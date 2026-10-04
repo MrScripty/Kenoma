@@ -4,6 +4,7 @@ import hashlib,html,json,re,shutil,subprocess
 from check_proofs import check
 from figures import generate
 from evidence_figures import generate as evidence_figures
+from spatial_figures import generate as advanced_figures
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'dist'
 
@@ -29,7 +30,30 @@ LABS={
   'caption':'Static reference at q = 90°; interactive starts at q = 30°. Tendon stiffness 30,000 N/m, tissue shear modulus 1,500 Pa and bulk modulus 50,000 Pa are authored teaching choices. Surface is the block boundary, not a separately modeled skin layer.',
   'controls':[('load','Dumbbell mass (kg)',0,10,0.5,5),('excitation','Excitation u (0–1)',0,1,.05,.6),('angle','Initial / prescribed flexion q (°)',0,135,1,30)]}
 }
+LABS.update({
+ 'spatial':{'title':'Laboratory 7 · Muscle under skin and elbow contact','model':'Authored 3D edge/volume energy, separate skin membrane and fascia tethers; finite quasistatic sampled bone contact; one-way hinge → shape. Not FEM, patient anatomy or medical pressure.',
+ 'description':'Left: coral deformable volume, red active fibre spans, gold tendon span, mint separate skin membrane and yellow contact samples on a schematic articulated arm. Right: the identical bind volume and skin, posed once with linear blend skinning at the identical hinge angle. Bones and dumbbells have identical poses; geometry uses SI coordinates and a common viewing scale.',
+ 'caption':'Compression fixture: q = 90°, activation 0.6, 640-iteration cap. Mechanical minimum volume ratio 0.736; same-pose LBS minimum 0.171. Sampled penetration 0.0283 mm versus 9.75 mm. This original schematic is not registered to the real atlas.',
+ 'controls':[('load','Dumbbell mass (kg)',0,10,.5,5),('excitation','Excitation u (0–1)',0,1,.05,.6),('angle','Initial / prescribed q (°)',0,100,1,30)]},
+ 'continuum':{'title':'Laboratory 6 · Matched spatial FEM and compliant solve','model':'Linear constant-strain tetrahedra; authored isotropic material; manufactured static load or one implicit step from rest. Small-strain model, no contact or muscle.',
+ 'description':'Left: converged discrete FEM reference. Right: a finite compliant strain solve for the identical implicit step, or analytic nodal samples in static mode. Both use the same mesh, camera and visible displacement magnification. Gray outlines show the bind block; the gold edge marks the x = 0 clamp. Orange arrows show six representative applied nodal loads on a common normalized length scale; distributed body and face loads are specified in the chapter.',
+ 'caption':'Authored 40 × 20 × 20 mm fixture, E = 100 kPa, ν = 0.25, n = 3, h = 0.0005 s, five compliant sweeps. Displacements in this illustration are magnified 50×; numerical errors and energies are unscaled SI quantities.',
+ 'controls':[]}
+})
+def advanced_block(key,web):
+    lab=LABS[key];e=html.escape
+    if not web:return f"\n### {lab['title']}\n\n![{lab['description']}](assets/{key}.svg)\n\n{lab['caption']}\n\n**Model:** {lab['model']}\n\n[Open the interactive laboratory](index.html#lab-{key}).\n"
+    controls=''
+    for param,label,low,high,step,value in lab['controls']:
+        controls+=f'<div class="control"><label for="{key}-{param}-number">{label}</label><div class="input-pair"><input type="range" aria-label="{label} slider" data-param="{param}" min="{low}" max="{high}" step="{step}" value="{value}"><input id="{key}-{param}-number" type="number" data-param="{param}" min="{low}" max="{high}" step="{step}" value="{value}"></div></div>'
+    options=[('n','Mesh subdivisions',[(1,'1: 8 nodes'),(2,'2: 27 nodes'),(3,'3: 64 nodes'),(4,'4: 125 nodes')],3),('case','Manufactured load case',[('quadratic','Quadratic: refinement test'),('affine','Affine: patch test')],'quadratic'),('comparison','Comparison target',[('implicit','Matched implicit step'),('static','Static analytic reference')],'implicit'),('h','Common implicit h (s)',[(.0005,'0.0005'),(.001,'0.001'),(.002,'0.002')],.0005),('sweeps','Compliant strain sweeps',[(1,'1'),(5,'5'),(20,'20'),(100,'100')],5),('magnification','Displacement display magnification',[(1,'1×'),(20,'20×'),(50,'50×'),(100,'100×')],50)] if key=='continuum' else [('mode','Hinge motion mode',[('forward','Force-driven hinge'),('prescribed','Prescribed static hold')],'forward'),('dt','Physics step h (s)',[(.0025,'0.0025'),(.005,'0.005'),(.01,'0.01')],.005),('sweeps','Quasistatic iteration cap',[(80,'80'),(160,'160'),(320,'320'),(640,'640')],160),('boneContact','Sampled bone contact',[('on','On: compliant force'),('off','Off: show penetration')],'on'),('skin','Separate skin membrane / fascia',[('on','On'),('off','Off: ablation')],'on'),('activeShape','Spatial preferred shortening',[('on','On: shared activation'),('off','Off: shape ablation')],'on'),('volumeK','Volume stiffness (Pa)',[(25000,'25,000'),(2500,'2,500')],25000),('tendon','Line-actuator tendon',[('compliant','Compliant'),('rigid','Rigid')],'compliant')]
+    for param,label,values,default in options:
+        controls+=f'<div class="control"><label for="{key}-{param}">{label}</label><select id="{key}-{param}" data-param="{param}">'+''.join(f'<option value="{v}"'+(' selected' if v==default else '')+f'>{label}</option>' for v,label in values)+'</select></div>'
+    actions='<button data-action="play">Play</button><button data-action="step">Single step</button><button data-action="pulse">Lift / release pulse</button><button data-action="release">Release excitation</button><button data-action="compression">90° compression fixture</button><button data-action="export">Download trace</button>' if key=='spatial' else ''
+    return f'''\n<section class="laboratory advanced-lesson" data-advanced="{key}" id="lab-{key}" aria-labelledby="lab-{key}-heading"><div class="lab-heading"><h3 id="lab-{key}-heading">{lab['title']}</h3><p class="model-label">{lab['model']}</p></div><figure class="static-figure"><img src="assets/{key}.svg" alt="{e(lab['description'])}"><figcaption>{lab['caption']}</figcaption></figure><p class="scene-legend">{e(lab['description'])}</p><div class="scene-host"></div><div class="controls">{controls}</div><div class="actions"><button data-action="start">Start 3D scene</button>{actions}<button data-action="reset">Reset</button><button data-action="view">Front / oblique view</button><button data-action="summary">Read current results</button><button data-action="copy">Copy state</button></div><dl class="readout" aria-label="Current numerical results"></dl><p class="lab-description">{e(lab['description'])} Static figures, equations and tables below provide the text and print alternatives. Playback advances fixed physics steps; spatial optimization can slow wall-clock playback.</p><p class="announce" role="status" aria-live="polite"></p><textarea class="preset" aria-label="Reproducible state JSON" readonly hidden></textarea><noscript><p>Interactive controls require JavaScript; static illustrations and worked tables remain readable.</p></noscript></section>\n'''
+
 def lab_block(key,web):
+    if key in ['spatial','continuum']:return advanced_block(key,web)
     lab=LABS[key];e=html.escape
     if not web:
         return f"\n### {lab['title']}\n\n![{lab['description']}](assets/{key}.svg)\n\n{lab['caption']}\n\n**Model:** {lab['model']}\n\n[Open this laboratory in the web edition](index.html#lab-{key}).\n"
@@ -64,6 +88,10 @@ def build():
     evidence=check()
     data=ROOT/'data/elbow-v1'
     subprocess.run(['python3',str(data/'scripts/validate_package.py')],check=True)
+    continuum=ROOT/'contributions/continuum_reference'
+    for relative,item in json.loads((continuum/'data/provenance.json').read_text())['files'].items():
+        payload=(continuum/relative).read_bytes()
+        if len(payload)!=item['bytes'] or hashlib.sha256(payload).hexdigest()!=item['sha256']:raise RuntimeError('Continuum provenance changed: '+relative)
     manifest=json.loads((ROOT/'book/book.json').read_text())
     claims={c['id']:c for c in evidence['claims']}
     source=(ROOT/'proofs/Mechanics.lean').read_text()
@@ -102,21 +130,26 @@ def build():
     for r in series['compression']:compression+=f"| {r['degrees']} | {r['volumeRatio']:.6f} | {r['skinVolumeRatio']:.6f} | {r['normal']:.4f} | {r['pressure']:.2f} | {r['torque']:.5f} |\n"
     trajectories='| h (s) | Final q (°) | Active work (J) | Max energy residual (J) | Event splits | Accepted substeps |\n|--:|--:|--:|--:|--:|--:|\n'
     for r in series['trajectories']:trajectories+=f"| {r['dt']:.4f} | {r['angleDegrees']:.6f} | {r['work']:.6f} | {r['maxEnergyResidual']:.3g} | {r['eventSplits']} | {r['substeps']} |\n"
-    chapters='\n\n'.join((ROOT/'book/chapters'/p).read_text() for p in manifest['chapters'])
+    spatial_text=subprocess.check_output(['node',str(ROOT/'tools/spatial-experiment.mjs')],text=True)
+    (OUT/'spatial-experiment.json').write_text(spatial_text);spatial=json.loads(spatial_text)
+    spatial_table='| Iteration cap | Min J | Mean J | Sampled penetration (mm) | Max free force (N) | Normal-force sum (N) | Elastic/contact energy (J) |\n|--:|--:|--:|--:|--:|--:|--:|\n'
+    for r in spatial['rows']:spatial_table+=f"| {r['maxIterations']} | {r['minJ']:.6f} | {r['meanJ']:.6f} | {r['penetrationM']*1000:.6f} | {r['maxFreeForceN']:.6f} | {r['contactNormalSumN']:.6f} | {r['totalEnergyJ']:.6f} |\n"
+    chapters='\n\n'.join(((ROOT/'book'/p).read_text()+'\n\n{{demo:continuum}}\n\n{{proof:compliance-denominator}}\n') if p.startswith('../contributions/') else (ROOT/'book/chapters'/p).read_text() for p in manifest['chapters'])
     def expand(web):
         text=re.sub(r'\{\{demo:(\w+)\}\}',lambda m:lab_block(m[1],web),chapters)
         text=re.sub(r'\{\{proof:([\w-]+)\}\}',lambda m:proof_block(m[1],web),text)
         text=text.replace('{{evidence}}',(ROOT/'web/evidence.html').read_text() if web else 'The web edition provides a resettable static atlas viewer and a recorded-bin slider. The figures, source tables and downloads above and below provide the reading alternative.')
-        text=text.replace('{{experiment}}',table)
+        text=text.replace('{{experiment}}',table).replace('{{spatial-experiment}}',spatial_table)
         text=text.replace('{{elbow-experiment}}',elbow_table)
         text=text.replace('{{series-holds}}',holds).replace('{{series-compression}}',compression).replace('{{series-trajectories}}',trajectories)
-        if '{{' in text: raise ValueError('Unexpanded build directive')
+        if re.search(r'\{\{[A-Za-z]',text): raise ValueError('Unexpanded build directive')
         return text+'\n\n# Checked source appendix {#checked-source-appendix}\n\nThe source below is included for inspection. It was checked by the command and toolchain recorded in each receipt; compilation establishes only its stated domain.\n\n```lean\n'+source+'```\n\n## Proof check receipt {#proof-check-receipt}\n\nFresh successful invocation: `'+evidence['command']+'`. Toolchain: '+evidence['lean_version']+'. Checked declarations: '+str(len(evidence['claims']))+'. Source SHA-256: `'+evidence['source_sha256']+'`. Claim-map SHA-256: `'+evidence['claims_sha256']+'`. Only bundled Std is used. This receipt establishes the exact claims above; it does not validate JavaScript, biological parameters, or medical use.\n\n## Kernel dependency report {#kernel-dependency-report}\n\n```text\n'+(OUT/'lean-check.txt').read_text()+'```\n'
     front=f"---\ntitle: {manifest['title']}\nsubtitle: {manifest['subtitle']}\nlang: en\n---\n\n"
     (OUT/'kenoma-mechanics.md').write_text(front+expand(False))
     staging=OUT/'web-staging.md';staging.write_text(front+expand(True))
-    subprocess.run(['pandoc',str(staging),'--standalone','--mathml','--toc','--toc-depth=2',
-      '--template',str(ROOT/'web/template.html'),'-o',str(OUT/'index.html')],check=True)
+    pandoc_result=subprocess.run(['pandoc',str(staging),'--standalone','--mathml','--toc','--toc-depth=2',
+      '--template',str(ROOT/'web/template.html'),'-o',str(OUT/'index.html')],check=True,capture_output=True,text=True)
+    if 'Could not convert TeX math' in pandoc_result.stderr:raise RuntimeError(pandoc_result.stderr)
     html_path=OUT/"index.html"
     rendered=html_path.read_text()
     rendered=re.sub(r'<math display="block".*?</math>', lambda m: '<div class="equation" tabindex="0" aria-label="Scrollable displayed equation">'+m[0]+'</div>', rendered, flags=re.S)
@@ -124,6 +157,7 @@ def build():
     staging.unlink()
     assets=OUT/'assets';generate(assets)
     evidence_figures(assets)
+    advanced_figures(assets,spatial)
     shutil.rmtree(OUT/'data/elbow-v1',ignore_errors=True)
     shutil.copytree(data,OUT/'data/elbow-v1',dirs_exist_ok=True,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
     shutil.copy(ROOT/'web/style.css',assets/'style.css')
@@ -132,12 +166,13 @@ def build():
     for file in ['Mechanics.lean','lean-toolchain','claims.json']:shutil.copy(ROOT/'proofs'/file,proofs/file)
     notices=OUT/'THIRD_PARTY_NOTICES.txt'
     notices.write_text('Kenoma original book and simulator content: Apache-2.0. Third-party data retains its component licenses below.\n\n'+(data/'LICENSES_AND_ATTRIBUTION.txt').read_text()+'\n\nThree.js 0.180.0 (MIT)\n'+(ROOT/'node_modules/three/LICENSE').read_text()+'\n\nBuild tool esbuild 0.25.10 (MIT)\n'+(ROOT/'node_modules/esbuild/LICENSE.md').read_text())
+    shutil.copytree(ROOT/'contributions/continuum_reference',OUT/'contributions/continuum_reference',dirs_exist_ok=True)
     shutil.copy(ROOT.parent/'LICENSE',OUT/'LICENSE')
     (OUT/'.nojekyll').touch()
-    inputs={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for folder in ['book','web','proofs','tools','data'] for p in sorted((ROOT/folder).rglob('*')) if p.is_file() and '__pycache__' not in str(p)}
+    inputs={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for folder in ['book','web','proofs','tools','data','contributions'] for p in sorted((ROOT/folder).rglob('*')) if p.is_file() and '__pycache__' not in str(p)}
     for relative in ['package.json','package-lock.json','requirements.txt']:
         inputs[relative]=hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()
-    manifest_out={'schema':1,'milestone':'tendon-tissue-3','input_sha256':inputs,'lean':evidence['lean_version'],
+    manifest_out={'schema':1,'milestone':'full-spatial-book','input_sha256':inputs,'lean':evidence['lean_version'],
       'pandoc':subprocess.check_output(['pandoc','--version'],text=True).splitlines()[0],
       'node':subprocess.check_output(['node','--version'],text=True).strip(),
       'numerical_experiment':'experiment.json','proof_evidence':'proof-status.json',

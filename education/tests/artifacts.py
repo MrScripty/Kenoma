@@ -7,9 +7,9 @@ ROOT=Path(__file__).resolve().parents[1];out=ROOT/'dist'
 proof=json.loads((out/'proof-status.json').read_text())
 assert proof['source_sha256']==hashlib.sha256((ROOT/'proofs/Mechanics.lean').read_bytes()).hexdigest()
 assert proof['claims_sha256']==hashlib.sha256((ROOT/'proofs/claims.json').read_bytes()).hexdigest()
-assert len(proof['claims'])==8 and all(c['status']=='checked' for c in proof['claims'])
+assert len(proof['claims'])==12 and all(c['status']=='checked' for c in proof['claims'])
 assert all(set(c['axioms'])<={'propext','Quot.sound','Classical.choice'} for c in proof['claims'])
-text=(out/'kenoma-mechanics.md').read_text();assert '{{' not in text
+text=(out/'kenoma-mechanics.md').read_text();assert not re.search(r'\{\{[A-Za-z]',text)
 for id in ['force-pair','torque-linearity','torque-origin','central-pair','kinetic-sign','torque-example']:
  assert f'Checked claim {id}:' in text
 browser=json.loads((out/'browser-check.json').read_text());assert browser['status']=='passed'

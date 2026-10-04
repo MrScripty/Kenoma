@@ -35,7 +35,7 @@ def render():
             }''',revision)
             page.pdf(path=str(ROOT/'dist/kenoma-mechanics.pdf'),format='A4',print_background=True,
               display_header_footer=True,header_template='<span></span>',
-              footer_template='<div style="font-family:Arial;font-size:9px;width:100%;padding:0 18mm;color:#456171;display:flex;justify-content:space-between"><span>Kenoma · Mechanics of Moving Bodies · Tendon, tissue and data 3</span><span class="pageNumber"></span></div>',
+              footer_template='<div style="font-family:Arial;font-size:9px;width:100%;padding:0 18mm;color:#456171;display:flex;justify-content:space-between"><span>Kenoma · Mechanics of Moving Bodies · Spatial mechanics and evidence</span><span class="pageNumber"></span></div>',
               prefer_css_page_size=True,tagged=True,outline=True)
             version=browser.version;browser.close()
         (ROOT/'dist/pdf-render.json').write_text(json.dumps({'renderer':'Playwright Chromium','browser_version':version,'source':'index.html','static_diagrams':True,'tagged':True,'pdf_byte_identity_asserted':False},indent=2)+'\n')

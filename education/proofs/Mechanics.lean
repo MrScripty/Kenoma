@@ -64,6 +64,41 @@ theorem virtual_power_identity (force dl omega : Int) :
     (-force * dl) * omega = -(force * (dl * omega)) := by
   simp only [Int.neg_mul, Int.mul_assoc]
 
+-- A volume element uses g0 = -(g1+g2+g3), coordinate by coordinate.
+-- The derivative formula itself is tested numerically, not proved here.
+theorem element_gradient_resultant (g1 g2 g3 scale : Int) :
+    scale * (-(g1 + g2 + g3)) + scale * g1 + scale * g2 + scale * g3 = 0 := by
+  simp only [Int.mul_neg, Int.mul_add]
+  omega
+
+-- The actual centroid-contact distribution uses four equal barycentric weights.
+-- This numerator identity supports the motion/force transpose contract.
+theorem centroid_contact_power (force v0 v1 v2 v3 : Int) :
+    force * (v0 + v1 + v2 + v3) =
+      force * v0 + force * v1 + force * v2 + force * v3 := by
+  simp only [Int.mul_add]
+
+-- A regularized scalar constraint denominator is positive under these inputs.
+-- h^2 scaling and the construction of the real gradients remain assumptions.
+theorem compliant_denominator_positive (w g alpha : Int)
+    (hw : 0 ≤ w) (ha : 0 < alpha) : 0 < w * (g * g) + alpha := by
+  have square : 0 ≤ g * g := by
+    rw [← Int.natAbs_mul_self' g]
+    exact Int.ofNat_zero_le _
+  have term := Int.mul_nonneg hw square
+  omega
+
+-- Scaled Armijo sufficient decrease, with nonnegative step coefficient.
+-- This checks the acceptance contract, not L-BFGS or nonconvex convergence.
+theorem accepted_energy_nonincrease (oldE newE coefficient slope : Int)
+    (hc : 0 ≤ coefficient) (hs : slope ≤ 0)
+    (accept : newE ≤ oldE + coefficient * slope) : newE ≤ oldE := by
+  have product : coefficient * slope ≤ 0 := by
+    have positive := Int.mul_nonneg hc (show 0 ≤ -slope by omega)
+    simp only [Int.mul_neg] at positive
+    omega
+  omega
+
 end Kenoma
 
 #print axioms Kenoma.force_pair_cancels
@@ -74,3 +109,8 @@ end Kenoma
 #print axioms Kenoma.torque_worked_example
 #print axioms Kenoma.activation_weighted_bound
 #print axioms Kenoma.virtual_power_identity
+
+#print axioms Kenoma.element_gradient_resultant
+#print axioms Kenoma.centroid_contact_power
+#print axioms Kenoma.compliant_denominator_positive
+#print axioms Kenoma.accepted_energy_nonincrease

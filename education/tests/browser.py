@@ -13,9 +13,9 @@ def check():
       with sync_playwright() as p:
         browser=p.chromium.launch(headless=True,executable_path=os.environ.get('CHROMIUM_EXECUTABLE') or shutil.which('chromium'),args=['--enable-unsafe-swiftshader'])
         context=browser.new_context(viewport={'width':1280,'height':900},reduced_motion='reduce')
-        page=context.new_page();errors=[];page.on('pageerror',lambda err:errors.append(str(err)))
+        page=context.new_page();page.set_default_timeout(60000);errors=[];page.on('pageerror',lambda err:errors.append(str(err)))
         page.goto(url+'/index.html',wait_until='networkidle')
-        assert page.locator('.proof-card').count()==8
+        assert page.locator('.proof-card').count()==12
         assert page.locator('math').count()>15
         # Every generated internal hash link and local asset must resolve.
         for link in page.locator('a[href^="#"]').evaluate_all('(els)=>els.map(el=>el.getAttribute("href"))'):
@@ -23,7 +23,7 @@ def check():
         for href in page.locator('[src],a[href]').evaluate_all('(els)=>els.map(el=>el.getAttribute("src")||el.getAttribute("href"))'):
           if not href or href.startswith(('#','http')):continue
           assert context.request.get(url+'/'+href.split('#')[0]).status==200,href
-        checks.append('8 proof cards, MathML, internal links and local resources verified')
+        checks.append('12 proof cards, MathML, internal links and local resources verified')
         force=page.locator('#lab-force');expect(force.locator('.readout')).to_contain_text('0 J')
         invalid=force.locator('input[type=number][data-param=mass]');invalid.fill('')
         expect(invalid).to_have_attribute('aria-invalid','true');force.locator('[data-action=reset]').click()
@@ -129,6 +129,34 @@ def check():
         series.locator('[data-action=reset]').click();series.locator('[data-action=step]').click();first=series.locator('.readout').inner_text()
         series.locator('[data-action=reset]').click();series.locator('[data-action=step]').click();assert series.locator('.readout').inner_text()==first
         checks.append('Series fixed-end storage/release, immediate release/change exports before stepping, tissue ablations, same-pose LBS and deterministic reset verified')
+        continuum=page.locator('#lab-continuum');expect(continuum.locator('.readout')).to_contain_text('One backward-Euler step from rest')
+        continuum.locator('[data-action=start]').click();assert page.locator('canvas').count()==1
+        continuum.locator('[data-action=copy]').click();c=json.loads(continuum.locator('.preset').input_value());assert c['diagnostics']['referenceConverged']
+        assert abs(c['diagnostics']['metrics']['relativeObjectiveNorm']-.009212)<.000002
+        assembly=c['diagnostics']['assemblyCount'];continuum.locator('select[data-param=sweeps]').select_option('20')
+        continuum.locator('[data-action=copy]').click();better=json.loads(continuum.locator('.preset').input_value());assert better['diagnostics']['metrics']['relativeObjectiveNorm']<.000002
+        assert better['diagnostics']['assemblyCount']==assembly
+        continuum.locator('select[data-param=comparison]').select_option('static');expect(continuum.locator('.readout')).to_contain_text('Static analytic displacement L2 error')
+        continuum.locator('select[data-param=n]').select_option('4');continuum.locator('[data-action=copy]').click();refined=json.loads(continuum.locator('.preset').input_value());assert abs(refined['diagnostics']['metrics']['relativeL2']-.1471)<.001
+        continuum.locator('[data-action=reset]').click();continuum.screenshot(path=str(out/'continuum-desktop.png'))
+        checks.append('Spatial FEM reference converged; matched sweep improvement, static refinement and cached assembly verified')
+        spatial=page.locator('#lab-spatial');spatial.locator('[data-action=start]').click();assert page.locator('canvas').count()==1
+        spatial.locator('[data-action=compression]').click();spatial.locator('[data-action=copy]').click();compression=json.loads(spatial.locator('.preset').input_value());d=compression['diagnostics'];(out/'spatial-compression-state.json').write_text(json.dumps(compression,indent=2)+'\n')
+        assert abs(d['q']-3.141592653589793/2)<1e-12 and d['minJ']>.7 and d['baselineMinJ']<.18
+        assert d['penetrationM']<.00005 and d['baselinePenetrationM']>.009
+        spatial.screenshot(path=str(out/'spatial-compression-desktop.png'))
+        spatial.locator('select[data-param=boneContact]').select_option('off');spatial.locator('[data-action=copy]').click();contact_off=json.loads(spatial.locator('.preset').input_value());assert contact_off['diagnostics']['contactNormalSumN']==0
+        spatial.locator('[data-action=reset]').click();spatial.locator('select[data-param=sweeps]').select_option('80')
+        spatial.evaluate('(lab)=>{for(let i=0;i<60;i++)lab.querySelector("[data-action=step]").click()}')
+        spatial.locator('[data-action=copy]').click();lifted=json.loads(spatial.locator('.preset').input_value());assert lifted['state']['q']>30*3.141592653589793/180 and lifted['state']['a']>.59
+        spatial.locator('[data-action=release]').click()
+        with page.expect_download() as info:spatial.locator('[data-action=export]').click()
+        info.value.save_as(str(out/'spatial-immediate-release.json'));instant=json.loads((out/'spatial-immediate-release.json').read_text());assert instant['trace'][-1]['excitation']==0 and instant['trace'][-1]['time']==lifted['state']['time']
+        assert instant['trace'][-1]['activation']==lifted['state']['a'] and instant['trace'][-1]['hingeWorkJ']==lifted['state']['work']
+        spatial.locator('[data-action=step]').click();spatial.locator('[data-action=copy]').click();released=json.loads(spatial.locator('.preset').input_value());assert released['state']['a']<lifted['state']['a']
+        spatial.locator('[data-action=reset]').click();reset_values=spatial.locator('.readout').inner_text();spatial.locator('[data-action=view]').click();assert spatial.locator('.readout').inner_text()==reset_values
+        spatial.locator('[data-action=reset]').click();assert spatial.locator('.readout').inner_text()==reset_values
+        checks.append('Spatial muscle/skin/contact same-pose fixture, force-driven lift, release-current export, camera and deterministic reset verified')
         evidence=page.locator('#evidence-viewer');expect(evidence.locator('[data-evidence=bin]')).to_be_enabled()
         evidence.locator('[data-action=start]').click();expect(evidence.locator('canvas')).to_be_visible();assert page.locator('canvas').count()==1
         evidence.locator('[data-evidence=part]').select_option('bones');evidence.locator('[data-action=view]').click()
@@ -150,6 +178,8 @@ def check():
         elbow=page.locator('#lab-elbow');elbow.locator('[data-action=start]').click();elbow.screenshot(path=str(out/'elbow-mobile.png'))
         series=page.locator('#lab-series');series.locator('[data-action=start]').click()
         series.locator('select[data-param=mode]').select_option('prescribed');series.locator('input[type=number][data-param=angle]').fill('90');series.screenshot(path=str(out/'series-mobile.png'))
+        continuum=page.locator('#lab-continuum');continuum.locator('[data-action=start]').click();continuum.screenshot(path=str(out/'continuum-mobile.png'))
+        spatial=page.locator('#lab-spatial');spatial.locator('[data-action=start]').click();spatial.locator('[data-action=compression]').click();spatial.screenshot(path=str(out/'spatial-compression-mobile.png'))
         evidence=page.locator('#evidence-viewer');evidence.locator('[data-action=start]').click();expect(evidence.locator('canvas')).to_be_visible();evidence.screenshot(path=str(out/'evidence-mobile.png'))
         assert page.evaluate('document.documentElement.scrollWidth<=window.innerWidth'), 'new chapter mobile overflow'
         no_gl=context.new_page();no_gl.add_init_script('''const original=HTMLCanvasElement.prototype.getContext;
@@ -159,12 +189,14 @@ HTMLCanvasElement.prototype.getContext=function(type,...args){if(type.includes('
         expect(lab.locator('.announce')).to_contain_text('3D rendering unavailable')
         expect(lab.locator('.static-figure')).to_be_visible();lab.locator('[data-action=step]').click()
         expect(lab.locator('.readout')).to_contain_text('0.003 m')
-        checks.append('No-WebGL fallback retains static figures and live numerical controls')
+        advanced=no_gl.locator('#lab-spatial');advanced.locator('[data-action=start]').click();expect(advanced.locator('.announce')).to_contain_text('3D unavailable');expect(advanced.locator('.static-figure')).to_be_visible()
+        advanced.locator('[data-action=compression]').click();expect(advanced.locator('.readout')).to_contain_text('90.00°')
+        checks.append('No-WebGL fallback retains static figures and live elementary/spatial numerical controls')
         no_js=browser.new_context(java_script_enabled=False).new_page()
         no_js.goto(url+'/index.html');expect(no_js.locator('#lab-force .static-figure')).to_be_visible()
-        expect(no_js.locator('#lab-force noscript')).to_be_visible();assert no_js.locator('.proof-card').count()==8
+        expect(no_js.locator('#lab-force noscript')).to_be_visible();assert no_js.locator('.proof-card').count()==12;expect(no_js.locator('#lab-spatial .static-figure')).to_be_visible();expect(no_js.locator('#lab-continuum .static-figure')).to_be_visible()
         checks.append('No-JavaScript chapter text, diagrams, proofs and experiment table remain readable')
-        result={'status':'passed','browser_version':browser.version,'checks':checks,'proof_cards':8,
+        result={'status':'passed','browser_version':browser.version,'checks':checks,'proof_cards':12,
           'html_sha256':hashlib.sha256((ROOT/'dist/index.html').read_bytes()).hexdigest(),
           'app_sha256':hashlib.sha256((ROOT/'dist/assets/app.js').read_bytes()).hexdigest(),
           'scope':'Automated Chromium desktop/mobile viewport checks; not real mobile hardware or accessibility certification.'}

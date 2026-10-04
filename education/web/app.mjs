@@ -4,6 +4,7 @@ import {ELBOW,elbowInitial,elbowResults,elbowStep} from './elbow.mjs';
 import {SERIES,seriesInitial,seriesResults,seriesStep} from './series.mjs';
 import {TISSUE,lbsPoint} from './tissue.mjs';
 import {EvidenceView} from './evidence.mjs';
+import {AdvancedView} from './advanced.mjs';
 const defaultsFor=kind=>kind==='series'?SERIES:kind==='elbow'?ELBOW:DEFAULTS[kind];
 
 const fmt=(v,d=3)=>Math.abs(v)<1e-12?'0':Math.abs(v)>1e5?v.toExponential(3):v.toFixed(d);
@@ -274,8 +275,9 @@ class Lab {
   }
 }
 const labs=[...document.querySelectorAll('[data-demo]')].map(root=>new Lab(root));
+const advanced=[...document.querySelectorAll('[data-advanced]')].map(root=>new AdvancedView(root,view=>{if(active&&active!==view)active.stopRenderer();active=view;}));
 const evidenceRoot=document.querySelector('#evidence-viewer');
 if(evidenceRoot)new EvidenceView(evidenceRoot,view=>{if(active&&active!==view)active.stopRenderer();active=view;});
-document.addEventListener('visibilitychange',()=>{if(document.hidden)labs.forEach(lab=>lab.pause());});
-const offscreen=new IntersectionObserver(entries=>{for(const entry of entries)if(!entry.isIntersecting)labs.find(lab=>lab.root===entry.target)?.pause();});
-labs.forEach(lab=>offscreen.observe(lab.root));
+document.addEventListener('visibilitychange',()=>{if(document.hidden)[...labs,...advanced].forEach(lab=>lab.pause());});
+const offscreen=new IntersectionObserver(entries=>{for(const entry of entries)if(!entry.isIntersecting)[...labs,...advanced].find(lab=>lab.root===entry.target)?.pause();});
+[...labs,...advanced].forEach(lab=>offscreen.observe(lab.root));

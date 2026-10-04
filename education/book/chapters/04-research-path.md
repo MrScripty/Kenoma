@@ -1,6 +1,6 @@
 # From a lever to an arm {#from-a-lever-to-an-arm}
 
-The mechanics chapters establish a vocabulary and a testing pattern. The anatomy chapter integrates audited evidence, and Laboratory 4 supplies a force-driven schematic elbow, activation/release, and work accounting. Laboratory 5 adds series tendon storage and an affine-block contact reaction with a same-pose LBS comparison. The separate data chapter supplies actual static atlas surfaces, a recorded normalized trial and source model parameters. Anatomical registration, spatial skin/fascia mechanics and validation still need implementation before this becomes a calibrated arm. The five laboratories are a growing teaching progression, not its completion.
+The book now provides a complete bounded teaching progression: rigid motion and energy; anatomical/data evidence; active elbow and series tendon; homogeneous continuum compression; spatial continuum accuracy/cost; interfaces; and a spatial arm-under-skin comparison. These working examples keep their model boundaries visible. They do not require subject calibration and do not establish clinical accuracy. This closing chapter describes how to extend that educational result responsibly.
 
 ## Add anatomy with provenance
 
@@ -12,7 +12,7 @@ Before adding bone meshes or medical images, verify the relevant dataset terms a
 
 An active muscle develops tensile force according to a model of activation, fiber length, shortening or lengthening velocity, and passive stretch. A contracting muscle need not shorten: it can hold length or lengthen under load. Millard and colleagues explicitly separate excitation, activation dynamics, muscle force, and tendon equilibrium in their primary model-comparison paper. Their equilibrium, damped-equilibrium, and rigid-tendon variants have different accuracy and computational tradeoffs. [Millard et al., 2013, §§2-4](#source-muscle)
 
-A tendon can stretch beyond slack length while transmitting force. Replacing it with an inextensible connection changes the model and must be labelled. The arm capstone will need a route from joint angle to musculotendon path length and moment arm, plus a force law and an activation state. A colored bulge driven directly by an animation slider does not supply those mechanics.
+A tendon can stretch beyond slack length while transmitting force. Replacing it with an inextensible connection changes the model and must be labelled. The implemented line actuator supplies a route from joint angle to musculotendon path length and moment arm, plus a force law and an activation state. A colored bulge driven directly by an animation slider does not supply those mechanics.
 
 ## Add surface and contact as separate mechanisms
 
@@ -33,7 +33,7 @@ This table describes research requirements, not completed validations or algorit
 
 ## Capstone acceptance contract
 
-The arm-and-dumbbell capstone will be introduced progressively, with matched states across mechanisms:
+The arm-and-dumbbell teaching sequence implements these mechanisms progressively, with matched states in each comparison:
 
 1. A rigid skeleton and external load establish coordinates, gravity, and torque balance.
 2. Muscle paths and activation produce a controlled lift; release reduces excitation and reveals subsequent dynamics.
@@ -48,6 +48,6 @@ For each stage, publish resettable inputs, numerical diagnostics, a static expla
 
 The canonical chapters are listed in `book/book.json` and assembled into one Markdown book. Small build directives insert laboratories, generated experiment results, and checked proof cards. `tools/build.py` emits the assembled Markdown and an HTML edition through Pandoc with native MathML. Local bundled JavaScript supplies interaction without a runtime CDN. `tools/render_pdf.py` prints the same HTML using static diagrams and print styles; controls and WebGL canvases are excluded from print.
 
-Quarto is a reasonable later option for chapter navigation, cross-reference management, or a larger bibliography. This initial slice uses the available Pandoc and browser runtime to keep the reproducible path compact. There is no separate hand-maintained prose for PDF and web, and no hand-maintained proof success flag.
+The assembled edition uses Pandoc and the browser runtime to keep the reproducible path compact. There is no separate hand-maintained prose for PDF and web, and no hand-maintained proof success flag.
 
 GitHub Actions checks proofs, runs equation tests, builds the book, and tests the browser before preparing an artifact. The foundation's exact-head workflow succeeded and was independently reviewed. A separate manually requested deployment job can publish an artifact after review. The workflow does not enable Pages, change repository settings, or publish this milestone automatically. This descendant's hosted build and any later deployment require their own verification.

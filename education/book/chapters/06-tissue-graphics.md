@@ -1,6 +1,6 @@
 # From line forces to tissue and rendered skin {#tissue-and-rendered-skin}
 
-Laboratory 4 moves a rigid skeleton. Its red ellipsoid cannot tell us where tissue compresses. The next layer must introduce material deformation, interfaces and contact before it supplies forces or pressure. This chapter integrates the audited simulation and anatomy research into the progression. Laboratory 5 implements a bounded affine-block/contact proxy; the spatial skin/fascia and anatomical contact mechanisms described below still need their own solvers and validation.
+Laboratory 4 moves a rigid skeleton. Its red ellipsoid cannot tell us where tissue compresses. The next layer must introduce material deformation, interfaces and contact before it supplies forces or pressure. This chapter integrates the audited simulation and anatomy research into the progression. Laboratory 5 implements a bounded affine-block/contact proxy; Laboratories 6–7 implement the spatial FEM comparison and a separate schematic skin/fascia/contact model described in later chapters. Their stated limits distinguish working examples from anatomical prediction.
 
 ## Deformation needs a reference configuration
 
@@ -42,4 +42,4 @@ Reduced deformation bases, cached simulations and learned mappings can save comp
 
 If a detailed render surface follows a tissue proxy, embed it directly in the posed proxy, or add a displacement residual measured against its baseline at the **same current pose and coordinate frame**. Adding an unposed rest-relative displacement to an already skinned vertex applies part of the pose twice. Test this with a pure bone-motion sweep: a zero tissue residual must leave exactly the baseline surface.
 
-For the eventual capstone, synchronize the actual q(t) from forward dynamics across the naive skinning and tissue views. Keep the base mesh and skeletal transforms identical. Show geometric distortion separately from detected intersection, contact gap separately from pressure, and each force owner separately from its visual shape. Laboratory 4 supplies the first trajectory and actuator telemetry for that comparison; compliant tissue and elbow compression still need implementation and validation.
+For the spatial capstone, synchronize the actual q(t) from forward dynamics across the naive skinning and tissue views. Keep the base mesh and skeletal transforms identical. Show geometric distortion separately from detected intersection, contact gap separately from pressure, and each force owner separately from its visual shape. Laboratory 4 supplies the first trajectory and actuator telemetry for that comparison; Laboratory 7 adds the spatial volume, membrane, fascia-tether and sampled bone-contact solve with a synchronized baseline and measured defects.

@@ -54,5 +54,33 @@
     "claim": "The signed generalized-force power equals negative tension times path-rate under the chain-product assumption.",
     "assumptions": "Exact integer force, path derivative dl and angular velocity omega in compatible positive SI scales; derivative and path-rate relations are assumed.",
     "limitations": "Only multiplication/sign algebra is checked; calculus, the geometric derivative and browser arithmetic require separate numerical verification."
+  },
+  {
+    "id": "element-resultant",
+    "theorem": "Kenoma.element_gradient_resultant",
+    "claim": "A tetrahedral volume-force contribution has zero resultant when its four coordinate gradients sum to zero.",
+    "assumptions": "Exact integer coordinate gradients g1,g2,g3, g0 = \u2212(g1+g2+g3), and a common scalar force factor.",
+    "limitations": "The analytic volume derivative, JavaScript implementation, torque, attachments and contact require separate checks. This is the partition algebra used in spatial.mjs."
+  },
+  {
+    "id": "centroid-transfer",
+    "theorem": "Kenoma.centroid_contact_power",
+    "claim": "Equal centroid barycentric weights transfer nodal power with the transpose of the point-motion map.",
+    "assumptions": "Exact integer scalar force and four velocity coordinates. Both sides are numerators with a shared division by four in physical interpretation.",
+    "limitations": "No division or floating-point equality is proved. Applies coordinatewise to the fixed centroid sample; no nonlinear moving embedding or biological claim."
+  },
+  {
+    "id": "compliance-denominator",
+    "theorem": "Kenoma.compliant_denominator_positive",
+    "claim": "A nonnegative inverse-mass quadratic plus strictly positive regularization has a positive scalar denominator.",
+    "assumptions": "Exact integer w \u2265 0, gradient g, alpha > 0 in common positive scales.",
+    "limitations": "A one-coordinate special case supporting the compliant solver denominator; finite precision, material assembly, time scaling and iterative accuracy are not proved."
+  },
+  {
+    "id": "armijo-decrease",
+    "theorem": "Kenoma.accepted_energy_nonincrease",
+    "claim": "An accepted sufficient-decrease step cannot increase the exact scaled objective.",
+    "assumptions": "Exact integer old/new energy, nonnegative scaled step coefficient, nonpositive directional slope and the stated Armijo acceptance inequality.",
+    "limitations": "Does not prove gradients, direction generation, line-search termination, global convergence, float bounds or biological validity. The spatial solver tests its actual accepted energies separately."
   }
 ]
