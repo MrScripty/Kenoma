@@ -53,6 +53,8 @@ These samples are not a complete surface collision test. A triangle can intersec
 
 At each requested q,a pair, initialize from a smooth authored pose field R_z(w(X)q)X, where w rises linearly from zero at y = 120 mm to one at y = −120 mm. The ends match their rigid transforms. The mechanical solve then minimizes the sum of the listed energies over free coordinates, using limited-memory BFGS with eight stored update pairs and an Armijo backtracking line search. Failed or poorly conditioned curvature updates are discarded; a non-descent search direction resets to scaled negative gradient.
 
+Sufficient-decrease backtracking has a classical gradient-method basis; its convergence conclusions require stated regularity assumptions. Our bounded nonconvex solve does not inherit those guarantees. [Armijo, 1966, original paper](https://msp.org/pjm/1966/16-1/pjm-v16-n1-p01-s.pdf)
+
 An accepted trial must have minimum tetrahedral J = V/V₀ greater than 0.01 and satisfy sufficient objective decrease. This is an implemented guard, not a proof of mesh injectivity, global convergence or feasible contact. It can reject a search step even while the residual remains large. The solver exposes its iteration cap, energy-evaluation count, maximum free force and L2 residual; an unconverged iterate stays labeled approximate. A residual criterion of 2 × 10⁻⁵ N per free coordinate is used for local stopping.
 
 {{proof:armijo-decrease}}

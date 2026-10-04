@@ -140,7 +140,8 @@ def check():
         continuum.locator('select[data-param=n]').select_option('4');continuum.locator('[data-action=copy]').click();refined=json.loads(continuum.locator('.preset').input_value());assert abs(refined['diagnostics']['metrics']['relativeL2']-.1471)<.001
         continuum.locator('[data-action=reset]').click();continuum.screenshot(path=str(out/'continuum-desktop.png'))
         checks.append('Spatial FEM reference converged; matched sweep improvement, static refinement and cached assembly verified')
-        spatial=page.locator('#lab-spatial');spatial.locator('[data-action=start]').click();assert page.locator('canvas').count()==1
+        spatial=page.locator('#lab-spatial');numeric=spatial.locator('input[type=number][data-param=excitation]');numeric.fill('');numeric.press_sequentially('0.35');expect(numeric).to_have_value('0.35');assert numeric.get_attribute('aria-invalid') is None
+        spatial.locator('[data-action=reset]').click();spatial.locator('[data-action=start]').click();assert page.locator('canvas').count()==1
         spatial.locator('[data-action=compression]').click();spatial.locator('[data-action=copy]').click();compression=json.loads(spatial.locator('.preset').input_value());d=compression['diagnostics'];(out/'spatial-compression-state.json').write_text(json.dumps(compression,indent=2)+'\n')
         assert abs(d['q']-3.141592653589793/2)<1e-12 and d['minJ']>.7 and d['baselineMinJ']<.18
         assert d['penetrationM']<.00005 and d['baselinePenetrationM']>.009

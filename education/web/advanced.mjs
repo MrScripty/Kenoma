@@ -15,7 +15,7 @@ export class AdvancedView{
  change(input){
   const key=input.dataset.param,isString=['case','comparison','mode','tendon','boneContact','skin','activeShape'].includes(key),v=isString?input.value:Number(input.value);
   if(!isString&&(input.value===''||!Number.isFinite(v)||(input.min!==''&&v<Number(input.min))||(input.max!==''&&v>Number(input.max)))){input.setAttribute('aria-invalid','true');this.status.textContent='Enter a finite value within the displayed limits.';return;}
-  input.removeAttribute('aria-invalid');this.params[key]=v;this.sync();
+  input.removeAttribute('aria-invalid');this.params[key]=v;this.root.querySelectorAll(`[data-param="${key}"]`).forEach(el=>{if(el!==input)el.value=v;});this.status.textContent='Input applied within the documented model limits.';
   if(this.kind==='spatial'&&key==='excitation'){this.pulse=false;this.update(false);return;}
   this.pause();if(this.kind==='spatial'){this.state=spatialInitial(this.params);this.index=0;this.history=[];this.pulse=false;}
   if(this.kind==='continuum'&&['n','case'].includes(key))this.problem=null;
