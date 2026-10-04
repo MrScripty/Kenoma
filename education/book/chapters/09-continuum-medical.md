@@ -76,6 +76,7 @@ $$[\mathbf f_1\;\mathbf f_2\;\mathbf f_3]
 
 This formula follows by differentiating the element energy with respect to the current vertex positions. It conserves total internal force by construction. For an objective energy, the internal net torque also vanishes up to numerical error.
 
+::: {.keep-together}
 **Original teaching pseudocode**
 
 ```text
@@ -96,6 +97,7 @@ evaluate internal forces:
         scatter their negative sum to vertex 0
         accumulate rest_volume * energy_density
 ```
+:::
 
 Six edge springs over a tetrahedron are a spring network. They do not become FEM by having the same four vertices. Their stiffness depends on topology and chosen springs, and no independent bulk response follows automatically. A separate volume constraint changes that model again. Those are useful lessons if named accurately.
 

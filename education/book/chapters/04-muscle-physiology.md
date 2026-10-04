@@ -54,6 +54,7 @@ The last term is not generally l̇_f cos α because α also changes. The model b
 
 A rigid-tendon approximation removes tendon stretch from the state. It can be useful, but it changes fiber operating lengths, velocities and stored elastic energy. It is a model simplification, not just a faster integrator. Do not switch tendon assumptions silently when moving from offline calculations to an interactive preview.
 
+::: {.keep-together}
 **Original equilibrium pseudocode**
 
 ```text
@@ -67,6 +68,7 @@ muscle_step(path_length, path_speed, excitation, old_state, h):
     reject or reduce h on loss of admissibility or failed convergence
     return tendon tension, fiber state, stored energy, work and residual
 ```
+:::
 
 This is a solver contract, not an interchangeable formula for every Hill model. For a damped equilibrium formulation one may solve for fiber velocity and integrate fiber length. A fully implicit formulation may solve the next fiber length and velocity together. State which unknown is being solved and report the normalized force residual.
 
@@ -77,10 +79,12 @@ For musculotendon length l_MT(**q**), positive tension F_T resists increasing le
 $$\delta W=-F_T\,\delta l_{MT}
 =-F_T\sum_j\frac{\partial l_{MT}}{\partial q_j}\delta q_j.$$
 
+::: {.keep-together}
 Thus
 
 $$Q_j=-F_T\frac{\partial l_{MT}}{\partial q_j}
 =r_jF_T,\qquad r_j=-\frac{\partial l_{MT}}{\partial q_j}.$$
+:::
 
 For a rotational q_j, r_j has units of metres. For a translational coordinate, the corresponding derivative has a different interpretation. For coupled coordinates, derivatives must follow the permitted motion, not move one geometrically dependent coordinate independently.
 

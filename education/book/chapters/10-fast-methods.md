@@ -28,6 +28,7 @@ For a distance constraint C = l−l₀, α = 1/k has units m/N. For C = J−1 an
 
 The [XPBD paper](https://mmacklin.com/xpbd.pdf) derives an implicit compliant formulation and a constraint-force estimate. The corresponding nodal force estimate is ∇ᵢC·λ/h² under this convention. Its stiffness parameterization is much less entangled with solver settings than PBD's, but finite iteration count, changing gradients, integration error and contact approximation remain. “Iteration independent” must not be presented as exact convergence in one sweep.
 
+::: {.keep-together}
 **Original instructional pseudocode**
 
 ```text
@@ -49,6 +50,7 @@ advance_xpbd_substep(x, v, h):
     apply declared dissipative or impact velocity corrections
     report residuals, constraint-force estimates and failed contacts
 ```
+:::
 
 This is an original outline. Production implementations need robust gradients, moving boundary velocities, degenerate-configuration handling, consistent friction, and declared multiplier warm-starting. If multipliers are reset every iteration rather than every substep, the compliance formulation above is no longer being implemented.
 
@@ -78,6 +80,7 @@ With constant h, masses, operators and weights, this global matrix can be factor
 
 [Bouaziz et al.](https://doi.org/10.1145/2601097.2601116) present the local/global method for a tailored energy class. It is not equivalent to applying arbitrary PBD projections in parallel. Nor does the prefactorization make every nonlinear constitutive law or contact model free. [Liu, Bouaziz and Kavan](https://arxiv.org/abs/1604.07378) extend the interpretation toward quasi-Newton treatment of more general hyperelastic energies.
 
+::: {.keep-together}
 **Original instructional pseudocode**
 
 ```text
@@ -92,6 +95,7 @@ for each substep:
         evaluate the original objective and residual
     reconstruct velocity and report convergence
 ```
+:::
 
 If a fixed sweep budget is used for responsiveness, expose its remaining residual. The visual plausibility of a stopped iterate is a different claim from a converged minimizer.
 

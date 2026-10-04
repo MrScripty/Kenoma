@@ -18,3 +18,5 @@ main img{max-width:100%;height:auto}#evidence-viewer .scene-host canvas{height:3
 
 [data-advanced] .scene-host canvas{height:420px}
 @media print{.advanced-lesson .static-figure img{max-height:125mm}.advanced-lesson .static-figure{background:#fff;color:#152e41}.advanced-lesson .static-figure figcaption{font-size:9pt}}
+
+@media print{.keep-together{break-inside:avoid}}
