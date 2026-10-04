@@ -159,6 +159,13 @@ def build():
     # Preserve the semantic operators; draw full-height fences around the table.
     rendered=re.sub(r'<mrow>(<mo[^>]*>\[</mo>)(<mtable>.*?</mtable>)(<mo[^>]*>\]</mo>)</mrow>',
       r'<mrow class="matrix-fenced">\1\2\3</mrow>',rendered,flags=re.S)
+    # Chromium 154 can paint a moved MathML superscript on the preceding page.
+    # Give this short formula an atomic HTML print rendering; keep its MathML.
+    def inline_math(match):
+        formula=match[0]
+        if '<annotation encoding="application/x-tex">M(u-y)=G^T\\ell</annotation>' not in formula:return formula
+        return '<span class="print-safe-inline">'+formula+'<span class="print-inline-equation" role="math" aria-label="M times u minus y equals G transpose times ell"><i>M</i>(<i>u</i>−<i>y</i>) = <i>G</i><sup><i>T</i></sup>ℓ</span></span>'
+    rendered=re.sub(r'<math display="inline".*?</math>',inline_math,rendered,flags=re.S)
     rendered=re.sub(r'<math display="block".*?</math>', lambda m: '<div class="equation" tabindex="0" aria-label="Scrollable displayed equation">'+m[0]+'</div>', rendered, flags=re.S)
     html_path.write_text(rendered)
     staging.unlink()

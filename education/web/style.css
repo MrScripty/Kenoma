@@ -25,3 +25,5 @@ math[display="inline"]{display:inline-block;white-space:nowrap;break-inside:avoi
 /* Keep MathML semantics while drawing matrix fences independently of font glyphs. */
 .matrix-fenced>mo{opacity:0}
 .matrix-fenced>mtable{border-left:1px solid currentColor;border-right:1px solid currentColor;background:linear-gradient(currentColor,currentColor) left top/.3em 1px no-repeat,linear-gradient(currentColor,currentColor) right top/.3em 1px no-repeat,linear-gradient(currentColor,currentColor) left bottom/.3em 1px no-repeat,linear-gradient(currentColor,currentColor) right bottom/.3em 1px no-repeat}
+.print-inline-equation{display:none}
+@media print{.print-safe-inline{display:inline-block;white-space:nowrap;break-inside:avoid}.print-safe-inline>math{display:none}.print-inline-equation{display:inline;font-family:Georgia,serif;font-size:1.1em}.print-inline-equation sup{font-size:.71em;line-height:0}}
