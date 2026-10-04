@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "utc": "2026-10-04T11:49:58.029Z",
+  "environment": {
+    "utc": "2026-10-04T11:49:50.844Z",
+    "node": "v24.19.0",
+    "v8": "13.6.233.17-node.51",
+    "os": "linux",
+    "kernel": "6.18.44",
+    "arch": "x64",
+    "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "visibleLogicalCpus": 5,
+    "scope": "Single-thread Node in shared virtualized executor. No renderer, GPU or network in timed regions. Host contention/frequency/quota are uncontrolled."
+  },
+  "command": "node --test education/contributions/continuum_reference/tests/continuum.test.mjs",
+  "moduleSha256": "88e69aa2cb83db4f6441259a8f8bdfb56a3cc20708587eae3415c559a7c9ea19",
+  "testSha256": "eaab67446b48df7bf7d542f9bbc76201ffa34de03423edde491e5fa83d7e8485",
+  "exitCode": 0,
+  "stdout": "✔ conforming tetrahedral volume, outward faces, exact total lumped mass (31.106889ms)\n✔ unit tetrahedron matches independently written tensor strain energy and gradients (1.346626ms)\n✔ six infinitesimal rigid modes vanish; a finite rotation is outside this model (6.902568ms)\n✔ affine patch: displacement, constant stress, signed support and half-ramp work (126.96013ms)\n✔ quadratic manufactured load is independent of FEM: divergence, surface resultants, refinement (1268.51345ms)\n✔ PCG implicit solve agrees with pivoted dense elimination; failed tolerance stays failed (1.791442ms)\n✔ six compliant strain modes reproduce full element energy, including shear (3.168608ms)\n✔ XPBD finite iteration error decreases to the matched implicit solution; reset is deterministic (29.667808ms)\n✔ finite sweeps depend on timestep; convergence matches target at each step size (52.859192ms)\n✔ implicit force signs and backward-Euler work/dissipation balance for nonzero initial state (12.911098ms)\n✔ zero forces and invalid domains are explicit (5.340188ms)\nℹ tests 11\nℹ suites 0\nℹ pass 11\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 1651.957046\n",
+  "stderr": "",
+  "scope": "Numerical module only; no browser, assembly, PDF, Lean or hosted CI certification."
+}
