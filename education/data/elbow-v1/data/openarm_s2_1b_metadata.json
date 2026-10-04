@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "dataset": "OpenArm Multisensor 2.0",
+  "source_archive_url": "https://drive.google.com/uc?export=download&id=1cOy5-Ws4SJWD4O1WK-iw36ExDsP5Y2O8",
+  "source_archive_bytes": 10269052,
+  "source_archive_sha256": "7d3acb811e4bbdc6846cb3434b66d6c56d99f26db8bfc672e9da9e41b856d560",
+  "source_member": "time_series/2/trial_1b.p",
+  "source_member_bytes": 653753,
+  "source_member_crc32": "c850bec4",
+  "source_member_sha256": "d7b274cb0cda788e06f5c7b5b7661a007f0acd679063ece2a6e5dffeca7bf5f7",
+  "license": "CC-BY-4.0",
+  "evidence_class": "recorded_preprocessed_normalized_human_research_signals",
+  "participant_code": "2",
+  "trial_label": "1b",
+  "trial_meaning": "Second force-target correlation trial",
+  "posture": "Right elbow held at 90 degrees flexion, forearm fully supinated",
+  "elbow_angle_measured_timeseries_included": false,
+  "acquisition_nominal_rate_hz": 1000,
+  "retained_samples": 4403,
+  "retained_start_index_zero_based": 1665,
+  "original_trial_samples": 6068,
+  "relative_time_origin": "Times[1665] subtracted from each retained Times entry; absolute timestamps omitted",
+  "duration_s": 85.90353727340698,
+  "observed_mean_saved_rate_hz": 51.24352430319211,
+  "observed_median_saved_interval_s": 0.010994195938110352,
+  "normalization": "Source retained Processed values used directly; original calibration defined (signal - relaxed_mean)/(MVC_mean - relaxed_mean). No second normalization, clipping or physical unit inference.",
+  "columns": {
+    "elapsed_s": {
+      "unit": "s",
+      "meaning": "Elapsed time from first retained sample"
+    },
+    "brachioradialis_thickness_normalized_1": {
+      "unit": "1",
+      "meaning": "Source Processed[0], ultrasound-derived brachioradialis thickness, trial-calibrated"
+    },
+    "biceps_semg_normalized_1": {
+      "unit": "1",
+      "meaning": "Source Processed[1], biceps brachii sEMG amplitude, preprocessed and trial-calibrated; not direct activation or force"
+    },
+    "wrist_contact_force_normalized_1": {
+      "unit": "1",
+      "meaning": "Source Processed[2], wrist-contact force, trial-calibrated; not individual-muscle force or elbow torque"
+    }
+  },
+  "display_aggregation": {
+    "bin_width_s": 0.5,
+    "bin_interval": "[start,end); arithmetic mean of retained samples in each bin; final bin may be partial",
+    "weighting": "sample-weighted, not time-weighted",
+    "error_bar": "none; no between-participant uncertainty inferred",
+    "plot_rate_hz": 2
+  },
+  "source_analysis_revision": "ae635da29c722269edff8936bba6aff864e9688f",
+  "source_analysis_path": "multisensorimport/dataobj/trialdata.py",
+  "paper_doi": "10.1109/TNSRE.2021.3133813",
+  "errata": "No subject-2 exception listed in supplied errata",
+  "source_calibration_extrema_retained": false,
+  "absolute_timestamps_included": false,
+  "demographics_included": false,
+  "registered_to_atlas_or_arm26": false,
+  "limits": [
+    "Single coded research participant and trial; no population or clinical claim",
+    "Ultrasound and sEMG measure different muscles",
+    "Amplitudes have SI dimensionless unit 1; N, m, and V conversions are not justified",
+    "Nonuniform saved times, no assumption of exact 1 kHz sampling",
+    "Binned display not intended for spectral, latency, causality or parameter-fitting analysis",
+    "Not an exact recreation of published analysis due to time-origin and binning choices",
+    "No unique activation, force-sharing, 3D deformation, tendon strain, skin contact or injury estimate"
+  ],
+  "display_bins": 172
+}

@@ -3,7 +3,7 @@ from pathlib import Path
 from functools import partial
 from http.server import SimpleHTTPRequestHandler,ThreadingHTTPServer
 from threading import Thread
-import json,os,shutil
+import json,os,shutil,subprocess
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -24,15 +24,18 @@ def render():
             page.emulate_media(media='print')
             page.evaluate('document.fonts.ready')
             # PDF links must survive the print server's lifetime. Web downloads stay relative.
-            page.evaluate('''() => {
+            revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
+            page.evaluate('''revision => {
               const destinations={'proofs/Mechanics.lean':'#checked-source-appendix','proof-status.json':'#proof-check-receipt','lean-check.txt':'#kernel-dependency-report'};
               for(const link of document.querySelectorAll('a[href]')){
-                const target=destinations[link.getAttribute('href')];if(target)link.setAttribute('href',target);
+                const href=link.getAttribute('href'),target=destinations[href];
+                if(target)link.setAttribute('href',target);
+                else if(href.startsWith('data/'))link.setAttribute('href',`https://github.com/MrScripty/Kenoma/blob/${revision}/education/${href}`);
               }
-            }''')
+            }''',revision)
             page.pdf(path=str(ROOT/'dist/kenoma-mechanics.pdf'),format='A4',print_background=True,
               display_header_footer=True,header_template='<span></span>',
-              footer_template='<div style="font-family:Arial;font-size:9px;width:100%;padding:0 18mm;color:#456171;display:flex;justify-content:space-between"><span>Kenoma · Mechanics of Moving Bodies · Elbow 2</span><span class="pageNumber"></span></div>',
+              footer_template='<div style="font-family:Arial;font-size:9px;width:100%;padding:0 18mm;color:#456171;display:flex;justify-content:space-between"><span>Kenoma · Mechanics of Moving Bodies · Tendon, tissue and data 3</span><span class="pageNumber"></span></div>',
               prefer_css_page_size=True,tagged=True,outline=True)
             version=browser.version;browser.close()
         (ROOT/'dist/pdf-render.json').write_text(json.dumps({'renderer':'Playwright Chromium','browser_version':version,'source':'index.html','static_diagrams':True,'tagged':True,'pdf_byte_identity_asserted':False},indent=2)+'\n')

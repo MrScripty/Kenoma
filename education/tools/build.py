@@ -22,7 +22,11 @@ LABS={
  'elbow':{'title':'Laboratory 4 · Articulated elbow and activation','model':'Schematic one-hinge forward dynamics or prescribed hold; toy line muscle; rigid tendon; no force–velocity law or tissue/contact mechanics.',
   'description':'The fixed upper segment joins a rotating forearm and dumbbell. Gold markers locate a synthetic flexor path. The red belly is an illustrative shape with no mechanical force of its own. The yellow arrow marks dumbbell gravity.',
   'caption':'Original schematic: q starts at 30° from downward, load 5 kg, excitation 0.6, activation 0, h = 0.005 s. Dimensions and actuator parameters are teaching choices, not anatomical measurements.',
-  'controls':[('load','Dumbbell mass (kg)',0,10,0.5,5),('excitation','Excitation u (0–1)',0,1,0.05,0.6),('angle','Initial / prescribed flexion q (°)',0,135,1,30)]}
+  'controls':[('load','Dumbbell mass (kg)',0,10,0.5,5),('excitation','Excitation u (0–1)',0,1,0.05,0.6),('angle','Initial / prescribed flexion q (°)',0,135,1,30)]},
+ 'series':{'title':'Laboratory 5 · Tendon, tissue and the same-pose skinning baseline','model':'Schematic series actuator; quasistatic affine hyperelastic block with ideal plate contact; tissue reaction drives the hinge. No anatomical calibration, spatial FEM or separate skin/fascia law.',
+  'description':'Both schematic arms have the same angle. Left: red active/passive fiber and gold tensile tendon; enlarged teal tissue block between gold frictionless plates. Right: the identical bind block receives uniform 50/50 linear blend skinning and has no force model. Insets are enlarged eight times in world units; read SI values for actual dimensions.',
+  'caption':'Static reference at q = 90°; interactive starts at q = 30°. Tendon stiffness 30,000 N/m, tissue shear modulus 1,500 Pa and bulk modulus 50,000 Pa are authored teaching choices. Surface is the block boundary, not a separately modeled skin layer.',
+  'controls':[('load','Dumbbell mass (kg)',0,10,0.5,5),('excitation','Excitation u (0–1)',0,1,.05,.6),('angle','Initial / prescribed flexion q (°)',0,135,1,30)]}
 }
 def lab_block(key,web):
     lab=LABS[key];e=html.escape
@@ -34,17 +38,20 @@ def lab_block(key,web):
     if key=='energy':
         controls+='<div class="control"><label for="energy-method">Integrator</label><select id="energy-method" data-param="method"><option value="explicit">Explicit Euler</option><option value="symplectic" selected>Symplectic Euler</option><option value="verlet">Velocity Verlet</option></select></div>'
         controls+='<div class="control"><label for="energy-dt">Step size h (s)</label><select id="energy-dt" data-param="dt"><option value="0.005">0.005 s</option><option value="0.01">0.01 s</option><option value="0.02" selected>0.02 s</option><option value="0.05">0.05 s</option><option value="0.1">0.10 s</option></select></div>'
-    if key=='elbow':
-        controls+='<div class="control"><label for="elbow-mode">Motion mode</label><select id="elbow-mode" data-param="mode"><option value="forward">Force-driven hinge</option><option value="prescribed">Prescribed static hold</option></select></div><div class="control"><label for="elbow-dt">Physics step h (s)</label><select id="elbow-dt" data-param="dt"><option value="0.0025">0.0025 s</option><option value="0.005" selected>0.005 s</option><option value="0.01">0.01 s</option></select></div>'
+    if key in ['elbow','series']:
+        controls+=f'<div class="control"><label for="{key}-mode">Motion mode</label><select id="{key}-mode" data-param="mode"><option value="forward">Force-driven hinge</option><option value="prescribed">Prescribed static hold</option></select></div><div class="control"><label for="{key}-dt">Physics step h (s)</label><select id="{key}-dt" data-param="dt"><option value="0.0025">0.0025 s</option><option value="0.005" selected>0.005 s</option><option value="0.01">0.01 s</option></select></div>'
+    if key=='series':
+        for param,label,options in [('tendon','Tendon assumption',[('compliant','Compliant tensile tendon'),('rigid','Rigid tendon')]),('tendonK','Tendon stiffness (N/m)',[(15000,'15,000'),(30000,'30,000'),(60000,'60,000')]),('contact','Tissue/plate contact',[('on','Enabled; force feeds hinge'),('off','Disabled; show penetration')]),('bulk','Tissue bulk modulus (Pa)',[(50000,'50,000'),(5000,'5,000'),(0,'0; remove volume resistance')])]:
+            controls+=f'<div class="control"><label for="series-{param}">{label}</label><select id="series-{param}" data-param="{param}">'+''.join(f'<option value="{value}"'+(' selected' if value in ['compliant',30000,'on',50000] else '')+f'>{text}</option>' for value,text in options)+'</select></div>'
     temporal='<button data-action="play">Play</button><button data-action="step">Single step</button>' if key!='torque' else ''
-    if key=='elbow':temporal+='<button data-action="pulse">Lift / release pulse</button><button data-action="release">Release excitation</button><button data-action="export">Download trace</button>'
+    if key in ['elbow','series']:temporal+='<button data-action="pulse">Lift / release pulse</button><button data-action="release">Release excitation</button><button data-action="export">Download trace</button>'
     chart=''
     if key=='energy':
         chart='<svg class="energy-chart" viewBox="0 0 580 205" role="img" aria-label="Energy versus step number"><title>Energy versus step number</title><text class="scale" x="40" y="20" font-size="13">Energy range 0 to 0.96 J</text><path d="M40 30V160H540" fill="none" stroke="#456171"/><line class="reference" x1="40" x2="540" y1="52" y2="52" stroke="#754d1f" stroke-dasharray="5 4"/><polyline class="trace" fill="none" stroke="#087567" stroke-width="2" points="40,52"/><text x="40" y="185" font-size="13">0</text><text x="435" y="185" font-size="13">600 steps</text><text x="195" y="201" font-size="12">Solid: numerical energy · Dashed: initial 0.80 J</text></svg>'
     return f'''\n<section class="laboratory" data-demo="{key}" id="lab-{key}" aria-labelledby="lab-{key}-heading">
 <div class="lab-heading"><h3 id="lab-{key}-heading">{e(lab['title'])}</h3><p class="model-label">{e(lab['model'])}</p></div>
 <figure class="static-figure"><img src="assets/{key}.svg" alt="{e(lab['description'])}"><figcaption>{e(lab['caption'])}</figcaption></figure>
-<div class="scene-host"></div><div class="controls">{controls}</div>
+<p class="scene-legend">{e(lab['description']) if key=='series' else ''}</p><div class="scene-host"></div><div class="controls">{controls}</div>
 <div class="actions"><button data-action="start">Start 3D scene</button>{temporal}<button data-action="reset">Reset</button><button data-action="view">Front / oblique view</button><button data-action="summary">Read current results</button><button data-action="copy">Copy state</button></div>
 <dl class="readout" aria-label="Current numerical results"></dl>{chart}
 <p class="lab-description">{e(lab['description'])} Axes: x right, y up, z out of the plane.</p>
@@ -54,6 +61,8 @@ def lab_block(key,web):
 
 def build():
     evidence=check()
+    data=ROOT/'data/elbow-v1'
+    subprocess.run(['python3',str(data/'scripts/validate_package.py')],check=True)
     manifest=json.loads((ROOT/'book/book.json').read_text())
     claims={c['id']:c for c in evidence['claims']}
     source=(ROOT/'proofs/Mechanics.lean').read_text()
@@ -84,12 +93,22 @@ def build():
     elbow_table='| h (s) | Steps | Final q (°) | Final a | Active work (J) | Max balance residual (J) |\n|--:|--:|--:|--:|--:|--:|\n'
     for r in elbow['rows']:
         elbow_table+=f"| {r['dt']:.4f} | {r['steps']} | {r['finalAngleDegrees']:.5f} | {r['finalActivation']:.6f} | {r['activeWork']:.6f} | {r['maxBalanceResidual']:.3g} |\n"
+    series_text=subprocess.check_output(['node',str(ROOT/'tools/series-experiment.mjs')],text=True)
+    (OUT/'series-experiment.json').write_text(series_text);series=json.loads(series_text)
+    holds='| Tendon | a | Fiber length (m) | Tendon length (m) | Tendon energy (J) | Active work (J) |\n|:--|--:|--:|--:|--:|--:|\n'
+    for r in series['holds']:holds+=f"| {r['tendon']} | {r['activation']:.6f} | {r['fiber']:.6f} | {r['tendonLength']:.6f} | {r['tendonEnergy']:.6f} | {r['work']:.6f} |\n"
+    compression='| q (°) | Tissue J | LBS J | Normal force (N) | Model pressure (Pa) | Tissue moment (N m) |\n|--:|--:|--:|--:|--:|--:|\n'
+    for r in series['compression']:compression+=f"| {r['degrees']} | {r['volumeRatio']:.6f} | {r['skinVolumeRatio']:.6f} | {r['normal']:.4f} | {r['pressure']:.2f} | {r['torque']:.5f} |\n"
+    trajectories='| h (s) | Final q (°) | Active work (J) | Max energy residual (J) | Event splits | Accepted substeps |\n|--:|--:|--:|--:|--:|--:|\n'
+    for r in series['trajectories']:trajectories+=f"| {r['dt']:.4f} | {r['angleDegrees']:.6f} | {r['work']:.6f} | {r['maxEnergyResidual']:.3g} | {r['eventSplits']} | {r['substeps']} |\n"
     chapters='\n\n'.join((ROOT/'book/chapters'/p).read_text() for p in manifest['chapters'])
     def expand(web):
         text=re.sub(r'\{\{demo:(\w+)\}\}',lambda m:lab_block(m[1],web),chapters)
         text=re.sub(r'\{\{proof:([\w-]+)\}\}',lambda m:proof_block(m[1],web),text)
+        text=text.replace('{{evidence}}',(ROOT/'web/evidence.html').read_text() if web else 'The web edition provides a resettable static atlas viewer and a recorded-bin slider. The figures, source tables and downloads above and below provide the reading alternative.')
         text=text.replace('{{experiment}}',table)
         text=text.replace('{{elbow-experiment}}',elbow_table)
+        text=text.replace('{{series-holds}}',holds).replace('{{series-compression}}',compression).replace('{{series-trajectories}}',trajectories)
         if '{{' in text: raise ValueError('Unexpanded build directive')
         return text+'\n\n# Checked source appendix {#checked-source-appendix}\n\nThe source below is included for inspection. It was checked by the command and toolchain recorded in each receipt; compilation establishes only its stated domain.\n\n```lean\n'+source+'```\n\n## Proof check receipt {#proof-check-receipt}\n\nFresh successful invocation: `'+evidence['command']+'`. Toolchain: '+evidence['lean_version']+'. Checked declarations: '+str(len(evidence['claims']))+'. Source SHA-256: `'+evidence['source_sha256']+'`. Claim-map SHA-256: `'+evidence['claims_sha256']+'`. Only bundled Std is used. This receipt establishes the exact claims above; it does not validate JavaScript, biological parameters, or medical use.\n\n## Kernel dependency report {#kernel-dependency-report}\n\n```text\n'+(OUT/'lean-check.txt').read_text()+'```\n'
     front=f"---\ntitle: {manifest['title']}\nsubtitle: {manifest['subtitle']}\nlang: en\n---\n\n"
@@ -103,18 +122,20 @@ def build():
     html_path.write_text(rendered)
     staging.unlink()
     assets=OUT/'assets';generate(assets)
+    shutil.rmtree(OUT/'data/elbow-v1',ignore_errors=True)
+    shutil.copytree(data,OUT/'data/elbow-v1',dirs_exist_ok=True,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
     shutil.copy(ROOT/'web/style.css',assets/'style.css')
     subprocess.run([str(ROOT/'node_modules/.bin/esbuild'),str(ROOT/'web/app.mjs'),'--bundle','--minify','--format=esm','--target=es2022',f'--outfile={assets/"app.js"}','--legal-comments=external'],check=True)
     proofs=OUT/'proofs';proofs.mkdir(exist_ok=True)
     for file in ['Mechanics.lean','lean-toolchain','claims.json']:shutil.copy(ROOT/'proofs'/file,proofs/file)
     notices=OUT/'THIRD_PARTY_NOTICES.txt'
-    notices.write_text('Kenoma original content: Apache-2.0. No third-party anatomical assets are included.\n\nThree.js 0.180.0 (MIT)\n'+(ROOT/'node_modules/three/LICENSE').read_text()+'\n\nBuild tool esbuild 0.25.10 (MIT)\n'+(ROOT/'node_modules/esbuild/LICENSE.md').read_text())
+    notices.write_text('Kenoma original book and simulator content: Apache-2.0. Third-party data retains its component licenses below.\n\n'+(data/'LICENSES_AND_ATTRIBUTION.txt').read_text()+'\n\nThree.js 0.180.0 (MIT)\n'+(ROOT/'node_modules/three/LICENSE').read_text()+'\n\nBuild tool esbuild 0.25.10 (MIT)\n'+(ROOT/'node_modules/esbuild/LICENSE.md').read_text())
     shutil.copy(ROOT.parent/'LICENSE',OUT/'LICENSE')
     (OUT/'.nojekyll').touch()
-    inputs={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for folder in ['book','web','proofs','tools'] for p in sorted((ROOT/folder).rglob('*')) if p.is_file() and '__pycache__' not in str(p)}
+    inputs={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for folder in ['book','web','proofs','tools','data'] for p in sorted((ROOT/folder).rglob('*')) if p.is_file() and '__pycache__' not in str(p)}
     for relative in ['package.json','package-lock.json','requirements.txt']:
         inputs[relative]=hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()
-    manifest_out={'schema':1,'milestone':'articulated-elbow-2','input_sha256':inputs,'lean':evidence['lean_version'],
+    manifest_out={'schema':1,'milestone':'tendon-tissue-3','input_sha256':inputs,'lean':evidence['lean_version'],
       'pandoc':subprocess.check_output(['pandoc','--version'],text=True).splitlines()[0],
       'node':subprocess.check_output(['node','--version'],text=True).strip(),
       'numerical_experiment':'experiment.json','proof_evidence':'proof-status.json',

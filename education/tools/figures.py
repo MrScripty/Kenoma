@@ -40,4 +40,11 @@ def generate(out):
 <text x="35" y="30">Force-driven hinge • q₀ = 30° • u = 0.6 • a₀ = 0</text>
 <text x="390" y="85">Synthetic flexor line</text><text x="390" y="114" class="small">Rigid tendon; no contact model</text>
 <text x="390" y="160">Dumbbell = 5 kg</text><text x="35" y="216" class="small">Authored schematic geometry</text><text x="35" y="238" class="small">No anatomical measurements</text>''',out/'elbow.svg')
-    (out/'figure-provenance.json').write_text(json.dumps({'schema':1,'creator':'Kenoma education contribution','license':'Apache-2.0','kind':'original schematic vector diagrams','anatomical_measurements':False,'generator':'tools/figures.py','figures':['force.svg','torque.svg','energy.svg','elbow.svg']},indent=2)+'\n')
+    svg('Series actuator and affine tissue versus skinning at ninety degrees', '''
+<text x="32" y="30">q = 90° • same pose • original schematic</text>
+<text x="35" y="66">Coupled tissue block</text><text x="408" y="66">50/50 LBS baseline</text>
+<path stroke="#e8cf9b" stroke-width="7" d="M45 110H285 M45 207H285 M415 110H655 M415 207H655"/>
+<rect x="82" y="113" width="167" height="91" fill="#70e0cc"/><rect x="468" y="121" width="132" height="75" fill="none" stroke="#9bafff" stroke-width="4"/>
+<text x="93" y="164" style="fill:#102d3a">J = 0.99290</text><text x="482" y="164">J = 0.50000</text>
+<text x="40" y="236" class="small">N = 5.5027 N; pressure = 1064.75 Pa</text><text x="420" y="236" class="small">Force / pressure not modeled</text>''',out/'series.svg')
+    (out/'figure-provenance.json').write_text(json.dumps({'schema':1,'creator':'Kenoma education contribution','license':'Apache-2.0','kind':'original schematic vector diagrams','anatomical_measurements':False,'generator':'tools/figures.py','figures':['force.svg','torque.svg','energy.svg','elbow.svg','series.svg']},indent=2)+'\n')

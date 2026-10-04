@@ -1,0 +1,528 @@
+{
+  "schema_version": "1.0",
+  "title": "Kenoma elbow anatomical and biomechanical evidence package",
+  "prepared_utc": "2026-10-04",
+  "intended_use": "Education and research; independent anatomy, measurement and model evidence",
+  "clinical_validation": false,
+  "subject_specific_calibration": false,
+  "sources": [
+    {
+      "id": "bodyparts3d",
+      "title": "BodyParts3D 4.0 IS-A 99% polygon-reduced release",
+      "evidence_class": "constructed_anatomical_reference_atlas",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_authority": "https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html",
+      "license_authority_updated": "2025-02-27",
+      "historical_embedded_notice": "CC-BY-SA-2.1-JP remains in original OBJ; current official archive grant is CC-BY-4.0",
+      "archive_url": "https://dbarchive.biosciencedbc.jp/data/bodyparts3d/LATEST/isa_BP3D_4.0_obj_99.zip",
+      "archive_bytes": 142903898,
+      "archive_sha256": null,
+      "full_archive_downloaded": false,
+      "verification": "HTTP range selection; member size and central-directory CRC32 validation; member SHA256 recorded",
+      "coordinate_units_source": "https://dbarchive.biosciencedbc.jp/data/bodyparts3d/20130619/coordinate_system.png",
+      "attribution": "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International.",
+      "spatial_registration_to_other_sources": null
+    },
+    {
+      "id": "openarm",
+      "title": "OpenArm Multisensor 2.0 participant 2 trial 1b",
+      "evidence_class": "recorded_preprocessed_normalized_human_research_signals",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_authority": "sources/openarm_readme.md",
+      "provider": "https://simtk.org/frs/?group_id=1617",
+      "doi": "10.1109/TNSRE.2021.3133813",
+      "archive_url": "https://drive.google.com/uc?export=download&id=1cOy5-Ws4SJWD4O1WK-iw36ExDsP5Y2O8",
+      "archive_sha256": "7d3acb811e4bbdc6846cb3434b66d6c56d99f26db8bfc672e9da9e41b856d560",
+      "archive_bytes": 10269052,
+      "source_member": "time_series/2/trial_1b.p",
+      "original_pickle_distributed": false,
+      "code_interpretation_revision": "ae635da29c722269edff8936bba6aff864e9688f",
+      "code_interpretation_url": "https://github.com/lhallock/openarm-multisensor/blob/ae635da29c722269edff8936bba6aff864e9688f/multisensorimport/dataobj/trialdata.py#L70-L147",
+      "code_bundled": false,
+      "spatial_registration_to_other_sources": null
+    },
+    {
+      "id": "arm26",
+      "title": "Arm26 OpenSim model",
+      "evidence_class": "model_parameters",
+      "license": "CC-BY-3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "license_authority": "Embedded credits of source XML",
+      "revision": "84b487c4e3245359a64381e01f01b9cf4772d457",
+      "path": "Models/Arm26/arm26.osim",
+      "url": "https://github.com/opensim-org/opensim-models/blob/84b487c4e3245359a64381e01f01b9cf4772d457/Models/Arm26/arm26.osim",
+      "git_blob_sha1": "2ff458149668bb2f0de24572f80658f8dd9db1d9",
+      "sha256": "e2224d0044eb393b05d64926c3fa1682c451a9adc7f510e5517ef9958d3d41b9",
+      "spatial_registration_to_other_sources": null
+    }
+  ],
+  "transformations": {
+    "bodyparts3d": "Select ten original meshes; verify member CRC; mm to m; one-based to zero-based triangle indices; no topology change",
+    "openarm": "Passive pickle opcode translation; select source participant 2 trial 1b from index1665; use normalized Processed streams directly; remove absolute time and unrelated fields; arithmetic half-second display-bin means",
+    "arm26": "XML extraction of six SI parameter types per actuator and coordinate bounds, unchanged numeric values"
+  },
+  "files": [
+    {
+      "path": "FIGURE_CAPTIONS.txt",
+      "bytes": 1943,
+      "sha256": "6ccefaecd7d103a69efae9bce185c358b9db863dbce6c88def927faa8ca6d4a4",
+      "evidence_class": "original_documentation_or_audit",
+      "license": "component-specific",
+      "source_ids": [
+        "bodyparts3d",
+        "openarm",
+        "arm26"
+      ]
+    },
+    {
+      "path": "LICENSES_AND_ATTRIBUTION.txt",
+      "bytes": 4494,
+      "sha256": "9c2fa6c1434f40faed1fa1c24c1af9a04bd931066d4ada27a501752c7af38f2e",
+      "evidence_class": "original_documentation_or_audit",
+      "license": "component-specific",
+      "source_ids": [
+        "bodyparts3d",
+        "openarm",
+        "arm26"
+      ]
+    },
+    {
+      "path": "README.txt",
+      "bytes": 7541,
+      "sha256": "c30023b4d34e4b413a99362bc53c542d100272b5e239c0fa43210debfb34820b",
+      "evidence_class": "original_documentation_or_audit",
+      "license": "component-specific",
+      "source_ids": [
+        "bodyparts3d",
+        "openarm",
+        "arm26"
+      ]
+    },
+    {
+      "path": "audit/bodyparts_archive_entries.json",
+      "bytes": 419224,
+      "sha256": "7e88e9e2cc97512a7bebcec607ce06484b477d5921fae0ea2a1c6a1870cc2a42",
+      "evidence_class": "anatomical_atlas_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "audit/bodyparts_subset_download_log.json",
+      "bytes": 15168,
+      "sha256": "e9d32167cb335b41d905d736c197925d9b0d4a4915cf93f98d7af9a2b2afc6c4",
+      "evidence_class": "anatomical_atlas_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "audit/bodyparts_subset_members.json",
+      "bytes": 3739,
+      "sha256": "146c3a2f5d7073087d5496502275835a2b3af20de102feb3b67c18e8414ed247",
+      "evidence_class": "anatomical_atlas_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "audit/bodyparts_zip_central_directory.bin",
+      "bytes": 170025,
+      "sha256": "edde15c7c5f34b2b9743935fb3c1873cce3a9789164427ddf8343c879bcde96b",
+      "evidence_class": "anatomical_atlas_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "audit/bodyparts_zip_end_record.bin",
+      "bytes": 22,
+      "sha256": "0f6688d48623420b5f59f5bd91304895193883f6727af9fca3dff66fec8ca99e",
+      "evidence_class": "anatomical_atlas_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "audit/download_log.json",
+      "bytes": 5646,
+      "sha256": "3336e0c0102493f1526ef1ba88d33bfc6d14bea871af7a91e83ec52589621545",
+      "evidence_class": "original_documentation_or_audit",
+      "license": "component-specific",
+      "source_ids": [
+        "bodyparts3d",
+        "openarm",
+        "arm26"
+      ]
+    },
+    {
+      "path": "data/arm26_parameters.csv",
+      "bytes": 7931,
+      "sha256": "f571181fdb34f42eb8e54706e035a95c464f92eba4a1a78feba92cbe97b2f917",
+      "evidence_class": "model_parameters_or_source",
+      "license": "CC-BY-3.0",
+      "source_ids": [
+        "arm26"
+      ]
+    },
+    {
+      "path": "data/arm26_parameters.json",
+      "bytes": 14638,
+      "sha256": "53fedc0a5366d7ac97c24939bf4e4982cad3a69d3e366f6b71c53785a8c43afc",
+      "evidence_class": "model_parameters_or_source",
+      "license": "CC-BY-3.0",
+      "source_ids": [
+        "arm26"
+      ]
+    },
+    {
+      "path": "data/bodyparts3d_mesh_summary.json",
+      "bytes": 10474,
+      "sha256": "9ad1c958674597b223aaf1b8152b41bf3f4592f8d7e68d7e2a395e1f92133c44",
+      "evidence_class": "anatomical_atlas_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "data/bodyparts3d_right_arm_m.json",
+      "bytes": 954664,
+      "sha256": "c3ca97df0d41302de5c3e553cb9974c4c0bd68a30866c26a18e1ba41ceab4257",
+      "evidence_class": "anatomical_atlas_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "data/openarm_s2_1b_0p5s_bins.csv",
+      "bytes": 15720,
+      "sha256": "7c84de130b1beeba810565957b8fdf1b1adaeaa7d3bde79052b578e6ca743f1f",
+      "evidence_class": "recorded_data_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "openarm"
+      ]
+    },
+    {
+      "path": "data/openarm_s2_1b_0p5s_bins.json",
+      "bytes": 48664,
+      "sha256": "016a875665bc7df37ab1eff6451b877fb7b076ad21adf01ddfbed5244ff4a7a1",
+      "evidence_class": "recorded_data_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "openarm"
+      ]
+    },
+    {
+      "path": "data/openarm_s2_1b_metadata.json",
+      "bytes": 3533,
+      "sha256": "93a1b1b108dcb4b91315fc5f54eadd2f93a00c822142ede53c3cbd3222cee2c0",
+      "evidence_class": "recorded_data_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "openarm"
+      ]
+    },
+    {
+      "path": "data/openarm_s2_1b_normalized_samples.csv",
+      "bytes": 342656,
+      "sha256": "20fc7432b52c62fdb1dd541684a0c95d319eda394b701c271c4d061beb9b42ce",
+      "evidence_class": "recorded_data_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "openarm"
+      ]
+    },
+    {
+      "path": "figures/bodyparts3d_right_arm.png",
+      "bytes": 250959,
+      "sha256": "ae280d8605f4f76a63db7c7b5c3d40f322eb693240ee8f671ad5f5a183011129",
+      "evidence_class": "anatomical_atlas_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "figures/bodyparts3d_right_arm.svg",
+      "bytes": 3714675,
+      "sha256": "057a755c12166a3b53727d4b582dbc151c59ddc9d947656b7a8eb21007e9e1b6",
+      "evidence_class": "anatomical_atlas_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "figures/openarm_recorded_trial.png",
+      "bytes": 296153,
+      "sha256": "616d37c887043fd85057b007f9d2232581b42b995ca9fc316da3131c9cd1df0e",
+      "evidence_class": "recorded_data_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "openarm"
+      ]
+    },
+    {
+      "path": "figures/openarm_recorded_trial.svg",
+      "bytes": 32104,
+      "sha256": "24321862b399c1baefdd58d443de182de84e8ee977c7faafa5f47789726db46b",
+      "evidence_class": "recorded_data_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "openarm"
+      ]
+    },
+    {
+      "path": "scripts/build_manifest.py",
+      "bytes": 5141,
+      "sha256": "4ff4ec5ac2b82f109be8c99fcc5a5c623916db51d7d5238e58da79778a4d094a",
+      "evidence_class": "original_processing_code",
+      "license": "MIT",
+      "source_ids": []
+    },
+    {
+      "path": "scripts/fetch_atlas_subset.py",
+      "bytes": 1837,
+      "sha256": "7d8f9573942660390ef65d030279e1db02ce0889ae9f5103cf4b2791aa5dccde",
+      "evidence_class": "original_processing_code",
+      "license": "MIT",
+      "source_ids": []
+    },
+    {
+      "path": "scripts/fetch_sources.py",
+      "bytes": 2962,
+      "sha256": "a324a0e4849ff016c4645696eb9d47e319fa5fdb3b4e28ebe803bd734c461bca",
+      "evidence_class": "original_processing_code",
+      "license": "MIT",
+      "source_ids": []
+    },
+    {
+      "path": "scripts/make_figures.py",
+      "bytes": 5258,
+      "sha256": "5824104dd5561917b730caf0c9411d7f9a540b971c9c60ccbefe299601f8336e",
+      "evidence_class": "original_processing_code",
+      "license": "MIT",
+      "source_ids": []
+    },
+    {
+      "path": "scripts/prepare_data.py",
+      "bytes": 12976,
+      "sha256": "e8a5c5cae1ac8e4752c7313844868e93f72968503f49f107506b6d4b11428a5c",
+      "evidence_class": "original_processing_code",
+      "license": "MIT",
+      "source_ids": []
+    },
+    {
+      "path": "scripts/read_openarm_safely.py",
+      "bytes": 4439,
+      "sha256": "febd235504fb3634bae9e50f05b4cef733dd49dc14d878078851044420022f89",
+      "evidence_class": "original_processing_code",
+      "license": "MIT",
+      "source_ids": []
+    },
+    {
+      "path": "scripts/validate_package.py",
+      "bytes": 3930,
+      "sha256": "4aa06ad00ed76b1dbe97c8ed750691806a1d0ff696e089b00a2654dbcc4843c7",
+      "evidence_class": "original_processing_code",
+      "license": "MIT",
+      "source_ids": []
+    },
+    {
+      "path": "sources/arm26.osim",
+      "bytes": 90192,
+      "sha256": "e2224d0044eb393b05d64926c3fa1682c451a9adc7f510e5517ef9958d3d41b9",
+      "evidence_class": "model_parameters_or_source",
+      "license": "CC-BY-3.0",
+      "source_ids": [
+        "arm26"
+      ]
+    },
+    {
+      "path": "sources/bodyparts3d/FJ1477.obj",
+      "bytes": 182250,
+      "sha256": "1d1c3b42eec0dffe696bd25cffa81784c87c15f16c9605050fdf1cb2f47698dd",
+      "evidence_class": "anatomical_atlas_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "sources/bodyparts3d/FJ1478.obj",
+      "bytes": 105386,
+      "sha256": "2442d2b5ac30c5da42e72eeff83d143df51c7617001cbc6552096a504f29bc07",
+      "evidence_class": "anatomical_atlas_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "sources/bodyparts3d/FJ1479.obj",
+      "bytes": 113287,
+      "sha256": "acc48f746bd07a117357a9c49a1a9850c96b85d7c63cf90a662a45717875a315",
+      "evidence_class": "anatomical_atlas_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "sources/bodyparts3d/FJ1480.obj",
+      "bytes": 61608,
+      "sha256": "1ea653667afa5ff0bf0e01d71ac648819655241c130e8dd1778ed2f9561c34c5",
+      "evidence_class": "anatomical_atlas_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "sources/bodyparts3d/FJ1486.obj",
+      "bytes": 127901,
+      "sha256": "be5f40b153fd6ce0c8c274eb4c26be8d1a29b4bbe75dd0e4a0dfe5c4d251fa03",
+      "evidence_class": "anatomical_atlas_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "sources/bodyparts3d/FJ1487.obj",
+      "bytes": 359055,
+      "sha256": "0ff651a5417f240c6a5205bef5218336a61fe3474752cca1b483d02aae0b92ad",
+      "evidence_class": "anatomical_atlas_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "sources/bodyparts3d/FJ1512.obj",
+      "bytes": 161507,
+      "sha256": "2173b7cce29f11036907b80e068e9bd6c16f22359d6e7994af9684454b99b4d5",
+      "evidence_class": "anatomical_atlas_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "sources/bodyparts3d/FJ3349.obj",
+      "bytes": 42701,
+      "sha256": "0f824e639b13ea02959734a0d9bd8d7ca67d0b51f531a138d769e1d3b22e0c98",
+      "evidence_class": "anatomical_atlas_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "sources/bodyparts3d/FJ3368.obj",
+      "bytes": 256564,
+      "sha256": "85f5445a11ecb029b027db0b9b34933982836d442b19ff531d1ca35a3bc3a237",
+      "evidence_class": "anatomical_atlas_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "sources/bodyparts3d/FJ3391.obj",
+      "bytes": 54174,
+      "sha256": "0aad73148e036c980ab24dfa675fcc1f109e5c60d82c12f3696420cf93cb4a98",
+      "evidence_class": "anatomical_atlas_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "sources/bodyparts_README.html",
+      "bytes": 19263,
+      "sha256": "f9a90b4d945ad0fe50db45c712e931aa54e52667187b30d7085b6cc394f40107",
+      "evidence_class": "anatomical_atlas_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "sources/bodyparts_coordinate_system.png",
+      "bytes": 28425,
+      "sha256": "338736275c11eac8c89531fdc14193c9a8adf5baab674033d9d89259f152a5f6",
+      "evidence_class": "anatomical_atlas_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "sources/bodyparts_isa_element_parts.txt",
+      "bytes": 1142159,
+      "sha256": "a3de74423f943b0d724ae8f59b3a817f87c423a544f8db98113b1980817cbeaf",
+      "evidence_class": "anatomical_atlas_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "sources/bodyparts_license.html",
+      "bytes": 14694,
+      "sha256": "07878f88d57f9d8acf88c6e33cf4d5cd3185a4c1ddae3904892720af006da423",
+      "evidence_class": "anatomical_atlas_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "sources/bodyparts_release_4.0.html",
+      "bytes": 6310,
+      "sha256": "771bd30a47ab11396eb6333e73a946426093c57fa4d4a1db8f718910fea7d985",
+      "evidence_class": "anatomical_atlas_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "sources/openarm_errata.md",
+      "bytes": 1699,
+      "sha256": "be6104de90c78462eddebdd5e2333249b1f51b75592c2e442f9c774395002859",
+      "evidence_class": "recorded_data_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "openarm"
+      ]
+    },
+    {
+      "path": "sources/openarm_readme.md",
+      "bytes": 7249,
+      "sha256": "863adc80fe95ad2c9d854791cb6d4a37736e016487d52129b033638a8009a6e7",
+      "evidence_class": "recorded_data_or_source_documentation",
+      "license": "CC-BY-4.0",
+      "source_ids": [
+        "openarm"
+      ]
+    }
+  ],
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "matplotlib": "3.10.8"
+  },
+  "reproducibility": "Run prepare_data.py from bundled original atlas/model sources and cleaned recorded CSV. Original OpenArm re-extraction accepts external exact-hash archive. Figures require NumPy and Matplotlib."
+}

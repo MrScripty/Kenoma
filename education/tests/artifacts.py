@@ -18,8 +18,13 @@ assert browser['html_sha256']==hashlib.sha256((out/'index.html').read_bytes()).h
 assert browser['app_sha256']==hashlib.sha256((out/'assets/app.js').read_bytes()).hexdigest()
 doc=fitz.open(out/'kenoma-mechanics.pdf');combined='\n'.join(page.get_text() for page in doc)
 assert len(doc)>5 and '\ufffd' not in combined
-for needle in ['Force changes motion','Energy reveals numerical error','Checked source appendix','14.715','0.80']:
+for needle in ['Force changes motion','Energy reveals numerical error','Checked source appendix','14.715','0.80','Store tendon energy','Inspect real anatomy','4,403','51.243524','798.52']:
  assert needle in combined,needle
+manifest=json.loads((out/'build-manifest.json').read_text())
+for relative,digest in manifest['input_sha256'].items():
+ assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Build input changed: '+relative
+for item in json.loads((out/'data/elbow-v1/provenance.json').read_text())['files']:
+ assert hashlib.sha256((out/'data/elbow-v1'/item['path']).read_bytes()).hexdigest()==item['sha256']
 proof_destinations={key:0 for key in ['checked-source-appendix','proof-check-receipt','kernel-dependency-report']}
 for page in doc:
  for link in page.get_links():

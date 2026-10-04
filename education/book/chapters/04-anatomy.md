@@ -37,7 +37,7 @@ The audited research identifies several useful routes to actual data. The table 
 | Quesada upper-limb dataset | EMG, kinematics and joint-torque time series | Research audit: CC BY-SA 4.0; torque is not measured individual muscle force |
 | Arm26 | Educational OpenSim model with six actuators | Embedded model CC BY 3.0; educational geometry/actuators differ from this one-hinge model |
 
-The research package verified a Multisensor time-series archive, but its raw bytes have not been integrated here. Its pickle serialization needs a reviewed conversion path; ordinary untrusted deserialization is unsuitable. A README or study abstract is not a substitute for an actual inspected trial. Our edition contains the numerical study summaries above, with citations, but no claim that it has analyzed the released medical time series.
+The following data chapter integrates a specific licensed Multisensor trial after a reviewed passive conversion, preserving normalized values and actual relative timestamps. Ordinary untrusted pickle deserialization is unsuitable; no pickle is bundled or executed here. The acquired atlas, recording and model parameters remain visibly separate from the published study summaries above and from the schematic actuator.
 
 The current MoBL-ARMS package has a noncommercial restriction according to the audited provider page, conflicting with an older catalogue's MIT label. It is excluded. Apache-2.0 on Kenoma code does not relicense any dataset, model, mesh, scan, or paper figure. [Data access and licence sources](#source-data)
 

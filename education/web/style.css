@@ -8,3 +8,9 @@
 
 .equation{max-width:100%;overflow-x:auto;padding:.6rem 0}
 @media print{.equation{overflow:visible;padding:2mm 0}main>h1{break-before:auto;break-after:avoid;margin-top:8mm}main>h1:first-child,#checked-source-appendix{break-before:page}#checked-source-appendix{margin-top:0}}
+
+.scene-legend{padding:.6rem 1.3rem;font-size:.85rem;line-height:1.5}.scene-legend:empty{display:none}
+@media print{.scene-legend{display:none}}
+
+main img{max-width:100%;height:auto}#evidence-viewer .scene-host canvas{height:360px}
+@media print{#evidence-viewer{display:none!important}main img{max-height:95mm;object-fit:contain}}

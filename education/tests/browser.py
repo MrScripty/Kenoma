@@ -90,6 +90,39 @@ def check():
         elbow.locator('[data-action=pulse]').click();page.wait_for_timeout(100);elbow.locator('[data-action=play]').click()
         elbow.locator('[data-action=reset]').click()
         checks.append('Elbow real WebGL, force-driven lift, continuous release, trace download, prescribed hold and pulse controls verified')
+        series=page.locator('#lab-series');series.locator('[data-action=start]').click()
+        expect(series.locator('canvas')).to_be_visible();assert page.locator('canvas').count()==1
+        series.locator('select[data-param=mode]').select_option('prescribed');series.locator('input[type=number][data-param=angle]').fill('90')
+        series.evaluate('(lab)=>{for(let i=0;i<60;i++)lab.querySelector("[data-action=step]").click()}')
+        series.locator('[data-action=copy]').click();before=json.loads(series.locator('.preset').input_value())
+        assert abs(before['state']['q']-3.141592653589793/2)<1e-12 and before['state']['work']>8.59
+        series.locator('[data-action=release]').click();series.locator('[data-action=copy]').click()
+        released=json.loads(series.locator('.preset').input_value());assert released['state']==before['state']
+        series.locator('[data-action=step]').click()
+        expect(series.locator('.readout')).to_contain_text('Lengthening')
+        with page.expect_download() as info:series.locator('[data-action=export]').click()
+        info.value.save_as(str(out/'series-trace.json'));trace=json.loads((out/'series-trace.json').read_text());r=trace['trace'][-1]
+        assert trace['model']=='series-affine-tissue-v1' and len(trace['trace'])==62
+        assert r['tissue']['normal']>5.5 and r['tissue']['volumeRatio']>.99 and abs(r['tissue']['skinVolumeRatio']-.5)<1e-12
+        assert r['fiberSpeed']>0 and r['activePower']<0 and r['hingeMusclePower']==0
+        series.screenshot(path=str(out/'series-desktop.png'))
+        series.locator('select[data-param=contact]').select_option('off')
+        expect(series.locator('.readout')).to_contain_text('13.891 mm')
+        series.locator('select[data-param=contact]').select_option('on');series.locator('select[data-param=bulk]').select_option('0')
+        expect(series.locator('.readout')).to_contain_text('0.45384')
+        series.locator('select[data-param=tendon]').select_option('rigid');expect(series.locator('.readout')).to_contain_text('0 J')
+        series.locator('[data-action=reset]').click();series.locator('[data-action=step]').click();first=series.locator('.readout').inner_text()
+        series.locator('[data-action=reset]').click();series.locator('[data-action=step]').click();assert series.locator('.readout').inner_text()==first
+        checks.append('Series actuator fixed-end storage/release, actual tissue contact/bulk ablations, same-pose LBS, full trace and deterministic reset verified')
+        evidence=page.locator('#evidence-viewer');expect(evidence.locator('[data-evidence=bin]')).to_be_enabled()
+        evidence.locator('[data-action=start]').click();expect(evidence.locator('canvas')).to_be_visible();assert page.locator('canvas').count()==1
+        evidence.locator('[data-evidence=part]').select_option('bones');evidence.locator('[data-action=view]').click()
+        slider=evidence.locator('[data-evidence=bin]');slider.focus();page.keyboard.press('End')
+        expect(evidence.locator('.readout')).to_contain_text('172 / 172');expect(evidence.locator('.readout')).to_contain_text('unit 1')
+        evidence.locator('[data-action=reset]').click();expect(slider).to_have_value('0');expect(evidence.locator('[data-evidence=part]')).to_have_value('all')
+        expect(evidence.locator('.readout')).to_contain_text('0.219441 s');evidence.screenshot(path=str(out/'evidence-desktop.png'))
+        assert not errors,errors
+        checks.append('Actual atlas WebGL part/camera views and keyboard-accessible timestamp-aware recording bins/reset verified; one active canvas retained')
         page.set_viewport_size({'width':390,'height':844})
         page.goto(url+'/index.html',wait_until='networkidle')
         assert page.evaluate('document.documentElement.scrollWidth<=window.innerWidth'), 'mobile overflow'
@@ -100,6 +133,10 @@ def check():
         expect(number).to_have_value('1');torque.locator('[data-action=reset]').click()
         checks.append('390px viewport has no horizontal page overflow; WebGL and keyboard controls verified')
         elbow=page.locator('#lab-elbow');elbow.locator('[data-action=start]').click();elbow.screenshot(path=str(out/'elbow-mobile.png'))
+        series=page.locator('#lab-series');series.locator('[data-action=start]').click()
+        series.locator('select[data-param=mode]').select_option('prescribed');series.locator('input[type=number][data-param=angle]').fill('90');series.screenshot(path=str(out/'series-mobile.png'))
+        evidence=page.locator('#evidence-viewer');evidence.locator('[data-action=start]').click();expect(evidence.locator('canvas')).to_be_visible();evidence.screenshot(path=str(out/'evidence-mobile.png'))
+        assert page.evaluate('document.documentElement.scrollWidth<=window.innerWidth'), 'new chapter mobile overflow'
         no_gl=context.new_page();no_gl.add_init_script('''const original=HTMLCanvasElement.prototype.getContext;
 HTMLCanvasElement.prototype.getContext=function(type,...args){if(type.includes('webgl'))return null;return original.call(this,type,...args);};''')
         no_gl.goto(url+'/index.html',wait_until='networkidle')

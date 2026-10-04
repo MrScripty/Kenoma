@@ -1,6 +1,6 @@
 # From line forces to tissue and rendered skin {#tissue-and-rendered-skin}
 
-Laboratory 4 moves a rigid skeleton. Its red ellipsoid cannot tell us where tissue compresses. The next layer must introduce material deformation, interfaces and contact before it supplies forces or pressure. This chapter integrates the audited simulation and anatomy research into the progression; its continuum/contact mechanisms are explained but are not yet executable laboratories.
+Laboratory 4 moves a rigid skeleton. Its red ellipsoid cannot tell us where tissue compresses. The next layer must introduce material deformation, interfaces and contact before it supplies forces or pressure. This chapter integrates the audited simulation and anatomy research into the progression. Laboratory 5 implements a bounded affine-block/contact proxy; the spatial skin/fascia and anatomical contact mechanisms described below still need their own solvers and validation.
 
 ## Deformation needs a reference configuration
 

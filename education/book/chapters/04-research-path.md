@@ -1,12 +1,12 @@
 # From a lever to an arm {#from-a-lever-to-an-arm}
 
-The mechanics chapters establish a vocabulary and a testing pattern. The anatomy chapter integrates audited evidence, and Laboratory 4 supplies a force-driven schematic elbow, activation/release, and work accounting. Raw anatomical data, compliant tendon and tissue mechanics, and contact still need implementation before the full arm can be presented as more than a schematic. The four laboratories are a growing teaching progression, not its completion.
+The mechanics chapters establish a vocabulary and a testing pattern. The anatomy chapter integrates audited evidence, and Laboratory 4 supplies a force-driven schematic elbow, activation/release, and work accounting. Laboratory 5 adds series tendon storage and an affine-block contact reaction with a same-pose LBS comparison. The separate data chapter supplies actual static atlas surfaces, a recorded normalized trial and source model parameters. Anatomical registration, spatial skin/fascia mechanics and validation still need implementation before this becomes a calibrated arm. The five laboratories are a growing teaching progression, not its completion.
 
 ## Add anatomy with provenance
 
 An anatomical dataset needs a source, version, specimen or subject description, coordinate system, segmentation conventions, units, and permission to redistribute each included file. A citation to a paper does not grant a licence to its meshes or scans. A reusable data record should distinguish measured values, fitted model parameters, and illustrative defaults.
 
-Before adding bone meshes or medical images, verify the relevant dataset terms at the asset level. Store permitted source metadata and derived-file provenance, including hashes and any required attribution. Schematic geometry may teach a force path, but it must not be labelled an anatomical measurement. No such assets or patient data are included in this milestone.
+Before adding bone meshes or medical images, verify the relevant dataset terms at the asset level. Store permitted source metadata and derived-file provenance, including hashes and any required attribution. Schematic geometry may teach a force path, but it must not be labelled an anatomical measurement. The data chapter demonstrates these records for its licensed atlas and research trial, without patient-specific calibration.
 
 ## Add muscles and tendons with a constitutive model
 

@@ -1,0 +1,332 @@
+{
+  "schema_version": "1.0",
+  "source_url": "https://github.com/opensim-org/opensim-models/blob/84b487c4e3245359a64381e01f01b9cf4772d457/Models/Arm26/arm26.osim",
+  "source_sha256": "e2224d0044eb393b05d64926c3fa1682c451a9adc7f510e5517ef9958d3d41b9",
+  "license": "CC-BY-3.0",
+  "credits": "The OpenSim Development Team (Reinbolt, J; Seth, A; Habib, A; Hamner, S) adapted from a model originally created by Kate Holzbaur (11/22/04) License: Creative Commons (CCBY 3.0). You are free to distribute, remix, tweak, and build upon this work, even commercially, as long as you credit us for the original creation. http://creativecommons.org/licenses/by/3.0/",
+  "evidence_class": "model_parameters",
+  "clinical_validation": false,
+  "registered_to_other_assets": false,
+  "muscles": [
+    {
+      "name": "TRIlong",
+      "anatomical_label": "triceps brachii long head",
+      "actuator_type": "Thelen2003Muscle",
+      "parameters": {
+        "max_isometric_force": {
+          "value": 798.52,
+          "unit": "N",
+          "meaning": "Peak isometric actuator force parameter, not a measured subject force",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/max_isometric_force"
+        },
+        "optimal_fiber_length": {
+          "value": 0.134,
+          "unit": "m",
+          "meaning": "Actuator optimal fiber length parameter",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/optimal_fiber_length"
+        },
+        "tendon_slack_length": {
+          "value": 0.143,
+          "unit": "m",
+          "meaning": "Actuator tendon slack length parameter",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/tendon_slack_length"
+        },
+        "pennation_angle_at_optimal": {
+          "value": 0.20943951,
+          "unit": "rad",
+          "meaning": "Fiber pennation angle at optimal fiber length",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/pennation_angle_at_optimal"
+        },
+        "activation_time_constant": {
+          "value": 0.01,
+          "unit": "s",
+          "meaning": "Actuator activation time constant",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/activation_time_constant"
+        },
+        "deactivation_time_constant": {
+          "value": 0.04,
+          "unit": "s",
+          "meaning": "Actuator deactivation time constant",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/deactivation_time_constant"
+        }
+      }
+    },
+    {
+      "name": "TRIlat",
+      "anatomical_label": "triceps brachii lateral head",
+      "actuator_type": "Thelen2003Muscle",
+      "parameters": {
+        "max_isometric_force": {
+          "value": 624.3,
+          "unit": "N",
+          "meaning": "Peak isometric actuator force parameter, not a measured subject force",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/max_isometric_force"
+        },
+        "optimal_fiber_length": {
+          "value": 0.1138,
+          "unit": "m",
+          "meaning": "Actuator optimal fiber length parameter",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/optimal_fiber_length"
+        },
+        "tendon_slack_length": {
+          "value": 0.098,
+          "unit": "m",
+          "meaning": "Actuator tendon slack length parameter",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/tendon_slack_length"
+        },
+        "pennation_angle_at_optimal": {
+          "value": 0.15707963,
+          "unit": "rad",
+          "meaning": "Fiber pennation angle at optimal fiber length",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/pennation_angle_at_optimal"
+        },
+        "activation_time_constant": {
+          "value": 0.01,
+          "unit": "s",
+          "meaning": "Actuator activation time constant",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/activation_time_constant"
+        },
+        "deactivation_time_constant": {
+          "value": 0.04,
+          "unit": "s",
+          "meaning": "Actuator deactivation time constant",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/deactivation_time_constant"
+        }
+      }
+    },
+    {
+      "name": "TRImed",
+      "anatomical_label": "triceps brachii medial head",
+      "actuator_type": "Thelen2003Muscle",
+      "parameters": {
+        "max_isometric_force": {
+          "value": 624.3,
+          "unit": "N",
+          "meaning": "Peak isometric actuator force parameter, not a measured subject force",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/max_isometric_force"
+        },
+        "optimal_fiber_length": {
+          "value": 0.1138,
+          "unit": "m",
+          "meaning": "Actuator optimal fiber length parameter",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/optimal_fiber_length"
+        },
+        "tendon_slack_length": {
+          "value": 0.0908,
+          "unit": "m",
+          "meaning": "Actuator tendon slack length parameter",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/tendon_slack_length"
+        },
+        "pennation_angle_at_optimal": {
+          "value": 0.15707963,
+          "unit": "rad",
+          "meaning": "Fiber pennation angle at optimal fiber length",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/pennation_angle_at_optimal"
+        },
+        "activation_time_constant": {
+          "value": 0.01,
+          "unit": "s",
+          "meaning": "Actuator activation time constant",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/activation_time_constant"
+        },
+        "deactivation_time_constant": {
+          "value": 0.04,
+          "unit": "s",
+          "meaning": "Actuator deactivation time constant",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/deactivation_time_constant"
+        }
+      }
+    },
+    {
+      "name": "BIClong",
+      "anatomical_label": "biceps brachii long head",
+      "actuator_type": "Thelen2003Muscle",
+      "parameters": {
+        "max_isometric_force": {
+          "value": 624.3,
+          "unit": "N",
+          "meaning": "Peak isometric actuator force parameter, not a measured subject force",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/max_isometric_force"
+        },
+        "optimal_fiber_length": {
+          "value": 0.1157,
+          "unit": "m",
+          "meaning": "Actuator optimal fiber length parameter",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/optimal_fiber_length"
+        },
+        "tendon_slack_length": {
+          "value": 0.2723,
+          "unit": "m",
+          "meaning": "Actuator tendon slack length parameter",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/tendon_slack_length"
+        },
+        "pennation_angle_at_optimal": {
+          "value": 0.0,
+          "unit": "rad",
+          "meaning": "Fiber pennation angle at optimal fiber length",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/pennation_angle_at_optimal"
+        },
+        "activation_time_constant": {
+          "value": 0.01,
+          "unit": "s",
+          "meaning": "Actuator activation time constant",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/activation_time_constant"
+        },
+        "deactivation_time_constant": {
+          "value": 0.04,
+          "unit": "s",
+          "meaning": "Actuator deactivation time constant",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/deactivation_time_constant"
+        }
+      }
+    },
+    {
+      "name": "BICshort",
+      "anatomical_label": "biceps brachii short head",
+      "actuator_type": "Thelen2003Muscle",
+      "parameters": {
+        "max_isometric_force": {
+          "value": 435.56,
+          "unit": "N",
+          "meaning": "Peak isometric actuator force parameter, not a measured subject force",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/max_isometric_force"
+        },
+        "optimal_fiber_length": {
+          "value": 0.1321,
+          "unit": "m",
+          "meaning": "Actuator optimal fiber length parameter",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/optimal_fiber_length"
+        },
+        "tendon_slack_length": {
+          "value": 0.1923,
+          "unit": "m",
+          "meaning": "Actuator tendon slack length parameter",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/tendon_slack_length"
+        },
+        "pennation_angle_at_optimal": {
+          "value": 0.0,
+          "unit": "rad",
+          "meaning": "Fiber pennation angle at optimal fiber length",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/pennation_angle_at_optimal"
+        },
+        "activation_time_constant": {
+          "value": 0.01,
+          "unit": "s",
+          "meaning": "Actuator activation time constant",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/activation_time_constant"
+        },
+        "deactivation_time_constant": {
+          "value": 0.04,
+          "unit": "s",
+          "meaning": "Actuator deactivation time constant",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/deactivation_time_constant"
+        }
+      }
+    },
+    {
+      "name": "BRA",
+      "anatomical_label": "brachialis",
+      "actuator_type": "Thelen2003Muscle",
+      "parameters": {
+        "max_isometric_force": {
+          "value": 987.26,
+          "unit": "N",
+          "meaning": "Peak isometric actuator force parameter, not a measured subject force",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BRA']/max_isometric_force"
+        },
+        "optimal_fiber_length": {
+          "value": 0.0858,
+          "unit": "m",
+          "meaning": "Actuator optimal fiber length parameter",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BRA']/optimal_fiber_length"
+        },
+        "tendon_slack_length": {
+          "value": 0.0535,
+          "unit": "m",
+          "meaning": "Actuator tendon slack length parameter",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BRA']/tendon_slack_length"
+        },
+        "pennation_angle_at_optimal": {
+          "value": 0.0,
+          "unit": "rad",
+          "meaning": "Fiber pennation angle at optimal fiber length",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BRA']/pennation_angle_at_optimal"
+        },
+        "activation_time_constant": {
+          "value": 0.01,
+          "unit": "s",
+          "meaning": "Actuator activation time constant",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BRA']/activation_time_constant"
+        },
+        "deactivation_time_constant": {
+          "value": 0.04,
+          "unit": "s",
+          "meaning": "Actuator deactivation time constant",
+          "evidence_class": "model_parameter",
+          "source_xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BRA']/deactivation_time_constant"
+        }
+      }
+    }
+  ],
+  "coordinates": [
+    {
+      "name": "r_shoulder_elev",
+      "default_value_rad": 0.0,
+      "range_rad": [
+        -1.57079633,
+        3.14159265
+      ],
+      "evidence_class": "model_coordinate_limit_not_clinical_range"
+    },
+    {
+      "name": "r_elbow_flex",
+      "default_value_rad": 0.0,
+      "range_rad": [
+        0.0,
+        2.26892803
+      ],
+      "evidence_class": "model_coordinate_limit_not_clinical_range"
+    }
+  ],
+  "limits": [
+    "No separate brachioradialis actuator",
+    "No continuum tissue, skin, fascia, contact-pressure, or tendon-strain measurement",
+    "These model parameters are not subject-specific measured data",
+    "No activation is inferred from pose; no kinematic or mechanics solver is implemented here"
+  ]
+}
