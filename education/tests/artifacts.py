@@ -37,6 +37,13 @@ for page in doc:
  for block in page.get_text('blocks'):
   assert block[0]>=-1 and block[1]>=-1 and block[2]<=page.rect.width+1 and block[3]<=page.rect.height+1
 assert all(count==len(proof['claims']) for count in proof_destinations.values()),'Missing internal PDF proof destinations'
+spans=[span for page in doc for block in page.get_text('dict')['blocks'] if 'lines' in block for line in block['lines'] for span in line['spans']]
+print_label_sizes={}
+for label in ['Humerus','Triceps medial head','Unit 1','Elapsed time from retained trial segment (s)']:
+ sizes=[s['size'] for s in spans if s['text']==label]
+ assert sizes and min(sizes)>=10,'Evidence figure label is missing or too small: '+label
+ print_label_sizes[label]=round(min(sizes),2)
 results={'status':'passed','pdf_pages':len(doc),'proof_cards':len(proof['claims']),'pdf_links':'no loopback or file URLs','pdf_proof_destinations':proof_destinations,'browser':browser['browser_version'],
+ 'print_figure_label_minimum_pt':print_label_sizes,
  'scope':'Content, hash, glyph and page-bounds sanity; PDF appearance still requires visual review.'}
 (out/'artifact-check.json').write_text(json.dumps(results,indent=2)+'\n');print(json.dumps(results,indent=2))

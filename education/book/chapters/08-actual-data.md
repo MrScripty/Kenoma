@@ -4,17 +4,17 @@ An atlas, a recorded human trial and an actuator model answer different question
 
 ## Ten static anatomical surfaces
 
-![Two anterior-facing views of a straight right-arm atlas: humerus, radius and ulna alone, then seven selected muscle surfaces with keyed colors.](data/elbow-v1/figures/bodyparts3d_right_arm.png)
+![Two anterior-facing views of a straight right-arm atlas: humerus, radius and ulna alone, then seven selected muscle surfaces with keyed colors.](assets/atlas-print.svg){.evidence-figure}
 
 Ten BodyParts3D 4.0 right-arm surfaces preserve the original atlas pose: humerus, radius, ulna, brachialis, brachioradialis, both biceps heads and three triceps heads. The official 99%-polygon-reduced release supplies 13,852 vertices and 20,218 triangles. It is a constructed static adult-male reference atlas, rather than scanned geometry for the OpenArm participant. Rendering colors are explanatory. Source axes are x toward anatomical left, y posterior and z superior; original OBJ positions are in millimetres. The JSON divides positions by 1,000 and converts face indices to zero-based, with no topology editing, joint fitting or rigging.
 
-BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International. Changes: ten-part selection, SI conversion and original rendering. The original OBJ comments retain the historical CC BY-SA 2.1 Japan notices; the package also includes the current official archive's February 2025 CC BY 4.0 grant. [Source and rights record](#source-acquired-data)
+BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International. Changes: ten-part selection, SI conversion and original rendering; this book's print derivative enlarges labels and reflows the legend without changing geometry. The original OBJ comments retain the historical CC BY-SA 2.1 Japan notices; the package also includes the current official archive's February 2025 CC BY 4.0 grant. [Source and rights record](#source-acquired-data)
 
 The browser viewer centers and rotates the atlas **for display only**. It can show bones or individual named parts, and switch anterior, oblique and posterior views. It does not animate a guessed elbow axis. Polygon reduction and edge diagnostics do not establish a mesh suitable for medical contact calculations. No skin, fat, fascia, cartilage or tendon material field is provided.
 
 ## One recorded trial at a held posture
 
-![Three aligned recorded curves over about 86 seconds: normalized brachioradialis thickness, biceps sEMG and wrist-contact force, with different amplitudes and profiles.](data/elbow-v1/figures/openarm_recorded_trial.png)
+![Three aligned recorded curves over about 86 seconds: normalized brachioradialis thickness, biceps sEMG and wrist-contact force, with different amplitudes and profiles.](assets/recording-print.svg){.evidence-figure}
 
 OpenArm Multisensor 2.0 participant code 2, trial 1b, was recorded with the right elbow held at 90° and the forearm supinated. The retained segment contains 4,403 preprocessed normalized samples over 85.903537 s. Ultrasound measures **brachioradialis thickness**; sEMG measures **biceps brachii electrical activity**; wrist-contact force is a net external signal. They are different quantities and, for ultrasound and sEMG, different muscles. The fixed acquisition posture is not a measured angle trajectory. Hallock et al. (2021), DOI 10.1109/TNSRE.2021.3133813; data CC BY 4.0. Changes: selected trial/segment, relative timestamps, display binning and original plot.
 

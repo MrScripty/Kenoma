@@ -37,7 +37,7 @@ class Lab {
     root.querySelector('[data-action="release"]')?.addEventListener('click',()=>{this.pulse=false;this.params.excitation=0;this.sync();this.update();this.status.textContent='Excitation released. Activation and velocity continue from the current state.';});
     root.querySelector('[data-action="pulse"]')?.addEventListener('click',()=>{this.reset();this.pulse=true;this.play();this.status.textContent='Forward lift pulse: excitation 0.6 until 0.30 s, then release. No tracking motor.';});
     root.querySelector('[data-action="export"]')?.addEventListener('click',()=>{
-      const blob=new Blob([JSON.stringify({schema:1,model:this.kind==='series'?'series-affine-tissue-v1':'schematic-elbow-v1',units:'SI, angle radians',parameters:this.params,initialEnergy:this.initialEnergy,trace:this.history},null,2)],{type:'application/json'});
+      const blob=new Blob([JSON.stringify({schema:1,model:this.kind==='series'?'series-affine-tissue-v1':'schematic-elbow-v1',units:'SI, angle radians',tracePolicy:'One row per step; current row refreshed after same-time input changes. Its excitation applies to the next step; time, state and accumulated work do not advance.',parameters:this.params,initialEnergy:this.initialEnergy,trace:this.history},null,2)],{type:'application/json'});
       const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=this.kind==='series'?'kenoma-series-trace.json':'kenoma-elbow-trace.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
       this.status.textContent='Downloaded the current trace with model parameters and energy accounting.';
     });
@@ -96,7 +96,7 @@ class Lab {
       if(this.index>=600)this.pause();
     } else if(this.articulated) {
       if(this.index>=1200||this.state.halted){this.pause();return;}
-      if(this.pulse && this.index*this.params.dt>=0.3){this.params.excitation=0;this.sync();}
+      if(this.pulse && this.index*this.params.dt>=0.3 && this.params.excitation!==0){this.params.excitation=0;this.sync();this.update();}
       this.state=(this.kind==='series'?seriesStep:elbowStep)(this.state,this.params);
       if(this.state.halted){this.pause();this.status.textContent='Paused at the last admissible state: a trial left the angle/fiber teaching domain. Joint-stop impact is not modeled.';}
       else this.index++;
@@ -121,7 +121,9 @@ class Lab {
       if(this.index===0 && !Number.isFinite(this.state.q)){this.state=this.initialFn(this.params);this.initialEnergy=this.resultFn(this.state,this.params).energy;}
       this.result=this.resultFn(this.state,this.params);const s=this.state,r=this.result;
       const residual=r.energy-this.initialEnergy-s.work+s.dissipation;
-      if(!this.history.some(h=>h.step===this.index))this.history.push({step:this.index,...s,excitation:this.params.excitation,...r,balanceResidual:residual});
+      const row={step:this.index,...s,excitation:this.params.excitation,...r,balanceResidual:residual};
+      const existing=this.history.findIndex(h=>h.step===this.index);
+      if(existing<0)this.history.push(row);else this.history[existing]=row;
       values=[['Mode',this.params.mode==='forward'?'Force-driven hinge':'Prescribed static hold'],['Time',`${fmt(s.time,3)} s`],['Flexion q',`${fmt(s.q*180/Math.PI,2)}°`],
         ['Excitation u',fmt(this.params.excitation,3)],['Activation a',fmt(s.a,3)],['Angular velocity',`${fmt(s.w)} rad/s`],['Fiber length',`${fmt(r.fiber,4)} m`],
         ['Fiber velocity',`${fmt(r.fiberSpeed,4)} m/s`],['Moment arm',`${fmt(r.momentArm,4)} m`],['Active tension',`${fmt(r.active,2)} N`],['Passive tension',`${fmt(r.passive,2)} N`],

@@ -78,6 +78,10 @@ def check():
         assert before['state']['q']>30*3.141592653589793/180 and before['state']['a']>0.5
         elbow.locator('[data-action=release]').click();elbow.locator('[data-action=copy]').click()
         released=json.loads(elbow.locator('.preset').input_value());assert released['state']==before['state'] and released['parameters']['excitation']==0
+        with page.expect_download() as info:elbow.locator('[data-action=export]').click()
+        info.value.save_as(str(out/'elbow-immediate-release.json'));instant=json.loads((out/'elbow-immediate-release.json').read_text())
+        assert len(instant['trace'])==61 and instant['trace'][-1]['excitation']==0
+        assert instant['trace'][-1]['work']==before['state']['work'] and instant['trace'][-1]['a']==before['state']['a']
         elbow.locator('[data-action=step]').click();elbow.locator('[data-action=copy]').click()
         after=json.loads(elbow.locator('.preset').input_value());assert 0<after['state']['a']<before['state']['a'] and after['step']==61
         with page.expect_download() as info:elbow.locator('[data-action=export]').click()
@@ -98,6 +102,17 @@ def check():
         assert abs(before['state']['q']-3.141592653589793/2)<1e-12 and before['state']['work']>8.59
         series.locator('[data-action=release]').click();series.locator('[data-action=copy]').click()
         released=json.loads(series.locator('.preset').input_value());assert released['state']==before['state']
+        with page.expect_download() as info:series.locator('[data-action=export]').click()
+        info.value.save_as(str(out/'series-immediate-release.json'));instant=json.loads((out/'series-immediate-release.json').read_text());current=instant['trace'][-1]
+        assert len(instant['trace'])==61 and current['step']==60 and current['excitation']==0
+        assert current['fiberSpeed']>0 and current['activePower']<0 and current['work']==before['state']['work']
+        assert current['a']==before['state']['a'] and 'current row refreshed' in instant['tracePolicy']
+        series.locator('input[type=number][data-param=excitation]').fill('0.8')
+        with page.expect_download() as info:series.locator('[data-action=export]').click()
+        info.value.save_as(str(out/'series-immediate-change.json'));changed=json.loads((out/'series-immediate-change.json').read_text())['trace'][-1]
+        assert changed['step']==60 and changed['excitation']==.8 and changed['fiberSpeed']<0 and changed['activePower']>0
+        assert changed['work']==current['work'] and changed['time']==current['time'] and changed['a']==current['a']
+        series.locator('[data-action=release]').click()
         series.locator('[data-action=step]').click()
         expect(series.locator('.readout')).to_contain_text('Lengthening')
         with page.expect_download() as info:series.locator('[data-action=export]').click()
@@ -113,7 +128,7 @@ def check():
         series.locator('select[data-param=tendon]').select_option('rigid');expect(series.locator('.readout')).to_contain_text('0 J')
         series.locator('[data-action=reset]').click();series.locator('[data-action=step]').click();first=series.locator('.readout').inner_text()
         series.locator('[data-action=reset]').click();series.locator('[data-action=step]').click();assert series.locator('.readout').inner_text()==first
-        checks.append('Series actuator fixed-end storage/release, actual tissue contact/bulk ablations, same-pose LBS, full trace and deterministic reset verified')
+        checks.append('Series fixed-end storage/release, immediate release/change exports before stepping, tissue ablations, same-pose LBS and deterministic reset verified')
         evidence=page.locator('#evidence-viewer');expect(evidence.locator('[data-evidence=bin]')).to_be_enabled()
         evidence.locator('[data-action=start]').click();expect(evidence.locator('canvas')).to_be_visible();assert page.locator('canvas').count()==1
         evidence.locator('[data-evidence=part]').select_option('bones');evidence.locator('[data-action=view]').click()

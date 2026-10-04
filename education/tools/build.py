@@ -3,6 +3,7 @@ from pathlib import Path
 import hashlib,html,json,re,shutil,subprocess
 from check_proofs import check
 from figures import generate
+from evidence_figures import generate as evidence_figures
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'dist'
 
@@ -122,6 +123,7 @@ def build():
     html_path.write_text(rendered)
     staging.unlink()
     assets=OUT/'assets';generate(assets)
+    evidence_figures(assets)
     shutil.rmtree(OUT/'data/elbow-v1',ignore_errors=True)
     shutil.copytree(data,OUT/'data/elbow-v1',dirs_exist_ok=True,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
     shutil.copy(ROOT/'web/style.css',assets/'style.css')

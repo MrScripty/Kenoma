@@ -38,6 +38,8 @@ $$\dot a=(u-a)/\tau,\qquad a(t+h)=u+(a(t)-u)e^{-h/\tau}.$$
 
 The implementation uses τ = 0.05 s while excitation is at least the current activation, and 0.15 s otherwise. Both are illustrative choices. Release sets u to zero while retaining a, q and q̇. Force therefore decays rather than disappearing instantaneously. Changing excitation preserves the trajectory; changing the load, mode, initial angle or timestep starts a fresh experiment.
 
+The exported trace has one row per step. A same-time excitation change refreshes the current row's input and instantaneous derived outputs, so an immediate download matches the display. Earlier rows remain intact; time, state and accumulated work do not advance. The current row's excitation applies to the next step. Intermediate input edits with zero elapsed time are not separate events.
+
 The exact real-arithmetic update is a convex mixture of a and u with weight e^(−h/τ). The following checked contract concerns integer-weighted mixture numerators only. Neither the exponential implementation nor the physiological validity of those time constants is formally established.
 
 {{proof:activation-bound}}
