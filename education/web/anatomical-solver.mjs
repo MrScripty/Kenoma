@@ -10,7 +10,7 @@ export function minimize(objective,start,{maxIterations=300,tolerance=1e-7,initi
   const last=history.at(-1),scale=last?dot(last.s,last.y)/dot(last.y,last.y):initialInverseScale;for(let i=0;i<x.length;i++)direction[i]*=scale;
   for(let j=0;j<history.length;j++){const h=history[j],beta=h.rho*dot(h.y,direction);for(let i=0;i<x.length;i++)direction[i]+=h.s[i]*(alpha[j]-beta);}
   for(let i=0;i<x.length;i++)direction[i]*=-1;let slope=dot(r.gradient,direction);if(!(slope<0)){history=[];for(let i=0;i<x.length;i++)direction[i]=-initialInverseScale*r.gradient[i];slope=dot(r.gradient,direction);}
-  let next=null,trial,step=1;for(let backtrack=0;backtrack<40;backtrack++){trial=x.map((v,i)=>v+step*direction[i]);try{const candidate=objective(trial);evaluations++;if(Number.isFinite(candidate.energy)&&candidate.gradient.every(Number.isFinite)&&candidate.energy<=r.energy+1e-4*step*slope){next=candidate;break;}}catch(e){if(!(e instanceof RangeError))throw e;}step*=.5;}
+  let next=null,trial,step=1;for(let backtrack=0;backtrack<40;backtrack++){trial=x.map((v,i)=>v+step*direction[i]);evaluations++;try{const candidate=objective(trial);if(Number.isFinite(candidate.energy)&&candidate.gradient.every(Number.isFinite)&&candidate.energy<=r.energy+1e-4*step*slope){next=candidate;break;}}catch(e){if(!(e instanceof RangeError))throw e;}step*=.5;}
   if(!next){reason='no admissible decreasing step';break;}
   const s=trial.map((v,i)=>v-x[i]),y=Float64Array.from(next.gradient,(v,i)=>v-r.gradient[i]),sy=dot(s,y);if(sy>1e-12*Math.sqrt(dot(s,s)*dot(y,y))){history.push({s,y,rho:1/sy});if(history.length>historySize)history.shift();}
   x=trial;r=next;accepted++;trace.push({iteration:accepted,energy:r.energy,maxGradient:Math.max(...r.gradient.map(Math.abs)),step});
