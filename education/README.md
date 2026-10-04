@@ -4,7 +4,7 @@ This additive track teaches mechanics with an illustrated, single-source book an
 
 ## Build and read
 
-Prerequisites: Node 22, Python 3.12, Pandoc (tested 3.1.11.1), and pinned Lean 4.19.0. A Linux x86_64 installer downloads the official Lean archive and checks its recorded SHA-256. For another platform, use the official Lean release matching `proofs/lean-toolchain`.
+Prerequisites: Node 22 or later, Python 3.12, Pandoc (tested 3.1.11.1), and pinned Lean 4.19.0. The local milestone used Node 24.19.0; CI selects Node 22 and remains unverified remotely. A Linux x86_64 installer downloads the official Lean archive and checks its recorded SHA-256. For another platform, use the official Lean release matching `proofs/lean-toolchain`.
 
 ```bash
 cd education
