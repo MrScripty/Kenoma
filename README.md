@@ -12,4 +12,4 @@ The word Kenoma comes from the ancient Greek word κένωμα which litteraly m
 
 ## Educational mechanics book
 
-The additive [educational book and 3D laboratories](education/README.md) develop force, torque, energy and a force-driven schematic elbow with activation/release, cited anatomy research, original diagrams, numerical comparisons and checked Lean proofs. This educational track is separate from the production simulator plans; raw-data integration and the full tissue/contact/skinning capstone remain pending.
+The additive [educational book and 3D laboratories](education/README.md) develop force, torque, energy and a force-driven schematic elbow with activation/release, series tendon storage and a reduced tissue/contact comparison. A separate viewer presents licensed atlas surfaces, recorded normalized human signals and source model parameters, with citations, numerical checks and exact Lean proofs. This educational track is separate from the production simulator plans; anatomical registration, spatial skin/fascia and the calibrated full capstone remain pending.
