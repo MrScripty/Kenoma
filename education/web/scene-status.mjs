@@ -1,4 +1,5 @@
 /** Visible lifecycle/errors for the real WebGL scene; no replacement renderer. */
+import {getInteractionDiagnostics} from './interaction-log.mjs';
 export class SceneStatus {
  constructor(root,stop){
   this.root=root;this.stop=stop;this.host=root.querySelector('.scene-host');
@@ -43,7 +44,7 @@ export class SceneStatus {
  fail(error,stage){
   const diagnostic={lab:this.root.id,stage,reason:String(error?.message||error),
    userAgent:navigator.userAgent,devicePixelRatio:window.devicePixelRatio,
-   lastObservedContext:this.capabilities};
+   lastObservedContext:this.capabilities,interactionDiagnostics:getInteractionDiagnostics(this.root)};
   this.stop();this.root.dataset.sceneState='error';this.root.classList.remove('active-scene');
   this.host.hidden=false;this.button.textContent='Retry interactive 3D';
   this.notice.textContent='3D unavailable here. See the diagnostic message below; numerical controls still work.';

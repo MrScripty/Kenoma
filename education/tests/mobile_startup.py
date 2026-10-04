@@ -13,11 +13,11 @@ ROOT=Path(__file__).resolve().parents[1]
 LABS=['force','torque','energy','elbow','series','continuum','spatial']
 
 
-def tap_start(page,lab):
+def tap_start(page,lab,point=(.5,.5)):
     button=lab.locator('[data-action=start]')
     expect(button).to_have_attribute('type','button')
     button.scroll_into_view_if_needed()
-    rect=button.bounding_box();x=rect['x']+rect['width']/2;y=rect['y']+rect['height']/2
+    rect=button.bounding_box();x=rect['x']+rect['width']*point[0];y=rect['y']+rect['height']*point[1]
     target=page.evaluate('([x,y])=>document.elementFromPoint(x,y)?.closest("button")?.dataset.action',[x,y])
     assert target=='start',target
     page.touchscreen.tap(x,y)
@@ -67,6 +67,34 @@ def check():
         # Atlas viewer shares lifecycle handling although it is not a numbered lab.
         atlas=page.locator('#evidence-viewer');tap_start(page,atlas);result['startup_draws']['atlas']=check_draw(atlas,out,'atlas')
         assert not downloads
+        # Owner reported Lab 7 exporting this exact filename after Start.
+        # Exercise native taps over the whole Start hitbox at narrower Android
+        # widths, with normal motion, then separately test the intended export.
+        spatial=page.locator('#lab-spatial');hitbox_cases=[]
+        page.emulate_media(reduced_motion='no-preference')
+        for width in [320,360,375,393,412]:
+          page.set_viewport_size({'width':width,'height':780})
+          for point in [(x,y) for y in [.05,.5,.95] for x in [.05,.5,.95]]:
+            tap_start(page,spatial,point)
+            expect(spatial).to_have_attribute('data-scene-state','ready')
+            assert not downloads,downloads
+            hitbox_cases.append({'width':width,'fractional_point':point,'target':'start','download_count':0})
+        export=spatial.locator('[data-action=export]');export.scroll_into_view_if_needed()
+        r=export.bounding_box();x=r['x']+r['width']/2;y=r['y']+r['height']/2
+        assert page.evaluate('([x,y])=>document.elementFromPoint(x,y)?.closest("button")?.dataset.action',[x,y])=='export'
+        with page.expect_download() as info:page.touchscreen.tap(x,y)
+        download=info.value;assert download.suggested_filename=='kenoma-spatial-trace.json'
+        download.save_as(str(out/'intentional-spatial-export.json'))
+        payload=json.loads((out/'intentional-spatial-export.json').read_text())
+        diagnostic=payload['interactionDiagnostics'];events=diagnostic['events']
+        assert diagnostic['lab']=='lab-spatial' and len(events)<=32
+        assert [e['type'] for e in events[-3:]]==['pointerdown','pointerup','click']
+        assert all(e['action']=='export' and e['trusted'] for e in events[-3:])
+        assert any(e['action']=='start' and e['trusted'] for e in events)
+        result['spatial_touch_contract']={'start_hitbox_cases':hitbox_cases,'intentional_export_filename':download.suggested_filename,'export_hit_target':'export','trace_model':payload['model'],'local_diagnostics_verified':True}
+        # The controlled export is expected; keep the Start-download contract
+        # separate from deliberately tapping Download trace.
+        assert downloads==['kenoma-spatial-trace.json'];downloads.clear()
         # Actual context-loss extension, not just a synthetic DOM event.
         lab=page.locator('#lab-spatial');tap_start(page,lab)
         supported=lab.locator('canvas').evaluate('c=>{const gl=c.getContext("webgl2"),ext=gl.getExtension("WEBGL_lose_context");if(!ext)return false;ext.loseContext();return true;}')

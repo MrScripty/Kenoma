@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import {formatReadout} from './readout.mjs';
 import {SceneStatus} from './scene-status.mjs';
+import {getInteractionDiagnostics} from './interaction-log.mjs';
 import {seriesResults} from './series.mjs';
 import {SPATIAL,SPATIAL_MESH as mesh,spatialInitial,spatialStep,spatialResults,rotate} from './spatial.mjs';
 import {makeCase,solveReference,solveCompliant,diagnose,difference,continuumError} from '../contributions/continuum_reference/continuum.mjs';
@@ -29,7 +30,7 @@ export class AdvancedView{
  play(){if(this.state?.halted||this.index>=240)return;this.activate(this);this.running=true;this.root.querySelector('[data-action=play]').textContent='Pause';let last=0;const tick=t=>{if(!this.running)return;if(t-last>=100){this.step();last=t;}if(this.running)this.frame=requestAnimationFrame(tick);};this.frame=requestAnimationFrame(tick);}
  step(){if(this.kind!=='spatial'||this.state.halted||this.index>=240){this.pause();return;}if(this.pulse&&this.state.time>=.3&&this.params.excitation!==0){this.params.excitation=0;this.sync();this.update(false);}this.state=spatialStep(this.state,this.params);if(this.state.halted){this.pause();this.status.textContent='Paused at the last pose within the 0–100° teaching domain; joint impact is absent.';}else this.index++;this.update();if(this.index>=240)this.pause();}
  copy(){const text=JSON.stringify({schema:1,model:this.kind,parameters:this.params,state:this.state,step:this.index,view:this.view,diagnostics:this.scalar},null,2),p=this.root.querySelector('.preset');p.hidden=false;p.value=text;p.focus();p.select();this.status.textContent='Reproducible parameters, state and unscaled diagnostics shown below.';}
- export(){const payload={schema:1,model:'one-way-spatial-arm-v1',units:'SI; q radians',parameters:this.params,tracePolicy:'Current row refreshed after excitation changes, without advancing state or spatial solve. Spatial energies are instantaneous quasistatic energies, not hinge work.',trace:this.history};const u=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=u;a.download='kenoma-spatial-trace.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);this.status.textContent='Downloaded the one-way spatial trace with its approximation labels.';}
+ export(){const payload={schema:1,model:'one-way-spatial-arm-v1',units:'SI; q radians',parameters:this.params,interactionDiagnostics:getInteractionDiagnostics(this.root),tracePolicy:'Current row refreshed after excitation changes, without advancing state or spatial solve. Spatial energies are instantaneous quasistatic energies, not hinge work.',trace:this.history};const u=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=u;a.download='kenoma-spatial-trace.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);this.status.textContent='Downloaded the one-way spatial trace with its approximation labels.';}
  update(solve=true){
   this.root.querySelector('.preset').hidden=true;let rows;
   if(this.kind==='spatial'){
