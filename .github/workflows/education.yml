@@ -2,9 +2,9 @@ name: Kenoma educational book
 on:
   push:
     branches: [main, 'education/**']
-    paths: ['education/**', '.github/workflows/education.yml']
+    paths: ['README.md', 'education/**', '.github/workflows/education.yml']
   pull_request:
-    paths: ['education/**', '.github/workflows/education.yml']
+    paths: ['README.md', 'education/**', '.github/workflows/education.yml']
   workflow_dispatch:
     inputs:
       publish:
