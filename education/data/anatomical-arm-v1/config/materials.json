@@ -1,0 +1,136 @@
+{
+  "schema": 1,
+  "parameters": {
+    "mu": {
+      "value": 1000,
+      "unit": "Pa",
+      "evidence_class": "authored_engineering_assumption",
+      "source": "anatomical-capstone-specification.md, reviewer-supplied engineering fixture choices",
+      "review_status": "Numerical fixtures only; geometry/coupling review pending",
+      "sensitivity_factors": [
+        0.5,
+        1,
+        2
+      ]
+    },
+    "bulk": {
+      "value": 1000000,
+      "unit": "Pa",
+      "evidence_class": "authored_engineering_assumption",
+      "source": "anatomical-capstone-specification.md, reviewer-supplied engineering fixture choices",
+      "review_status": "Numerical fixtures only; geometry/coupling review pending",
+      "sensitivity_factors": [
+        0.5,
+        1,
+        2
+      ]
+    },
+    "kf": {
+      "value": 20000,
+      "unit": "Pa",
+      "evidence_class": "authored_engineering_assumption",
+      "source": "anatomical-capstone-specification.md, reviewer-supplied engineering fixture choices",
+      "review_status": "Numerical fixtures only; geometry/coupling review pending",
+      "sensitivity_factors": [
+        0.5,
+        1,
+        2
+      ]
+    },
+    "b": {
+      "value": 6,
+      "unit": "1",
+      "evidence_class": "authored_engineering_assumption",
+      "source": "anatomical-capstone-specification.md, reviewer-supplied engineering fixture choices",
+      "review_status": "Numerical fixtures only; geometry/coupling review pending",
+      "sensitivity_factors": null
+    },
+    "optimumStretch": {
+      "value": 1,
+      "unit": "1",
+      "evidence_class": "authored_engineering_assumption",
+      "source": "anatomical-capstone-specification.md, reviewer-supplied engineering fixture choices",
+      "review_status": "Numerical fixtures only; geometry/coupling review pending",
+      "sensitivity_factors": null
+    },
+    "activeWidth": {
+      "value": 0.5,
+      "unit": "1",
+      "evidence_class": "authored_engineering_assumption",
+      "source": "anatomical-capstone-specification.md, reviewer-supplied engineering fixture choices",
+      "review_status": "Numerical fixtures only; geometry/coupling review pending",
+      "sensitivity_factors": null
+    },
+    "sigma0": {
+      "value": 300000,
+      "unit": "Pa",
+      "evidence_class": "authored_engineering_assumption",
+      "source": "anatomical-capstone-specification.md, reviewer-supplied engineering fixture choices",
+      "review_status": "Numerical fixtures only; geometry/coupling review pending",
+      "sensitivity_factors": [
+        0.5,
+        1,
+        2
+      ],
+      "limits": "Placeholder only: not yet matched to per-head Arm26 fixed-end model-reference forces."
+    },
+    "forceVelocityMultiplier": {
+      "value": 1,
+      "unit": "1",
+      "evidence_class": "authored_engineering_assumption",
+      "source": "anatomical-capstone-specification.md, reviewer-supplied engineering fixture choices",
+      "review_status": "Numerical fixtures only; geometry/coupling review pending",
+      "sensitivity_factors": null
+    },
+    "tendonYoung": {
+      "value": 50000000,
+      "unit": "Pa",
+      "evidence_class": "authored_engineering_assumption",
+      "source": "anatomical-capstone-specification.md, reviewer-supplied engineering fixture choices",
+      "review_status": "Numerical fixtures only; geometry/coupling review pending",
+      "sensitivity_factors": [
+        0.5,
+        1,
+        2
+      ]
+    },
+    "toeStrain": {
+      "value": 0.03,
+      "unit": "1",
+      "evidence_class": "authored_engineering_assumption",
+      "source": "anatomical-capstone-specification.md, reviewer-supplied engineering fixture choices",
+      "review_status": "Numerical fixtures only; geometry/coupling review pending",
+      "sensitivity_factors": null
+    }
+  },
+  "fixed_end_targets": {
+    "FJ1478": {
+      "value": 624.3,
+      "unit": "N",
+      "evidence_class": "existing_model_parameter",
+      "source": "../../elbow-v1/sources/arm26.osim",
+      "source_sha256": "e2224d0044eb393b05d64926c3fa1682c451a9adc7f510e5517ef9958d3d41b9",
+      "review_status": "Reference target; actual finite-element fixed-end match pending",
+      "limits": "Not a measured human muscle force."
+    },
+    "FJ1512": {
+      "value": 435.56,
+      "unit": "N",
+      "evidence_class": "existing_model_parameter",
+      "source": "../../elbow-v1/sources/arm26.osim",
+      "source_sha256": "e2224d0044eb393b05d64926c3fa1682c451a9adc7f510e5517ef9958d3d41b9",
+      "review_status": "Reference target; actual finite-element fixed-end match pending",
+      "limits": "Not a measured human muscle force."
+    },
+    "FJ1486": {
+      "value": 987.26,
+      "unit": "N",
+      "evidence_class": "existing_model_parameter",
+      "source": "../../elbow-v1/sources/arm26.osim",
+      "source_sha256": "e2224d0044eb393b05d64926c3fa1682c451a9adc7f510e5517ef9958d3d41b9",
+      "review_status": "Reference target; actual finite-element fixed-end match pending",
+      "limits": "Not a measured human muscle force."
+    }
+  },
+  "limits": "Passive triceps/brachioradialis use a=0; no invented active targets. Geometry-derived tendon L0/A0 and weak transverse aponeurosis pending."
+}

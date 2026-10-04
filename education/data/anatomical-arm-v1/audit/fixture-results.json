@@ -1,0 +1,400 @@
+{
+  "schema": 1,
+  "evidence_class": "numerical_engineering_fixture",
+  "units": "SI: m, N, Pa, J",
+  "source_hashes": {
+    "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+    "web/anatomical-element.mjs": "3f67a6bd31565c83d2cbea591c3cf1862a48e50cc4efa780880fda7e808d4b1f",
+    "web/anatomical-fixture.mjs": "be5107bc44c1db5f53e27a4e116d360850d168c4a990f197d7cb1c4444ca22c4",
+    "web/anatomical-solver.mjs": "a135b8ab4da839bb43012cbf8ba0884d82996e0424e20c8a8c3cb5dc3e7bde8b",
+    "web/anatomical-transfer.mjs": "1e82dabebf5a6247af9216a70292216b194a52545abf8f3b73c93ee6e2f22431",
+    "tools/anatomical-fixture-experiment.mjs": "b8475d143d2f857e6e86be99c817545f6e3078d3f9058cd5e9ac2db49170d371"
+  },
+  "cases": [
+    {
+      "name": "fixed-end-a0.1",
+      "options": {
+        "activation": 0.1,
+        "fixedEnd": true
+      },
+      "elements": 6,
+      "nodes": 27,
+      "quadrature": "four",
+      "converged": true,
+      "reason": "gradient tolerance",
+      "accepted_iterations": 0,
+      "evaluations": 1,
+      "max_gradient_J_per_normalized_displacement": 7.203156046663851e-14,
+      "maximum_nodal_force_residual_N": 6.002630038886542e-13,
+      "mean_end_length_m": 0.1199999999673445,
+      "mean_fibre_stretch": 1.0000000000000002,
+      "volume_ratio": 1,
+      "minimum_J": 0.999999999999999,
+      "end_reaction_N": 35.99999999999968,
+      "passive_stored_J": -1.4654943925042786e-17,
+      "active_solve_potential_J": -6.195044477408375e-16,
+      "every_accepted_energy_decreased": true,
+      "elapsed_ms": 6.429974999999999
+    },
+    {
+      "name": "free-a0.05",
+      "options": {
+        "activation": 0.05
+      },
+      "elements": 6,
+      "nodes": 27,
+      "quadrature": "four",
+      "converged": true,
+      "reason": "gradient tolerance",
+      "accepted_iterations": 1161,
+      "evaluations": 1222,
+      "max_gradient_J_per_normalized_displacement": 8.158770661054193e-7,
+      "maximum_nodal_force_residual_N": 0.000006798975550878494,
+      "mean_end_length_m": 0.07046833011697297,
+      "mean_fibre_stretch": 0.6092913592228386,
+      "volume_ratio": 0.9986776260610778,
+      "minimum_J": 0.9917602009745697,
+      "end_reaction_N": -6.898877530185643e-8,
+      "passive_stored_J": 0.065025387857221,
+      "active_solve_potential_J": -0.5426362336816878,
+      "every_accepted_energy_decreased": true,
+      "elapsed_ms": 429.591736
+    },
+    {
+      "name": "loaded-a0.05-12N",
+      "options": {
+        "activation": 0.05,
+        "loadN": 12
+      },
+      "elements": 6,
+      "nodes": 27,
+      "quadrature": "four",
+      "converged": true,
+      "reason": "gradient tolerance",
+      "accepted_iterations": 717,
+      "evaluations": 755,
+      "max_gradient_J_per_normalized_displacement": 8.361998235822954e-7,
+      "maximum_nodal_force_residual_N": 0.000006968331863185795,
+      "mean_end_length_m": 0.09972251258122283,
+      "mean_fibre_stretch": 0.8313839392919833,
+      "volume_ratio": 0.9989780626262347,
+      "minimum_J": 0.9940561170354146,
+      "end_reaction_N": 12.00000602449161,
+      "passive_stored_J": 0.009664813592117792,
+      "active_solve_potential_J": -0.3289808254724016,
+      "every_accepted_energy_decreased": true,
+      "elapsed_ms": 187.637447
+    },
+    {
+      "name": "release-after-free",
+      "options": {
+        "activation": 0,
+        "start": "Warm start from previous accepted fixture",
+        "solver": {
+          "maxIterations": 5000
+        }
+      },
+      "elements": 6,
+      "nodes": 27,
+      "quadrature": "four",
+      "converged": true,
+      "reason": "gradient tolerance",
+      "accepted_iterations": 3975,
+      "evaluations": 4199,
+      "max_gradient_J_per_normalized_displacement": 9.203661203154455e-7,
+      "maximum_nodal_force_residual_N": 0.000007669717669295379,
+      "mean_end_length_m": 0.11999986086250312,
+      "mean_fibre_stretch": 0.9999988409047942,
+      "volume_ratio": 0.9999999981488876,
+      "minimum_J": 0.9999998767815542,
+      "end_reaction_N": 0.0000015397458058250767,
+      "passive_stored_J": 4.8814757187330695e-12,
+      "active_solve_potential_J": 0,
+      "every_accepted_energy_decreased": true,
+      "elapsed_ms": 800.5122409999999
+    },
+    {
+      "name": "loaded-refinement-2-four",
+      "options": {
+        "activation": 0.05,
+        "loadN": 12,
+        "solver": {
+          "maxIterations": 6000,
+          "historySize": 20
+        }
+      },
+      "elements": 48,
+      "nodes": 125,
+      "quadrature": "four",
+      "converged": true,
+      "reason": "gradient tolerance",
+      "accepted_iterations": 1324,
+      "evaluations": 1371,
+      "max_gradient_J_per_normalized_displacement": 9.101570005731751e-7,
+      "maximum_nodal_force_residual_N": 0.000007584641671443126,
+      "mean_end_length_m": 0.09892323450243241,
+      "mean_fibre_stretch": 0.8247609747636768,
+      "volume_ratio": 0.9991912764156509,
+      "minimum_J": 0.9879659205693501,
+      "end_reaction_N": 11.999996715932992,
+      "passive_stored_J": 0.009724804941499425,
+      "active_solve_potential_J": -0.34241930219059086,
+      "every_accepted_energy_decreased": true,
+      "elapsed_ms": 2268.455957
+    },
+    {
+      "name": "loaded-refinement-1-subdivided32",
+      "options": {
+        "activation": 0.05,
+        "loadN": 12,
+        "solver": {
+          "maxIterations": 6000,
+          "historySize": 20
+        }
+      },
+      "elements": 6,
+      "nodes": 27,
+      "quadrature": "subdivided32",
+      "converged": true,
+      "reason": "gradient tolerance",
+      "accepted_iterations": 663,
+      "evaluations": 698,
+      "max_gradient_J_per_normalized_displacement": 7.735178814838317e-7,
+      "maximum_nodal_force_residual_N": 0.000006445982345698598,
+      "mean_end_length_m": 0.10034905456943563,
+      "mean_fibre_stretch": 0.836541378364865,
+      "volume_ratio": 0.9988424693048151,
+      "minimum_J": 0.9804424409218002,
+      "end_reaction_N": 12.000002836714318,
+      "passive_stored_J": 0.010213947607914841,
+      "active_solve_potential_J": -0.32066232217879376,
+      "every_accepted_energy_decreased": true,
+      "elapsed_ms": 905.1716349999997
+    },
+    {
+      "name": "loaded-refinement-2-subdivided32",
+      "options": {
+        "activation": 0.05,
+        "loadN": 12,
+        "solver": {
+          "maxIterations": 6000,
+          "historySize": 20
+        }
+      },
+      "elements": 48,
+      "nodes": 125,
+      "quadrature": "subdivided32",
+      "converged": true,
+      "reason": "gradient tolerance",
+      "accepted_iterations": 1392,
+      "evaluations": 1439,
+      "max_gradient_J_per_normalized_displacement": 8.341977907710963e-7,
+      "maximum_nodal_force_residual_N": 0.000006951648256425802,
+      "mean_end_length_m": 0.09912753133406749,
+      "mean_fibre_stretch": 0.826436732706054,
+      "volume_ratio": 0.9991455984696547,
+      "minimum_J": 0.9822029317673838,
+      "end_reaction_N": 11.999977826870204,
+      "passive_stored_J": 0.009877476728134885,
+      "active_solve_potential_J": -0.3396777968982174,
+      "every_accepted_energy_decreased": true,
+      "elapsed_ms": 19095.913800000002
+    },
+    {
+      "name": "loaded-bulk-factor-0.5",
+      "options": {
+        "activation": 0.05,
+        "loadN": 12,
+        "material": {
+          "mu": 1000,
+          "bulk": 500000,
+          "kf": 20000,
+          "b": 6,
+          "sigma0": 300000,
+          "optimumStretch": 1,
+          "activeWidth": 0.5
+        },
+        "start": "Warm start from previous accepted fixture",
+        "solver": {
+          "maxIterations": 3000,
+          "historySize": 20
+        }
+      },
+      "elements": 6,
+      "nodes": 27,
+      "quadrature": "four",
+      "converged": true,
+      "reason": "gradient tolerance",
+      "accepted_iterations": 275,
+      "evaluations": 286,
+      "max_gradient_J_per_normalized_displacement": 6.886504221439299e-7,
+      "maximum_nodal_force_residual_N": 0.0000057387535178660826,
+      "mean_end_length_m": 0.09960741575656182,
+      "mean_fibre_stretch": 0.830428960577045,
+      "volume_ratio": 0.9980062965944544,
+      "minimum_J": 0.9888612078883832,
+      "end_reaction_N": 11.999991864132205,
+      "passive_stored_J": 0.009961604057086789,
+      "active_solve_potential_J": -0.3310934980622925,
+      "every_accepted_energy_decreased": true,
+      "elapsed_ms": 122.15653100000054
+    },
+    {
+      "name": "loaded-bulk-factor-2",
+      "options": {
+        "activation": 0.05,
+        "loadN": 12,
+        "material": {
+          "mu": 1000,
+          "bulk": 2000000,
+          "kf": 20000,
+          "b": 6,
+          "sigma0": 300000,
+          "optimumStretch": 1,
+          "activeWidth": 0.5
+        },
+        "start": "Warm start from previous accepted fixture",
+        "solver": {
+          "maxIterations": 3000,
+          "historySize": 20
+        }
+      },
+      "elements": 6,
+      "nodes": 27,
+      "quadrature": "four",
+      "converged": true,
+      "reason": "gradient tolerance",
+      "accepted_iterations": 457,
+      "evaluations": 480,
+      "max_gradient_J_per_normalized_displacement": 9.146180088892564e-7,
+      "maximum_nodal_force_residual_N": 0.000007621816740743803,
+      "mean_end_length_m": 0.09978391390951004,
+      "mean_fibre_stretch": 0.8318932464737373,
+      "volume_ratio": 0.9994823940455276,
+      "minimum_J": 0.996912883415295,
+      "end_reaction_N": 12.000005891548277,
+      "passive_stored_J": 0.009501901928269506,
+      "active_solve_potential_J": -0.3278511901905927,
+      "every_accepted_energy_decreased": true,
+      "elapsed_ms": 167.32830399999875
+    }
+  ],
+  "half_double_affine_material_sensitivity": [
+    {
+      "parameter": "mu",
+      "factor": 0.5,
+      "stretch": 1.08,
+      "J": 1,
+      "passive_stored_J": 0.011543018842098086,
+      "solve_potential_J": 0.011543018842098086,
+      "top_reaction_N": 2.5533620806504147
+    },
+    {
+      "parameter": "mu",
+      "factor": 1,
+      "stretch": 1.08,
+      "J": 1,
+      "passive_stored_J": 0.012200085508764762,
+      "solve_potential_J": 0.012200085508764762,
+      "top_reaction_N": 2.642426552529702
+    },
+    {
+      "parameter": "mu",
+      "factor": 2,
+      "stretch": 1.08,
+      "J": 1,
+      "passive_stored_J": 0.013514218842098117,
+      "solve_potential_J": 0.013514218842098117,
+      "top_reaction_N": 2.8205554962882746
+    },
+    {
+      "parameter": "bulk",
+      "factor": 0.5,
+      "stretch": 1.08,
+      "J": 1,
+      "passive_stored_J": 0.012200085508764762,
+      "solve_potential_J": 0.012200085508764762,
+      "top_reaction_N": 2.6424265525299195
+    },
+    {
+      "parameter": "bulk",
+      "factor": 1,
+      "stretch": 1.08,
+      "J": 1,
+      "passive_stored_J": 0.012200085508764762,
+      "solve_potential_J": 0.012200085508764762,
+      "top_reaction_N": 2.642426552529702
+    },
+    {
+      "parameter": "bulk",
+      "factor": 2,
+      "stretch": 1.08,
+      "J": 1,
+      "passive_stored_J": 0.012200085508764762,
+      "solve_potential_J": 0.012200085508764762,
+      "top_reaction_N": 2.642426552529265
+    },
+    {
+      "parameter": "kf",
+      "factor": 0.5,
+      "stretch": 1.08,
+      "J": 1,
+      "passive_stored_J": 0.006757109421049058,
+      "solve_potential_J": 0.006757109421049058,
+      "top_reaction_N": 1.410277748143919
+    },
+    {
+      "parameter": "kf",
+      "factor": 1,
+      "stretch": 1.08,
+      "J": 1,
+      "passive_stored_J": 0.012200085508764762,
+      "solve_potential_J": 0.012200085508764762,
+      "top_reaction_N": 2.642426552529702
+    },
+    {
+      "parameter": "kf",
+      "factor": 2,
+      "stretch": 1.08,
+      "J": 1,
+      "passive_stored_J": 0.023086037684196172,
+      "solve_potential_J": 0.023086037684196172,
+      "top_reaction_N": 5.1067241613012655
+    },
+    {
+      "parameter": "sigma0",
+      "factor": 0.5,
+      "stretch": 1.08,
+      "J": 1,
+      "passive_stored_J": 0.012200085508764762,
+      "solve_potential_J": 0.09713685012956455,
+      "top_reaction_N": 11.187524792529704
+    },
+    {
+      "parameter": "sigma0",
+      "factor": 1,
+      "stretch": 1.08,
+      "J": 1,
+      "passive_stored_J": 0.012200085508764762,
+      "solve_potential_J": 0.18207361475036432,
+      "top_reaction_N": 19.73262303252971
+    },
+    {
+      "parameter": "sigma0",
+      "factor": 2,
+      "stretch": 1.08,
+      "J": 1,
+      "passive_stored_J": 0.012200085508764762,
+      "solve_potential_J": 0.3519471439919639,
+      "top_reaction_N": 36.82281951252971
+    }
+  ],
+  "limitations": [
+    "Authored rectangular block, not atlas muscle geometry or measured human properties.",
+    "Quasistatic fixed-activation solves, not physiological transient speed.",
+    "Refinement and quadrature receipts assess this fixture only; no general incompressibility or locking guarantee.",
+    "Elapsed times are local profiling evidence, not a browser/mobile performance promise.",
+    "Active solve potential is not passive stored energy or metabolic work.",
+    "No accepted coupled elbow, whole-surface contact, aponeurosis solid or model-reference matching is implemented here."
+  ]
+}

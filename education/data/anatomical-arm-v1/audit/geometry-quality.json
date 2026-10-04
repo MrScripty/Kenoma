@@ -1,0 +1,277 @@
+{
+  "source_sha256": "c3ca97df0d41302de5c3e553cb9974c4c0bd68a30866c26a18e1ba41ceab4257",
+  "frame": {
+    "origin_m": [
+      -0.21619444420892808,
+      -0.07851378858697686,
+      1.0427000083199367
+    ],
+    "axis_unit": [
+      -0.9648533656758845,
+      0.23142706890543924,
+      0.12449696591385262
+    ],
+    "proximal_unit": [
+      0.1168023626262171,
+      -0.046713659252016516,
+      0.992055967233815
+    ],
+    "posterior_unit": [
+      0.2354043135306819,
+      0.9717300786829249,
+      0.01804060292852891
+    ],
+    "atlas_bind_angle_rad": 0.20482245594875664,
+    "hand_grip_m": [
+      -0.25747983552311937,
+      -0.12159036180531857,
+      0.7715207662217145
+    ],
+    "axis_evidence": "Derived from mesh-inspected articular surface candidates; interior joint-axis fit and pose collision review pending. Not a measured functional axis.",
+    "grip_evidence": "Authored 40 mm distal extension beyond the mean distal bone landmarks; no hand mesh.",
+    "review_status": "Independent anatomical review pending",
+    "units": "m, rad"
+  },
+  "bones": [
+    {
+      "element_id": "FJ3368",
+      "name": "right humerus",
+      "volume_m3": 0.00015562274705739493,
+      "closed_components": 1,
+      "flipped_faces": 0,
+      "vertices": 1894,
+      "triangles": 3784
+    },
+    {
+      "element_id": "FJ3349",
+      "name": "right radius",
+      "volume_m3": 0.00003939231414562754,
+      "closed_components": 1,
+      "flipped_faces": 0,
+      "vertices": 338,
+      "triangles": 672
+    },
+    {
+      "element_id": "FJ3391",
+      "name": "right ulna",
+      "volume_m3": 0.000038254980785931525,
+      "closed_components": 1,
+      "flipped_faces": 0,
+      "vertices": 419,
+      "triangles": 834
+    }
+  ],
+  "muscles": [
+    {
+      "name": "right brachialis",
+      "element_id": "FJ1486",
+      "nodes": 585,
+      "elements": 252,
+      "reference_volume_m3": 0.00006507269150414686,
+      "source_volume_m3": 0.00007671120729688691,
+      "quality": {
+        "positive_reference_quadrature": true,
+        "minimum_element_volume_m3": 1.1567423422994302e-8,
+        "whole_source_closed_components": 5,
+        "source_faces_reoriented": 0
+      },
+      "segmentation": {
+        "evidence_class": "authored_atlas_derived_remesh",
+        "belly_area_fraction": 0.25,
+        "rings": 7,
+        "sectors": 16,
+        "source_cross_section_loops": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "limits": "Largest source-plane loop, consistent non-convex perimeter triangulation and authored 25% peak-area belly cut. Straight reference edges and curved centreline guides. Not measured tendon/aponeurosis boundaries or fibre architecture."
+      }
+    },
+    {
+      "name": "short head of right biceps brachii",
+      "element_id": "FJ1512",
+      "nodes": 585,
+      "elements": 252,
+      "reference_volume_m3": 0.00006358895849884152,
+      "source_volume_m3": 0.00007400561763934674,
+      "quality": {
+        "positive_reference_quadrature": true,
+        "minimum_element_volume_m3": 1.1623482305078969e-8,
+        "whole_source_closed_components": 8,
+        "source_faces_reoriented": 8
+      },
+      "segmentation": {
+        "evidence_class": "authored_atlas_derived_remesh",
+        "belly_area_fraction": 0.25,
+        "rings": 7,
+        "sectors": 16,
+        "source_cross_section_loops": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "limits": "Largest source-plane loop, consistent non-convex perimeter triangulation and authored 25% peak-area belly cut. Straight reference edges and curved centreline guides. Not measured tendon/aponeurosis boundaries or fibre architecture."
+      }
+    },
+    {
+      "name": "long head of right biceps brachii",
+      "element_id": "FJ1478",
+      "nodes": 585,
+      "elements": 252,
+      "reference_volume_m3": 0.00008093851163041635,
+      "source_volume_m3": 0.00009545632436770284,
+      "quality": {
+        "positive_reference_quadrature": true,
+        "minimum_element_volume_m3": 1.4137626390982114e-8,
+        "whole_source_closed_components": 3,
+        "source_faces_reoriented": 0
+      },
+      "segmentation": {
+        "evidence_class": "authored_atlas_derived_remesh",
+        "belly_area_fraction": 0.25,
+        "rings": 7,
+        "sectors": 16,
+        "source_cross_section_loops": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "limits": "Largest source-plane loop, consistent non-convex perimeter triangulation and authored 25% peak-area belly cut. Straight reference edges and curved centreline guides. Not measured tendon/aponeurosis boundaries or fibre architecture."
+      }
+    },
+    {
+      "name": "medial head of right triceps brachii",
+      "element_id": "FJ1480",
+      "nodes": 585,
+      "elements": 252,
+      "reference_volume_m3": 0.0000566878449094311,
+      "source_volume_m3": 0.00006414653284967539,
+      "quality": {
+        "positive_reference_quadrature": true,
+        "minimum_element_volume_m3": 4.122703291360999e-9,
+        "whole_source_closed_components": 2,
+        "source_faces_reoriented": 0
+      },
+      "segmentation": {
+        "evidence_class": "authored_atlas_derived_remesh",
+        "belly_area_fraction": 0.25,
+        "rings": 7,
+        "sectors": 16,
+        "source_cross_section_loops": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "limits": "Largest source-plane loop, consistent non-convex perimeter triangulation and authored 25% peak-area belly cut. Straight reference edges and curved centreline guides. Not measured tendon/aponeurosis boundaries or fibre architecture."
+      }
+    },
+    {
+      "name": "lateral head of right triceps brachii",
+      "element_id": "FJ1477",
+      "nodes": 585,
+      "elements": 252,
+      "reference_volume_m3": 0.00011451582434323131,
+      "source_volume_m3": 0.0001298925496300595,
+      "quality": {
+        "positive_reference_quadrature": true,
+        "minimum_element_volume_m3": 1.7263543237484538e-8,
+        "whole_source_closed_components": 3,
+        "source_faces_reoriented": 2
+      },
+      "segmentation": {
+        "evidence_class": "authored_atlas_derived_remesh",
+        "belly_area_fraction": 0.25,
+        "rings": 7,
+        "sectors": 16,
+        "source_cross_section_loops": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "limits": "Largest source-plane loop, consistent non-convex perimeter triangulation and authored 25% peak-area belly cut. Straight reference edges and curved centreline guides. Not measured tendon/aponeurosis boundaries or fibre architecture."
+      }
+    },
+    {
+      "name": "long head of right triceps brachii",
+      "element_id": "FJ1479",
+      "nodes": 585,
+      "elements": 252,
+      "reference_volume_m3": 0.00011496072510381184,
+      "source_volume_m3": 0.0001332453328708725,
+      "quality": {
+        "positive_reference_quadrature": true,
+        "minimum_element_volume_m3": 1.195879508562097e-9,
+        "whole_source_closed_components": 2,
+        "source_faces_reoriented": 0
+      },
+      "segmentation": {
+        "evidence_class": "authored_atlas_derived_remesh",
+        "belly_area_fraction": 0.25,
+        "rings": 7,
+        "sectors": 16,
+        "source_cross_section_loops": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "limits": "Largest source-plane loop, consistent non-convex perimeter triangulation and authored 25% peak-area belly cut. Straight reference edges and curved centreline guides. Not measured tendon/aponeurosis boundaries or fibre architecture."
+      }
+    },
+    {
+      "name": "right brachioradialis",
+      "element_id": "FJ1487",
+      "nodes": 585,
+      "elements": 252,
+      "reference_volume_m3": 0.00006525539750423486,
+      "source_volume_m3": 0.00007909510205830804,
+      "quality": {
+        "positive_reference_quadrature": true,
+        "minimum_element_volume_m3": 1.39017073109344e-9,
+        "whole_source_closed_components": 1,
+        "source_faces_reoriented": 0
+      },
+      "segmentation": {
+        "evidence_class": "authored_atlas_derived_remesh",
+        "belly_area_fraction": 0.25,
+        "rings": 7,
+        "sectors": 16,
+        "source_cross_section_loops": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "limits": "Largest source-plane loop, consistent non-convex perimeter triangulation and authored 25% peak-area belly cut. Straight reference edges and curved centreline guides. Not measured tendon/aponeurosis boundaries or fibre architecture."
+      }
+    }
+  ],
+  "limits": "Geometry and constitutive foundation; no accepted anatomical rig or coupled simulation yet"
+}
