@@ -2,39 +2,40 @@
   "schema": 1,
   "frame": {
     "origin_m": [
-      -0.21619444420892808,
-      -0.07851378858697686,
-      1.0427000083199367
+      -0.211,
+      -0.0702352010774452,
+      1.0444103477692186
     ],
     "axis_unit": [
-      -0.9648533656758845,
-      0.23142706890543924,
-      0.12449696591385262
+      -0.9547432358233934,
+      0.10312281883629201,
+      0.27898214617558126
     ],
     "proximal_unit": [
-      0.1168023626262171,
-      -0.046713659252016516,
-      0.992055967233815
+      0.2682770006482004,
+      -0.10642200707998935,
+      0.9574454591945549
     ],
     "posterior_unit": [
-      0.2354043135306819,
-      0.9717300786829249,
-      0.01804060292852891
+      0.12842431456963882,
+      0.9889590692462069,
+      0.07394021086658094
     ],
-    "atlas_bind_angle_rad": 0.20482245594875664,
+    "atlas_bind_angle_rad": 0.2841100888248933,
     "hand_grip_m": [
-      -0.25747983552311937,
-      -0.12159036180531857,
-      0.7715207662217145
+      -0.25824388536562315,
+      -0.12286093123159579,
+      0.7718685991833019
     ],
-    "axis_evidence": "Derived from mesh-inspected articular surface candidates; interior joint-axis fit and pose collision review pending. Not a measured functional axis.",
+    "axis_evidence": "Smallest eigenvector of area-weighted articular normal covariance; area-weighted nonlinear radial circle fit with fixed X gauge. No articular surface point is treated as the axis center.",
     "grip_evidence": "Authored 40 mm distal extension beyond the mean distal bone landmarks; no hand mesh.",
     "review_status": "Independent anatomical review pending",
-    "units": "m, rad"
+    "units": "m, rad",
+    "axis_fit_receipt": "audit/interior-axis-fit.json"
   },
   "poses": [
     {
-      "angle_degrees": 11.735462275367977,
+      "angle_degrees": 16.278309006753318,
       "pairs": [
         {
           "bones": [
@@ -82,7 +83,7 @@
             "FJ3368",
             "FJ3391"
           ],
-          "broad_phase_candidates": 593,
+          "broad_phase_candidates": 477,
           "transverse_crossing_triangle_pairs": 0,
           "first_examples_in_welded_oriented_mesh": []
         },
@@ -91,7 +92,7 @@
             "FJ3349",
             "FJ3391"
           ],
-          "broad_phase_candidates": 108,
+          "broad_phase_candidates": 94,
           "transverse_crossing_triangle_pairs": 0,
           "first_examples_in_welded_oriented_mesh": []
         }
@@ -114,7 +115,7 @@
             "FJ3368",
             "FJ3391"
           ],
-          "broad_phase_candidates": 151,
+          "broad_phase_candidates": 287,
           "transverse_crossing_triangle_pairs": 0,
           "first_examples_in_welded_oriented_mesh": []
         },
@@ -123,7 +124,7 @@
             "FJ3349",
             "FJ3391"
           ],
-          "broad_phase_candidates": 293,
+          "broad_phase_candidates": 218,
           "transverse_crossing_triangle_pairs": 0,
           "first_examples_in_welded_oriented_mesh": []
         }
@@ -146,7 +147,7 @@
             "FJ3368",
             "FJ3391"
           ],
-          "broad_phase_candidates": 8,
+          "broad_phase_candidates": 236,
           "transverse_crossing_triangle_pairs": 0,
           "first_examples_in_welded_oriented_mesh": []
         },
@@ -155,7 +156,7 @@
             "FJ3349",
             "FJ3391"
           ],
-          "broad_phase_candidates": 383,
+          "broad_phase_candidates": 269,
           "transverse_crossing_triangle_pairs": 0,
           "first_examples_in_welded_oriented_mesh": []
         }
@@ -178,7 +179,7 @@
             "FJ3368",
             "FJ3391"
           ],
-          "broad_phase_candidates": 0,
+          "broad_phase_candidates": 180,
           "transverse_crossing_triangle_pairs": 0,
           "first_examples_in_welded_oriented_mesh": []
         },
@@ -187,7 +188,7 @@
             "FJ3349",
             "FJ3391"
           ],
-          "broad_phase_candidates": 173,
+          "broad_phase_candidates": 155,
           "transverse_crossing_triangle_pairs": 0,
           "first_examples_in_welded_oriented_mesh": []
         }
@@ -210,7 +211,7 @@
             "FJ3368",
             "FJ3391"
           ],
-          "broad_phase_candidates": 0,
+          "broad_phase_candidates": 115,
           "transverse_crossing_triangle_pairs": 0,
           "first_examples_in_welded_oriented_mesh": []
         },

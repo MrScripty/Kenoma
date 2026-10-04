@@ -12,8 +12,9 @@
     "test:browser": "python3 tests/browser.py",
     "test:mobile": "python3 tests/mobile_startup.py",
     "anatomy:geometry": "node tools/build-anatomical-geometry.mjs && node tools/build-anatomical-attachments.mjs",
-    "anatomy:proofs": "python3 tools/check_anatomical_proofs.py",
-    "anatomy:inspect": "node tools/build-anatomy-inspector.mjs"
+    "anatomy:proofs": "python3 tools/check_anatomical_proofs.py && python3 tools/check_coupled_proofs.py",
+    "anatomy:inspect": "node tools/build-anatomy-inspector.mjs",
+    "anatomy:coupling": "node tools/anatomical-coupling-experiment.mjs && node tools/build-coupled-inspector.mjs"
   },
   "dependencies": {
     "three": "0.180.0"

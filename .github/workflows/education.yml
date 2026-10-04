@@ -48,8 +48,12 @@ jobs:
           npm run anatomy:proofs
           node tools/anatomical-fixture-experiment.mjs
           node tools/anatomical-bone-collision-audit.mjs
+          node tools/anatomical-apposition-audit.mjs
+          node tools/anatomical-remesh-audit.mjs
+          npm run anatomy:coupling
           npm run anatomy:inspect
           python3 tests/anatomical_inspection.py
+          python3 tests/coupled_inspection.py
       - name: Check mechanics and build checked proofs and book
         run: |
           npm test

@@ -9,11 +9,20 @@ assert proof['source_sha256']==hashlib.sha256((ROOT/'proofs/Mechanics.lean').rea
 assert proof['claims_sha256']==hashlib.sha256((ROOT/'proofs/claims.json').read_bytes()).hexdigest()
 assert len(proof['claims'])==12 and all(c['status']=='checked' for c in proof['claims'])
 assert all(set(c['axioms'])<={'propext','Quot.sound','Classical.choice'} for c in proof['claims'])
+families=[(proof,'checked-source-appendix','proof-check-receipt','kernel-dependency-report')]
+for receipt_name,source_name,claims_name,prefix,count in [('transfer-proof-status.json','AnatomicalTransfer.lean','anatomical-claims.json','transfer',2),('coupled-proof-status.json','CoupledMechanics.lean','coupled-claims.json','coupled',7)]:
+ receipt=json.loads((out/receipt_name).read_text())
+ assert receipt['source_sha256']==hashlib.sha256((ROOT/'proofs'/source_name).read_bytes()).hexdigest()
+ assert receipt['claims_sha256']==hashlib.sha256((ROOT/'proofs'/claims_name).read_bytes()).hexdigest()
+ assert len(receipt['claims'])==count and all(c['status']=='checked' for c in receipt['claims'])
+ assert all(set(c['axioms'])<={'propext','Quot.sound','Classical.choice'} for c in receipt['claims'])
+ families.append((receipt,prefix+'-source-appendix',prefix+'-proof-receipt',prefix+'-kernel-report'))
+total_claims=sum(len(r['claims']) for r,*_ in families)
 text=(out/'kenoma-mechanics.md').read_text();assert not re.search(r'\{\{[A-Za-z]',text)
 for id in ['force-pair','torque-linearity','torque-origin','central-pair','kinetic-sign','torque-example']:
  assert f'Checked claim {id}:' in text
 browser=json.loads((out/'browser-check.json').read_text());assert browser['status']=='passed'
-assert browser['proof_cards']==len(proof['claims'])
+assert browser['proof_cards']==total_claims
 assert browser['html_sha256']==hashlib.sha256((out/'index.html').read_bytes()).hexdigest()
 assert browser['app_sha256']==hashlib.sha256((out/'assets/app.js').read_bytes()).hexdigest()
 mobile=json.loads((out/'mobile-startup-check.json').read_text())
@@ -34,7 +43,7 @@ for relative,digest in manifest['input_sha256'].items():
  assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Build input changed: '+relative
 for item in json.loads((out/'data/elbow-v1/provenance.json').read_text())['files']:
  assert hashlib.sha256((out/'data/elbow-v1'/item['path']).read_bytes()).hexdigest()==item['sha256']
-proof_destinations={key:0 for key in ['checked-source-appendix','proof-check-receipt','kernel-dependency-report']}
+proof_destinations={key:0 for _,*keys in families for key in keys}
 for page in doc:
  for link in page.get_links():
   uri=link.get('uri','');parsed=urlparse(uri)
@@ -45,14 +54,14 @@ for page in doc:
    proof_destinations[destination]+=1
  for block in page.get_text('blocks'):
   assert block[0]>=-1 and block[1]>=-1 and block[2]<=page.rect.width+1 and block[3]<=page.rect.height+1
-assert all(count==len(proof['claims']) for count in proof_destinations.values()),'Missing internal PDF proof destinations'
+assert all(proof_destinations[key]==len(receipt['claims']) for receipt,*keys in families for key in keys),'Missing internal PDF proof destinations'
 spans=[span for page in doc for block in page.get_text('dict')['blocks'] if 'lines' in block for line in block['lines'] for span in line['spans']]
 print_label_sizes={}
 for label in ['Humerus','Triceps medial head','Unit 1','Elapsed time from retained trial segment (s)']:
  sizes=[s['size'] for s in spans if s['text']==label]
  assert sizes and min(sizes)>=10,'Evidence figure label is missing or too small: '+label
  print_label_sizes[label]=round(min(sizes),2)
-results={'status':'passed','pdf_pages':len(doc),'proof_cards':len(proof['claims']),'pdf_links':'no loopback or file URLs','pdf_proof_destinations':proof_destinations,'browser':browser['browser_version'],
+results={'status':'passed','pdf_pages':len(doc),'proof_cards':total_claims,'pdf_links':'no loopback or file URLs','pdf_proof_destinations':proof_destinations,'browser':browser['browser_version'],
  'print_figure_label_minimum_pt':print_label_sizes,
  'scope':'Content, hash, glyph and page-bounds sanity; PDF appearance still requires visual review.'}
 (out/'artifact-check.json').write_text(json.dumps(results,indent=2)+'\n');print(json.dumps(results,indent=2))

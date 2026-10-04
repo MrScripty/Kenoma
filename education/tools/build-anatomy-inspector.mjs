@@ -3,7 +3,7 @@ import {mkdir,copyFile,writeFile,readFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 const root=fileURLToPath(new URL('../',import.meta.url)),out=root+'dist/anatomy-inspection/';await mkdir(out,{recursive:true});
-await mkdir(out+'audit/',{recursive:true});for(const file of ['geometry-quality.json','fixture-results.json','bone-axis-intersections.json'])await copyFile(root+'data/anatomical-arm-v1/audit/'+file,out+'audit/'+file);
+await mkdir(out+'audit/',{recursive:true});for(const file of ['geometry-quality.json','fixture-results.json','bone-axis-intersections.json','interior-axis-fit.json','apposition-results.json','remesh-discrepancy.json'])await copyFile(root+'data/anatomical-arm-v1/audit/'+file,out+'audit/'+file);
 const proof=JSON.parse(await readFile(root+'data/anatomical-arm-v1/audit/proof-status.json'));for(const [path,key] of [['proofs/AnatomicalTransfer.lean','source_sha256'],['proofs/anatomical-claims.json','claims_sha256']])if(createHash('sha256').update(await readFile(root+path)).digest('hex')!==proof[key])throw Error('Stale transfer proof receipt: '+path);
 await copyFile(root+'data/anatomical-arm-v1/audit/proof-status.json',out+'proof-status.json');await copyFile(root+'data/anatomical-arm-v1/audit/lean-check.txt',out+'lean-check.txt');await copyFile(root+'proofs/AnatomicalTransfer.lean',out+'AnatomicalTransfer.lean');
 await copyFile(root+'data/elbow-v1/data/bodyparts3d_right_arm_m.json',out+'atlas.json');

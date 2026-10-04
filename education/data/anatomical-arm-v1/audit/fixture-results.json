@@ -5,7 +5,7 @@
   "source_hashes": {
     "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
     "web/anatomical-element.mjs": "3f67a6bd31565c83d2cbea591c3cf1862a48e50cc4efa780880fda7e808d4b1f",
-    "web/anatomical-fixture.mjs": "ce706356932292652040d0f8efe0cbdab92a046e0ea8ea0ad97e7d89e37474c6",
+    "web/anatomical-fixture.mjs": "d53b5dca829883b4e91c02e5b88f3ac745ce7510cf28aabfcbd6cb978353a30a",
     "web/anatomical-solver.mjs": "2e23ae4e594c0947d15b21cdcd0422ad27e2bc3c2ac3af40293703c208906bfb",
     "web/anatomical-transfer.mjs": "1e82dabebf5a6247af9216a70292216b194a52545abf8f3b73c93ee6e2f22431",
     "tools/anatomical-fixture-experiment.mjs": "ab2643c37480dd1908fec40bdd80b679e0c8cdbb4add28a260091abc43f77d02"
@@ -35,7 +35,7 @@
       "passive_stored_J": -1.4654943925042786e-17,
       "active_solve_potential_J": -6.195044477408375e-16,
       "every_accepted_energy_decreased": true,
-      "elapsed_ms": 7.234563000000001
+      "elapsed_ms": 7.510487999999995
     },
     {
       "name": "free-a0.05",
@@ -60,7 +60,7 @@
       "passive_stored_J": 0.065025387857221,
       "active_solve_potential_J": -0.5426362336816878,
       "every_accepted_energy_decreased": true,
-      "elapsed_ms": 487.306744
+      "elapsed_ms": 421.66449300000005
     },
     {
       "name": "loaded-a0.05-12N",
@@ -86,7 +86,7 @@
       "passive_stored_J": 0.009664813592117792,
       "active_solve_potential_J": -0.3289808254724016,
       "every_accepted_energy_decreased": true,
-      "elapsed_ms": 177.58693600000004
+      "elapsed_ms": 189.320331
     },
     {
       "name": "release-after-free",
@@ -115,7 +115,7 @@
       "passive_stored_J": 4.8814757187330695e-12,
       "active_solve_potential_J": 0,
       "every_accepted_energy_decreased": true,
-      "elapsed_ms": 837.32198
+      "elapsed_ms": 898.48691
     },
     {
       "name": "loaded-refinement-2-four",
@@ -145,7 +145,7 @@
       "passive_stored_J": 0.009724804941499425,
       "active_solve_potential_J": -0.34241930219059086,
       "every_accepted_energy_decreased": true,
-      "elapsed_ms": 2336.032781
+      "elapsed_ms": 2591.9810340000004
     },
     {
       "name": "loaded-refinement-1-subdivided32",
@@ -175,7 +175,7 @@
       "passive_stored_J": 0.010213947607914841,
       "active_solve_potential_J": -0.32066232217879376,
       "every_accepted_energy_decreased": true,
-      "elapsed_ms": 906.8001119999994
+      "elapsed_ms": 1102.0414980000005
     },
     {
       "name": "loaded-refinement-2-subdivided32",
@@ -205,7 +205,7 @@
       "passive_stored_J": 0.009877476728134885,
       "active_solve_potential_J": -0.3396777968982174,
       "every_accepted_energy_decreased": true,
-      "elapsed_ms": 15310.768564000002
+      "elapsed_ms": 16247.686452000002
     },
     {
       "name": "loaded-bulk-factor-0.5",
@@ -245,7 +245,7 @@
       "passive_stored_J": 0.009961604057086789,
       "active_solve_potential_J": -0.3310934980622925,
       "every_accepted_energy_decreased": true,
-      "elapsed_ms": 74.32527899999695
+      "elapsed_ms": 70.05737900000167
     },
     {
       "name": "loaded-bulk-factor-2",
@@ -285,7 +285,7 @@
       "passive_stored_J": 0.009501901928269506,
       "active_solve_potential_J": -0.3278511901905927,
       "every_accepted_energy_decreased": true,
-      "elapsed_ms": 118.43008299999929
+      "elapsed_ms": 110.08721700000024
     }
   ],
   "half_double_affine_material_sensitivity": [
