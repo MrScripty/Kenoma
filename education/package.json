@@ -9,7 +9,8 @@
     "test:python": "python3 -m unittest discover -s tests -p 'test_*.py'",
     "proofs": "python3 tools/check_proofs.py",
     "pdf": "python3 tools/render_pdf.py",
-    "test:browser": "python3 tests/browser.py"
+    "test:browser": "python3 tests/browser.py",
+    "test:mobile": "python3 tests/mobile_startup.py"
   },
   "dependencies": {
     "three": "0.180.0"
