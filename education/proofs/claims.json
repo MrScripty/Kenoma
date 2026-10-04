@@ -1,8 +1,58 @@
 [
- {"id":"force-pair","theorem":"Kenoma.force_pair_cancels","claim":"An equal and opposite scalar force pair cancels.","assumptions":"Exact integer forces in a common positive unit scale; the force pair is assumed.","limitations":"Does not prove Newton's third law from biology or establish a system boundary."},
- {"id":"torque-linearity","theorem":"Kenoma.torque_linear","claim":"Planar torque is additive in applied force at a fixed point.","assumptions":"Exact integer planar coordinates and forces; shared positive length and force scales.","limitations":"No arbitrary real coordinates, JavaScript refinement or rounding bound is established."},
- {"id":"torque-origin","theorem":"Kenoma.torque_origin_shift","claim":"Changing the torque origin subtracts origin cross force.","assumptions":"Exact integer planar coordinates and forces in common positive scales.","limitations":"This is an algebraic identity, not a claim that torque is independent of origin."},
- {"id":"central-pair","theorem":"Kenoma.central_pair_torque","claim":"Equal opposite central forces produce zero summed planar torque.","assumptions":"Force at A is k(B-A); force at B is its negative; integer k and positions.","limitations":"Noncentral pairs can form a couple. Tissue/contact models are not verified by this theorem."},
- {"id":"kinetic-sign","theorem":"Kenoma.kinetic_numerator_nonnegative","claim":"The exact numerator m(vx²+vy²) of twice kinetic energy is nonnegative.","assumptions":"Integer mass m ≥ 0; integer velocity coordinates; positive SI scale factors.","limitations":"The factor 1/2 and unit scales are interpreted in prose; no integrator conservation or biological validation."},
- {"id":"torque-example","theorem":"Kenoma.torque_worked_example","claim":"300 mm crossed with -49050 mN gives -14715000 scaled torque units.","assumptions":"r=(300,0) mm; F=(0,-49050) mN; product scale 10^-6 N m.","limitations":"Only this exact arithmetic example is checked, not trigonometric slider states."}
+  {
+    "id": "force-pair",
+    "theorem": "Kenoma.force_pair_cancels",
+    "claim": "An equal and opposite scalar force pair cancels.",
+    "assumptions": "Exact integer forces in a common positive unit scale; the force pair is assumed.",
+    "limitations": "Does not prove Newton's third law from biology or establish a system boundary."
+  },
+  {
+    "id": "torque-linearity",
+    "theorem": "Kenoma.torque_linear",
+    "claim": "Planar torque is additive in applied force at a fixed point.",
+    "assumptions": "Exact integer planar coordinates and forces; shared positive length and force scales.",
+    "limitations": "No arbitrary real coordinates, JavaScript refinement or rounding bound is established."
+  },
+  {
+    "id": "torque-origin",
+    "theorem": "Kenoma.torque_origin_shift",
+    "claim": "Changing the torque origin subtracts origin cross force.",
+    "assumptions": "Exact integer planar coordinates and forces in common positive scales.",
+    "limitations": "This is an algebraic identity, not a claim that torque is independent of origin."
+  },
+  {
+    "id": "central-pair",
+    "theorem": "Kenoma.central_pair_torque",
+    "claim": "Equal opposite central forces produce zero summed planar torque.",
+    "assumptions": "Force at A is k(B-A); force at B is its negative; integer k and positions.",
+    "limitations": "Noncentral pairs can form a couple. Tissue/contact models are not verified by this theorem."
+  },
+  {
+    "id": "kinetic-sign",
+    "theorem": "Kenoma.kinetic_numerator_nonnegative",
+    "claim": "The exact numerator m(vx\u00b2+vy\u00b2) of twice kinetic energy is nonnegative.",
+    "assumptions": "Integer mass m \u2265 0; integer velocity coordinates; positive SI scale factors.",
+    "limitations": "The factor 1/2 and unit scales are interpreted in prose; no integrator conservation or biological validation."
+  },
+  {
+    "id": "torque-example",
+    "theorem": "Kenoma.torque_worked_example",
+    "claim": "300 mm crossed with -49050 mN gives -14715000 scaled torque units.",
+    "assumptions": "r=(300,0) mm; F=(0,-49050) mN; product scale 10^-6 N m.",
+    "limitations": "Only this exact arithmetic example is checked, not trigonometric slider states."
+  },
+  {
+    "id": "activation-bound",
+    "theorem": "Kenoma.activation_weighted_bound",
+    "claim": "A nonnegative integer-weighted mixture of bounded inputs has a bounded numerator.",
+    "assumptions": "Exact integer a and u in [0, scale]; weight w in [0, d]. For a normalized mixture, additionally d > 0.",
+    "limitations": "Does not prove exp() bounds, floating-point activation, or physiological validity; the numerator is bounded by scale*d."
+  },
+  {
+    "id": "virtual-power",
+    "theorem": "Kenoma.virtual_power_identity",
+    "claim": "The signed generalized-force power equals negative tension times path-rate under the chain-product assumption.",
+    "assumptions": "Exact integer force, path derivative dl and angular velocity omega in compatible positive SI scales; derivative and path-rate relations are assumed.",
+    "limitations": "Only multiplication/sign algebra is checked; calculus, the geometric derivative and browser arithmetic require separate numerical verification."
+  }
 ]

@@ -2,7 +2,7 @@
 
 A body can look convincing while its forces are wrong. A model can balance its forces while its surface looks wrong. Kenoma's educational book asks how to tell the difference, beginning with quantities that we can calculate and inspect before adding anatomy. The intended reader is a programmer, technical artist, or engineering student who wants to connect geometry, mechanics, computation, and evidence.
 
-This first milestone develops force, torque, and energy. The web edition contains three small 3D laboratories; the printed edition contains the same explanations, default-state diagrams, worked values, and a numerical experiment. The later arm-and-dumbbell capstone will combine these foundations with muscle activation, tendon stretch, soft tissue, and contact. That capstone and the anatomical dataset integration are still pending. This edition does not contain a patient-specific model or clinical validation.
+This edition develops force, torque, energy, anatomical evidence, and a force-driven schematic elbow with activation and a dumbbell load. The web edition contains four 3D laboratories; the printed edition contains the same explanations, default-state diagrams, worked values, and original numerical experiments. Source-grounded chapters explain anatomy, tissue, contact and graphics approximations. Published human-study summaries are distinguished from the executable's authored parameters. Raw anatomical dataset integration, compliant tendon/tissue mechanics and the complete contact/skinning capstone remain pending. This edition does not contain a patient-specific model or clinical validation.
 
 The content is an **educational extension**. The existing production plans in `docs/plans/` remain separate. A teaching experiment does not silently add a simulator requirement to the Bevy MVP, change its canonical storage format, or establish a production algorithm choice.
 
@@ -30,9 +30,9 @@ Store physics in SI units and convert only at input and output. The Internationa
 
 ## How to use a laboratory
 
-Read the model label and the worked example first. Change one control, predict a result, and inspect the numerical output before interpreting the image. Step through time when needed; use Reset to return all physics parameters and the camera to defaults. The force and energy laboratories start paused and stop at a bounded step count. Parameter changes reset time rather than mixing trajectories from different models.
+Read the model label and the worked example first. Change one control, predict a result, and inspect the numerical output before interpreting the image. Step through time when needed; use Reset to return all physics parameters and the camera to defaults. The laboratories start paused and stop at a bounded step count. Parameter changes reset time rather than mixing trajectories from different models, except that the elbow's excitation can change during a trajectory: activation and velocity continue through release.
 
-Every scene has a text description and static illustration. If WebGL is unavailable, the controls and numerical results still work. The image remains a teaching diagram with no anatomical geometry or medical measurements. There are no imported anatomy assets in this milestone: all cylinders, spheres, grids, and arrows are original procedural **schematic teaching geometry**.
+Every scene has a text description and static illustration. If WebGL is unavailable, the controls and numerical results still work. The image remains a teaching diagram with no imported anatomical geometry; the human-study summaries in the anatomy chapter are separate from its parameter choices. There are no imported anatomy assets in this milestone: all cylinders, spheres, grids, and arrows are original procedural **schematic teaching geometry**.
 
 ## A useful question to carry forward
 

@@ -45,6 +45,25 @@ theorem kinetic_numerator_nonnegative (m vx vy : Int) (hm : 0 ≤ m) :
 -- Product scale is 10^-6 N m; result is -14.715 N m.
 theorem torque_worked_example : torque 300 0 0 (-49050) = -14715000 := by decide
 
+-- The weights are integers. This is a convex-combination numerator contract,
+-- not a theorem about exp(), the RK4 code, or a physiological activation law.
+theorem activation_weighted_bound (a u w d scale : Int)
+    (ha0 : 0 ≤ a) (hau : a ≤ scale) (hu0 : 0 ≤ u) (huu : u ≤ scale)
+    (hw : 0 ≤ w) (hwd : w ≤ d) :
+    0 ≤ a * w + u * (d - w) ∧ a * w + u * (d - w) ≤ scale * d := by
+  have hdw : 0 ≤ d - w := by omega
+  constructor
+  · exact Int.add_nonneg (Int.mul_nonneg ha0 hw) (Int.mul_nonneg hu0 hdw)
+  · calc
+      a * w + u * (d - w) ≤ scale * w + scale * (d - w) :=
+        Int.add_le_add (Int.mul_le_mul_of_nonneg_right hau hw)
+          (Int.mul_le_mul_of_nonneg_right huu hdw)
+      _ = scale * d := by simp only [Int.mul_sub]; omega
+
+theorem virtual_power_identity (force dl omega : Int) :
+    (-force * dl) * omega = -(force * (dl * omega)) := by
+  simp only [Int.neg_mul, Int.mul_assoc]
+
 end Kenoma
 
 #print axioms Kenoma.force_pair_cancels
@@ -53,3 +72,5 @@ end Kenoma
 #print axioms Kenoma.central_pair_torque
 #print axioms Kenoma.kinetic_numerator_nonnegative
 #print axioms Kenoma.torque_worked_example
+#print axioms Kenoma.activation_weighted_bound
+#print axioms Kenoma.virtual_power_identity

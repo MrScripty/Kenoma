@@ -18,7 +18,11 @@ LABS={
  'energy':{'title':'Laboratory 3 · Numerical energy','model':'Ideal undamped linear spring; fixed physics steps; 600-step playback limit.',
   'description':'A spring connects a wall to a mass marker. Extension is visually exaggerated and fitted to the view. The energy chart shows a solid numerical trace and a dashed initial-energy reference. Read numeric values when the chart rescales.',
   'caption':'Initial state: m = 1 kg, k = 40 N/m, x = 0.20 m, v = 0 m/s, E = 0.80 J. Default symplectic Euler step h = 0.02 s. Original schematic geometry.',
-  'controls':[]}
+  'controls':[]},
+ 'elbow':{'title':'Laboratory 4 · Articulated elbow and activation','model':'Schematic one-hinge forward dynamics or prescribed hold; toy line muscle; rigid tendon; no force–velocity law or tissue/contact mechanics.',
+  'description':'The fixed upper segment joins a rotating forearm and dumbbell. Gold markers locate a synthetic flexor path. The red belly is an illustrative shape with no mechanical force of its own. The yellow arrow marks dumbbell gravity.',
+  'caption':'Original schematic: q starts at 30° from downward, load 5 kg, excitation 0.6, activation 0, h = 0.005 s. Dimensions and actuator parameters are teaching choices, not anatomical measurements.',
+  'controls':[('load','Dumbbell mass (kg)',0,10,0.5,5),('excitation','Excitation u (0–1)',0,1,0.05,0.6),('angle','Initial / prescribed flexion q (°)',0,135,1,30)]}
 }
 def lab_block(key,web):
     lab=LABS[key];e=html.escape
@@ -30,7 +34,10 @@ def lab_block(key,web):
     if key=='energy':
         controls+='<div class="control"><label for="energy-method">Integrator</label><select id="energy-method" data-param="method"><option value="explicit">Explicit Euler</option><option value="symplectic" selected>Symplectic Euler</option><option value="verlet">Velocity Verlet</option></select></div>'
         controls+='<div class="control"><label for="energy-dt">Step size h (s)</label><select id="energy-dt" data-param="dt"><option value="0.005">0.005 s</option><option value="0.01">0.01 s</option><option value="0.02" selected>0.02 s</option><option value="0.05">0.05 s</option><option value="0.1">0.10 s</option></select></div>'
+    if key=='elbow':
+        controls+='<div class="control"><label for="elbow-mode">Motion mode</label><select id="elbow-mode" data-param="mode"><option value="forward">Force-driven hinge</option><option value="prescribed">Prescribed static hold</option></select></div><div class="control"><label for="elbow-dt">Physics step h (s)</label><select id="elbow-dt" data-param="dt"><option value="0.0025">0.0025 s</option><option value="0.005" selected>0.005 s</option><option value="0.01">0.01 s</option></select></div>'
     temporal='<button data-action="play">Play</button><button data-action="step">Single step</button>' if key!='torque' else ''
+    if key=='elbow':temporal+='<button data-action="pulse">Lift / release pulse</button><button data-action="release">Release excitation</button><button data-action="export">Download trace</button>'
     chart=''
     if key=='energy':
         chart='<svg class="energy-chart" viewBox="0 0 580 205" role="img" aria-label="Energy versus step number"><title>Energy versus step number</title><text class="scale" x="40" y="20" font-size="13">Energy range 0 to 0.96 J</text><path d="M40 30V160H540" fill="none" stroke="#456171"/><line class="reference" x1="40" x2="540" y1="52" y2="52" stroke="#754d1f" stroke-dasharray="5 4"/><polyline class="trace" fill="none" stroke="#087567" stroke-width="2" points="40,52"/><text x="40" y="185" font-size="13">0</text><text x="435" y="185" font-size="13">600 steps</text><text x="195" y="201" font-size="12">Solid: numerical energy · Dashed: initial 0.80 J</text></svg>'
@@ -71,13 +78,20 @@ def build():
     table='| Method | h (s) | Steps | Max relative energy deviation (%) | Final position error (m) |\n|:--|--:|--:|--:|--:|\n'
     for r in experiment['rows']:
         table+=f"| {r['method']} | {r['dt']:.2f} | {r['steps']} | {100*r['max_relative_energy_error']:.4g} | {r['final_position_error']:.4g} |\n"
+    elbow_text=subprocess.check_output(['node',str(ROOT/'tools/elbow-experiment.mjs')],text=True)
+    (OUT/'elbow-experiment.json').write_text(elbow_text)
+    elbow=json.loads(elbow_text)
+    elbow_table='| h (s) | Steps | Final q (°) | Final a | Active work (J) | Max balance residual (J) |\n|--:|--:|--:|--:|--:|--:|\n'
+    for r in elbow['rows']:
+        elbow_table+=f"| {r['dt']:.4f} | {r['steps']} | {r['finalAngleDegrees']:.5f} | {r['finalActivation']:.6f} | {r['activeWork']:.6f} | {r['maxBalanceResidual']:.3g} |\n"
     chapters='\n\n'.join((ROOT/'book/chapters'/p).read_text() for p in manifest['chapters'])
     def expand(web):
         text=re.sub(r'\{\{demo:(\w+)\}\}',lambda m:lab_block(m[1],web),chapters)
         text=re.sub(r'\{\{proof:([\w-]+)\}\}',lambda m:proof_block(m[1],web),text)
         text=text.replace('{{experiment}}',table)
+        text=text.replace('{{elbow-experiment}}',elbow_table)
         if '{{' in text: raise ValueError('Unexpanded build directive')
-        return text+'\n\n# Checked source appendix {#checked-source-appendix}\n\nThe source below is included for inspection. It was checked by the command and toolchain recorded in each receipt; compilation establishes only its stated domain.\n\n```lean\n'+source+'```\n'
+        return text+'\n\n# Checked source appendix {#checked-source-appendix}\n\nThe source below is included for inspection. It was checked by the command and toolchain recorded in each receipt; compilation establishes only its stated domain.\n\n```lean\n'+source+'```\n\n## Proof check receipt {#proof-check-receipt}\n\nFresh successful invocation: `'+evidence['command']+'`. Toolchain: '+evidence['lean_version']+'. Checked declarations: '+str(len(evidence['claims']))+'. Source SHA-256: `'+evidence['source_sha256']+'`. Claim-map SHA-256: `'+evidence['claims_sha256']+'`. Only bundled Std is used. This receipt establishes the exact claims above; it does not validate JavaScript, biological parameters, or medical use.\n\n## Kernel dependency report {#kernel-dependency-report}\n\n```text\n'+(OUT/'lean-check.txt').read_text()+'```\n'
     front=f"---\ntitle: {manifest['title']}\nsubtitle: {manifest['subtitle']}\nlang: en\n---\n\n"
     (OUT/'kenoma-mechanics.md').write_text(front+expand(False))
     staging=OUT/'web-staging.md';staging.write_text(front+expand(True))
@@ -100,7 +114,7 @@ def build():
     inputs={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for folder in ['book','web','proofs','tools'] for p in sorted((ROOT/folder).rglob('*')) if p.is_file() and '__pycache__' not in str(p)}
     for relative in ['package.json','package-lock.json','requirements.txt']:
         inputs[relative]=hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()
-    manifest_out={'schema':1,'milestone':'foundation-1','input_sha256':inputs,'lean':evidence['lean_version'],
+    manifest_out={'schema':1,'milestone':'articulated-elbow-2','input_sha256':inputs,'lean':evidence['lean_version'],
       'pandoc':subprocess.check_output(['pandoc','--version'],text=True).splitlines()[0],
       'node':subprocess.check_output(['node','--version'],text=True).strip(),
       'numerical_experiment':'experiment.json','proof_evidence':'proof-status.json',

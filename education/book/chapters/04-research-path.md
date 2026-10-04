@@ -1,6 +1,6 @@
 # From a lever to an arm {#from-a-lever-to-an-arm}
 
-The mechanics chapters establish a vocabulary and a testing pattern. The remaining educational work must supply anatomy, data provenance, muscle dynamics, deformation, and contact before an arm lifting a dumbbell can be presented as more than a schematic. The first three laboratories provide a working publishing foundation for that research, not its completion.
+The mechanics chapters establish a vocabulary and a testing pattern. The anatomy chapter integrates audited evidence, and Laboratory 4 supplies a force-driven schematic elbow, activation/release, and work accounting. Raw anatomical data, compliant tendon and tissue mechanics, and contact still need implementation before the full arm can be presented as more than a schematic. The four laboratories are a growing teaching progression, not its completion.
 
 ## Add anatomy with provenance
 
@@ -50,4 +50,4 @@ The canonical chapters are listed in `book/book.json` and assembled into one Mar
 
 Quarto is a reasonable later option for chapter navigation, cross-reference management, or a larger bibliography. This initial slice uses the available Pandoc and browser runtime to keep the reproducible path compact. There is no separate hand-maintained prose for PDF and web, and no hand-maintained proof success flag.
 
-GitHub Actions checks proofs, runs equation tests, builds the book, and tests the browser before preparing an artifact. A separate manually requested deployment job can publish that artifact after review. The workflow does not enable Pages, change repository settings, or publish this milestone automatically. Those hosted steps remain to be verified after the branch is pushed and reviewed.
+GitHub Actions checks proofs, runs equation tests, builds the book, and tests the browser before preparing an artifact. The foundation's exact-head workflow succeeded and was independently reviewed. A separate manually requested deployment job can publish an artifact after review. The workflow does not enable Pages, change repository settings, or publish this milestone automatically. This descendant's hosted build and any later deployment require their own verification.

@@ -1,6 +1,6 @@
 # Sources and evidence boundaries {#sources-and-evidence-boundaries}
 
-Sources below were opened and checked on 2026-10-04. The original mechanics explanations, worked examples, code, diagrams, and numerical experiment are produced for Kenoma. External source figures and anatomical assets have not been copied. The existing Apache-2.0 repository licence covers this original contribution; each future third-party asset must retain its own licence and attribution.
+The foundation sources and the primary papers marked independently opened below were checked on 2026-10-04. Dataset references supplied by the incoming audit are explicitly distinguished. The original mechanics explanations, worked examples, code, diagrams, and numerical experiments are produced for Kenoma. External source figures and anatomical assets have not been copied. The existing Apache-2.0 repository licence covers this original contribution; each future third-party asset must retain its own licence and attribution.
 
 ## International units {#source-bipm}
 
@@ -26,6 +26,30 @@ Matthew Millard, Thomas Uchida, Ajay Seth, and Scott L. Delp. “Flexing Computa
 
 [Lean official installation documentation](https://lean-lang.org/install/) and the [official Lean 4.19.0 release](https://github.com/leanprover/lean4/releases/tag/v4.19.0). The project pins the version deliberately; it does not claim it is the newest release. Only the bundled standard library is imported. The successful kernel checks and their transitive-axiom reports are linked in each proof card and in the generated build evidence.
 
+## Human architecture {#source-architecture}
+
+Wendy M. Murray, Thomas S. Buchanan and Scott L. Delp. “The isometric functional capacity of muscles that cross the elbow.” *Journal of Biomechanics* 33:943–952 (2000). [DOI](https://doi.org/10.1016/S0021-9290(00)00051-8), [author-hosted original PDF](https://research.me.udel.edu/buchanan/PDF_Files/Murray%2C%20Buchanan%2C%20Delp%2C%20JB%202000.pdf). Independently opened full text; Table 2 and §3 checked for the three reported study summaries. Human cadaver measurements and derived architecture estimates are distinguished. No source table image or participant-level data is copied.
+
+## Forearm indentation {#source-indentation}
+
+Jarkko T. Iivarinen, Rami K. Korhonen, Petro Julkunen and Jukka S. Jurvelin. “Experimental and computational analysis of soft tissue stiffness in forearm using a manual indentation device.” *Medical Engineering and Physics* 33:1245–1253 (2011). [DOI](https://doi.org/10.1016/j.medengphy.2011.05.015), [original abstract at PubMed](https://pubmed.ncbi.nlm.nih.gov/21696992/). Independently checked abstract, including nine subjects, layered inverse FE fitting, and 210/1.9 kPa resting estimates. Full publisher text was not independently read here; no additional material-law detail or raw observations are inferred.
+
+## Contracting tissue under compression {#source-compression}
+
+D. S. Ryan, S. Domínguez, S. A. Ross, N. Nigam and J. M. Wakeling. “The Energy of Muscle Contraction. II. Transverse Compression and Work.” *Frontiers in Physiology* 11:538522 (2020). [Original full text](https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2020.538522/full), [DOI](https://doi.org/10.3389/fphys.2020.538522). Independently opened primary paper for its model scope and force/work mechanism. Computational evidence is kept separate from measured human elbow-contact data.
+
+## Position-based compliance {#source-xpbd}
+
+Miles Macklin, Matthias Müller and Nuttapong Chentanez. “XPBD: Position-Based Simulation of Compliant Constrained Dynamics.” ACM MIG (2016). [Author-hosted original paper](https://mmacklin.com/xpbd.pdf). Independently opened for compliance, timestep scaling and multiplier accumulation. No implementation or benchmark speed from this paper is reproduced as a Kenoma result.
+
+## Geometric skinning {#source-dqs}
+
+Ladislav Kavan, Steven Collins, Jiří Žára and Carol O'Sullivan. “Geometric Skinning with Approximate Dual Quaternion Blending.” *ACM Transactions on Graphics* 27(4) (2008). [Author-hosted original paper](https://users.cs.utah.edu/~ladislav/kavan08geometric/kavan08geometric.pdf). Independently opened for the geometric approximation and LBS artifacts. The book's two-rotation algebraic counterexample is original, and no tissue/contact guarantee is attributed to skinning.
+
+## Dataset and model access {#source-data}
+
+The incoming anatomy audit supplies the access/rights distinctions for [Visible Human](https://www.nlm.nih.gov/research/visible/visible_human.html), [OpenArm 2.0](https://simtk.org/frs/?group_id=1617), [OpenArm Multisensor research/code](https://github.com/lhallock/openarm-multisensor), [Quesada data](https://doi.org/10.5281/zenodo.11209324), [Arm26's model file](https://github.com/opensim-org/opensim-models/blob/master/Models/Arm26/arm26.osim), and the [current MoBL-ARMS package](https://simtk.org/frs/?group_id=657). These are audited research references; this worker does not assert new raw-asset acquisition. [BodyParts3D's official terms](https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html) were independently checked. Exact-package provenance and permissions are required before later redistribution. Incoming package hashes and access limitations are recorded in `education/research/integration-notes.md` in the source tree.
+
 ## What remains unverified
 
-Anatomical measurements, asset licences, actual medical datasets, material parameters, muscle-force predictions, continuum tissue behavior, contact accuracy, patient-specific validity, and performance comparisons are not established by this first milestone. They belong to the next research and implementation stages. The browser tests establish behavior in the tested Chromium environment; they do not certify every browser, assistive technology, or medical application.
+Published architecture and fitted-modulus summaries above are verified within their stated sources and methods. Raw medical-data integration, asset-specific redistribution clearance, the schematic actuator's biological calibration, continuum tissue behavior, contact accuracy, patient-specific validity, and performance rankings are not established by this edition. The browser tests establish behavior in the tested Chromium environment; they do not certify every browser, assistive technology, or medical application.

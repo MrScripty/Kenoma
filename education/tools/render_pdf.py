@@ -23,9 +23,16 @@ def render():
             page.goto(url+'/index.html',wait_until='networkidle')
             page.emulate_media(media='print')
             page.evaluate('document.fonts.ready')
+            # PDF links must survive the print server's lifetime. Web downloads stay relative.
+            page.evaluate('''() => {
+              const destinations={'proofs/Mechanics.lean':'#checked-source-appendix','proof-status.json':'#proof-check-receipt','lean-check.txt':'#kernel-dependency-report'};
+              for(const link of document.querySelectorAll('a[href]')){
+                const target=destinations[link.getAttribute('href')];if(target)link.setAttribute('href',target);
+              }
+            }''')
             page.pdf(path=str(ROOT/'dist/kenoma-mechanics.pdf'),format='A4',print_background=True,
               display_header_footer=True,header_template='<span></span>',
-              footer_template='<div style="font-family:Arial;font-size:9px;width:100%;padding:0 18mm;color:#456171;display:flex;justify-content:space-between"><span>Kenoma · Mechanics of Moving Bodies · Foundation 1</span><span class="pageNumber"></span></div>',
+              footer_template='<div style="font-family:Arial;font-size:9px;width:100%;padding:0 18mm;color:#456171;display:flex;justify-content:space-between"><span>Kenoma · Mechanics of Moving Bodies · Elbow 2</span><span class="pageNumber"></span></div>',
               prefer_css_page_size=True,tagged=True,outline=True)
             version=browser.version;browser.close()
         (ROOT/'dist/pdf-render.json').write_text(json.dumps({'renderer':'Playwright Chromium','browser_version':version,'source':'index.html','static_diagrams':True,'tagged':True,'pdf_byte_identity_asserted':False},indent=2)+'\n')

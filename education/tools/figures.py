@@ -32,4 +32,12 @@ def generate(out):
 <text x="328" y="227">x₀ = 0.20 m; v₀ = 0 m/s</text>
 <text x="38" y="32">Linear spring • m = 1 kg • k = 40 N/m • E₀ = 0.80 J</text>
 <text x="54" y="222" class="small">Extension exaggerated</text><text x="490" y="134">mass</text>''',out/'energy.svg')
-    (out/'figure-provenance.json').write_text(json.dumps({'schema':1,'creator':'Kenoma education contribution','license':'Apache-2.0','kind':'original schematic vector diagrams','anatomical_measurements':False,'generator':'tools/figures.py','figures':['force.svg','torque.svg','energy.svg']},indent=2)+'\n')
+    svg('Schematic articulated elbow initial pose at thirty degrees', '''
+<path class="line" d="M300 48V130 L350 216"/><circle cx="300" cy="130" r="10" class="teal"/>
+<path stroke="#ff876f" stroke-width="5" d="M300 65L316 158"/><ellipse cx="308" cy="107" rx="13" ry="28" fill="#d95f4b"/>
+<circle cx="300" cy="65" r="5" fill="#ffc66d"/><circle cx="316" cy="158" r="5" fill="#ffc66d"/>
+<path stroke="#71818b" stroke-width="12" d="M331 216H369"/><path class="force" d="M350 223V251"/>
+<text x="35" y="30">Force-driven hinge • q₀ = 30° • u = 0.6 • a₀ = 0</text>
+<text x="390" y="85">Synthetic flexor line</text><text x="390" y="114" class="small">Rigid tendon; no contact model</text>
+<text x="390" y="160">Dumbbell = 5 kg</text><text x="35" y="216" class="small">Authored schematic geometry</text><text x="35" y="238" class="small">No anatomical measurements</text>''',out/'elbow.svg')
+    (out/'figure-provenance.json').write_text(json.dumps({'schema':1,'creator':'Kenoma education contribution','license':'Apache-2.0','kind':'original schematic vector diagrams','anatomical_measurements':False,'generator':'tools/figures.py','figures':['force.svg','torque.svg','energy.svg','elbow.svg']},indent=2)+'\n')

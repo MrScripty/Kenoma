@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import {DEFAULTS,forceState,leverState,springStep,springEnergy} from './mechanics.mjs';
+import {ELBOW,elbowInitial,elbowResults,elbowStep} from './elbow.mjs';
 
 const fmt=(v,d=3)=>Math.abs(v)<1e-12?'0':Math.abs(v)>1e5?v.toExponential(3):v.toFixed(d);
 let active=null;
@@ -7,7 +8,7 @@ class Lab {
   constructor(root) {
     this.root=root; this.kind=root.dataset.demo; this.running=false; this.index=0; this.view='front';
     this.readout=root.querySelector('.readout'); this.sceneHost=root.querySelector('.scene-host');
-    this.params={...DEFAULTS[this.kind]}; this.history=[]; this.status=root.querySelector('.announce');
+    this.params={...(this.kind==='elbow'?ELBOW:DEFAULTS[this.kind])}; this.history=[]; this.status=root.querySelector('.announce');
     root.querySelectorAll('[data-param]').forEach(input=>input.addEventListener('input',()=>this.change(input)));
     root.querySelector('[data-action="reset"]').addEventListener('click',()=>this.reset());
     root.querySelector('[data-action="start"]').addEventListener('click',()=>this.start());
@@ -17,7 +18,7 @@ class Lab {
     });
     root.querySelector('[data-action="summary"]').addEventListener('click',()=>{this.status.textContent=this.readout.textContent;});
     root.querySelector('[data-action="copy"]').addEventListener('click',async()=>{
-      const text=JSON.stringify({schema:1,scene:this.kind,parameters:this.params,step:this.index,view:this.view},null,2);
+      const text=JSON.stringify({schema:1,scene:this.kind,parameters:this.params,step:this.index,state:this.state,initialEnergy:this.initialEnergy,view:this.view},null,2);
       const preset=root.querySelector('.preset'); preset.hidden=false; preset.value=text;
       preset.focus(); preset.select();
       this.status.textContent='Reproducible state shown below. Copy the selected text.';
@@ -26,25 +27,33 @@ class Lab {
     if(step)step.addEventListener('click',()=>{this.pause();this.step();});
     const play=root.querySelector('[data-action="play"]');
     if(play)play.addEventListener('click',()=>this.running?this.pause():this.play());
+    root.querySelector('[data-action="release"]')?.addEventListener('click',()=>{this.pulse=false;this.params.excitation=0;this.sync();this.update();this.status.textContent='Excitation released. Activation and velocity continue from the current state.';});
+    root.querySelector('[data-action="pulse"]')?.addEventListener('click',()=>{this.reset();this.pulse=true;this.play();this.status.textContent='Forward lift pulse: excitation 0.6 until 0.30 s, then release. No tracking motor.';});
+    root.querySelector('[data-action="export"]')?.addEventListener('click',()=>{
+      const blob=new Blob([JSON.stringify({schema:1,model:'schematic-elbow-v1',units:'SI, angle radians',parameters:this.params,initialEnergy:this.initialEnergy,trace:this.history},null,2)],{type:'application/json'});
+      const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='kenoma-elbow-trace.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+      this.status.textContent='Downloaded the current trace with model parameters and energy accounting.';
+    });
     this.reset();
   }
   change(input) {
     const key=input.dataset.param;
-    let value=key==='method'?input.value:Number(input.value);
+    let value=['method','mode'].includes(key)?input.value:Number(input.value);
     if(input.tagName!=='SELECT') {
-      if(input.value==='' || !Number.isFinite(value)){input.setAttribute('aria-invalid','true');this.status.textContent='Enter a finite number within the displayed control limits.';return;}
+      if(input.value==='' || !Number.isFinite(value) || value<Number(input.min)||value>Number(input.max)){input.setAttribute('aria-invalid','true');this.status.textContent='Enter a finite number within the displayed control limits.';return;}
       input.removeAttribute('aria-invalid');
-      value=Math.min(Number(input.max),Math.max(Number(input.min),value));
     }
     this.params[key]=value;
-    this.root.querySelectorAll(`[data-param="${key}"]`).forEach(el=>el.value=value);
+    this.root.querySelectorAll(`[data-param="${key}"]`).forEach(el=>{if(el!==input)el.value=value;});
+    if(this.kind==='elbow' && key==='excitation'){this.pulse=false;this.update();return;}
     this.pause(); this.index=0; this.history=[]; this.state={x:this.params.x,v:this.params.v};
+    if(this.kind==='elbow'){this.pulse=false;this.state=elbowInitial(this.params);this.initialEnergy=elbowResults(this.state,this.params).energy;}
     if(this.kind==='force' && key!=='time') {this.params.time=0;this.sync();}
     this.update();
   }
-  sync(){this.root.querySelectorAll('[data-param]').forEach(el=>el.value=this.params[el.dataset.param]);}
+  sync(){this.root.querySelectorAll('[data-param]').forEach(el=>{el.value=this.params[el.dataset.param];el.removeAttribute('aria-invalid');});}
   reset(){
-    this.pause();this.params={...DEFAULTS[this.kind]};this.index=0;this.history=[];
+    this.pause();this.params={...(this.kind==='elbow'?ELBOW:DEFAULTS[this.kind])};this.index=0;this.history=[];this.pulse=false;
     this.state={x:this.params.x,v:this.params.v};this.view='front';this.sync();this.update();
     this.status.textContent='Reset to the documented default state; playback paused.';
   }
@@ -53,6 +62,7 @@ class Lab {
     const button=this.root.querySelector('[data-action="play"]');if(button)button.textContent='Play';
   }
   play(){
+    if(this.kind==='elbow' && (this.index>=1200||this.state.halted))return;
     if(this.kind==='energy' && this.index>=600)return;
     if(this.kind==='force' && this.params.time>=2)return;
     if(active && active!==this)active.pause();
@@ -77,6 +87,13 @@ class Lab {
       if(this.index>=600){this.pause();return;}
       this.state=springStep(this.state,this.params);this.index++;
       if(this.index>=600)this.pause();
+    } else if(this.kind==='elbow') {
+      if(this.index>=1200||this.state.halted){this.pause();return;}
+      if(this.pulse && this.index*this.params.dt>=0.3){this.params.excitation=0;this.sync();}
+      this.state=elbowStep(this.state,this.params);
+      if(this.state.halted){this.pause();this.status.textContent='Paused at the last admissible state: proposed motion left the 0–135° teaching domain. Joint-stop contact is not modeled.';}
+      else this.index++;
+      if(this.index>=1200)this.pause();
     }
     this.update();
   }
@@ -93,6 +110,16 @@ class Lab {
       this.result=leverState(this.params);const s=this.result;
       values=[['Load force y',`${fmt(s.force[1])} N`],['Torque z',`${fmt(s.torque)} N m`],
         ['Moment arm magnitude',`${fmt(s.momentArm)} m`],['Potential energy',`${fmt(s.potential)} J`]];
+    } else if(this.kind==='elbow') {
+      if(this.index===0 && !Number.isFinite(this.state.q)){this.state=elbowInitial(this.params);this.initialEnergy=elbowResults(this.state,this.params).energy;}
+      this.result=elbowResults(this.state,this.params);const s=this.state,r=this.result;
+      const residual=r.energy-this.initialEnergy-s.work+s.dissipation;
+      if(!this.history.some(h=>h.step===this.index))this.history.push({step:this.index,...s,excitation:this.params.excitation,...r,balanceResidual:residual});
+      values=[['Mode',this.params.mode==='forward'?'Force-driven hinge':'Prescribed static hold'],['Time',`${fmt(s.time,3)} s`],['Flexion q',`${fmt(s.q*180/Math.PI,2)}°`],
+        ['Excitation u',fmt(this.params.excitation,3)],['Activation a',fmt(s.a,3)],['Angular velocity',`${fmt(s.w)} rad/s`],['Fiber length',`${fmt(r.fiber,4)} m`],
+        ['Fiber velocity',`${fmt(r.fiberSpeed,4)} m/s`],['Moment arm',`${fmt(r.momentArm,4)} m`],['Active tension',`${fmt(r.active,2)} N`],['Passive tension',`${fmt(r.passive,2)} N`],
+        ['Muscle moment',`${fmt(r.activeTorque+r.passiveTorque)} N m`],['Gravity moment',`${fmt(r.gravityTorque)} N m`],['External hold moment',`${fmt(r.motorTorque)} N m`],
+        ['Active work',`${fmt(s.work,4)} J`],['Dissipated energy',`${fmt(s.dissipation,4)} J`],['Energy balance residual',`${fmt(residual,7)} J`],['Fiber motion',Math.abs(r.fiberSpeed)<1e-6?'Isometric':r.fiberSpeed<0?'Shortening':'Lengthening']];
     } else {
       const energy=springEnergy(this.state,this.params),e0=springEnergy(this.params,this.params);
       this.result={...this.state,energy};
@@ -178,6 +205,18 @@ class Lab {
       const [x,y]=this.result.r.map(v=>v*5);
       rod([0,0,0],[x,y,0]);sphere([0,0,0],0.12,0xa2bdcf);sphere([x,y,0],0.15,0x70e0cc);
       arrow([x,y-0.17,0],[0,-this.params.mass/10*0.9,0],0xffc66d);line([0,0,0.09],[x,0,0.09],0xffffff);
+    } else if(this.kind==='elbow') {
+      const q=this.state.q,scale=4.5,p=this.params;
+      const end=[p.length*Math.sin(q)*scale,-p.length*Math.cos(q)*scale,0];
+      rod([0,1.45,0],[0,0,0]);rod([0,0,0],end);sphere([0,0,0],.11,0xa2bdcf);
+      rod([end[0]-.22,end[1],0],[end[0]+.22,end[1],0]);sphere([end[0]-.22,end[1],0],.14,0x71818b);sphere([end[0]+.22,end[1],0],.14,0x71818b);
+      const origin=[0,p.origin*scale,.15],insert=[...this.result.point.map(v=>v*scale),.15];
+      line(origin,insert,0xff876f);sphere(origin,.045,0xffc66d);sphere(insert,.045,0xffc66d);
+      const v=new THREE.Vector3(...insert).sub(new THREE.Vector3(...origin));
+      const belly=new THREE.Mesh(new THREE.SphereGeometry(1,24,16),new THREE.MeshStandardMaterial({color:new THREE.Color().setHSL(.02,.65,.35+.2*this.state.a),roughness:.6}));
+      const radius=.075*Math.sqrt(.2/this.result.fiber);belly.scale.set(radius,v.length()*.31,radius);
+      belly.position.copy(new THREE.Vector3(...origin).addScaledVector(v,.44));belly.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),v.normalize());this.scene.add(belly);
+      arrow([end[0],end[1]-.2,0],[0,-p.load*.075,0],0xffc66d);
     } else {
       const x=this.state.x,scale=3/Math.max(1,Math.abs(x));const tip=0.6+x*scale;
       const points=[];for(let i=0;i<=120;i++)points.push(new THREE.Vector3(-1.4+(tip+1.4)*i/120,i===0||i===120?0:0.1*Math.sin(i/120*Math.PI*20),0.1*Math.cos(i/120*Math.PI*20)));
