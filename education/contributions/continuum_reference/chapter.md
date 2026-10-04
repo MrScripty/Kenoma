@@ -11,9 +11,7 @@ All dimensions and parameters below are authored for teaching. The block is not 
 Material coordinates are $X=(x,y,z)$ in the reference cuboid
 
 $$\Omega=[0,L]\times[0,W]\times[0,H_b],\qquad
-L=0.04\ {
-m m},\quad W=H_b=0.02\ {
-m m}.$$
+L=0.04\,\mathrm{m},\quad W=H_b=0.02\,\mathrm{m}.$$
 
 A point moves to $X+u(X)$. We retain only infinitesimal strain,
 
@@ -36,8 +34,7 @@ Finite rotations are outside this constitutive approximation. For a rigid rotati
 
 Choose the static displacement
 
-$$u^*(X)=(c x^2,0,0),\qquad c=0.25\ {
-m m}^{-1}.$$
+$$u^*(X)=(c x^2,0,0),\qquad c=0.25\,\mathrm{m}^{-1}.$$
 
 The exact tip displacement is 0.0004 m, or 0.4 mm; the largest axial strain is $2cL=0.02$. Unlike the earlier affine block, its axial strain varies through space. Define $A=WH_b$ and $M_L=\lambda+2\mu=120000$ Pa. Direct differentiation gives
 
@@ -45,8 +42,7 @@ $$\sigma^*(x)=\operatorname{diag}(2cM_Lx,\;2c\lambda x,\;2c\lambda x).$$
 
 Static balance is $\nabla\cdot\sigma+b=0$. Therefore apply
 
-$$b=(-2cM_L,0,0)=(-60000,0,0)\ {
-m N/m^3},\qquad t(X)=\sigma^*(X)n$$
+$$b=(-2cM_L,0,0)=(-60000,0,0)\,\mathrm{N/m^3},\qquad t(X)=\sigma^*(X)n$$
 
 on every unclamped face, using the outward normal $n$. This is an independently derived manufactured solution, rather than a curve fitted to a computed mesh. The $x=L$ face receives 2400 Pa in $+x$, a 0.96 N resultant. The body force totals −0.96 N. The $y$ and $z$ faces have outward, linearly varying normal tractions reaching 800 Pa; each positive side has a 0.32 N resultant and each negative side its opposite. Shear tractions are zero. The exact stress at $x=0$ is zero, so the exact support resultant is zero.
 
@@ -55,8 +51,7 @@ A zero resultant does not mean the load is absent: the body and boundary forces 
 The exact stored energy follows from a one-dimensional integral over the cuboid:
 
 $$U^*=\frac12 M_L\int_\Omega(2cx)^2\,dV
-=\frac{2M_Lc^2AL^3}{3}=0.000128\ {
-m J}.$$
+=\frac{2M_Lc^2AL^3}{3}=0.000128\,\mathrm{J}.$$
 
 For the linear model with a load ramped proportionally from zero to its final value, external work is $\tfrac12f^Tu$, not $f^Tu$. The latter is final load dotted with displacement. It is twice the ramp work at static equilibrium with stationary zero-displacement supports. The distinction from work under a constant final load will matter for the dynamic step.
 
@@ -92,7 +87,7 @@ The $6\times6$ matrix $D$ has $\lambda+2\mu$ on the three normal diagonals, $\la
 Because strain is constant in this element,
 
 $$U_e=\tfrac12 V_e u_e^TB_e^TDB_eu_e,
-\qquad K_e=V_eB_e^TDB_e,\qquad f_{{\rm int},e}=-K_eu_e.$$
+\qquad K_e=V_eB_e^TDB_e,\qquad f_{\mathrm{int},e}=-K_eu_e.$$
 
 This uses a volume integral and a material strain energy. It is not a network of springs on the tetrahedron's six edges. Sharing vertices accumulates each element's forces into a global vector; it does not count the same material volume twice.
 
@@ -107,7 +102,7 @@ Before solving the quadratic case, use the simpler affine patch $u=(0.02x,0,0)$ 
 
 For a constant body force, the consistent nodal load from one tetrahedron is $V_eb/4$. For a surface triangle,
 
-$$f_a^{\rm surface}=\int_{\Gamma_e}N_a(X)t(X)\,dA.$$
+$$f_a^{\mathrm{surface}}=\int_{\Gamma_e}N_a(X)t(X)\,dA.$$
 
 The manufactured traction varies linearly in $x$, so multiplying it by $N_a$ gives a quadratic polynomial. The code integrates it with the degree-two, three-point triangle rule at barycentric coordinates $(2/3,1/6,1/6)$ and permutations, each weighted by one third of the triangle area. Uniformly distributing the resultant of a varying traction would change the assembled load.
 
@@ -118,8 +113,7 @@ $$K_{ff}u_f=f_f,\qquad u_c=0.$$
 The implementation stores small element matrices and evaluates global matrix-vector products by scattering their contributions; it does not form a global dense matrix. A Jacobi-preconditioned conjugate gradient solve uses the diagonal of $K_{ff}$. The stopping condition is a **freshly recomputed** free-degree residual,
 
 $$\|K_{ff}u_f-f_f\|_2\leq
-\max(10^{-12}\ {
-m N},\;10^{-10}\|f_f\|_2).$$
+\max(10^{-12}\,\mathrm{N},\;10^{-10}\|f_f\|_2).$$
 
 If only the recursively updated residual passes, the code recomputes it and restarts when necessary. The default iteration cap is 10000. A failed solve returns `converged:false`; integration must not label that result a reference. Shewchuk's original notes explain the quadratic minimum, PCG, diagonal preconditioning and residual checks (§§3, 11–12, Appendix B3). The particular tolerances and fixtures here are authored. [Original notes](https://www.cs.cmu.edu/~quake-papers/painless-conjugate-gradient.pdf)
 
@@ -150,7 +144,7 @@ $$\eta_{L^2}=\frac{(\int_\Omega\|u_h-u^*\|^2dV)^{1/2}}
 \eta_E=\frac{(\int_\Omega (e_h-e^*)^TD(e_h-e^*)dV)^{1/2}}
 {(\int_\Omega e^{*T}De^*dV)^{1/2}}.$$
 
-`l2RmsM` divides the squared displacement integral by the volume before taking the square root; it has metres as units. The undivided displacement integral's square root would have units m^(5/2), so it must not be labeled a displacement in metres. The energy norm has units $\sqrt{\rm J}$; it is not stored energy itself.
+`l2RmsM` divides the squared displacement integral by the volume before taking the square root; it has metres as units. The undivided displacement integral's square root would have units m^(5/2), so it must not be labeled a displacement in metres. The energy norm has units $\sqrt{\mathrm{J}}$; it is not stored energy itself.
 
 The code integrates these polynomial errors with a Duffy transformation of a four-point Gauss rule in each of three coordinates. Its Jacobian is $(1-r)^2(1-s)$ and it scales by $6V_e$. This integrates the quartic displacement-error square exactly up to floating-point roundoff. Independent tests verify its analytic normalization: the exact RMS displacement is $cL^2/\sqrt5$, and the exact energy-norm denominator is $\sqrt{2U^*}$.
 
@@ -180,9 +174,9 @@ This step is not static equilibrium and its small final displacement is not the 
 Backward Euler also dissipates energy numerically. With $T=\tfrac12v^TMv$, a converged step satisfies the independently derived identity
 
 $$T_{n+1}+U_{n+1}-T_n-U_n
-=f^T(u_{n+1}-u_n)-D_{\rm BE},$$
+=f^T(u_{n+1}-u_n)-D_{\mathrm{BE}},$$
 
-$$D_{\rm BE}=\tfrac12(v_{n+1}-v_n)^TM(v_{n+1}-v_n)
+$$D_{\mathrm{BE}}=\tfrac12(v_{n+1}-v_n)^TM(v_{n+1}-v_n)
 +\tfrac12(u_{n+1}-u_n)^TK(u_{n+1}-u_n)\geq0.$$
 
 Here work uses the constant load over the actual displacement increment. This is distinct from the half-load static ramp. A test covers nonzero initial displacement and velocity with the clamp respected. Numerical dissipation is reported separately from a physical damping mechanism; none is added here.
