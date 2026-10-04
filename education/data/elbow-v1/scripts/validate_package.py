@@ -3,13 +3,19 @@
 import csv,hashlib,json,math,pathlib,sys,xml.etree.ElementTree as ET
 from read_openarm_safely import read_passive
 ROOT=pathlib.Path(__file__).resolve().parents[1]
+ARM26_SHA256='e2224d0044eb393b05d64926c3fa1682c451a9adc7f510e5517ef9958d3d41b9'
 def run():
     checks=[]
     def require(condition,label):
         if not condition:raise AssertionError(label)
         checks.append(label)
     a=json.loads((ROOT/'data/arm26_parameters.json').read_text())
-    require(a['source_sha256']=='e2224d0044eb393b05d64926c3fa1682c451a9adc7f510e5517ef9958d3d41b9','Pinned Arm26 byte hash')
+    require(hashlib.sha256((ROOT/'sources/arm26.osim').read_bytes()).hexdigest()==ARM26_SHA256
+            and a['source_sha256']==ARM26_SHA256,'Pinned Arm26 byte hash')
+    for pin in json.loads((ROOT/'audit/source_document_pins.json').read_text())['documents']:
+        raw=(ROOT/pin['path']).read_bytes()
+        require(len(raw)==pin['bytes'] and hashlib.sha256(raw).hexdigest()==pin['sha256'],
+                'Accepted document pin '+pin['path'])
     xml=ET.parse(ROOT/'sources/arm26.osim')
     require(len(a['muscles'])==6,'Exactly six Arm26 actuators')
     for m in a['muscles']:
@@ -18,11 +24,18 @@ def run():
             require(p['value']==float(node.text),f"Source parameter exact: {m['name']}/{name}")
     atlas=json.loads((ROOT/'data/bodyparts3d_right_arm_m.json').read_text())
     require(len(atlas['parts'])==10,'Ten atlas parts')
+    # Acquisition-time pins are independent of regenerated data/provenance.json.
+    pins={p['element file id']:p for p in json.loads((ROOT/'audit/bodyparts_subset_members.json').read_text())}
     for p in atlas['parts']:
         raw=(ROOT/p['source_obj']).read_bytes()
-        require(hashlib.sha256(raw).hexdigest()==p['source_sha256'],f"Source OBJ hash {p['element_id']}")
-        original=[list(map(float,line.split()[1:4])) for line in raw.decode().splitlines() if line.startswith('v ')]
-        require(all(x*.001==y for a,b in zip(original,p['vertices_m']) for x,y in zip(a,b)),f"SI conversion exact {p['element_id']}")
+        pin=pins[p['element_id']]
+        require(len(raw)==pin['bytes'] and hashlib.sha256(raw).hexdigest()==pin['sha256']
+                and p['source_sha256']==pin['sha256'],f"Source OBJ hash {p['element_id']}")
+        original=[list(map(float,line.split()[1:])) for line in raw.decode().splitlines() if line.startswith('v ')]
+        converted=p['vertices_m']
+        require(len(original)==len(converted)==p['vertex_count']
+                and all(len(v)==3 for v in original+converted),f"Vertex count and dimensions {p['element_id']}")
+        require(all(original[i][j]*.001==converted[i][j] for i in range(len(original)) for j in range(3)),f"SI conversion exact {p['element_id']}")
         require(all(0<=i<len(p['vertices_m']) for tri in p['triangles_zero_based'] for i in tri),f"Face bounds {p['element_id']}")
         require(p['exact_coordinate_boundary_edges']==0 and p['exact_coordinate_nonmanifold_edges']==0,f"Exact-coordinate edge diagnostic {p['element_id']}")
     with (ROOT/'data/openarm_s2_1b_normalized_samples.csv').open() as f:rows=list(csv.DictReader(f))

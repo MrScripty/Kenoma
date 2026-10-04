@@ -119,6 +119,51 @@ if bytes change, compare provenance hashes before adopting a new version.
 The exact archive was 142,903,898 bytes. Its full-file hash is NOT claimed,
 since the complete archive was deliberately not downloaded.
 
+Document acquisition coverage (review repair)
+
+audit/download_log.json is the unchanged historical BodyParts3D metadata
+receipt. Its coverage is ZIP-directory ranges, the mapping, license and
+archive README; it contains NO OpenArm or Arm26 request receipts. Atlas
+member receipts and independent download-time byte pins are in
+audit/bodyparts_subset_download_log.json and bodyparts_subset_members.json.
+Do not interpret regenerated provenance.json as independent source identity.
+Validation hashes actual Arm26 bytes against the pinned constant, actual OBJ
+bytes against download-time member pins, and checks complete vertex counts
+and 3-coordinate shapes before comparing every mm-to-m conversion.
+
+The additional coordinate PNG, release-4.0 HTML, Arm26 XML and OpenArm
+release README/errata have explicit accepted-byte pins and acquisition
+locators in audit/source_document_pins.json. Their original network receipts
+were not supplied. The original OpenArm data-release notices are distinct
+from the analysis repository's README; do not substitute that README.
+
+Reacquire these five documents without replacing the accepted package:
+  python3 scripts/fetch_sources.py --documents --output /new/external/directory
+
+This retains the 30 MiB transfer ceiling, 128,000-byte per-document limits
+and 1.5 GiB free-space floor. A candidate is written only after exact size
+and SHA-256 verification. Current timestamps, response headers, errors and
+verification results are recorded in the new output directory; existing
+output directories and destinations inside this package are refused.
+
+For OpenArm, obtain readme.md and errata.md from the official release folder
+listed in the pins, then append --openarm-release-directory /path/to/release.
+Those files are size-limited and hash-verified locally. This does not invent
+a direct download URL or an original HTTP receipt. Network byte receipt and
+local file verification are explicitly different acquisition methods.
+
+audit/document_reacquisition_log.json records the actual current attempt:
+Arm26 matched the pinned bytes; the two BodyParts3D document requests and
+OpenArm release-folder access were unavailable here (403 proxy tunnel
+responses). The two OpenArm files still require manual official acquisition.
+No unavailable or mismatched upstream bytes replace any original source.
+An incomplete run returns exit status 1 and leaves its partial receipt.
+These access gaps remain explicit, rather than claiming full reacquisition.
+
+The original contribution's 992 checks and 40-payload byte inventory remain
+historical facts. The repaired package has additional shape checks and audit
+payloads; its current check count and inventory are reported by the scripts.
+
 Limits
 
 Educational and research material only. No clinical validation, diagnosis,

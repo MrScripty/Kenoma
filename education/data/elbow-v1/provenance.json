@@ -90,8 +90,8 @@
     },
     {
       "path": "README.txt",
-      "bytes": 7541,
-      "sha256": "c30023b4d34e4b413a99362bc53c542d100272b5e239c0fa43210debfb34820b",
+      "bytes": 10251,
+      "sha256": "8fef41f1419e9b253343dd9df2e1f49c39fb5e0118da7476cc27bd3214dc5212",
       "evidence_class": "original_documentation_or_audit",
       "license": "component-specific",
       "source_ids": [
@@ -151,10 +151,32 @@
       ]
     },
     {
+      "path": "audit/document_reacquisition_log.json",
+      "bytes": 5673,
+      "sha256": "eabd301a2ea75d2f391a2b1747030fe4749ae1e1705d6129f4ff14cd83f92bbc",
+      "evidence_class": "source_document_acquisition_audit",
+      "license": "component-specific",
+      "source_ids": [
+        "bodyparts3d",
+        "openarm",
+        "arm26"
+      ]
+    },
+    {
       "path": "audit/download_log.json",
       "bytes": 5646,
       "sha256": "3336e0c0102493f1526ef1ba88d33bfc6d14bea871af7a91e83ec52589621545",
-      "evidence_class": "original_documentation_or_audit",
+      "evidence_class": "historical_atlas_metadata_http_receipts",
+      "license": "component-specific",
+      "source_ids": [
+        "bodyparts3d"
+      ]
+    },
+    {
+      "path": "audit/source_document_pins.json",
+      "bytes": 3151,
+      "sha256": "5c83ee5666559494e39513c6bc832ba2a5cae7550c88fe98866b5636704dd7e3",
+      "evidence_class": "source_document_acquisition_audit",
       "license": "component-specific",
       "source_ids": [
         "bodyparts3d",
@@ -284,8 +306,8 @@
     },
     {
       "path": "scripts/build_manifest.py",
-      "bytes": 5141,
-      "sha256": "4ff4ec5ac2b82f109be8c99fcc5a5c623916db51d7d5238e58da79778a4d094a",
+      "bytes": 6100,
+      "sha256": "cd868976451d5f4408322fb0080458b4f9c09fb8cebd8682a1166a4fb0bbb3d0",
       "evidence_class": "original_processing_code",
       "license": "MIT",
       "source_ids": []
@@ -299,9 +321,17 @@
       "source_ids": []
     },
     {
+      "path": "scripts/fetch_documents.py",
+      "bytes": 4552,
+      "sha256": "5f63d3ce345435148d4983d6b4fba6909048c8cf308814eb3c386477e04510e9",
+      "evidence_class": "original_processing_code",
+      "license": "MIT",
+      "source_ids": []
+    },
+    {
       "path": "scripts/fetch_sources.py",
-      "bytes": 2962,
-      "sha256": "a324a0e4849ff016c4645696eb9d47e319fa5fdb3b4e28ebe803bd734c461bca",
+      "bytes": 4231,
+      "sha256": "fe29b1f1e8131dd5ec9c9c07ad1ef14fdb202317bd22f70d0d95681bfaa07c33",
       "evidence_class": "original_processing_code",
       "license": "MIT",
       "source_ids": []
@@ -332,8 +362,8 @@
     },
     {
       "path": "scripts/validate_package.py",
-      "bytes": 3930,
-      "sha256": "4aa06ad00ed76b1dbe97c8ed750691806a1d0ff696e089b00a2654dbcc4843c7",
+      "bytes": 4866,
+      "sha256": "6f4780ce800e164c99cb52ce70abfa9596ec59aef4a96ab251ed2d8240d8129c",
       "evidence_class": "original_processing_code",
       "license": "MIT",
       "source_ids": []
@@ -524,5 +554,12 @@
     "numpy": "2.3.5",
     "matplotlib": "3.10.8"
   },
-  "reproducibility": "Run prepare_data.py from bundled original atlas/model sources and cleaned recorded CSV. Original OpenArm re-extraction accepts external exact-hash archive. Figures require NumPy and Matplotlib."
+  "reproducibility": "Run prepare_data.py from bundled original atlas/model sources and cleaned recorded CSV. Original OpenArm re-extraction accepts external exact-hash archive. Figures require NumPy and Matplotlib.",
+  "acquisition_coverage": {
+    "historical_metadata_log": "audit/download_log.json covers BodyParts3D ZIP directory, mapping, license and README only; it does not cover Arm26 or OpenArm.",
+    "historical_atlas_members": "audit/bodyparts_subset_download_log.json and bodyparts_subset_members.json",
+    "additional_document_pins": "audit/source_document_pins.json",
+    "current_reacquisition_receipt": "audit/document_reacquisition_log.json",
+    "limitation": "Original network receipts for these five documents were not supplied. Current attempts and local verification do not establish original download dates or HTTP headers; consult each result for incomplete coverage."
+  }
 }

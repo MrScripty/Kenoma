@@ -45,6 +45,7 @@ jobs:
       - name: Check mechanics and build checked proofs and book
         run: |
           npm test
+          npm run test:python
           npm run build
           npm run pdf
           npm run test:browser

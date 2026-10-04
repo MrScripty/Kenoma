@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {formatReadout} from './readout.mjs';
 import {DEFAULTS,forceState,leverState,springStep,springEnergy} from './mechanics.mjs';
 import {ELBOW,elbowInitial,elbowResults,elbowStep} from './elbow.mjs';
 import {SERIES,seriesInitial,seriesResults,seriesStep} from './series.mjs';
@@ -24,7 +25,7 @@ class Lab {
       this.view=this.view==='front'?'oblique':'front'; this.draw();
       this.status.textContent=`Camera ${this.view}; physics state unchanged.`;
     });
-    root.querySelector('[data-action="summary"]').addEventListener('click',()=>{this.status.textContent=this.readout.textContent;});
+    root.querySelector('[data-action="summary"]').addEventListener('click',()=>{this.status.textContent=formatReadout(this.readout);});
     root.querySelector('[data-action="copy"]').addEventListener('click',async()=>{
       const text=JSON.stringify({schema:1,scene:this.kind,parameters:this.params,step:this.index,state:this.state,initialEnergy:this.initialEnergy,view:this.view},null,2);
       const preset=root.querySelector('.preset'); preset.hidden=false; preset.value=text;

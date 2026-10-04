@@ -10,6 +10,8 @@ SOURCES=[
 def category(p):
  s=str(p)
  if s.startswith('scripts/'):return 'original_processing_code','MIT',[]
+ if s=='audit/download_log.json':return 'historical_atlas_metadata_http_receipts','component-specific',['bodyparts3d']
+ if s in ('audit/source_document_pins.json','audit/document_reacquisition_log.json'):return 'source_document_acquisition_audit','component-specific',['bodyparts3d','openarm','arm26']
  if 'arm26' in s:return 'model_parameters_or_source','CC-BY-3.0',['arm26']
  if 'openarm' in s:return 'recorded_data_or_source_documentation','CC-BY-4.0',['openarm']
  if 'bodyparts' in s:return 'anatomical_atlas_or_source_documentation','CC-BY-4.0',['bodyparts3d']
@@ -24,6 +26,7 @@ def main():
   rel=p.relative_to(ROOT);c,lic,src=category(rel)
   files.append({'path':str(rel),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'evidence_class':c,'license':lic,'source_ids':src})
  manifest={'schema_version':'1.0','title':'Kenoma elbow anatomical and biomechanical evidence package','prepared_utc':'2026-10-04','intended_use':'Education and research; independent anatomy, measurement and model evidence','clinical_validation':False,'subject_specific_calibration':False,'sources':SOURCES,'transformations':{'bodyparts3d':'Select ten original meshes; verify member CRC; mm to m; one-based to zero-based triangle indices; no topology change','openarm':'Passive pickle opcode translation; select source participant 2 trial 1b from index1665; use normalized Processed streams directly; remove absolute time and unrelated fields; arithmetic half-second display-bin means','arm26':'XML extraction of six SI parameter types per actuator and coordinate bounds, unchanged numeric values'},'files':files,'runtime':{'python':platform.python_version()},'reproducibility':'Run prepare_data.py from bundled original atlas/model sources and cleaned recorded CSV. Original OpenArm re-extraction accepts external exact-hash archive. Figures require NumPy and Matplotlib.'}
+ manifest['acquisition_coverage']={'historical_metadata_log':'audit/download_log.json covers BodyParts3D ZIP directory, mapping, license and README only; it does not cover Arm26 or OpenArm.','historical_atlas_members':'audit/bodyparts_subset_download_log.json and bodyparts_subset_members.json','additional_document_pins':'audit/source_document_pins.json','current_reacquisition_receipt':'audit/document_reacquisition_log.json','limitation':'Original network receipts for these five documents were not supplied. Current attempts and local verification do not establish original download dates or HTTP headers; consult each result for incomplete coverage.'}
  try:
   import numpy,matplotlib
   manifest['runtime'].update(numpy=numpy.__version__,matplotlib=matplotlib.__version__)

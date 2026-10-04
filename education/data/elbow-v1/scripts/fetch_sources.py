@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Small, bounded public-source downloads; never fetch a complete atlas."""
-import hashlib, io, json, pathlib, struct, urllib.request, zipfile, zlib
+import datetime, hashlib, io, json, pathlib, struct, urllib.request, zipfile, zlib
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE = 'https://dbarchive.biosciencedbc.jp/data/bodyparts3d/LATEST/'
 URL = BASE + 'isa_BP3D_4.0_obj_99.zip'
@@ -9,6 +9,9 @@ transferred = 0
 log = []
 def fetch(url, limit, byte_range=None):
     global transferred
+    if not 0 < limit <= MAX_TOTAL-transferred:
+        raise RuntimeError('Download budget exceeded before request')
+    started=datetime.datetime.now(datetime.timezone.utc).isoformat()
     if __import__('shutil').disk_usage(ROOT).free < 1536 * 1024**2 + limit:
         raise RuntimeError('Preserve 1.5 GiB free-space floor')
     headers = {'User-Agent':'Kenoma-Educational-Data-Audit/1.0'}
@@ -20,7 +23,7 @@ def fetch(url, limit, byte_range=None):
         data = r.read(limit+1)
         if len(data)>limit or transferred+len(data)>MAX_TOTAL: raise RuntimeError('Download budget exceeded')
         transferred += len(data)
-        log.append({'url':url,'range':byte_range,'status':r.status,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),'headers':dict(r.headers)})
+        log.append({'url':url,'final_url':r.geturl(),'range':byte_range,'status':r.status,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),'headers':dict(r.headers),'started_utc':started,'completed_utc':datetime.datetime.now(datetime.timezone.utc).isoformat()})
         return data
 def main():
     (ROOT/'sources').mkdir(exist_ok=True)
@@ -44,4 +47,18 @@ def main():
     (ROOT/'audit/download_log.json').write_text(json.dumps(log,indent=2))
     print('Archive entries',len(entries),'downloaded bytes',transferred)
     print('Example entries',entries[:5])
-if __name__=='__main__': main()
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--documents',action='store_true',help='Reacquire the five documents outside the historical atlas metadata log')
+    parser.add_argument('--output',type=pathlib.Path,help='New directory outside the accepted package (required with --documents)')
+    parser.add_argument('--openarm-release-directory',type=pathlib.Path,help='Official release readme.md and errata.md, verified against accepted pins')
+    args=parser.parse_args()
+    if args.documents:
+        if args.output is None:parser.error('--documents requires --output')
+        from fetch_documents import reacquire
+        receipt=reacquire(args.output,args.openarm_release_directory)
+        print(json.dumps(receipt,indent=2))
+        raise SystemExit(0 if receipt['complete'] else 1)
+    if args.output or args.openarm_release_directory:parser.error('Document options require --documents')
+    main()

@@ -158,6 +158,24 @@ def check():
         spatial.locator('[data-action=reset]').click();reset_values=spatial.locator('.readout').inner_text();spatial.locator('[data-action=view]').click();assert spatial.locator('.readout').inner_text()==reset_values
         spatial.locator('[data-action=reset]').click();assert spatial.locator('.readout').inner_text()==reset_values
         checks.append('Spatial muscle/skin/contact same-pose fixture, force-driven lift, release-current export, camera and deterministic reset verified')
+        # Exercise the real dt/dd DOM and both lab controller implementations.
+        for name in ['force','torque','energy','elbow','series','continuum','spatial']:
+          lab=page.locator('#lab-'+name)
+          expected=lab.locator('.readout').evaluate('(dl)=>Array.from(dl.children).map(row=>row.querySelector("dt").textContent.trim()+": "+row.querySelector("dd").textContent.trim()+".").join(" ")')
+          assert expected and ': ' in expected
+          lab.locator('[data-action=summary]').click()
+          assert lab.locator('.announce').text_content()==expected,name
+        # Ordinary stepping/playback must not continuously announce changing numbers.
+        for lab in [energy,spatial]:
+          lab.locator('[data-action=reset]').click()
+          lab.locator('[data-action=summary]').click()
+          spoken=lab.locator('.announce').text_content()
+          lab.locator('.announce').evaluate('(el)=>{el.summaryMutations=0;el.summaryObserver=new MutationObserver(records=>el.summaryMutations+=records.length);el.summaryObserver.observe(el,{childList:true,characterData:true,subtree:true});}')
+          lab.locator('[data-action=step]').click()
+          lab.locator('[data-action=play]').click();page.wait_for_timeout(250);lab.locator('[data-action=play]').click()
+          assert lab.locator('.announce').text_content()==spoken
+          assert lab.locator('.announce').evaluate('(el)=>{el.summaryObserver.disconnect();return el.summaryMutations;}')==0
+        checks.append('All seven deliberate spoken summaries separate each actual DOM label/value pair; energy/spatial stepping and playback produce no live-region mutations')
         evidence=page.locator('#evidence-viewer');expect(evidence.locator('[data-evidence=bin]')).to_be_enabled()
         evidence.locator('[data-action=start]').click();expect(evidence.locator('canvas')).to_be_visible();assert page.locator('canvas').count()==1
         evidence.locator('[data-evidence=part]').select_option('bones');evidence.locator('[data-action=view]').click()
