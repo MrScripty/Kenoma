@@ -8,7 +8,7 @@
     "data/anatomical-arm-v1/audit/apposition-results.json": "63e9dd81f53fe9c45a87214f1caa3c8e475f9b6a7ee1d1678d6024e7da6df397",
     "web/anatomical-coupled-fixture.mjs": "620afbb2e801f00ec361f5f1b5d39f010acc386812dcaa7239c0ca781d0bf4b9",
     "tools/anatomy-inspector.mjs": "1760366fe89eaf27f8caedc39031f88d2033bdab8d0718a49c3b4c8fb3dec112",
-    "tools/coupled-inspector.mjs": "3cb5688a8e5cbcac00afd7afd5e37a4201a453e11bb64cc993a9b9cc060ac756",
+    "tools/coupled-inspector.mjs": "25ccfdaa42fa8c2c7bf1b4df33794f328f6499afcf16086b86b37c86d303552a",
     "tools/capture-anatomical-review.py": "5903e43c039bbfaef2562f225c7dfb8447153a3669a121d6bca1294305834832"
   },
   "images": {
@@ -34,7 +34,7 @@
     "sourceHashes": {
       "web/anatomical-coupled-fixture.mjs": "620afbb2e801f00ec361f5f1b5d39f010acc386812dcaa7239c0ca781d0bf4b9",
       "web/anatomical-coupled-worker.mjs": "1c54d08f5e36ca837343fc96399ac85de8e92f8fe1ebd1d73a50e5885b93c435",
-      "tools/coupled-inspector.mjs": "3cb5688a8e5cbcac00afd7afd5e37a4201a453e11bb64cc993a9b9cc060ac756"
+      "tools/coupled-inspector.mjs": "25ccfdaa42fa8c2c7bf1b4df33794f328f6499afcf16086b86b37c86d303552a"
     },
     "rows": [
       {
@@ -45,8 +45,9 @@
         "releasedActivation": 0.008910365719019932,
         "resetExactInRuntime": true,
         "massStatePreserved": true,
+        "massEventDuringPlayback": true,
         "visibleCompiledClaims": 7,
-        "workerTraceRows": 1,
+        "workerTraceRows": 3,
         "browserErrors": [],
         "limit": "Mobile emulation, not a real phone; authored fixture, not anatomical capstone."
       },
@@ -58,10 +59,17 @@
         "releasedActivation": 0.008910365719019932,
         "resetExactInRuntime": true,
         "massStatePreserved": true,
+        "massEventDuringPlayback": true,
         "visibleCompiledClaims": 7,
-        "workerTraceRows": 1,
+        "workerTraceRows": 3,
         "browserErrors": [],
         "limit": "Mobile emulation, not a real phone; authored fixture, not anatomical capstone."
+      },
+      {
+        "viewport": "mobile-no-WebGL-fault",
+        "numericalWorkerContinues": true,
+        "browserErrors": [],
+        "limit": "Injected unavailable context, not a GPU configuration override."
       }
     ]
   },

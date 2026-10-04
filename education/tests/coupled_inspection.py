@@ -34,10 +34,21 @@ def run():
           page.locator('#reset').click();page.evaluate('()=>coupledApi.idle()');reset=page.evaluate('coupledApi.state');assert reset['steps']==0 and reset['q']==0 and reset['activation']==0 and reset['massKg']==.5
           page.locator('#step').click();page.evaluate('()=>coupledApi.idle()');first=page.evaluate('coupledApi.state')
           page.locator('#reset').click();page.evaluate('()=>coupledApi.idle()');page.locator('#step').click();page.evaluate('()=>coupledApi.idle()');assert first==page.evaluate('coupledApi.state')
+          page.locator('#play').click();page.locator('#mass').evaluate('(el)=>{el.value=1;el.dispatchEvent(new Event("input",{bubbles:true}));}')
+          page.wait_for_function('coupledApi.state.massKg===1');assert page.evaluate('coupledApi.state.steps')<24
+          page.locator('#play').click();page.evaluate('()=>coupledApi.idle()')
           assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+1')
           assert not errors,errors
-          results.append({'viewport':label,'loadedQ':loaded['q'],'releasedQ':released['q'],'loadedActivation':loaded['activation'],'releasedActivation':released['activation'],'resetExactInRuntime':True,'massStatePreserved':True,'visibleCompiledClaims':7,'workerTraceRows':len(page.evaluate('coupledApi.rows')),'browserErrors':errors,'limit':'Mobile emulation, not a real phone; authored fixture, not anatomical capstone.'})
+          results.append({'viewport':label,'loadedQ':loaded['q'],'releasedQ':released['q'],'loadedActivation':loaded['activation'],'releasedActivation':released['activation'],'resetExactInRuntime':True,'massStatePreserved':True,'massEventDuringPlayback':True,'visibleCompiledClaims':7,'workerTraceRows':len(page.evaluate('coupledApi.rows')),'browserErrors':errors,'limit':'Mobile emulation, not a real phone; authored fixture, not anatomical capstone.'})
           page.close()
+        page=browser.new_page(viewport={'width':393,'height':852});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
+        page.add_init_script('const original=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(kind,...args){return kind.startsWith("webgl")?null:original.call(this,kind,...args);};')
+        page.goto(url+'/coupled-fixture/index.html');page.wait_for_function('window.coupledReady');page.locator('#start').click()
+        assert '3D unavailable' in page.locator('#status').inner_text()
+        page.locator('#step').click();page.evaluate('()=>coupledApi.idle()');assert page.evaluate('coupledApi.state.steps')==1
+        assert not errors,errors
+        results.append({'viewport':'mobile-no-WebGL-fault','numericalWorkerContinues':True,'browserErrors':errors,'limit':'Injected unavailable context, not a GPU configuration override.'})
+        page.close()
         version=browser.version;browser.close()
     finally:server.shutdown();server.server_close()
     receipt={'result':'PASS','browserVersion':version,'sourceHashes':{path:hashlib.sha256((ROOT/path).read_bytes()).hexdigest() for path in ['web/anatomical-coupled-fixture.mjs','web/anatomical-coupled-worker.mjs','tools/coupled-inspector.mjs']},'rows':results}
