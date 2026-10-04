@@ -132,6 +132,9 @@ def build():
     for r in series['trajectories']:trajectories+=f"| {r['dt']:.4f} | {r['angleDegrees']:.6f} | {r['work']:.6f} | {r['maxEnergyResidual']:.3g} | {r['eventSplits']} | {r['substeps']} |\n"
     spatial_text=subprocess.check_output(['node',str(ROOT/'tools/spatial-experiment.mjs')],text=True)
     (OUT/'spatial-experiment.json').write_text(spatial_text);spatial=json.loads(spatial_text)
+    r=spatial['reference']
+    LABS['spatial']['caption']=f"Generated compression fixture: q = 90°, activation 0.6, 640-iteration cap. Mechanical minimum volume ratio {r['minJ']:.3f}; same-pose LBS minimum {r['baselineMinJ']:.3f}. Sampled penetration {r['penetrationM']*1000:.4f} mm versus {r['baselinePenetrationM']*1000:.4f} mm. Original schematic, not registered to the real atlas."
+    spatial_summary=f"At 640 iterations, minimum J is {r['minJ']:.6f} and total mean J is {r['meanJ']:.6f}. Tissue flattens and moves laterally while total volume changes by {100*(1-r['meanJ']):.3f}%. Maximum sampled penetration is {r['penetrationM']*1000:.6f} mm, versus {r['baselinePenetrationM']*1000:.6f} mm for skinning. Maximum free-force defect is {r['maxFreeForceN']:.6f} N. These values are generated in {spatial['runtime']['node']}; they are not cross-runtime bit-identity claims. A small sampled gap does not prove the material law correct, and a residual alone does not establish a contact-free surface."
     spatial_table='| Iteration cap | Min J | Mean J | Sampled penetration (mm) | Max free force (N) | Normal-force sum (N) | Elastic/contact energy (J) |\n|--:|--:|--:|--:|--:|--:|--:|\n'
     for r in spatial['rows']:spatial_table+=f"| {r['maxIterations']} | {r['minJ']:.6f} | {r['meanJ']:.6f} | {r['penetrationM']*1000:.6f} | {r['maxFreeForceN']:.6f} | {r['contactNormalSumN']:.6f} | {r['totalEnergyJ']:.6f} |\n"
     chapters='\n\n'.join(((ROOT/'book'/p).read_text()+'\n\n{{demo:continuum}}\n\n{{proof:compliance-denominator}}\n') if p.startswith('../contributions/') else (ROOT/'book/chapters'/p).read_text() for p in manifest['chapters'])
@@ -139,7 +142,7 @@ def build():
         text=re.sub(r'\{\{demo:(\w+)\}\}',lambda m:lab_block(m[1],web),chapters)
         text=re.sub(r'\{\{proof:([\w-]+)\}\}',lambda m:proof_block(m[1],web),text)
         text=text.replace('{{evidence}}',(ROOT/'web/evidence.html').read_text() if web else 'The web edition provides a resettable static atlas viewer and a recorded-bin slider. The figures, source tables and downloads above and below provide the reading alternative.')
-        text=text.replace('{{experiment}}',table).replace('{{spatial-experiment}}',spatial_table)
+        text=text.replace('{{experiment}}',table).replace('{{spatial-experiment}}',spatial_table).replace('{{spatial-summary}}',spatial_summary)
         text=text.replace('{{elbow-experiment}}',elbow_table)
         text=text.replace('{{series-holds}}',holds).replace('{{series-compression}}',compression).replace('{{series-trajectories}}',trajectories)
         if re.search(r'\{\{[A-Za-z]',text): raise ValueError('Unexpanded build directive')

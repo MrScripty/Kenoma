@@ -65,7 +65,7 @@ The original worked compression fixture holds q = 90°, a = 0.6. These values ar
 
 {{spatial-experiment}}
 
-At 640 iterations, the minimum J is about 0.736 and total mean J about 0.960. Some tissue flattens and moves laterally while the model permits roughly 4% total volume change. The maximum sampled penetration is about 0.0283 mm, versus 9.75 mm in the skinning baseline. The maximum free-force defect remains about 0.0145 N. Those are separate diagnostics: a small sampled gap does not prove the material law correct, and a residual alone does not establish a contact-free surface.
+{{spatial-summary}}
 
 At the straight pose, activation 0.6 shortens the measured upper centreline span from 180 mm to about 170.77 mm while mean J remains about 0.9993. Releasing activation returns the quasistatic solution toward its passive state. The browser's prescribed-hold mode lets a reader isolate that deformation from bone motion. During the default lift/release pulse, the arm reaches roughly 67° by 0.6 s and subsequently lowers below its starting angle by 0.9 s; its spatial active span lengthens again. Activation persists after excitation becomes zero; the line fibre and spatial span can subsequently stretch as the load lowers the arm. A contracting actuator can carry tensile force while lengthening; “active” does not mean every fibre is getting shorter at every instant.
 

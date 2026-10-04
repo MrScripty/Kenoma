@@ -20,6 +20,10 @@ doc=fitz.open(out/'kenoma-mechanics.pdf');combined='\n'.join(page.get_text() for
 assert len(doc)>5 and '\ufffd' not in combined
 for needle in ['Force changes motion','Energy reveals numerical error','Checked source appendix','14.715','0.80','Store tendon energy','Inspect real anatomy','4,403','51.243524','798.52']:
  assert needle in combined,needle
+spatial=json.loads((out/'spatial-experiment.json').read_text());reference=spatial['reference']
+assert spatial['sourceSha256']==hashlib.sha256((ROOT/'web/spatial.mjs').read_bytes()).hexdigest()
+assert f"{reference['penetrationM']*1000:.4f} mm" in (out/'assets/spatial.svg').read_text()
+assert f"Maximum free-force defect is {reference['maxFreeForceN']:.6f} N" in text
 manifest=json.loads((out/'build-manifest.json').read_text())
 for relative,digest in manifest['input_sha256'].items():
  assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Build input changed: '+relative

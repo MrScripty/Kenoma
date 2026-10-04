@@ -25,7 +25,7 @@ def generate(folder,spatial):
   body+=f'<text x="{offset-110}" y="500" font-family="sans-serif" font-size="20">{text}</text>'
  for c in r['contacts']:
   x,y=project(c['point'],135,1000,370);body+=f'<circle cx="{x}" cy="{y}" r="4" fill="#8a6000"/>'
- body+='<text x="35" y="545" font-family="sans-serif" font-size="19">Coral: tissue · Red: active span · Gold: tendon/bones · Mint: separate skin</text><text x="35" y="579" font-family="sans-serif" font-size="19">Sampled penetration: 0.0283 mm mechanical / 9.7500 mm LBS</text><text x="35" y="613" font-family="sans-serif" font-size="18">Schematic geometry · one-way quasistatic solve · finite iterations · not medical pressure</text>'
+ body+='<text x="35" y="545" font-family="sans-serif" font-size="19">Coral: tissue · Red: active span · Gold: tendon/bones · Mint: separate skin</text>'+f'<text x="35" y="579" font-family="sans-serif" font-size="19">Sampled penetration: {r["penetrationM"]*1000:.4f} mm mechanical / {r["baselinePenetrationM"]*1000:.4f} mm LBS</text>'+ '<text x="35" y="613" font-family="sans-serif" font-size="18">Schematic geometry · one-way quasistatic solve · finite iterations · not medical pressure</text>'
  (folder/'spatial.svg').write_text(svg(body,'Spatial arm contact comparison','Actual solved schematic mesh with separate skin and identical posed bones. Numerical values retain SI units.'))
  example=json.loads((ROOT/'contributions/continuum_reference/data/example.json').read_text());nodes=example['nodes'];faces=[f['tri'] for f in example['surface']]
  body='<text x="30" y="34" font-family="sans-serif" font-size="25">The same spatial implicit target, solved two ways</text>'
