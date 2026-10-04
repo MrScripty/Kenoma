@@ -45,6 +45,9 @@ jobs:
       - name: Check anatomical research foundation separately from the published capstone
         run: |
           npm run anatomy:geometry
+          node tools/repair-anatomical-reference.mjs
+          node tools/partition-anatomical-origins.mjs
+          node tools/anatomical-radial-apposition.mjs
           npm run anatomy:proofs
           node tools/anatomical-fixture-experiment.mjs
           node tools/anatomical-bone-collision-audit.mjs
