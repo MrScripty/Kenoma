@@ -16,6 +16,11 @@ browser=json.loads((out/'browser-check.json').read_text());assert browser['statu
 assert browser['proof_cards']==len(proof['claims'])
 assert browser['html_sha256']==hashlib.sha256((out/'index.html').read_bytes()).hexdigest()
 assert browser['app_sha256']==hashlib.sha256((out/'assets/app.js').read_bytes()).hexdigest()
+mobile=json.loads((out/'mobile-startup-check.json').read_text())
+assert mobile['status']=='passed' and mobile['downloads_on_start']==[]
+assert mobile['html_sha256']==browser['html_sha256'] and mobile['app_sha256']==browser['app_sha256']
+assert set(mobile['startup_draws'])=={'force','torque','energy','elbow','series','continuum','spatial','atlas'}
+assert all(d['available'] and not d['lost'] and d['unique_colors']>100 and d['vivid_geometry_pixels']>300 for d in mobile['startup_draws'].values())
 doc=fitz.open(out/'kenoma-mechanics.pdf');combined='\n'.join(page.get_text() for page in doc)
 assert len(doc)>5 and '\ufffd' not in combined
 for needle in ['Force changes motion','Energy reveals numerical error','Checked source appendix','14.715','0.80','Store tendon energy','Inspect real anatomy','4,403','51.243524','798.52']:

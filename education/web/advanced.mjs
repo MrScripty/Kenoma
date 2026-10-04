@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import {formatReadout} from './readout.mjs';
+import {SceneStatus} from './scene-status.mjs';
 import {seriesResults} from './series.mjs';
 import {SPATIAL,SPATIAL_MESH as mesh,spatialInitial,spatialStep,spatialResults,rotate} from './spatial.mjs';
 import {makeCase,solveReference,solveCompliant,diagnose,difference,continuumError} from '../contributions/continuum_reference/continuum.mjs';
@@ -10,6 +11,7 @@ export class AdvancedView{
   this.root=root;this.kind=root.dataset.advanced;this.activate=activate;this.host=root.querySelector('.scene-host');this.status=root.querySelector('.announce');this.view='front';this.running=false;
   root.querySelectorAll('[data-param]').forEach(input=>input.addEventListener('input',()=>this.change(input)));
   for(const [action,fn] of Object.entries({start:()=>this.start(),reset:()=>this.reset(),view:()=>{this.view=this.view==='front'?'oblique':'front';this.draw();this.status.textContent=`${this.view} view; numerical state unchanged.`;},step:()=>{this.pause();this.step();},play:()=>this.running?this.pause():this.play(),release:()=>{this.pulse=false;this.params.excitation=0;this.sync();this.update(false);this.status.textContent='Released excitation; activation, pose and spatial state are unchanged until the next step.';},pulse:()=>{this.reset();this.pulse=true;this.play();},compression:()=>{this.pause();this.params.mode='prescribed';this.params.angle=90;this.params.sweeps=640;this.state=spatialInitial(this.params);this.state.a=.6;this.index=0;this.history=[];this.sync();this.update();this.status.textContent='Same-pose compression fixture: q = 90°, a = 0.6, finite quasistatic solve, 640-iteration cap. No time advanced.';},summary:()=>{this.status.textContent=formatReadout(root.querySelector('.readout'));},copy:()=>this.copy(),export:()=>this.export()}))root.querySelector(`[data-action=${action}]`)?.addEventListener('click',fn);
+  this.sceneStatus=new SceneStatus(root,()=>this.stopRenderer());
   this.reset();
  }
  sync(){this.root.querySelectorAll('[data-param]').forEach(el=>{el.value=this.params[el.dataset.param];el.removeAttribute('aria-invalid');});}
@@ -47,9 +49,20 @@ export class AdvancedView{
   }
   this.root.querySelector('.readout').replaceChildren(...rows.map(([label,value])=>{const div=document.createElement('div'),dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=label;dd.textContent=value;div.append(dt,dd);return div;}));this.draw();
  }
- start(){this.activate(this);if(!this.renderer)try{this.renderer=new THREE.WebGLRenderer({antialias:true});this.renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));this.renderer.setClearColor(0x101d2c);this.renderer.domElement.setAttribute('role','img');this.renderer.domElement.setAttribute('aria-label',`${this.kind} paired 3D comparison; numerical results and text alternative follow.`);this.host.replaceChildren(this.renderer.domElement);this.scene=new THREE.Scene();this.camera=new THREE.PerspectiveCamera(36,1,.01,100);this.observer=new ResizeObserver(()=>this.draw());this.observer.observe(this.host);}catch{this.stopRenderer();this.status.textContent='3D unavailable; numerical controls, static figure and text remain usable.';return;}this.root.classList.add('active-scene');this.draw();}
- stopRenderer(){this.pause();this.observer?.disconnect();this.scene?.traverse(o=>{o.geometry?.dispose();o.material?.dispose();});this.renderer?.dispose();this.renderer?.forceContextLoss();this.renderer=null;this.host.replaceChildren();this.root.classList.remove('active-scene');}
- draw(){
+ start(){
+  this.activate(this);this.sceneStatus.begin();
+  if(!this.renderer)try{
+   this.renderer=new THREE.WebGLRenderer({antialias:true});this.renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));this.renderer.setClearColor(0x101d2c);
+   this.renderer.domElement.setAttribute('role','img');this.renderer.domElement.setAttribute('aria-label',`${this.kind} paired 3D comparison; numerical results and text alternative follow.`);
+   this.host.replaceChildren(this.renderer.domElement);this.scene=new THREE.Scene();this.camera=new THREE.PerspectiveCamera(36,1,.01,100);
+   this.sceneStatus.watch(this.renderer);this.observer=new ResizeObserver(()=>this.draw());this.observer.observe(this.host);
+  }catch(error){this.sceneStatus.fail(error,'initialization');this.status.textContent='3D unavailable; numerical controls, static figure and text remain usable.';return;}
+  this.root.classList.add('active-scene');
+  if(this.draw())try{this.sceneStatus.ready(this.renderer);}catch(error){this.sceneStatus.fail(error,'first-frame');}
+ }
+ stopRenderer(){this.pause();if(!this.renderer&&this.root.dataset.sceneState==='error')return;this.sceneStatus.idle();this.observer?.disconnect();this.scene?.traverse(o=>{o.geometry?.dispose();o.material?.dispose();});this.renderer?.dispose();this.renderer?.forceContextLoss();this.renderer=null;this.host.replaceChildren();this.root.classList.remove('active-scene');}
+ draw(){if(!this.renderer)return false;return this.sceneStatus.draw(()=>this.renderScene());}
+ renderScene(){
   if(!this.renderer)return;this.scene.traverse(o=>{o.geometry?.dispose();o.material?.dispose();});this.scene.clear();this.scene.add(new THREE.AmbientLight(0xffffff,2));const light=new THREE.DirectionalLight(0xffffff,3);light.position.set(1,2,4);this.scene.add(light);
   const surf=(x,faces,color,offset,scale,wire=false,alpha=1)=>{const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(x.map(X=>[offset+scale*X[0],scale*(X[1]-.04),scale*X[2]]).flat(),3));g.setIndex(faces.flat());g.computeVertexNormals();const obj=new THREE.Mesh(g,new THREE.MeshStandardMaterial({color,side:THREE.DoubleSide,roughness:.7,transparent:alpha<1,opacity:alpha,wireframe:wire,depthWrite:alpha===1}));this.scene.add(obj);};
   const rod=(A,B,r,color,offset,scale)=>{const a=new THREE.Vector3(offset+scale*A[0],scale*(A[1]-.04),scale*A[2]),b=new THREE.Vector3(offset+scale*B[0],scale*(B[1]-.04),scale*B[2]),d=b.clone().sub(a);const obj=new THREE.Mesh(new THREE.CylinderGeometry(r*scale,r*scale,d.length(),18),new THREE.MeshStandardMaterial({color}));obj.position.copy(a.add(b).multiplyScalar(.5));obj.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.normalize());this.scene.add(obj);};

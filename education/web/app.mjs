@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import {formatReadout} from './readout.mjs';
+import {SceneStatus} from './scene-status.mjs';
 import {DEFAULTS,forceState,leverState,springStep,springEnergy} from './mechanics.mjs';
 import {ELBOW,elbowInitial,elbowResults,elbowStep} from './elbow.mjs';
 import {SERIES,seriesInitial,seriesResults,seriesStep} from './series.mjs';
@@ -43,6 +44,7 @@ class Lab {
       const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=this.kind==='series'?'kenoma-series-trace.json':'kenoma-elbow-trace.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
       this.status.textContent='Downloaded the current trace with model parameters and energy accounting.';
     });
+    this.sceneStatus=new SceneStatus(root,()=>this.stopRenderer());
     this.reset();
   }
   change(input) {
@@ -166,6 +168,7 @@ class Lab {
   start(){
     if(active && active!==this)active.stopRenderer();
     active=this;
+    this.sceneStatus.begin();
     if(!this.renderer){
       try {
         this.renderer=new THREE.WebGLRenderer({antialias:true,alpha:false});
@@ -175,22 +178,24 @@ class Lab {
         canvas.setAttribute('aria-label',`${this.kind} schematic 3D scene; equivalent results and description follow.`);
         this.sceneHost.replaceChildren(canvas);this.scene=new THREE.Scene();
         this.camera=new THREE.PerspectiveCamera(40,1,0.01,100);
+        this.sceneStatus.watch(this.renderer);
         this.observer=new ResizeObserver(()=>this.draw());this.observer.observe(this.sceneHost);
       }catch(error){
-        this.stopRenderer();this.status.textContent='3D rendering unavailable. Static figure, controls and numerical results remain available.';return;
+        this.sceneStatus.fail(error,'initialization');this.status.textContent='3D rendering unavailable. Static figure, controls and numerical results remain available.';return;
       }
     }
-    this.root.classList.add('active-scene');this.root.querySelector('[data-action="start"]').textContent='3D scene active';
-    this.draw();
+    this.root.classList.add('active-scene');
+    if(this.draw())try{this.sceneStatus.ready(this.renderer);}catch(error){this.sceneStatus.fail(error,'first-frame');}
   }
   stopRenderer(){
-    this.pause();this.observer?.disconnect();
+    this.pause();if(!this.renderer&&this.root.dataset.sceneState==='error')return;
+    this.sceneStatus.idle();this.observer?.disconnect();
     this.scene?.traverse(obj=>{obj.geometry?.dispose();if(obj.material)obj.material.dispose();});
     this.renderer?.dispose();this.renderer?.forceContextLoss();this.renderer=null;
     this.sceneHost.replaceChildren();this.root.classList.remove('active-scene');
-    this.root.querySelector('[data-action="start"]').textContent='Start 3D scene';
   }
-  draw(){
+  draw(){if(!this.renderer)return false;return this.sceneStatus.draw(()=>this.renderScene());}
+  renderScene(){
     if(!this.renderer)return;
     this.scene.traverse(obj=>{obj.geometry?.dispose();if(obj.material)obj.material.dispose();});this.scene.clear();
     this.scene.add(new THREE.AmbientLight(0xffffff,2));

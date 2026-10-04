@@ -18,7 +18,7 @@ def render():
     server,url=serve()
     try:
         with sync_playwright() as p:
-            browser=p.chromium.launch(headless=True, executable_path=os.environ.get("CHROMIUM_EXECUTABLE") or shutil.which("chromium"), args=["--enable-unsafe-swiftshader"])
+            browser=p.chromium.launch(headless=True, executable_path=os.environ.get("CHROMIUM_EXECUTABLE") or shutil.which("chromium"))
             page=browser.new_page()
             page.goto(url+'/index.html',wait_until='networkidle')
             page.emulate_media(media='print')

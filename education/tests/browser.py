@@ -11,7 +11,7 @@ def check():
     server,url=serve();checks=[];out=ROOT/'dist/qa';out.mkdir(exist_ok=True)
     try:
       with sync_playwright() as p:
-        browser=p.chromium.launch(headless=True,executable_path=os.environ.get('CHROMIUM_EXECUTABLE') or shutil.which('chromium'),args=['--enable-unsafe-swiftshader'])
+        browser=p.chromium.launch(headless=True,executable_path=os.environ.get('CHROMIUM_EXECUTABLE') or shutil.which('chromium'))
         context=browser.new_context(viewport={'width':1280,'height':900},reduced_motion='reduce')
         page=context.new_page();page.set_default_timeout(60000);errors=[];page.on('pageerror',lambda err:errors.append(str(err)))
         page.goto(url+'/index.html',wait_until='networkidle')

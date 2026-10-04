@@ -1,5 +1,6 @@
 // Read-only evidence views. No anatomical rig or inference from recorded signals.
 import * as THREE from 'three';
+import {SceneStatus} from './scene-status.mjs';
 export class EvidenceView {
  constructor(root,activate){
   this.root=root;this.activate=activate;this.host=root.querySelector('.scene-host');this.status=root.querySelector('.announce');this.view='anterior';
@@ -9,6 +10,7 @@ export class EvidenceView {
   root.querySelector('[data-action=view]').addEventListener('click',()=>{this.view=this.view==='anterior'?'oblique':this.view==='oblique'?'posterior':'anterior';this.draw();this.status.textContent=`Atlas ${this.view} view; source geometry unchanged.`;});
   this.time.addEventListener('input',()=>this.read());
   root.querySelector('[data-action=reset]').addEventListener('click',()=>{this.part.value='all';this.time.value='0';this.view='anterior';this.draw();this.read();this.status.textContent='Atlas display and recorded bin reset; no mechanical model is driven.';});
+  this.sceneStatus=new SceneStatus(root,()=>this.stopRenderer());
   this.load().catch(()=>{this.status.textContent='Evidence data could not load. Static figures and downloadable files remain available.';});
  }
  async load(){
@@ -25,21 +27,26 @@ export class EvidenceView {
  pause(){} // Evidence views do not animate or advance a simulation.
  async start(){
   if(!this.atlas){this.status.textContent='Loading local atlas evidence; try Start again when data is ready.';return;}
-  this.activate(this);
+  this.activate(this);this.sceneStatus.begin();
   if(!this.renderer){
    try{
     this.renderer=new THREE.WebGLRenderer({antialias:true});this.renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));this.renderer.setClearColor(0x101d2c);
     this.renderer.domElement.setAttribute('role','img');this.renderer.domElement.setAttribute('aria-label','Static BodyParts3D atlas surfaces. Source z is superior; no pose or tissue mechanics is applied. Part labels and static alternative follow.');
     this.host.replaceChildren(this.renderer.domElement);this.scene=new THREE.Scene();this.camera=new THREE.PerspectiveCamera(35,1,.001,100);
+    this.sceneStatus.watch(this.renderer);
     this.observer=new ResizeObserver(()=>this.draw());this.observer.observe(this.host);
-   }catch{this.stopRenderer();this.status.textContent='3D rendering unavailable. Static atlas figure and source data remain available.';return;}
+   }catch(error){this.sceneStatus.fail(error,'initialization');this.status.textContent='3D rendering unavailable. Static atlas figure and source data remain available.';return;}
   }
-  this.draw();this.status.textContent='Actual static atlas loaded. Display centering and viewing rotation only; no rig, skin/contact or subject calibration.';
+  if(!this.draw())return;
+  try{this.sceneStatus.ready(this.renderer);}catch(error){this.sceneStatus.fail(error,'first-frame');return;}
+  this.status.textContent='Actual static atlas loaded. Display centering and viewing rotation only; no rig, skin/contact or subject calibration.';
  }
  stopRenderer(){
-  this.observer?.disconnect();this.scene?.traverse(o=>{o.geometry?.dispose();o.material?.dispose();});this.renderer?.dispose();this.renderer?.forceContextLoss();this.renderer=null;this.host.replaceChildren();
+  if(!this.renderer&&this.root.dataset.sceneState==='error')return;
+  this.sceneStatus.idle();this.observer?.disconnect();this.scene?.traverse(o=>{o.geometry?.dispose();o.material?.dispose();});this.renderer?.dispose();this.renderer?.forceContextLoss();this.renderer=null;this.host.replaceChildren();
  }
- draw(){
+ draw(){if(!this.renderer||!this.atlas)return false;return this.sceneStatus.draw(()=>this.renderScene());}
+ renderScene(){
   if(!this.renderer||!this.atlas)return;
   this.scene.traverse(o=>{o.geometry?.dispose();o.material?.dispose();});this.scene.clear();
   this.scene.add(new THREE.AmbientLight(0xffffff,2));const lamp=new THREE.DirectionalLight(0xffffff,3);lamp.position.set(1,2,3);this.scene.add(lamp);
