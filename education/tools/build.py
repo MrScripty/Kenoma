@@ -155,6 +155,10 @@ def build():
     if 'Could not convert TeX math' in pandoc_result.stderr:raise RuntimeError(pandoc_result.stderr)
     html_path=OUT/"index.html"
     rendered=html_path.read_text()
+    # MathML matrix fences can fail to stretch in Chromium's PDF font fallback.
+    # Preserve the semantic operators; draw full-height fences around the table.
+    rendered=re.sub(r'<mrow>(<mo[^>]*>\[</mo>)(<mtable>.*?</mtable>)(<mo[^>]*>\]</mo>)</mrow>',
+      r'<mrow class="matrix-fenced">\1\2\3</mrow>',rendered,flags=re.S)
     rendered=re.sub(r'<math display="block".*?</math>', lambda m: '<div class="equation" tabindex="0" aria-label="Scrollable displayed equation">'+m[0]+'</div>', rendered, flags=re.S)
     html_path.write_text(rendered)
     staging.unlink()

@@ -20,3 +20,8 @@ main img{max-width:100%;height:auto}#evidence-viewer .scene-host canvas{height:3
 @media print{.advanced-lesson .static-figure img{max-height:125mm}.advanced-lesson .static-figure{background:#fff;color:#152e41}.advanced-lesson .static-figure figcaption{font-size:9pt}}
 
 @media print{.keep-together{break-inside:avoid}}
+/* Atomic inline equations prevent a superscript fragment escaping its paragraph. */
+math[display="inline"]{display:inline-block;white-space:nowrap;break-inside:avoid}
+/* Keep MathML semantics while drawing matrix fences independently of font glyphs. */
+.matrix-fenced>mo{opacity:0}
+.matrix-fenced>mtable{border-left:1px solid currentColor;border-right:1px solid currentColor;background:linear-gradient(currentColor,currentColor) left top/.3em 1px no-repeat,linear-gradient(currentColor,currentColor) right top/.3em 1px no-repeat,linear-gradient(currentColor,currentColor) left bottom/.3em 1px no-repeat,linear-gradient(currentColor,currentColor) right bottom/.3em 1px no-repeat}

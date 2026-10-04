@@ -22,7 +22,7 @@ def generate(out):
 <path class="force" d="M470 163V238"/><text x="492" y="215">Fᵧ = -49.05 N</text>
 <path stroke="#fff" d="M125 91H467 M125 85V97 M467 85V97"/><text x="235" y="78">L = 0.30 m</text>
 <text x="38" y="32">Posed massless lever • m = 5 kg • θ = 0°</text><text x="72" y="183" class="small">pivot</text>
-<text x="65" y="228">τz = -14.715 N m</text>''',out/'torque.svg')
+<text x="150" y="228">τz = -14.715 N m</text>''',out/'torque.svg')
     pts=' '.join(f'{110+i*3.2:.1f},{130+(0 if i in [0,100] else (12 if (i//3)%2 else -12))}' for i in range(101))
     svg('Energy laboratory initial spring state',f'''
 <path class="axis" d="M75 160H630"/><path class="line" d="M105 70V170"/>
