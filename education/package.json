@@ -1,0 +1,15 @@
+{
+  "name": "kenoma-education",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "python3 tools/build.py",
+    "test": "node --test tests/mechanics.test.mjs",
+    "proofs": "python3 tools/check_proofs.py",
+    "pdf": "python3 tools/render_pdf.py",
+    "test:browser": "python3 tests/browser.py"
+  },
+  "dependencies": {"three": "0.180.0"},
+  "devDependencies": {"esbuild": "0.25.10"}
+}
