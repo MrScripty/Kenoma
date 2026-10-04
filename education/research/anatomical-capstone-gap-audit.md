@@ -85,7 +85,7 @@ Replace per-edge constants with documented continuum properties and a discretiza
 
 ### Tendon, attachment transfer, joint evolution and work
 
-Use a specified tensile law F_T = A₀ σ_T(ε_T), including slack/toe behavior and energy consistently; ε_T = (l_T−l_slack)/l_slack. Distributed tendinous regions also require their actual stress/geometry. Use l_MT = l_T + l_f cos α only where that lumped architecture approximation is declared; a 3D field need not be forced into that identity globally.
+Use a specified tensile law F_T = A₀ P_T(ε_T), with reference area A₀ and nominal axial stress P_T, including slack/toe behavior and energy consistently; ε_T = (l_T−l_slack)/l_slack. If using Cauchy stress instead, use the current area. Distributed tendinous regions also require their actual stress/geometry. Use l_MT = l_T + l_f cos α only where that lumped architecture approximation is declared; a 3D field need not be forced into that identity globally.
 
 For each bone-bound attachment or contact point x_b(q), define its kinematic Jacobian B_b = ∂x_b/∂q. If f_b is the force **on the bone**, generalized force is Q_tissue = Σ B_bᵀ f_b, and virtual power is Q_tissue q̇ = Σ f_b·ẋ_b. Specify opposite tissue-side reactions and signs. Area/quadrature weights and force distributions must preserve resultant, moment and power. The Jacobian B is distinct from volume ratio J. A path reference still has r = −∂l_MT/∂q and Q = rF_T; it is an independent comparison, not an extra lifting moment.
 
