@@ -9,3 +9,7 @@ This repo contains 3 main tracks:
 In theory the simpilist option is probably good enough for the intended use case, but morph targets have the potential for more control and consistent character generation. At this time i dont know if biomechanical simulation is practical as its much more difficult to create a system capable of acuratly simulating human anatomy and doing so in real time, but the problem is interesting enough i want to try it.
 
 The word Kenoma comes from the ancient Greek word κένωμα which litteraly means "emptiness", "void", or "That which has been emptied". It seemed fitting for a lifeless mannequin that doesnt appear alive until diffusion paints it with life. 
+
+## Educational mechanics book
+
+The additive [educational book and seven 3D laboratories](education/README.md) develop force, torque, energy, activation/release, tendon storage, a worked spatial FEM/fast-solver comparison and a spatial muscle-under-skin/elbow-contact capstone at identical poses. Licensed atlas surfaces, recorded normalized human signals and source model parameters remain separate evidence streams. The book includes original numerical experiments, primary citations and visible checked Lean claims. Its schematic one-way capstone is an educational model; the original production simulator plans remain separate.

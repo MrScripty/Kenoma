@@ -1,0 +1,78 @@
+LICENSES AND ATTRIBUTION
+
+No package-wide license supersedes the licenses of its component sources.
+Retain source credits, source links, the modification descriptions and the
+following source-specific notices when redistributing relevant components.
+This is a provenance record, not legal advice.
+
+BODY PARTS 3D
+Data and data-derived figure: Creative Commons Attribution 4.0 International.
+Required attribution:
+BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International.
+License: https://creativecommons.org/licenses/by/4.0/
+Official grant, updated 2025-02-27:
+https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html
+Release: BodyParts3D 4.0, IS-A 99% polygon-reduced archive.
+https://dbarchive.biosciencedbc.jp/data/bodyparts3d/20130619/release_4.0_e.html
+Publication: Mitsuhashi N, Fujieda K, Tamura T, Kawamoto S, Takagi T, Okubo K.
+BodyParts3D: 3D structure database for anatomical concepts.
+Nucleic Acids Research 37 (2009), D782-D785. DOI: 10.1093/nar/gkn613.
+Changes: ten-element selection; source mm to SI m in JSON; face indices to
+zero-based; explanatory colors and rendering for the original figure.
+Historical CC BY-SA 2.1 Japan comments remain in the untouched OBJ files.
+The current archive license is the source of the CC BY 4.0 grant used here.
+
+OPENARM MULTISENSOR 2.0
+Data, transformed CSV/JSON and data-derived figure: CC BY 4.0.
+License: https://creativecommons.org/licenses/by/4.0/
+Creators: Laura A. Hallock, Bhavna Sud, Chris Mitchell, Eric Hu, Fayyaz
+Ahamed, Akash Velu, Amanda Schwartz, and Ruzena Bajcsy.
+Publication: Toward Real-Time Muscle Force Inference and Device Control via
+Optical-Flow-Tracked Muscle Deformation. IEEE Transactions on Neural Systems
+and Rehabilitation Engineering 29 (2021), 2625-2634.
+https://doi.org/10.1109/TNSRE.2021.3133813
+Provider: https://simtk.org/frs/?group_id=1617
+Data folder: https://drive.google.com/drive/folders/1pj5yTKnpGu1HgSylA22fk8XsAkr9dS84
+The original README and errata supplied with the release are preserved.
+Changes: select coded participant 2 trial 1b, omit startup/calibration and
+identifying-time fields, retain normalized Processed streams, shift time
+origin, calculate half-second display means, generate an original figure.
+No original analysis implementation is copied into this package.
+
+ARM26
+Model XML and extracted parameters: CC BY 3.0.
+https://creativecommons.org/licenses/by/3.0/
+Credit: The OpenSim Development Team (Reinbolt, J; Seth, A; Habib, A;
+Hamner, S), adapted from a model originally created by Kate Holzbaur
+(11/22/04). The complete source credit remains in sources/arm26.osim.
+Publication: Holzbaur KRS, Murray WM, Delp SL. A Model of the Upper Extremity
+for Simulating Musculoskeletal Surgery and Analyzing Neuromuscular Control.
+Annals of Biomedical Engineering 33 (2005), 829-840.
+https://doi.org/10.1007/s10439-005-3320-7
+Pinned model:
+https://github.com/opensim-org/opensim-models/blob/84b487c4e3245359a64381e01f01b9cf4772d457/Models/Arm26/arm26.osim
+Changes: extract selected numerical parameters and coordinate bounds into
+CSV/JSON with units, source paths and evidence labels. Model XML unchanged.
+
+ORIGINAL PROCESSING SCRIPTS
+The original scripts in scripts/ are provided under MIT. They contain no
+copied third-party source implementation. External Python dependencies are
+not bundled and retain their own licenses. Third-party data is NOT MIT.
+
+MIT License
+Copyright (c) 2026 Kenoma educational data contribution
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to
+deal in the Software without restriction, including without limitation the
+rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+sell copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+IN THE SOFTWARE.

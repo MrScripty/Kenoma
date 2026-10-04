@@ -1,0 +1,50 @@
+# Kenoma educational book
+
+This additive track provides one illustrated research book, seven resettable 3D laboratories and a read-only actual-data viewer. It preserves the production simulator plans. The final teaching sequence integrates a reviewed tetrahedral FEM/compliant-solver comparison and an on-arm spatial volume, separate skin membrane, fascia tethers and sampled bone contact alongside same-pose naive skinning. The capstone is explicitly one-way and quasistatic; the line actuator drives the dumbbell hinge. All laboratory geometry/material defaults are authored, while the licensed atlas, normalized human trial and Arm26 parameters remain independent evidence. No clinical or subject-specific prediction is claimed.
+
+## Build and read
+
+Prerequisites: Node 22 or later, Python 3.12, Pandoc (tested 3.1.11.1), and pinned Lean 4.19.0. The local milestone used Node 24.19.0; CI selects Node 22; the reviewed foundation passed remotely, and the articulated-elbow descendant passed its own exact-head workflow; the complete spatial edition needs its own exact-head check. A Linux x86_64 installer downloads the official Lean archive and checks its recorded SHA-256. For another platform, use the official Lean release matching `proofs/lean-toolchain`.
+
+```bash
+cd education
+npm ci
+python3 -m pip install -r requirements.txt
+python3 -m playwright install chromium
+python3 tools/install_lean.py --directory .tools
+export LEAN="$PWD/.tools/lean-4.19.0-linux/bin/lean"
+npm test
+npm run build
+npm run pdf
+npm run test:browser
+python3 tests/artifacts.py
+python3 -m http.server 8000 --directory dist
+```
+
+Open `http://localhost:8000`. Generated outputs are `dist/kenoma-mechanics.md`, `dist/kenoma-mechanics.pdf`, and `dist/index.html`, with locally bundled assets, complete proof sources, citations, receipts, experiment measurements, and third-party notices. Serve the directory rather than opening HTML via `file://`, since module scripts need HTTP. Every URL is relative for a project-base path such as `/Kenoma/`.
+
+A system Chromium can be used when installed; `CHROMIUM_EXECUTABLE=/absolute/path/to/chromium` overrides selection. The local verified render used system Chromium because the Playwright CDN was unavailable. Browser versions are recorded in the generated receipts. PDF byte identity and cross-browser transcendental bit identity are not claimed.
+
+## Authoring and evidence
+
+- Edit canonical chapter Markdown in `book/chapters/`; order comes from `book/book.json`.
+- `{{demo:force}}`, `{{demo:torque}}`, `{{demo:energy}}`, `{{demo:elbow}}`, `{{demo:series}}` expand into HTML laboratories or static Markdown descriptions. `{{demo:continuum}}` and `{{demo:spatial}}` add the advanced lessons. Original SVGs are generated from actual solved fixture coordinates as well as elementary diagrams.
+- `{{proof:ID}}` connects a claim to the declaration in `proofs/claims.json`. `tools/check_proofs.py` invokes Lean afresh, rejects unknown/custom axiom dependencies and admissions, and writes a source-bound receipt only on success. No manual checked flag is accepted.
+- `{{experiment}}` executes the browser's pure mechanics module to generate the table and JSON result. Tests independently compare reference values and convergence, without claiming implementation refinement proofs.
+- The PDF prints the same HTML manuscript with native MathML and static diagrams. Controls and canvases are omitted; all prose, worked examples and exact claims remain.
+
+The 3D renderer initializes only when requested and keeps one active canvas. Numerical controls work without WebGL. A zero-JavaScript reader retains all chapter text, figures, mathematical claims and the numerical experiment table. Labs start paused; Reset restores all parameters and camera. Only deliberate requested summaries are announced, rather than every frame.
+
+Proofs use exact integer coordinates with explicitly positive SI scale factors, not real-valued biological models. The twelve checks cover cancellation, torque identities, kinetic-energy numerator nonnegativity, an exact worked torque, an integer convex-mixture numerator bound and signed virtual-power algebra, plus element-gradient resultants, centroid force-transfer power, a compliant-denominator bound and Armijo acceptance. Every card declares its domain and limits. These exact contracts do not prove the numerical implementation or biological response.
+
+## GitHub Pages foundation
+
+`.github/workflows/education.yml` validates branch/PR changes and uploads a reviewable artifact. The actions are pinned to verified upstream commit SHAs. Publication is a separate job available only through explicit `workflow_dispatch` with `publish=true` on `main`, after all build checks pass. The repository must have Pages configured to use GitHub Actions before that hosted job can succeed. No settings are changed by the local build and no Pages publication has been performed. Foundation head `ffde6989f72f8a60bf63977aa3375495a0ae6def` passed its remote build-only workflow, independently confirmed by review at https://github.com/MrScripty/Kenoma/actions/runs/37194337186 . The current edition needs its own exact-head remote check before publication.
+
+Do not describe a local build as a hosted site or a passing future workflow. Confirm the Actions run and deployment URL after review. Adding this workflow does not amend the Bevy MVP, require a full simulator, or authorize a merge.
+
+## Spatial lesson boundaries
+
+`web/spatial.mjs` implements central-edge energies, actual tetrahedral volume gradients, independent skin edges, compliant fascia vector tethers and bone-capsule vertex/centroid penalties. It uses deterministic limited-memory BFGS with Armijo/positive-J guards, reports finite-solve defects and limits q to 0–100°. It is not FEM, pressure measurement, self-contact or CCD. Its reactions do not drive the hinge, and instantaneous shape energy is not hinge active work.
+
+`contributions/continuum_reference/` retains the separately reviewed original module, chapter and source-bound fixtures. `npm test` explicitly discovers its 11 tests. Reference solves must converge before being displayed; static analytic error stays separate from matched implicit iterative error. Element assembly is cached across sweeps/camera changes. The original measured timing environment is retained; no universal browser speed claim is made.
