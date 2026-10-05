@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "result": "PASS_FROZEN_DIAGNOSTIC_EVIDENCE",
+  "physical_source_checkpoint": "c7db3bc5882612d9196961ba6d0d9182f1ad005c",
+  "sha256": {
+    "coarse-native-gradient.f64": "b2b0ca66baef48205139844c80cfe020d7a72f2106fbc5051f72f7e1a3c632d9",
+    "coarse-native-hessian.f64": "b7fb94a75c23d89513c8d2eaacdb3ece2d44eac7a2462d3329ddf50d9d33ff97",
+    "contact-curvature-categories.json": "8b601c193418216f25b372f3a71c94b097e4327d5e9c344f19fead3c2a84d7d3",
+    "contact-tags-execution.txt": "8b601c193418216f25b372f3a71c94b097e4327d5e9c344f19fead3c2a84d7d3",
+    "curvature-fd.json": "47a233ee6dfe7490420189428eb61cc8c63dfdefd83559b96f5ac890049d723d",
+    "curvature-first-failure/checker.mjs": "aef1a951b849b2f3e9be4a19c9bdd5f44b3051ab1103cc9753f9d461526503b0",
+    "curvature-first-failure/execution.txt": "c745a6461fb62326328af3421198637fccf8bb0d94b0313ed4947d8f7b35b611",
+    "curvature-refined-execution.txt": "e4b249c84a895b56e43447da63291af5a54e6d5c8e70758a20b8a27b32ad9105",
+    "curvature-split.json": "524f0ff75b833133feb434c0f93d552ec3e7e93b5d02602cd77eba1129e74d7a",
+    "fixed-pose-timestep-spectrum.json": "ca4d280cd6531b350a841008cf85696d845f639c0ff0d46480edcec3302b743a",
+    "frozen-execution.txt": "f251e5e2150ee626d915c9b05329d4834a05b0c78760fb6c681566ec7a7ad734",
+    "frozen.json": "e95ebcaadf9bf206c1e3e749f4597c53d89bfb9c94400df18463b343ebbb0315",
+    "matched-time-and-rejection.pdf": "110764e2aacc170ce081c5758cbf7136bde40eb6827de2de06ef7f9549e5cb21",
+    "matched-time-and-rejection.png": "0a4ca39b6b94a00d8958a32c6f7cdf90d15ec97e97ea0c6c857278a657a69356",
+    "negative-mode.f64": "bc2097e14d95fa5ae347a3aa22411a1377b3d4e14b71a4c09beeb652e58495f1",
+    "original-execution.txt": "ce3158046fd071fb1603442fefe5d54aa174c3f2f3bd134b7cc09b8f782e1fe3",
+    "original-fresh-replay.txt": "ffee5e812ea588f75528e73c8bf92a9b5cd6cb424e3a3b67574c7dbfb3c88029",
+    "rejected-native-gradient.f64": "e9dc7dbcfb00a7d48f97add1718e7351f931b9a8f46ff5ac819693e07666dd50",
+    "rejected-native-hessian.f64": "33faf8dd973b90ecdf3e273a1565e0d07e4be168a645f503f7617d5ea1681516",
+    "render-execution.txt": "6af5af17b38201b4409f1ce60c51b64eb319fff367988d23b3d9afb26d9392a5",
+    "render-receipt.json": "e85f831b0f3e3c1eadc1e1865290b1637dba1859e50369a59c4b4b805aafc6af",
+    "spectrum-execution.txt": "48aa05c8fb473c69836b3aa608201c4b50c047f5e0ac32b1d74ab1d93338f1c6",
+    "spectrum.json": "48aa05c8fb473c69836b3aa608201c4b50c047f5e0ac32b1d74ab1d93338f1c6",
+    "split-execution.txt": "524f0ff75b833133feb434c0f93d552ec3e7e93b5d02602cd77eba1129e74d7a",
+    "tagged-contact.mjs": "3fdeacb0d841f3d3472e7aa2482b144140946420978054ed2cf1fb85f52254b0"
+  },
+  "scope": "Frozen diagnostics and original terminal replay only; ongoing controlled-run receipts are not included."
+}

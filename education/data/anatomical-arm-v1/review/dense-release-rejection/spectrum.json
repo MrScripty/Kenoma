@@ -1,0 +1,209 @@
+{
+  "schema": 1,
+  "result": "PASS_FROZEN_REDUCED_SPECTRUM",
+  "numpy": "2.3.5",
+  "sourceHashes": {
+    "tools/dense_rejection_spectrum.py": "0bd178a55374c6533072139bc2417575d292de0472c819f6931995f87143883b",
+    "frozen.json": "e95ebcaadf9bf206c1e3e749f4597c53d89bfb9c94400df18463b343ebbb0315",
+    "rejected-native-hessian.f64": "33faf8dd973b90ecdf3e273a1565e0d07e4be168a645f503f7617d5ea1681516",
+    "rejected-native-gradient.f64": "e9dc7dbcfb00a7d48f97add1718e7351f931b9a8f46ff5ac819693e07666dd50",
+    "coarse-native-hessian.f64": "b7fb94a75c23d89513c8d2eaacdb3ece2d44eac7a2462d3329ddf50d9d33ff97",
+    "coarse-native-gradient.f64": "b2b0ca66baef48205139844c80cfe020d7a72f2106fbc5051f72f7e1a3c632d9"
+  },
+  "rows": {
+    "rejected-native": {
+      "symmetryErrorNPerM": 3.725290298461914e-09,
+      "relativeSymmetryError": 8.454806417479803e-17,
+      "relativeEigenResidual": 5.749208463385936e-16,
+      "minimumEigenvalueNPerM": -177.81317238660324,
+      "maximumEigenvalueNPerM": 76030923.59675452,
+      "negativeEigenvaluesBelowMinus1eMinus6": 1,
+      "scaledMinimumEigenvalue": -0.014740609232879561,
+      "scaledMaximumEigenvalue": 13.278795145363185,
+      "scaledNegativeEigenvaluesBelowMinus1eMinus10": 1,
+      "minimumModes": [
+        {
+          "eigenvalueNPerM": -177.81317238660324,
+          "jointFraction": 2.20742364532216e-06,
+          "bodyFractions": {
+            "FJ1486": 2.1397132765497127e-07,
+            "FJ1512": 4.320529773339759e-08,
+            "FJ1478": 7.393116376028565e-08,
+            "FJ1480": 1.3446219091064546e-09,
+            "FJ1477": 7.517801319345443e-08,
+            "FJ1479": 1.1371262671164314e-07,
+            "FJ1487": 0.9999968521707064
+          }
+        },
+        {
+          "eigenvalueNPerM": 1.7635763540248923,
+          "jointFraction": 7.770298268517099e-12,
+          "bodyFractions": {
+            "FJ1486": 0.001069774576984853,
+            "FJ1512": 2.7168822447219745e-05,
+            "FJ1478": 1.3290262596537901e-05,
+            "FJ1480": 1.3772998165876144e-13,
+            "FJ1477": 4.5660843461117575e-12,
+            "FJ1479": 2.2812538301962428e-12,
+            "FJ1487": 0.9988854505090814
+          }
+        },
+        {
+          "eigenvalueNPerM": 2.7979248486894694,
+          "jointFraction": 6.257505998413017e-11,
+          "bodyFractions": {
+            "FJ1486": 1.5577673104425886e-12,
+            "FJ1512": 6.477121228319595e-12,
+            "FJ1478": 1.1995465282330899e-11,
+            "FJ1480": 0.05196393256689229,
+            "FJ1477": 0.7571611881648471,
+            "FJ1479": 0.18080692445360572,
+            "FJ1487": 2.6946630830322054e-10
+          }
+        }
+      ],
+      "frozenShiftedDirections": [
+        {
+          "shiftNPerM": 0.001,
+          "minimumShiftedEigenvalueNPerM": -177.81217238660324,
+          "positiveDefinite": false,
+          "maximumCoordinateDirectionM": 0.0003330127438707916,
+          "jointDirectionRad": 1.5300749749380649e-06,
+          "gradientDotDirectionJ": -3.957654700158636e-06,
+          "linearResidualN": 5.6560252358409113e-14,
+          "unshiftedNewtonResidualN": 3.3301274371920486e-07
+        },
+        {
+          "shiftNPerM": 1.0,
+          "minimumShiftedEigenvalueNPerM": -176.81317238660324,
+          "positiveDefinite": false,
+          "maximumCoordinateDirectionM": 0.0002775912896312019,
+          "jointDirectionRad": 1.4774975602017237e-06,
+          "gradientDotDirectionJ": -3.3662232511214186e-06,
+          "linearResidualN": 1.4494021217600905e-14,
+          "unshiftedNewtonResidualN": 0.00027759128963112355
+        },
+        {
+          "shiftNPerM": 1000.0,
+          "minimumShiftedEigenvalueNPerM": 822.1868276133968,
+          "positiveDefinite": true,
+          "maximumCoordinateDirectionM": 5.153186139676196e-06,
+          "jointDirectionRad": 7.16537985596352e-08,
+          "gradientDotDirectionJ": -2.05908245410504e-07,
+          "linearResidualN": 8.348356728138384e-17,
+          "unshiftedNewtonResidualN": 0.005153186139676212
+        },
+        {
+          "shiftNPerM": 10000.0,
+          "minimumShiftedEigenvalueNPerM": 9822.186827613397,
+          "positiveDefinite": true,
+          "maximumCoordinateDirectionM": 6.419040749050694e-07,
+          "jointDirectionRad": -3.2670121347230873e-07,
+          "gradientDotDirectionJ": -9.574723286999339e-08,
+          "linearResidualN": 2.2714035513571318e-17,
+          "unshiftedNewtonResidualN": 0.006419040749050687
+        }
+      ]
+    },
+    "coarse-native": {
+      "symmetryErrorNPerM": 1.862645149230957e-09,
+      "relativeSymmetryError": 4.2273989949289467e-17,
+      "relativeEigenResidual": 7.286035722282957e-16,
+      "minimumEigenvalueNPerM": 0.38906235227924557,
+      "maximumEigenvalueNPerM": 76030907.39732713,
+      "negativeEigenvaluesBelowMinus1eMinus6": 0,
+      "scaledMinimumEigenvalue": 1.6848338983789313e-05,
+      "scaledMaximumEigenvalue": 12.413994080947678,
+      "scaledNegativeEigenvaluesBelowMinus1eMinus10": 0,
+      "minimumModes": [
+        {
+          "eigenvalueNPerM": 0.38906235227924557,
+          "jointFraction": 1.1805012942984563e-10,
+          "bodyFractions": {
+            "FJ1486": 0.0009705106380775146,
+            "FJ1512": 9.969776297944192e-05,
+            "FJ1478": 1.4443192866968961e-05,
+            "FJ1480": 7.417479099462899e-13,
+            "FJ1477": 1.697648049657628e-11,
+            "FJ1479": 1.6724436087959853e-11,
+            "FJ1487": 0.9988999114123942
+          }
+        },
+        {
+          "eigenvalueNPerM": 2.326121585813496,
+          "jointFraction": 2.426066753045976e-09,
+          "bodyFractions": {
+            "FJ1486": 8.33939288648622e-11,
+            "FJ1512": 3.670758956277388e-10,
+            "FJ1478": 4.5252467335828166e-10,
+            "FJ1480": 0.03449195053703225,
+            "FJ1477": 0.7922611708924006,
+            "FJ1479": 0.15723581755736526,
+            "FJ1487": 1.9853373729253154e-08
+          }
+        },
+        {
+          "eigenvalueNPerM": 3.193549234751854,
+          "jointFraction": 2.817002138763962e-08,
+          "bodyFractions": {
+            "FJ1486": 0.01643685465873781,
+            "FJ1512": 0.004116210921910244,
+            "FJ1478": 0.00160867655756857,
+            "FJ1480": 8.336373356826355e-10,
+            "FJ1477": 1.1423647228853663e-08,
+            "FJ1479": 8.68953089396829e-09,
+            "FJ1487": 0.9771555677389318
+          }
+        }
+      ],
+      "frozenShiftedDirections": [
+        {
+          "shiftNPerM": 0.001,
+          "minimumShiftedEigenvalueNPerM": 0.39006235227924557,
+          "positiveDefinite": true,
+          "maximumCoordinateDirectionM": 3.0445021718631387e-05,
+          "jointDirectionRad": 1.6937463674836403e-08,
+          "gradientDotDirectionJ": -5.8234116657172555e-09,
+          "linearResidualN": 1.4430730915782064e-15,
+          "unshiftedNewtonResidualN": 3.0445021712227974e-08
+        },
+        {
+          "shiftNPerM": 1.0,
+          "minimumShiftedEigenvalueNPerM": 1.3890623522792456,
+          "positiveDefinite": true,
+          "maximumCoordinateDirectionM": 1.0615339973445147e-05,
+          "jointDirectionRad": 1.9558016562495453e-08,
+          "gradientDotDirectionJ": -3.549043357881328e-09,
+          "linearResidualN": 1.4430730915782064e-15,
+          "unshiftedNewtonResidualN": 1.0615339973440519e-05
+        },
+        {
+          "shiftNPerM": 1000.0,
+          "minimumShiftedEigenvalueNPerM": 1000.3890623522792,
+          "positiveDefinite": true,
+          "maximumCoordinateDirectionM": 4.128488790072622e-08,
+          "jointDirectionRad": 2.838175055580496e-10,
+          "gradientDotDirectionJ": -2.963770076899118e-11,
+          "linearResidualN": 1.0191500421363742e-17,
+          "unshiftedNewtonResidualN": 4.128488790072619e-05
+        },
+        {
+          "shiftNPerM": 10000.0,
+          "minimumShiftedEigenvalueNPerM": 10000.389062352278,
+          "positiveDefinite": true,
+          "maximumCoordinateDirectionM": 4.248979664029494e-09,
+          "jointDirectionRad": 8.472889408122533e-11,
+          "gradientDotDirectionJ": -3.0112115301994725e-12,
+          "linearResidualN": 6.505213034913027e-19,
+          "unshiftedNewtonResidualN": 4.248979664029493e-05
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Objective Hessians in the existing 460-coordinate space; no full-nodal/mesh stability certification.",
+    "Negative reduced curvature can occur away from a local minimum; it is not by itself proof of infeasible contact or physiological buckling.",
+    "Shifted directions are frozen algebraic diagnostics, not line searches, accepted states or new solver regularization.",
+    "Native coarse and rejected fine operators have different physical poses/history; identical-pose h dependence is recorded separately in frozen.json."
+  ]
+}

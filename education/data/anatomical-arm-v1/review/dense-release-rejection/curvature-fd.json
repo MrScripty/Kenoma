@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "result": "PASS_LOCAL_NEGATIVE_CURVATURE_AT_REFINED_DIFFERENCE",
+  "rows": [
+    {
+      "incrementM": 0.000001,
+      "actualForceDifferenceCurvatureNPerM": -177.30406433416937,
+      "analyticEigenvalueNPerM": -177.81317238661225,
+      "absoluteErrorNPerM": 0.5091080524428833,
+      "relativeError": 0.002863162754534009
+    },
+    {
+      "incrementM": 5e-7,
+      "actualForceDifferenceCurvatureNPerM": -177.68588401248414,
+      "analyticEigenvalueNPerM": -177.81317238661225,
+      "absoluteErrorNPerM": 0.12728837412811345,
+      "relativeError": 0.0007158545816355793
+    },
+    {
+      "incrementM": 2.5e-7,
+      "actualForceDifferenceCurvatureNPerM": -177.7813457568574,
+      "analyticEigenvalueNPerM": -177.81317238661225,
+      "absoluteErrorNPerM": 0.03182662975484618,
+      "relativeError": 0.0001789891565831061
+    },
+    {
+      "incrementM": 1e-8,
+      "actualForceDifferenceCurvatureNPerM": -177.81312412294605,
+      "analyticEigenvalueNPerM": -177.81317238661225,
+      "absoluteErrorNPerM": 0.000048263666201364686,
+      "relativeError": 2.714290822978338e-7
+    },
+    {
+      "incrementM": 5e-9,
+      "actualForceDifferenceCurvatureNPerM": -177.81315391830324,
+      "analyticEigenvalueNPerM": -177.81317238661225,
+      "absoluteErrorNPerM": 0.000018468309008312644,
+      "relativeError": 1.0386355949016938e-7
+    }
+  ],
+  "sourceHashes": {
+    "tools/anatomical-contact-experiment.mjs": "a258797940c1bb0e0db0882539d9a802e0fea4671dcec0b54188e2feea91fa75",
+    "web/anatomical-aponeurosis.mjs": "1dbebfd2ea67427ee0d962b7b234d2d40a2f2cd4616a4f1199e20b3aba7316a0",
+    "web/anatomical-apparatus.mjs": "be60e6a3ba4db34ee01a4cb531bcdd19f868645ef26e06e1e30daedbc360cb98",
+    "web/anatomical-arm-worker.mjs": "dfadf3136b8ecac0fd6275f059085636eb8953346d920ca69a4d4382fa7b39d5",
+    "web/anatomical-arm.mjs": "9ec37ec7b23bb67643fef715f4554fc8811e897a581691231e6669fdd66c7569",
+    "web/anatomical-audit.mjs": "4f45bf4ce4459096e9595cd7bb1e0bcdfb0fafe858ee5da25444940604589f14",
+    "web/anatomical-comparison.mjs": "d812405b86541f756759bede9750071117edbab81e69efcfadf96f4f195fd09f",
+    "web/anatomical-contact-differential.mjs": "76f107f5eb1c41fdf6622c428648babc5a489113a709fd337782b1b3de3cac0b",
+    "web/anatomical-contact-refinement.mjs": "29830d2f311ee74a50acfd65f0ca8c245d2b390ed66d6eafd6c9b79de7607e07",
+    "web/anatomical-contact.mjs": "2e0ce22d3880b4d681cb24d700f694ea2b3bf8fc64fc66519e8ba998813aee1e",
+    "web/anatomical-coupled-fixture.mjs": "620afbb2e801f00ec361f5f1b5d39f010acc386812dcaa7239c0ca781d0bf4b9",
+    "web/anatomical-coupled-worker.mjs": "1c54d08f5e36ca837343fc96399ac85de8e92f8fe1ebd1d73a50e5885b93c435",
+    "web/anatomical-distance.mjs": "e11826c97f160220fda68f72cbe5e73f35f9527edcf4a4d58100c467cb50940a",
+    "web/anatomical-element.mjs": "3f67a6bd31565c83d2cbea591c3cf1862a48e50cc4efa780880fda7e808d4b1f",
+    "web/anatomical-fixture.mjs": "d53b5dca829883b4e91c02e5b88f3ac745ce7510cf28aabfcbd6cb978353a30a",
+    "web/anatomical-intersections.mjs": "a083a9838ac3c7508b65b58329c741aef65a065288aff82fc886d1c2c90375df",
+    "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+    "web/anatomical-modal.mjs": "12cd671bc963aa04dd5c0e173a776049de191283d850b0b60d0fe8e63be4c9a1",
+    "web/anatomical-newton.mjs": "e0b2193bff56a3fdb9595fa0893c469b5897a31512a282ff7a9b5519b2fe93fe",
+    "web/anatomical-preconditioner.mjs": "d234cd800784a57171514139a17d0720bb1a9d4d1089afcd9e7c783cead1b0b4",
+    "web/anatomical-retraction.mjs": "f5c4ef1115bc2a385d86e232cb9a6a36f8f61cd56d823b3495284de8e9c71819",
+    "web/anatomical-routing-audit.mjs": "e6ef4473a272c985cd05012cf4cbf424c45522b535c280ad5de49222dd459d9b",
+    "web/anatomical-routing.mjs": "83e52df556739786c97e4cb8ef6a7854d0d9a5fb36ca197b6bdc0b7597d09a3e",
+    "web/anatomical-solver.mjs": "2e23ae4e594c0947d15b21cdcd0422ad27e2bc3c2ac3af40293703c208906bfb",
+    "web/anatomical-tangent.mjs": "9b35daecd9efd68908e393998271f63cbc5728a5a2c4821560010ff5786f285c",
+    "web/anatomical-transfer.mjs": "1e82dabebf5a6247af9216a70292216b194a52545abf8f3b73c93ee6e2f22431",
+    "data/anatomical-arm-v1/generated/arm-reference.json": "1b80c1d3d9f2eb4370cd298f58f5e9c582625574f27072f6d3a1ea898ce4c036",
+    "data/anatomical-arm-v1/config/attachments-apparatus.json": "070fee738e73e127e334ee5cbe680cb622f100396ad0728eb9df6723c2232389",
+    "data/anatomical-arm-v1/config/apparatus-routing.json": "b8580e8158e17730b65b64d0fdbe0f1cbbafc76235b9a5f0c2b01020818cd93f",
+    "data/anatomical-arm-v1/audit/modal-fixed-end-results.json": "b0eeecdade262b682279d9ebeb7a8147a4525a992976a85afc0ce5e63270d8b4",
+    "data/anatomical-arm-v1/audit/arm-rest-results.json": "8dc23d896adce4b428f39cb172d76f3c74c828f49c2007c66155e45e8ea359c7",
+    "data/anatomical-arm-v1/audit/arm-loaded-rejected-candidate.json": "713c4aee49e5d8856e154b728b6cc127aa3a2383e83aa5720013cdf4060650ca",
+    "data/anatomical-arm-v1/audit/activation-continuation-results.json": "0c1c452277eadd4bac40219d1f1c0234a3e40731262d443f445b6f879b1530c0",
+    "data/anatomical-arm-v1/audit/contact-feature-v2/interrupted-lift.json": "5c23df199339719c4a46244ba85fcad4bd61376774bdccd330b9cf53c1c24e3b",
+    "data/anatomical-arm-v1/audit/contact-missed-soft-v3/candidate.json": "2075d10be43de28b02305c0f3e8b990f18186bdb026e29d31cc88c52af1d70ee",
+    "data/anatomical-arm-v1/audit/contact-lift-release-results.json": "a74bd8fa9fd7bc3745ed42c32af75fc44692408d081b2070ceeefa63a0db35a9",
+    "data/anatomical-arm-v1/audit/contact-lift-release-recheck.json": "387c284d2dd235ec52e66526bec6f19abc2a4eac5a8e6526cae25b728e9a2c1f",
+    "tools/anatomical-compression-quadrature.mjs": "f12e0d80224bad5e0bfa0649e08cac2f31a0baf162e2547ae8767b7371f48dc2",
+    "tools/anatomical-dense-quadrature.mjs": "2a9279268cc9a3c206e400293add90a537d7222c62af5992e08bc6467a078210",
+    "tools/anatomical-dense-trajectory.mjs": "2fc880378fdf639741af5db355dce7ee3fec674c2f859df49f53845ce8cda31b",
+    "tools/anatomical-dense-release-refinement.mjs": "39b2b933b970f5c93e874a836fcfc338eedde3c267f06a060d3ab789cadcb57d",
+    "data/anatomical-arm-v1/audit/contact-fine-release-results.json": "25e2af66d9ce97fec1610b1c71b39823cb02ee810ca056e2d257e9a4269773d7",
+    "data/anatomical-arm-v1/audit/anatomical-dense-release-base.json": "9745c82bc9a6ebe3a2df82c0f93dc31628abebe6958d817428ac1c08b4f3f9a3",
+    "tools/check-dense-rejection-curvature.mjs": "c0c3f19baa3553ba3a5297da6f8539709d8f6c18ab8cee63937ced9202c6374b",
+    "data/anatomical-arm-v1/review/dense-release-rejection/negative-mode.f64": "bc2097e14d95fa5ae347a3aa22411a1377b3d4e14b71a4c09beeb652e58495f1",
+    "data/anatomical-arm-v1/review/dense-release-rejection/frozen.json": "e95ebcaadf9bf206c1e3e749f4597c53d89bfb9c94400df18463b343ebbb0315",
+    "data/anatomical-arm-v1/review/dense-release-rejection/fixed-pose-timestep-spectrum.json": "ca4d280cd6531b350a841008cf85696d845f639c0ff0d46480edcec3302b743a"
+  },
+  "limits": [
+    "Frozen contact reference rule and existing reduced space; no state update or solver step.",
+    "All increments and disagreements retained; verdict uses the two finest derivative increments at the unchanged relative-error diagnostic gate.",
+    "Directional force differences validate this reduced curvature locally, not contact feasibility or anatomical/full-nodal stability.",
+    "Negative mode is a local objective property away from an accepted minimum, not evidence for a constitutive retuning."
+  ]
+}

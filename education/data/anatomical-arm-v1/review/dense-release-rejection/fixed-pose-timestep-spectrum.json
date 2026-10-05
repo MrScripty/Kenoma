@@ -1,0 +1,15 @@
+{
+  "result": "PASS_SAME_POSE_TIMESTEP_SPECTRUM",
+  "hS": [
+    0.01,
+    0.03
+  ],
+  "minimumEigenvaluesNPerM": [
+    -177.81317238661225,
+    -179.64687941745166
+  ],
+  "rankOneJointHessianChangeNPerM": -96716.46442313872,
+  "negativeModeFile": "negative-mode.f64",
+  "negativeModeSha256": "bc2097e14d95fa5ae347a3aa22411a1377b3d4e14b71a4c09beeb652e58495f1",
+  "referenceHessianSha256": "33faf8dd973b90ecdf3e273a1565e0d07e4be168a645f503f7617d5ea1681516"
+}

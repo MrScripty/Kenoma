@@ -1,0 +1,14 @@
+{
+  "result": "PASS_SOURCE_BOUND_DIAGNOSTIC_RENDER",
+  "matplotlib": "3.10.8",
+  "sourceHashes": {
+    "tools/dense_release_rejection_figure.py": "aeb9c11f4ac6a1d5299a60492b126aa93498b8948e47cc17513340eb90a82d1e",
+    "frozen.json": "e95ebcaadf9bf206c1e3e749f4597c53d89bfb9c94400df18463b343ebbb0315",
+    "anatomical-dense-release-refinement.json": "7a2d9aabf693d402b5e4275c9563742236ce06e64f48356a7f2cd2cd106869dd"
+  },
+  "outputs": {
+    "matched-time-and-rejection.png": "0a4ca39b6b94a00d8958a32c6f7cdf90d15ec97e97ea0c6c857278a657a69356",
+    "matched-time-and-rejection.pdf": "110764e2aacc170ce081c5758cbf7136bde40eb6827de2de06ef7f9549e5cb21"
+  },
+  "scope": "Matched retained states and original rejected trace; not convergence acceptance."
+}
