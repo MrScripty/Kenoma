@@ -62,6 +62,19 @@ At node 98, excluded x/y/z directions give energy derivatives of approximately *
 
 The follow-up should therefore enrich the displacement field and retain conservative transfer/contact derivatives before treating the whole tissue envelope as mechanically credible. Denser quadrature alone does not eliminate the restricted-space issue. A constitutive alternative would separately require updated potential/stress/tangent equations, parameter matching and the relevant book/proof contracts; none is selected here.
 
+`tools/anatomical-nodal-force-components.mjs` subsequently decomposes those same excluded directions at the same frozen dense state. Full P2 body virtual work is assembled independently for matrix, bulk, passive fibre and active terms. Two central differences separate embedded axial sheets, routed tendons, transverse matrices, interfaces and frozen contact energy; reference areas and rest lengths stay fixed. Component sums agree with the original total derivatives within **3.42 × 10⁻⁸ N**, and body analytic/difference agreement is within **6.62 × 10⁻⁷ N**. Every probe restores the exact base energy; none advances a state.
+
+| Excluded nodal shape / global axis | Bulk (N) | Active body (N) | Routed tendons (N) | Contact (N) | Total derivative (N) |
+|---|---:|---:|---:|---:|---:|
+| 98 / x | −0.336945 | −0.276755 | +0.0777405 | +0.000857550 | −0.493919 |
+| 98 / y | −1.972446 | −0.0215436 | −0.0121754 | +0.000656523 | −1.984401 |
+| 98 / z | −0.419729 | −1.382656 | +0.270462 | −0.0000576681 | −1.445203 |
+| 96 / x | −0.00123108 | −0.225394 | +0.0722307 | −0.0000337718 | −0.148703 |
+| 96 / y | −1.069491 | −0.0122965 | −0.0222323 | −0.0000393749 | −1.080343 |
+| 96 / z | +0.296438 | −1.072381 | +0.373686 | −0.0000169483 | −0.397633 |
+
+Axes describe the projected unit nodal shapes in the global atlas frame; these are scalar virtual-work derivatives, not six isolated nodal traction vectors. The receipt retains all remaining terms. Bulk dominates the two y-direction deficits; active work dominates the z-direction body terms, with routed tendon forces partly opposing it. Embedded axial-sheet contributions are below **0.000016 N**, and contact below **0.000858 N** in these probes. This identifies bulk/active tissue stationarity outside the retained field as a concrete unresolved issue. It does not select a new constitutive law or prove full nodal equilibrium.
+
 ## Re-equilibrated bulk sensitivity
 
 `tools/anatomical-bulk-step.mjs` changes only the seven muscle-body bulk moduli and re-solves the 0.07–0.10 s increment from the **same accepted dense old state**. The original 1 MPa dense target is a nonlinear guess. The 240-iteration ceiling, 1e-4 N gate, fitted stress scales, displacement space and attachment/contact parameters are unchanged. Separate fresh `--mode replay` processes independently assemble full P2 body forces and check temporal lineage and finite geometry.

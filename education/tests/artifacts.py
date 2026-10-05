@@ -61,7 +61,7 @@ assert trajectory['verifierSHA256']==hashlib.sha256((ROOT/'tools/verify-anatomic
 assert all(r['independentResidualN']<=1e-4 and r['minimumCornerJ']>1e-6 and r['surfaceAudit']['transverseCrossingPairs']==0 and r['routingAudit']['accepted'] and all(v==0 for v in r['sampledPenetrationsM'].values()) for r in trajectory['rows'])
 assert abs(trajectory['rows'][-1]['timeS']-.43)<1e-12
 assert trajectory['behavior']['releaseFallFromPeakRad']>0 and trajectory['behavior']['finalVelocityRadPerS']<0
-for name in ['anatomical-dense-trajectory.json','anatomical-enriched-step.json','anatomical-fixed-end-compression.json','anatomical-further-integration.json','anatomical-nodal-probe.json','anatomical-compression-localization.json','anatomical-calibration-geometry.json']:
+for name in ['anatomical-dense-trajectory.json','anatomical-enriched-step.json','anatomical-fixed-end-compression.json','anatomical-further-integration.json','anatomical-nodal-probe.json','anatomical-compression-localization.json','anatomical-calibration-geometry.json','anatomical-nodal-force-components.json']:
  receipt=json.loads((out/audit/name).read_text())
  for relative,digest in receipt['sourceHashes'].items():
   assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Dense qualification source changed: '+relative

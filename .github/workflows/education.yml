@@ -71,6 +71,7 @@ jobs:
           node --max-old-space-size=8192 tools/anatomical-dense-envelope-export.mjs
           python3 tools/dense_envelope_figure.py
           python3 tools/anatomical_calibration_geometry.py
+          node --max-old-space-size=8192 tools/anatomical-nodal-force-components.mjs
           node tools/anatomical-fixture-experiment.mjs
           node tools/anatomical-bone-collision-audit.mjs
           node tools/anatomical-apposition-audit.mjs
