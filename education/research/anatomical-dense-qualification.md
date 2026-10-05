@@ -57,3 +57,22 @@ The four accepted dense loading increments through 0.10 s are frozen in `audit/a
 At node 98, excluded x/y/z directions give energy derivatives of approximately **−0.494/−1.984/−1.445 N**. At node 96 they give **−0.149/−1.080/−0.398 N**. Central differences at 0.1 and 0.05 micrometre agree within **8 × 10⁻⁷ N**. Both perturbed states retain positive sampled determinants. Tests independently compare each potential component against actual reduced-coordinate displacement, including active tendon contact, and check exact restoration. These nonzero excluded virtual-work derivatives show that the accepted reduced state is not stationary in these additional directions. They are not a complete full nodal force vector, a full nodal solve or a convergence certificate.
 
 The follow-up should therefore enrich the displacement field and retain conservative transfer/contact derivatives before treating the whole tissue envelope as mechanically credible. Denser quadrature alone does not eliminate the restricted-space issue. A constitutive alternative would separately require updated potential/stress/tangent equations, parameter matching and the relevant book/proof contracts; none is selected here.
+
+## Re-equilibrated bulk sensitivity
+
+`tools/anatomical-bulk-step.mjs` changes only the seven muscle-body bulk moduli and re-solves the 0.07–0.10 s increment from the **same accepted dense old state**. The original 1 MPa dense target is a nonlinear guess. The 240-iteration ceiling, 1e-4 N gate, fitted stress scales, displacement space and attachment/contact parameters are unchanged. Separate fresh `--mode replay` processes independently assemble full P2 body forces and check temporal lineage and finite geometry.
+
+| Bulk modulus | Independent reduced residual (N) | Short-biceps minimum sampled J | Minimum corner J | Short-biceps global volume ratio | Reference-volume fraction with sampled J < 0.9 |
+|---|---:|---:|---:|---:|---:|
+| 0.5 MPa | 0.0000399061 | 0.627251 | 0.609408 | 0.998914 | 0.0371991 |
+| 1 MPa, dense prefix | 0.0000900056, solver/fresh evaluation | 0.72548 | 0.712634 | approximately 0.99886 | approximately 0.01715 |
+| 2 MPa | 0.0000906255 | 0.824307 | 0.816574 | 0.999119 | 0.00569833 |
+
+Both changed-material comparisons have zero transverse surface crossings, zero tendon-path violations and zero sampled bone/soft/tendon penetrations. Half/double bulk changes the joint angle by **−0.01198/+0.008947 degrees**, and maximum reduced-coordinate changes are **5.47372/3.61622 mm**. The corner-volume losses remain **39.1%/18.3%**. These are controlled one-increment sensitivities from one common dense old state, not bulk-dependent self-consistent trajectories, physiological calibration or permission to pick a modulus by visual appearance.
+
+```sh
+node --max-old-space-size=8192 tools/anatomical-bulk-step.mjs --factor 0.5
+node --max-old-space-size=8192 tools/anatomical-bulk-step.mjs --factor 2
+node --max-old-space-size=8192 tools/anatomical-bulk-step.mjs --factor 0.5 --mode replay
+node --max-old-space-size=8192 tools/anatomical-bulk-step.mjs --factor 2 --mode replay
+```
