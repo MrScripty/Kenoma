@@ -127,6 +127,16 @@ All three frozen denser calibration residuals fail the unchanged **0.0001 N** ga
 
 The next correction must begin with these isolated calibration fixtures. Before claiming credible muscle mechanics, the calibrating states themselves must be stationary in the declared resolved displacement field and integration rule, with qualified local compression response. Subsequent contact cleanup, endpoint-force matching and a selected bulk value do not establish that prerequisite. Historical fits are retained as numerical reference inputs to the present trajectory experiments, not upgraded to physical calibration by a passing arm residual.
 
+`tools/anatomical-calibration-nodal-audit.mjs` independently assembles all P2 body and embedded-sheet nodal forces at those same frozen states. Explicit distal/proximal P2 cap node sets retain both fixed caps: 90 nodes held and 495 free per head, with 1,755 total nodal components. Sheet reference points, areas and rest lengths are unchanged. Nodal sheet forces project to the original 63-coordinate sheet gradients within **8.53 × 10⁻¹³ N**; complete nodal force projection reproduces the prior frozen 256-point reduced residuals. Two central-difference sizes verify the largest free components within **2.44 × 10⁻⁶ N**. No optimizer, refit or time advancement is used.
+
+| Isolated head | Maximum free nodal component (N) | Distal nodal cap reaction at frozen pose (N) | Reduced boundary-coordinate reaction under 256 points (N) |
+|---|---:|---:|---:|
+| Brachialis FJ1486 | 64.067641 | 605.123049 | 987.274289 |
+| Short biceps FJ1512 | 52.058855 | 320.222145 | 436.705055 |
+| Long biceps FJ1478 | 54.223684 | 449.872973 | 625.009093 |
+
+All complete free nodal residuals fail the unchanged **0.0001 N** force gate. At a nonstationary pose, the nodal cap reaction and reaction conjugate to a reduced boundary-coordinate extension are distinct diagnostics; neither is a full nodal equilibrium force fit. This directly establishes the calibration's unresolved displacement-field stationarity, without attributing it to arm contact. `audit/anatomical-calibration-nodal.json` retains every nodal force and both derivative probes. A preliminary exact-mode-support boundary classifier differed from the explicit cap membership by one long-biceps cap node with a tiny binary64 coefficient; its source/output snapshot is retained under `review/dense-qualification/calibration-mode-support/`. The final audit holds both complete source cap sets and checks original cap trace leakage at roundoff scale.
+
 The audit binds the saved calibration, its original replay, Arm26 source, operators and diagnostic by SHA-256. The initial rejected schema read and corrected execution are retained separately in the raw review logs.
 
 The additional dimensional check in `audit/anatomical-calibration-geometry.json` reads the atlas names and original Arm26 `Thelen2003Muscle` entries directly, verifies each force target and source hash, and compares geometric mean area `V/L` with the recorded effective area `F/sigma0`.
