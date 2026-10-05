@@ -38,6 +38,18 @@ assert compression['executionReceiptSHA256']==hashlib.sha256((out/audit/'contact
 assert compression['acceptedReplaySHA256']==hashlib.sha256((out/audit/'contact-lift-release-recheck.json').read_bytes()).hexdigest()
 for relative,digest in compression['sourceHashes'].items():
  assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Compression diagnostic source changed: '+relative
+dense=json.loads((out/audit/'anatomical-dense-step-recheck.json').read_text())
+dense_execution=json.loads((out/audit/'anatomical-dense-step.json').read_text())
+assert dense['result']=='PASS_ACCEPTED_COMPARISON'
+assert dense['unchangedStationarityToleranceN']==1e-4
+assert dense['residualN']<=1e-4 and dense['independentResidualN']<=1e-4
+assert dense['surfaceAudit']['transverseCrossingPairs']==0 and dense['routingAudit']['accepted']
+assert all(v==0 for v in dense['sampledPenetrationsM'].values())
+assert dense['executionReceiptSHA256']==hashlib.sha256((out/audit/'anatomical-dense-step.json').read_bytes()).hexdigest()
+assert dense['verifierSHA256']==hashlib.sha256((ROOT/'tools/verify-anatomical-dense-step.mjs').read_bytes()).hexdigest()
+assert dense_execution['accepted'] and dense_execution['pointsPerElement']==256
+for relative,digest in dense_execution['sourceHashes'].items():
+ assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Dense comparison source changed: '+relative
 text=(out/'kenoma-mechanics.md').read_text();assert not re.search(r'\{\{[A-Za-z]',text)
 for id in ['force-pair','torque-linearity','torque-origin','central-pair','kinetic-sign','torque-example']:
  assert f'Checked claim {id}:' in text

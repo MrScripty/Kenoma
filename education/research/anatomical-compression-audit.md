@@ -27,6 +27,24 @@ node tools/anatomical-compression-audit.mjs
 
 The four tests check nested positive weights/reference measure, affine energy and independent nodal energy differences, exact fixed-geometry bulk decomposition, and the actual compressed atlas pose's energy/gradient/determinant. `data/anatomical-arm-v1/audit/anatomical-compression-sensitivity.json` binds the executed auditor and base inputs by SHA-256. The operator and execution logs are preserved under `review/anatomical-compression/`.
 
+## Re-equilibrated same-old-state comparison
+
+`tools/anatomical-dense-step.mjs` re-solves just the 0.07–0.10 s loading increment with 256 positive integration points per P2 element. The exact 32-point old coordinates, velocity, activation, mass and contact recipe are retained. The old target is a nonlinear starting guess. `tools/anatomical-dense-quadrature.mjs` builds the denser body operator in tools; the original viewer/operator files and source-bound lift/release stay byte-identical. Displacement modes, material parameters, Newton/Armijo algorithm, contact law, force tolerance and finite geometry gates are unchanged. Body integration is frozen throughout; contact witnesses refine only between Newton solves.
+
+The solve takes 15 accepted Newton iterations across two frozen contact rules. Its dense reduced residual falls from the original target's 0.144508 N to **0.0000900553 N**. A no-optimizer replay independently assembles full P2 body gradients, projects them and replaces the modal body forces in the total incremental gradient; its residual is **0.0000900553 N**, below the original **0.0001 N** gate. Every boundary triangle and tendon path participates in the same finite gates: zero transverse surface crossings, zero path violations and zero sampled contact penetrations.
+
+The new joint angle differs by **0.001299 degrees**, and the maximum reduced-coordinate change is **0.12457 mm**. Minimum sampled/corner J are **0.725476/0.712631**. The short biceps head's integrated global volume ratio is **0.998864**, but **1.71534%** of its reference volume has sampled J below 0.9. Local compression persists. These quantities are not global determinant bounds or nodal displacement-error estimates.
+
+```sh
+node --test tests/anatomical_dense_quadrature.test.mjs
+# Optional reproduction of the nonlinear experiment (several minutes):
+node --max-old-space-size=8192 tools/anatomical-dense-step.mjs
+# Fresh replay of the stored result, with no optimizer:
+node --max-old-space-size=8192 tools/verify-anatomical-dense-step.mjs
+```
+
+The additional tests compare dense modal assembly with independent full P2 energy/gradients and check energy directional differences, gradient directional differences and Hessian symmetry at actual compressed coordinates. Source-bound execution, old/target/new coordinates, contact recipes, iteration trace and solver receipt are in `audit/anatomical-dense-step.json`; the independent replay is in `audit/anatomical-dense-step-recheck.json`. CI replays the stored experiment rather than rerunning the nonlinear solve.
+
 ## Remaining acceptance work
 
-Re-equilibrated quadrature/material sensitivity and enriched or full nodal convergence remain open. These body nodal gradients are not a full nodal force-balance audit: attachment/contact forces have not been assembled into an enriched solve. Corner and interior determinant queries remain finite checks. Compression, the interrupted release's **3.2884-degree** timestep difference, source articulation gaps, omitted finite tendon radius, coplanar cases and continuous-motion collision limits are explicit. No physiological, medical or numerical convergence claim is added.
+A self-consistent higher-quadrature trajectory, further integration refinement, re-equilibrated bulk sensitivity and enriched or full nodal convergence remain open. The new increment starts from a 32-point old state; it does not replace the primary trajectory. These body nodal gradients are not a full nodal force-balance audit: attachment/contact forces have not been assembled into an enriched solve. Corner and interior determinant queries remain finite checks. Compression, the interrupted release's **3.2884-degree** timestep difference, source articulation gaps, omitted finite tendon radius, coplanar cases and continuous-motion collision limits are explicit. No physiological, medical or numerical convergence claim is added.
