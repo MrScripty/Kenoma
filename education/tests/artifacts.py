@@ -18,6 +18,8 @@ for receipt_name,source_name,claims_name,prefix,count in [('transfer-proof-statu
  assert all(set(c['axioms'])<={'propext','Quot.sound','Classical.choice'} for c in receipt['claims'])
  families.append((receipt,prefix+'-source-appendix',prefix+'-proof-receipt',prefix+'-kernel-report'))
 total_claims=sum(len(r['claims']) for r,*_ in families)
+scope=(ROOT/'book/chapters/00-scope.md').read_text()
+assert f'The {total_claims} proof cards in this research edition' in scope,'Scope proof count differs from checked receipts'
 audit='data/anatomical-arm-v1/audit/'
 for stem,status,steps in [('contact-lift-release','PASS',15),('contact-fine-release','PASS_ACCEPTED_PREFIX',22)]:
  receipt=json.loads((out/audit/(stem+'-recheck.json')).read_text())
@@ -51,6 +53,7 @@ assert dense_execution['accepted'] and dense_execution['pointsPerElement']==256
 for relative,digest in dense_execution['sourceHashes'].items():
  assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Dense comparison source changed: '+relative
 text=(out/'kenoma-mechanics.md').read_text();assert not re.search(r'\{\{[A-Za-z]',text)
+assert f'The {total_claims} proof cards in this research edition' in text,'Manuscript proof count differs from checked receipts'
 for id in ['force-pair','torque-linearity','torque-origin','central-pair','kinetic-sign','torque-example']:
  assert f'Checked claim {id}:' in text
 browser=json.loads((out/'browser-check.json').read_text());assert browser['status']=='passed'
