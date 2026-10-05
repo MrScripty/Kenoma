@@ -152,7 +152,7 @@ Denser integration and re-equilibration leave substantial compression visible. T
 
 The [localization receipt](data/anatomical-arm-v1/audit/anatomical-compression-localization.json) identifies the worst corner at short-biceps proximal node 98. About **1.602%** of the head's reference volume has sampled $J<0.9$ in the proximal sixth, despite that region's mean $J=1.01369$. For the unchanged constitutive law, the matrix has zero mean Cauchy stress, while
 
-$$s_{\rm volume}=\frac{K\log J}{J},\qquad s_{\rm active}=\frac{a\sigma_0 f(\lambda)\lambda}{3J}.$$
+$$s_{\mathrm{volume}}=\frac{K\log J}{J},\qquad s_{\mathrm{active}}=\frac{a\sigma_0 f(\lambda)\lambda}{3J}.$$
 
 The active potential uses full fibre stretch $\lambda=\lVert Ff_0\rVert$ and therefore contributes mean stress under dilation. At the worst corner, the bulk/active contributions are **−475.4/+71.1 kPa**; passive fibre stress is zero. This is a stress identity of the authored law, not measured tissue pressure or proof of local hydrostatic balance. The active term alone does not explain the compression. The original [Blemker et al. study, equations 1–3 and 9](https://nmbl.stanford.edu/publications/pdf/Blemker2005.pdf) separates deviatoric and dilatational invariants; its geometry, parameters and validation do not transfer to this fixture.
 

@@ -11,10 +11,10 @@ The smallest corner determinant, **0.71263118**, occurs in short biceps **FJ1512
 For the unchanged law, let `s = tr(P Fᵀ/J)/3` denote mean Cauchy stress, positive in tension. Direct differentiation gives
 
 \[
-s_{\rm matrix}=0,\qquad
-s_{\rm volume}=K\log(J)/J,\qquad
-s_{\rm active}=a\sigma_0 f(\lambda)\lambda/(3J),\qquad
-s_{\rm passive\ fibre}=\frac{k_f}{b}\operatorname{expm1}(b\max(\lambda-1,0))\lambda/(3J).
+s_{\mathrm{matrix}}=0,\qquad
+s_{\mathrm{volume}}=K\log(J)/J,\qquad
+s_{\mathrm{active}}=a\sigma_0 f(\lambda)\lambda/(3J),\qquad
+s_{\mathrm{passive\ fibre}}=\frac{k_f}{b}\operatorname{expm1}(b\max(\lambda-1,0))\lambda/(3J).
 \]
 
 The diagnostic checks the split against the actual material's Cauchy tensor. A separate test checks `dW(exp(t)F)/dt = 3Js` by an energy directional difference. At the worst corner, the volume contribution is **−475.409 kPa**, active contribution **+71.051 kPa**, passive-fibre contribution zero, and total mean stress **−404.358 kPa**. The isochoric matrix's trace error is below **2.33 × 10⁻¹⁰ Pa** over the short head. These are constitutive diagnostics, not measured pressure or a local hydrostatic equilibrium assertion. The active trace cannot alone explain the worst compression; endpoint transfer, authored geometry and the restricted displacement space also need investigation.
