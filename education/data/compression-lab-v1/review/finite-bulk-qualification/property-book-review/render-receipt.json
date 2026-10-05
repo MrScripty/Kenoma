@@ -1,0 +1,92 @@
+{
+  "schema": 1,
+  "result": "PASS_PROPERTY_BOOK_RENDER_CAPTURE",
+  "inspector_sha256": "da83ee75403e1219ea172f863f6eaf81db36b9035fc80b555f87caaf530e38c2",
+  "html_sha256": "d669a4ef72db35c8aa5807501c57053977dbd5f7f448603694ea16cbab1026de",
+  "pdf_sha256": "ac41f02afc1a36b32f9d59c4e8e2a1a5b6c810a9adfb6896b2b029a3ba370963",
+  "build_manifest_sha256": "954e3af49bd6dcb74cc6b3ddd124144e833701fa13f0a9f5c02f4092b376906e",
+  "browser": "151.0.7922.173",
+  "views": [
+    {
+      "name": "desktop",
+      "horizontalOverflow": false,
+      "proofCards": 33
+    },
+    {
+      "name": "mobile",
+      "horizontalOverflow": false,
+      "proofCards": 33
+    }
+  ],
+  "page_errors": [],
+  "pdf_pages": [
+    {
+      "page": 34,
+      "phrases": [
+        "Measure deformation before choosing a muscle law"
+      ],
+      "image": "pdf-page-34.png"
+    },
+    {
+      "page": 35,
+      "phrases": [
+        "Property lab 1"
+      ],
+      "image": "pdf-page-35.png"
+    },
+    {
+      "page": 37,
+      "phrases": [
+        "Property lab 2"
+      ],
+      "image": "pdf-page-37.png"
+    },
+    {
+      "page": 38,
+      "phrases": [
+        "Positive real axial stretch",
+        "KenomaProperties.isochoric_sqrt_construction"
+      ],
+      "image": "pdf-page-38.png"
+    },
+    {
+      "page": 39,
+      "phrases": [
+        "Property lab 3"
+      ],
+      "image": "pdf-page-39.png"
+    },
+    {
+      "page": 92,
+      "phrases": [
+        "Checked source appendix: ContinuumProperties"
+      ],
+      "image": "pdf-page-92.png"
+    },
+    {
+      "page": 94,
+      "phrases": [
+        "KenomaProperties.isochoric_sqrt_construction"
+      ],
+      "image": "pdf-page-94.png"
+    }
+  ],
+  "outputs": {
+    "desktop-volume-det-compose.png": "071967aac0adc7aca9c0121777963bdc19ab8c0d95eab29ff9d665dd40600be3",
+    "desktop-volume-diagonal.png": "53ed4f9d751bb85f0ce8e4c45cad96e480c323e8863671524404e2c422271d22",
+    "desktop-volume-edge-translation.png": "a5ef3ecfa234cb0977c44ad5c210c1658437d848082fa0ed8adf7fb789de2c2a",
+    "desktop-volume-isochoric-sqrt.png": "2e65dcbed23195d99458c3dc14becf99d901eed52b266fa5036a1e9912c0602e",
+    "mobile-volume-det-compose.png": "8bfdc757db7b734693c8579c6ccb86340155010d35487d2cef7419b1e1b4eecd",
+    "mobile-volume-diagonal.png": "f20586e41c131aa2de933d2acd624e32e7938bed4488e2f949c89316cbdd8074",
+    "mobile-volume-edge-translation.png": "bdb7d12d4906e49691ba1b7333e627dd4559094cdd37da2db367830a2368bbd0",
+    "mobile-volume-isochoric-sqrt.png": "45841119505266e4059531d2a8a8abc55353646c2ebc77f0cc28f7eca2c76292",
+    "pdf-page-34.png": "1cf72440a55fc7073470804537064e1bad7b9ea58dd68e84b9a3ea10d7ecc879",
+    "pdf-page-35.png": "005a08d2d4528ce569f40398f17eeaa6f493245d732a9a56ff59a47290a8e9fb",
+    "pdf-page-37.png": "31e38ad894e0741e5871d2e49cfa1e4de75aa638ee7ae4a7fc0d29df2807e16a",
+    "pdf-page-38.png": "104da658c6940e0c9a202bb5ed5f1d2470085c268b5e44cc5975670b4aa986e2",
+    "pdf-page-39.png": "1bda35c900e75b7dead3667c091db02ebea6c2dcca244625b919cb41490bf742",
+    "pdf-page-92.png": "ae11ef619ae8eb05ec1f1e3582568d6da5ab40698f82aac7baaa5aee49f50f27",
+    "pdf-page-94.png": "848cad414a3a716bdccaa14a1e12e56975090c5d1c0bb9ac2cb8eb76c3f707ad"
+  },
+  "scope": "Capture and layout evidence; manual appearance review is recorded separately. No biological or browser-arithmetic refinement proof."
+}

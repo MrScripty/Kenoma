@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "result": "PASS_LAB5_COMPRESSION_BROWSER",
+  "source_revision": "25718cb38327930e907c32499b03e46e0ada39a3",
+  "checks": [
+    "Actual default free-side equilibrium, boundary-volume oracle and independent volume-variable root",
+    "Actual confined supports and force control: equal load gives different height and volume",
+    "Unsupported force, empty/invalid input and zero-bulk force degeneracy reject without advancing state; keyboard slider and paired number work",
+    "Material, height, load and boundary controls; live summary/reset; desktop/mobile, print and zero-JavaScript alternatives"
+  ],
+  "javascript_errors": [],
+  "browser": "151.0.7922.173",
+  "manifest": "build-manifest.json",
+  "manifest_sha256": "954e3af49bd6dcb74cc6b3ddd124144e833701fa13f0a9f5c02f4092b376906e",
+  "html_sha256": "d669a4ef72db35c8aa5807501c57053977dbd5f7f448603694ea16cbab1026de",
+  "outputs": {
+    "compression-desktop-confined-displacement.png": "827bfc71d62e419878890408b19597e86ce21777f603aeebead2f8c0e9bd24cb",
+    "compression-desktop-confined-force.png": "ca9f0c2b34f71fc7588980a73595f3d5dfb097fa31f2e26b701f64eba38a387a",
+    "compression-desktop-free-displacement.png": "dc8bd16dc0272abd7227a4de53ef38c25dc2cf84c44b21c669e3515c5ac136f0",
+    "compression-desktop-free-force.png": "840555daa97499f3e5dd3f2440f0674dcdf810fcf8b112ad2cb020336d7c4668",
+    "compression-mobile-confined-displacement.png": "beafa345013c470db64c7b718dab4e1fda0ba52a45ff743e1cf491d0afec3b2d",
+    "compression-mobile-confined-force.png": "d552696a47c343305bfa2ebf583d4ed15c54844748ebd080eb5df45c80c750ee",
+    "compression-mobile-free-displacement.png": "c3901f845a8a451afec3dddf8074a2f63d2ac4b2908ed578d4747a6fdc94dc3d",
+    "compression-mobile-free-force.png": "43c5d7f57fecf7ce7d85f5b2cf99f7c9b1a82d829b85bb4077f1fc4c2d929b42"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "result": "PASS_SELECTED_MANUAL_APPEARANCE",
+  "reviewed": [
+    "compression-book-review/pdf-page-27.png",
+    "compression-book-review/pdf-page-28.png",
+    "compression-book-review/pdf-page-29.png",
+    "compression-book-review/mobile-compression-free-pressure.png",
+    "compression-controls/compression-mobile-free-displacement.png"
+  ],
+  "findings": [
+    "Boundary-condition illustration, equations and proof cards fit PDF pages; text and links legible.",
+    "Mobile controls and output units fit viewport; code uses its bounded horizontal scrolling area."
+  ],
+  "scope": "Selected appearance checks; source/proof correctness and browser behavior checked separately; no anatomical qualification."
+}
