@@ -1,0 +1,19 @@
+{
+  "observed_utc": "2026-10-05 22:10:11 UTC",
+  "workflow_runs": [
+    {
+      "id": 37380129790,
+      "head": "1dc0ed83b79a55cb4f02644009b9f7cf14b029e2",
+      "status": "in_progress",
+      "conclusion": null,
+      "url": "https://github.com/MrScripty/Kenoma/actions/runs/37380129790"
+    },
+    {
+      "id": 37375476903,
+      "head": "74c176933dfade99577b90a500dd655f8b7553a4",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "url": "https://github.com/MrScripty/Kenoma/actions/runs/37375476903"
+    }
+  ]
+}

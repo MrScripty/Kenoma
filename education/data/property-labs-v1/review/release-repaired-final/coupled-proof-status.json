@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "lean_version": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)",
+  "source": "proofs/CoupledMechanics.lean",
+  "source_sha256": "84c4e1ad43e792d0fd530996e4814102fc3d31c1c5b3a689bf4ce6c060a4c2ab",
+  "claims_sha256": "79ea43a2ed7f73ab8fad8eaa66e87cc4ad71af9a80d0d236ce012445ccbbe0e3",
+  "command": "lean -DwarningAsError=true proofs/CoupledMechanics.lean",
+  "claims": [
+    {
+      "id": "implicit-impulse",
+      "theorem": "Kenoma.Coupled.impulse_balance",
+      "claim": "The assumed implicit momentum equation has the implemented tissue/gravity/damping torque signs.",
+      "implementation": "web/anatomical-coupled-fixture.mjs: stepCoupledFixture torqueBalanceNm and coupledObjective qGradient.",
+      "assumptions": "Exact integer quantities in compatible common scales; the stationarity/momentum equation is supplied.",
+      "limitations": "Does not derive the gradient, verify Newton convergence, or refine floating-point code.",
+      "numerical_evidence": "tests/anatomical-coupling.test.mjs, anatomical-tangent.test.mjs, anatomical-element.test.mjs and anatomical-material.test.mjs; applicable independent derivative, transfer, state and torque checks.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "kinetic-increment",
+      "theorem": "Kenoma.Coupled.kinetic_increment_identity",
+      "claim": "Twice the joint kinetic increment plus twice its implicit kinetic defect equals twice the end-velocity inertial work.",
+      "implementation": "web/anatomical-coupled-fixture.mjs: jointImplicitDissipationJ and joint kinetic ledger.",
+      "assumptions": "Exact integer inertia and old/new angular velocities; positive common physical scales interpret numerator factors of two.",
+      "limitations": "Only angular kinetic algebra; no tissue potential, metabolic work or whole-system conservation claim.",
+      "numerical_evidence": "tests/anatomical-coupling.test.mjs, anatomical-tangent.test.mjs, anatomical-element.test.mjs and anatomical-material.test.mjs; applicable independent derivative, transfer, state and torque checks.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "implicit-angular-work",
+      "theorem": "Kenoma.Coupled.implicit_kinetic_work_balance",
+      "claim": "The assumed implicit momentum equation gives the joint angular work balance including damping and implicit kinetic defect.",
+      "implementation": "web/anatomical-coupled-fixture.mjs: torqueBalanceNm, jointImplicitDissipationJ and dampingDissipationJ.",
+      "assumptions": "Exact integer quantities in compatible scales; the implemented angular stationarity relation is supplied.",
+      "limitations": "Does not prove full tissue/joint energy conservation. Nonlinear endpoint-work defects are measured separately.",
+      "numerical_evidence": "tests/anatomical-coupling.test.mjs, anatomical-tangent.test.mjs, anatomical-element.test.mjs and anatomical-material.test.mjs; applicable independent derivative, transfer, state and torque checks.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "implicit-dissipation",
+      "theorem": "Kenoma.Coupled.implicit_dissipation_numerator_nonnegative",
+      "claim": "The angular implicit kinetic and damping defect numerator is nonnegative under nonnegative inertia, step and damping.",
+      "implementation": "web/anatomical-coupled-fixture.mjs: jointImplicitDissipationJ and dampingDissipationJ.",
+      "assumptions": "Integer inertia, h and damping are nonnegative; velocities arbitrary; positive common scales and factors of two.",
+      "limitations": "No total-energy monotonicity under activation, nonlinear potentials, external mass changes or solver errors follows.",
+      "numerical_evidence": "tests/anatomical-coupling.test.mjs, anatomical-tangent.test.mjs, anatomical-element.test.mjs and anatomical-material.test.mjs; applicable independent derivative, transfer, state and torque checks.",
+      "status": "checked",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "id": "mass-event-work",
+      "theorem": "Kenoma.Coupled.mass_event_work_numerator",
+      "claim": "At fixed pose and velocity, changing point-mass inertia and downward-positive gravitational potential gives the recorded external mass-event work numerator.",
+      "implementation": "web/anatomical-coupled-fixture.mjs: fixtureMassEvent.",
+      "assumptions": "Exact integer fixed pose/velocity, delta mass and squared grip radius; I changes by deltaMass*radiusSquared; fixture z is downward-positive.",
+      "limitations": "State preservation, real geometry, signs for other world conventions and browser arithmetic need independent checks.",
+      "numerical_evidence": "tests/anatomical-coupling.test.mjs, anatomical-tangent.test.mjs, anatomical-element.test.mjs and anatomical-material.test.mjs; applicable independent derivative, transfer, state and torque checks.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "tendon-toe-storage",
+      "theorem": "Kenoma.Coupled.tendon_toe_energy_numerator_nonnegative",
+      "claim": "The tensile toe-branch stored-energy numerator is nonnegative for nonnegative reference area, length, Young modulus and strain.",
+      "implementation": "web/anatomical-material.mjs: tendonMaterial and tendonSegment toe energy A0*L0*E*epsilon^3/(6*epsilonToe).",
+      "assumptions": "Exact nonnegative integer numerator factors in compatible scales. Physical interpretation additionally requires positive toe denominator.",
+      "limitations": "No continuity, constitutive derivative, other branch, material calibration or floating-point accuracy is proved.",
+      "numerical_evidence": "tests/anatomical-coupling.test.mjs, anatomical-tangent.test.mjs, anatomical-element.test.mjs and anatomical-material.test.mjs; applicable independent derivative, transfer, state and torque checks.",
+      "status": "checked",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "id": "quadratic-partition",
+      "theorem": "Kenoma.Coupled.quadratic_partition_numerator",
+      "claim": "Four corner and six midside shape-weight numerators sum to the squared common barycentric denominator.",
+      "implementation": "web/anatomical-element.mjs: quadraticShape.",
+      "assumptions": "Exact integer barycentric numerators sum to d; rational interpretation requires d>0. Corner numerators are 2*l_i^2-d*l_i and edge numerators 4*l_i*l_j.",
+      "limitations": "No claim about irrational quadrature values, geometry, gradients, floating-point evaluation or anatomical fidelity is established.",
+      "numerical_evidence": "tests/anatomical-coupling.test.mjs, anatomical-tangent.test.mjs, anatomical-element.test.mjs and anatomical-material.test.mjs; applicable independent derivative, transfer, state and torque checks.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    }
+  ]
+}
