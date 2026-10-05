@@ -1,0 +1,14 @@
+{
+  "result": "PASS_FROZEN_ACCEPTED_RETRY_SPECTRUM",
+  "minimumEigenvalueNPerM": 0.6392266060827926,
+  "maximumEigenvalueNPerM": 76030926.4049352,
+  "negativeEigenvaluesBelowMinus1eMinus6": 0,
+  "scaledMinimumEigenvalue": 2.008688241780222e-05,
+  "scaledMaximumEigenvalue": 13.276685211001341,
+  "sourceHashes": {
+    "tools/accepted_retry_spectrum.py": "ed514edb323d09a78595d72235332edbf61830ac564aef93a124e49bec02d5b5",
+    "accepted-retry-hessian.json": "d7af7a17a6b0a228263ec4b702a9711b0a65d35d459616d82d2feef1d03b3b58",
+    "accepted-retry-hessian.f64": "9608097d414c38ea413250be9bfa0f6711b274546be3133218a4cd4902b62d19"
+  },
+  "scope": "Frozen reduced objective at one endpoint; no global/full-nodal/physiological stability or convergence certification."
+}

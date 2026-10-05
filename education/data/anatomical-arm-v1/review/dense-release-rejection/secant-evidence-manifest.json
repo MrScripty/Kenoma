@@ -1,0 +1,15 @@
+{
+  "result": "PASS_ISOLATED_RETRY_SOURCE_BOUND_EVIDENCE",
+  "scope": "Accepted one-step retry and frozen reduced endpoint operator; full successor replay and controlled interval remain pending.",
+  "sha256": {
+    "education/data/anatomical-arm-v1/review/dense-release-rejection/accepted-retry-hessian-execution.txt": "3e542e01e0a6673e5c87edaf5c3ac41e9ffa39da6788748c6bf3037f36c5ac4f",
+    "education/data/anatomical-arm-v1/review/dense-release-rejection/accepted-retry-hessian.json": "d7af7a17a6b0a228263ec4b702a9711b0a65d35d459616d82d2feef1d03b3b58",
+    "education/data/anatomical-arm-v1/review/dense-release-rejection/accepted-retry-spectrum-execution.txt": "62d46187264c1662c18c20ed5465fdd1940e05abda5149573cfdfbb429422b5e",
+    "education/data/anatomical-arm-v1/review/dense-release-rejection/accepted-retry-hessian.f64": "9608097d414c38ea413250be9bfa0f6711b274546be3133218a4cd4902b62d19",
+    "education/data/anatomical-arm-v1/review/dense-release-rejection/accepted-retry-spectrum.json": "62d46187264c1662c18c20ed5465fdd1940e05abda5149573cfdfbb429422b5e",
+    "education/data/anatomical-arm-v1/review/dense-release-rejection/secant-execution.txt": "ebbf4c649e8ea98a5ea42c7114f0976bdb98be273d0cb7120a6d0f56db382390",
+    "education/data/anatomical-arm-v1/review/dense-release-rejection/secant-fresh-replay.txt": "54333895c4ec27d7e5d8517edf3c8ba5ea7f838856793b40cf3f66338d51606a",
+    "education/data/anatomical-arm-v1/audit/dense-release-secant-retry.json": "7e2efc6188afcfd899d923938de71c0595c1953bd055fbdf370c6b9d1fbfc9b0",
+    "education/data/anatomical-arm-v1/audit/dense-release-secant-retry-recheck.json": "36e06e8f6e02b62160c3033ddc1370d1a6f55899081dcc2bb618f6df463b6ac4"
+  }
+}
