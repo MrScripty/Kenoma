@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "rendererSHA256": "3f8edd549634f8e4da903f3805a52ebf9e390d9731ee3eaa94b341e46096f8e9",
+  "pythonVersion": "3.12.14",
+  "matplotlibVersion": "3.10.8",
+  "inputSHA256": "dc5560c55cee3f626a0ec7a49e4c18a0c6da9e446e4c052ad236331ff366a8e9",
+  "outputs": {
+    "dense-envelope.svg": "bfce1cdff4e9ebef28b33f85c41afd720cf28925ba3a7b4ccd4c2ba1d7336430",
+    "dense-envelope.png": "50fb75f7228b4c378966724d6768f98d6891faa5e991b1a0150adf941c28a702"
+  },
+  "limits": [
+    "The surface tessellation connects stored P2 nodes; a rendered triangle is a visualization of the curved P2 boundary.",
+    "The two accepted 0.10 s increments use the identical accepted dense old state. The enriched result is one comparison, not an enriched trajectory.",
+    "The geometry is atlas-derived and authored; no skin or physiological validation is implied."
+  ]
+}

@@ -67,6 +67,9 @@ jobs:
           node --max-old-space-size=8192 tools/anatomical-fixed-end-compression-audit.mjs
           node --max-old-space-size=8192 tools/anatomical-trajectory-orientation-audit.mjs
           python3 tools/package_anatomical_orientation.py
+          python3 tools/dense_qualification_figure.py --coarse-only
+          node --max-old-space-size=8192 tools/anatomical-dense-envelope-export.mjs
+          python3 tools/dense_envelope_figure.py
           node tools/anatomical-fixture-experiment.mjs
           node tools/anatomical-bone-collision-audit.mjs
           node tools/anatomical-apposition-audit.mjs

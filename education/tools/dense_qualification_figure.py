@@ -35,32 +35,32 @@ def render():
         matched=read('anatomical-dense-matched-times.json')
         if matched['result']!='PASS_ACCEPTED_MATCHED_TIME_COMPARISON':raise ValueError('Fresh matched-time comparison required')
     if enriched['result']!='PASS_ACCEPTED_ENRICHED_COMPARISON':raise ValueError('Fresh enriched comparison required')
-    plt.rcParams.update({'font.size':10,'axes.titlesize':12,'axes.spines.top':False,'axes.spines.right':False,'svg.fonttype':'none'})
+    plt.rcParams.update({'font.size':15,'axes.titlesize':17,'axes.spines.top':False,'axes.spines.right':False,'svg.fonttype':'none'})
     fig,axes=plt.subplots(2,2,figsize=(12,8),layout='constrained')
-    fig.suptitle('Arm qualification · accepted states and unresolved local compression',fontsize=16)
+    fig.suptitle('Arm qualification · motion and unresolved compression',fontsize=20)
     held=coarse['held']
     series=[(coarse,'256 points · original intervals','#0e7669')]
     if not coarse_only:series.extend([(fine,'256 points · half intervals','#ca6234'),(release,'256 points · release thirds','#72509b')])
     for receipt,label,color in [(baseline,'32 points · original','#758193')]+series:
         rows=receipt['rows'];axes[0,0].plot([0]+[r['timeS'] for r in rows],[held['qRad']*180/np.pi]+[r['qRad']*180/np.pi for r in rows],'.-',label=label,color=color,markersize=3)
     axes[0,0].axvline(.13,color='#777',linestyle=':',linewidth=1)
-    axes[0,0].text(.135,.83,'effort removed',transform=axes[0,0].get_xaxis_transform(),va='top',fontsize=9)
-    axes[0,0].set(title='Accepted angle trajectories',xlabel='Time (s)',ylabel='Joint angle (degrees)');axes[0,0].legend(fontsize=8,loc='upper left')
+    axes[0,0].text(.135,.18,'effort removed',transform=axes[0,0].get_xaxis_transform(),va='top',fontsize=12)
+    axes[0,0].set(title='Accepted angle trajectories',xlabel='Time (s)',ylabel='Joint angle (degrees)');axes[0,0].legend(fontsize=12,loc='upper left')
     for receipt,label,color in series:
         axes[0,1].semilogy([r['timeS'] for r in receipt['rows']],[r['independentResidualN'] for r in receipt['rows']],'.-',label=label,color=color)
     axes[0,1].axhline(1e-4,color='#444',linestyle='--',label='Original gate: 1e-4 N')
     axes[0,1].scatter([integration['timeS']],[integration['frozenResidual2048N']],marker='x',s=65,color='#a3242d',label='Frozen 2048-point audit')
-    axes[0,1].set(title='Independent reduced force checks',xlabel='Time (s)',ylabel='Maximum residual (N)');axes[0,1].legend(fontsize=8,loc='best')
+    axes[0,1].set(title='Independent reduced residuals',xlabel='Time (s)',ylabel='Maximum residual (N)');axes[0,1].legend(fontsize=12,loc='best')
     bins=next(h for h in local['heads'] if h['elementId']=='FJ1512')['bins'];z=[(b['bin']+.5)/6 for b in bins]
     axes[1,0].plot(z,[b['minimumJ'] for b in bins],'o-',color='#a3242d',label='Minimum sampled J')
     axes[1,0].plot(z,[b['meanJ'] for b in bins],'o-',color='#0e7669',label='Region mean J')
-    axes[1,0].axhline(1,color='#888',linestyle=':',linewidth=1);axes[1,0].set(title='Short biceps · original dense increment at 0.10 s',xlabel='Longitudinal fraction · 0 distal, 1 proximal',ylabel='Volume ratio J',ylim=(.67,1.06));axes[1,0].legend(fontsize=8,loc='lower left')
+    axes[1,0].axhline(1,color='#888',linestyle=':',linewidth=1);axes[1,0].set(title='Short biceps · proximal compression',xlabel='Longitudinal fraction (0 distal, 1 proximal)',ylabel='Volume ratio J',ylim=(.67,1.06));axes[1,0].legend(fontsize=12,loc='lower left')
     labels=['0.5 MPa','1 MPa','2 MPa','1 MPa\n+6 coordinates'];values=[]
     for r in [bulk[0],coarse['rows'][3],bulk[1],enriched]:values.append(min(h['minimumCornerJ'] for h in r['heads']))
     axes[1,1].bar(labels,values,color=['#d5a16f','#0e7669','#8cb8bd','#a3242d'],width=.55)
-    for i,v in enumerate(values):axes[1,1].text(i,v+.005,f'{v:.6f}',ha='center',fontsize=10)
-    axes[1,1].set(title='Bulk and nodal sensitivity · one increment',ylabel='Minimum queried corner J',ylim=(0,1.03))
-    axes[1,1].text(.5,.06,'Same dense old state; altered bulk or displacement space.\nSingle increments do not calibrate trajectories.',transform=axes[1,1].transAxes,ha='center',fontsize=9)
+    for i,v in enumerate(values):axes[1,1].text(i,v+.005,f'{v:.6f}',ha='center',fontsize=14)
+    axes[1,1].set(title='Bulk and nodal sensitivity',ylabel='Minimum queried corner J',ylim=(0,1.03))
+    axes[1,1].text(.5,.06,'One increment from the same dense old state.\nThese comparisons do not calibrate trajectories.',transform=axes[1,1].transAxes,ha='center',fontsize=12)
     for ax in axes.flat:ax.grid(axis='y',alpha=.15)
     inputs=['audit/contact-lift-release-recheck.json','audit/anatomical-dense-trajectory.json','audit/anatomical-dense-trajectory-recheck.json','audit/anatomical-compression-localization.json','audit/anatomical-further-integration.json','audit/anatomical-bulk-step-0.5-recheck.json','audit/anatomical-bulk-step-2-recheck.json','audit/anatomical-enriched-step-recheck.json']
     if not coarse_only:inputs.extend(['audit/anatomical-dense-fine-trajectory.json','audit/anatomical-dense-fine-trajectory-recheck.json','audit/anatomical-dense-release-refinement.json','audit/anatomical-dense-release-refinement-recheck.json','audit/anatomical-dense-matched-times.json'])

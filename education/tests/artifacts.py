@@ -87,6 +87,15 @@ assert sum(h['elementCount'] for r in full_orientation['rows'] for h in r['heads
 assert all(e['orientationCertified'] and all(len(e[k]['coefficients'])==20 and all(int(c['numerator'])>0 for c in e[k]['coefficients']) for k in ['reference','current']) for r in full_orientation['rows'] for h in r['heads'] for e in h['elements'])
 for relative,digest in orientation['sourceHashes'].items():
  assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Orientation certificate source changed: '+relative
+envelope_path='data/anatomical-arm-v1/review/dense-qualification/envelope/'
+envelope_plot=json.loads((out/envelope_path/'render-receipt.json').read_text())
+envelope_bytes=(out/audit/'anatomical-dense-envelope.json').read_bytes()
+assert envelope_plot['inputSHA256']==hashlib.sha256(envelope_bytes).hexdigest()
+assert envelope_plot['rendererSHA256']==hashlib.sha256((ROOT/'tools/dense_envelope_figure.py').read_bytes()).hexdigest()
+for relative,digest in json.loads(envelope_bytes)['sourceHashes'].items():
+ assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Envelope export source changed: '+relative
+for relative,digest in envelope_plot['outputs'].items():
+ assert hashlib.sha256((out/envelope_path/relative).read_bytes()).hexdigest()==digest,'Changed envelope render: '+relative
 text=(out/'kenoma-mechanics.md').read_text();assert not re.search(r'\{\{[A-Za-z]',text)
 assert f'The {total_claims} proof cards in this research edition' in text,'Manuscript proof count differs from checked receipts'
 for id in ['force-pair','torque-linearity','torque-origin','central-pair','kinetic-sign','torque-example']:
