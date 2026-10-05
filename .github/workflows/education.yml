@@ -49,10 +49,14 @@ jobs:
           node tools/partition-anatomical-origins.mjs
           node tools/anatomical-radial-apposition.mjs
           npm run anatomy:proofs
-          npm run anatomy:apparatus
+          # Retain the recorded routing bytes used by source-bound trajectories.
+          node tools/verify-anatomical-matches.mjs
           node tools/verify-anatomical-arm-rest.mjs
           node tools/replay-rejected-arm-v1.mjs
           node tools/verify-anatomical-rejected-steps.mjs
+          node tools/verify-anatomical-cold-candidate.mjs
+          node tools/verify-anatomical-contact-trajectory.mjs
+          node tools/verify-anatomical-release-prefix.mjs
           node tools/anatomical-fixture-experiment.mjs
           node tools/anatomical-bone-collision-audit.mjs
           node tools/anatomical-apposition-audit.mjs

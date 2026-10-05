@@ -16,5 +16,23 @@
     "assumptions": "Exact signed integer force-component numerators in a compatible scale; interpolated headA, headB, distal, matrix and contact contributions are supplied; their equilibrium is assumed.",
     "limitations": "Does not derive interpolation/geometry, verify the floating-point residual, prove Newton convergence or validate an anatomical aponeurosis.",
     "numerical_evidence": "tests/anatomical_apparatus.test.mjs checks shared coordinates, source faces, objective derivatives and actual attachment torque; equilibrium receipts are checked separately."
+  },
+  {
+    "id": "contact-area-partition",
+    "theorem": "Kenoma.Arm.contact_partition_area_numerator",
+    "claim": "Reference-area child shares preserve the parent area numerator when their sum equals the parent scale.",
+    "implementation": "web/anatomical-contact.mjs: rebuildSurfaceSamples; web/anatomical-contact-refinement.mjs: splitMaterialTriangle, rebuildBoneSamples.",
+    "assumptions": "Exact integer compatible area/share scales; the geometric partition supplies a+b+c=scale. Positive child areas are checked numerically.",
+    "limitations": "Does not prove the triangulation, positive floating-point weights, geometric clearance, continuous collision detection, Newton convergence or biological contact.",
+    "numerical_evidence": "tests/anatomical_contact_refinement.test.mjs independently checks positive children, reference-area conservation, saved missed intersections and material-rule replay."
+  },
+  {
+    "id": "conservative-contact-gap",
+    "theorem": "Kenoma.Arm.conservative_contact_gap",
+    "claim": "A supplied lower unsigned distance envelope gives a gap no greater than the exact outside distance or the negative inside distance.",
+    "implementation": "web/anatomical-contact.mjs: regularizedSoft; outside gap=u, inside gap=u-2*d. Raw signed distance and full geometry remain the acceptance gates.",
+    "assumptions": "Exact integer distance numerators in compatible SI scales; the bound u<=d is supplied.",
+    "limitations": "Does not prove the numerical simplex solver, floating-point bounds, signed-distance queries, derivative correctness, Newton convergence or collision clearance.",
+    "numerical_evidence": "tests/anatomical_contact_differential.test.mjs checks envelope bounds/weights and tests/anatomical_contact_refinement.test.mjs checks the preserved loaded closest-face corner and original collision gates."
   }
 ]

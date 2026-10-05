@@ -10,7 +10,7 @@ assert proof['claims_sha256']==hashlib.sha256((ROOT/'proofs/claims.json').read_b
 assert len(proof['claims'])==12 and all(c['status']=='checked' for c in proof['claims'])
 assert all(set(c['axioms'])<={'propext','Quot.sound','Classical.choice'} for c in proof['claims'])
 families=[(proof,'checked-source-appendix','proof-check-receipt','kernel-dependency-report')]
-for receipt_name,source_name,claims_name,prefix,count in [('transfer-proof-status.json','AnatomicalTransfer.lean','anatomical-claims.json','transfer',2),('coupled-proof-status.json','CoupledMechanics.lean','coupled-claims.json','coupled',7),('arm-proof-status.json','AnatomicalArm.lean','arm-claims.json','arm',2)]:
+for receipt_name,source_name,claims_name,prefix,count in [('transfer-proof-status.json','AnatomicalTransfer.lean','anatomical-claims.json','transfer',2),('coupled-proof-status.json','CoupledMechanics.lean','coupled-claims.json','coupled',7),('arm-proof-status.json','AnatomicalArm.lean','arm-claims.json','arm',4)]:
  receipt=json.loads((out/receipt_name).read_text())
  assert receipt['source_sha256']==hashlib.sha256((ROOT/'proofs'/source_name).read_bytes()).hexdigest()
  assert receipt['claims_sha256']==hashlib.sha256((ROOT/'proofs'/claims_name).read_bytes()).hexdigest()
@@ -18,6 +18,18 @@ for receipt_name,source_name,claims_name,prefix,count in [('transfer-proof-statu
  assert all(set(c['axioms'])<={'propext','Quot.sound','Classical.choice'} for c in receipt['claims'])
  families.append((receipt,prefix+'-source-appendix',prefix+'-proof-receipt',prefix+'-kernel-report'))
 total_claims=sum(len(r['claims']) for r,*_ in families)
+audit='data/anatomical-arm-v1/audit/'
+for stem,status,steps in [('contact-lift-release','PASS',15),('contact-fine-release','PASS_ACCEPTED_PREFIX',22)]:
+ receipt=json.loads((out/audit/(stem+'-recheck.json')).read_text())
+ execution=out/audit/(stem+'-results.json')
+ assert receipt['result']==status and receipt['verifiedSteps']==steps
+ assert receipt['executionReceiptSHA256']==hashlib.sha256(execution.read_bytes()).hexdigest()
+ verifier='tools/verify-anatomical-contact-trajectory.mjs' if stem=='contact-lift-release' else 'tools/verify-anatomical-release-prefix.mjs'
+ assert receipt['verifierSHA256']==hashlib.sha256((ROOT/verifier).read_bytes()).hexdigest()
+ for relative,digest in receipt['executionSourceHashes'].items():
+  assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Trajectory source changed: '+relative
+ assert all(r['transverseCrossingPairs']==0 and r['tendonViolations']==0 and r['residualN']<=1e-4 for r in receipt['rows'])
+ assert json.loads(execution.read_text())['completedAllSteps']==(stem=='contact-lift-release')
 text=(out/'kenoma-mechanics.md').read_text();assert not re.search(r'\{\{[A-Za-z]',text)
 for id in ['force-pair','torque-linearity','torque-origin','central-pair','kinetic-sign','torque-example']:
  assert f'Checked claim {id}:' in text

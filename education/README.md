@@ -1,8 +1,8 @@
 # Kenoma educational book
 
-This additive track provides one illustrated research book, seven resettable teaching laboratories, actual atlas-data inspection, a coupled engineering fixture and an anatomical apparatus candidate. It preserves the production simulator plans. The research edition has 20 chapters and 23 compiled Lean4 claims across four source files. Primary sources and independently licensed anatomy/trial/Arm26 data are cited separately from authored teaching geometry and material assumptions.
+This additive track provides one illustrated research book, seven resettable teaching laboratories, actual atlas-data inspection, a coupled engineering fixture and an anatomical apparatus candidate. It preserves the production simulator plans. The research edition has 20 chapters and 25 compiled Lean4 claims across four source files. Primary sources and independently licensed anatomy/trial/Arm26 data are cited separately from authored teaching geometry and material assumptions.
 
-The published spatial teaching lab uses a one-way quasistatic line actuator and schematic skin/fascia. The newer anatomical candidate connects seven atlas-derived P2 volumes through shared tendon apparatuses and a jointly solved elbow. Its held rest is accepted, but loaded attempts fail both force and geometry checks. Anatomical lift, release and elbow compression remain incomplete; no medical or subject-specific validation is claimed.
+The published spatial teaching lab uses a one-way quasistatic line actuator and schematic skin/fascia. The newer anatomical candidate connects seven atlas-derived P2 volumes through shared tendon apparatuses and a jointly solved elbow. Its held rest and all 15 recorded loaded/released steps pass independently replayed reduced force and finite geometry checks after material contact-witness refinement. The original failures remain source-bound regressions. Lift/release receipts, compression and remaining model limits are reported in the anatomical apparatus chapter; no medical or subject-specific validation is claimed.
 
 ## Build and read
 
@@ -24,6 +24,16 @@ python3 tests/anatomical_arm_inspection.py
 python3 tests/artifacts.py
 python3 -m http.server 8000 --directory dist
 ```
+
+The contact regression and trajectory commands retain the original failed inputs and re-evaluate their gates:
+
+```bash
+node tools/verify-anatomical-rejected-steps.mjs
+node tools/verify-anatomical-cold-candidate.mjs
+npm run anatomy:contact
+```
+
+The last command solves the recorded 0.5 kg lifting/release schedule and then independently replays force, finite geometry and the mechanical ledger. CPU solves can take minutes per step. Archived coordinates supply nonlinear initial guesses; the old accepted state defines inertia and activation, and collision or force failures retain that state. Contact gaps and force tolerances remain at their original values.
 
 Open `http://localhost:8000`. Generated outputs are `dist/kenoma-mechanics.md`, `dist/kenoma-mechanics.pdf`, and `dist/index.html`, with locally bundled assets, complete proof sources, citations, receipts, experiment measurements, and third-party notices. Serve the directory rather than opening HTML via `file://`, since module scripts need HTTP. Every URL is relative for a project-base path such as `/Kenoma/`.
 

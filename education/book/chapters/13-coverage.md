@@ -15,7 +15,8 @@ The original requested subjects appear below with their working example, evidenc
 | Separate skin and fascia | Interfaces; Lab 7 | Independent membrane energy and fascia tethers; ablation | No bending, sliding or skin self-contact |
 | Elbow tissue compression/contact | Spatial capstone; Lab 7 | Capsule gaps, sample forces, local J, residual and contact-off comparison | Compliant sampled bone contact; no pressure/CCD guarantee |
 | Naive skin weighting | Labs 5, 7 at shared q | Actual transformed bind vertices and measured cell volumes | Force-free geometry; no anatomical accuracy claim |
-| Formal claims | Visible cards and complete Lean appendix | Twelve fresh kernel-checked declarations | Exact integer contracts, not floating-point/biological validation |
+| Anatomical missed contact | Anatomical apparatus | Saved muscle/bone and tendon/bone failures; positive-area geometric witnesses; derivative and frozen-rule replay checks | Reduced stationary model, finite transverse triangles and axial paths; no CCD or finite tendon radius |
+| Formal claims | Visible cards and complete Lean appendix | 25 fresh kernel-checked declarations across four source files | Exact integer contracts, not floating-point/biological validation |
 
 The continuum solver's static manufactured solution independently assesses spatial discretization. Its matched implicit reference assesses the algebraic error of a faster solver at the same physical step. The capstone's iteration study instead measures a nonconvex spring/volume model at one mesh. These are different error questions, and their percentages must not be combined into a single “accuracy” badge.
 

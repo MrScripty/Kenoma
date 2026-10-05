@@ -1,0 +1,118 @@
+{
+  "schema": 1,
+  "scope": "Captured local execution logs from the completed working tree before commit. Exact-commit reruns are separate review artifacts.",
+  "entries": [
+    {
+      "log": "logs/node-tests.log",
+      "command": "node --test --test-concurrency=2 tests/*.test.mjs contributions/continuum_reference/tests/*.test.mjs",
+      "workingDirectory": "education",
+      "sha256": "c77b2fd141027ea8c19c735ee5f39a1647d5418227caf58790ca8862b3eedc3c",
+      "recordedAtUnixSeconds": 1791187462.1628833,
+      "status": "PASS"
+    },
+    {
+      "log": "logs/python-tests.log",
+      "command": "npm run test:python",
+      "workingDirectory": "education",
+      "sha256": "71fe2f977efbb2dfe2dbc9eb76eb5dd1bf704c1a0e044e693208fdf743d0e11c",
+      "recordedAtUnixSeconds": 1791185132.1317072,
+      "status": "PASS"
+    },
+    {
+      "log": "logs/build.log",
+      "command": "npm run build",
+      "workingDirectory": "education",
+      "sha256": "a2043e1cc18802d7f6a976d01003180abb44619b571f42525d8828b3e2901c63",
+      "recordedAtUnixSeconds": 1791194315.1881235,
+      "status": "PASS"
+    },
+    {
+      "log": "logs/pdf.log",
+      "command": "npm run pdf",
+      "workingDirectory": "education",
+      "sha256": "5c57949792b5c832ce58f3ed5081a48a0ce803cb1685c1739047c4ed8107a63d",
+      "recordedAtUnixSeconds": 1791194373.976031,
+      "status": "PASS"
+    },
+    {
+      "log": "logs/browser.log",
+      "command": "npm run test:browser",
+      "workingDirectory": "education",
+      "sha256": "2fd3f1aed525d51652d474db8dab08bb9533fbf686443ae40368bd78ad4e94c5",
+      "recordedAtUnixSeconds": 1791194448.0199094,
+      "status": "PASS"
+    },
+    {
+      "log": "logs/mobile.log",
+      "command": "npm run test:mobile",
+      "workingDirectory": "education",
+      "sha256": "2c76216ebabd1f878dd157e279edfff214ae5427fb63e449249aeab0d31d9eaf",
+      "recordedAtUnixSeconds": 1791194253.6002269,
+      "status": "PASS"
+    },
+    {
+      "log": "logs/arm-browser.log",
+      "command": "python3 tests/anatomical_arm_inspection.py",
+      "workingDirectory": "education",
+      "sha256": "9772291728382860407d7ccfdd1e1c707de6fdfb1906e718e8e0a217231f70ba",
+      "recordedAtUnixSeconds": 1791194252.276229,
+      "status": "PASS"
+    },
+    {
+      "log": "logs/artifacts.log",
+      "command": "python3 tests/artifacts.py",
+      "workingDirectory": "education",
+      "sha256": "12d102039434d06b3f04ca64da4ce66b241a9ed66cc1ef9d2d8e23523c219997",
+      "recordedAtUnixSeconds": 1791194477.1924512,
+      "status": "PASS"
+    },
+    {
+      "log": "logs/rejected-steps.log",
+      "command": "node tools/verify-anatomical-rejected-steps.mjs",
+      "workingDirectory": "education",
+      "sha256": "cb4cd2d7617ce43428e293f8b2ff8ab2a1dde5b67a5e4093b610993d4ca8e782",
+      "recordedAtUnixSeconds": 1791185350.0179899,
+      "status": "PASS"
+    },
+    {
+      "log": "logs/cold-candidates.log",
+      "command": "node tools/verify-anatomical-cold-candidate.mjs",
+      "workingDirectory": "education",
+      "sha256": "ec638ce874a3d140899086989b3a80013005af0aa4fb378a35a960047e53c8cf",
+      "recordedAtUnixSeconds": 1791187384.839019,
+      "status": "PASS"
+    },
+    {
+      "log": "logs/trajectory-replay.log",
+      "command": "node tools/verify-anatomical-contact-trajectory.mjs",
+      "workingDirectory": "education",
+      "sha256": "9da45715fb87959662bd20094dfc5c6a52007a48b299f1930cd46d047d61b4fb",
+      "recordedAtUnixSeconds": 1791193836.6446447,
+      "status": "PASS"
+    },
+    {
+      "log": "logs/finer-prefix-replay.log",
+      "command": "node tools/verify-anatomical-release-prefix.mjs",
+      "workingDirectory": "education",
+      "sha256": "d2b8c649e112c630b264813be827ca13135e1e92ee8ec4ce20e6c9a3f7cdeb88",
+      "recordedAtUnixSeconds": 1791194124.1084187,
+      "status": "PASS"
+    },
+    {
+      "log": "logs/trajectory-execution.log",
+      "command": "node tools/anatomical-contact-experiment.mjs",
+      "workingDirectory": "education",
+      "sha256": "99505d816cbe5cac9611c5b93e5368805c30f4b8e94a28435666f74c79a4f90b",
+      "recordedAtUnixSeconds": 1791192990.2059708,
+      "status": "COMPLETED_ACCEPTED"
+    },
+    {
+      "log": "logs/finer-prefix-execution.log",
+      "command": "node tools/anatomical-release-refinement-experiment.mjs --base /tmp/kenoma-fine-base.json --output /tmp/kenoma-fine-release-results.json",
+      "workingDirectory": "education",
+      "sha256": "a11a2ebf16a1c7727da400879ab75e6eef254b1ea5224dc152cfca2df7c65032",
+      "recordedAtUnixSeconds": 1791193737.308822,
+      "status": "INTERRUPTED_ACCEPTED_PREFIX"
+    }
+  ]
+}

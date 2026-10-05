@@ -2,8 +2,8 @@
   "schema": 1,
   "lean_version": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)",
   "source": "proofs/AnatomicalArm.lean",
-  "source_sha256": "3f06dfbdf3daf8ffabdb3a8a1f5543147808c3775c6e3983a693a8677c409f21",
-  "claims_sha256": "7da65f11efb48c3147779ea0b1c799627c1deb407f8627ce28275c0b6718cd02",
+  "source_sha256": "843f04f8e8f5c81a902d6816f0136726d006be6574aff5245360b8c2006ef025",
+  "claims_sha256": "a56d39ba3dfe805189ca13ef91f696b99b2762e7258e6b22246b81eba36baa83",
   "command": "lean -DwarningAsError=true proofs/AnatomicalArm.lean",
   "claims": [
     {
@@ -31,6 +31,34 @@
       "status": "checked",
       "axioms": [
         "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "contact-area-partition",
+      "theorem": "Kenoma.Arm.contact_partition_area_numerator",
+      "claim": "Reference-area child shares preserve the parent area numerator when their sum equals the parent scale.",
+      "implementation": "web/anatomical-contact.mjs: rebuildSurfaceSamples; web/anatomical-contact-refinement.mjs: splitMaterialTriangle, rebuildBoneSamples.",
+      "assumptions": "Exact integer compatible area/share scales; the geometric partition supplies a+b+c=scale. Positive child areas are checked numerically.",
+      "limitations": "Does not prove the triangulation, positive floating-point weights, geometric clearance, continuous collision detection, Newton convergence or biological contact.",
+      "numerical_evidence": "tests/anatomical_contact_refinement.test.mjs independently checks positive children, reference-area conservation, saved missed intersections and material-rule replay.",
+      "status": "checked",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "id": "conservative-contact-gap",
+      "theorem": "Kenoma.Arm.conservative_contact_gap",
+      "claim": "A supplied lower unsigned distance envelope gives a gap no greater than the exact outside distance or the negative inside distance.",
+      "implementation": "web/anatomical-contact.mjs: regularizedSoft; outside gap=u, inside gap=u-2*d. Raw signed distance and full geometry remain the acceptance gates.",
+      "assumptions": "Exact integer distance numerators in compatible SI scales; the bound u<=d is supplied.",
+      "limitations": "Does not prove the numerical simplex solver, floating-point bounds, signed-distance queries, derivative correctness, Newton convergence or collision clearance.",
+      "numerical_evidence": "tests/anatomical_contact_differential.test.mjs checks envelope bounds/weights and tests/anatomical_contact_refinement.test.mjs checks the preserved loaded closest-face corner and original collision gates.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
         "Quot.sound"
       ]
     }

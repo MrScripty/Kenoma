@@ -16,9 +16,9 @@ def run():
         for label,width,height in [('desktop',1200,1050),('mobile-emulation',393,852)]:
           page=browser.new_page(viewport={'width':width,'height':height});page.set_default_timeout(60000);errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
           page.goto(url+'/anatomical-arm/index.html');page.wait_for_function('window.anatomicalArmReady===true')
-          assert page.locator('#proofs details').count()==3
+          assert page.locator('#proofs details').count()==5
           page.locator('#proofs details').last.locator('summary').click()
-          assert sum(s.startswith('theorem ') for s in page.locator('#proofs pre').inner_text().splitlines())==2
+          assert sum(s.startswith('theorem ') for s in page.locator('#proofs pre').inner_text().splitlines())==4
           assert page.locator('#heads tr').count()==7
           assert page.locator('canvas').count()==0
           original=page.evaluate('anatomicalArmApi.state');receipt=page.evaluate('anatomicalArmApi.receipt')
@@ -40,7 +40,7 @@ def run():
           assert page.evaluate('anatomicalArmApi.rows.length')==0
           assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+1')
           assert not errors,errors
-          results.append({'viewport':label,'restResidualN':receipt['maximumFreeModalGradientN'],'visibleCompiledClaims':2,'headRows':7,'massStatePreserved':True,'releaseStatePreserved':True,'resetExactInRuntime':True,'busyResetWorkerTerminated':True,'browserErrors':errors,'limits':'Rest/control acceptance only. Mobile emulation, not a physical phone. No accepted anatomical lift/release trajectory.'})
+          results.append({'viewport':label,'restResidualN':receipt['maximumFreeModalGradientN'],'visibleCompiledClaims':4,'headRows':7,'massStatePreserved':True,'releaseStatePreserved':True,'resetExactInRuntime':True,'busyResetWorkerTerminated':True,'browserErrors':errors,'limits':'Rest/control acceptance only. Mobile emulation, not a physical phone. This browser check does not execute a full anatomical lift/release trajectory.'})
           page.close()
         page=browser.new_page(viewport={'width':393,'height':852});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
         page.add_init_script('const original=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(kind,...args){return kind.startsWith("webgl")?null:original.call(this,kind,...args);};')

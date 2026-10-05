@@ -1,4 +1,4 @@
-"""Fresh pinned kernel check of two narrow atlas-frame algebraic claims."""
+"""Fresh pinned kernel check of narrow atlas-frame algebraic claims."""
 from pathlib import Path
 import hashlib,json,os,re,subprocess
 ROOT=Path(__file__).resolve().parents[1]

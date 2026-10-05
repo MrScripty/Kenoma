@@ -205,6 +205,7 @@ def build():
     advanced_figures(assets,spatial)
     from coupled_figures import generate as coupled_figures
     coupled_figures(assets)
+    subprocess.run(['python3',str(ROOT/'tools/contact_trajectory_figure.py')],check=True)
     review=ROOT/'data/anatomical-arm-v1/review/coupling-candidate'
     for name in ['atlas-assembly-bind','fixture-loaded','fixture-released']:
         shutil.copy(review/(name+'.png'),assets/(name+'.png'))
@@ -217,6 +218,7 @@ def build():
     subprocess.run([str(ROOT/'node_modules/.bin/esbuild'),str(ROOT/'web/app.mjs'),'--bundle','--minify','--format=esm','--target=es2022',f'--outfile={assets/"app.js"}','--legal-comments=external'],check=True)
     proofs=OUT/'proofs';proofs.mkdir(exist_ok=True)
     for file in ['Mechanics.lean','AnatomicalTransfer.lean','CoupledMechanics.lean','AnatomicalArm.lean','anatomical-claims.json','coupled-claims.json','arm-claims.json','lean-toolchain','claims.json']:shutil.copy(ROOT/'proofs'/file,proofs/file)
+    subprocess.run(['node',str(ROOT/'tools/build-anatomy-inspector.mjs')],check=True)
     subprocess.run(['node',str(ROOT/'tools/build-coupled-inspector.mjs')],check=True)
     subprocess.run(['node',str(ROOT/'tools/build-anatomical-arm-inspector.mjs')],check=True)
     notices=OUT/'THIRD_PARTY_NOTICES.txt'

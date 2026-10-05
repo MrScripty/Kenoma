@@ -24,6 +24,23 @@ theorem shared_guide_force_balance
     distal = -(headA+headB+matrix+contact) := by
   omega
 
+-- Exact scaled reference-area partition; geometry supplies the shares.
+theorem contact_partition_area_numerator (area a b c scale : Int)
+    (partition : a + b + c = scale) :
+    area*a + area*b + area*c = area*scale := by
+  rw [← Int.mul_add, ← Int.mul_add, partition]
+
+-- A supplied conservative unsigned envelope also gives conservative signed
+-- gaps on either side. Numerical construction/geometry is checked separately.
+theorem conservative_contact_gap (distance envelope : Int)
+    (bound : envelope <= distance) :
+    envelope <= distance ∧ envelope - 2*distance <= -distance := by
+  omega
+
 end Kenoma.Arm
 #print axioms Kenoma.Arm.upward_mass_event_work_numerator
 #print axioms Kenoma.Arm.shared_guide_force_balance
+
+#print axioms Kenoma.Arm.contact_partition_area_numerator
+
+#print axioms Kenoma.Arm.conservative_contact_gap
