@@ -27,3 +27,10 @@ The following bounded lesson is finite-bulk/shear and free/confined compression.
 ## Preserved anatomical processes
 
 The all-half trajectory, interpolated-initial-guess all-half trajectory, and release-third refinement remain active. Their original iteration limits, force/geometry gates and reject-without-advancement behavior are unchanged. Their optimizer-free replay monitor is also running, with a separate trigger waiting to build matched-time comparisons and figures after terminal receipts. No dense convergence or whole-envelope qualification is claimed. The pending workflow/artifact/final-inspection edits remain uncommitted until those receipts are terminal.
+
+
+## Main-book integration completed on 2026-10-05
+
+The historical pending status above describes the frozen first preview. Main-book source commit `3cd3c5fbf2b061058e1dc5d2305408951dd4b5ee` now contains the three lessons and all four freshly checked real claims. The complete edition has 21 chapters, 29 checked claims and 89 PDF pages. The corrected numerical suite passes all 128 tests, Python checks pass all 16 tests, and full-book/property desktop/mobile, print, source-hash, glyph and PDF-link checks pass. The endpoint-warning bug and its frozen failing case are recorded separately. The Library errors remain generic unclassified download failures, with no verified plan hash.
+
+`deliverables/property-integration/` contains the coherent source-bound Markdown, PDF, full portable archive and delivery manifest. `data/property-labs-v1/review/main-integration/` retains raw tests and render evidence. The next bounded curriculum milestone is separate finite-bulk/shear and free/confined compression; the measured-property and subsequent rate/history lessons remain planned. The three old anatomical refinements remain active under their original gates. Parent retains review, merge, publication and Library delivery.
