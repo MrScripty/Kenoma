@@ -1,0 +1,179 @@
+{
+  "schema": 1,
+  "result": "PASS_COMPLETED_ACCEPTED_RELEASE_MATCHED_TIMES",
+  "sameLoadingPrefixStates": 5,
+  "bodyPointsPerElement": 256,
+  "coarse": {
+    "verifiedSteps": 15,
+    "maximumIndependentResidualN": 0.00009000557448879398,
+    "minimumCornerJ": 0.7120247523019865,
+    "peakAngleDeg": 39.33573834006891,
+    "finalAngleDeg": 33.534950964707086,
+    "releaseFallDeg": 5.800787375361821,
+    "finalVelocityRadPerS": -1.6615033607996137
+  },
+  "fine": {
+    "verifiedSteps": 35,
+    "maximumIndependentResidualN": 0.0000944593552529684,
+    "minimumCornerJ": 0.7120247523019865,
+    "peakAngleDeg": 42.71109785227619,
+    "finalAngleDeg": 38.25633035900602,
+    "releaseFallDeg": 4.454767493270162,
+    "finalVelocityRadPerS": -1.6999823901416078
+  },
+  "rows": [
+    {
+      "timeS": 0.01,
+      "coarseAngleDeg": 16.29807672209087,
+      "fineAngleDeg": 16.29807672209087,
+      "angleDifferenceDeg": 0,
+      "maximumNodalDifferenceM": 0,
+      "coarseIndependentResidualN": 0.00004403872624770901,
+      "fineIndependentResidualN": 0.00004403872624770901
+    },
+    {
+      "timeS": 0.04,
+      "coarseAngleDeg": 16.97702019170075,
+      "fineAngleDeg": 16.97702019170075,
+      "angleDifferenceDeg": 0,
+      "maximumNodalDifferenceM": 0,
+      "coarseIndependentResidualN": 0.00005981979899478875,
+      "fineIndependentResidualN": 0.00005981979899478875
+    },
+    {
+      "timeS": 0.07,
+      "coarseAngleDeg": 18.387635026958844,
+      "fineAngleDeg": 18.387635026958844,
+      "angleDifferenceDeg": 0,
+      "maximumNodalDifferenceM": 0,
+      "coarseIndependentResidualN": 0.00003938279472053257,
+      "fineIndependentResidualN": 0.00003938279472053257
+    },
+    {
+      "timeS": 0.1,
+      "coarseAngleDeg": 20.556681709199946,
+      "fineAngleDeg": 20.556681709199946,
+      "angleDifferenceDeg": 0,
+      "maximumNodalDifferenceM": 0,
+      "coarseIndependentResidualN": 0.00009000557448879398,
+      "fineIndependentResidualN": 0.00009000557448879398
+    },
+    {
+      "timeS": 0.13,
+      "coarseAngleDeg": 23.585432134876523,
+      "fineAngleDeg": 23.585432134876523,
+      "angleDifferenceDeg": 0,
+      "maximumNodalDifferenceM": 0,
+      "coarseIndependentResidualN": 0.00006944999805952833,
+      "fineIndependentResidualN": 0.00006944999805952833
+    },
+    {
+      "timeS": 0.16,
+      "coarseAngleDeg": 27.08129261405728,
+      "fineAngleDeg": 27.042310032357523,
+      "angleDifferenceDeg": -0.03898258169975185,
+      "maximumNodalDifferenceM": 0.0000772156157543223,
+      "coarseIndependentResidualN": 0.000023207512511957268,
+      "fineIndependentResidualN": 0.00006161848269223627
+    },
+    {
+      "timeS": 0.19,
+      "coarseAngleDeg": 30.596326984304895,
+      "fineAngleDeg": 30.81060172515078,
+      "angleDifferenceDeg": 0.21427474084588075,
+      "maximumNodalDifferenceM": 0.00033372222736773423,
+      "coarseIndependentResidualN": 0.000054932733176166204,
+      "fineIndependentResidualN": 0.00003382147280515404
+    },
+    {
+      "timeS": 0.22,
+      "coarseAngleDeg": 33.811149619285075,
+      "fineAngleDeg": 34.47947977322048,
+      "angleDifferenceDeg": 0.6683301539354077,
+      "maximumNodalDifferenceM": 0.001102701567400113,
+      "coarseIndependentResidualN": 0.00008411142027710608,
+      "fineIndependentResidualN": 0.000012763578688919537
+    },
+    {
+      "timeS": 0.25,
+      "coarseAngleDeg": 36.45657319950201,
+      "fineAngleDeg": 37.73108197639115,
+      "angleDifferenceDeg": 1.2745087768891419,
+      "maximumNodalDifferenceM": 0.0020975028247883954,
+      "coarseIndependentResidualN": 0.00006723404198682905,
+      "fineIndependentResidualN": 0.00003341667204768582
+    },
+    {
+      "timeS": 0.28,
+      "coarseAngleDeg": 38.342120986052194,
+      "fineAngleDeg": 40.307576220572926,
+      "angleDifferenceDeg": 1.9654552345207288,
+      "maximumNodalDifferenceM": 0.0031895739368719587,
+      "coarseIndependentResidualN": 0.00006660718717522258,
+      "fineIndependentResidualN": 0.0000944593552529684
+    },
+    {
+      "timeS": 0.31000000000000005,
+      "coarseAngleDeg": 39.32724167646216,
+      "fineAngleDeg": 42.01379414941862,
+      "angleDifferenceDeg": 2.686552472956467,
+      "maximumNodalDifferenceM": 0.004409347648635409,
+      "coarseIndependentResidualN": 0.000035165438673928975,
+      "fineIndependentResidualN": 0.00008761065853337552
+    },
+    {
+      "timeS": 0.3400000000000001,
+      "coarseAngleDeg": 39.33573834006891,
+      "fineAngleDeg": 42.71109785227619,
+      "angleDifferenceDeg": 3.375359512207277,
+      "maximumNodalDifferenceM": 0.005564977948752507,
+      "coarseIndependentResidualN": 0.00008127190594933709,
+      "fineIndependentResidualN": 0.00006570854581968918
+    },
+    {
+      "timeS": 0.3700000000000001,
+      "coarseAngleDeg": 38.34759219044987,
+      "fineAngleDeg": 42.32323265531149,
+      "angleDifferenceDeg": 3.9756404648616215,
+      "maximumNodalDifferenceM": 0.0066003196743102495,
+      "coarseIndependentResidualN": 0.00006445645197781922,
+      "fineIndependentResidualN": 0.000002062913436177115
+    },
+    {
+      "timeS": 0.40000000000000013,
+      "coarseAngleDeg": 36.39086487132568,
+      "fineAngleDeg": 40.82926616834349,
+      "angleDifferenceDeg": 4.438401297017801,
+      "maximumNodalDifferenceM": 0.006957725825777878,
+      "coarseIndependentResidualN": 0.00005469302102568919,
+      "fineIndependentResidualN": 0.00004217794165725002
+    },
+    {
+      "timeS": 0.43000000000000016,
+      "coarseAngleDeg": 33.534950964707086,
+      "fineAngleDeg": 38.25633035900602,
+      "angleDifferenceDeg": 4.721379394298936,
+      "maximumNodalDifferenceM": 0.0074036776038493915,
+      "coarseIndependentResidualN": 0.00004248022990923023,
+      "fineIndependentResidualN": 7.281126307931169e-7
+    }
+  ],
+  "maximumAbsoluteAngleDifferenceDeg": 4.721379394298936,
+  "maximumNodalDifferenceM": 0.0074036776038493915,
+  "sourceHashes": {
+    "data/anatomical-arm-v1/audit/anatomical-dense-trajectory.json": "695c2b682d5d97a4a3bd4876bb7352724e80a7f3cf050568d456d29ec1b7532b",
+    "data/anatomical-arm-v1/audit/anatomical-dense-trajectory-recheck.json": "dfdd21492e1758fd7b84410d8420f62a3de7bafeb5f3bab35c1bc289228c6a4b",
+    "data/anatomical-arm-v1/audit/anatomical-dense-release-secant-completed.json": "e5aa8750e67016513b40179bd178c1b0689d747242e5605c22c8e8c49ea4eb64",
+    "data/anatomical-arm-v1/audit/anatomical-dense-release-secant-completed-recheck.json": "5c47300be25d9f7ed1cdb21273b6927beab9e1b2ab1b36ba9141afca5cc42dc2",
+    "data/anatomical-arm-v1/generated/arm-reference.json": "1b80c1d3d9f2eb4370cd298f58f5e9c582625574f27072f6d3a1ea898ce4c036",
+    "data/anatomical-arm-v1/config/attachments-apparatus.json": "070fee738e73e127e334ee5cbe680cb622f100396ad0728eb9df6723c2232389",
+    "data/anatomical-arm-v1/audit/modal-fixed-end-results.json": "b0eeecdade262b682279d9ebeb7a8147a4525a992976a85afc0ce5e63270d8b4",
+    "data/anatomical-arm-v1/config/apparatus-routing.json": "b8580e8158e17730b65b64d0fdbe0f1cbbafc76235b9a5f0c2b01020818cd93f",
+    "tools/compare-completed-dense-release.mjs": "faea0ccc8e2b1940eb15fe3b43a8d345051b85b16fddbf6fd45aab12b9e1e3a6"
+  },
+  "limits": [
+    "Fine refinement is release-only, with five unchanged dense loading increments.",
+    "Actual P2 node-position differences are measured; no mesh/full-nodal force or timestep convergence acceptance.",
+    "The original rejected execution and successful final retry remain separate immutable evidence."
+  ]
+}

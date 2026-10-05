@@ -1,0 +1,17 @@
+{
+  "result": "PASS_COMPLETE_DENSE_RELEASE_EVIDENCE",
+  "sha256": {
+    "education/data/anatomical-arm-v1/review/dense-release-completed/appearance-review.json": "c6190b293b4d8a1e9b4d74c53719c394af7ad51c957450bf09e16a575560e88d",
+    "education/data/anatomical-arm-v1/review/dense-release-completed/render-execution.txt": "90e81291fbae92653f3e4c20e1d39779a3991bbf1b672a098593459a4dfc554d",
+    "education/data/anatomical-arm-v1/review/dense-release-completed/completed-release-matched-times.pdf": "69a02ee0231ca75311b0fe7734a277649b293111918bc06b92cc54fbf3567ce0",
+    "education/data/anatomical-arm-v1/review/dense-release-completed/assembly-execution.txt": "3d64ac63ce19bc067b50c88ba885e3c5940301faaa4e6b6f0479eff5b373c5ce",
+    "education/data/anatomical-arm-v1/review/dense-release-completed/completed-release-matched-times.png": "0df4aba1cf20af7491bce80596c6192c2086070f3b87f0e47e85008359c213d4",
+    "education/data/anatomical-arm-v1/review/dense-release-completed/matched-time-execution.txt": "2b4b4573d66e14c107faf4acde335c44882cf723478f3751dfa4df9e87a606b1",
+    "education/data/anatomical-arm-v1/review/dense-release-completed/render-receipt.json": "90e81291fbae92653f3e4c20e1d39779a3991bbf1b672a098593459a4dfc554d",
+    "education/data/anatomical-arm-v1/review/dense-release-completed/full-fresh-replay.txt": "46ed12bc20c7e2f1f25bde75a936b12743fca4de93aedd4d3c1bf8684a8c004c",
+    "education/data/anatomical-arm-v1/audit/anatomical-dense-release-secant-completed.json": "e5aa8750e67016513b40179bd178c1b0689d747242e5605c22c8e8c49ea4eb64",
+    "education/data/anatomical-arm-v1/audit/anatomical-dense-release-secant-completed-recheck.json": "5c47300be25d9f7ed1cdb21273b6927beab9e1b2ab1b36ba9141afca5cc42dc2",
+    "education/data/anatomical-arm-v1/audit/dense-release-secant-matched-times.json": "2b4b4573d66e14c107faf4acde335c44882cf723478f3751dfa4df9e87a606b1"
+  },
+  "scope": "Complete 35-state reduced release refinement; no general convergence/whole-envelope acceptance."
+}

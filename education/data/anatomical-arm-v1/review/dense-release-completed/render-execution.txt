@@ -1,0 +1,17 @@
+{
+  "result": "PASS_COMPLETED_RELEASE_RENDER",
+  "matplotlib": "3.10.8",
+  "sourceHashes": {
+    "anatomical-dense-trajectory.json": "695c2b682d5d97a4a3bd4876bb7352724e80a7f3cf050568d456d29ec1b7532b",
+    "anatomical-dense-release-secant-completed.json": "e5aa8750e67016513b40179bd178c1b0689d747242e5605c22c8e8c49ea4eb64",
+    "dense-release-secant-matched-times.json": "2b4b4573d66e14c107faf4acde335c44882cf723478f3751dfa4df9e87a606b1",
+    "anatomical-dense-trajectory-recheck.json": "dfdd21492e1758fd7b84410d8420f62a3de7bafeb5f3bab35c1bc289228c6a4b",
+    "anatomical-dense-release-secant-completed-recheck.json": "5c47300be25d9f7ed1cdb21273b6927beab9e1b2ab1b36ba9141afca5cc42dc2",
+    "tools/completed_release_figure.py": "485c11e3917075390092800c434f5434ae7140d72ad33ff1eb93aa0bbc9d072e"
+  },
+  "outputs": {
+    "completed-release-matched-times.png": "0df4aba1cf20af7491bce80596c6192c2086070f3b87f0e47e85008359c213d4",
+    "completed-release-matched-times.pdf": "69a02ee0231ca75311b0fe7734a277649b293111918bc06b92cc54fbf3567ce0"
+  },
+  "scope": "Actual fully replayed accepted trajectories and matched-time differences; no convergence acceptance."
+}
