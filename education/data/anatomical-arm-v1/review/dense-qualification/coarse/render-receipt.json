@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "coarseOnly": true,
+  "rendererSHA256": "097b228fc3294f96f0bbbfbb5c72ddd5696535b880a06e6433c028e1359c624b",
+  "pythonVersion": "3.12.14",
+  "matplotlibVersion": "3.10.8",
+  "inputs": {
+    "audit/contact-lift-release-recheck.json": "387c284d2dd235ec52e66526bec6f19abc2a4eac5a8e6526cae25b728e9a2c1f",
+    "audit/anatomical-dense-trajectory.json": "695c2b682d5d97a4a3bd4876bb7352724e80a7f3cf050568d456d29ec1b7532b",
+    "audit/anatomical-dense-trajectory-recheck.json": "dfdd21492e1758fd7b84410d8420f62a3de7bafeb5f3bab35c1bc289228c6a4b",
+    "audit/anatomical-compression-localization.json": "fba3eadd893902287bda52bad4b698d8bcb4707254030d6d3e993ea4d09c0504",
+    "audit/anatomical-further-integration.json": "d8c6444ccc947d32c658666a7b995f5bf7fe728413309ad80457483c2f9045ae",
+    "audit/anatomical-bulk-step-0.5-recheck.json": "9ddd38c871623acb8beb9b0a82283ac33b8d4c44601ead104f27bfabf52e7671",
+    "audit/anatomical-bulk-step-2-recheck.json": "2057332cf1c81fef65c2ed507cc280c59b7d13ec478c19ba22e1623ec16cd34f",
+    "audit/anatomical-enriched-step-recheck.json": "bd6f202cc7c8f8a79568dec9eea42de5149053ad1b07fc00607b1e16ffc7ced4"
+  },
+  "outputs": {
+    "dense-qualification.svg": "3dc462de6d6565b71623f96061afd0c68b53212d65d7ec9403c8ca8bcdefc303",
+    "dense-qualification.png": "8eac8dbfa654e70f96e9df2ae41f2c7a70c72277fb3b6cd98394add92c2f1572"
+  },
+  "limits": [
+    "Accepted prefixes are shown only through their verified times; rejection is not plotted as accepted.",
+    "Finite samples and passing reduced residuals do not qualify quadrature, timestep, mesh, full nodal or physiological convergence."
+  ]
+}
