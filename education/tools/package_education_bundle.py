@@ -4,6 +4,7 @@ import hashlib,json,re,sys,zipfile
 from html.parser import HTMLParser
 from urllib.parse import unquote,urlsplit
 import fitz
+from executable_outputs import executable_outputs,executable_digest
 ROOT=Path(__file__).resolve().parents[1]
 FAMILIES=[('proof-status.json','Mechanics.lean','claims.json',12),('transfer-proof-status.json','AnatomicalTransfer.lean','anatomical-claims.json',2),('coupled-proof-status.json','CoupledMechanics.lean','coupled-claims.json',7),('arm-proof-status.json','AnatomicalArm.lean','arm-claims.json',4),('property-proof-status.json','ContinuumProperties.lean','property-claims.json',4)]
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -13,6 +14,8 @@ def validate_build(out,manifest):
     require(bool(manifest.get('input_sha256')),'Empty build inputs')
     for relative,value in manifest['input_sha256'].items():
         require(digest(ROOT/relative)==value,'Build input changed: '+relative)
+    outputs=executable_outputs(out)
+    require(bool(outputs) and outputs==manifest.get('executable_outputs'),'Executable output inventory/hash differs from the checked build')
     def local(relative):
         path=(out/relative).resolve()
         require(path.is_relative_to(out.resolve()) and path.is_file(),'Missing/invalid bundle resource: '+relative)
@@ -38,7 +41,11 @@ def validate_build(out,manifest):
     html=digest(local('index.html'));app=digest(local('assets/app.js'));manifest_hash=digest(local('build-manifest.json'))
     for name in ['browser-check.json','mobile-startup-check.json']:
         receipt=read(name);require(receipt.get('status')=='passed','Missing successful check: '+name)
+        require(receipt.get('executable_outputs_sha256')==executable_digest(outputs),'Stale executable browser binding: '+name)
         require(receipt.get('html_sha256')==html and receipt.get('app_sha256')==app,'Stale checked browser outputs: '+name)
+    for name,scope in [('anatomical-arm-review/browser-receipt.json','anatomical-arm'),('coupled-review/browser-receipt.json','coupled-fixture')]:
+        receipt=read(name);scoped=executable_outputs(out,scope)
+        require(receipt.get('result')=='PASS' and bool(scoped) and receipt.get('executable_outputs')==scoped,'Stale native subpage/worker browser binding: '+name)
     property_check=read('qa/property-browser-check.json')
     require(property_check.get('result')=='PASS_INTEGRATED_PROPERTY_LABS' and property_check.get('proof_cards')==29,'Missing property/proof browser coverage')
     require(property_check.get('html_sha256')==html and property_check.get('app_sha256')==app and property_check.get('manifest_sha256')==manifest_hash,'Stale property browser outputs')

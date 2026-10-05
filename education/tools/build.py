@@ -1,5 +1,6 @@
 """Assemble chapters and checked evidence, then build a portable Pages artifact."""
 from pathlib import Path
+from executable_outputs import executable_outputs
 import hashlib,html,json,re,shutil,subprocess
 from check_proofs import check
 from check_anatomical_proofs import check as check_transfer
@@ -247,6 +248,7 @@ def build():
       'pandoc':subprocess.check_output(['pandoc','--version'],text=True).splitlines()[0],
       'node':subprocess.check_output(['node','--version'],text=True).strip(),
       'numerical_experiment':'experiment.json','proof_evidence':'proof-status.json',
+      'executable_outputs':executable_outputs(OUT),
       'proof_families':[b[2] for b in bundles],'property_mathlib':properties['mathlib'],
       'property_experiment':'property-experiment.json',
       'git_revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),

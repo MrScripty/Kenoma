@@ -13,6 +13,7 @@ import {JOINT_SCALE_M} from '../web/anatomical-apparatus.mjs';
 import {finitePoseAudit} from '../web/anatomical-audit.mjs';
 import {finiteRoutingAudit} from '../web/anatomical-routing-audit.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url)),base=root+'data/anatomical-arm-v1/',read=p=>JSON.parse(fs.readFileSync(base+p)),hash=p=>createHash('sha256').update(fs.readFileSync(root+p)).digest('hex'),run=read('audit/contact-lift-release-results.json'),fine=read('audit/contact-fine-release-results.json'),prefix=read('audit/contact-coarse-release-base.json'),check=read('audit/contact-lift-release-recheck.json');
+if(check.verifierSHA256!==hash('tools/verify-anatomical-contact-trajectory.mjs'))throw Error('Stale primary replay verifier digest');
 if(check.result!=='PASS'||check.executionReceiptSHA256!==hash('data/anatomical-arm-v1/audit/contact-lift-release-results.json')||fine.baseReceiptSHA256!==hash('data/anatomical-arm-v1/audit/contact-coarse-release-base.json'))throw Error('Source-bound base receipt');
 for(const [p,h] of Object.entries(fine.sourceHashes))if(!recordedInputMatches(p,h))throw Error('Changed finer execution source '+p);
 for(const [i,s] of prefix.snapshots.entries())if(JSON.stringify(s)!==JSON.stringify(run.snapshots[i]))throw Error('Base differs from verified primary trajectory');

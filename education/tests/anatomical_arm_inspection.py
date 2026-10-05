@@ -5,9 +5,11 @@ from pathlib import Path
 import hashlib,json,os,shutil,sys
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
 from render_pdf import serve
+from executable_outputs import executable_outputs,unchanged_outputs
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[1]
 def run():
+    checked_executables=executable_outputs(ROOT/'dist','anatomical-arm')
     out=ROOT/'dist/anatomical-arm-review';out.mkdir(parents=True,exist_ok=True)
     server,url=serve();results=[]
     try:
@@ -50,6 +52,7 @@ def run():
         version=browser.version;browser.close()
     finally:server.shutdown();server.server_close()
     paths=['tools/anatomical-arm-inspector.mjs','tools/build-anatomical-arm-inspector.mjs','web/anatomical-arm-worker.mjs','data/anatomical-arm-v1/audit/arm-rest-recheck.json']
-    receipt={'result':'PASS','browserVersion':version,'sourceHashes':{s:hashlib.sha256((ROOT/s).read_bytes()).hexdigest() for s in paths},'rows':results}
+    unchanged_outputs(ROOT/'dist',checked_executables,'anatomical-arm')
+    receipt={'executable_outputs':checked_executables,'result':'PASS','browserVersion':version,'sourceHashes':{s:hashlib.sha256((ROOT/s).read_bytes()).hexdigest() for s in paths},'rows':results}
     (out/'browser-receipt.json').write_text(json.dumps(receipt,indent=2)+'\n');print(json.dumps({'result':'PASS','output':str(out)}))
 if __name__=='__main__':run()

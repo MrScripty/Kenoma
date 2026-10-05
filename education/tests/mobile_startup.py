@@ -6,6 +6,7 @@ from pathlib import Path
 import hashlib,json,os,shutil,sys
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
 from render_pdf import serve
+from executable_outputs import checked_build_outputs,executable_digest,unchanged_outputs
 from playwright.sync_api import sync_playwright,expect
 from collections import Counter
 import fitz
@@ -43,6 +44,7 @@ def check_draw(lab,out,name):
 
 
 def check():
+    checked_executables=checked_build_outputs(ROOT/'dist')
     out=ROOT/'dist/qa/mobile-startup';out.mkdir(parents=True,exist_ok=True)
     receipt=ROOT/'dist/mobile-startup-check.json';receipt.unlink(missing_ok=True)
     server,url=serve();result={'status':'passed','scope':'Pixel 7 touch emulation with default headless Chromium; not physical Android/WebView evidence','startup_draws':{},'fault_tests':[]}
@@ -105,7 +107,8 @@ def check():
         failed.locator('#lab-series .scene-toolbar').screenshot(path=str(out/'retry-toolbar.png'))
         assert not failed_downloads
         result['fault_tests'].append('Unavailable WebGL in all seven labs gives prominent in-viewport error plus functional numerical controls, explicitly without 3D')
-        result.update(browser=browser.version,downloads_on_start=downloads+failed_downloads,html_sha256=hashlib.sha256((ROOT/'dist/index.html').read_bytes()).hexdigest(),app_sha256=hashlib.sha256((ROOT/'dist/assets/app.js').read_bytes()).hexdigest())
+        unchanged_outputs(ROOT/'dist',checked_executables)
+        result.update(executable_outputs_sha256=executable_digest(checked_executables),browser=browser.version,downloads_on_start=downloads+failed_downloads,html_sha256=hashlib.sha256((ROOT/'dist/index.html').read_bytes()).hexdigest(),app_sha256=hashlib.sha256((ROOT/'dist/assets/app.js').read_bytes()).hexdigest())
         browser.close()
       receipt.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))
     finally:server.shutdown();server.server_close()

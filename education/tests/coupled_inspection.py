@@ -3,9 +3,11 @@ from pathlib import Path
 import hashlib,json,os,shutil,sys
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
 from render_pdf import serve
+from executable_outputs import executable_outputs,unchanged_outputs
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[1]
 def run():
+    checked_executables=executable_outputs(ROOT/'dist','coupled-fixture')
     out=ROOT/'dist/coupled-review';out.mkdir(parents=True,exist_ok=True)
     server,url=serve();results=[]
     try:
@@ -51,6 +53,7 @@ def run():
         page.close()
         version=browser.version;browser.close()
     finally:server.shutdown();server.server_close()
-    receipt={'result':'PASS','browserVersion':version,'sourceHashes':{path:hashlib.sha256((ROOT/path).read_bytes()).hexdigest() for path in ['web/anatomical-coupled-fixture.mjs','web/anatomical-coupled-worker.mjs','tools/coupled-inspector.mjs']},'rows':results}
+    unchanged_outputs(ROOT/'dist',checked_executables,'coupled-fixture')
+    receipt={'executable_outputs':checked_executables,'result':'PASS','browserVersion':version,'sourceHashes':{path:hashlib.sha256((ROOT/path).read_bytes()).hexdigest() for path in ['web/anatomical-coupled-fixture.mjs','web/anatomical-coupled-worker.mjs','tools/coupled-inspector.mjs']},'rows':results}
     (out/'browser-receipt.json').write_text(json.dumps(receipt,indent=2)+'\n');print(json.dumps({'result':'PASS','output':str(out)}))
 if __name__=='__main__':run()

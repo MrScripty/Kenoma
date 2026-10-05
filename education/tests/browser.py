@@ -3,10 +3,12 @@ from pathlib import Path
 import hashlib,json,os,shutil,sys
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
 from render_pdf import serve
+from executable_outputs import checked_build_outputs,executable_digest,unchanged_outputs
 from playwright.sync_api import sync_playwright,expect
 ROOT=Path(__file__).resolve().parents[1]
 
 def check():
+    checked_executables=checked_build_outputs(ROOT/'dist')
     (ROOT/'dist/browser-check.json').unlink(missing_ok=True)
     server,url=serve();checks=[];out=ROOT/'dist/qa';out.mkdir(exist_ok=True)
     try:
@@ -216,7 +218,8 @@ HTMLCanvasElement.prototype.getContext=function(type,...args){if(type.includes('
         no_js.goto(url+'/index.html');expect(no_js.locator('#lab-force .static-figure')).to_be_visible()
         expect(no_js.locator('#lab-force noscript')).to_be_visible();assert no_js.locator('.proof-card').count()==proof_count;expect(no_js.locator('#lab-spatial .static-figure')).to_be_visible();expect(no_js.locator('#lab-continuum .static-figure')).to_be_visible()
         checks.append('No-JavaScript chapter text, diagrams, proofs and experiment table remain readable')
-        result={'status':'passed','browser_version':browser.version,'checks':checks,'proof_cards':proof_count,
+        unchanged_outputs(ROOT/'dist',checked_executables)
+        result={'executable_outputs_sha256':executable_digest(checked_executables),'status':'passed','browser_version':browser.version,'checks':checks,'proof_cards':proof_count,
           'html_sha256':hashlib.sha256((ROOT/'dist/index.html').read_bytes()).hexdigest(),
           'app_sha256':hashlib.sha256((ROOT/'dist/assets/app.js').read_bytes()).hexdigest(),
           'scope':'Automated Chromium desktop/mobile viewport checks; not real mobile hardware or accessibility certification.'}
