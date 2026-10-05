@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import './property-labs.mjs';
 import {formatReadout} from './readout.mjs';
 import {SceneStatus} from './scene-status.mjs';
 import {DEFAULTS,forceState,leverState,springStep,springEnergy} from './mechanics.mjs';
