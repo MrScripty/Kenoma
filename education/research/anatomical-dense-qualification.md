@@ -76,3 +76,20 @@ node --max-old-space-size=8192 tools/anatomical-bulk-step.mjs --factor 2
 node --max-old-space-size=8192 tools/anatomical-bulk-step.mjs --factor 0.5 --mode replay
 node --max-old-space-size=8192 tools/anatomical-bulk-step.mjs --factor 2 --mode replay
 ```
+
+## Controlled displacement enrichment
+
+`tools/anatomical-enriched-step.mjs` repeats the same dense 0.07–0.10 s increment with **six additional coordinates**, three components of each of two orthonormal nodal shapes at short-biceps proximal nodes 98 and 96. The shapes are projected off the original 21 scalar displacement columns and orthogonalized against each other. The short head has 69 coordinates; the other six bodies keep 63. The old state has zero additional coordinates. This is one controlled increment, not an enriched self-consistent trajectory.
+
+The isolated generated operator under `tools/enriched/` generalizes coordinate offsets and retains the original material law, dense 256-point rule, apparatus, sheet, transfer, contact derivatives, force gate and 240-iteration ceiling. Original source-bound operators are unchanged. `tools/enriched/source-manifest.json` records both original and generated source hashes. Five tests check zero-enrichment agreement, gradients and Hessian-vector products including active tendon contact, retraction rotation, reference routing, and contact-refinement rollback.
+
+The comparison passes fresh independent full P2 body-force projection at **0.0000872870302 N**. Queried transverse crossings, tendon-path violations and sampled bone/soft/tendon penetrations are zero. Short-biceps minimum sampled/corner J become **0.537856/0.470464**, while its global volume ratio remains **0.998870**. Its sampled reference-volume fraction below J = 0.9 is **0.0178626**. Thus selected enrichment makes local compression worse, despite almost unchanged global volume. Neither a near-unity global volume nor reduced-force stationarity qualifies the tissue envelope. Picking extra modes or a bulk modulus by appearance would hide this unresolved behavior.
+
+```sh
+python3 tools/build-enriched-operator.py
+node --test tests/anatomical_enrichment.test.mjs
+node --max-old-space-size=8192 tools/anatomical-enriched-step.mjs
+node --max-old-space-size=8192 tools/anatomical-enriched-step.mjs --replay
+```
+
+The accepted comparison, including this adverse compression result, is preserved in `audit/anatomical-enriched-step.json` and `audit/anatomical-enriched-step-recheck.json`. Further work needs a better resolved displacement field and integration, plus independently justified bulk/active-stress calibration. No constitutive change or physiological qualification is selected here.
