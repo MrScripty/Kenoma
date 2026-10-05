@@ -46,6 +46,10 @@ node --max-old-space-size=8192 tools/verify-anatomical-dense-trajectory.mjs
 
 Execution logs are under `data/anatomical-arm-v1/review/dense-qualification/`. Trajectory conclusions require completed execution and fresh replay; a running receipt is not an accepted trajectory.
 
+The original-interval dense run now completes **all 15 increments to 0.43 s** and passes fresh independent replay (`audit/anatomical-dense-trajectory-recheck.json`). The maximum independent total residual is **0.0000900055745 N**; independently projected full P2 body gradients agree with the reduced assembly within **1.06 × 10⁻¹¹ N**, and body energies within **4.45 × 10⁻¹⁴ J**. Every accepted state passes the unchanged finite surface, routing, contact-sample and corner determinant gates, as well as activation/velocity/time lineage, rule-energy events, active work, impulse and work-defect bookkeeping. The actual reversal is **39.335738 → 33.534951 degrees**, with final angular velocity **−1.661503 rad/s**. Minimum queried corner J over the accepted trajectory is **0.712025**. This is a self-consistent trajectory under the declared 256-point reduced potential, not a convergence or physiological validation result.
+
+The completed uncommitted execution JSON was compacted by changing whitespace only before fresh replay bound its byte hash. All numeric values, coordinates, contact rules, traces and original source hashes remain present. Committed frozen prefix bytes are unchanged; matched-time analysis checks their physical states against this completed run.
+
 ## Further integration and missing displacement directions
 
 The four accepted dense loading increments through 0.10 s are frozen in `audit/anatomical-dense-loading-prefix.json`. This prefix supplies identical old/target states for controlled bulk comparisons. It is not a completed lift/release.
@@ -65,7 +69,7 @@ The follow-up should therefore enrich the displacement field and retain conserva
 | Bulk modulus | Independent reduced residual (N) | Short-biceps minimum sampled J | Minimum corner J | Short-biceps global volume ratio | Reference-volume fraction with sampled J < 0.9 |
 |---|---:|---:|---:|---:|---:|
 | 0.5 MPa | 0.0000399061 | 0.627251 | 0.609408 | 0.998914 | 0.0371991 |
-| 1 MPa, dense prefix | 0.0000900056, solver/fresh evaluation | 0.72548 | 0.712634 | approximately 0.99886 | approximately 0.01715 |
+| 1 MPa, dense trajectory at 0.10 s | 0.0000900055745 | 0.725478 | 0.712634 | 0.998864 | 0.0171365 |
 | 2 MPa | 0.0000906255 | 0.824307 | 0.816574 | 0.999119 | 0.00569833 |
 
 Both changed-material comparisons have zero transverse surface crossings, zero tendon-path violations and zero sampled bone/soft/tendon penetrations. Half/double bulk changes the joint angle by **−0.01198/+0.008947 degrees**, and maximum reduced-coordinate changes are **5.47372/3.61622 mm**. The corner-volume losses remain **39.1%/18.3%**. These are controlled one-increment sensitivities from one common dense old state, not bulk-dependent self-consistent trajectories, physiological calibration or permission to pick a modulus by visual appearance.
