@@ -104,13 +104,23 @@ The accepted comparison, including this adverse compression result, is preserved
 
 | Head | Fitted active stress scale (MPa) | Original queried corner J | Original global volume ratio | Frozen 256-point free residual (N) |
 |---|---:|---:|---:|---:|
-| Long biceps FJ1486 | 3.59933 | 0.559236 | 1.04781 | 0.132179 |
+| Brachialis FJ1486 | 3.59933 | 0.559236 | 1.04781 | 0.132179 |
 | Short biceps FJ1512 | 8.70839 | 0.615812 | 1.02382 | 1.66242 |
-| Brachialis FJ1478 | 20.3781 | 0.609997 | 1.02796 | 0.674166 |
+| Long biceps FJ1478 | 20.3781 | 0.609997 | 1.02796 | 0.674166 |
 
 All three frozen denser calibration residuals fail the unchanged **0.0001 N** gate. The local compression exists in isolated fixed-end poses before any whole-arm contact is applied. Global dilation and local volume loss coexist. The fitted stress scales are approximately **3.6–20.4 times** the authored 1 MPa bulk modulus; these ratios describe model parameters, not physiological tissue measurements. Matching an Arm26 actuator force in the restricted 32-point field does not qualify either the denser calibration or local tissue behavior. Any future constitutive/bulk change needs a newly resolved calibration and trajectory; none is silently retuned here.
 
 The audit binds the saved calibration, its original replay, Arm26 source, operators and diagnostic by SHA-256. The initial rejected schema read and corrected execution are retained separately in the raw review logs.
+
+The additional dimensional check in `audit/anatomical-calibration-geometry.json` reads the atlas names and original Arm26 `Thelen2003Muscle` entries directly, verifies each force target and source hash, and compares geometric mean area `V/L` with the recorded effective area `F/sigma0`.
+
+| Verified atlas head | V/L (mm²) | F/sigma0 (mm²) | F/(sigma0 V/L) |
+|---|---:|---:|---:|
+| Brachialis FJ1486, Arm26 BRA | 480.815 | 274.294 | 0.570477 |
+| Short biceps FJ1512, Arm26 BICshort | 444.656 | 50.0186 | 0.112488 |
+| Long biceps FJ1478, Arm26 BIClong | 556.660 | 30.6365 | 0.0550363 |
+
+These ratios describe the equilibrated numerical fixtures. They combine local strain, fibre orientation, embedded sheets, volume stresses and displacement restrictions. They identify another calibration question behind the high fitted stress scales. `V/L` is a geometric mean area, not measured physiological cross-sectional area; neither the ratio nor a matched endpoint force establishes physiological specific tension. The geometry and actuator parameters remain independent reference models. The table's atlas/Arm26 names supersede the two accidentally swapped names in the preceding author commit; all receipts identify heads by their correct original element IDs.
 
 ## Whole-element orientation of stored P2 geometry
 
