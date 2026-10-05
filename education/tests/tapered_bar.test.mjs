@@ -16,3 +16,15 @@ test('large strain is exposed and invalid area or refinement rejected',()=>{
  assert.equal(barState({...BAR_DEFAULTS,force:20}).smallStrainWarning,true);
  assert.throws(()=>barState({...BAR_DEFAULTS,area:0}),RangeError);assert.throws(()=>barState({...BAR_DEFAULTS,segments:3.5}),RangeError);
 });
+test('small-strain warning uses true endpoint extrema independently of midpoint display resolution',()=>{
+ const fixture={...BAR_DEFAULTS,area:.0001,ratio:4,modulus:110000,force:.6};
+ const expectedEndpoint=3/55; // N/(E*A1), independently reduced from the fixture.
+ for(const segments of [8,16,64,512]){
+  const s=barState({...fixture,segments});
+  assert.equal(s.smallStrainWarning,true);assert.ok(Math.abs(s.maxAbsStrain-expectedEndpoint)<1e-15);
+  assert.ok(Math.abs(s.maximumStrain-expectedEndpoint)<1e-15);
+ }
+ assert.ok(Math.max(...barState({...fixture,segments:8}).samples.map(s=>Math.abs(s.strain)))<.05);
+ const reverse=barState({...fixture,force:-.6,segments:8});
+ assert.equal(reverse.smallStrainWarning,true);assert.ok(Math.abs(reverse.minimumStrain+expectedEndpoint)<1e-15);
+});

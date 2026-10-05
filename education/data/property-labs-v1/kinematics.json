@@ -3,8 +3,8 @@
   "node": "v24.19.0",
   "inputs": {
     "web/continuum-properties.mjs": "29bcfa030f0a1af6d0c17ed72e2801f580c69c5fa45af26459e1028ba5dc5753",
-    "web/tapered-bar.mjs": "f17a6d4d89f2e6f3d5d4bca060e4bae08c375c3dc8aeee9a2cc58c480acd835f",
-    "web/property-labs.mjs": "deb2e1a1b49a021a31b32e93fd52662cc6755dcbe5f77cb7bf5451cd10f3e8ad",
+    "web/tapered-bar.mjs": "2b7a3ec5dcea86d4c0ac95eab02b91868aa3e2343298405b11f66783b374b9cc",
+    "web/property-labs.mjs": "e302e23845bebb2a314df612d4f48fea773de2dc6b0bd65daf6001c152721788",
     "tools/property-experiment.mjs": "a248f76d166fc6a7eb7772bee227844391c920b4671b91d9a10078bfe23ff23c"
   },
   "defaults": {
@@ -280,7 +280,13 @@
       "extensionErrorM": -9.732530334839555e-7,
       "activeStrain": 0,
       "elasticEnergyJ": 0.00020779816621296102,
-      "maxAbsStrain": 0.009411764705882354,
+      "endpointStrains": [
+        0.01,
+        0.005
+      ],
+      "minimumStrain": 0.005,
+      "maximumStrain": 0.01,
+      "maxAbsStrain": 0.01,
       "smallStrainWarning": false,
       "samples": [
         {
@@ -360,7 +366,13 @@
       "extensionErrorM": -2.4393245794877665e-7,
       "activeStrain": 0,
       "elasticEnergyJ": 0.0002079075642992913,
-      "maxAbsStrain": 0.009696969696969697,
+      "endpointStrains": [
+        0.01,
+        0.005
+      ],
+      "minimumStrain": 0.005,
+      "maximumStrain": 0.01,
+      "maxAbsStrain": 0.01,
       "smallStrainWarning": false,
       "samples": [
         {
@@ -504,7 +516,13 @@
       "extensionErrorM": -6.102212477530379e-8,
       "activeStrain": 0,
       "elasticEnergyJ": 0.00020793500084926735,
-      "maxAbsStrain": 0.009846153846153846,
+      "endpointStrains": [
+        0.01,
+        0.005
+      ],
+      "minimumStrain": 0.005,
+      "maximumStrain": 0.01,
+      "maxAbsStrain": 0.01,
       "smallStrainWarning": false,
       "samples": [
         {
@@ -776,7 +794,13 @@
       "extensionErrorM": -1.5257974265341437e-8,
       "activeStrain": 0,
       "elasticEnergyJ": 0.00020794186547184375,
-      "maxAbsStrain": 0.009922480620155038,
+      "endpointStrains": [
+        0.01,
+        0.005
+      ],
+      "minimumStrain": 0.005,
+      "maximumStrain": 0.01,
+      "maxAbsStrain": 0.01,
       "smallStrainWarning": false,
       "samples": [
         {
@@ -1304,7 +1328,13 @@
       "extensionErrorM": -3.814646335571423e-9,
       "activeStrain": 0,
       "elasticEnergyJ": 0.0002079435819710332,
-      "maxAbsStrain": 0.009961089494163425,
+      "endpointStrains": [
+        0.01,
+        0.005
+      ],
+      "minimumStrain": 0.005,
+      "maximumStrain": 0.01,
+      "maxAbsStrain": 0.01,
       "smallStrainWarning": false,
       "samples": [
         {
@@ -2344,6 +2374,12 @@
     "extensionErrorM": -1.6263032587282567e-19,
     "activeStrain": 0.01,
     "elasticEnergyJ": 0.000049999999999999996,
+    "endpointStrains": [
+      0.0033333333333333322,
+      -0.003333333333333334
+    ],
+    "minimumStrain": -0.003333333333333334,
+    "maximumStrain": 0.0033333333333333322,
     "maxAbsStrain": 0.003333333333333334,
     "smallStrainWarning": false,
     "samples": [

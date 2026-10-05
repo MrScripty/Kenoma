@@ -1,0 +1,17 @@
+✔ oriented boundary measurement agrees with an independent affine prediction over translations and rotations (12.441275ms)
+✔ rigid deformation has zero Green strain; volume-preserving shear still has strain (0.278422ms)
+✔ determinant composition is checked numerically on nontrivial independent matrices (0.153688ms)
+✔ inversion is rejected by signed boundary volume and deformation orientation (6.103263ms)
+✔ isochoric construction preserves independently triangulated volume while area and length change (0.96015ms)
+✔ linear taper midpoint integration converges to independently integrated log oracle (1.714935ms)
+✔ equal-length two-area fixed-end active fixture: narrow +1/300, wide -1/300 (4.288451ms)
+✔ large strain is exposed and invalid area or refinement rejected (0.630111ms)
+✔ small-strain warning uses true endpoint extrema independently of midpoint display resolution (3.044497ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 218.678822
