@@ -23,6 +23,8 @@ npm run test:browser
 npm run test:mobile
 python3 tests/anatomical_arm_inspection.py
 python3 tests/property_browser.py dist
+python3 tests/worker_lifecycle.py
+python3 tools/inspect_property_integration.py
 python3 tests/artifacts.py
 python3 -m http.server 8000 --directory dist
 ```
@@ -52,7 +54,7 @@ A system Chromium can be used when installed; `CHROMIUM_EXECUTABLE=/absolute/pat
 
 The 3D renderer initializes only when requested and keeps one active canvas. Numerical controls work without WebGL. A zero-JavaScript reader retains all chapter text, figures, mathematical claims and the numerical experiment table. Labs start paused; Reset restores all parameters and camera. Only deliberate requested summaries are announced, rather than every frame.
 
-The original 25 declarations use exact integer domains and bundled Std. Four additional declarations in `ContinuumProperties.lean` use real matrices and the real square root with pinned mathlib v4.19.0; `proofs/mathlib-lock.json` binds its commit and dependency manifest. The source build uses two jobs and does not require a binary cache. These are mathematical contracts, not real-valued biological model validation. The twelve checks cover cancellation, torque identities, kinetic-energy numerator nonnegativity, an exact worked torque, an integer convex-mixture numerator bound and signed virtual-power algebra, plus element-gradient resultants, centroid force-transfer power, a compliant-denominator bound and Armijo acceptance. Every card declares its domain and limits. These exact contracts do not prove the numerical implementation or biological response.
+The original 25 declarations use exact integer domains and bundled Std. Four additional declarations in `ContinuumProperties.lean` use real matrices and the real square root with pinned mathlib v4.19.0; `proofs/mathlib-lock.json` binds its commit and dependency manifest. The source build uses two jobs and does not require a binary cache. These are mathematical contracts, not real-valued biological model validation. The original twelve Mechanics checks cover cancellation, torque identities, kinetic-energy numerator nonnegativity, an exact worked torque, an integer convex-mixture numerator bound and signed virtual-power algebra, plus element-gradient resultants, centroid force-transfer power, a compliant-denominator bound and Armijo acceptance. Every card declares its domain and limits. These exact contracts do not prove the numerical implementation or biological response.
 
 ## GitHub Pages foundation
 

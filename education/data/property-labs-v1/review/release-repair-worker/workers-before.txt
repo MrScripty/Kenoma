@@ -1,0 +1,30 @@
+{
+  "result": "FAIL_WORKER_LIFECYCLE",
+  "browserVersion": "151.0.7922.173",
+  "sourceHashes": {
+    "tools/coupled-inspector.mjs": "25ccfdaa42fa8c2c7bf1b4df33794f328f6499afcf16086b86b37c86d303552a",
+    "tools/anatomical-arm-inspector.mjs": "692e7d63993a56ed05cd753e44554f5e3a8eb5b8ccca1e598284c7edcc88dfde",
+    "tests/worker_lifecycle.py": "1c5d3c108f875202af7ae9a1dc94a646e1c7f8fdc5476fa2a5d6f2292bfcdbab"
+  },
+  "rows": [
+    {
+      "case": "coupled-queued-reset",
+      "passed": false,
+      "error": "reset idle is blocked by stale queued work"
+    },
+    {
+      "case": "anatomical-worker-error",
+      "passed": false,
+      "error": "worker error leaves pending request and queue unresolved"
+    }
+  ],
+  "scope": "Injected held step/error events exercising actual bundled UI; native worker init/reset; no numerical lift/release qualification."
+}
+Traceback (most recent call last):
+  File "/workspace/Kenoma-ci-repro/education/tests/worker_lifecycle.py", line 56, in <module>
+    if __name__=='__main__':run()
+                            ^^^^^
+  File "/workspace/Kenoma-ci-repro/education/tests/worker_lifecycle.py", line 55, in run
+    (out/'browser-receipt.json').write_text(json.dumps(receipt,indent=2)+'\n');print(json.dumps(receipt,indent=2));assert receipt['result']=='PASS_WORKER_LIFECYCLE'
+                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
