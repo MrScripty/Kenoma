@@ -3,6 +3,7 @@ No binary-cache dependency or changes to the existing Std-only proof bundle.
 """
 from pathlib import Path
 import concurrent.futures,os,re,subprocess,time
+from bootstrap_proofwidgets import bootstrap,print_log_tail
 ROOT=Path(__file__).resolve().parents[1]
 root=ROOT/'.tools/mathlib4'
 import hashlib,json
@@ -14,6 +15,7 @@ if subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip(
 if hashlib.sha256((root/'lake-manifest.json').read_bytes()).hexdigest()!=lock['manifest_sha256']:raise RuntimeError('Unexpected locked dependency manifest')
 # Lake resolves its existing lockfile; cache downloading is explicitly disabled.
 subprocess.run(['lake','--no-cache','env','lean','--version'],cwd=root,env=env,check=True)
+bootstrap(root,env)
 roots=[root,*sorted((root/'.lake/packages').iterdir())]
 roots=[p for p in roots if p.is_dir()]
 def source(name):
@@ -52,7 +54,9 @@ logs=ROOT/'.tools/property-mathlib-source-logs';logs.mkdir(exist_ok=True)
 def build(name):
  with (logs/(name+'.txt')).open('w') as stream:
   result=subprocess.run(['lake','--no-cache','build',name],cwd=root,env=env,stdout=stream,stderr=subprocess.STDOUT)
- if result.returncode:raise RuntimeError('Source build failed '+name+'; raw '+str(logs/(name+'.txt')))
+ if result.returncode:
+  print_log_tail(logs/(name+'.txt'))
+  raise RuntimeError('Source build failed '+name+'; raw '+str(logs/(name+'.txt')))
  return name
 done=set();pending=set(graph);jobs={}
 with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
