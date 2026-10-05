@@ -17,7 +17,7 @@ const root=fileURLToPath(new URL('../',import.meta.url)),base=root+'data/anatomi
 const near=(a,b,t,label)=>{if(!(Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=t))throw Error(`${label}: ${a} vs ${b}`);};
 for(const [p,h] of Object.entries(run.sourceHashes))if(hash(root+p)!==h)throw Error('Changed execution source '+p);
 if(run.pointsPerElement!==256||run.parameters.stationarityToleranceN!==.0001||JSON.stringify(run.parameters)!==JSON.stringify(baseline.parameters)||JSON.stringify(run.contactParameters)!==JSON.stringify(baseline.contactParameters)||!run.held?.accepted)throw Error('Changed dense parameters or no accepted held state');
-if(!['ACCEPTED_DENSE_TRAJECTORY','REJECTED_INCREMENT'].includes(run.result)||run.snapshots.length!==run.attempts.filter(a=>a.accepted).length)throw Error('Incomplete or inconsistent execution');
+if(!['ACCEPTED_DENSE_TRAJECTORY','REJECTED_INCREMENT','REJECTED_BEHAVIOR'].includes(run.result)||run.snapshots.length!==run.attempts.filter(a=>a.accepted).length||!run.attempts.every((a,i)=>a.accepted===(i<run.snapshots.length)))throw Error('Incomplete or inconsistent execution');
 const arm=prepareAnatomicalArm(read('generated/arm-reference.json'),read('config/attachments-apparatus.json'),read('audit/modal-fixed-end-results.json'),{parameters:run.parameters,contactParameters:run.contactParameters,routingRecipe:read('config/apparatus-routing.json')}),p=arm.parameters,j=arm.model.jointIndex;
 for(const b of arm.model.bodies)b.modal=denseModalBody(b.modal);
 const prepared=arm.model.bodies.map(b=>prepareCompressionBody(b.modal.source,b.modal.nodeModes,2));
@@ -36,27 +36,36 @@ function audit(state,old,request){
  }
  if(!old){gradient[j]=0;independent[j]=0;}
  const residualN=Math.max(...gradient.map(Math.abs)),independentResidualN=Math.max(...independent.map(Math.abs)),surface=finitePoseAudit(arm.model,c.positions,state.qRad),routing=finiteRoutingAudit(arm.model,x),sampledPenetrationsM={bone:c.contact.maximumSampledBonePenetrationM,soft:c.contact.maximumSampledSoftPenetrationM,tendon:c.contact.maximumSampledTendonPenetrationM};
- const passes=residualN<=p.stationarityToleranceN&&independentResidualN<=p.stationarityToleranceN&&surface.transverseCrossingPairs===0&&routing.accepted&&Object.values(sampledPenetrationsM).every(v=>v===0);
+ const passes=residualN<=p.stationarityToleranceN&&independentResidualN<=p.stationarityToleranceN&&heads.every(h=>h.minimumCornerJ>1e-6)&&surface.transverseCrossingPairs===0&&routing.accepted&&Object.values(sampledPenetrationsM).every(v=>v===0);
  return {c,gradient,passes,row:{timeS:state.timeS,qRad:state.qRad,activation:state.activation,residualN,independentResidualN,minimumJ:Math.min(...heads.map(h=>h.minimumJ)),minimumCornerJ:Math.min(...heads.map(h=>h.minimumCornerJ)),heads,surfaceAudit:surface,routingAudit:routing,sampledPenetrationsM}};
 }
-const held=run.held.state;near(held.timeS,0,0,'held time');near(held.activation,0,0,'held activation');near(held.omegaRadPerS,0,0,'held velocity');near(held.massKg,baseline.held.state.massKg,0,'mass');near(held.qRad,arm.model.frame.atlas_bind_angle_rad,1e-14,'held angle');
+const held=run.held.state;near(held.timeS,0,0,'held time');near(held.step,0,0,'held step');near(held.activation,0,0,'held activation');near(held.omegaRadPerS,0,0,'held velocity');near(held.massKg,baseline.held.state.massKg,0,'mass');near(held.qRad,arm.model.frame.atlas_bind_angle_rad,1e-14,'held angle');near(held.qRad,held.coordinatesM[j]/JOINT_SCALE_M,1e-14,'held joint coordinate');
 const heldAudit=audit(held);if(!heldAudit.passes)throw Error('Held acceptance');near(heldAudit.row.residualN,run.held.receipt.maximumFreeModalGradientN,1e-9,'held residual');
 let old=held;const rows=[];
 for(const [i,state] of run.snapshots.entries()){
- const request=run.schedule[i],attempt=run.attempts[i],r=attempt.receipt,b=baseline.attempts[request.baselineIndex];
- if(!attempt.accepted||attempt.hS!==request.hS||attempt.effort!==request.effort||request.hS!==b.hS/run.timeRefinementFactor||request.effort!==b.effort)throw Error('Changed schedule');
+ const request=run.schedule[i],attempt=run.attempts[i],r=attempt.receipt,b=baseline.attempts[request.baselineIndex],localFactor=request.refinementFactor??run.timeRefinementFactor;
+ if(![1,2,3].includes(localFactor)||!attempt.accepted||attempt.hS!==request.hS||attempt.effort!==request.effort||request.hS!==b.hS/localFactor||request.effort!==b.effort)throw Error('Changed schedule');
  const tau=request.effort>=old.activation?p.activationTimeS:p.releaseTimeS;
  near(state.activation,request.effort+(old.activation-request.effort)*Math.exp(-request.hS/tau),1e-14,'activation lineage');near(state.qRad,state.coordinatesM[j]/JOINT_SCALE_M,1e-14,'joint coordinate');near(state.timeS,old.timeS+request.hS,1e-14,'time lineage');near(state.omegaRadPerS,(state.qRad-old.qRad)/request.hS,1e-14,'velocity lineage');near(state.massKg,old.massKg,0,'mass lineage');
+ near(state.step,old.step+1,0,'step lineage');near(state.effort,request.effort,0,'effort lineage');near(r.timeS,state.timeS,1e-14,'receipt time');near(r.qRad,state.qRad,1e-14,'receipt angle');
  const checked=audit(state,old,request);if(!checked.passes)throw Error('Acceptance gate '+i);near(checked.row.residualN,r.maximumFreeModalGradientN,1e-9,'solver residual');
  const prior=stored(old,old.activation,old.contactRule),oldAtRule=stored(old,old.activation,state.contactRule),oldAtActivation=stored(old,state.activation,state.contactRule),c=checked.c,I=arm.baseInertiaKgM2+state.massKg*arm.gripRadiusSquaredM2,passive=z=>z.physicalPotentialJ-z.energies.activePotentialJ;
  const quadrature=oldAtRule.physicalPotentialJ-prior.physicalPotentialJ,activeWork=oldAtActivation.energies.activePotentialJ-c.energies.activePotentialJ,oldE=passive(oldAtActivation)+rigid(old)+.5*I*old.omegaRadPerS**2,newE=passive(c)+rigid(state)+.5*I*state.omegaRadPerS**2,damping=p.jointDampingNmS*request.hS*state.omegaRadPerS**2,kineticDefect=.5*I*(state.omegaRadPerS-old.omegaRadPerS)**2,workDefect=newE-oldE-activeWork+damping+kineticDefect,impulse=request.hS*JOINT_SCALE_M*checked.gradient[j];
  for(const [a,b,label] of [[quadrature,r.referenceQuadratureUpdateJ,'rule energy event'],[activeWork,r.activeMechanicalWorkJ,'active work'],[oldE,r.oldMechanicalJ,'old energy'],[newE,r.newMechanicalJ,'new energy'],[workDefect,r.nonlinearWorkDefectJ,'work defect'],[impulse,r.impulseResidualNmS,'impulse']])near(a,b,1e-9,label);
- rows.push({...checked.row,step:i+1,label:request.label,referenceQuadratureUpdateJ:quadrature,activeMechanicalWorkJ:activeWork,nonlinearWorkDefectJ:workDefect,impulseResidualNmS:impulse,angleDifferenceFrom32Rad:state.qRad-baseline.snapshots[request.baselineIndex].qRad,matchedBaselineTime:request.part===run.timeRefinementFactor});old=state;console.log('VERIFIED',i,state.timeS,checked.row.independentResidualN);
+ rows.push({...checked.row,step:i+1,label:request.label,referenceQuadratureUpdateJ:quadrature,activeMechanicalWorkJ:activeWork,nonlinearWorkDefectJ:workDefect,impulseResidualNmS:impulse,angleDifferenceFrom32Rad:state.qRad-baseline.snapshots[request.baselineIndex].qRad,matchedBaselineTime:request.part===localFactor});old=state;console.log('VERIFIED',i,state.timeS,checked.row.independentResidualN);
 }
-let rejected=null;
+let rejected=null,behavior=null;
 if(run.result==='REJECTED_INCREMENT'){
  const request=run.attempts.at(-1),x=run.rejectedCandidate.coordinatesM,tau=request.effort>=old.activation?p.activationTimeS:p.releaseTimeS,state={...old,coordinatesM:x,qRad:x[j]/JOINT_SCALE_M,activation:request.effort+(old.activation-request.effort)*Math.exp(-request.hS/tau),contactRule:run.rejectedCandidate.contactRule},checked=audit(state,old,request);
  if(checked.passes||!Object.values(run.rollback).every(v=>v===true))throw Error('Unreproducible rejection or rollback');rejected={reason:request.reason,...checked.row};
-}else if(!run.completedAllSteps||!run.behaviorAccepted||run.snapshots.length!==run.schedule.length)throw Error('Unqualified completion');
-const result={schema:1,result:rejected?'PASS_PRESERVED_REJECTION':'PASS_DENSE_TRAJECTORY',executionReceiptSHA256:hash(input),verifierSHA256:hash(fileURLToPath(import.meta.url)),pointsPerElement:256,unchangedStationarityToleranceN:p.stationarityToleranceN,verifiedSteps:rows.length,maximumGradientAssemblyDifferenceN,maximumEnergyAssemblyDifferenceJ,held:heldAudit.row,rows,rejected,behavior:run.behavior,limits:run.limits};
+}else{
+ if(!run.completedAllSteps||run.snapshots.length!==run.schedule.length)throw Error('Unqualified completion');
+ const peak=Math.max(...run.snapshots.map(s=>s.qRad)),last=run.snapshots.at(-1),lift=run.snapshots.filter((_,i)=>run.schedule[i].effort>0);
+ behavior={liftAngleIncreaseRad:Math.max(...lift.map(s=>s.qRad))-held.qRad,peakAngleRad:peak,finalAngleRad:last.qRad,releaseFallFromPeakRad:peak-last.qRad,finalActivation:last.activation,finalVelocityRadPerS:last.omegaRadPerS};
+ for(const [k,v] of Object.entries(behavior))near(v,run.behavior[k],1e-14,'behavior '+k);
+ const accepted=behavior.liftAngleIncreaseRad>0&&behavior.releaseFallFromPeakRad>0&&behavior.finalVelocityRadPerS<0;
+ if(accepted!==run.behaviorAccepted||accepted!==(run.result==='ACCEPTED_DENSE_TRAJECTORY'))throw Error('Behavior verdict mismatch');
+}
+const verdict=rejected?'PASS_PRESERVED_REJECTION':run.result==='REJECTED_BEHAVIOR'?'PASS_PRESERVED_BEHAVIOR_REJECTION':'PASS_DENSE_TRAJECTORY';
+const result={schema:1,result:verdict,executionReceiptSHA256:hash(input),verifierSHA256:hash(fileURLToPath(import.meta.url)),pointsPerElement:256,unchangedStationarityToleranceN:p.stationarityToleranceN,verifiedSteps:rows.length,maximumGradientAssemblyDifferenceN,maximumEnergyAssemblyDifferenceJ,held:heldAudit.row,rows,rejected,behavior,limits:run.limits};
 fs.writeFileSync(output,JSON.stringify(result,null,2)+'\n');console.log('RESULT',result.result,rows.length);
