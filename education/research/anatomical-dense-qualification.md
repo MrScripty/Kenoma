@@ -6,7 +6,7 @@ Author lane starts at `08f5f3b7fd4b987d3f049c13fdf4338bfaa2928e`, tree `c8743d6b
 
 `tools/anatomical-compression-localization.mjs` queries all 256 positive points and four corners of every original P2 element at the separately accepted dense same-old-state comparison. It records the twelve smallest sampled determinants per head, complete deformation gradients, reference/current positions, fibre stretches, stress decomposition and six longitudinal reference-volume bins. `audit/anatomical-compression-localization.json` binds its inputs and implementation by SHA-256.
 
-The smallest corner determinant, **0.71263118**, occurs in short biceps **FJ1512**, element 212, corner 3, at the distal belly plane (longitudinal fraction 1). Its fibre stretch is **0.768758**. In this head, **1.60194%** of total reference volume has sampled J below 0.9 in the distal sixth; **0.113398%** is in the proximal sixth; none is sampled in the four middle bins. The distal sixth's mean J is **1.013694**: compression and dilation coexist even within that bin. Neither global nor regional mean volume proves local incompressibility.
+The smallest corner determinant, **0.71263118**, occurs in short biceps **FJ1512**, element 212, corner 3 (node 98), at the **proximal** belly plane (longitudinal fraction 1). The mesh's `proximal_nodes` contains node 98; fraction 0 is the distal cap. Its fibre stretch is **0.768758**. In this head, **1.60194%** of total reference volume has sampled J below 0.9 in the proximal sixth; **0.113398%** is in the distal sixth; none is sampled in the four middle bins. The proximal sixth's mean J is **1.013694**: compression and dilation coexist even within that bin. Neither global nor regional mean volume proves local incompressibility.
 
 For the unchanged law, let `s = tr(P Fᵀ/J)/3` denote mean Cauchy stress, positive in tension. Direct differentiation gives
 
@@ -45,3 +45,15 @@ node --max-old-space-size=8192 tools/verify-anatomical-dense-trajectory.mjs
 ```
 
 Execution logs are under `data/anatomical-arm-v1/review/dense-qualification/`. Trajectory conclusions require completed execution and fresh replay; a running receipt is not an accepted trajectory.
+
+## Further integration and missing displacement directions
+
+The four accepted dense loading increments through 0.10 s are frozen in `audit/anatomical-dense-loading-prefix.json`. This prefix supplies identical old/target states for controlled bulk comparisons. It is not a completed lift/release.
+
+`tools/anatomical-further-integration-audit.mjs` queries the 0.10 s dense state with **2048** positive body points per element. The 256-point residual is **0.0000900056 N**; replacing its projected body forces by the independently assembled 2048-point forces gives **0.0173852 N**, which fails the original **0.0001 N** gate. The short biceps accounts for the dominant **0.0173810 N** body-gradient difference. Its sampled/corner J are **0.719138/0.712634** at this dense state. These coordinates are not accepted under the finer rule. Two tests check positive weights, reference measure, exact polynomial moments and affine full nodal forces.
+
+`tools/anatomical-nodal-probe.mjs` tests six selected P2 nodal displacement directions around short-biceps proximal nodes 98 and 96. Each direction is normalized in the Euclidean nodal norm and projected orthogonally to all 63 retained body displacement columns (maximum column dot below 3.3 × 10⁻¹⁶). The potential includes dense body energy, embedded sheets, routed apparatus, interfaces and the frozen contact potential. Reference areas and rest lengths are retained. It never accepts or advances a perturbed state.
+
+At node 98, excluded x/y/z directions give energy derivatives of approximately **−0.494/−1.984/−1.445 N**. At node 96 they give **−0.149/−1.080/−0.398 N**. Central differences at 0.1 and 0.05 micrometre agree within **8 × 10⁻⁷ N**. Both perturbed states retain positive sampled determinants. Tests independently compare each potential component against actual reduced-coordinate displacement, including active tendon contact, and check exact restoration. These nonzero excluded virtual-work derivatives show that the accepted reduced state is not stationary in these additional directions. They are not a complete full nodal force vector, a full nodal solve or a convergence certificate.
+
+The follow-up should therefore enrich the displacement field and retain conservative transfer/contact derivatives before treating the whole tissue envelope as mechanically credible. Denser quadrature alone does not eliminate the restricted-space issue. A constitutive alternative would separately require updated potential/stress/tangent equations, parameter matching and the relevant book/proof contracts; none is selected here.
