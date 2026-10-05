@@ -1,0 +1,13 @@
+✔ zero enrichment exactly reproduces the original dense potential, positions and retained gradients (14372.239874ms)
+✔ new apparatus/contact force coefficients agree with independent energy directional differences (50092.120354ms)
+✔ enriched body force assembly agrees with independent full P2 nodal gradients (1566.341871ms)
+✔ enriched analytic body Hessian passes directional differences and symmetry (102.562129ms)
+✔ rotation search remainder rotates the extra nodal vector modes consistently (4.129558ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 89437.066837
