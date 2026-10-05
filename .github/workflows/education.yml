@@ -57,6 +57,7 @@ jobs:
           node tools/verify-anatomical-cold-candidate.mjs
           node tools/verify-anatomical-contact-trajectory.mjs
           node tools/verify-anatomical-release-prefix.mjs
+          node tools/anatomical-compression-audit.mjs
           node tools/anatomical-fixture-experiment.mjs
           node tools/anatomical-bone-collision-audit.mjs
           node tools/anatomical-apposition-audit.mjs

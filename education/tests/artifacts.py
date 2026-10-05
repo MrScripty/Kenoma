@@ -30,6 +30,14 @@ for stem,status,steps in [('contact-lift-release','PASS',15),('contact-fine-rele
   assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Trajectory source changed: '+relative
  assert all(r['transverseCrossingPairs']==0 and r['tendonViolations']==0 and r['residualN']<=1e-4 for r in receipt['rows'])
  assert json.loads(execution.read_text())['completedAllSteps']==(stem=='contact-lift-release')
+compression=json.loads((out/audit/'anatomical-compression-sensitivity.json').read_text())
+assert compression['result']=='COMPLETED_FROZEN_POSE_DIAGNOSTIC'
+assert compression['unchangedStationarityToleranceN']==1e-4
+assert len(compression['states'])==16 and len(compression['selectedResults'])==5
+assert compression['executionReceiptSHA256']==hashlib.sha256((out/audit/'contact-lift-release-results.json').read_bytes()).hexdigest()
+assert compression['acceptedReplaySHA256']==hashlib.sha256((out/audit/'contact-lift-release-recheck.json').read_bytes()).hexdigest()
+for relative,digest in compression['sourceHashes'].items():
+ assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Compression diagnostic source changed: '+relative
 text=(out/'kenoma-mechanics.md').read_text();assert not re.search(r'\{\{[A-Za-z]',text)
 for id in ['force-pair','torque-linearity','torque-origin','central-pair','kinetic-sign','torque-example']:
  assert f'Checked claim {id}:' in text

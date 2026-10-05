@@ -1,2 +1,2 @@
 # Preserve raw validation output; tool-generated trailing spaces are evidence.
-education/review/contact-lift-release/logs/*.log -whitespace
+education/review/**/*.log -whitespace

@@ -1,0 +1,151 @@
+{
+  "commit": "e3f546712bceee543993f798b13da97efc88d849",
+  "tree": "2da92b10998632bf1d3330aa4ef709be0748178f",
+  "branch": "education/anatomical-contact-intersections",
+  "initialWorktreeStatus": "",
+  "note": "Fresh local checks at this exact commit; does not assert a remote workflow result.",
+  "result": "PASS",
+  "nodeTests": {
+    "passed": 96,
+    "failed": 0,
+    "command": "node --test --test-concurrency=2 tests/*.test.mjs contributions/continuum_reference/tests/*.test.mjs"
+  },
+  "commands": [
+    {
+      "name": "python-tests",
+      "command": [
+        "npm",
+        "run",
+        "test:python"
+      ],
+      "commit": "e3f546712bceee543993f798b13da97efc88d849",
+      "exitCode": 0,
+      "elapsedSeconds": 1.821512222290039
+    },
+    {
+      "name": "build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "commit": "e3f546712bceee543993f798b13da97efc88d849",
+      "exitCode": 0,
+      "elapsedSeconds": 20.162595987319946
+    },
+    {
+      "name": "pdf",
+      "command": [
+        "npm",
+        "run",
+        "pdf"
+      ],
+      "commit": "e3f546712bceee543993f798b13da97efc88d849",
+      "exitCode": 0,
+      "elapsedSeconds": 5.089267730712891
+    },
+    {
+      "name": "browser",
+      "command": [
+        "npm",
+        "run",
+        "test:browser"
+      ],
+      "commit": "e3f546712bceee543993f798b13da97efc88d849",
+      "exitCode": 0,
+      "elapsedSeconds": 80.11225605010986
+    },
+    {
+      "name": "mobile",
+      "command": [
+        "npm",
+        "run",
+        "test:mobile"
+      ],
+      "commit": "e3f546712bceee543993f798b13da97efc88d849",
+      "exitCode": 0,
+      "elapsedSeconds": 15.97433876991272
+    },
+    {
+      "name": "arm-browser",
+      "command": [
+        "python3",
+        "tests/anatomical_arm_inspection.py"
+      ],
+      "commit": "e3f546712bceee543993f798b13da97efc88d849",
+      "exitCode": 0,
+      "elapsedSeconds": 59.926462173461914
+    },
+    {
+      "name": "artifacts",
+      "command": [
+        "python3",
+        "tests/artifacts.py"
+      ],
+      "commit": "e3f546712bceee543993f798b13da97efc88d849",
+      "exitCode": 0,
+      "elapsedSeconds": 2.63200044631958
+    },
+    {
+      "name": "rejected-steps",
+      "command": [
+        "node",
+        "tools/verify-anatomical-rejected-steps.mjs"
+      ],
+      "commit": "e3f546712bceee543993f798b13da97efc88d849",
+      "exitCode": 0,
+      "elapsedSeconds": 9.466244220733643
+    },
+    {
+      "name": "cold-candidates",
+      "command": [
+        "node",
+        "tools/verify-anatomical-cold-candidate.mjs"
+      ],
+      "commit": "e3f546712bceee543993f798b13da97efc88d849",
+      "exitCode": 0,
+      "elapsedSeconds": 11.903613805770874
+    },
+    {
+      "name": "trajectory-replay",
+      "command": [
+        "node",
+        "tools/verify-anatomical-contact-trajectory.mjs"
+      ],
+      "commit": "e3f546712bceee543993f798b13da97efc88d849",
+      "exitCode": 0,
+      "elapsedSeconds": 167.5234456062317
+    },
+    {
+      "name": "finer-prefix-replay",
+      "command": [
+        "node",
+        "tools/verify-anatomical-release-prefix.mjs"
+      ],
+      "commit": "e3f546712bceee543993f798b13da97efc88d849",
+      "exitCode": 0,
+      "elapsedSeconds": 218.03960752487183
+    }
+  ],
+  "logSHA256": {
+    "arm-browser.log": "9772291728382860407d7ccfdd1e1c707de6fdfb1906e718e8e0a217231f70ba",
+    "artifacts.log": "12d102039434d06b3f04ca64da4ce66b241a9ed66cc1ef9d2d8e23523c219997",
+    "browser.log": "2fd3f1aed525d51652d474db8dab08bb9533fbf686443ae40368bd78ad4e94c5",
+    "build.log": "53741c4dff41dc00affa5065284b736a316f1d47b1bc5d320962a3b3ba98cb0a",
+    "cold-candidates.log": "ec638ce874a3d140899086989b3a80013005af0aa4fb378a35a960047e53c8cf",
+    "finer-prefix-replay.log": "d2b8c649e112c630b264813be827ca13135e1e92ee8ec4ce20e6c9a3f7cdeb88",
+    "mobile.log": "8001eddcbc6a2c58b6d6013a9b57a1145c89a454a43e22305e03f6324065f8fb",
+    "node-tests.log": "dd4496c7fd502be779a44d1c63eab341be34ccc773a38c2dfd1ada22017dc875",
+    "pdf.log": "5c57949792b5c832ce58f3ed5081a48a0ce803cb1685c1739047c4ed8107a63d",
+    "python-tests.log": "f1b737b09194268bb843170702427af03fee4db0cc3c95aff924cc2a06e060a4",
+    "rejected-steps.log": "cb4cd2d7617ce43428e293f8b2ff8ab2a1dde5b67a5e4093b610993d4ca8e782",
+    "trajectory-replay.log": "9da45715fb87959662bd20094dfc5c6a52007a48b299f1930cd46d047d61b4fb"
+  },
+  "limits": {
+    "minimumSampledBodyJ": 0.7375402448791594,
+    "maximumMatchedTimestepAngleDifferenceDegrees": 3.288358977361752,
+    "finerComparisonStatus": "INTERRUPTED_AFTER_22_OF_27_STEPS",
+    "maximumAbsoluteNonlinearWorkDefectJ": 2.4340123010132175
+  },
+  "remoteCIResult": "Unavailable: GitHub API returns Forbidden."
+}

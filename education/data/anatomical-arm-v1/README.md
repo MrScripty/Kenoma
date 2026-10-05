@@ -83,3 +83,8 @@ Material witnesses split reference surface partitions and tendon side-area quadr
 From `education/`, run `npm run anatomy:contact` to execute and replay the trajectory, or `node tools/verify-anatomical-contact-trajectory.mjs` to replay saved evidence without optimizing. `node tools/verify-anatomical-rejected-steps.mjs` and `node tools/verify-anatomical-cold-candidate.mjs` recheck the failures. Four apparatus integer claims now compile, including conditional area-partition and conservative-gap algebra. No full nodal, finite-radius tendon, coplanar, continuous-motion or medical validation is claimed.
 
 The optional `contact-fine-release-results.json` is explicitly **interrupted after 22 of 27 requested steps**. Its exact `contact-coarse-release-base.json` and source hashes are retained. `node tools/verify-anatomical-release-prefix.mjs` independently replays that accepted prefix; matched-time angle differences report sensitivity, not convergence. `node tools/anatomical-release-refinement-experiment.mjs` reproduces the requested continuation, whose full completion is not claimed by the interrupted receipt.
+
+
+## Follow-up compression and integration diagnostic
+
+`node tools/anatomical-compression-audit.mjs` writes `audit/anatomical-compression-sensitivity.json` using the unchanged accepted trajectory and material parameters. Four new focused tests check its independent P2 integration/projection and fixed-geometry bulk decomposition. At the most compressed pose, denser samples find J=0.72527 (256 points) and 0.71234 (corners), while the frozen 256-point residual is 0.14451 N. The original 0.0001 N gate is unchanged. This is a diagnostic, not a re-equilibrated trajectory or convergence claim; see `../../research/anatomical-compression-audit.md`.

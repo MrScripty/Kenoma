@@ -1,0 +1,12 @@
+✔ nested positive diagnostic rules retain the existing 4/32 rules and reference measure (7.834493ms)
+✔ independent P2 integration reproduces affine material energy and nodal energy derivatives (50.751835ms)
+✔ half/double bulk diagnostic is exact at fixed geometry and retains the original force gate (219.160639ms)
+✔ actual compressed loading pose retains the independent original P2 energy, gradient and determinant (517.775959ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1107.757608
