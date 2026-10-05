@@ -1,31 +1,57 @@
 {
   "schema": 1,
-  "result": "BLOCKED_LIBRARY_BYTES_AFTER_ONE_SUPPORTED_RETRY",
-  "library_file_id": "libfile_9f5deb13a1508191ac0ea059bbdbb94d",
-  "file_id": "file_000000001ed881fdbc2c383ae73723be",
-  "filename": "kenoma-arm-fiber-research-supplement.txt",
+  "result": "BLOCKED_PREFERRED_MARKDOWN_BYTES",
+  "library_file_id": "libfile_f8fd080387808191b95b3ba53ffe2e2b",
+  "file_id": "file_00000000416881f9b0c18e658d51e1fd",
+  "filename": "kenoma-arm-fiber-research-supplement.md",
   "version": 0,
-  "expected_size_bytes": 18835,
-  "expected_sha256": "dc4738185d73c1583f44640b152a940bfae30089f3fdc34e1ff8072d36b08d18",
+  "expected_size_bytes": 20133,
+  "expected_sha256": "c23339c9140458ba69b93e7eb83fd06deaa622deb1438ce2a4e79364a88900f7",
   "local_full_file_exists": false,
   "bytes_hash_verified": false,
   "attempts": [
     {
       "attempt": 1,
-      "route": "Current Library skill resolved-reference preparation and bundled materialization helper, explicit consumer-local destination",
-      "exit_code": 1,
-      "output": "library file transfer failed: download failed\n"
-    },
-    {
-      "attempt": 2,
-      "route": "Current Library skill resolved-reference preparation and bundled materialization helper, explicit consumer-local destination",
+      "route": "Fresh resolved-reference preparation for the new preferred Markdown identity and current helper, explicit consumer-local destination",
       "exit_code": 1,
       "output": "library file transfer failed: download failed\n"
     }
   ],
+  "prior_text_attempts": {
+    "schema": 1,
+    "result": "BLOCKED_LIBRARY_BYTES_AFTER_ONE_SUPPORTED_RETRY",
+    "library_file_id": "libfile_9f5deb13a1508191ac0ea059bbdbb94d",
+    "file_id": "file_000000001ed881fdbc2c383ae73723be",
+    "filename": "kenoma-arm-fiber-research-supplement.txt",
+    "version": 0,
+    "expected_size_bytes": 18835,
+    "expected_sha256": "dc4738185d73c1583f44640b152a940bfae30089f3fdc34e1ff8072d36b08d18",
+    "local_full_file_exists": false,
+    "bytes_hash_verified": false,
+    "attempts": [
+      {
+        "attempt": 1,
+        "route": "Current Library skill resolved-reference preparation and bundled materialization helper, explicit consumer-local destination",
+        "exit_code": 1,
+        "output": "library file transfer failed: download failed\n"
+      },
+      {
+        "attempt": 2,
+        "route": "Current Library skill resolved-reference preparation and bundled materialization helper, explicit consumer-local destination",
+        "exit_code": 1,
+        "output": "library file transfer failed: download failed\n"
+      }
+    ],
+    "current_helper_resource": "skill://plugin_connector_1p_1b8ff8edfc1481918b252c8277e23125/library/scripts/library_file_transfer.py",
+    "helper_sha256": "5e1557817be17db06e2375f8c34ed83e948d520242e5ee4cb50a30c7a4c83378",
+    "destination": "/workspace/Kenoma-fiber-research/education/research/fiber-supplement/kenoma-arm-fiber-research-supplement.txt",
+    "fallback": "Only verified delegation summary consumed; no inferred URL or alternate restricted transfer route.",
+    "observed_utc": "2026-10-05T22:14:14.598197+00:00"
+  },
   "current_helper_resource": "skill://plugin_connector_1p_1b8ff8edfc1481918b252c8277e23125/library/scripts/library_file_transfer.py",
   "helper_sha256": "5e1557817be17db06e2375f8c34ed83e948d520242e5ee4cb50a30c7a4c83378",
-  "destination": "/workspace/Kenoma-fiber-research/education/research/fiber-supplement/kenoma-arm-fiber-research-supplement.txt",
-  "fallback": "Only verified delegation summary consumed; no inferred URL or alternate restricted transfer route.",
-  "observed_utc": "2026-10-05T22:14:14.598197+00:00"
+  "destination": "/workspace/Kenoma-fiber-research/education/research/fiber-supplement/kenoma-arm-fiber-research-supplement.md",
+  "retry_decision": "Stopped after the fresh preferred-asset attempt returned the same failure as the prior supported transfer and bounded retry; do not blindly repeat the failed route.",
+  "fallback": "Only verified delegation summary consumed. Distributed documents must be Markdown or PDF; no TXT/DOCX is delivered here.",
+  "observed_utc": "2026-10-05T22:15:48.662604+00:00"
 }
