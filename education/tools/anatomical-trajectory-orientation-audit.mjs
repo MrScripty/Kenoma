@@ -1,3 +1,4 @@
+import {recordedInputMatches} from './recorded-inputs.mjs';
 /** Exact-sign orientation certificates for the stored accepted P2 geometries. */
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
@@ -8,7 +9,7 @@ import {prepareModalBody as enrichedBody} from './enriched/anatomical-modal.mjs'
 import {exactElementOrientation} from './anatomical-bernstein-orientation.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url)),base=root+'data/anatomical-arm-v1/',hash=p=>createHash('sha256').update(fs.readFileSync(root+p)).digest('hex'),read=p=>JSON.parse(fs.readFileSync(base+p)),coarse=read('audit/anatomical-dense-trajectory.json'),replay=read('audit/anatomical-dense-trajectory-recheck.json'),enriched=read('audit/anatomical-enriched-step.json'),enrichedReplay=read('audit/anatomical-enriched-step-recheck.json');
 if(replay.result!=='PASS_DENSE_TRAJECTORY'||replay.executionReceiptSHA256!==hash('data/anatomical-arm-v1/audit/anatomical-dense-trajectory.json')||enrichedReplay.result!=='PASS_ACCEPTED_ENRICHED_COMPARISON'||enrichedReplay.executionReceiptSHA256!==hash('data/anatomical-arm-v1/audit/anatomical-enriched-step.json'))throw Error('Fresh accepted replay required');
-for(const run of [coarse,enriched])for(const [p,h] of Object.entries(run.sourceHashes))if(hash(p)!==h)throw Error('Changed accepted source '+p);
+for(const run of [coarse,enriched])for(const [p,h] of Object.entries(run.sourceHashes))if(!recordedInputMatches(p,h))throw Error('Changed accepted source '+p);
 const arm=prepareAnatomicalArm(read('generated/arm-reference.json'),read('config/attachments-apparatus.json'),read('audit/modal-fixed-end-results.json'),{parameters:coarse.parameters,contactParameters:coarse.contactParameters,routingRecipe:read('config/apparatus-routing.json')}),extra=enrichedBody(arm.model.bodies.find(b=>b.id==='FJ1512').modal.source),rows=[];
 const ratio=(a,b)=>Number(BigInt(a.minimumNumerator))/Number(BigInt(b.maximumNumerator))*2**(b.denominatorPowerOfTwo-a.denominatorPowerOfTwo);
 function audit(state,kind){

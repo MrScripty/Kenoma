@@ -1,3 +1,4 @@
+import {recordedInputMatches} from './recorded-inputs.mjs';
 /** Frozen-pose sensitivity of the actual accepted anatomical trajectory.
  * Independent P2 element assembly; no changed state is accepted or advanced.
  */
@@ -15,7 +16,7 @@ const root=fileURLToPath(new URL('../',import.meta.url)),base=root+'data/anatomi
 const read=p=>JSON.parse(fs.readFileSync(base+p)),hash=p=>createHash('sha256').update(fs.readFileSync(root+p)).digest('hex');
 const run=read('audit/contact-lift-release-results.json'),check=read('audit/contact-lift-release-recheck.json');
 if(check.result!=='PASS'||check.executionReceiptSHA256!==hash('data/anatomical-arm-v1/audit/contact-lift-release-results.json')||check.verifierSHA256!==hash('tools/verify-anatomical-contact-trajectory.mjs'))throw Error('A current source-bound accepted trajectory is required');
-for(const [p,h] of Object.entries(run.sourceHashes))if(hash(p)!==h)throw Error('Changed execution input '+p);
+for(const [p,h] of Object.entries(run.sourceHashes))if(!recordedInputMatches(p,h))throw Error('Changed execution input '+p);
 const arm=prepareAnatomicalArm(read('generated/arm-reference.json'),read('config/attachments-apparatus.json'),read('audit/modal-fixed-end-results.json'),{parameters:run.parameters,contactParameters:run.contactParameters,routingRecipe:read('config/apparatus-routing.json')}),j=arm.model.jointIndex,p=arm.parameters;
 const worst=check.rows.reduce((best,r,i)=>r.minimumJ<check.rows[best].minimumJ?i:best,0),peak=run.snapshots.reduce((best,s,i)=>s.qRad>run.snapshots[best].qRad?i:best,0);
 const selected=new Set([-1,0,worst,peak,run.snapshots.length-1]);

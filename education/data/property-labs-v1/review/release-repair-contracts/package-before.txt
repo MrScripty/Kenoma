@@ -1,0 +1,31 @@
+F
+======================================================================
+FAIL: test_qualified_bundle_and_corruption_controls (__main__.PackageAcceptance.test_qualified_bundle_and_corruption_controls)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/Kenoma-ci-repro/education/tests/test_package_acceptance.py", line 32, in test_qualified_bundle_and_corruption_controls
+    self.assertEqual(unexpected,[], 'package accepted corrupted qualified-build outputs')
+AssertionError: Lists differ: ['changed HTML with stale browser hashes',[83 chars]app'] != []
+
+First list contains 5 additional elements.
+First extra element 0:
+'changed HTML with stale browser hashes'
+
++ []
+- ['changed HTML with stale browser hashes',
+-  'wrong proof source hash',
+-  'empty checked claims',
+-  'missing PDF',
+-  'missing linked app'] : package accepted corrupted qualified-build outputs
+
+----------------------------------------------------------------------
+Ran 1 test in 55.595s
+
+FAILED (failures=1)
+FALSE_PASS_PACKAGE changed HTML with stale browser hashes
+FALSE_PASS_PACKAGE wrong proof source hash
+FALSE_PASS_PACKAGE empty checked claims
+FALSE_PASS_PACKAGE missing PDF
+FALSE_PASS_PACKAGE missing linked app
+REJECTED_PACKAGE failed artifact status
+REJECTED_PACKAGE changed build input

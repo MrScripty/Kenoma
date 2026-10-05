@@ -3,6 +3,9 @@ from pathlib import Path
 import gzip,hashlib,json,re
 from urllib.parse import urlparse
 import fitz
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
+from recorded_inputs import recorded_input_matches
 ROOT=Path(__file__).resolve().parents[1];out=ROOT/'dist'
 proof=json.loads((out/'proof-status.json').read_text())
 assert proof['source_sha256']==hashlib.sha256((ROOT/'proofs/Mechanics.lean').read_bytes()).hexdigest()
@@ -67,7 +70,7 @@ for stem,status,steps in [('contact-lift-release','PASS',15),('contact-fine-rele
  verifier='tools/verify-anatomical-contact-trajectory.mjs' if stem=='contact-lift-release' else 'tools/verify-anatomical-release-prefix.mjs'
  assert receipt['verifierSHA256']==hashlib.sha256((ROOT/verifier).read_bytes()).hexdigest()
  for relative,digest in receipt['executionSourceHashes'].items():
-  assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Trajectory source changed: '+relative
+  assert recorded_input_matches(relative,digest),'Trajectory source changed: '+relative
  assert all(r['transverseCrossingPairs']==0 and r['tendonViolations']==0 and r['residualN']<=1e-4 for r in receipt['rows'])
  assert json.loads(execution.read_text())['completedAllSteps']==(stem=='contact-lift-release')
 compression=json.loads((out/audit/'anatomical-compression-sensitivity.json').read_text())
@@ -77,7 +80,7 @@ assert len(compression['states'])==16 and len(compression['selectedResults'])==5
 assert compression['executionReceiptSHA256']==hashlib.sha256((out/audit/'contact-lift-release-results.json').read_bytes()).hexdigest()
 assert compression['acceptedReplaySHA256']==hashlib.sha256((out/audit/'contact-lift-release-recheck.json').read_bytes()).hexdigest()
 for relative,digest in compression['sourceHashes'].items():
- assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Compression diagnostic source changed: '+relative
+ assert recorded_input_matches(relative,digest),'Compression diagnostic source changed: '+relative
 dense=json.loads((out/audit/'anatomical-dense-step-recheck.json').read_text())
 dense_execution=json.loads((out/audit/'anatomical-dense-step.json').read_text())
 assert dense['result']=='PASS_ACCEPTED_COMPARISON'
@@ -89,7 +92,7 @@ assert dense['executionReceiptSHA256']==hashlib.sha256((out/audit/'anatomical-de
 assert dense['verifierSHA256']==hashlib.sha256((ROOT/'tools/verify-anatomical-dense-step.mjs').read_bytes()).hexdigest()
 assert dense_execution['accepted'] and dense_execution['pointsPerElement']==256
 for relative,digest in dense_execution['sourceHashes'].items():
- assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Dense comparison source changed: '+relative
+ assert recorded_input_matches(relative,digest),'Dense comparison source changed: '+relative
 trajectory=json.loads((out/audit/'anatomical-dense-trajectory-recheck.json').read_text())
 trajectory_execution=json.loads((out/audit/'anatomical-dense-trajectory.json').read_text())
 assert trajectory['result']=='PASS_DENSE_TRAJECTORY' and trajectory['verifiedSteps']==15
@@ -102,7 +105,7 @@ assert trajectory['behavior']['releaseFallFromPeakRad']>0 and trajectory['behavi
 for name in ['anatomical-dense-trajectory.json','anatomical-enriched-step.json','anatomical-fixed-end-compression.json','anatomical-further-integration.json','anatomical-nodal-probe.json','anatomical-compression-localization.json','anatomical-calibration-geometry.json','anatomical-nodal-force-components.json']:
  receipt=json.loads((out/audit/name).read_text())
  for relative,digest in receipt['sourceHashes'].items():
-  assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Dense qualification source changed: '+relative
+  assert recorded_input_matches(relative,digest),'Dense qualification source changed: '+relative
 enriched=json.loads((out/audit/'anatomical-enriched-step-recheck.json').read_text())
 assert enriched['result']=='PASS_ACCEPTED_ENRICHED_COMPARISON' and enriched['independentResidualN']<=1e-4
 assert enriched['executionReceiptSHA256']==hashlib.sha256((out/audit/'anatomical-enriched-step.json').read_bytes()).hexdigest()
@@ -124,14 +127,14 @@ full_orientation=json.loads(decoded)
 assert sum(h['elementCount'] for r in full_orientation['rows'] for h in r['heads'])==29988
 assert all(e['orientationCertified'] and all(len(e[k]['coefficients'])==20 and all(int(c['numerator'])>0 for c in e[k]['coefficients']) for k in ['reference','current']) for r in full_orientation['rows'] for h in r['heads'] for e in h['elements'])
 for relative,digest in orientation['sourceHashes'].items():
- assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Orientation certificate source changed: '+relative
+ assert recorded_input_matches(relative,digest),'Orientation certificate source changed: '+relative
 envelope_path='data/anatomical-arm-v1/review/dense-qualification/envelope/'
 envelope_plot=json.loads((out/envelope_path/'render-receipt.json').read_text())
 envelope_bytes=(out/audit/'anatomical-dense-envelope.json').read_bytes()
 assert envelope_plot['inputSHA256']==hashlib.sha256(envelope_bytes).hexdigest()
 assert envelope_plot['rendererSHA256']==hashlib.sha256((ROOT/'tools/dense_envelope_figure.py').read_bytes()).hexdigest()
 for relative,digest in json.loads(envelope_bytes)['sourceHashes'].items():
- assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Envelope export source changed: '+relative
+ assert recorded_input_matches(relative,digest),'Envelope export source changed: '+relative
 for relative,digest in envelope_plot['outputs'].items():
  assert hashlib.sha256((out/envelope_path/relative).read_bytes()).hexdigest()==digest,'Changed envelope render: '+relative
 text=(out/'kenoma-mechanics.md').read_text();assert not re.search(r'\{\{[A-Za-z]',text)

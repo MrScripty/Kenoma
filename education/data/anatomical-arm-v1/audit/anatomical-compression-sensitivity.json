@@ -3,7 +3,7 @@
   "result": "COMPLETED_FROZEN_POSE_DIAGNOSTIC",
   "baseImplementationCommit": "e3f546712bceee543993f798b13da97efc88d849",
   "executionReceiptSHA256": "a74bd8fa9fd7bc3745ed42c32af75fc44692408d081b2070ceeefa63a0db35a9",
-  "acceptedReplaySHA256": "387c284d2dd235ec52e66526bec6f19abc2a4eac5a8e6526cae25b728e9a2c1f",
+  "acceptedReplaySHA256": "89615b61e75247105c67ce051478d69979b28144756a67b58b70116bffb9fec8",
   "sourceHashes": {
     "tools/anatomical-contact-experiment.mjs": "a258797940c1bb0e0db0882539d9a802e0fea4671dcec0b54188e2feea91fa75",
     "web/anatomical-aponeurosis.mjs": "1dbebfd2ea67427ee0d962b7b234d2d40a2f2cd4616a4f1199e20b3aba7316a0",
@@ -14,7 +14,7 @@
     "web/anatomical-comparison.mjs": "d812405b86541f756759bede9750071117edbab81e69efcfadf96f4f195fd09f",
     "web/anatomical-contact-differential.mjs": "76f107f5eb1c41fdf6622c428648babc5a489113a709fd337782b1b3de3cac0b",
     "web/anatomical-contact-refinement.mjs": "29830d2f311ee74a50acfd65f0ca8c245d2b390ed66d6eafd6c9b79de7607e07",
-    "web/anatomical-contact.mjs": "2e0ce22d3880b4d681cb24d700f694ea2b3bf8fc64fc66519e8ba998813aee1e",
+    "web/anatomical-contact.mjs": "ca3abc6a6c885651d6e43d0d0e2b08738b63a536d3850b854087a701695a1e67",
     "web/anatomical-coupled-fixture.mjs": "620afbb2e801f00ec361f5f1b5d39f010acc386812dcaa7239c0ca781d0bf4b9",
     "web/anatomical-coupled-worker.mjs": "1c54d08f5e36ca837343fc96399ac85de8e92f8fe1ebd1d73a50e5885b93c435",
     "web/anatomical-distance.mjs": "e11826c97f160220fda68f72cbe5e73f35f9527edcf4a4d58100c467cb50940a",
@@ -41,8 +41,8 @@
     "data/anatomical-arm-v1/audit/contact-feature-v2/interrupted-lift.json": "5c23df199339719c4a46244ba85fcad4bd61376774bdccd330b9cf53c1c24e3b",
     "data/anatomical-arm-v1/audit/contact-missed-soft-v3/candidate.json": "2075d10be43de28b02305c0f3e8b990f18186bdb026e29d31cc88c52af1d70ee",
     "tools/anatomical-compression-quadrature.mjs": "f12e0d80224bad5e0bfa0649e08cac2f31a0baf162e2547ae8767b7371f48dc2",
-    "tools/anatomical-compression-audit.mjs": "9842a9d0d3955e249788740694f6d513391d9bd0f784e5062dbba57604361626",
-    "tools/verify-anatomical-contact-trajectory.mjs": "35dca44d1cd40fc1f09d12d6356da328cd05f4d5c556aae3cf62abc8022b3474"
+    "tools/anatomical-compression-audit.mjs": "0b8a2285a846edf77ee053357d89501b09f47a8aa261e837196b72877b93a00e",
+    "tools/verify-anatomical-contact-trajectory.mjs": "f1c069c530f575e6d348a8569324c5c3144124b84135b35d3c193e109165a340"
   },
   "unchangedStationarityToleranceN": 0.0001,
   "maximumModalProjectionDifferenceN": 1.299241270125151e-11,

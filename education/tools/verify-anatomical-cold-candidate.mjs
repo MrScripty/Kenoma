@@ -1,3 +1,4 @@
+import {recordedInputMatches} from './recorded-inputs.mjs';
 /** Fresh residual replay of the failed unassisted starting guess. */
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
@@ -10,7 +11,7 @@ import {finiteRoutingAudit} from '../web/anatomical-routing-audit.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url)),base=root+'data/anatomical-arm-v1/',read=p=>JSON.parse(fs.readFileSync(base+p)),hash=p=>createHash('sha256').update(fs.readFileSync(root+p)).digest('hex'),rest=read('audit/arm-rest-results.json'),rows=[];
 for(const path of ['audit/contact-cold-start-rejected.json','audit/contact-default-start-rejected.json']){
  const d=read(path),arm=prepareAnatomicalArm(read('generated/arm-reference.json'),read('config/attachments-apparatus.json'),read('audit/modal-fixed-end-results.json'),{parameters:d.parameters||rest.parameters,contactParameters:d.contactParameters||rest.contactParameters,routingRecipe:read('config/apparatus-routing.json'),contactRule:d.candidateContactRule||d.oldState.contactRule});
- if(d.sourceHashes)for(const [p,h] of Object.entries(d.sourceHashes))if(hash(p)!==h){const archived='data/anatomical-arm-v1/audit/contact-missed-soft-v3/'+p;if(!fs.existsSync(root+archived)||hash(archived)!==h)throw Error('Missing failed execution source '+p);};
+ if(d.sourceHashes)for(const [p,h] of Object.entries(d.sourceHashes))if(!recordedInputMatches(p,h)){const archived='data/anatomical-arm-v1/audit/contact-missed-soft-v3/'+p;if(!fs.existsSync(root+archived)||hash(archived)!==h)throw Error('Missing failed execution source '+p);};
  const x=Float64Array.from(d.candidateCoordinatesM),old=d.oldState,p=arm.parameters,h=d.hS,a=d.requestedEffort+(old.activation-d.requestedEffort)*Math.exp(-h/p.activationTimeS),c=anatomicalConfiguration(arm,x,a,{hessian:false}),j=arm.model.jointIndex,q=x[j]/JOINT_SCALE_M,grip=attachmentMap(arm.gripM,arm.model.frame,q),com=attachmentMap(arm.comM,arm.model.frame,q),I=arm.baseInertiaKgM2+old.massKg*arm.gripRadiusSquaredM2,stop=q<p.minimumAngleRad?q-p.minimumAngleRad:q>p.maximumAngleRad?q-p.maximumAngleRad:0;
  c.gradient[j]+=(p.gMPerS2*(p.segmentMassKg*com.B[2]+old.massKg*grip.B[2])+p.stopStiffnessNmPerRad*stop+I/h**2*(q-old.qRad-h*old.omegaRadPerS)+p.jointDampingNmS/h*(q-old.qRad))/JOINT_SCALE_M;
  const residual=Math.max(...c.gradient.map(Math.abs));if(!(Number.isFinite(residual)&&residual>p.stationarityToleranceN))throw Error('Failed unassisted residual not reproduced');

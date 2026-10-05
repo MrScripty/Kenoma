@@ -1,3 +1,5 @@
+import {stateDomain,sameMass,requestDomain} from './anatomical-replay-contracts.mjs';
+import {recordedInputMatches} from './recorded-inputs.mjs';
 /** Independent full P2 gradient assembly and finite geometry replay. No solve. */
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
@@ -13,7 +15,7 @@ import {denseModalBody,incrementalGradient} from './anatomical-dense-quadrature.
 
 const root=fileURLToPath(new URL('../',import.meta.url)),base=root+'data/anatomical-arm-v1/',read=p=>JSON.parse(fs.readFileSync(base+p)),hash=p=>createHash('sha256').update(fs.readFileSync(root+p)).digest('hex'),run=read('audit/anatomical-dense-step.json'),baseline=read('audit/contact-lift-release-results.json');
 const near=(a,b,t,label)=>{if(!(Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=t))throw Error(`${label}: ${a} vs ${b}`);};
-for(const [p,h] of Object.entries(run.sourceHashes))if(hash(p)!==h)throw Error('Changed dense-step source '+p);
+for(const [p,h] of Object.entries(run.sourceHashes))if(!recordedInputMatches(p,h))throw Error('Changed dense-step source '+p);
 if(run.pointsPerElement!==256||run.parameters.stationarityToleranceN!==.0001||JSON.stringify(run.parameters)!==JSON.stringify(baseline.parameters)||JSON.stringify(run.contactParameters)!==JSON.stringify(baseline.contactParameters))throw Error('Changed accuracy experiment parameters');
 if(!['ACCEPTED_SAME_OLD_STATE_COMPARISON','REJECTED_SAME_OLD_STATE_COMPARISON'].includes(run.result))throw Error('Incomplete accuracy experiment');
 const i=run.baselineIndex,old=run.oldState,target=baseline.snapshots[i],request=baseline.attempts[i];
@@ -24,6 +26,7 @@ for(const b of arm.model.bodies)b.modal=denseModalBody(b.modal);
 restoreContactRecipe(arm.contact,target.contactRule);
 const frozen=anatomicalConfiguration(arm,Float64Array.from(target.coordinatesM),target.activation,{hessian:false}),frozenResidualN=Math.max(...incrementalGradient(arm,frozen,target,old,request.hS).map(Math.abs));
 near(frozenResidualN,run.frozenResidualN,1e-9,'frozen residual');
+requestDomain(request);stateDomain(old,arm.model.ndof,arm.model.jointIndex);if(run.accepted){stateDomain(run.candidate,arm.model.ndof,arm.model.jointIndex);sameMass(run.candidate,old);}
 const state=run.candidate,x=Float64Array.from(state.coordinatesM),q=x[arm.model.jointIndex]/JOINT_SCALE_M,tau=request.effort>=old.activation?arm.parameters.activationTimeS:arm.parameters.releaseTimeS,activation=request.effort+(old.activation-request.effort)*Math.exp(-request.hS/tau);
 near(state.activation,activation,1e-14,'activation');
 if(run.accepted){near(state.qRad,q,1e-14,'q');near(state.timeS,old.timeS+request.hS,1e-14,'time');near(state.omegaRadPerS,(q-old.qRad)/request.hS,1e-14,'omega');}
@@ -38,6 +41,7 @@ for(const b of arm.model.bodies){
  heads.push({elementId:b.id,minimumJ:full.minimumJ,minimumCornerJ:full.minimumCornerJ,globalVolumeRatio:full.globalVolumeRatio,referenceVolumeFractionBelow09:full.referenceVolumeFractionBelow09,volumeEnergyJ:full.energies.volume});
 }
 const residualN=Math.max(...gradient.map(Math.abs)),independentResidualN=Math.max(...independent.map(Math.abs)),surface=finitePoseAudit(arm.model,c.positions,q),routing=finiteRoutingAudit(arm.model,x),sampledPenetrationsM={bone:c.contact.maximumSampledBonePenetrationM,soft:c.contact.maximumSampledSoftPenetrationM,tendon:c.contact.maximumSampledTendonPenetrationM};
+if(![residualN,independentResidualN,...Object.values(sampledPenetrationsM)].every(Number.isFinite))throw Error('Nonfinite dense replay metrics');
 const passesGates=residualN<=arm.parameters.stationarityToleranceN&&independentResidualN<=arm.parameters.stationarityToleranceN&&!surface.transverseCrossingPairs&&routing.accepted&&Object.values(sampledPenetrationsM).every(v=>v===0);
 if(run.accepted&&!passesGates)throw Error('Dense acceptance gates');
 if(!run.accepted&&(!run.restoredOldContactOnReject||passesGates))throw Error('Rejected case has no reproducible gate failure or rollback');

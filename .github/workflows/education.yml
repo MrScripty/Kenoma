@@ -99,7 +99,9 @@ jobs:
           npm run test:mobile
           python3 tests/property_browser.py dist
           python3 tools/inspect_property_integration.py
+          python3 tests/render_capture_rerun.py
           python3 tests/anatomical_arm_inspection.py
+          python3 tests/worker_lifecycle.py
           python3 tests/artifacts.py
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:

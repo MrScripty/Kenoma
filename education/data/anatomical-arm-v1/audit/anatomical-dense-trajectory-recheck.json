@@ -2,7 +2,7 @@
   "schema": 1,
   "result": "PASS_DENSE_TRAJECTORY",
   "executionReceiptSHA256": "695c2b682d5d97a4a3bd4876bb7352724e80a7f3cf050568d456d29ec1b7532b",
-  "verifierSHA256": "0de4ac35162ecf731ac3e35b206d6ec3f071c9bf2cc9430c4839e054168b6c17",
+  "verifierSHA256": "080a6b1ad60620249b02b7faa63ffd7ff127fbd75fb8588a0bf8e0c3dfe12d20",
   "pointsPerElement": 256,
   "unchangedStationarityToleranceN": 0.0001,
   "verifiedSteps": 15,
@@ -419,7 +419,8 @@
       "bone": 0,
       "soft": 0,
       "tendon": 0
-    }
+    },
+    "curvatureFallbacks": 0
   },
   "rows": [
     {
@@ -834,6 +835,7 @@
         "soft": 0,
         "tendon": 0
       },
+      "curvatureFallbacks": 0,
       "step": 1,
       "label": "regression-load",
       "referenceQuadratureUpdateJ": 0,
@@ -1255,6 +1257,7 @@
         "soft": 0,
         "tendon": 0
       },
+      "curvatureFallbacks": 0,
       "step": 2,
       "label": "lift",
       "referenceQuadratureUpdateJ": 0,
@@ -1676,6 +1679,7 @@
         "soft": 0,
         "tendon": 0
       },
+      "curvatureFallbacks": 0,
       "step": 3,
       "label": "lift",
       "referenceQuadratureUpdateJ": 0,
@@ -2097,6 +2101,7 @@
         "soft": 0,
         "tendon": 0
       },
+      "curvatureFallbacks": 0,
       "step": 4,
       "label": "lift",
       "referenceQuadratureUpdateJ": 0.0003461156240458507,
@@ -2518,6 +2523,7 @@
         "soft": 0,
         "tendon": 0
       },
+      "curvatureFallbacks": 0,
       "step": 5,
       "label": "lift",
       "referenceQuadratureUpdateJ": -0.00001875839457987638,
@@ -2939,6 +2945,7 @@
         "soft": 0,
         "tendon": 0
       },
+      "curvatureFallbacks": 0,
       "step": 6,
       "label": "release",
       "referenceQuadratureUpdateJ": 0.00004295462604630984,
@@ -3360,6 +3367,7 @@
         "soft": 0,
         "tendon": 0
       },
+      "curvatureFallbacks": 0,
       "step": 7,
       "label": "release",
       "referenceQuadratureUpdateJ": 0,
@@ -3781,6 +3789,7 @@
         "soft": 0,
         "tendon": 0
       },
+      "curvatureFallbacks": 0,
       "step": 8,
       "label": "release",
       "referenceQuadratureUpdateJ": 0.001571490034603329,
@@ -4202,6 +4211,7 @@
         "soft": 0,
         "tendon": 0
       },
+      "curvatureFallbacks": 0,
       "step": 9,
       "label": "release",
       "referenceQuadratureUpdateJ": 0,
@@ -4623,6 +4633,7 @@
         "soft": 0,
         "tendon": 0
       },
+      "curvatureFallbacks": 0,
       "step": 10,
       "label": "release",
       "referenceQuadratureUpdateJ": 0,
@@ -5044,6 +5055,7 @@
         "soft": 0,
         "tendon": 0
       },
+      "curvatureFallbacks": 0,
       "step": 11,
       "label": "release",
       "referenceQuadratureUpdateJ": 0,
@@ -5465,6 +5477,7 @@
         "soft": 0,
         "tendon": 0
       },
+      "curvatureFallbacks": 0,
       "step": 12,
       "label": "release",
       "referenceQuadratureUpdateJ": 0,
@@ -5886,6 +5899,7 @@
         "soft": 0,
         "tendon": 0
       },
+      "curvatureFallbacks": 0,
       "step": 13,
       "label": "release",
       "referenceQuadratureUpdateJ": 0,
@@ -6307,6 +6321,7 @@
         "soft": 0,
         "tendon": 0
       },
+      "curvatureFallbacks": 0,
       "step": 14,
       "label": "release",
       "referenceQuadratureUpdateJ": 0,
@@ -6728,6 +6743,7 @@
         "soft": 0,
         "tendon": 0
       },
+      "curvatureFallbacks": 0,
       "step": 15,
       "label": "release",
       "referenceQuadratureUpdateJ": 0,

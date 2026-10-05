@@ -1,0 +1,23 @@
+fatal: pathspec 'education/book' did not match any files
+E
+======================================================================
+ERROR: test_qualified_bundle_and_corruption_controls (__main__.PackageAcceptance.test_qualified_bundle_and_corruption_controls)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/Kenoma-ci-repro/education/tests/test_package_acceptance.py", line 11, in test_qualified_bundle_and_corruption_controls
+    with tarfile.open(fileobj=process.stdout,mode='r|') as archive:archive.extractall(temporary,filter='data')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tarfile.py", line 1918, in open
+    t = cls(name, filemode, stream, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tarfile.py", line 1794, in __init__
+    self.firstmember = self.next()
+                       ^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tarfile.py", line 2789, in next
+    raise ReadError("empty file") from None
+tarfile.ReadError: empty file
+
+----------------------------------------------------------------------
+Ran 1 test in 0.020s
+
+FAILED (errors=1)

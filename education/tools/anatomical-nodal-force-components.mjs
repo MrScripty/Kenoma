@@ -1,3 +1,4 @@
+import {recordedInputMatches} from './recorded-inputs.mjs';
 /** Decompose the frozen excluded virtual-work directions. No solve or advance. */
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
@@ -10,7 +11,7 @@ import {denseModalBody} from './anatomical-dense-quadrature.mjs';
 import {prepareCompressionBody} from './anatomical-compression-quadrature.mjs';
 import {excludedNodalDirection,nodalProbeConfiguration} from './anatomical-nodal-probe.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url)),base=root+'data/anatomical-arm-v1/',read=p=>JSON.parse(fs.readFileSync(base+p)),hash=p=>createHash('sha256').update(fs.readFileSync(root+p)).digest('hex'),run=read('audit/anatomical-dense-loading-prefix.json'),prior=read('audit/anatomical-nodal-probe.json');
-for(const [p,h] of Object.entries(prior.sourceHashes))if(hash(p)!==h)throw Error('Changed excluded-direction source '+p);
+for(const [p,h] of Object.entries(prior.sourceHashes))if(!recordedInputMatches(p,h))throw Error('Changed excluded-direction source '+p);
 const state=run.snapshots[3],arm=prepareAnatomicalArm(read('generated/arm-reference.json'),read('config/attachments-apparatus.json'),read('audit/modal-fixed-end-results.json'),{parameters:run.parameters,contactParameters:run.contactParameters,routingRecipe:read('config/apparatus-routing.json')});
 for(const b of arm.model.bodies)b.modal=denseModalBody(b.modal);restoreContactRecipe(arm.contact,state.contactRule);
 const body=arm.model.bodies.find(b=>b.id==='FJ1512'),x=Float64Array.from(state.coordinatesM),positions=modalPositions(body.modal,x.slice(body.offset,body.offset+63)),prepared=prepareCompressionBody(body.modal.source,body.modal.nodeModes,2),baseline=anatomicalConfiguration(arm,x,state.activation,{hessian:false}),points=[];
