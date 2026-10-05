@@ -16,7 +16,7 @@ def check():
         page=context.new_page();page.set_default_timeout(60000);errors=[];page.on('pageerror',lambda err:errors.append(str(err)))
         page.goto(url+'/index.html',wait_until='networkidle')
         proof_count=sum(len(json.loads((ROOT/'dist'/name).read_text())['claims']) for name in json.loads((ROOT/'dist/build-manifest.json').read_text())['proof_families'])
-        assert page.locator('.proof-card').count()==proof_count
+        assert page.locator('.proof-card').count()==proof_count, (page.locator('.proof-card').count(),proof_count)
         assert page.locator('math').count()>15
         # Every generated internal hash link and local asset must resolve.
         for link in page.locator('a[href^="#"]').evaluate_all('(els)=>els.map(el=>el.getAttribute("href"))'):
