@@ -1,0 +1,204 @@
+{
+  "schema": 1,
+  "result": "PASS_FROZEN_VOLUME_PENALTY_COMPARISON",
+  "sourceHashes": {
+    "tools/compare-volume-penalties.mjs": "b236ff0b1e28d0e7d0feb5f7d2ffd0b8c869d1c52b8357a18f5d8aae0edfffb9",
+    "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+    "web/tissue.mjs": "72d88e8afa18af7acf3f5ab45d6b1676a0beff523a124023f19cce99347b1b30",
+    "data/anatomical-arm-v1/audit/anatomical-dense-trajectory-recheck.json": "dfdd21492e1758fd7b84410d8420f62a3de7bafeb5f3bab35c1bc289228c6a4b"
+  },
+  "matchedBulkPa": 1000000,
+  "matchedShearPa": 1000,
+  "savedCorner": {
+    "timeS": 0.07,
+    "J": 0.7120247523019865
+  },
+  "rows": [
+    {
+      "J": 1,
+      "log": {
+        "energyDensityPa": 0,
+        "pressurePa": 0,
+        "matrixDensityPa": 0,
+        "fiberDensityPa": 0
+      },
+      "quadratic": {
+        "energyDensityPa": 0,
+        "pressurePa": 0
+      },
+      "stressErrorPa": 0,
+      "finiteDifferences": [
+        {
+          "delta": 0.000002,
+          "logPressurePa": 0.000001999944488903976,
+          "quadraticPressurePa": -5.551104535213942e-11,
+          "maximumErrorPa": 0.000001999944488903976
+        },
+        {
+          "delta": 0.000001,
+          "logPressurePa": 5.000555107944562e-7,
+          "quadraticPressurePa": 5.551115123125783e-11,
+          "maximumErrorPa": 5.000555107944562e-7
+        }
+      ],
+      "energyRatio": null,
+      "pressureRatio": null
+    },
+    {
+      "J": 0.999,
+      "log": {
+        "energyDensityPa": 0.5005004587502707,
+        "pressurePa": 1001.5018354188418,
+        "matrixDensityPa": -2.220446049250313e-13,
+        "fiberDensityPa": 0
+      },
+      "quadratic": {
+        "energyDensityPa": 0.4999999999996678,
+        "pressurePa": 999.9999999998897
+      },
+      "stressErrorPa": 1.1152678780490533e-10,
+      "finiteDifferences": [
+        {
+          "delta": 0.000002,
+          "logPressurePa": 1001.5018373995961,
+          "quadraticPressurePa": 999.9999999733833,
+          "maximumErrorPa": 0.000001980754291253106
+        },
+        {
+          "delta": 0.000001,
+          "logPressurePa": 1001.5018359496031,
+          "quadraticPressurePa": 1000.0000000287557,
+          "maximumErrorPa": 5.307613264449174e-7
+        }
+      ],
+      "energyRatio": 1.0010009175012065,
+      "pressureRatio": 1.0015018354189522
+    },
+    {
+      "J": 0.9,
+      "log": {
+        "energyDensityPa": 5550.419129841503,
+        "pressurePa": 117067.23961980669,
+        "matrixDensityPa": -2.220446049250313e-13,
+        "fiberDensityPa": 0
+      },
+      "quadratic": {
+        "energyDensityPa": 4999.999999999975,
+        "pressurePa": 99999.99999999977
+      },
+      "stressErrorPa": 2.9103830456733704e-10,
+      "finiteDifferences": [
+        {
+          "delta": 0.000002,
+          "logPressurePa": 117067.23961970056,
+          "quadraticPressurePa": 99999.99999740794,
+          "maximumErrorPa": 0.0000025918270694091916
+        },
+        {
+          "delta": 0.000001,
+          "logPressurePa": 117067.23961651733,
+          "quadraticPressurePa": 99999.99999718057,
+          "maximumErrorPa": 0.0000032893585739657283
+        }
+      ],
+      "energyRatio": 1.110083825968306,
+      "pressureRatio": 1.1706723961980696
+    },
+    {
+      "J": 0.8,
+      "log": {
+        "energyDensityPa": 24896.522246558634,
+        "pressurePa": 278929.4391427618,
+        "matrixDensityPa": 2.220446049250313e-13,
+        "fiberDensityPa": 0
+      },
+      "quadratic": {
+        "energyDensityPa": 19999.99999999997,
+        "pressurePa": 199999.99999999988
+      },
+      "stressErrorPa": 2.9103830456733704e-10,
+      "finiteDifferences": [
+        {
+          "delta": 0.000002,
+          "logPressurePa": 278929.4391332078,
+          "quadraticPressurePa": 199999.99998981366,
+          "maximumErrorPa": 0.00001018622424453497
+        },
+        {
+          "delta": 0.000001,
+          "logPressurePa": 278929.43912047485,
+          "quadraticPressurePa": 199999.9999843567,
+          "maximumErrorPa": 0.000022286956664174795
+        }
+      ],
+      "energyRatio": 1.2448261123279336,
+      "pressureRatio": 1.3946471957138098
+    },
+    {
+      "J": 0.7120247523019865,
+      "log": {
+        "energyDensityPa": 57678.54912587442,
+        "pressurePa": 477009.5458160402,
+        "matrixDensityPa": -2.220446049250313e-13,
+        "fiberDensityPa": 0
+      },
+      "quadratic": {
+        "energyDensityPa": 41464.87164336609,
+        "pressurePa": 287975.24769801344
+      },
+      "stressErrorPa": 3.4924596548080444e-10,
+      "finiteDifferences": [
+        {
+          "delta": 0.000002,
+          "logPressurePa": 477009.54581887345,
+          "quadraticPressurePa": 287975.24769834126,
+          "maximumErrorPa": 0.000002833257894963026
+        },
+        {
+          "delta": 0.000001,
+          "logPressurePa": 477009.5458079595,
+          "quadraticPressurePa": 287975.2476947033,
+          "maximumErrorPa": 0.000008080678526312113
+        }
+      ],
+      "energyRatio": 1.391022010678341,
+      "pressureRatio": 1.6564255075014587
+    },
+    {
+      "J": 0.6,
+      "log": {
+        "energyDensityPa": 130471.40894795686,
+        "pressurePa": 851376.0396099851,
+        "matrixDensityPa": 0,
+        "fiberDensityPa": 0
+      },
+      "quadratic": {
+        "energyDensityPa": 80000.00000000006,
+        "pressurePa": 400000.0000000002
+      },
+      "stressErrorPa": 4.656612873077393e-10,
+      "finiteDifferences": [
+        {
+          "delta": 0.000002,
+          "logPressurePa": 851376.0395871941,
+          "quadraticPressurePa": 399999.9999796273,
+          "maximumErrorPa": 0.00002279097680002451
+        },
+        {
+          "delta": 0.000001,
+          "logPressurePa": 851376.0396381258,
+          "quadraticPressurePa": 400000.00000873115,
+          "maximumErrorPa": 0.000028140726499259472
+        }
+      ],
+      "energyRatio": 1.6308926118494596,
+      "pressureRatio": 2.128440099024962
+    }
+  ],
+  "limits": [
+    "Shared authored moduli isolate law shape; no parameter calibration or default change.",
+    "Pure isotropic compression at zero activation isolates volume energy; actual anisotropic arm points may have other stress contributions.",
+    "A larger logarithmic restoring pressure does not prove correct compression, equilibrium, locking diagnosis or convergence.",
+    "No optimizer, state/time advancement, skin, tolerance or iteration change."
+  ]
+}
