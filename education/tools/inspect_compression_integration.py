@@ -1,12 +1,16 @@
 """Capture Lab 5's real proof cards and actual PDF pages; no stability claim."""
 from pathlib import Path
-import hashlib,json,os,shutil
+import hashlib,json,os,re,shutil
 import fitz
 from playwright.sync_api import sync_playwright
 from render_pdf import serve
 ROOT=Path(__file__).resolve().parents[1]
 def inspect():
     out=ROOT/'dist/compression-book-review';out.mkdir(exist_ok=True)
+    (out/'render-receipt.json').unlink(missing_ok=True)
+    for old in out.glob('pdf-page-*.png'):
+        if re.fullmatch(r'pdf-page-[0-9]+\.png',old.name):old.unlink()
+    captures=[]
     server,url=serve();views=[];errors=[]
     try:
       with sync_playwright() as p:
@@ -16,21 +20,21 @@ def inspect():
             for claim in ['compression-dilation','compression-shear','compression-mean-pressure','compression-free-pressure']:
                 card=page.locator('#proof-'+claim);card.scroll_into_view_if_needed()
                 assert card.evaluate('(x)=>x.scrollWidth<=x.clientWidth+1')
-                card.screenshot(path=str(out/(name+'-'+claim+'.png')))
+                path=out/(name+'-'+claim+'.png');card.screenshot(path=str(path));captures.append(path)
             overflow=page.evaluate('document.documentElement.scrollWidth>innerWidth+1');assert not overflow
             views.append({'name':name,'horizontalOverflow':overflow,'proofCards':page.locator('.proof-card').count()});page.close()
         version=browser.version;browser.close()
-    finally:server.shutdown()
+    finally:server.shutdown();server.server_close()
     assert not errors,errors
     doc=fitz.open(ROOT/'dist/kenoma-mechanics.pdf');selected=[]
     phrases=['Extend Laboratory 5','Laboratory 5 extension','Exact material identities','Checked claim compression-','Constitutive difference from the capstone','KenomaProperties.dilation_shape_zero','KenomaProperties.free_side_plate_pressure']
     for index,page in enumerate(doc):
         matched=[phrase for phrase in phrases if phrase in page.get_text()]
         if matched:
-            path=out/f'pdf-page-{index+1}.png';page.get_pixmap(matrix=fitz.Matrix(1.7,1.7),alpha=False).save(path);selected.append({'page':index+1,'phrases':matched,'image':path.name})
+            path=out/f'pdf-page-{index+1}.png';page.get_pixmap(matrix=fitz.Matrix(1.7,1.7),alpha=False).save(path);captures.append(path);selected.append({'page':index+1,'phrases':matched,'image':path.name})
     for phrase in ['Laboratory 5 extension','Exact material identities','Constitutive difference from the capstone']:
         assert any(phrase in row['phrases'] for row in selected),phrase
     digest=lambda path:hashlib.sha256(path.read_bytes()).hexdigest()
-    receipt={'schema':1,'result':'PASS_COMPRESSION_BOOK_RENDER_CAPTURE','inspector_sha256':digest(Path(__file__)),'html_sha256':digest(ROOT/'dist/index.html'),'pdf_sha256':digest(ROOT/'dist/kenoma-mechanics.pdf'),'build_manifest_sha256':digest(ROOT/'dist/build-manifest.json'),'browser':version,'views':views,'page_errors':errors,'pdf_pages':selected,'outputs':{p.name:digest(p) for p in sorted(out.glob('*.png'))},'scope':'Source-bound actual layout captures. Manual appearance review is recorded separately; no anatomical qualification.'}
+    receipt={'schema':1,'result':'PASS_COMPRESSION_BOOK_RENDER_CAPTURE','inspector_sha256':digest(Path(__file__)),'html_sha256':digest(ROOT/'dist/index.html'),'pdf_sha256':digest(ROOT/'dist/kenoma-mechanics.pdf'),'build_manifest_sha256':digest(ROOT/'dist/build-manifest.json'),'browser':version,'views':views,'page_errors':errors,'pdf_pages':selected,'outputs':{p.name:digest(p) for p in sorted(captures)},'scope':'Source-bound actual layout captures. Manual appearance review is recorded separately; no anatomical qualification.'}
     (out/'render-receipt.json').write_text(json.dumps(receipt,indent=2)+'\n');print(json.dumps({k:v for k,v in receipt.items() if k!='outputs'},indent=2))
 if __name__=='__main__':inspect()
