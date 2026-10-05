@@ -1,0 +1,96 @@
+
+> kenoma-education@0.1.0 test:mobile
+> python3 tests/mobile_startup.py
+
+{
+  "status": "passed",
+  "scope": "Pixel 7 touch emulation with default headless Chromium; not physical Android/WebView evidence",
+  "startup_draws": {
+    "force": {
+      "available": true,
+      "lost": false,
+      "width": 543,
+      "height": 450,
+      "unique_colors": 1169,
+      "vivid_geometry_pixels": 1984,
+      "sha256": "8cf46476a04d6d660126a99b642b3613c8634ce7571a6acb6bc2054ba115d4cd"
+    },
+    "torque": {
+      "available": true,
+      "lost": false,
+      "width": 543,
+      "height": 450,
+      "unique_colors": 1948,
+      "vivid_geometry_pixels": 5238,
+      "sha256": "dafa50036593743bac5718c0e1108a853aecb5906cd3e212c994f6ba1601ae37"
+    },
+    "energy": {
+      "available": true,
+      "lost": false,
+      "width": 543,
+      "height": 450,
+      "unique_colors": 1849,
+      "vivid_geometry_pixels": 2103,
+      "sha256": "51f3200e1b672546ccdf4fe0e58c036bb3174065c6d9932cd8a2ffd84f011869"
+    },
+    "elbow": {
+      "available": true,
+      "lost": false,
+      "width": 543,
+      "height": 450,
+      "unique_colors": 3998,
+      "vivid_geometry_pixels": 9484,
+      "sha256": "32db39577c41da482e7a4441f36a339fec4526eb04169d8b78cc301ba3c30652"
+    },
+    "series": {
+      "available": true,
+      "lost": false,
+      "width": 543,
+      "height": 450,
+      "unique_colors": 8338,
+      "vivid_geometry_pixels": 39078,
+      "sha256": "b558675c7d056c61e62b8f8debf22b9bfb3c8e0274887783f5f22ffb96c78471"
+    },
+    "continuum": {
+      "available": true,
+      "lost": false,
+      "width": 543,
+      "height": 630,
+      "unique_colors": 2987,
+      "vivid_geometry_pixels": 64156,
+      "sha256": "a8182937e0e6560d71a9d7a87e9d40c81b5f3239600f3d6c952e1006fdbae343"
+    },
+    "spatial": {
+      "available": true,
+      "lost": false,
+      "width": 543,
+      "height": 630,
+      "unique_colors": 23255,
+      "vivid_geometry_pixels": 97745,
+      "sha256": "2235a0c5beb4076085fd0dfc4adfed82d536dfb89afea953dec125ccbbe92aef"
+    },
+    "atlas": {
+      "available": true,
+      "lost": false,
+      "width": 543,
+      "height": 540,
+      "unique_colors": 7528,
+      "vivid_geometry_pixels": 54148,
+      "sha256": "d92bad5c6851665bf749f11e30b4b385b0ee606c15a75e17cef93e1fe6501d3f"
+    }
+  },
+  "fault_tests": [
+    "Actual WebGL context loss exposes visible diagnostics, preserves static alternative and recovers on Retry without a download",
+    "Injected post-context draw failure produces in-viewport diagnostics and Retry restores real drawn geometry",
+    "Unavailable WebGL in all seven labs gives prominent in-viewport error plus functional numerical controls, explicitly without 3D"
+  ],
+  "browser": "151.0.7922.173",
+  "downloads_on_start": [],
+  "html_sha256": "0b6104da502d5ad8b36f9422ab0708f16ca75ec5f329f5d87caffe322d459b19",
+  "app_sha256": "4bac0cb2ab5954cb602175a891db5f824703fb0b044dfc9cdfdefdc4b7bf1d76"
+}
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

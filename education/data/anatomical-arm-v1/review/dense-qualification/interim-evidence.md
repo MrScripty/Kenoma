@@ -1,0 +1,5 @@
+# Preserved interim checks
+
+`all-node-tests.txt` and `all-node-tests-final.txt` preserve earlier complete Node test runs; `node-tests-119.txt` is the later 119-test pass after exact orientation checks were added. `book-build-initial.txt`, `browser-tests.txt`, `mobile-tests.txt`, and `arm-inspection.txt` preserve successful checks of the initial diagnostic edition. `diagnosis-render-receipt.json` binds its initial desktop/mobile screenshots and the then-current HTML/PDF byte hashes. Those screenshots are historical renders, not receipts for the eventual final edition.
+
+`artifact-tests.txt` preserves the expected failed source-manifest check after the dense verifier changed following that initial build. `book-build-tex-rejection.txt` preserves the initial MathML rejection; `interim-build-missing-lean.txt` preserves the missing-PATH failure. Their subsequent successful builds are recorded separately. Failures are retained rather than relabeled as passes. Final checks must build the frozen scientific evidence before testing the manifest again.
