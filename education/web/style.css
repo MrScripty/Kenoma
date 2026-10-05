@@ -34,3 +34,6 @@ math[display="inline"]{display:inline-block;white-space:nowrap;break-inside:avoi
 
 .property-lesson>h3,.property-lesson>.model-label,.property-lesson>p:not(.announce){margin-left:1.3rem;margin-right:1.3rem}.property-lesson .preset{width:90%}
 @media print{.property-lesson .static-figure{background:#fff;color:#162d3e}.property-lesson .static-figure img{max-height:75mm}}
+
+.property-lesson:not([data-enhanced=true])>.property-description{display:none}
+@media print{.property-lesson>.property-description{display:none}}
