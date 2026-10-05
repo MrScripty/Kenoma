@@ -49,6 +49,10 @@ jobs:
           node tools/partition-anatomical-origins.mjs
           node tools/anatomical-radial-apposition.mjs
           npm run anatomy:proofs
+          npm run anatomy:apparatus
+          node tools/verify-anatomical-arm-rest.mjs
+          node tools/replay-rejected-arm-v1.mjs
+          node tools/verify-anatomical-rejected-steps.mjs
           node tools/anatomical-fixture-experiment.mjs
           node tools/anatomical-bone-collision-audit.mjs
           node tools/anatomical-apposition-audit.mjs
@@ -65,6 +69,7 @@ jobs:
           npm run pdf
           npm run test:browser
           npm run test:mobile
+          python3 tests/anatomical_arm_inspection.py
           python3 tests/artifacts.py
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:

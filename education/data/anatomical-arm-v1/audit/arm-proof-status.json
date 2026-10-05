@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "lean_version": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)",
+  "source": "proofs/AnatomicalArm.lean",
+  "source_sha256": "3f06dfbdf3daf8ffabdb3a8a1f5543147808c3775c6e3983a693a8677c409f21",
+  "claims_sha256": "7da65f11efb48c3147779ea0b1c799627c1deb407f8627ce28275c0b6718cd02",
+  "command": "lean -DwarningAsError=true proofs/AnatomicalArm.lean",
+  "claims": [
+    {
+      "id": "upward-mass-event",
+      "theorem": "Kenoma.Arm.upward_mass_event_work_numerator",
+      "claim": "At unchanged pose and velocity, the point-mass inertia and upward-positive gravitational potential increments give the external mass-event energy numerator.",
+      "implementation": "web/anatomical-arm.mjs: changeAnatomicalMass; +Z superior, V=+mgz.",
+      "assumptions": "Exact integer quantities in compatible common scales; squared grip radius is fixed and inertia changes by deltaMass times that radius squared. Factors of two represent the kinetic denominator.",
+      "limitations": "Does not establish browser state preservation, numerical equality, actual anatomical geometry or handling of a physical dumbbell.",
+      "numerical_evidence": "Actual-arm mass-event/state tests and source-bound arm experiment receipts are required separately.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "shared-guide-balance",
+      "theorem": "Kenoma.Arm.shared_guide_force_balance",
+      "claim": "A supplied zero resultant at one shared biceps guide component makes the common distal force equal the negative sum of the two head, matrix and contact contributions.",
+      "implementation": "web/anatomical-apparatus.mjs and web/anatomical-contact.mjs: both biceps heads, common distal branches, sheet matrix and contact act on the same nine free guide coordinates.",
+      "assumptions": "Exact signed integer force-component numerators in a compatible scale; interpolated headA, headB, distal, matrix and contact contributions are supplied; their equilibrium is assumed.",
+      "limitations": "Does not derive interpolation/geometry, verify the floating-point residual, prove Newton convergence or validate an anatomical aponeurosis.",
+      "numerical_evidence": "tests/anatomical_apparatus.test.mjs checks shared coordinates, source faces, objective derivatives and actual attachment torque; equilibrium receipts are checked separately.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    }
+  ]
+}

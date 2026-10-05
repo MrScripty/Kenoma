@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "accepted": false,
+  "reason": "Full tendon segment audit rejects a force-converged, sampled-clear candidate",
+  "sourceHashes": {
+    "data/anatomical-arm-v1/generated/arm-reference.json": "1b80c1d3d9f2eb4370cd298f58f5e9c582625574f27072f6d3a1ea898ce4c036",
+    "data/anatomical-arm-v1/config/attachments-apparatus.json": "070fee738e73e127e334ee5cbe680cb622f100396ad0728eb9df6723c2232389",
+    "data/anatomical-arm-v1/config/apparatus-routing.json": "624693010136aa56b0df36a938594ccbac0f65b97067279ac6aaba9b4c06ef37",
+    "data/anatomical-arm-v1/audit/modal-fixed-end-results.json": "b0eeecdade262b682279d9ebeb7a8147a4525a992976a85afc0ce5e63270d8b4",
+    "web/anatomical-arm.mjs": "580c6a31e91704a08f442fdfa4268d31e15e8ec26face248f8f2fa714f54ed1a",
+    "web/anatomical-apparatus.mjs": "060be01017fea5a56deb50ec0685f6932e14b1049cc81874934e810b02b98e28",
+    "web/anatomical-aponeurosis.mjs": "1dbebfd2ea67427ee0d962b7b234d2d40a2f2cd4616a4f1199e20b3aba7316a0",
+    "web/anatomical-modal.mjs": "12cd671bc963aa04dd5c0e173a776049de191283d850b0b60d0fe8e63be4c9a1",
+    "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+    "web/anatomical-element.mjs": "3f67a6bd31565c83d2cbea591c3cf1862a48e50cc4efa780880fda7e808d4b1f",
+    "web/anatomical-contact.mjs": "9b6d718be4915b8b363e1cdc29d9b342f375eaa721e69d415f7c13aad5eeb9fa",
+    "web/anatomical-contact-differential.mjs": "41a6e5276067216507a4ffcea885c23813aac3d2fa9e36b69030fafc2363b810",
+    "web/anatomical-distance.mjs": "93e191f675afa9e2bb2a2a067cb3054512713d3de1e38eb9087f381a7554acc7",
+    "web/anatomical-routing.mjs": "c1b91ab794c58f161d50110387c2eb5e002dbf319b604dfc71e0a6ef83bbca80",
+    "web/anatomical-routing-audit.mjs": "e6ef4473a272c985cd05012cf4cbf424c45522b535c280ad5de49222dd459d9b",
+    "web/anatomical-audit.mjs": "4f45bf4ce4459096e9595cd7bb1e0bcdfb0fafe858ee5da25444940604589f14",
+    "web/anatomical-intersections.mjs": "a083a9838ac3c7508b65b58329c741aef65a065288aff82fc886d1c2c90375df",
+    "web/anatomical-transfer.mjs": "1e82dabebf5a6247af9216a70292216b194a52545abf8f3b73c93ee6e2f22431",
+    "web/anatomical-newton.mjs": "00281344873681bc3b18a83a5a6971942674a30caf05628fdf0967729d508893",
+    "web/anatomical-preconditioner.mjs": "d234cd800784a57171514139a17d0720bb1a9d4d1089afcd9e7c783cead1b0b4"
+  },
+  "maximumFreeModalGradientN": 0.00009169354130009839,
+  "surfaceTransverseCrossingPairs": 0,
+  "pathAudit": {
+    "testedLegs": 721,
+    "violations": [
+      {
+        "branchIndex": 461,
+        "group": "FJ1478 distributed estimated proximal fan",
+        "leg": 0,
+        "bone": "FJ3368",
+        "boneIndex": 0,
+        "crossings": 2,
+        "minimumSampledSignedDistanceM": 0.001893127013151882,
+        "clear": false
+      }
+    ],
+    "maximumSampledPenetrationM": 6.206335383118183e-17,
+    "accepted": false,
+    "limits": [
+      "Every axial path leg checked against all source bone triangles with AABB pruning.",
+      "Exact transverse segment hits plus five containment samples; finite radius, grazing/coplanar overlap and continuous motion are not certified.",
+      "Prescribed guides are authored frictionless support constraints, not measured anatomical tendon wrapping."
+    ]
+  },
+  "missedCase": {
+    "branchIndex": 461,
+    "group": "FJ1478 distributed estimated proximal fan",
+    "A": [
+      -0.18583542603193964,
+      -0.10074431780241483,
+      1.2325127836776075
+    ],
+    "B": [
+      -0.17151738977761696,
+      -0.09261343367355047,
+      1.3280900233925992
+    ],
+    "bone": "FJ3368",
+    "intersections": [
+      {
+        "triangle": 2509,
+        "time": 0.9270217894570608
+      },
+      {
+        "triangle": 2512,
+        "time": 0.9284116257032559
+      }
+    ],
+    "insideIntervalM": 0.0001347935260369536,
+    "middlePointM": [
+      -0.17255234457906607,
+      -0.09320116074866902,
+      1.3211813858255992
+    ],
+    "middlePenetrationM": 0.000007628489508669089,
+    "fiveSampleDistancesM": [
+      0.015597852773397727,
+      0.012273333626298559,
+      0.01022648210148247,
+      0.0032042080657163825,
+      0.001893127013151882
+    ]
+  },
+  "limits": [
+    "The immutable baseline has tensile-only estimated proximal fans, without the later weak connective-matrix boundaries.",
+    "This force-converged candidate is rejected, not a usable initial state or an accepted lift.",
+    "Finite line quadrature does not certify full segment clearance; this is a documented source-mesh counterexample."
+  ]
+}

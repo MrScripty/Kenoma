@@ -4,6 +4,7 @@ import hashlib,html,json,re,shutil,subprocess
 from check_proofs import check
 from check_anatomical_proofs import check as check_transfer
 from check_coupled_proofs import check as check_coupled
+from check_arm_proofs import check as check_arm
 from figures import generate
 from evidence_figures import generate as evidence_figures
 from spatial_figures import generate as advanced_figures
@@ -90,6 +91,7 @@ def build():
     evidence=check()
     transfer=check_transfer()
     coupled=check_coupled()
+    arm=check_arm()
     data=ROOT/'data/elbow-v1'
     subprocess.run(['python3',str(data/'scripts/validate_package.py')],check=True)
     continuum=ROOT/'contributions/continuum_reference'
@@ -101,11 +103,12 @@ def build():
     source=(ROOT/'proofs/Mechanics.lean').read_text()
     bundles=[(evidence,source,'proof-status.json','lean-check.txt','checked-source-appendix','proof-check-receipt','kernel-dependency-report'),
       (transfer,(ROOT/'proofs/AnatomicalTransfer.lean').read_text(),'transfer-proof-status.json','transfer-lean-check.txt','transfer-source-appendix','transfer-proof-receipt','transfer-kernel-report'),
-      (coupled,(ROOT/'proofs/CoupledMechanics.lean').read_text(),'coupled-proof-status.json','coupled-lean-check.txt','coupled-source-appendix','coupled-proof-receipt','coupled-kernel-report')]
+      (coupled,(ROOT/'proofs/CoupledMechanics.lean').read_text(),'coupled-proof-status.json','coupled-lean-check.txt','coupled-source-appendix','coupled-proof-receipt','coupled-kernel-report'),
+      (arm,(ROOT/'proofs/AnatomicalArm.lean').read_text(),'arm-proof-status.json','arm-lean-check.txt','arm-source-appendix','arm-proof-receipt','arm-kernel-report')]
     claim_bundles={c['id']:b for b in bundles for c in b[0]['claims']}
     for receipt,checked_source,receipt_path,transcript_path,*_ in bundles[1:]:
         (OUT/receipt_path).write_text(json.dumps(receipt,indent=2)+'\n')
-        original='lean-check.txt' if receipt is transfer else 'coupled-lean-check.txt'
+        original={id(transfer):'lean-check.txt',id(coupled):'coupled-lean-check.txt',id(arm):'arm-lean-check.txt'}[id(receipt)]
         shutil.copy(ROOT/'data/anatomical-arm-v1/audit'/original,OUT/transcript_path)
     def proof_block(id,web):
         receipt,checked_source,receipt_path,transcript_path,*_=claim_bundles[id]
@@ -205,6 +208,7 @@ def build():
     review=ROOT/'data/anatomical-arm-v1/review/coupling-candidate'
     for name in ['atlas-assembly-bind','fixture-loaded','fixture-released']:
         shutil.copy(review/(name+'.png'),assets/(name+'.png'))
+    shutil.copy(ROOT/'data/anatomical-arm-v1/review/apparatus-candidate/desktop-rest.png',assets/'anatomical-arm-rest.png')
     shutil.rmtree(OUT/'data/elbow-v1',ignore_errors=True)
     shutil.copytree(data,OUT/'data/elbow-v1',dirs_exist_ok=True,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
     shutil.copytree(ROOT/'data/anatomical-arm-v1',OUT/'data/anatomical-arm-v1',dirs_exist_ok=True)
@@ -212,8 +216,9 @@ def build():
     shutil.copytree(ROOT/'web',OUT/'web',dirs_exist_ok=True)
     subprocess.run([str(ROOT/'node_modules/.bin/esbuild'),str(ROOT/'web/app.mjs'),'--bundle','--minify','--format=esm','--target=es2022',f'--outfile={assets/"app.js"}','--legal-comments=external'],check=True)
     proofs=OUT/'proofs';proofs.mkdir(exist_ok=True)
-    for file in ['Mechanics.lean','AnatomicalTransfer.lean','CoupledMechanics.lean','anatomical-claims.json','coupled-claims.json','lean-toolchain','claims.json']:shutil.copy(ROOT/'proofs'/file,proofs/file)
+    for file in ['Mechanics.lean','AnatomicalTransfer.lean','CoupledMechanics.lean','AnatomicalArm.lean','anatomical-claims.json','coupled-claims.json','arm-claims.json','lean-toolchain','claims.json']:shutil.copy(ROOT/'proofs'/file,proofs/file)
     subprocess.run(['node',str(ROOT/'tools/build-coupled-inspector.mjs')],check=True)
+    subprocess.run(['node',str(ROOT/'tools/build-anatomical-arm-inspector.mjs')],check=True)
     notices=OUT/'THIRD_PARTY_NOTICES.txt'
     notices.write_text('Kenoma original book and simulator content: Apache-2.0. Third-party data retains its component licenses below.\n\n'+(data/'LICENSES_AND_ATTRIBUTION.txt').read_text()+'\n\nThree.js 0.180.0 (MIT)\n'+(ROOT/'node_modules/three/LICENSE').read_text()+'\n\nBuild tool esbuild 0.25.10 (MIT)\n'+(ROOT/'node_modules/esbuild/LICENSE.md').read_text())
     shutil.copytree(ROOT/'contributions/continuum_reference',OUT/'contributions/continuum_reference',dirs_exist_ok=True)

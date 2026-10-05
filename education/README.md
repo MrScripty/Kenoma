@@ -1,10 +1,12 @@
 # Kenoma educational book
 
-This additive track provides one illustrated research book, seven resettable 3D laboratories and a read-only actual-data viewer. It preserves the production simulator plans. The final teaching sequence integrates a reviewed tetrahedral FEM/compliant-solver comparison and an on-arm spatial volume, separate skin membrane, fascia tethers and sampled bone contact alongside same-pose naive skinning. The capstone is explicitly one-way and quasistatic; the line actuator drives the dumbbell hinge. All laboratory geometry/material defaults are authored, while the licensed atlas, normalized human trial and Arm26 parameters remain independent evidence. No clinical or subject-specific prediction is claimed.
+This additive track provides one illustrated research book, seven resettable teaching laboratories, actual atlas-data inspection, a coupled engineering fixture and an anatomical apparatus candidate. It preserves the production simulator plans. The research edition has 20 chapters and 23 compiled Lean4 claims across four source files. Primary sources and independently licensed anatomy/trial/Arm26 data are cited separately from authored teaching geometry and material assumptions.
+
+The published spatial teaching lab uses a one-way quasistatic line actuator and schematic skin/fascia. The newer anatomical candidate connects seven atlas-derived P2 volumes through shared tendon apparatuses and a jointly solved elbow. Its held rest is accepted, but loaded attempts fail both force and geometry checks. Anatomical lift, release and elbow compression remain incomplete; no medical or subject-specific validation is claimed.
 
 ## Build and read
 
-Prerequisites: Node 22 or later, Python 3.12, Pandoc (tested 3.1.11.1), and pinned Lean 4.19.0. The local milestone used Node 24.19.0; CI selects Node 22; the reviewed foundation passed remotely, and the articulated-elbow descendant passed its own exact-head workflow; the complete spatial edition needs its own exact-head check. A Linux x86_64 installer downloads the official Lean archive and checks its recorded SHA-256. For another platform, use the official Lean release matching `proofs/lean-toolchain`.
+Prerequisites: Node 22 or later, Python 3.12, Pandoc (tested 3.1.11.1), and pinned Lean 4.19.0. The local milestone used Node 24.19.0; CI selects Node 22; the reviewed foundation passed remotely, and the articulated-elbow descendant passed its own exact-head workflow; each new apparatus revision requires its own workflow check. A Linux x86_64 installer downloads the official Lean archive and checks its recorded SHA-256. For another platform, use the official Lean release matching `proofs/lean-toolchain`.
 
 ```bash
 cd education
@@ -17,6 +19,8 @@ npm test
 npm run build
 npm run pdf
 npm run test:browser
+npm run test:mobile
+python3 tests/anatomical_arm_inspection.py
 python3 tests/artifacts.py
 python3 -m http.server 8000 --directory dist
 ```
