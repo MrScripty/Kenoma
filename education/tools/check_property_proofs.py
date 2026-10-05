@@ -15,6 +15,7 @@ def check():
         if package['type']=='git':
             revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=dependency/'.lake/packages'/package['name'],text=True).strip()
             if revision!=package['rev']:raise RuntimeError('Dependency revision differs: '+package['name'])
+            if subprocess.check_output(['git','status','--porcelain'],cwd=dependency/'.lake/packages'/package['name'],text=True).strip():raise RuntimeError('Modified dependency source: '+package['name'])
     env=os.environ.copy();env['PATH']=str(ROOT/'.tools/lean-4.19.0-linux/bin')+os.pathsep+env['PATH'];env['MATHLIB_CACHE_DIR']=str(ROOT/'.tools/mathlib-cache')
     version=subprocess.check_output(['lean','--version'],env=env,text=True).strip()
     if 'version 4.19.0,' not in version:raise RuntimeError('Pinned Lean 4.19.0 required')

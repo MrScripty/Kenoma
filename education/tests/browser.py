@@ -15,7 +15,8 @@ def check():
         context=browser.new_context(viewport={'width':1280,'height':900},reduced_motion='reduce')
         page=context.new_page();page.set_default_timeout(60000);errors=[];page.on('pageerror',lambda err:errors.append(str(err)))
         page.goto(url+'/index.html',wait_until='networkidle')
-        assert page.locator('.proof-card').count()==25
+        proof_count=sum(len(json.loads((ROOT/'dist'/name).read_text())['claims']) for name in json.loads((ROOT/'dist/build-manifest.json').read_text())['proof_families'])
+        assert page.locator('.proof-card').count()==proof_count
         assert page.locator('math').count()>15
         # Every generated internal hash link and local asset must resolve.
         for link in page.locator('a[href^="#"]').evaluate_all('(els)=>els.map(el=>el.getAttribute("href"))'):
@@ -23,7 +24,7 @@ def check():
         for href in page.locator('[src],a[href]').evaluate_all('(els)=>els.map(el=>el.getAttribute("src")||el.getAttribute("href"))'):
           if not href or href.startswith(('#','http')):continue
           assert context.request.get(url+'/'+href.split('#')[0]).status==200,href
-        checks.append('25 proof cards, MathML, internal links and local resources verified')
+        checks.append(f'{proof_count} proof cards, MathML, internal links and local resources verified')
         force=page.locator('#lab-force');expect(force.locator('.readout')).to_contain_text('0 J')
         invalid=force.locator('input[type=number][data-param=mass]');invalid.fill('')
         expect(invalid).to_have_attribute('aria-invalid','true');force.locator('[data-action=reset]').click()
@@ -213,9 +214,9 @@ HTMLCanvasElement.prototype.getContext=function(type,...args){if(type.includes('
         checks.append('No-WebGL fallback retains static figures and live elementary/spatial numerical controls')
         no_js=browser.new_context(java_script_enabled=False).new_page()
         no_js.goto(url+'/index.html');expect(no_js.locator('#lab-force .static-figure')).to_be_visible()
-        expect(no_js.locator('#lab-force noscript')).to_be_visible();assert no_js.locator('.proof-card').count()==25;expect(no_js.locator('#lab-spatial .static-figure')).to_be_visible();expect(no_js.locator('#lab-continuum .static-figure')).to_be_visible()
+        expect(no_js.locator('#lab-force noscript')).to_be_visible();assert no_js.locator('.proof-card').count()==proof_count;expect(no_js.locator('#lab-spatial .static-figure')).to_be_visible();expect(no_js.locator('#lab-continuum .static-figure')).to_be_visible()
         checks.append('No-JavaScript chapter text, diagrams, proofs and experiment table remain readable')
-        result={'status':'passed','browser_version':browser.version,'checks':checks,'proof_cards':25,
+        result={'status':'passed','browser_version':browser.version,'checks':checks,'proof_cards':proof_count,
           'html_sha256':hashlib.sha256((ROOT/'dist/index.html').read_bytes()).hexdigest(),
           'app_sha256':hashlib.sha256((ROOT/'dist/assets/app.js').read_bytes()).hexdigest(),
           'scope':'Automated Chromium desktop/mobile viewport checks; not real mobile hardware or accessibility certification.'}

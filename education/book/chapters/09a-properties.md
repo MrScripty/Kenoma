@@ -46,8 +46,10 @@ Add a separately declared uniform active-stress offset $a\sigma_0$, still under 
 
 {{property:tapered}}
 
+The illustrative 5% small-strain warning uses the true endpoint extrema of this monotone positive-area law, independent of midpoint display resolution. It is a warning about this approximation, not material validation.
+
 The executable oracle is [the tapered-bar module](web/tapered-bar.mjs). Tests check the logarithmic integral, refinement and the two-segment fixed-end case. Its scope is numerical evidence for this declared reduced law; the kinematic Lean claims above do not prove its mechanics.
 
 ## What the exact claims cover
 
-The proposed real-number proof source targets edge translation invariance, determinant composition, the actual diagonal determinant and the positive square-root isochoric construction. These four declarations await fresh kernel compilation against the pinned mathlib dependency. They must not be displayed as checked proof cards until that succeeds. Separate numerical and browser tests cover the implemented controls and boundary measurements. Neither class of test validates measured biological parameters or resolves the capstone's local compression and full nodal stationarity failures.
+The freshly checked real-number proof bundle establishes edge translation invariance, determinant composition, the actual diagonal determinant and the positive square-root isochoric construction. The four claims above are compiled from their displayed real definitions against pinned mathlib. The edge and matrix identities do not prove the oriented boundary-triangle oracle, and the isochoric identity does not prove a free-side material equilibrium. Separate numerical and browser tests cover the implemented controls and boundary measurements. Neither class of test validates measured biological parameters or resolves the capstone's local compression and full nodal stationarity failures.

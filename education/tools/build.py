@@ -5,6 +5,8 @@ from check_proofs import check
 from check_anatomical_proofs import check as check_transfer
 from check_coupled_proofs import check as check_coupled
 from check_arm_proofs import check as check_arm
+from check_property_proofs import check as check_properties
+from property_labs import block as property_block
 from figures import generate
 from evidence_figures import generate as evidence_figures
 from spatial_figures import generate as advanced_figures
@@ -92,6 +94,7 @@ def build():
     transfer=check_transfer()
     coupled=check_coupled()
     arm=check_arm()
+    properties=check_properties()
     data=ROOT/'data/elbow-v1'
     subprocess.run(['python3',str(data/'scripts/validate_package.py')],check=True)
     continuum=ROOT/'contributions/continuum_reference'
@@ -104,19 +107,25 @@ def build():
     bundles=[(evidence,source,'proof-status.json','lean-check.txt','checked-source-appendix','proof-check-receipt','kernel-dependency-report'),
       (transfer,(ROOT/'proofs/AnatomicalTransfer.lean').read_text(),'transfer-proof-status.json','transfer-lean-check.txt','transfer-source-appendix','transfer-proof-receipt','transfer-kernel-report'),
       (coupled,(ROOT/'proofs/CoupledMechanics.lean').read_text(),'coupled-proof-status.json','coupled-lean-check.txt','coupled-source-appendix','coupled-proof-receipt','coupled-kernel-report'),
-      (arm,(ROOT/'proofs/AnatomicalArm.lean').read_text(),'arm-proof-status.json','arm-lean-check.txt','arm-source-appendix','arm-proof-receipt','arm-kernel-report')]
+      (arm,(ROOT/'proofs/AnatomicalArm.lean').read_text(),'arm-proof-status.json','arm-lean-check.txt','arm-source-appendix','arm-proof-receipt','arm-kernel-report'),
+      (properties,(ROOT/'proofs/ContinuumProperties.lean').read_text(),'property-proof-status.json','property-lean-check.txt','property-source-appendix','property-proof-receipt','property-kernel-report')]
     claim_bundles={c['id']:b for b in bundles for c in b[0]['claims']}
     for receipt,checked_source,receipt_path,transcript_path,*_ in bundles[1:]:
         (OUT/receipt_path).write_text(json.dumps(receipt,indent=2)+'\n')
+        if receipt is properties:continue  # Fresh property checker already wrote its transcript here.
         original={id(transfer):'lean-check.txt',id(coupled):'coupled-lean-check.txt',id(arm):'arm-lean-check.txt'}[id(receipt)]
         shutil.copy(ROOT/'data/anatomical-arm-v1/audit'/original,OUT/transcript_path)
+    def dependency_description(receipt):
+        dependency=receipt.get('mathlib')
+        if isinstance(dependency,dict):return 'pinned mathlib '+dependency['tag']+'; commit '+dependency['commit']+'; locked transitive dependencies'
+        return 'mathlib not used; bundled Std only'
     def proof_block(id,web):
         receipt,checked_source,receipt_path,transcript_path,*_=claim_bundles[id]
         c=next(c for c in receipt['claims'] if c['id']==id);name=c['theorem'].split('.')[-1]
         statement=re.search(r'theorem '+re.escape(name)+r'\b(.*?) := by',checked_source,re.S)
         if not statement: raise ValueError('Missing theorem source')
         stmt='theorem '+name+statement.group(1)
-        meta=f"Lean 4.19.0; mathlib not used; transitive axioms: {', '.join(c['axioms']) or 'none'}; source SHA-256: {receipt['source_sha256']}"
+        meta=f"Lean 4.19.0; {dependency_description(receipt)}; transitive axioms: {', '.join(c['axioms']) or 'none'}; source SHA-256: {receipt['source_sha256']}"
         if not web:
             return f"\n**Checked claim {id}:** {c['claim']}\n\n**Assumptions:** {c['assumptions']}\n\n```lean\n{stmt}\n```\n\n**Limits:** {c['limitations']}\n\nDeclaration: `{c['theorem']}`. {meta}. [Full checked source]({receipt['source']}); [receipt]({receipt_path}).\n"
         e=html.escape
@@ -168,6 +177,7 @@ def build():
         step_table+=f"| {r['hS']:.2f} | {r['peakQ']*180/math.pi:.4f} | {r['finalQ']*180/math.pi:.4f} | {r['sumEndpointWorkDefectJ']:.6f} | {r['maxTorqueBalanceNm']:.3g} |\n"
     def expand(web):
         text=re.sub(r'\{\{demo:(\w+)\}\}',lambda m:lab_block(m[1],web),chapters)
+        text=re.sub(r'\{\{property:(\w+)\}\}',lambda m:property_block(m[1],web),text)
         text=re.sub(r'\{\{proof:([\w-]+)\}\}',lambda m:proof_block(m[1],web),text)
         text=text.replace('{{evidence}}',(ROOT/'web/evidence.html').read_text() if web else 'The web edition provides a resettable static atlas viewer and a recorded-bin slider. The figures, source tables and downloads above and below provide the reading alternative.')
         text=text.replace('{{experiment}}',table).replace('{{spatial-experiment}}',spatial_table).replace('{{spatial-summary}}',spatial_summary)
@@ -176,7 +186,7 @@ def build():
         text=text.replace('{{coupled-profile}}',profile_table).replace('{{coupled-steps}}',step_table)
         if re.search(r'\{\{[A-Za-z]',text): raise ValueError('Unexpanded build directive')
         for receipt,checked_source,receipt_path,transcript_path,source_id,receipt_id,kernel_id in bundles:
-            text+='\n\n# Checked source appendix: '+Path(receipt['source']).stem+' {#'+source_id+'}\n\nCompilation establishes only the stated exact domain.\n\n```lean\n'+checked_source+'```\n\n## Proof check receipt {#'+receipt_id+'}\n\nFresh successful invocation: `'+receipt['command']+'`. Toolchain: '+receipt['lean_version']+'. Checked declarations: '+str(len(receipt['claims']))+'. Source SHA-256: `'+receipt['source_sha256']+'`. Claim-map SHA-256: `'+receipt['claims_sha256']+'`. Only bundled Std is used. This receipt does not validate floating-point implementation, biological parameters or anatomy.\n\n## Kernel dependency report {#'+kernel_id+'}\n\n```text\n'+(OUT/transcript_path).read_text()+'```\n'
+            text+='\n\n# Checked source appendix: '+Path(receipt['source']).stem+' {#'+source_id+'}\n\nCompilation establishes only the stated exact domain.\n\n```lean\n'+checked_source+'```\n\n## Proof check receipt {#'+receipt_id+'}\n\nFresh successful invocation: `'+receipt['command']+'`. Toolchain: '+receipt['lean_version']+'. Checked declarations: '+str(len(receipt['claims']))+'. Source SHA-256: `'+receipt['source_sha256']+'`. Claim-map SHA-256: `'+receipt['claims_sha256']+'`. Dependencies: '+dependency_description(receipt)+'. This receipt does not validate floating-point implementation, biological parameters or anatomy.\n\n## Kernel dependency report {#'+kernel_id+'}\n\n```text\n'+(OUT/transcript_path).read_text()+'```\n'
         return text
     front=f"---\ntitle: {manifest['title']}\nsubtitle: {manifest['subtitle']}\nlang: en\n---\n\n"
     (OUT/'kenoma-mechanics.md').write_text(front+expand(False))
@@ -201,6 +211,7 @@ def build():
     html_path.write_text(rendered)
     staging.unlink()
     assets=OUT/'assets';generate(assets)
+    subprocess.run(['node',str(ROOT/'tools/property-experiment.mjs'),str(assets),str(OUT/'property-experiment.json')],cwd=ROOT,check=True)
     evidence_figures(assets)
     advanced_figures(assets,spatial)
     from coupled_figures import generate as coupled_figures
@@ -213,16 +224,19 @@ def build():
     shutil.rmtree(OUT/'data/elbow-v1',ignore_errors=True)
     shutil.copytree(data,OUT/'data/elbow-v1',dirs_exist_ok=True,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
     shutil.copytree(ROOT/'data/anatomical-arm-v1',OUT/'data/anatomical-arm-v1',dirs_exist_ok=True)
+    shutil.copytree(ROOT/'data/property-labs-v1',OUT/'data/property-labs-v1',dirs_exist_ok=True)
     shutil.copy(ROOT/'web/style.css',assets/'style.css')
     shutil.copytree(ROOT/'web',OUT/'web',dirs_exist_ok=True)
     subprocess.run([str(ROOT/'node_modules/.bin/esbuild'),str(ROOT/'web/app.mjs'),'--bundle','--minify','--format=esm','--target=es2022',f'--outfile={assets/"app.js"}','--legal-comments=external'],check=True)
     proofs=OUT/'proofs';proofs.mkdir(exist_ok=True)
-    for file in ['Mechanics.lean','AnatomicalTransfer.lean','CoupledMechanics.lean','AnatomicalArm.lean','anatomical-claims.json','coupled-claims.json','arm-claims.json','lean-toolchain','claims.json']:shutil.copy(ROOT/'proofs'/file,proofs/file)
+    for file in ['Mechanics.lean','AnatomicalTransfer.lean','CoupledMechanics.lean','AnatomicalArm.lean','anatomical-claims.json','coupled-claims.json','arm-claims.json','ContinuumProperties.lean','property-claims.json','mathlib-lock.json','lean-toolchain','claims.json']:shutil.copy(ROOT/'proofs'/file,proofs/file)
     subprocess.run(['node',str(ROOT/'tools/build-anatomy-inspector.mjs')],check=True)
     subprocess.run(['node',str(ROOT/'tools/build-coupled-inspector.mjs')],check=True)
     subprocess.run(['node',str(ROOT/'tools/build-anatomical-arm-inspector.mjs')],check=True)
+    shutil.copy(ROOT/'.tools/mathlib4/LICENSE',proofs/'mathlib-LICENSE')
+    shutil.copy(ROOT/'.tools/mathlib4/lake-manifest.json',proofs/'mathlib-lake-manifest.json')
     notices=OUT/'THIRD_PARTY_NOTICES.txt'
-    notices.write_text('Kenoma original book and simulator content: Apache-2.0. Third-party data retains its component licenses below.\n\n'+(data/'LICENSES_AND_ATTRIBUTION.txt').read_text()+'\n\nThree.js 0.180.0 (MIT)\n'+(ROOT/'node_modules/three/LICENSE').read_text()+'\n\nBuild tool esbuild 0.25.10 (MIT)\n'+(ROOT/'node_modules/esbuild/LICENSE.md').read_text())
+    notices.write_text('Kenoma original book and simulator content: Apache-2.0. Third-party data retains its component licenses below.\n\n'+(data/'LICENSES_AND_ATTRIBUTION.txt').read_text()+'\n\nThree.js 0.180.0 (MIT)\n'+(ROOT/'node_modules/three/LICENSE').read_text()+'\n\nBuild tool esbuild 0.25.10 (MIT)\n'+(ROOT/'node_modules/esbuild/LICENSE.md').read_text()+'\n\nmathlib4 v4.19.0, commit '+properties['mathlib']['commit']+' (Apache-2.0); used for kernel-checked real kinematic identities. Locked transitive dependency metadata: proofs/mathlib-lock.json and upstream lake-manifest.json SHA-256 '+properties['mathlib']['manifest_sha256']+'\n'+(ROOT/'.tools/mathlib4/LICENSE').read_text())
     shutil.copytree(ROOT/'contributions/continuum_reference',OUT/'contributions/continuum_reference',dirs_exist_ok=True)
     shutil.copy(ROOT.parent/'LICENSE',OUT/'LICENSE')
     (OUT/'.nojekyll').touch()
@@ -233,6 +247,8 @@ def build():
       'pandoc':subprocess.check_output(['pandoc','--version'],text=True).splitlines()[0],
       'node':subprocess.check_output(['node','--version'],text=True).strip(),
       'numerical_experiment':'experiment.json','proof_evidence':'proof-status.json',
+      'proof_families':[b[2] for b in bundles],'property_mathlib':properties['mathlib'],
+      'property_experiment':'property-experiment.json',
       'git_revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
       'original_plans_base':'9b0c67fd25e1b645833a68bb9b1c2aba1404bbce',
       'determinism':'State progression repeatable in the pinned implementation; cross-browser transcendental bit identity and PDF byte identity not asserted.'}

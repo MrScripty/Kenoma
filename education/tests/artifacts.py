@@ -10,7 +10,7 @@ assert proof['claims_sha256']==hashlib.sha256((ROOT/'proofs/claims.json').read_b
 assert len(proof['claims'])==12 and all(c['status']=='checked' for c in proof['claims'])
 assert all(set(c['axioms'])<={'propext','Quot.sound','Classical.choice'} for c in proof['claims'])
 families=[(proof,'checked-source-appendix','proof-check-receipt','kernel-dependency-report')]
-for receipt_name,source_name,claims_name,prefix,count in [('transfer-proof-status.json','AnatomicalTransfer.lean','anatomical-claims.json','transfer',2),('coupled-proof-status.json','CoupledMechanics.lean','coupled-claims.json','coupled',7),('arm-proof-status.json','AnatomicalArm.lean','arm-claims.json','arm',4)]:
+for receipt_name,source_name,claims_name,prefix,count in [('transfer-proof-status.json','AnatomicalTransfer.lean','anatomical-claims.json','transfer',2),('coupled-proof-status.json','CoupledMechanics.lean','coupled-claims.json','coupled',7),('arm-proof-status.json','AnatomicalArm.lean','arm-claims.json','arm',4),('property-proof-status.json','ContinuumProperties.lean','property-claims.json','property',4)]:
  receipt=json.loads((out/receipt_name).read_text())
  assert receipt['source_sha256']==hashlib.sha256((ROOT/'proofs'/source_name).read_bytes()).hexdigest()
  assert receipt['claims_sha256']==hashlib.sha256((ROOT/'proofs'/claims_name).read_bytes()).hexdigest()
@@ -20,6 +20,44 @@ for receipt_name,source_name,claims_name,prefix,count in [('transfer-proof-statu
 total_claims=sum(len(r['claims']) for r,*_ in families)
 scope=(ROOT/'book/chapters/00-scope.md').read_text()
 assert f'The {total_claims} proof cards in this research edition' in scope,'Scope proof count differs from checked receipts'
+properties=json.loads((out/'property-proof-status.json').read_text())
+assert properties['mathlib']==json.loads((ROOT/'proofs/mathlib-lock.json').read_text())
+assert properties['mathlib']['commit']=='c44e0c8ee63ca166450922a373c7409c5d26b00b'
+assert properties['source']=='proofs/ContinuumProperties.lean'
+assert hashlib.sha256((out/'proofs/mathlib-lake-manifest.json').read_bytes()).hexdigest()==properties['mathlib']['manifest_sha256']
+property_experiment=json.loads((out/'property-experiment.json').read_text())
+for relative,digest in property_experiment['inputs'].items():
+ assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Property experiment source changed: '+relative
+assert abs(property_experiment['deformation']['volumeMeasurementDifference'])<1e-12
+assert abs(property_experiment['isochoric']['volumeRatio']-1)<1e-12
+assert abs(property_experiment['isochoric']['areaLengthMeasurementDifferenceM3'])<1e-15
+active=property_experiment['activeTwoSegment']
+assert abs(active['samples'][0]['strain']-1/300)<1e-12 and abs(active['samples'][1]['strain']+1/300)<1e-12
+assert abs(active['numericalExtensionM'])<1e-14
+errors=[abs(row['extensionErrorM']) for row in property_experiment['taperRefinement']]
+assert all(errors[i]<errors[i-1]/3.8 for i in range(1,len(errors)))
+property_browser=json.loads((out/'qa/property-browser-check.json').read_text())
+assert property_browser['result']=='PASS_INTEGRATED_PROPERTY_LABS' and property_browser['proof_cards']==total_claims
+assert property_browser['html_sha256']==hashlib.sha256((out/'index.html').read_bytes()).hexdigest()
+assert property_browser['app_sha256']==hashlib.sha256((out/'assets/app.js').read_bytes()).hexdigest()
+assert property_browser['manifest_sha256']==hashlib.sha256((out/'build-manifest.json').read_bytes()).hexdigest()
+warning_audit=json.loads((out/'data/property-labs-v1/endpoint-warning-audit.json').read_text())
+assert warning_audit['result']=='PASS_PRESERVED_WARNING_FAILURE_AND_ENDPOINT_CORRECTION'
+assert not warning_audit['frozen']['smallStrainWarning'] and warning_audit['corrected']['smallStrainWarning']
+assert abs(warning_audit['oracleMaximumStrain']-3/55)<1e-15
+assert all(r['smallStrainWarning'] and abs(r['trueMaximumStrain']-3/55)<1e-15 for r in warning_audit['refinements'])
+for relative,digest in warning_audit['sourceHashes'].items():
+ assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Endpoint audit source changed: '+relative
+property_render=json.loads((out/'property-book-review/render-receipt.json').read_text())
+assert property_render['result']=='PASS_PROPERTY_BOOK_RENDER_CAPTURE'
+assert property_render['html_sha256']==hashlib.sha256((out/'index.html').read_bytes()).hexdigest()
+assert property_render['pdf_sha256']==hashlib.sha256((out/'kenoma-mechanics.pdf').read_bytes()).hexdigest()
+assert property_render['build_manifest_sha256']==hashlib.sha256((out/'build-manifest.json').read_bytes()).hexdigest()
+assert property_render['inspector_sha256']==hashlib.sha256((ROOT/'tools/inspect_property_integration.py').read_bytes()).hexdigest()
+assert all(not v['horizontalOverflow'] and v['proofCards']==total_claims for v in property_render['views'])
+assert not property_render['page_errors']
+for name,digest in property_render['outputs'].items():
+ assert hashlib.sha256((out/'property-book-review'/name).read_bytes()).hexdigest()==digest,'Property render changed: '+name
 audit='data/anatomical-arm-v1/audit/'
 for stem,status,steps in [('contact-lift-release','PASS',15),('contact-fine-release','PASS_ACCEPTED_PREFIX',22)]:
  receipt=json.loads((out/audit/(stem+'-recheck.json')).read_text())
@@ -98,7 +136,7 @@ for relative,digest in envelope_plot['outputs'].items():
  assert hashlib.sha256((out/envelope_path/relative).read_bytes()).hexdigest()==digest,'Changed envelope render: '+relative
 text=(out/'kenoma-mechanics.md').read_text();assert not re.search(r'\{\{[A-Za-z]',text)
 assert f'The {total_claims} proof cards in this research edition' in text,'Manuscript proof count differs from checked receipts'
-for id in ['force-pair','torque-linearity','torque-origin','central-pair','kinetic-sign','torque-example']:
+for id in ['force-pair','torque-linearity','torque-origin','central-pair','kinetic-sign','torque-example','volume-edge-translation','volume-det-compose','volume-diagonal','volume-isochoric-sqrt']:
  assert f'Checked claim {id}:' in text
 browser=json.loads((out/'browser-check.json').read_text());assert browser['status']=='passed'
 assert browser['proof_cards']==total_claims
@@ -111,7 +149,7 @@ assert set(mobile['startup_draws'])=={'force','torque','energy','elbow','series'
 assert all(d['available'] and not d['lost'] and d['unique_colors']>100 and d['vivid_geometry_pixels']>300 for d in mobile['startup_draws'].values())
 doc=fitz.open(out/'kenoma-mechanics.pdf');combined='\n'.join(page.get_text() for page in doc)
 assert len(doc)>5 and '\ufffd' not in combined
-for needle in ['Force changes motion','Energy reveals numerical error','Checked source appendix','14.715','0.80','Store tendon energy','Inspect real anatomy','4,403','51.243524','798.52']:
+for needle in ['Force changes motion','Energy reveals numerical error','Checked source appendix','14.715','0.80','Store tendon energy','Inspect real anatomy','4,403','51.243524','798.52','Measure deformation','Volume and cross-section','Uneven axial strain']:
  assert needle in combined,needle
 spatial=json.loads((out/'spatial-experiment.json').read_text());reference=spatial['reference']
 assert spatial['sourceSha256']==hashlib.sha256((ROOT/'web/spatial.mjs').read_bytes()).hexdigest()
