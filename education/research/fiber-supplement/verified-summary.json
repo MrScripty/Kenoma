@@ -1,0 +1,118 @@
+{
+  "schema": 1,
+  "evidence_origin": "Parent original-source verification supplied in delegation; complete Library text unavailable in consumer workspace.",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3394665/",
+  "source_table": "Tirrell 2012 Table S1",
+  "quantity": "SDS-PAGE MHC-protein fraction",
+  "unit": "percent",
+  "classes": [
+    "I",
+    "IIa",
+    "IIx"
+  ],
+  "donors": {
+    "count": 6,
+    "women": 3,
+    "men": 3,
+    "age_range_years": [
+      73,
+      91
+    ],
+    "mean_age_years": 83
+  },
+  "uncertainty": "Paper reports SEM, not SD; numerical uncertainty values were not supplied and are omitted.",
+  "rows": [
+    {
+      "element_id": "FJ1478",
+      "atlas_name": "long head of right biceps brachii",
+      "reported_means_percent": [
+        55.0,
+        25.3,
+        19.7
+      ],
+      "rounded_sum_percent": 100.0
+    },
+    {
+      "element_id": "FJ1512",
+      "atlas_name": "short head of right biceps brachii",
+      "reported_means_percent": [
+        56.1,
+        25.7,
+        18.2
+      ],
+      "rounded_sum_percent": 100.0
+    },
+    {
+      "element_id": "FJ1486",
+      "atlas_name": "right brachialis",
+      "reported_means_percent": [
+        65.9,
+        20.1,
+        13.9
+      ],
+      "rounded_sum_percent": 99.9
+    },
+    {
+      "element_id": "FJ1479",
+      "atlas_name": "long head of right triceps brachii",
+      "reported_means_percent": [
+        48.1,
+        30.0,
+        22.0
+      ],
+      "rounded_sum_percent": 100.1
+    },
+    {
+      "element_id": "FJ1477",
+      "atlas_name": "lateral head of right triceps brachii",
+      "reported_means_percent": [
+        45.4,
+        32.3,
+        22.3
+      ],
+      "rounded_sum_percent": 100.0
+    },
+    {
+      "element_id": "FJ1480",
+      "atlas_name": "medial head of right triceps brachii",
+      "reported_means_percent": [
+        42.4,
+        39.6,
+        18.0
+      ],
+      "rounded_sum_percent": 100.0
+    }
+  ],
+  "repository_mapping_input_sha256": "1b80c1d3d9f2eb4370cd298f58f5e9c582625574f27072f6d3a1ea898ce4c036",
+  "comparison_evidence": [
+    {
+      "source": "https://pubmed.ncbi.nlm.nih.gov/31408678/",
+      "cohort": "27 older men",
+      "EDC": {
+        "slow_protein_percent": 50,
+        "pure_type_I_area_percent": 63
+      },
+      "biceps": {
+        "slow_protein_percent": 35,
+        "pure_type_I_area_percent": 47
+      },
+      "scope": "Different measurement fractions; not interchangeable."
+    },
+    {
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9925190/",
+      "usable_morphology_samples": 26,
+      "reported_type_I_count_percent_range": [
+        43,
+        63
+      ],
+      "scope": "Small sex/decade groups; no pooled muscle-specific default inferred."
+    }
+  ],
+  "not_supplied": [
+    "Brachioradialis composition",
+    "Numerical SEM values",
+    "Full historical tables",
+    "All 13 primary reference details"
+  ],
+  "applied_to_model": false
+}
