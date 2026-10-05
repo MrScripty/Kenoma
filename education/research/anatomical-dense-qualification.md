@@ -93,3 +93,17 @@ node --max-old-space-size=8192 tools/anatomical-enriched-step.mjs --replay
 ```
 
 The accepted comparison, including this adverse compression result, is preserved in `audit/anatomical-enriched-step.json` and `audit/anatomical-enriched-step-recheck.json`. Further work needs a better resolved displacement field and integration, plus independently justified bulk/active-stress calibration. No constitutive change or physiological qualification is selected here.
+
+## Compression predates whole-arm contact
+
+`tools/anatomical-fixed-end-compression-audit.mjs` independently replays the three original fixed-end, full-activation calibration poses using the original 32-point muscle potential and embedded sheets. All original endpoint-force targets and free-coordinate residuals pass. Both end rings remain fixed; no whole-arm contact, attached apparatus or time stepping enters this fixture. The diagnostic also evaluates the same coordinates with 256 positive body points and element corners, without fitting or solving.
+
+| Head | Fitted active stress scale (MPa) | Original queried corner J | Original global volume ratio | Frozen 256-point free residual (N) |
+|---|---:|---:|---:|---:|
+| Long biceps FJ1486 | 3.59933 | 0.559236 | 1.04781 | 0.132179 |
+| Short biceps FJ1512 | 8.70839 | 0.615812 | 1.02382 | 1.66242 |
+| Brachialis FJ1478 | 20.3781 | 0.609997 | 1.02796 | 0.674166 |
+
+All three frozen denser calibration residuals fail the unchanged **0.0001 N** gate. The local compression exists in isolated fixed-end poses before any whole-arm contact is applied. Global dilation and local volume loss coexist. The fitted stress scales are approximately **3.6–20.4 times** the authored 1 MPa bulk modulus; these ratios describe model parameters, not physiological tissue measurements. Matching an Arm26 actuator force in the restricted 32-point field does not qualify either the denser calibration or local tissue behavior. Any future constitutive/bulk change needs a newly resolved calibration and trajectory; none is silently retuned here.
+
+The audit binds the saved calibration, its original replay, Arm26 source, operators and diagnostic by SHA-256. The initial rejected schema read and corrected execution are retained separately in the raw review logs.
