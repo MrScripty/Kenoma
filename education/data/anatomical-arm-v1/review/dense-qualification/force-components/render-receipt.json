@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "inputSHA256": "c201d8671477503a23edbd3d48abd62de77796c6f7fa648c1ff70adc18940d3d",
+  "rendererSHA256": "cb7e19b5f26edc7451bed0cf329787f8ce01535f159dc6e59e16f693ed6b2e95",
+  "pythonVersion": "3.12.14",
+  "matplotlibVersion": "3.10.8",
+  "outputs": {
+    "nodal-force-components.svg": "8a3fdc8ae8ad31dfc8a4bb0c882a06687e28245b6038e85fbdf5d74073500f60",
+    "nodal-force-components.png": "087c88629ef44eaeff6e311c55211b58083779a22adc24f105e98d669c62ffd6"
+  },
+  "limits": [
+    "Components are scalar virtual-work derivatives in six normalized excluded shapes, not isolated nodal traction vectors.",
+    "The unchanged accepted pose is evaluated only; this does not select a material law or establish full nodal equilibrium."
+  ]
+}

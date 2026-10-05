@@ -164,6 +164,10 @@ A [controlled enriched increment](data/anatomical-arm-v1/audit/anatomical-enrich
 
 The [excluded-force decomposition](data/anatomical-arm-v1/audit/anatomical-nodal-force-components.json) locates the unbalanced virtual work at the original dense 63-coordinate state. In the largest missing direction at proximal node 98, bulk contributes **−1.972 N** to a total **−1.984 N**. In its global z direction, active-body work contributes **−1.383 N**, partly opposed by routed tendon forces. Contact contributions stay below **0.000858 N** across the six probes. Thus the unresolved stationarity involves bulk and active forces outside the retained tissue field. The component audit uses independent body virtual work and two perturbation sizes, retaining the original potential and reference geometry.
 
+![Bulk, active and apparatus virtual work outside the retained short-biceps field](data/anatomical-arm-v1/review/dense-qualification/force-components/nodal-force-components.svg)
+
+The stacked components and total markers evaluate the same accepted state. Each direction is a unit nodal shape projected off the retained displacement field; the plotted values are scalar energy derivatives, rather than isolated nodal traction vectors.
+
 An [independent audit of the original fixed-end calibration poses](data/anatomical-arm-v1/audit/anatomical-fixed-end-compression.json) locates compression before whole-arm contact: the three fully activated, isolated heads have queried corner $J$ of **0.55924, 0.61581 and 0.61000**, despite global volume ratios above one. Their original 32-point force matches pass. At unchanged coordinates, 256-point free residuals become **0.13218, 1.66242 and 0.67417 N**, all above **0.0001 N**. The saved actuator-force fit therefore needs its own resolution qualification before it can support physical material calibration.
 
 ### A self-consistent denser trajectory
