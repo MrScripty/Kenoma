@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/Kenoma-fiber-research/education/tests/browser.py", line 227, in <module>
+    if __name__=='__main__':check()
+                            ^^^^^^^
+  File "/workspace/Kenoma-fiber-research/education/tests/browser.py", line 19, in check
+    assert page.locator('.proof-card').count()==proof_count
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

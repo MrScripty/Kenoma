@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/Kenoma-fiber-research/education/tests/property_browser.py", line 78, in <module>
+    if __name__=='__main__':check(sys.argv[1] if len(sys.argv)>1 else ROOT/'dist/property-preview')
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Kenoma-fiber-research/education/tests/property_browser.py", line 73, in check
+    assert page.locator('.property-lesson .static-figure img').count()==3
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

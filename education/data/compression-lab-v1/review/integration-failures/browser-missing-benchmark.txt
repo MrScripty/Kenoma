@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/Kenoma-fiber-research/education/tests/browser.py", line 227, in <module>
+    if __name__=='__main__':check()
+                            ^^^^^^^
+  File "/workspace/Kenoma-fiber-research/education/tests/browser.py", line 26, in check
+    assert context.request.get(url+'/'+href.split('#')[0]).status==200,href
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: data/compression-lab-v1/benchmark.json

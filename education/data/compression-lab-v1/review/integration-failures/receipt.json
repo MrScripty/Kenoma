@@ -1,0 +1,9 @@
+{
+  "scope": "Research-only full-book integration failures. First proof-card assertion failure is preserved; diagnostic DOM has 33 cards. The next run passed that check and found the linked compression benchmark missing from generated output. Property image check previously included the new compression lesson in its three-lesson selector; now scoped to data-property. No scientific or numerical gate changes.",
+  "raw_sha256": {
+    "browser-first.txt": "811eadb2969a2d1eadbd255e6301cefd102677fe9798b31ade801136530b9379",
+    "browser-missing-benchmark.txt": "ca3f9f369bb0caf981180d36661d4cc22b0ac8595e032a6f77abf949abcf3b94",
+    "dom-diagnostic.txt": "d3b6482f500dcf337122cbd20b561a0f25839fdbc895e519efb6a4dca89f3003",
+    "property-image-selector.txt": "3e86b4383fc724ace3af52a923d31a3675cd8e5275efbb67995031ff2e4ae224"
+  }
+}
