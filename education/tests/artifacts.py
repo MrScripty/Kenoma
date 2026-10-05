@@ -10,7 +10,7 @@ assert proof['claims_sha256']==hashlib.sha256((ROOT/'proofs/claims.json').read_b
 assert len(proof['claims'])==12 and all(c['status']=='checked' for c in proof['claims'])
 assert all(set(c['axioms'])<={'propext','Quot.sound','Classical.choice'} for c in proof['claims'])
 families=[(proof,'checked-source-appendix','proof-check-receipt','kernel-dependency-report')]
-for receipt_name,source_name,claims_name,prefix,count in [('transfer-proof-status.json','AnatomicalTransfer.lean','anatomical-claims.json','transfer',2),('coupled-proof-status.json','CoupledMechanics.lean','coupled-claims.json','coupled',7),('arm-proof-status.json','AnatomicalArm.lean','arm-claims.json','arm',4),('property-proof-status.json','ContinuumProperties.lean','property-claims.json','property',4)]:
+for receipt_name,source_name,claims_name,prefix,count in [('transfer-proof-status.json','AnatomicalTransfer.lean','anatomical-claims.json','transfer',2),('coupled-proof-status.json','CoupledMechanics.lean','coupled-claims.json','coupled',7),('arm-proof-status.json','AnatomicalArm.lean','arm-claims.json','arm',4),('property-proof-status.json','ContinuumProperties.lean','property-claims.json','property',8)]:
  receipt=json.loads((out/receipt_name).read_text())
  assert receipt['source_sha256']==hashlib.sha256((ROOT/'proofs'/source_name).read_bytes()).hexdigest()
  assert receipt['claims_sha256']==hashlib.sha256((ROOT/'proofs'/claims_name).read_bytes()).hexdigest()
@@ -58,6 +58,26 @@ assert all(not v['horizontalOverflow'] and v['proofCards']==total_claims for v i
 assert not property_render['page_errors']
 for name,digest in property_render['outputs'].items():
  assert hashlib.sha256((out/'property-book-review'/name).read_bytes()).hexdigest()==digest,'Property render changed: '+name
+compression=json.loads((out/'compression-experiment.json').read_text())
+assert compression['result']=='PASS_LAB5_COMPRESSION_EXPERIMENT'
+assert compression==json.loads((ROOT/'data/compression-lab-v1/benchmark.json').read_text())
+for relative,digest in compression['inputs'].items():
+ assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Compression source differs: '+relative
+assert all(s['accepted'] and s['J']>0 and abs(s['volumeMeasurementDifference'])<1e-12 and abs(s['volumeEquilibriumDifference'])<1e-10 for s in compression['rows'])
+assert all(abs(s['forceResidualN'])<=1e-8 for s in compression['forceControlled'])
+assert all(not c['accepted'] and not c['stateAdvanced'] for c in compression['negativeCases'])
+compression_browser=json.loads((out/'qa/compression-browser-check.json').read_text())
+assert compression_browser['result']=='PASS_LAB5_COMPRESSION_BROWSER' and not compression_browser['javascript_errors']
+assert compression_browser['html_sha256']==hashlib.sha256((out/'index.html').read_bytes()).hexdigest()
+assert compression_browser['manifest_sha256']==hashlib.sha256((out/'build-manifest.json').read_bytes()).hexdigest()
+compression_render=json.loads((out/'compression-book-review/render-receipt.json').read_text())
+assert compression_render['result']=='PASS_COMPRESSION_BOOK_RENDER_CAPTURE'
+assert compression_render['pdf_sha256']==hashlib.sha256((out/'kenoma-mechanics.pdf').read_bytes()).hexdigest()
+assert compression_render['html_sha256']==compression_browser['html_sha256']
+assert compression_render['inspector_sha256']==hashlib.sha256((ROOT/'tools/inspect_compression_integration.py').read_bytes()).hexdigest()
+assert all(not v['horizontalOverflow'] and v['proofCards']==total_claims for v in compression_render['views'])
+for name,digest in compression_render['outputs'].items():
+ assert hashlib.sha256((out/'compression-book-review'/name).read_bytes()).hexdigest()==digest
 audit='data/anatomical-arm-v1/audit/'
 for stem,status,steps in [('contact-lift-release','PASS',15),('contact-fine-release','PASS_ACCEPTED_PREFIX',22)]:
  receipt=json.loads((out/audit/(stem+'-recheck.json')).read_text())

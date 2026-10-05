@@ -34,5 +34,5 @@ def check():
         if not set(axioms)<={'propext','Quot.sound','Classical.choice'}:raise RuntimeError('Unapproved kernel dependency')
         claim.update(status='checked',axioms=axioms)
     payload={'schema':1,'lean_version':version,'mathlib':lock,'source':'proofs/ContinuumProperties.lean','source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'claims_sha256':hashlib.sha256(claim_file.read_bytes()).hexdigest(),'command':'lake env lean -DwarningAsError=true proofs/ContinuumProperties.lean (from pinned mathlib workspace)','claims':claims}
-    target.write_text(json.dumps(payload,indent=2)+'\n');print(f'Checked {len(claims)} real kinematic claims with {version}');return payload
+    target.write_text(json.dumps(payload,indent=2)+'\n');print(f'Checked {len(claims)} real kinematic/material claims with {version}');return payload
 if __name__=='__main__':check()

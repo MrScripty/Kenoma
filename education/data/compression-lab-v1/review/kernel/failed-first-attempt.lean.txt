@@ -47,28 +47,27 @@ theorem isochoric_sqrt_construction (lambda : ℝ) (hlambda : 0 < lambda) :
         exact mul_inv_cancel₀ (ne_of_gt hlambda)
 
 
-noncomputable section
-
 /- Exact identities for Lab 5's declared split energy, per reference volume. -/
 def shapeDensity (mu J I1 : ℝ) : ℝ :=
-  mu / 2 * (J ^ (-2 / 3 : ℝ) * I1 - 3)
+  mu / 2 * (Real.rpow J (-2 / 3 : ℝ) * I1 - 3)
 
 def volumeDensity (bulk J : ℝ) : ℝ := bulk / 2 * (J - 1) ^ 2
 
 theorem dilation_shape_zero (mu s : ℝ) (hs : 0 < s) :
-    shapeDensity mu (s ^ (3 : ℕ)) (3 * s ^ (2 : ℕ)) = 0 := by
-  have hpow : (s ^ (3 : ℕ)) ^ (-2 / 3 : ℝ) = (s ^ (2 : ℕ))⁻¹ := by
+    shapeDensity mu (s ^ 3) (3 * s ^ 2) = 0 := by
+  have hpow : Real.rpow (s ^ 3) (-2 / 3 : ℝ) = (s ^ 2)⁻¹ := by
     calc
-      (s ^ (3 : ℕ)) ^ (-2 / 3 : ℝ) = s ^ (-2 : ℝ) := by
+      Real.rpow (s ^ 3) (-2 / 3 : ℝ) = Real.rpow s (-2 : ℝ) := by
         rw [← Real.rpow_natCast_mul hs.le 3]
         congr 1
         norm_num
-      _ = (s ^ (2 : ℕ))⁻¹ := by
-        rw [show (-2 : ℝ) = -(2 : ℝ) by norm_num, Real.rpow_neg hs.le, Real.rpow_two]
+      _ = (s ^ 2)⁻¹ := by
+        rw [show (-2 : ℝ) = -(2 : ℝ) by norm_num, Real.rpow_neg hs.le,
+          Real.rpow_natCast]
   unfold shapeDensity
   rw [hpow]
-  have hn : s ^ (2 : ℕ) ≠ 0 := pow_ne_zero _ (ne_of_gt hs)
-  have hcancel : (s ^ (2 : ℕ))⁻¹ * (3 * s ^ (2 : ℕ)) = 3 := by
+  have hn : s ^ 2 ≠ 0 := pow_ne_zero _ (ne_of_gt hs)
+  have hcancel : (s ^ 2)⁻¹ * (3 * s ^ 2) = 3 := by
     rw [mul_comm 3, ← mul_assoc, inv_mul_cancel₀ hn, one_mul]
   rw [hcancel]
   simp
@@ -87,18 +86,17 @@ theorem simple_shear_split (mu bulk gamma : ℝ) :
   have hdet : Matrix.det (shearMatrix gamma) = 1 := by
     simp [shearMatrix, Matrix.det_fin_three]
   have hI : squaredInvariant (shearMatrix gamma) = 3 + gamma ^ 2 := by
-    simp [squaredInvariant, shearMatrix, Fin.sum_univ_succ]
-    ring
+    simp [squaredInvariant, shearMatrix, Fin.sum_univ_succ] <;> ring
   rw [hdet, hI]
   simp [shapeDensity, volumeDensity]
 
 /- For F=diag(t,h,t), these are the actual split Cauchy components. -/
 def lateralCauchy (mu bulk t h : ℝ) : ℝ :=
-  mu / 3 * (t ^ (2 : ℕ) * h) ^ (-5 / 3 : ℝ) * (t ^ 2 - h ^ 2) +
+  mu / 3 * Real.rpow (t ^ 2 * h) (-5 / 3 : ℝ) * (t ^ 2 - h ^ 2) +
     bulk * (t ^ 2 * h - 1)
 
 def axialCauchy (mu bulk t h : ℝ) : ℝ :=
-  2 * mu / 3 * (t ^ (2 : ℕ) * h) ^ (-5 / 3 : ℝ) * (h ^ 2 - t ^ 2) +
+  2 * mu / 3 * Real.rpow (t ^ 2 * h) (-5 / 3 : ℝ) * (h ^ 2 - t ^ 2) +
     bulk * (t ^ 2 * h - 1)
 
 theorem mean_pressure_split (mu bulk t h : ℝ) :
@@ -113,8 +111,6 @@ theorem free_side_plate_pressure (mu bulk t h : ℝ)
   have hm := mean_pressure_split mu bulk t h
   rw [hfree] at hm
   linarith
-
-end
 
 end KenomaProperties
 

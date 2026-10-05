@@ -7,6 +7,7 @@ from check_coupled_proofs import check as check_coupled
 from check_arm_proofs import check as check_arm
 from check_property_proofs import check as check_properties
 from property_labs import block as property_block
+from compression_lab import block as compression_block
 from figures import generate
 from evidence_figures import generate as evidence_figures
 from spatial_figures import generate as advanced_figures
@@ -178,6 +179,7 @@ def build():
     def expand(web):
         text=re.sub(r'\{\{demo:(\w+)\}\}',lambda m:lab_block(m[1],web),chapters)
         text=re.sub(r'\{\{property:(\w+)\}\}',lambda m:property_block(m[1],web),text)
+        text=text.replace('{{compression-lab}}',compression_block(web))
         text=re.sub(r'\{\{proof:([\w-]+)\}\}',lambda m:proof_block(m[1],web),text)
         text=text.replace('{{evidence}}',(ROOT/'web/evidence.html').read_text() if web else 'The web edition provides a resettable static atlas viewer and a recorded-bin slider. The figures, source tables and downloads above and below provide the reading alternative.')
         text=text.replace('{{experiment}}',table).replace('{{spatial-experiment}}',spatial_table).replace('{{spatial-summary}}',spatial_summary)
@@ -212,6 +214,7 @@ def build():
     staging.unlink()
     assets=OUT/'assets';generate(assets)
     subprocess.run(['node',str(ROOT/'tools/property-experiment.mjs'),str(assets),str(OUT/'property-experiment.json')],cwd=ROOT,check=True)
+    subprocess.run(['node',str(ROOT/'tools/compression-experiment.mjs'),str(assets),str(OUT/'compression-experiment.json')],cwd=ROOT,check=True)
     evidence_figures(assets)
     advanced_figures(assets,spatial)
     from coupled_figures import generate as coupled_figures
@@ -236,7 +239,7 @@ def build():
     shutil.copy(ROOT/'.tools/mathlib4/LICENSE',proofs/'mathlib-LICENSE')
     shutil.copy(ROOT/'.tools/mathlib4/lake-manifest.json',proofs/'mathlib-lake-manifest.json')
     notices=OUT/'THIRD_PARTY_NOTICES.txt'
-    notices.write_text('Kenoma original book and simulator content: Apache-2.0. Third-party data retains its component licenses below.\n\n'+(data/'LICENSES_AND_ATTRIBUTION.txt').read_text()+'\n\nThree.js 0.180.0 (MIT)\n'+(ROOT/'node_modules/three/LICENSE').read_text()+'\n\nBuild tool esbuild 0.25.10 (MIT)\n'+(ROOT/'node_modules/esbuild/LICENSE.md').read_text()+'\n\nmathlib4 v4.19.0, commit '+properties['mathlib']['commit']+' (Apache-2.0); used for kernel-checked real kinematic identities. Locked transitive dependency metadata: proofs/mathlib-lock.json and upstream lake-manifest.json SHA-256 '+properties['mathlib']['manifest_sha256']+'\n'+(ROOT/'.tools/mathlib4/LICENSE').read_text())
+    notices.write_text('Kenoma original book and simulator content: Apache-2.0. Third-party data retains its component licenses below.\n\n'+(data/'LICENSES_AND_ATTRIBUTION.txt').read_text()+'\n\nThree.js 0.180.0 (MIT)\n'+(ROOT/'node_modules/three/LICENSE').read_text()+'\n\nBuild tool esbuild 0.25.10 (MIT)\n'+(ROOT/'node_modules/esbuild/LICENSE.md').read_text()+'\n\nmathlib4 v4.19.0, commit '+properties['mathlib']['commit']+' (Apache-2.0); used for kernel-checked real kinematic/material identities. Locked transitive dependency metadata: proofs/mathlib-lock.json and upstream lake-manifest.json SHA-256 '+properties['mathlib']['manifest_sha256']+'\n'+(ROOT/'.tools/mathlib4/LICENSE').read_text())
     shutil.copytree(ROOT/'contributions/continuum_reference',OUT/'contributions/continuum_reference',dirs_exist_ok=True)
     shutil.copy(ROOT.parent/'LICENSE',OUT/'LICENSE')
     (OUT/'.nojekyll').touch()
@@ -248,7 +251,7 @@ def build():
       'node':subprocess.check_output(['node','--version'],text=True).strip(),
       'numerical_experiment':'experiment.json','proof_evidence':'proof-status.json',
       'proof_families':[b[2] for b in bundles],'property_mathlib':properties['mathlib'],
-      'property_experiment':'property-experiment.json',
+      'property_experiment':'property-experiment.json','compression_experiment':'compression-experiment.json',
       'git_revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
       'original_plans_base':'9b0c67fd25e1b645833a68bb9b1c2aba1404bbce',
       'determinism':'State progression repeatable in the pinned implementation; cross-browser transcendental bit identity and PDF byte identity not asserted.'}

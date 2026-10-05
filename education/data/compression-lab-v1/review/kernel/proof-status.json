@@ -1,0 +1,131 @@
+{
+  "schema": 1,
+  "lean_version": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)",
+  "mathlib": {
+    "repository": "https://github.com/leanprover-community/mathlib4",
+    "tag": "v4.19.0",
+    "commit": "c44e0c8ee63ca166450922a373c7409c5d26b00b",
+    "manifest_sha256": "5c6421b650bc87a2427a892a39e5522dc44543ca4ac1bd6e9f08d536c044a752",
+    "toolchain": "leanprover/lean4:v4.19.0",
+    "license": "Apache-2.0",
+    "qualification": "Fresh compilation required; this lock alone is not proof evidence."
+  },
+  "source": "proofs/ContinuumProperties.lean",
+  "source_sha256": "fe98ebd6b702914562228167250e3be017b001cbcb5be54c77b8c9783375f28a",
+  "claims_sha256": "294fa5f120ec7c322d62722218a584a12ff65acb38ef9d63d7c046f7af417d1e",
+  "command": "lake env lean -DwarningAsError=true proofs/ContinuumProperties.lean (from pinned mathlib workspace)",
+  "claims": [
+    {
+      "id": "volume-edge-translation",
+      "theorem": "KenomaProperties.edge_translation_invariant",
+      "claim": "Adding one real translation to all four vertices leaves the tetrahedral edge matrix unchanged.",
+      "assumptions": "Four real three-dimensional vertex vectors; the same translation acts on each vertex. A meaningful physical deformation gradient additionally requires a nondegenerate reference tetrahedron.",
+      "limitations": "No floating-point equivalence, boundary triangulation, inversion detection, equilibrium or biological claim is established.",
+      "implementation": "web/continuum-properties.mjs: measureTetrahedron and boundaryMeasurements; numerical geometry and translation are checked separately.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "volume-det-compose",
+      "theorem": "KenomaProperties.determinant_composition",
+      "claim": "The determinant of a product of real 3 by 3 matrices is the product of their determinants.",
+      "assumptions": "Real square matrices; this supports F=Ds*inverse(Dm) with separately assumed invertible reference geometry.",
+      "limitations": "Does not certify JavaScript matrix multiplication/inversion, mesh orientation or boundary measurements.",
+      "implementation": "web/continuum-properties.mjs: multiply3 and measured deformation gradient; separate nontrivial matrix and geometric tests.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "volume-diagonal",
+      "theorem": "KenomaProperties.axial_determinant",
+      "claim": "The real axial/lateral diagonal deformation diag(lambda,b,b) has determinant lambda \u00d7 b \u00d7 b.",
+      "assumptions": "Real stretches; physical use additionally requires lambda>0 and b>0. Unit determinant follows whenever the stated product equals one.",
+      "limitations": "A kinematic identity; no force equilibrium, finite-bulk incompressibility, material response or biological correctness follows.",
+      "implementation": "web/continuum-properties.mjs: isochoricState; independent oriented boundary and area-times-length measurements.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "volume-isochoric-sqrt",
+      "theorem": "KenomaProperties.isochoric_sqrt_construction",
+      "claim": "For real lambda>0, b=1/sqrt(lambda) is positive and diag(lambda,b,b) has unit determinant.",
+      "assumptions": "Positive real axial stretch and the exact real square-root construction.",
+      "limitations": "Does not prove binary64 sqrt/division or measured browser volume is exact, and does not establish a passive or active equilibrium.",
+      "implementation": "web/continuum-properties.mjs: the actual isochoric toggle; floating-point boundary-volume error is reported.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "compression-dilation",
+      "theorem": "KenomaProperties.dilation_shape_zero",
+      "claim": "For positive real uniform scale, Lab 5\u2019s declared isochoric energy density is exactly zero.",
+      "assumptions": "Positive real s; declared J=s\u00b3, I\u2081=3s\u00b2 and exact real power.",
+      "limitations": "Does not prove zero volume energy, binary64 power correctness, constitutive calibration or full displacement stability.",
+      "implementation": "web/compression.mjs with unchanged web/tissue.mjs; independent geometric volume, volume-variable traction equation and energy derivatives checked numerically.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "compression-shear",
+      "theorem": "KenomaProperties.simple_shear_split",
+      "claim": "The actual simple-shear matrix has unit determinant, shape energy \u03bc\u03b3\u00b2/2 and zero quadratic volume energy.",
+      "assumptions": "Exact real gamma, mu and bulk; physical use requires mu>0 and bulk\u22650.",
+      "limitations": "No stress derivative, browser arithmetic, mesh equilibrium or biological validation is proved.",
+      "implementation": "web/compression.mjs with unchanged web/tissue.mjs; independent geometric volume, volume-variable traction equation and energy derivatives checked numerically.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "compression-mean-pressure",
+      "theorem": "KenomaProperties.mean_pressure_split",
+      "claim": "For the declared diagonal split Cauchy law, mean compressive stress equals K(1\u2212J).",
+      "assumptions": "Exact real identity for the displayed components; physical use requires positive t and h, mu>0 and K\u22650.",
+      "limitations": "Does not certify the Piola-to-Cauchy code, stress derivatives or a pressure discretization.",
+      "implementation": "web/compression.mjs with unchanged web/tissue.mjs; independent geometric volume, volume-variable traction equation and energy derivatives checked numerically.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "compression-free-pressure",
+      "theorem": "KenomaProperties.free_side_plate_pressure",
+      "claim": "At zero lateral traction, plate compressive pressure equals three times K(1\u2212J).",
+      "assumptions": "Declared diagonal Cauchy law and zero lateral Cauchy stress; physical use requires positive stretches and positive current area.",
+      "limitations": "Conditional algebra only; no existence, uniqueness, stability or numerical root acceptance is proved.",
+      "implementation": "web/compression.mjs with unchanged web/tissue.mjs; independent geometric volume, volume-variable traction equation and energy derivatives checked numerically.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ]
+}

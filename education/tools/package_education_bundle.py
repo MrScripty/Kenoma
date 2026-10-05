@@ -9,6 +9,7 @@ def package(destination):
     for name in ['artifact-check.json','browser-check.json','mobile-startup-check.json']:
         if json.loads((out/name).read_text())['status']!='passed':raise RuntimeError('Missing successful check: '+name)
     if json.loads((out/'qa/property-browser-check.json').read_text())['result']!='PASS_INTEGRATED_PROPERTY_LABS':raise RuntimeError('Property interactions not checked')
+    if 'compression_experiment' in manifest and json.loads((out/'qa/compression-browser-check.json').read_text())['result']!='PASS_LAB5_COMPRESSION_BROWSER':raise RuntimeError('Compression interactions not checked')
     for name in manifest['proof_families']:
         if not all(c['status']=='checked' for c in json.loads((out/name).read_text())['claims']):raise RuntimeError('Unqualified proof receipt: '+name)
     target=Path(destination).resolve();target.parent.mkdir(parents=True,exist_ok=True)

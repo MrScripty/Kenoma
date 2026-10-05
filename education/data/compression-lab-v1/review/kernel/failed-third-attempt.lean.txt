@@ -64,7 +64,7 @@ theorem dilation_shape_zero (mu s : ℝ) (hs : 0 < s) :
         congr 1
         norm_num
       _ = (s ^ (2 : ℕ))⁻¹ := by
-        rw [show (-2 : ℝ) = -(2 : ℝ) by norm_num, Real.rpow_neg hs.le, Real.rpow_two]
+        rw [show (-2 : ℝ) = -(2 : ℝ) by norm_num, Real.rpow_neg hs.le]
   unfold shapeDensity
   rw [hpow]
   have hn : s ^ (2 : ℕ) ≠ 0 := pow_ne_zero _ (ne_of_gt hs)

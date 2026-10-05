@@ -45,7 +45,9 @@ def visit(name):
    for dep in match[1].split('--')[0].split():
     if source(dep) is not None:graph[name].add(dep);visit(dep)
   else:break
-for name in ['Mathlib.LinearAlgebra.Matrix.Determinant.Basic','Mathlib.Data.Real.Sqrt']:visit(name)
+for line in (ROOT/'proofs/ContinuumProperties.lean').read_text().splitlines():
+ match=re.match(r'^import\s+(\S+)',line)
+ if match:visit(match[1])
 print('SOURCE_MODULE_COUNT',len(graph),flush=True)
 # Preserve the workspace cache and no-download settings established above.
 logs=ROOT/'.tools/property-mathlib-source-logs';logs.mkdir(exist_ok=True)
@@ -54,7 +56,10 @@ def build(name):
   result=subprocess.run(['lake','--no-cache','build',name],cwd=root,env=env,stdout=stream,stderr=subprocess.STDOUT)
  if result.returncode:raise RuntimeError('Source build failed '+name+'; raw '+str(logs/(name+'.txt')))
  return name
-done=set();pending=set(graph);jobs={}
+# Completed pinned imports are reused; only new dependency modules are built.
+done={name for name in graph if any((package/'.lake/build/lib/lean'/(name.replace('.','/')+'.olean')).exists() for package in roots)}
+print('SOURCE_REUSED_MODULES',len(done),flush=True)
+pending=set(graph)-done;jobs={}
 with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
  while pending or jobs:
   ready=sorted(n for n in pending if graph[n]<=done)
@@ -64,4 +69,8 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
   for future in finished:
    name=jobs.pop(future);future.result();done.add(name)
    if len(done)%25==0 or not pending:print('SOURCE_PROGRESS',len(done),len(graph),name,flush=True)
+# Ask Lake to check the final import targets and their traces after expansion.
+for line in (ROOT/'proofs/ContinuumProperties.lean').read_text().splitlines():
+ match=re.match(r'^import\s+(\S+)',line)
+ if match:build(match[1])
 print('SOURCE_BUILD_COMPLETE',len(done),flush=True)

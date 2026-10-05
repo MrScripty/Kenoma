@@ -1,0 +1,9 @@
+# Lab 5 finite-bulk milestone
+
+This successor starts from frozen e19b9bf40226352e9e94bcae801ab97c208cd31a and preserves all delivered assets, prior research/refinement failures and live arm processes in the original checkout. CI reproducibility repair is separately owned by branch education/proof-build-repro and is not folded into this feature.
+
+The additive experiment reuses the unchanged Lab 5 material functions and dimensions. It adds separate bulk/shear, force/height and free/confined controls, independent boundary volume and volume-variable lateral equilibrium, two energy-derivative increments, near-reference moduli and converging plate-work quadrature. Force control is deliberately bounded; zero-bulk free contraction and unsupported loads reject without updating the accepted state. The arm material, force/contact gates and Newton iteration budgets remain unchanged.
+
+All 134 Node tests and 16 Python tests passed. Actual desktop/mobile controls passed, including paired keyboard input, invalid drafts, rollback/reset, print and zero-JavaScript alternatives. Four additional exact real identities compiled successfully with Lean 4.19.0 and the existing locked mathlib revision. The eight-real-claim bundle uses only propext, Classical.choice and Quot.sound. Three failed compile attempts are retained; no receipt or checked badge was emitted for them.
+
+The main book is integrating the extension in the existing Lab 5 chapter, keeping 21 chapters and expanding to 33 checked claims. The duplicate print captions and stale computational-geometry proof count noted in review are corrected in this book successor. Main build/PDF/layout checks and deliverable hashes will be recorded after the integrated render. Homogeneous qualification does not establish anatomical convergence, full displacement/pressure adequacy or credible tissue compression.

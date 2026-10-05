@@ -62,7 +62,7 @@ def check(destination):
         for lab in [deformation,iso,bar]:
             lab.scroll_into_view_if_needed();assert lab.evaluate('(x)=>x.scrollWidth<=x.clientWidth+1');lab.screenshot(path=str(qa/(lab.get_attribute('data-property')+'-mobile.png')))
         page.emulate_media(media='print')
-        for lab in [deformation,iso,bar]:expect(lab.locator('.static-figure')).to_be_visible();expect(lab.locator('.property-scene')).to_be_hidden()
+        for lab in [deformation,iso,bar]:expect(lab.locator('.static-figure')).to_be_visible();expect(lab.locator('.property-scene')).to_be_hidden();expect(lab.locator('.property-description')).to_be_hidden()
         revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
         page.evaluate('''revision=>{for(const link of document.querySelectorAll('a[href^="web/"]'))link.setAttribute('href',`https://github.com/MrScripty/Kenoma/blob/${revision}/education/${link.getAttribute('href')}`)}''',revision)
         if preview_mode:page.pdf(path=str(qa/'property-lessons.pdf'),format='A4',print_background=True)

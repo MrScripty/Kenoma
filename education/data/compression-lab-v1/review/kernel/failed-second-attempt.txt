@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "/workspace/Kenoma-compression-lab/education/tools/check_property_proofs.py", line 38, in <module>
+    if __name__=='__main__':check()
+                            ^^^^^^^
+  File "/workspace/Kenoma-compression-lab/education/tools/check_property_proofs.py", line 25, in check
+    if result.returncode:raise RuntimeError(transcript)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: /workspace/Kenoma-compression-lab/education/proofs/ContinuumProperties.lean:68:10: error: tactic 'rewrite' failed, did not find instance of the pattern in the target expression
+  ?x ^ ↑?n
+mu s : ℝ
+hs : 0 < s
+⊢ (s ^ 2)⁻¹ = (s ^ 2)⁻¹
+'KenomaProperties.edge_translation_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KenomaProperties.determinant_composition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KenomaProperties.axial_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KenomaProperties.isochoric_sqrt_construction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KenomaProperties.dilation_shape_zero' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'KenomaProperties.simple_shear_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KenomaProperties.mean_pressure_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KenomaProperties.free_side_plate_pressure' depends on axioms: [propext, Classical.choice, Quot.sound]
+

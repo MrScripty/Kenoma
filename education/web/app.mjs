@@ -1,3 +1,4 @@
+import './compression-lab.mjs';
 import * as THREE from 'three';
 import './property-labs.mjs';
 import {formatReadout} from './readout.mjs';

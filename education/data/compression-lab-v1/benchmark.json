@@ -1,0 +1,3929 @@
+{
+  "schema": 1,
+  "result": "PASS_LAB5_COMPRESSION_EXPERIMENT",
+  "node": "v24.19.0",
+  "inputs": {
+    "web/compression.mjs": "6650f3c4a42bc9a429207791597d37e8cea52d2144668d7b54b6cb6c1a466ead",
+    "web/compression-lab.mjs": "a9fb9025d11b9e2a40aa2a3616f9bf15fb7239556c1f8653c76c38792b9bb22b",
+    "web/tissue.mjs": "72d88e8afa18af7acf3f5ab45d6b1676a0beff523a124023f19cce99347b1b30",
+    "web/continuum-properties.mjs": "29bcfa030f0a1af6d0c17ed72e2801f580c69c5fa45af26459e1028ba5dc5753",
+    "web/property-labs.mjs": "e302e23845bebb2a314df612d4f48fea773de2dc6b0bd65daf6001c152721788",
+    "tools/compression_lab.py": "6ed4648902e8355fede711923f9ffe965707294b5a738a9cb0d2470fb006260f",
+    "tools/compression-experiment.mjs": "0c00caee4b97b8391beba0b2f31374faf1dad32ccf9a5114bd85ad4c9864a255",
+    "tests/compression.test.mjs": "c876dbcd0aefc3b7e5f35d48ae12283b2764a6d4260e38e72f4d09d21d892018"
+  },
+  "defaults": {
+    "mu": 1500,
+    "bulk": 50000,
+    "heightStretch": 0.8,
+    "force": 2,
+    "mode": "displacement",
+    "boundary": "free"
+  },
+  "limits": {
+    "minimumHeightStretch": 0.6,
+    "forceMinimumHeightStretch": 0.8,
+    "stressTolerancePa": 1e-7,
+    "forceToleranceN": 1e-8,
+    "energyDerivativeTolerancePa": 0.001,
+    "rootBisections": 52
+  },
+  "dimensionsM": {
+    "width": 0.08,
+    "height": 0.06,
+    "depth": 0.05
+  },
+  "law": "mu/2*(J^(-2/3)*I1-3)+K/2*(J-1)^2 per reference volume; unchanged Lab 5",
+  "rows": [
+    {
+      "accepted": true,
+      "scope": "Homogeneous isotropic elastic Lab 5 block; prescribed boundary or stationary compression branch. No biological calibration, spatial stability or anatomical convergence.",
+      "controls": {
+        "mu": 1500,
+        "bulk": 50000,
+        "heightStretch": 1,
+        "force": 2,
+        "mode": "displacement",
+        "boundary": "free"
+      },
+      "heightStretch": 1,
+      "lateralStretch": 1,
+      "J": 1,
+      "volumeRatio": 1,
+      "volumeMeasurementDifference": 0,
+      "volumeEquilibriumJ": 1,
+      "volumeEquilibriumDifference": 0,
+      "reference": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "current": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "referenceBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "currentBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "heightM": 0.06,
+      "plateDisplacementM": 0,
+      "currentPlateAreaM2": 0.004,
+      "plateReactionN": 0,
+      "platePressurePa": 0,
+      "bulkPressurePa": 0,
+      "meanCompressionPressurePa": 0,
+      "lateralPiolaStressPa": 0,
+      "axialPiolaStressPa": 0,
+      "lateralCauchyStressPa": 0,
+      "axialCauchyStressPa": 0,
+      "sideSupportForceN": 0,
+      "energyJ": 0,
+      "deviatoricEnergyJ": 0,
+      "volumeEnergyJ": 0,
+      "forceResidualN": 0,
+      "lateralResidualPa": 0,
+      "energyDerivativeProbes": [
+        {
+          "delta": 0.000002,
+          "axialPa": -8.326395129188601e-8,
+          "lateralPa": 2.0000390233056854e-7,
+          "axialDifferencePa": -8.326395129188601e-8,
+          "lateralDifferencePa": 2.0000390233056854e-7
+        },
+        {
+          "delta": 0.000001,
+          "axialPa": -1.6653622924917815e-7,
+          "lateralPa": 4.999611835863086e-8,
+          "axialDifferencePa": -1.6653622924917815e-7,
+          "lateralDifferencePa": 4.999611835863086e-8
+        }
+      ],
+      "maxSupportedForceN": 4.536371031795807,
+      "forceBranch": "Imposed height 0.6 ≤ h ≤ 1; reaction is an output",
+      "bulkShearRatio": 33.333333333333336,
+      "isochoricComparison": {
+        "lateralStretch": 1,
+        "J": 1,
+        "interpretation": "Prescribed exact-isochoric geometry; not the finite-bulk free-side equilibrium"
+      }
+    },
+    {
+      "accepted": true,
+      "scope": "Homogeneous isotropic elastic Lab 5 block; prescribed boundary or stationary compression branch. No biological calibration, spatial stability or anatomical convergence.",
+      "controls": {
+        "mu": 1500,
+        "bulk": 50000,
+        "heightStretch": 1,
+        "force": 2,
+        "mode": "displacement",
+        "boundary": "confined"
+      },
+      "heightStretch": 1,
+      "lateralStretch": 1,
+      "J": 1,
+      "volumeRatio": 1,
+      "volumeMeasurementDifference": 0,
+      "volumeEquilibriumJ": 1,
+      "volumeEquilibriumDifference": 0,
+      "reference": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "current": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "referenceBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "currentBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "heightM": 0.06,
+      "plateDisplacementM": 0,
+      "currentPlateAreaM2": 0.004,
+      "plateReactionN": 0,
+      "platePressurePa": 0,
+      "bulkPressurePa": 0,
+      "meanCompressionPressurePa": 0,
+      "lateralPiolaStressPa": 0,
+      "axialPiolaStressPa": 0,
+      "lateralCauchyStressPa": 0,
+      "axialCauchyStressPa": 0,
+      "sideSupportForceN": 0,
+      "energyJ": 0,
+      "deviatoricEnergyJ": 0,
+      "volumeEnergyJ": 0,
+      "forceResidualN": 0,
+      "lateralResidualPa": null,
+      "energyDerivativeProbes": [
+        {
+          "delta": 0.000002,
+          "axialPa": -8.326395129188601e-8,
+          "lateralPa": 2.0000390233056854e-7,
+          "axialDifferencePa": -8.326395129188601e-8,
+          "lateralDifferencePa": 2.0000390233056854e-7
+        },
+        {
+          "delta": 0.000001,
+          "axialPa": -1.6653622924917815e-7,
+          "lateralPa": 4.999611835863086e-8,
+          "axialDifferencePa": -1.6653622924917815e-7,
+          "lateralDifferencePa": 4.999611835863086e-8
+        }
+      ],
+      "maxSupportedForceN": 42.08871497512574,
+      "forceBranch": "Imposed height 0.6 ≤ h ≤ 1; reaction is an output",
+      "bulkShearRatio": 33.333333333333336,
+      "isochoricComparison": {
+        "lateralStretch": 1,
+        "J": 1,
+        "interpretation": "Prescribed exact-isochoric geometry; not the finite-bulk free-side equilibrium"
+      }
+    },
+    {
+      "accepted": true,
+      "scope": "Homogeneous isotropic elastic Lab 5 block; prescribed boundary or stationary compression branch. No biological calibration, spatial stability or anatomical convergence.",
+      "controls": {
+        "mu": 1500,
+        "bulk": 50000,
+        "heightStretch": 0.9,
+        "force": 2,
+        "mode": "displacement",
+        "boundary": "free"
+      },
+      "heightStretch": 0.9,
+      "lateralStretch": 1.0525140426614987,
+      "J": 0.9970072289996861,
+      "volumeRatio": 0.9970072289996863,
+      "volumeMeasurementDifference": 2.220446049250313e-16,
+      "volumeEquilibriumJ": 0.9970072289996861,
+      "volumeEquilibriumDifference": 0,
+      "reference": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "current": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.0842011234129199,
+          0,
+          0
+        ],
+        [
+          0,
+          0.054,
+          0
+        ],
+        [
+          0.0842011234129199,
+          0.054,
+          0
+        ],
+        [
+          0,
+          0,
+          0.052625702133074936
+        ],
+        [
+          0.0842011234129199,
+          0,
+          0.052625702133074936
+        ],
+        [
+          0,
+          0.054,
+          0.052625702133074936
+        ],
+        [
+          0.0842011234129199,
+          0.054,
+          0.052625702133074936
+        ]
+      ],
+      "referenceBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "currentBoundary": {
+        "signedVolumeM3": 0.0002392817349599247,
+        "surfaceAreaM2": 0.02363958363896464,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "heightM": 0.054,
+      "plateDisplacementM": 0.005999999999999998,
+      "currentPlateAreaM2": 0.0044311432399986046,
+      "plateReactionN": 1.989209548035782,
+      "platePressurePa": 448.915650047099,
+      "bulkPressurePa": 149.63855001569604,
+      "meanCompressionPressurePa": 149.63855001569598,
+      "lateralPiolaStressPa": 5.258016244624741e-12,
+      "axialPiolaStressPa": -497.3023870089455,
+      "lateralCauchyStressPa": 5.550748051809322e-12,
+      "axialCauchyStressPa": -448.915650047099,
+      "sideSupportForceN": 1.5774048733874226e-14,
+      "energyJ": 0.005745929965874793,
+      "deviatoricEnergyJ": 0.005692189896312873,
+      "volumeEnergyJ": 0.00005374006956191991,
+      "forceResidualN": 0,
+      "lateralResidualPa": 5.258016244624741e-12,
+      "energyDerivativeProbes": [
+        {
+          "delta": 0.000002,
+          "axialPa": -497.30238701352386,
+          "lateralPa": 1.481742969063523e-7,
+          "axialDifferencePa": -4.57833948530606e-9,
+          "lateralDifferencePa": 1.4816903889010768e-7
+        },
+        {
+          "delta": 0.000001,
+          "axialPa": -497.30238685179705,
+          "lateralPa": -9.035018104045873e-9,
+          "axialDifferencePa": 1.5714846313130693e-7,
+          "lateralDifferencePa": -9.040276120290498e-9
+        }
+      ],
+      "maxSupportedForceN": 4.536371031795807,
+      "forceBranch": "Imposed height 0.6 ≤ h ≤ 1; reaction is an output",
+      "bulkShearRatio": 33.333333333333336,
+      "isochoricComparison": {
+        "lateralStretch": 1.0540925533894598,
+        "J": 1,
+        "interpretation": "Prescribed exact-isochoric geometry; not the finite-bulk free-side equilibrium"
+      }
+    },
+    {
+      "accepted": true,
+      "scope": "Homogeneous isotropic elastic Lab 5 block; prescribed boundary or stationary compression branch. No biological calibration, spatial stability or anatomical convergence.",
+      "controls": {
+        "mu": 1500,
+        "bulk": 50000,
+        "heightStretch": 0.9,
+        "force": 2,
+        "mode": "displacement",
+        "boundary": "confined"
+      },
+      "heightStretch": 0.9,
+      "lateralStretch": 1,
+      "J": 0.9,
+      "volumeRatio": 0.9000000000000001,
+      "volumeMeasurementDifference": 1.1102230246251565e-16,
+      "volumeEquilibriumJ": 0.9,
+      "volumeEquilibriumDifference": 0,
+      "reference": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "current": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.054,
+          0
+        ],
+        [
+          0.08,
+          0.054,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.054,
+          0.05
+        ],
+        [
+          0.08,
+          0.054,
+          0.05
+        ]
+      ],
+      "referenceBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "currentBoundary": {
+        "signedVolumeM3": 0.00021600000000000002,
+        "surfaceAreaM2": 0.022040000000000004,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "heightM": 0.054,
+      "plateDisplacementM": 0.005999999999999998,
+      "currentPlateAreaM2": 0.004,
+      "plateReactionN": 20.905891274444784,
+      "platePressurePa": 5226.472818611196,
+      "bulkPressurePa": 4999.999999999999,
+      "meanCompressionPressurePa": 4999.999999999999,
+      "lateralPiolaStressPa": -4398.087231624961,
+      "axialPiolaStressPa": -5226.472818611196,
+      "lateralCauchyStressPa": -4886.763590694401,
+      "axialCauchyStressPa": -5226.472818611196,
+      "sideSupportForceN": -13.194261694874882,
+      "energyJ": 0.0626050341483639,
+      "deviatoricEnergyJ": 0.002605034148363936,
+      "volumeEnergyJ": 0.05999999999999996,
+      "forceResidualN": 0,
+      "lateralResidualPa": null,
+      "energyDerivativeProbes": [
+        {
+          "delta": 0.000002,
+          "axialPa": -5226.472818536018,
+          "lateralPa": -4398.087231370063,
+          "axialDifferencePa": 7.517792255384848e-8,
+          "lateralDifferencePa": 2.548977136029862e-7
+        },
+        {
+          "delta": 0.000001,
+          "axialPa": -5226.472818651667,
+          "lateralPa": -4398.087231644727,
+          "axialDifferencePa": -4.047069523949176e-8,
+          "lateralDifferencePa": -1.976604835363105e-8
+        }
+      ],
+      "maxSupportedForceN": 42.08871497512574,
+      "forceBranch": "Imposed height 0.6 ≤ h ≤ 1; reaction is an output",
+      "bulkShearRatio": 33.333333333333336,
+      "isochoricComparison": {
+        "lateralStretch": 1.0540925533894598,
+        "J": 1,
+        "interpretation": "Prescribed exact-isochoric geometry; not the finite-bulk free-side equilibrium"
+      }
+    },
+    {
+      "accepted": true,
+      "scope": "Homogeneous isotropic elastic Lab 5 block; prescribed boundary or stationary compression branch. No biological calibration, spatial stability or anatomical convergence.",
+      "controls": {
+        "mu": 1500,
+        "bulk": 50000,
+        "heightStretch": 0.8,
+        "force": 2,
+        "mode": "displacement",
+        "boundary": "free"
+      },
+      "heightStretch": 0.8,
+      "lateralStretch": 1.1146268835553577,
+      "J": 0.9939144716354632,
+      "volumeRatio": 0.9939144716354634,
+      "volumeMeasurementDifference": 2.220446049250313e-16,
+      "volumeEquilibriumJ": 0.9939144716354633,
+      "volumeEquilibriumDifference": -1.1102230246251565e-16,
+      "reference": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "current": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08917015068442861,
+          0,
+          0
+        ],
+        [
+          0,
+          0.048,
+          0
+        ],
+        [
+          0.08917015068442861,
+          0.048,
+          0
+        ],
+        [
+          0,
+          0,
+          0.055731344177767886
+        ],
+        [
+          0.08917015068442861,
+          0,
+          0.055731344177767886
+        ],
+        [
+          0,
+          0.048,
+          0.055731344177767886
+        ],
+        [
+          0.08917015068442861,
+          0.048,
+          0.055731344177767886
+        ]
+      ],
+      "referenceBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "currentBoundary": {
+        "signedVolumeM3": 0.0002385394731925112,
+        "surfaceAreaM2": 0.02384968822312549,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "heightM": 0.048,
+      "plateDisplacementM": 0.011999999999999997,
+      "currentPlateAreaM2": 0.004969572358177315,
+      "plateReactionN": 4.536371031795807,
+      "platePressurePa": 912.8292546804987,
+      "bulkPressurePa": 304.27641822683984,
+      "meanCompressionPressurePa": 304.27641822683984,
+      "lateralPiolaStressPa": -9.379164112033322e-12,
+      "axialPiolaStressPa": -1134.0927579489517,
+      "lateralCauchyStressPa": -1.0518277742095555e-11,
+      "axialCauchyStressPa": -912.8292546804985,
+      "sideSupportForceN": -2.813749233609997e-14,
+      "energyJ": 0.024977266334915958,
+      "deviatoricEnergyJ": 0.024755064402062467,
+      "volumeEnergyJ": 0.00022220193285349133,
+      "forceResidualN": 0,
+      "lateralResidualPa": -9.379164112033322e-12,
+      "energyDerivativeProbes": [
+        {
+          "delta": 0.000002,
+          "axialPa": -1134.092757865916,
+          "lateralPa": 1.9154238380577249e-7,
+          "axialDifferencePa": 8.303572940349113e-8,
+          "lateralDifferencePa": 1.9155176296988452e-7
+        },
+        {
+          "delta": 0.000001,
+          "axialPa": -1134.092757956266,
+          "lateralPa": 7.228014483236698e-8,
+          "axialDifferencePa": -7.314383765333332e-9,
+          "lateralDifferencePa": 7.228952399647902e-8
+        }
+      ],
+      "maxSupportedForceN": 4.536371031795807,
+      "forceBranch": "Imposed height 0.6 ≤ h ≤ 1; reaction is an output",
+      "bulkShearRatio": 33.333333333333336,
+      "isochoricComparison": {
+        "lateralStretch": 1.118033988749895,
+        "J": 1,
+        "interpretation": "Prescribed exact-isochoric geometry; not the finite-bulk free-side equilibrium"
+      }
+    },
+    {
+      "accepted": true,
+      "scope": "Homogeneous isotropic elastic Lab 5 block; prescribed boundary or stationary compression branch. No biological calibration, spatial stability or anatomical convergence.",
+      "controls": {
+        "mu": 1500,
+        "bulk": 50000,
+        "heightStretch": 0.8,
+        "force": 2,
+        "mode": "displacement",
+        "boundary": "confined"
+      },
+      "heightStretch": 0.8,
+      "lateralStretch": 1,
+      "J": 0.8,
+      "volumeRatio": 0.8000000000000002,
+      "volumeMeasurementDifference": 1.1102230246251565e-16,
+      "volumeEquilibriumJ": 0.8,
+      "volumeEquilibriumDifference": 0,
+      "reference": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "current": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.048,
+          0
+        ],
+        [
+          0.08,
+          0.048,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.048,
+          0.05
+        ],
+        [
+          0.08,
+          0.048,
+          0.05
+        ]
+      ],
+      "referenceBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "currentBoundary": {
+        "signedVolumeM3": 0.00019200000000000003,
+        "surfaceAreaM2": 0.020479999999999998,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "heightM": 0.048,
+      "plateDisplacementM": 0.011999999999999997,
+      "currentPlateAreaM2": 0.004,
+      "plateReactionN": 42.08871497512574,
+      "platePressurePa": 10522.178743781435,
+      "bulkPressurePa": 9999.999999999998,
+      "meanCompressionPressurePa": 9999.999999999998,
+      "lateralPiolaStressPa": -7791.128502487424,
+      "axialPiolaStressPa": -10522.178743781435,
+      "lateralCauchyStressPa": -9738.910628109279,
+      "axialCauchyStressPa": -10522.178743781435,
+      "sideSupportForceN": -23.37338550746227,
+      "energyJ": 0.2514207534331979,
+      "deviatoricEnergyJ": 0.011420753433198065,
+      "volumeEnergyJ": 0.23999999999999985,
+      "forceResidualN": 0,
+      "lateralResidualPa": null,
+      "energyDerivativeProbes": [
+        {
+          "delta": 0.000002,
+          "axialPa": -10522.178743357,
+          "lateralPa": -7791.1285021638205,
+          "axialDifferencePa": 4.244338924763724e-7,
+          "lateralDifferencePa": 3.236036718590185e-7
+        },
+        {
+          "delta": 0.000001,
+          "axialPa": -10522.178743935243,
+          "lateralPa": -7791.128502424029,
+          "axialDifferencePa": -1.5380828699562699e-7,
+          "lateralDifferencePa": 6.339541869238019e-8
+        }
+      ],
+      "maxSupportedForceN": 42.08871497512574,
+      "forceBranch": "Imposed height 0.6 ≤ h ≤ 1; reaction is an output",
+      "bulkShearRatio": 33.333333333333336,
+      "isochoricComparison": {
+        "lateralStretch": 1.118033988749895,
+        "J": 1,
+        "interpretation": "Prescribed exact-isochoric geometry; not the finite-bulk free-side equilibrium"
+      }
+    },
+    {
+      "accepted": true,
+      "scope": "Homogeneous isotropic elastic Lab 5 block; prescribed boundary or stationary compression branch. No biological calibration, spatial stability or anatomical convergence.",
+      "controls": {
+        "mu": 1500,
+        "bulk": 50000,
+        "heightStretch": 0.7,
+        "force": 2,
+        "mode": "displacement",
+        "boundary": "free"
+      },
+      "heightStretch": 0.7,
+      "lateralStretch": 1.1895988501807349,
+      "J": 0.9906017970459284,
+      "volumeRatio": 0.9906017970459283,
+      "volumeMeasurementDifference": -1.1102230246251565e-16,
+      "volumeEquilibriumJ": 0.9906017970459287,
+      "volumeEquilibriumDifference": -2.220446049250313e-16,
+      "reference": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "current": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.09516790801445879,
+          0,
+          0
+        ],
+        [
+          0,
+          0.041999999999999996,
+          0
+        ],
+        [
+          0.09516790801445879,
+          0.041999999999999996,
+          0
+        ],
+        [
+          0,
+          0,
+          0.059479942509036744
+        ],
+        [
+          0.09516790801445879,
+          0,
+          0.059479942509036744
+        ],
+        [
+          0,
+          0.041999999999999996,
+          0.059479942509036744
+        ],
+        [
+          0.09516790801445879,
+          0.041999999999999996,
+          0.059479942509036744
+        ]
+      ],
+      "referenceBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "currentBoundary": {
+        "signedVolumeM3": 0.00023774443129102277,
+        "surfaceAreaM2": 0.024311582838784238,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "heightM": 0.041999999999999996,
+      "plateDisplacementM": 0.018000000000000002,
+      "currentPlateAreaM2": 0.005660581697405306,
+      "plateReactionN": 7.979894344547536,
+      "platePressurePa": 1409.7304431107063,
+      "bulkPressurePa": 469.91014770357833,
+      "meanCompressionPressurePa": 469.9101477035783,
+      "lateralPiolaStressPa": -1.1880274541908875e-11,
+      "axialPiolaStressPa": -1994.973586136884,
+      "lateralCauchyStressPa": -1.426684362680497e-11,
+      "axialCauchyStressPa": -1409.7304431107063,
+      "sideSupportForceN": -3.5640823625726625e-14,
+      "energyJ": 0.06195645614897429,
+      "deviatoricEnergyJ": 0.061426498836378775,
+      "volumeEnergyJ": 0.000529957312595517,
+      "forceResidualN": 0,
+      "lateralResidualPa": -1.1880274541908875e-11,
+      "energyDerivativeProbes": [
+        {
+          "delta": 0.000002,
+          "axialPa": -1994.9735860603946,
+          "lateralPa": 1.337182679398789e-7,
+          "axialDifferencePa": 7.648941391380504e-8,
+          "lateralDifferencePa": 1.337301482144208e-7
+        },
+        {
+          "delta": 0.000001,
+          "axialPa": -1994.973586284463,
+          "lateralPa": -8.673617379884037e-8,
+          "axialDifferencePa": -1.4757893040950876e-7,
+          "lateralDifferencePa": -8.672429352429846e-8
+        }
+      ],
+      "maxSupportedForceN": 4.536371031795807,
+      "forceBranch": "Imposed height 0.6 ≤ h ≤ 1; reaction is an output",
+      "bulkShearRatio": 33.333333333333336,
+      "isochoricComparison": {
+        "lateralStretch": 1.1952286093343936,
+        "J": 1,
+        "interpretation": "Prescribed exact-isochoric geometry; not the finite-bulk free-side equilibrium"
+      }
+    },
+    {
+      "accepted": true,
+      "scope": "Homogeneous isotropic elastic Lab 5 block; prescribed boundary or stationary compression branch. No biological calibration, spatial stability or anatomical convergence.",
+      "controls": {
+        "mu": 1500,
+        "bulk": 50000,
+        "heightStretch": 0.7,
+        "force": 2,
+        "mode": "displacement",
+        "boundary": "confined"
+      },
+      "heightStretch": 0.7,
+      "lateralStretch": 1,
+      "J": 0.7,
+      "volumeRatio": 0.7,
+      "volumeMeasurementDifference": 0,
+      "volumeEquilibriumJ": 0.7,
+      "volumeEquilibriumDifference": 0,
+      "reference": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "current": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.041999999999999996,
+          0
+        ],
+        [
+          0.08,
+          0.041999999999999996,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.041999999999999996,
+          0.05
+        ],
+        [
+          0.08,
+          0.041999999999999996,
+          0.05
+        ]
+      ],
+      "referenceBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "currentBoundary": {
+        "signedVolumeM3": 0.00016799999999999996,
+        "surfaceAreaM2": 0.018919999999999996,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "heightM": 0.041999999999999996,
+      "plateDisplacementM": 0.018000000000000002,
+      "currentPlateAreaM2": 0.004,
+      "plateReactionN": 63.69657992562227,
+      "platePressurePa": 15924.144981405567,
+      "bulkPressurePa": 15000.000000000002,
+      "meanCompressionPressurePa": 15000.000000000002,
+      "lateralPiolaStressPa": -10176.549256508053,
+      "axialPiolaStressPa": -15924.144981405567,
+      "lateralCauchyStressPa": -14537.92750929722,
+      "axialCauchyStressPa": -15924.144981405567,
+      "sideSupportForceN": -30.52964776952416,
+      "energyJ": 0.5685122479729053,
+      "deviatoricEnergyJ": 0.028512247972905226,
+      "volumeEnergyJ": 0.54,
+      "forceResidualN": 0,
+      "lateralResidualPa": null,
+      "energyDerivativeProbes": [
+        {
+          "delta": 0.000002,
+          "axialPa": -15924.1449809953,
+          "lateralPa": -10176.54925628923,
+          "axialDifferencePa": 4.102676030015573e-7,
+          "lateralDifferencePa": 2.18822606257163e-7
+        },
+        {
+          "delta": 0.000001,
+          "axialPa": -15924.14498226743,
+          "lateralPa": -10176.549256520528,
+          "axialDifferencePa": -8.618626452516764e-7,
+          "lateralDifferencePa": -1.2474629329517484e-8
+        }
+      ],
+      "maxSupportedForceN": 42.08871497512574,
+      "forceBranch": "Imposed height 0.6 ≤ h ≤ 1; reaction is an output",
+      "bulkShearRatio": 33.333333333333336,
+      "isochoricComparison": {
+        "lateralStretch": 1.1952286093343936,
+        "J": 1,
+        "interpretation": "Prescribed exact-isochoric geometry; not the finite-bulk free-side equilibrium"
+      }
+    },
+    {
+      "accepted": true,
+      "scope": "Homogeneous isotropic elastic Lab 5 block; prescribed boundary or stationary compression branch. No biological calibration, spatial stability or anatomical convergence.",
+      "controls": {
+        "mu": 1500,
+        "bulk": 50000,
+        "heightStretch": 0.6,
+        "force": 2,
+        "mode": "displacement",
+        "boundary": "free"
+      },
+      "heightStretch": 0.6,
+      "lateralStretch": 1.2824884602136088,
+      "J": 0.9868659903486441,
+      "volumeRatio": 0.9868659903486439,
+      "volumeMeasurementDifference": -2.220446049250313e-16,
+      "volumeEquilibriumJ": 0.9868659903486438,
+      "volumeEquilibriumDifference": 3.3306690738754696e-16,
+      "reference": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "current": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.10259907681708871,
+          0,
+          0
+        ],
+        [
+          0,
+          0.036,
+          0
+        ],
+        [
+          0.10259907681708871,
+          0.036,
+          0
+        ],
+        [
+          0,
+          0,
+          0.06412442301068044
+        ],
+        [
+          0.10259907681708871,
+          0,
+          0.06412442301068044
+        ],
+        [
+          0,
+          0.036,
+          0.06412442301068044
+        ],
+        [
+          0.10259907681708871,
+          0.036,
+          0.06412442301068044
+        ]
+      ],
+      "referenceBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "currentBoundary": {
+        "signedVolumeM3": 0.0002368478376836745,
+        "surfaceAreaM2": 0.025162305192247967,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "heightM": 0.036,
+      "plateDisplacementM": 0.024,
+      "currentPlateAreaM2": 0.006579106602324293,
+      "plateReactionN": 12.961507441834172,
+      "platePressurePa": 1970.101447703413,
+      "bulkPressurePa": 656.7004825677958,
+      "meanCompressionPressurePa": 656.7004825677958,
+      "lateralPiolaStressPa": 9.72022462519817e-12,
+      "axialPiolaStressPa": -3240.376860458543,
+      "lateralCauchyStressPa": 1.2631984519090317e-11,
+      "axialCauchyStressPa": -1970.1014477034125,
+      "sideSupportForceN": 2.916067387559451e-14,
+      "energyJ": 0.12377029920571488,
+      "deviatoricEnergyJ": 0.12273528594858343,
+      "volumeEnergyJ": 0.001035013257131462,
+      "forceResidualN": 0,
+      "lateralResidualPa": 9.72022462519817e-12,
+      "energyDerivativeProbes": [
+        {
+          "delta": 0.000002,
+          "axialPa": -3240.376860528157,
+          "lateralPa": 1.3733227518149726e-7,
+          "axialDifferencePa": -6.961408871575259e-8,
+          "lateralDifferencePa": 1.3732255495687207e-7
+        },
+        {
+          "delta": 0.000001,
+          "axialPa": -3240.3768605570694,
+          "lateralPa": -2.891205793294679e-8,
+          "axialDifferencePa": -9.852647053776309e-8,
+          "lateralDifferencePa": -2.892177815757199e-8
+        }
+      ],
+      "maxSupportedForceN": 4.536371031795807,
+      "forceBranch": "Imposed height 0.6 ≤ h ≤ 1; reaction is an output",
+      "bulkShearRatio": 33.333333333333336,
+      "isochoricComparison": {
+        "lateralStretch": 1.2909944487358056,
+        "J": 1,
+        "interpretation": "Prescribed exact-isochoric geometry; not the finite-bulk free-side equilibrium"
+      }
+    },
+    {
+      "accepted": true,
+      "scope": "Homogeneous isotropic elastic Lab 5 block; prescribed boundary or stationary compression branch. No biological calibration, spatial stability or anatomical convergence.",
+      "controls": {
+        "mu": 1500,
+        "bulk": 50000,
+        "heightStretch": 0.6,
+        "force": 2,
+        "mode": "displacement",
+        "boundary": "confined"
+      },
+      "heightStretch": 0.6,
+      "lateralStretch": 1,
+      "J": 0.6,
+      "volumeRatio": 0.6,
+      "volumeMeasurementDifference": 0,
+      "volumeEquilibriumJ": 0.6,
+      "volumeEquilibriumDifference": 0,
+      "reference": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "current": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.036,
+          0
+        ],
+        [
+          0.08,
+          0.036,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.036,
+          0.05
+        ],
+        [
+          0.08,
+          0.036,
+          0.05
+        ]
+      ],
+      "referenceBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "currentBoundary": {
+        "signedVolumeM3": 0.00014399999999999998,
+        "surfaceAreaM2": 0.01736,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "heightM": 0.036,
+      "plateDisplacementM": 0.024,
+      "currentPlateAreaM2": 0.004,
+      "plateReactionN": 85.99774339770133,
+      "platePressurePa": 21499.435849425332,
+      "bulkPressurePa": 20000,
+      "meanCompressionPressurePa": 20000.000000000004,
+      "lateralPiolaStressPa": -11550.169245172401,
+      "axialPiolaStressPa": -21499.435849425332,
+      "lateralCauchyStressPa": -19250.282075287338,
+      "axialCauchyStressPa": -21499.435849425332,
+      "sideSupportForceN": -34.65050773551721,
+      "energyJ": 1.0171503270336384,
+      "deviatoricEnergyJ": 0.05715032703363839,
+      "volumeEnergyJ": 0.9600000000000001,
+      "forceResidualN": 0,
+      "lateralResidualPa": null,
+      "energyDerivativeProbes": [
+        {
+          "delta": 0.000002,
+          "axialPa": -21499.435848976183,
+          "lateralPa": -11550.169244760787,
+          "axialDifferencePa": 4.4914850150234997e-7,
+          "lateralDifferencePa": 4.116136551601812e-7
+        },
+        {
+          "delta": 0.000001,
+          "axialPa": -21499.435849670073,
+          "lateralPa": -11550.169245339028,
+          "axialDifferencePa": -2.447413862682879e-7,
+          "lateralDifferencePa": -1.6662670532241464e-7
+        }
+      ],
+      "maxSupportedForceN": 42.08871497512574,
+      "forceBranch": "Imposed height 0.6 ≤ h ≤ 1; reaction is an output",
+      "bulkShearRatio": 33.333333333333336,
+      "isochoricComparison": {
+        "lateralStretch": 1.2909944487358056,
+        "J": 1,
+        "interpretation": "Prescribed exact-isochoric geometry; not the finite-bulk free-side equilibrium"
+      }
+    }
+  ],
+  "forceControlled": [
+    {
+      "accepted": true,
+      "scope": "Homogeneous isotropic elastic Lab 5 block; prescribed boundary or stationary compression branch. No biological calibration, spatial stability or anatomical convergence.",
+      "controls": {
+        "mu": 1500,
+        "bulk": 50000,
+        "heightStretch": 0.8,
+        "force": 2,
+        "mode": "force",
+        "boundary": "free"
+      },
+      "heightStretch": 0.8995158036034099,
+      "lateralStretch": 1.0527895411102324,
+      "J": 0.9969925693488674,
+      "volumeRatio": 0.9969925693488676,
+      "volumeMeasurementDifference": 2.220446049250313e-16,
+      "volumeEquilibriumJ": 0.9969925693488673,
+      "volumeEquilibriumDifference": 1.1102230246251565e-16,
+      "reference": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "current": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.0842231632888186,
+          0,
+          0
+        ],
+        [
+          0,
+          0.053970948216204594,
+          0
+        ],
+        [
+          0.0842231632888186,
+          0.053970948216204594,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05263947705551162
+        ],
+        [
+          0.0842231632888186,
+          0,
+          0.05263947705551162
+        ],
+        [
+          0,
+          0.053970948216204594,
+          0.05263947705551162
+        ],
+        [
+          0.0842231632888186,
+          0.053970948216204594,
+          0.05263947705551162
+        ]
+      ],
+      "referenceBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "currentBoundary": {
+        "signedVolumeM3": 0.0002392782166437282,
+        "surfaceAreaM2": 0.02364013949248251,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "heightM": 0.053970948216204594,
+      "plateDisplacementM": 0.006029051783795407,
+      "currentPlateAreaM2": 0.004433463271484374,
+      "plateReactionN": 2.0000000000000084,
+      "platePressurePa": 451.1145976699127,
+      "bulkPressurePa": 150.37153255663128,
+      "meanCompressionPressurePa": 150.37153255663108,
+      "lateralPiolaStressPa": 9.208633855450898e-12,
+      "axialPiolaStressPa": -500.00000000000205,
+      "lateralCauchyStressPa": 9.723997659545159e-12,
+      "axialCauchyStressPa": -451.11459766991265,
+      "sideSupportForceN": 2.7625901566352695e-14,
+      "energyJ": 0.005803876761469274,
+      "deviatoricEnergyJ": 0.005749608926741043,
+      "volumeEnergyJ": 0.00005426783472823204,
+      "forceResidualN": 8.43769498715119e-15,
+      "lateralResidualPa": 9.208633855450898e-12,
+      "energyDerivativeProbes": [
+        {
+          "delta": 0.000002,
+          "axialPa": -500.00000001600426,
+          "lateralPa": 1.8883187837455872e-7,
+          "axialDifferencePa": -1.6002218217181507e-8,
+          "lateralDifferencePa": 1.8882266974070327e-7
+        },
+        {
+          "delta": 0.000001,
+          "axialPa": -500.0000001054509,
+          "lateralPa": -4.517509052022936e-8,
+          "axialDifferencePa": -1.0544886208663229e-7,
+          "lateralDifferencePa": -4.518429915408481e-8
+        }
+      ],
+      "maxSupportedForceN": 4.536371031795807,
+      "forceBranch": "Stationary branch 0.8 ≤ h ≤ 1; monotonicity sampled, no global stability theorem",
+      "bulkShearRatio": 33.333333333333336,
+      "isochoricComparison": {
+        "lateralStretch": 1.0543762166385415,
+        "J": 1,
+        "interpretation": "Prescribed exact-isochoric geometry; not the finite-bulk free-side equilibrium"
+      }
+    },
+    {
+      "accepted": true,
+      "scope": "Homogeneous isotropic elastic Lab 5 block; prescribed boundary or stationary compression branch. No biological calibration, spatial stability or anatomical convergence.",
+      "controls": {
+        "mu": 1500,
+        "bulk": 50000,
+        "heightStretch": 0.8,
+        "force": 2,
+        "mode": "force",
+        "boundary": "confined"
+      },
+      "heightStretch": 0.9903888083763983,
+      "lateralStretch": 1,
+      "J": 0.9903888083763983,
+      "volumeRatio": 0.9903888083763985,
+      "volumeMeasurementDifference": 2.220446049250313e-16,
+      "volumeEquilibriumJ": 0.9903888083763983,
+      "volumeEquilibriumDifference": 0,
+      "reference": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "current": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.059423328502583896,
+          0
+        ],
+        [
+          0.08,
+          0.059423328502583896,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.059423328502583896,
+          0.05
+        ],
+        [
+          0.08,
+          0.059423328502583896,
+          0.05
+        ]
+      ],
+      "referenceBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "currentBoundary": {
+        "signedVolumeM3": 0.00023769331401033564,
+        "surfaceAreaM2": 0.023450065410671808,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "heightM": 0.059423328502583896,
+      "plateDisplacementM": 0.0005766714974161013,
+      "currentPlateAreaM2": 0.004,
+      "plateReactionN": 2.000000000000016,
+      "platePressurePa": 500.000000000004,
+      "bulkPressurePa": 480.5595811800845,
+      "meanCompressionPressurePa": 480.55958118008454,
+      "lateralPiolaStressPa": -466.31404434410587,
+      "axialPiolaStressPa": -500.00000000000404,
+      "lateralCauchyStressPa": -470.8393717701248,
+      "axialCauchyStressPa": -500.00000000000404,
+      "sideSupportForceN": -1.3989421330323175,
+      "energyJ": 0.0005765871915461772,
+      "deviatoricEnergyJ": 0.00002233716499262961,
+      "volumeEnergyJ": 0.0005542500265535476,
+      "forceResidualN": 1.5987211554602254e-14,
+      "lateralResidualPa": null,
+      "energyDerivativeProbes": [
+        {
+          "delta": 0.000002,
+          "axialPa": -499.99999994203006,
+          "lateralPa": -466.3140440985522,
+          "axialDifferencePa": 5.7973977618530625e-8,
+          "lateralDifferencePa": 2.4555367872380884e-7
+        },
+        {
+          "delta": 0.000001,
+          "axialPa": -499.99999996902216,
+          "lateralPa": -466.31404429393444,
+          "axialDifferencePa": 3.098188017247594e-8,
+          "lateralDifferencePa": 5.0171422572020674e-8
+        }
+      ],
+      "maxSupportedForceN": 42.08871497512574,
+      "forceBranch": "Stationary branch 0.8 ≤ h ≤ 1; monotonicity sampled, no global stability theorem",
+      "bulkShearRatio": 33.333333333333336,
+      "isochoricComparison": {
+        "lateralStretch": 1.0048405162401879,
+        "J": 1,
+        "interpretation": "Prescribed exact-isochoric geometry; not the finite-bulk free-side equilibrium"
+      }
+    }
+  ],
+  "materialSweep": [
+    {
+      "accepted": true,
+      "scope": "Homogeneous isotropic elastic Lab 5 block; prescribed boundary or stationary compression branch. No biological calibration, spatial stability or anatomical convergence.",
+      "controls": {
+        "mu": 1500,
+        "bulk": 0,
+        "heightStretch": 0.8,
+        "force": 2,
+        "mode": "displacement",
+        "boundary": "free"
+      },
+      "heightStretch": 0.8,
+      "lateralStretch": 0.8,
+      "J": 0.5120000000000001,
+      "volumeRatio": 0.5120000000000003,
+      "volumeMeasurementDifference": 2.220446049250313e-16,
+      "volumeEquilibriumJ": 0.5120000000000001,
+      "volumeEquilibriumDifference": 0,
+      "reference": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "current": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.064,
+          0,
+          0
+        ],
+        [
+          0,
+          0.048,
+          0
+        ],
+        [
+          0.064,
+          0.048,
+          0
+        ],
+        [
+          0,
+          0,
+          0.04000000000000001
+        ],
+        [
+          0.064,
+          0,
+          0.04000000000000001
+        ],
+        [
+          0,
+          0.048,
+          0.04000000000000001
+        ],
+        [
+          0.064,
+          0.048,
+          0.04000000000000001
+        ]
+      ],
+      "referenceBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "currentBoundary": {
+        "signedVolumeM3": 0.00012288000000000007,
+        "surfaceAreaM2": 0.015104000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "heightM": 0.048,
+      "plateDisplacementM": 0.011999999999999997,
+      "currentPlateAreaM2": 0.00256,
+      "plateReactionN": 0,
+      "platePressurePa": 0,
+      "bulkPressurePa": 0,
+      "meanCompressionPressurePa": 0,
+      "lateralPiolaStressPa": 0,
+      "axialPiolaStressPa": 0,
+      "lateralCauchyStressPa": 0,
+      "axialCauchyStressPa": 0,
+      "sideSupportForceN": 0,
+      "energyJ": 0,
+      "deviatoricEnergyJ": 0,
+      "volumeEnergyJ": 0,
+      "forceResidualN": 0,
+      "lateralResidualPa": 0,
+      "energyDerivativeProbes": [
+        {
+          "delta": 0.000002,
+          "axialPa": 0,
+          "lateralPa": 4.163336342340551e-8,
+          "axialDifferencePa": 0,
+          "lateralDifferencePa": 4.163336342340551e-8
+        },
+        {
+          "delta": 0.000001,
+          "axialPa": 0,
+          "lateralPa": -8.326672684691621e-8,
+          "axialDifferencePa": 0,
+          "lateralDifferencePa": -8.326672684691621e-8
+        }
+      ],
+      "maxSupportedForceN": 0,
+      "forceBranch": "Imposed height 0.6 ≤ h ≤ 1; reaction is an output",
+      "bulkShearRatio": 0,
+      "isochoricComparison": {
+        "lateralStretch": 1.118033988749895,
+        "J": 1,
+        "interpretation": "Prescribed exact-isochoric geometry; not the finite-bulk free-side equilibrium"
+      }
+    },
+    {
+      "accepted": true,
+      "scope": "Homogeneous isotropic elastic Lab 5 block; prescribed boundary or stationary compression branch. No biological calibration, spatial stability or anatomical convergence.",
+      "controls": {
+        "mu": 1500,
+        "bulk": 0,
+        "heightStretch": 0.8,
+        "force": 2,
+        "mode": "displacement",
+        "boundary": "confined"
+      },
+      "heightStretch": 0.8,
+      "lateralStretch": 1,
+      "J": 0.8,
+      "volumeRatio": 0.8000000000000002,
+      "volumeMeasurementDifference": 1.1102230246251565e-16,
+      "volumeEquilibriumJ": 0.8,
+      "volumeEquilibriumDifference": 0,
+      "reference": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "current": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.048,
+          0
+        ],
+        [
+          0.08,
+          0.048,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.048,
+          0.05
+        ],
+        [
+          0.08,
+          0.048,
+          0.05
+        ]
+      ],
+      "referenceBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "currentBoundary": {
+        "signedVolumeM3": 0.00019200000000000003,
+        "surfaceAreaM2": 0.020479999999999998,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "heightM": 0.048,
+      "plateDisplacementM": 0.011999999999999997,
+      "currentPlateAreaM2": 0.004,
+      "plateReactionN": 2.088714975125749,
+      "platePressurePa": 522.1787437814372,
+      "bulkPressurePa": 0,
+      "meanCompressionPressurePa": -1.1368683772161603e-13,
+      "lateralPiolaStressPa": 208.87149751257502,
+      "axialPiolaStressPa": -522.1787437814372,
+      "lateralCauchyStressPa": 261.0893718907188,
+      "axialCauchyStressPa": -522.1787437814372,
+      "sideSupportForceN": 0.6266144925377252,
+      "energyJ": 0.011420753433198065,
+      "deviatoricEnergyJ": 0.011420753433198065,
+      "volumeEnergyJ": 0,
+      "forceResidualN": 0,
+      "lateralResidualPa": null,
+      "energyDerivativeProbes": [
+        {
+          "delta": 0.000002,
+          "axialPa": -522.1787435790172,
+          "lateralPa": 208.87149751490975,
+          "axialDifferencePa": 2.0241998299752595e-7,
+          "lateralDifferencePa": 2.3347297428699676e-9
+        },
+        {
+          "delta": 0.000001,
+          "axialPa": -522.1787437416475,
+          "lateralPa": 208.87149751581325,
+          "axialDifferencePa": 3.978971108153928e-8,
+          "lateralDifferencePa": 3.2382274639530806e-9
+        }
+      ],
+      "maxSupportedForceN": 2.088714975125749,
+      "forceBranch": "Imposed height 0.6 ≤ h ≤ 1; reaction is an output",
+      "bulkShearRatio": 0,
+      "isochoricComparison": {
+        "lateralStretch": 1.118033988749895,
+        "J": 1,
+        "interpretation": "Prescribed exact-isochoric geometry; not the finite-bulk free-side equilibrium"
+      }
+    },
+    {
+      "accepted": true,
+      "scope": "Homogeneous isotropic elastic Lab 5 block; prescribed boundary or stationary compression branch. No biological calibration, spatial stability or anatomical convergence.",
+      "controls": {
+        "mu": 1500,
+        "bulk": 1500,
+        "heightStretch": 0.8,
+        "force": 2,
+        "mode": "displacement",
+        "boundary": "free"
+      },
+      "heightStretch": 0.8,
+      "lateralStretch": 1.013111985225759,
+      "J": 0.8211167156864629,
+      "volumeRatio": 0.8211167156864628,
+      "volumeMeasurementDifference": -1.1102230246251565e-16,
+      "volumeEquilibriumJ": 0.8211167156864627,
+      "volumeEquilibriumDifference": 2.220446049250313e-16,
+      "reference": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "current": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08104895881806072,
+          0,
+          0
+        ],
+        [
+          0,
+          0.048,
+          0
+        ],
+        [
+          0.08104895881806072,
+          0.048,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05065559926128796
+        ],
+        [
+          0.08104895881806072,
+          0,
+          0.05065559926128796
+        ],
+        [
+          0,
+          0.048,
+          0.05065559926128796
+        ],
+        [
+          0.08104895881806072,
+          0.048,
+          0.05065559926128796
+        ]
+      ],
+      "referenceBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "currentBoundary": {
+        "signedVolumeM3": 0.00019706801176475107,
+        "surfaceAreaM2": 0.020854804732482107,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "heightM": 0.048,
+      "plateDisplacementM": 0.011999999999999997,
+      "currentPlateAreaM2": 0.004105583578432315,
+      "plateReactionN": 3.3048912354016373,
+      "platePressurePa": 804.9747794109172,
+      "bulkPressurePa": 268.32492647030557,
+      "meanCompressionPressurePa": 268.32492647030557,
+      "lateralPiolaStressPa": 3.410605131648481e-13,
+      "axialPiolaStressPa": -826.2228088504094,
+      "lateralCauchyStressPa": 4.2080801300663607e-13,
+      "axialCauchyStressPa": -804.9747794109174,
+      "sideSupportForceN": 1.0231815394945444e-15,
+      "energyJ": 0.018522503368515318,
+      "deviatoricEnergyJ": 0.012762642075291727,
+      "volumeEnergyJ": 0.005759861293223591,
+      "forceResidualN": 0,
+      "lateralResidualPa": 3.410605131648481e-13,
+      "energyDerivativeProbes": [
+        {
+          "delta": 0.000002,
+          "axialPa": -826.222808807496,
+          "lateralPa": -4.1561083278611014e-8,
+          "axialDifferencePa": 4.29133706347784e-8,
+          "lateralDifferencePa": -4.156142433912418e-8
+        },
+        {
+          "delta": 0.000001,
+          "axialPa": -826.2228089123022,
+          "lateralPa": -2.1684043449710092e-8,
+          "axialDifferencePa": -6.189281975821359e-8,
+          "lateralDifferencePa": -2.1684384510223257e-8
+        }
+      ],
+      "maxSupportedForceN": 3.3048912354016373,
+      "forceBranch": "Imposed height 0.6 ≤ h ≤ 1; reaction is an output",
+      "bulkShearRatio": 1,
+      "isochoricComparison": {
+        "lateralStretch": 1.118033988749895,
+        "J": 1,
+        "interpretation": "Prescribed exact-isochoric geometry; not the finite-bulk free-side equilibrium"
+      }
+    },
+    {
+      "accepted": true,
+      "scope": "Homogeneous isotropic elastic Lab 5 block; prescribed boundary or stationary compression branch. No biological calibration, spatial stability or anatomical convergence.",
+      "controls": {
+        "mu": 1500,
+        "bulk": 1500,
+        "heightStretch": 0.8,
+        "force": 2,
+        "mode": "displacement",
+        "boundary": "confined"
+      },
+      "heightStretch": 0.8,
+      "lateralStretch": 1,
+      "J": 0.8,
+      "volumeRatio": 0.8000000000000002,
+      "volumeMeasurementDifference": 1.1102230246251565e-16,
+      "volumeEquilibriumJ": 0.8,
+      "volumeEquilibriumDifference": 0,
+      "reference": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "current": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.048,
+          0
+        ],
+        [
+          0.08,
+          0.048,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.048,
+          0.05
+        ],
+        [
+          0.08,
+          0.048,
+          0.05
+        ]
+      ],
+      "referenceBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "currentBoundary": {
+        "signedVolumeM3": 0.00019200000000000003,
+        "surfaceAreaM2": 0.020479999999999998,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "heightM": 0.048,
+      "plateDisplacementM": 0.011999999999999997,
+      "currentPlateAreaM2": 0.004,
+      "plateReactionN": 3.2887149751257483,
+      "platePressurePa": 822.1787437814371,
+      "bulkPressurePa": 299.99999999999994,
+      "meanCompressionPressurePa": 299.99999999999983,
+      "lateralPiolaStressPa": -31.128502487424953,
+      "axialPiolaStressPa": -822.1787437814371,
+      "lateralCauchyStressPa": -38.91062810928119,
+      "axialCauchyStressPa": -822.1787437814371,
+      "sideSupportForceN": -0.09338550746227486,
+      "energyJ": 0.01862075343319806,
+      "deviatoricEnergyJ": 0.011420753433198065,
+      "volumeEnergyJ": 0.007199999999999996,
+      "forceResidualN": 0,
+      "lateralResidualPa": null,
+      "energyDerivativeProbes": [
+        {
+          "delta": 0.000002,
+          "axialPa": -822.1787435728988,
+          "lateralPa": -31.128502473871027,
+          "axialDifferencePa": 2.0853826754319016e-7,
+          "lateralDifferencePa": 1.3553925981568682e-8
+        },
+        {
+          "delta": 0.000001,
+          "axialPa": -822.1787437499852,
+          "lateralPa": -31.128502484713046,
+          "axialDifferencePa": 3.145191840303596e-8,
+          "lateralDifferencePa": 2.7119071432935016e-9
+        }
+      ],
+      "maxSupportedForceN": 3.2887149751257483,
+      "forceBranch": "Imposed height 0.6 ≤ h ≤ 1; reaction is an output",
+      "bulkShearRatio": 1,
+      "isochoricComparison": {
+        "lateralStretch": 1.118033988749895,
+        "J": 1,
+        "interpretation": "Prescribed exact-isochoric geometry; not the finite-bulk free-side equilibrium"
+      }
+    },
+    {
+      "accepted": true,
+      "scope": "Homogeneous isotropic elastic Lab 5 block; prescribed boundary or stationary compression branch. No biological calibration, spatial stability or anatomical convergence.",
+      "controls": {
+        "mu": 1500,
+        "bulk": 50000,
+        "heightStretch": 0.8,
+        "force": 2,
+        "mode": "displacement",
+        "boundary": "free"
+      },
+      "heightStretch": 0.8,
+      "lateralStretch": 1.1146268835553577,
+      "J": 0.9939144716354632,
+      "volumeRatio": 0.9939144716354634,
+      "volumeMeasurementDifference": 2.220446049250313e-16,
+      "volumeEquilibriumJ": 0.9939144716354633,
+      "volumeEquilibriumDifference": -1.1102230246251565e-16,
+      "reference": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "current": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08917015068442861,
+          0,
+          0
+        ],
+        [
+          0,
+          0.048,
+          0
+        ],
+        [
+          0.08917015068442861,
+          0.048,
+          0
+        ],
+        [
+          0,
+          0,
+          0.055731344177767886
+        ],
+        [
+          0.08917015068442861,
+          0,
+          0.055731344177767886
+        ],
+        [
+          0,
+          0.048,
+          0.055731344177767886
+        ],
+        [
+          0.08917015068442861,
+          0.048,
+          0.055731344177767886
+        ]
+      ],
+      "referenceBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "currentBoundary": {
+        "signedVolumeM3": 0.0002385394731925112,
+        "surfaceAreaM2": 0.02384968822312549,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "heightM": 0.048,
+      "plateDisplacementM": 0.011999999999999997,
+      "currentPlateAreaM2": 0.004969572358177315,
+      "plateReactionN": 4.536371031795807,
+      "platePressurePa": 912.8292546804987,
+      "bulkPressurePa": 304.27641822683984,
+      "meanCompressionPressurePa": 304.27641822683984,
+      "lateralPiolaStressPa": -9.379164112033322e-12,
+      "axialPiolaStressPa": -1134.0927579489517,
+      "lateralCauchyStressPa": -1.0518277742095555e-11,
+      "axialCauchyStressPa": -912.8292546804985,
+      "sideSupportForceN": -2.813749233609997e-14,
+      "energyJ": 0.024977266334915958,
+      "deviatoricEnergyJ": 0.024755064402062467,
+      "volumeEnergyJ": 0.00022220193285349133,
+      "forceResidualN": 0,
+      "lateralResidualPa": -9.379164112033322e-12,
+      "energyDerivativeProbes": [
+        {
+          "delta": 0.000002,
+          "axialPa": -1134.092757865916,
+          "lateralPa": 1.9154238380577249e-7,
+          "axialDifferencePa": 8.303572940349113e-8,
+          "lateralDifferencePa": 1.9155176296988452e-7
+        },
+        {
+          "delta": 0.000001,
+          "axialPa": -1134.092757956266,
+          "lateralPa": 7.228014483236698e-8,
+          "axialDifferencePa": -7.314383765333332e-9,
+          "lateralDifferencePa": 7.228952399647902e-8
+        }
+      ],
+      "maxSupportedForceN": 4.536371031795807,
+      "forceBranch": "Imposed height 0.6 ≤ h ≤ 1; reaction is an output",
+      "bulkShearRatio": 33.333333333333336,
+      "isochoricComparison": {
+        "lateralStretch": 1.118033988749895,
+        "J": 1,
+        "interpretation": "Prescribed exact-isochoric geometry; not the finite-bulk free-side equilibrium"
+      }
+    },
+    {
+      "accepted": true,
+      "scope": "Homogeneous isotropic elastic Lab 5 block; prescribed boundary or stationary compression branch. No biological calibration, spatial stability or anatomical convergence.",
+      "controls": {
+        "mu": 1500,
+        "bulk": 50000,
+        "heightStretch": 0.8,
+        "force": 2,
+        "mode": "displacement",
+        "boundary": "confined"
+      },
+      "heightStretch": 0.8,
+      "lateralStretch": 1,
+      "J": 0.8,
+      "volumeRatio": 0.8000000000000002,
+      "volumeMeasurementDifference": 1.1102230246251565e-16,
+      "volumeEquilibriumJ": 0.8,
+      "volumeEquilibriumDifference": 0,
+      "reference": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "current": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.048,
+          0
+        ],
+        [
+          0.08,
+          0.048,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.048,
+          0.05
+        ],
+        [
+          0.08,
+          0.048,
+          0.05
+        ]
+      ],
+      "referenceBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "currentBoundary": {
+        "signedVolumeM3": 0.00019200000000000003,
+        "surfaceAreaM2": 0.020479999999999998,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "heightM": 0.048,
+      "plateDisplacementM": 0.011999999999999997,
+      "currentPlateAreaM2": 0.004,
+      "plateReactionN": 42.08871497512574,
+      "platePressurePa": 10522.178743781435,
+      "bulkPressurePa": 9999.999999999998,
+      "meanCompressionPressurePa": 9999.999999999998,
+      "lateralPiolaStressPa": -7791.128502487424,
+      "axialPiolaStressPa": -10522.178743781435,
+      "lateralCauchyStressPa": -9738.910628109279,
+      "axialCauchyStressPa": -10522.178743781435,
+      "sideSupportForceN": -23.37338550746227,
+      "energyJ": 0.2514207534331979,
+      "deviatoricEnergyJ": 0.011420753433198065,
+      "volumeEnergyJ": 0.23999999999999985,
+      "forceResidualN": 0,
+      "lateralResidualPa": null,
+      "energyDerivativeProbes": [
+        {
+          "delta": 0.000002,
+          "axialPa": -10522.178743357,
+          "lateralPa": -7791.1285021638205,
+          "axialDifferencePa": 4.244338924763724e-7,
+          "lateralDifferencePa": 3.236036718590185e-7
+        },
+        {
+          "delta": 0.000001,
+          "axialPa": -10522.178743935243,
+          "lateralPa": -7791.128502424029,
+          "axialDifferencePa": -1.5380828699562699e-7,
+          "lateralDifferencePa": 6.339541869238019e-8
+        }
+      ],
+      "maxSupportedForceN": 42.08871497512574,
+      "forceBranch": "Imposed height 0.6 ≤ h ≤ 1; reaction is an output",
+      "bulkShearRatio": 33.333333333333336,
+      "isochoricComparison": {
+        "lateralStretch": 1.118033988749895,
+        "J": 1,
+        "interpretation": "Prescribed exact-isochoric geometry; not the finite-bulk free-side equilibrium"
+      }
+    },
+    {
+      "accepted": true,
+      "scope": "Homogeneous isotropic elastic Lab 5 block; prescribed boundary or stationary compression branch. No biological calibration, spatial stability or anatomical convergence.",
+      "controls": {
+        "mu": 1500,
+        "bulk": 1000000,
+        "heightStretch": 0.8,
+        "force": 2,
+        "mode": "displacement",
+        "boundary": "free"
+      },
+      "heightStretch": 0.8,
+      "lateralStretch": 1.117863495475318,
+      "J": 0.999695035613037,
+      "volumeRatio": 0.9996950356130371,
+      "volumeMeasurementDifference": 1.1102230246251565e-16,
+      "volumeEquilibriumJ": 0.9996950356130372,
+      "volumeEquilibriumDifference": -2.220446049250313e-16,
+      "reference": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "current": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08942907963802543,
+          0,
+          0
+        ],
+        [
+          0,
+          0.048,
+          0
+        ],
+        [
+          0.08942907963802543,
+          0.048,
+          0
+        ],
+        [
+          0,
+          0,
+          0.0558931747737659
+        ],
+        [
+          0.08942907963802543,
+          0,
+          0.0558931747737659
+        ],
+        [
+          0,
+          0.048,
+          0.0558931747737659
+        ],
+        [
+          0.08942907963802543,
+          0.048,
+          0.0558931747737659
+        ]
+      ],
+      "referenceBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "currentBoundary": {
+        "signedVolumeM3": 0.0002399268085471289,
+        "surfaceAreaM2": 0.023947886779662336,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "heightM": 0.048,
+      "plateDisplacementM": 0.011999999999999997,
+      "currentPlateAreaM2": 0.004998475178065185,
+      "plateReactionN": 4.573070755283027,
+      "platePressurePa": 914.8931608885524,
+      "bulkPressurePa": 304.96438696303585,
+      "meanCompressionPressurePa": 304.9643869630359,
+      "lateralPiolaStressPa": -2.482920535840094e-10,
+      "axialPiolaStressPa": -1143.2676888207566,
+      "lateralCauchyStressPa": -2.776412936250717e-10,
+      "axialCauchyStressPa": -914.8931608885524,
+      "sideSupportForceN": -7.448761607520283e-13,
+      "energyJ": 0.025188838303024097,
+      "deviatoricEnergyJ": 0.025177677909746208,
+      "volumeEnergyJ": 0.000011160393277888831,
+      "forceResidualN": 0,
+      "lateralResidualPa": -2.482920535840094e-10,
+      "energyDerivativeProbes": [
+        {
+          "delta": 0.000002,
+          "axialPa": -1143.2676886065597,
+          "lateralPa": 0.000002900240811398725,
+          "axialDifferencePa": 2.1419691620394588e-7,
+          "lateralDifferencePa": 0.0000029004891034523092
+        },
+        {
+          "delta": 0.000001,
+          "axialPa": -1143.2676889751883,
+          "lateralPa": 7.77011556947945e-7,
+          "axialDifferencePa": -1.5443174561369233e-7,
+          "lateralDifferencePa": 7.77259849001529e-7
+        }
+      ],
+      "maxSupportedForceN": 4.573070755283027,
+      "forceBranch": "Imposed height 0.6 ≤ h ≤ 1; reaction is an output",
+      "bulkShearRatio": 666.6666666666666,
+      "isochoricComparison": {
+        "lateralStretch": 1.118033988749895,
+        "J": 1,
+        "interpretation": "Prescribed exact-isochoric geometry; not the finite-bulk free-side equilibrium"
+      }
+    },
+    {
+      "accepted": true,
+      "scope": "Homogeneous isotropic elastic Lab 5 block; prescribed boundary or stationary compression branch. No biological calibration, spatial stability or anatomical convergence.",
+      "controls": {
+        "mu": 1500,
+        "bulk": 1000000,
+        "heightStretch": 0.8,
+        "force": 2,
+        "mode": "displacement",
+        "boundary": "confined"
+      },
+      "heightStretch": 0.8,
+      "lateralStretch": 1,
+      "J": 0.8,
+      "volumeRatio": 0.8000000000000002,
+      "volumeMeasurementDifference": 1.1102230246251565e-16,
+      "volumeEquilibriumJ": 0.8,
+      "volumeEquilibriumDifference": 0,
+      "reference": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "current": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.048,
+          0
+        ],
+        [
+          0.08,
+          0.048,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.048,
+          0.05
+        ],
+        [
+          0.08,
+          0.048,
+          0.05
+        ]
+      ],
+      "referenceBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "currentBoundary": {
+        "signedVolumeM3": 0.00019200000000000003,
+        "surfaceAreaM2": 0.020479999999999998,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "heightM": 0.048,
+      "plateDisplacementM": 0.011999999999999997,
+      "currentPlateAreaM2": 0.004,
+      "plateReactionN": 802.0887149751255,
+      "platePressurePa": 200522.17874378138,
+      "bulkPressurePa": 199999.99999999994,
+      "meanCompressionPressurePa": 199999.99999999997,
+      "lateralPiolaStressPa": -159791.1285024874,
+      "axialPiolaStressPa": -200522.17874378138,
+      "lateralCauchyStressPa": -199738.91062810924,
+      "axialCauchyStressPa": -200522.1787437814,
+      "sideSupportForceN": -479.3733855074622,
+      "energyJ": 4.811420753433195,
+      "deviatoricEnergyJ": 0.011420753433198065,
+      "volumeEnergyJ": 4.799999999999997,
+      "forceResidualN": 0,
+      "lateralResidualPa": null,
+      "energyDerivativeProbes": [
+        {
+          "delta": 0.000002,
+          "axialPa": -200522.17873841227,
+          "lateralPa": -159791.1284960859,
+          "axialDifferencePa": 0.00000536910374648869,
+          "lateralDifferencePa": 0.000006401503924280405
+        },
+        {
+          "delta": 0.000001,
+          "axialPa": -200522.1787504397,
+          "lateralPa": -159791.12850117442,
+          "axialDifferencePa": -0.000006658316124230623,
+          "lateralDifferencePa": 0.0000013129902072250843
+        }
+      ],
+      "maxSupportedForceN": 802.0887149751255,
+      "forceBranch": "Imposed height 0.6 ≤ h ≤ 1; reaction is an output",
+      "bulkShearRatio": 666.6666666666666,
+      "isochoricComparison": {
+        "lateralStretch": 1.118033988749895,
+        "J": 1,
+        "interpretation": "Prescribed exact-isochoric geometry; not the finite-bulk free-side equilibrium"
+      }
+    }
+  ],
+  "shapeSweep": [
+    {
+      "accepted": true,
+      "scope": "Homogeneous isotropic elastic Lab 5 block; prescribed boundary or stationary compression branch. No biological calibration, spatial stability or anatomical convergence.",
+      "controls": {
+        "mu": 100,
+        "bulk": 50000,
+        "heightStretch": 0.8,
+        "force": 2,
+        "mode": "displacement",
+        "boundary": "free"
+      },
+      "heightStretch": 0.8,
+      "lateralStretch": 1.1178066674647975,
+      "J": 0.9995933966630052,
+      "volumeRatio": 0.9995933966630055,
+      "volumeMeasurementDifference": 3.3306690738754696e-16,
+      "volumeEquilibriumJ": 0.9995933966630055,
+      "volumeEquilibriumDifference": -3.3306690738754696e-16,
+      "reference": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "current": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.0894245333971838,
+          0,
+          0
+        ],
+        [
+          0,
+          0.048,
+          0
+        ],
+        [
+          0.0894245333971838,
+          0.048,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05589033337323988
+        ],
+        [
+          0.0894245333971838,
+          0,
+          0.05589033337323988
+        ],
+        [
+          0,
+          0.048,
+          0.05589033337323988
+        ],
+        [
+          0.0894245333971838,
+          0.048,
+          0.05589033337323988
+        ]
+      ],
+      "referenceBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "currentBoundary": {
+        "signedVolumeM3": 0.0002399024151991213,
+        "surfaceAreaM2": 0.023946161176590725,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "heightM": 0.048,
+      "plateDisplacementM": 0.011999999999999997,
+      "currentPlateAreaM2": 0.004997966983315025,
+      "plateReactionN": 0.30482850804074885,
+      "platePressurePa": 60.99050054919807,
+      "bulkPressurePa": 20.330166849741317,
+      "meanCompressionPressurePa": 20.33016684974132,
+      "lateralPiolaStressPa": -1.1581846592889633e-11,
+      "axialPiolaStressPa": -76.20712701018721,
+      "lateralCauchyStressPa": -1.2951531479005036e-11,
+      "axialCauchyStressPa": -60.99050054919806,
+      "sideSupportForceN": -3.47455397786689e-14,
+      "energyJ": 0.0016790078877924363,
+      "deviatoricEnergyJ": 0.0016780159301505043,
+      "volumeEnergyJ": 9.919576419319696e-7,
+      "forceResidualN": 0,
+      "lateralResidualPa": -1.1581846592889633e-11,
+      "energyDerivativeProbes": [
+        {
+          "delta": 0.000002,
+          "axialPa": -76.2071269973339,
+          "lateralPa": 1.39252216528607e-7,
+          "axialDifferencePa": 1.2853305975113472e-8,
+          "lateralDifferencePa": 1.392637983751999e-7
+        },
+        {
+          "delta": 0.000001,
+          "axialPa": -76.2071270093053,
+          "lateralPa": 3.90764532999984e-8,
+          "axialDifferencePa": 8.819114327707211e-10,
+          "lateralDifferencePa": 3.908803514659129e-8
+        }
+      ],
+      "maxSupportedForceN": 0.30482850804074885,
+      "forceBranch": "Imposed height 0.6 ≤ h ≤ 1; reaction is an output",
+      "bulkShearRatio": 500,
+      "isochoricComparison": {
+        "lateralStretch": 1.118033988749895,
+        "J": 1,
+        "interpretation": "Prescribed exact-isochoric geometry; not the finite-bulk free-side equilibrium"
+      }
+    },
+    {
+      "accepted": true,
+      "scope": "Homogeneous isotropic elastic Lab 5 block; prescribed boundary or stationary compression branch. No biological calibration, spatial stability or anatomical convergence.",
+      "controls": {
+        "mu": 1500,
+        "bulk": 50000,
+        "heightStretch": 0.8,
+        "force": 2,
+        "mode": "displacement",
+        "boundary": "free"
+      },
+      "heightStretch": 0.8,
+      "lateralStretch": 1.1146268835553577,
+      "J": 0.9939144716354632,
+      "volumeRatio": 0.9939144716354634,
+      "volumeMeasurementDifference": 2.220446049250313e-16,
+      "volumeEquilibriumJ": 0.9939144716354633,
+      "volumeEquilibriumDifference": -1.1102230246251565e-16,
+      "reference": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "current": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08917015068442861,
+          0,
+          0
+        ],
+        [
+          0,
+          0.048,
+          0
+        ],
+        [
+          0.08917015068442861,
+          0.048,
+          0
+        ],
+        [
+          0,
+          0,
+          0.055731344177767886
+        ],
+        [
+          0.08917015068442861,
+          0,
+          0.055731344177767886
+        ],
+        [
+          0,
+          0.048,
+          0.055731344177767886
+        ],
+        [
+          0.08917015068442861,
+          0.048,
+          0.055731344177767886
+        ]
+      ],
+      "referenceBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "currentBoundary": {
+        "signedVolumeM3": 0.0002385394731925112,
+        "surfaceAreaM2": 0.02384968822312549,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "heightM": 0.048,
+      "plateDisplacementM": 0.011999999999999997,
+      "currentPlateAreaM2": 0.004969572358177315,
+      "plateReactionN": 4.536371031795807,
+      "platePressurePa": 912.8292546804987,
+      "bulkPressurePa": 304.27641822683984,
+      "meanCompressionPressurePa": 304.27641822683984,
+      "lateralPiolaStressPa": -9.379164112033322e-12,
+      "axialPiolaStressPa": -1134.0927579489517,
+      "lateralCauchyStressPa": -1.0518277742095555e-11,
+      "axialCauchyStressPa": -912.8292546804985,
+      "sideSupportForceN": -2.813749233609997e-14,
+      "energyJ": 0.024977266334915958,
+      "deviatoricEnergyJ": 0.024755064402062467,
+      "volumeEnergyJ": 0.00022220193285349133,
+      "forceResidualN": 0,
+      "lateralResidualPa": -9.379164112033322e-12,
+      "energyDerivativeProbes": [
+        {
+          "delta": 0.000002,
+          "axialPa": -1134.092757865916,
+          "lateralPa": 1.9154238380577249e-7,
+          "axialDifferencePa": 8.303572940349113e-8,
+          "lateralDifferencePa": 1.9155176296988452e-7
+        },
+        {
+          "delta": 0.000001,
+          "axialPa": -1134.092757956266,
+          "lateralPa": 7.228014483236698e-8,
+          "axialDifferencePa": -7.314383765333332e-9,
+          "lateralDifferencePa": 7.228952399647902e-8
+        }
+      ],
+      "maxSupportedForceN": 4.536371031795807,
+      "forceBranch": "Imposed height 0.6 ≤ h ≤ 1; reaction is an output",
+      "bulkShearRatio": 33.333333333333336,
+      "isochoricComparison": {
+        "lateralStretch": 1.118033988749895,
+        "J": 1,
+        "interpretation": "Prescribed exact-isochoric geometry; not the finite-bulk free-side equilibrium"
+      }
+    },
+    {
+      "accepted": true,
+      "scope": "Homogeneous isotropic elastic Lab 5 block; prescribed boundary or stationary compression branch. No biological calibration, spatial stability or anatomical convergence.",
+      "controls": {
+        "mu": 10000,
+        "bulk": 50000,
+        "heightStretch": 0.8,
+        "force": 2,
+        "mode": "displacement",
+        "boundary": "free"
+      },
+      "heightStretch": 0.8,
+      "lateralStretch": 1.0954665029537702,
+      "J": 0.9600374872750103,
+      "volumeRatio": 0.9600374872750103,
+      "volumeMeasurementDifference": 0,
+      "volumeEquilibriumJ": 0.9600374872750104,
+      "volumeEquilibriumDifference": -1.1102230246251565e-16,
+      "reference": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08,
+          0,
+          0
+        ],
+        [
+          0,
+          0.06,
+          0
+        ],
+        [
+          0.08,
+          0.06,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05
+        ],
+        [
+          0.08,
+          0,
+          0.05
+        ],
+        [
+          0,
+          0.06,
+          0.05
+        ],
+        [
+          0.08,
+          0.06,
+          0.05
+        ]
+      ],
+      "current": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0.08763732023630162,
+          0,
+          0
+        ],
+        [
+          0,
+          0.048,
+          0
+        ],
+        [
+          0.08763732023630162,
+          0.048,
+          0
+        ],
+        [
+          0,
+          0,
+          0.05477332514768851
+        ],
+        [
+          0.08763732023630162,
+          0,
+          0.05477332514768851
+        ],
+        [
+          0,
+          0.048,
+          0.05477332514768851
+        ],
+        [
+          0.08763732023630162,
+          0.048,
+          0.05477332514768851
+        ]
+      ],
+      "referenceBoundary": {
+        "signedVolumeM3": 0.00023999999999999998,
+        "surfaceAreaM2": 0.023600000000000003,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "currentBoundary": {
+        "signedVolumeM3": 0.00023040899694600243,
+        "surfaceAreaM2": 0.02327179682961316,
+        "closureVectorM2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "heightM": 0.048,
+      "plateDisplacementM": 0.011999999999999997,
+      "currentPlateAreaM2": 0.004800187436375051,
+      "plateReactionN": 28.774132726270974,
+      "platePressurePa": 5994.37690874844,
+      "bulkPressurePa": 1998.1256362494871,
+      "meanCompressionPressurePa": 1998.125636249487,
+      "lateralPiolaStressPa": -9.322320693172514e-12,
+      "axialPiolaStressPa": -7193.533181567744,
+      "lateralCauchyStressPa": -1.0637386752625704e-11,
+      "axialCauchyStressPa": -5994.37690874844,
+      "sideSupportForceN": -2.7966962079517543e-14,
+      "energyJ": 0.15824234438342752,
+      "deviatoricEnergyJ": 0.14866032984365773,
+      "volumeEnergyJ": 0.0095820145397698,
+      "forceResidualN": 0,
+      "lateralResidualPa": -9.322320693172514e-12,
+      "energyDerivativeProbes": [
+        {
+          "delta": 0.000002,
+          "axialPa": -7193.533180412105,
+          "lateralPa": 3.324886662288881e-7,
+          "axialDifferencePa": 0.00000115563852887135,
+          "lateralDifferencePa": 3.324979885495813e-7
+        },
+        {
+          "delta": 0.000001,
+          "axialPa": -7193.533182204653,
+          "lateralPa": 1.4456028966473397e-7,
+          "axialDifferencePa": -6.369091352098621e-7,
+          "lateralDifferencePa": 1.4456961198542714e-7
+        }
+      ],
+      "maxSupportedForceN": 28.774132726270974,
+      "forceBranch": "Imposed height 0.6 ≤ h ≤ 1; reaction is an output",
+      "bulkShearRatio": 5,
+      "isochoricComparison": {
+        "lateralStretch": 1.118033988749895,
+        "J": 1,
+        "interpretation": "Prescribed exact-isochoric geometry; not the finite-bulk free-side equilibrium"
+      }
+    }
+  ],
+  "dilation": [
+    {
+      "scale": 0.7,
+      "J": 0.3429999999999999,
+      "energyDensityPa": 10791.225000000002,
+      "volumeEnergyDensityPa": 10791.225000000002,
+      "piolaStressPa": -16096.499999999998,
+      "volumePiolaPa": -16096.499999999998,
+      "shapeEnergyDensityPa": 0,
+      "stressDifferencePa": 0
+    },
+    {
+      "scale": 0.9,
+      "J": 0.7290000000000001,
+      "energyDensityPa": 1836.0249999999987,
+      "volumeEnergyDensityPa": 1836.0249999999987,
+      "piolaStressPa": -10975.499999999996,
+      "volumePiolaPa": -10975.499999999995,
+      "shapeEnergyDensityPa": 0,
+      "stressDifferencePa": -1.8189894035458565e-12
+    },
+    {
+      "scale": 1.2,
+      "J": 1.7279999999999998,
+      "energyDensityPa": 13249.6,
+      "volumeEnergyDensityPa": 13249.599999999991,
+      "piolaStressPa": 52416,
+      "volumePiolaPa": 52415.99999999997,
+      "shapeEnergyDensityPa": 9.094947017729282e-12,
+      "stressDifferencePa": 2.9103830456733704e-11
+    }
+  ],
+  "shear": [
+    {
+      "gamma": -0.6,
+      "F": [
+        1,
+        -0.6,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "J": 1,
+      "I1": 3.36,
+      "shapeEnergyDensityPa": 269.9999999999999,
+      "expectedShapeEnergyDensityPa": 270,
+      "volumeEnergyDensityPa": 0
+    },
+    {
+      "gamma": 0.2,
+      "F": [
+        1,
+        0.2,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "J": 1,
+      "I1": 3.04,
+      "shapeEnergyDensityPa": 30.00000000000003,
+      "expectedShapeEnergyDensityPa": 30.000000000000007,
+      "volumeEnergyDensityPa": 0
+    },
+    {
+      "gamma": 0.7,
+      "F": [
+        1,
+        0.7,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "J": 1,
+      "I1": 3.49,
+      "shapeEnergyDensityPa": 367.50000000000017,
+      "expectedShapeEnergyDensityPa": 367.49999999999994,
+      "volumeEnergyDensityPa": 0
+    }
+  ],
+  "workChecks": [
+    {
+      "boundary": "free",
+      "probes": [
+        {
+          "cells": 32,
+          "plateWorkJ": 0.12377031287514201,
+          "storedEnergyJ": 0.12377029920571488,
+          "differenceJ": 1.3669427131879353e-8
+        },
+        {
+          "cells": 64,
+          "plateWorkJ": 0.12377030006109324,
+          "storedEnergyJ": 0.12377029920571488,
+          "differenceJ": 8.553783653608704e-10
+        }
+      ],
+      "scope": "Quasistatic elastic path from h=1 to h=0.6; no kinetic, activation, dissipative or history energy"
+    },
+    {
+      "boundary": "confined",
+      "probes": [
+        {
+          "cells": 32,
+          "plateWorkJ": 1.0171503322844706,
+          "storedEnergyJ": 1.0171503270336384,
+          "differenceJ": 5.250832213476997e-9
+        },
+        {
+          "cells": 64,
+          "plateWorkJ": 1.0171503273621718,
+          "storedEnergyJ": 1.0171503270336384,
+          "differenceJ": 3.285334226887926e-10
+        }
+      ],
+      "scope": "Quasistatic elastic path from h=1 to h=0.6; no kinetic, activation, dissipative or history energy"
+    }
+  ],
+  "negativeCases": [
+    {
+      "parameters": {
+        "mu": 1500,
+        "bulk": 50000,
+        "heightStretch": 0.8,
+        "force": 20,
+        "mode": "force",
+        "boundary": "free"
+      },
+      "accepted": false,
+      "reason": "Force exceeds the supported h ≥ 0.8 branch (4.53637 N)",
+      "stateAdvanced": false
+    },
+    {
+      "parameters": {
+        "mu": 1500,
+        "bulk": 0,
+        "heightStretch": 0.8,
+        "force": 2,
+        "mode": "force",
+        "boundary": "free"
+      },
+      "accepted": false,
+      "reason": "Free block with zero bulk has no unique force-controlled equilibrium; use imposed height",
+      "stateAdvanced": false
+    }
+  ],
+  "scope": "Homogeneous constitutive/boundary evidence only; not a mesh, mixed-pressure stability, biological validation or anatomical capstone qualification"
+}

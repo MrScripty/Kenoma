@@ -65,6 +65,46 @@ $$P_i=\mu J^{-2/3}\left(\lambda_i-\frac{I_1}{3\lambda_i}\right)
 
 Free lateral faces require P_x = P_z = 0. For a compressed block, the implementation brackets t between h and 1/√h and bisects that scalar equation. It reports the remaining lateral stress residual. The hard plate constraint fixes h; this is not a penalty that merely makes penetration small. Removing bulk resistance sets κ = 0 and allows stress-free uniform contraction t = h, exposing large volume loss under the same imposed gap.
 
+## Extend Laboratory 5: bulk, shear and lateral boundaries {#lab5-bulk-compression}
+
+The following experiment extends the **same** Lab 5 block and energy. It isolates material and boundary conditions from the tendon actuator and authored joint-gap function. There are no added anatomical states, skin layers or new arm parameters. The three property lessons later in this book measure prescribed geometry, exact isochoric stretches and axial load/strain; here a specified material law determines lateral equilibrium and, under force control, height.
+
+The split neo-Hookean form also appears in the [original Abaqus material documentation](https://abaqus-docs.mit.edu/2017/English/SIMACAEMATRefMap/simamat-c-hyperelastic.htm), with $C_{10}=\mu/2$ and $1/D_1=K/2$ when elastic and total volume ratios coincide. That reference describes isotropic elastomers, not measured muscle parameters. The values and experiment here remain authored teaching choices.
+
+{{compression-lab}}
+
+**Displacement control.** Set the dimensionless height stretch $0.6\le h\le1$; height is $hH$ and shortening is $H(1-h)$ in metres. Free sides solve $P_x=P_z=0$ for $t$; confined sides impose $t=1$ and the side supports carry a reaction. Confinement is a physical constraint, not a missing displacement mode. Plate force is an **output**, $N=-WD P_y$, measured in newtons. A homogeneous block has the same local $J$ throughout; it cannot reveal the capstone's spatially varying compression.
+
+**Force control.** Specify compression-positive plate force $0\le N\le20$ N and solve the scalar equation $-WD P_y=N$ after each lateral solve. This lesson supports only the branch $0.8\le h\le1$. It reports that branch's maximum load, samples monotonicity and freshly checks the force residual. A load outside that bracket rejects the candidate and retains the last valid state. This is no theorem of global existence or stability, and it does not extrapolate a large-compression force branch. At $K=0$, a free block can contract uniformly without energy or load; force control has no unique state and is rejected, including the zero-load case.
+
+First Piola stress uses reference area. Current Cauchy stresses are $\sigma_x=P_x t/J$ and $\sigma_y=P_y h/J$, and current plate area is $WDt^2$. Thus plate compressive pressure is $p_{plate}=-\sigma_y=N/(WDt^2)$, while mean compressive stress is
+
+$$p_{mean}=-\frac{2\sigma_x+\sigma_y}{3}=K(1-J).$$
+
+These two pressures generally differ. The isochoric part has zero Cauchy trace. Free sides give $\sigma_x=0$, so $p_{plate}=3K(1-J)$ for this declared law. A confined support instead supplies the lateral traction. The displayed signed force on the block at the positive-$x$ side is $\sigma_x(hHtD)$; the opposing side has the opposite vector force. A negative value pushes inward. Neither pressure is a vascular, intramuscular or measured contact pressure.
+
+The implementation imports the unchanged Lab 5 energy and Piola stress, rather than creating a second constitutive law. Its independent lateral route solves in $J$, using $t^2=J/h$:
+
+$$0=\frac{\mu}{3}J^{-5/3}\left(\frac{J}{h}-h^2\right)+K(J-1).$$
+
+The independent boundary-triangle volume is compared with $J=t^2h$. Centred differences of energy check each Piola component at two increments. Numerical tests additionally use a geometric-mean-normalized diagonal energy, test the small-strain free modulus $9K\mu/(3K+\mu)$ and confined modulus $K+4\mu/3$, and compare integrated plate work with stored energy. Free lateral motion has zero traction work; confined lateral motion is zero. The support reactions are not counted as extra energy.
+
+At the default imposed $h=0.8$, free sides have $J=0.993914$ and $N=4.53637$ N, while confinement imposes $J=0.8$ and needs $42.0887$ N. At the same 2 N load, free and confined height stretches are respectively $0.899516$ and $0.990389$. Reducing height and reducing volume are different observables. The [source-bound experiment](data/compression-lab-v1/benchmark.json) retains material/load sweeps and unsupported-load rejection; its values are recomputed during the build.
+
+### Exact material identities and their limits
+
+Under uniform positive dilation $F=sI$, $J=s^3$ and $I_1=3s^2$: the declared isochoric energy vanishes, but $K(J-1)^2/2$ generally does not. Under simple shear $F=[[1,\gamma,0],[0,1,0],[0,0,1]]$, $J=1$ and $I_1=3+\gamma^2$: volume energy is zero while shape energy is $\mu\gamma^2/2$. The following real-number claims use the actual energy definitions, real power and shear matrix. They do not certify browser arithmetic, the lateral root or physiological material selection.
+
+{{proof:compression-dilation}}
+
+{{proof:compression-shear}}
+
+{{proof:compression-mean-pressure}}
+
+{{proof:compression-free-pressure}}
+
+**Constitutive difference from the capstone.** The arm's local body volume energy is $K(\ln J)^2/2$, not this lab's $K(J-1)^2/2$. Its volumetric Cauchy mean is $K\ln J/J$, with compression-positive pressure $-K\ln J/J$, and its directional fibre energy can also contribute mean stress. The lab's identity $p_{mean}=K(1-J)$ and free-side factor three therefore cannot be transferred to the anatomical law. Both volume penalties have the same small-strain bulk modulus at $J=1$; their finite-compression responses differ. No material law, bulk value, accepted state or residual tolerance in the capstone changes here. This homogeneous fixture cannot diagnose volumetric locking, justify a mixed pressure space or qualify the whole tissue envelope.
+
 ## Contact produces a force, pressure and generalized moment
 
 The ideal opposed plates have gap
