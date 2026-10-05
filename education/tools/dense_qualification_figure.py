@@ -21,8 +21,9 @@ def render():
     pairs=[(coarse,'anatomical-dense-trajectory.json')]
     if not coarse_only:
         fine=read('anatomical-dense-fine-trajectory-recheck.json')
+        interpolated=read('anatomical-dense-interpolated-trajectory-recheck.json')
         release=read('anatomical-dense-release-refinement-recheck.json')
-        pairs.extend([(fine,'anatomical-dense-fine-trajectory.json'),(release,'anatomical-dense-release-refinement.json')])
+        pairs.extend([(fine,'anatomical-dense-fine-trajectory.json'),(interpolated,'anatomical-dense-interpolated-trajectory.json'),(release,'anatomical-dense-release-refinement.json')])
     if any(r['result'] not in ['PASS_DENSE_TRAJECTORY','PASS_PRESERVED_REJECTION','PASS_PRESERVED_BEHAVIOR_REJECTION'] for r,_ in pairs):raise ValueError('Fresh replay required')
     for receipt,source in pairs:
         if receipt['executionReceiptSHA256']!=digest(BASE/'audit'/source):raise ValueError('Stale replay')
@@ -40,17 +41,21 @@ def render():
     fig.suptitle('Arm qualification · motion and unresolved compression',fontsize=20)
     held=coarse['held']
     series=[(coarse,'256 points · original intervals','#0e7669')]
-    if not coarse_only:series.extend([(fine,'256 points · half intervals','#ca6234'),(release,'256 points · release thirds','#72509b')])
+    if not coarse_only:series.extend([(fine,'256 points · half intervals, target guesses','#ca6234'),(interpolated,'256 points · half intervals, interpolated guesses','#3875b4'),(release,'256 points · release thirds','#72509b')])
     for receipt,label,color in [(baseline,'32 points · original','#758193')]+series:
-        rows=receipt['rows'];axes[0,0].plot([0]+[r['timeS'] for r in rows],[held['qRad']*180/np.pi]+[r['qRad']*180/np.pi for r in rows],'.-',label=label,color=color,markersize=3)
+        rows=receipt['rows'];axes[0,0].plot([0]+[r['timeS'] for r in rows],[held['qRad']*180/np.pi]+[r['qRad']*180/np.pi for r in rows],'.',label=label,color=color,markersize=3,linestyle='--' if 'interpolated' in label else '-')
     axes[0,0].axvline(.13,color='#777',linestyle=':',linewidth=1)
     axes[0,0].text(.135,.18,'effort removed',transform=axes[0,0].get_xaxis_transform(),va='top',fontsize=12)
-    axes[0,0].set(title='Accepted angle trajectories',xlabel='Time (s)',ylabel='Joint angle (degrees)');axes[0,0].legend(fontsize=12,loc='upper left')
+    axes[0,0].set(title='Accepted angle trajectories',xlabel='Time (s)',ylabel='Joint angle (degrees)')
+    if coarse_only:axes[0,0].legend(fontsize=12,loc='upper left')
+    else:fig.legend(*axes[0,0].get_legend_handles_labels(),loc='outside lower center',ncol=2,fontsize=12)
     for receipt,label,color in series:
         axes[0,1].semilogy([r['timeS'] for r in receipt['rows']],[r['independentResidualN'] for r in receipt['rows']],'.-',label=label,color=color)
     axes[0,1].axhline(1e-4,color='#444',linestyle='--',label='Original gate: 1e-4 N')
     axes[0,1].scatter([integration['timeS']],[integration['frozenResidual2048N']],marker='x',s=65,color='#a3242d',label='Frozen 2048-point audit')
-    axes[0,1].set(title='Independent reduced residuals',xlabel='Time (s)',ylabel='Maximum residual (N)');axes[0,1].legend(fontsize=12,loc='best')
+    axes[0,1].set(title='Independent reduced residuals',xlabel='Time (s)',ylabel='Maximum residual (N)')
+    handles,labels=axes[0,1].get_legend_handles_labels()
+    axes[0,1].legend(handles if coarse_only else handles[-2:],labels if coarse_only else labels[-2:],fontsize=12,loc='best')
     bins=next(h for h in local['heads'] if h['elementId']=='FJ1512')['bins'];z=[(b['bin']+.5)/6 for b in bins]
     axes[1,0].plot(z,[b['minimumJ'] for b in bins],'o-',color='#a3242d',label='Minimum sampled J')
     axes[1,0].plot(z,[b['meanJ'] for b in bins],'o-',color='#0e7669',label='Region mean J')
@@ -63,7 +68,7 @@ def render():
     axes[1,1].text(.5,.06,'One increment from the same dense old state.\nThese comparisons do not calibrate trajectories.',transform=axes[1,1].transAxes,ha='center',fontsize=12)
     for ax in axes.flat:ax.grid(axis='y',alpha=.15)
     inputs=['audit/contact-lift-release-recheck.json','audit/anatomical-dense-trajectory.json','audit/anatomical-dense-trajectory-recheck.json','audit/anatomical-compression-localization.json','audit/anatomical-further-integration.json','audit/anatomical-bulk-step-0.5-recheck.json','audit/anatomical-bulk-step-2-recheck.json','audit/anatomical-enriched-step-recheck.json']
-    if not coarse_only:inputs.extend(['audit/anatomical-dense-fine-trajectory.json','audit/anatomical-dense-fine-trajectory-recheck.json','audit/anatomical-dense-release-refinement.json','audit/anatomical-dense-release-refinement-recheck.json','audit/anatomical-dense-matched-times.json'])
+    if not coarse_only:inputs.extend(['audit/anatomical-dense-fine-trajectory.json','audit/anatomical-dense-fine-trajectory-recheck.json','audit/anatomical-dense-interpolated-trajectory.json','audit/anatomical-dense-interpolated-trajectory-recheck.json','audit/anatomical-dense-release-refinement.json','audit/anatomical-dense-release-refinement-recheck.json','audit/anatomical-dense-matched-times.json'])
     for suffix in ['svg','png']:fig.savefig(out/f'dense-qualification.{suffix}',dpi=170)
     plt.close(fig)
     receipt={'schema':1,'coarseOnly':coarse_only,'rendererSHA256':digest(Path(__file__)),'pythonVersion':platform.python_version(),'matplotlibVersion':matplotlib.__version__,'inputs':{p:digest(BASE/p) for p in inputs},'outputs':{f'dense-qualification.{s}':digest(out/f'dense-qualification.{s}') for s in ['svg','png']},'limits':['Accepted prefixes are shown only through their verified times; rejection is not plotted as accepted.','Finite samples and passing reduced residuals do not qualify quadrature, timestep, mesh, full nodal or physiological convergence.']}
