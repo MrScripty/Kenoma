@@ -1,6 +1,6 @@
 """Check generated receipts, complete content, links, and PDF glyph/bounds sanity."""
 from pathlib import Path
-import hashlib,json,re
+import gzip,hashlib,json,re
 from urllib.parse import urlparse
 import fitz
 ROOT=Path(__file__).resolve().parents[1];out=ROOT/'dist'
@@ -52,6 +52,41 @@ assert dense['verifierSHA256']==hashlib.sha256((ROOT/'tools/verify-anatomical-de
 assert dense_execution['accepted'] and dense_execution['pointsPerElement']==256
 for relative,digest in dense_execution['sourceHashes'].items():
  assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Dense comparison source changed: '+relative
+trajectory=json.loads((out/audit/'anatomical-dense-trajectory-recheck.json').read_text())
+trajectory_execution=json.loads((out/audit/'anatomical-dense-trajectory.json').read_text())
+assert trajectory['result']=='PASS_DENSE_TRAJECTORY' and trajectory['verifiedSteps']==15
+assert trajectory_execution['result']=='ACCEPTED_DENSE_TRAJECTORY' and trajectory_execution['completedAllSteps']
+assert trajectory['executionReceiptSHA256']==hashlib.sha256((out/audit/'anatomical-dense-trajectory.json').read_bytes()).hexdigest()
+assert trajectory['verifierSHA256']==hashlib.sha256((ROOT/'tools/verify-anatomical-dense-trajectory.mjs').read_bytes()).hexdigest()
+assert all(r['independentResidualN']<=1e-4 and r['minimumCornerJ']>1e-6 and r['surfaceAudit']['transverseCrossingPairs']==0 and r['routingAudit']['accepted'] and all(v==0 for v in r['sampledPenetrationsM'].values()) for r in trajectory['rows'])
+assert abs(trajectory['rows'][-1]['timeS']-.43)<1e-12
+assert trajectory['behavior']['releaseFallFromPeakRad']>0 and trajectory['behavior']['finalVelocityRadPerS']<0
+for name in ['anatomical-dense-trajectory.json','anatomical-enriched-step.json','anatomical-fixed-end-compression.json','anatomical-further-integration.json','anatomical-nodal-probe.json','anatomical-compression-localization.json']:
+ receipt=json.loads((out/audit/name).read_text())
+ for relative,digest in receipt['sourceHashes'].items():
+  assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Dense qualification source changed: '+relative
+enriched=json.loads((out/audit/'anatomical-enriched-step-recheck.json').read_text())
+assert enriched['result']=='PASS_ACCEPTED_ENRICHED_COMPARISON' and enriched['independentResidualN']<=1e-4
+assert enriched['executionReceiptSHA256']==hashlib.sha256((out/audit/'anatomical-enriched-step.json').read_bytes()).hexdigest()
+assert enriched['verifierSHA256']==hashlib.sha256((ROOT/'tools/anatomical-enriched-step.mjs').read_bytes()).hexdigest()
+assert len(enriched['additionalCoordinatesM'])==6 and next(h for h in enriched['heads'] if h['elementId']=='FJ1512')['coordinateCount']==69
+plot_path='data/anatomical-arm-v1/review/dense-qualification/coarse/'
+plot=json.loads((out/plot_path/'render-receipt.json').read_text())
+assert plot['rendererSHA256']==hashlib.sha256((ROOT/'tools/dense_qualification_figure.py').read_bytes()).hexdigest()
+for relative,digest in plot['inputs'].items():
+ assert hashlib.sha256((out/'data/anatomical-arm-v1'/relative).read_bytes()).hexdigest()==digest,'Stale plotted input: '+relative
+for relative,digest in plot['outputs'].items():
+ assert hashlib.sha256((out/plot_path/relative).read_bytes()).hexdigest()==digest,'Changed qualification figure: '+relative
+orientation=json.loads((out/audit/'anatomical-trajectory-orientation-summary.json').read_text())
+archive=(out/audit/orientation['archive']).read_bytes();decoded=gzip.decompress(archive)
+assert orientation['result']=='PASS_EXACT_STORED_P2_ORIENTATION' and orientation['certifiedElementCount']==29988
+assert hashlib.sha256(archive).hexdigest()==orientation['archiveSHA256']
+assert hashlib.sha256(decoded).hexdigest()==orientation['fullReceiptSHA256']
+full_orientation=json.loads(decoded)
+assert sum(h['elementCount'] for r in full_orientation['rows'] for h in r['heads'])==29988
+assert all(e['orientationCertified'] and all(len(e[k]['coefficients'])==20 and all(int(c['numerator'])>0 for c in e[k]['coefficients']) for k in ['reference','current']) for r in full_orientation['rows'] for h in r['heads'] for e in h['elements'])
+for relative,digest in orientation['sourceHashes'].items():
+ assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Orientation certificate source changed: '+relative
 text=(out/'kenoma-mechanics.md').read_text();assert not re.search(r'\{\{[A-Za-z]',text)
 assert f'The {total_claims} proof cards in this research edition' in text,'Manuscript proof count differs from checked receipts'
 for id in ['force-pair','torque-linearity','torque-origin','central-pair','kinetic-sign','torque-example']:

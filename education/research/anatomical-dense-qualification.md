@@ -111,3 +111,17 @@ The accepted comparison, including this adverse compression result, is preserved
 All three frozen denser calibration residuals fail the unchanged **0.0001 N** gate. The local compression exists in isolated fixed-end poses before any whole-arm contact is applied. Global dilation and local volume loss coexist. The fitted stress scales are approximately **3.6–20.4 times** the authored 1 MPa bulk modulus; these ratios describe model parameters, not physiological tissue measurements. Matching an Arm26 actuator force in the restricted 32-point field does not qualify either the denser calibration or local tissue behavior. Any future constitutive/bulk change needs a newly resolved calibration and trajectory; none is silently retuned here.
 
 The audit binds the saved calibration, its original replay, Arm26 source, operators and diagnostic by SHA-256. The initial rejected schema read and corrected execution are retained separately in the raw review logs.
+
+## Whole-element orientation of stored P2 geometry
+
+`tools/anatomical-bernstein-orientation.mjs` treats each stored binary64 nodal coordinate as an exact dyadic rational. A P2 tetrahedron has an affine Jacobian matrix and a cubic determinant in reference barycentric coordinates. By determinant multilinearity, the helper computes all **20 degree-three Bernstein coefficients**, with a common denominator, using `BigInt` arithmetic. The Bernstein basis is nonnegative and sums to one on the tetrahedron; strictly positive coefficients therefore certify a strictly positive Jacobian throughout the element. Reference and current nodal geometries are checked separately.
+
+All **29,988 elements** across the held pose, the 15 accepted dense states and the accepted enriched comparison pass this exact sign test. This strengthens the previous finite point/corner orientation queries for those stored interpolants. It does not establish mechanical stationarity outside the displacement space, local incompressibility, surface-contact completeness or continuous-motion validity. Numeric lower-J ratios in the receipt are explicitly approximate; only the integer positivity predicate is exact.
+
+Four tests cover affine orientation/reversal, independent curved-P2 determinant reconstruction, unresolved/folded geometry and determinant underflow with signed zero. The 124,008,828-byte full coefficient receipt is retained losslessly as `audit/anatomical-trajectory-orientation-full.json.gz` (29,173,335 bytes). `audit/anatomical-trajectory-orientation-summary.json` binds the full decoded byte hash, archive byte hash, all inputs and packaging source. Packaging independently checks every coefficient sign and round-trips the original bytes. No Lean claim or constitutive assumption is changed.
+
+```sh
+node --test tests/anatomical_bernstein_orientation.test.mjs
+node --max-old-space-size=8192 tools/anatomical-trajectory-orientation-audit.mjs
+python3 tools/package_anatomical_orientation.py
+```

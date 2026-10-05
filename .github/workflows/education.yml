@@ -65,6 +65,8 @@ jobs:
           node --max-old-space-size=8192 tools/anatomical-bulk-step.mjs --factor 2 --mode replay
           node --max-old-space-size=8192 tools/anatomical-enriched-step.mjs --replay
           node --max-old-space-size=8192 tools/anatomical-fixed-end-compression-audit.mjs
+          node --max-old-space-size=8192 tools/anatomical-trajectory-orientation-audit.mjs
+          python3 tools/package_anatomical_orientation.py
           node tools/anatomical-fixture-experiment.mjs
           node tools/anatomical-bone-collision-audit.mjs
           node tools/anatomical-apposition-audit.mjs
