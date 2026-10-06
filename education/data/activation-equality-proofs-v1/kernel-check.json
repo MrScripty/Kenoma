@@ -1,0 +1,283 @@
+{
+  "schema": 1,
+  "compiler_exit_code": 0,
+  "lean_version": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)",
+  "mathlib": {
+    "repository": "https://github.com/leanprover-community/mathlib4",
+    "tag": "v4.19.0",
+    "commit": "c44e0c8ee63ca166450922a373c7409c5d26b00b",
+    "manifest_sha256": "5c6421b650bc87a2427a892a39e5522dc44543ca4ac1bd6e9f08d536c044a752",
+    "toolchain": "leanprover/lean4:v4.19.0",
+    "license": "Apache-2.0",
+    "qualification": "Fresh compilation required; this lock alone is not proof evidence."
+  },
+  "dependencies": [
+    {
+      "name": "plausible",
+      "commit": "77e08eddc486491d7b9e470926b3dbe50319451a"
+    },
+    {
+      "name": "LeanSearchClient",
+      "commit": "25078369972d295301f5a1e53c3e5850cf6d9d4c"
+    },
+    {
+      "name": "importGraph",
+      "commit": "e6a9f0f5ee3ccf7443a0070f92b62f8db12ae82b"
+    },
+    {
+      "name": "proofwidgets",
+      "commit": "c4919189477c3221e6a204008998b0d724f49904"
+    },
+    {
+      "name": "aesop",
+      "commit": "5d50b08dedd7d69b3d9b3176e0d58a23af228884"
+    },
+    {
+      "name": "Qq",
+      "commit": "fa4f7f15d97591a9cf3aa7724ba371c7fc6dda02"
+    },
+    {
+      "name": "batteries",
+      "commit": "f5d04a9c4973d401c8c92500711518f7c656f034"
+    },
+    {
+      "name": "Cli",
+      "commit": "02dbd02bc00ec4916e99b04b2245b30200e200d0"
+    }
+  ],
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-DwarningAsError=true",
+    "/workspace/Kenoma-refinement-diagnosis/education/proofs/ActivationEquality.lean"
+  ],
+  "working_directory": "/workspace/Kenoma/education/.tools/mathlib4",
+  "source": "proofs/ActivationEquality.lean",
+  "source_sha256": "b5cf02396b0d849373290736bee390cbe6d2a4d846851edf6c405701a7f673b3",
+  "claims_sha256": "b7f9c29a3ddd93c2a7b399766d1d73c83bac6f58c091c5edb93dc2d39da52770",
+  "checker_sha256": "aef6af526db5596530413168ca2e182aa2ed95540d596e5aea3f49876d34eb74",
+  "transcript_sha256": "81a515294daf6e99a2331f298801423c4bdcd63f8d09b02bfe9dd8e6748914c3",
+  "equation_sources": [
+    {
+      "path": "data/millard-reference-v1/upstream/MuscleFirstOrderActivationDynamicModel.cpp",
+      "sha256": "7cda12111355cf7f04a906c4821582a203547b149ac9b43250c58a13734a18e9"
+    },
+    {
+      "path": "data/millard-reference-v1/upstream/manifest.json",
+      "sha256": "0d9448dd2fc3e0dacf58722c80263708fe2df9addc83019ac24496134906573c"
+    },
+    {
+      "path": "tools/millard_reference_benchmark.py",
+      "sha256": "4a5210c7988c8ffc13cd1b6d1626ae9a5d6066ad9a5933ddb4036103e6eb667b"
+    },
+    {
+      "path": "tools/run_activation_equality_diagnostic.py",
+      "sha256": "2f3bfa75f82275303e946a3f8f50b4f751a90f950ffd1b35b27973f03d5ba82c"
+    },
+    {
+      "path": "web/vertical-force-model.js",
+      "sha256": "58ca8de8ae7d9e65083f6460bfb25dc32eccd1953853da78d8325274c0ddcf80"
+    }
+  ],
+  "exact_statements": [
+    "theorem clamp_identity (TA TD amin a u : \u211d) (hl : amin \u2264 a) (hu : a \u2264 1) :\n    clampedRate TA TD amin a u = rate TA TD a u",
+    "theorem scale_positive (a : \u211d) (ha : 0 \u2264 a) : 0 < scale a",
+    "theorem time_constants_positive (TA TD a : \u211d) (hTA : 0 < TA)\n    (hTD : 0 < TD) (ha : 0 \u2264 a) :\n    0 < activationTau TA a \u2227 0 < deactivationTau TD a",
+    "theorem one_sided_equality (TA TD a : \u211d) :\n    activationRate TA a a = 0 \u2227 deactivationRate TD a a = 0",
+    "theorem rate_equality (TA TD a : \u211d) : rate TA TD a a = 0",
+    "theorem positive_above (TA TD a u : \u211d) (hTA : 0 < TA)\n    (ha : 0 \u2264 a) (h : a < u) : 0 < rate TA TD a u",
+    "theorem negative_below (TA TD a u : \u211d) (hTD : 0 < TD)\n    (ha : 0 \u2264 a) (h : u < a) : rate TA TD a u < 0",
+    "theorem restoring_sign (TA TD a u : \u211d) (hTA : 0 < TA)\n    (hTD : 0 < TD) (ha : 0 \u2264 a) : (a - u) * rate TA TD a u \u2264 0",
+    "theorem restoring_strict (TA TD a u : \u211d) (hTA : 0 < TA)\n    (hTD : 0 < TD) (ha : 0 \u2264 a) (hne : a \u2260 u) :\n    (a - u) * rate TA TD a u < 0",
+    "theorem lower_boundary_inward (TA TD amin u : \u211d) (hTA : 0 < TA)\n    (hmin : 0 \u2264 amin) (hu : amin \u2264 u) : 0 \u2264 rate TA TD amin u",
+    "theorem upper_boundary_inward (TA TD u : \u211d) (hTD : 0 < TD)\n    (hu : u \u2264 1) : rate TA TD 1 u \u2264 0",
+    "theorem continuous_excitation (TA TD a : \u211d) :\n    Continuous (fun u : \u211d => rate TA TD a u)",
+    "theorem deactivation_rewrite (TD a u : \u211d) :\n    deactivationRate TD a u = (u - a) * scale a / TD",
+    "theorem coefficient_agreement_iff (TA TD a : \u211d) (hTA : 0 < TA)\n    (hTD : 0 < TD) (ha : 0 \u2264 a) :\n    1 / activationTau TA a = 1 / deactivationTau TD a \u2194\n      TD = TA * (scale a) ^ 2",
+    "theorem default_coefficients_at_upper :\n    1 / activationTau (1 / 100) 1 = 1 / deactivationTau (1 / 25) 1"
+  ],
+  "claims": [
+    {
+      "theorem": "KenomaActivation.clamp_identity",
+      "claim": "The clamped source rate equals the in-domain rate.",
+      "assumptions": "amin \u2264 a \u2264 1; TA, TD and u arbitrary reals.",
+      "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaActivation.scale_positive",
+      "claim": "S(a) is strictly positive.",
+      "assumptions": "a \u2265 0.",
+      "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaActivation.time_constants_positive",
+      "claim": "Both branch time constants are strictly positive.",
+      "assumptions": "TA > 0, TD > 0, a \u2265 0.",
+      "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaActivation.one_sided_equality",
+      "claim": "Both one-sided rate extensions equal zero at u=a.",
+      "assumptions": "All parameters real; algebraic equality also holds under Lean total division.",
+      "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaActivation.rate_equality",
+      "claim": "The piecewise rate equals zero at u=a.",
+      "assumptions": "All parameters real; physical interpretation requires positive time constants and S(a).",
+      "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaActivation.positive_above",
+      "claim": "The piecewise rate is positive when excitation exceeds activation.",
+      "assumptions": "TA > 0, a \u2265 0, a < u; TD arbitrary.",
+      "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaActivation.negative_below",
+      "claim": "The piecewise rate is negative when excitation is below activation.",
+      "assumptions": "TD > 0, a \u2265 0, u < a; TA arbitrary.",
+      "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaActivation.restoring_sign",
+      "claim": "(a-u) times the rate is nonpositive.",
+      "assumptions": "TA > 0, TD > 0, a \u2265 0.",
+      "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaActivation.restoring_strict",
+      "claim": "(a-u) times the rate is strictly negative away from equality.",
+      "assumptions": "TA > 0, TD > 0, a \u2265 0, a \u2260 u.",
+      "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaActivation.lower_boundary_inward",
+      "claim": "The rate at the lower activation boundary is nonnegative.",
+      "assumptions": "TA > 0, amin \u2265 0, u \u2265 amin; boundary vector-field sign only.",
+      "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaActivation.upper_boundary_inward",
+      "claim": "The rate at activation 1 is nonpositive.",
+      "assumptions": "TD > 0, u \u2264 1; boundary vector-field sign only.",
+      "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaActivation.continuous_excitation",
+      "claim": "The piecewise rate is continuous in excitation for each fixed activation.",
+      "assumptions": "All parameters real and fixed; positive denominators needed for physical interpretation; no joint or trajectory continuity claim.",
+      "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaActivation.deactivation_rewrite",
+      "claim": "The deactivation extension equals (u-a) S(a) / TD.",
+      "assumptions": "All parameters real, using Lean total division.",
+      "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaActivation.coefficient_agreement_iff",
+      "claim": "Branch coefficients 1/tauA and 1/tauD agree exactly when TD = TA S(a)^2.",
+      "assumptions": "TA > 0, TD > 0, a \u2265 0; coefficient identity, not a formal derivative theorem.",
+      "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaActivation.default_coefficients_at_upper",
+      "claim": "The default branch coefficients agree at activation 1.",
+      "assumptions": "Exact real TA=1/100, TD=1/25, a=1; no binary64 assertion.",
+      "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "scope": "Exact real algebra and fixed-activation excitation continuity; no numerical refinement or ODE solution theorem."
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "theorem": "KenomaActivation.clamp_identity",
+    "claim": "The clamped source rate equals the in-domain rate.",
+    "assumptions": "amin \u2264 a \u2264 1; TA, TD and u arbitrary reals.",
+    "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established."
+  },
+  {
+    "theorem": "KenomaActivation.scale_positive",
+    "claim": "S(a) is strictly positive.",
+    "assumptions": "a \u2265 0.",
+    "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established."
+  },
+  {
+    "theorem": "KenomaActivation.time_constants_positive",
+    "claim": "Both branch time constants are strictly positive.",
+    "assumptions": "TA > 0, TD > 0, a \u2265 0.",
+    "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established."
+  },
+  {
+    "theorem": "KenomaActivation.one_sided_equality",
+    "claim": "Both one-sided rate extensions equal zero at u=a.",
+    "assumptions": "All parameters real; algebraic equality also holds under Lean total division.",
+    "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established."
+  },
+  {
+    "theorem": "KenomaActivation.rate_equality",
+    "claim": "The piecewise rate equals zero at u=a.",
+    "assumptions": "All parameters real; physical interpretation requires positive time constants and S(a).",
+    "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established."
+  },
+  {
+    "theorem": "KenomaActivation.positive_above",
+    "claim": "The piecewise rate is positive when excitation exceeds activation.",
+    "assumptions": "TA > 0, a \u2265 0, a < u; TD arbitrary.",
+    "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established."
+  },
+  {
+    "theorem": "KenomaActivation.negative_below",
+    "claim": "The piecewise rate is negative when excitation is below activation.",
+    "assumptions": "TD > 0, a \u2265 0, u < a; TA arbitrary.",
+    "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established."
+  },
+  {
+    "theorem": "KenomaActivation.restoring_sign",
+    "claim": "(a-u) times the rate is nonpositive.",
+    "assumptions": "TA > 0, TD > 0, a \u2265 0.",
+    "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established."
+  },
+  {
+    "theorem": "KenomaActivation.restoring_strict",
+    "claim": "(a-u) times the rate is strictly negative away from equality.",
+    "assumptions": "TA > 0, TD > 0, a \u2265 0, a \u2260 u.",
+    "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established."
+  },
+  {
+    "theorem": "KenomaActivation.lower_boundary_inward",
+    "claim": "The rate at the lower activation boundary is nonnegative.",
+    "assumptions": "TA > 0, amin \u2265 0, u \u2265 amin; boundary vector-field sign only.",
+    "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established."
+  },
+  {
+    "theorem": "KenomaActivation.upper_boundary_inward",
+    "claim": "The rate at activation 1 is nonpositive.",
+    "assumptions": "TD > 0, u \u2264 1; boundary vector-field sign only.",
+    "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established."
+  },
+  {
+    "theorem": "KenomaActivation.continuous_excitation",
+    "claim": "The piecewise rate is continuous in excitation for each fixed activation.",
+    "assumptions": "All parameters real and fixed; positive denominators needed for physical interpretation; no joint or trajectory continuity claim.",
+    "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established."
+  },
+  {
+    "theorem": "KenomaActivation.deactivation_rewrite",
+    "claim": "The deactivation extension equals (u-a) S(a) / TD.",
+    "assumptions": "All parameters real, using Lean total division.",
+    "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established."
+  },
+  {
+    "theorem": "KenomaActivation.coefficient_agreement_iff",
+    "claim": "Branch coefficients 1/tauA and 1/tauD agree exactly when TD = TA S(a)^2.",
+    "assumptions": "TA > 0, TD > 0, a \u2265 0; coefficient identity, not a formal derivative theorem.",
+    "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established."
+  },
+  {
+    "theorem": "KenomaActivation.default_coefficients_at_upper",
+    "claim": "The default branch coefficients agree at activation 1.",
+    "assumptions": "Exact real TA=1/100, TD=1/25, a=1; no binary64 assertion.",
+    "limitations": "No floating-point correctness, event localization, RK order, ODE solution invariance or anatomical validation is established."
+  }
+]

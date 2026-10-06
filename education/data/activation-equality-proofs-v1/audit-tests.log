@@ -1,0 +1,11 @@
+test_admissions_rejected (__main__.AuditTests.test_admissions_rejected) ... ok
+test_complete_inventory (__main__.AuditTests.test_complete_inventory) ... ok
+test_hidden_declaration_rejected (__main__.AuditTests.test_hidden_declaration_rejected) ... ok
+test_nested_comments_not_admissions (__main__.AuditTests.test_nested_comments_not_admissions) ... ok
+test_reports_rejected (__main__.AuditTests.test_reports_rejected) ... ok
+test_unclosed_comment_rejected (__main__.AuditTests.test_unclosed_comment_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+OK
