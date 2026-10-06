@@ -10,7 +10,7 @@ from threading import Thread
 from tempfile import TemporaryDirectory
 from io import BytesIO
 import argparse, hashlib, json, os, shutil, subprocess, sys
-from math import tan, pi, exp, hypot
+from math import tan, pi, exp, hypot, sqrt, cos
 from PIL import Image
 from playwright.sync_api import sync_playwright, expect
 
@@ -45,6 +45,90 @@ def field_pixels(canvas, path):
 
 def check(page, out, case='all'):
     observed = {}
+    if case in ['all', 'energy']:
+        lab = page.locator('#lab-energy')
+        energy_runs = []
+        for h in [.005, .01, .02, .05, .1]:
+            for method in ['explicit', 'symplectic', 'verlet']:
+                lab.locator('[data-action=reset]').click()
+                lab.locator('select[data-param=dt]').select_option(str(h))
+                lab.locator('select[data-param=method]').select_option(method)
+                initial = state(lab)
+                assert initial['step'] == 0 and initial['run']['sampleCount'] == 1
+                lab.locator('[data-action=run]').click()
+                expect(lab.locator('.announce')).to_contain_text('Completed 12 simulated seconds', timeout=30000)
+                current = state(lab)
+                count = round(12/h)
+                assert current['step'] == current['run']['stepLimit'] == count
+                assert current['run']['timeS'] == 12 and current['run']['sampleCount'] == count+1
+                expect(lab.locator('.readout')).to_contain_text(f'{count} / {count}')
+                expect(lab.locator('.readout')).to_contain_text('12.000 / 12 s')
+                points = lab.locator('.trace').get_attribute('points').split()
+                assert len(points) == count+1 and abs(float(points[-1].split(',')[0])-540) < 1e-10
+                with page.expect_download() as info: lab.locator('[data-action=export]').click()
+                filename = f'energy-{method}-{h}-trace.json'
+                info.value.save_as(str(out/filename))
+                trace = json.loads((out/filename).read_text())
+                assert trace['model'] == 'ideal-linear-spring-v1' and abs(trace['initialEnergy']-.8) < 1e-15
+                assert trace['run'] == current['run'] and len(trace['trace']) == count+1
+                # Independent Python recurrences check every physics sample; no JS reference call.
+                x, v, e0, maximum = .2, 0., .8, 0.
+                for i, row in enumerate(trace['trace']):
+                    if i:
+                        acceleration = -40*x
+                        if method == 'explicit': x, v = x+h*v, v+h*acceleration
+                        elif method == 'symplectic':
+                            v += h*acceleration
+                            x += h*v
+                        else:
+                            new_x = x+h*v+.5*h*h*acceleration
+                            v += .5*h*(acceleration-40*new_x)
+                            x = new_x
+                    energy = .5*v*v+20*x*x
+                    assert row['step'] == i and abs(row['time']-i*h) < 1e-12
+                    for key, expected in [('x', x), ('v', v), ('energy', energy)]:
+                        assert abs(row[key]-expected) <= 1e-10*max(1, abs(expected)), (method, h, i, key)
+                    maximum = max(maximum, abs(energy/e0-1))
+                assert abs(current['run']['maxAbsoluteRelativeEnergyDeviation']-maximum) <= 1e-10*max(1, maximum)
+                error = abs(x-.2*cos(sqrt(40)*12))
+                assert abs(current['run']['absolutePositionErrorM']-error) <= 1e-10*max(1, error)
+                before = current['state']
+                lab.locator('[data-action=step]').click()
+                assert state(lab)['state'] == before
+                if h == .05 or (h == .005 and method == 'verlet'):
+                    lab.screenshot(path=str(out/f'energy-{method}-{h}-completed.png'))
+                energy_runs.append({'method': method, 'h': h, 'run': current['run'], 'finalState': current['state'], 'trace': filename})
+        # A genuine mid-run user pause leaves state unchanged; resume reaches the endpoint.
+        lab.locator('[data-action=reset]').click()
+        lab.locator('select[data-param=dt]').select_option('0.005')
+        lab.locator('[data-action=run]').click()
+        expect(lab.locator('[data-action=run]')).to_have_text('Pause run')
+        lab.locator('[data-action=run]').click()
+        paused = state(lab)
+        assert 0 < paused['step'] < 2400
+        page.wait_for_timeout(150)
+        assert state(lab)['step'] == paused['step']
+        lab.locator('[data-action=run]').click()
+        expect(lab.locator('.announce')).to_contain_text('Completed 12 simulated seconds', timeout=30000)
+        assert state(lab)['step'] == 2400
+        # Normal Play is paced by fixed h, then can pause and single-step at the same state.
+        lab.locator('[data-action=reset]').click()
+        lab.locator('select[data-param=dt]').select_option('0.005')
+        lab.locator('[data-action=play]').click()
+        page.wait_for_timeout(300)
+        lab.locator('[data-action=play]').click()
+        paced = state(lab)
+        assert 0 < paced['run']['timeS'] < 2
+        page.wait_for_timeout(150)
+        assert state(lab)['step'] == paced['step']
+        lab.locator('[data-action=step]').click()
+        assert state(lab)['step'] == paced['step']+1
+        lab.locator('select[data-param=dt]').select_option('0.01')
+        assert state(lab)['step'] == 0 and state(lab)['run']['stepLimit'] == 1200
+        lab.locator('[data-action=reset]').click()
+        reset = state(lab)
+        assert reset['step'] == 0 and reset['run']['stepLimit'] == 600 and reset['parameters']['dt'] == .02
+        observed['energy'] = {'runs': energy_runs, 'paused': paused, 'paced': paced, 'reset': reset}
     if case in ['all', 'alignment']:
         lab = page.locator('[data-property=deformation]')
         expect(lab.locator('label[for=property-deformation-sy]')).to_have_text('Y diagonal coefficient sy')
@@ -326,7 +410,7 @@ def check(page, out, case='all'):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--out', type=Path, default=Path('/tmp/kenoma-teaching-controls'))
-    parser.add_argument('--case', choices=['all', 'force', 'property', 'spatial', 'elbow', 'workflows', 'alignment'], default='all')
+    parser.add_argument('--case', choices=['all', 'force', 'property', 'spatial', 'elbow', 'workflows', 'alignment', 'energy'], default='all')
     args = parser.parse_args(); out = args.out.resolve(); out.mkdir(parents=True, exist_ok=True)
     sys.path.insert(0, str(ROOT/'tools'))
     from build import lab_block
@@ -364,6 +448,25 @@ def main():
                 errors = []; page.on('pageerror', lambda e: errors.append(str(e)))
                 page.goto(f'http://127.0.0.1:{server.server_port}/index.html', wait_until='networkidle')
                 receipt['observed'] = check(page, out, args.case)
+                if args.case in ['all', 'energy']:
+                    fallback = context.new_page()
+                    fallback.on('pageerror', lambda e: errors.append(str(e)))
+                    fallback.add_init_script("""const original=HTMLCanvasElement.prototype.getContext;
+                        HTMLCanvasElement.prototype.getContext=function(kind,...args){
+                            return /webgl/i.test(kind)?null:original.call(this,kind,...args);
+                        };""")
+                    fallback.goto(f'http://127.0.0.1:{server.server_port}/index.html', wait_until='networkidle')
+                    energy = fallback.locator('#lab-energy')
+                    energy.locator('select[data-param=dt]').select_option('0.005')
+                    energy.locator('[data-action=run]').click()
+                    expect(energy.locator('.announce')).to_contain_text('Completed 12 simulated seconds', timeout=30000)
+                    numerical = state(energy)
+                    assert numerical['step'] == 2400 and numerical['display'] == 'numerical-only'
+                    assert numerical['run']['sampleCount'] == 2401
+                    expect(energy.locator('.scene-notice')).to_contain_text('static reference diagram does not move')
+                    energy.screenshot(path=str(out/'energy-numerical-only-completed.png'))
+                    receipt['observed']['energyNumericalOnly'] = numerical
+                    fallback.close()
                 assert not errors, errors
                 receipt['javascript_errors'] = errors
                 receipt['status'] = 'PASS'

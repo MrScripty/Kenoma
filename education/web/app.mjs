@@ -4,7 +4,8 @@ import './material-lab.mjs';
 import {formatReadout} from './readout.mjs';
 import {SceneStatus} from './scene-status.mjs';
 import {currentPulse,pulseDue} from './pulse.mjs';
-import {DEFAULTS,forceState,leverState,springStep,springEnergy} from './mechanics.mjs';
+import {DEFAULTS,forceState,leverState,springStep,springEnergy,exactSpring} from './mechanics.mjs';
+import {ENERGY_DURATION_S,ENERGY_BATCH_STEPS,energyStepLimit} from './energy-run.mjs';
 import {ELBOW,elbowInitial,elbowResults,elbowStep} from './elbow.mjs';
 import {SERIES,seriesInitial,seriesResults,seriesStep} from './series.mjs';
 import {TISSUE,lbsPoint} from './tissue.mjs';
@@ -31,7 +32,7 @@ export class Lab {
     });
     root.querySelector('[data-action="summary"]').addEventListener('click',()=>{this.status.textContent=formatReadout(this.readout);});
     root.querySelector('[data-action="copy"]').addEventListener('click',async()=>{
-      const text=JSON.stringify({schema:1,scene:this.kind,parameters:this.params,step:this.index,state:this.state,initialEnergy:this.initialEnergy,view:this.view,pulse:this.pulse||null,display:this.root.dataset.runDisplay},null,2);
+      const text=JSON.stringify({schema:1,scene:this.kind,parameters:this.params,step:this.index,state:this.state,initialEnergy:this.initialEnergy,view:this.view,pulse:this.pulse||null,display:this.root.dataset.runDisplay,...(this.kind==='energy'?{run:this.energyRun()}: {})},null,2);
       const preset=root.querySelector('.preset'); preset.hidden=false; preset.value=text;
       preset.focus(); preset.select();
       this.status.textContent='Reproducible state shown below. Copy the selected text.';
@@ -40,11 +41,12 @@ export class Lab {
     if(step)step.addEventListener('click',()=>{this.sceneStatus.run(()=>this.start());this.pause();this.step();});
     const play=root.querySelector('[data-action="play"]');
     if(play)play.addEventListener('click',()=>this.running?this.pause():this.play());
+    root.querySelector('[data-action="run"]')?.addEventListener('click',()=>this.running?this.pause():this.playEnergy(true));
     root.querySelector('[data-action="release"]')?.addEventListener('click',()=>{this.pulse=false;this.params.excitation=0;this.sync();this.update();this.status.textContent='Excitation released. Activation and velocity continue from the current state.';});
     root.querySelector('[data-action="pulse"]')?.addEventListener('click',()=>this.pulseCurrent());
     root.querySelector('[data-action="export"]')?.addEventListener('click',()=>{
-      const blob=new Blob([JSON.stringify({schema:1,model:this.kind==='series'?'series-force-length-affine-tissue-v2':'schematic-elbow-v1',units:'SI, angle radians',tracePolicy:'One row per step; current row refreshed after same-time input changes. Its excitation applies to the next step; time, state and accumulated work do not advance.',parameters:this.params,initialEnergy:this.initialEnergy,pulse:this.pulse||null,trace:this.history},null,2)],{type:'application/json'});
-      const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=this.kind==='series'?'kenoma-series-trace.json':'kenoma-elbow-trace.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+      const blob=new Blob([JSON.stringify({schema:1,model:this.kind==='energy'?'ideal-linear-spring-v1':this.kind==='series'?'series-force-length-affine-tissue-v2':'schematic-elbow-v1',units:'SI, angle radians',tracePolicy:this.kind==='energy'?'Initial state and every completed fixed physics step, including steps between display frames. Maximum energy deviation includes all samples.':'One row per step; current row refreshed after same-time input changes. Its excitation applies to the next step; time, state and accumulated work do not advance.',parameters:this.params,initialEnergy:this.kind==='energy'?springEnergy(this.params,this.params):this.initialEnergy,pulse:this.pulse||null,...(this.kind==='energy'?{run:this.energyRun()}:{}),trace:this.history},null,2)],{type:'application/json'});
+      const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=this.kind==='energy'?'kenoma-energy-trace.json':this.kind==='series'?'kenoma-series-trace.json':'kenoma-elbow-trace.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
       this.status.textContent='Downloaded the current trace with model parameters and energy accounting.';
     });
     this.sceneStatus=new SceneStatus(root,()=>this.stopRenderer());
@@ -72,12 +74,14 @@ export class Lab {
     this.status.textContent='Reset to the documented default state; playback paused.';
   }
   pause(){
+    if(this.kind==='energy' && this.running)this.status.textContent=`Paused at ${(this.index*this.params.dt).toFixed(3)} of ${ENERGY_DURATION_S} simulated seconds; ${this.index} of ${energyStepLimit(this.params.dt)} fixed steps. Play or Run to 12 s resumes this trajectory.`;
     this.running=false;cancelAnimationFrame(this.frame);
     const button=this.root.querySelector('[data-action="play"]');if(button)button.textContent='Play';
+    const run=this.root.querySelector('[data-action="run"]');if(run)run.textContent='Run to 12 s';
   }
   play(){
     if(this.articulated && (this.index>=1200||this.state.halted))return;
-    if(this.kind==='energy' && this.index>=600)return;
+    if(this.kind==='energy'){this.playEnergy();return;}
     if(this.kind==='force' && this.params.time>=2)return;
     this.sceneStatus.run(()=>this.start());
     if(active && active!==this)active.pause();
@@ -93,6 +97,48 @@ export class Lab {
     };
     this.frame=requestAnimationFrame(tick);
   }
+  energyRun(){
+    return {durationS:ENERGY_DURATION_S,stepLimit:energyStepLimit(this.params.dt),completedSteps:this.index,
+      timeS:this.index*this.params.dt,sampleCount:this.history.length,
+      maxAbsoluteRelativeEnergyDeviation:this.maxRelativeEnergyDeviation,
+      absolutePositionErrorM:Math.abs(this.state.x-exactSpring(this.index*this.params.dt,this.params).x)};
+  }
+  recordEnergy(){
+    // Every physics sample is retained, independently of display/frame batching.
+    if(this.history.at(-1)?.step===this.index)return;
+    const energy=springEnergy(this.state,this.params),e0=springEnergy(this.params,this.params);
+    if(this.index===0)this.maxRelativeEnergyDeviation=0;
+    this.maxRelativeEnergyDeviation=Math.max(this.maxRelativeEnergyDeviation,Math.abs(energy/e0-1));
+    this.history.push({step:this.index,time:this.index*this.params.dt,...this.state,energy});
+  }
+  advanceEnergy(){
+    const limit=energyStepLimit(this.params.dt);
+    if(this.index>=limit){this.pause();return false;}
+    this.state=springStep(this.state,this.params);this.index++;this.recordEnergy();
+    if(this.index===limit){this.pause();this.status.textContent=`Completed ${ENERGY_DURATION_S} simulated seconds in ${limit} fixed steps; all ${this.history.length} samples retained. Reset or change a parameter for a new trajectory.`;}
+    return true;
+  }
+  playEnergy(fast=false){
+    if(this.index>=energyStepLimit(this.params.dt))return;
+    this.sceneStatus.run(()=>this.start());
+    if(active && active!==this)active.pause();
+    this.running=true;this.last=null;this.accumulator=0;
+    this.root.querySelector('[data-action="play"]').textContent='Pause';
+    this.root.querySelector('[data-action="run"]').textContent='Pause run';
+    const tick=timestamp=>{
+      if(!this.running)return;
+      if(this.last!==null)this.accumulator+=Math.min((timestamp-this.last)/1000,.25);
+      this.last=timestamp;
+      const count=fast?ENERGY_BATCH_STEPS:Math.min(ENERGY_BATCH_STEPS,Math.floor((this.accumulator+1e-12)/this.params.dt));
+      let advanced=0;
+      while(advanced<count && this.running){this.advanceEnergy();advanced++;}
+      if(!fast)this.accumulator=Math.max(0,this.accumulator-advanced*this.params.dt);
+      if(advanced)this.update(); // One plot/readout/3D redraw per bounded frame batch.
+      if(this.running)this.frame=requestAnimationFrame(tick);
+    };
+    this.status.textContent=fast?'Running to 12 simulated seconds in bounded batches; Pause keeps the current trajectory.':'Playing fixed physics steps at approximately one simulated second per wall-clock second; Pause keeps the current trajectory.';
+    this.frame=requestAnimationFrame(tick);
+  }
   pulseCurrent(){
     if(this.state.halted||this.index>=1200){this.status.textContent='Pulse unavailable at the domain/step limit. Reset defaults or set a new experiment before running.';return;}
     this.pulse=currentPulse(this.state.time,this.params.excitation);this.play();
@@ -104,9 +150,7 @@ export class Lab {
       this.params.time=Math.min(2,Math.round((this.params.time+0.05)*100)/100);this.index++;
       this.sync();if(this.params.time>=2)this.pause();
     } else if(this.kind==='energy') {
-      if(this.index>=600){this.pause();return;}
-      this.state=springStep(this.state,this.params);this.index++;
-      if(this.index>=600)this.pause();
+      if(!this.advanceEnergy())return;
     } else if(this.articulated) {
       if(this.index>=1200||this.state.halted){this.pause();return;}
       if(pulseDue(this.pulse,this.state.time)){this.pulse=false;this.params.excitation=0;this.sync();this.update();}
@@ -154,10 +198,12 @@ export class Lab {
     } else {
       const energy=springEnergy(this.state,this.params),e0=springEnergy(this.params,this.params);
       this.result={...this.state,energy};
-      if(!this.history.some(s=>s.step===this.index))this.history.push({step:this.index,energy});
-      values=[['Step',String(this.index)],['Time',`${fmt(this.index*this.params.dt,2)} s`],
+      this.recordEnergy();
+      values=[['Step',`${this.index} / ${energyStepLimit(this.params.dt)}`],['Time',`${fmt(this.index*this.params.dt,3)} / ${ENERGY_DURATION_S} s`],
         ['Extension',`${fmt(this.state.x)} m`],['Velocity',`${fmt(this.state.v)} m/s`],
-        ['Energy',`${fmt(energy,5)} J`],['Relative energy change',`${fmt(100*(energy/e0-1),2)} %`]];
+        ['Energy',`${fmt(energy,5)} J`],['Relative energy change',`${fmt(100*(energy/e0-1),2)} %`],
+        ['Maximum absolute relative energy deviation',`${fmt(100*this.maxRelativeEnergyDeviation,4)} %; all ${this.history.length} samples`],
+        ['Absolute position error against analytic reference',`${fmt(Math.abs(this.state.x-exactSpring(this.index*this.params.dt,this.params).x),7)} m`]];
       this.plot();
     }
     this.readout.replaceChildren(...values.map(([label,value])=>{
@@ -169,12 +215,12 @@ export class Lab {
   plot(){
     const svg=this.root.querySelector('.energy-chart');if(!svg)return;
     const e0=springEnergy(this.params,this.params),max=Math.max(e0*1.2,...this.history.map(s=>s.energy));
-    const points=this.history.map(s=>`${40+s.step/600*500},${160-s.energy/max*130}`).join(' ');
+    const points=this.history.map(s=>`${40+s.time/ENERGY_DURATION_S*500},${160-s.energy/max*130}`).join(' ');
     svg.querySelector('.trace').setAttribute('points',points);
     svg.querySelector('.reference').setAttribute('y1',160-e0/max*130);
     svg.querySelector('.reference').setAttribute('y2',160-e0/max*130);
     svg.querySelector('.scale').textContent=`Energy range 0 to ${fmt(max)} J`;
-    svg.querySelector('title').textContent=`Energy plot after ${this.index} steps. Current ${fmt(this.result.energy)} J; reference ${fmt(e0)} J. Vertical range 0 to ${fmt(max)} J.`;
+    svg.querySelector('title').textContent=`Energy plot at ${fmt(this.index*this.params.dt,3)} of ${ENERGY_DURATION_S} seconds, after ${this.index} of ${energyStepLimit(this.params.dt)} steps. Current ${fmt(this.result.energy)} J; reference ${fmt(e0)} J. Vertical range 0 to ${fmt(max)} J.`;
   }
   start(){
     if(active && active!==this)active.stopRenderer();
