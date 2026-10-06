@@ -1,0 +1,52 @@
+[
+  {
+    "theorem": "KenomaEuler.normalized_error",
+    "description": "Normalize the actual FT=100*f(s) error expression exactly.",
+    "scope": "Exact real local scalar algebra; slope is supplied. No derivative-kernel, C2/Taylor, floating-point, numerical convergence, accepted motion or anatomy proof."
+  },
+  {
+    "theorem": "KenomaEuler.source_tendon_euler_increment",
+    "description": "Actual y/q Euler coordinates change normalized tendon length by tau*(-5*(w+v)).",
+    "scope": "Exact real local scalar algebra; slope is supplied. No derivative-kernel, C2/Taylor, floating-point, numerical convergence, accepted motion or anatomy proof."
+  },
+  {
+    "theorem": "KenomaEuler.tangent_normal_cancellation",
+    "description": "The supplied-slope symbolic lower-surface normal rate cancels with its tangent I rate.",
+    "scope": "Exact real local scalar algebra; slope is supplied. No derivative-kernel, C2/Taylor, floating-point, numerical convergence, accepted motion or anatomy proof."
+  },
+  {
+    "theorem": "KenomaEuler.euler_constraint_defect_identity",
+    "description": "For an arbitrary real tendon function, the exact Euler constraint increment is .4 times its first-order remainder.",
+    "scope": "Exact real local scalar algebra; slope is supplied. No derivative-kernel, C2/Taylor, floating-point, numerical convergence, accepted motion or anatomy proof."
+  },
+  {
+    "theorem": "KenomaEuler.source_euler_constraint_defect",
+    "description": "The same exact defect identity in actual source y/q/I coordinates.",
+    "scope": "Exact real local scalar algebra; slope is supplied. No derivative-kernel, C2/Taylor, floating-point, numerical convergence, accepted motion or anatomy proof."
+  },
+  {
+    "theorem": "KenomaEuler.on_surface_euler_defect",
+    "description": "An exactly on-surface entry leaves only the scaled tendon remainder at its Euler predictor.",
+    "scope": "Exact real local scalar algebra; slope is supplied. No derivative-kernel, C2/Taylor, floating-point, numerical convergence, accepted motion or anatomy proof."
+  },
+  {
+    "theorem": "KenomaEuler.defect_bound_from_remainder",
+    "description": "A supplied pointwise quadratic remainder bound implies the scaled local constraint-defect bound.",
+    "scope": "Exact real local scalar algebra; slope is supplied. No derivative-kernel, C2/Taylor, floating-point, numerical convergence, accepted motion or anatomy proof."
+  },
+  {
+    "theorem": "KenomaEuler.quadratic_tendon_remainder",
+    "description": "An explicit quadratic tendon has exactly A*delta^2 first-order remainder.",
+    "scope": "Exact real local scalar algebra; slope is supplied. No derivative-kernel, C2/Taylor, floating-point, numerical convergence, accepted motion or anatomy proof."
+  },
+  {
+    "theorem": "KenomaEuler.quadratic_euler_constraint_defect",
+    "description": "An explicit quadratic tendon has exact .4*A*tau^2*sdot^2 Euler constraint defect.",
+    "scope": "Exact real local scalar algebra; slope is supplied. No derivative-kernel, C2/Taylor, floating-point, numerical convergence, accepted motion or anatomy proof."
+  },
+  {
+    "theorem": "KenomaEuler.tangent_quadratic_predictor_can_leave_surface",
+    "description": "Under positive quadratic curvature, nonzero step/direction and zero entry H, symbolic tangent normal cancellation coexists with positive predictor H.",
+    "scope": "Exact real local scalar algebra; slope is supplied. No derivative-kernel, C2/Taylor, floating-point, numerical convergence, accepted motion or anatomy proof."
+  }
+]

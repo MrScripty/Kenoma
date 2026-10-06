@@ -1,0 +1,36 @@
+{
+  "baseline_commit": "9547246e10269ea0c2613cc9cef848323f700ef6",
+  "source_sha256": {
+    "education/proofs/EulerConstraintDefect.lean": "6eac275a9b1f1e83b42138bfc18c1e4fc771add68f47294a53e3a22dd5e77883",
+    "education/proofs/euler-constraint-defect-claims.json": "639007c3face58256d375c1bc9cb2b78a3864730c53a2a2067af848a9a4e0ef6",
+    "education/tools/check_euler_constraint_defect_proofs.py": "73e70525ca4622ad3a0c26bdbf82862f22bb2978c31f3a5a216bffab109dc658",
+    "education/tests/euler_constraint_defect_proof_audit.py": "8a9ea86f8442040fc31fe031378536646aa482f0c91825640d3716e37a203b1e",
+    "education/research/mechanical-closure/euler-constraint-defect-proofs.md": "8a1b9ac21fd12a718af37839fe8087053a31ca7b10dd4e33c92ee9bdd3d950b0"
+  },
+  "equation_inputs_sha256": {
+    "education/tools/run_filippov_bounded_experiment.py": "1f32681d69c5e9bf0d1b1f4ab468c95d2ad41421d509553869bfdfbd444ee7e8",
+    "education/tools/vertical_force_reference.py": "18fb8a6d533010afc5211fb7a286bfc53e2d7a1b0c1544a350e1896e3ea63fed",
+    "education/web/vertical-force-model.js": "58ca8de8ae7d9e65083f6460bfb25dc32eccd1953853da78d8325274c0ddcf80",
+    "education/proofs/FilippovConvexWeight.lean": "8cafcaf2fd8e1d4a6102739ceb04a09989d8807172e95bd6e78879d397613814",
+    "education/proofs/mathlib-lock.json": "cfeeea1b9e805fdfa169b7b7f41b3d29cf0a99d09fa79e04e38a8bd9683611da",
+    "education/data/millard-reference-v1/upstream/manifest.json": "0d9448dd2fc3e0dacf58722c80263708fe2df9addc83019ac24496134906573c"
+  },
+  "external_committed_evidence_sha256": {
+    "a522899d089d4249bf20e27b2545723b41d3f2f2:education/data/sliding-constraint-policy-proposal-v1/predictor-curvature-diagnosis.json": "23b9528f4c953f79be2ff7a8edd465a623e5089481d5031bad789b1eb7c47cf4",
+    "a522899d089d4249bf20e27b2545723b41d3f2f2:education/research/mechanical-closure/sliding-constraint-policy-proposal.md": "d7f795f04f8e254ae88897a21d83bdf12ac67fed99d095b6228bff5bdf345faf",
+    "455641c0aa9b4a9ad4b68e50fc1b6f5746180226:education/tools/first_sliding_segment_engine.py": "f8c44a99a4b905b5e5130cdf00009b468848156e0c58f98db9c08d9ff21184ce"
+  },
+  "preserved_prior_branches": {
+    "education/sliding-constraint-policy-proposal": "a522899d089d4249bf20e27b2545723b41d3f2f2",
+    "education/first-sliding-segment-exploratory": "455641c0aa9b4a9ad4b68e50fc1b6f5746180226",
+    "education/filippov-convex-weight-proofs": "9547246e10269ea0c2613cc9cef848323f700ef6",
+    "education/first-sliding-segment-protocol": "b692d372bfcec354dfef377dc2245c3176c3e5cb",
+    "origin/main": "9b0c67fd25e1b645833a68bb9b1c2aba1404bbce"
+  },
+  "declarations": 10,
+  "scope": "Real local algebra and conditional pointwise remainder scaling; supplied slope; no derivative/C2/source-kernel proof or numerical policy approval.",
+  "revised_policy_execution_authorized": false,
+  "book_adoption": false,
+  "new_ODE_steps": 0,
+  "new_accepted_states": 0
+}

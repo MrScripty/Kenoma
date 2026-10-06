@@ -1,0 +1,22 @@
+{
+  "runs": [
+    {
+      "source": "education/data/euler-constraint-defect-proofs-v1/attempts/EulerConstraintDefect-attempt-01.lean",
+      "source_sha256": "93ea428d9f4de373a7fbe44fca163d6a9655de90a670942f4b00bbf3cd92d9ca",
+      "log": "education/data/euler-constraint-defect-proofs-v1/attempts/lean-attempt-01.log",
+      "log_sha256": "08f34b9e45bdfc433585b1061a369ebccfa5781e2eeea79d39ae5ed079defbf2",
+      "compiler_exit_code": 1,
+      "kernel_receipt_issued": false,
+      "reason": "Optional Positivity tactic module not built in the pinned local dependency tree; removed optional import, used direct ordered-field lemma."
+    },
+    {
+      "source": "education/data/euler-constraint-defect-proofs-v1/attempts/EulerConstraintDefect-attempt-02.lean",
+      "source_sha256": "6eac275a9b1f1e83b42138bfc18c1e4fc771add68f47294a53e3a22dd5e77883",
+      "log": "education/data/euler-constraint-defect-proofs-v1/attempts/lean-attempt-02.log",
+      "log_sha256": "332f8cabc3ed7d74bd22d7f3667633ed6ff530f5c3a26c39eceb50fa74d048b9",
+      "compiler_exit_code": 0,
+      "kernel_receipt_issued": false,
+      "reason": "Preliminary source compiled successfully with warnings as errors; no final kernel receipt issued before source freeze."
+    }
+  ]
+}
