@@ -1,0 +1,14 @@
+✔ short prediction follows accepted secant without mutating history (2.065193ms)
+✔ long target cannot extrapolate farther than one accepted increment (0.312706ms)
+✔ bootstrap and mass discontinuity copy the current accepted state (0.291476ms)
+✔ nonconsecutive or mismatched history is rejected rather than reused (1.237201ms)
+✔ nonfinite states and invalid increments cannot become guesses (0.388288ms)
+✔ overflowing extrapolated coordinates are rejected (0.194004ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 78.515513
