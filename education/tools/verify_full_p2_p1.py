@@ -55,9 +55,10 @@ def main():
     for sign in [1,-1]:
      probe=x+sign*h*v;z=B.evaluate(probe);q=replay(m,probe,z['p'],2)
      gradients.append(np.array(q['gradientN'])[m['free']]);error=np.max(abs(z['g']-q['gradientN']))
-     assert error<=2e-6 and q['weakPressureRMS']<=1e-6 if 'weakPressureRMS' in q else error<=2e-6
+     weak=np.array(q['weak']);weakRMS=float(np.sqrt(max(0,weak@cho_solve(B.Mfactor,weak)/B.volume)))
+     assert error<=2e-6 and weakRMS<=1e-6
      sideChecks.append(dict(sign=sign,maximumIndependentForceDifferenceN=float(error),
-                           pointwisePressureRMS=q['pointwisePressureRMS'],Jmin=q['Jmin'],Jmax=q['Jmax']))
+                           weakPressureRMS=weakRMS,pointwisePressureRMS=q['pointwisePressureRMS'],Jmin=q['Jmin'],Jmax=q['Jmax']))
     fd=(gradients[0]-gradients[1])/(2*h);error=np.linalg.norm(fd-Hv)/np.linalg.norm(Hv)
     assert error<=1e-4,(name,h,error)
     checks.append(dict(stepM=h,independentNodeGradientRelativeError=float(error),probeChecks=sideChecks))
