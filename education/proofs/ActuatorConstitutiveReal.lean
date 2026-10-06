@@ -169,10 +169,10 @@ theorem series_equilibrium_exists (a maxForce optimalFiber width compliance pass
     (show Differentiable ℝ (fun f => activeForce f a maxForce optimalFiber width) from
       fun f => (active_force_hasDerivAt f a maxForce optimalFiber width hl.ne' hw.ne').differentiableAt).continuous
   have hpassive : Continuous (fun f : ℝ => passiveK * max 0 (f - optimalFiber)) :=
-    (continuous_const.max (continuous_id.sub_const optimalFiber)).const_mul passiveK
+    continuous_const.mul (continuous_const.max (continuous_id.sub continuous_const))
   have hcontinuous : Continuous
       (fun f => seriesResidual f a maxForce optimalFiber width compliance passiveK totalFiber) :=
-    (continuous_id.add ((hactive.add hpassive).const_mul compliance)).sub_const totalFiber
+    (continuous_id.add (continuous_const.mul (hactive.add hpassive))).sub continuous_const
   have hupper : 0 ≤ seriesResidual totalFiber a maxForce optimalFiber width compliance passiveK totalFiber := by
     have hforce := (active_force_bounds totalFiber a maxForce optimalFiber width ha hF).1
     have hpassiveForce := mul_nonneg hk (le_max_left (0 : ℝ) (totalFiber - optimalFiber))
