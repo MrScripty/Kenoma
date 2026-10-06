@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "source_revision": "1c90c63827abce0649286734ecd5fb6d1276c83e",
+  "inputs": {
+    "tests/axisymmetric_material.test.mjs": "1c2aca59098d403ef3a024863a766887339fd228e400ca4934aa6394a19d9238",
+    "tests/axisymmetric_specimen.test.mjs": "694f6978d357a8cdeba437dedc40893947a46becf01004f578f844ab3c74ca22",
+    "tests/axisymmetric_end_faces.test.mjs": "a5a112056017b18518405e520de8425545d591d8cd594efe683b9a92bb428488",
+    "web/axisymmetric-material.mjs": "3c977b401f2f76f95c5445a82d80c55ccc04e457c3d0c30350635ddf58cce561",
+    "web/axisymmetric-specimen.mjs": "39723a813efc3d92a8b4979d6652561354de109d68333ae8b1317e7e641c1a4e",
+    "web/axisymmetric-worker.mjs": "dee47f2148dba588a46c3ef84d27942a411f9eb7c0c3831bc19a2bf634562466"
+  },
+  "count": 18,
+  "command": "node --test education/tests/axisymmetric_material.test.mjs education/tests/axisymmetric_specimen.test.mjs education/tests/axisymmetric_end_faces.test.mjs",
+  "transcript_sha256": "f0cd92c1d0c91dab56eaaf1dcbc736573583cc3fd2b07bdf7b3de786a027463d",
+  "scope": "Original 13 focused cases plus five new regressions, source/head hashes unchanged before and after"
+}

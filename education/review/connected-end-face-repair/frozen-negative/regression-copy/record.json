@@ -1,0 +1,14 @@
+{
+  "frozen_revision": "49bf8adf30e1b9bc192e0211f12dfafeb60ede94",
+  "status": "EXPECTED_FROZEN_FAILURE",
+  "returncode": 1,
+  "five_regressions_failed": true,
+  "inputs": {
+    "web/axisymmetric-specimen.mjs": "e889b8d49e33de4f08727c98d0cb6c03216d4c26cf0de9bb3626fe1a9d8b1758",
+    "web/axisymmetric-material.mjs": "3c977b401f2f76f95c5445a82d80c55ccc04e457c3d0c30350635ddf58cce561",
+    "review/connected-passive-specimen/numerical/material-oracle.json": "0b32a88bb4589338ad3eee2080657102fc375905d0625ae6bbe14f69bcde22dc",
+    "tests/axisymmetric_end_faces.test.mjs": "a5a112056017b18518405e520de8425545d591d8cd594efe683b9a92bb428488"
+  },
+  "transcript_sha256": "bcafa3b3c429c2d2273a3adfea9db41e71a1ff175f19b83c216d645d6d48c7f3",
+  "scope": "Exact repaired-test bytes executed against copied unchanged frozen material/core. New tests fail at actual end DOFs, independently expected nonzero reactions, exact reference endpoint and default/alternate rendering endpoint."
+}

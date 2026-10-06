@@ -1,0 +1,110 @@
+✖ every accepted axial count assigns every prescribed cap DOF by topology (6.808607ms)
+✖ three-cell uniform compression has oracle reaction and all end-face DOFs (246.563889ms)
+✖ three-cell uniform tension has oracle reaction and all end-face DOFs (185.226038ms)
+✖ rounded-count reference endpoints and all accepted render subdivisions remain inside the exact domain (1.463546ms)
+✖ otherwise-delivered axial counts render the top endpoint with subdivision three (2.661323ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 0
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 522.733345
+
+✖ failing tests:
+
+test at tests/axisymmetric_end_faces.test.mjs:9:1
+✖ every accepted axial count assigns every prescribed cap DOF by topology (6.808607ms)
+  AssertionError [ERR_ASSERTION]: top axial DOF 0, 3 cells
+  + actual - expected
+  
+  + 0
+  - -0.005000000000000001
+  
+      at TestContext.<anonymous> (file:///workspace/kenoma-end-face-frozen-regression/tests/axisymmetric_end_faces.test.mjs:16:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: -0.005000000000000001,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/axisymmetric_end_faces.test.mjs:23:31
+✖ three-cell uniform compression has oracle reaction and all end-face DOFs (246.563889ms)
+  AssertionError [ERR_ASSERTION]: A loaded cylinder must have a nonzero correctly signed reaction
+      at TestContext.<anonymous> (file:///workspace/kenoma-end-face-frozen-regression/tests/axisymmetric_end_faces.test.mjs:26:54)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/axisymmetric_end_faces.test.mjs:23:31
+✖ three-cell uniform tension has oracle reaction and all end-face DOFs (185.226038ms)
+  AssertionError [ERR_ASSERTION]: A loaded cylinder must have a nonzero correctly signed reaction
+      at TestContext.<anonymous> (file:///workspace/kenoma-end-face-frozen-regression/tests/axisymmetric_end_faces.test.mjs:26:54)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/axisymmetric_end_faces.test.mjs:34:1
+✖ rounded-count reference endpoints and all accepted render subdivisions remain inside the exact domain (1.463546ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 0.05000000000000001
+  - 0.05
+        ^
+  
+      at TestContext.<anonymous> (file:///workspace/kenoma-end-face-frozen-regression/tests/axisymmetric_end_faces.test.mjs:39:57)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0.05000000000000001,
+    expected: 0.05,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/axisymmetric_end_faces.test.mjs:49:1
+✖ otherwise-delivered axial counts render the top endpoint with subdivision three (2.661323ms)
+  RangeError: Material point inside reference frustum
+      at pointWithDisplacement (file:///workspace/kenoma-end-face-frozen-regression/web/axisymmetric-specimen.mjs:186:76)
+      at materialPoint (file:///workspace/kenoma-end-face-frozen-regression/web/axisymmetric-specimen.mjs:193:54)
+      at revolvedBoundary (file:///workspace/kenoma-end-face-frozen-regression/web/axisymmetric-specimen.mjs:213:128)
+      at TestContext.<anonymous> (file:///workspace/kenoma-end-face-frozen-regression/tests/axisymmetric_end_faces.test.mjs:51:129)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)

@@ -1,0 +1,299 @@
+{
+  "status": "PASS_BOUNDED_ENGINEERING_CHECKS",
+  "experiment_sha256": "ff27f49123cb83c1701932b97d5b5ef5e4138e9ae54fa88494879ef00fab970d",
+  "source_input_sha256": {
+    "web/axisymmetric-material.mjs": "3c977b401f2f76f95c5445a82d80c55ccc04e457c3d0c30350635ddf58cce561",
+    "web/axisymmetric-specimen.mjs": "39723a813efc3d92a8b4979d6652561354de109d68333ae8b1317e7e641c1a4e",
+    "tools/axisymmetric-experiment.mjs": "f64d5f56276c7e3f6be73ec18180ce10402dcc11ad2387045917df31e3d8f05f"
+  },
+  "checker_sha256": "be0f3ed02336b4439a1ed39ccd600eda8c0b11ade0c8bd718ccddbf159a32857",
+  "reference_volume_m3": 6.2177354602298e-06,
+  "radius_ratio": 1.5,
+  "area_ratio": 2.25,
+  "material_ratio_K_over_mu": 20,
+  "loaded": [
+    {
+      "epsilon": -0.1,
+      "reference": "16:8:7:-0.1:1.5",
+      "finite_volume_signal_rms": 0.0048108751309367676,
+      "global_volume_change": -0.00469342290071828,
+      "successive_8x4_to_16x8": {
+        "epsilon": -0.1,
+        "coarse": "8:4:5:-0.1:1.5",
+        "reference": "16:8:7:-0.1:1.5",
+        "volumeWeightedRmsJDifference": 9.04012454505895e-05,
+        "maxMaterialProbeJDifference": 5.6960704609476664e-05,
+        "volumeRatioDifference": 1.277335192062523e-07,
+        "reactionDifferenceN": 1.6134089616606784e-06,
+        "energyDifferenceJ": 3.6735896045785293e-09
+      },
+      "scaled_cut_force_variation": 0.0004046482481607923,
+      "max_declared_noncorner_side_traction_over_mu": 0.0001102100323592219,
+      "corner_limit": "Corner and near-corner gradients are recorded separately. Changing quadrature-point extrema do not establish converged pointwise corner stress/J or global stability."
+    },
+    {
+      "epsilon": 0.1,
+      "reference": "16:8:7:0.1:1.5",
+      "finite_volume_signal_rms": 0.004813308259746537,
+      "global_volume_change": 0.004646992822435081,
+      "successive_8x4_to_16x8": {
+        "epsilon": 0.1,
+        "coarse": "8:4:5:0.1:1.5",
+        "reference": "16:8:7:0.1:1.5",
+        "volumeWeightedRmsJDifference": 7.975100927720321e-05,
+        "maxMaterialProbeJDifference": 4.989448401548913e-05,
+        "volumeRatioDifference": 1.0572645070539011e-07,
+        "reactionDifferenceN": 1.0572792833660194e-06,
+        "energyDifferenceJ": 2.7895603397885696e-09
+      },
+      "scaled_cut_force_variation": 0.000403788444600872,
+      "max_declared_noncorner_side_traction_over_mu": 0.00011795235202889811,
+      "corner_limit": "Corner and near-corner gradients are recorded separately. Changing quadrature-point extrema do not establish converged pointwise corner stress/J or global stability."
+    }
+  ],
+  "quadrature": [
+    {
+      "epsilon": -0.1,
+      "independent_3_to_7_solution_probe_J_difference": 1.0806615602376723e-09,
+      "reevaluations": [
+        {
+          "order": 3,
+          "energyJ": 0.0001405308829859549,
+          "volumeRatio": 0.9953065770992854,
+          "rightReactionN": -0.05850932979452589,
+          "scaledMaxFreeResidual": 1.3847727052796662e-06
+        },
+        {
+          "order": 5,
+          "energyJ": 0.00014053088299840696,
+          "volumeRatio": 0.9953065770992858,
+          "rightReactionN": -0.058509329764751275,
+          "scaledMaxFreeResidual": 1.1727526075127899e-14
+        },
+        {
+          "order": 7,
+          "energyJ": 0.00014053088299840658,
+          "volumeRatio": 0.9953065770992836,
+          "rightReactionN": -0.05850932976475305,
+          "scaledMaxFreeResidual": 4.0112124272801144e-11
+        },
+        {
+          "order": 9,
+          "energyJ": 0.00014053088299840832,
+          "volumeRatio": 0.995306577099282,
+          "rightReactionN": -0.05850932976475237,
+          "scaledMaxFreeResidual": 4.0147519875394865e-11
+        }
+      ],
+      "note": "Order3 reintegration of an order5 stationary state has an observable residual; order7/9 agreement is checked independently."
+    },
+    {
+      "epsilon": 0.1,
+      "independent_3_to_7_solution_probe_J_difference": 7.019378411854404e-10,
+      "reevaluations": [
+        {
+          "order": 3,
+          "energyJ": 0.00012174399433505424,
+          "volumeRatio": 1.0046469928224373,
+          "rightReactionN": 0.04716327543218511,
+          "scaledMaxFreeResidual": 1.2603869687320298e-06
+        },
+        {
+          "order": 5,
+          "energyJ": 0.00012174399433956441,
+          "volumeRatio": 1.0046469928224364,
+          "rightReactionN": 0.04716327541751746,
+          "scaledMaxFreeResidual": 1.0977029114870362e-14
+        },
+        {
+          "order": 7,
+          "energyJ": 0.00012174399433956422,
+          "volumeRatio": 1.0046469928224353,
+          "rightReactionN": 0.047163275417518705,
+          "scaledMaxFreeResidual": 3.6526062745840224e-11
+        },
+        {
+          "order": 9,
+          "energyJ": 0.00012174399433956417,
+          "volumeRatio": 1.0046469928224402,
+          "rightReactionN": 0.04716327541751778,
+          "scaledMaxFreeResidual": 3.655865097290708e-11
+        }
+      ],
+      "note": "Order3 reintegration of an order5 stationary state has an observable residual; order7/9 agreement is checked independently."
+    }
+  ],
+  "reaction_energy_derivatives": [
+    {
+      "epsilon": 0,
+      "h": 2e-05,
+      "plusConverged": true,
+      "minusConverged": true,
+      "energyDerivativeN": -7.439847412332394e-11,
+      "assembledReactionN": 0
+    },
+    {
+      "epsilon": 0,
+      "h": 1e-05,
+      "plusConverged": true,
+      "minusConverged": true,
+      "energyDerivativeN": -1.853617848385154e-11,
+      "assembledReactionN": 0
+    },
+    {
+      "epsilon": -0.1,
+      "h": 2e-05,
+      "plusConverged": true,
+      "minusConverged": true,
+      "energyDerivativeN": -0.058509329878313664,
+      "assembledReactionN": -0.058509329764751254
+    },
+    {
+      "epsilon": -0.1,
+      "h": 1e-05,
+      "plusConverged": true,
+      "minusConverged": true,
+      "energyDerivativeN": -0.0585093297932309,
+      "assembledReactionN": -0.058509329764751254
+    },
+    {
+      "epsilon": 0.1,
+      "h": 2e-05,
+      "plusConverged": true,
+      "minusConverged": true,
+      "energyDerivativeN": 0.04716327536692199,
+      "assembledReactionN": 0.04716327541751774
+    },
+    {
+      "epsilon": 0.1,
+      "h": 1e-05,
+      "plusConverged": true,
+      "minusConverged": true,
+      "energyDerivativeN": 0.047163275404950376,
+      "assembledReactionN": 0.04716327541751774
+    }
+  ],
+  "rendering": [
+    {
+      "epsilon": 0,
+      "finest_uploaded_Float32_volume_error_over_reference": 0.000100374710840026,
+      "finest": {
+        "epsilon": 0,
+        "azimuth": 256,
+        "axialSubdivisions": 8,
+        "integratedVolumeM3": 6.217735460229774e-06,
+        "boundaryVolumeM3": 6.2171112258042854e-06,
+        "actualFloat32VolumeM3": 6.2171113568308735e-06,
+        "referenceBoundaryVolumeM3": 6.2171112258042854e-06,
+        "exactReferenceVolumeM3": 6.2177354602298e-06
+      },
+      "note": "Actual finite polygon error remains present; no postsolve or render volume correction."
+    },
+    {
+      "epsilon": -0.1,
+      "finest_uploaded_Float32_volume_error_over_reference": 0.00010024161797509527,
+      "finest": {
+        "epsilon": -0.1,
+        "azimuth": 256,
+        "axialSubdivisions": 8,
+        "integratedVolumeM3": 6.188552998230149e-06,
+        "boundaryVolumeM3": 6.187929383358777e-06,
+        "actualFloat32VolumeM3": 6.187929722367475e-06,
+        "referenceBoundaryVolumeM3": 6.2171112258042854e-06,
+        "exactReferenceVolumeM3": 6.2177354602298e-06
+      },
+      "note": "Actual finite polygon error remains present; no postsolve or render volume correction."
+    },
+    {
+      "epsilon": 0.1,
+      "finest_uploaded_Float32_volume_error_over_reference": 0.00010037315467267386,
+      "finest": {
+        "epsilon": 0.1,
+        "azimuth": 256,
+        "axialSubdivisions": 8,
+        "integratedVolumeM3": 6.246629232285288e-06,
+        "boundaryVolumeM3": 6.2460051803038804e-06,
+        "actualFloat32VolumeM3": 6.246005138562225e-06,
+        "referenceBoundaryVolumeM3": 6.2171112258042854e-06,
+        "exactReferenceVolumeM3": 6.2177354602298e-06
+      },
+      "note": "Actual finite polygon error remains present; no postsolve or render volume correction."
+    }
+  ],
+  "geometry_admissibility": {
+    "4:2:5:-0.1:1": {
+      "cells": 8,
+      "lower_J_bound": 0.49753436746962015,
+      "upper_J_bound": 1.9901374698784917,
+      "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+      "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+    },
+    "4:2:5:0:1": {
+      "cells": 8,
+      "lower_J_bound": 0.49999999999999856,
+      "upper_J_bound": 2.0000000000000058,
+      "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+      "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+    },
+    "4:2:5:0.1:1": {
+      "cells": 8,
+      "lower_J_bound": 0.5024681555241389,
+      "upper_J_bound": 2.0098726220965664,
+      "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+      "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+    },
+    "16:8:7:-0.1:1.5": {
+      "cells": 128,
+      "lower_J_bound": 0.46665083261876994,
+      "upper_J_bound": 2.1122212039098938,
+      "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+      "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+    },
+    "16:8:7:0.1:1.5": {
+      "cells": 128,
+      "lower_J_bound": 0.47391081006103997,
+      "upper_J_bound": 2.143161576792228,
+      "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+      "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+    },
+    "16:8:7:0:1.5": {
+      "cells": 128,
+      "lower_J_bound": 0.47015610651974254,
+      "upper_J_bound": 2.1269531250000018,
+      "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+      "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+    }
+  },
+  "conditioning": [
+    {
+      "epsilon": 0,
+      "free_dofs": 1024,
+      "original_tangent_independent_SciPy_scaled_Cholesky": "PASS",
+      "jacobi_scaled_smallest_eigenvalue": 0.0003203689501160567,
+      "jacobi_scaled_largest_eigenvalue": 2.9911141298799673,
+      "jacobi_scaled_spectral_condition_number": 9336.466997804899,
+      "scope": "Numerical original constrained discrete tangent at this state; no continuum or nonaxisymmetric stability theorem"
+    },
+    {
+      "epsilon": -0.1,
+      "free_dofs": 1024,
+      "original_tangent_independent_SciPy_scaled_Cholesky": "PASS",
+      "jacobi_scaled_smallest_eigenvalue": 0.00034723144635578906,
+      "jacobi_scaled_largest_eigenvalue": 3.0113945411971614,
+      "jacobi_scaled_spectral_condition_number": 8672.58588702692,
+      "scope": "Numerical original constrained discrete tangent at this state; no continuum or nonaxisymmetric stability theorem"
+    },
+    {
+      "epsilon": 0.1,
+      "free_dofs": 1024,
+      "original_tangent_independent_SciPy_scaled_Cholesky": "PASS",
+      "jacobi_scaled_smallest_eigenvalue": 0.00030030739455416683,
+      "jacobi_scaled_largest_eigenvalue": 2.9741828074584578,
+      "jacobi_scaled_spectral_condition_number": 9903.794782922005,
+      "scope": "Numerical original constrained discrete tangent at this state; no continuum or nonaxisymmetric stability theorem"
+    }
+  ],
+  "targets": "Provisional new-specimen engineering targets, supported here by observed independent checks. Mesh/quadrature differences are not rigorous continuum error estimates. Existing lesson acceptance limits are unchanged.",
+  "zero_load_normalization": "Force scale mu*pi*a0\u00b2 and energy scale mu*V0 remain positive at zero reaction; no division by zero load.",
+  "scope": "Uniform and one connected passive taper at zero/\u00b110%; finite compliance, all admissible Q2 free force components, no mixed pressure, exact incompressibility, active muscle, anatomy, unrestricted stability or release qualification"
+}

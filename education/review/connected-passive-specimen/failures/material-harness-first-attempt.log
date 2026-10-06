@@ -1,0 +1,27 @@
+file:///workspace/kenoma-connected-specimen/education/web/axisymmetric-material.mjs:29
+ if(!Number.isFinite(lambda)||lambda<.9||lambda>1.1||mu!==1500||bulk!==30000)throw new RangeError('Bounded uniform-cylinder oracle');
+                                                                                   ^
+
+RangeError: Bounded uniform-cylinder oracle
+    at uniformCylinderOracle (file:///workspace/kenoma-connected-specimen/education/web/axisymmetric-material.mjs:29:84)
+    at Array.map (<anonymous>)
+    at file:///workspace/kenoma-connected-specimen/education/[eval1]:1:269
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:224:26
+    at async ModuleLoader.executeModuleJob (node:internal/modules/esm/loader:221:20)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.19.0
+Traceback (most recent call last):
+  File "/workspace/kenoma-connected-specimen/education/tools/qualify_axisymmetric_material.py", line 49, in <module>
+    record=qualify();out=Path(sys.argv[1]);out.parent.mkdir(parents=True,exist_ok=True);out.write_text(json.dumps(record,indent=2)+'\n');print(json.dumps(record,indent=2))
+           ^^^^^^^^^
+  File "/workspace/kenoma-connected-specimen/education/tools/qualify_axisymmetric_material.py", line 14, in qualify
+    actual=json.loads(subprocess.check_output(['node','--input-type=module','-e',program],cwd=ROOT,text=True))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['node', '--input-type=module', '-e', "import {axisymmetricMaterial as m,uniformCylinderOracle as o} from './web/axisymmetric-material.mjs';console.log(JSON.stringify({material:[[1.07, 0.031, -0.021, 0.965, 1.01], [0.92, -0.06, 0.04, 1.06, 0.98], [1, 0, 0, 1, 1]].map(v=>({v,...m(v)})),cylinders:[.9,1,1.1].map(o)}));"]' returned non-zero exit status 1.

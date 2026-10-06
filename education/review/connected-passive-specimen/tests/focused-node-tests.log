@@ -1,0 +1,21 @@
+✔ reference material is stress free with finite bulk compliance (1.091387ms)
+✔ independent tensor stress, mean stress and symmetric tangent agree at shear and dilation (1.114472ms)
+✔ energy forces and analytic tangent pass separate centered differences at two scales (0.618738ms)
+✔ uniform free-lateral oracle solves finite-volume response at zero and signed ten percent (0.483204ms)
+✔ invalid material orientation and unsupported oracle domain fail explicitly (0.450526ms)
+✔ Q2 partition and derivatives reproduce the exact frustum reference volume (24.719273ms)
+✔ assembled energy force and ORIGINAL tangent pass directional derivatives (20.76409ms)
+✔ free-lateral connected cylinder qualifies all nodes and material-point stresses against independent scalar oracle (102.656387ms)
+✔ complete cap axial displacement, free radial end DOFs and regular axis are explicit (79.878437ms)
+✔ connected tapered solution develops meridional shear with actual finite local volume compliance (60.164851ms)
+✔ watertight renderer follows solved geometry, has one component and exposes tessellation error without correction (65.389837ms)
+✔ finite iteration cap remains an explicit approximation and original tangent linear solves are checked (80.788381ms)
+✔ load continuation reaches the fine compressed taper without changing the original Hessian (3267.523538ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3791.154975

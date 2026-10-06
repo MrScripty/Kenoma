@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "refs": [
+    {
+      "path": "/tmp/kenoma-real-integration",
+      "head": "f0973f46e55faa881ab3b34c6a848dfee313142e",
+      "clean": true
+    },
+    {
+      "path": "/workspace/kenoma-current-main-53",
+      "head": "e8fa239e3c01468cee86615e1f306dd6659999fa",
+      "clean": true
+    },
+    {
+      "path": "/workspace/kenoma-dissipative",
+      "head": "0682249146ae2de57f3f62d3d2cc2df2bfac165c",
+      "clean": true
+    },
+    {
+      "path": "/workspace/kenoma-serial-specimen",
+      "head": "ae239015fc471fe0be1cd21a6a47cca6be0b312f",
+      "clean": true
+    },
+    {
+      "path": "/workspace/kenoma-pr8-print-readability",
+      "head": "2ece72fd802e979ed8b0f1f999a39c0e072673f0",
+      "clean": true
+    },
+    {
+      "path": "/workspace/kenoma-serial-readable",
+      "head": "57614206e0282198f83ea4b730cdd29da5b9e4e1",
+      "clean": true
+    },
+    {
+      "path": "/workspace/kenoma-serial-wording",
+      "head": "6a792178392549f8ac314d9c162cfd4215c3054b",
+      "clean": true
+    }
+  ]
+}

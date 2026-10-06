@@ -1,0 +1,160 @@
+{
+  "status": "PASS",
+  "lean_version": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)",
+  "mathlib": {
+    "repository": "https://github.com/leanprover-community/mathlib4",
+    "tag": "v4.19.0",
+    "commit": "c44e0c8ee63ca166450922a373c7409c5d26b00b",
+    "manifest_sha256": "5c6421b650bc87a2427a892a39e5522dc44543ca4ac1bd6e9f08d536c044a752",
+    "toolchain": "leanprover/lean4:v4.19.0",
+    "license": "Apache-2.0",
+    "qualification": "Fresh compilation required; this lock alone is not proof evidence."
+  },
+  "source": "proofs/AxisymmetricSpecimenReal.lean",
+  "source_sha256": "7308734ec0108ec080d3ba54129f38655eb547bf887451a3668934000bbd2ec8",
+  "claims_sha256": "7011d50d9483686f2adea169a7e48d3e5bf12d63024c4a137a61329d24fdeed4",
+  "input_sha256": {
+    "proofs/AxisymmetricSpecimenReal.lean": "7308734ec0108ec080d3ba54129f38655eb547bf887451a3668934000bbd2ec8",
+    "proofs/axisymmetric-specimen-real-claims.json": "7011d50d9483686f2adea169a7e48d3e5bf12d63024c4a137a61329d24fdeed4",
+    "tools/check_axisymmetric_proofs.py": "12d9e0bbe6633d394de9224b02616f788674c8173754ed41d2a97ae3c9904d4f"
+  },
+  "command": "lake --no-cache env lean -DwarningAsError=true proofs/AxisymmetricSpecimenReal.lean, from pinned official mathlib workspace",
+  "claims": [
+    {
+      "id": "axis-real-axis-determinant",
+      "theorem": "Kenoma.AxisymmetricSpecimenReal.axis_determinant",
+      "statement": "theorem axis_determinant (a b c d h : \u211d) :\n    Matrix.det (axisMatrix a b c d h) = h * (a * d - b * c)",
+      "claim": "Full axisymmetric Jacobian includes meridional shear and hoop stretch.",
+      "assumptions": "Real entries in the declared cylindrical matrix.",
+      "limits": "Local real identity only. No assembled equilibrium/convergence, JS equivalence, mesh volume, full pointwise error, global injectivity, anatomy or unrestricted stability certification.",
+      "implementation": "web/axisymmetric-specimen.mjs: deformation and materialPoint",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "axis-real-uniform-determinant",
+      "theorem": "Kenoma.AxisymmetricSpecimenReal.uniform_determinant",
+      "statement": "theorem uniform_determinant (side axial : \u211d) :\n    Matrix.det (axisMatrix side 0 0 axial side) = axial * side ^ 2",
+      "claim": "A uniform cylinder has J = axial stretch times side stretch squared.",
+      "assumptions": "Real homogeneous stretches; runtime requires positive orientation.",
+      "limits": "Local real identity only. No assembled equilibrium/convergence, JS equivalence, mesh volume, full pointwise error, global injectivity, anatomy or unrestricted stability certification.",
+      "implementation": "web/axisymmetric-material.mjs: uniformCylinderOracle",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "axis-real-logarithmic-energy-nonnegative",
+      "theorem": "Kenoma.AxisymmetricSpecimenReal.logarithmic_energy_nonnegative",
+      "statement": "theorem logarithmic_energy_nonnegative (bulk J : \u211d) (hbulk : 0 \u2264 bulk) :\n    0 \u2264 logarithmicEnergy bulk J",
+      "claim": "Finite logarithmic volumetric storage is nonnegative.",
+      "assumptions": "Real bulk >= 0; implemented material requires bulk > 0 and J > 1e-6.",
+      "limits": "Local real identity only. No assembled equilibrium/convergence, JS equivalence, mesh volume, full pointwise error, global injectivity, anatomy or unrestricted stability certification.",
+      "implementation": "web/axisymmetric-material.mjs: volumeEnergyPa",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "axis-real-logarithmic-energy-rest",
+      "theorem": "Kenoma.AxisymmetricSpecimenReal.logarithmic_energy_rest",
+      "statement": "theorem logarithmic_energy_rest (bulk : \u211d) : logarithmicEnergy bulk 1 = 0",
+      "claim": "The volumetric term vanishes at J = 1.",
+      "assumptions": "Real bulk; this does not constrain an equilibrium to J = 1.",
+      "limits": "Local real identity only. No assembled equilibrium/convergence, JS equivalence, mesh volume, full pointwise error, global injectivity, anatomy or unrestricted stability certification.",
+      "implementation": "web/axisymmetric-material.mjs: volumeEnergyPa",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "axis-real-logarithmic-energy-derivative",
+      "theorem": "Kenoma.AxisymmetricSpecimenReal.logarithmic_energy_derivative",
+      "statement": "theorem logarithmic_energy_derivative (bulk J : \u211d) (hJ : 0 < J) :\n    HasDerivAt (logarithmicEnergy bulk) (bulk * Real.log J / J) J",
+      "claim": "The actual logarithmic volume energy derivative is bulk*log(J)/J.",
+      "assumptions": "Real J > 0.",
+      "limits": "Local real identity only. No assembled equilibrium/convergence, JS equivalence, mesh volume, full pointwise error, global injectivity, anatomy or unrestricted stability certification.",
+      "implementation": "web/axisymmetric-material.mjs: gradient bulk term",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "axis-real-full-side-traction",
+      "theorem": "Kenoma.AxisymmetricSpecimenReal.full_side_traction",
+      "statement": "theorem full_side_traction (A B C D H slope : \u211d) :\n    (axisMatrix A B C D H).mulVec ![1, 0, -slope] =\n      ![A - slope * B, 0, C - slope * D]",
+      "claim": "A tapered side normal couples both meridional traction components.",
+      "assumptions": "Real Piola components and slope; unnormalized normal (1,0,-slope).",
+      "limits": "Local real identity only. No assembled equilibrium/convergence, JS equivalence, mesh volume, full pointwise error, global injectivity, anatomy or unrestricted stability certification.",
+      "implementation": "web/axisymmetric-specimen.mjs: sideTraction",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "axis-real-uniform-force-conversion",
+      "theorem": "Kenoma.AxisymmetricSpecimenReal.uniform_force_conversion",
+      "statement": "theorem uniform_force_conversion (area side axial sigma : \u211d) (haxial : axial \u2260 0) :\n    area * ((axial * side ^ 2) / axial * sigma) = area * side ^ 2 * sigma",
+      "claim": "Reference-area nominal force equals current-area axial Cauchy force in the uniform cylinder.",
+      "assumptions": "Real axial stretch != 0 and homogeneous J = axial*side^2.",
+      "limits": "Local real identity only. No assembled equilibrium/convergence, JS equivalence, mesh volume, full pointwise error, global injectivity, anatomy or unrestricted stability certification.",
+      "implementation": "web/axisymmetric-material.mjs: uniformCylinderOracle nominalAxialPa",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "axis-real-profile-primitive-derivative",
+      "theorem": "Kenoma.AxisymmetricSpecimenReal.profile_primitive_derivative",
+      "statement": "theorem profile_primitive_derivative (radius length ratio Z : \u211d) (hL : length \u2260 0) :\n    HasDerivAt (profilePrimitive radius length ratio)\n      (Real.pi * (radius * (1 + (ratio - 1) * Z / length)) ^ 2) Z",
+      "claim": "The declared radius-profile primitive differentiates to the section area.",
+      "assumptions": "Real length != 0; physical reference length and radius are positive.",
+      "limits": "Local real identity only. No assembled equilibrium/convergence, JS equivalence, mesh volume, full pointwise error, global injectivity, anatomy or unrestricted stability certification.",
+      "implementation": "web/axisymmetric-specimen.mjs: reference frustum geometry",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "axis-real-frustum-primitive-endpoints",
+      "theorem": "Kenoma.AxisymmetricSpecimenReal.frustum_primitive_endpoints",
+      "statement": "theorem frustum_primitive_endpoints (radius length ratio : \u211d) (hL : length \u2260 0) :\n    profilePrimitive radius length ratio length - profilePrimitive radius length ratio 0 =\n      Real.pi * length * radius ^ 2 * (1 + ratio + ratio ^ 2) / 3",
+      "claim": "The profile primitive endpoint difference gives the frustum polynomial.",
+      "assumptions": "Real length != 0; no mesh integration or renderer identity is proved.",
+      "limits": "Local real identity only. No assembled equilibrium/convergence, JS equivalence, mesh volume, full pointwise error, global injectivity, anatomy or unrestricted stability certification.",
+      "implementation": "web/axisymmetric-specimen.mjs: frustumVolume",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "scope": "Nine local prototype identities; no book-family or publication change and no numerical/continuum/stability/anatomical certification"
+}

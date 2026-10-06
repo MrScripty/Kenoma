@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/workspace/kenoma-end-face-negatives/worker-reaction/copy/tests/axisymmetric_browser.py", line 194, in <module>
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--preview',type=Path,required=True);p.add_argument('--out',type=Path,required=True);p.add_argument('--oracle',type=Path,required=True);p.add_argument('--experiment',type=Path,required=True);a=p.parse_args();qualify(a.preview.resolve(),a.out.resolve(),a.oracle.resolve(),a.experiment.resolve())
+                                                                                                                                                                                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/kenoma-end-face-negatives/worker-reaction/copy/tests/axisymmetric_browser.py", line 146, in qualify
+    assert lab.get_attribute('data-scene-state')=='idle';record(page,lab,'rest-static',False)
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/kenoma-end-face-negatives/worker-reaction/copy/tests/axisymmetric_browser.py", line 139, in record
+    p=snap(lab);row={'case':name,'state':verify_state(p,oracle,experiment)}
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/kenoma-end-face-negatives/worker-reaction/copy/tests/axisymmetric_browser.py", line 84, in verify_state
+    for k in ['energyJ','volumeM3','rightReactionN','weightedRmsJDefect']:close(d[k],expected['state']['diagnostics'][k],'Actual browser/offline '+k,absolute=2e-12)
+                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/kenoma-end-face-negatives/worker-reaction/copy/tests/axisymmetric_browser.py", line 17, in close
+    assert abs(got-want)<=absolute+relative*abs(want),(label,got,want)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('Actual browser/offline rightReactionN', 0.01, 0)

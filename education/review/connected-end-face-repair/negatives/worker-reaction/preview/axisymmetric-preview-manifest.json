@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "scope": "Separate connected passive finite-compliance prototype; nine fresh local Real identities; no book/release claim",
+  "source_base_revision": "1c90c63827abce0649286734ecd5fb6d1276c83e",
+  "input_sha256": {
+    "web/axisymmetric-material.mjs": "3c977b401f2f76f95c5445a82d80c55ccc04e457c3d0c30350635ddf58cce561",
+    "web/axisymmetric-specimen.mjs": "39723a813efc3d92a8b4979d6652561354de109d68333ae8b1317e7e641c1a4e",
+    "web/axisymmetric-lab.mjs": "b8f99ffe6712e4d9a974856c1311f26c4c8bcc41a583b5685fb168fe05c0f640",
+    "web/axisymmetric-worker.mjs": "99d9d13ea127c88f3e6ac4295b67befd28236d6b86c31585a87bc505a09e6f7b",
+    "web/scene-status.mjs": "1719e9dba0573423ba6be04f609950efa3303d2a75800be7ec9c38df8606b8cb",
+    "web/axisymmetric-lab.css": "19b34c09cb27ac35ecd16e4429adcdb1554ece02797112790f90cccc03be9752",
+    "tools/build_axisymmetric_preview.py": "71861b3a9c7b0e6b0bdf91736334ab9542b7edfbc777ccdd51d6403b7a89802c",
+    "proofs/AxisymmetricSpecimenReal.lean": "7308734ec0108ec080d3ba54129f38655eb547bf887451a3668934000bbd2ec8",
+    "proofs/axisymmetric-specimen-real-claims.json": "7011d50d9483686f2adea169a7e48d3e5bf12d63024c4a137a61329d24fdeed4",
+    "tools/check_axisymmetric_proofs.py": "12d9e0bbe6633d394de9224b02616f788674c8173754ed41d2a97ae3c9904d4f",
+    "proofs/mathlib-lock.json": "cfeeea1b9e805fdfa169b7b7f41b3d29cf0a99d09fa79e04e38a8bd9683611da"
+  },
+  "proof_receipt_sha256": "45d3286b47207c6dd7d137a67dc8c39a9ed381ff872c4c8f5a1438ef11bf2220",
+  "output_sha256": {
+    "THIRD_PARTY_NOTICES.txt": "60dbebf282accb01a69e081efa61e88379eee8906dfe6e9ccf6bbced68f79471",
+    "assets/axisymmetric-app.js": "f164e89e8b8b6ce0443862f7b92605600f9d42fa57479e3628aae1f6678c9f47",
+    "assets/axisymmetric-app.js.LEGAL.txt": "373b12aaa205aa5bc749aef71f9d69280e4b405d39570ffcd66a385349d76587",
+    "assets/axisymmetric-lab.css": "19b34c09cb27ac35ecd16e4429adcdb1554ece02797112790f90cccc03be9752",
+    "assets/axisymmetric-worker.js": "d0f33151c61d822f3e86b03b3cff478fc8fb394139de7a8fd2f177c90c75db4f",
+    "index.html": "ff67ead5342286262311bdb046b558c2f55a626dfea9d36d06997b79e86dd55c",
+    "proofs/AxisymmetricSpecimenReal.lean": "7308734ec0108ec080d3ba54129f38655eb547bf887451a3668934000bbd2ec8",
+    "proofs/axisymmetric-lean-check.txt": "17741f939604160a6d151c8db22d1c5ca90782412ffa87977972ff211b67b843",
+    "proofs/axisymmetric-proof-status.json": "45d3286b47207c6dd7d137a67dc8c39a9ed381ff872c4c8f5a1438ef11bf2220",
+    "proofs/axisymmetric-specimen-real-claims.json": "7011d50d9483686f2adea169a7e48d3e5bf12d63024c4a137a61329d24fdeed4",
+    "proofs/mathlib-lock.json": "cfeeea1b9e805fdfa169b7b7f41b3d29cf0a99d09fa79e04e38a8bd9683611da",
+    "web/axisymmetric-lab.mjs": "b8f99ffe6712e4d9a974856c1311f26c4c8bcc41a583b5685fb168fe05c0f640",
+    "web/axisymmetric-material.mjs": "3c977b401f2f76f95c5445a82d80c55ccc04e457c3d0c30350635ddf58cce561",
+    "web/axisymmetric-specimen.mjs": "39723a813efc3d92a8b4979d6652561354de109d68333ae8b1317e7e641c1a4e",
+    "web/axisymmetric-worker.mjs": "99d9d13ea127c88f3e6ac4295b67befd28236d6b86c31585a87bc505a09e6f7b",
+    "web/scene-status.mjs": "1719e9dba0573423ba6be04f609950efa3303d2a75800be7ec9c38df8606b8cb"
+  }
+}

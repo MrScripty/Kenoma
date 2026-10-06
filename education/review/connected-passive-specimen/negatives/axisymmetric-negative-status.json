@@ -1,0 +1,52 @@
+{
+  "status": "PASS_NEGATIVES_REJECTED",
+  "source_input_sha256": {
+    "web/axisymmetric-material.mjs": "3c977b401f2f76f95c5445a82d80c55ccc04e457c3d0c30350635ddf58cce561",
+    "web/axisymmetric-specimen.mjs": "e889b8d49e33de4f08727c98d0cb6c03216d4c26cf0de9bb3626fe1a9d8b1758",
+    "web/axisymmetric-lab.mjs": "b8f99ffe6712e4d9a974856c1311f26c4c8bcc41a583b5685fb168fe05c0f640",
+    "web/axisymmetric-worker.mjs": "1b9ad84c2363a18fed3a77fb46708e444f27066e87b4918d5f8b5068414ba7c0",
+    "web/scene-status.mjs": "1719e9dba0573423ba6be04f609950efa3303d2a75800be7ec9c38df8606b8cb",
+    "web/axisymmetric-lab.css": "19b34c09cb27ac35ecd16e4429adcdb1554ece02797112790f90cccc03be9752",
+    "tools/build_axisymmetric_preview.py": "71861b3a9c7b0e6b0bdf91736334ab9542b7edfbc777ccdd51d6403b7a89802c",
+    "proofs/AxisymmetricSpecimenReal.lean": "7308734ec0108ec080d3ba54129f38655eb547bf887451a3668934000bbd2ec8",
+    "proofs/axisymmetric-specimen-real-claims.json": "7011d50d9483686f2adea169a7e48d3e5bf12d63024c4a137a61329d24fdeed4",
+    "tools/check_axisymmetric_proofs.py": "12d9e0bbe6633d394de9224b02616f788674c8173754ed41d2a97ae3c9904d4f",
+    "proofs/mathlib-lock.json": "cfeeea1b9e805fdfa169b7b7f41b3d29cf0a99d09fa79e04e38a8bd9683611da",
+    "tests/axisymmetric_browser.py": "9dfc4d3d5c3bcb9bf28b758c9c57cb7331c96f8ea0196ce6231443ee950d9815",
+    "tools/qualify_axisymmetric_material.py": "149dc025c7473f4bf42e428b02b450f803da988250be2b79297473128909b04e",
+    "tools/axisymmetric-experiment.mjs": "f64d5f56276c7e3f6be73ec18180ce10402dcc11ad2387045917df31e3d8f05f",
+    "tools/qualify_axisymmetric_negatives.py": "f5fdaf2ae284a72b1296b1fa77e10acab3c3ce9dce36bae47510616890feca01"
+  },
+  "cases": [
+    {
+      "case": "renderer-radius",
+      "changed_source": "web/axisymmetric-lab.mjs",
+      "before_sha256": "b8f99ffe6712e4d9a974856c1311f26c4c8bcc41a583b5685fb168fe05c0f640",
+      "after_sha256": "7c1ccd68c904c4f26e39dd10144e44afc12a5fba325fc012ba59a0eaf151d438",
+      "mutation": {
+        "before": "[v[2],v[0],v[1]]",
+        "after": "[v[2],1.05*v[0],1.05*v[1]]"
+      },
+      "delivered_manifest_sha256": "364e45819e8150a9a7abc8e6b4adb1309f69a0cf4028d34fc870031a943e0bf9",
+      "expected_independent_failure": "Actual displayed vertex from independent Q2 map",
+      "returncode": 1,
+      "failure_log_sha256": "4fa4563c96870e694f15c61c82e5ddcd9a1e7d7bca589e6a86271425d20e69aa",
+      "scope": "Actual rebuilt browser copy and real GPU renderer/worker; negative source only, original acceptance criteria unchanged"
+    },
+    {
+      "case": "worker-reaction",
+      "changed_source": "web/axisymmetric-worker.mjs",
+      "before_sha256": "1b9ad84c2363a18fed3a77fb46708e444f27066e87b4918d5f8b5068414ba7c0",
+      "after_sha256": "3512704961d3698253bde4061f064eafb9a094e6b3828eb972e01eb7bf8621e4",
+      "mutation": {
+        "before": "self.postMessage({sequence,configuration:c,state,boundary,surfaceJ,trace});",
+        "after": "state.diagnostics.rightReactionN+=.01;self.postMessage({sequence,configuration:c,state,boundary,surfaceJ,trace});"
+      },
+      "delivered_manifest_sha256": "4bd70ffa3275a6a04a8e328fe3409ed896d15ef5f8a86a6d633e2efaf1d5535b",
+      "expected_independent_failure": "Actual browser/offline rightReactionN",
+      "returncode": 1,
+      "failure_log_sha256": "413153e7fe3b4fa2af14ef9ee69e6ac45d9c072476a27fc05706f639aac8d879",
+      "scope": "Actual rebuilt browser copy and real GPU renderer/worker; negative source only, original acceptance criteria unchanged"
+    }
+  ]
+}
