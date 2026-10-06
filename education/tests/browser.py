@@ -4,6 +4,7 @@ import hashlib,json,os,shutil,sys
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
 from render_pdf import serve
 from executable_outputs import checked_build_outputs,executable_digest,unchanged_outputs
+from teaching_controls_browser import check as check_teaching_controls
 from playwright.sync_api import sync_playwright,expect
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -161,6 +162,8 @@ def check():
         spatial.locator('[data-action=reset]').click();reset_values=spatial.locator('.readout').inner_text();spatial.locator('[data-action=view]').click();assert spatial.locator('.readout').inner_text()==reset_values
         spatial.locator('[data-action=reset]').click();assert spatial.locator('.readout').inner_text()==reset_values
         checks.append('Spatial muscle/skin/contact same-pose fixture, force-driven lift, release-current export, camera and deterministic reset verified')
+        check_teaching_controls(page,out)
+        checks.append('Teaching control regressions: measured Lab1 marker pixels, common strain scale and inactive bar inputs, state-preserving Lab7 ablations, and dead-centre explanation')
         # Exercise the real dt/dd DOM and both lab controller implementations.
         for name in ['force','torque','energy','elbow','series','continuum','spatial']:
           lab=page.locator('#lab-'+name)

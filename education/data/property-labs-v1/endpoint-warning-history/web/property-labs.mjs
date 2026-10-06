@@ -24,7 +24,6 @@ class PropertyLab{
   root.dataset.enhanced='true';this.render();
  }
  change(input){
-  if(input.disabled)return;
   const key=input.dataset.param,value=input.tagName==='SELECT'?(['segments'].includes(key)?Number(input.value):input.value):input.valueAsNumber;
   if(input.value===''||!input.checkValidity()||(typeof value==='number'&&!Number.isFinite(value))){input.setAttribute('aria-invalid','true');return;}
   const candidate={...this.params,[key]:value};let state;
@@ -33,15 +32,10 @@ class PropertyLab{
   this.root.querySelectorAll(`[data-param="${key}"]`).forEach(other=>{if(other!==input)other.value=value;});this.render();
  }
  renderBar(){
-  const s=this.state,n=s.samples.length,m=Math.max(.05,s.maxAbsStrain),width=520/n;
-  const active=this.params.mode==='active-fixed';
-  for(const key of ['force','activation','activeStress'])this.root.querySelectorAll(`[data-param="${key}"]`).forEach(input=>{
-   input.disabled=key==='force'?active:!active;
-   input.title=input.disabled?(active?'Inactive: fixed ends determine the reaction force.':'Inactive: passive mode has no active stress.') : '';
-  });
+  const s=this.state,n=s.samples.length,m=Math.max(...s.samples.map(v=>Math.abs(v.strain)),1e-5),width=520/n;
   this.root.querySelector('.property-scene').innerHTML=`<svg xmlns="${NS}" viewBox="0 0 620 330" role="img" aria-label="Axial strain by position; blue extension and red compression"><rect width="620" height="330" fill="#f4f7fb"/><path d="M50 165H570" stroke="#526479"/>${s.samples.map((v,i)=>{const h=110*Math.abs(v.strain)/m;return `<rect x="${50+i*width}" y="${v.strain>=0?165-h:165}" width="${width}" height="${h}" fill="${v.strain>=0?'#1474b1':'#c53e48'}"/>`;}).join('')}<text x="50" y="25" font-size="17">Strain (dimensionless): scale ±${pretty(m)}</text><text x="50" y="310" font-size="16">0 → ${pretty(this.params.length)} m; blue extension, red compression</text></svg>`;
   const values=[['Constant resultant N (N)',s.resultantN],['Exact compliance (m/N)',s.exactComplianceMPerN],['Exact extension (m)',s.exactExtensionM],['Midpoint extension (m)',s.numericalExtensionM],['Extension error (m)',s.extensionErrorM],['Minimum strain (true area extrema)',s.minimumStrain],['Maximum strain (true area extrema)',s.maximumStrain]];
-  this.root.querySelector('.readout').innerHTML=values.map(([label,value])=>`<div><dt>${label}</dt><dd>${pretty(value)}</dd></div>`).join('')+`<div><dt>Plot range</dt><dd>${m>.05?'Expanded beyond ±0.05 to show all strains; compare the labeled scale':'Fixed ±0.05 for load, stiffness and activation comparisons'}; current range ±${pretty(m)}.</dd></div><div><dt>Small-strain scope</dt><dd>${s.smallStrainWarning?'Exceeded 5% illustrative validity warning; reduced model remains unqualified':'Within 5% illustrative warning threshold; not a material validation'}</dd></div>`;
+  this.root.querySelector('.readout').innerHTML=values.map(([label,value])=>`<div><dt>${label}</dt><dd>${pretty(value)}</dd></div>`).join('')+`<div><dt>Small-strain scope</dt><dd>${s.smallStrainWarning?'Exceeded 5% illustrative validity warning; reduced model remains unqualified':'Within 5% illustrative warning threshold; not a material validation'}</dd></div>`;
  }
  render(){
   const s=this.state;

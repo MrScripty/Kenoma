@@ -93,6 +93,9 @@ jobs:
         run: |
           npm test
           npm run test:python
+          node tools/tapered-bar-current-endpoint-audit.mjs
+          python3 tests/endpoint_warning_audit.py
+          python3 tools/check_endpoint_warning_audit.py
           npm run build
           npm run pdf
           npm run test:browser

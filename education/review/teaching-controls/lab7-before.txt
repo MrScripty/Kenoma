@@ -1,0 +1,85 @@
+✖ compression control ablations preserve activation/pose and produce the named physical effect (2876.230808ms)
+✖ parameter edits preserve evolved state, halt, accounting and counters; pose/hold edits enforce kinematics (582.076409ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3550.810089
+
+✖ failing tests:
+
+test at tests/spatial_controls.test.mjs:28:1
+✖ compression control ablations preserve activation/pose and produce the named physical effect (2876.230808ms)
+  AssertionError [ERR_ASSERTION]: skin
+  + actual - expected
+  
+    {
+      index: 0,
+      state: {
+  +     a: 0,
+  -     a: 0.6,
+        dissipation: 0,
+        eventSplits: 0,
+        halted: false,
+        q: 1.5707963267948966,
+        substeps: 0,
+  
+      at TestContext.<anonymous> (file:///workspace/Kenoma/education/tests/spatial_controls.test.mjs:34:28)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: { state: { q: 1.5707963267948966, w: 0, a: 0, time: 0, work: 0, dissipation: 0, halted: false, eventSplits: 0, substeps: 0 }, index: 0 },
+    expected: { state: { q: 1.5707963267948966, w: 0, a: 0.6, time: 0, work: 0, dissipation: 0, halted: false, eventSplits: 0, substeps: 0 }, index: 0 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/spatial_controls.test.mjs:49:1
+✖ parameter edits preserve evolved state, halt, accounting and counters; pose/hold edits enforce kinematics (582.076409ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   index: 0,
+  -   index: 60,
+      state: {
+  +     a: 0,
+  +     dissipation: 0,
+  +     eventSplits: 0,
+  -     a: 0.5985127486940003,
+  -     dissipation: 0.3100301324746818,
+  -     eventSplits: 8,
+        halted: false,
+  +     q: 0.5235987755982988,
+  +     substeps: 0,
+  +     time: 0,
+  +     w: 0,
+  +     work: 0
+  -     q: 0.7052677279823594,
+  -     substeps: 68,
+  -     time: 0.3000000000000002,
+  -     w: 2.0154057757528263,
+  -     work: 12.210303721368287
+      }
+    }
+  
+      at TestContext.<anonymous> (file:///workspace/Kenoma/education/tests/spatial_controls.test.mjs:54:30)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { state: { q: 0.5235987755982988, w: 0, a: 0, time: 0, work: 0, dissipation: 0, halted: false, eventSplits: 0, substeps: 0 }, index: 0 },
+    expected: { state: { q: 0.7052677279823594, w: 2.0154057757528263, a: 0.5985127486940003, time: 0.3000000000000002, work: 12.210303721368287, dissipation: 0.3100301324746818, halted: false, eventSplits: 8, substeps: 68 }, index: 60 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
