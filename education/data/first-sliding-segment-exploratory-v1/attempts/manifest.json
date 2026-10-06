@@ -1,0 +1,10 @@
+{
+  "scope": "Failed preliminary unit-control attempt, no ODE or accepted entry",
+  "test_exit_code": 1,
+  "reason": "Impulse ledger check incorrectly applied to Jacobian velocity auxiliary; corrected only auxiliary validation distinction",
+  "trajectory_gates_unchanged": true,
+  "files": {
+    "attempts/01-engine-source.py": "4754b93a9c3d31433c649cec534d1850fe592113ec498421a1e524a7c3588ca4",
+    "attempts/01-ledger-Jacobian-tests.log": "4a992bdefb602e927eed0785c69ee6b5924fe6a34bbd5980544eb5d45a8409c6"
+  }
+}
