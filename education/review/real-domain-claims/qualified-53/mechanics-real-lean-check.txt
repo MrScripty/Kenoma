@@ -1,0 +1,3 @@
+'Kenoma.MechanicsReal.force_pair_cancels' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Kenoma.MechanicsReal.torque_linear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Kenoma.MechanicsReal.virtual_power_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
