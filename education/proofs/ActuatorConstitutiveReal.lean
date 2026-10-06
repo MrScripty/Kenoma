@@ -54,7 +54,7 @@ theorem activation_hasDerivAt (a u h tau : ℝ) (htau : tau ≠ 0) :
       ((u - activation a u h tau) / tau) h := by
   have hd := ((((hasDerivAt_id h).neg).div_const tau).exp).const_mul (a - u)
   have hd' := hd.const_add u
-  convert hd' using 1 <;> simp only [activation, id_eq] <;> field_simp [htau] <;> ring
+  convert hd' using 1 <;> simp only [activation, id_eq] <;> field_simp [htau]
 
 theorem active_force_bounds (fiber a maxForce optimalFiber width : ℝ)
     (ha : 0 ≤ a) (hF : 0 ≤ maxForce) :
@@ -71,9 +71,9 @@ theorem active_force_hasDerivAt (fiber a maxForce optimalFiber width : ℝ)
     HasDerivAt (fun f => activeForce f a maxForce optimalFiber width)
       (activeSlope fiber a maxForce optimalFiber width) fiber := by
   have hz := (((hasDerivAt_id fiber).div_const optimalFiber).sub_const 1).div_const width
-  have hd := (((hz.pow 2).neg).exp).const_mul (a * maxForce)
+  have hd := (((hz.mul hz).neg).exp).const_mul (a * maxForce)
   convert hd using 1 <;>
-    simp only [activeSlope, activeForce, normalizedFiber, id_eq] <;>
+    simp only [activeSlope, activeForce, normalizedFiber, id_eq, pow_two] <;>
     field_simp [hl, hw] <;> ring
 
 theorem gaussian_weighted_radius_bound (z : ℝ) :
@@ -141,8 +141,8 @@ theorem series_residual_strictMono (a maxForce optimalFiber width compliance pas
   have hstrict := hcore hxy
   have hpassive := mul_le_mul_of_nonneg_left
     (max_le_max (le_refl (0 : ℝ)) (sub_le_sub_right hxy.le optimalFiber)) (mul_nonneg hc hk)
-  dsimp [seriesResidual]
-  nlinarith
+  convert (sub_lt_sub_right (add_lt_add_of_lt_of_le hstrict hpassive) totalFiber) using 1 <;>
+    dsimp [seriesResidual] <;> ring
 
 theorem series_equilibrium_unique (a maxForce optimalFiber width compliance passiveK totalFiber x y : ℝ)
     (ha0 : 0 ≤ a) (ha1 : a ≤ 1) (hF : 0 ≤ maxForce)
