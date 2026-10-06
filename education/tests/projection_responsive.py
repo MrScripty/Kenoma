@@ -10,13 +10,17 @@ ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('projection_oracle', ROOT/'standalone/pressure-projection-lab-check.py')
 oracle = importlib.util.module_from_spec(spec); spec.loader.exec_module(oracle)
 FROZEN = 'e7d56450f6a806fa14b0a511bfcf6405d592fc27'
+FROZEN_SHA256 = '3c3bd14dc774c809074af208c9574127c9824a04b69c1a5a25209c95e1f461b4'
 
 
 def check(output):
     output.mkdir(parents=True, exist_ok=True)
     (output/'receipt.json').unlink(missing_ok=True)
     current = ROOT/'standalone/pressure-projection-lab.html'
-    old = subprocess.check_output(['git','show',FROZEN+':education/standalone/pressure-projection-lab.html'], cwd=ROOT)
+    # CI has a shallow checkout: preserve the exact immutable predecessor
+    # locally rather than depending on historical Git objects being present.
+    old = (ROOT/'tests/fixtures/projection-layout-e7d56450.html').read_bytes()
+    assert hashlib.sha256(old).hexdigest() == FROZEN_SHA256, 'Changed frozen layout fixture'
     errors = []; rows = []
     with tempfile.TemporaryDirectory() as folder:
         folder = Path(folder); (folder/'frozen.html').write_bytes(old); shutil.copy2(current, folder/'fixed.html')
@@ -76,7 +80,7 @@ def check(output):
         finally:server.shutdown();server.server_close()
     assert not errors, errors
     receipt={'result':'PASS_PROJECTION_RESPONSIVE_REGRESSION','source_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
-             'source_sha256':hashlib.sha256(current.read_bytes()).hexdigest(),'browser':version,'frozen_source':FROZEN,
+             'source_sha256':hashlib.sha256(current.read_bytes()).hexdigest(),'browser':version,'frozen_source':FROZEN,'frozen_sha256':FROZEN_SHA256,
              'frozen_failure':regression,'fixed_cases':rows,'javascript_errors':errors,
              'scope':'Local browser with native and declared DejaVu font fallback; no inference that browser patch version caused hosted failure',
              'evidence_sha256':{f.name:hashlib.sha256(f.read_bytes()).hexdigest() for f in output.iterdir() if f.is_file() and f.name!='receipt.json'}}
