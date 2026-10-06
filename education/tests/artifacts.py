@@ -197,6 +197,6 @@ for label in ['Humerus','Triceps medial head','Unit 1','Elapsed time from retain
  print_label_sizes[label]=round(min(sizes),2)
 results={'status':'passed','pdf_pages':len(doc),'proof_cards':total_claims,'pdf_links':'no loopback or file URLs','pdf_proof_destinations':proof_destinations,'browser':browser['browser_version'],
  'print_figure_label_minimum_pt':print_label_sizes,
- 'print_readability':{'minimum_measured_pt':print_readability['minimum_measured_pt'],'theorem_statements':print_readability['theorem_statements'],'complete_source_appendices':print_readability['complete_source_appendices'],'dense_figure_labels':print_readability['dense_figure_labels']},
+ 'print_readability':{'minimum_measured_pt':print_readability['minimum_measured_pt'],'theorem_statements':print_readability['theorem_statements'],'complete_source_appendices':print_readability['complete_source_appendices'],'dense_figure_labels':print_readability['dense_figure_labels'],'instructional_figure_labels':print_readability['instructional_figure_labels'],'serial_figure_labels':print_readability['serial_figure_labels'],'dissipative_figure_labels':print_readability['dissipative_figure_labels']},
  'scope':'Content, hash, glyph and page-bounds sanity; PDF appearance still requires visual review.'}
 (out/'artifact-check.json').write_text(json.dumps(results,indent=2)+'\n');print(json.dumps(results,indent=2))
