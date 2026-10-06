@@ -1,0 +1,5 @@
+START coarse-1.25
+RESULT coarse-1.25 {"name": "coarse-1.25", "rank": 86, "momentRows": 96, "rowRedundancy": 10, "freeDisplacementCount": 189, "kernelDimension": 103, "lowestRestrictedEigenvalueNPerM": -4443.161108281245, "negativeRestrictedEigenvalueCount": 43, "constrainedClassification": "CONSTRAINED_NEGATIVE_DIRECTION", "constrainedVolumeRMSPerM": 2.6904609602219846e-14, "finiteKUnconstrainedRayleighNPerM": -4991.552805406648, "finiteKUnconstrainedVolumeRMSPerM": 3.329162069335779, "constrainedDerivativeGatesPass": true, "unconstrainedDerivativeGatesPass": true}
+START coarse-1.01
+RESULT coarse-1.01 {"name": "coarse-1.01", "rank": 86, "momentRows": 96, "rowRedundancy": 10, "freeDisplacementCount": 189, "kernelDimension": 103, "lowestRestrictedEigenvalueNPerM": 2.193602593185752, "negativeRestrictedEigenvalueCount": 0, "constrainedClassification": "POSITIVE_SAMPLED_RESTRICTED_SPECTRUM", "constrainedVolumeRMSPerM": 1.0664738079664745e-14, "finiteKUnconstrainedRayleighNPerM": 2.1719289853437207, "finiteKUnconstrainedVolumeRMSPerM": 0.01955454102429566, "constrainedDerivativeGatesPass": true, "unconstrainedDerivativeGatesPass": true}
+COMPLETE 17.75274682044983

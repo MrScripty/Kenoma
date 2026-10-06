@@ -1,0 +1,523 @@
+{
+  "sourceCommit": "dffc998be0dd96d583cfa58bfd9e42d9baa44a45",
+  "sourceHashes": {
+    "tools/frozen_volume_kernel.py": "f7593e476d76c67b2862c4fe6edd40d4833441c936dba20af65be63b81d9d226",
+    "tools/volume-admissibility-replay.mjs": "0b4f0f21e0e785ca563b21b8dac77e3881e7a38a394cd12bbd2f47bc1ccc0b45",
+    "tools/run_frozen_volume_admissibility.py": "0fe86459fd7d9677a9d934a8bd3026e1d17f10eed59cbea10d32db04937fdf70",
+    "tests/test_frozen_volume_kernel.py": "485781bf7b755185e007f15ea0b6f726f57c60a9d127a9218e1ca324457141d4",
+    "research/mechanical-closure/frozen-volume-admissibility-protocol.md": "a0be2d50d071728c4f36a3cf2c78d891ea95a45e7961e4e2d6ebae7a6c9939be",
+    "tools/frozen_pressure_spaces.py": "bd343b6a4f1d4a5a1cb3b42124783c9134cadfaa56ae66c88c66ce26bfa4efcb",
+    "tools/frozen-pressure-replay.mjs": "19235f4b4dae2a4253e28e849c9e8c1d04db266b11285d6eb6679bd82be5e98e",
+    "tools/full_p2_p1.py": "c80a360fd897867e8cb2360766de8a9f5d548d61bf59b5e54dc8b8df2d5f6860",
+    "tools/source_amplitude_p2_p1.py": "ac12c5fb9ac8e4ec2251c4a855bd7c4e57bb964160b5a044a8510825efb37b23",
+    "tools/run_full_p2_p1.py": "fe9e2df4a796451e2ff4cacab7b9d7b341f1e75a7b7254826c3677da07b3bdb8",
+    "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+    "web/anatomical-modal.mjs": "12cd671bc963aa04dd5c0e173a776049de191283d850b0b60d0fe8e63be4c9a1",
+    "web/anatomical-element.mjs": "3f67a6bd31565c83d2cbea591c3cf1862a48e50cc4efa780880fda7e808d4b1f",
+    "web/anatomical-intersections.mjs": "a083a9838ac3c7508b65b58329c741aef65a065288aff82fc886d1c2c90375df",
+    "tools/anatomical-compression-quadrature.mjs": "f12e0d80224bad5e0bfa0649e08cac2f31a0baf162e2547ae8767b7371f48dc2"
+  },
+  "previousPacketHashes": {
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/execution.log": "ca8b1750d7e1380f56bf63ee5e3a470210b64bf7715803e8473e0a6f95feb373",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/coarse-1.25.json": "b4379ec2700b50d2f9a28652a0efdde6fe2e97bd09415c3b769bac89f557690b",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/coarse-1.01-request.json": "10b69b807c0a302b9ea464f6bf644e7ca0fa5a2e559dc74def76f03690be0bdb",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/primary-source-binding.json": "30cb9959afd5257fe9f9c9522e8512cb9176597b8c00e3a542cc444e64a40177",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/coarse-1.01.json": "64029bff323e8cc387274b29aeb3494bc53a3dc30e8879e54da34a6236c41322",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/execution.json": "3bfe4ea91c13fa5509b0e74d33a6ec9b234c066352df8f784b4d4f98cfa2456a",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/equivalence-control.json": "e33da5a8ba032d2e35bdeb653c7b54b4355825bcac67deb6e6e36eb22cc82b4c",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/precommit-tests.log": "23b2fd009be20bf1e6e26f9b9fca064ce43d56264beb3a0f73b318bb82b6cc43",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/summary.json": "e6561b88cdbf7edbdd8474d9723ef50218ae10c3bea9ba36eb6ff74eaaf15b30",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/coarse-mesh.json": "b8d7739144d4d940ef075db81fd04173ee296dd5a3d333c283faf8ad30e25ee9",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/coarse-1.25-request.json": "cdf679326d54d12d47e3ec4bf543409e6ed5dfae05ebffa17b1ec093dfb0b97c",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/coarse-1.25-reclassification.json": "7a75a83ad9e2f85b115e5a6849329b0e3818a69284a6d544a2295bd58283b560",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/visual-inspection.json": "e21f909c98b51a9f082c328b9071c67fb73884306ebcc1acbd432ff871d9e7f1",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/execution.log": "05190fc8b3f6a7694b4e8f95d191a0d1e9c2f8f9059e8eab8dfc68013ab05217",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/fine-1.25.json": "62466537478860e6958c2b93afcf153cf99d51986cfa7d89e3823a169b461bc7",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/execution.json": "b7f037f4dc40219a8918be451e3649479ff6253ffc779b6165baee8b5b68b23f",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/render.log": "546bf5f7550666bb2944077eed061223f13e4f7ca7125d3b4f9d6ab05471fa0e",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/pdf-raster-receipt.json": "6b9592799c4a1c47154eeab50007fbfd6d348d5da1dfd2b435262445aa49437f",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/precommit-tests.log": "b7c4fab179bd517b1a86d6a2e72ca7e181a1e101f9276f14d9d61e2e50f13376",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/summary.json": "7504e77a2aa9047ae034aaaf7510dcf194dd60ba678fa1d97580be87242af12f",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/packet-check.log": "d184404c9a435c23fed0896b0ebfc8bfb69eb045a27029b36338179e42d61419",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/fine-mesh.json": "dc46e330cf16c3eda8974a71684c364dc3f402831d702993adb17731e816767f",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/source-amplitude.pdf-raster.png": "573e2a4374b5b0c35edae89a83253dae1a5d0e33399659a22899a3c4d1bc7574",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/manifest.json": "d7d1c677e2975068bd35f1e6cbd0b839b660286b1d0bf3344526f6f7c272e696",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/fine-1.25-request.json": "bd74d08db14896311c05a768a250b3777f2cc2b1d51c6a8db8f46b6c61565c2e",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/source-amplitude.png": "58525d46985d5f35da57a858d014e0231213b895ef27eb11dbf69c997d2b4ef8",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/source-amplitude.pdf": "47ffe1db1b19ed3b6afe079f10d264c414e63b531527fc151c32649b98a597f9",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/render-receipt.json": "bc5daebe4cf91ddfe4863e3762aa5f8db58b6fe532258bc187c564cc00402d4c",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/fine-export-failure.json": "9213054155fc8c1b0b07f67784fa505ab6293e70721d0e611dc8356ed3ed70af",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/coarse.json": "8b97b3b2480721c0bda56a59caba6aac7aec3982cecaa90857f34c18e5a777d2",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/fine.log": "84609a95e994b5ae0bee2e5c08934d8715898d471389e4f29c473a7586381023",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/diagnose_pressure_residual-v1.py": "48f71d2b11b37edba7b87275d09e74ca8d0aa340ac7e9f28464dd74e6aa0d99a",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/fine-recovery-request.json": "6ef1695f6f40147a45cdeedd4e8f3daa6f5e8d2f75264dd1039251a475fe62a8",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/export-regression.log": "19ef556a0f57316e6b8c6d36f372ebc7e9bce051d41ecd3367648fe40bc9969a",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/coarse.log": "6bbb0f504ec968f6157211a1c74a340dab89f633df0a2f1b668c6e8588fbdd1f",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/coarse-request.json": "57c5f42e7612b1f0af1a2e0a98110f1cbf317ccc635398bb8cf3b5183f690982",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/operator.log": "cdd4e6a8787f9df926c80e4c635f5362523113aedcf23c72a548dc574f7a6023",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/fine-request.json": "6315a655a7dbe53b06621fc3a4d96ae1ed7bab80f063bbc53e0d574b04c1b11b",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/tests.log": "d754a72a7124656adb587ace11d5139fd1eaca06502b2cbb08035397b5f3d907",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/fine-recovery.log": "294a3a5aa1b1c696fbbfe920da68d75b0f29995ecfd3cc9711d4027dece0f00c",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/pointwise-comparison.log": "0ac6468e348b108cbff7ee12290e6920d0b2f8e64e1eb7e8565b418e68f53ef1",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/summary.json": "6f34dc5e77defbef9023ca548c8748fbbe3b9d8fc46b5a5f3e8deb9fa0301d83",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/fine-recovery.json": "194c01da5c99151beb738ffeee4b8d136b6e6eb79c280833926eadbe728267fe",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/pointwise-comparison.json": "ee34fabc19530f9a4e882a254e3952195079981935610463d5940af059e900be",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/manifest.json": "c7a5c0a3815c1e3087713fb4c35ac53e5566a83ce23acd0f11cd0496b429bbad",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/operator.json": "544c2463addcd11343c5b7aced2d2eab2e10cce62167606dfdda453c307135a3",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/fine-recovery-solver-terminal.json": "7ff8db4ae0ccd9b31ede5aa2523d97396fa7b57d8e2f02b463ef87c1b665f304",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/coarse-1.01-pointwise.json": "b0164ed2d76b269f003b6a3b54458a895a96e22484f92e125ddc55a689808e7e",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/fine-1.01-comparison.json": "d3ff297cd70e737f60aec6a7b6e95b906a9464a25beaecb010cf6666b890ecf1",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/coarse-1.01-continuousP1.json": "56260bd4a7d5421318387c432500e77d7102934150bac7d82fedd9ce3afeba44",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/execution.log": "84b38d1e13ecd43508574a31c90a526834744bd9565995d9b5af0f565dad72fe",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/fine-1.01-request.json": "eb51b3b940215b550132d3a394a859ae6c0d4c81522d845d20b0b64399a34452",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/fine-1.25-pointwise.json": "e0bf10ab84777f00f11116e7523119a7abbf479b3d80ee5ddc348eb3b98fba0c",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/coarse-1.25-continuousP1.json": "5c0681ef4c8d5d75d45501057e37ba043a5f16608e223cd97db58dcbe787b3dc",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/fine-1.01-assembled.json": "3a4c2dc3125b63c5d74ff783756ad2844f4553fea140fb799a5e70d82a83384e",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/coarse-1.01-request.json": "4b6960e927bcff90c637dfcfb5178c79368fceef6e3170116987b4b7941ed6cd",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/coarse-1.01-assembled.json": "88e327a5c9f6dec8f2f189833dadf2efb1a8b364e3498d01b39a8cb01ede41a1",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/fine-1.01-pointwise.json": "b22885b315f35fd70b691ac805d6194ca1e27a8b4e5521a2a5228e9b16e80740",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/coarse-1.01-comparison.json": "6808e6a21b43e9ab669343cac0fe589013f0b96229365a55a63aeccbffd85d9e",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/check-scope-summary.json": "d825b437b0a8dfe477acded5b0df50c134ec5996a62ef1ddcf14251eea6389d9",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/coarse-1.01-brokenP1.json": "ab889a72b57ac5137f109332a763f541b0b0ac4db5e1c9b0f2022fe9206558e0",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/coarse-1.25-brokenP1.json": "a106201660f48a32ff520fcce1ede85e8af0537bd8fd6bd5f0b00f1f2b56a5c3",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/preexecution-tests.log": "6b154d6746f2291f8272cd22b70f055665838f7decbb2e5fc4496661d1e42bdf",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/fine-1.01-continuousP1.json": "3b16e97982e4d1e56b8fa14eedaed9085beae1047a67619c7ed4e7394f00f33d",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/coarse-1.25-comparison.json": "bbff6262d704b9734e545a4e086b81d62f93b03754e4f7870aa687ade8b51338",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/coarse-1.25-pointwise.json": "fb33a3b0dbd686c1ea749e3ccf6b54eed2036da357d4dc9b69aed00dc1a2042b",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/summary.json": "7dfb7b7eabec5ac15dd6117e84aa2dfac6684610f7805b88ab4d884dc41d3547",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/fine-1.01-brokenP1.json": "65e6a8f556dfdaabdcee2d175b78ae9a33cbb8429a350edba457a5329d4412b0",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/coarse-mesh.json": "8815edeed008b399a2b4f50389f7595f748894e34ace211d0e019b8a69499140",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/fine-mesh.json": "6f3bfd092fe97b82503f3f14e7074a74b48e2f7afd01e1d1101ab8d31ef343ba",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/coarse-1.25-assembled.json": "b24ae05a1da7420f1e1e42cf5db8abba53d24e21198bddb0082efecc02d7ef34",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/manifest.json": "c31feb1fa69390ffe7c3856a51bb5da9610b380b834853a3a6fc7b47a58c2931",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/fine-1.25-request.json": "39df75d9fd2c853f6828471f1a120b753a309c4172b599e921e7d5170c3e2c9d",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/coarse-1.25-request.json": "211f01c851dfa5bdbb5b89859cb1c301723841c002a151fd52310c1a36fc8de2",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/fine-1.25-continuousP1.json": "79729619d6fca9eb63cc9e720c8b69a6f20f7438449a6f77fde9ac38abb1efdb",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/fine-1.25-comparison.json": "566f7463f1f8bc16e3ab86050386bd5b4423d15edc8e52b73bb29d801063546d",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/fine-1.25-assembled.json": "c2a9172a0dbd43013fff4062e888f205cd9919a76a65acdaf536901674263291",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/energy-accumulation-audit.json": "c2e4a122109dad283d08407b15c4cf7e7cb3da728921b82794c0192cf1419c9d",
+    "data/anatomical-arm-v1/review/frozen-pressure-space-comparison/fine-1.25-brokenP1.json": "ac4df9dcf8615a14075a9f2c02f02fb43ce49331b604e21b993a491fecbedcf0"
+  },
+  "archivedPointwiseReceiptSHA256": "b0164ed2d76b269f003b6a3b54458a895a96e22484f92e125ddc55a689808e7e",
+  "material": {
+    "mu": 1000.0,
+    "bulk": 1000000.0,
+    "kf": 20000.0,
+    "b": 6.0,
+    "sigma0": 155000.0,
+    "optimumStretch": 1.0,
+    "activeWidth": 0.5
+  },
+  "activation": 1.0,
+  "positionsM": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0199008432779587
+    ],
+    [
+      0.0,
+      0.0199008432779587,
+      0.0
+    ],
+    [
+      0.0,
+      0.0199008432779587,
+      0.0199008432779587
+    ],
+    [
+      0.035350000000000006,
+      0.0,
+      0.0
+    ],
+    [
+      0.035350000000000006,
+      0.0,
+      0.0199008432779587
+    ],
+    [
+      0.035350000000000006,
+      0.0199008432779587,
+      0.0
+    ],
+    [
+      0.035350000000000006,
+      0.0199008432779587,
+      0.0199008432779587
+    ],
+    [
+      0.07070000000000001,
+      0.0,
+      0.0
+    ],
+    [
+      0.07070000000000001,
+      0.0,
+      0.0199008432779587
+    ],
+    [
+      0.07070000000000001,
+      0.0199008432779587,
+      0.0
+    ],
+    [
+      0.07070000000000001,
+      0.0199008432779587,
+      0.0199008432779587
+    ],
+    [
+      0.10605,
+      0.0,
+      0.0
+    ],
+    [
+      0.10605,
+      0.0,
+      0.0199008432779587
+    ],
+    [
+      0.10605,
+      0.0199008432779587,
+      0.0
+    ],
+    [
+      0.10605,
+      0.0199008432779587,
+      0.0199008432779587
+    ],
+    [
+      0.14140000000000003,
+      0.0,
+      0.0
+    ],
+    [
+      0.14140000000000003,
+      0.0,
+      0.0199008432779587
+    ],
+    [
+      0.14140000000000003,
+      0.0199008432779587,
+      0.0
+    ],
+    [
+      0.14140000000000003,
+      0.0199008432779587,
+      0.0199008432779587
+    ],
+    [
+      0.017675000000000003,
+      0.0,
+      0.0
+    ],
+    [
+      0.017675000000000003,
+      0.00995042163897935,
+      0.0
+    ],
+    [
+      0.017675000000000003,
+      0.00995042163897935,
+      0.00995042163897935
+    ],
+    [
+      0.035350000000000006,
+      0.00995042163897935,
+      0.0
+    ],
+    [
+      0.035350000000000006,
+      0.00995042163897935,
+      0.00995042163897935
+    ],
+    [
+      0.035350000000000006,
+      0.0199008432779587,
+      0.00995042163897935
+    ],
+    [
+      0.017675000000000003,
+      0.0,
+      0.00995042163897935
+    ],
+    [
+      0.035350000000000006,
+      0.0,
+      0.00995042163897935
+    ],
+    [
+      0.035350000000000006,
+      0.00995042163897935,
+      0.0199008432779587
+    ],
+    [
+      0.0,
+      0.00995042163897935,
+      0.0
+    ],
+    [
+      0.017675000000000003,
+      0.0199008432779587,
+      0.0
+    ],
+    [
+      0.017675000000000003,
+      0.0199008432779587,
+      0.00995042163897935
+    ],
+    [
+      0.0,
+      0.00995042163897935,
+      0.00995042163897935
+    ],
+    [
+      0.0,
+      0.0199008432779587,
+      0.00995042163897935
+    ],
+    [
+      0.017675000000000003,
+      0.0199008432779587,
+      0.0199008432779587
+    ],
+    [
+      0.0,
+      0.0,
+      0.00995042163897935
+    ],
+    [
+      0.017675000000000003,
+      0.0,
+      0.0199008432779587
+    ],
+    [
+      0.017675000000000003,
+      0.00995042163897935,
+      0.0199008432779587
+    ],
+    [
+      0.0,
+      0.00995042163897935,
+      0.0199008432779587
+    ],
+    [
+      0.053025,
+      0.0,
+      0.0
+    ],
+    [
+      0.053025,
+      0.00995042163897935,
+      0.0
+    ],
+    [
+      0.053025,
+      0.00995042163897935,
+      0.00995042163897935
+    ],
+    [
+      0.07070000000000001,
+      0.00995042163897935,
+      0.0
+    ],
+    [
+      0.07070000000000001,
+      0.00995042163897935,
+      0.00995042163897935
+    ],
+    [
+      0.07070000000000001,
+      0.0199008432779587,
+      0.00995042163897935
+    ],
+    [
+      0.053025,
+      0.0,
+      0.00995042163897935
+    ],
+    [
+      0.07070000000000001,
+      0.0,
+      0.00995042163897935
+    ],
+    [
+      0.07070000000000001,
+      0.00995042163897935,
+      0.0199008432779587
+    ],
+    [
+      0.053025,
+      0.0199008432779587,
+      0.0
+    ],
+    [
+      0.053025,
+      0.0199008432779587,
+      0.00995042163897935
+    ],
+    [
+      0.053025,
+      0.0199008432779587,
+      0.0199008432779587
+    ],
+    [
+      0.053025,
+      0.0,
+      0.0199008432779587
+    ],
+    [
+      0.053025,
+      0.00995042163897935,
+      0.0199008432779587
+    ],
+    [
+      0.08837500000000001,
+      0.0,
+      0.0
+    ],
+    [
+      0.08837500000000001,
+      0.00995042163897935,
+      0.0
+    ],
+    [
+      0.08837500000000001,
+      0.00995042163897935,
+      0.00995042163897935
+    ],
+    [
+      0.10605,
+      0.00995042163897935,
+      0.0
+    ],
+    [
+      0.10605,
+      0.00995042163897935,
+      0.00995042163897935
+    ],
+    [
+      0.10605,
+      0.0199008432779587,
+      0.00995042163897935
+    ],
+    [
+      0.08837500000000001,
+      0.0,
+      0.00995042163897935
+    ],
+    [
+      0.10605,
+      0.0,
+      0.00995042163897935
+    ],
+    [
+      0.10605,
+      0.00995042163897935,
+      0.0199008432779587
+    ],
+    [
+      0.08837500000000001,
+      0.0199008432779587,
+      0.0
+    ],
+    [
+      0.08837500000000001,
+      0.0199008432779587,
+      0.00995042163897935
+    ],
+    [
+      0.08837500000000001,
+      0.0199008432779587,
+      0.0199008432779587
+    ],
+    [
+      0.08837500000000001,
+      0.0,
+      0.0199008432779587
+    ],
+    [
+      0.08837500000000001,
+      0.00995042163897935,
+      0.0199008432779587
+    ],
+    [
+      0.12372500000000002,
+      0.0,
+      0.0
+    ],
+    [
+      0.12372500000000002,
+      0.00995042163897935,
+      0.0
+    ],
+    [
+      0.12372500000000002,
+      0.00995042163897935,
+      0.00995042163897935
+    ],
+    [
+      0.14140000000000003,
+      0.00995042163897935,
+      0.0
+    ],
+    [
+      0.14140000000000003,
+      0.00995042163897935,
+      0.00995042163897935
+    ],
+    [
+      0.14140000000000003,
+      0.0199008432779587,
+      0.00995042163897935
+    ],
+    [
+      0.12372500000000002,
+      0.0,
+      0.00995042163897935
+    ],
+    [
+      0.14140000000000003,
+      0.0,
+      0.00995042163897935
+    ],
+    [
+      0.14140000000000003,
+      0.00995042163897935,
+      0.0199008432779587
+    ],
+    [
+      0.12372500000000002,
+      0.0199008432779587,
+      0.0
+    ],
+    [
+      0.12372500000000002,
+      0.0199008432779587,
+      0.00995042163897935
+    ],
+    [
+      0.12372500000000002,
+      0.0199008432779587,
+      0.0199008432779587
+    ],
+    [
+      0.12372500000000002,
+      0.0,
+      0.0199008432779587
+    ],
+    [
+      0.12372500000000002,
+      0.00995042163897935,
+      0.0199008432779587
+    ]
+  ],
+  "stretch": 1.01,
+  "relativeSingularCutoff": 1e-10,
+  "fullBlockNonlinearSolves": 0,
+  "scope": "Coarse qualified affine field only; first-order volume kernel, unchanged physical finite-K law; fine1.25 excluded"
+}

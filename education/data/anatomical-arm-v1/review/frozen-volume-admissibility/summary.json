@@ -1,0 +1,70 @@
+{
+  "result": "COMPLETED_SINGLE_COARSE_VOLUME_ADMISSIBILITY_DIAGNOSTIC",
+  "sourceCommit": "dffc998be0dd96d583cfa58bfd9e42d9baa44a45",
+  "sourceHashes": {
+    "tools/frozen_volume_kernel.py": "f7593e476d76c67b2862c4fe6edd40d4833441c936dba20af65be63b81d9d226",
+    "tools/volume-admissibility-replay.mjs": "0b4f0f21e0e785ca563b21b8dac77e3881e7a38a394cd12bbd2f47bc1ccc0b45",
+    "tools/run_frozen_volume_admissibility.py": "0fe86459fd7d9677a9d934a8bd3026e1d17f10eed59cbea10d32db04937fdf70",
+    "tests/test_frozen_volume_kernel.py": "485781bf7b755185e007f15ea0b6f726f57c60a9d127a9218e1ca324457141d4",
+    "research/mechanical-closure/frozen-volume-admissibility-protocol.md": "a0be2d50d071728c4f36a3cf2c78d891ea95a45e7961e4e2d6ebae7a6c9939be",
+    "tools/frozen_pressure_spaces.py": "bd343b6a4f1d4a5a1cb3b42124783c9134cadfaa56ae66c88c66ce26bfa4efcb",
+    "tools/frozen-pressure-replay.mjs": "19235f4b4dae2a4253e28e849c9e8c1d04db266b11285d6eb6679bd82be5e98e",
+    "tools/full_p2_p1.py": "c80a360fd897867e8cb2360766de8a9f5d548d61bf59b5e54dc8b8df2d5f6860",
+    "tools/source_amplitude_p2_p1.py": "ac12c5fb9ac8e4ec2251c4a855bd7c4e57bb964160b5a044a8510825efb37b23",
+    "tools/run_full_p2_p1.py": "fe9e2df4a796451e2ff4cacab7b9d7b341f1e75a7b7254826c3677da07b3bdb8",
+    "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+    "web/anatomical-modal.mjs": "12cd671bc963aa04dd5c0e173a776049de191283d850b0b60d0fe8e63be4c9a1",
+    "web/anatomical-element.mjs": "3f67a6bd31565c83d2cbea591c3cf1862a48e50cc4efa780880fda7e808d4b1f",
+    "web/anatomical-intersections.mjs": "a083a9838ac3c7508b65b58329c741aef65a065288aff82fc886d1c2c90375df",
+    "tools/anatomical-compression-quadrature.mjs": "f12e0d80224bad5e0bfa0649e08cac2f31a0baf162e2547ae8767b7371f48dc2"
+  },
+  "cases": [
+    {
+      "name": "coarse-1.25",
+      "rank": 86,
+      "momentRows": 96,
+      "rowRedundancy": 10,
+      "freeDisplacementCount": 189,
+      "kernelDimension": 103,
+      "lowestRestrictedEigenvalueNPerM": -4443.161108281245,
+      "negativeRestrictedEigenvalueCount": 43,
+      "constrainedClassification": "CONSTRAINED_NEGATIVE_DIRECTION",
+      "constrainedVolumeRMSPerM": 2.6904609602219846e-14,
+      "finiteKUnconstrainedRayleighNPerM": -4991.552805406648,
+      "finiteKUnconstrainedVolumeRMSPerM": 3.329162069335779,
+      "constrainedDerivativeGatesPass": true,
+      "unconstrainedDerivativeGatesPass": true
+    },
+    {
+      "name": "coarse-1.01",
+      "rank": 86,
+      "momentRows": 96,
+      "rowRedundancy": 10,
+      "freeDisplacementCount": 189,
+      "kernelDimension": 103,
+      "lowestRestrictedEigenvalueNPerM": 2.193602593185752,
+      "negativeRestrictedEigenvalueCount": 0,
+      "constrainedClassification": "POSITIVE_SAMPLED_RESTRICTED_SPECTRUM",
+      "constrainedVolumeRMSPerM": 1.0664738079664745e-14,
+      "finiteKUnconstrainedRayleighNPerM": 2.1719289853437207,
+      "finiteKUnconstrainedVolumeRMSPerM": 0.01955454102429566,
+      "constrainedDerivativeGatesPass": true,
+      "unconstrainedDerivativeGatesPass": true
+    }
+  ],
+  "previousPacketHashesUnchanged": true,
+  "previousPacketFileCount": 79,
+  "elapsedSeconds": 17.750568866729736,
+  "fullBlockNonlinearSolves": 0,
+  "stabilizationParameters": 0,
+  "coefficientChanges": 0,
+  "physicalHistoryAdvanced": false,
+  "fine125Excluded": true,
+  "pressureNullModesRepaired": false,
+  "limits": [
+    "Kernel is first-order volume preservation at the finite-K affine base, not an exact nonlinear incompressible trajectory.",
+    "Positive restriction cannot erase unconstrained finite-K negative curvature or justify raising K.",
+    "Row redundancy handled only for displacement-kernel representation; pressure null modes remain unchanged.",
+    "No fine1.25 qualification, anatomy, locking or nonlinear convergence inference."
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "entryCommit": "09fa01117a53a4800c91404a2ebd5f4aa610327e",
+  "sourceCommit": "dffc998be0dd96d583cfa58bfd9e42d9baa44a45",
+  "files": {
+    "data/anatomical-arm-v1/review/frozen-volume-admissibility/coarse-1.01-constrained.json": "b97e0b9174ae41865debf0e240596cc76b793b61eee9f231579f853265a93731",
+    "data/anatomical-arm-v1/review/frozen-volume-admissibility/coarse-1.01-finite-K-unconstrained.json": "b232b20e579682785c0b094a1ca3eaecbe27b58f0536b8983966d46a4e68bffa",
+    "data/anatomical-arm-v1/review/frozen-volume-admissibility/coarse-1.01-kernel-assembled.json": "306ef97dde6eebaf7eb7dc7b64fcc65aec5f848ee7761c0986e877ab1f007172",
+    "data/anatomical-arm-v1/review/frozen-volume-admissibility/coarse-1.01-request.json": "3fac5798bc31c3403d2fa304ddcd9b7d918b67f58feef8b1ee5be9b7ce25e323",
+    "data/anatomical-arm-v1/review/frozen-volume-admissibility/coarse-1.25-constrained.json": "fd548bd6a995565d85dbc5ad5af3bd758fb5bfe0a12ff31531ed43101565c398",
+    "data/anatomical-arm-v1/review/frozen-volume-admissibility/coarse-1.25-finite-K-unconstrained.json": "50248594b260b2842012b00048d8f68e7ccd25cb362fdde01a06902abf6bd5c1",
+    "data/anatomical-arm-v1/review/frozen-volume-admissibility/coarse-1.25-kernel-assembled.json": "0016fc8e92ed4142136f6a61b4b64c4b9d8d83e56b9677d1d8d193af63c2ee68",
+    "data/anatomical-arm-v1/review/frozen-volume-admissibility/coarse-1.25-request.json": "ea7cedf55b952b3d3071830afc8ad12449a8fd8f90087edc74fefdeac94d4065",
+    "data/anatomical-arm-v1/review/frozen-volume-admissibility/coarse-mesh.json": "642e5d9c820a3763728d4a8a57800faecfc044d0c684d524085db4c996e562ea",
+    "data/anatomical-arm-v1/review/frozen-volume-admissibility/execution.log": "aa173a83c61e79b03926be868c7cf39b69768ff25a7b9cffc569b87c79a11c45",
+    "data/anatomical-arm-v1/review/frozen-volume-admissibility/preexecution-tests.log": "503bdddaeae34edaabec0f304f6f145004bfb5312b92ed2e1931f8f1af9f45d2",
+    "data/anatomical-arm-v1/review/frozen-volume-admissibility/publication-audit.json": "5685a609e8ad55ae7c07a0995acdad8e1f9023b2d816a30db52a9a018f05d5fb",
+    "data/anatomical-arm-v1/review/frozen-volume-admissibility/summary.json": "b2558bab3dd776953aa746ad5fdd3c6ee9e6fb27f5d0b0ce4d3e89f33167bb19",
+    "data/anatomical-arm-v1/review/frozen-volume-admissibility/verification-summary.json": "6e5babc9517cbeb7484396f1073c502b6aa961ac89e15d4919142dda07b54c23",
+    "research/mechanical-closure/frozen-volume-admissibility-protocol.md": "a0be2d50d071728c4f36a3cf2c78d891ea95a45e7961e4e2d6ebae7a6c9939be",
+    "research/mechanical-closure/frozen-volume-admissibility-results.md": "fa75e29a09e6e550186c823cfade20dd5817c72d1cd631b8d145f5fb94e4751e",
+    "tests/test_frozen_volume_kernel.py": "485781bf7b755185e007f15ea0b6f726f57c60a9d127a9218e1ca324457141d4",
+    "tools/frozen_volume_kernel.py": "f7593e476d76c67b2862c4fe6edd40d4833441c936dba20af65be63b81d9d226",
+    "tools/run_frozen_volume_admissibility.py": "0fe86459fd7d9677a9d934a8bd3026e1d17f10eed59cbea10d32db04937fdf70",
+    "tools/volume-admissibility-replay.mjs": "0b4f0f21e0e785ca563b21b8dac77e3881e7a38a394cd12bbd2f47bc1ccc0b45"
+  },
+  "excludes": [
+    "data/anatomical-arm-v1/review/frozen-volume-admissibility/manifest.json"
+  ],
+  "preservesAllPreviousPacketHashes": true
+}

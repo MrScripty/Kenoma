@@ -1,0 +1,61 @@
+{
+  "entryCommit": "09fa01117a53a4800c91404a2ebd5f4aa610327e",
+  "preexecutionCommit": "dffc998be0dd96d583cfa58bfd9e42d9baa44a45",
+  "previousPacketFileCount": 79,
+  "previousPacketHashesUnchanged": true,
+  "exactFrozenMeshCoordinatesMaterialActivationAndArchivedWitnessesPreserved": true,
+  "frozenOperatorSourcesUnchanged": [
+    "tools/frozen_pressure_spaces.py",
+    "tools/frozen-pressure-replay.mjs",
+    "tools/full_p2_p1.py",
+    "tools/source_amplitude_p2_p1.py",
+    "tools/run_full_p2_p1.py",
+    "web/anatomical-material.mjs",
+    "web/anatomical-modal.mjs",
+    "web/anatomical-element.mjs",
+    "web/anatomical-intersections.mjs",
+    "tools/anatomical-compression-quadrature.mjs"
+  ],
+  "witnessRecords": [
+    {
+      "case": "coarse-1.25",
+      "witness": "constrained",
+      "allOriginalBaseGatesPass": true,
+      "bothOriginalDerivativeChecksPass": true,
+      "maximumFullActionRelativeDerivativeError": 1.8629466395335148e-09,
+      "maximumIndependentEnergyGradientDifferenceN": 1.7097435341909196e-07,
+      "maximumIndependentOriginalVolumeObserverDifferencePerM": 1.2710762774381324e-15
+    },
+    {
+      "case": "coarse-1.25",
+      "witness": "finite-K-unconstrained",
+      "allOriginalBaseGatesPass": true,
+      "bothOriginalDerivativeChecksPass": true,
+      "maximumFullActionRelativeDerivativeError": 1.4308801945576954e-09,
+      "maximumIndependentEnergyGradientDifferenceN": 1.1768365098418793e-07,
+      "maximumIndependentOriginalVolumeObserverDifferencePerM": 1.9095836023552692e-14
+    },
+    {
+      "case": "coarse-1.01",
+      "witness": "constrained",
+      "allOriginalBaseGatesPass": true,
+      "bothOriginalDerivativeChecksPass": true,
+      "maximumFullActionRelativeDerivativeError": 2.487692515625653e-07,
+      "maximumIndependentEnergyGradientDifferenceN": 1.1657341268820467e-08,
+      "maximumIndependentOriginalVolumeObserverDifferencePerM": 9.524875347529314e-17
+    },
+    {
+      "case": "coarse-1.01",
+      "witness": "finite-K-unconstrained",
+      "allOriginalBaseGatesPass": true,
+      "bothOriginalDerivativeChecksPass": true,
+      "maximumFullActionRelativeDerivativeError": 3.3581549654113216e-06,
+      "maximumIndependentEnergyGradientDifferenceN": 6.244998905101625e-10,
+      "maximumIndependentOriginalVolumeObserverDifferencePerM": 1.0408340855860843e-16
+    }
+  ],
+  "previousFine125UnqualifiedReceiptsUnchanged": true,
+  "newNonlinearSolves": 0,
+  "newPhysicalThresholds": 0,
+  "scope": "Additive verification of saved evidence; does not replace any raw or previous classification"
+}
