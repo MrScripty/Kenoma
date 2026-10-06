@@ -6,6 +6,7 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def check(out=None):
     out=Path(out) if out else ROOT/'dist';manifest=json.loads((out/'build-manifest.json').read_text())
     identity=json.loads((ROOT/'tools/connected-source-identity.json').read_text())
+    assert len(identity['immutable_sha256'])==15 and {'web/axisymmetric-specimen.mjs','web/axisymmetric-material.mjs','web/axisymmetric-worker.mjs','proofs/AxisymmetricSpecimenReal.lean','proofs/axisymmetric-specimen-real-claims.json'} <= set(identity['immutable_sha256']), 'Incomplete accepted-source identity inventory'
     for name,value in identity['immutable_sha256'].items():assert sha(ROOT/name)==value,'Accepted connected source changed: '+name
     for name,value in manifest['connected_outputs'].items():assert sha(out/name)==value,'Changed connected output: '+name
     child=out/'connected-passive';p=json.loads((child/'axisymmetric-preview-manifest.json').read_text())

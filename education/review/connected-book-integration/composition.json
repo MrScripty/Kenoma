@@ -17,7 +17,23 @@
     "accepted_evidence": "05fd23cdb6a414415f1117fced93443aa9936c48",
     "source_parent": "49bf8adf30e1b9bc192e0211f12dfafeb60ede94",
     "merge_base_with_frozen_book": "6a792178392549f8ac314d9c162cfd4215c3054b",
-    "immutable_sha256": {},
+    "immutable_sha256": {
+      "proofs/AxisymmetricSpecimenReal.lean": "7308734ec0108ec080d3ba54129f38655eb547bf887451a3668934000bbd2ec8",
+      "proofs/axisymmetric-specimen-real-claims.json": "7011d50d9483686f2adea169a7e48d3e5bf12d63024c4a137a61329d24fdeed4",
+      "tools/axisymmetric-end-face-experiment.mjs": "eea0e1e78b8d94659ee267c1195c0b31a948f90280bbe32a2ee95718744c74fe",
+      "tools/axisymmetric-experiment.mjs": "f64d5f56276c7e3f6be73ec18180ce10402dcc11ad2387045917df31e3d8f05f",
+      "tools/build_axisymmetric_preview.py": "71861b3a9c7b0e6b0bdf91736334ab9542b7edfbc777ccdd51d6403b7a89802c",
+      "tools/check_axisymmetric_proofs.py": "12d9e0bbe6633d394de9224b02616f788674c8173754ed41d2a97ae3c9904d4f",
+      "tools/qualify_axisymmetric_end_faces.py": "a69a03500df63a9be94526be655efbc92081df0d0a267321b7323db21572440d",
+      "tools/qualify_axisymmetric_experiment.py": "be0f3ed02336b4439a1ed39ccd600eda8c0b11ade0c8bd718ccddbf159a32857",
+      "tools/qualify_axisymmetric_material.py": "149dc025c7473f4bf42e428b02b450f803da988250be2b79297473128909b04e",
+      "tools/qualify_axisymmetric_negatives.py": "f5fdaf2ae284a72b1296b1fa77e10acab3c3ce9dce36bae47510616890feca01",
+      "web/axisymmetric-lab.css": "19b34c09cb27ac35ecd16e4429adcdb1554ece02797112790f90cccc03be9752",
+      "web/axisymmetric-lab.mjs": "b8f99ffe6712e4d9a974856c1311f26c4c8bcc41a583b5685fb168fe05c0f640",
+      "web/axisymmetric-material.mjs": "3c977b401f2f76f95c5445a82d80c55ccc04e457c3d0c30350635ddf58cce561",
+      "web/axisymmetric-specimen.mjs": "39723a813efc3d92a8b4979d6652561354de109d68333ae8b1317e7e641c1a4e",
+      "web/axisymmetric-worker.mjs": "dee47f2148dba588a46c3ef84d27942a411f9eb7c0c3831bc19a2bf634562466"
+    },
     "integration": "Additive selective import on the frozen responsive book; no source-branch merge. Only browser launcher portability changes to original test harnesses; assertions/laws/proofs unchanged."
   },
   "excluded_sources": [
