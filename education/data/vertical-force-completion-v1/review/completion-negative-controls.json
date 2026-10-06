@@ -1,0 +1,3312 @@
+{
+  "passed": true,
+  "tests_run": 9,
+  "controls": [
+    {
+      "name": "brake-crossing-does-not-replace-protocol-end",
+      "passed": true,
+      "qualification": {
+        "full_trajectory": false,
+        "prefix_qualified": true,
+        "status": "prefix-only",
+        "missing_methods": [],
+        "comparisons": {
+          "coarse": {
+            "matched_count": 233,
+            "matched_end": 0.231,
+            "max_errors": {
+              "y_m": 1.5197805271010583e-13,
+              "w_m_s": 4.703370071884594e-11,
+              "a": 1.246258651832477e-11,
+              "q": 7.821299163879303e-12,
+              "force_N": 4.177052481679766e-09
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 1.1657341758564144e-14,
+            "passed": false,
+            "full_passed": false,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 232,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.231
+            },
+            "full_coverage": {
+              "passed": false,
+              "required_grid_count": 301,
+              "missing_grid_times": [
+                0.232,
+                0.233,
+                0.234,
+                0.235,
+                0.236,
+                0.237,
+                0.238,
+                0.239,
+                0.24,
+                0.241,
+                0.242,
+                0.243,
+                0.244,
+                0.245,
+                0.246,
+                0.247,
+                0.248,
+                0.249,
+                0.25,
+                0.251,
+                0.252,
+                0.253,
+                0.254,
+                0.255,
+                0.256,
+                0.257,
+                0.258,
+                0.259,
+                0.26,
+                0.261,
+                0.262,
+                0.263,
+                0.264,
+                0.265,
+                0.266,
+                0.267,
+                0.268,
+                0.269,
+                0.27,
+                0.271,
+                0.272,
+                0.273,
+                0.274,
+                0.275,
+                0.276,
+                0.277,
+                0.278,
+                0.279,
+                0.28,
+                0.281,
+                0.282,
+                0.283,
+                0.284,
+                0.285,
+                0.286,
+                0.287,
+                0.288,
+                0.289,
+                0.29,
+                0.291,
+                0.292,
+                0.293,
+                0.294,
+                0.295,
+                0.296,
+                0.297,
+                0.298,
+                0.299,
+                0.3
+              ],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": false,
+                "declared_endpoint_s": 0.3,
+                "issues": [
+                  "declared-endpoint-not-reached",
+                  "declared-endpoint-history-missing"
+                ]
+              },
+              "other": {
+                "passed": false,
+                "declared_endpoint_s": 0.3,
+                "issues": [
+                  "declared-endpoint-not-reached",
+                  "declared-endpoint-history-missing"
+                ]
+              }
+            },
+            "issues": []
+          },
+          "DOP853": {
+            "matched_count": 232,
+            "matched_end": 0.231,
+            "max_errors": {
+              "y_m": 2.2399183202681527e-14,
+              "w_m_s": 3.1083013767030376e-12,
+              "a": 1.4196095340923698e-09,
+              "q": 7.032152637975742e-13,
+              "force_N": 2.7923086065584357e-10
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 2.5305081641224803e-08,
+            "passed": false,
+            "full_passed": false,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 232,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.231
+            },
+            "full_coverage": {
+              "passed": false,
+              "required_grid_count": 301,
+              "missing_grid_times": [
+                0.232,
+                0.233,
+                0.234,
+                0.235,
+                0.236,
+                0.237,
+                0.238,
+                0.239,
+                0.24,
+                0.241,
+                0.242,
+                0.243,
+                0.244,
+                0.245,
+                0.246,
+                0.247,
+                0.248,
+                0.249,
+                0.25,
+                0.251,
+                0.252,
+                0.253,
+                0.254,
+                0.255,
+                0.256,
+                0.257,
+                0.258,
+                0.259,
+                0.26,
+                0.261,
+                0.262,
+                0.263,
+                0.264,
+                0.265,
+                0.266,
+                0.267,
+                0.268,
+                0.269,
+                0.27,
+                0.271,
+                0.272,
+                0.273,
+                0.274,
+                0.275,
+                0.276,
+                0.277,
+                0.278,
+                0.279,
+                0.28,
+                0.281,
+                0.282,
+                0.283,
+                0.284,
+                0.285,
+                0.286,
+                0.287,
+                0.288,
+                0.289,
+                0.29,
+                0.291,
+                0.292,
+                0.293,
+                0.294,
+                0.295,
+                0.296,
+                0.297,
+                0.298,
+                0.299,
+                0.3
+              ],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": false,
+                "declared_endpoint_s": 0.3,
+                "issues": [
+                  "declared-endpoint-not-reached",
+                  "declared-endpoint-history-missing"
+                ]
+              },
+              "other": {
+                "passed": false,
+                "declared_endpoint_s": 0.3,
+                "issues": [
+                  "declared-endpoint-not-reached",
+                  "declared-endpoint-history-missing"
+                ]
+              }
+            },
+            "issues": []
+          },
+          "Radau": {
+            "matched_count": 232,
+            "matched_end": 0.231,
+            "max_errors": {
+              "y_m": 9.068474239630952e-14,
+              "w_m_s": 7.82417620276421e-12,
+              "a": 1.419897713295093e-09,
+              "q": 2.0055068716828828e-12,
+              "force_N": 1.710819041988998e-09
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 2.5309348172797286e-08,
+            "passed": false,
+            "full_passed": false,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 232,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.231
+            },
+            "full_coverage": {
+              "passed": false,
+              "required_grid_count": 301,
+              "missing_grid_times": [
+                0.232,
+                0.233,
+                0.234,
+                0.235,
+                0.236,
+                0.237,
+                0.238,
+                0.239,
+                0.24,
+                0.241,
+                0.242,
+                0.243,
+                0.244,
+                0.245,
+                0.246,
+                0.247,
+                0.248,
+                0.249,
+                0.25,
+                0.251,
+                0.252,
+                0.253,
+                0.254,
+                0.255,
+                0.256,
+                0.257,
+                0.258,
+                0.259,
+                0.26,
+                0.261,
+                0.262,
+                0.263,
+                0.264,
+                0.265,
+                0.266,
+                0.267,
+                0.268,
+                0.269,
+                0.27,
+                0.271,
+                0.272,
+                0.273,
+                0.274,
+                0.275,
+                0.276,
+                0.277,
+                0.278,
+                0.279,
+                0.28,
+                0.281,
+                0.282,
+                0.283,
+                0.284,
+                0.285,
+                0.286,
+                0.287,
+                0.288,
+                0.289,
+                0.29,
+                0.291,
+                0.292,
+                0.293,
+                0.294,
+                0.295,
+                0.296,
+                0.297,
+                0.298,
+                0.299,
+                0.3
+              ],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": false,
+                "declared_endpoint_s": 0.3,
+                "issues": [
+                  "declared-endpoint-not-reached",
+                  "declared-endpoint-history-missing"
+                ]
+              },
+              "other": {
+                "passed": false,
+                "declared_endpoint_s": 0.3,
+                "issues": [
+                  "declared-endpoint-not-reached",
+                  "declared-endpoint-history-missing"
+                ]
+              }
+            },
+            "issues": []
+          }
+        }
+      }
+    },
+    {
+      "name": "coarse-missing-endpoint-row",
+      "passed": true,
+      "qualification": {
+        "full_trajectory": false,
+        "prefix_qualified": false,
+        "status": "unqualified",
+        "missing_methods": [],
+        "comparisons": {
+          "coarse": {
+            "passed": false,
+            "full_passed": false,
+            "prefix_passed": false,
+            "issues": [
+              "history-tail-disagrees-with-accepted-time"
+            ],
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": false,
+                "declared_endpoint_s": 0.3,
+                "issues": [
+                  "history-tail-disagrees-with-accepted-time",
+                  "declared-endpoint-history-missing"
+                ]
+              }
+            }
+          },
+          "DOP853": {
+            "matched_count": 301,
+            "matched_end": 0.3,
+            "max_errors": {
+              "y_m": 5.488433278910686e-16,
+              "w_m_s": 7.483454742097575e-15,
+              "a": 6.938893903907228e-16,
+              "q": 5.551115123125783e-15,
+              "force_N": 6.519229600598919e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": true,
+            "full_passed": true,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.2999999999999807
+            },
+            "full_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            },
+            "issues": []
+          },
+          "Radau": {
+            "matched_count": 301,
+            "matched_end": 0.3,
+            "max_errors": {
+              "y_m": 2.801434926218881e-16,
+              "w_m_s": 8.475872154020684e-15,
+              "a": 9.020562075079397e-16,
+              "q": 2.1094237467877974e-15,
+              "force_N": 6.519229600598919e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": true,
+            "full_passed": true,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.2999999999999807
+            },
+            "full_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            },
+            "issues": []
+          }
+        }
+      }
+    },
+    {
+      "name": "fine-missing-endpoint-row",
+      "passed": true,
+      "qualification": {
+        "full_trajectory": false,
+        "prefix_qualified": false,
+        "status": "unqualified",
+        "missing_methods": [],
+        "comparisons": {
+          "coarse": {
+            "passed": false,
+            "full_passed": false,
+            "prefix_passed": false,
+            "issues": [
+              "history-tail-disagrees-with-accepted-time"
+            ],
+            "completion": {
+              "primary": {
+                "passed": false,
+                "declared_endpoint_s": 0.3,
+                "issues": [
+                  "history-tail-disagrees-with-accepted-time",
+                  "declared-endpoint-history-missing"
+                ]
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            }
+          },
+          "DOP853": {
+            "passed": false,
+            "full_passed": false,
+            "prefix_passed": false,
+            "issues": [
+              "history-tail-disagrees-with-accepted-time"
+            ],
+            "completion": {
+              "primary": {
+                "passed": false,
+                "declared_endpoint_s": 0.3,
+                "issues": [
+                  "history-tail-disagrees-with-accepted-time",
+                  "declared-endpoint-history-missing"
+                ]
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            }
+          },
+          "Radau": {
+            "passed": false,
+            "full_passed": false,
+            "prefix_passed": false,
+            "issues": [
+              "history-tail-disagrees-with-accepted-time"
+            ],
+            "completion": {
+              "primary": {
+                "passed": false,
+                "declared_endpoint_s": 0.3,
+                "issues": [
+                  "history-tail-disagrees-with-accepted-time",
+                  "declared-endpoint-history-missing"
+                ]
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "DOP853-missing-endpoint-row",
+      "passed": true,
+      "qualification": {
+        "full_trajectory": false,
+        "prefix_qualified": false,
+        "status": "unqualified",
+        "missing_methods": [],
+        "comparisons": {
+          "coarse": {
+            "matched_count": 301,
+            "matched_end": 0.3,
+            "max_errors": {
+              "y_m": 1.1700270382192531e-17,
+              "w_m_s": 1.0260237104375391e-15,
+              "a": 9.71445146547012e-17,
+              "q": 0.0,
+              "force_N": 2.7000623958883807e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": true,
+            "full_passed": true,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.2999999999999807
+            },
+            "full_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            },
+            "issues": []
+          },
+          "DOP853": {
+            "passed": false,
+            "full_passed": false,
+            "prefix_passed": false,
+            "issues": [
+              "history-tail-disagrees-with-accepted-time"
+            ],
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": false,
+                "declared_endpoint_s": 0.3,
+                "issues": [
+                  "history-tail-disagrees-with-accepted-time",
+                  "declared-endpoint-history-missing"
+                ]
+              }
+            }
+          },
+          "Radau": {
+            "matched_count": 301,
+            "matched_end": 0.3,
+            "max_errors": {
+              "y_m": 2.801434926218881e-16,
+              "w_m_s": 8.475872154020684e-15,
+              "a": 9.020562075079397e-16,
+              "q": 2.1094237467877974e-15,
+              "force_N": 6.519229600598919e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": true,
+            "full_passed": true,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.2999999999999807
+            },
+            "full_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            },
+            "issues": []
+          }
+        }
+      }
+    },
+    {
+      "name": "Radau-missing-endpoint-row",
+      "passed": true,
+      "qualification": {
+        "full_trajectory": false,
+        "prefix_qualified": false,
+        "status": "unqualified",
+        "missing_methods": [],
+        "comparisons": {
+          "coarse": {
+            "matched_count": 301,
+            "matched_end": 0.3,
+            "max_errors": {
+              "y_m": 1.1700270382192531e-17,
+              "w_m_s": 1.0260237104375391e-15,
+              "a": 9.71445146547012e-17,
+              "q": 0.0,
+              "force_N": 2.7000623958883807e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": true,
+            "full_passed": true,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.2999999999999807
+            },
+            "full_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            },
+            "issues": []
+          },
+          "DOP853": {
+            "matched_count": 301,
+            "matched_end": 0.3,
+            "max_errors": {
+              "y_m": 5.488433278910686e-16,
+              "w_m_s": 7.483454742097575e-15,
+              "a": 6.938893903907228e-16,
+              "q": 5.551115123125783e-15,
+              "force_N": 6.519229600598919e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": true,
+            "full_passed": true,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.2999999999999807
+            },
+            "full_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            },
+            "issues": []
+          },
+          "Radau": {
+            "passed": false,
+            "full_passed": false,
+            "prefix_passed": false,
+            "issues": [
+              "history-tail-disagrees-with-accepted-time"
+            ],
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": false,
+                "declared_endpoint_s": 0.3,
+                "issues": [
+                  "history-tail-disagrees-with-accepted-time",
+                  "declared-endpoint-history-missing"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "coarse-failure-rejects-full",
+      "passed": true,
+      "qualification": {
+        "full_trajectory": false,
+        "prefix_qualified": true,
+        "status": "prefix-only",
+        "missing_methods": [],
+        "comparisons": {
+          "coarse": {
+            "matched_count": 301,
+            "matched_end": 0.3,
+            "max_errors": {
+              "y_m": 1.1700270382192531e-17,
+              "w_m_s": 1.0260237104375391e-15,
+              "a": 9.71445146547012e-17,
+              "q": 0.0,
+              "force_N": 2.7000623958883807e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": false,
+            "full_passed": false,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.2999999999999807
+            },
+            "full_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": false,
+                "declared_endpoint_s": 0.3,
+                "issues": [
+                  "method-failure"
+                ]
+              }
+            },
+            "issues": []
+          },
+          "DOP853": {
+            "matched_count": 301,
+            "matched_end": 0.3,
+            "max_errors": {
+              "y_m": 5.488433278910686e-16,
+              "w_m_s": 7.483454742097575e-15,
+              "a": 6.938893903907228e-16,
+              "q": 5.551115123125783e-15,
+              "force_N": 6.519229600598919e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": true,
+            "full_passed": true,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.2999999999999807
+            },
+            "full_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            },
+            "issues": []
+          },
+          "Radau": {
+            "matched_count": 301,
+            "matched_end": 0.3,
+            "max_errors": {
+              "y_m": 2.801434926218881e-16,
+              "w_m_s": 8.475872154020684e-15,
+              "a": 9.020562075079397e-16,
+              "q": 2.1094237467877974e-15,
+              "force_N": 6.519229600598919e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": true,
+            "full_passed": true,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.2999999999999807
+            },
+            "full_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            },
+            "issues": []
+          }
+        }
+      }
+    },
+    {
+      "name": "fine-failure-rejects-full",
+      "passed": true,
+      "qualification": {
+        "full_trajectory": false,
+        "prefix_qualified": true,
+        "status": "prefix-only",
+        "missing_methods": [],
+        "comparisons": {
+          "coarse": {
+            "matched_count": 301,
+            "matched_end": 0.3,
+            "max_errors": {
+              "y_m": 1.1700270382192531e-17,
+              "w_m_s": 1.0260237104375391e-15,
+              "a": 9.71445146547012e-17,
+              "q": 0.0,
+              "force_N": 2.7000623958883807e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": false,
+            "full_passed": false,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.2999999999999807
+            },
+            "full_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": false,
+                "declared_endpoint_s": 0.3,
+                "issues": [
+                  "method-failure"
+                ]
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            },
+            "issues": []
+          },
+          "DOP853": {
+            "matched_count": 301,
+            "matched_end": 0.3,
+            "max_errors": {
+              "y_m": 5.488433278910686e-16,
+              "w_m_s": 7.483454742097575e-15,
+              "a": 6.938893903907228e-16,
+              "q": 5.551115123125783e-15,
+              "force_N": 6.519229600598919e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": false,
+            "full_passed": false,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.2999999999999807
+            },
+            "full_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": false,
+                "declared_endpoint_s": 0.3,
+                "issues": [
+                  "method-failure"
+                ]
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            },
+            "issues": []
+          },
+          "Radau": {
+            "matched_count": 301,
+            "matched_end": 0.3,
+            "max_errors": {
+              "y_m": 2.801434926218881e-16,
+              "w_m_s": 8.475872154020684e-15,
+              "a": 9.020562075079397e-16,
+              "q": 2.1094237467877974e-15,
+              "force_N": 6.519229600598919e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": false,
+            "full_passed": false,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.2999999999999807
+            },
+            "full_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": false,
+                "declared_endpoint_s": 0.3,
+                "issues": [
+                  "method-failure"
+                ]
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            },
+            "issues": []
+          }
+        }
+      }
+    },
+    {
+      "name": "DOP853-failure-rejects-full",
+      "passed": true,
+      "qualification": {
+        "full_trajectory": false,
+        "prefix_qualified": true,
+        "status": "prefix-only",
+        "missing_methods": [],
+        "comparisons": {
+          "coarse": {
+            "matched_count": 301,
+            "matched_end": 0.3,
+            "max_errors": {
+              "y_m": 1.1700270382192531e-17,
+              "w_m_s": 1.0260237104375391e-15,
+              "a": 9.71445146547012e-17,
+              "q": 0.0,
+              "force_N": 2.7000623958883807e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": true,
+            "full_passed": true,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.2999999999999807
+            },
+            "full_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            },
+            "issues": []
+          },
+          "DOP853": {
+            "matched_count": 301,
+            "matched_end": 0.3,
+            "max_errors": {
+              "y_m": 5.488433278910686e-16,
+              "w_m_s": 7.483454742097575e-15,
+              "a": 6.938893903907228e-16,
+              "q": 5.551115123125783e-15,
+              "force_N": 6.519229600598919e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": false,
+            "full_passed": false,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.2999999999999807
+            },
+            "full_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": false,
+                "declared_endpoint_s": 0.3,
+                "issues": [
+                  "method-failure"
+                ]
+              }
+            },
+            "issues": []
+          },
+          "Radau": {
+            "matched_count": 301,
+            "matched_end": 0.3,
+            "max_errors": {
+              "y_m": 2.801434926218881e-16,
+              "w_m_s": 8.475872154020684e-15,
+              "a": 9.020562075079397e-16,
+              "q": 2.1094237467877974e-15,
+              "force_N": 6.519229600598919e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": true,
+            "full_passed": true,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.2999999999999807
+            },
+            "full_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            },
+            "issues": []
+          }
+        }
+      }
+    },
+    {
+      "name": "Radau-failure-rejects-full",
+      "passed": true,
+      "qualification": {
+        "full_trajectory": false,
+        "prefix_qualified": true,
+        "status": "prefix-only",
+        "missing_methods": [],
+        "comparisons": {
+          "coarse": {
+            "matched_count": 301,
+            "matched_end": 0.3,
+            "max_errors": {
+              "y_m": 1.1700270382192531e-17,
+              "w_m_s": 1.0260237104375391e-15,
+              "a": 9.71445146547012e-17,
+              "q": 0.0,
+              "force_N": 2.7000623958883807e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": true,
+            "full_passed": true,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.2999999999999807
+            },
+            "full_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            },
+            "issues": []
+          },
+          "DOP853": {
+            "matched_count": 301,
+            "matched_end": 0.3,
+            "max_errors": {
+              "y_m": 5.488433278910686e-16,
+              "w_m_s": 7.483454742097575e-15,
+              "a": 6.938893903907228e-16,
+              "q": 5.551115123125783e-15,
+              "force_N": 6.519229600598919e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": true,
+            "full_passed": true,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.2999999999999807
+            },
+            "full_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            },
+            "issues": []
+          },
+          "Radau": {
+            "matched_count": 301,
+            "matched_end": 0.3,
+            "max_errors": {
+              "y_m": 2.801434926218881e-16,
+              "w_m_s": 8.475872154020684e-15,
+              "a": 9.020562075079397e-16,
+              "q": 2.1094237467877974e-15,
+              "force_N": 6.519229600598919e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": false,
+            "full_passed": false,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.2999999999999807
+            },
+            "full_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": false,
+                "declared_endpoint_s": 0.3,
+                "issues": [
+                  "method-failure"
+                ]
+              }
+            },
+            "issues": []
+          }
+        }
+      }
+    },
+    {
+      "name": "truncated-.009s-old-false-acceptance",
+      "passed": true,
+      "old_comparison": {
+        "passed": true,
+        "matched_count": 10,
+        "matched_end": 0.009,
+        "max_errors": {
+          "y_m": 1.805755545092323e-17,
+          "w_m_s": 4.012790100205165e-15,
+          "a": 6.453171330633722e-16,
+          "q": 0.0,
+          "force_N": 2.2293278334473143e-13
+        },
+        "budgets": {
+          "y_m": 1e-06,
+          "w_m_s": 1e-05,
+          "a": 2e-06,
+          "q": 2e-06,
+          "force_N": 0.0001
+        },
+        "brake_time_error_s": 0
+      },
+      "old_primary_only_full_flag": true,
+      "repaired_comparison": {
+        "matched_count": 10,
+        "matched_end": 0.009,
+        "max_errors": {
+          "y_m": 1.805755545092323e-17,
+          "w_m_s": 4.012790100205165e-15,
+          "a": 6.453171330633722e-16,
+          "q": 0.0,
+          "force_N": 2.2293278334473143e-13
+        },
+        "budgets": {
+          "y_m": 1e-06,
+          "w_m_s": 1e-05,
+          "a": 2e-06,
+          "q": 2e-06,
+          "force_N": 0.0001
+        },
+        "brake_time_error_s": 0,
+        "passed": false,
+        "full_passed": false,
+        "prefix_passed": true,
+        "common_coverage": {
+          "passed": true,
+          "required_grid_count": 10,
+          "missing_grid_times": [],
+          "grid_s": 0.001,
+          "horizon_s": 0.009000000000000001
+        },
+        "full_coverage": {
+          "passed": false,
+          "required_grid_count": 301,
+          "missing_grid_times": [
+            0.01,
+            0.011,
+            0.012,
+            0.013,
+            0.014,
+            0.015,
+            0.016,
+            0.017,
+            0.018,
+            0.019,
+            0.02,
+            0.021,
+            0.022,
+            0.023,
+            0.024,
+            0.025,
+            0.026,
+            0.027,
+            0.028,
+            0.029,
+            0.03,
+            0.031,
+            0.032,
+            0.033,
+            0.034,
+            0.035,
+            0.036,
+            0.037,
+            0.038,
+            0.039,
+            0.04,
+            0.041,
+            0.042,
+            0.043,
+            0.044,
+            0.045,
+            0.046,
+            0.047,
+            0.048,
+            0.049,
+            0.05,
+            0.051,
+            0.052,
+            0.053,
+            0.054,
+            0.055,
+            0.056,
+            0.057,
+            0.058,
+            0.059,
+            0.06,
+            0.061,
+            0.062,
+            0.063,
+            0.064,
+            0.065,
+            0.066,
+            0.067,
+            0.068,
+            0.069,
+            0.07,
+            0.071,
+            0.072,
+            0.073,
+            0.074,
+            0.075,
+            0.076,
+            0.077,
+            0.078,
+            0.079,
+            0.08,
+            0.081,
+            0.082,
+            0.083,
+            0.084,
+            0.085,
+            0.086,
+            0.087,
+            0.088,
+            0.089,
+            0.09,
+            0.091,
+            0.092,
+            0.093,
+            0.094,
+            0.095,
+            0.096,
+            0.097,
+            0.098,
+            0.099,
+            0.1,
+            0.101,
+            0.102,
+            0.103,
+            0.104,
+            0.105,
+            0.106,
+            0.107,
+            0.108,
+            0.109,
+            0.11,
+            0.111,
+            0.112,
+            0.113,
+            0.114,
+            0.115,
+            0.116,
+            0.117,
+            0.118,
+            0.119,
+            0.12,
+            0.121,
+            0.122,
+            0.123,
+            0.124,
+            0.125,
+            0.126,
+            0.127,
+            0.128,
+            0.129,
+            0.13,
+            0.131,
+            0.132,
+            0.133,
+            0.134,
+            0.135,
+            0.136,
+            0.137,
+            0.138,
+            0.139,
+            0.14,
+            0.141,
+            0.142,
+            0.143,
+            0.144,
+            0.145,
+            0.146,
+            0.147,
+            0.148,
+            0.149,
+            0.15,
+            0.151,
+            0.152,
+            0.153,
+            0.154,
+            0.155,
+            0.156,
+            0.157,
+            0.158,
+            0.159,
+            0.16,
+            0.161,
+            0.162,
+            0.163,
+            0.164,
+            0.165,
+            0.166,
+            0.167,
+            0.168,
+            0.169,
+            0.17,
+            0.171,
+            0.172,
+            0.173,
+            0.174,
+            0.175,
+            0.176,
+            0.177,
+            0.178,
+            0.179,
+            0.18,
+            0.181,
+            0.182,
+            0.183,
+            0.184,
+            0.185,
+            0.186,
+            0.187,
+            0.188,
+            0.189,
+            0.19,
+            0.191,
+            0.192,
+            0.193,
+            0.194,
+            0.195,
+            0.196,
+            0.197,
+            0.198,
+            0.199,
+            0.2,
+            0.201,
+            0.202,
+            0.203,
+            0.204,
+            0.205,
+            0.206,
+            0.207,
+            0.208,
+            0.209,
+            0.21,
+            0.211,
+            0.212,
+            0.213,
+            0.214,
+            0.215,
+            0.216,
+            0.217,
+            0.218,
+            0.219,
+            0.22,
+            0.221,
+            0.222,
+            0.223,
+            0.224,
+            0.225,
+            0.226,
+            0.227,
+            0.228,
+            0.229,
+            0.23,
+            0.231,
+            0.232,
+            0.233,
+            0.234,
+            0.235,
+            0.236,
+            0.237,
+            0.238,
+            0.239,
+            0.24,
+            0.241,
+            0.242,
+            0.243,
+            0.244,
+            0.245,
+            0.246,
+            0.247,
+            0.248,
+            0.249,
+            0.25,
+            0.251,
+            0.252,
+            0.253,
+            0.254,
+            0.255,
+            0.256,
+            0.257,
+            0.258,
+            0.259,
+            0.26,
+            0.261,
+            0.262,
+            0.263,
+            0.264,
+            0.265,
+            0.266,
+            0.267,
+            0.268,
+            0.269,
+            0.27,
+            0.271,
+            0.272,
+            0.273,
+            0.274,
+            0.275,
+            0.276,
+            0.277,
+            0.278,
+            0.279,
+            0.28,
+            0.281,
+            0.282,
+            0.283,
+            0.284,
+            0.285,
+            0.286,
+            0.287,
+            0.288,
+            0.289,
+            0.29,
+            0.291,
+            0.292,
+            0.293,
+            0.294,
+            0.295,
+            0.296,
+            0.297,
+            0.298,
+            0.299,
+            0.3
+          ],
+          "grid_s": 0.001,
+          "horizon_s": 0.3
+        },
+        "completion": {
+          "primary": {
+            "passed": true,
+            "declared_endpoint_s": 0.3,
+            "issues": []
+          },
+          "other": {
+            "passed": false,
+            "declared_endpoint_s": 0.3,
+            "issues": [
+              "declared-endpoint-not-reached",
+              "declared-endpoint-history-missing"
+            ]
+          }
+        },
+        "issues": []
+      },
+      "repaired_qualification": {
+        "full_trajectory": false,
+        "prefix_qualified": true,
+        "status": "prefix-only",
+        "missing_methods": [],
+        "comparisons": {
+          "coarse": {
+            "matched_count": 301,
+            "matched_end": 0.3,
+            "max_errors": {
+              "y_m": 1.1700270382192531e-17,
+              "w_m_s": 1.0260237104375391e-15,
+              "a": 9.71445146547012e-17,
+              "q": 0.0,
+              "force_N": 2.7000623958883807e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": true,
+            "full_passed": true,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.2999999999999807
+            },
+            "full_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            },
+            "issues": []
+          },
+          "DOP853": {
+            "matched_count": 10,
+            "matched_end": 0.009,
+            "max_errors": {
+              "y_m": 1.805755545092323e-17,
+              "w_m_s": 4.012790100205165e-15,
+              "a": 6.453171330633722e-16,
+              "q": 0.0,
+              "force_N": 2.2293278334473143e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": false,
+            "full_passed": false,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 10,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.009000000000000001
+            },
+            "full_coverage": {
+              "passed": false,
+              "required_grid_count": 301,
+              "missing_grid_times": [
+                0.01,
+                0.011,
+                0.012,
+                0.013,
+                0.014,
+                0.015,
+                0.016,
+                0.017,
+                0.018,
+                0.019,
+                0.02,
+                0.021,
+                0.022,
+                0.023,
+                0.024,
+                0.025,
+                0.026,
+                0.027,
+                0.028,
+                0.029,
+                0.03,
+                0.031,
+                0.032,
+                0.033,
+                0.034,
+                0.035,
+                0.036,
+                0.037,
+                0.038,
+                0.039,
+                0.04,
+                0.041,
+                0.042,
+                0.043,
+                0.044,
+                0.045,
+                0.046,
+                0.047,
+                0.048,
+                0.049,
+                0.05,
+                0.051,
+                0.052,
+                0.053,
+                0.054,
+                0.055,
+                0.056,
+                0.057,
+                0.058,
+                0.059,
+                0.06,
+                0.061,
+                0.062,
+                0.063,
+                0.064,
+                0.065,
+                0.066,
+                0.067,
+                0.068,
+                0.069,
+                0.07,
+                0.071,
+                0.072,
+                0.073,
+                0.074,
+                0.075,
+                0.076,
+                0.077,
+                0.078,
+                0.079,
+                0.08,
+                0.081,
+                0.082,
+                0.083,
+                0.084,
+                0.085,
+                0.086,
+                0.087,
+                0.088,
+                0.089,
+                0.09,
+                0.091,
+                0.092,
+                0.093,
+                0.094,
+                0.095,
+                0.096,
+                0.097,
+                0.098,
+                0.099,
+                0.1,
+                0.101,
+                0.102,
+                0.103,
+                0.104,
+                0.105,
+                0.106,
+                0.107,
+                0.108,
+                0.109,
+                0.11,
+                0.111,
+                0.112,
+                0.113,
+                0.114,
+                0.115,
+                0.116,
+                0.117,
+                0.118,
+                0.119,
+                0.12,
+                0.121,
+                0.122,
+                0.123,
+                0.124,
+                0.125,
+                0.126,
+                0.127,
+                0.128,
+                0.129,
+                0.13,
+                0.131,
+                0.132,
+                0.133,
+                0.134,
+                0.135,
+                0.136,
+                0.137,
+                0.138,
+                0.139,
+                0.14,
+                0.141,
+                0.142,
+                0.143,
+                0.144,
+                0.145,
+                0.146,
+                0.147,
+                0.148,
+                0.149,
+                0.15,
+                0.151,
+                0.152,
+                0.153,
+                0.154,
+                0.155,
+                0.156,
+                0.157,
+                0.158,
+                0.159,
+                0.16,
+                0.161,
+                0.162,
+                0.163,
+                0.164,
+                0.165,
+                0.166,
+                0.167,
+                0.168,
+                0.169,
+                0.17,
+                0.171,
+                0.172,
+                0.173,
+                0.174,
+                0.175,
+                0.176,
+                0.177,
+                0.178,
+                0.179,
+                0.18,
+                0.181,
+                0.182,
+                0.183,
+                0.184,
+                0.185,
+                0.186,
+                0.187,
+                0.188,
+                0.189,
+                0.19,
+                0.191,
+                0.192,
+                0.193,
+                0.194,
+                0.195,
+                0.196,
+                0.197,
+                0.198,
+                0.199,
+                0.2,
+                0.201,
+                0.202,
+                0.203,
+                0.204,
+                0.205,
+                0.206,
+                0.207,
+                0.208,
+                0.209,
+                0.21,
+                0.211,
+                0.212,
+                0.213,
+                0.214,
+                0.215,
+                0.216,
+                0.217,
+                0.218,
+                0.219,
+                0.22,
+                0.221,
+                0.222,
+                0.223,
+                0.224,
+                0.225,
+                0.226,
+                0.227,
+                0.228,
+                0.229,
+                0.23,
+                0.231,
+                0.232,
+                0.233,
+                0.234,
+                0.235,
+                0.236,
+                0.237,
+                0.238,
+                0.239,
+                0.24,
+                0.241,
+                0.242,
+                0.243,
+                0.244,
+                0.245,
+                0.246,
+                0.247,
+                0.248,
+                0.249,
+                0.25,
+                0.251,
+                0.252,
+                0.253,
+                0.254,
+                0.255,
+                0.256,
+                0.257,
+                0.258,
+                0.259,
+                0.26,
+                0.261,
+                0.262,
+                0.263,
+                0.264,
+                0.265,
+                0.266,
+                0.267,
+                0.268,
+                0.269,
+                0.27,
+                0.271,
+                0.272,
+                0.273,
+                0.274,
+                0.275,
+                0.276,
+                0.277,
+                0.278,
+                0.279,
+                0.28,
+                0.281,
+                0.282,
+                0.283,
+                0.284,
+                0.285,
+                0.286,
+                0.287,
+                0.288,
+                0.289,
+                0.29,
+                0.291,
+                0.292,
+                0.293,
+                0.294,
+                0.295,
+                0.296,
+                0.297,
+                0.298,
+                0.299,
+                0.3
+              ],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": false,
+                "declared_endpoint_s": 0.3,
+                "issues": [
+                  "declared-endpoint-not-reached",
+                  "declared-endpoint-history-missing"
+                ]
+              }
+            },
+            "issues": []
+          },
+          "Radau": {
+            "matched_count": 301,
+            "matched_end": 0.3,
+            "max_errors": {
+              "y_m": 2.801434926218881e-16,
+              "w_m_s": 8.475872154020684e-15,
+              "a": 9.020562075079397e-16,
+              "q": 2.1094237467877974e-15,
+              "force_N": 6.519229600598919e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": true,
+            "full_passed": true,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.2999999999999807
+            },
+            "full_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            },
+            "issues": []
+          }
+        }
+      }
+    },
+    {
+      "name": "method-config-mismatch",
+      "passed": true,
+      "qualification": {
+        "full_trajectory": false,
+        "prefix_qualified": false,
+        "status": "unqualified",
+        "missing_methods": [],
+        "comparisons": {
+          "coarse": {
+            "matched_count": 301,
+            "matched_end": 0.3,
+            "max_errors": {
+              "y_m": 1.1700270382192531e-17,
+              "w_m_s": 1.0260237104375391e-15,
+              "a": 9.71445146547012e-17,
+              "q": 0.0,
+              "force_N": 2.7000623958883807e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": true,
+            "full_passed": true,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.2999999999999807
+            },
+            "full_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            },
+            "issues": []
+          },
+          "DOP853": {
+            "passed": false,
+            "full_passed": false,
+            "prefix_passed": false,
+            "issues": [
+              "different-initial-condition-or-protocol"
+            ],
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            }
+          },
+          "Radau": {
+            "matched_count": 301,
+            "matched_end": 0.3,
+            "max_errors": {
+              "y_m": 2.801434926218881e-16,
+              "w_m_s": 8.475872154020684e-15,
+              "a": 9.020562075079397e-16,
+              "q": 2.1094237467877974e-15,
+              "force_N": 6.519229600598919e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": true,
+            "full_passed": true,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.2999999999999807
+            },
+            "full_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            },
+            "issues": []
+          }
+        }
+      }
+    },
+    {
+      "name": "missing-accepted-time",
+      "passed": true,
+      "qualification": {
+        "full_trajectory": false,
+        "prefix_qualified": false,
+        "status": "unqualified",
+        "missing_methods": [],
+        "comparisons": {
+          "coarse": {
+            "matched_count": 301,
+            "matched_end": 0.3,
+            "max_errors": {
+              "y_m": 1.1700270382192531e-17,
+              "w_m_s": 1.0260237104375391e-15,
+              "a": 9.71445146547012e-17,
+              "q": 0.0,
+              "force_N": 2.7000623958883807e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": true,
+            "full_passed": true,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.2999999999999807
+            },
+            "full_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            },
+            "issues": []
+          },
+          "DOP853": {
+            "passed": false,
+            "full_passed": false,
+            "prefix_passed": false,
+            "issues": [
+              "missing-or-nonfinite-accepted-time"
+            ],
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": false,
+                "declared_endpoint_s": 0.3,
+                "issues": [
+                  "missing-or-nonfinite-accepted-time",
+                  "declared-endpoint-not-reached"
+                ]
+              }
+            }
+          },
+          "Radau": {
+            "matched_count": 301,
+            "matched_end": 0.3,
+            "max_errors": {
+              "y_m": 2.801434926218881e-16,
+              "w_m_s": 8.475872154020684e-15,
+              "a": 9.020562075079397e-16,
+              "q": 2.1094237467877974e-15,
+              "force_N": 6.519229600598919e-13
+            },
+            "budgets": {
+              "y_m": 1e-06,
+              "w_m_s": 1e-05,
+              "a": 2e-06,
+              "q": 2e-06,
+              "force_N": 0.0001
+            },
+            "brake_time_error_s": 0,
+            "passed": true,
+            "full_passed": true,
+            "prefix_passed": true,
+            "common_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.2999999999999807
+            },
+            "full_coverage": {
+              "passed": true,
+              "required_grid_count": 301,
+              "missing_grid_times": [],
+              "grid_s": 0.001,
+              "horizon_s": 0.3
+            },
+            "completion": {
+              "primary": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              },
+              "other": {
+                "passed": true,
+                "declared_endpoint_s": 0.3,
+                "issues": []
+              }
+            },
+            "issues": []
+          }
+        }
+      }
+    },
+    {
+      "name": "missing-required-Radau",
+      "passed": true,
+      "qualification": {
+        "full_trajectory": false,
+        "prefix_qualified": false,
+        "status": "unqualified",
+        "missing_methods": [
+          "Radau"
+        ],
+        "comparisons": {}
+      }
+    },
+    {
+      "name": "sparse-common-grid-old-false-acceptance",
+      "passed": true,
+      "old_comparison": {
+        "passed": true,
+        "matched_count": 3,
+        "matched_end": 0.3,
+        "max_errors": {
+          "y_m": 5.364341150892066e-16,
+          "w_m_s": 2.578272332926182e-15,
+          "a": 4.163336342344337e-16,
+          "q": 5.551115123125783e-15,
+          "force_N": 2.2293278334473143e-13
+        },
+        "budgets": {
+          "y_m": 1e-06,
+          "w_m_s": 1e-05,
+          "a": 2e-06,
+          "q": 2e-06,
+          "force_N": 0.0001
+        },
+        "brake_time_error_s": 0
+      },
+      "repaired_comparison": {
+        "matched_count": 3,
+        "matched_end": 0.3,
+        "max_errors": {
+          "y_m": 5.364341150892066e-16,
+          "w_m_s": 2.578272332926182e-15,
+          "a": 4.163336342344337e-16,
+          "q": 5.551115123125783e-15,
+          "force_N": 2.2293278334473143e-13
+        },
+        "budgets": {
+          "y_m": 1e-06,
+          "w_m_s": 1e-05,
+          "a": 2e-06,
+          "q": 2e-06,
+          "force_N": 0.0001
+        },
+        "brake_time_error_s": 0,
+        "passed": false,
+        "full_passed": false,
+        "prefix_passed": false,
+        "common_coverage": {
+          "passed": false,
+          "required_grid_count": 301,
+          "missing_grid_times": [
+            0.002,
+            0.003,
+            0.004,
+            0.005,
+            0.006,
+            0.007,
+            0.008,
+            0.009,
+            0.01,
+            0.011,
+            0.012,
+            0.013,
+            0.014,
+            0.015,
+            0.016,
+            0.017,
+            0.018,
+            0.019,
+            0.02,
+            0.021,
+            0.022,
+            0.023,
+            0.024,
+            0.025,
+            0.026,
+            0.027,
+            0.028,
+            0.029,
+            0.03,
+            0.031,
+            0.032,
+            0.033,
+            0.034,
+            0.035,
+            0.036,
+            0.037,
+            0.038,
+            0.039,
+            0.04,
+            0.041,
+            0.042,
+            0.043,
+            0.044,
+            0.045,
+            0.046,
+            0.047,
+            0.048,
+            0.049,
+            0.05,
+            0.051,
+            0.052,
+            0.053,
+            0.054,
+            0.055,
+            0.056,
+            0.057,
+            0.058,
+            0.059,
+            0.06,
+            0.061,
+            0.062,
+            0.063,
+            0.064,
+            0.065,
+            0.066,
+            0.067,
+            0.068,
+            0.069,
+            0.07,
+            0.071,
+            0.072,
+            0.073,
+            0.074,
+            0.075,
+            0.076,
+            0.077,
+            0.078,
+            0.079,
+            0.08,
+            0.081,
+            0.082,
+            0.083,
+            0.084,
+            0.085,
+            0.086,
+            0.087,
+            0.088,
+            0.089,
+            0.09,
+            0.091,
+            0.092,
+            0.093,
+            0.094,
+            0.095,
+            0.096,
+            0.097,
+            0.098,
+            0.099,
+            0.1,
+            0.101,
+            0.102,
+            0.103,
+            0.104,
+            0.105,
+            0.106,
+            0.107,
+            0.108,
+            0.109,
+            0.11,
+            0.111,
+            0.112,
+            0.113,
+            0.114,
+            0.115,
+            0.116,
+            0.117,
+            0.118,
+            0.119,
+            0.12,
+            0.121,
+            0.122,
+            0.123,
+            0.124,
+            0.125,
+            0.126,
+            0.127,
+            0.128,
+            0.129,
+            0.13,
+            0.131,
+            0.132,
+            0.133,
+            0.134,
+            0.135,
+            0.136,
+            0.137,
+            0.138,
+            0.139,
+            0.14,
+            0.141,
+            0.142,
+            0.143,
+            0.144,
+            0.145,
+            0.146,
+            0.147,
+            0.148,
+            0.149,
+            0.15,
+            0.151,
+            0.152,
+            0.153,
+            0.154,
+            0.155,
+            0.156,
+            0.157,
+            0.158,
+            0.159,
+            0.16,
+            0.161,
+            0.162,
+            0.163,
+            0.164,
+            0.165,
+            0.166,
+            0.167,
+            0.168,
+            0.169,
+            0.17,
+            0.171,
+            0.172,
+            0.173,
+            0.174,
+            0.175,
+            0.176,
+            0.177,
+            0.178,
+            0.179,
+            0.18,
+            0.181,
+            0.182,
+            0.183,
+            0.184,
+            0.185,
+            0.186,
+            0.187,
+            0.188,
+            0.189,
+            0.19,
+            0.191,
+            0.192,
+            0.193,
+            0.194,
+            0.195,
+            0.196,
+            0.197,
+            0.198,
+            0.199,
+            0.2,
+            0.201,
+            0.202,
+            0.203,
+            0.204,
+            0.205,
+            0.206,
+            0.207,
+            0.208,
+            0.209,
+            0.21,
+            0.211,
+            0.212,
+            0.213,
+            0.214,
+            0.215,
+            0.216,
+            0.217,
+            0.218,
+            0.219,
+            0.22,
+            0.221,
+            0.222,
+            0.223,
+            0.224,
+            0.225,
+            0.226,
+            0.227,
+            0.228,
+            0.229,
+            0.23,
+            0.231,
+            0.232,
+            0.233,
+            0.234,
+            0.235,
+            0.236,
+            0.237,
+            0.238,
+            0.239,
+            0.24,
+            0.241,
+            0.242,
+            0.243,
+            0.244,
+            0.245,
+            0.246,
+            0.247,
+            0.248,
+            0.249,
+            0.25,
+            0.251,
+            0.252,
+            0.253,
+            0.254,
+            0.255,
+            0.256,
+            0.257,
+            0.258,
+            0.259,
+            0.26,
+            0.261,
+            0.262,
+            0.263,
+            0.264,
+            0.265,
+            0.266,
+            0.267,
+            0.268,
+            0.269,
+            0.27,
+            0.271,
+            0.272,
+            0.273,
+            0.274,
+            0.275,
+            0.276,
+            0.277,
+            0.278,
+            0.279,
+            0.28,
+            0.281,
+            0.282,
+            0.283,
+            0.284,
+            0.285,
+            0.286,
+            0.287,
+            0.288,
+            0.289,
+            0.29,
+            0.291,
+            0.292,
+            0.293,
+            0.294,
+            0.295,
+            0.296,
+            0.297,
+            0.298,
+            0.299
+          ],
+          "grid_s": 0.001,
+          "horizon_s": 0.2999999999999807
+        },
+        "full_coverage": {
+          "passed": false,
+          "required_grid_count": 301,
+          "missing_grid_times": [
+            0.002,
+            0.003,
+            0.004,
+            0.005,
+            0.006,
+            0.007,
+            0.008,
+            0.009,
+            0.01,
+            0.011,
+            0.012,
+            0.013,
+            0.014,
+            0.015,
+            0.016,
+            0.017,
+            0.018,
+            0.019,
+            0.02,
+            0.021,
+            0.022,
+            0.023,
+            0.024,
+            0.025,
+            0.026,
+            0.027,
+            0.028,
+            0.029,
+            0.03,
+            0.031,
+            0.032,
+            0.033,
+            0.034,
+            0.035,
+            0.036,
+            0.037,
+            0.038,
+            0.039,
+            0.04,
+            0.041,
+            0.042,
+            0.043,
+            0.044,
+            0.045,
+            0.046,
+            0.047,
+            0.048,
+            0.049,
+            0.05,
+            0.051,
+            0.052,
+            0.053,
+            0.054,
+            0.055,
+            0.056,
+            0.057,
+            0.058,
+            0.059,
+            0.06,
+            0.061,
+            0.062,
+            0.063,
+            0.064,
+            0.065,
+            0.066,
+            0.067,
+            0.068,
+            0.069,
+            0.07,
+            0.071,
+            0.072,
+            0.073,
+            0.074,
+            0.075,
+            0.076,
+            0.077,
+            0.078,
+            0.079,
+            0.08,
+            0.081,
+            0.082,
+            0.083,
+            0.084,
+            0.085,
+            0.086,
+            0.087,
+            0.088,
+            0.089,
+            0.09,
+            0.091,
+            0.092,
+            0.093,
+            0.094,
+            0.095,
+            0.096,
+            0.097,
+            0.098,
+            0.099,
+            0.1,
+            0.101,
+            0.102,
+            0.103,
+            0.104,
+            0.105,
+            0.106,
+            0.107,
+            0.108,
+            0.109,
+            0.11,
+            0.111,
+            0.112,
+            0.113,
+            0.114,
+            0.115,
+            0.116,
+            0.117,
+            0.118,
+            0.119,
+            0.12,
+            0.121,
+            0.122,
+            0.123,
+            0.124,
+            0.125,
+            0.126,
+            0.127,
+            0.128,
+            0.129,
+            0.13,
+            0.131,
+            0.132,
+            0.133,
+            0.134,
+            0.135,
+            0.136,
+            0.137,
+            0.138,
+            0.139,
+            0.14,
+            0.141,
+            0.142,
+            0.143,
+            0.144,
+            0.145,
+            0.146,
+            0.147,
+            0.148,
+            0.149,
+            0.15,
+            0.151,
+            0.152,
+            0.153,
+            0.154,
+            0.155,
+            0.156,
+            0.157,
+            0.158,
+            0.159,
+            0.16,
+            0.161,
+            0.162,
+            0.163,
+            0.164,
+            0.165,
+            0.166,
+            0.167,
+            0.168,
+            0.169,
+            0.17,
+            0.171,
+            0.172,
+            0.173,
+            0.174,
+            0.175,
+            0.176,
+            0.177,
+            0.178,
+            0.179,
+            0.18,
+            0.181,
+            0.182,
+            0.183,
+            0.184,
+            0.185,
+            0.186,
+            0.187,
+            0.188,
+            0.189,
+            0.19,
+            0.191,
+            0.192,
+            0.193,
+            0.194,
+            0.195,
+            0.196,
+            0.197,
+            0.198,
+            0.199,
+            0.2,
+            0.201,
+            0.202,
+            0.203,
+            0.204,
+            0.205,
+            0.206,
+            0.207,
+            0.208,
+            0.209,
+            0.21,
+            0.211,
+            0.212,
+            0.213,
+            0.214,
+            0.215,
+            0.216,
+            0.217,
+            0.218,
+            0.219,
+            0.22,
+            0.221,
+            0.222,
+            0.223,
+            0.224,
+            0.225,
+            0.226,
+            0.227,
+            0.228,
+            0.229,
+            0.23,
+            0.231,
+            0.232,
+            0.233,
+            0.234,
+            0.235,
+            0.236,
+            0.237,
+            0.238,
+            0.239,
+            0.24,
+            0.241,
+            0.242,
+            0.243,
+            0.244,
+            0.245,
+            0.246,
+            0.247,
+            0.248,
+            0.249,
+            0.25,
+            0.251,
+            0.252,
+            0.253,
+            0.254,
+            0.255,
+            0.256,
+            0.257,
+            0.258,
+            0.259,
+            0.26,
+            0.261,
+            0.262,
+            0.263,
+            0.264,
+            0.265,
+            0.266,
+            0.267,
+            0.268,
+            0.269,
+            0.27,
+            0.271,
+            0.272,
+            0.273,
+            0.274,
+            0.275,
+            0.276,
+            0.277,
+            0.278,
+            0.279,
+            0.28,
+            0.281,
+            0.282,
+            0.283,
+            0.284,
+            0.285,
+            0.286,
+            0.287,
+            0.288,
+            0.289,
+            0.29,
+            0.291,
+            0.292,
+            0.293,
+            0.294,
+            0.295,
+            0.296,
+            0.297,
+            0.298,
+            0.299
+          ],
+          "grid_s": 0.001,
+          "horizon_s": 0.3
+        },
+        "completion": {
+          "primary": {
+            "passed": true,
+            "declared_endpoint_s": 0.3,
+            "issues": []
+          },
+          "other": {
+            "passed": true,
+            "declared_endpoint_s": 0.3,
+            "issues": []
+          }
+        },
+        "issues": []
+      }
+    },
+    {
+      "name": "original-ten-full-two-prefix-preserved",
+      "passed": true,
+      "full": [
+        "baseline",
+        "pulse",
+        "lower",
+        "release",
+        "mass-025",
+        "mass-05",
+        "desc-fixed-plus",
+        "desc-fixed-minus",
+        "desc-pi-plus",
+        "desc-pi-minus"
+      ],
+      "prefix": [
+        "high",
+        "mass-1"
+      ]
+    }
+  ],
+  "source_sha256": {
+    "education/tests/vertical_force_completion.py": "e53ca7faa3425aac7c8ea5f9e3ff881052cbdf80e14e153d0e4cea161b885b5b",
+    "education/tools/audit_vertical_force_completion.py": "03c30c451ba2644d8bccd040b4aaa4bc70403beeab3ccfbd46e64ce89d836a7f",
+    "education/tools/audit_vertical_force.py": "a6122147f458e8c7158f9e43c65e457c4a6723b75fe03239c0aafb6b45f05c3b"
+  }
+}

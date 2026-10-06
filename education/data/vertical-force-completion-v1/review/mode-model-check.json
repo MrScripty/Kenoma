@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checks": [
+    "Release 150 N and 0 N are identical physical trajectories; bypass/floor metadata is explicit",
+    "Fixed activation 150 N delegates identical physics and suppresses dormant PI claims",
+    "Dormant raw PI clipping does not label release/fixed excitation as PI saturation",
+    "Active PI retains its target, capacity and saturation metadata"
+  ],
+  "physics_gains_source_law_changed": false,
+  "release_state_series_exactly_equal": true,
+  "fixed_state_series_exactly_equal": true,
+  "source_sha256": {
+    "education/web/vertical-force-model.js": "58ca8de8ae7d9e65083f6460bfb25dc32eccd1953853da78d8325274c0ddcf80",
+    "education/web/vertical-force-mode-aware.js": "fc3a4a9b562000b5e9e70b69a8567c2b4b80bf925716c44e935ec40654ce1448",
+    "education/tests/vertical_force_modes.js": "f303e1cbc78e0ff49201d18d5c3ebe7c240691ea1e25c0efab5b78595fd30718",
+    "education/data/vertical-force-command-v1/protocol.json": "2619577a9e7e73b33e8cf500e065869059fc053951deb246237234b652e8a153",
+    "education/data/millard-reference-v1/review/native-controls.json": "13c360473038d1d7ca86ea4aab7275cd991694cb8e8c195e6a239f3070e25eb3"
+  }
+}

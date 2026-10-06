@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checks": [
+    "Custom release 150 N equals 0 N physically; floor drive/bypass labels and only PI-stage target points render",
+    "Release initialization keeps its actual PI weight-stage target applicable",
+    "Fixed activation bypasses 0/150 N targets with identical state history, no target line/capacity/saturation claim",
+    "Active PI retains applicable target and conditional capacity warning",
+    "Corrected labels and controls fit 360px without overflow"
+  ],
+  "javascript_errors": [],
+  "html_sha256": "003565f4a59ea1ebd36dd0a66ba4028b5295ce8b0d57c97715617fc70262789c"
+}

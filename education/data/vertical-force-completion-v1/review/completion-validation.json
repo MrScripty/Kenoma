@@ -1,0 +1,3678 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "baseline",
+      "passed": true,
+      "full_trajectory": true,
+      "prefix_qualified": true,
+      "status": "full",
+      "missing_methods": [],
+      "comparisons": {
+        "coarse": {
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 1.1700270382192531e-17,
+            "w_m_s": 1.0260237104375391e-15,
+            "a": 9.71445146547012e-17,
+            "q": 0.0,
+            "force_N": 2.7000623958883807e-13
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.2999999999999807
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.3
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            }
+          },
+          "issues": []
+        },
+        "DOP853": {
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 5.488433278910686e-16,
+            "w_m_s": 7.483454742097575e-15,
+            "a": 6.938893903907228e-16,
+            "q": 5.551115123125783e-15,
+            "force_N": 6.519229600598919e-13
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.2999999999999807
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.3
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            }
+          },
+          "issues": []
+        },
+        "Radau": {
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 2.801434926218881e-16,
+            "w_m_s": 8.475872154020684e-15,
+            "a": 9.020562075079397e-16,
+            "q": 2.1094237467877974e-15,
+            "force_N": 6.519229600598919e-13
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.2999999999999807
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.3
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            }
+          },
+          "issues": []
+        }
+      },
+      "balances": {
+        "coarse": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 1.8159994122601675e-16,
+            "load_J": 6.409494854920721e-31,
+            "combined_J": 1.815999412260169e-16,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 0.0
+          },
+          "source_force_residual_N": 2.2293278334473143e-13,
+          "min_q": 1,
+          "min_s": 1.0059961788466336
+        },
+        "fine": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 1.8849046565710457e-16,
+            "load_J": 4.190823558986625e-31,
+            "combined_J": 1.8849046565710447e-16,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 0.0
+          },
+          "source_force_residual_N": 2.2293278334473143e-13,
+          "min_q": 1,
+          "min_s": 1.0059961788466336
+        },
+        "DOP853": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 4.929968899978534e-16,
+            "load_J": 1.9721522630525295e-30,
+            "combined_J": 4.929968899978534e-16,
+            "momentum_N_s": 4.397899546607141e-29,
+            "power_ledger_J": 2.828805902315972e-30
+          },
+          "source_force_residual_N": 1.865174681370263e-14,
+          "min_q": 0.9999999999999944,
+          "min_s": 1.0059961788466332
+        },
+        "Radau": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 2.8237227074652144e-15,
+            "load_J": 6.902532920683853e-31,
+            "combined_J": 2.8237227074652163e-15,
+            "momentum_N_s": 2.7610131682735413e-30,
+            "power_ledger_J": 3.1554436208840472e-30
+          },
+          "source_force_residual_N": 1.865174681370263e-14,
+          "min_q": 0.9999999999999979,
+          "min_s": 1.0059961788466332
+        }
+      },
+      "independent_quadrature": {
+        "passed": true,
+        "method": "Gauss-Legendre 8 on every actual accepted solver dense polynomial; independent power/force reevaluation",
+        "errors": {
+          "active_J": 2.1867786021171077e-19,
+          "dissipation_J": 4.254821850538516e-31,
+          "load_J": 1.9721522630525295e-31,
+          "fiber_J": 0.0,
+          "tendon_J": 2.1867786020342773e-19,
+          "momentum_N_s": 3.3194598104672152e-18
+        },
+        "integrals": [
+          3.610059182440146e-15,
+          1.1515035560037293e-28,
+          1.0043065253238345e-15,
+          0.0,
+          2.605752657116203e-15,
+          -6.606646311958335e-16
+        ],
+        "accepted_interval_count": 835
+      },
+      "last_accepted_state_retained": true
+    },
+    {
+      "name": "pulse",
+      "passed": true,
+      "full_trajectory": true,
+      "prefix_qualified": true,
+      "status": "full",
+      "missing_methods": [],
+      "comparisons": {
+        "coarse": {
+          "matched_count": 302,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 1.5197805271010583e-13,
+            "w_m_s": 4.703370071884594e-11,
+            "a": 1.246258651832477e-11,
+            "q": 7.821299163879303e-12,
+            "force_N": 4.177052481679766e-09
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 1.1657341758564144e-14,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.29999999999999244
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.3
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            }
+          },
+          "issues": []
+        },
+        "DOP853": {
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 2.4321127815689347e-10,
+            "w_m_s": 4.794567520782778e-09,
+            "a": 1.6077076822607062e-09,
+            "q": 2.439716428881411e-09,
+            "force_N": 9.842385928493513e-08
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 2.5305081641224803e-08,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.29999999999999244
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.3
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            }
+          },
+          "issues": []
+        },
+        "Radau": {
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 2.4325407898921625e-10,
+            "w_m_s": 4.7953798024483185e-09,
+            "a": 1.6079791803624843e-09,
+            "q": 2.440145085991219e-09,
+            "force_N": 9.857136351598683e-08
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 2.5309348172797286e-08,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.29999999999999244
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.3
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            }
+          },
+          "issues": []
+        }
+      },
+      "balances": {
+        "coarse": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 3.9386036444798763e-13,
+            "load_J": 1.813136746387574e-14,
+            "combined_J": 3.8877028766398647e-13,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 4.209655492031991e-15
+          },
+          "source_force_residual_N": 5.151434834260726e-13,
+          "min_q": 0.9825216893237383,
+          "min_s": 1.005909417077514
+        },
+        "fine": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 2.3897498089013765e-14,
+            "load_J": 1.1112627575679112e-15,
+            "combined_J": 2.213286386796616e-14,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 4.197190555180197e-15
+          },
+          "source_force_residual_N": 4.0678571622265736e-13,
+          "min_q": 0.982521689323597,
+          "min_s": 1.00590941707752
+        },
+        "DOP853": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 5.874342895798024e-16,
+            "load_J": 1.0408340855860843e-17,
+            "combined_J": 5.893451959088081e-16,
+            "momentum_N_s": 1.734723475976807e-18,
+            "power_ledger_J": 1.2793585635328952e-17
+          },
+          "source_force_residual_N": 4.1744385725905886e-14,
+          "min_q": 0.9825216893166595,
+          "min_s": 1.0059094170777598
+        },
+        "Radau": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 5.5432248418155194e-14,
+            "load_J": 5.0684689735167043e-14,
+            "combined_J": 2.4000426991665266e-14,
+            "momentum_N_s": 2.168404344971009e-19,
+            "power_ledger_J": 1.9071793840377826e-17
+          },
+          "source_force_residual_N": 4.085620730620576e-14,
+          "min_q": 0.9825216893166404,
+          "min_s": 1.0059094170778295
+        }
+      },
+      "independent_quadrature": {
+        "passed": true,
+        "method": "Gauss-Legendre 8 on every actual accepted solver dense polynomial; independent power/force reevaluation",
+        "errors": {
+          "active_J": 4.485994908876023e-15,
+          "dissipation_J": 9.536100208096254e-16,
+          "load_J": 2.5248900192842427e-15,
+          "fiber_J": 0.0,
+          "tendon_J": 2.9857504814899405e-15,
+          "momentum_N_s": 1.0793883148396688e-14
+        },
+        "integrals": [
+          0.007714714303884605,
+          0.00021759954577511064,
+          0.007507236512645696,
+          0.0,
+          -1.0121754536263482e-05,
+          -0.002425800631151866
+        ],
+        "accepted_interval_count": 736
+      },
+      "last_accepted_state_retained": true
+    },
+    {
+      "name": "lower",
+      "passed": true,
+      "full_trajectory": true,
+      "prefix_qualified": true,
+      "status": "full",
+      "missing_methods": [],
+      "comparisons": {
+        "coarse": {
+          "matched_count": 302,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 4.641788797950241e-13,
+            "w_m_s": 5.1145437711397346e-11,
+            "a": 1.1857390069813789e-11,
+            "q": 8.171685550451002e-12,
+            "force_N": 4.4089478734576915e-09
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 4.440892098500626e-16,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.2999999999999813
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.3
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            }
+          },
+          "issues": []
+        },
+        "DOP853": {
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 1.130561170397705e-09,
+            "w_m_s": 8.440282971014859e-09,
+            "a": 3.4719088021217814e-09,
+            "q": 1.1299848612367214e-08,
+            "force_N": 2.215661680793346e-07
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 2.798831194583684e-08,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.2999999999999813
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.3
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            }
+          },
+          "issues": []
+        },
+        "Radau": {
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 1.1306455289161396e-09,
+            "w_m_s": 8.439213625014222e-09,
+            "a": 3.472066911758276e-09,
+            "q": 1.1300693270044349e-08,
+            "force_N": 2.2150966216827328e-07
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 2.799070794590186e-08,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.2999999999999813
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.3
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            }
+          },
+          "issues": []
+        }
+      },
+      "balances": {
+        "coarse": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 1.3599369566977071e-17,
+            "tendon_J": 4.611918892572994e-13,
+            "load_J": 2.2291630347170965e-14,
+            "combined_J": 4.585547656784381e-13,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 3.923219442456688e-15
+          },
+          "source_force_residual_N": 4.3876013933186186e-13,
+          "min_q": 1,
+          "min_s": 1.0059173174152976
+        },
+        "fine": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 8.324948343983746e-19,
+            "tendon_J": 2.9544845472310056e-14,
+            "load_J": 1.3689136629801979e-15,
+            "combined_J": 2.729021910253919e-14,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 3.9405217844702516e-15
+          },
+          "source_force_residual_N": 4.591882429849647e-13,
+          "min_q": 1,
+          "min_s": 1.0059173174152927
+        },
+        "DOP853": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 2.484850560109295e-20,
+            "tendon_J": 5.802378976599298e-16,
+            "load_J": 1.734723475976807e-18,
+            "combined_J": 5.792299284526972e-16,
+            "momentum_N_s": 1.3010426069826053e-18,
+            "power_ledger_J": 1.1680584342636802e-18
+          },
+          "source_force_residual_N": 4.263256414560601e-14,
+          "min_q": 0.9999999999999994,
+          "min_s": 1.005917317415298
+        },
+        "Radau": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 9.123502406885421e-18,
+            "tendon_J": 5.853995131525902e-14,
+            "load_J": 4.280549439211745e-14,
+            "combined_J": 2.034518929196205e-14,
+            "momentum_N_s": 4.336808689942018e-19,
+            "power_ledger_J": 2.360680823997735e-18
+          },
+          "source_force_residual_N": 4.3520742565306136e-14,
+          "min_q": 0.9999999999999996,
+          "min_s": 1.0059173174152987
+        }
+      },
+      "independent_quadrature": {
+        "passed": true,
+        "method": "Gauss-Legendre 8 on every actual accepted solver dense polynomial; independent power/force reevaluation",
+        "errors": {
+          "active_J": 7.9432987964978e-14,
+          "dissipation_J": 1.5935061430105701e-16,
+          "load_J": 1.2849530467429204e-14,
+          "fiber_J": 2.863686045768781e-18,
+          "tendon_J": 9.213091562847468e-14,
+          "momentum_N_s": 3.6090770129393324e-13
+        },
+        "integrals": [
+          -0.0020500895172610423,
+          1.526648780868166e-05,
+          -0.0020607394441495915,
+          4.6875427179941616e-08,
+          -4.66343634730982e-06,
+          -0.0017917355030178655
+        ],
+        "accepted_interval_count": 742
+      },
+      "last_accepted_state_retained": true
+    },
+    {
+      "name": "release",
+      "passed": true,
+      "full_trajectory": true,
+      "prefix_qualified": true,
+      "status": "full",
+      "missing_methods": [],
+      "comparisons": {
+        "coarse": {
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 1.4193978748398264e-13,
+            "w_m_s": 2.1435252444551578e-11,
+            "a": 6.755013215453687e-15,
+            "q": 3.668620962571367e-12,
+            "force_N": 1.5710819312175772e-09
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.2999999999999807
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.3
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            }
+          },
+          "issues": []
+        },
+        "DOP853": {
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 1.1965602120245222e-13,
+            "w_m_s": 2.432859469436721e-12,
+            "a": 1.0130785099704553e-15,
+            "q": 1.2310152897043736e-12,
+            "force_N": 1.142241856655346e-10
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.2999999999999807
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.3
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            }
+          },
+          "issues": []
+        },
+        "Radau": {
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 1.3731203674094417e-13,
+            "w_m_s": 7.706797006123978e-12,
+            "a": 7.973482984979796e-14,
+            "q": 1.6571188865555087e-12,
+            "force_N": 1.1822249845749866e-09
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.2999999999999807
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.3
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            }
+          },
+          "issues": []
+        }
+      },
+      "balances": {
+        "coarse": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 9.516367728557018e-15,
+            "tendon_J": 2.844458067523259e-13,
+            "load_J": 4.3817058407178214e-14,
+            "combined_J": 2.5929538599806304e-13,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 1.7120809978066198e-13
+          },
+          "source_force_residual_N": 1.1928236176572682e-12,
+          "min_q": 1,
+          "min_s": 1.0052319732983688
+        },
+        "fine": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 8.777700788442644e-16,
+            "tendon_J": 1.8027842673545846e-14,
+            "load_J": 2.7090417582809057e-15,
+            "combined_J": 1.54751211844939e-13,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 1.7110125165656354e-13
+          },
+          "source_force_residual_N": 1.3287149158713873e-12,
+          "min_q": 1,
+          "min_s": 1.005231973298271
+        },
+        "DOP853": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 4.180683577104105e-15,
+            "tendon_J": 1.2102948851455686e-15,
+            "load_J": 5.551115123125783e-17,
+            "combined_J": 4.603956105242446e-15,
+            "momentum_N_s": 1.3877787807814457e-17,
+            "power_ledger_J": 9.226560487851643e-17
+          },
+          "source_force_residual_N": 2.7533531010703882e-14,
+          "min_q": 0.9999999999999994,
+          "min_s": 1.005231973298203
+        },
+        "Radau": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 3.5658281882788856e-13,
+            "tendon_J": 1.2785378224883237e-13,
+            "load_J": 1.6793782076779395e-13,
+            "combined_J": 2.8781838024016793e-13,
+            "momentum_N_s": 1.431146867680866e-17,
+            "power_ledger_J": 3.642919299551295e-17
+          },
+          "source_force_residual_N": 2.842170943040401e-14,
+          "min_q": 0.9999999999999996,
+          "min_s": 1.0052319732982018
+        }
+      },
+      "independent_quadrature": {
+        "passed": true,
+        "method": "Gauss-Legendre 8 on every actual accepted solver dense polynomial; independent power/force reevaluation",
+        "errors": {
+          "active_J": 1.7856549572314862e-13,
+          "dissipation_J": 9.0576851574653e-14,
+          "load_J": 2.7158830739892892e-14,
+          "fiber_J": 2.5462965069777965e-13,
+          "tendon_J": 1.2799819797820744e-14,
+          "momentum_N_s": 3.341706251991372e-14
+        },
+        "integrals": [
+          -0.04050883229972911,
+          0.019003639491116206,
+          -0.09160057893732217,
+          0.03175676027248974,
+          0.00033134687398692764,
+          0.0016268762917325912
+        ],
+        "accepted_interval_count": 707
+      },
+      "last_accepted_state_retained": true
+    },
+    {
+      "name": "high",
+      "passed": true,
+      "full_trajectory": false,
+      "prefix_qualified": true,
+      "status": "prefix-only",
+      "missing_methods": [],
+      "comparisons": {
+        "coarse": {
+          "matched_count": 107,
+          "matched_end": 0.1054,
+          "max_errors": {
+            "y_m": 1.6312712257382511e-09,
+            "w_m_s": 1.0198148261975071e-07,
+            "a": 1.6768345267870188e-08,
+            "q": 1.601008425833328e-08,
+            "force_N": 9.402670783309475e-06
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": false,
+          "full_passed": false,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 106,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.10540000000000001
+          },
+          "full_coverage": {
+            "passed": false,
+            "required_grid_count": 301,
+            "missing_grid_times": [
+              0.106,
+              0.107,
+              0.108,
+              0.109,
+              0.11,
+              0.111,
+              0.112,
+              0.113,
+              0.114,
+              0.115,
+              0.116,
+              0.117,
+              0.118,
+              0.119,
+              0.12,
+              0.121,
+              0.122,
+              0.123,
+              0.124,
+              0.125,
+              0.126,
+              0.127,
+              0.128,
+              0.129,
+              0.13,
+              0.131,
+              0.132,
+              0.133,
+              0.134,
+              0.135,
+              0.136,
+              0.137,
+              0.138,
+              0.139,
+              0.14,
+              0.141,
+              0.142,
+              0.143,
+              0.144,
+              0.145,
+              0.146,
+              0.147,
+              0.148,
+              0.149,
+              0.15,
+              0.151,
+              0.152,
+              0.153,
+              0.154,
+              0.155,
+              0.156,
+              0.157,
+              0.158,
+              0.159,
+              0.16,
+              0.161,
+              0.162,
+              0.163,
+              0.164,
+              0.165,
+              0.166,
+              0.167,
+              0.168,
+              0.169,
+              0.17,
+              0.171,
+              0.172,
+              0.173,
+              0.174,
+              0.175,
+              0.176,
+              0.177,
+              0.178,
+              0.179,
+              0.18,
+              0.181,
+              0.182,
+              0.183,
+              0.184,
+              0.185,
+              0.186,
+              0.187,
+              0.188,
+              0.189,
+              0.19,
+              0.191,
+              0.192,
+              0.193,
+              0.194,
+              0.195,
+              0.196,
+              0.197,
+              0.198,
+              0.199,
+              0.2,
+              0.201,
+              0.202,
+              0.203,
+              0.204,
+              0.205,
+              0.206,
+              0.207,
+              0.208,
+              0.209,
+              0.21,
+              0.211,
+              0.212,
+              0.213,
+              0.214,
+              0.215,
+              0.216,
+              0.217,
+              0.218,
+              0.219,
+              0.22,
+              0.221,
+              0.222,
+              0.223,
+              0.224,
+              0.225,
+              0.226,
+              0.227,
+              0.228,
+              0.229,
+              0.23,
+              0.231,
+              0.232,
+              0.233,
+              0.234,
+              0.235,
+              0.236,
+              0.237,
+              0.238,
+              0.239,
+              0.24,
+              0.241,
+              0.242,
+              0.243,
+              0.244,
+              0.245,
+              0.246,
+              0.247,
+              0.248,
+              0.249,
+              0.25,
+              0.251,
+              0.252,
+              0.253,
+              0.254,
+              0.255,
+              0.256,
+              0.257,
+              0.258,
+              0.259,
+              0.26,
+              0.261,
+              0.262,
+              0.263,
+              0.264,
+              0.265,
+              0.266,
+              0.267,
+              0.268,
+              0.269,
+              0.27,
+              0.271,
+              0.272,
+              0.273,
+              0.274,
+              0.275,
+              0.276,
+              0.277,
+              0.278,
+              0.279,
+              0.28,
+              0.281,
+              0.282,
+              0.283,
+              0.284,
+              0.285,
+              0.286,
+              0.287,
+              0.288,
+              0.289,
+              0.29,
+              0.291,
+              0.292,
+              0.293,
+              0.294,
+              0.295,
+              0.296,
+              0.297,
+              0.298,
+              0.299,
+              0.3
+            ],
+            "grid_s": 0.001,
+            "horizon_s": 0.3
+          },
+          "completion": {
+            "primary": {
+              "passed": false,
+              "declared_endpoint_s": 0.3,
+              "issues": [
+                "method-failure",
+                "declared-endpoint-not-reached",
+                "declared-endpoint-history-missing"
+              ]
+            },
+            "other": {
+              "passed": false,
+              "declared_endpoint_s": 0.3,
+              "issues": [
+                "method-failure",
+                "declared-endpoint-not-reached",
+                "declared-endpoint-history-missing"
+              ]
+            }
+          },
+          "issues": []
+        },
+        "DOP853": {
+          "matched_count": 106,
+          "matched_end": 0.105,
+          "max_errors": {
+            "y_m": 1.1122112519162952e-10,
+            "w_m_s": 6.94266982792513e-09,
+            "a": 1.1269299104998964e-09,
+            "q": 1.0880846224026186e-09,
+            "force_N": 6.385476227777076e-07
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": false,
+          "full_passed": false,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 106,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.10513065980604425
+          },
+          "full_coverage": {
+            "passed": false,
+            "required_grid_count": 301,
+            "missing_grid_times": [
+              0.106,
+              0.107,
+              0.108,
+              0.109,
+              0.11,
+              0.111,
+              0.112,
+              0.113,
+              0.114,
+              0.115,
+              0.116,
+              0.117,
+              0.118,
+              0.119,
+              0.12,
+              0.121,
+              0.122,
+              0.123,
+              0.124,
+              0.125,
+              0.126,
+              0.127,
+              0.128,
+              0.129,
+              0.13,
+              0.131,
+              0.132,
+              0.133,
+              0.134,
+              0.135,
+              0.136,
+              0.137,
+              0.138,
+              0.139,
+              0.14,
+              0.141,
+              0.142,
+              0.143,
+              0.144,
+              0.145,
+              0.146,
+              0.147,
+              0.148,
+              0.149,
+              0.15,
+              0.151,
+              0.152,
+              0.153,
+              0.154,
+              0.155,
+              0.156,
+              0.157,
+              0.158,
+              0.159,
+              0.16,
+              0.161,
+              0.162,
+              0.163,
+              0.164,
+              0.165,
+              0.166,
+              0.167,
+              0.168,
+              0.169,
+              0.17,
+              0.171,
+              0.172,
+              0.173,
+              0.174,
+              0.175,
+              0.176,
+              0.177,
+              0.178,
+              0.179,
+              0.18,
+              0.181,
+              0.182,
+              0.183,
+              0.184,
+              0.185,
+              0.186,
+              0.187,
+              0.188,
+              0.189,
+              0.19,
+              0.191,
+              0.192,
+              0.193,
+              0.194,
+              0.195,
+              0.196,
+              0.197,
+              0.198,
+              0.199,
+              0.2,
+              0.201,
+              0.202,
+              0.203,
+              0.204,
+              0.205,
+              0.206,
+              0.207,
+              0.208,
+              0.209,
+              0.21,
+              0.211,
+              0.212,
+              0.213,
+              0.214,
+              0.215,
+              0.216,
+              0.217,
+              0.218,
+              0.219,
+              0.22,
+              0.221,
+              0.222,
+              0.223,
+              0.224,
+              0.225,
+              0.226,
+              0.227,
+              0.228,
+              0.229,
+              0.23,
+              0.231,
+              0.232,
+              0.233,
+              0.234,
+              0.235,
+              0.236,
+              0.237,
+              0.238,
+              0.239,
+              0.24,
+              0.241,
+              0.242,
+              0.243,
+              0.244,
+              0.245,
+              0.246,
+              0.247,
+              0.248,
+              0.249,
+              0.25,
+              0.251,
+              0.252,
+              0.253,
+              0.254,
+              0.255,
+              0.256,
+              0.257,
+              0.258,
+              0.259,
+              0.26,
+              0.261,
+              0.262,
+              0.263,
+              0.264,
+              0.265,
+              0.266,
+              0.267,
+              0.268,
+              0.269,
+              0.27,
+              0.271,
+              0.272,
+              0.273,
+              0.274,
+              0.275,
+              0.276,
+              0.277,
+              0.278,
+              0.279,
+              0.28,
+              0.281,
+              0.282,
+              0.283,
+              0.284,
+              0.285,
+              0.286,
+              0.287,
+              0.288,
+              0.289,
+              0.29,
+              0.291,
+              0.292,
+              0.293,
+              0.294,
+              0.295,
+              0.296,
+              0.297,
+              0.298,
+              0.299,
+              0.3
+            ],
+            "grid_s": 0.001,
+            "horizon_s": 0.3
+          },
+          "completion": {
+            "primary": {
+              "passed": false,
+              "declared_endpoint_s": 0.3,
+              "issues": [
+                "method-failure",
+                "declared-endpoint-not-reached",
+                "declared-endpoint-history-missing"
+              ]
+            },
+            "other": {
+              "passed": false,
+              "declared_endpoint_s": 0.3,
+              "issues": [
+                "method-failure",
+                "declared-endpoint-not-reached",
+                "declared-endpoint-history-missing"
+              ]
+            }
+          },
+          "issues": []
+        },
+        "Radau": {
+          "matched_count": 106,
+          "matched_end": 0.105,
+          "max_errors": {
+            "y_m": 1.1127513927650101e-10,
+            "w_m_s": 6.947844286009364e-09,
+            "a": 1.1253862564064576e-09,
+            "q": 1.088641843338678e-09,
+            "force_N": 6.388944804314178e-07
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": false,
+          "full_passed": false,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 106,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.10513925906910943
+          },
+          "full_coverage": {
+            "passed": false,
+            "required_grid_count": 301,
+            "missing_grid_times": [
+              0.106,
+              0.107,
+              0.108,
+              0.109,
+              0.11,
+              0.111,
+              0.112,
+              0.113,
+              0.114,
+              0.115,
+              0.116,
+              0.117,
+              0.118,
+              0.119,
+              0.12,
+              0.121,
+              0.122,
+              0.123,
+              0.124,
+              0.125,
+              0.126,
+              0.127,
+              0.128,
+              0.129,
+              0.13,
+              0.131,
+              0.132,
+              0.133,
+              0.134,
+              0.135,
+              0.136,
+              0.137,
+              0.138,
+              0.139,
+              0.14,
+              0.141,
+              0.142,
+              0.143,
+              0.144,
+              0.145,
+              0.146,
+              0.147,
+              0.148,
+              0.149,
+              0.15,
+              0.151,
+              0.152,
+              0.153,
+              0.154,
+              0.155,
+              0.156,
+              0.157,
+              0.158,
+              0.159,
+              0.16,
+              0.161,
+              0.162,
+              0.163,
+              0.164,
+              0.165,
+              0.166,
+              0.167,
+              0.168,
+              0.169,
+              0.17,
+              0.171,
+              0.172,
+              0.173,
+              0.174,
+              0.175,
+              0.176,
+              0.177,
+              0.178,
+              0.179,
+              0.18,
+              0.181,
+              0.182,
+              0.183,
+              0.184,
+              0.185,
+              0.186,
+              0.187,
+              0.188,
+              0.189,
+              0.19,
+              0.191,
+              0.192,
+              0.193,
+              0.194,
+              0.195,
+              0.196,
+              0.197,
+              0.198,
+              0.199,
+              0.2,
+              0.201,
+              0.202,
+              0.203,
+              0.204,
+              0.205,
+              0.206,
+              0.207,
+              0.208,
+              0.209,
+              0.21,
+              0.211,
+              0.212,
+              0.213,
+              0.214,
+              0.215,
+              0.216,
+              0.217,
+              0.218,
+              0.219,
+              0.22,
+              0.221,
+              0.222,
+              0.223,
+              0.224,
+              0.225,
+              0.226,
+              0.227,
+              0.228,
+              0.229,
+              0.23,
+              0.231,
+              0.232,
+              0.233,
+              0.234,
+              0.235,
+              0.236,
+              0.237,
+              0.238,
+              0.239,
+              0.24,
+              0.241,
+              0.242,
+              0.243,
+              0.244,
+              0.245,
+              0.246,
+              0.247,
+              0.248,
+              0.249,
+              0.25,
+              0.251,
+              0.252,
+              0.253,
+              0.254,
+              0.255,
+              0.256,
+              0.257,
+              0.258,
+              0.259,
+              0.26,
+              0.261,
+              0.262,
+              0.263,
+              0.264,
+              0.265,
+              0.266,
+              0.267,
+              0.268,
+              0.269,
+              0.27,
+              0.271,
+              0.272,
+              0.273,
+              0.274,
+              0.275,
+              0.276,
+              0.277,
+              0.278,
+              0.279,
+              0.28,
+              0.281,
+              0.282,
+              0.283,
+              0.284,
+              0.285,
+              0.286,
+              0.287,
+              0.288,
+              0.289,
+              0.29,
+              0.291,
+              0.292,
+              0.293,
+              0.294,
+              0.295,
+              0.296,
+              0.297,
+              0.298,
+              0.299,
+              0.3
+            ],
+            "grid_s": 0.001,
+            "horizon_s": 0.3
+          },
+          "completion": {
+            "primary": {
+              "passed": false,
+              "declared_endpoint_s": 0.3,
+              "issues": [
+                "method-failure",
+                "declared-endpoint-not-reached",
+                "declared-endpoint-history-missing"
+              ]
+            },
+            "other": {
+              "passed": false,
+              "declared_endpoint_s": 0.3,
+              "issues": [
+                "method-failure",
+                "declared-endpoint-not-reached",
+                "declared-endpoint-history-missing"
+              ]
+            }
+          },
+          "issues": []
+        }
+      },
+      "balances": {
+        "coarse": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 2.442404976182866e-09,
+            "load_J": 4.911144092041488e-11,
+            "combined_J": 2.4569665468821e-09,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 6.40559924981049e-14
+          },
+          "source_force_residual_N": 7.140954494389007e-13,
+          "min_q": 0.7985435865062892,
+          "min_s": 1.0056660858729376
+        },
+        "fine": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 1.4742026002712016e-10,
+            "load_J": 2.9807757824518166e-12,
+            "combined_J": 1.4838520689952617e-10,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 6.548884698420743e-14
+          },
+          "source_force_residual_N": 6.359357485052897e-13,
+          "min_q": 0.7985435733694596,
+          "min_s": 1.0056660862843174
+        },
+        "DOP853": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 9.887067293351537e-14,
+            "load_J": 3.028827189055505e-15,
+            "combined_J": 9.880518712229724e-14,
+            "momentum_N_s": 2.7755575615628914e-17,
+            "power_ledger_J": 6.441787207822625e-16
+          },
+          "source_force_residual_N": 1.163513729807164e-13,
+          "min_q": 0.7999898774836721,
+          "min_s": 1.0056660863122773
+        },
+        "Radau": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 1.0669047026054534e-11,
+            "load_J": 2.41289627167518e-11,
+            "combined_J": 3.4798011694370246e-11,
+            "momentum_N_s": 1.3877787807814457e-17,
+            "power_ledger_J": 7.45931094670027e-17
+          },
+          "source_force_residual_N": 1.2878587085651816e-13,
+          "min_q": 0.799943704445372,
+          "min_s": 1.0056660863122087
+        }
+      },
+      "independent_quadrature": {
+        "passed": true,
+        "method": "Gauss-Legendre 8 on every actual accepted solver dense polynomial; independent power/force reevaluation",
+        "errors": {
+          "active_J": 5.384581669432009e-15,
+          "dissipation_J": 2.3300805729320473e-14,
+          "load_J": 9.287015600989434e-14,
+          "fiber_J": 0.0,
+          "tendon_J": 1.2161495768769903e-13,
+          "momentum_N_s": 1.5365486660812167e-13
+        },
+        "integrals": [
+          0.25172045130606696,
+          0.08310172804750804,
+          0.1688673947999112,
+          0.0,
+          -0.0002486715413523394,
+          0.26554969708236575
+        ],
+        "accepted_interval_count": 501
+      },
+      "last_accepted_state_retained": true
+    },
+    {
+      "name": "mass-025",
+      "passed": true,
+      "full_trajectory": true,
+      "prefix_qualified": true,
+      "status": "full",
+      "missing_methods": [],
+      "comparisons": {
+        "coarse": {
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 1.8877121274549907e-12,
+            "w_m_s": 3.8399844415337725e-10,
+            "a": 8.845679744240442e-11,
+            "q": 3.0882851831393054e-11,
+            "force_N": 1.434287355550623e-08
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.2999999999999807
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.3
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            }
+          },
+          "issues": []
+        },
+        "DOP853": {
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 1.2426379912035268e-13,
+            "w_m_s": 2.5286175930894217e-11,
+            "a": 5.817311909961376e-12,
+            "q": 2.046030012081701e-12,
+            "force_N": 9.512626242269562e-10
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.2999999999999807
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.3
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            }
+          },
+          "issues": []
+        },
+        "Radau": {
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 1.3697506670573567e-13,
+            "w_m_s": 3.336211862325911e-11,
+            "a": 7.372144561479388e-12,
+            "q": 4.157230115708899e-12,
+            "force_N": 2.9112348087778628e-09
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.2999999999999807
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.3
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            }
+          },
+          "issues": []
+        }
+      },
+      "balances": {
+        "coarse": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 9.458810904666715e-12,
+            "load_J": 2.157276310713052e-12,
+            "combined_J": 9.167396008979978e-12,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 2.0875011788601405e-14
+          },
+          "source_force_residual_N": 9.396927680427325e-13,
+          "min_q": 0.6002299647593612,
+          "min_s": 1.003565611691215
+        },
+        "fine": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 5.87180694691658e-13,
+            "load_J": 1.3312289638689467e-13,
+            "combined_J": 5.524439412873949e-13,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 2.027479746591343e-14
+          },
+          "source_force_residual_N": 7.056577544517495e-13,
+          "min_q": 0.6002299647628916,
+          "min_s": 1.0035656116913871
+        },
+        "DOP853": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 3.0921445959286586e-16,
+            "load_J": 1.249000902703301e-16,
+            "combined_J": 3.0254661623208e-16,
+            "momentum_N_s": 6.938893903907228e-18,
+            "power_ledger_J": 1.8951853975046618e-16
+          },
+          "source_force_residual_N": 2.886579864025407e-14,
+          "min_q": 0.6002299647630789,
+          "min_s": 1.003565611691399
+        },
+        "Radau": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 3.8800343146738747e-13,
+            "load_J": 9.022379197920483e-13,
+            "combined_J": 1.07997874423775e-12,
+            "momentum_N_s": 5.204170427930421e-18,
+            "power_ledger_J": 1.4181364416110398e-16
+          },
+          "source_force_residual_N": 2.930988785010413e-14,
+          "min_q": 0.6002299647630962,
+          "min_s": 1.0035656116913938
+        }
+      },
+      "independent_quadrature": {
+        "passed": true,
+        "method": "Gauss-Legendre 8 on every actual accepted solver dense polynomial; independent power/force reevaluation",
+        "errors": {
+          "active_J": 8.326672684688674e-17,
+          "dissipation_J": 1.7541523789077473e-14,
+          "load_J": 2.5118795932144167e-15,
+          "fiber_J": 0.0,
+          "tendon_J": 1.3911831756030502e-14,
+          "momentum_N_s": 1.6670692604137116e-14
+        },
+        "integrals": [
+          0.15465657985982045,
+          0.05577909736912273,
+          0.10059156763505281,
+          0.0,
+          -0.001714085144354056,
+          0.026367510374195845
+        ],
+        "accepted_interval_count": 689
+      },
+      "last_accepted_state_retained": true
+    },
+    {
+      "name": "mass-05",
+      "passed": true,
+      "full_trajectory": true,
+      "prefix_qualified": true,
+      "status": "full",
+      "missing_methods": [],
+      "comparisons": {
+        "coarse": {
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 1.6015576610128102e-14,
+            "w_m_s": 4.545849645060801e-12,
+            "a": 1.2734258092450546e-12,
+            "q": 8.435474541101939e-13,
+            "force_N": 4.4011194688664546e-10
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.2999999999999807
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.3
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            }
+          },
+          "issues": []
+        },
+        "DOP853": {
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 8.144158090972464e-14,
+            "w_m_s": 1.6971389571462936e-12,
+            "a": 1.4039464035775495e-13,
+            "q": 8.131273432354647e-13,
+            "force_N": 4.0743408646903845e-11
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.2999999999999807
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.3
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            }
+          },
+          "issues": []
+        },
+        "Radau": {
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 8.130648931903295e-14,
+            "w_m_s": 2.0351210565428045e-12,
+            "a": 2.6756166726649155e-12,
+            "q": 8.117950756059145e-13,
+            "force_N": 4.391074170939646e-10
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.2999999999999807
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 301,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.3
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.3,
+              "issues": []
+            }
+          },
+          "issues": []
+        }
+      },
+      "balances": {
+        "coarse": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 4.9406855830939206e-15,
+            "load_J": 1.8427042948839694e-16,
+            "combined_J": 1.0283474646908403e-14,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 1.4352602290793222e-14
+          },
+          "source_force_residual_N": 4.929390229335695e-13,
+          "min_q": 0.9896807875240906,
+          "min_s": 1.0059961788466336
+        },
+        "fine": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 8.48640615788189e-16,
+            "load_J": 1.1294416728027646e-17,
+            "combined_J": 1.522976081184957e-14,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 1.4381069374084544e-14
+          },
+          "source_force_residual_N": 4.760636329592671e-13,
+          "min_q": 0.9896807875240891,
+          "min_s": 1.0059961788466336
+        },
+        "DOP853": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 9.268793550601742e-16,
+            "load_J": 7.806255641895632e-18,
+            "combined_J": 9.30089609930268e-16,
+            "momentum_N_s": 4.336808689942018e-19,
+            "power_ledger_J": 6.4289800696601396e-18
+          },
+          "source_force_residual_N": 3.4638958368304884e-14,
+          "min_q": 0.9896807875232759,
+          "min_s": 1.0059961788466336
+        },
+        "Radau": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 1.2148773333902144e-15,
+            "load_J": 1.2066348557804828e-15,
+            "combined_J": 1.038920360225551e-15,
+            "momentum_N_s": 5.421010862427522e-20,
+            "power_ledger_J": 9.093745721722168e-18
+          },
+          "source_force_residual_N": 3.375077994860476e-14,
+          "min_q": 0.9896807875232773,
+          "min_s": 1.0059961788466336
+        }
+      },
+      "independent_quadrature": {
+        "passed": true,
+        "method": "Gauss-Legendre 8 on every actual accepted solver dense polynomial; independent power/force reevaluation",
+        "errors": {
+          "active_J": 8.500145032286355e-17,
+          "dissipation_J": 1.6988092790132248e-17,
+          "load_J": 1.1275702593849246e-17,
+          "fiber_J": 0.0,
+          "tendon_J": 8.163195325868594e-17,
+          "momentum_N_s": 9.046582927219049e-16
+        },
+        "integrals": [
+          0.005114816413829862,
+          4.4769669055583164e-05,
+          0.005062068908006292,
+          0.0,
+          7.977836768003827e-06,
+          0.0031927690795961806
+        ],
+        "accepted_interval_count": 616
+      },
+      "last_accepted_state_retained": true
+    },
+    {
+      "name": "mass-1",
+      "passed": true,
+      "full_trajectory": false,
+      "prefix_qualified": true,
+      "status": "prefix-only",
+      "missing_methods": [],
+      "comparisons": {
+        "coarse": {
+          "matched_count": 263,
+          "matched_end": 0.262,
+          "max_errors": {
+            "y_m": 3.8237944477437225e-09,
+            "w_m_s": 7.862997347674039e-08,
+            "a": 1.9658028749952594e-08,
+            "q": 3.6022262284163276e-08,
+            "force_N": 2.057495384732988e-06
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": false,
+          "full_passed": false,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 263,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.2619999999999849
+          },
+          "full_coverage": {
+            "passed": false,
+            "required_grid_count": 301,
+            "missing_grid_times": [
+              0.263,
+              0.264,
+              0.265,
+              0.266,
+              0.267,
+              0.268,
+              0.269,
+              0.27,
+              0.271,
+              0.272,
+              0.273,
+              0.274,
+              0.275,
+              0.276,
+              0.277,
+              0.278,
+              0.279,
+              0.28,
+              0.281,
+              0.282,
+              0.283,
+              0.284,
+              0.285,
+              0.286,
+              0.287,
+              0.288,
+              0.289,
+              0.29,
+              0.291,
+              0.292,
+              0.293,
+              0.294,
+              0.295,
+              0.296,
+              0.297,
+              0.298,
+              0.299,
+              0.3
+            ],
+            "grid_s": 0.001,
+            "horizon_s": 0.3
+          },
+          "completion": {
+            "primary": {
+              "passed": false,
+              "declared_endpoint_s": 0.3,
+              "issues": [
+                "method-failure",
+                "declared-endpoint-not-reached",
+                "declared-endpoint-history-missing"
+              ]
+            },
+            "other": {
+              "passed": false,
+              "declared_endpoint_s": 0.3,
+              "issues": [
+                "method-failure",
+                "declared-endpoint-not-reached",
+                "declared-endpoint-history-missing"
+              ]
+            }
+          },
+          "issues": []
+        },
+        "DOP853": {
+          "matched_count": 262,
+          "matched_end": 0.261,
+          "max_errors": {
+            "y_m": 5.14934046791371e-10,
+            "w_m_s": 1.0913081844449168e-08,
+            "a": 1.945433727654211e-08,
+            "q": 4.90537055419793e-09,
+            "force_N": 8.397244020130756e-07
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": false,
+          "full_passed": false,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 262,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.26197761378932727
+          },
+          "full_coverage": {
+            "passed": false,
+            "required_grid_count": 301,
+            "missing_grid_times": [
+              0.262,
+              0.263,
+              0.264,
+              0.265,
+              0.266,
+              0.267,
+              0.268,
+              0.269,
+              0.27,
+              0.271,
+              0.272,
+              0.273,
+              0.274,
+              0.275,
+              0.276,
+              0.277,
+              0.278,
+              0.279,
+              0.28,
+              0.281,
+              0.282,
+              0.283,
+              0.284,
+              0.285,
+              0.286,
+              0.287,
+              0.288,
+              0.289,
+              0.29,
+              0.291,
+              0.292,
+              0.293,
+              0.294,
+              0.295,
+              0.296,
+              0.297,
+              0.298,
+              0.299,
+              0.3
+            ],
+            "grid_s": 0.001,
+            "horizon_s": 0.3
+          },
+          "completion": {
+            "primary": {
+              "passed": false,
+              "declared_endpoint_s": 0.3,
+              "issues": [
+                "method-failure",
+                "declared-endpoint-not-reached",
+                "declared-endpoint-history-missing"
+              ]
+            },
+            "other": {
+              "passed": false,
+              "declared_endpoint_s": 0.3,
+              "issues": [
+                "method-failure",
+                "declared-endpoint-not-reached",
+                "declared-endpoint-history-missing"
+              ]
+            }
+          },
+          "issues": []
+        },
+        "Radau": {
+          "matched_count": 262,
+          "matched_end": 0.261,
+          "max_errors": {
+            "y_m": 5.769196752269945e-10,
+            "w_m_s": 1.2260647268280689e-08,
+            "a": 1.9583311210505383e-08,
+            "q": 5.495294885804469e-09,
+            "force_N": 8.624019898206825e-07
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": false,
+          "full_passed": false,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 262,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.2619720264447538
+          },
+          "full_coverage": {
+            "passed": false,
+            "required_grid_count": 301,
+            "missing_grid_times": [
+              0.262,
+              0.263,
+              0.264,
+              0.265,
+              0.266,
+              0.267,
+              0.268,
+              0.269,
+              0.27,
+              0.271,
+              0.272,
+              0.273,
+              0.274,
+              0.275,
+              0.276,
+              0.277,
+              0.278,
+              0.279,
+              0.28,
+              0.281,
+              0.282,
+              0.283,
+              0.284,
+              0.285,
+              0.286,
+              0.287,
+              0.288,
+              0.289,
+              0.29,
+              0.291,
+              0.292,
+              0.293,
+              0.294,
+              0.295,
+              0.296,
+              0.297,
+              0.298,
+              0.299,
+              0.3
+            ],
+            "grid_s": 0.001,
+            "horizon_s": 0.3
+          },
+          "completion": {
+            "primary": {
+              "passed": false,
+              "declared_endpoint_s": 0.3,
+              "issues": [
+                "method-failure",
+                "declared-endpoint-not-reached",
+                "declared-endpoint-history-missing"
+              ]
+            },
+            "other": {
+              "passed": false,
+              "declared_endpoint_s": 0.3,
+              "issues": [
+                "method-failure",
+                "declared-endpoint-not-reached",
+                "declared-endpoint-history-missing"
+              ]
+            }
+          },
+          "issues": []
+        }
+      },
+      "balances": {
+        "coarse": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 2.316480340880389e-13,
+            "tendon_J": 3.769174208856363e-12,
+            "load_J": 2.2376371588972432e-13,
+            "combined_J": 3.5581954049845876e-12,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 1.6768877952877403e-13
+          },
+          "source_force_residual_N": 1.2594369991347776e-12,
+          "min_q": 1,
+          "min_s": 1.0059961788466336
+        },
+        "fine": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 1.5154544286133387e-14,
+            "tendon_J": 2.340575649961707e-13,
+            "load_J": 1.38595732113167e-14,
+            "combined_J": 1.963533502458148e-13,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 1.6697580818014757e-13
+          },
+          "source_force_residual_N": 9.059419880941277e-13,
+          "min_q": 1,
+          "min_s": 1.0059961788466336
+        },
+        "DOP853": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 2.373101715136272e-15,
+            "tendon_J": 2.2455995396519768e-15,
+            "load_J": 4.996003610813204e-16,
+            "combined_J": 1.7008963681952594e-15,
+            "momentum_N_s": 4.163336342344337e-17,
+            "power_ledger_J": 4.49293380277993e-16
+          },
+          "source_force_residual_N": 1.865174681370263e-14,
+          "min_q": 1.0,
+          "min_s": 1.0059961788466336
+        },
+        "Radau": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 3.6273206660553114e-12,
+            "tendon_J": 9.020006963567084e-13,
+            "load_J": 5.195788244094501e-12,
+            "combined_J": 2.5748153609228552e-12,
+            "momentum_N_s": 2.7755575615628914e-17,
+            "power_ledger_J": 2.1510571102112408e-16
+          },
+          "source_force_residual_N": 1.5987211554602254e-14,
+          "min_q": 1.0,
+          "min_s": 1.0059961788466336
+        }
+      },
+      "independent_quadrature": {
+        "passed": true,
+        "method": "Gauss-Legendre 8 on every actual accepted solver dense polynomial; independent power/force reevaluation",
+        "errors": {
+          "active_J": 9.776901510605285e-14,
+          "dissipation_J": 1.7207069102909145e-13,
+          "load_J": 7.494005416219807e-14,
+          "fiber_J": 2.500499807212009e-13,
+          "tendon_J": 5.570890970751918e-14,
+          "momentum_N_s": 1.9470536294363683e-14
+        },
+        "integrals": [
+          -0.11021693769746557,
+          0.06239265849726451,
+          -0.2531693624210834,
+          0.0768812333790933,
+          0.003678532847259444,
+          0.1036217648040314
+        ],
+        "accepted_interval_count": 625
+      },
+      "last_accepted_state_retained": true
+    },
+    {
+      "name": "desc-fixed-plus",
+      "passed": true,
+      "full_trajectory": true,
+      "prefix_qualified": true,
+      "status": "full",
+      "missing_methods": [],
+      "comparisons": {
+        "coarse": {
+          "matched_count": 151,
+          "matched_end": 0.15,
+          "max_errors": {
+            "y_m": 5.339051954451196e-16,
+            "w_m_s": 2.4358065477819713e-14,
+            "a": 0.0,
+            "q": 5.773159728050814e-15,
+            "force_N": 8.37019342725398e-12
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 151,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.14999999999999725
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 151,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.15
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.15,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.15,
+              "issues": []
+            }
+          },
+          "issues": []
+        },
+        "DOP853": {
+          "matched_count": 151,
+          "matched_end": 0.15,
+          "max_errors": {
+            "y_m": 2.9575849419278405e-16,
+            "w_m_s": 1.5940883934585127e-14,
+            "a": 0.0,
+            "q": 3.774758283725532e-15,
+            "force_N": 7.403855306620244e-12
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 151,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.14999999999999725
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 151,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.15
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.15,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.15,
+              "issues": []
+            }
+          },
+          "issues": []
+        },
+        "Radau": {
+          "matched_count": 151,
+          "matched_end": 0.15,
+          "max_errors": {
+            "y_m": 7.728320140418764e-16,
+            "w_m_s": 7.476149622878507e-14,
+            "a": 0.0,
+            "q": 1.554312234475219e-14,
+            "force_N": 1.9880985746567603e-11
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 151,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.14999999999999725
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 151,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.15
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.15,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.15,
+              "issues": []
+            }
+          },
+          "issues": []
+        }
+      },
+      "balances": {
+        "coarse": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 3.71531520555312e-16,
+            "tendon_J": 1.1522954899284565e-14,
+            "load_J": 1.0722759485881639e-16,
+            "combined_J": 1.1082788980610062e-14,
+            "momentum_N_s": 8.673617379884035e-19,
+            "power_ledger_J": 4.9873299934333204e-18
+          },
+          "source_force_residual_N": 1.7550405573274475e-12,
+          "min_q": 1.1000470190608178,
+          "min_s": 1.0306322441542233
+        },
+        "fine": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 5.218675867152151e-16,
+            "tendon_J": 1.518528141772335e-14,
+            "load_J": 7.15573433840433e-18,
+            "combined_J": 1.469604084861338e-14,
+            "momentum_N_s": 2.6020852139652106e-18,
+            "power_ledger_J": 4.933119884809045e-18
+          },
+          "source_force_residual_N": 1.5063505998114124e-12,
+          "min_q": 1.1000470190608225,
+          "min_s": 1.0306322441542233
+        },
+        "DOP853": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 2.7020562775648994e-16,
+            "tendon_J": 9.929936647251614e-15,
+            "load_J": 8.673617379884035e-19,
+            "combined_J": 9.678794680495719e-15,
+            "momentum_N_s": 8.673617379884035e-19,
+            "power_ledger_J": 1.0842021724855044e-18
+          },
+          "source_force_residual_N": 3.552713678800501e-14,
+          "min_q": 1.100047019060821,
+          "min_s": 1.0306322441542233
+        },
+        "Radau": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 1.7612059610727128e-16,
+            "tendon_J": 6.7338712730902195e-15,
+            "load_J": 5.944680511738021e-16,
+            "combined_J": 6.5517635734877914e-15,
+            "momentum_N_s": 6.505213034913027e-19,
+            "power_ledger_J": 1.0842021724855044e-18
+          },
+          "source_force_residual_N": 4.263256414560601e-14,
+          "min_q": 1.100047019060821,
+          "min_s": 1.0306322441542233
+        }
+      },
+      "independent_quadrature": {
+        "passed": true,
+        "method": "Gauss-Legendre 8 on every actual accepted solver dense polynomial; independent power/force reevaluation",
+        "errors": {
+          "active_J": 7.300068752616462e-16,
+          "dissipation_J": 6.390797412584692e-20,
+          "load_J": 5.421010862427522e-19,
+          "fiber_J": 2.610936708264018e-17,
+          "tendon_J": 7.570441669380035e-16,
+          "momentum_N_s": 3.63049163214918e-15
+        },
+        "integrals": [
+          -8.032247091884277e-05,
+          2.4420502188039886e-08,
+          -0.0005663969268079021,
+          2.843751247670537e-06,
+          0.00048320628413920134,
+          -9.770600600715352e-05
+        ],
+        "accepted_interval_count": 301
+      },
+      "last_accepted_state_retained": true
+    },
+    {
+      "name": "desc-fixed-minus",
+      "passed": true,
+      "full_trajectory": true,
+      "prefix_qualified": true,
+      "status": "full",
+      "missing_methods": [],
+      "comparisons": {
+        "coarse": {
+          "matched_count": 151,
+          "matched_end": 0.15,
+          "max_errors": {
+            "y_m": 6.217780874591752e-16,
+            "w_m_s": 2.7672120847467736e-14,
+            "a": 0.0,
+            "q": 5.10702591327572e-15,
+            "force_N": 9.919176591210999e-12
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 151,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.14999999999999725
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 151,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.15
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.15,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.15,
+              "issues": []
+            }
+          },
+          "issues": []
+        },
+        "DOP853": {
+          "matched_count": 151,
+          "matched_end": 0.15,
+          "max_errors": {
+            "y_m": 8.231245952851005e-16,
+            "w_m_s": 2.931817522046007e-14,
+            "a": 0.0,
+            "q": 9.547918011776346e-15,
+            "force_N": 1.1681322575896047e-11
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 151,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.14999999999999725
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 151,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.15
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.15,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.15,
+              "issues": []
+            }
+          },
+          "issues": []
+        },
+        "Radau": {
+          "matched_count": 151,
+          "matched_end": 0.15,
+          "max_errors": {
+            "y_m": 8.841719538596124e-16,
+            "w_m_s": 7.74689896108384e-14,
+            "a": 0.0,
+            "q": 1.5987211554602254e-14,
+            "force_N": 1.8452794847689802e-11
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 151,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.14999999999999725
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 151,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.15
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.15,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.15,
+              "issues": []
+            }
+          },
+          "issues": []
+        }
+      },
+      "balances": {
+        "coarse": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 2.1169555637547827e-16,
+            "tendon_J": 6.675107515341505e-15,
+            "load_J": 1.0690233420707074e-16,
+            "combined_J": 6.609281574072944e-15,
+            "momentum_N_s": 2.8189256484623115e-18,
+            "power_ledger_J": 8.61940727125976e-18
+          },
+          "source_force_residual_N": 1.6058265828178264e-12,
+          "min_q": 1.0998817726207006,
+          "min_s": 1.0306674437743684
+        },
+        "fine": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 2.909126187015422e-16,
+            "tendon_J": 1.035911807723e-14,
+            "load_J": 6.396792817664476e-18,
+            "combined_J": 1.0071869537769823e-14,
+            "momentum_N_s": 1.3010426069826053e-18,
+            "power_ledger_J": 8.131516293641283e-18
+          },
+          "source_force_residual_N": 1.5205614545266144e-12,
+          "min_q": 1.0998817726207029,
+          "min_s": 1.0306674437743713
+        },
+        "DOP853": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 2.0824982634604777e-16,
+            "tendon_J": 6.495021534491663e-15,
+            "load_J": 4.336808689942018e-19,
+            "combined_J": 6.354550490491516e-15,
+            "momentum_N_s": 1.5178830414797062e-18,
+            "power_ledger_J": 4.336808689942018e-19
+          },
+          "source_force_residual_N": 3.552713678800501e-14,
+          "min_q": 1.099881772620695,
+          "min_s": 1.0306674437743708
+        },
+        "Radau": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 1.4221259667926076e-16,
+            "tendon_J": 5.545585692046107e-15,
+            "load_J": 6.183442158910063e-16,
+            "combined_J": 5.469398145626294e-15,
+            "momentum_N_s": 5.421010862427522e-19,
+            "power_ledger_J": 1.3010426069826053e-18
+          },
+          "source_force_residual_N": 2.842170943040401e-14,
+          "min_q": 1.0998817726206958,
+          "min_s": 1.0306674437743713
+        }
+      },
+      "independent_quadrature": {
+        "passed": true,
+        "method": "Gauss-Legendre 8 on every actual accepted solver dense polynomial; independent power/force reevaluation",
+        "errors": {
+          "active_J": 1.9930346435714785e-16,
+          "dissipation_J": 1.3737815613280684e-20,
+          "load_J": 3.2526065174565133e-19,
+          "fiber_J": 7.1303233499867e-18,
+          "tendon_J": 2.07407875596477e-16,
+          "momentum_N_s": 1.0447643184613442e-15
+        },
+        "integrals": [
+          7.90718209078486e-05,
+          2.4437274315413706e-08,
+          0.0005662857162459569,
+          -2.8318944764991483e-06,
+          -0.0004844064381359242,
+          9.764562931292603e-05
+        ],
+        "accepted_interval_count": 301
+      },
+      "last_accepted_state_retained": true
+    },
+    {
+      "name": "desc-pi-plus",
+      "passed": true,
+      "full_trajectory": true,
+      "prefix_qualified": true,
+      "status": "full",
+      "missing_methods": [],
+      "comparisons": {
+        "coarse": {
+          "matched_count": 151,
+          "matched_end": 0.15,
+          "max_errors": {
+            "y_m": 1.3238560036960543e-11,
+            "w_m_s": 2.2787978440209195e-10,
+            "a": 1.186278630882498e-09,
+            "q": 1.341315947200883e-10,
+            "force_N": 4.165976008607686e-08
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 151,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.14999999999999725
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 151,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.15
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.15,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.15,
+              "issues": []
+            }
+          },
+          "issues": []
+        },
+        "DOP853": {
+          "matched_count": 151,
+          "matched_end": 0.15,
+          "max_errors": {
+            "y_m": 7.2642295434797e-12,
+            "w_m_s": 1.326553338171514e-10,
+            "a": 6.904181670819298e-10,
+            "q": 7.096612186785478e-11,
+            "force_N": 2.4245998986316408e-08
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 151,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.14999999999999725
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 151,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.15
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.15,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.15,
+              "issues": []
+            }
+          },
+          "issues": []
+        },
+        "Radau": {
+          "matched_count": 151,
+          "matched_end": 0.15,
+          "max_errors": {
+            "y_m": 6.790352194036855e-12,
+            "w_m_s": 1.2828965657740612e-10,
+            "a": 6.684641729037821e-10,
+            "q": 6.384381912027948e-11,
+            "force_N": 2.346371985595397e-08
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 151,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.14999999999999725
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 151,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.15
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.15,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.15,
+              "issues": []
+            }
+          },
+          "issues": []
+        }
+      },
+      "balances": {
+        "coarse": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 4.0074949855437546e-16,
+            "tendon_J": 1.2504645756361565e-14,
+            "load_J": 1.0511340062246965e-16,
+            "combined_J": 1.2205631267519536e-14,
+            "momentum_N_s": 8.673617379884035e-19,
+            "power_ledger_J": 3.65376132127615e-17
+          },
+          "source_force_residual_N": 1.6058265828178264e-12,
+          "min_q": 1.1000348567115368,
+          "min_s": 1.0306322441542233
+        },
+        "fine": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 3.9911768958149005e-16,
+            "tendon_J": 1.3063877236929589e-14,
+            "load_J": 8.348356728138384e-18,
+            "combined_J": 1.266494588797905e-14,
+            "momentum_N_s": 8.673617379884035e-19,
+            "power_ledger_J": 3.7838655819744105e-17
+          },
+          "source_force_residual_N": 1.5134560271690134e-12,
+          "min_q": 1.1000348566756806,
+          "min_s": 1.0306322441542233
+        },
+        "DOP853": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 1.3761447832509079e-16,
+            "tendon_J": 5.100141229480437e-15,
+            "load_J": 9.215718466126788e-19,
+            "combined_J": 4.961989451025379e-15,
+            "momentum_N_s": 1.0842021724855044e-18,
+            "power_ledger_J": 6.505213034913027e-19
+          },
+          "source_force_residual_N": 4.263256414560601e-14,
+          "min_q": 1.1000348566547988,
+          "min_s": 1.0306322441542233
+        },
+        "Radau": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 2.384550212451361e-16,
+            "tendon_J": 8.59176011586138e-15,
+            "load_J": 9.699018525171146e-16,
+            "combined_J": 8.365450822469654e-15,
+            "momentum_N_s": 4.336808689942018e-19,
+            "power_ledger_J": 3.2526065174565133e-19
+          },
+          "source_force_residual_N": 3.268496584496461e-13,
+          "min_q": 1.1000348566555196,
+          "min_s": 1.0306322441542233
+        }
+      },
+      "independent_quadrature": {
+        "passed": true,
+        "method": "Gauss-Legendre 8 on every actual accepted solver dense polynomial; independent power/force reevaluation",
+        "errors": {
+          "active_J": 9.051597362266794e-16,
+          "dissipation_J": 5.583105175263413e-19,
+          "load_J": 4.87890977618477e-19,
+          "fiber_J": 3.292755879156367e-17,
+          "tendon_J": 9.395696026759381e-16,
+          "momentum_N_s": 4.736730213790452e-15
+        },
+        "integrals": [
+          9.470156280350839e-05,
+          2.70694380629045e-08,
+          -0.0003968536259179065,
+          -3.396804742292604e-06,
+          0.000494924924025643,
+          -7.653422308788932e-05
+        ],
+        "accepted_interval_count": 301
+      },
+      "last_accepted_state_retained": true
+    },
+    {
+      "name": "desc-pi-minus",
+      "passed": true,
+      "full_trajectory": true,
+      "prefix_qualified": true,
+      "status": "full",
+      "missing_methods": [],
+      "comparisons": {
+        "coarse": {
+          "matched_count": 151,
+          "matched_end": 0.15,
+          "max_errors": {
+            "y_m": 4.045805279472925e-12,
+            "w_m_s": 9.226393278126844e-11,
+            "a": 9.229050856873755e-10,
+            "q": 3.829647710063e-11,
+            "force_N": 2.207576699220226e-08
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 151,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.14999999999999725
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 151,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.15
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.15,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.15,
+              "issues": []
+            }
+          },
+          "issues": []
+        },
+        "DOP853": {
+          "matched_count": 151,
+          "matched_end": 0.15,
+          "max_errors": {
+            "y_m": 8.616458363323344e-12,
+            "w_m_s": 1.9754018803748788e-10,
+            "a": 1.97915056565634e-09,
+            "q": 8.084000135966107e-11,
+            "force_N": 4.722381419242083e-08
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 151,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.14999999999999725
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 151,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.15
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.15,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.15,
+              "issues": []
+            }
+          },
+          "issues": []
+        },
+        "Radau": {
+          "matched_count": 151,
+          "matched_end": 0.15,
+          "max_errors": {
+            "y_m": 7.024624410734387e-12,
+            "w_m_s": 1.7901030183458018e-10,
+            "a": 1.7773478799831821e-09,
+            "q": 4.0812242474430604e-11,
+            "force_N": 5.066745956128216e-08
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0,
+          "passed": true,
+          "full_passed": true,
+          "prefix_passed": true,
+          "common_coverage": {
+            "passed": true,
+            "required_grid_count": 151,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.14999999999999725
+          },
+          "full_coverage": {
+            "passed": true,
+            "required_grid_count": 151,
+            "missing_grid_times": [],
+            "grid_s": 0.001,
+            "horizon_s": 0.15
+          },
+          "completion": {
+            "primary": {
+              "passed": true,
+              "declared_endpoint_s": 0.15,
+              "issues": []
+            },
+            "other": {
+              "passed": true,
+              "declared_endpoint_s": 0.15,
+              "issues": []
+            }
+          },
+          "issues": []
+        }
+      },
+      "balances": {
+        "coarse": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 4.966181698322749e-16,
+            "tendon_J": 1.5997511475240866e-14,
+            "load_J": 1.0809495659680479e-16,
+            "combined_J": 1.545246194671806e-14,
+            "momentum_N_s": 6.505213034913027e-19,
+            "power_ledger_J": 1.235990476633475e-17
+          },
+          "source_force_residual_N": 1.5347723092418164e-12,
+          "min_q": 1.0998887130937045,
+          "min_s": 1.0306673235953527
+        },
+        "fine": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 9.229002060322103e-16,
+            "tendon_J": 2.6457568774729268e-14,
+            "load_J": 7.26415455565288e-18,
+            "combined_J": 2.5535516796093116e-14,
+            "momentum_N_s": 4.363913744254155e-18,
+            "power_ledger_J": 1.0516761073109393e-17
+          },
+          "source_force_residual_N": 1.7621459846850485e-12,
+          "min_q": 1.099888713056649,
+          "min_s": 1.0306673236008184
+        },
+        "DOP853": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 3.067038539372041e-16,
+            "tendon_J": 1.0174261606821222e-14,
+            "load_J": 4.336808689942018e-19,
+            "combined_J": 9.885658138900238e-15,
+            "momentum_N_s": 4.336808689942018e-19,
+            "power_ledger_J": 5.421010862427522e-19
+          },
+          "source_force_residual_N": 3.552713678800501e-14,
+          "min_q": 1.0998887131343242,
+          "min_s": 1.0306673235891133
+        },
+        "Radau": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 9.796274848174885e-17,
+            "tendon_J": 4.35383066405004e-15,
+            "load_J": 6.35227276595679e-16,
+            "combined_J": 4.193241058922832e-15,
+            "momentum_N_s": 1.2332799712022613e-18,
+            "power_ledger_J": 1.1926223897340549e-18
+          },
+          "source_force_residual_N": 2.842170943040401e-14,
+          "min_q": 1.0998887130422677,
+          "min_s": 1.0306673236113164
+        }
+      },
+      "independent_quadrature": {
+        "passed": true,
+        "method": "Gauss-Legendre 8 on every actual accepted solver dense polynomial; independent power/force reevaluation",
+        "errors": {
+          "active_J": 6.843687400635845e-16,
+          "dissipation_J": 8.05673916626649e-21,
+          "load_J": 7.589415207398531e-19,
+          "fiber_J": 2.4295446026095097e-17,
+          "tendon_J": 7.075503377640402e-16,
+          "momentum_N_s": 3.737678569426528e-15
+        },
+        "integrals": [
+          5.3456352636153816e-05,
+          2.6965124798702214e-08,
+          0.0005533560431376189,
+          -1.9211330677566837e-06,
+          -0.0004980055225585064,
+          0.0001215722057391571
+        ],
+        "accepted_interval_count": 301
+      },
+      "last_accepted_state_retained": true
+    }
+  ],
+  "full_presets": 10,
+  "prefix_only_presets": [
+    "high",
+    "mass-1"
+  ],
+  "required_methods": [
+    "coarse",
+    "fine",
+    "DOP853",
+    "Radau"
+  ],
+  "source_sha256": {
+    "education/tools/audit_vertical_force_completion.py": "03c30c451ba2644d8bccd040b4aaa4bc70403beeab3ccfbd46e64ce89d836a7f",
+    "education/tools/audit_vertical_force.py": "a6122147f458e8c7158f9e43c65e457c4a6723b75fe03239c0aafb6b45f05c3b",
+    "education/tools/vertical_force_reference.py": "18fb8a6d533010afc5211fb7a286bfc53e2d7a1b0c1544a350e1896e3ea63fed",
+    "education/web/vertical-force-model.js": "58ca8de8ae7d9e65083f6460bfb25dc32eccd1953853da78d8325274c0ddcf80",
+    "education/data/vertical-force-command-v1/protocol.json": "2619577a9e7e73b33e8cf500e065869059fc053951deb246237234b652e8a153",
+    "education/research/mechanical-closure/vertical-force-command-protocol.md": "03a406eaefbae6776bb6c97a2a88b718ca31974906bc7e48b0684dec71cec3e6",
+    "education/data/millard-reference-v1/review/native-controls.json": "13c360473038d1d7ca86ea4aab7275cd991694cb8e8c195e6a239f3070e25eb3"
+  },
+  "input_sha256": {
+    "education/data/vertical-force-command-v1/review/cases.json": "b67002861424bf214295f00ee189763078375579e5f3c8b3f1beb0e0f3b66b9b",
+    "education/data/vertical-force-command-v1/review/baseline-coarse.json": "84ec256c2c67e55f42615f699cb8f78b63984463f3cd4d003f343a81adc4e76b",
+    "education/data/vertical-force-command-v1/review/baseline-fine.json": "3668514c004893956590f7b6a6bef25e25ce4cc07c4062cae29ed8119b8a5064",
+    "education/data/vertical-force-command-v1/review/baseline-DOP853.json": "59f0f1847b83a6e93e9312b08c063491704825a820916f1d8edb1585f2302bb6",
+    "education/data/vertical-force-command-v1/review/baseline-Radau.json": "3c8592b5aa862bfb6fedda9e970de526f8226b1d388210fcc25c4eb1b4ab86a8",
+    "education/data/vertical-force-command-v1/review/pulse-coarse.json": "ea1000ae868690e0fa09ac66d415f383d3d78d07ba34e38cc6056cfd9f1126bc",
+    "education/data/vertical-force-command-v1/review/pulse-fine.json": "daf493944ea20e607c951c5677b0488b9486c6f55b72d7c8e6eea6880e836f9e",
+    "education/data/vertical-force-command-v1/review/pulse-DOP853.json": "ef5524968753a36e47ac5bb3c1d3f371e4dfa743c95b34d90b76104401f98870",
+    "education/data/vertical-force-command-v1/review/pulse-Radau.json": "cd85a05f71aac468a10446f615f4a229d1494f5074d8926aefe943590a6a340e",
+    "education/data/vertical-force-command-v1/review/lower-coarse.json": "ca05a74d03b490d86be07bbcfc101b716073136664f11459f7926f80099e9eb6",
+    "education/data/vertical-force-command-v1/review/lower-fine.json": "528c9ea07680dafa91d1b0796751ac3b3a94efc37daab864b03c663044f11c26",
+    "education/data/vertical-force-command-v1/review/lower-DOP853.json": "0447f8eaf1429d811cfeac6175e01fa821f355a42515738a59a55d34153714ae",
+    "education/data/vertical-force-command-v1/review/lower-Radau.json": "1497102150ed5c31c2483341d5da341cfe74930772c6d9d59a9e76154ca6217b",
+    "education/data/vertical-force-command-v1/review/release-coarse.json": "9c9bfd93f1829189759d55aac51f53ffb2aa9d1f55186675b9094033c4af1f9a",
+    "education/data/vertical-force-command-v1/review/release-fine.json": "392df066fd077ce1711160de251520a1817b79695360675b49b51bc7cef87d86",
+    "education/data/vertical-force-command-v1/review/release-DOP853.json": "b2fb9645ec7a2d0fae9cc242631aa41dfc1c70c632763a1022bd00f84180b8e6",
+    "education/data/vertical-force-command-v1/review/release-Radau.json": "a4638def9469962ec97659611c29ca30e71c6181c97ab079be3da36c31980a5f",
+    "education/data/vertical-force-command-v1/review/high-coarse.json": "65fa472d36820f67a2c0dc33091bf78a28bf260090a1b93d5dca409d735b2798",
+    "education/data/vertical-force-command-v1/review/high-fine.json": "070aaba065f7f3a54bb50da246fe61e678576da5342ce89bf33744b4724ea2d8",
+    "education/data/vertical-force-command-v1/review/high-DOP853.json": "cdf10a5334e24456717e462d746e6baef90c24b4971b12e624a7d31ce6bb56d7",
+    "education/data/vertical-force-command-v1/review/high-Radau.json": "7445f13f6fa1f98d47870ca555423bb34ce8681f2a452cbe2ce882c0bc7fb494",
+    "education/data/vertical-force-command-v1/review/mass-025-coarse.json": "8e79734de3eec48c8014491305569fb150a0ecbd92a98b1c2f504abbebc8fae6",
+    "education/data/vertical-force-command-v1/review/mass-025-fine.json": "9f7cd5e07ac3c7086324f157603afc9b479bbdaeccbfb2ca4015d4aacb7109a1",
+    "education/data/vertical-force-command-v1/review/mass-025-DOP853.json": "2d00a7f0d7331c19c9e61878ba1207b283e5402df1a3febd8878b1074a871023",
+    "education/data/vertical-force-command-v1/review/mass-025-Radau.json": "12756a4f2f0eea75d3b3e4840ebb682855fcbaa1ea5ee0127efd671295cacf48",
+    "education/data/vertical-force-command-v1/review/mass-05-coarse.json": "35da12ab9e3f8a1a4ae23ea919be80b2db6e5b5d8f98e9d0e559877132838013",
+    "education/data/vertical-force-command-v1/review/mass-05-fine.json": "222842f3260d273f127c17c97167ef3049095fa4604401a2422dff666e357b52",
+    "education/data/vertical-force-command-v1/review/mass-05-DOP853.json": "5ac5805212a081d15fc0aec8708da8dbe610f4c4ce5a65f8c0481093b6ae04cb",
+    "education/data/vertical-force-command-v1/review/mass-05-Radau.json": "f4733f422d679da8419a106390d76c981262910bfe725b315d64e9c9070a9a57",
+    "education/data/vertical-force-command-v1/review/mass-1-coarse.json": "97711d2f32f1e02414575b78d09939b4ac1f8dbaeac7a869f8836badda1a092a",
+    "education/data/vertical-force-command-v1/review/mass-1-fine.json": "fcb5d9817ce2c3f551d7490734c32773f91a55b9bdfd7e1da4f5e163f14795eb",
+    "education/data/vertical-force-command-v1/review/mass-1-DOP853.json": "b98e76ab564bcc960fc2f79af0c5d58818edc2a8aab68c079ec55431a40a6feb",
+    "education/data/vertical-force-command-v1/review/mass-1-Radau.json": "3113858af5ffd516a13c38dc1e41bc5e39cf7a46d9492eb99f47b7c71a15a555",
+    "education/data/vertical-force-command-v1/review/desc-fixed-plus-coarse.json": "4b5a175d107d0c804bd3f6fc0bdfb64c2740045c27c69b6177bfa09dff85ce36",
+    "education/data/vertical-force-command-v1/review/desc-fixed-plus-fine.json": "326349ad24de3e46590d8fd7cf5748c9da4645d744ebc35d082b9ae393efdfe5",
+    "education/data/vertical-force-command-v1/review/desc-fixed-plus-DOP853.json": "903a60d4e7c72468fbedbc18acf4fcdde211334ce33bc500691c70ef60182166",
+    "education/data/vertical-force-command-v1/review/desc-fixed-plus-Radau.json": "2bd255b1d1b194e47f1df18ce128cd60338725e8692f74513fce4e0f2fb70282",
+    "education/data/vertical-force-command-v1/review/desc-fixed-minus-coarse.json": "11055010fc1203ae94114c752e140e1f9ac461945f48c01e7f8064a8930bc3f4",
+    "education/data/vertical-force-command-v1/review/desc-fixed-minus-fine.json": "63b997d94c12ee01f13470038e8d6fe015a3a3da6397534a5c8a750341bb08db",
+    "education/data/vertical-force-command-v1/review/desc-fixed-minus-DOP853.json": "a0ccde1ba23b774ca35d5829da2b5937795fe7024065b4a9cac200f3d039e04a",
+    "education/data/vertical-force-command-v1/review/desc-fixed-minus-Radau.json": "506ace50600f45a5d2b57f6c512c4ed4d1853c488e00eddf1ff3fc04b733b60a",
+    "education/data/vertical-force-command-v1/review/desc-pi-plus-coarse.json": "f04a3c724cac2fbe5072b7c04a39e2267b151730d30a4509930909b684ba4a7f",
+    "education/data/vertical-force-command-v1/review/desc-pi-plus-fine.json": "9773354d8acf6c4be1137c9c7f93e9c09498a4d4789d66b2e70cbb836386b398",
+    "education/data/vertical-force-command-v1/review/desc-pi-plus-DOP853.json": "a217f293b933de919a7652626b86d77c1f89d022311d5babd5a9e126c50703b0",
+    "education/data/vertical-force-command-v1/review/desc-pi-plus-Radau.json": "ba7a08959797e9ccdf2305503ad72ee8c484dad93c2544216aa010207fd6d680",
+    "education/data/vertical-force-command-v1/review/desc-pi-minus-coarse.json": "668f185830d3abbfab5eec7cb38728cde05d68fa8e28ba31f091c31cd5a5d8ff",
+    "education/data/vertical-force-command-v1/review/desc-pi-minus-fine.json": "64c15255b53f2fdb581436ca99cb8108ea289a00b2c3613d7e575ae165a40513",
+    "education/data/vertical-force-command-v1/review/desc-pi-minus-DOP853.json": "e2837bc04a8412d95a03a4b968ab2a81b8af8e4fdcf7cfe02b48f0b052ab63a9",
+    "education/data/vertical-force-command-v1/review/desc-pi-minus-Radau.json": "fcce315b23173390e97d62a3bd6abf2ab197a26fb8924898f8635d9a4f7327e2"
+  },
+  "early_terminal_event_policy": "none declared; brake events are intermediate",
+  "time_metadata_precision_s": 1e-09,
+  "physics_gains_tolerances_events_changed": false
+}

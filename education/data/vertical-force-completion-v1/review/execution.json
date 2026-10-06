@@ -1,0 +1,19 @@
+{
+  "scope": "Completion checker and mode-aware presentation successor only",
+  "source_commit": "359182410f0ca964ab218798ecb41eafbf702dcd",
+  "source_tree": "eef1e79285134c4e4e378f277f37d6fcb0b8eb17",
+  "frozen_commit": "765ce8c4e9c969a81bb0c4261484ad59c5c0c906",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "node": "v24.19.0",
+  "chromium": "Chromium 151.0.7922.173 built on Debian GNU/Linux 13 (trixie)",
+  "commands": [
+    "OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 python3 education/tests/vertical_force_completion.py",
+    "OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 python3 education/tools/audit_vertical_force_completion.py",
+    "node education/tests/vertical_force_modes.js",
+    "PYTHONDONTWRITEBYTECODE=1 python3 education/tools/build_vertical_force_completion_page.py",
+    "PYTHONDONTWRITEBYTECODE=1 python3 education/tests/vertical_force_completion_browser.py"
+  ],
+  "physics_gains_tolerances_events_changed": false,
+  "antiwindup_continuation_extended": false
+}

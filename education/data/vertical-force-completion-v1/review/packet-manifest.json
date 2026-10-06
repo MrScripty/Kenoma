@@ -1,0 +1,132 @@
+{
+  "source_commit": "359182410f0ca964ab218798ecb41eafbf702dcd",
+  "source_tree": "eef1e79285134c4e4e378f277f37d6fcb0b8eb17",
+  "frozen_commit": "765ce8c4e9c969a81bb0c4261484ad59c5c0c906",
+  "scope": "Completion/coverage checker and bypass-mode presentation only",
+  "files": [
+    {
+      "path": "education/data/vertical-force-completion-v1/review/browser-fixed-150-desktop.png",
+      "bytes": 223092,
+      "sha256": "8066264621501f09061d91677fba35049aee13b13aee6e90e0271f98fabfa8d7"
+    },
+    {
+      "path": "education/data/vertical-force-completion-v1/review/browser-release-150-desktop.png",
+      "bytes": 219343,
+      "sha256": "1062a95deb743ae3db8621afd58665ebf3b0faa14bee75eda7137ef3c06e8fee"
+    },
+    {
+      "path": "education/data/vertical-force-completion-v1/review/browser-release-150-mobile.png",
+      "bytes": 220112,
+      "sha256": "39ad406e70b4115fc02560b872548bea1bbd751ab457b6f333244afaddfc6ce0"
+    },
+    {
+      "path": "education/data/vertical-force-completion-v1/review/completion-audit-run.log",
+      "bytes": 252,
+      "sha256": "95be0bf452f2417e5e67ff9517c9f5563f3d9630f0448ecee5b965387d5df784"
+    },
+    {
+      "path": "education/data/vertical-force-completion-v1/review/completion-negative-controls.json",
+      "bytes": 85218,
+      "sha256": "39e6892a0015beaf0f0a721795fc9e9e51c32a22e7b9b7ded81da29011b94447"
+    },
+    {
+      "path": "education/data/vertical-force-completion-v1/review/completion-test-run.log",
+      "bytes": 1048,
+      "sha256": "cec2b77b37916e34d930f1ff229ddfc9732ffdf07fea8b812758f234c734e2f0"
+    },
+    {
+      "path": "education/data/vertical-force-completion-v1/review/completion-validation.json",
+      "bytes": 112225,
+      "sha256": "d04798a422af62714309b7d02e0308576bbcb9224f190fdb454b6722af584b3d"
+    },
+    {
+      "path": "education/data/vertical-force-completion-v1/review/execution.json",
+      "bytes": 1073,
+      "sha256": "ac0e9ea0869d947f4d5315a45e6e7298716ff1c01551ca2c0090ceea24c2e42b"
+    },
+    {
+      "path": "education/data/vertical-force-completion-v1/review/mode-browser-check.json",
+      "bytes": 608,
+      "sha256": "3d86cbdb2d1998d2da4e7c537e17ff3a320a7c935922b14b670ea72dfd085e77"
+    },
+    {
+      "path": "education/data/vertical-force-completion-v1/review/mode-browser-run.log",
+      "bytes": 422,
+      "sha256": "c05c99c22a912e56daebad4d08e8475442b7572dda06d4b91ee37aaed0c3f4fa"
+    },
+    {
+      "path": "education/data/vertical-force-completion-v1/review/mode-model-check.json",
+      "bytes": 1163,
+      "sha256": "922a24e305c3e241c188e91f3ea6880a8bbcb869aecb3ca4d5f655f0f855873f"
+    },
+    {
+      "path": "education/data/vertical-force-completion-v1/review/mode-model-run.log",
+      "bytes": 321,
+      "sha256": "21adac16ba0c66c2e62a1864cf2e3ab7084b25f2a83ee6e2f456f06873242a3c"
+    },
+    {
+      "path": "education/data/vertical-force-completion-v1/review/negative-truncated-DOP853.json",
+      "bytes": 10390,
+      "sha256": "e0ee68bae6695ef097d24ae3af9b13c012b202a4e15f485dcc441166ecf1ccd5"
+    },
+    {
+      "path": "education/data/vertical-force-completion-v1/review/page-build-run.log",
+      "bytes": 40,
+      "sha256": "61c165fe447611979efbc247e197c19841edfbaa1d3e59c69dbb5d989458321f"
+    },
+    {
+      "path": "education/data/vertical-force-completion-v1/review/preservation-check.json",
+      "bytes": 329,
+      "sha256": "a947c58970f68dd3d2f0743a34ec2cb0ba03af846f0e5300e5c569dffc77b443"
+    },
+    {
+      "path": "education/data/vertical-force-completion-v1/review/vertical-force-lab.html",
+      "bytes": 35993,
+      "sha256": "003565f4a59ea1ebd36dd0a66ba4028b5295ce8b0d57c97715617fc70262789c"
+    },
+    {
+      "path": "education/research/mechanical-closure/vertical-force-completion-results.md",
+      "bytes": 6011,
+      "sha256": "fcd0562fa08ccf0b031daac79dfb7245f7d3fe6f9dd3c6f4a75d1c7d0ed912af"
+    },
+    {
+      "path": "education/tests/vertical_force_completion.py",
+      "bytes": 5204,
+      "sha256": "e53ca7faa3425aac7c8ea5f9e3ff881052cbdf80e14e153d0e4cea161b885b5b"
+    },
+    {
+      "path": "education/tests/vertical_force_completion_browser.py",
+      "bytes": 5146,
+      "sha256": "4277336eb4583ad1cbaf5d18c12e3d0a49d22a8a2605fe57906f74376533566d"
+    },
+    {
+      "path": "education/tests/vertical_force_modes.js",
+      "bytes": 3181,
+      "sha256": "f303e1cbc78e0ff49201d18d5c3ebe7c240691ea1e25c0efab5b78595fd30718"
+    },
+    {
+      "path": "education/tools/audit_vertical_force_completion.py",
+      "bytes": 7715,
+      "sha256": "03c30c451ba2644d8bccd040b4aaa4bc70403beeab3ccfbd46e64ce89d836a7f"
+    },
+    {
+      "path": "education/tools/build_vertical_force_completion_page.py",
+      "bytes": 926,
+      "sha256": "2234ce36fa322bba7fdb433c5de9836d9d3e741b91d00e9142a76010e712a985"
+    },
+    {
+      "path": "education/web/vertical-force-completion.template.html",
+      "bytes": 20459,
+      "sha256": "9cbf0616ed020b0e884356f52b54c47c77f39308342571929cd846fe318d3a11"
+    },
+    {
+      "path": "education/web/vertical-force-mode-aware.js",
+      "bytes": 842,
+      "sha256": "fc3a4a9b562000b5e9e70b69a8567c2b4b80bf925716c44e935ec40654ce1448"
+    }
+  ],
+  "excluded": [
+    "education/data/vertical-force-completion-v1/review/packet-manifest.json",
+    "education/data/vertical-force-completion-v1/review/packet-verification.log"
+  ]
+}

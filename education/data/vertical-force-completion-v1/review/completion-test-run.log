@@ -1,0 +1,14 @@
+test_brake_is_not_early_terminal (__main__.CompletionTests.test_brake_is_not_early_terminal) ... ok
+test_each_missing_endpoint_rejects_full (__main__.CompletionTests.test_each_missing_endpoint_rejects_full) ... ok
+test_each_required_method_failure_rejects_full (__main__.CompletionTests.test_each_required_method_failure_rejects_full) ... ok
+test_frozen_false_acceptance_truncated_replay (__main__.CompletionTests.test_frozen_false_acceptance_truncated_replay) ... ok
+test_initial_condition_mismatch (__main__.CompletionTests.test_initial_condition_mismatch) ... ok
+test_missing_accepted_time (__main__.CompletionTests.test_missing_accepted_time) ... ok
+test_missing_required_method (__main__.CompletionTests.test_missing_required_method) ... ok
+test_sparse_common_times (__main__.CompletionTests.test_sparse_common_times) ... ok
+test_unchanged_completed_and_stopped_cases (__main__.CompletionTests.test_unchanged_completed_and_stopped_cases) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.326s
+
+OK

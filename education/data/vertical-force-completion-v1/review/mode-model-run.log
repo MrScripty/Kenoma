@@ -1,0 +1,4 @@
+Release 150 N and 0 N are identical physical trajectories; bypass/floor metadata is explicit
+Fixed activation 150 N delegates identical physics and suppresses dormant PI claims
+Dormant raw PI clipping does not label release/fixed excitation as PI saturation
+Active PI retains its target, capacity and saturation metadata
