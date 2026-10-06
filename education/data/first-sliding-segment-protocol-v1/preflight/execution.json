@@ -1,0 +1,25 @@
+{
+  "source_freeze_commit": "03cc50f21d0a863da316f386bf3730669229fcdb",
+  "source_freeze_tree": "c36cbcede60c44861658c1a1a27ce6a01f3bf6fb",
+  "protocol_sha256": "b513a175cbdddebdee826e71f2fc5133807a3503f698ed46b6aa14e46413d0a6",
+  "command": "OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 python3 education/tools/first_sliding_segment_preflight.py",
+  "exit_code": 0,
+  "unit_test_command": "OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 python3 education/tests/first_sliding_segment_preflight.py",
+  "unit_tests_passed": 13,
+  "unit_test_exit_code": 0,
+  "static_roots": 12,
+  "source_kernel_incoming_evaluation_only": true,
+  "sliding_steps": 0,
+  "new_incoming_ODE_steps": 0,
+  "accepted_states": 0,
+  "execution_authorized": false,
+  "full_combined_external_raw_replay_complete": false,
+  "historical_activation_external_raw_replay_complete": false,
+  "report_only_failures_preserved": [
+    "static-entry-failed-v1.log",
+    "static-entry-failed-v2.log"
+  ],
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "node": "v24.19.0"
+}

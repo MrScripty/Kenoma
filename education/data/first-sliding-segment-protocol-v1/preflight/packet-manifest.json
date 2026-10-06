@@ -1,0 +1,89 @@
+{
+  "scope": "Held first short sliding proposal and static incoming-polynomial diagnosis only",
+  "incoming_commit": "c1c7ba308fee51e8ad74a7aadaeffa31b970151c",
+  "incoming_tree": "2d267b49e2fc5e9784134ac748c7938ebc89c54d",
+  "source_freeze_commit": "03cc50f21d0a863da316f386bf3730669229fcdb",
+  "source_freeze_tree": "c36cbcede60c44861658c1a1a27ce6a01f3bf6fb",
+  "excluded_self": "education/data/first-sliding-segment-protocol-v1/preflight/packet-manifest.json",
+  "files": {
+    "education/data/first-sliding-segment-protocol-v1/preflight/diagnostic-summary.json": {
+      "sha256": "f5f69340584911d70996ba6140b3d5c8acfa857637ce225d028a9968d6b6000c",
+      "bytes": 7143
+    },
+    "education/data/first-sliding-segment-protocol-v1/preflight/entry-custody.json": {
+      "sha256": "5f6901ce576894b2af72f30c99d815e488981c3b3220b39996e0931fb4d280ae",
+      "bytes": 246905
+    },
+    "education/data/first-sliding-segment-protocol-v1/preflight/execution.json": {
+      "sha256": "16d96d68243112c95fbdbca3859713cf42172aa757bdb539e6128562649d3306",
+      "bytes": 1036
+    },
+    "education/data/first-sliding-segment-protocol-v1/preflight/preservation.json": {
+      "sha256": "8fb4d7d9b8b4d9d8d3b800753eb1ea8a1c8e4c53265cd1b7fcad77fa15d50e8d",
+      "bytes": 170219
+    },
+    "education/data/first-sliding-segment-protocol-v1/preflight/static-entry-failed-v1.log": {
+      "sha256": "4c69c4403cc05072416a18a268751efed6331c4bb363dcd8165bd2082e79e259",
+      "bytes": 3319
+    },
+    "education/data/first-sliding-segment-protocol-v1/preflight/static-entry-failed-v2.log": {
+      "sha256": "06205e3c682a0c9ab20aaa1a37d3f1d30594c2c6f0d7c9c15741939ebb6276c5",
+      "bytes": 3319
+    },
+    "education/data/first-sliding-segment-protocol-v1/preflight/static-entry.log": {
+      "sha256": "9bd6ab20d2723c38e413caac35d530bf02a8ec2733f3b51b1e485231f648f7a2",
+      "bytes": 1613
+    },
+    "education/data/first-sliding-segment-protocol-v1/preflight/tests-v2.log": {
+      "sha256": "dbedbc89e741ac6247c60efefcbf671dcd92e2477be0cdba6791b535a9beacfb",
+      "bytes": 1497
+    },
+    "education/data/first-sliding-segment-protocol-v1/preflight/tests-v3.log": {
+      "sha256": "1867c05ed3bda39ce35ad35a5afe7daf62294f2d322092913c6f68a852ac78c3",
+      "bytes": 1658
+    },
+    "education/data/first-sliding-segment-protocol-v1/preflight/tests.log": {
+      "sha256": "f11ee9c70f95233f7f5e430272f129a409c64c443d772a3621cb5d2491a56732",
+      "bytes": 1390
+    },
+    "education/data/first-sliding-segment-protocol-v1/preflight/verification.log": {
+      "sha256": "a3a97a90ba23590273a917c9fa96f21f76eb63830826add894f7d1b513c1ab80",
+      "bytes": 288
+    },
+    "education/data/first-sliding-segment-protocol-v1/protocol-source-freeze-v1.json": {
+      "sha256": "27f5df3c73a165c169fba32d0c189da349684e98e87968a9e9feb5a6f6a588f0",
+      "bytes": 26203
+    },
+    "education/data/first-sliding-segment-protocol-v1/protocol-source-freeze-v2.json": {
+      "sha256": "ba0acde15bffe51d7e7aecbe9241f25ac45e4856ef2feb115e3efa280c066f9a",
+      "bytes": 26619
+    },
+    "education/data/first-sliding-segment-protocol-v1/protocol.json": {
+      "sha256": "b513a175cbdddebdee826e71f2fc5133807a3503f698ed46b6aa14e46413d0a6",
+      "bytes": 26663
+    },
+    "education/research/mechanical-closure/first-sliding-segment-preparation-results.md": {
+      "sha256": "7c390e9cf88c54a77679341e4640ff5998ffdbc335af94f2ffcb23e601637638",
+      "bytes": 4744
+    },
+    "education/research/mechanical-closure/first-sliding-segment-protocol.md": {
+      "sha256": "ed35604e5d27b39381e27221ee61c3251ce152c45e3b247e45974074af80adca",
+      "bytes": 10068
+    },
+    "education/tests/first_sliding_segment_preflight.py": {
+      "sha256": "4cd8e17b7cbd474f9db533e10779c121cd053efb1471e2e18f6fb8878886214e",
+      "bytes": 6027
+    },
+    "education/tools/first_sliding_segment_preflight.py": {
+      "sha256": "6a953bf978453d67eff722c22c80c4a1f43cd6d49b24f7e3b20393ba79100c9c",
+      "bytes": 11124
+    },
+    "education/tools/verify_first_sliding_preparation.py": {
+      "sha256": "86887e33ab4ab5ef4474db77c2f0ab7c23ef78e8751591170bf47e5d20dfe8de",
+      "bytes": 4525
+    }
+  },
+  "sliding_steps": 0,
+  "accepted_states": 0,
+  "execution_authorized": false
+}
