@@ -1,0 +1,58 @@
+mkdir -p failed for path /home/agent/.config/matplotlib: [Errno 30] Read-only file system: '/home/agent/.config/matplotlib'
+Matplotlib created a temporary cache directory at /tmp/matplotlib-h50vou51 because there was an issue with the default path (/home/agent/.config/matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+{
+  "result": "PASS_SOURCE_BOUND_CONTROLLED_MIXED_RENDER",
+  "rendererSHA256": "bfb76807cc814d61ec338fa75e71e0c5399fcece1179a8fe9a1a8892a63f0465",
+  "inputs": {
+    "data/anatomical-arm-v1/review/full-p2-p1/summary.json": "ffe972e97c62e6a83aec9ec62aaca0cccb77a93126d839d3b48c838ee24f2616",
+    "data/anatomical-arm-v1/review/full-p2-p1/verification.json": "a350b0d4dc5eac41f0a1bc1aeab8510da846727aadd39144375c8b4925c5c8e6",
+    "data/anatomical-arm-v1/review/full-p2-p1/fine-mesh.json": "368751eef3d9564a2ed59793048f75a1b2183fc4d3147fb634dbd89dc8217ef6",
+    "data/anatomical-arm-v1/review/full-p2-p1/coarse-1.00.json": "f242f7358ae01d59f1d7944976b547c96a4d6e8eb4a89ffe52f8a1564bc32150",
+    "data/anatomical-arm-v1/review/full-p2-p1/coarse-1.01.json": "2966921567df44badae58f49295698dcecc1b1bc79107868ae2784bf7b430eba",
+    "data/anatomical-arm-v1/review/full-p2-p1/coarse-1.25.json": "327b68f7658ef2aba0ee6515e63928f2a7b696041ff837f33ed820cec9dd1843",
+    "data/anatomical-arm-v1/review/full-p2-p1/fine-1.00.json": "90ffcd4192b76102cb2ca4ff4678b09a51812c5ab516414be20465c3c813db68",
+    "data/anatomical-arm-v1/review/full-p2-p1/fine-1.01.json": "f11868ba2beb4cba43be903783afd385d2706fb9d23c85045afb5a748219de62",
+    "data/anatomical-arm-v1/review/full-p2-p1/fine-1.25.json": "7dbb1e9456c43523d0d78a9aa37e72ea27c178f7a29f6a5045986e27bf1995ef"
+  },
+  "outputs": {
+    "data/anatomical-arm-v1/review/full-p2-p1/controlled-mixed-comparator.png": "b0ef3d76c6fda0d10c90632a2b3cf1addb948786585d1f6eefb583e848a3d379",
+    "data/anatomical-arm-v1/review/full-p2-p1/controlled-mixed-comparator.pdf": "27b34de267f5ee8af8e301b3ddbd761c28b216f116b2d1d46861ff5088d4fe37"
+  },
+  "dimensionsPixels": [
+    2080,
+    1440
+  ],
+  "limits": [
+    "Actual controlled mesh geometry; no skin, atlas, trajectory or continuum spectral convergence claim.",
+    "Reference-stretch stability explicitly unassessed."
+  ]
+}
