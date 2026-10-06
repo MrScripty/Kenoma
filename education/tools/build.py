@@ -16,7 +16,7 @@ OUT=ROOT/'dist'
 
 LABS={
  'force':{'title':'Laboratory 1 · Constant force','model':'Analytic planar motion; constant net force; no contact or anatomy.',
-  'description':'A position marker moves along x. The yellow arrow represents force and the violet arrow velocity. Coordinates are fitted to the view; values retain SI units.',
+  'description':'A position marker moves along x. Position scale is fixed over the 0–2 s trajectory for the selected mass and force; grid spacing is reported below. Yellow force and violet velocity arrows use separate scales. Values retain SI units.',
   'caption':'Reference at t = 1 s: m = 2 kg, F = 4 N, x = 1 m, v = 2 m/s. The interactive starts at t = 0 s. Original schematic geometry.',
   'controls':[('mass','Mass (kg)',0.5,5,0.5,2),('force','Net force x (N)',-8,8,0.5,4),('time','Elapsed time (s)',0,2,0.05,0)]},
  'torque':{'title':'Laboratory 2 · Force and lever arm','model':'Prescribed pose; massless rigid lever; point load; uniform illustrative gravity.',
@@ -40,7 +40,7 @@ LABS.update({
  'spatial':{'title':'Laboratory 7 · Muscle under skin and elbow contact','model':'Authored 3D edge/volume energy, separate skin membrane and fascia tethers; finite quasistatic sampled bone contact; one-way hinge → shape. Not FEM, patient anatomy or medical pressure.',
  'description':'Left: coral deformable volume, red active fibre spans, gold tendon span, mint separate skin membrane and yellow contact samples on a schematic articulated arm. Right: the identical bind volume and skin, posed once with linear blend skinning at the identical hinge angle. Bones and dumbbells have identical poses; geometry uses SI coordinates and a common viewing scale.',
  'caption':'Compression fixture: q = 90°, activation 0.6, 640-iteration cap. Mechanical minimum volume ratio 0.736; same-pose LBS minimum 0.171. Sampled penetration 0.0283 mm versus 9.75 mm. This original schematic is not registered to the real atlas.',
- 'controls':[('load','Dumbbell mass (kg)',0,10,.5,5),('excitation','Excitation u (0–1)',0,1,.05,.6),('angle','Initial / prescribed q (°)',0,100,1,30)]},
+ 'controls':[('load','Dumbbell mass (kg)',0,10,.5,5),('excitation','Excitation u (0–1)',0,1,.05,.6),('angle','Set flexion q (°)',0,100,1,30)]},
  'continuum':{'title':'Laboratory 6 · Matched spatial FEM and compliant solve','model':'Linear constant-strain tetrahedra; authored isotropic material; manufactured static load or one implicit step from rest. Small-strain model, no contact or muscle.',
  'description':'Left: converged discrete FEM reference. Right: a finite compliant strain solve for the identical implicit step, or analytic nodal samples in static mode. Both use the same mesh, camera and visible displacement magnification. Gray outlines show the bind block; the gold edge marks the x = 0 clamp. Orange arrows show six representative applied nodal loads on a common normalized length scale; distributed body and face loads are specified in the chapter.',
  'caption':'Authored 40 × 20 × 20 mm fixture, E = 100 kPa, ν = 0.25, n = 3, h = 0.0005 s, five compliant sweeps. Displacements in this illustration are magnified 50×; numerical errors and energies are unscaled SI quantities.',

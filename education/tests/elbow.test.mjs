@@ -33,3 +33,11 @@ test('prescribed hold reports external motor and domain stop invents no impulse'
  close(next.q,s.q);close(next.w,0);assert.ok(next.a>0);close(r.motorTorque+r.activeTorque+r.passiveTorque+r.gravityTorque,0);
  const edge={...s,q:0,w:-2},stopped=elbowStep(edge,ELBOW);assert.ok(stopped.halted);close(stopped.q,0);close(stopped.w,-2);close(stopped.time,0);
 });
+test('straight-path dead centre keeps zero angle despite developed tension, without a halt or nudge',()=>{
+ const p={...ELBOW,angle:0,excitation:1};let s=elbowInitial(p);
+ for(let i=0;i<200;i++)s=elbowStep(s,p);
+ const r=elbowResults(s,p);
+ assert.equal(s.q,0);assert.equal(s.w,0);assert.equal(s.halted,false);
+ assert.ok(s.a>.999&&r.tension>1100);assert.equal(r.momentArm,0);
+ assert.equal(r.activeTorque,0);assert.equal(r.passiveTorque,0);
+});

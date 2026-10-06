@@ -117,7 +117,8 @@ class Lab {
       const s=this.result;
       values=[['Time',`${fmt(this.params.time,2)} s`],['Acceleration',`${fmt(s.acceleration)} m/s²`],
         ['Position',`${fmt(s.position)} m`],['Velocity',`${fmt(s.velocity)} m/s`],
-        ['Work',`${fmt(s.work)} J`],['Kinetic energy',`${fmt(s.kinetic)} J`]];
+        ['Work',`${fmt(s.work)} J`],['Kinetic energy',`${fmt(s.kinetic)} J`],
+        ['Position scale',`${fmt(.5/(1.7/Math.max(4,Math.abs(forceState({...this.params,time:2}).position))))} m per grid interval; fixed over 0–2 s for this mass/force`]];
     } else if(this.kind==='torque') {
       this.result=leverState(this.params);const s=this.result;
       values=[['Load force y',`${fmt(s.force[1])} N`],['Torque z',`${fmt(s.torque)} N m`],
@@ -134,6 +135,7 @@ class Lab {
         ['Fiber velocity',`${fmt(r.fiberSpeed,4)} m/s`],['Moment arm',`${fmt(r.momentArm,4)} m`],['Active tension',`${fmt(r.active,2)} N`],['Passive tension',`${fmt(r.passive,2)} N`],
         ['Muscle moment',`${fmt(r.activeTorque+r.passiveTorque)} N m`],['Gravity moment',`${fmt(r.gravityTorque)} N m`],['External hold moment',`${fmt(r.motorTorque)} N m`],
         ['Active work',`${fmt(s.work,4)} J`],['Dissipated energy',`${fmt(s.dissipation,4)} J`],['Energy balance residual',`${fmt(residual,7)} J`],['Fiber motion',Math.abs(r.fiberSpeed)<1e-6?'Isometric':r.fiberSpeed<0?'Shortening':'Lengthening']];
+      if(Math.abs(r.momentArm)<1e-12)values.push(['Actuator leverage','Dead centre: zero moment arm at q = 0°. Activation and tension cannot turn this straight-path hinge; no angle is nudged.']);
       if(this.kind==='series')values.push(['Tendon length',`${fmt(r.tendon,5)} m`],['Tendon stretch',`${fmt((r.tendon-this.params.tendonLength)*1000,3)} mm`],
        ['Tendon energy',`${fmt(r.tendonEnergy,5)} J`],['Passive fiber energy',`${fmt(r.fiberEnergy,5)} J`],['Force equilibrium residual',`${fmt(r.forceResidual,8)} N`],
        ['Active fiber power',`${fmt(r.activePower,4)} W`],['Muscle power at hinge',`${fmt(r.hingeMusclePower,4)} W`],
@@ -221,10 +223,11 @@ class Lab {
     for(let i=-4;i<=4;i++){line([i/2,-1.8,-0.1],[i/2,1.8,-0.1],0x263d50);line([-2,i/2,-0.1],[2,i/2,-0.1],0x263d50);}
     arrow([-1.8,-1.5,0],[0.45,0,0],0xffffff);arrow([-1.8,-1.5,0],[0,0.45,0],0xffffff);
     if(this.kind==='force') {
-      const x=this.result.position,scale=1.7/Math.max(4,Math.abs(x));
+      // Fit the whole allowed trajectory, so changing time never rescales position.
+      const x=this.result.position,end=forceState({...this.params,time:2}),scale=1.7/Math.max(4,Math.abs(end.position));
       sphere([x*scale,0,0],0.13,0x70e0cc);line([0,0,0],[x*scale,0,0]);
       arrow([x*scale,0,0],[this.params.force/8*0.65,0,0],0xffc66d);
-      arrow([x*scale,0.28,0],[this.result.velocity/8*0.55,0,0],0xd7a3ff);
+      arrow([x*scale,0.28,0],[this.result.velocity/Math.max(8,Math.abs(end.velocity))*0.55,0,0],0xd7a3ff);
     } else if(this.kind==='torque') {
       const [x,y]=this.result.r.map(v=>v*5);
       rod([0,0,0],[x,y,0]);sphere([0,0,0],0.12,0xa2bdcf);sphere([x,y,0],0.15,0x70e0cc);
