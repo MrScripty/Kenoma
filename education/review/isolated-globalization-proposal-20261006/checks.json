@@ -1,0 +1,13 @@
+{
+  "sourceCommit": "24090b4c27e37c7142cc77f9eacc27a5818ab575",
+  "testCommand": "node --test education/tests/isolated_segment_geometry.test.mjs",
+  "tests": 3,
+  "pass": 3,
+  "fail": 0,
+  "durationMs": 89.178999,
+  "kernelSha256": "f14654a364424181850171b25a16700e44c0e6e0d65471dca34c37c6ff5eed97",
+  "testsSha256": "a60e52cd0ef4a0e59354a213489a81815283aed3e8fb1d01555cc0168abeb5a8",
+  "geometryReceiptSha256": "3eb1dd27b6d25c5be7937b2040575997f2cd03149257367bfc08e6114162bc95",
+  "constitutiveEvaluations": 0,
+  "newOptimizerTrials": 0
+}
