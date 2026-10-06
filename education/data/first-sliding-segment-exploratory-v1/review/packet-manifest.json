@@ -1,0 +1,199 @@
+{
+  "scope": "Authorized first sliding exploratory packet; nine of twelve endpoints, required matrix unqualified",
+  "baseline_commit": "b692d372bfcec354dfef377dc2245c3176c3e5cb",
+  "baseline_tree": "a840171b814bf85c7e83714c30a003c94ee7c68c",
+  "verified_anatomical_ancestor": "08f5f3b7fd4b987d3f049c13fdf4338bfaa2928e",
+  "source_freeze_commit": "30d3c9e6b80f6149df81fdae319b2da4fb39fd03",
+  "source_freeze_tree": "f6259e1edb51f7079bf655537c63d9970a545215",
+  "preflight_commit": "2aceda1bbeb5b09f224a2bda909c99ef0a82c244",
+  "raw_result_commit": "e156a5076fd39a6e122e3346611e50e4ea4cf54a",
+  "required_cells": 12,
+  "completed_cells": 9,
+  "required_matrix_passed": false,
+  "force_or_residence_sign_failure_at_rejected_points": false,
+  "constraint_failed_cells": [
+    "full-source/RK4-0.0002",
+    "full-source/DOP853",
+    "full-source/Radau"
+  ],
+  "physical_failure_retries": 0,
+  "excluded_self": "education/data/first-sliding-segment-exploratory-v1/review/packet-manifest.json",
+  "files": {
+    "education/data/first-sliding-segment-exploratory-v1/attempts/01-engine-source.py": {
+      "sha256": "4754b93a9c3d31433c649cec534d1850fe592113ec498421a1e524a7c3588ca4",
+      "bytes": 19829
+    },
+    "education/data/first-sliding-segment-exploratory-v1/attempts/01-ledger-Jacobian-tests.log": {
+      "sha256": "4a992bdefb602e927eed0785c69ee6b5924fe6a34bbd5980544eb5d45a8409c6",
+      "bytes": 3107
+    },
+    "education/data/first-sliding-segment-exploratory-v1/attempts/manifest.json": {
+      "sha256": "f6443ca524099e7e0cc9ceb2ed24b537bc44ef4c54d20d278a9cd6e91ffe9717",
+      "bytes": 514
+    },
+    "education/data/first-sliding-segment-exploratory-v1/preflight/entry-preflight.json": {
+      "sha256": "1b9c66d0743432c82a4af9ddf1d25ed21f77e342cc35927ba0c17ba1eaf02f11",
+      "bytes": 1299036
+    },
+    "education/data/first-sliding-segment-exploratory-v1/preflight/executable-preflight.log": {
+      "sha256": "6bf20755b5d3ea914eb27d711d214c7aa8d13656eba1b3aca32a47a1bd4c46db",
+      "bytes": 1417
+    },
+    "education/data/first-sliding-segment-exploratory-v1/preflight/source-freeze.json": {
+      "sha256": "2a500d95f29eaea2210dfebf37d62ce5034cdd852bf33c6c79f9df4c39f6d495",
+      "bytes": 280
+    },
+    "education/data/first-sliding-segment-exploratory-v1/preflight/tests.log": {
+      "sha256": "b5cfdf77768cbd699c28510b27b0c64b7ff39d04aa514d708398ba4318e88683",
+      "bytes": 1797
+    },
+    "education/data/first-sliding-segment-exploratory-v1/protocol.json": {
+      "sha256": "1e04be36edbe8fefee1c6f994de41111fd8c06be47ed3b84ae53069e30511d2c",
+      "bytes": 27842
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/audit.json": {
+      "sha256": "16dc97e6929d1b51542566e6541c3fa788f495ff19bbca52c1fcc84683086211",
+      "bytes": 429021
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/audit.log": {
+      "sha256": "9cbc5cd455559fba5ef8f44cd508d6ff85de4e03d78c5bd3f0177ad64b42eaf2",
+      "bytes": 692
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/baseline-preservation.json": {
+      "sha256": "8039622a681d16f1fd614b13f631907e411c862bc63ed0bd5593f32c7dc14b9c",
+      "bytes": 848
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/constraint-stop-diagnosis.json": {
+      "sha256": "6584d2d150962381be81d6d1777bbf134c7c60655afa517ad3d76680acfd4a3d",
+      "bytes": 7864
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/constraint-stop-diagnosis.log": {
+      "sha256": "00b11b1d8b124803b65cb411a42ff619e659d2aeedec30bb0b338c42dca2a397",
+      "bytes": 366
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/execution-and-render.json": {
+      "sha256": "1821ae2508be53b1e1bedbb8ada83d12f9ea5ed9066b4ede0abb9b9298dc49e1",
+      "bytes": 2531
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/mass-1-full-source-DOP853.json": {
+      "sha256": "e039a821d39ec86444ffaeaf18367e4e0f48ebc5600673033066b963cac27aec",
+      "bytes": 313623
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/mass-1-full-source-RK4-0.000025.json": {
+      "sha256": "de2f34b41629f2e13796974a79505ad6586d6817e7364a78feb2252622ef702a",
+      "bytes": 1852961
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/mass-1-full-source-RK4-0.00005.json": {
+      "sha256": "cd4d6dd77d362374e7d2069605b2f1f201bc1feb09fdb7aa12dc33b747fd8687",
+      "bytes": 1102344
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/mass-1-full-source-RK4-0.0001.json": {
+      "sha256": "344f65e9707d2f2989b37c4aab98c1b82c32c2d20171d3d44bca886a50bd883d",
+      "bytes": 707509
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/mass-1-full-source-RK4-0.0002.json": {
+      "sha256": "e3b516c448556c9ca2e49559b54fed1ee715617dd80053611f1994911c115150",
+      "bytes": 307295
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/mass-1-full-source-Radau.json": {
+      "sha256": "ec9a74ffe434ad5706c8f2117372eda35c2779c0518fc286f80120272b1cca06",
+      "bytes": 310837
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/mass-1-reduced-independent-DOP853.json": {
+      "sha256": "bc7a30cd1ddff7de271c0c93773bcc69af7c8c2281350a5c1e36e4ef3a1a72d0",
+      "bytes": 452785
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/mass-1-reduced-independent-RK4-0.000025.json": {
+      "sha256": "c20ac491829373b520fdccf9c1cc184fcad17efba81eda3cdb531f7116660ae5",
+      "bytes": 1813952
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/mass-1-reduced-independent-RK4-0.00005.json": {
+      "sha256": "a833bda739ba49d6b2b917ed09923f2d48219e6aeee59ee173dfa0ace711148c",
+      "bytes": 1081582
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/mass-1-reduced-independent-RK4-0.0001.json": {
+      "sha256": "e6452e2742396c529ccd23e859662447f44ff0ccbd1abd72aa4f1a51a78bc93b",
+      "bytes": 697749
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/mass-1-reduced-independent-RK4-0.0002.json": {
+      "sha256": "67600dcc5ad3c0fcc49e761a1032481319b448702efaa32871838b90deb3eff6",
+      "bytes": 504777
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/mass-1-reduced-independent-Radau.json": {
+      "sha256": "fc7ebc2528ceed608472997689c16ff4c92123dc5c790b70458fc4db19ecfb40",
+      "bytes": 482047
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/matched-witness-analysis.log": {
+      "sha256": "bc07a9477eeb59d9eee91b36a8872563e4c416653b14a21f78901c34c377f292",
+      "bytes": 1432
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/matched-witness-summary.json": {
+      "sha256": "2711d9c0ac473da8f1e64ca137638bb33cba0fb76b09df10d7ee5af305448209",
+      "bytes": 88372
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/matrix-execution.json": {
+      "sha256": "4a39f88ecb7215b2f1cc4930a307fe301b6e2fe9a761d1f1c3627d7a977a398a",
+      "bytes": 1961
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/matrix.log": {
+      "sha256": "839bff1fead7de639d333db65ea49e4d94b424d0cb4507dc4c2d6152e9ecd37d",
+      "bytes": 4428
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/packet-verification.log": {
+      "sha256": "5f164bd37d0535f78d6afa062bb468985673b5bdb0b020689b187c32ab6a850e",
+      "bytes": 388
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/runtime-entry-checks.json": {
+      "sha256": "21e4d5d321783d3a1f6abb8d53ea070ecfbf78a636758b3b751b560ba12ca8e0",
+      "bytes": 1283410
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/segment-outcome.png": {
+      "sha256": "417124dd6db0e0e7f74e00044a8788918da3b2383f75ffb11e953f913a0f00b6",
+      "bytes": 196433
+    },
+    "education/data/first-sliding-segment-exploratory-v1/review/segment-outcome.svg": {
+      "sha256": "26e72ff9cd60a1bc88fce097b3f635da83ccfee0729fea81a50057207d18f13a",
+      "bytes": 101581
+    },
+    "education/research/mechanical-closure/first-sliding-segment-exploratory-results.md": {
+      "sha256": "63ba3ac99162a7548384fa84ea559c69be30f2d60cffd05d1d0ad313619a294e",
+      "bytes": 10013
+    },
+    "education/research/mechanical-closure/first-sliding-segment-exploratory-source.md": {
+      "sha256": "81c7ce64f3907b1c019140961e503d285d68ebe2c7dd7fe01d79cc294520c07c",
+      "bytes": 5244
+    },
+    "education/tests/first_sliding_segment.py": {
+      "sha256": "17234b34eeb4cc9d26839f7d29cdaa55d2f86fa9e054039ea75d43add50f3d50",
+      "bytes": 5954
+    },
+    "education/tools/analyze_first_sliding_segment.py": {
+      "sha256": "42fac3c66eb0a0ec0e4840c054ba907f5e47f0b478a1f37c631a048ab55a0881",
+      "bytes": 7831
+    },
+    "education/tools/audit_first_sliding_segment.py": {
+      "sha256": "c53dbf1aa6065a5bdd184a46e61afc472594f5ae8fe2208f4330430b1d522ed2",
+      "bytes": 11879
+    },
+    "education/tools/diagnose_first_sliding_constraint_stops.py": {
+      "sha256": "95863bb95b965f291d6e250e634666156d94c2153ca05c71af26da499b765708",
+      "bytes": 3240
+    },
+    "education/tools/first_sliding_segment_engine.py": {
+      "sha256": "f8c44a99a4b905b5e5130cdf00009b468848156e0c58f98db9c08d9ff21184ce",
+      "bytes": 20539
+    },
+    "education/tools/preflight_first_sliding_segment.py": {
+      "sha256": "1c23fd50d638ed643ef11a2fa614ec1745fad28be066261a4587fa74a8f9beb4",
+      "bytes": 8486
+    },
+    "education/tools/run_first_sliding_segment.py": {
+      "sha256": "66f7560d15aaffedb99924a5f89e8957b52202edb29442b1617d8f14d927d6be",
+      "bytes": 2480
+    },
+    "education/tools/verify_first_sliding_segment_packet.py": {
+      "sha256": "0eea5eef76af20780c9278a775d12ea8c6a130f45158347b51468f8951a25266",
+      "bytes": 7652
+    }
+  }
+}

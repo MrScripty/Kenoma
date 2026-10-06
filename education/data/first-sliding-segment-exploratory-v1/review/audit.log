@@ -1,0 +1,13 @@
+AUDIT completed 9 of12; accepted-prefix checks True all66complete comparisons False overall False
+full-source/RK4-0.0002 0.26203073810264343 constraint-drift []
+full-source/RK4-0.0001 0.263 endpoint []
+full-source/RK4-0.00005 0.263 endpoint []
+full-source/RK4-0.000025 0.263 endpoint []
+full-source/DOP853 0.26203073413288025 constraint-drift []
+full-source/Radau 0.26203073463297993 constraint-drift []
+reduced-independent/RK4-0.0002 0.263 endpoint []
+reduced-independent/RK4-0.0001 0.263 endpoint []
+reduced-independent/RK4-0.00005 0.263 endpoint []
+reduced-independent/RK4-0.000025 0.263 endpoint []
+reduced-independent/DOP853 0.263 endpoint []
+reduced-independent/Radau 0.263 endpoint []

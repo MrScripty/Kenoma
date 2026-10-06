@@ -1,0 +1,59 @@
+{
+  "source_freeze": {
+    "commit": "30d3c9e6b80f6149df81fdae319b2da4fb39fd03",
+    "tree": "f6259e1edb51f7079bf655537c63d9970a545215",
+    "protocol_sha256": "1e04be36edbe8fefee1c6f994de41111fd8c06be47ed3b84ae53069e30511d2c",
+    "frozen_before_executable_preflight": true,
+    "frozen_before_matrix": true
+  },
+  "preflight_commit": "2aceda1bbeb5b09f224a2bda909c99ef0a82c244",
+  "preflight_tree": "ddf2e7e1d9f77f0ca50422f9598b36c68a527d06",
+  "raw_result_commit": "e156a5076fd39a6e122e3346611e50e4ea4cf54a",
+  "raw_result_tree": "4a54ed2d9d16ef80df34756b798d7951d73b49cf",
+  "commands": [
+    "OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 python3 education/tests/first_sliding_segment.py",
+    "OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 python3 education/tools/preflight_first_sliding_segment.py",
+    "OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 python3 education/tools/run_first_sliding_segment.py",
+    "OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 python3 education/tools/audit_first_sliding_segment.py",
+    "OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 python3 education/tools/diagnose_first_sliding_constraint_stops.py",
+    "OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 MPLCONFIGDIR=/tmp/kenoma-first-slide-mpl XDG_CACHE_HOME=/tmp/kenoma-first-slide-cache python3 education/tools/analyze_first_sliding_segment.py"
+  ],
+  "command_exit_codes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "test_count": 14,
+  "preflight_cells_passed": 12,
+  "preflight_pairs_passed": 66,
+  "completed_cells": 9,
+  "required_cells": 12,
+  "required_matrix_passed": false,
+  "failure_classification": "Full-coordinate constraint gate on unaccepted Euler predictors; force/sign domain valid",
+  "physical_failure_retries": 0,
+  "root_max_iterations": 32,
+  "velocity_root_max_iterations": 64,
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "matplotlib": "3.10.8",
+  "node": "v24.19.0",
+  "render_png_dimensions": [
+    2380,
+    1360
+  ],
+  "render_png_visually_reviewed": true,
+  "render_review_notes": "Twelve readable rows, accepted endpoints and unaccepted failure markers separated, original gate visible, explicit unqualified title; no trajectory point implied by rejected markers",
+  "full_combined_external_raw_replay_complete": false,
+  "historical_activation_external_raw_replay_complete": false,
+  "hidden_root_theorem": false,
+  "book_or_main_changes": false,
+  "constraint_failed_cells": [
+    "full-source/RK4-0.0002",
+    "full-source/DOP853",
+    "full-source/Radau"
+  ]
+}

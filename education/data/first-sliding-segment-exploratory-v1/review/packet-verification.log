@@ -1,0 +1,3 @@
+PASS evidence integrity:152 inputs; frozen6 sources;12 preflight/runtime entries;66 absolute incoming pairs;630 replayed RHS probes;2086 baseline blobs; branch preservation
+EXPECTED matrix failure:9/12 endpoints;36/66 complete post-witness pairs;3 exact-rollback constraint stops; no gate changes or failure retries
+Maximum directly stored primary force residual N: 3.552713678800501e-15
