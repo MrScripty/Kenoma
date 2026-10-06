@@ -45,13 +45,20 @@ def inspect():
         all_text=''.join(''.join(page.get_text().split()) for page in pdf)
         for receipt in receipts:
             assert receipt['source_sha256'] in all_text
-            for claim in receipt['claims']:assert claim['theorem'] in all_text
+            for claim in receipt['claims']:
+                assert claim['theorem'] in all_text
+                assert ''.join(claim['assumptions'].split()) in all_text
+                assert ''.join(claim['limitations'].split()) in all_text
         source_names={Path(r['source']).stem for r in receipts}
+        source_started=False
         for index,page in enumerate(pdf):
             text=page.get_text();flat=''.join(text.split())
             for link in page.get_links():
                 uri=link.get('uri','');assert '127.0.0.1' not in uri and 'localhost' not in uri,uri
-            if any('Checkedsourceappendix:'+name in flat for name in source_names):
+            source_started=source_started or any('Checkedsourceappendix:'+name in flat for name in source_names)
+            # These Real appendices are the final book families. Capture their
+            # continuation pages as well as the pages bearing their headings.
+            if source_started:
                 path=out/f'pdf-source-page-{index+1}.png'
                 page.get_pixmap(matrix=fitz.Matrix(1.5,1.5),alpha=False).save(path);captures.append(path)
                 pages.append({'page':index+1,'image':path.name})

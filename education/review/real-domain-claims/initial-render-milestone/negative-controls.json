@@ -1,0 +1,22 @@
+{
+  "scope": "Actual qualified rendering receipt corrupted temporarily and restored; no change to source or delivered evidence",
+  "render_receipt_sha256": "ded7ae9ab443a0ea2ab51f9ddade66d56781487b1b2834e7afbd0c0e91603e49",
+  "controls": [
+    {
+      "case": "changed screenshot",
+      "result": "REJECTED"
+    },
+    {
+      "case": "false mobile overflow",
+      "result": "REJECTED"
+    },
+    {
+      "case": "missing Real claim coverage",
+      "result": "REJECTED"
+    },
+    {
+      "case": "stale PDF binding",
+      "result": "REJECTED"
+    }
+  ]
+}

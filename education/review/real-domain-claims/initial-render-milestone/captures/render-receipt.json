@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "result": "PASS_REAL_PROOF_RENDER_CAPTURE",
+  "source_revision": "11b5dbd47ddb5364eae594bf1aae18050add5c65",
+  "inspector_sha256": "6afe1a9f1e20e23dd48e7dd2321ee2c3b5908b0c6cdc1a3fa6dd77c40204a2cb",
+  "html_sha256": "ea43f49c7581b6cb665578458cbb5228ffee907361bf8f8f9b922f53f05ed909",
+  "app_sha256": "41a8ba9c98cdc4f93a34b3ba690e6a25158901305418118ce4340229fbe8d2f9",
+  "pdf_sha256": "162db7dca17a9878ac8cb0d773aa1b7d5b9870c3c916ac36d9e14d697619a384",
+  "manifest_sha256": "4bd6403fbc4002b347415fc7d4347921e504e84d369a88311890b45a81a0c6a4",
+  "browser": "151.0.7922.173",
+  "views": [
+    {
+      "name": "desktop",
+      "real_cards": 8,
+      "horizontal_overflow": false
+    },
+    {
+      "name": "mobile",
+      "real_cards": 8,
+      "horizontal_overflow": false
+    }
+  ],
+  "page_errors": [],
+  "real_claims": [
+    "material-real-confined-volume",
+    "material-real-bulk-sign",
+    "material-real-bulk-zero",
+    "material-real-separated-wall",
+    "material-real-lateral-work",
+    "force-real-pair",
+    "torque-real-linearity",
+    "virtual-real-power"
+  ],
+  "pdf_pages": 72,
+  "source_pages": [
+    {
+      "page": 70,
+      "image": "pdf-source-page-70.png"
+    },
+    {
+      "page": 71,
+      "image": "pdf-source-page-71.png"
+    },
+    {
+      "page": 72,
+      "image": "pdf-source-page-72.png"
+    }
+  ],
+  "outputs": {
+    "desktop-material-real-confined-volume.png": "65ddc413662592f155d0602fa84dcaa412c6974acf55979cb4ec8c349d0d6e4e",
+    "desktop-material-real-bulk-sign.png": "1a8b6dbc0094cbc09bc183bd1afee271cfc45a18010fd51501d405c4409ef618",
+    "desktop-material-real-bulk-zero.png": "fc46374c11d7f8c032983e800cfa6b06f403455f0668fb86dbaa420e74f3cf9e",
+    "desktop-material-real-separated-wall.png": "c726d45e8595f5957414bb15e96de2593ff5249edff186757743f5dfcad9ea7b",
+    "desktop-material-real-lateral-work.png": "a571a15538864589036cb6654fa466347d0a505aec55b39f2bfff995ef81b359",
+    "desktop-force-real-pair.png": "b18322ac1a8ae92fb727a4fd54bbd368408160a2cf2d7c83e6bfc0516b148c50",
+    "desktop-torque-real-linearity.png": "a240feeb2c967eab0bd927edc5fe7b8b5c9ceaab5d4bb193c40a0c4942a41e05",
+    "desktop-virtual-real-power.png": "76da639342d73e2a30a42aaddd0be821b98bc4e111ee81c6de4800b0c017d77b",
+    "mobile-material-real-confined-volume.png": "94b4ecedb03f79fbb054096a6f20deb87640506fbcc1ca3733af29423bf62ca4",
+    "mobile-material-real-bulk-sign.png": "94b7944c0acbbabd6e2c33f81671b23060e860aa8237ad65880fcb190752cfd7",
+    "mobile-material-real-bulk-zero.png": "20ccf2dfed91d3e7e6ef93b69c6b0820ce5ac79e3bffd285ba08d8abdaac3d0f",
+    "mobile-material-real-separated-wall.png": "0455f5a89eadcda15c37fcb1bcd29edc863a5fdf68c74d351456244a570275f2",
+    "mobile-material-real-lateral-work.png": "13611b8815e531ae888921bf06d2ab4eebdb20727321d2495b959a94c1d3aa1c",
+    "mobile-force-real-pair.png": "1609ffec7480035f49de5cd34a1338f32c4322b0484e6bbc8abd712c0cbc01ef",
+    "mobile-torque-real-linearity.png": "9c2f175cdba16018298cbd24a0387b6cc35d16b38d25646c7e4a10670ddc3473",
+    "mobile-virtual-real-power.png": "d2a744b751c8f6563a3af42b59f4f8356290f327be3aad361a050c179327e3de",
+    "pdf-source-page-70.png": "3e2f059120af242af6797a721e8948da69511d9a3b409f6aadba5b5469c93166",
+    "pdf-source-page-71.png": "7430ee242256080f1488e43990e56097a582f513c8cbcb463549adb4e09e5cc2",
+    "pdf-source-page-72.png": "f53ec6d081dddf048994ad953f98a27915553193cb12a37e569ac339c8987bfc"
+  },
+  "scope": "Actual generated desktop/mobile card captures, source-bound metadata and complete PDF theorem/hash text with durable links. Appearance review is separate; no numerical refinement or biological certificate."
+}
