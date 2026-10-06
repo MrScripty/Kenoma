@@ -17,7 +17,7 @@ expectedMargin=M*c+M*tau*km+c*c*tau+c*tau*tau*(kr+ks+km)
 assert sp.simplify(margin-expectedMargin)==0
 K=sp.symbols('K_total',positive=True)
 positiveMargin=sp.expand(margin.subs(kr,K-ks))
-assert positiveMargin==M*c+M*tau*km+c*c*tau+c*tau*tau*(K+km)
+assert sp.simplify(positiveMargin-(M*c+M*tau*km+c*c*tau+c*tau*tau*(K+km)))==0
 # Marginal undamped/no-memory case factors into one relaxation pole and a neutral pair.
 assert sp.factor(polynomial.subs({c:0,km:0}))==(s*tau+1)*(M*s**2+kr+ks)
 receipt=dict(result='PASS_PARAMETER_FREE_LINEAR_MEMORY_STABILITY_IDENTITY',

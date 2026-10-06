@@ -1,0 +1,9 @@
+{
+  "result": "REJECTED_SYMBOLIC_STRUCTURAL_EQUALITY_CHECK",
+  "sourceCommit": "0a4ed848fb03282105dde0bbc4ef8777f3553270",
+  "sourceFile": "education/tools/active_memory_stability.py",
+  "sourceSHA256": "4213351df48dd779aa7c179f6f754cb9bb65d371ef8bc5e873a7893d91c0a9b9",
+  "failureLogSHA256": "ac865e2d6c4aa692014cdd0c134ac5bfd1d54370d1261764e006a7d653d79cef",
+  "reason": "Expanded positive-total-stiffness margin compared by structural == against factored expression; mathematical identity not yet verified by this assertion.",
+  "physicalAdvancement": false
+}
