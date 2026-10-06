@@ -1,0 +1,37 @@
+{
+  "result": "PASS_SOURCE_ORIENTATION_VECTOR_RECHECK_AND_DAMAGE_CONTROLS",
+  "qualifiedDiagnosticSource": "401c306e1564be5dc82427193c159d1452f81787",
+  "verificationSourceSha256": "4939c53fabf56da8ad523dcad271a0ce46e7edb978bc7e6c7117eb7d6552ef9a",
+  "resultsSha256": "0c7a864aa463e78479ffb67e44ac3c7768768955fc449d7f7a7f7acafb2cf1dd",
+  "orientationHashes": {
+    "FJ1486-orientation.json": "668d65cd94e4120d9b3fab319a7d7b88772683c7336ad3fa5208fc3a5c148564",
+    "FJ1512-orientation.json": "b56f0c0990560e1ac6ec57abcbf6fe9288520d585af04d9240fe86dc3a15c029",
+    "FJ1478-orientation.json": "77692062441fbfdbc9dc625d45c16d6a9d4a8c8f543a69b88c64b678d037c9d5"
+  },
+  "checkedSourceFiles": 19,
+  "checkedOrientationElements": 756,
+  "checkedFrozenRules": 9,
+  "fullNodalGatesPassed": 0,
+  "fullNodalGatesFailed": 9,
+  "reducedGatesPassed": 3,
+  "reducedGatesFailed": 6,
+  "damageChecks": [
+    {
+      "damage": "false equilibrium pass",
+      "rejected": true
+    },
+    {
+      "damage": "changed physical gate",
+      "rejected": true
+    },
+    {
+      "damage": "altered omitted force",
+      "rejected": true
+    },
+    {
+      "damage": "wrong qualified source",
+      "rejected": true
+    }
+  ],
+  "scope": "Fresh byte/qualified-commit checks and exact stored-orientation replay; independent arithmetic on saved free vectors/modal columns. No new optimizer, equilibrium solve or physiological claim."
+}

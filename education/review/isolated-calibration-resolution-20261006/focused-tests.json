@@ -1,0 +1,20 @@
+{
+  "result": "PASS_25_FOCUSED_TESTS",
+  "command": "node --test tests/isolated_calibration_diagnostic.test.mjs tests/anatomical_compression_quadrature.test.mjs tests/anatomical_integration_refinement.test.mjs tests/anatomical_bernstein_orientation.test.mjs tests/anatomical-material.test.mjs tests/anatomical-element.test.mjs",
+  "exitCode": 0,
+  "tests": 25,
+  "passed": 25,
+  "failed": 0,
+  "skipped": 0,
+  "durationMs": 1586.309348,
+  "qualifiedDiagnosticSourceCommit": "401c306e1564be5dc82427193c159d1452f81787",
+  "testSourceHashes": {
+    "tests/isolated_calibration_diagnostic.test.mjs": "0c4794368f934557016a67096fbc89f92edc80a5ffd062298ee47d5c11d70733",
+    "tests/anatomical_compression_quadrature.test.mjs": "7bb45094f73deb02d3e887c545d7ca2f916f2cbb889622f48540e34f182d685b",
+    "tests/anatomical_integration_refinement.test.mjs": "5b4f978df34ec6445f16dab93096c945f72ca7df5757c8434a9c2534c6624ea8",
+    "tests/anatomical_bernstein_orientation.test.mjs": "8dea008dcbb653859fd2bce76c1c581c4e68c5929a72d10e715b9862b1311045",
+    "tests/anatomical-material.test.mjs": "78497312c83af858439d45fcd3449354676170fb9a7236d9f416af0f6edf917c",
+    "tests/anatomical-element.test.mjs": "9c52ae93dfb37159713f7ee2af4ea0b1e49996968529bcdf2cb339cf82cd7b84"
+  },
+  "scope": "Focused execution completed before source commit; committed source bytes are unchanged. All nine full nodal physical gates still fail."
+}
