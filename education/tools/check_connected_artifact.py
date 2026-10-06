@@ -12,6 +12,7 @@ def check(out=None):
     child=out/'connected-passive';p=json.loads((child/'axisymmetric-preview-manifest.json').read_text())
     assert all(sha(ROOT/n)==h for n,h in p['input_sha256'].items())
     assert all(sha(child/n)==h for n,h in p['output_sha256'].items())
+    assert all(sha(child/n)==h for n,h in p['accepted_builder_output_sha256'].items() if n!='index.html'),'Accepted builder output changed outside the presentation link'
     for name,status in [('connected-numerical-qualification.json','PASS_BOUNDED_ENGINEERING_CHECKS'),('connected-end-face-qualification.json','PASS'),('connected-material-oracle.json','PASS')]:assert json.loads((out/name).read_text())['status']==status
     for name,datafile in [('connected-numerical-qualification.json','connected-experiment.json'),('connected-end-face-qualification.json','connected-end-face-experiment.json')]:
         receipt=json.loads((out/name).read_text());assert receipt['experiment_sha256' if name=='connected-numerical-qualification.json' else 'data_sha256']==sha(out/datafile)

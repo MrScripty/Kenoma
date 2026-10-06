@@ -21,6 +21,16 @@ def prepare(out):
     run(sys.executable,'tools/qualify_axisymmetric_end_faces.py',str(out/'connected-end-face-experiment.json'),str(out/'connected-material-oracle.json'),str(out/'connected-experiment.json'),str(out/'connected-end-face-qualification.json'))
     proof=ROOT/'.tools/connected-book-proofs';check(proof)
     preview=out/'connected-passive';shutil.rmtree(preview,ignore_errors=True);build(preview,proof)
+    # Preserve the accepted builder and stylesheet bytes. Add book-only layout
+    # rules after the canonical stylesheet, with complete input/output bindings.
+    manifest_path=preview/'axisymmetric-preview-manifest.json';manifest=json.loads(manifest_path.read_text())
+    manifest['accepted_builder_output_sha256']=dict(manifest['output_sha256'])
+    style='web/connected-book-integration.css';shutil.copy2(ROOT/style,preview/'assets/connected-book-integration.css')
+    page=preview/'index.html';page.write_text(page.read_text().replace('</head>','<link rel="stylesheet" href="assets/connected-book-integration.css"></head>'))
+    manifest['input_sha256'].update({name:digest(ROOT/name) for name in [style,'tools/connected_book.py']})
+    manifest['integration_scope']='Book presentation: wrap long proof metadata and allow control grid labels to shrink. Accepted law, solver, controls, source stylesheet and proof bytes unchanged.'
+    manifest['output_sha256']={str(p.relative_to(preview)):digest(p) for p in sorted(preview.rglob('*')) if p.is_file() and p!=manifest_path}
+    manifest_path.write_text(json.dumps(manifest,indent=2)+'\n')
     run('node','tools/connected-specimen-figure.mjs',str(out/'connected-experiment.json'),str(out/'assets/connected-specimen.svg'),str(out/'connected-figure.json'))
 def block(web):
     image='![Solved connected taper meridians at zero and ±10% imposed end displacement, at a fixed SI scale. Gray is the reference boundary; teal is sampled from the actual Q2 solution.](assets/connected-specimen.svg)'

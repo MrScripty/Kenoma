@@ -21,8 +21,15 @@ def run():
    for epsilon in ['-0.1','0.1','0']:
     edit(frame,lab,'epsilon',epsilon);state=snap(lab);cases.append({'epsilon':float(epsilon),'state':verify_state(state,oracle,experiment),'scene':verify_scene(frame,state)})
    edit(frame,lab,'epsilon','-0.1');lab.locator('[data-setting=cap]').select_option('1');ready(frame);expect(lab).to_have_attribute('data-converged','false');lab.locator('[data-action=reset]').click();ready(frame);assert snap(lab)['configuration']=={'epsilon':0,'ratio':1.5,'axialCells':16,'radialCells':8,'cap':25}
+   frame.locator('details').evaluate_all('(rows)=>rows.forEach(e=>e.open=true)')
    for width in [320,360,390,414,768,1280]:
-    page.set_viewport_size({'width':width,'height':844});assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),width;assert frame.evaluate('document.documentElement.scrollWidth<=innerWidth'),('frame',width)
+    page.set_viewport_size({'width':width,'height':844})
+    layout=lambda f:f.evaluate("()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,rootOverflow:[document.documentElement,document.body].map(e=>getComputedStyle(e).overflowX)})")
+    parent_layout=layout(page);child_layout=layout(frame)
+    if parent_layout['scrollWidth']>parent_layout['width'] or child_layout['scrollWidth']>child_layout['width']:
+     (out/('connected-viewport-failure-'+str(width)+'.json')).write_text(json.dumps({'parent':parent_layout,'child':child_layout,'state':snap(lab),'browser':browser.version},indent=2)+'\n');page.screenshot(path=str(out/('connected-viewport-failure-'+str(width)+'.png')))
+    assert parent_layout['scrollWidth']<=parent_layout['width'],('parent',width,parent_layout);assert child_layout['scrollWidth']<=child_layout['width'],('frame',width,child_layout)
+    assert all(v not in ['hidden','clip'] for v in parent_layout['rootOverflow'])
     assert frame.evaluate("()=>![document.documentElement,document.body].some(e=>['hidden','clip'].includes(getComputedStyle(e).overflowX))")
    element.screenshot(path=str(out/'connected-in-book-controls.png'));version=browser.version;browser.close()
  finally:server.shutdown();server.server_close()
