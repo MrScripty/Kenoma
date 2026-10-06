@@ -56,7 +56,7 @@ def validate_build(out,manifest):
     if 'serial-real-proof-status.json' in manifest.get('proof_families',[]):check_serial_artifact(out)
     check_print_readability(out)
     if 'mixed-volume-proof-status.json' in manifest.get('proof_families',[]):check_projection_artifact(out)
-    check_connected_artifact(out)
+    if 'axisymmetric-proof-status.json' in manifest['proof_families']:check_connected_artifact(out)
     require(digest(local('proofs/mathlib-lake-manifest.json'))==lock['manifest_sha256'],'Wrong bundled dependency manifest')
     html=digest(local('index.html'));app=digest(local('assets/app.js'));manifest_hash=digest(local('build-manifest.json'))
     for name in ['browser-check.json','mobile-startup-check.json']:
