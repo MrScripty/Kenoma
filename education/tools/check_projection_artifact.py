@@ -25,6 +25,14 @@ def check(out=None):
     for name, value in lab['evidence_sha256'].items():
         assert digest(out/'projection-qa'/name) == value
     with fitz.open(out/'projection-qa/fixed-field-reference.pdf') as doc:
+        glyphs = [s['size'] for pg in doc for b in pg.get_text('dict')['blocks'] for line in b.get('lines',[]) for s in line['spans'] if s['text'].strip()]
+        assert min(glyphs)>=10 and min(glyphs)==lab['review_print_qualification']['minimum_actual_pt']
+        from check_print_readability import PDFText, svg_label_measurements, portable_links
+        labels=[]
+        measured=PDFText(doc)
+        for index in range(3): labels.extend(svg_label_measurements(measured,out/'projection-qa'/f'review-chart-{index}.svg'))
+        assert labels==lab['review_print_qualification']['diagram_labels']
+        assert portable_links(doc)==lab['portable_pdf_links']
         for page in doc:
             for link in page.get_links():
                 uri = urlparse(link.get('uri',''))

@@ -22,26 +22,14 @@ def check():
     for name in ['pressure-projection-lab.html', 'pressure-projection-proof-guide.md', 'pressure-projection-lab-check.py']:
         assert digest(ROOT/'standalone'/name) == digest(out/'standalone'/name)
     subprocess.run([sys.executable, str(out/'standalone/pressure-projection-lab-check.py'), '--output', str(out/'projection-qa')], check=True)
-    # The unchanged standalone checker prints from loopback. Make the new
-    # review PDF portable, retaining the unchanged lab and checker identities.
+    # Retain accepted source bytes, but re-render the new review PDF at actual
+    # readable print size and with permanent source links. The standalone
+    # checkpoint's original PDF was never a portable print qualification.
     pdf = out/'projection-qa/fixed-field-reference.pdf'
     revision = json.loads((out/'build-manifest.json').read_text())['git_revision']
-    rewrites = []
-    with fitz.open(pdf) as doc:
-        for page in doc:
-            for link in page.get_links():
-                uri = link.get('uri', '')
-                parsed = urlparse(uri)
-                if parsed.hostname in {'127.0.0.1', 'localhost', '::1'}:
-                    target = f'https://github.com/MrScripty/Kenoma/blob/{revision}/education{parsed.path}'
-                    link['uri'] = target; page.update_link(link)
-                    rewrites.append({'from':parsed.path,'to':target})
-        if rewrites: doc.saveIncr()
+    original_pdf_hash = digest(pdf)
     receipt_path = out/'projection-qa/receipt.json'
     receipt = json.loads(receipt_path.read_text())
-    receipt['evidence_sha256'][pdf.name] = digest(pdf)
-    receipt['portable_pdf_links'] = {'annotation_only_rewrites':rewrites, 'source_commit':revision}
-    receipt_path.write_text(json.dumps(receipt,indent=2)+'\n')
     server, url = serve()
     errors = []
     try:
@@ -49,6 +37,37 @@ def check():
             browser = p.chromium.launch(headless=True, executable_path=os.environ.get('CHROMIUM_EXECUTABLE') or shutil.which('chromium'))
             page = browser.new_page(viewport={'width':1280,'height':900})
             page.on('pageerror', lambda error: errors.append(str(error)))
+            page.goto(url+'/standalone/pressure-projection-lab.html',wait_until='networkidle')
+            page.emulate_media(media='print'); page.set_viewport_size({'width':658,'height':1000})
+            page.add_style_tag(content='''@page{size:A4;margin:18mm}
+                @media print{*{font-size:14px!important}main{width:100%;padding:0}
+                .hero,.charts,.details-grid,.definition,.footer{display:block}
+                .chart svg{width:310px!important;max-width:100%!important;margin:auto}
+                .chart{margin:12px 0;break-inside:avoid}.panel{break-inside:avoid}
+                .controls{display:none!important}svg text{font-size:14px!important}}
+            ''')
+            page.evaluate('document.fonts.ready')
+            assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1'), 'Review print overflow'
+            graphics = page.locator('svg[role=img]').evaluate_all('(nodes)=>nodes.map(n=>n.outerHTML)')
+            page.evaluate('''revision=>{for(const a of document.querySelectorAll('a[href]')){
+                const url=new URL(a.href);if(url.origin===location.origin)
+                a.href=`https://github.com/MrScripty/Kenoma/blob/${revision}/education${url.pathname}`;
+            }}''',revision)
+            page.pdf(path=str(pdf),format='A4',print_background=True,prefer_css_page_size=True,tagged=True)
+            from check_print_readability import PDFText, svg_label_measurements, portable_links
+            with fitz.open(pdf) as doc:
+                glyphs = [s['size'] for pg in doc for b in pg.get_text('dict')['blocks'] for line in b.get('lines',[]) for s in line['spans'] if s['text'].strip()]
+                assert glyphs and min(glyphs)>=10, 'Review PDF actual-point readability failed'
+                measured = PDFText(doc); labels = []
+                for index,svg in enumerate(graphics):
+                    target=out/'projection-qa'/f'review-chart-{index}.svg';target.write_text(svg)
+                    labels.extend(svg_label_measurements(measured,target))
+                    receipt['evidence_sha256'][target.name]=digest(target)
+                receipt['portable_pdf_links'] = portable_links(doc)
+                receipt['review_print_qualification'] = {'minimum_actual_pt':min(glyphs),'diagram_labels':labels,'source_commit':revision,'original_unqualified_pdf_sha256':original_pdf_hash,'pages':len(doc)}
+            receipt['evidence_sha256'][pdf.name] = digest(pdf)
+            receipt_path.write_text(json.dumps(receipt,indent=2)+'\n')
+            page.emulate_media(media='screen');page.set_viewport_size({'width':1280,'height':900})
             page.goto(url+'/index.html#fixed-field-pressure-projection', wait_until='networkidle')
             frame = page.frame_locator('iframe[title="Fixed-field weighted pressure projection controls"]')
             expect(frame.locator('#full')).to_have_text('8')
