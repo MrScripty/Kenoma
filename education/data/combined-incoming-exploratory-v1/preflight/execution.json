@@ -1,0 +1,17 @@
+{
+  "scope": "Before matrix: 16 executable tests, including two real initializations/one short accepted step each; structural runtime schedule tests have stubbed acceptance.",
+  "test_command": "OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 python3 education/tests/combined_incoming_exploratory.py",
+  "tests_passed": 16,
+  "real_short_steps": 2,
+  "combined_matrix_prefixes_executed": 0,
+  "python_version": "3.12.14",
+  "source_sha256": {
+    "education/tools/run_combined_incoming_exploratory.py": "e0ba0e4624cdcf7c3553aa6f90b878c0f253450288d69b1958fdb2d57793625c",
+    "education/tools/audit_combined_incoming_exploratory.py": "9aa48e955947010579b68c135d8371d317ed3ceb55a51c0082c5aa8761c21ec4",
+    "education/tools/execute_combined_incoming_matrix.py": "06abb17a5f065f15a78d9518b13eb0ecded5e108951808b1a8b2f81ecb6b1a85",
+    "education/tests/combined_incoming_exploratory.py": "1d8fdc6864eb36508d3299ac0b6948eb803a27112f16498ad76b708bd4131dda",
+    "education/research/mechanical-closure/combined-incoming-exploratory-protocol.md": "3df0aa93873553ebccbcf6ce7ae06eaf58e511983dbf05d915ba10db565ae5f0"
+  },
+  "protocol_sha256": "10f6ff423473b884e7b3e455e4e6050fdd61d93d493d32c8597dd08fc4121f2f",
+  "historical_review_limitation": "Full independent raw replay of activation-only evidence remains incomplete because owner download was canceled. Original source semantics and compact receipts have independent scoped acceptance. Owner removed only the extra prerequisite for exploratory execution, with every numerical/physical acceptance condition unchanged. No transfer retry/reroute; no full qualification."
+}

@@ -1,0 +1,20 @@
+test_actual_recrossing_stops (__main__.Checks.test_actual_recrossing_stops) ... ok
+test_ambiguous_post_controller_activation_stops (__main__.Checks.test_ambiguous_post_controller_activation_stops) ... ok
+test_attraction_held_without_state_mutation (__main__.Checks.test_attraction_held_without_state_mutation) ... ok
+test_both_real_initializations_and_one_step (__main__.Checks.test_both_real_initializations_and_one_step) ... ok
+test_bound_and_tangency_stop (__main__.Checks.test_bound_and_tangency_stop) ... ok
+test_controller_cut_preserves_pending_activation_end (__main__.Checks.test_controller_cut_preserves_pending_activation_end) ... ok
+test_controller_without_remainder_keeps_reviewed_fresh_step (__main__.Checks.test_controller_without_remainder_keeps_reviewed_fresh_step) ... ok
+test_earliest_activation_discards_later_failure (__main__.Checks.test_earliest_activation_discards_later_failure) ... ok
+test_earliest_uncertified_root_stops (__main__.Checks.test_earliest_uncertified_root_stops) ... ok
+test_extra_ordinary_event_stops (__main__.Checks.test_extra_ordinary_event_stops) ... ok
+test_guard_arming_excludes_residual_sized_fake_recross (__main__.Checks.test_guard_arming_excludes_residual_sized_fake_recross) ... ok
+test_overlap_and_touch_stop (__main__.Checks.test_overlap_and_touch_stop) ... ok
+test_physical_failure_preserves_all_eleven_state_and_time (__main__.Checks.test_physical_failure_preserves_all_eleven_state_and_time) ... ok
+test_sliding_prohibited (__main__.Checks.test_sliding_prohibited) ... ok
+test_wrong_side_acceptance_is_transactional (__main__.Checks.test_wrong_side_acceptance_is_transactional) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.248s
+
+OK
