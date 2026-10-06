@@ -1,0 +1,12 @@
+{
+  "result": "PASS_3_PROJECTED_OPERATOR_TESTS",
+  "qualifiedSourceCommit": "0f0b33f68085159c7598e6b9f312c705979c763a",
+  "command": "node --test tests/isolated_projected_response.test.mjs",
+  "exitCode": 0,
+  "tests": 3,
+  "passed": 3,
+  "failed": 0,
+  "durationMs": 355.620802,
+  "testSha256": "d7938ca2f74bd2b938ba15d928057c9ce322e04856d02a7e0b34079069296c2b",
+  "scope": "Executed before source commit; committed test bytes unchanged; no nonlinear solves."
+}
