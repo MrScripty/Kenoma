@@ -1,0 +1,1602 @@
+{
+  "result": "PASS_INDEPENDENT_TWO_STATE_KINETIC_AUDIT",
+  "sourceHashes": {
+    "tools/independent_two_state_audit.py": "bdcc5b9676954a2cbf0043736497be88b5f89d4cafe9fc28107879201185e098",
+    "data/anatomical-arm-v1/review/two-state-kinetics/summary.json": "8c69d36ae52259e0850ce62ba62215231d290bec9c9937ef240a32016b11a473",
+    "data/anatomical-arm-v1/review/two-state-kinetics/matched-states.npz": "be9d98f45a4ecfabbf2c5197499ef41644a0eb691a938fc9bced217178cf68cd",
+    "data/anatomical-arm-v1/review/two-state-kinetics/execute.log": "0b0abc0acabb39ad780e6a649af13864f70f193deecdc45bd17a58b97f0b0095",
+    "tools/two_state_kinetics.py": "0c39c7d73275c9f23006baf942b33ac5cac8f450631b45b3da3be600044fb3f9",
+    "research/mechanical-closure/two-state-benchmark-protocol.md": "7fa41ab629b8cebf97aa69f2ed7618a6d266778032726bace9fcf5ccd4aac27c",
+    "research/mechanical-closure/source-rendering-evidence.md": "05eb4d0b66aee383c4824cc0a33ece96dd8c16e782f96d6ec85b2750b95513ec",
+    "research/mechanical-closure/two-state-source-convention-audit.md": "409b6209d1fc03165bc2c03457e827c13f151e547a5da81ce990d4a56df51f51"
+  },
+  "archivedCaseCount": 144,
+  "independentlyConstructedGridCount": 6,
+  "independentMethod": "Reversible symmetric eigensystem; exponential and rational BE powers; erfc cell integrals; direct implicit solve",
+  "maxima": {
+    "cellRateAbsoluteDifference": 8.659739592076221e-15,
+    "generatorColumnSum": 3.552713678800501e-14,
+    "detailedBalanceAbsoluteResidual": 1.1102230246251565e-16,
+    "generatorSimilarityDifference": 1.1368683772161603e-13,
+    "equilibriumStateDifference": 1.1449174941446927e-16,
+    "exponentialStateDifference": 9.303668946358812e-14,
+    "exponentialForceDifference": 3.728405624893555e-13,
+    "spectralBEMatchedStateDifference": 9.409140133698202e-14,
+    "spectralBEMatchedForceDifference": 3.759297440245256e-13,
+    "archivedMatchedMassError": 3.774758283725532e-14,
+    "terminalResidualL1PerSecond": 9.351952803094785e-13,
+    "terminalForceDifference": 5.46229728115577e-14,
+    "recordedScalarDifference": 3.730349362740526e-13,
+    "boundaryIdentityError": 8.647596527744383e-16,
+    "directImplicitSolveDifference": 1.6653345369377348e-16
+  },
+  "archivedMatchedMinimumPopulation": 1.3854190888644813e-26,
+  "independentSpectralMinimumPopulation": 2.972953886857814e-26,
+  "largestGeneratorEigenvalue": 2.7232507150698015e-13,
+  "independentContinuousQuadrature": {
+    "I": 1.992220371316941,
+    "xMoment": -0.02065074070957796,
+    "errors": [
+      9.41427234179512e-13,
+      6.381831500234569e-13
+    ],
+    "baselineForceAtN1": 1.3177970777196684
+  },
+  "temporalRatiosRange": [
+    0.5046001248552824,
+    0.5095384066812612
+  ],
+  "spatialRatiosRange": [
+    0.2500092476101338,
+    0.2500369921488726
+  ],
+  "maximumMatchedExtentForceDifference": 7.394085344003543e-14,
+  "transientSpatialDiagnostics": [
+    {
+      "radius": 2.4,
+      "pCa": 4.5,
+      "delta": 0.001,
+      "coarseToHalfMatchedIncrementDifferences": [
+        1.8985564387397446e-08,
+        2.2626889785348225e-06,
+        3.198231439649188e-06,
+        2.669414434829633e-06,
+        7.159779621038925e-07,
+        6.126456904898982e-08,
+        3.0508323353023206e-11,
+        -1.9983763359064393e-15
+      ],
+      "halfToFineMatchedIncrementDifferences": [
+        4.7464175753358125e-09,
+        1.0995053790564915e-06,
+        1.5437710990892322e-06,
+        1.2712711075024313e-06,
+        3.2993053974576337e-07,
+        2.7535923736236172e-08,
+        1.3503917068980213e-11,
+        2.886543596309301e-15
+      ],
+      "maximumMatchedIncrementDifferences": [
+        3.198231439649188e-06,
+        1.5437710990892322e-06
+      ],
+      "halvingDifferenceRatio": 0.48269524211123616,
+      "finestDifferenceNormalizedByDeltaCapacity": 0.0007718952478308339,
+      "interpretation": "Diagnostic exact-generator transient strain-bin refinement; no additional acceptance gate"
+    },
+    {
+      "radius": 2.4,
+      "pCa": 4.5,
+      "delta": -0.001,
+      "coarseToHalfMatchedIncrementDifferences": [
+        -1.898556460943926e-08,
+        1.999502706073413e-06,
+        2.7362869015086045e-06,
+        2.1361197940519216e-06,
+        4.784872242350934e-07,
+        3.492099076424839e-08,
+        1.5416363222442674e-11,
+        -1.7763345208057238e-15
+      ],
+      "halfToFineMatchedIncrementDifferences": [
+        -4.746416687168552e-09,
+        1.0337352405228803e-06,
+        1.4283173476319947e-06,
+        1.1379493651941814e-06,
+        2.705144084121133e-07,
+        2.0939310540510457e-08,
+        9.720102497848921e-12,
+        2.6645017812085857e-15
+      ],
+      "maximumMatchedIncrementDifferences": [
+        2.7362869015086045e-06,
+        1.4283173476319947e-06
+      ],
+      "halvingDifferenceRatio": 0.5219910773407995,
+      "finestDifferenceNormalizedByDeltaCapacity": 0.0007141676467981029,
+      "interpretation": "Diagnostic exact-generator transient strain-bin refinement; no additional acceptance gate"
+    },
+    {
+      "radius": 2.4,
+      "pCa": 4.5,
+      "delta": 0.0005,
+      "coarseToHalfMatchedIncrementDifferences": [
+        9.492782082677815e-09,
+        1.131344489600474e-06,
+        1.5991157191584685e-06,
+        1.334707216859712e-06,
+        3.5798898116296713e-07,
+        3.063228419143219e-08,
+        1.525338453015875e-11,
+        -2.2204181510071547e-15
+      ],
+      "halfToFineMatchedIncrementDifferences": [
+        2.373208676646999e-09,
+        5.497526889731412e-07,
+        7.718855492115533e-07,
+        6.356355543063202e-07,
+        1.6496526953981896e-07,
+        1.376796075790901e-08,
+        6.752513639027858e-12,
+        2.6645017812085857e-15
+      ],
+      "maximumMatchedIncrementDifferences": [
+        1.5991157191584685e-06,
+        7.718855492115533e-07
+      ],
+      "halvingDifferenceRatio": 0.4826952421040277,
+      "finestDifferenceNormalizedByDeltaCapacity": 0.0007718952474977669,
+      "interpretation": "Diagnostic exact-generator transient strain-bin refinement; no additional acceptance gate"
+    },
+    {
+      "radius": 2.4,
+      "pCa": 4.5,
+      "delta": -0.0005,
+      "coarseToHalfMatchedIncrementDifferences": [
+        -9.492782082677815e-09,
+        9.997513528146647e-07,
+        1.3681434506432812e-06,
+        1.0680598969149398e-06,
+        2.392436121175467e-07,
+        1.7460495049061473e-08,
+        7.707737527591135e-12,
+        -1.9983763359064393e-15
+      ],
+      "halfToFineMatchedIncrementDifferences": [
+        -2.3732082325633683e-09,
+        5.168676202614402e-07,
+        7.141586738159973e-07,
+        5.689746823750489e-07,
+        1.3525720309584757e-07,
+        1.0469654604129783e-08,
+        4.860717374369762e-12,
+        2.6645017812085857e-15
+      ],
+      "maximumMatchedIncrementDifferences": [
+        1.3681434506432812e-06,
+        7.141586738159973e-07
+      ],
+      "halvingDifferenceRatio": 0.5219910773831576,
+      "finestDifferenceNormalizedByDeltaCapacity": 0.0007141676467981029,
+      "interpretation": "Diagnostic exact-generator transient strain-bin refinement; no additional acceptance gate"
+    },
+    {
+      "radius": 2.4,
+      "pCa": 6.1,
+      "delta": 0.001,
+      "coarseToHalfMatchedIncrementDifferences": [
+        8.84752834971567e-09,
+        1.0544434958944235e-06,
+        1.4904188652948993e-06,
+        1.2439830287569842e-06,
+        3.336553598422784e-07,
+        2.855011315090822e-08,
+        1.4217289002340093e-11,
+        -9.312702495728559e-16
+      ],
+      "halfToFineMatchedIncrementDifferences": [
+        2.2118944267597242e-09,
+        5.123842943707554e-07,
+        7.194180950306752e-07,
+        5.924294339792354e-07,
+        1.5375206890216563e-07,
+        1.2832110803810263e-08,
+        6.293006974252487e-12,
+        1.345168138271903e-15
+      ],
+      "maximumMatchedIncrementDifferences": [
+        1.4904188652948993e-06,
+        7.194180950306752e-07
+      ],
+      "halvingDifferenceRatio": 0.48269524211123616,
+      "finestDifferenceNormalizedByDeltaCapacity": 0.0007718952478308337,
+      "interpretation": "Diagnostic exact-generator transient strain-bin refinement; no additional acceptance gate"
+    },
+    {
+      "radius": 2.4,
+      "pCa": 6.1,
+      "delta": -0.001,
+      "coarseToHalfMatchedIncrementDifferences": [
+        -8.847528453190143e-09,
+        9.317951532197125e-07,
+        1.2751464976265404e-06,
+        9.954605536408768e-07,
+        2.229814818782466e-07,
+        1.627365136387182e-08,
+        7.18423260309371e-12,
+        -8.277957773980942e-16
+      ],
+      "halfToFineMatchedIncrementDifferences": [
+        -2.211894012861836e-09,
+        4.81734525242632e-07,
+        6.656150940634251e-07,
+        5.30299708960962e-07,
+        1.2606335258705587e-07,
+        9.758000333855871e-09,
+        4.529698493922371e-12,
+        1.2416936660971412e-15
+      ],
+      "maximumMatchedIncrementDifferences": [
+        1.2751464976265404e-06,
+        6.656150940634251e-07
+      ],
+      "halvingDifferenceRatio": 0.5219910773407995,
+      "finestDifferenceNormalizedByDeltaCapacity": 0.0007141676467981029,
+      "interpretation": "Diagnostic exact-generator transient strain-bin refinement; no additional acceptance gate"
+    },
+    {
+      "radius": 2.4,
+      "pCa": 6.1,
+      "delta": 0.0005,
+      "coarseToHalfMatchedIncrementDifferences": [
+        4.4237641231205994e-09,
+        5.272217481024235e-07,
+        7.452094323370262e-07,
+        6.219915141198059e-07,
+        1.668276799728764e-07,
+        1.4275056420242402e-08,
+        7.108282340517435e-12,
+        -1.0347447217476177e-15
+      ],
+      "halfToFineMatchedIncrementDifferences": [
+        1.105947161642626e-09,
+        2.561921469266915e-07,
+        3.597090473601259e-07,
+        2.962147172483039e-07,
+        7.687603429587111e-08,
+        6.416054884532771e-09,
+        3.1467621733066804e-12,
+        1.2416936660971412e-15
+      ],
+      "maximumMatchedIncrementDifferences": [
+        7.452094323370262e-07,
+        3.597090473601259e-07
+      ],
+      "halvingDifferenceRatio": 0.4826952421040277,
+      "finestDifferenceNormalizedByDeltaCapacity": 0.0007718952474977669,
+      "interpretation": "Diagnostic exact-generator transient strain-bin refinement; no additional acceptance gate"
+    },
+    {
+      "radius": 2.4,
+      "pCa": 6.1,
+      "delta": -0.0005,
+      "coarseToHalfMatchedIncrementDifferences": [
+        -4.4237641231205994e-09,
+        4.658975765063818e-07,
+        6.37573248761533e-07,
+        4.977302767687011e-07,
+        1.114907409391233e-07,
+        8.136825526724203e-09,
+        3.5919093526025055e-12,
+        -9.312702495728559e-16
+      ],
+      "halfToFineMatchedIncrementDifferences": [
+        -1.1059469546936819e-09,
+        2.40867262621316e-07,
+        3.3280754703171257e-07,
+        2.651498543770065e-07,
+        6.303167577615558e-08,
+        4.878999856504519e-09,
+        2.26515967037771e-12,
+        1.2416936660971412e-15
+      ],
+      "maximumMatchedIncrementDifferences": [
+        6.37573248761533e-07,
+        3.3280754703171257e-07
+      ],
+      "halvingDifferenceRatio": 0.5219910773831576,
+      "finestDifferenceNormalizedByDeltaCapacity": 0.0007141676467981029,
+      "interpretation": "Diagnostic exact-generator transient strain-bin refinement; no additional acceptance gate"
+    },
+    {
+      "radius": 3.0,
+      "pCa": 4.5,
+      "delta": 0.001,
+      "coarseToHalfMatchedIncrementDifferences": [
+        1.8985564387397446e-08,
+        2.2626889783127805e-06,
+        3.1982314400932717e-06,
+        2.669414436383926e-06,
+        7.159779641022688e-07,
+        6.126457215757523e-08,
+        3.0505658851242e-11,
+        -5.329003562417171e-15
+      ],
+      "halfToFineMatchedIncrementDifferences": [
+        4.746417131252182e-09,
+        1.0995053788344497e-06,
+        1.5437710990892322e-06,
+        1.2712711077244731e-06,
+        3.299305390796379e-07,
+        2.7535922181943465e-08,
+        1.3511688532508739e-11,
+        1.6431094317452946e-14
+      ],
+      "maximumMatchedIncrementDifferences": [
+        3.1982314400932717e-06,
+        1.5437710990892322e-06
+      ],
+      "halvingDifferenceRatio": 0.48269524204421255,
+      "finestDifferenceNormalizedByDeltaCapacity": 0.0007718952478308339,
+      "interpretation": "Diagnostic exact-generator transient strain-bin refinement; no additional acceptance gate"
+    },
+    {
+      "radius": 3.0,
+      "pCa": 4.5,
+      "delta": -0.001,
+      "coarseToHalfMatchedIncrementDifferences": [
+        -1.898556460943926e-08,
+        1.9995027058513715e-06,
+        2.7362869026188136e-06,
+        2.136119795828256e-06,
+        4.784872260114279e-07,
+        3.492099365079199e-08,
+        1.5413920762476567e-11,
+        -5.1069617473164555e-15
+      ],
+      "halfToFineMatchedIncrementDifferences": [
+        -4.746416909210367e-09,
+        1.0337352409669638e-06,
+        1.428317347187911e-06,
+        1.1379493649721396e-06,
+        2.7051440796802965e-07,
+        2.0939309208259566e-08,
+        9.727207835932143e-12,
+        1.620905250235223e-14
+      ],
+      "maximumMatchedIncrementDifferences": [
+        2.7362869026188136e-06,
+        1.428317347187911e-06
+      ],
+      "halvingDifferenceRatio": 0.5219910769667149,
+      "finestDifferenceNormalizedByDeltaCapacity": 0.0007141676465760582,
+      "interpretation": "Diagnostic exact-generator transient strain-bin refinement; no additional acceptance gate"
+    },
+    {
+      "radius": 3.0,
+      "pCa": 4.5,
+      "delta": 0.0005,
+      "coarseToHalfMatchedIncrementDifferences": [
+        9.492781638594185e-09,
+        1.131344489600474e-06,
+        1.599115719824594e-06,
+        1.3347072186360464e-06,
+        3.579889831613435e-07,
+        3.0632287522059415e-08,
+        1.5251608195637944e-11,
+        -5.773087192618602e-15
+      ],
+      "halfToFineMatchedIncrementDifferences": [
+        2.373208676646999e-09,
+        5.497526891951831e-07,
+        7.71885549655637e-07,
+        6.356355540842783e-07,
+        1.6496526909573533e-07,
+        1.376795942565812e-08,
+        6.75939693529598e-12,
+        1.6431094317452946e-14
+      ],
+      "maximumMatchedIncrementDifferences": [
+        1.599115719824594e-06,
+        7.71885549655637e-07
+      ],
+      "halvingDifferenceRatio": 0.4826952421806626,
+      "finestDifferenceNormalizedByDeltaCapacity": 0.0007718952479418562,
+      "interpretation": "Diagnostic exact-generator transient strain-bin refinement; no additional acceptance gate"
+    },
+    {
+      "radius": 3.0,
+      "pCa": 4.5,
+      "delta": -0.0005,
+      "coarseToHalfMatchedIncrementDifferences": [
+        -9.492782082677815e-09,
+        9.99751352370581e-07,
+        1.3681434517534905e-06,
+        1.0680598984692325e-06,
+        2.392436138938812e-07,
+        1.74604983796887e-08,
+        7.70573915125523e-12,
+        -5.329003562417171e-15
+      ],
+      "halfToFineMatchedIncrementDifferences": [
+        -2.373208676646999e-09,
+        5.168676204834819e-07,
+        7.141586738159973e-07,
+        5.689746825970907e-07,
+        1.352572022076803e-07,
+        1.0469653049837078e-08,
+        4.8673786288227835e-12,
+        1.620905250235223e-14
+      ],
+      "maximumMatchedIncrementDifferences": [
+        1.3681434517534905e-06,
+        7.141586738159973e-07
+      ],
+      "halvingDifferenceRatio": 0.5219910769595768,
+      "finestDifferenceNormalizedByDeltaCapacity": 0.0007141676467981029,
+      "interpretation": "Diagnostic exact-generator transient strain-bin refinement; no additional acceptance gate"
+    },
+    {
+      "radius": 3.0,
+      "pCa": 6.1,
+      "delta": 0.001,
+      "coarseToHalfMatchedIncrementDifferences": [
+        8.84752834971567e-09,
+        1.0544434957909491e-06,
+        1.4904188655018483e-06,
+        1.2439830294813053e-06,
+        3.3365536077354864e-07,
+        2.8550114599550832e-08,
+        1.4216047308673995e-11,
+        -2.4833873321942825e-15
+      ],
+      "halfToFineMatchedIncrementDifferences": [
+        2.21189421981078e-09,
+        5.123842942672809e-07,
+        7.194180950306752e-07,
+        5.924294340827099e-07,
+        1.5375206859174221e-07,
+        1.2832110079488959e-08,
+        6.296628580778604e-12,
+        7.65711094093237e-15
+      ],
+      "maximumMatchedIncrementDifferences": [
+        1.4904188655018483e-06,
+        7.194180950306752e-07
+      ],
+      "halvingDifferenceRatio": 0.4826952420442125,
+      "finestDifferenceNormalizedByDeltaCapacity": 0.0007718952478308337,
+      "interpretation": "Diagnostic exact-generator transient strain-bin refinement; no additional acceptance gate"
+    },
+    {
+      "radius": 3.0,
+      "pCa": 6.1,
+      "delta": -0.001,
+      "coarseToHalfMatchedIncrementDifferences": [
+        -8.847528453190143e-09,
+        9.31795153116238e-07,
+        1.2751464981439128e-06,
+        9.954605544686725e-07,
+        2.2298148270604239e-07,
+        1.627365270903996e-08,
+        7.183094383899787e-12,
+        -2.3799128600195207e-15
+      ],
+      "halfToFineMatchedIncrementDifferences": [
+        -2.211894116336308e-09,
+        4.817345254495809e-07,
+        6.656150938564761e-07,
+        5.302997088574875e-07,
+        1.2606335238010692e-07,
+        9.757999713009038e-09,
+        4.533009677031964e-12,
+        7.553636468757609e-15
+      ],
+      "maximumMatchedIncrementDifferences": [
+        1.2751464981439128e-06,
+        6.656150938564761e-07
+      ],
+      "halvingDifferenceRatio": 0.5219910769667149,
+      "finestDifferenceNormalizedByDeltaCapacity": 0.0007141676465760582,
+      "interpretation": "Diagnostic exact-generator transient strain-bin refinement; no additional acceptance gate"
+    },
+    {
+      "radius": 3.0,
+      "pCa": 6.1,
+      "delta": 0.0005,
+      "coarseToHalfMatchedIncrementDifferences": [
+        4.423763916171654e-09,
+        5.272217481024235e-07,
+        7.452094326474496e-07,
+        6.219915149476017e-07,
+        1.6682768090414668e-07,
+        1.4275057972359484e-08,
+        7.107454544740037e-12,
+        -2.690336276543806e-15
+      ],
+      "halfToFineMatchedIncrementDifferences": [
+        1.105947161642626e-09,
+        2.56192147030166e-07,
+        3.5970904756707487e-07,
+        2.962147171448294e-07,
+        7.687603408892216e-08,
+        6.4160542636859374e-09,
+        3.1499698819440977e-12,
+        7.65711094093237e-15
+      ],
+      "maximumMatchedIncrementDifferences": [
+        7.452094326474496e-07,
+        3.5970904756707487e-07
+      ],
+      "halvingDifferenceRatio": 0.48269524218066256,
+      "finestDifferenceNormalizedByDeltaCapacity": 0.0007718952479418562,
+      "interpretation": "Diagnostic exact-generator transient strain-bin refinement; no additional acceptance gate"
+    },
+    {
+      "radius": 3.0,
+      "pCa": 6.1,
+      "delta": -0.0005,
+      "coarseToHalfMatchedIncrementDifferences": [
+        -4.4237641231205994e-09,
+        4.658975762994329e-07,
+        6.375732492789053e-07,
+        4.977302774930225e-07,
+        1.1149074176691908e-07,
+        8.136827078841286e-09,
+        3.5909780823529327e-12,
+        -2.4833873321942825e-15
+      ],
+      "halfToFineMatchedIncrementDifferences": [
+        -1.105947161642626e-09,
+        2.4086726272479046e-07,
+        3.3280754703171257e-07,
+        2.65149854480481e-07,
+        6.303167536225768e-08,
+        4.878999132183214e-09,
+        2.2682639045429528e-12,
+        7.553636468757609e-15
+      ],
+      "maximumMatchedIncrementDifferences": [
+        6.375732492789053e-07,
+        3.3280754703171257e-07
+      ],
+      "halvingDifferenceRatio": 0.5219910769595769,
+      "finestDifferenceNormalizedByDeltaCapacity": 0.0007141676467981029,
+      "interpretation": "Diagnostic exact-generator transient strain-bin refinement; no additional acceptance gate"
+    }
+  ],
+  "grids": [
+    {
+      "name": "R2.4-dx0.04",
+      "bins": 120,
+      "spatialRelativeForceError": 2.698574975215118e-05,
+      "independentExactMassError": 7.815970093361102e-14,
+      "independentExactMinimumPopulation": 4.3038916737957386e-17,
+      "independentExactStateDifference": 2.65898414397725e-14,
+      "largestSymmetricEigenvalue": 7.765737961074875e-14,
+      "slowestNonzeroEigenvalue": -24.679173762389855
+    },
+    {
+      "name": "R2.4-dx0.02",
+      "bins": 240,
+      "spatialRelativeForceError": 6.7474356989100646e-06,
+      "independentExactMassError": 4.707345624410664e-14,
+      "independentExactMinimumPopulation": 1.5246373476429433e-17,
+      "independentExactStateDifference": 1.6764367671839864e-14,
+      "largestSymmetricEigenvalue": 4.7113218610636453e-14,
+      "slowestNonzeroEigenvalue": -24.674593293107783
+    },
+    {
+      "name": "R2.4-dx0.01",
+      "bins": 480,
+      "spatialRelativeForceError": 1.6869213225507535e-06,
+      "independentExactMassError": 1.0524914273446484e-13,
+      "independentExactMinimumPopulation": 6.207151098517321e-18,
+      "independentExactStateDifference": 3.4638958368304884e-14,
+      "largestSymmetricEigenvalue": -1.0516344068914345e-13,
+      "slowestNonzeroEigenvalue": -24.673458510150347
+    },
+    {
+      "name": "R3-dx0.04",
+      "bins": 150,
+      "spatialRelativeForceError": 2.698574975147719e-05,
+      "independentExactMassError": 7.038813976123492e-14,
+      "independentExactMinimumPopulation": 2.334686919278956e-25,
+      "independentExactStateDifference": 2.4591439995447217e-14,
+      "largestSymmetricEigenvalue": 7.091374983742538e-14,
+      "slowestNonzeroEigenvalue": -24.679173762389837
+    },
+    {
+      "name": "R3-dx0.02",
+      "bins": 300,
+      "spatialRelativeForceError": 6.747435698236078e-06,
+      "independentExactMassError": 2.7267077484793845e-13,
+      "independentExactMinimumPopulation": 7.588057629928559e-26,
+      "independentExactStateDifference": 9.303668946358812e-14,
+      "largestSymmetricEigenvalue": 2.7232507150698015e-13,
+      "slowestNonzeroEigenvalue": -24.674593293107844
+    },
+    {
+      "name": "R3-dx0.01",
+      "bins": 600,
+      "spatialRelativeForceError": 1.68692132221376e-06,
+      "independentExactMassError": 1.7985612998927536e-14,
+      "independentExactMinimumPopulation": 2.972953886857814e-26,
+      "independentExactStateDifference": 4.829470157119431e-15,
+      "largestSymmetricEigenvalue": 1.7291525235964164e-14,
+      "slowestNonzeroEigenvalue": -24.673458510150343
+    }
+  ],
+  "cases": [
+    {
+      "name": "R2.4-dx0.04-pCa4.5-shift0.001-dt0.004",
+      "independentMaximumTemporalForceError": 2.6407544046591624e-05,
+      "independentNormalizedTemporalError": 0.013203937920895931,
+      "independentSpectralBEStateDifference": 2.8310687127941492e-14
+    },
+    {
+      "name": "R2.4-dx0.04-pCa4.5-shift0.001-dt0.002",
+      "independentMaximumTemporalForceError": 1.3445668708200742e-05,
+      "independentNormalizedTemporalError": 0.006722918822544947,
+      "independentSpectralBEStateDifference": 1.4155343563970746e-14
+    },
+    {
+      "name": "R2.4-dx0.04-pCa4.5-shift0.001-dt0.001",
+      "independentMaximumTemporalForceError": 6.784686112926153e-06,
+      "independentNormalizedTemporalError": 0.003392385679250781,
+      "independentSpectralBEStateDifference": 3.991251773527438e-14
+    },
+    {
+      "name": "R2.4-dx0.04-pCa4.5-shift-0.001-dt0.004",
+      "independentMaximumTemporalForceError": 2.6289580052241135e-05,
+      "independentNormalizedTemporalError": 0.013144955182646715,
+      "independentSpectralBEStateDifference": 2.8199664825478976e-14
+    },
+    {
+      "name": "R2.4-dx0.04-pCa4.5-shift-0.001-dt0.002",
+      "independentMaximumTemporalForceError": 1.3395550728656502e-05,
+      "independentNormalizedTemporalError": 0.006697859517921415,
+      "independentSpectralBEStateDifference": 1.4932499681208355e-14
+    },
+    {
+      "name": "R2.4-dx0.04-pCa4.5-shift-0.001-dt0.001",
+      "independentMaximumTemporalForceError": 6.762198956566934e-06,
+      "independentNormalizedTemporalError": 0.0033811419598022497,
+      "independentSpectralBEStateDifference": 4.285460875053104e-14
+    },
+    {
+      "name": "R2.4-dx0.04-pCa4.5-shift0.0005-dt0.004",
+      "independentMaximumTemporalForceError": 1.320377202129741e-05,
+      "independentNormalizedTemporalError": 0.013203937918897506,
+      "independentSpectralBEStateDifference": 2.808864252301646e-14
+    },
+    {
+      "name": "R2.4-dx0.04-pCa4.5-shift0.0005-dt0.002",
+      "independentMaximumTemporalForceError": 6.7228343521019696e-06,
+      "independentNormalizedTemporalError": 0.00672291882054652,
+      "independentSpectralBEStateDifference": 1.404432126150823e-14
+    },
+    {
+      "name": "R2.4-dx0.04-pCa4.5-shift0.0005-dt0.001",
+      "independentMaximumTemporalForceError": 3.392343053798541e-06,
+      "independentNormalizedTemporalError": 0.0033923856765862123,
+      "independentSpectralBEStateDifference": 3.980149543281186e-14
+    },
+    {
+      "name": "R2.4-dx0.04-pCa4.5-shift-0.0005-dt0.004",
+      "independentMaximumTemporalForceError": 1.3144790028896125e-05,
+      "independentNormalizedTemporalError": 0.013144955185422308,
+      "independentSpectralBEStateDifference": 2.8699265186560297e-14
+    },
+    {
+      "name": "R2.4-dx0.04-pCa4.5-shift-0.0005-dt0.002",
+      "independentMaximumTemporalForceError": 6.697775366770742e-06,
+      "independentNormalizedTemporalError": 0.006697859520363936,
+      "independentSpectralBEStateDifference": 1.509903313490213e-14
+    },
+    {
+      "name": "R2.4-dx0.04-pCa4.5-shift-0.0005-dt0.001",
+      "independentMaximumTemporalForceError": 3.38109948083698e-06,
+      "independentNormalizedTemporalError": 0.0033811419623557947,
+      "independentSpectralBEStateDifference": 4.3076653355456074e-14
+    },
+    {
+      "name": "R2.4-dx0.04-pCa6.1-shift0.001-dt0.004",
+      "independentMaximumTemporalForceError": 1.2306270692263865e-05,
+      "independentNormalizedTemporalError": 0.013203937920790425,
+      "independentSpectralBEStateDifference": 1.326716514427062e-14
+    },
+    {
+      "name": "R2.4-dx0.04-pCa6.1-shift0.001-dt0.002",
+      "independentMaximumTemporalForceError": 6.265862454890581e-06,
+      "independentNormalizedTemporalError": 0.006722918822726379,
+      "independentSpectralBEStateDifference": 5.88418203051333e-15
+    },
+    {
+      "name": "R2.4-dx0.04-pCa6.1-shift0.001-dt0.001",
+      "independentMaximumTemporalForceError": 3.1617549786089327e-06,
+      "independentNormalizedTemporalError": 0.0033923856789974853,
+      "independentSpectralBEStateDifference": 1.9290125052862095e-14
+    },
+    {
+      "name": "R2.4-dx0.04-pCa6.1-shift-0.001-dt0.004",
+      "independentMaximumTemporalForceError": 1.2251297884291468e-05,
+      "independentNormalizedTemporalError": 0.013144955182481625,
+      "independentSpectralBEStateDifference": 1.3433698597964394e-14
+    },
+    {
+      "name": "R2.4-dx0.04-pCa6.1-shift-0.001-dt0.002",
+      "independentMaximumTemporalForceError": 6.24250680203442e-06,
+      "independentNormalizedTemporalError": 0.006697859517748947,
+      "independentSpectralBEStateDifference": 6.300515664747763e-15
+    },
+    {
+      "name": "R2.4-dx0.04-pCa6.1-shift-0.001-dt0.001",
+      "independentMaximumTemporalForceError": 3.1512756615281745e-06,
+      "independentNormalizedTemporalError": 0.003381141959787441,
+      "independentSpectralBEStateDifference": 2.020605904817785e-14
+    },
+    {
+      "name": "R2.4-dx0.04-pCa6.1-shift0.0005-dt0.004",
+      "independentMaximumTemporalForceError": 6.153135345132732e-06,
+      "independentNormalizedTemporalError": 0.013203937918646253,
+      "independentSpectralBEStateDifference": 1.3211653993039363e-14
+    },
+    {
+      "name": "R2.4-dx0.04-pCa6.1-shift0.0005-dt0.002",
+      "independentMaximumTemporalForceError": 3.1329312264460896e-06,
+      "independentNormalizedTemporalError": 0.006722918820582206,
+      "independentSpectralBEStateDifference": 5.856426454897701e-15
+    },
+    {
+      "name": "R2.4-dx0.04-pCa6.1-shift0.0005-dt0.001",
+      "independentMaximumTemporalForceError": 1.5808774880277099e-06,
+      "independentNormalizedTemporalError": 0.0033923856762577095,
+      "independentSpectralBEStateDifference": 1.9234613901630837e-14
+    },
+    {
+      "name": "R2.4-dx0.04-pCa6.1-shift-0.0005-dt0.004",
+      "independentMaximumTemporalForceError": 6.12564894342249e-06,
+      "independentNormalizedTemporalError": 0.0131449551852214,
+      "independentSpectralBEStateDifference": 1.3489209749195652e-14
+    },
+    {
+      "name": "R2.4-dx0.04-pCa6.1-shift-0.0005-dt0.002",
+      "independentMaximumTemporalForceError": 3.121253402071922e-06,
+      "independentNormalizedTemporalError": 0.0066978595200122394,
+      "independentSpectralBEStateDifference": 6.38378239159465e-15
+    },
+    {
+      "name": "R2.4-dx0.04-pCa6.1-shift-0.0005-dt0.001",
+      "independentMaximumTemporalForceError": 1.5756378323183995e-06,
+      "independentNormalizedTemporalError": 0.003381141963122821,
+      "independentSpectralBEStateDifference": 2.0317081350640365e-14
+    },
+    {
+      "name": "R2.4-dx0.02-pCa4.5-shift0.001-dt0.004",
+      "independentMaximumTemporalForceError": 2.6365060600719303e-05,
+      "independentNormalizedTemporalError": 0.013182695931070063,
+      "independentSpectralBEStateDifference": 1.6819878823071122e-14
+    },
+    {
+      "name": "R2.4-dx0.02-pCa4.5-shift0.001-dt0.002",
+      "independentMaximumTemporalForceError": 1.342641718626858e-05,
+      "independentNormalizedTemporalError": 0.006713292940636863,
+      "independentSpectralBEStateDifference": 2.4702462297909733e-14
+    },
+    {
+      "name": "R2.4-dx0.02-pCa4.5-shift0.001-dt0.001",
+      "independentMaximumTemporalForceError": 6.775643122347574e-06,
+      "independentNormalizedTemporalError": 0.003387864127151573,
+      "independentSpectralBEStateDifference": 1.6653345369377348e-15
+    },
+    {
+      "name": "R2.4-dx0.02-pCa4.5-shift-0.001-dt0.004",
+      "independentMaximumTemporalForceError": 2.6305615631105894e-05,
+      "independentNormalizedTemporalError": 0.013152973072817885,
+      "independentSpectralBEStateDifference": 1.6986412276764895e-14
+    },
+    {
+      "name": "R2.4-dx0.02-pCa4.5-shift-0.001-dt0.002",
+      "independentMaximumTemporalForceError": 1.340111655068199e-05,
+      "independentNormalizedTemporalError": 0.006700642463899793,
+      "independentSpectralBEStateDifference": 2.481348460037225e-14
+    },
+    {
+      "name": "R2.4-dx0.02-pCa4.5-shift-0.001-dt0.001",
+      "independentMaximumTemporalForceError": 6.764275973125677e-06,
+      "independentNormalizedTemporalError": 0.003382180481129865,
+      "independentSpectralBEStateDifference": 4.6074255521944e-15
+    },
+    {
+      "name": "R2.4-dx0.02-pCa4.5-shift0.0005-dt0.004",
+      "independentMaximumTemporalForceError": 1.3182530299138406e-05,
+      "independentNormalizedTemporalError": 0.013182695929848802,
+      "independentSpectralBEStateDifference": 1.6708856520608606e-14
+    },
+    {
+      "name": "R2.4-dx0.02-pCa4.5-shift0.0005-dt0.002",
+      "independentMaximumTemporalForceError": 6.713208591246911e-06,
+      "independentNormalizedTemporalError": 0.006713292938749459,
+      "independentSpectralBEStateDifference": 2.3925306180672123e-14
+    },
+    {
+      "name": "R2.4-dx0.02-pCa4.5-shift0.0005-dt0.001",
+      "independentMaximumTemporalForceError": 3.387821559286408e-06,
+      "independentNormalizedTemporalError": 0.00338786412526417,
+      "independentSpectralBEStateDifference": 1.4988010832439613e-15
+    },
+    {
+      "name": "R2.4-dx0.02-pCa4.5-shift-0.0005-dt0.004",
+      "independentMaximumTemporalForceError": 1.3152807816885215e-05,
+      "independentNormalizedTemporalError": 0.013152973074150169,
+      "independentSpectralBEStateDifference": 1.6819878823071122e-14
+    },
+    {
+      "name": "R2.4-dx0.02-pCa4.5-shift-0.0005-dt0.002",
+      "independentMaximumTemporalForceError": 6.700558276673263e-06,
+      "independentNormalizedTemporalError": 0.006700642465232077,
+      "independentSpectralBEStateDifference": 2.4868995751603507e-14
+    },
+    {
+      "name": "R2.4-dx0.02-pCa4.5-shift-0.0005-dt0.001",
+      "independentMaximumTemporalForceError": 3.3821379883391955e-06,
+      "independentNormalizedTemporalError": 0.003382180482906244,
+      "independentSpectralBEStateDifference": 3.552713678800501e-15
+    },
+    {
+      "name": "R2.4-dx0.02-pCa6.1-shift0.001-dt0.004",
+      "independentMaximumTemporalForceError": 1.2286472835354445e-05,
+      "independentNormalizedTemporalError": 0.013182695931228063,
+      "independentSpectralBEStateDifference": 7.799316747991725e-15
+    },
+    {
+      "name": "R2.4-dx0.02-pCa6.1-shift0.001-dt0.002",
+      "independentMaximumTemporalForceError": 6.256890986544583e-06,
+      "independentNormalizedTemporalError": 0.006713292940600013,
+      "independentSpectralBEStateDifference": 1.1379786002407855e-14
+    },
+    {
+      "name": "R2.4-dx0.02-pCa6.1-shift0.001-dt0.001",
+      "independentMaximumTemporalForceError": 3.1575408236950153e-06,
+      "independentNormalizedTemporalError": 0.003387864127240385,
+      "independentSpectralBEStateDifference": 1.1102230246251565e-15
+    },
+    {
+      "name": "R2.4-dx0.02-pCa6.1-shift-0.001-dt0.004",
+      "independentMaximumTemporalForceError": 1.2258770679896003e-05,
+      "independentNormalizedTemporalError": 0.013152973072850236,
+      "independentSpectralBEStateDifference": 7.827072323607354e-15
+    },
+    {
+      "name": "R2.4-dx0.02-pCa6.1-shift-0.001-dt0.002",
+      "independentMaximumTemporalForceError": 6.245100549806537e-06,
+      "independentNormalizedTemporalError": 0.0067006424635675165,
+      "independentSpectralBEStateDifference": 1.176836406102666e-14
+    },
+    {
+      "name": "R2.4-dx0.02-pCa6.1-shift-0.001-dt0.001",
+      "independentMaximumTemporalForceError": 3.152243579052083e-06,
+      "independentNormalizedTemporalError": 0.0033821804809786066,
+      "independentSpectralBEStateDifference": 2.0261570199409107e-15
+    },
+    {
+      "name": "R2.4-dx0.02-pCa6.1-shift0.0005-dt0.004",
+      "independentMaximumTemporalForceError": 6.143236416900066e-06,
+      "independentNormalizedTemporalError": 0.013182695929560373,
+      "independentSpectralBEStateDifference": 7.771561172376096e-15
+    },
+    {
+      "name": "R2.4-dx0.02-pCa6.1-shift0.0005-dt0.002",
+      "independentMaximumTemporalForceError": 3.128445492328602e-06,
+      "independentNormalizedTemporalError": 0.006713292938574961,
+      "independentSpectralBEStateDifference": 1.1268763699945339e-14
+    },
+    {
+      "name": "R2.4-dx0.02-pCa6.1-shift0.0005-dt0.001",
+      "independentMaximumTemporalForceError": 1.5787704111813738e-06,
+      "independentNormalizedTemporalError": 0.0033878641258109367,
+      "independentSpectralBEStateDifference": 4.718447854656915e-16
+    },
+    {
+      "name": "R2.4-dx0.02-pCa6.1-shift-0.0005-dt0.004",
+      "independentMaximumTemporalForceError": 6.129385340614135e-06,
+      "independentNormalizedTemporalError": 0.013152973074279685,
+      "independentSpectralBEStateDifference": 7.965850201685498e-15
+    },
+    {
+      "name": "R2.4-dx0.02-pCa6.1-shift-0.0005-dt0.002",
+      "independentMaximumTemporalForceError": 3.12255027545838e-06,
+      "independentNormalizedTemporalError": 0.006700642464758723,
+      "independentSpectralBEStateDifference": 1.1518563880485999e-14
+    },
+    {
+      "name": "R2.4-dx0.02-pCa6.1-shift-0.0005-dt0.001",
+      "independentMaximumTemporalForceError": 1.5761217905252423e-06,
+      "independentNormalizedTemporalError": 0.0033821804831227795,
+      "independentSpectralBEStateDifference": 2.0261570199409107e-15
+    },
+    {
+      "name": "R2.4-dx0.01-pCa4.5-shift0.001-dt0.004",
+      "independentMaximumTemporalForceError": 2.6346921982112192e-05,
+      "independentNormalizedTemporalError": 0.013173626507815991,
+      "independentSpectralBEStateDifference": 3.4361402612148595e-14
+    },
+    {
+      "name": "R2.4-dx0.01-pCa4.5-shift0.001-dt0.002",
+      "independentMaximumTemporalForceError": 1.3418396241471342e-05,
+      "independentNormalizedTemporalError": 0.006709282417849026,
+      "independentSpectralBEStateDifference": 3.26405569239796e-14
+    },
+    {
+      "name": "R2.4-dx0.01-pCa4.5-shift0.001-dt0.001",
+      "independentMaximumTemporalForceError": 6.7719382241815396e-06,
+      "independentNormalizedTemporalError": 0.0033860116547936264,
+      "independentSpectralBEStateDifference": 7.93809462606987e-15
+    },
+    {
+      "name": "R2.4-dx0.01-pCa4.5-shift-0.001-dt0.004",
+      "independentMaximumTemporalForceError": 2.6317141568865665e-05,
+      "independentNormalizedTemporalError": 0.013158736114106073,
+      "independentSpectralBEStateDifference": 3.4361402612148595e-14
+    },
+    {
+      "name": "R2.4-dx0.01-pCa4.5-shift-0.001-dt0.002",
+      "independentMaximumTemporalForceError": 1.3405715680647745e-05,
+      "independentNormalizedTemporalError": 0.006702942057775347,
+      "independentSpectralBEStateDifference": 3.186340080674199e-14
+    },
+    {
+      "name": "R2.4-dx0.01-pCa4.5-shift-0.001-dt0.001",
+      "independentMaximumTemporalForceError": 6.7662391751710516e-06,
+      "independentNormalizedTemporalError": 0.0033831620944857893,
+      "independentSpectralBEStateDifference": 5.9396931817445875e-15
+    },
+    {
+      "name": "R2.4-dx0.01-pCa4.5-shift0.0005-dt0.004",
+      "independentMaximumTemporalForceError": 1.317346099316552e-05,
+      "independentNormalizedTemporalError": 0.013173626509925441,
+      "independentSpectralBEStateDifference": 3.447242491461111e-14
+    },
+    {
+      "name": "R2.4-dx0.01-pCa4.5-shift0.0005-dt0.002",
+      "independentMaximumTemporalForceError": 6.709198122845095e-06,
+      "independentNormalizedTemporalError": 0.0067092824199584756,
+      "independentSpectralBEStateDifference": 3.275157922644212e-14
+    },
+    {
+      "name": "R2.4-dx0.01-pCa4.5-shift0.0005-dt0.001",
+      "independentMaximumTemporalForceError": 3.3859691153104166e-06,
+      "independentNormalizedTemporalError": 0.0033860116580133135,
+      "independentSpectralBEStateDifference": 7.993605777301127e-15
+    },
+    {
+      "name": "R2.4-dx0.01-pCa4.5-shift-0.0005-dt0.004",
+      "independentMaximumTemporalForceError": 1.3158570781213186e-05,
+      "independentNormalizedTemporalError": 0.013158736110886384,
+      "independentSpectralBEStateDifference": 3.430589146091734e-14
+    },
+    {
+      "name": "R2.4-dx0.01-pCa4.5-shift-0.0005-dt0.002",
+      "independentMaximumTemporalForceError": 6.702857837437293e-06,
+      "independentNormalizedTemporalError": 0.006702942054888731,
+      "independentSpectralBEStateDifference": 3.186340080674199e-14
+    },
+    {
+      "name": "R2.4-dx0.01-pCa4.5-shift-0.0005-dt0.001",
+      "independentMaximumTemporalForceError": 3.383119584032812e-06,
+      "independentNormalizedTemporalError": 0.003383162090933031,
+      "independentSpectralBEStateDifference": 5.9396931817445875e-15
+    },
+    {
+      "name": "R2.4-dx0.01-pCa6.1-shift0.001-dt0.004",
+      "independentMaximumTemporalForceError": 1.2278019994926836e-05,
+      "independentNormalizedTemporalError": 0.013173626507756771,
+      "independentSpectralBEStateDifference": 1.63202784619898e-14
+    },
+    {
+      "name": "R2.4-dx0.01-pCa6.1-shift0.001-dt0.002",
+      "independentMaximumTemporalForceError": 6.253153118640498e-06,
+      "independentNormalizedTemporalError": 0.006709282418078947,
+      "independentSpectralBEStateDifference": 1.5487611193520934e-14
+    },
+    {
+      "name": "R2.4-dx0.01-pCa6.1-shift0.001-dt0.001",
+      "independentMaximumTemporalForceError": 3.155814291333492e-06,
+      "independentNormalizedTemporalError": 0.0033860116548960115,
+      "independentSpectralBEStateDifference": 3.552713678800501e-15
+    },
+    {
+      "name": "R2.4-dx0.01-pCa6.1-shift-0.001-dt0.004",
+      "independentMaximumTemporalForceError": 1.226414192156966e-05,
+      "independentNormalizedTemporalError": 0.013158736113773845,
+      "independentSpectralBEStateDifference": 1.5987211554602254e-14
+    },
+    {
+      "name": "R2.4-dx0.01-pCa6.1-shift-0.001-dt0.002",
+      "independentMaximumTemporalForceError": 6.247243806711822e-06,
+      "independentNormalizedTemporalError": 0.006702942057964012,
+      "independentSpectralBEStateDifference": 1.4765966227514582e-14
+    },
+    {
+      "name": "R2.4-dx0.01-pCa6.1-shift-0.001-dt0.001",
+      "independentMaximumTemporalForceError": 3.1531584576693916e-06,
+      "independentNormalizedTemporalError": 0.0033831620943991204,
+      "independentSpectralBEStateDifference": 2.609024107869118e-15
+    },
+    {
+      "name": "R2.4-dx0.01-pCa6.1-shift0.0005-dt0.004",
+      "independentMaximumTemporalForceError": 6.139009998795686e-06,
+      "independentNormalizedTemporalError": 0.013173626510615669,
+      "independentSpectralBEStateDifference": 1.609823385706477e-14
+    },
+    {
+      "name": "R2.4-dx0.01-pCa6.1-shift0.0005-dt0.002",
+      "independentMaximumTemporalForceError": 3.1265765607635387e-06,
+      "independentNormalizedTemporalError": 0.006709282421176085,
+      "independentSpectralBEStateDifference": 1.5265566588595902e-14
+    },
+    {
+      "name": "R2.4-dx0.01-pCa6.1-shift0.0005-dt0.001",
+      "independentMaximumTemporalForceError": 1.5779071473875916e-06,
+      "independentNormalizedTemporalError": 0.0033860116585887534,
+      "independentSpectralBEStateDifference": 3.58046925441613e-15
+    },
+    {
+      "name": "R2.4-dx0.01-pCa6.1-shift-0.0005-dt0.004",
+      "independentMaximumTemporalForceError": 6.13207095934154e-06,
+      "independentNormalizedTemporalError": 0.013158736110676708,
+      "independentSpectralBEStateDifference": 1.5959455978986625e-14
+    },
+    {
+      "name": "R2.4-dx0.01-pCa6.1-shift-0.0005-dt0.002",
+      "independentMaximumTemporalForceError": 3.1236219016905764e-06,
+      "independentNormalizedTemporalError": 0.0067029420543903906,
+      "independentSpectralBEStateDifference": 1.504352198367087e-14
+    },
+    {
+      "name": "R2.4-dx0.01-pCa6.1-shift-0.0005-dt0.001",
+      "independentMaximumTemporalForceError": 1.576579227058339e-06,
+      "independentNormalizedTemporalError": 0.003383162090587258,
+      "independentSpectralBEStateDifference": 2.581268532253489e-15
+    },
+    {
+      "name": "R3-dx0.04-pCa4.5-shift0.001-dt0.004",
+      "independentMaximumTemporalForceError": 2.6407544047701847e-05,
+      "independentNormalizedTemporalError": 0.01320393792145105,
+      "independentSpectralBEStateDifference": 2.3703261575747092e-14
+    },
+    {
+      "name": "R3-dx0.04-pCa4.5-shift0.001-dt0.002",
+      "independentMaximumTemporalForceError": 1.3445668707978697e-05,
+      "independentNormalizedTemporalError": 0.0067229188224339235,
+      "independentSpectralBEStateDifference": 2.098321516541546e-14
+    },
+    {
+      "name": "R3-dx0.04-pCa4.5-shift0.001-dt0.001",
+      "independentMaximumTemporalForceError": 6.784686113814331e-06,
+      "independentNormalizedTemporalError": 0.003392385679694876,
+      "independentSpectralBEStateDifference": 3.469446951953614e-14
+    },
+    {
+      "name": "R3-dx0.04-pCa4.5-shift-0.001-dt0.004",
+      "independentMaximumTemporalForceError": 2.6289580051130912e-05,
+      "independentNormalizedTemporalError": 0.013144955182091597,
+      "independentSpectralBEStateDifference": 2.3925306180672123e-14
+    },
+    {
+      "name": "R3-dx0.04-pCa4.5-shift-0.001-dt0.002",
+      "independentMaximumTemporalForceError": 1.3395550729100592e-05,
+      "independentNormalizedTemporalError": 0.006697859518143463,
+      "independentSpectralBEStateDifference": 2.1649348980190553e-14
+    },
+    {
+      "name": "R3-dx0.04-pCa4.5-shift-0.001-dt0.001",
+      "independentMaximumTemporalForceError": 6.762198955234666e-06,
+      "independentNormalizedTemporalError": 0.0033811419591361076,
+      "independentSpectralBEStateDifference": 3.780309398848658e-14
+    },
+    {
+      "name": "R3-dx0.04-pCa4.5-shift0.0005-dt0.004",
+      "independentMaximumTemporalForceError": 1.3203772021963545e-05,
+      "independentNormalizedTemporalError": 0.013203937919563646,
+      "independentSpectralBEStateDifference": 2.3592239273284576e-14
+    },
+    {
+      "name": "R3-dx0.04-pCa4.5-shift0.0005-dt0.002",
+      "independentMaximumTemporalForceError": 6.722834351435836e-06,
+      "independentNormalizedTemporalError": 0.0067229188198803785,
+      "independentSpectralBEStateDifference": 2.0872192862952943e-14
+    },
+    {
+      "name": "R3-dx0.04-pCa4.5-shift0.0005-dt0.001",
+      "independentMaximumTemporalForceError": 3.392343054464675e-06,
+      "independentNormalizedTemporalError": 0.0033923856772523544,
+      "independentSpectralBEStateDifference": 3.47499806707674e-14
+    },
+    {
+      "name": "R3-dx0.04-pCa4.5-shift-0.0005-dt0.004",
+      "independentMaximumTemporalForceError": 1.3144790027785902e-05,
+      "independentNormalizedTemporalError": 0.01314495518431207,
+      "independentSpectralBEStateDifference": 2.3925306180672123e-14
+    },
+    {
+      "name": "R3-dx0.04-pCa4.5-shift-0.0005-dt0.002",
+      "independentMaximumTemporalForceError": 6.697775366770742e-06,
+      "independentNormalizedTemporalError": 0.006697859520363936,
+      "independentSpectralBEStateDifference": 2.1316282072803006e-14
+    },
+    {
+      "name": "R3-dx0.04-pCa4.5-shift-0.0005-dt0.001",
+      "independentMaximumTemporalForceError": 3.3810994799488014e-06,
+      "independentNormalizedTemporalError": 0.003381141961467605,
+      "independentSpectralBEStateDifference": 3.7969627442180354e-14
+    },
+    {
+      "name": "R3-dx0.04-pCa6.1-shift0.001-dt0.004",
+      "independentMaximumTemporalForceError": 1.230627069293e-05,
+      "independentNormalizedTemporalError": 0.01320393792150515,
+      "independentSpectralBEStateDifference": 1.0880185641326534e-14
+    },
+    {
+      "name": "R3-dx0.04-pCa6.1-shift0.001-dt0.002",
+      "independentMaximumTemporalForceError": 6.265862454446491e-06,
+      "independentNormalizedTemporalError": 0.006722918822249896,
+      "independentSpectralBEStateDifference": 9.575673587391975e-15
+    },
+    {
+      "name": "R3-dx0.04-pCa6.1-shift0.001-dt0.001",
+      "independentMaximumTemporalForceError": 3.1617549791640442e-06,
+      "independentNormalizedTemporalError": 0.0033923856795930888,
+      "independentSpectralBEStateDifference": 1.6153745008296028e-14
+    },
+    {
+      "name": "R3-dx0.04-pCa6.1-shift-0.001-dt0.004",
+      "independentMaximumTemporalForceError": 1.2251297883847379e-05,
+      "independentNormalizedTemporalError": 0.013144955182005142,
+      "independentSpectralBEStateDifference": 1.1046719095020308e-14
+    },
+    {
+      "name": "R3-dx0.04-pCa6.1-shift-0.001-dt0.002",
+      "independentMaximumTemporalForceError": 6.2425068022564645e-06,
+      "independentNormalizedTemporalError": 0.006697859517987188,
+      "independentSpectralBEStateDifference": 1.021405182655144e-14
+    },
+    {
+      "name": "R3-dx0.04-pCa6.1-shift-0.001-dt0.001",
+      "independentMaximumTemporalForceError": 3.1512756608620407e-06,
+      "independentNormalizedTemporalError": 0.003381141959072717,
+      "independentSpectralBEStateDifference": 1.7180701306074297e-14
+    },
+    {
+      "name": "R3-dx0.04-pCa6.1-shift0.0005-dt0.004",
+      "independentMaximumTemporalForceError": 6.153135345576821e-06,
+      "independentNormalizedTemporalError": 0.013203937919599219,
+      "independentSpectralBEStateDifference": 1.099120794378905e-14
+    },
+    {
+      "name": "R3-dx0.04-pCa6.1-shift0.0005-dt0.002",
+      "independentMaximumTemporalForceError": 3.1329312263350673e-06,
+      "independentNormalizedTemporalError": 0.006722918820343965,
+      "independentSpectralBEStateDifference": 9.547918011776346e-15
+    },
+    {
+      "name": "R3-dx0.04-pCa6.1-shift0.0005-dt0.001",
+      "independentMaximumTemporalForceError": 1.580877488471799e-06,
+      "independentNormalizedTemporalError": 0.003392385677210675,
+      "independentSpectralBEStateDifference": 1.6181500583911657e-14
+    },
+    {
+      "name": "R3-dx0.04-pCa6.1-shift-0.0005-dt0.004",
+      "independentMaximumTemporalForceError": 6.125648942978401e-06,
+      "independentNormalizedTemporalError": 0.013144955184268435,
+      "independentSpectralBEStateDifference": 1.099120794378905e-14
+    },
+    {
+      "name": "R3-dx0.04-pCa6.1-shift-0.0005-dt0.002",
+      "independentMaximumTemporalForceError": 3.1212534022939664e-06,
+      "independentNormalizedTemporalError": 0.006697859520488723,
+      "independentSpectralBEStateDifference": 1.0047518372857667e-14
+    },
+    {
+      "name": "R3-dx0.04-pCa6.1-shift-0.0005-dt0.001",
+      "independentMaximumTemporalForceError": 1.5756378316522657e-06,
+      "independentNormalizedTemporalError": 0.0033811419616933723,
+      "independentSpectralBEStateDifference": 1.7263968032921184e-14
+    },
+    {
+      "name": "R3-dx0.02-pCa4.5-shift0.001-dt0.004",
+      "independentMaximumTemporalForceError": 2.636506058650845e-05,
+      "independentNormalizedTemporalError": 0.013182695923964547,
+      "independentSpectralBEStateDifference": 9.331424521974441e-14
+    },
+    {
+      "name": "R3-dx0.02-pCa4.5-shift0.001-dt0.002",
+      "independentMaximumTemporalForceError": 1.3426417173389993e-05,
+      "independentNormalizedTemporalError": 0.006713292934197488,
+      "independentSpectralBEStateDifference": 9.275913370743183e-14
+    },
+    {
+      "name": "R3-dx0.02-pCa4.5-shift0.001-dt0.001",
+      "independentMaximumTemporalForceError": 6.775643109468987e-06,
+      "independentNormalizedTemporalError": 0.0033878641207121985,
+      "independentSpectralBEStateDifference": 6.98885394001536e-14
+    },
+    {
+      "name": "R3-dx0.02-pCa4.5-shift-0.001-dt0.004",
+      "independentMaximumTemporalForceError": 2.630561564442857e-05,
+      "independentNormalizedTemporalError": 0.013152973079479307,
+      "independentSpectralBEStateDifference": 9.309220061481938e-14
+    },
+    {
+      "name": "R3-dx0.02-pCa4.5-shift-0.001-dt0.002",
+      "independentMaximumTemporalForceError": 1.34011165626724e-05,
+      "independentNormalizedTemporalError": 0.006700642469895073,
+      "independentSpectralBEStateDifference": 9.39803790345195e-14
+    },
+    {
+      "name": "R3-dx0.02-pCa4.5-shift-0.001-dt0.001",
+      "independentMaximumTemporalForceError": 6.764275985560175e-06,
+      "independentNormalizedTemporalError": 0.003382180487347192,
+      "independentSpectralBEStateDifference": 7.271960811294775e-14
+    },
+    {
+      "name": "R3-dx0.02-pCa4.5-shift0.0005-dt0.004",
+      "independentMaximumTemporalForceError": 1.3182530285593685e-05,
+      "independentNormalizedTemporalError": 0.01318269591630391,
+      "independentSpectralBEStateDifference": 9.281464485866309e-14
+    },
+    {
+      "name": "R3-dx0.02-pCa4.5-shift0.0005-dt0.002",
+      "independentMaximumTemporalForceError": 6.713208578368324e-06,
+      "independentNormalizedTemporalError": 0.006713292925870711,
+      "independentSpectralBEStateDifference": 9.259260025373806e-14
+    },
+    {
+      "name": "R3-dx0.02-pCa4.5-shift0.0005-dt0.001",
+      "independentMaximumTemporalForceError": 3.3878215461857764e-06,
+      "independentNormalizedTemporalError": 0.0033878641121633736,
+      "independentSpectralBEStateDifference": 6.966649479522857e-14
+    },
+    {
+      "name": "R3-dx0.02-pCa4.5-shift-0.0005-dt0.004",
+      "independentMaximumTemporalForceError": 1.315280783065198e-05,
+      "independentNormalizedTemporalError": 0.013152973087917108,
+      "independentSpectralBEStateDifference": 9.309220061481938e-14
+    },
+    {
+      "name": "R3-dx0.02-pCa4.5-shift-0.0005-dt0.002",
+      "independentMaximumTemporalForceError": 6.700558289995939e-06,
+      "independentNormalizedTemporalError": 0.006700642478554921,
+      "independentSpectralBEStateDifference": 9.409140133698202e-14
+    },
+    {
+      "name": "R3-dx0.02-pCa4.5-shift-0.0005-dt0.001",
+      "independentMaximumTemporalForceError": 3.3821380018839164e-06,
+      "independentNormalizedTemporalError": 0.0033821804964511352,
+      "independentSpectralBEStateDifference": 7.283063041541027e-14
+    },
+    {
+      "name": "R3-dx0.02-pCa6.1-shift0.001-dt0.004",
+      "independentMaximumTemporalForceError": 1.2286472828915151e-05,
+      "independentNormalizedTemporalError": 0.013182695924319062,
+      "independentSpectralBEStateDifference": 4.324318680914985e-14
+    },
+    {
+      "name": "R3-dx0.02-pCa6.1-shift0.001-dt0.002",
+      "independentMaximumTemporalForceError": 6.256890980549379e-06,
+      "independentNormalizedTemporalError": 0.006713292934167495,
+      "independentSpectralBEStateDifference": 4.346523141407488e-14
+    },
+    {
+      "name": "R3-dx0.02-pCa6.1-shift0.001-dt0.001",
+      "independentMaximumTemporalForceError": 3.157540817699811e-06,
+      "independentNormalizedTemporalError": 0.003387864120807867,
+      "independentSpectralBEStateDifference": 3.269606807521086e-14
+    },
+    {
+      "name": "R3-dx0.02-pCa6.1-shift-0.001-dt0.004",
+      "independentMaximumTemporalForceError": 1.2258770686335296e-05,
+      "independentNormalizedTemporalError": 0.013152973079759238,
+      "independentSpectralBEStateDifference": 4.318767565791859e-14
+    },
+    {
+      "name": "R3-dx0.02-pCa6.1-shift-0.001-dt0.002",
+      "independentMaximumTemporalForceError": 6.245100555912764e-06,
+      "independentNormalizedTemporalError": 0.006700642470119155,
+      "independentSpectralBEStateDifference": 4.3826053897078054e-14
+    },
+    {
+      "name": "R3-dx0.02-pCa6.1-shift-0.001-dt0.001",
+      "independentMaximumTemporalForceError": 3.1522435851583097e-06,
+      "independentNormalizedTemporalError": 0.003382180487530245,
+      "independentSpectralBEStateDifference": 3.416711358283919e-14
+    },
+    {
+      "name": "R3-dx0.02-pCa6.1-shift0.0005-dt0.004",
+      "independentMaximumTemporalForceError": 6.143236410571795e-06,
+      "independentNormalizedTemporalError": 0.013182695915980614,
+      "independentSpectralBEStateDifference": 4.31044089310717e-14
+    },
+    {
+      "name": "R3-dx0.02-pCa6.1-shift0.0005-dt0.002",
+      "independentMaximumTemporalForceError": 3.12844548644442e-06,
+      "independentNormalizedTemporalError": 0.006713292925948166,
+      "independentSpectralBEStateDifference": 4.31044089310717e-14
+    },
+    {
+      "name": "R3-dx0.02-pCa6.1-shift0.0005-dt0.001",
+      "independentMaximumTemporalForceError": 1.5787704051861695e-06,
+      "independentNormalizedTemporalError": 0.003387864112945901,
+      "independentSpectralBEStateDifference": 3.2585045772748344e-14
+    },
+    {
+      "name": "R3-dx0.02-pCa6.1-shift-0.0005-dt0.004",
+      "independentMaximumTemporalForceError": 6.129385347275473e-06,
+      "independentNormalizedTemporalError": 0.013152973088574169,
+      "independentSpectralBEStateDifference": 4.3270942384765476e-14
+    },
+    {
+      "name": "R3-dx0.02-pCa6.1-shift-0.0005-dt0.002",
+      "independentMaximumTemporalForceError": 3.1225502818976736e-06,
+      "independentNormalizedTemporalError": 0.006700642478576725,
+      "independentSpectralBEStateDifference": 4.388156504830931e-14
+    },
+    {
+      "name": "R3-dx0.02-pCa6.1-shift-0.0005-dt0.001",
+      "independentMaximumTemporalForceError": 1.576121796631469e-06,
+      "independentNormalizedTemporalError": 0.0033821804962260566,
+      "independentSpectralBEStateDifference": 3.366751322175787e-14
+    },
+    {
+      "name": "R3-dx0.01-pCa4.5-shift0.001-dt0.004",
+      "independentMaximumTemporalForceError": 2.634692197434063e-05,
+      "independentNormalizedTemporalError": 0.01317362650393016,
+      "independentSpectralBEStateDifference": 8.1601392309949e-15
+    },
+    {
+      "name": "R3-dx0.01-pCa4.5-shift0.001-dt0.002",
+      "independentMaximumTemporalForceError": 1.341839623414387e-05,
+      "independentNormalizedTemporalError": 0.006709282414185244,
+      "independentSpectralBEStateDifference": 2.7755575615628914e-16
+    },
+    {
+      "name": "R3-dx0.01-pCa4.5-shift0.001-dt0.001",
+      "independentMaximumTemporalForceError": 6.771938213745443e-06,
+      "independentNormalizedTemporalError": 0.0033860116495755127,
+      "independentSpectralBEStateDifference": 1.099120794378905e-14
+    },
+    {
+      "name": "R3-dx0.01-pCa4.5-shift-0.001-dt0.004",
+      "independentMaximumTemporalForceError": 2.6317141575527003e-05,
+      "independentNormalizedTemporalError": 0.013158736117436783,
+      "independentSpectralBEStateDifference": 8.215650382226158e-15
+    },
+    {
+      "name": "R3-dx0.01-pCa4.5-shift-0.001-dt0.002",
+      "independentMaximumTemporalForceError": 1.3405715686864994e-05,
+      "independentNormalizedTemporalError": 0.0067029420608840104,
+      "independentSpectralBEStateDifference": 4.996003610813204e-16
+    },
+    {
+      "name": "R3-dx0.01-pCa4.5-shift-0.001-dt0.001",
+      "independentMaximumTemporalForceError": 6.76623918427488e-06,
+      "independentNormalizedTemporalError": 0.003383162099037761,
+      "independentSpectralBEStateDifference": 1.2823075934420558e-14
+    },
+    {
+      "name": "R3-dx0.01-pCa4.5-shift0.0005-dt0.004",
+      "independentMaximumTemporalForceError": 1.3173460986726226e-05,
+      "independentNormalizedTemporalError": 0.013173626503486066,
+      "independentSpectralBEStateDifference": 7.827072323607354e-15
+    },
+    {
+      "name": "R3-dx0.01-pCa4.5-shift0.0005-dt0.002",
+      "independentMaximumTemporalForceError": 6.709198117516024e-06,
+      "independentNormalizedTemporalError": 0.006709282414629338,
+      "independentSpectralBEStateDifference": 3.885780586188048e-16
+    },
+    {
+      "name": "R3-dx0.01-pCa4.5-shift0.0005-dt0.001",
+      "independentMaximumTemporalForceError": 3.3859691062065878e-06,
+      "independentNormalizedTemporalError": 0.0033860116489093707,
+      "independentSpectralBEStateDifference": 1.0769163338864018e-14
+    },
+    {
+      "name": "R3-dx0.01-pCa4.5-shift-0.0005-dt0.004",
+      "independentMaximumTemporalForceError": 1.315857078765248e-05,
+      "independentNormalizedTemporalError": 0.01315873611732576,
+      "independentSpectralBEStateDifference": 8.326672684688674e-15
+    },
+    {
+      "name": "R3-dx0.01-pCa4.5-shift-0.0005-dt0.002",
+      "independentMaximumTemporalForceError": 6.702857843654542e-06,
+      "independentNormalizedTemporalError": 0.006702942061106058,
+      "independentSpectralBEStateDifference": 1.6653345369377348e-16
+    },
+    {
+      "name": "R3-dx0.01-pCa4.5-shift-0.0005-dt0.001",
+      "independentMaximumTemporalForceError": 3.3831195933586855e-06,
+      "independentNormalizedTemporalError": 0.0033831621002590215,
+      "independentSpectralBEStateDifference": 1.2823075934420558e-14
+    },
+    {
+      "name": "R3-dx0.01-pCa6.1-shift0.001-dt0.004",
+      "independentMaximumTemporalForceError": 1.22780199912631e-05,
+      "independentNormalizedTemporalError": 0.013173626503825787,
+      "independentSpectralBEStateDifference": 3.635980405647388e-15
+    },
+    {
+      "name": "R3-dx0.01-pCa6.1-shift0.001-dt0.002",
+      "independentMaximumTemporalForceError": 6.253153115198806e-06,
+      "independentNormalizedTemporalError": 0.006709282414386205,
+      "independentSpectralBEStateDifference": 4.718447854656915e-16
+    },
+    {
+      "name": "R3-dx0.01-pCa6.1-shift0.001-dt0.001",
+      "independentMaximumTemporalForceError": 3.155814286559533e-06,
+      "independentNormalizedTemporalError": 0.0033860116497738215,
+      "independentSpectralBEStateDifference": 4.773959005888173e-15
+    },
+    {
+      "name": "R3-dx0.01-pCa6.1-shift-0.001-dt0.004",
+      "independentMaximumTemporalForceError": 1.2264141924678285e-05,
+      "independentNormalizedTemporalError": 0.013158736117109226,
+      "independentSpectralBEStateDifference": 3.6637359812630166e-15
+    },
+    {
+      "name": "R3-dx0.01-pCa6.1-shift-0.001-dt0.002",
+      "independentMaximumTemporalForceError": 6.2472438094873795e-06,
+      "independentNormalizedTemporalError": 0.006702942060942029,
+      "independentSpectralBEStateDifference": 1.6653345369377348e-16
+    },
+    {
+      "name": "R3-dx0.01-pCa6.1-shift-0.001-dt0.001",
+      "independentMaximumTemporalForceError": 3.153158461888239e-06,
+      "independentNormalizedTemporalError": 0.003383162098925707,
+      "independentSpectralBEStateDifference": 6.2450045135165055e-15
+    },
+    {
+      "name": "R3-dx0.01-pCa6.1-shift0.0005-dt0.004",
+      "independentMaximumTemporalForceError": 6.1390099953539945e-06,
+      "independentNormalizedTemporalError": 0.013173626503230184,
+      "independentSpectralBEStateDifference": 3.497202527569243e-15
+    },
+    {
+      "name": "R3-dx0.01-pCa6.1-shift0.0005-dt0.002",
+      "independentMaximumTemporalForceError": 3.1265765574328697e-06,
+      "independentNormalizedTemporalError": 0.006709282414028843,
+      "independentSpectralBEStateDifference": 6.106226635438361e-16
+    },
+    {
+      "name": "R3-dx0.01-pCa6.1-shift0.0005-dt0.001",
+      "independentMaximumTemporalForceError": 1.5779071429466995e-06,
+      "independentNormalizedTemporalError": 0.0033860116490590972,
+      "independentSpectralBEStateDifference": 4.6629367034256575e-15
+    },
+    {
+      "name": "R3-dx0.01-pCa6.1-shift-0.0005-dt0.004",
+      "independentMaximumTemporalForceError": 6.132070962561187e-06,
+      "independentNormalizedTemporalError": 0.01315873611758571,
+      "independentSpectralBEStateDifference": 3.608224830031759e-15
+    },
+    {
+      "name": "R3-dx0.01-pCa6.1-shift-0.0005-dt0.002",
+      "independentMaximumTemporalForceError": 3.123621904466134e-06,
+      "independentNormalizedTemporalError": 0.006702942060346426,
+      "independentSpectralBEStateDifference": 1.942890293094024e-16
+    },
+    {
+      "name": "R3-dx0.01-pCa6.1-shift-0.0005-dt0.001",
+      "independentMaximumTemporalForceError": 1.5765792313882088e-06,
+      "independentNormalizedTemporalError": 0.0033831620998786725,
+      "independentSpectralBEStateDifference": 5.689893001203927e-15
+    }
+  ],
+  "syntheticBoundaryTests": [
+    {
+      "delta": 0.01,
+      "escapedMass": 0.0775,
+      "escapedDiscreteMoment": 0.26505,
+      "immediateForceIncrement": -0.5161,
+      "minimumPopulation": 0.0,
+      "massError": 0.0
+    },
+    {
+      "delta": -0.01,
+      "escapedMass": 0.0675,
+      "escapedDiscreteMoment": -0.09585,
+      "immediateForceIncrement": 0.17770000000000002,
+      "minimumPopulation": 0.0,
+      "massError": 0.0
+    }
+  ],
+  "invalidInputRejections": [
+    {
+      "input": "negative population",
+      "result": "REJECTED",
+      "reason": "nonfinite or negative population; no clipping"
+    },
+    {
+      "input": "nonfinite population",
+      "result": "REJECTED",
+      "reason": "nonfinite or negative population; no clipping"
+    },
+    {
+      "input": "incorrect mass",
+      "result": "REJECTED",
+      "reason": "population mass gate failed"
+    },
+    {
+      "input": "capacity 0.0",
+      "result": "REJECTED",
+      "reason": "invalid fixed capacity"
+    },
+    {
+      "input": "capacity -1.0",
+      "result": "REJECTED",
+      "reason": "invalid fixed capacity"
+    },
+    {
+      "input": "capacity 1.1",
+      "result": "REJECTED",
+      "reason": "invalid fixed capacity"
+    },
+    {
+      "input": "capacity nan",
+      "result": "REJECTED",
+      "reason": "invalid fixed capacity"
+    },
+    {
+      "input": "timestep 0.0",
+      "result": "REJECTED",
+      "reason": "invalid positive timestep"
+    },
+    {
+      "input": "timestep -0.001",
+      "result": "REJECTED",
+      "reason": "invalid positive timestep"
+    },
+    {
+      "input": "timestep nan",
+      "result": "REJECTED",
+      "reason": "invalid positive timestep"
+    },
+    {
+      "input": "shift 0.0",
+      "result": "REJECTED",
+      "reason": "shift must be finite, nonzero and smaller than one bin"
+    },
+    {
+      "input": "shift 0.04",
+      "result": "REJECTED",
+      "reason": "shift must be finite, nonzero and smaller than one bin"
+    },
+    {
+      "input": "shift -0.04",
+      "result": "REJECTED",
+      "reason": "shift must be finite, nonzero and smaller than one bin"
+    },
+    {
+      "input": "shift 0.08",
+      "result": "REJECTED",
+      "reason": "shift must be finite, nonzero and smaller than one bin"
+    },
+    {
+      "input": "shift -0.08",
+      "result": "REJECTED",
+      "reason": "shift must be finite, nonzero and smaller than one bin"
+    },
+    {
+      "input": "shift nan",
+      "result": "REJECTED",
+      "reason": "shift must be finite, nonzero and smaller than one bin"
+    }
+  ],
+  "sourceParity": "Primary PDF extraction independently read; visual column alignment/source code parity not certified",
+  "limits": [
+    "Archived matched states checked independently; all-step metrics additionally supported by source validation and positivity-safe formula.",
+    "Synthetic boundary loss is a declared discrete center-mass convention, not exact continuous tail force.",
+    "No source-fiber trajectory, cooperative/series model, descending branch, human coefficient or arm qualification."
+  ]
+}

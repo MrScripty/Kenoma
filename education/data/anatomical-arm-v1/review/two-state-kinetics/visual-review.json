@@ -1,0 +1,13 @@
+{
+  "result": "PASS_VISUAL_REVIEW",
+  "imageSHA256": "c4ada39cf63b62e0ac80b5f35f436935d7965d2735da18c50b408e3da19e5d83",
+  "inspectedImage": "two-state-kinetics.png",
+  "observations": [
+    "Four panels readable at native and resized display",
+    "Fast and relaxed increments distinguish both pCa cases",
+    "Axes identify normalized force and dimensionless link shift",
+    "Equilibrium and temporal refinement are separate panels",
+    "Explicit fixed-capacity nonhuman scope and arm limitation visible"
+  ],
+  "scope": "Human visual inspection of generated scientific figure; no new solve or physiology claim"
+}
