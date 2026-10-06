@@ -1,0 +1,7 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {midpointNodes} from '../web/anatomical-element.mjs';import {MUSCLE_FIXTURE} from '../web/anatomical-material.mjs';import {prepareCompressionBody,evaluateCompressionBody} from '../tools/anatomical-compression-quadrature.mjs';import {elementBodyTangent} from '../tools/full-p2-body-tangent.mjs';
+test('Full P2 element Hessian-vector agrees with independently assembled nodal stress differences',()=>{
+ const source={nodes_m:midpointNodes([[0,0,0],[.02,0,0],[0,.02,0],[0,0,.02]]),elements_ten_node:[Array.from({length:10},(_,i)=>i)],reference_fibres:[[1,0,0]]},body=prepareCompressionBody(source,source.nodes_m.map(()=>[]),2),positions=source.nodes_m.map(([x,y,z])=>[1.2*x+.1*y,y/Math.sqrt(1.2),z/Math.sqrt(1.2)]),p={...MUSCLE_FIXTURE,sigma0:8708387.370104775},H=elementBodyTangent(body.elements[0],positions,.01,p),d=Array.from({length:30},(_,k)=>Math.sin(k+1)/Math.sqrt(30)),Hd=Array.from({length:30},(_,i)=>d.reduce((s,v,j)=>s+H[30*i+j]*v,0));
+ assert.ok(Math.max(...H.map((v,k)=>Math.abs(v-H[(k%30)*30+Math.floor(k/30)])))<1e-8);
+ for(const h of [1e-7,5e-8]){const gp=evaluateCompressionBody(body,positions.map((X,n)=>X.map((v,i)=>v+h*d[3*n+i])),.01,p).nodalGradientN.flat(),gm=evaluateCompressionBody(body,positions.map((X,n)=>X.map((v,i)=>v-h*d[3*n+i])),.01,p).nodalGradientN.flat(),err=Math.hypot(...gp.map((v,i)=>(v-gm[i])/(2*h)-Hd[i]))/Math.hypot(...Hd);assert.ok(err<1e-4,err);}
+});

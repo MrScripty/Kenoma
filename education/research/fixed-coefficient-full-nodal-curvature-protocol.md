@@ -1,0 +1,9 @@
+# Frozen full P2 curvature at the accepted enlarged state
+
+Keep the independently replayed current-preconditioned tapered control at activation **0.01** unchanged. Expand only the *diagnostic tangent space* to all **1755 P2 nodal components**, holding the exact original 90 cap nodes (270 components) fixed and leaving **1485 free components**. No optimizer, candidate acceptance, activation advancement, coefficient fit or geometric change occurs. The original 126-coordinate restriction remains embedded in the full P2 space.
+
+Assemble each full 30×30 element Hessian from the unchanged C=dP/dF and the same 256 positive integration points, in N/m. Save row-major binary64 element matrices and source hashes; assemble the global sparse operator independently in Python. Check symmetry, the independently stored full nodal gradient, cap trace, and three restricted Hessian-vector projections against the existing modal assembly. Compute six smallest eigenvalues of the symmetric held-cap global operator with NumPy/SciPy. This checks a finite P2 constrained *body* tangent, not a continuum proof or complete arm/contact Hessian.
+
+Save the minimum eigenvector as a Euclidean-norm-one full nodal displacement direction with exactly zero cap motion. Independently finite-difference the original full nodal body gradient at **1e-7 and 5e-8 m**, requiring relative Hessian-vector error at most **1e-4**. Report potential directional curvature as a derivative diagnostic even though the frozen full nodal gradient is not zero. Negative curvature is not a completed relaxation or a physical time step; preserve both existing accepted restricted and rejected states.
+
+This audit follows the witnessed local negative acoustic curvature and enlarged-space excluded forces. It must not use a larger optimizer budget or relaxed gates to repair either issue. No material, published equation/book/Lean or envelope/skin change is authorized by a tangent spectrum alone.

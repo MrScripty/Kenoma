@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "result": "PASS_INDEPENDENT_FROZEN_FULL_P2_CURVATURE",
+  "sourceHashes": {
+    "data/anatomical-arm-v1/audit/fixed-coefficient-full-p2-operator.json": "02afc4b2d44a29abd28191a6d89b2e0cfed97715859bff5ebccc5833223f2351",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-full-p2-spectrum.json": "7fc251a60512a3e98093de524e75702de30e84e8c9a88366d1a4e37909beb941",
+    "tools/verify-fixed-coefficient-full-p2-curvature.mjs": "9d4aa9472797ecf5ebb5f292fdb7a4fb2cb04024d8fda077de7f0360ee6014df",
+    "web/anatomical-intersections.mjs": "a083a9838ac3c7508b65b58329c741aef65a065288aff82fc886d1c2c90375df"
+  },
+  "fullNodalForceAssemblyDifferenceN": 1.2789769243681803e-13,
+  "minimumEigenvalueNPerM": -1027.0211870426497,
+  "rayleighNPerM": -1027.0211870424214,
+  "rayleighPartsNPerM": {
+    "matrix": 261.284278528399,
+    "volume": -1390.369613261733,
+    "passiveFiber": 106.80297325949817,
+    "active": -4.7388255686324445
+  },
+  "fullGradientDirectionalDerivativeN": 0.828976878849957,
+  "probes": [
+    {
+      "stepM": 1e-7,
+      "relativeVectorError": 6.175730793258179e-7,
+      "curvatureNPerM": -1027.021182125217,
+      "potentialFirstDerivativeN": 0.8289769712344075,
+      "minimumSampledPerturbedJ": 0.33399623045569926
+    },
+    {
+      "stepM": 5e-8,
+      "relativeVectorError": 0.0000016442773077700019,
+      "curvatureNPerM": -1027.0211857465674,
+      "potentialFirstDerivativeN": 0.8289768499425421,
+      "minimumSampledPerturbedJ": 0.3339987933929554
+    }
+  ],
+  "surface": {
+    "triangleCount": 880,
+    "transverseCrossings": 0,
+    "limits": "Finite strict transverse triangular intersections only; not coplanar, containment or curved-surface certification."
+  },
+  "limits": [
+    "Perturbed fields are derivative probes, never accepted or time-advanced states.",
+    "Negative finite P2 body curvature and nonzero full nodal force block a credible local equilibrium at this frozen restricted state.",
+    "No complete arm/contact stability, continuum convergence, material change or new physical solution is claimed."
+  ]
+}

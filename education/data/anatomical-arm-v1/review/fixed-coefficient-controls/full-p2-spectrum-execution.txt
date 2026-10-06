@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "result": "PASS_SOURCE_BOUND_FROZEN_FULL_P2_SPECTRUM",
+  "fullComponents": 1755,
+  "heldComponents": 270,
+  "freeComponents": 1485,
+  "maximumGlobalAsymmetryNPerM": 2.3283064365386963e-10,
+  "maximumRestrictedHessianDifferenceNPerM": 2.6193447411060333e-08,
+  "relativeRestrictedHessianDifference": 1.3783587022882913e-13,
+  "sixSmallestEigenvaluesNPerM": [
+    -1027.0211870426497,
+    -861.4558493747361,
+    -692.262927135326,
+    -616.0271779678656,
+    -523.5870185759768,
+    -441.1331433716994
+  ],
+  "minimumRestrictedEigenvalueNPerM": 48.045216645998465,
+  "minimumEigenvalueNPerM": -1027.0211870426497,
+  "relativeEigenResidual": 4.570511543672468e-13,
+  "directionNorm": 0.9999999999999997,
+  "maximumHeldDirection": 0.0,
+  "fullGradientDirectionalDerivativeN": 0.8289768788499912,
+  "maximumFreeNodalComponentN": 49.09170071407688,
+  "limits": [
+    "Frozen accepted restricted state with unbalanced full nodal gradient; no relaxation or physical time advancement.",
+    "Body-only finite P2 held-cap tangent. Local spectrum cannot establish the complete arm/contact dynamic stability."
+  ]
+}
