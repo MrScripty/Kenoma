@@ -138,14 +138,18 @@ def build():
         stmt='theorem '+name+statement.group(1)
         meta=f"Lean 4.19.0; {dependency_description(receipt)}; transitive axioms: {', '.join(c['axioms']) or 'none'}; source SHA-256: {receipt['source_sha256']}"
         if not web:
-            return f"\n**Checked claim {id}:** {c['claim']}\n\n**Assumptions:** {c['assumptions']}\n\n```lean\n{stmt}\n```\n\n**Limits:** {c['limitations']}\n\nDeclaration: `{c['theorem']}`. {meta}. [Full checked source]({receipt['source']}); [receipt]({receipt_path}).\n"
+            claim_text=c['claim'].replace('*',r'\*');assumptions=c['assumptions'].replace('*',r'\*');limits=c['limitations'].replace('*',r'\*')
+            return f"\n**Checked claim {id}:** {claim_text}\n\n**Assumptions:** {assumptions}\n\n```lean\n{stmt}\n```\n\n**Limits:** {limits}\n\nDeclaration: `{c['theorem']}`. {meta}. [Full checked source]({receipt['source']}); [receipt]({receipt_path}).\n"
         e=html.escape
+        # Pandoc parses prose inside aside elements as Markdown. Claim-map
+        # multiplication signs are literal text, not emphasis delimiters.
+        def prose(value):return e(value).replace('*','&#42;')
         implementation=c.get('implementation','See the adjacent derivation and original mechanics claim map.')
         match=re.match(r'(web/[^: ]+)',implementation)
-        implementation_html=(f'<a href="{e(match[1])}">{e(implementation)}</a>' if match else e(implementation))
+        implementation_html=(f'<a href="{e(match[1])}">{prose(implementation)}</a>' if match else prose(implementation))
         return f'''\n<aside class="proof-card" id="proof-{id}" aria-label="Checked mathematical claim">
-<h3>Checked claim · {e(id)}</h3><p>{e(c['claim'])}</p><p><strong>Assumptions:</strong> {e(c['assumptions'])}</p>
-<pre><code>{e(stmt)}</code></pre><p><strong>Limits:</strong> {e(c['limitations'])}</p>
+<h3>Checked claim · {e(id)}</h3><p>{prose(c['claim'])}</p><p><strong>Assumptions:</strong> {prose(c['assumptions'])}</p>
+<pre><code>{e(stmt)}</code></pre><p><strong>Limits:</strong> {prose(c['limitations'])}</p>
 <p class="proof-meta">Declaration {e(c['theorem'])}. {e(meta)}.</p>
 <p><strong>Implementation link:</strong> {implementation_html}</p>
 <p><a href="{receipt['source']}">Full source</a> · <a href="{receipt_path}">Build receipt</a> · <a href="{transcript_path}">Kernel dependency report</a></p>

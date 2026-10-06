@@ -8,6 +8,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
 from recorded_inputs import recorded_input_matches
 from check_endpoint_warning_audit import check as check_endpoint_warning_audit
 from check_material_artifact import check as check_material_artifact
+from check_real_lesson_artifact import check as check_real_lesson_artifact
 from check_real_lesson_proofs import FAMILIES as REAL_FAMILIES
 ROOT=Path(__file__).resolve().parents[1];out=ROOT/'dist'
 proof=json.loads((out/'proof-status.json').read_text())
@@ -57,6 +58,7 @@ assert property_browser['app_sha256']==hashlib.sha256((out/'assets/app.js').read
 assert property_browser['manifest_sha256']==hashlib.sha256((out/'build-manifest.json').read_bytes()).hexdigest()
 check_endpoint_warning_audit(out)
 check_material_artifact(out)
+check_real_lesson_artifact(out)
 property_render=json.loads((out/'property-book-review/render-receipt.json').read_text())
 assert property_render['result']=='PASS_PROPERTY_BOOK_RENDER_CAPTURE'
 assert property_render['html_sha256']==hashlib.sha256((out/'index.html').read_bytes()).hexdigest()

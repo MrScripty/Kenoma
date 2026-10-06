@@ -103,6 +103,7 @@ jobs:
           python3 tests/property_browser.py dist
           python3 tests/material_browser.py dist
           python3 tools/inspect_property_integration.py
+          python3 tools/inspect_real_lesson_proofs.py
           python3 tests/render_capture_rerun.py
           python3 tests/anatomical_arm_inspection.py
           python3 tests/worker_lifecycle.py

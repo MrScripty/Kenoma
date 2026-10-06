@@ -6,6 +6,7 @@ from urllib.parse import unquote,urlsplit
 import fitz
 from executable_outputs import executable_outputs,executable_digest
 from check_real_lesson_proofs import FAMILIES as REAL_FAMILIES
+from check_real_lesson_artifact import check as check_real_lesson_artifact
 ROOT=Path(__file__).resolve().parents[1]
 FAMILIES=[('proof-status.json','Mechanics.lean','claims.json',12),('transfer-proof-status.json','AnatomicalTransfer.lean','anatomical-claims.json',2),('coupled-proof-status.json','CoupledMechanics.lean','coupled-claims.json',7),('arm-proof-status.json','AnatomicalArm.lean','arm-claims.json',4),('property-proof-status.json','ContinuumProperties.lean','property-claims.json',4)]
 FAMILIES += [('material-proof-status.json','MaterialResponse.lean','material-claims.json',5)]
@@ -45,6 +46,7 @@ def validate_build(out,manifest):
     for name,*_ in FAMILIES:
         if name in real_receipts:
             require(read(name).get('mathlib')==lock,'Wrong pinned mathlib identity: '+name)
+    if any(name in real_receipts for name,*_ in FAMILIES):check_real_lesson_artifact(out)
     require(digest(local('proofs/mathlib-lake-manifest.json'))==lock['manifest_sha256'],'Wrong bundled dependency manifest')
     html=digest(local('index.html'));app=digest(local('assets/app.js'));manifest_hash=digest(local('build-manifest.json'))
     for name in ['browser-check.json','mobile-startup-check.json']:
