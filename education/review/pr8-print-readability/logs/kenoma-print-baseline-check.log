@@ -1,0 +1,322 @@
+Traceback (most recent call last):
+  File "/workspace/kenoma-pr8-print-readability/education/tools/check_print_readability.py", line 299, in <module>
+    main()
+  File "/workspace/kenoma-pr8-print-readability/education/tools/check_print_readability.py", line 292, in main
+    result = qualify(args.dist, args.baseline_pdf)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/kenoma-pr8-print-readability/education/tools/check_print_readability.py", line 268, in qualify
+    assert not errors, 'Print readability failed:\n' + '\n'.join(errors)
+           ^^^^^^^^^^
+AssertionError: Print readability failed:
+card:force-pair:claim: 6.297174 pt below 10 pt
+card:force-pair:assumptions: 6.297174 pt below 10 pt
+card:force-pair:limits: 6.297174 pt below 10 pt
+card:force-pair:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.force_pair_cancels: 4.554956 pt below 10 pt
+card:force-real-pair:claim: 6.297174 pt below 10 pt
+card:force-real-pair:assumptions: 6.297174 pt below 10 pt
+card:force-real-pair:limits: 6.297174 pt below 10 pt
+card:force-real-pair:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.MechanicsReal.force_pair_cancels: 4.554956 pt below 10 pt
+card:torque-example:claim: 6.297174 pt below 10 pt
+card:torque-example:assumptions: 6.297174 pt below 10 pt
+card:torque-example:limits: 6.297174 pt below 10 pt
+card:torque-example:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.torque_worked_example: 4.554956 pt below 10 pt
+card:torque-linearity:claim: 6.297174 pt below 10 pt
+card:torque-linearity:assumptions: 6.297174 pt below 10 pt
+card:torque-linearity:limits: 6.297174 pt below 10 pt
+card:torque-linearity:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.torque_linear: 4.554956 pt below 10 pt
+card:torque-real-linearity:claim: 6.297174 pt below 10 pt
+card:torque-real-linearity:assumptions: 6.297174 pt below 10 pt
+card:torque-real-linearity:limits: 6.297174 pt below 10 pt
+card:torque-real-linearity:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.MechanicsReal.torque_linear: 4.554956 pt below 10 pt
+card:torque-origin:claim: 6.297174 pt below 10 pt
+card:torque-origin:assumptions: 6.297174 pt below 10 pt
+card:torque-origin:limits: 6.297174 pt below 10 pt
+card:torque-origin:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.torque_origin_shift: 4.554956 pt below 10 pt
+card:central-pair:claim: 6.297174 pt below 10 pt
+card:central-pair:assumptions: 6.297174 pt below 10 pt
+card:central-pair:limits: 6.297174 pt below 10 pt
+card:central-pair:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.central_pair_torque: 4.554956 pt below 10 pt
+card:kinetic-sign:claim: 6.297174 pt below 10 pt
+card:kinetic-sign:assumptions: 6.297174 pt below 10 pt
+card:kinetic-sign:limits: 6.297174 pt below 10 pt
+card:kinetic-sign:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.kinetic_numerator_nonnegative: 4.554956 pt below 10 pt
+card:volume-edge-translation:claim: 6.297174 pt below 10 pt
+card:volume-edge-translation:assumptions: 6.297174 pt below 10 pt
+card:volume-edge-translation:limits: 6.297174 pt below 10 pt
+card:volume-edge-translation:implementation: 6.297174 pt below 10 pt
+theorem:KenomaProperties.edge_translation_invariant: 4.554956 pt below 10 pt
+card:volume-det-compose:claim: 6.297174 pt below 10 pt
+card:volume-det-compose:assumptions: 6.297174 pt below 10 pt
+card:volume-det-compose:limits: 6.297174 pt below 10 pt
+card:volume-det-compose:implementation: 6.297174 pt below 10 pt
+theorem:KenomaProperties.determinant_composition: 4.554956 pt below 10 pt
+card:volume-diagonal:claim: 6.297174 pt below 10 pt
+card:volume-diagonal:assumptions: 6.297174 pt below 10 pt
+card:volume-diagonal:limits: 6.297174 pt below 10 pt
+card:volume-diagonal:implementation: 6.297174 pt below 10 pt
+theorem:KenomaProperties.axial_determinant: 4.554956 pt below 10 pt
+card:volume-isochoric-sqrt:claim: 6.297174 pt below 10 pt
+card:volume-isochoric-sqrt:assumptions: 6.297174 pt below 10 pt
+card:volume-isochoric-sqrt:limits: 6.297174 pt below 10 pt
+card:volume-isochoric-sqrt:implementation: 6.297174 pt below 10 pt
+theorem:KenomaProperties.isochoric_sqrt_construction: 4.554956 pt below 10 pt
+card:material-real-confined-volume:claim: 6.297174 pt below 10 pt
+card:material-real-confined-volume:assumptions: 6.297174 pt below 10 pt
+card:material-real-confined-volume:limits: 6.297174 pt below 10 pt
+card:material-real-confined-volume:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.MaterialReal.confined_volume: 4.554956 pt below 10 pt
+card:material-real-bulk-sign:claim: 6.297174 pt below 10 pt
+card:material-real-bulk-sign:assumptions: 6.297174 pt below 10 pt
+card:material-real-bulk-sign:limits: 6.297174 pt below 10 pt
+card:material-real-bulk-sign:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.MaterialReal.finite_bulk_energy_nonnegative: 4.554956 pt below 10 pt
+card:material-real-bulk-zero:claim: 6.297174 pt below 10 pt
+card:material-real-bulk-zero:assumptions: 6.297174 pt below 10 pt
+card:material-real-bulk-zero:limits: 6.297174 pt below 10 pt
+card:material-real-bulk-zero:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.MaterialReal.positive_bulk_zero_energy: 4.554956 pt below 10 pt
+card:material-real-separated-wall:claim: 6.297174 pt below 10 pt
+card:material-real-separated-wall:assumptions: 6.297174 pt below 10 pt
+card:material-real-separated-wall:limits: 6.297174 pt below 10 pt
+card:material-real-separated-wall:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.MaterialReal.separated_wall_zero_reaction: 4.554956 pt below 10 pt
+card:material-real-lateral-work:claim: 6.297174 pt below 10 pt
+card:material-real-lateral-work:assumptions: 6.297174 pt below 10 pt
+card:material-real-lateral-work:limits: 6.297174 pt below 10 pt
+card:material-real-lateral-work:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.MaterialReal.lateral_virtual_work: 4.554956 pt below 10 pt
+card:material-confined-volume:claim: 6.297174 pt below 10 pt
+card:material-confined-volume:assumptions: 6.297174 pt below 10 pt
+card:material-confined-volume:limits: 6.297174 pt below 10 pt
+card:material-confined-volume:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.Material.confined_volume: 4.554956 pt below 10 pt
+card:material-bulk-sign:claim: 6.297174 pt below 10 pt
+card:material-bulk-sign:assumptions: 6.297174 pt below 10 pt
+card:material-bulk-sign:limits: 6.297174 pt below 10 pt
+card:material-bulk-sign:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.Material.finite_bulk_penalty_nonnegative: 4.554956 pt below 10 pt
+card:material-bulk-zero:claim: 6.297174 pt below 10 pt
+card:material-bulk-zero:assumptions: 6.297174 pt below 10 pt
+card:material-bulk-zero:limits: 6.297174 pt below 10 pt
+card:material-bulk-zero:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.Material.positive_bulk_zero_penalty: 4.554956 pt below 10 pt
+card:material-separated-wall:claim: 6.297174 pt below 10 pt
+card:material-separated-wall:assumptions: 6.297174 pt below 10 pt
+card:material-separated-wall:limits: 6.297174 pt below 10 pt
+card:material-separated-wall:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.Material.separated_wall_zero_reaction: 4.554956 pt below 10 pt
+card:material-lateral-work:claim: 6.297174 pt below 10 pt
+card:material-lateral-work:assumptions: 6.297174 pt below 10 pt
+card:material-lateral-work:limits: 6.297174 pt below 10 pt
+card:material-lateral-work:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.Material.lateral_virtual_work: 4.554956 pt below 10 pt
+card:virtual-power:claim: 6.297174 pt below 10 pt
+card:virtual-power:assumptions: 6.297174 pt below 10 pt
+card:virtual-power:limits: 6.297174 pt below 10 pt
+card:virtual-power:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.virtual_power_identity: 4.554956 pt below 10 pt
+card:virtual-real-power:claim: 6.297174 pt below 10 pt
+card:virtual-real-power:assumptions: 6.297174 pt below 10 pt
+card:virtual-real-power:limits: 6.297174 pt below 10 pt
+card:virtual-real-power:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.MechanicsReal.virtual_power_identity: 4.554956 pt below 10 pt
+card:activation-bound:claim: 6.297174 pt below 10 pt
+card:activation-bound:assumptions: 6.297174 pt below 10 pt
+card:activation-bound:limits: 6.297174 pt below 10 pt
+card:activation-bound:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.activation_weighted_bound: 4.554956 pt below 10 pt
+card:actuator-real-activation-interval:claim: 6.297174 pt below 10 pt
+card:actuator-real-activation-interval:assumptions: 6.297174 pt below 10 pt
+card:actuator-real-activation-interval:limits: 6.297174 pt below 10 pt
+card:actuator-real-activation-interval:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.ActuatorReal.activation_in_unit_interval: 4.554956 pt below 10 pt
+card:actuator-real-activation-ode:claim: 6.297174 pt below 10 pt
+card:actuator-real-activation-ode:assumptions: 6.297174 pt below 10 pt
+card:actuator-real-activation-ode:limits: 6.297174 pt below 10 pt
+card:actuator-real-activation-ode:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.ActuatorReal.activation_hasDerivAt: 4.554956 pt below 10 pt
+card:actuator-real-active-force-bounds:claim: 6.297174 pt below 10 pt
+card:actuator-real-active-force-bounds:assumptions: 6.297174 pt below 10 pt
+card:actuator-real-active-force-bounds:limits: 6.297174 pt below 10 pt
+card:actuator-real-active-force-bounds:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.ActuatorReal.active_force_bounds: 4.554956 pt below 10 pt
+card:actuator-real-active-force-derivative:claim: 6.297174 pt below 10 pt
+card:actuator-real-active-force-derivative:assumptions: 6.297174 pt below 10 pt
+card:actuator-real-active-force-derivative:limits: 6.297174 pt below 10 pt
+card:actuator-real-active-force-derivative:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.ActuatorReal.active_force_hasDerivAt: 4.554956 pt below 10 pt
+card:actuator-real-gaussian-radius-bound:claim: 6.297174 pt below 10 pt
+card:actuator-real-gaussian-radius-bound:assumptions: 6.297174 pt below 10 pt
+card:actuator-real-gaussian-radius-bound:limits: 6.297174 pt below 10 pt
+card:actuator-real-gaussian-radius-bound:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.ActuatorReal.gaussian_weighted_radius_bound: 4.554956 pt below 10 pt
+card:actuator-real-active-slope-bound:claim: 6.297174 pt below 10 pt
+card:actuator-real-active-slope-bound:assumptions: 6.297174 pt below 10 pt
+card:actuator-real-active-slope-bound:limits: 6.297174 pt below 10 pt
+card:actuator-real-active-slope-bound:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.ActuatorReal.active_slope_bound: 4.554956 pt below 10 pt
+card:actuator-real-series-strict-monotone:claim: 6.297174 pt below 10 pt
+card:actuator-real-series-strict-monotone:assumptions: 6.297174 pt below 10 pt
+card:actuator-real-series-strict-monotone:limits: 6.297174 pt below 10 pt
+card:actuator-real-series-strict-monotone:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.ActuatorReal.series_residual_strictMono: 4.554956 pt below 10 pt
+card:actuator-real-series-unique-root:claim: 6.297174 pt below 10 pt
+card:actuator-real-series-unique-root:assumptions: 6.297174 pt below 10 pt
+card:actuator-real-series-unique-root:limits: 6.297174 pt below 10 pt
+card:actuator-real-series-unique-root:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.ActuatorReal.series_equilibrium_unique: 4.554956 pt below 10 pt
+card:actuator-real-series-root-exists:claim: 6.297174 pt below 10 pt
+card:actuator-real-series-root-exists:assumptions: 6.297174 pt below 10 pt
+card:actuator-real-series-root-exists:limits: 6.297174 pt below 10 pt
+card:actuator-real-series-root-exists:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.ActuatorReal.series_equilibrium_exists: 4.554956 pt below 10 pt
+card:actuator-real-series-lower-rejection:claim: 6.297174 pt below 10 pt
+card:actuator-real-series-lower-rejection:assumptions: 6.297174 pt below 10 pt
+card:actuator-real-series-lower-rejection:limits: 6.297174 pt below 10 pt
+card:actuator-real-series-lower-rejection:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.ActuatorReal.series_positive_lower_endpoint: 4.554956 pt below 10 pt
+card:actuator-real-series-denominator:claim: 6.297174 pt below 10 pt
+card:actuator-real-series-denominator:assumptions: 6.297174 pt below 10 pt
+card:actuator-real-series-denominator:limits: 6.297174 pt below 10 pt
+card:actuator-real-series-denominator:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.ActuatorReal.series_denominator_positive: 4.554956 pt below 10 pt
+card:compliance-denominator:claim: 6.297174 pt below 10 pt
+card:compliance-denominator:assumptions: 6.297174 pt below 10 pt
+card:compliance-denominator:limits: 6.297174 pt below 10 pt
+card:compliance-denominator:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.compliant_denominator_positive: 4.554956 pt below 10 pt
+card:element-resultant:claim: 6.297174 pt below 10 pt
+card:element-resultant:assumptions: 6.297174 pt below 10 pt
+card:element-resultant:limits: 6.297174 pt below 10 pt
+card:element-resultant:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.element_gradient_resultant: 4.554956 pt below 10 pt
+card:centroid-transfer:claim: 6.297174 pt below 10 pt
+card:centroid-transfer:assumptions: 6.297174 pt below 10 pt
+card:centroid-transfer:limits: 6.297174 pt below 10 pt
+card:centroid-transfer:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.centroid_contact_power: 4.554956 pt below 10 pt
+card:armijo-decrease:claim: 6.297174 pt below 10 pt
+card:armijo-decrease:assumptions: 6.297174 pt below 10 pt
+card:armijo-decrease:limits: 6.297174 pt below 10 pt
+card:armijo-decrease:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.accepted_energy_nonincrease: 4.554956 pt below 10 pt
+card:quadratic-partition:claim: 6.297174 pt below 10 pt
+card:quadratic-partition:assumptions: 6.297174 pt below 10 pt
+card:quadratic-partition:limits: 6.297174 pt below 10 pt
+card:quadratic-partition:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.Coupled.quadratic_partition_numerator: 4.554956 pt below 10 pt
+card:tendon-toe-storage:claim: 6.297174 pt below 10 pt
+card:tendon-toe-storage:assumptions: 6.297174 pt below 10 pt
+card:tendon-toe-storage:limits: 6.297174 pt below 10 pt
+card:tendon-toe-storage:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.Coupled.tendon_toe_energy_numerator_nonnegative: 4.554956 pt below 10 pt
+card:attachment-transpose-power:claim: 6.297174 pt below 10 pt
+card:attachment-transpose-power:assumptions: 6.297174 pt below 10 pt
+card:attachment-transpose-power:limits: 6.297174 pt below 10 pt
+card:attachment-transpose-power:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.Anatomical.attachment_transpose_power: 4.554956 pt below 10 pt
+card:paired-attachment-work:claim: 6.297174 pt below 10 pt
+card:paired-attachment-work:assumptions: 6.297174 pt below 10 pt
+card:paired-attachment-work:limits: 6.297174 pt below 10 pt
+card:paired-attachment-work:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.Anatomical.paired_attachment_work: 4.554956 pt below 10 pt
+card:implicit-impulse:claim: 6.297174 pt below 10 pt
+card:implicit-impulse:assumptions: 6.297174 pt below 10 pt
+card:implicit-impulse:limits: 6.297174 pt below 10 pt
+card:implicit-impulse:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.Coupled.impulse_balance: 4.554956 pt below 10 pt
+card:kinetic-increment:claim: 6.297174 pt below 10 pt
+card:kinetic-increment:assumptions: 6.297174 pt below 10 pt
+card:kinetic-increment:limits: 6.297174 pt below 10 pt
+card:kinetic-increment:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.Coupled.kinetic_increment_identity: 4.554956 pt below 10 pt
+card:implicit-angular-work:claim: 6.297174 pt below 10 pt
+card:implicit-angular-work:assumptions: 6.297174 pt below 10 pt
+card:implicit-angular-work:limits: 6.297174 pt below 10 pt
+card:implicit-angular-work:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.Coupled.implicit_kinetic_work_balance: 4.554956 pt below 10 pt
+card:implicit-dissipation:claim: 6.297174 pt below 10 pt
+card:implicit-dissipation:assumptions: 6.297174 pt below 10 pt
+card:implicit-dissipation:limits: 6.297174 pt below 10 pt
+card:implicit-dissipation:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.Coupled.implicit_dissipation_numerator_nonnegative: 4.554956 pt below 10 pt
+card:mass-event-work:claim: 6.297174 pt below 10 pt
+card:mass-event-work:assumptions: 6.297174 pt below 10 pt
+card:mass-event-work:limits: 6.297174 pt below 10 pt
+card:mass-event-work:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.Coupled.mass_event_work_numerator: 4.554956 pt below 10 pt
+card:shared-guide-balance:claim: 6.297174 pt below 10 pt
+card:shared-guide-balance:assumptions: 6.297174 pt below 10 pt
+card:shared-guide-balance:limits: 6.297174 pt below 10 pt
+card:shared-guide-balance:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.Arm.shared_guide_force_balance: 4.554956 pt below 10 pt
+card:upward-mass-event:claim: 6.297174 pt below 10 pt
+card:upward-mass-event:assumptions: 6.297174 pt below 10 pt
+card:upward-mass-event:limits: 6.297174 pt below 10 pt
+card:upward-mass-event:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.Arm.upward_mass_event_work_numerator: 4.554956 pt below 10 pt
+card:contact-area-partition:claim: 6.297174 pt below 10 pt
+card:contact-area-partition:assumptions: 6.297174 pt below 10 pt
+card:contact-area-partition:limits: 6.297174 pt below 10 pt
+card:contact-area-partition:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.Arm.contact_partition_area_numerator: 4.554956 pt below 10 pt
+card:conservative-contact-gap:claim: 6.297174 pt below 10 pt
+card:conservative-contact-gap:assumptions: 6.297174 pt below 10 pt
+card:conservative-contact-gap:limits: 6.297174 pt below 10 pt
+card:conservative-contact-gap:implementation: 6.297174 pt below 10 pt
+theorem:Kenoma.Arm.conservative_contact_gap: 4.554956 pt below 10 pt
+appendix:Mechanics.lean: 4.554956 pt below 10 pt
+appendix:AnatomicalTransfer.lean: 4.554956 pt below 10 pt
+appendix:CoupledMechanics.lean: 4.554956 pt below 10 pt
+appendix:AnatomicalArm.lean: 4.554956 pt below 10 pt
+appendix:ContinuumProperties.lean: 4.554956 pt below 10 pt
+appendix:MaterialResponse.lean: 4.554956 pt below 10 pt
+appendix:MaterialResponseReal.lean: 4.554956 pt below 10 pt
+appendix:MechanicsReal.lean: 4.554956 pt below 10 pt
+appendix:ActuatorConstitutiveReal.lean: 4.554956 pt below 10 pt
+prose:Reading a moving
+body: 6.995111 pt below 10 pt
+prose:Force changes motion: 6.995111 pt below 10 pt
+prose:A force has an application
+point: 6.995111 pt below 10 pt
+prose:Energy reveals numerical
+error: 6.995111 pt below 10 pt
+prose:Measure
+deformation before choosing a muscle law: 6.995111 pt below 10 pt
+prose:Let material stiffness and
+boundaries choose the lateral shape: 6.995111 pt below 10 pt
+prose:Anatomy is evidence, not a silhouette: 6.995111 pt below 10 pt
+prose:Inspect real anatomy and recorded
+evidence: 6.995111 pt below 10 pt
+prose:Muscle pulls through a
+changing path: 6.995111 pt below 10 pt
+prose:Let forces move the elbow: 6.995111 pt below 10 pt
+prose:From line forces to tissue and
+rendered skin: 6.995111 pt below 10 pt
+prose:Store tendon energy and resist
+compression: 6.995111 pt below 10 pt
+prose:From a spring to a volume
+of tissue: 6.995111 pt below 10 pt
+prose:Fast solvers and what
+they approximate: 6.995111 pt below 10 pt
+prose:Solve a spatial solid, then buy speed with
+a measured error: 6.995111 pt below 10 pt
+prose:Skin must
+follow motion without losing the mechanics: 6.995111 pt below 10 pt
+prose:Lift, release and compress a spatial arm: 6.995111 pt below 10 pt
+prose:Coupled tissue mechanics: a checked
+intermediate: 6.995111 pt below 10 pt
+prose:Build an anatomical apparatus that can
+fail a check: 6.995111 pt below 10 pt
+prose:What the experiments establish: 6.995111 pt below 10 pt
+prose:From a lever to an arm: 6.995111 pt below 10 pt
+prose:Sources and evidence
+boundaries: 6.995111 pt below 10 pt

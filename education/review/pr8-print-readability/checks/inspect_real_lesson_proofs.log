@@ -1,0 +1,93 @@
+{
+  "schema": 1,
+  "result": "PASS_REAL_PROOF_RENDER_CAPTURE",
+  "source_revision": "0b4dc6a2cfa4fd4ff2b3decd08718c35ad5510e2",
+  "inspector_sha256": "6afe1a9f1e20e23dd48e7dd2321ee2c3b5908b0c6cdc1a3fa6dd77c40204a2cb",
+  "html_sha256": "c97f1d11d5d8192e3e9a957eb2770239404c53c5fd480868595bb0df7d0c7f77",
+  "app_sha256": "41a8ba9c98cdc4f93a34b3ba690e6a25158901305418118ce4340229fbe8d2f9",
+  "pdf_sha256": "2475b4dccf078c3bd6aa825c0748d7cd515c1c726cb283845cbe59944f6cffa2",
+  "manifest_sha256": "324028ce021c93f1c03aeaadc95b22772659118505278caf12282c07e02bbfca",
+  "browser": "151.0.7922.173",
+  "views": [
+    {
+      "name": "desktop",
+      "real_cards": 19,
+      "horizontal_overflow": false
+    },
+    {
+      "name": "mobile",
+      "real_cards": 19,
+      "horizontal_overflow": false
+    }
+  ],
+  "page_errors": [],
+  "real_claims": [
+    "material-real-confined-volume",
+    "material-real-bulk-sign",
+    "material-real-bulk-zero",
+    "material-real-separated-wall",
+    "material-real-lateral-work",
+    "force-real-pair",
+    "torque-real-linearity",
+    "virtual-real-power",
+    "actuator-real-activation-interval",
+    "actuator-real-activation-ode",
+    "actuator-real-active-force-bounds",
+    "actuator-real-active-force-derivative",
+    "actuator-real-gaussian-radius-bound",
+    "actuator-real-active-slope-bound",
+    "actuator-real-series-strict-monotone",
+    "actuator-real-series-unique-root",
+    "actuator-real-series-root-exists",
+    "actuator-real-series-lower-rejection",
+    "actuator-real-series-denominator"
+  ],
+  "pdf_pages": 153,
+  "source_pages": [
+    {
+      "page": 143,
+      "image": "pdf-source-page-143.png"
+    },
+    {
+      "page": 144,
+      "image": "pdf-source-page-144.png"
+    },
+    {
+      "page": 145,
+      "image": "pdf-source-page-145.png"
+    },
+    {
+      "page": 146,
+      "image": "pdf-source-page-146.png"
+    },
+    {
+      "page": 147,
+      "image": "pdf-source-page-147.png"
+    },
+    {
+      "page": 148,
+      "image": "pdf-source-page-148.png"
+    },
+    {
+      "page": 149,
+      "image": "pdf-source-page-149.png"
+    },
+    {
+      "page": 150,
+      "image": "pdf-source-page-150.png"
+    },
+    {
+      "page": 151,
+      "image": "pdf-source-page-151.png"
+    },
+    {
+      "page": 152,
+      "image": "pdf-source-page-152.png"
+    },
+    {
+      "page": 153,
+      "image": "pdf-source-page-153.png"
+    }
+  ],
+  "scope": "Actual generated desktop/mobile card captures, source-bound metadata and complete PDF theorem/hash text with durable links. Appearance review is separate; no numerical refinement or biological certificate."
+}

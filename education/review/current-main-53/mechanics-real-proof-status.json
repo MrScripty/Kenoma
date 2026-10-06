@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "lean_version": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)",
+  "mathlib": {
+    "repository": "https://github.com/leanprover-community/mathlib4",
+    "tag": "v4.19.0",
+    "commit": "c44e0c8ee63ca166450922a373c7409c5d26b00b",
+    "manifest_sha256": "5c6421b650bc87a2427a892a39e5522dc44543ca4ac1bd6e9f08d536c044a752",
+    "toolchain": "leanprover/lean4:v4.19.0",
+    "license": "Apache-2.0",
+    "qualification": "Fresh compilation required; this lock alone is not proof evidence."
+  },
+  "source": "proofs/MechanicsReal.lean",
+  "source_sha256": "aff41fbe28d5d546f1af36b1187c427cc536ea5c2853017d1539ac35ea645cdf",
+  "claims_sha256": "f3e626d2abc7eac8586912ade41204bdeaef13cc35ef7373144bf642f085ad5b",
+  "command": "lake --no-cache env lean -DwarningAsError=true proofs/MechanicsReal.lean (from pinned mathlib workspace)",
+  "claims": [
+    {
+      "id": "force-real-pair",
+      "theorem": "Kenoma.MechanicsReal.force_pair_cancels",
+      "claim": "An assumed real equal-and-opposite force pair cancels",
+      "assumptions": "One real force component and its assumed equal-and-opposite partner.",
+      "limitations": "Does not prove an interface follows an action-reaction or constitutive law.",
+      "implementation": "book/chapters/01-force.md: assumed internal-pair bookkeeping; no interface or pair solver is claimed.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "torque-real-linearity",
+      "theorem": "Kenoma.MechanicsReal.torque_linear",
+      "claim": "Real planar torque is additive in applied force at a fixed point",
+      "assumptions": "Real planar point coordinates; two real applied forces share that application point and torque origin.",
+      "limitations": "No geometric differentiation or floating-point equivalence.",
+      "implementation": "web/mechanics.mjs: cross2 implements the planar torque expression.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "virtual-real-power",
+      "theorem": "Kenoma.MechanicsReal.virtual_power_identity",
+      "claim": "Real signed power products associate under an assumed path-rate/moment relation",
+      "assumptions": "Real force, path derivative and angular velocity; signed force/moment and path-rate associations assumed.",
+      "limitations": "Does not derive the path derivative, continuous work balance or numerical work.",
+      "implementation": "web/elbow.mjs: active signed power.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ]
+}
