@@ -13,6 +13,7 @@ from check_serial_artifact import check as check_serial_artifact
 from check_real_lesson_artifact import check as check_real_lesson_artifact
 from check_real_lesson_proofs import FAMILIES as REAL_FAMILIES
 from check_print_readability import check as check_print_readability
+from check_connected_artifact import check as check_connected_artifact
 from check_projection_artifact import check as check_projection_artifact
 from check_projection_print_limits import check as check_projection_print_limits
 ROOT=Path(__file__).resolve().parents[1];out=ROOT/'dist'
@@ -68,6 +69,7 @@ check_serial_artifact(out)
 check_real_lesson_artifact(out)
 print_readability=check_print_readability(out)
 check_projection_artifact(out)
+check_connected_artifact(out)
 check_projection_print_limits(out)
 property_render=json.loads((out/'property-book-review/render-receipt.json').read_text())
 assert property_render['result']=='PASS_PROPERTY_BOOK_RENDER_CAPTURE'

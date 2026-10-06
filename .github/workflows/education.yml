@@ -105,6 +105,11 @@ jobs:
           python3 tools/check_print_readability.py dist
           python3 tests/projection_responsive.py --output dist/projection-responsive-qa
           python3 tests/projection_integration.py
+          python3 tests/axisymmetric_browser.py --preview dist/connected-passive --out dist/connected-qa --oracle dist/connected-material-oracle.json --experiment dist/connected-experiment.json
+          python3 tests/axisymmetric_end_faces_browser.py --preview dist/connected-passive --out dist/connected-api-qa --oracle dist/connected-material-oracle.json --legacy-experiment dist/connected-experiment.json --affected-experiment dist/connected-end-face-experiment.json
+          python3 tests/connected_integration.py
+          python3 tools/qualify_axisymmetric_negatives.py --out review/connected-negative-ci --proof-directory dist/connected-passive/proofs --oracle dist/connected-material-oracle.json --experiment dist/connected-experiment.json
+          python3 tools/qualify_connected_artifact_negatives.py
           python3 tools/qualify_projection_negatives.py --runtime review/projection-negative-ci --site dist --output dist/projection-negative-artifacts.json
           python3 tools/check_print_readability.py dist
           npm run test:browser

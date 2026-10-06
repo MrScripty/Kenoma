@@ -1,5 +1,6 @@
 """Actual full-book 9pt corruption plus missing/forged print receipts."""
 from pathlib import Path
+import os
 import ast,copy,hashlib,json,shutil,sys
 import fitz
 from playwright.sync_api import sync_playwright
@@ -34,7 +35,7 @@ for source,_,prefix,_ in FAMILIES:
 server,url=render_pdf.serve()
 try:
     with sync_playwright() as p:
-        browser=p.chromium.launch(headless=True,executable_path='/usr/bin/chromium')
+        browser=p.chromium.launch(headless=True,executable_path=os.environ.get('CHROMIUM_EXECUTABLE') or shutil.which('chromium') or p.chromium.executable_path)
         page=browser.new_page(viewport={'width':658,'height':1000})
         page.goto(url+'/index.html',wait_until='networkidle');page.emulate_media(media='print');page.evaluate('document.fonts.ready')
         page.add_style_tag(content='@media print {pre, pre code, pre code span {font-size:9pt!important}}')

@@ -7,6 +7,7 @@ from pathlib import Path
 from functools import partial
 from http.server import ThreadingHTTPServer
 from threading import Thread
+import os,shutil
 import argparse,hashlib,json
 from playwright.sync_api import sync_playwright,expect
 from axisymmetric_browser import ROOT,sha,close,ready,snap,verify_state,verify_scene,GPU_TRACK,QuietHandler
@@ -19,7 +20,7 @@ def qualify(preview,out,oraclefile,legacyfile,affectedfile):
     server=ThreadingHTTPServer(('127.0.0.1',0),partial(QuietHandler,directory=str(preview)));Thread(target=server.serve_forever,daemon=True).start();cases=[];errors=[]
     try:
         with sync_playwright() as pw:
-            browser=pw.chromium.launch(executable_path='/usr/bin/chromium',headless=True,args=['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']);context=browser.new_context(viewport={'width':1200,'height':1000});context.add_init_script(GPU_TRACK);page=context.new_page();page.on('pageerror',lambda e:errors.append(str(e)));page.goto('http://127.0.0.1:'+str(server.server_port));ready(page);lab=page.locator('[data-axisymmetric]');lab.locator('[data-action=start]').click();expect(lab).to_have_attribute('data-scene-state','ready')
+            browser=pw.chromium.launch(executable_path=os.environ.get('CHROMIUM_EXECUTABLE') or shutil.which('chromium') or pw.chromium.executable_path,headless=True,args=['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']);context=browser.new_context(viewport={'width':1200,'height':1000});context.add_init_script(GPU_TRACK);page=context.new_page();page.on('pageerror',lambda e:errors.append(str(e)));page.goto('http://127.0.0.1:'+str(server.server_port));ready(page);lab=page.locator('[data-axisymmetric]');lab.locator('[data-action=start]').click();expect(lab).to_have_attribute('data-scene-state','ready')
             # Keep the displayed option explicit; leave production validation/menu unchanged.
             lab.locator('[data-setting=mesh]').evaluate("el=>{for(const n of [3,6,12,24])el.add(new Option(n+' axial × 2 radial (qualification API)',n+',2'));}")
             for expected in affected['cases']:

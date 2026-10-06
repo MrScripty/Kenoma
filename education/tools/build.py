@@ -12,6 +12,7 @@ from check_real_lesson_proofs import check as check_real_lessons, FAMILIES as RE
 from property_labs import block as property_block
 from dissipative_lab import block as dissipative_block
 from serial_lab import block as serial_block
+from connected_book import prepare as prepare_connected, block as connected_block
 from figures import generate
 from evidence_figures import generate as evidence_figures
 from spatial_figures import generate as advanced_figures
@@ -114,6 +115,7 @@ def build():
     real_lessons=check_real_lessons(properties)
     from check_mixed_volume_proofs import check as check_mixed
     check_mixed(OUT/'mixed-volume-kernel', False)
+    prepare_connected(OUT)
     data=ROOT/'data/elbow-v1'
     subprocess.run(['python3',str(data/'scripts/validate_package.py')],check=True)
     continuum=ROOT/'contributions/continuum_reference'
@@ -221,6 +223,7 @@ def build():
         text=text.replace('{{dissipative-table}}',dissipative_table)
         text=re.sub(r'\{\{serial:(\w+)\}\}',lambda m:serial_block(m[1],web),text)
         text=text.replace('{{serial-table}}',serial_table)
+        text=text.replace('{{connected-specimen}}',connected_block(web))
         text=re.sub(r'\{\{proof:([\w-]+)\}\}',lambda m:proof_block(m[1],web),text)
         text=text.replace('{{evidence}}',(ROOT/'web/evidence.html').read_text() if web else 'The web edition provides a resettable static atlas viewer and a recorded-bin slider. The figures, source tables and downloads above and below provide the reading alternative.')
         text=text.replace('{{experiment}}',table).replace('{{spatial-experiment}}',spatial_table).replace('{{spatial-summary}}',spatial_summary)
@@ -307,6 +310,7 @@ def build():
       'property_experiment':'property-experiment.json',
       'material_experiment':'material-experiment.json',
       'dissipative_outputs':{name:hashlib.sha256((OUT/name).read_bytes()).hexdigest() for name in ['assets/property-dissipative.svg','dissipative-experiment.json']},
+      'connected_outputs':{name:hashlib.sha256((OUT/name).read_bytes()).hexdigest() for name in ['assets/connected-specimen.svg','connected-figure.json','connected-experiment.json','connected-material-oracle.json','connected-numerical-qualification.json','connected-end-face-experiment.json','connected-end-face-qualification.json','connected-passive/axisymmetric-preview-manifest.json']},
       'serial_outputs':{name:hashlib.sha256((OUT/name).read_bytes()).hexdigest() for name in ['assets/property-serial.svg','serial-experiment.json']},
       'git_revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
       'original_plans_base':'9b0c67fd25e1b645833a68bb9b1c2aba1404bbce',

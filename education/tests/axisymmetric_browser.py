@@ -7,6 +7,7 @@ from pathlib import Path
 from functools import partial
 from http.server import SimpleHTTPRequestHandler,ThreadingHTTPServer
 from threading import Thread
+import os,shutil
 import argparse,hashlib,json,math,sys
 import numpy as np
 from playwright.sync_api import sync_playwright,expect
@@ -142,7 +143,7 @@ def qualify(preview,out,oracle_file,experiment_file):
         (out/(name+'-state.json')).write_text(json.dumps(p)+'\n');cases.append(row);return p
     try:
         with sync_playwright() as pw:
-            browser=pw.chromium.launch(executable_path='/usr/bin/chromium',headless=True,args=['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']);context=browser.new_context(viewport={'width':1200,'height':1000});context.add_init_script(GPU_TRACK);page=context.new_page();page.on('pageerror',lambda e:errors.append(str(e)));page.goto(url);ready(page);lab=page.locator('[data-axisymmetric]')
+            browser=pw.chromium.launch(executable_path=os.environ.get('CHROMIUM_EXECUTABLE') or shutil.which('chromium') or pw.chromium.executable_path,headless=True,args=['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader']);context=browser.new_context(viewport={'width':1200,'height':1000});context.add_init_script(GPU_TRACK);page=context.new_page();page.on('pageerror',lambda e:errors.append(str(e)));page.goto(url);ready(page);lab=page.locator('[data-axisymmetric]')
             assert lab.get_attribute('data-scene-state')=='idle';record(page,lab,'rest-static',False)
             lab.locator('[data-action=start]').click();expect(lab).to_have_attribute('data-scene-state','ready');rest=record(page,lab,'taper-rest',screenshot=True)
             edit(page,lab,'epsilon','0.1');tension=record(page,lab,'taper-tension',screenshot=True)

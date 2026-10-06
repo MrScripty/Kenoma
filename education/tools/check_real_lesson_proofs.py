@@ -10,6 +10,7 @@ FAMILIES = [
     ('DissipativeBarReal.lean', 'dissipative-real-claims.json', 'dissipative-real', 11),
     ('SerialSpecimenReal.lean', 'serial-specimen-real-claims.json', 'serial-real', 12),
     ('MixedLogVolume.lean', 'mixed-volume-claims.json', 'mixed-volume', 27),
+    ('AxisymmetricSpecimenReal.lean', 'axisymmetric-specimen-real-claims.json', 'axisymmetric', 9),
 ]
 
 def check(existing=None):
@@ -45,6 +46,8 @@ def check(existing=None):
             if not set(axioms) <= {'propext','Quot.sound','Classical.choice'}:
                 raise RuntimeError('Unapproved kernel dependency')
             claim.update(status='checked',axioms=axioms)
+            if 'limitations' not in claim and 'limits' in claim:
+                claim['limitations'] = claim['limits']  # Preserve the accepted map bytes and exact limits.
         receipts.append({'schema':1,'lean_version':existing['lean_version'],'mathlib':existing['mathlib'],
             'source':'proofs/'+source_name,'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),
             'claims_sha256':hashlib.sha256(claim_file.read_bytes()).hexdigest(),
