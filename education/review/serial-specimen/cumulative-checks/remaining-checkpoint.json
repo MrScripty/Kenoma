@@ -1,0 +1,76 @@
+[
+  {
+    "command": [
+      "python3",
+      "tools/qualify_dissipative_negatives.py",
+      "dist",
+      "dist/dissipative-negative-artifacts.json"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.567237138748169,
+    "log": "qualify_dissipative_negatives.log"
+  },
+  {
+    "command": [
+      "python3",
+      "tools/inspect_property_integration.py"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 9.292025089263916,
+    "log": "inspect_property_integration.log"
+  },
+  {
+    "command": [
+      "python3",
+      "tests/render_capture_rerun.py"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 9.873316287994385,
+    "log": "render_capture_rerun.log"
+  },
+  {
+    "command": [
+      "python3",
+      "tests/anatomical_arm_inspection.py"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 53.73380732536316,
+    "log": "anatomical_arm_inspection.log"
+  },
+  {
+    "command": [
+      "python3",
+      "tests/coupled_inspection.py"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 7.960790634155273,
+    "log": "coupled_inspection.log"
+  },
+  {
+    "command": [
+      "python3",
+      "tests/anatomical_inspection.py"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 8.254576444625854,
+    "log": "anatomical_inspection.log"
+  },
+  {
+    "command": [
+      "python3",
+      "tests/worker_lifecycle.py"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 34.248791217803955,
+    "log": "worker_lifecycle.log"
+  },
+  {
+    "command": [
+      "python3",
+      "tests/artifacts.py"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 10.712723016738892,
+    "log": "artifacts.log"
+  }
+]

@@ -1,0 +1,73 @@
+name: Mixed-volume research proofs
+on:
+  push:
+    branches: ['research/mixed-log-volume-projection']
+    paths:
+      - '.github/workflows/mixed-volume-research.yml'
+      - 'education/proofs/MixedLogVolume.lean'
+      - 'education/proofs/lean-toolchain'
+      - 'education/proofs/mathlib-lock.json'
+      - 'education/tools/check_mixed_volume_proofs.py'
+      - 'education/tools/bootstrap_proofwidgets.py'
+      - 'education/tools/install_lean.py'
+      - 'education/tests/mixed_volume_binding.py'
+      - 'education/research/mixed-log-volume-projection.md'
+permissions:
+  contents: read
+jobs:
+  kernel-check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: education
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.12'
+      - name: Install the pinned official Lean toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y zstd
+          python3 tools/install_lean.py --directory .tools
+      - name: Reject an uncommitted source binding
+        run: python3 tests/mixed_volume_binding.py
+      - name: Build pinned dependencies and freshly check the committed proofs
+        run: |
+          set -o pipefail
+          python3 tools/check_mixed_volume_proofs.py --build-dependencies \
+            --output .tools/mixed-volume-successor-check \
+            2>&1 | tee .tools/mixed-volume-successor-check/source-build-and-check.txt
+      - name: Bind the evidence to this hosted source
+        env:
+          EXPECTED_SOURCE_COMMIT: ${{ github.sha }}
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib, json, os
+          directory = Path('.tools/mixed-volume-successor-check')
+          proof = json.loads((directory / 'receipt.json').read_text())
+          negative = json.loads((directory / 'binding-negative.json').read_text())
+          assert proof['source_commit'] == negative['source_commit'] == os.environ['EXPECTED_SOURCE_COMMIT']
+          assert proof['source_files_match_commit'] is True
+          assert negative['result'] == 'PASS_DIRTY_SOURCE_BINDING_NEGATIVE_CONTROL'
+          assert proof['source_sha256'] == negative['proof_sha256']
+          assert proof['transcript_sha256'] == hashlib.sha256((directory / 'lean-check.txt').read_bytes()).hexdigest()
+          assert proof['olean_sha256'] == hashlib.sha256((directory / 'MixedLogVolume.olean').read_bytes()).hexdigest()
+          print('PASS_EXACT_HOSTED_SOURCE_AND_EVIDENCE_BINDING', proof['source_commit'])
+          PY
+      - name: Preserve research check evidence and dependency diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: mixed-volume-research-${{ github.sha }}
+          include-hidden-files: true
+          if-no-files-found: error
+          path: |
+            education/.tools/mixed-volume-successor-check/
+            education/.tools/mixed-volume-mathlib-source-logs/
+            education/.tools/property-mathlib-source-logs/

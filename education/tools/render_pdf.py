@@ -61,6 +61,7 @@ def render():
                 if(target)link.setAttribute('href',target);
                 else if(href.startsWith('data/'))link.setAttribute('href',`https://github.com/MrScripty/Kenoma/blob/${revision}/education/${href}`);
                 else if(href.startsWith('web/'))link.setAttribute('href',`https://github.com/MrScripty/Kenoma/blob/${revision}/education/${href}`);
+                else if(href.startsWith('standalone/'))link.setAttribute('href',`https://github.com/MrScripty/Kenoma/blob/${revision}/education/${href}`);
                 else if(href.startsWith('coupled-fixture/')||href.startsWith('anatomy-inspection/')||href.startsWith('anatomical-arm/')){
                   link.setAttribute('href',`https://github.com/MrScripty/Kenoma/blob/${revision}/education/data/anatomical-arm-v1/README.md`);
                   link.textContent='Reproduce this research preview from the pinned repository instructions';

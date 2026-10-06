@@ -1,0 +1,9 @@
+# Commit-binding checker successor
+
+The original proof and author evidence at `f7ccd8add94e79dc08c1fbd604efc8e99f57e8d4` remain frozen. Independent source/evidence review accepted the 27 declarations within their exact assumptions; that review was not a fresh reviewer kernel run. This successor makes a false `source_files_match_commit` fatal before dependency work and again before writing a success receipt. It leaves the tested Lean bytes unchanged.
+
+The negative control uses a disposable Git fixture with the valid proof unchanged and an uncommitted edit to the tracked explanation. It requires a failed check with the commit-binding error and removal of a stale success receipt. The positive check still requires pinned Lean 4.19.0, warnings as errors, pristine pinned dependencies, the complete theorem/axiom inventory, and clean committed proof/checker/explanation files.
+
+The separate `mixed-volume-research.yml` workflow runs only on the research branch. It freshly builds pinned source dependencies, checks the proofs and negative control, binds both receipts to the exact hosted commit, and uploads a research artifact. It has no book generation, proof registration, Pages deployment, PR creation or production mechanics step. A passing hosted run must be confirmed separately; this source note is not a run receipt.
+
+The mathematical scope remains finite real vectors with strictly positive diagonal weights, one constant `K > 0`, and a supplied exact linear projector into `Q` with weighted-orthogonal residual for every `g`. `g` is abstract; interpreting it as sampled `log J` requires separate positive-J and sampling checks. Pressure-vector uniqueness does not establish uniqueness of basis coefficients without injective evaluation. Nested-space monotonicity compares the same fixed `g`, weights and `K`, not re-equilibrated states. No derivative/Hessian, numerical refinement, stability, continuum or anatomical certification is added.

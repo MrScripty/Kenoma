@@ -43,7 +43,9 @@ jobs:
           python3 tools/install_lean.py --directory .tools
           echo "$PWD/.tools/lean-4.19.0-linux/bin" >> "$GITHUB_PATH"
       - name: Compile pinned real-proof dependencies from source
-        run: python3 tools/build_property_mathlib.py
+        run: |
+          python3 tools/build_property_mathlib.py
+          python3 tools/check_mixed_volume_proofs.py --build-dependencies
       - name: Preserve dependency diagnostics
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
@@ -101,16 +103,36 @@ jobs:
           npm run build
           npm run pdf
           python3 tools/check_print_readability.py dist
+          python3 tests/projection_responsive.py --output dist/projection-responsive-qa
+          python3 tests/projection_integration.py
+          python3 tools/qualify_projection_negatives.py --runtime review/projection-negative-ci --site dist --output dist/projection-negative-artifacts.json
+          python3 tools/check_print_readability.py dist
           npm run test:browser
           npm run test:mobile
           python3 tests/property_browser.py dist
           python3 tests/material_browser.py dist
+          python3 tests/dissipative_browser.py dist --output dist/dissipative-qa
+          python3 tests/dissipative_browser.py --negative-controls --output review/dissipative-negative-ci
+          python3 tools/qualify_dissipative_negatives.py dist dist/dissipative-negative-artifacts.json
+          python3 tests/serial_browser.py dist --output dist/serial-qa
+          python3 tests/serial_browser.py --negative-controls --output review/serial-negative-ci
+          python3 tools/qualify_serial_negatives.py dist dist/serial-negative-artifacts.json
           python3 tools/inspect_property_integration.py
           python3 tools/inspect_real_lesson_proofs.py
           python3 tests/render_capture_rerun.py
           python3 tests/anatomical_arm_inspection.py
           python3 tests/worker_lifecycle.py
           python3 tests/artifacts.py
+          python3 tools/qualify_print_negatives.py
+      - name: Preserve projection viewport diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: kenoma-projection-viewport-diagnostics
+          path: |
+            education/dist/projection-qa/viewport-failure-*
+            education/dist/projection-responsive-qa/
+          if-no-files-found: ignore
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: kenoma-education-checked

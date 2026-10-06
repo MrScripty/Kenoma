@@ -1,0 +1,152 @@
+{
+  "schema": 1,
+  "result": "PASS_REAL_PROOF_RENDER_CAPTURE",
+  "source_revision": "9fb31ed243c5e4c75b7f90433e76631e1496d562",
+  "inspector_sha256": "6afe1a9f1e20e23dd48e7dd2321ee2c3b5908b0c6cdc1a3fa6dd77c40204a2cb",
+  "html_sha256": "bc3824b8eb852b054fe81532c9d3bc903750ed1ad31b9c3a70881c6337bbed23",
+  "app_sha256": "b97555957f8cf2b2fb4142cfbec2038cb91e5c792356f2784b3ed582a3930a57",
+  "pdf_sha256": "4ee34296fa6ec3097cc451b5d9a4fc9742679a90a751febcca74e5a6047d98d2",
+  "manifest_sha256": "c6b08be4320cd977fa4b7f6890affa9455294c2cf411948041e571f56873f304",
+  "browser": "151.0.7922.173",
+  "views": [
+    {
+      "name": "desktop",
+      "real_cards": 42,
+      "horizontal_overflow": false
+    },
+    {
+      "name": "mobile",
+      "real_cards": 42,
+      "horizontal_overflow": false
+    }
+  ],
+  "page_errors": [],
+  "real_claims": [
+    "material-real-confined-volume",
+    "material-real-bulk-sign",
+    "material-real-bulk-zero",
+    "material-real-separated-wall",
+    "material-real-lateral-work",
+    "force-real-pair",
+    "torque-real-linearity",
+    "virtual-real-power",
+    "actuator-real-activation-interval",
+    "actuator-real-activation-ode",
+    "actuator-real-active-force-bounds",
+    "actuator-real-active-force-derivative",
+    "actuator-real-gaussian-radius-bound",
+    "actuator-real-active-slope-bound",
+    "actuator-real-series-strict-monotone",
+    "actuator-real-series-unique-root",
+    "actuator-real-series-root-exists",
+    "actuator-real-series-lower-rejection",
+    "actuator-real-series-denominator",
+    "dissipative-real-storage-sign",
+    "dissipative-real-dissipation-sign",
+    "dissipative-real-storage-derivative",
+    "dissipative-real-power-balance",
+    "dissipative-real-elastic-recovery",
+    "dissipative-real-viscous-derivative",
+    "dissipative-real-viscous-bounds",
+    "dissipative-real-viscous-monotone",
+    "dissipative-real-viscous-antitone",
+    "dissipative-real-held-stress-bounds",
+    "dissipative-real-held-stress-decay",
+    "serial-real-energy-factor",
+    "serial-real-energy-sign",
+    "serial-real-energy-zero",
+    "serial-real-energy-derivative",
+    "serial-real-stress-identities",
+    "serial-real-stress-sign",
+    "serial-real-stress-difference",
+    "serial-real-stress-monotone",
+    "serial-real-root-unique",
+    "serial-real-volume",
+    "serial-real-tension-order",
+    "serial-real-compression-order"
+  ],
+  "pdf_pages": 184,
+  "source_pages": [
+    {
+      "page": 165,
+      "image": "pdf-source-page-165.png"
+    },
+    {
+      "page": 166,
+      "image": "pdf-source-page-166.png"
+    },
+    {
+      "page": 167,
+      "image": "pdf-source-page-167.png"
+    },
+    {
+      "page": 168,
+      "image": "pdf-source-page-168.png"
+    },
+    {
+      "page": 169,
+      "image": "pdf-source-page-169.png"
+    },
+    {
+      "page": 170,
+      "image": "pdf-source-page-170.png"
+    },
+    {
+      "page": 171,
+      "image": "pdf-source-page-171.png"
+    },
+    {
+      "page": 172,
+      "image": "pdf-source-page-172.png"
+    },
+    {
+      "page": 173,
+      "image": "pdf-source-page-173.png"
+    },
+    {
+      "page": 174,
+      "image": "pdf-source-page-174.png"
+    },
+    {
+      "page": 175,
+      "image": "pdf-source-page-175.png"
+    },
+    {
+      "page": 176,
+      "image": "pdf-source-page-176.png"
+    },
+    {
+      "page": 177,
+      "image": "pdf-source-page-177.png"
+    },
+    {
+      "page": 178,
+      "image": "pdf-source-page-178.png"
+    },
+    {
+      "page": 179,
+      "image": "pdf-source-page-179.png"
+    },
+    {
+      "page": 180,
+      "image": "pdf-source-page-180.png"
+    },
+    {
+      "page": 181,
+      "image": "pdf-source-page-181.png"
+    },
+    {
+      "page": 182,
+      "image": "pdf-source-page-182.png"
+    },
+    {
+      "page": 183,
+      "image": "pdf-source-page-183.png"
+    },
+    {
+      "page": 184,
+      "image": "pdf-source-page-184.png"
+    }
+  ],
+  "scope": "Actual generated desktop/mobile card captures, source-bound metadata and complete PDF theorem/hash text with durable links. Appearance review is separate; no numerical refinement or biological certificate."
+}

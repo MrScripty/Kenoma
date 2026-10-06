@@ -1,0 +1,4048 @@
+{
+  "result": "PASS_PROJECTION_RESPONSIVE_REGRESSION",
+  "source_commit": "142806f492567191e1edd9f8171f3e18e05383a0",
+  "source_sha256": "571378f62222bac31dab5b210efe23891b7beb02ec69f5ca42d953ac00f51975",
+  "browser": "151.0.7922.173",
+  "frozen_source": "e7d56450f6a806fa14b0a511bfcf6405d592fc27",
+  "frozen_sha256": "3c3bd14dc774c809074af208c9574127c9824a04b69c1a5a25209c95e1f461b4",
+  "frozen_failure": {
+    "width": 320,
+    "documentWidth": 345,
+    "documentClientWidth": 320,
+    "bodyFont": "\"DejaVu Sans\", sans-serif",
+    "state": {
+      "g": [
+        -0.75,
+        0.25,
+        -0.25,
+        0.75
+      ],
+      "K": 8,
+      "level": 1,
+      "weights": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "groups": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "projected": [
+        0.125,
+        0.125,
+        0.125,
+        0.125
+      ],
+      "residual": [
+        -0.875,
+        0.125,
+        -0.375,
+        0.625
+      ],
+      "pStar": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "fullNormSq": 2,
+      "projectedNormSq": 0.125,
+      "residualNormSq": 1.875,
+      "full": 8,
+      "condensed": 0.5,
+      "gap": 7.5,
+      "residualEnergy": 7.5,
+      "objective": 0.5,
+      "identityDefect": 0,
+      "weightedResiduals": [
+        0
+      ]
+    },
+    "elements": [
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "text": "Actual values used in this calculation\nSample\tw\u1d62\tg\u1d62\t(Pg)\u1d62\tr\u1d62\tp*\u1d62 = K(Pg)\u1d62\n1\t1\t-0.75\t0.125\t-0.875\t1\n2",
+        "bounds": {
+          "left": 17,
+          "right": 345.453125,
+          "width": 328.453125
+        },
+        "clientWidth": 326,
+        "scrollWidth": 326,
+        "minWidth": "auto",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": false
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "table-scroll",
+        "text": "Actual values used in this calculation\nSample\tw\u1d62\tg\u1d62\t(Pg)\u1d62\tr\u1d62\tp*\u1d62 = K(Pg)\u1d62\n1\t1\t-0.75\t0.125\t-0.875\t1\n2",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "auto",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": true
+      },
+      {
+        "tag": "TABLE",
+        "id": "samples-table",
+        "classes": null,
+        "text": "Actual values used in this calculation\nSample\tw\u1d62\tg\u1d62\t(Pg)\u1d62\tr\u1d62\tp*\u1d62 = K(Pg)\u1d62\n1\t1\t-0.75\t0.125\t-0.875\t1\n2",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": true
+      },
+      {
+        "tag": "CAPTION",
+        "id": "",
+        "classes": null,
+        "text": "Actual values used in this calculation",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": true
+      },
+      {
+        "tag": "THEAD",
+        "id": "",
+        "classes": null,
+        "text": "Sample\tw\u1d62\tg\u1d62\t(Pg)\u1d62\tr\u1d62\tp*\u1d62 = K(Pg)\u1d62\n",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": true
+      },
+      {
+        "tag": "TR",
+        "id": "",
+        "classes": null,
+        "text": "Sample\tw\u1d62\tg\u1d62\t(Pg)\u1d62\tr\u1d62\tp*\u1d62 = K(Pg)\u1d62",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": true
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "classes": null,
+        "text": "p*\u1d62 = K(Pg)\u1d62",
+        "bounds": {
+          "left": 247.609375,
+          "right": 327.453125,
+          "width": 79.84375
+        },
+        "clientWidth": 80,
+        "scrollWidth": 80,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": true
+      },
+      {
+        "tag": "TBODY",
+        "id": "",
+        "classes": null,
+        "text": "1\t1\t-0.75\t0.125\t-0.875\t1\n2\t3\t0.25\t0.125\t0.125\t1\n3\t2\t-0.25\t0.125\t-0.375\t1\n4\t2\t0.75\t0.125\t0.625\t1",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": true
+      },
+      {
+        "tag": "TR",
+        "id": "",
+        "classes": null,
+        "text": "1\t1\t-0.75\t0.125\t-0.875\t1",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": true
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "classes": null,
+        "text": "1",
+        "bounds": {
+          "left": 247.609375,
+          "right": 327.453125,
+          "width": 79.84375
+        },
+        "clientWidth": 80,
+        "scrollWidth": 80,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": true
+      },
+      {
+        "tag": "TR",
+        "id": "",
+        "classes": null,
+        "text": "2\t3\t0.25\t0.125\t0.125\t1",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": true
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "classes": null,
+        "text": "1",
+        "bounds": {
+          "left": 247.609375,
+          "right": 327.453125,
+          "width": 79.84375
+        },
+        "clientWidth": 80,
+        "scrollWidth": 80,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": true
+      },
+      {
+        "tag": "TR",
+        "id": "",
+        "classes": null,
+        "text": "3\t2\t-0.25\t0.125\t-0.375\t1",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": true
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "classes": null,
+        "text": "1",
+        "bounds": {
+          "left": 247.609375,
+          "right": 327.453125,
+          "width": 79.84375
+        },
+        "clientWidth": 80,
+        "scrollWidth": 80,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": true
+      },
+      {
+        "tag": "TR",
+        "id": "",
+        "classes": null,
+        "text": "4\t2\t0.75\t0.125\t0.625\t1",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": true
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "classes": null,
+        "text": "1",
+        "bounds": {
+          "left": 247.609375,
+          "right": 327.453125,
+          "width": 79.84375
+        },
+        "clientWidth": 80,
+        "scrollWidth": 80,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": true
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "classes": "small",
+        "text": "p* is the optimal mixed variable in the chosen sample space, not a measured anatomical pressure.",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": false
+      },
+      {
+        "tag": "DIV",
+        "id": "calculation",
+        "classes": "calc",
+        "text": "Full: 4 \u00d7 2 = 8\nCondensed: 4 \u00d7 0.125 = 0.5\nResidual: 4 \u00d7 1.875 = 7.5\nMixed objective at p*: 0.5",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": false
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "classes": "small",
+        "text": "Readouts round to five decimal places; the identity diagnostic uses unrounded values.",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": false
+      },
+      {
+        "tag": "DIV",
+        "id": "checks",
+        "classes": "checks",
+        "text": "Weighted residual sums by group: [0]. Browser identity difference: 0.",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": false
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "classes": "panel",
+        "text": "What refinement recovers\n\nEvery row uses the same current g, weights, and K.\n\nPressure values\tEcond\t",
+        "bounds": {
+          "left": 17,
+          "right": 345.453125,
+          "width": 328.453125
+        },
+        "clientWidth": 326,
+        "scrollWidth": 326,
+        "minWidth": "auto",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": false
+      },
+      {
+        "tag": "H2",
+        "id": "",
+        "classes": null,
+        "text": "What refinement recovers",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": false
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "classes": "small",
+        "text": "Every row uses the same current g, weights, and K.",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": false
+      },
+      {
+        "tag": "TABLE",
+        "id": "refinement",
+        "classes": "ladder",
+        "text": "Pressure values\tEcond\tGap\n1 shared\t0.5\t7.5\n2 groups\t1\t7\n4 samples\t8\t0",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": false
+      },
+      {
+        "tag": "THEAD",
+        "id": "",
+        "classes": null,
+        "text": "Pressure values\tEcond\tGap\n",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": false
+      },
+      {
+        "tag": "TR",
+        "id": "",
+        "classes": null,
+        "text": "Pressure values\tEcond\tGap",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": false
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "classes": null,
+        "text": "Gap",
+        "bounds": {
+          "left": 272.0625,
+          "right": 327.453125,
+          "width": 55.390625
+        },
+        "clientWidth": 55,
+        "scrollWidth": 55,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": false
+      },
+      {
+        "tag": "TBODY",
+        "id": "",
+        "classes": null,
+        "text": "1 shared\t0.5\t7.5\n2 groups\t1\t7\n4 samples\t8\t0",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": false
+      },
+      {
+        "tag": "TR",
+        "id": "",
+        "classes": "selected",
+        "text": "1 shared\t0.5\t7.5",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": false
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "classes": null,
+        "text": "7.5",
+        "bounds": {
+          "left": 272.0625,
+          "right": 327.453125,
+          "width": 55.390625
+        },
+        "clientWidth": 55,
+        "scrollWidth": 55,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": false
+      },
+      {
+        "tag": "TR",
+        "id": "",
+        "classes": "",
+        "text": "2 groups\t1\t7",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": false
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "classes": null,
+        "text": "7",
+        "bounds": {
+          "left": 272.0625,
+          "right": 327.453125,
+          "width": 55.390625
+        },
+        "clientWidth": 55,
+        "scrollWidth": 55,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": false
+      },
+      {
+        "tag": "TR",
+        "id": "",
+        "classes": "",
+        "text": "4 samples\t8\t0",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": false
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "classes": null,
+        "text": "0",
+        "bounds": {
+          "left": 272.0625,
+          "right": 327.453125,
+          "width": 55.390625
+        },
+        "clientWidth": 55,
+        "scrollWidth": 55,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": false
+      },
+      {
+        "tag": "P",
+        "id": "recovery",
+        "classes": "small",
+        "text": "Refining from one shared value to two groups recovers the pair means. Four sample values recover thi",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": false
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "classes": "small",
+        "text": "Energy ordering is at a fixed state. It does not establish stability or compare solutions re-equilib",
+        "bounds": {
+          "left": 35,
+          "right": 327.453125,
+          "width": 292.453125
+        },
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "minWidth": "0px",
+        "overflowX": "visible",
+        "gridTemplateColumns": "none",
+        "tableScrollAncestor": false
+      }
+    ],
+    "tableScroll": [
+      {
+        "clientWidth": 292,
+        "scrollWidth": 292,
+        "scrollLeft": 0
+      }
+    ],
+    "case": "frozen-dejavu-320",
+    "browser": "151.0.7922.173"
+  },
+  "fixed_cases": [
+    {
+      "width": 320,
+      "documentWidth": 320,
+      "documentClientWidth": 320,
+      "bodyFont": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 1,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0.125,
+          0.125,
+          0.125,
+          0.125
+        ],
+        "residual": [
+          -0.875,
+          0.125,
+          -0.375,
+          0.625
+        ],
+        "pStar": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.125,
+        "residualNormSq": 1.875,
+        "full": 8,
+        "condensed": 0.5,
+        "gap": 7.5,
+        "residualEnergy": 7.5,
+        "objective": 0.5,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 250,
+          "scrollWidth": 263,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "native-320-q1",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 320,
+      "documentWidth": 320,
+      "documentClientWidth": 320,
+      "bodyFont": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 2,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0,
+          0,
+          0.25,
+          0.25
+        ],
+        "residual": [
+          -0.75,
+          0.25,
+          -0.5,
+          0.5
+        ],
+        "pStar": [
+          0,
+          0,
+          2,
+          2
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.25,
+        "residualNormSq": 1.75,
+        "full": 8,
+        "condensed": 1,
+        "gap": 7,
+        "residualEnergy": 7,
+        "objective": 1,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 250,
+          "scrollWidth": 250,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "native-320-q2",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 320,
+      "documentWidth": 320,
+      "documentClientWidth": 320,
+      "bodyFont": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 4,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "projected": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "residual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "pStar": [
+          -6,
+          2,
+          -2,
+          6
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 2,
+        "residualNormSq": 0,
+        "full": 8,
+        "condensed": 8,
+        "gap": 0,
+        "residualEnergy": 0,
+        "objective": 8,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 250,
+          "scrollWidth": 250,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "native-320-q4",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 360,
+      "documentWidth": 360,
+      "documentClientWidth": 360,
+      "bodyFont": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 1,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0.125,
+          0.125,
+          0.125,
+          0.125
+        ],
+        "residual": [
+          -0.875,
+          0.125,
+          -0.375,
+          0.625
+        ],
+        "pStar": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.125,
+        "residualNormSq": 1.875,
+        "full": 8,
+        "condensed": 0.5,
+        "gap": 7.5,
+        "residualEnergy": 7.5,
+        "objective": 0.5,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 290,
+          "scrollWidth": 290,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "native-360-q1",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 360,
+      "documentWidth": 360,
+      "documentClientWidth": 360,
+      "bodyFont": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 2,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0,
+          0,
+          0.25,
+          0.25
+        ],
+        "residual": [
+          -0.75,
+          0.25,
+          -0.5,
+          0.5
+        ],
+        "pStar": [
+          0,
+          0,
+          2,
+          2
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.25,
+        "residualNormSq": 1.75,
+        "full": 8,
+        "condensed": 1,
+        "gap": 7,
+        "residualEnergy": 7,
+        "objective": 1,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 290,
+          "scrollWidth": 290,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "native-360-q2",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 360,
+      "documentWidth": 360,
+      "documentClientWidth": 360,
+      "bodyFont": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 4,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "projected": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "residual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "pStar": [
+          -6,
+          2,
+          -2,
+          6
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 2,
+        "residualNormSq": 0,
+        "full": 8,
+        "condensed": 8,
+        "gap": 0,
+        "residualEnergy": 0,
+        "objective": 8,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 290,
+          "scrollWidth": 290,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "native-360-q4",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 390,
+      "documentWidth": 390,
+      "documentClientWidth": 390,
+      "bodyFont": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 1,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0.125,
+          0.125,
+          0.125,
+          0.125
+        ],
+        "residual": [
+          -0.875,
+          0.125,
+          -0.375,
+          0.625
+        ],
+        "pStar": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.125,
+        "residualNormSq": 1.875,
+        "full": 8,
+        "condensed": 0.5,
+        "gap": 7.5,
+        "residualEnergy": 7.5,
+        "objective": 0.5,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 320,
+          "scrollWidth": 320,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "native-390-q1",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 390,
+      "documentWidth": 390,
+      "documentClientWidth": 390,
+      "bodyFont": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 2,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0,
+          0,
+          0.25,
+          0.25
+        ],
+        "residual": [
+          -0.75,
+          0.25,
+          -0.5,
+          0.5
+        ],
+        "pStar": [
+          0,
+          0,
+          2,
+          2
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.25,
+        "residualNormSq": 1.75,
+        "full": 8,
+        "condensed": 1,
+        "gap": 7,
+        "residualEnergy": 7,
+        "objective": 1,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 320,
+          "scrollWidth": 320,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "native-390-q2",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 390,
+      "documentWidth": 390,
+      "documentClientWidth": 390,
+      "bodyFont": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 4,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "projected": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "residual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "pStar": [
+          -6,
+          2,
+          -2,
+          6
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 2,
+        "residualNormSq": 0,
+        "full": 8,
+        "condensed": 8,
+        "gap": 0,
+        "residualEnergy": 0,
+        "objective": 8,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 320,
+          "scrollWidth": 320,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "native-390-q4",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 414,
+      "documentWidth": 414,
+      "documentClientWidth": 414,
+      "bodyFont": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 1,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0.125,
+          0.125,
+          0.125,
+          0.125
+        ],
+        "residual": [
+          -0.875,
+          0.125,
+          -0.375,
+          0.625
+        ],
+        "pStar": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.125,
+        "residualNormSq": 1.875,
+        "full": 8,
+        "condensed": 0.5,
+        "gap": 7.5,
+        "residualEnergy": 7.5,
+        "objective": 0.5,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 344,
+          "scrollWidth": 344,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "native-414-q1",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 414,
+      "documentWidth": 414,
+      "documentClientWidth": 414,
+      "bodyFont": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 2,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0,
+          0,
+          0.25,
+          0.25
+        ],
+        "residual": [
+          -0.75,
+          0.25,
+          -0.5,
+          0.5
+        ],
+        "pStar": [
+          0,
+          0,
+          2,
+          2
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.25,
+        "residualNormSq": 1.75,
+        "full": 8,
+        "condensed": 1,
+        "gap": 7,
+        "residualEnergy": 7,
+        "objective": 1,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 344,
+          "scrollWidth": 344,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "native-414-q2",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 414,
+      "documentWidth": 414,
+      "documentClientWidth": 414,
+      "bodyFont": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 4,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "projected": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "residual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "pStar": [
+          -6,
+          2,
+          -2,
+          6
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 2,
+        "residualNormSq": 0,
+        "full": 8,
+        "condensed": 8,
+        "gap": 0,
+        "residualEnergy": 0,
+        "objective": 8,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 344,
+          "scrollWidth": 344,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "native-414-q4",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 560,
+      "documentWidth": 560,
+      "documentClientWidth": 560,
+      "bodyFont": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 1,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0.125,
+          0.125,
+          0.125,
+          0.125
+        ],
+        "residual": [
+          -0.875,
+          0.125,
+          -0.375,
+          0.625
+        ],
+        "pStar": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.125,
+        "residualNormSq": 1.875,
+        "full": 8,
+        "condensed": 0.5,
+        "gap": 7.5,
+        "residualEnergy": 7.5,
+        "objective": 0.5,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 490,
+          "scrollWidth": 490,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "native-560-q1",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 560,
+      "documentWidth": 560,
+      "documentClientWidth": 560,
+      "bodyFont": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 2,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0,
+          0,
+          0.25,
+          0.25
+        ],
+        "residual": [
+          -0.75,
+          0.25,
+          -0.5,
+          0.5
+        ],
+        "pStar": [
+          0,
+          0,
+          2,
+          2
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.25,
+        "residualNormSq": 1.75,
+        "full": 8,
+        "condensed": 1,
+        "gap": 7,
+        "residualEnergy": 7,
+        "objective": 1,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 490,
+          "scrollWidth": 490,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "native-560-q2",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 560,
+      "documentWidth": 560,
+      "documentClientWidth": 560,
+      "bodyFont": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 4,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "projected": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "residual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "pStar": [
+          -6,
+          2,
+          -2,
+          6
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 2,
+        "residualNormSq": 0,
+        "full": 8,
+        "condensed": 8,
+        "gap": 0,
+        "residualEnergy": 0,
+        "objective": 8,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 490,
+          "scrollWidth": 490,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "native-560-q4",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 768,
+      "documentWidth": 768,
+      "documentClientWidth": 768,
+      "bodyFont": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 1,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0.125,
+          0.125,
+          0.125,
+          0.125
+        ],
+        "residual": [
+          -0.875,
+          0.125,
+          -0.375,
+          0.625
+        ],
+        "pStar": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.125,
+        "residualNormSq": 1.875,
+        "full": 8,
+        "condensed": 0.5,
+        "gap": 7.5,
+        "residualEnergy": 7.5,
+        "objective": 0.5,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 682,
+          "scrollWidth": 682,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "native-768-q1",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 768,
+      "documentWidth": 768,
+      "documentClientWidth": 768,
+      "bodyFont": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 2,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0,
+          0,
+          0.25,
+          0.25
+        ],
+        "residual": [
+          -0.75,
+          0.25,
+          -0.5,
+          0.5
+        ],
+        "pStar": [
+          0,
+          0,
+          2,
+          2
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.25,
+        "residualNormSq": 1.75,
+        "full": 8,
+        "condensed": 1,
+        "gap": 7,
+        "residualEnergy": 7,
+        "objective": 1,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 682,
+          "scrollWidth": 682,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "native-768-q2",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 768,
+      "documentWidth": 768,
+      "documentClientWidth": 768,
+      "bodyFont": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 4,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "projected": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "residual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "pStar": [
+          -6,
+          2,
+          -2,
+          6
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 2,
+        "residualNormSq": 0,
+        "full": 8,
+        "condensed": 8,
+        "gap": 0,
+        "residualEnergy": 0,
+        "objective": 8,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 682,
+          "scrollWidth": 682,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "native-768-q4",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 1280,
+      "documentWidth": 1280,
+      "documentClientWidth": 1280,
+      "bodyFont": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 1,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0.125,
+          0.125,
+          0.125,
+          0.125
+        ],
+        "residual": [
+          -0.875,
+          0.125,
+          -0.375,
+          0.625
+        ],
+        "pStar": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.125,
+        "residualNormSq": 1.875,
+        "full": 8,
+        "condensed": 0.5,
+        "gap": 7.5,
+        "residualEnergy": 7.5,
+        "objective": 0.5,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 607,
+          "scrollWidth": 607,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "native-1280-q1",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 1280,
+      "documentWidth": 1280,
+      "documentClientWidth": 1280,
+      "bodyFont": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 2,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0,
+          0,
+          0.25,
+          0.25
+        ],
+        "residual": [
+          -0.75,
+          0.25,
+          -0.5,
+          0.5
+        ],
+        "pStar": [
+          0,
+          0,
+          2,
+          2
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.25,
+        "residualNormSq": 1.75,
+        "full": 8,
+        "condensed": 1,
+        "gap": 7,
+        "residualEnergy": 7,
+        "objective": 1,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 607,
+          "scrollWidth": 607,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "native-1280-q2",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 1280,
+      "documentWidth": 1280,
+      "documentClientWidth": 1280,
+      "bodyFont": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 4,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "projected": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "residual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "pStar": [
+          -6,
+          2,
+          -2,
+          6
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 2,
+        "residualNormSq": 0,
+        "full": 8,
+        "condensed": 8,
+        "gap": 0,
+        "residualEnergy": 0,
+        "objective": 8,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 607,
+          "scrollWidth": 607,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "native-1280-q4",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 320,
+      "documentWidth": 320,
+      "documentClientWidth": 320,
+      "bodyFont": "\"DejaVu Sans\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 1,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0.125,
+          0.125,
+          0.125,
+          0.125
+        ],
+        "residual": [
+          -0.875,
+          0.125,
+          -0.375,
+          0.625
+        ],
+        "pStar": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.125,
+        "residualNormSq": 1.875,
+        "full": 8,
+        "condensed": 0.5,
+        "gap": 7.5,
+        "residualEnergy": 7.5,
+        "objective": 0.5,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0
+        ]
+      },
+      "elements": [
+        {
+          "tag": "TABLE",
+          "id": "samples-table",
+          "classes": null,
+          "text": "Actual values used in this calculation\nSample\tw\u1d62\tg\u1d62\t(Pg)\u1d62\tr\u1d62\tp*\u1d62 = K(Pg)\u1d62\n1\t1\t-0.75\t0.125\t-0.875\t1\n2",
+          "bounds": {
+            "left": 35,
+            "right": 327.453125,
+            "width": 292.453125
+          },
+          "clientWidth": 292,
+          "scrollWidth": 292,
+          "minWidth": "0px",
+          "overflowX": "visible",
+          "gridTemplateColumns": "none",
+          "tableScrollAncestor": true
+        },
+        {
+          "tag": "CAPTION",
+          "id": "",
+          "classes": null,
+          "text": "Actual values used in this calculation",
+          "bounds": {
+            "left": 35,
+            "right": 327.453125,
+            "width": 292.453125
+          },
+          "clientWidth": 292,
+          "scrollWidth": 292,
+          "minWidth": "0px",
+          "overflowX": "visible",
+          "gridTemplateColumns": "none",
+          "tableScrollAncestor": true
+        },
+        {
+          "tag": "THEAD",
+          "id": "",
+          "classes": null,
+          "text": "Sample\tw\u1d62\tg\u1d62\t(Pg)\u1d62\tr\u1d62\tp*\u1d62 = K(Pg)\u1d62\n",
+          "bounds": {
+            "left": 35,
+            "right": 327.453125,
+            "width": 292.453125
+          },
+          "clientWidth": 292,
+          "scrollWidth": 292,
+          "minWidth": "0px",
+          "overflowX": "visible",
+          "gridTemplateColumns": "none",
+          "tableScrollAncestor": true
+        },
+        {
+          "tag": "TR",
+          "id": "",
+          "classes": null,
+          "text": "Sample\tw\u1d62\tg\u1d62\t(Pg)\u1d62\tr\u1d62\tp*\u1d62 = K(Pg)\u1d62",
+          "bounds": {
+            "left": 35,
+            "right": 327.453125,
+            "width": 292.453125
+          },
+          "clientWidth": 292,
+          "scrollWidth": 292,
+          "minWidth": "0px",
+          "overflowX": "visible",
+          "gridTemplateColumns": "none",
+          "tableScrollAncestor": true
+        },
+        {
+          "tag": "TH",
+          "id": "",
+          "classes": null,
+          "text": "p*\u1d62 = K(Pg)\u1d62",
+          "bounds": {
+            "left": 247.609375,
+            "right": 327.453125,
+            "width": 79.84375
+          },
+          "clientWidth": 80,
+          "scrollWidth": 80,
+          "minWidth": "0px",
+          "overflowX": "visible",
+          "gridTemplateColumns": "none",
+          "tableScrollAncestor": true
+        },
+        {
+          "tag": "TBODY",
+          "id": "",
+          "classes": null,
+          "text": "1\t1\t-0.75\t0.125\t-0.875\t1\n2\t3\t0.25\t0.125\t0.125\t1\n3\t2\t-0.25\t0.125\t-0.375\t1\n4\t2\t0.75\t0.125\t0.625\t1",
+          "bounds": {
+            "left": 35,
+            "right": 327.453125,
+            "width": 292.453125
+          },
+          "clientWidth": 292,
+          "scrollWidth": 292,
+          "minWidth": "0px",
+          "overflowX": "visible",
+          "gridTemplateColumns": "none",
+          "tableScrollAncestor": true
+        },
+        {
+          "tag": "TR",
+          "id": "",
+          "classes": null,
+          "text": "1\t1\t-0.75\t0.125\t-0.875\t1",
+          "bounds": {
+            "left": 35,
+            "right": 327.453125,
+            "width": 292.453125
+          },
+          "clientWidth": 292,
+          "scrollWidth": 292,
+          "minWidth": "0px",
+          "overflowX": "visible",
+          "gridTemplateColumns": "none",
+          "tableScrollAncestor": true
+        },
+        {
+          "tag": "TD",
+          "id": "",
+          "classes": null,
+          "text": "1",
+          "bounds": {
+            "left": 247.609375,
+            "right": 327.453125,
+            "width": 79.84375
+          },
+          "clientWidth": 80,
+          "scrollWidth": 80,
+          "minWidth": "0px",
+          "overflowX": "visible",
+          "gridTemplateColumns": "none",
+          "tableScrollAncestor": true
+        },
+        {
+          "tag": "TR",
+          "id": "",
+          "classes": null,
+          "text": "2\t3\t0.25\t0.125\t0.125\t1",
+          "bounds": {
+            "left": 35,
+            "right": 327.453125,
+            "width": 292.453125
+          },
+          "clientWidth": 292,
+          "scrollWidth": 292,
+          "minWidth": "0px",
+          "overflowX": "visible",
+          "gridTemplateColumns": "none",
+          "tableScrollAncestor": true
+        },
+        {
+          "tag": "TD",
+          "id": "",
+          "classes": null,
+          "text": "1",
+          "bounds": {
+            "left": 247.609375,
+            "right": 327.453125,
+            "width": 79.84375
+          },
+          "clientWidth": 80,
+          "scrollWidth": 80,
+          "minWidth": "0px",
+          "overflowX": "visible",
+          "gridTemplateColumns": "none",
+          "tableScrollAncestor": true
+        },
+        {
+          "tag": "TR",
+          "id": "",
+          "classes": null,
+          "text": "3\t2\t-0.25\t0.125\t-0.375\t1",
+          "bounds": {
+            "left": 35,
+            "right": 327.453125,
+            "width": 292.453125
+          },
+          "clientWidth": 292,
+          "scrollWidth": 292,
+          "minWidth": "0px",
+          "overflowX": "visible",
+          "gridTemplateColumns": "none",
+          "tableScrollAncestor": true
+        },
+        {
+          "tag": "TD",
+          "id": "",
+          "classes": null,
+          "text": "1",
+          "bounds": {
+            "left": 247.609375,
+            "right": 327.453125,
+            "width": 79.84375
+          },
+          "clientWidth": 80,
+          "scrollWidth": 80,
+          "minWidth": "0px",
+          "overflowX": "visible",
+          "gridTemplateColumns": "none",
+          "tableScrollAncestor": true
+        },
+        {
+          "tag": "TR",
+          "id": "",
+          "classes": null,
+          "text": "4\t2\t0.75\t0.125\t0.625\t1",
+          "bounds": {
+            "left": 35,
+            "right": 327.453125,
+            "width": 292.453125
+          },
+          "clientWidth": 292,
+          "scrollWidth": 292,
+          "minWidth": "0px",
+          "overflowX": "visible",
+          "gridTemplateColumns": "none",
+          "tableScrollAncestor": true
+        },
+        {
+          "tag": "TD",
+          "id": "",
+          "classes": null,
+          "text": "1",
+          "bounds": {
+            "left": 247.609375,
+            "right": 327.453125,
+            "width": 79.84375
+          },
+          "clientWidth": 80,
+          "scrollWidth": 80,
+          "minWidth": "0px",
+          "overflowX": "visible",
+          "gridTemplateColumns": "none",
+          "tableScrollAncestor": true
+        }
+      ],
+      "tableScroll": [
+        {
+          "clientWidth": 250,
+          "scrollWidth": 292,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "dejavu-320-q1",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 320,
+      "documentWidth": 320,
+      "documentClientWidth": 320,
+      "bodyFont": "\"DejaVu Sans\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 2,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0,
+          0,
+          0.25,
+          0.25
+        ],
+        "residual": [
+          -0.75,
+          0.25,
+          -0.5,
+          0.5
+        ],
+        "pStar": [
+          0,
+          0,
+          2,
+          2
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.25,
+        "residualNormSq": 1.75,
+        "full": 8,
+        "condensed": 1,
+        "gap": 7,
+        "residualEnergy": 7,
+        "objective": 1,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 250,
+          "scrollWidth": 279,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "dejavu-320-q2",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 320,
+      "documentWidth": 320,
+      "documentClientWidth": 320,
+      "bodyFont": "\"DejaVu Sans\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 4,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "projected": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "residual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "pStar": [
+          -6,
+          2,
+          -2,
+          6
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 2,
+        "residualNormSq": 0,
+        "full": 8,
+        "condensed": 8,
+        "gap": 0,
+        "residualEnergy": 0,
+        "objective": 8,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 250,
+          "scrollWidth": 258,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "dejavu-320-q4",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 360,
+      "documentWidth": 360,
+      "documentClientWidth": 360,
+      "bodyFont": "\"DejaVu Sans\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 1,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0.125,
+          0.125,
+          0.125,
+          0.125
+        ],
+        "residual": [
+          -0.875,
+          0.125,
+          -0.375,
+          0.625
+        ],
+        "pStar": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.125,
+        "residualNormSq": 1.875,
+        "full": 8,
+        "condensed": 0.5,
+        "gap": 7.5,
+        "residualEnergy": 7.5,
+        "objective": 0.5,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 290,
+          "scrollWidth": 292,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "dejavu-360-q1",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 360,
+      "documentWidth": 360,
+      "documentClientWidth": 360,
+      "bodyFont": "\"DejaVu Sans\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 2,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0,
+          0,
+          0.25,
+          0.25
+        ],
+        "residual": [
+          -0.75,
+          0.25,
+          -0.5,
+          0.5
+        ],
+        "pStar": [
+          0,
+          0,
+          2,
+          2
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.25,
+        "residualNormSq": 1.75,
+        "full": 8,
+        "condensed": 1,
+        "gap": 7,
+        "residualEnergy": 7,
+        "objective": 1,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 290,
+          "scrollWidth": 290,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "dejavu-360-q2",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 360,
+      "documentWidth": 360,
+      "documentClientWidth": 360,
+      "bodyFont": "\"DejaVu Sans\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 4,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "projected": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "residual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "pStar": [
+          -6,
+          2,
+          -2,
+          6
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 2,
+        "residualNormSq": 0,
+        "full": 8,
+        "condensed": 8,
+        "gap": 0,
+        "residualEnergy": 0,
+        "objective": 8,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 290,
+          "scrollWidth": 290,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "dejavu-360-q4",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 390,
+      "documentWidth": 390,
+      "documentClientWidth": 390,
+      "bodyFont": "\"DejaVu Sans\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 1,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0.125,
+          0.125,
+          0.125,
+          0.125
+        ],
+        "residual": [
+          -0.875,
+          0.125,
+          -0.375,
+          0.625
+        ],
+        "pStar": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.125,
+        "residualNormSq": 1.875,
+        "full": 8,
+        "condensed": 0.5,
+        "gap": 7.5,
+        "residualEnergy": 7.5,
+        "objective": 0.5,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 320,
+          "scrollWidth": 320,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "dejavu-390-q1",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 390,
+      "documentWidth": 390,
+      "documentClientWidth": 390,
+      "bodyFont": "\"DejaVu Sans\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 2,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0,
+          0,
+          0.25,
+          0.25
+        ],
+        "residual": [
+          -0.75,
+          0.25,
+          -0.5,
+          0.5
+        ],
+        "pStar": [
+          0,
+          0,
+          2,
+          2
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.25,
+        "residualNormSq": 1.75,
+        "full": 8,
+        "condensed": 1,
+        "gap": 7,
+        "residualEnergy": 7,
+        "objective": 1,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 320,
+          "scrollWidth": 320,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "dejavu-390-q2",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 390,
+      "documentWidth": 390,
+      "documentClientWidth": 390,
+      "bodyFont": "\"DejaVu Sans\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 4,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "projected": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "residual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "pStar": [
+          -6,
+          2,
+          -2,
+          6
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 2,
+        "residualNormSq": 0,
+        "full": 8,
+        "condensed": 8,
+        "gap": 0,
+        "residualEnergy": 0,
+        "objective": 8,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 320,
+          "scrollWidth": 320,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "dejavu-390-q4",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 414,
+      "documentWidth": 414,
+      "documentClientWidth": 414,
+      "bodyFont": "\"DejaVu Sans\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 1,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0.125,
+          0.125,
+          0.125,
+          0.125
+        ],
+        "residual": [
+          -0.875,
+          0.125,
+          -0.375,
+          0.625
+        ],
+        "pStar": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.125,
+        "residualNormSq": 1.875,
+        "full": 8,
+        "condensed": 0.5,
+        "gap": 7.5,
+        "residualEnergy": 7.5,
+        "objective": 0.5,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 344,
+          "scrollWidth": 344,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "dejavu-414-q1",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 414,
+      "documentWidth": 414,
+      "documentClientWidth": 414,
+      "bodyFont": "\"DejaVu Sans\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 2,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0,
+          0,
+          0.25,
+          0.25
+        ],
+        "residual": [
+          -0.75,
+          0.25,
+          -0.5,
+          0.5
+        ],
+        "pStar": [
+          0,
+          0,
+          2,
+          2
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.25,
+        "residualNormSq": 1.75,
+        "full": 8,
+        "condensed": 1,
+        "gap": 7,
+        "residualEnergy": 7,
+        "objective": 1,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 344,
+          "scrollWidth": 344,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "dejavu-414-q2",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 414,
+      "documentWidth": 414,
+      "documentClientWidth": 414,
+      "bodyFont": "\"DejaVu Sans\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 4,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "projected": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "residual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "pStar": [
+          -6,
+          2,
+          -2,
+          6
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 2,
+        "residualNormSq": 0,
+        "full": 8,
+        "condensed": 8,
+        "gap": 0,
+        "residualEnergy": 0,
+        "objective": 8,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 344,
+          "scrollWidth": 344,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "dejavu-414-q4",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 560,
+      "documentWidth": 560,
+      "documentClientWidth": 560,
+      "bodyFont": "\"DejaVu Sans\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 1,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0.125,
+          0.125,
+          0.125,
+          0.125
+        ],
+        "residual": [
+          -0.875,
+          0.125,
+          -0.375,
+          0.625
+        ],
+        "pStar": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.125,
+        "residualNormSq": 1.875,
+        "full": 8,
+        "condensed": 0.5,
+        "gap": 7.5,
+        "residualEnergy": 7.5,
+        "objective": 0.5,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 490,
+          "scrollWidth": 490,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "dejavu-560-q1",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 560,
+      "documentWidth": 560,
+      "documentClientWidth": 560,
+      "bodyFont": "\"DejaVu Sans\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 2,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0,
+          0,
+          0.25,
+          0.25
+        ],
+        "residual": [
+          -0.75,
+          0.25,
+          -0.5,
+          0.5
+        ],
+        "pStar": [
+          0,
+          0,
+          2,
+          2
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.25,
+        "residualNormSq": 1.75,
+        "full": 8,
+        "condensed": 1,
+        "gap": 7,
+        "residualEnergy": 7,
+        "objective": 1,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 490,
+          "scrollWidth": 490,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "dejavu-560-q2",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 560,
+      "documentWidth": 560,
+      "documentClientWidth": 560,
+      "bodyFont": "\"DejaVu Sans\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 4,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "projected": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "residual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "pStar": [
+          -6,
+          2,
+          -2,
+          6
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 2,
+        "residualNormSq": 0,
+        "full": 8,
+        "condensed": 8,
+        "gap": 0,
+        "residualEnergy": 0,
+        "objective": 8,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 490,
+          "scrollWidth": 490,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "dejavu-560-q4",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 768,
+      "documentWidth": 768,
+      "documentClientWidth": 768,
+      "bodyFont": "\"DejaVu Sans\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 1,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0.125,
+          0.125,
+          0.125,
+          0.125
+        ],
+        "residual": [
+          -0.875,
+          0.125,
+          -0.375,
+          0.625
+        ],
+        "pStar": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.125,
+        "residualNormSq": 1.875,
+        "full": 8,
+        "condensed": 0.5,
+        "gap": 7.5,
+        "residualEnergy": 7.5,
+        "objective": 0.5,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 682,
+          "scrollWidth": 682,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "dejavu-768-q1",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 768,
+      "documentWidth": 768,
+      "documentClientWidth": 768,
+      "bodyFont": "\"DejaVu Sans\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 2,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0,
+          0,
+          0.25,
+          0.25
+        ],
+        "residual": [
+          -0.75,
+          0.25,
+          -0.5,
+          0.5
+        ],
+        "pStar": [
+          0,
+          0,
+          2,
+          2
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.25,
+        "residualNormSq": 1.75,
+        "full": 8,
+        "condensed": 1,
+        "gap": 7,
+        "residualEnergy": 7,
+        "objective": 1,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 682,
+          "scrollWidth": 682,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "dejavu-768-q2",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 768,
+      "documentWidth": 768,
+      "documentClientWidth": 768,
+      "bodyFont": "\"DejaVu Sans\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 4,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "projected": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "residual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "pStar": [
+          -6,
+          2,
+          -2,
+          6
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 2,
+        "residualNormSq": 0,
+        "full": 8,
+        "condensed": 8,
+        "gap": 0,
+        "residualEnergy": 0,
+        "objective": 8,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 682,
+          "scrollWidth": 682,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "dejavu-768-q4",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 1280,
+      "documentWidth": 1280,
+      "documentClientWidth": 1280,
+      "bodyFont": "\"DejaVu Sans\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 1,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0.125,
+          0.125,
+          0.125,
+          0.125
+        ],
+        "residual": [
+          -0.875,
+          0.125,
+          -0.375,
+          0.625
+        ],
+        "pStar": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.125,
+        "residualNormSq": 1.875,
+        "full": 8,
+        "condensed": 0.5,
+        "gap": 7.5,
+        "residualEnergy": 7.5,
+        "objective": 0.5,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 607,
+          "scrollWidth": 607,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "dejavu-1280-q1",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 1280,
+      "documentWidth": 1280,
+      "documentClientWidth": 1280,
+      "bodyFont": "\"DejaVu Sans\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 2,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "projected": [
+          0,
+          0,
+          0.25,
+          0.25
+        ],
+        "residual": [
+          -0.75,
+          0.25,
+          -0.5,
+          0.5
+        ],
+        "pStar": [
+          0,
+          0,
+          2,
+          2
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 0.25,
+        "residualNormSq": 1.75,
+        "full": 8,
+        "condensed": 1,
+        "gap": 7,
+        "residualEnergy": 7,
+        "objective": 1,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 607,
+          "scrollWidth": 607,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "dejavu-1280-q2",
+      "browser": "151.0.7922.173"
+    },
+    {
+      "width": 1280,
+      "documentWidth": 1280,
+      "documentClientWidth": 1280,
+      "bodyFont": "\"DejaVu Sans\", sans-serif",
+      "state": {
+        "g": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "K": 8,
+        "level": 4,
+        "weights": [
+          1,
+          3,
+          2,
+          2
+        ],
+        "groups": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "projected": [
+          -0.75,
+          0.25,
+          -0.25,
+          0.75
+        ],
+        "residual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "pStar": [
+          -6,
+          2,
+          -2,
+          6
+        ],
+        "fullNormSq": 2,
+        "projectedNormSq": 2,
+        "residualNormSq": 0,
+        "full": 8,
+        "condensed": 8,
+        "gap": 0,
+        "residualEnergy": 0,
+        "objective": 8,
+        "identityDefect": 0,
+        "weightedResiduals": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "elements": [],
+      "tableScroll": [
+        {
+          "clientWidth": 607,
+          "scrollWidth": 607,
+          "scrollLeft": 0
+        }
+      ],
+      "case": "dejavu-1280-q4",
+      "browser": "151.0.7922.173"
+    }
+  ],
+  "javascript_errors": [],
+  "scope": "Local browser with native and declared DejaVu font fallback; no inference that browser patch version caused hosted failure",
+  "evidence_sha256": {
+    "fixed-native-320.png": "ecbc910fcf59fb8407b61ba00246c4479619fca3197dce81fa4f0efee50b838b",
+    "viewport-failure-frozen-dejavu-320.json": "bfb4105c071a0ef2fc6200239ea9d792db24a01be6b1a2dd907f877c133a4325",
+    "viewport-failure-frozen-dejavu-320.png": "2683c80d8f7df8920ede1a41da38d314676062a18f92f1c550480d27a2d900eb",
+    "fixed-dejavu-320.png": "ce04af585410df5473540f5fa8ef0192c707887af8b4d2330c897cd733eaf140"
+  }
+}

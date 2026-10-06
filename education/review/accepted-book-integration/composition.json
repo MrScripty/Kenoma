@@ -1,0 +1,170 @@
+{
+  "schema": 1,
+  "branch": "education/accepted-book-integration-20261006",
+  "sources": {
+    "main": "041de5deed0d288f644017704d675b7f8c1b97a4",
+    "pr8_print": "2ece72fd802e979ed8b0f1f999a39c0e072673f0",
+    "sls_source": "569e6686aaa08c7a2005ed25441c59db7afee4f8",
+    "sls_evidence": "0682249146ae2de57f3f62d3d2cc2df2bfac165c",
+    "serial_readable": "57614206e0282198f83ea4b730cdd29da5b9e4e1",
+    "serial_wording": "6a792178392549f8ac314d9c162cfd4215c3054b",
+    "projection_proofs": "1828dfbc1f8441137c962ae47a1db31bac376a76",
+    "projection_lab": "0bda9b5226e1bae3c83bf8c8fa12b0c4d6a03e46",
+    "projection_evidence": "3c1414fbecc5fe9c7b48ea8f9a5840644a9b7797"
+  },
+  "exact_source_parents": {
+    "main": "041de5deed0d288f644017704d675b7f8c1b97a4 2e05953581cdbd4f58c9070cd27e9ebce0d8c276 f1f48bf7b4b3fca1605e58f61b5507d46af6e65f",
+    "pr8_print": "2ece72fd802e979ed8b0f1f999a39c0e072673f0 0b4dc6a2cfa4fd4ff2b3decd08718c35ad5510e2",
+    "sls_source": "569e6686aaa08c7a2005ed25441c59db7afee4f8 c603d5081e7865d423fac4f452a1bcc7840735b1",
+    "sls_evidence": "0682249146ae2de57f3f62d3d2cc2df2bfac165c 569e6686aaa08c7a2005ed25441c59db7afee4f8",
+    "serial_readable": "57614206e0282198f83ea4b730cdd29da5b9e4e1 9fb31ed243c5e4c75b7f90433e76631e1496d562",
+    "serial_wording": "6a792178392549f8ac314d9c162cfd4215c3054b 4ce48764e5fe819e799bd633d56f4cd972e8b699",
+    "projection_proofs": "1828dfbc1f8441137c962ae47a1db31bac376a76 f7ccd8add94e79dc08c1fbd604efc8e99f57e8d4",
+    "projection_lab": "0bda9b5226e1bae3c83bf8c8fa12b0c4d6a03e46 1828dfbc1f8441137c962ae47a1db31bac376a76",
+    "projection_evidence": "3c1414fbecc5fe9c7b48ea8f9a5840644a9b7797 0bda9b5226e1bae3c83bf8c8fa12b0c4d6a03e46"
+  },
+  "composition_merges": [
+    {
+      "commit": "0b30286c29cab8f1627b758fd65e1e61fd75832a",
+      "parents": "6a792178392549f8ac314d9c162cfd4215c3054b 2ece72fd802e979ed8b0f1f999a39c0e072673f0"
+    },
+    {
+      "commit": "95ca16b74ffac1f9ae510def914c6a0d4b2ffb01",
+      "parents": "0b30286c29cab8f1627b758fd65e1e61fd75832a 3c1414fbecc5fe9c7b48ea8f9a5840644a9b7797"
+    }
+  ],
+  "conflicts": "Four PR8/serial duplicate typography conflicts retained serial-readable superset: tests/artifacts.py, check_print_readability.py, package_education_bundle.py, style.css. Original laws and diagrams unchanged.",
+  "unchanged_sources": [
+    {
+      "path": "proofs/DissipativeBarReal.lean",
+      "accepted_commit": "569e6686aaa08c7a2005ed25441c59db7afee4f8",
+      "sha256": "7368497bd84dcb8ab8e020270a4823d233424601b0225e546393114b7141c972",
+      "byte_identical": true
+    },
+    {
+      "path": "proofs/dissipative-real-claims.json",
+      "accepted_commit": "569e6686aaa08c7a2005ed25441c59db7afee4f8",
+      "sha256": "73faf38ad39f2e91ec18cad29e4c6afed1707bb3e349da9a8262d8961ea8bf48",
+      "byte_identical": true
+    },
+    {
+      "path": "web/dissipative-bar.mjs",
+      "accepted_commit": "569e6686aaa08c7a2005ed25441c59db7afee4f8",
+      "sha256": "26c19ad1454245b79f83a1f1237b6d5764a8585e2f75ef7415e507fd86541ef5",
+      "byte_identical": true
+    },
+    {
+      "path": "web/dissipative-lab.mjs",
+      "accepted_commit": "569e6686aaa08c7a2005ed25441c59db7afee4f8",
+      "sha256": "1bcf64845d87479d33f88837e19fa986bff300e84acaee3a2a4660e6660038ce",
+      "byte_identical": true
+    },
+    {
+      "path": "proofs/SerialSpecimenReal.lean",
+      "accepted_commit": "6a792178392549f8ac314d9c162cfd4215c3054b",
+      "sha256": "b0b4ccb250f7a10561c66fc32def5aad4f3ec900eeb3575a3e8bd4aacf0f3fbe",
+      "byte_identical": true
+    },
+    {
+      "path": "proofs/serial-specimen-real-claims.json",
+      "accepted_commit": "6a792178392549f8ac314d9c162cfd4215c3054b",
+      "sha256": "ae5102fb1f62d0499af6aa4aa7ab7faf0d2ad4830da441d5c4e991fded772ec1",
+      "byte_identical": true
+    },
+    {
+      "path": "web/serial-specimen.mjs",
+      "accepted_commit": "6a792178392549f8ac314d9c162cfd4215c3054b",
+      "sha256": "56391812f3d79a11f2840e13ca8dfaf6462459dae9826bcca1deb9208265b3ab",
+      "byte_identical": true
+    },
+    {
+      "path": "web/serial-lab.mjs",
+      "accepted_commit": "6a792178392549f8ac314d9c162cfd4215c3054b",
+      "sha256": "760749013924e4ddb4d5b6b124b2fc2004132cd728a8c751b3b9c6bab6f7c022",
+      "byte_identical": true
+    },
+    {
+      "path": "book/chapters/09d-serial-specimen.md",
+      "accepted_commit": "6a792178392549f8ac314d9c162cfd4215c3054b",
+      "sha256": "b53ddf5917e22daced7e97a8090c382fe807492dd06aa20269f8ace8c3d1ae52",
+      "byte_identical": true
+    },
+    {
+      "path": "book/chapters/09c-dissipative-response.md",
+      "accepted_commit": "57614206e0282198f83ea4b730cdd29da5b9e4e1",
+      "sha256": "b09a4eacd144b66a5cc1bf4b4efd6aa36767322016478ccd5abda1e57bea2f9a",
+      "byte_identical": true
+    },
+    {
+      "path": "proofs/MixedLogVolume.lean",
+      "accepted_commit": "1828dfbc1f8441137c962ae47a1db31bac376a76",
+      "sha256": "d1411e4068ea99b9f7a85fd0a573e9ecd976b260617d0f209b6baebb3ae7e15e",
+      "byte_identical": true
+    },
+    {
+      "path": "tools/check_mixed_volume_proofs.py",
+      "accepted_commit": "1828dfbc1f8441137c962ae47a1db31bac376a76",
+      "sha256": "7c6586de69f6885d9a55dadf7c33c1e03334559eda4366ff844fff3132a1c96a",
+      "byte_identical": true
+    },
+    {
+      "path": "research/mixed-log-volume-projection.md",
+      "accepted_commit": "1828dfbc1f8441137c962ae47a1db31bac376a76",
+      "sha256": "a689e0c0f88f62c97e6c43bfd54980dc10c18602c32ad9924968c452590b2377",
+      "byte_identical": true
+    },
+    {
+      "path": "standalone/pressure-projection-lab.html",
+      "accepted_commit": "0bda9b5226e1bae3c83bf8c8fa12b0c4d6a03e46",
+      "sha256": "3c3bd14dc774c809074af208c9574127c9824a04b69c1a5a25209c95e1f461b4",
+      "byte_identical": true
+    },
+    {
+      "path": "standalone/pressure-projection-proof-guide.md",
+      "accepted_commit": "0bda9b5226e1bae3c83bf8c8fa12b0c4d6a03e46",
+      "sha256": "9ffe07ea8797fae607854646d56285c4ac422fbc69ed8a4ee5121051c8547955",
+      "byte_identical": true
+    },
+    {
+      "path": "standalone/pressure-projection-lab-check.py",
+      "accepted_commit": "0bda9b5226e1bae3c83bf8c8fa12b0c4d6a03e46",
+      "sha256": "979743140482e0ab1cfe5ef49b1102dcb64492af8780e6fda055dc433c80a84f",
+      "byte_identical": true
+    }
+  ],
+  "sls_chapter_note": "The accepted serial successor adds only a continuation link after the unchanged SLS chapter. SLS laws/controllers/proofs are byte-identical to 569e668.",
+  "curriculum": [
+    "00-scope.md",
+    "01-force.md",
+    "02-torque.md",
+    "03-energy.md",
+    "09a-properties.md",
+    "09b-material-response.md",
+    "09c-dissipative-response.md",
+    "09d-serial-specimen.md",
+    "04-anatomy.md",
+    "08-actual-data.md",
+    "04-muscle-physiology.md",
+    "05-elbow.md",
+    "06-tissue-graphics.md",
+    "07-tendon-tissue.md",
+    "09-continuum-medical.md",
+    "10-fast-methods.md",
+    "10a-spatial-continuum.md",
+    "10b-pressure-projection.md",
+    "11-interfaces.md",
+    "12-spatial-capstone.md",
+    "14-coupled-mechanics.md",
+    "15-anatomical-apparatus.md",
+    "13-coverage.md",
+    "04-research-path.md",
+    "05-sources.md"
+  ],
+  "excluded_new_work": [
+    "continuous passive specimen",
+    "scalar tension/mass controller",
+    "anatomical capstone",
+    "ongoing research branches"
+  ],
+  "scope": "Retained inherited anatomical research chapter is not anatomical completion; no new anatomical source imported. No PR, merge into existing branch, Pages cancellation, publication, deployment, protection or credential change."
+}

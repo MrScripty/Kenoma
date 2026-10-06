@@ -18,8 +18,8 @@ import fitz
 
 ROOT = Path(__file__).resolve().parents[1]
 MINIMUM_PT = 10.0
-EXPECTED_CARDS = 53
-EXPECTED_SOURCES = 9
+EXPECTED_CARDS = 103
+EXPECTED_SOURCES = 12
 
 
 def sha(path):
@@ -231,7 +231,7 @@ def qualify(out, baseline_pdf=None):
         for claim in receipt['claims']:
             assert claim['id'] not in claims, 'Duplicate claim id'
             claims[claim['id']] = (claim, source)
-    assert len(families) == EXPECTED_SOURCES and len(claims) == EXPECTED_CARDS, 'Expected the frozen 53-card, nine-source edition'
+    assert len(families) == EXPECTED_SOURCES and len(claims) == EXPECTED_CARDS, 'Expected the complete 103-card, twelve-source integration edition'
     cards = [n for n in nodes if 'proof-card' in n.attrs.get('class', '').split()]
     assert len(cards) == EXPECTED_CARDS, 'Wrong printed card inventory'
     measurements, errors, figure_inputs = [], [], {}
@@ -290,7 +290,7 @@ def qualify(out, baseline_pdf=None):
                 measure('prose:' + chapter, n.text(), prose=True, node=n)
                 selected.add(chapter)
         assert selected, 'No representative instructional prose selected'
-        for name in ('dense-qualification.svg', 'dense-envelope.svg', 'nodal-force-components.svg'):
+        for name in ('dense-qualification.svg', 'dense-envelope.svg', 'nodal-force-components.svg', 'property-serial.svg', 'property-dissipative.svg', 'pressure-projection.svg'):
             paths = list(out.rglob(name))
             assert len(paths) == 1, f'Missing/duplicated delivered figure {name}'
             path = paths[0]
@@ -322,7 +322,10 @@ def qualify(out, baseline_pdf=None):
             'portable_links': links, 'baseline_pdf_sha256': baseline_hash,
             'pdf_sha256': initial_hashes['kenoma-mechanics.pdf'], 'html_sha256': initial_hashes['index.html'], 'delivered_styles_sha256': styles,
             'build_manifest_sha256': initial_hashes['build-manifest.json'], 'proof_inputs_sha256': bindings, 'dense_figure_inputs_sha256': figure_inputs,
-            'dense_figure_labels': sum(m['label'].startswith('figure:') for m in measurements),
+            'instructional_figure_labels': sum(m['label'].startswith('figure:') for m in measurements),
+            'dense_figure_labels': sum(m['label'].startswith(('figure:dense-', 'figure:nodal-force-components.svg:')) for m in measurements),
+            'serial_figure_labels': sum(m['label'].startswith('figure:property-serial.svg:') for m in measurements),
+            'dissipative_figure_labels': sum(m['label'].startswith('figure:property-dissipative.svg:') for m in measurements),
             'checker_sha256': sha(__file__), 'source_inputs_sha256': source_inputs,
             'pdf_render_receipt_sha256': sha(out / 'pdf-render.json') if (out / 'pdf-render.json').is_file() else None,
             'pdf_byte_identity_asserted': False,

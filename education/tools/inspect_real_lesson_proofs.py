@@ -32,7 +32,8 @@ def inspect():
                     expect(card).to_be_visible()
                     expect(card).to_contain_text(claim['assumptions']);expect(card).to_contain_text(claim['limitations'])
                     expect(card.locator('.proof-meta')).to_contain_text(receipt['source_sha256'])
-                    expect(card.locator('pre').first).to_contain_text('ℝ')
+                    from build import theorem_statement
+                    expect(card.locator('pre').first).to_have_text(theorem_statement((ROOT / receipt['source']).read_text(), claim['theorem'].split('.')[-1]))
                     assert card.evaluate('(x)=>x.scrollWidth<=x.clientWidth+1')
                     path=out/(name+'-'+claim['id']+'.png');card.screenshot(path=str(path));captures.append(path)
             overflow=page.evaluate('document.documentElement.scrollWidth>innerWidth+1');assert not overflow

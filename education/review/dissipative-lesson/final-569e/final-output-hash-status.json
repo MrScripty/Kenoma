@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "source_commit": "569e6686aaa08c7a2005ed25441c59db7afee4f8",
+  "receipts": [
+    {
+      "folder": "dist/dissipative-qa",
+      "status": "PASS",
+      "receipt_sha256": "6499c7562d08c642964ef20b05804d2452de3163c1ab60e0265ac8c5fb3e78d0",
+      "source_base_revision": "569e6686aaa08c7a2005ed25441c59db7afee4f8",
+      "positive_output_count": 7,
+      "negative_controls": [],
+      "all_recorded_output_and_source_hashes_match": true
+    },
+    {
+      "folder": "review/dissipative-lesson/standalone-569e",
+      "status": "PASS",
+      "receipt_sha256": "cd0aaabb1f008b0327ded2d8566ea9a8a3c2b3c3e2c198a71fbe8579f22165a3",
+      "source_base_revision": "569e6686aaa08c7a2005ed25441c59db7afee4f8",
+      "positive_output_count": 7,
+      "negative_controls": [
+        {
+          "case": "forged-loss",
+          "detected": true,
+          "reason": "('Independent W-U-D ledger', 1, 1.1007079474800437e-09)"
+        },
+        {
+          "case": "lost-extension-hold",
+          "detected": true,
+          "reason": "Step rejected: Held extension invariant failed. Last accepted state and trace retained."
+        }
+      ],
+      "all_recorded_output_and_source_hashes_match": true
+    }
+  ],
+  "current_checker_sha256": {
+    "tests/dissipative_browser.py": "5c585de5763d5171e876dfc407eebc5eafd1b29b50ac29bf0f3610e3621cb2c1",
+    "tools/check_dissipative_artifact.py": "2330f23ed84abcdfa1667248c27d7391cac7cee1e916f954bec6cd9d4f7ca49c",
+    "tools/qualify_dissipative_negatives.py": "bb98547a5deb574dee8b398a2fc2a180b4a8f68612eb9f33c3150af815048ac3"
+  },
+  "checker_files_match_committed_source": true,
+  "scope": "Final own positive/negative output hashes and source bindings, read-only verification; parent owns artifact/package validation."
+}

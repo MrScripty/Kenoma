@@ -1,0 +1,105 @@
+{
+  "source_commit": "3c452eb2a1b111d0c4069ea8eab5c56680850dc2",
+  "gates": [
+    {
+      "name": "mixed-dependencies",
+      "command": [
+        "python3",
+        "tools/check_mixed_volume_proofs.py",
+        "--build-dependencies",
+        "--output",
+        ".tools/mixed-volume-integration-precheck"
+      ],
+      "exit_code": 0,
+      "duration_s": 217.11165595054626,
+      "log": "review/accepted-book-integration/initial-diagnostics/logs/mixed-dependencies.log"
+    },
+    {
+      "name": "python-tests",
+      "command": [
+        "npm",
+        "run",
+        "test:python"
+      ],
+      "exit_code": 0,
+      "duration_s": 18.69643807411194,
+      "log": "review/accepted-book-integration/initial-diagnostics/logs/python-tests.log"
+    },
+    {
+      "name": "book-build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "exit_code": 0,
+      "duration_s": 61.72860074043274,
+      "log": "review/accepted-book-integration/initial-diagnostics/logs/book-build.log"
+    },
+    {
+      "name": "pdf",
+      "command": [
+        "npm",
+        "run",
+        "pdf"
+      ],
+      "exit_code": 0,
+      "duration_s": 8.008347034454346,
+      "log": "review/accepted-book-integration/initial-diagnostics/logs/pdf.log"
+    },
+    {
+      "name": "print-readability",
+      "command": [
+        "python3",
+        "tools/check_print_readability.py",
+        "dist"
+      ],
+      "exit_code": 0,
+      "duration_s": 6.031822443008423,
+      "log": "review/accepted-book-integration/initial-diagnostics/logs/print-readability.log"
+    },
+    {
+      "name": "projection-browser",
+      "command": [
+        "python3",
+        "tests/projection_integration.py"
+      ],
+      "exit_code": 0,
+      "duration_s": 15.217878103256226,
+      "log": "review/accepted-book-integration/initial-diagnostics/logs/projection-browser.log"
+    },
+    {
+      "name": "projection-artifact",
+      "command": [
+        "python3",
+        "tools/check_projection_artifact.py",
+        "dist"
+      ],
+      "exit_code": 0,
+      "duration_s": 0.1781156063079834,
+      "log": "review/accepted-book-integration/initial-diagnostics/logs/projection-artifact.log"
+    },
+    {
+      "name": "browser",
+      "command": [
+        "npm",
+        "run",
+        "test:browser"
+      ],
+      "exit_code": 0,
+      "duration_s": 292.5887722969055,
+      "log": "review/accepted-book-integration/initial-diagnostics/logs/browser.log"
+    },
+    {
+      "name": "mobile",
+      "command": [
+        "npm",
+        "run",
+        "test:mobile"
+      ],
+      "exit_code": 0,
+      "duration_s": 20.46146249771118,
+      "log": "review/accepted-book-integration/initial-diagnostics/logs/mobile.log"
+    }
+  ]
+}

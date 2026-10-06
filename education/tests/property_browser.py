@@ -8,6 +8,7 @@ from playwright.sync_api import sync_playwright,expect
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'tools'))
 from check_real_lesson_proofs import FAMILIES as REAL_FAMILIES
+from check_print_readability import theorem_statement
 def check(destination):
     out=Path(destination).resolve();qa=out/'qa';qa.mkdir(exist_ok=True)
     class Quiet(SimpleHTTPRequestHandler):
@@ -33,15 +34,16 @@ def check(destination):
             expect(page.locator('#proof-volume-isochoric-sqrt pre').first).to_contain_text('Real.sqrt')
             checks.append('Four actual real proof cards retain positive-stretch assumptions and pinned mathlib metadata')
             real_card_count=0
-            for _,_,prefix,_ in REAL_FAMILIES:
+            for source,_,prefix,_ in REAL_FAMILIES:
                 name=prefix+'-proof-status.json'
                 receipt=json.loads((out/name).read_text())
+                checked_source=(out/'proofs'/source).read_text()
                 real_card_count+=len(receipt['claims'])
                 for claim in receipt['claims']:
                     card=page.locator('#proof-'+claim['id'])
                     expect(card.locator('.proof-meta')).to_contain_text(receipt['source_sha256'])
                     expect(card.locator('.proof-meta')).to_contain_text('pinned mathlib v4.19.0')
-                    expect(card.locator('pre').first).to_contain_text('ℝ')
+                    expect(card.locator('pre').first).to_have_text(theorem_statement(checked_source,claim['theorem']))
                     expect(card).to_contain_text(claim['limitations'])
             checks.append(f'{real_card_count} additional actual Real cards bind compiled sources and retain explicit assumptions and limits')
         def state(lab):

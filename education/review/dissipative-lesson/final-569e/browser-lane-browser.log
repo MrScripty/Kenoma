@@ -1,0 +1,25 @@
+{
+  "executable_outputs_sha256": "0a9e9932ba8cae3647da2a671399b5a58032cc3e8e9e89547905d962782f53a5",
+  "status": "passed",
+  "browser_version": "151.0.7922.173",
+  "checks": [
+    "64 proof cards, MathML, internal links and local resources verified",
+    "Blank numeric input then Reset clears stale aria-invalid",
+    "Sequential decimal typing retains 0.35 without eager minimum clamping",
+    "Desktop real WebGL, camera, defaults, all integrators, stepping, reset replay, copy, pause verified",
+    "Elbow real WebGL, force-driven lift, continuous release, trace download, prescribed hold and pulse controls verified",
+    "Series fixed-end storage/release, immediate release/change exports before stepping, tissue ablations, same-pose LBS and deterministic reset verified",
+    "Spatial FEM reference converged; matched sweep improvement, static refinement and cached assembly verified",
+    "Spatial muscle/skin/contact same-pose fixture, force-driven lift, release-current export, camera and deterministic reset verified",
+    "Teaching control regressions: measured Lab1 marker pixels, common strain scale and inactive bar inputs, state-preserving Lab7 ablations, and dead-centre explanation",
+    "All seven deliberate spoken summaries separate each actual DOM label/value pair; energy/spatial stepping and playback produce no live-region mutations",
+    "Actual atlas WebGL part/camera views and keyboard-accessible timestamp-aware recording bins/reset verified; one active canvas retained",
+    "390px viewport has no horizontal page overflow; WebGL and keyboard controls verified",
+    "No-WebGL fallback retains static figures and live elementary/spatial numerical controls",
+    "No-JavaScript chapter text, diagrams, proofs and experiment table remain readable"
+  ],
+  "proof_cards": 64,
+  "html_sha256": "9a6ce26bdab8d7e9b0ce54fbaec862303794c78f39a6cda08104b1574f44579d",
+  "app_sha256": "96e227afbe48f45158760e8ea7e28526e061f9136e3f465a966d71574d8c78f0",
+  "scope": "Automated Chromium desktop/mobile viewport checks; not real mobile hardware or accessibility certification."
+}

@@ -1,0 +1,37 @@
+{
+  "result": "PASS_SIX_DAMAGED_SLS_ARTIFACT_CONTROLS",
+  "source_manifest_sha256": "c6b08be4320cd977fa4b7f6890affa9455294c2cf411948041e571f56873f304",
+  "checker_sha256": "2330f23ed84abcdfa1667248c27d7391cac7cee1e916f954bec6cd9d4f7ca49c",
+  "cases": [
+    {
+      "case": "missing-browser-receipt",
+      "detected": true,
+      "reason": "[Errno 2] No such file or directory: '/workspace/kenoma-serial-readable/education/.artifact-tmp/tmpzsbh3q6e/dissipative-qa/receipt.json'"
+    },
+    {
+      "case": "stale-manifest-binding",
+      "detected": true,
+      "reason": "Stale SLS manifest binding"
+    },
+    {
+      "case": "forged-closed-zero-loss",
+      "detected": true,
+      "reason": "SLS frame disagreement: force/workJ"
+    },
+    {
+      "case": "changed-static-figure",
+      "detected": true,
+      "reason": "Changed SLS generated figure/experiment: assets/property-dissipative.svg"
+    },
+    {
+      "case": "changed-visible-plot",
+      "detected": true,
+      "reason": "Changed SLS browser evidence: force-hold-loaded.png"
+    },
+    {
+      "case": "missing-real-claim",
+      "detected": true,
+      "reason": "Required proof/receipt condition rejected"
+    }
+  ]
+}

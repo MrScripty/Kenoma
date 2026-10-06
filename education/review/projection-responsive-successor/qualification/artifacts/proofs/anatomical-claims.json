@@ -1,0 +1,20 @@
+[
+  {
+    "id":"attachment-transpose-power",
+    "theorem":"Kenoma.Anatomical.attachment_transpose_power",
+    "claim":"The exact one-DOF attachment transpose preserves three-coordinate power.",
+    "assumptions":"Integer B, force and angular velocity in compatible positive scales; the velocity mapping B*omega is assumed.",
+    "implementation":"web/anatomical-transfer.mjs: attachmentMap returns B; tendonTransfer computes QNm=dot(B,boneForce).",
+    "numerical_evidence":"tests/anatomical-fixture.test.mjs independently differences the actual energy and rigid map and checks power.",
+    "limitations":"Does not prove the geometric derivative, floating-point equality, solver convergence, anatomical axis, material response or biology."
+  },
+  {
+    "id":"paired-attachment-work",
+    "theorem":"Kenoma.Anatomical.paired_attachment_work",
+    "claim":"Transferred equal-opposite attachment powers cancel the assumed potential-rate expression.",
+    "assumptions":"Integer coordinate quantities in compatible positive scales; potential-rate expression and force pairing are supplied, not derived.",
+    "implementation":"web/anatomical-transfer.mjs: nodeForce=-boneForce, nodeGradient=boneForce, qGradient=-QNm.",
+    "numerical_evidence":"tests/anatomical-fixture.test.mjs differences nodal and joint potential derivatives and tests paired work.",
+    "limitations":"No real calculus, rounding bound, finite-element convergence, anatomy or biological validation is established."
+  }
+]

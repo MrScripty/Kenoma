@@ -1,0 +1,19 @@
+PASS: current Real-card render evidence
+PASS_SLS_SOURCE_PROOF_PROTOCOL_VISUAL_BROWSER_BINDING
+PASS_SERIAL_SOURCE_PROOF_GEOMETRY_VISUAL_BROWSER_BINDING
+PASS source-bound projection artifact
+PASS: current Real-card render evidence
+PASS_SLS_SOURCE_PROOF_PROTOCOL_VISUAL_BROWSER_BINDING
+PASS_SERIAL_SOURCE_PROOF_GEOMETRY_VISUAL_BROWSER_BINDING
+PASS source-bound projection artifact
+{
+  "schema": 2,
+  "result": "PASS_CHECKED_BOOK_BUNDLE",
+  "source_revision": "061359eaaee4345c9a41186ee4e5f70b26cb2a8f",
+  "build_manifest_sha256": "afb844b80298c98ec9e0a64b777945b8c5ff809427da76fe224de4e6d04a2903",
+  "archive": "kenoma-print-limits-successor-portable.zip",
+  "archive_bytes": 88763907,
+  "archive_sha256": "be7387d0fe61d415fa0581a368d5de5a80ee865b0deabefed4d6a83493dafd6f",
+  "file_count": 1222,
+  "qualification": "Local coherent book, source-bound proofs, numerical and browser evidence; no hosted publication or biological validation"
+}

@@ -1,0 +1,116 @@
+Cloning into '/workspace/Kenoma-candidate/education/.tools/mathlib4'...
+Note: switching to 'c44e0c8ee63ca166450922a373c7409c5d26b00b'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+info: plausible: cloning https://github.com/leanprover-community/plausible
+info: plausible: checking out revision '77e08eddc486491d7b9e470926b3dbe50319451a'
+info: LeanSearchClient: cloning https://github.com/leanprover-community/LeanSearchClient
+info: LeanSearchClient: checking out revision '25078369972d295301f5a1e53c3e5850cf6d9d4c'
+info: importGraph: cloning https://github.com/leanprover-community/import-graph
+info: importGraph: checking out revision 'e6a9f0f5ee3ccf7443a0070f92b62f8db12ae82b'
+info: proofwidgets: cloning https://github.com/leanprover-community/ProofWidgets4
+info: proofwidgets: checking out revision 'c4919189477c3221e6a204008998b0d724f49904'
+info: aesop: cloning https://github.com/leanprover-community/aesop
+info: aesop: checking out revision '5d50b08dedd7d69b3d9b3176e0d58a23af228884'
+info: Qq: cloning https://github.com/leanprover-community/quote4
+info: Qq: checking out revision 'fa4f7f15d97591a9cf3aa7724ba371c7fc6dda02'
+info: batteries: cloning https://github.com/leanprover-community/batteries
+info: batteries: checking out revision 'f5d04a9c4973d401c8c92500711518f7c656f034'
+info: Cli: cloning https://github.com/leanprover/lean4-cli
+info: Cli: checking out revision '02dbd02bc00ec4916e99b04b2245b30200e200d0'
+Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+PROOFWIDGETS_SOURCE_ASSETS_READY c4919189477c3221e6a204008998b0d724f49904
+SOURCE_MODULE_COUNT 1910
+SOURCE_PROGRESS 25 1910 Aesop.Search.Expansion.Simp
+SOURCE_PROGRESS 50 1910 Batteries.Lean.Meta.UnusedNames
+SOURCE_PROGRESS 75 1910 Aesop.Script.CtorNames
+SOURCE_PROGRESS 100 1910 Batteries.Control.Nondet.Basic
+SOURCE_PROGRESS 125 1910 Aesop.RuleTac.Apply
+SOURCE_PROGRESS 150 1910 Aesop.Tree.RunMetaM
+SOURCE_PROGRESS 175 1910 Batteries.Tactic.SeqFocus
+SOURCE_PROGRESS 200 1910 ImportGraph.RequiredModules
+SOURCE_PROGRESS 225 1910 Plausible.Random
+SOURCE_PROGRESS 250 1910 Mathlib.Logic.OpClass
+SOURCE_PROGRESS 275 1910 Mathlib.Tactic.ExtractGoal
+SOURCE_PROGRESS 300 1910 Mathlib.Tactic.MinImports
+SOURCE_PROGRESS 325 1910 Mathlib.Tactic.Substs
+SOURCE_PROGRESS 350 1910 Mathlib.Logic.Function.ULift
+SOURCE_PROGRESS 375 1910 Mathlib.Tactic.CongrExclamation
+SOURCE_PROGRESS 400 1910 Mathlib.Util.AssertExists
+SOURCE_PROGRESS 425 1910 Mathlib.Tactic.ToAdditive.Frontend
+SOURCE_PROGRESS 450 1910 Mathlib.Algebra.Group.Hom.Instances
+SOURCE_PROGRESS 475 1910 Mathlib.Algebra.Ring.Int.Defs
+SOURCE_PROGRESS 500 1910 Plausible
+SOURCE_PROGRESS 525 1910 Mathlib.Algebra.Group.Action.TypeTags
+SOURCE_PROGRESS 550 1910 Mathlib.Logic.Equiv.Basic
+SOURCE_PROGRESS 575 1910 Qq.AssertInstancesCommute
+SOURCE_PROGRESS 600 1910 Mathlib.Algebra.Ring.Action.Basic
+SOURCE_PROGRESS 625 1910 Mathlib.Data.PNat.Defs
+SOURCE_PROGRESS 650 1910 Mathlib.Order.Nat
+SOURCE_PROGRESS 675 1910 Mathlib.Algebra.Order.Sub.Unbundled.Basic
+SOURCE_PROGRESS 700 1910 Mathlib.Data.Sum.Order
+SOURCE_PROGRESS 725 1910 Mathlib.Algebra.Divisibility.Hom
+SOURCE_PROGRESS 750 1910 Mathlib.Data.List.Basic
+SOURCE_PROGRESS 775 1910 Mathlib.Algebra.FreeMonoid.Basic
+SOURCE_PROGRESS 800 1910 Mathlib.Algebra.Order.Ring.Cast
+SOURCE_PROGRESS 825 1910 Mathlib.Data.Rat.Lemmas
+SOURCE_PROGRESS 850 1910 Mathlib.Algebra.Group.Submonoid.DistribMulAction
+SOURCE_PROGRESS 875 1910 Mathlib.Algebra.Ring.Action.Pointwise.Set
+SOURCE_PROGRESS 900 1910 Mathlib.Algebra.Group.Indicator
+SOURCE_PROGRESS 925 1910 Mathlib.GroupTheory.OreLocalization.OreSet
+SOURCE_PROGRESS 950 1910 Mathlib.Algebra.Algebra.Rat
+SOURCE_PROGRESS 975 1910 Mathlib.Data.Vector.Basic
+SOURCE_PROGRESS 1000 1910 Mathlib.Data.Fintype.Basic
+SOURCE_PROGRESS 1025 1910 Mathlib.Algebra.BigOperators.Group.Finset.Piecewise
+SOURCE_PROGRESS 1050 1910 Mathlib.Data.Fintype.Pi
+SOURCE_PROGRESS 1075 1910 Mathlib.Order.GaloisConnection.Basic
+SOURCE_PROGRESS 1100 1910 Mathlib.Algebra.Group.Action.Pointwise.Set.Basic
+SOURCE_PROGRESS 1125 1910 Mathlib.Data.Finset.NAry
+SOURCE_PROGRESS 1150 1910 Mathlib.Algebra.Module.Submodule.Defs
+SOURCE_PROGRESS 1175 1910 Mathlib.Order.CompleteLattice.Chain
+SOURCE_PROGRESS 1200 1910 Mathlib.Data.Finsupp.ToDFinsupp
+SOURCE_PROGRESS 1225 1910 Mathlib.Data.NNRat.Lemmas
+SOURCE_PROGRESS 1250 1910 Mathlib.Algebra.Order.Antidiag.Prod
+SOURCE_PROGRESS 1275 1910 Mathlib.Order.Filter.AtTopBot.Prod
+SOURCE_PROGRESS 1300 1910 Mathlib.Order.SuccPred.Basic
+SOURCE_PROGRESS 1325 1910 Mathlib.Order.Filter.Ultrafilter.Defs
+SOURCE_PROGRESS 1350 1910 Mathlib.Algebra.Algebra.Opposite
+SOURCE_PROGRESS 1375 1910 Mathlib.Topology.Bornology.Hom
+SOURCE_PROGRESS 1400 1910 Mathlib.GroupTheory.OrderOfElement
+SOURCE_PROGRESS 1425 1910 Mathlib.Topology.Continuous
+SOURCE_PROGRESS 1450 1910 Mathlib.Combinatorics.Enumerative.Composition
+SOURCE_PROGRESS 1475 1910 Mathlib.Algebra.Algebra.Subalgebra.Lattice
+SOURCE_PROGRESS 1500 1910 Mathlib.Algebra.Order.Module.Pointwise
+SOURCE_PROGRESS 1525 1910 Mathlib.Topology.Algebra.Group.Defs
+SOURCE_PROGRESS 1550 1910 Mathlib.Tactic.LinearCombination
+SOURCE_PROGRESS 1575 1910 Mathlib.Analysis.Convex.Jensen
+SOURCE_PROGRESS 1600 1910 Mathlib.Topology.DiscreteSubset
+SOURCE_PROGRESS 1625 1910 Mathlib.Algebra.Polynomial.Degree.Domain
+SOURCE_PROGRESS 1650 1910 Mathlib.Data.ENNReal.Action
+SOURCE_PROGRESS 1675 1910 Mathlib.Topology.Order.OrderClosed
+SOURCE_PROGRESS 1700 1910 Mathlib.Topology.Algebra.Order.LiminfLimsup
+SOURCE_PROGRESS 1725 1910 Mathlib.Topology.Algebra.Module.Basic
+SOURCE_PROGRESS 1750 1910 Mathlib.Topology.Bornology.Real
+SOURCE_PROGRESS 1775 1910 Mathlib.Topology.UniformSpace.Real
+SOURCE_PROGRESS 1800 1910 Mathlib.Topology.Algebra.Equicontinuity
+SOURCE_PROGRESS 1825 1910 Mathlib.Analysis.CStarAlgebra.Basic
+SOURCE_PROGRESS 1850 1910 Mathlib.Topology.Algebra.Module.LocallyConvex
+SOURCE_PROGRESS 1875 1910 Mathlib.Analysis.Calculus.Deriv.AffineMap
+SOURCE_PROGRESS 1900 1910 Mathlib.Analysis.Calculus.FDeriv.Mul
+SOURCE_PROGRESS 1910 1910 Mathlib.Analysis.SpecialFunctions.ExpDeriv
+SOURCE_BUILD_COMPLETE 1910

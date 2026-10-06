@@ -1,0 +1,29 @@
+{
+  "status": "BLOCKED_FOR_PRINT_READABILITY",
+  "minimum_requested_pt": 10,
+  "scope": "Independent point-size audit; existing artifact gate does not protect these text categories",
+  "samples": [
+    {
+      "page": 25,
+      "phrase": "Incompressibility is a ",
+      "size_pt": [
+        6.995110511779785
+      ]
+    },
+    {
+      "page": 27,
+      "phrase": "theorem energy_factor",
+      "size_pt": [
+        4.554955959320068
+      ]
+    },
+    {
+      "page": 93,
+      "phrase": "theorem energy_factor",
+      "size_pt": [
+        4.554955959320068
+      ]
+    }
+  ],
+  "repair_scope": "Separate successor of frozen PR8 e8fa239e; do not mix SLS or serial content into that branch"
+}

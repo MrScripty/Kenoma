@@ -1,0 +1,60 @@
+
+> kenoma-education@0.1.0 build
+> python3 tools/build.py
+
+{
+  "result": "PASS",
+  "checks": 1010,
+  "clinical_validation": false,
+  "note": "Structural/data/provenance checks only; figures separately visually inspected."
+}
+Generated independent protocol frames and static reading figure
+Generated actual serial-block static geometry and numerical cases
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+/workspace/Kenoma-candidate/education/dist/assets/anatomical-contact-trajectory.png
+
+  dist/assets/app.js            633.2kb
+  dist/assets/app.js.LEGAL.txt    188b 
+
+⚡ Done in 127ms
+/workspace/Kenoma-candidate/education/dist/anatomy-inspection/
+/workspace/Kenoma-candidate/education/dist/coupled-fixture/
+/workspace/Kenoma-candidate/education/dist/anatomical-arm/
+Checked 12 theorems with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+Checked 2 anatomical transfer identities with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+Checked 7 coupled mechanical properties with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+Checked 4 arm algebraic claims with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+Checked 4 real kinematic claims with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+Freshly compiled 5 material contracts with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+Freshly compiled 69 additional Real declarations
+Checked 27 research declarations with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+SOURCE_SHA256 d1411e4068ea99b9f7a85fd0a573e9ecd976b260617d0f209b6baebb3ae7e15e
+Built single-source Markdown and portable HTML in education/dist

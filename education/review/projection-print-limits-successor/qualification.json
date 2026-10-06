@@ -1,0 +1,69 @@
+{
+  "result": "PASS_NARROW_PROJECTION_PRINT_LIMITS_SUCCESSOR",
+  "source_commit": "789c079963374b57e5213e02772114b00e60346f",
+  "frozen_predecessor": "9c4ab8b23adf56c84bcabdcab28cfe8ea59ff99f",
+  "retained_book_source": "061359eaaee4345c9a41186ee4e5f70b26cb2a8f",
+  "scope": "Derivative projection PDF render and complete-paragraph regression; original book/manifest/mechanics/proofs retained without rebuilding or rebinding their historical receipts. Full fresh Node/Python/kernel suite not claimed.",
+  "pdf_sha256": "22bc6672b42fe723cbdc429dcf9315fd450a9a9231d3d01285f610809286a617",
+  "pages": 4,
+  "minimum_actual_pt": 10.5,
+  "complete_limits": {
+    "heading": {
+      "label": "projection:limits-heading",
+      "minimum_pt": 10.5,
+      "matched_glyphs": 23,
+      "pages": [
+        4
+      ],
+      "superscript_glyphs_exempted": 0,
+      "text_sha256": "88e286c082822d8554b5fdb1a4b5eb17e42893c4aa259a46e0bed3e042eb1626"
+    },
+    "paragraph": {
+      "label": "projection:complete-limits-paragraph",
+      "minimum_pt": 10.5,
+      "matched_glyphs": 416,
+      "pages": [
+        4
+      ],
+      "superscript_glyphs_exempted": 0,
+      "text_sha256": "4ac5edd171b1c46bc0a1516e7c9777c2da59e766727e544d9e8cf99a43bffa82"
+    }
+  },
+  "diagram_labels": 33,
+  "portable_links": {
+    "external_targets": [
+      "https://github.com/MrScripty/Kenoma/blob/<revision>/education/proofs/MixedLogVolume.lean",
+      "https://github.com/MrScripty/Kenoma/blob/<revision>/education/standalone/pressure-projection-proof-guide.md"
+    ],
+    "internal_targets": [],
+    "annotations": 2
+  },
+  "renderer_input_sha256": {
+    "tests/projection_integration.py": "d42d8dda76e19c796cf4c76563ab999d0bead2a0a49a22493585842d3415e6fc",
+    "tests/artifacts.py": "b8600e00c7c6f0d26f373282183fb43440b8425e9515a3ba8d06c4bd8f8d6b51",
+    "tools/check_projection_print_limits.py": "a6a397da2d6699764de627102e1e8436d01921d131a6512bff9e8df7c2250f66"
+  },
+  "regression_test_sha256": "8697a41e493a832cbdd9d91756325bceb1744d562876a1cf5946f658e4f4666b",
+  "checks": [
+    "Historical heading-only PDF rejected despite >=10pt present glyphs",
+    "Self-consistently rehashed heading-only artifact rejected",
+    "5625 independent rational browser cases and actual desktop/mobile/in-book controls",
+    "Complete original paragraph measured at >=10pt",
+    "33 diagram labels and portable PDF links",
+    "Main book actual typography: 103 full statements /12 complete sources /176 labels",
+    "Full artifact bindings and unchanged source identities",
+    "Seven existing projection damaged-artifact controls",
+    "Portable archive file hashes and CRC"
+  ],
+  "open_local_failures": [],
+  "artifact_sha256": {
+    "artifact-check.json": "8cffa7c45d557258119238b622fc9a981e88fb19ab22b41d3c44f537d161ceb8",
+    "fixed-field-reference.pdf": "22bc6672b42fe723cbdc429dcf9315fd450a9a9231d3d01285f610809286a617",
+    "review-chart-2.svg": "561770077196735ac706b8b62941050edd0c7f6150d655cb3b1101c8f620d734",
+    "review-chart-1.svg": "4e88bc3b5557c5aa18282a8ad164534a358f04e16f4144a3a4e98a3018392fb7",
+    "integration.json": "dded0e835b62871b2d4b61ce675cef50c3e5eb942b5b96fb64d539ce92ea4abb",
+    "receipt.json": "bd1a04980a7bf08101da4e0cc4cadf21cf7f758331fea091c2f2b9da039ba9b3",
+    "print-readability-check.json": "7ef4f8e7e4430434f8bc5d4dc4d955b84266680f16a7f34dc94fcb46e354fe30",
+    "review-chart-0.svg": "eac09f9cdc0c9373dfd3d7d83f9d73db89bb3a01ff9d981489a42987678be8e4"
+  }
+}

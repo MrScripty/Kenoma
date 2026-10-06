@@ -1,0 +1,149 @@
+{
+  "schema": 1,
+  "lean_version": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)",
+  "mathlib": "not used; bundled Std only",
+  "source_sha256": "6b45c1d9a32fbd0cf6e034d3e4d15d26dc720215afe6845bbbb9d7de07bff2fd",
+  "claims_sha256": "e5aee4e575fd3325ea676b0234801b31c9003b46943b3f13dc84ee987298e7b6",
+  "source": "proofs/Mechanics.lean",
+  "command": "lean -DwarningAsError=true proofs/Mechanics.lean",
+  "claims": [
+    {
+      "id": "force-pair",
+      "theorem": "Kenoma.force_pair_cancels",
+      "claim": "An equal and opposite scalar force pair cancels.",
+      "assumptions": "Exact integer forces in a common positive unit scale; the force pair is assumed.",
+      "limitations": "Does not prove Newton's third law from biology or establish a system boundary.",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "status": "checked"
+    },
+    {
+      "id": "torque-linearity",
+      "theorem": "Kenoma.torque_linear",
+      "claim": "Planar torque is additive in applied force at a fixed point.",
+      "assumptions": "Exact integer planar coordinates and forces; shared positive length and force scales.",
+      "limitations": "No arbitrary real coordinates, JavaScript refinement or rounding bound is established.",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "status": "checked"
+    },
+    {
+      "id": "torque-origin",
+      "theorem": "Kenoma.torque_origin_shift",
+      "claim": "Changing the torque origin subtracts origin cross force.",
+      "assumptions": "Exact integer planar coordinates and forces in common positive scales.",
+      "limitations": "This is an algebraic identity, not a claim that torque is independent of origin.",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "status": "checked"
+    },
+    {
+      "id": "central-pair",
+      "theorem": "Kenoma.central_pair_torque",
+      "claim": "Equal opposite central forces produce zero summed planar torque.",
+      "assumptions": "Force at A is k(B-A); force at B is its negative; integer k and positions.",
+      "limitations": "Noncentral pairs can form a couple. Tissue/contact models are not verified by this theorem.",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "status": "checked"
+    },
+    {
+      "id": "kinetic-sign",
+      "theorem": "Kenoma.kinetic_numerator_nonnegative",
+      "claim": "The exact numerator m(vx\u00b2+vy\u00b2) of twice kinetic energy is nonnegative.",
+      "assumptions": "Integer mass m \u2265 0; integer velocity coordinates; positive SI scale factors.",
+      "limitations": "The factor 1/2 and unit scales are interpreted in prose; no integrator conservation or biological validation.",
+      "axioms": [
+        "propext"
+      ],
+      "status": "checked"
+    },
+    {
+      "id": "torque-example",
+      "theorem": "Kenoma.torque_worked_example",
+      "claim": "300 mm crossed with -49050 mN gives -14715000 scaled torque units.",
+      "assumptions": "r=(300,0) mm; F=(0,-49050) mN; product scale 10^-6 N m.",
+      "limitations": "Only this exact arithmetic example is checked, not trigonometric slider states.",
+      "axioms": [],
+      "status": "checked"
+    },
+    {
+      "id": "activation-bound",
+      "theorem": "Kenoma.activation_weighted_bound",
+      "claim": "A nonnegative integer-weighted mixture of bounded inputs has a bounded numerator.",
+      "assumptions": "Exact integer a and u in [0, scale]; weight w in [0, d]. For a normalized mixture, additionally d > 0.",
+      "limitations": "Does not prove exp() bounds, floating-point activation, or physiological validity; the numerator is bounded by scale*d.",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "status": "checked"
+    },
+    {
+      "id": "virtual-power",
+      "theorem": "Kenoma.virtual_power_identity",
+      "claim": "The signed generalized-force power equals negative tension times path-rate under the chain-product assumption.",
+      "assumptions": "Exact integer force, path derivative dl and angular velocity omega in compatible positive SI scales; derivative and path-rate relations are assumed.",
+      "limitations": "Only multiplication/sign algebra is checked; calculus, the geometric derivative and browser arithmetic require separate numerical verification.",
+      "axioms": [
+        "propext"
+      ],
+      "status": "checked"
+    },
+    {
+      "id": "element-resultant",
+      "theorem": "Kenoma.element_gradient_resultant",
+      "claim": "A tetrahedral volume-force contribution has zero resultant when its four coordinate gradients sum to zero.",
+      "assumptions": "Exact integer coordinate gradients g1,g2,g3, g0 = \u2212(g1+g2+g3), and a common scalar force factor.",
+      "limitations": "The analytic volume derivative, JavaScript implementation, torque, attachments and contact require separate checks. This is the partition algebra used in spatial.mjs.",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "status": "checked"
+    },
+    {
+      "id": "centroid-transfer",
+      "theorem": "Kenoma.centroid_contact_power",
+      "claim": "Equal centroid barycentric weights transfer nodal power with the transpose of the point-motion map.",
+      "assumptions": "Exact integer scalar force and four velocity coordinates. Both sides are numerators with a shared division by four in physical interpretation.",
+      "limitations": "No division or floating-point equality is proved. Applies coordinatewise to the fixed centroid sample; no nonlinear moving embedding or biological claim.",
+      "axioms": [
+        "propext"
+      ],
+      "status": "checked"
+    },
+    {
+      "id": "compliance-denominator",
+      "theorem": "Kenoma.compliant_denominator_positive",
+      "claim": "A nonnegative inverse-mass quadratic plus strictly positive regularization has a positive scalar denominator.",
+      "assumptions": "Exact integer w \u2265 0, gradient g, alpha > 0 in common positive scales.",
+      "limitations": "A one-coordinate special case supporting the compliant solver denominator; finite precision, material assembly, time scaling and iterative accuracy are not proved.",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "status": "checked"
+    },
+    {
+      "id": "armijo-decrease",
+      "theorem": "Kenoma.accepted_energy_nonincrease",
+      "claim": "An accepted sufficient-decrease step cannot increase the exact scaled objective.",
+      "assumptions": "Exact integer old/new energy, nonnegative scaled step coefficient, nonpositive directional slope and the stated Armijo acceptance inequality.",
+      "limitations": "Does not prove gradients, direction generation, line-search termination, global convergence, float bounds or biological validity. The spatial solver tests its actual accepted energies separately.",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "status": "checked"
+    }
+  ]
+}

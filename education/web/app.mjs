@@ -1,6 +1,8 @@
+import './serial-lab.mjs';
 import * as THREE from 'three';
 import './property-labs.mjs';
 import './material-lab.mjs';
+import './dissipative-lab.mjs';
 import {formatReadout} from './readout.mjs';
 import {SceneStatus} from './scene-status.mjs';
 import {currentPulse,pulseDue} from './pulse.mjs';

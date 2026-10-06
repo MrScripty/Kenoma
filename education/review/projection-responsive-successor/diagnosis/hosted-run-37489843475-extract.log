@@ -1,0 +1,38 @@
+2026-10-06T15:44:01.1141627Z Downloading Chrome for Testing 151.0.7922.34 (playwright chromium v1234) from https://cdn.playwright.dev/builds/cft/151.0.7922.34/linux64/chrome-linux64.zip
+2026-10-06T15:44:06.3220809Z Chrome for Testing 151.0.7922.34 (playwright chromium v1234) downloaded to /home/runner/.cache/ms-playwright/chromium-1234
+2026-10-06T15:44:07.5727860Z Downloading Chrome Headless Shell 151.0.7922.34 (playwright chromium-headless-shell v1234) from https://cdn.playwright.dev/builds/cft/151.0.7922.34/linux64/chrome-headless-shell-linux64.zip
+2026-10-06T15:44:11.6449814Z Chrome Headless Shell 151.0.7922.34 (playwright chromium-headless-shell v1234) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1234
+2026-10-06T17:22:59.7592267Z # tests 208
+2026-10-06T17:22:59.7592656Z # pass 208
+2026-10-06T17:23:15.3176543Z Ran 55 tests in 15.128s
+2026-10-06T17:24:32.3766378Z PASS: 103 statements, 12 complete sources; minimum 10.377959 pt
+
+2026-10-06T17:24:17.5588609Z Built single-source Markdown and portable HTML in education/dist
+2026-10-06T17:24:17.6665689Z 
+2026-10-06T17:24:17.6666518Z > kenoma-education@0.1.0 pdf
+2026-10-06T17:24:17.6667166Z > python3 tools/render_pdf.py
+2026-10-06T17:24:17.6667463Z 
+2026-10-06T17:24:25.0399307Z Rendered illustrated PDF from the same HTML content
+2026-10-06T17:24:32.3766378Z PASS: 103 statements, 12 complete sources; minimum 10.377959 pt
+2026-10-06T17:24:40.4037826Z Traceback (most recent call last):
+2026-10-06T17:24:40.4039675Z   File "/home/runner/work/Kenoma/Kenoma/education/dist/standalone/pressure-projection-lab-check.py", line 224, in <module>
+2026-10-06T17:24:40.4041293Z     check(parser.parse_args().output.resolve())
+2026-10-06T17:24:40.4042622Z   File "/home/runner/work/Kenoma/Kenoma/education/dist/standalone/pressure-projection-lab-check.py", line 174, in check
+2026-10-06T17:24:40.4043935Z     assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), width
+2026-10-06T17:24:40.4044844Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-06T17:24:40.4045397Z AssertionError: 320
+2026-10-06T17:24:40.4636464Z Traceback (most recent call last):
+2026-10-06T17:24:40.4637491Z   File "/home/runner/work/Kenoma/Kenoma/education/tests/projection_integration.py", line 111, in <module>
+2026-10-06T17:24:40.4638450Z     check()
+2026-10-06T17:24:40.4639293Z   File "/home/runner/work/Kenoma/Kenoma/education/tests/projection_integration.py", line 25, in check
+2026-10-06T17:24:40.4640975Z     subprocess.run([sys.executable, str(out/'standalone/pressure-projection-lab-check.py'), '--output', str(out/'projection-qa')], check=True)
+2026-10-06T17:24:40.4641938Z   File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/subprocess.py", line 571, in run
+2026-10-06T17:24:40.5122009Z     raise CalledProcessError(retcode, process.args,
+2026-10-06T17:24:40.5531697Z subprocess.CalledProcessError: Command '['/opt/hostedtoolcache/Python/3.12.14/x64/bin/python3', '/home/runner/work/Kenoma/Kenoma/education/dist/standalone/pressure-projection-lab-check.py', '--output', '/home/runner/work/Kenoma/Kenoma/education/dist/projection-qa']' returned non-zero exit status 1.
+2026-10-06T17:24:40.5545385Z ##[error]Process completed with exit code 1.
+2026-10-06T17:24:40.5670372Z Post job cleanup.
+2026-10-06T17:24:40.6547459Z [command]/usr/bin/git version
+2026-10-06T17:24:40.6594577Z git version 2.55.0
+2026-10-06T17:24:40.6641709Z Temporarily overriding HOME='/home/runner/work/_temp/3a188604-2a39-4fba-a79b-e154a9efa52d' before making global git config changes
+2026-10-06T17:24:40.6643484Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-06T17:24:40.6648519Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Kenoma/Kenoma

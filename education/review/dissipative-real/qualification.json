@@ -1,0 +1,240 @@
+{
+  "schema": 1,
+  "result": "PASS_FRESH_REAL_SLS_KERNEL",
+  "source_commit": "b262270f7d8fa0d725ba34d35ea319ee662dba0f",
+  "source": "proofs/DissipativeBarReal.lean",
+  "source_sha256": "7368497bd84dcb8ab8e020270a4823d233424601b0225e546393114b7141c972",
+  "claims_sha256": "c82b69418c7bb0ede1296b2a3c72b0904d47b23854c5db3c93f8986f93bad657",
+  "lean_version": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)",
+  "mathlib": {
+    "repository": "https://github.com/leanprover-community/mathlib4",
+    "tag": "v4.19.0",
+    "commit": "c44e0c8ee63ca166450922a373c7409c5d26b00b",
+    "manifest_sha256": "5c6421b650bc87a2427a892a39e5522dc44543ca4ac1bd6e9f08d536c044a752",
+    "toolchain": "leanprover/lean4:v4.19.0",
+    "license": "Apache-2.0",
+    "qualification": "Fresh compilation required; this lock alone is not proof evidence."
+  },
+  "mathlib_identity": {
+    "actual_commit": "c44e0c8ee63ca166450922a373c7409c5d26b00b",
+    "manifest_sha256": "5c6421b650bc87a2427a892a39e5522dc44543ca4ac1bd6e9f08d536c044a752",
+    "source_pristine": true,
+    "packages": [
+      {
+        "name": "plausible",
+        "expected_commit": "77e08eddc486491d7b9e470926b3dbe50319451a",
+        "actual_commit": "77e08eddc486491d7b9e470926b3dbe50319451a",
+        "source_pristine": true
+      },
+      {
+        "name": "LeanSearchClient",
+        "expected_commit": "25078369972d295301f5a1e53c3e5850cf6d9d4c",
+        "actual_commit": "25078369972d295301f5a1e53c3e5850cf6d9d4c",
+        "source_pristine": true
+      },
+      {
+        "name": "importGraph",
+        "expected_commit": "e6a9f0f5ee3ccf7443a0070f92b62f8db12ae82b",
+        "actual_commit": "e6a9f0f5ee3ccf7443a0070f92b62f8db12ae82b",
+        "source_pristine": true
+      },
+      {
+        "name": "proofwidgets",
+        "expected_commit": "c4919189477c3221e6a204008998b0d724f49904",
+        "actual_commit": "c4919189477c3221e6a204008998b0d724f49904",
+        "source_pristine": true
+      },
+      {
+        "name": "aesop",
+        "expected_commit": "5d50b08dedd7d69b3d9b3176e0d58a23af228884",
+        "actual_commit": "5d50b08dedd7d69b3d9b3176e0d58a23af228884",
+        "source_pristine": true
+      },
+      {
+        "name": "Qq",
+        "expected_commit": "fa4f7f15d97591a9cf3aa7724ba371c7fc6dda02",
+        "actual_commit": "fa4f7f15d97591a9cf3aa7724ba371c7fc6dda02",
+        "source_pristine": true
+      },
+      {
+        "name": "batteries",
+        "expected_commit": "f5d04a9c4973d401c8c92500711518f7c656f034",
+        "actual_commit": "f5d04a9c4973d401c8c92500711518f7c656f034",
+        "source_pristine": true
+      },
+      {
+        "name": "Cli",
+        "expected_commit": "02dbd02bc00ec4916e99b04b2245b30200e200d0",
+        "actual_commit": "02dbd02bc00ec4916e99b04b2245b30200e200d0",
+        "source_pristine": true
+      }
+    ]
+  },
+  "command": [
+    "lake",
+    "--no-cache",
+    "env",
+    "lean",
+    "-DwarningAsError=true",
+    "/tmp/kenoma-dissipative-real/education/proofs/DissipativeBarReal.lean"
+  ],
+  "cwd": "/tmp/kenoma-dissipative-real/education/.tools/mathlib4",
+  "claims": [
+    {
+      "id": "dissipative-real-storage-sign",
+      "theorem": "Kenoma.DissipativeBarReal.storage_nonnegative",
+      "claim": "Local real stored energy is nonnegative.",
+      "assumptions": "Real E0>=0, E1>=0; any real total strain eps and viscous strain v.",
+      "limitations": "U=E0*eps^2/2+E1*(eps-v)^2/2. Real local constitutive law only; no numerical or JavaScript refinement, axial-bar or quadrature solve, discrete energy-ledger, calibration or biological validation.",
+      "implementation": "Local SLS law; intended source web/dissipative-bar.mjs. Runtime qualification remains separate.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "dissipative-real-dissipation-sign",
+      "theorem": "Kenoma.DissipativeBarReal.dissipation_nonnegative",
+      "claim": "Local real dissipation rate eta*vdot^2 is nonnegative.",
+      "assumptions": "Real eta>=0; any real viscous-strain rate vdot.",
+      "limitations": "Ddot=eta*vdot^2. Real local constitutive law only; no numerical or JavaScript refinement, axial-bar or quadrature solve, discrete energy-ledger, calibration or biological validation.",
+      "implementation": "Local SLS law; intended source web/dissipative-bar.mjs. Runtime qualification remains separate.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "dissipative-real-storage-derivative",
+      "theorem": "Kenoma.DissipativeBarReal.storage_hasDerivAt",
+      "claim": "The real storage time derivative equals E0*eps*epsdot+E1*(eps-v)*(epsdot-vdot).",
+      "assumptions": "Fixed real E0,E1; supplied real strain paths eps(t),v(t) with HasDerivAt eps epsdot t and HasDerivAt v vdot t.",
+      "limitations": "Derivative of U for fixed constitutive coefficients and supplied path derivatives. Real local constitutive law only; no numerical or JavaScript refinement, axial-bar or quadrature solve, discrete energy-ledger, calibration or biological validation.",
+      "implementation": "Local SLS law; intended source web/dissipative-bar.mjs. Runtime qualification remains separate.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "dissipative-real-power-balance",
+      "theorem": "Kenoma.DissipativeBarReal.local_power_balance",
+      "claim": "Real stress power equals storage rate plus dissipation under the Maxwell equation.",
+      "assumptions": "Real E0,E1,eps,v,eta,epsdot,vdot; assumed constitutive constraint eta*vdot=E1*(eps-v).",
+      "limitations": "sigma*epsdot=Udot+Ddot; the constitutive constraint is an explicit assumption. Real local constitutive law only; no numerical or JavaScript refinement, axial-bar or quadrature solve, discrete energy-ledger, calibration or biological validation.",
+      "implementation": "Local SLS law; intended source web/dissipative-bar.mjs. Runtime qualification remains separate.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "dissipative-real-elastic-recovery",
+      "theorem": "Kenoma.DissipativeBarReal.zero_branch_recovers_elastic",
+      "claim": "Setting E1=0 recovers sigma=E0*eps and U=E0*eps^2/2.",
+      "assumptions": "Real E0,eps,v; the Maxwell spring coefficient E1 is exactly zero.",
+      "limitations": "Zero-branch elastic reference; no whole-bar geometry or numerical equivalence is asserted. Real local constitutive law only; no numerical or JavaScript refinement, axial-bar or quadrature solve, discrete energy-ledger, calibration or biological validation.",
+      "implementation": "Local SLS law; intended source web/dissipative-bar.mjs. Runtime qualification remains separate.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "dissipative-real-viscous-derivative",
+      "theorem": "Kenoma.DissipativeBarReal.viscous_strain_hasDerivAt",
+      "claim": "The exact held-strain exponential has derivative E1*(eps-v(t))/eta.",
+      "assumptions": "Fixed real held strain eps, initial viscous strain v0, E1, eta!=0; any real elapsed time t.",
+      "limitations": "v(t)=eps+(v0-eps)*exp(-E1*t/eta); constant strain and coefficients only. Real local constitutive law only; no numerical or JavaScript refinement, axial-bar or quadrature solve, discrete energy-ledger, calibration or biological validation.",
+      "implementation": "Local SLS law; intended source web/dissipative-bar.mjs. Runtime qualification remains separate.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "dissipative-real-viscous-bounds",
+      "theorem": "Kenoma.DissipativeBarReal.viscous_strain_bounded",
+      "claim": "Forward held-strain viscous strain stays between v0 and eps.",
+      "assumptions": "Real held strain eps and initial v0; E1>=0, eta>0 and elapsed time t>=0.",
+      "limitations": "min(v0,eps)<=v(t)<=max(v0,eps); no general changing-load trajectory is certified. Real local constitutive law only; no numerical or JavaScript refinement, axial-bar or quadrature solve, discrete energy-ledger, calibration or biological validation.",
+      "implementation": "Local SLS law; intended source web/dissipative-bar.mjs. Runtime qualification remains separate.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "dissipative-real-viscous-monotone",
+      "theorem": "Kenoma.DissipativeBarReal.viscous_strain_monotone",
+      "claim": "Viscous strain is nondecreasing toward the held strain when v0<=eps.",
+      "assumptions": "Real fixed eps,v0; E1>=0, eta>0 and v0<=eps; ordered real comparison times s<=t.",
+      "limitations": "Weak monotonicity includes E1=0 and v0=eps; no asymptotic-limit or numerical step proof. Real local constitutive law only; no numerical or JavaScript refinement, axial-bar or quadrature solve, discrete energy-ledger, calibration or biological validation.",
+      "implementation": "Local SLS law; intended source web/dissipative-bar.mjs. Runtime qualification remains separate.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "dissipative-real-viscous-antitone",
+      "theorem": "Kenoma.DissipativeBarReal.viscous_strain_antitone",
+      "claim": "Viscous strain is nonincreasing toward the held strain when eps<=v0.",
+      "assumptions": "Real fixed eps,v0; E1>=0, eta>0 and eps<=v0; ordered real comparison times s<=t.",
+      "limitations": "Weak monotonicity includes E1=0 and eps=v0; no asymptotic-limit or numerical step proof. Real local constitutive law only; no numerical or JavaScript refinement, axial-bar or quadrature solve, discrete energy-ledger, calibration or biological validation.",
+      "implementation": "Local SLS law; intended source web/dissipative-bar.mjs. Runtime qualification remains separate.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "dissipative-real-held-stress-bounds",
+      "theorem": "Kenoma.DissipativeBarReal.held_stress_bounded",
+      "claim": "Forward held-strain stress lies between E0*eps and its initial value when v0<=eps.",
+      "assumptions": "Real E0,eps,v0; E1>=0, eta>0, t>=0 and v0<=eps; sigma(t)=E0*eps+E1*(eps-v(t)).",
+      "limitations": "Relative bounds require the stated initial ordering; no assertion of positive stress for arbitrary real strain. Real local constitutive law only; no numerical or JavaScript refinement, axial-bar or quadrature solve, discrete energy-ledger, calibration or biological validation.",
+      "implementation": "Local SLS law; intended source web/dissipative-bar.mjs. Runtime qualification remains separate.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "dissipative-real-held-stress-decay",
+      "theorem": "Kenoma.DissipativeBarReal.held_stress_antitone",
+      "claim": "Held-strain stress is nonincreasing when v0<=eps.",
+      "assumptions": "Real E0,eps,v0; E1>=0, eta>0 and v0<=eps; ordered real comparison times s<=t.",
+      "limitations": "Stress relaxation under constant imposed strain; no changing-load or force-controlled creep trajectory proof. Real local constitutive law only; no numerical or JavaScript refinement, axial-bar or quadrature solve, discrete energy-ledger, calibration or biological validation.",
+      "implementation": "Local SLS law; intended source web/dissipative-bar.mjs. Runtime qualification remains separate.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "existing_property_receipt_sha256": "85d886cc422f4be2023558c4c10315574de1d697b11d22155e1a90133e7ec876",
+  "scope": "Real local SLS density and constant-strain relaxation only; no runtime, numerical or biological qualification."
+}
