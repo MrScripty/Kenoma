@@ -1,0 +1,267 @@
+{
+  "schema": 1,
+  "source_freeze_commit": "5f907466a13ed42a4f30d9525ecc2f2af09aca0d",
+  "source_freeze_tree": "58ddf9c871690955fa96894987a4680aeee08c65",
+  "compiler_exit_code": 0,
+  "lean_version": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)",
+  "mathlib": {
+    "repository": "https://github.com/leanprover-community/mathlib4",
+    "tag": "v4.19.0",
+    "commit": "c44e0c8ee63ca166450922a373c7409c5d26b00b",
+    "manifest_sha256": "5c6421b650bc87a2427a892a39e5522dc44543ca4ac1bd6e9f08d536c044a752",
+    "toolchain": "leanprover/lean4:v4.19.0",
+    "license": "Apache-2.0",
+    "qualification": "Fresh compilation required; this lock alone is not proof evidence."
+  },
+  "dependencies": [
+    {
+      "name": "plausible",
+      "commit": "77e08eddc486491d7b9e470926b3dbe50319451a"
+    },
+    {
+      "name": "LeanSearchClient",
+      "commit": "25078369972d295301f5a1e53c3e5850cf6d9d4c"
+    },
+    {
+      "name": "importGraph",
+      "commit": "e6a9f0f5ee3ccf7443a0070f92b62f8db12ae82b"
+    },
+    {
+      "name": "proofwidgets",
+      "commit": "c4919189477c3221e6a204008998b0d724f49904"
+    },
+    {
+      "name": "aesop",
+      "commit": "5d50b08dedd7d69b3d9b3176e0d58a23af228884"
+    },
+    {
+      "name": "Qq",
+      "commit": "fa4f7f15d97591a9cf3aa7724ba371c7fc6dda02"
+    },
+    {
+      "name": "batteries",
+      "commit": "f5d04a9c4973d401c8c92500711518f7c656f034"
+    },
+    {
+      "name": "Cli",
+      "commit": "02dbd02bc00ec4916e99b04b2245b30200e200d0"
+    }
+  ],
+  "compiler_binary_sha256": "92c3d35b5bfaa5e0fea413a775d504cf46cd95e1345df61c2274f76779e7e023",
+  "lake_binary_sha256": "5111aee5c9434ab05d4265606475ef22e8bda69aaf3a0657b61a7eec6e550bed",
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-DwarningAsError=true",
+    "/workspace/Kenoma-filippov-proofs/education/proofs/FilippovConvexWeight.lean"
+  ],
+  "working_directory": "/workspace/Kenoma/education/.tools/mathlib4",
+  "source": "proofs/FilippovConvexWeight.lean",
+  "source_sha256": "8cafcaf2fd8e1d4a6102739ceb04a09989d8807172e95bd6e78879d397613814",
+  "claims_sha256": "665a0615b8bd0a0331da927351e15c9f4331c72ff5f6254b78145f62bc49572d",
+  "checker_sha256": "072cf2fcc2be1958fa7e62f049ef160bfaca9ab7c01af3420accc2d7be3dab92",
+  "transcript_sha256": "9acc27a691b08322f6ac41c097f68bc6c427f9a5e8049413de677698368eea97",
+  "equation_sources": [
+    {
+      "path": "tools/run_filippov_bounded_experiment.py",
+      "sha256": "1f32681d69c5e9bf0d1b1f4ab468c95d2ad41421d509553869bfdfbd444ee7e8"
+    },
+    {
+      "path": "tools/filippov_source_worker.mjs",
+      "sha256": "0d6b83efd7b63d7dbac21b857ba6c0af357139b6476675de4f4d46a47dfe8fcd"
+    },
+    {
+      "path": "web/vertical-force-model.js",
+      "sha256": "58ca8de8ae7d9e65083f6460bfb25dc32eccd1953853da78d8325274c0ddcf80"
+    },
+    {
+      "path": "research/mechanical-closure/antiwindup-continuation-analysis.md",
+      "sha256": "aaae20b7a9b6e28e2a8d89b3806b1c4b8c50ac19d41f4ccc4050cdaaa95ca300"
+    },
+    {
+      "path": "research/mechanical-closure/antiwindup-continuation-protocol-clarifications.md",
+      "sha256": "b8139dd5ad709e4a82226186e1996b23e1c7efea2f6609693240edacf3859c90"
+    },
+    {
+      "path": "research/mechanical-closure/filippov-bounded-experiment-results.md",
+      "sha256": "8c1a70a5732e26bf762f25b8e0d1309164fb0ffe59e40a9d097b6992727f083e"
+    }
+  ],
+  "exact_statements": [
+    "theorem normal_gap_positive (\u03bdon \u03bdoff : \u211d) (hon : 0 < \u03bdon) (hoff : \u03bdoff < 0) :\n    0 < \u03bdon - \u03bdoff",
+    "theorem denominator_nonzero (\u03bdon \u03bdoff : \u211d) (hon : 0 < \u03bdon) (hoff : \u03bdoff < 0) :\n    \u03bdon - \u03bdoff \u2260 0",
+    "theorem weight_positive (\u03bdon \u03bdoff : \u211d) (hon : 0 < \u03bdon) (hoff : \u03bdoff < 0) :\n    0 < weight \u03bdon \u03bdoff",
+    "theorem weight_below_one (\u03bdon \u03bdoff : \u211d) (hon : 0 < \u03bdon) (hoff : \u03bdoff < 0) :\n    weight \u03bdon \u03bdoff < 1",
+    "theorem weighted_normal_zero (\u03bdon \u03bdoff : \u211d) (hden : \u03bdon - \u03bdoff \u2260 0) :\n    mixedNormal (weight \u03bdon \u03bdoff) \u03bdon \u03bdoff = 0",
+    "theorem unique_zero_normal_weight (\u03b8 \u03bdon \u03bdoff : \u211d) (hden : \u03bdon - \u03bdoff \u2260 0)\n    (hz : mixedNormal \u03b8 \u03bdon \u03bdoff = 0) : \u03b8 = weight \u03bdon \u03bdoff",
+    "theorem strict_attraction_selection (\u03bdon \u03bdoff : \u211d) (hon : 0 < \u03bdon) (hoff : \u03bdoff < 0) :\n    0 < weight \u03bdon \u03bdoff \u2227 weight \u03bdon \u03bdoff < 1 \u2227\n      mixedNormal (weight \u03bdon \u03bdoff) \u03bdon \u03bdoff = 0 \u2227\n      \u2200 \u03b8 : \u211d, mixedNormal \u03b8 \u03bdon \u03bdoff = 0 \u2192 \u03b8 = weight \u03bdon \u03bdoff",
+    "theorem source_normal_gap (\u03b7 d k : \u211d) :\n    onNormal \u03b7 d k - offNormal \u03b7 d = \u03b7 * k",
+    "theorem source_integrating_rate_nonzero (\u03b7 d k : \u211d)\n    (hon : 0 < onNormal \u03b7 d k) (hoff : offNormal \u03b7 d < 0) : k \u2260 0",
+    "theorem source_weight_identity (\u03b7 d k : \u211d) (h\u03b7 : \u03b7 \u2260 0) (hk : k \u2260 0) :\n    weight (onNormal \u03b7 d k) (offNormal \u03b7 d) = -d / k",
+    "theorem source_weight_strict_bounds (\u03b7 d k : \u211d) (h\u03b7 : \u03b7 \u2260 0)\n    (hon : 0 < onNormal \u03b7 d k) (hoff : offNormal \u03b7 d < 0) :\n    0 < -d / k \u2227 -d / k < 1",
+    "theorem source_integral_rate (d k : \u211d) (hk : k \u2260 0) :\n    (-d / k) * k + (1 - (-d / k)) * 0 = -d",
+    "theorem source_normal_tangency (\u03b7 d k : \u211d) (hk : k \u2260 0) :\n    \u03b7 * (d + ((-d / k) * k + (1 - (-d / k)) * 0)) = 0",
+    "theorem source_unique_weight (\u03b8 \u03b7 d k : \u211d) (h\u03b7 : \u03b7 \u2260 0) (hk : k \u2260 0)\n    (hz : mixedNormal \u03b8 (onNormal \u03b7 d k) (offNormal \u03b7 d) = 0) : \u03b8 = -d / k"
+  ],
+  "claims": [
+    {
+      "theorem": "KenomaFilippov.normal_gap_positive",
+      "description": "Opposite strict normal signs imply a positive normal difference.",
+      "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaFilippov.denominator_nonzero",
+      "description": "Opposite strict normal signs exclude a zero normal difference.",
+      "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaFilippov.weight_positive",
+      "description": "Under strict attraction the integrating-field weight is strictly positive.",
+      "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaFilippov.weight_below_one",
+      "description": "Under strict attraction the integrating-field weight is strictly below one.",
+      "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaFilippov.weighted_normal_zero",
+      "description": "For a nonzero normal difference the derived weight has exactly zero scalar mixed normal.",
+      "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaFilippov.unique_zero_normal_weight",
+      "description": "For a nonzero normal difference any real zero-normal weight equals the derived weight.",
+      "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaFilippov.strict_attraction_selection",
+      "description": "Combine strict bounds, zero normal and uniqueness under explicit opposite signs.",
+      "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaFilippov.source_normal_gap",
+      "description": "The declared on/off normals differ by eta times k.",
+      "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaFilippov.source_integrating_rate_nonzero",
+      "description": "Opposite source-normal signs imply k is nonzero.",
+      "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaFilippov.source_weight_identity",
+      "description": "For nonzero eta and k the general normal weight equals minus d over k.",
+      "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaFilippov.source_weight_strict_bounds",
+      "description": "The model weight minus d over k has strict unit-interval bounds under the declared normal signs.",
+      "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaFilippov.source_integral_rate",
+      "description": "The weighted integrating/frozen scalar I rates equal minus d when k is nonzero.",
+      "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaFilippov.source_normal_tangency",
+      "description": "Substituting the weighted I rate makes the declared scalar normal-rate expression zero.",
+      "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaFilippov.source_unique_weight",
+      "description": "For nonzero eta and k any real zero mixed-normal weight equals minus d over k.",
+      "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "scope": "Exact scalar real strict-attraction, convex-weight, zero-normal and uniqueness identities only; no ODE existence, numerical event accuracy, residence or stability theorem.",
+  "sliding_steps_executed": 0,
+  "trajectory_states_added": 0,
+  "book_receipts_written": false
+}

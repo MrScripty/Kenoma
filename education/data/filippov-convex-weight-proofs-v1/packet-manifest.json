@@ -1,0 +1,103 @@
+{
+  "scope": "Independent exact scalar Filippov weight proofs; zero sliding/trajectory advances; no book adoption",
+  "source_freeze_commit": "5f907466a13ed42a4f30d9525ecc2f2af09aca0d",
+  "source_freeze_tree": "58ddf9c871690955fa96894987a4680aeee08c65",
+  "baseline_commit": "c1c7ba308fee51e8ad74a7aadaeffa31b970151c",
+  "baseline_tree": "2d267b49e2fc5e9784134ac748c7938ebc89c54d",
+  "kernel_receipt_sha256": "e560df73f6adc2643b858930683556073537aeda0217f63c65bbfebc98deb609",
+  "excluded_self": "education/data/filippov-convex-weight-proofs-v1/packet-manifest.json",
+  "files": {
+    "education/data/filippov-convex-weight-proofs-v1/attempts/01-lean.log": {
+      "sha256": "aad05f2a5b834ac13c82a323485be335a56f43333c374b2877463190827f4338",
+      "bytes": 350
+    },
+    "education/data/filippov-convex-weight-proofs-v1/attempts/01-source.lean": {
+      "sha256": "de642a21c52928dd93f09b14ea6229057efe325e2f5d9a090f9faabeb81cc2df",
+      "bytes": 4652
+    },
+    "education/data/filippov-convex-weight-proofs-v1/attempts/02-lean.log": {
+      "sha256": "794de2ccd78ec357957bb97e69e1182555e74252e561fcaf160c5e32e0279bc9",
+      "bytes": 2946
+    },
+    "education/data/filippov-convex-weight-proofs-v1/attempts/03-lean.log": {
+      "sha256": "d16d550b35b9ffc77c4e19e038a04dd9e9ec07a799306786b4f8a979d782eafb",
+      "bytes": 2125
+    },
+    "education/data/filippov-convex-weight-proofs-v1/attempts/03-source.lean": {
+      "sha256": "3c5217ee2682fcfbb8055578a1bdafe060b738b3b6e1bd2eb240ecc01415c098",
+      "bytes": 4646
+    },
+    "education/data/filippov-convex-weight-proofs-v1/attempts/04-lean.log": {
+      "sha256": "9acc27a691b08322f6ac41c097f68bc6c427f9a5e8049413de677698368eea97",
+      "bytes": 1378
+    },
+    "education/data/filippov-convex-weight-proofs-v1/attempts/04-source.lean": {
+      "sha256": "8cafcaf2fd8e1d4a6102739ceb04a09989d8807172e95bd6e78879d397613814",
+      "bytes": 4633
+    },
+    "education/data/filippov-convex-weight-proofs-v1/attempts/manifest.json": {
+      "sha256": "36340b40af6de2364627dccfcbb75a7ea3becf4e4809a4140f32eb5eb92814f7",
+      "bytes": 3831
+    },
+    "education/data/filippov-convex-weight-proofs-v1/attempts/preservation-metadata-failure.json": {
+      "sha256": "7d3a1453b58fbd6eed72543792f1eb0f746ece40bd2334e8316b132cc92782f0",
+      "bytes": 634
+    },
+    "education/data/filippov-convex-weight-proofs-v1/audit-tests.log": {
+      "sha256": "1b54fb54b413248004d57eb3431126994280b528a12843ad5b85f7752802d535",
+      "bytes": 945
+    },
+    "education/data/filippov-convex-weight-proofs-v1/baseline-preservation.json": {
+      "sha256": "2392d122fed72d55166c29e5575080fa2c79efacf4b4a5e7b3ec31b7fec88e4c",
+      "bytes": 797
+    },
+    "education/data/filippov-convex-weight-proofs-v1/frozen-check-command.log": {
+      "sha256": "8f29e01682e0da681b15a3d4251d4a65c92be06b4b75030cab8ef69bfb55be8f",
+      "bytes": 128
+    },
+    "education/data/filippov-convex-weight-proofs-v1/packet-verification.log": {
+      "sha256": "83886f6b435c4f0c62d37ea5564ee5432239bf03f871904e83af601440537963",
+      "bytes": 297
+    },
+    "education/data/filippov-convex-weight-proofs-v1/protocol.json": {
+      "sha256": "11d31dd8e20c148e2e196ed23a73672464fb47af7f900aebb02a075a542756e3",
+      "bytes": 2910
+    },
+    "education/data/filippov-convex-weight-proofs-v1/review/kernel-check.json": {
+      "sha256": "e560df73f6adc2643b858930683556073537aeda0217f63c65bbfebc98deb609",
+      "bytes": 11602
+    },
+    "education/data/filippov-convex-weight-proofs-v1/review/lean-check.log": {
+      "sha256": "9acc27a691b08322f6ac41c097f68bc6c427f9a5e8049413de677698368eea97",
+      "bytes": 1378
+    },
+    "education/proofs/FilippovConvexWeight.lean": {
+      "sha256": "8cafcaf2fd8e1d4a6102739ceb04a09989d8807172e95bd6e78879d397613814",
+      "bytes": 4633
+    },
+    "education/proofs/filippov-convex-weight-claims.json": {
+      "sha256": "665a0615b8bd0a0331da927351e15c9f4331c72ff5f6254b78145f62bc49572d",
+      "bytes": 3622
+    },
+    "education/research/mechanical-closure/filippov-convex-weight-proofs.md": {
+      "sha256": "9412a55435fc4d4a8efaec8bf0c8c1692ae825e0c4b5c61234644f113c7df3eb",
+      "bytes": 6261
+    },
+    "education/research/mechanical-closure/filippov-convex-weight-results.md": {
+      "sha256": "d852a0473a602144955991dc212f13facf0b8ec88ae7f499b4da5943ca3d06b4",
+      "bytes": 3586
+    },
+    "education/tests/filippov_convex_weight_proof_audit.py": {
+      "sha256": "fba34d7bfa8884a869a7dcbbe56efb0a8b03e1ff76aad518009121db418879ce",
+      "bytes": 3025
+    },
+    "education/tools/check_filippov_convex_weight_proofs.py": {
+      "sha256": "072cf2fcc2be1958fa7e62f049ef160bfaca9ab7c01af3420accc2d7be3dab92",
+      "bytes": 7083
+    },
+    "education/tools/verify_filippov_convex_weight_packet.py": {
+      "sha256": "0e96de5bc4f97082a5fab8c47ff94e759cdac0b7d100e29c41932adfcf4d9860",
+      "bytes": 3882
+    }
+  }
+}

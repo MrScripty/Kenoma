@@ -1,0 +1,16 @@
+{
+  "stage": "Baseline metadata construction before source freeze",
+  "failed_command": [
+    "git",
+    "rev-parse",
+    "main"
+  ],
+  "exit_code": 128,
+  "reason": "No local main ref exists in this checkout; refs/remotes/origin/main is available",
+  "substantive_baseline_blob_validation_had_passed": true,
+  "initial_metadata_files_written": false,
+  "source_freeze_commit_completed": "5f907466a13ed42a4f30d9525ecc2f2af09aca0d",
+  "correction": "Record verified origin/main ref and absence of local main; rerun byte preservation checks; do not alter either ref",
+  "proof_or_physical_source_changed": false,
+  "sliding_steps": 0
+}

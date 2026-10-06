@@ -1,0 +1,45 @@
+{
+  "scope": "Independent exact real scalar Filippov weight proofs only",
+  "baseline_commit": "c1c7ba308fee51e8ad74a7aadaeffa31b970151c",
+  "baseline_tree": "2d267b49e2fc5e9784134ac748c7938ebc89c54d",
+  "source_freeze_commit": "5f907466a13ed42a4f30d9525ecc2f2af09aca0d",
+  "source_freeze_tree": "58ddf9c871690955fa96894987a4680aeee08c65",
+  "branch": "education/filippov-convex-weight-proofs",
+  "required_declarations": 14,
+  "namespace": "KenomaFilippov",
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "real_lean_version": "4.19.0",
+  "warnings_as_errors": true,
+  "sliding_steps_executed": 0,
+  "sliding_execution_authorized": false,
+  "trajectory_states_added": 0,
+  "book_adoption": false,
+  "sign_convention_mismatch_found": false,
+  "source_sha256": {
+    "education/proofs/FilippovConvexWeight.lean": "8cafcaf2fd8e1d4a6102739ceb04a09989d8807172e95bd6e78879d397613814",
+    "education/proofs/filippov-convex-weight-claims.json": "665a0615b8bd0a0331da927351e15c9f4331c72ff5f6254b78145f62bc49572d",
+    "education/tools/check_filippov_convex_weight_proofs.py": "072cf2fcc2be1958fa7e62f049ef160bfaca9ab7c01af3420accc2d7be3dab92",
+    "education/tests/filippov_convex_weight_proof_audit.py": "fba34d7bfa8884a869a7dcbbe56efb0a8b03e1ff76aad518009121db418879ce",
+    "education/research/mechanical-closure/filippov-convex-weight-proofs.md": "9412a55435fc4d4a8efaec8bf0c8c1692ae825e0c4b5c61234644f113c7df3eb"
+  },
+  "equation_inputs_sha256": {
+    "education/tools/run_filippov_bounded_experiment.py": "1f32681d69c5e9bf0d1b1f4ab468c95d2ad41421d509553869bfdfbd444ee7e8",
+    "education/tools/filippov_source_worker.mjs": "0d6b83efd7b63d7dbac21b857ba6c0af357139b6476675de4f4d46a47dfe8fcd",
+    "education/web/vertical-force-model.js": "58ca8de8ae7d9e65083f6460bfb25dc32eccd1953853da78d8325274c0ddcf80",
+    "education/research/mechanical-closure/antiwindup-continuation-analysis.md": "aaae20b7a9b6e28e2a8d89b3806b1c4b8c50ac19d41f4ccc4050cdaaa95ca300",
+    "education/research/mechanical-closure/antiwindup-continuation-protocol-clarifications.md": "b8139dd5ad709e4a82226186e1996b23e1c7efea2f6609693240edacf3859c90",
+    "education/research/mechanical-closure/filippov-bounded-experiment-results.md": "8c1a70a5732e26bf762f25b8e0d1309164fb0ffe59e40a9d097b6992727f083e",
+    "education/proofs/mathlib-lock.json": "cfeeea1b9e805fdfa169b7b7f41b3d29cf0a99d09fa79e04e38a8bd9683611da",
+    "education/proofs/lean-toolchain": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea"
+  },
+  "preserved_prior_branches": {
+    "education/first-sliding-segment-protocol": "b692d372bfcec354dfef377dc2245c3176c3e5cb",
+    "education/activation-equality-proofs": "4da4eccc9af3b10f05be1bbd8966084f098dc6dc",
+    "education/combined-incoming-exploratory": "c1c7ba308fee51e8ad74a7aadaeffa31b970151c",
+    "refs/remotes/origin/main": "9b0c67fd25e1b645833a68bb9b1c2aba1404bbce"
+  }
+}
