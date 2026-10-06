@@ -1,0 +1,136 @@
+{
+  "schema": 1,
+  "sourceHashes": {
+    "tools/full_p2_p1.py": "c80a360fd897867e8cb2360766de8a9f5d548d61bf59b5e54dc8b8df2d5f6860",
+    "tools/full-p2-p1-replay.mjs": "0b2db14ba4f7c25732280f64a9a85a95a7ff854bc96f4073c02d36aa0ba0fe61",
+    "tools/run_full_p2_p1.py": "fe9e2df4a796451e2ff4cacab7b9d7b341f1e75a7b7254826c3677da07b3bdb8",
+    "tests/test_full_p2_p1.py": "d7db4c83f223caa7e37a85f8c6f30683f3d7ddb0b35808eccdcf7a188732b33d",
+    "research/mechanical-closure/full-p2-p1-protocol.md": "6c90b7626378a7dd2d8314ace1aee0696b866e551575890f028e1fc49f1e18f4",
+    "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+    "web/anatomical-modal.mjs": "12cd671bc963aa04dd5c0e173a776049de191283d850b0b60d0fe8e63be4c9a1",
+    "web/anatomical-element.mjs": "3f67a6bd31565c83d2cbea591c3cf1862a48e50cc4efa780880fda7e808d4b1f",
+    "web/anatomical-intersections.mjs": "a083a9838ac3c7508b65b58329c741aef65a065288aff82fc886d1c2c90375df",
+    "tools/anatomical-compression-quadrature.mjs": "f12e0d80224bad5e0bfa0649e08cac2f31a0baf162e2547ae8767b7371f48dc2"
+  },
+  "sourceCommit": "b97491152ba9e4ac20c75af768e88838a6f7c282",
+  "elapsedSeconds": 47.99315333366394,
+  "cases": [
+    {
+      "name": "coarse-1.00",
+      "result": "PASS_STATIONARY_CONTROL",
+      "stationaryAccepted": true,
+      "stationaryStabilityDiagnosticPass": true,
+      "forceResidualN": 9.927901514080289e-14,
+      "iterations": 0,
+      "capForceN": 34.83354948041911,
+      "pressurePointwiseRMS": 8.557607343862892e-16,
+      "Jmin": 0.9999999999999959,
+      "Jmax": 1.0000000000000047,
+      "beta": 0.5793835383607835,
+      "lowestEigenvalueNPerM": null
+    },
+    {
+      "name": "coarse-1.01",
+      "result": "PASS_STATIONARY_CONTROL",
+      "stationaryAccepted": true,
+      "stationaryStabilityDiagnosticPass": true,
+      "forceResidualN": 2.719166194670461e-05,
+      "iterations": 2,
+      "capForceN": 34.90001416913894,
+      "pressurePointwiseRMS": 2.3635582985486984e-08,
+      "Jmin": 1.000009841400244,
+      "Jmax": 1.000010065992757,
+      "beta": 0.5796137375126907,
+      "lowestEigenvalueNPerM": 5.433012268276961
+    },
+    {
+      "name": "coarse-1.25",
+      "result": "PASS_STATIONARY_CONTROL",
+      "stationaryAccepted": true,
+      "stationaryStabilityDiagnosticPass": false,
+      "forceResidualN": 6.544742225951505e-11,
+      "iterations": 3,
+      "capForceN": 24.480017318044183,
+      "pressurePointwiseRMS": 1.3081028399381005e-11,
+      "Jmin": 1.000254088086176,
+      "Jmax": 1.0002540882206836,
+      "beta": 0.5852731066602535,
+      "lowestEigenvalueNPerM": -4293.987496427366
+    },
+    {
+      "name": "fine-1.00",
+      "result": "PASS_STATIONARY_CONTROL",
+      "stationaryAccepted": true,
+      "stationaryStabilityDiagnosticPass": true,
+      "forceResidualN": 1.2373635645107593e-13,
+      "iterations": 0,
+      "capForceN": 34.83354948041911,
+      "pressurePointwiseRMS": 1.7757230678500829e-15,
+      "Jmin": 0.9999999999999881,
+      "Jmax": 1.0000000000000147,
+      "beta": 0.5130090891248049,
+      "lowestEigenvalueNPerM": null
+    },
+    {
+      "name": "fine-1.01",
+      "result": "PASS_STATIONARY_CONTROL",
+      "stationaryAccepted": true,
+      "stationaryStabilityDiagnosticPass": true,
+      "forceResidualN": 1.269308970354352e-05,
+      "iterations": 2,
+      "capForceN": 34.900014541117464,
+      "pressurePointwiseRMS": 3.514066868663179e-08,
+      "Jmin": 1.000009768289069,
+      "Jmax": 1.0000101726566817,
+      "beta": 0.5126730108186075,
+      "lowestEigenvalueNPerM": 1.0249804055031284
+    },
+    {
+      "name": "fine-1.25",
+      "result": "PASS_STATIONARY_CONTROL",
+      "stationaryAccepted": true,
+      "stationaryStabilityDiagnosticPass": false,
+      "forceResidualN": 5.481398433502148e-10,
+      "iterations": 3,
+      "capForceN": 24.480017318043615,
+      "pressurePointwiseRMS": 7.551956204147804e-11,
+      "Jmin": 1.0002540874206196,
+      "Jmax": 1.0002540891102103,
+      "beta": 0.5131053515006908,
+      "lowestEigenvalueNPerM": -3033.966159751719
+    }
+  ],
+  "refinement": [
+    {
+      "stretch": 1.0,
+      "maximumInterpolatedPositionDifferenceM": 5.618469141565346e-17,
+      "relativeCapForceDifference": 0.0,
+      "JExtremaDifference": 9.992007221626409e-15,
+      "infSupBetaRatio": 0.8854395321210403,
+      "matchedStationaryRefinementPass": true,
+      "infSupTrendConcern": false
+    },
+    {
+      "stretch": 1.01,
+      "maximumInterpolatedPositionDifferenceM": 8.851601445366659e-10,
+      "relativeCapForceDifference": 1.0658405950305835e-08,
+      "JExtremaDifference": 1.0666392458169582e-07,
+      "infSupBetaRatio": 0.8845080398174352,
+      "matchedStationaryRefinementPass": true,
+      "infSupTrendConcern": false
+    },
+    {
+      "stretch": 1.25,
+      "maximumInterpolatedPositionDifferenceM": 1.423351019027594e-12,
+      "relativeCapForceDifference": 2.322033441492304e-14,
+      "JExtremaDifference": 8.8952667454123e-10,
+      "infSupBetaRatio": 0.8766938813037664,
+      "matchedStationaryRefinementPass": true,
+      "infSupTrendConcern": false
+    }
+  ],
+  "limits": [
+    "No atlas solve, anatomical map, self-consistent loaded motion, tissue-envelope or skin qualification.",
+    "Two deterministic homogeneous mesh levels do not prove a stable mesh family or nonuniform convergence."
+  ]
+}
