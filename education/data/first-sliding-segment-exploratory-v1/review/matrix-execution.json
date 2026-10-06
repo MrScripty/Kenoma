@@ -1,0 +1,37 @@
+{
+  "required_cells": 12,
+  "executed_cells": 12,
+  "completed_cells": 9,
+  "failure_codes": {
+    "full-source/RK4-0.0002": "constraint-drift",
+    "full-source/RK4-0.0001": null,
+    "full-source/RK4-0.00005": null,
+    "full-source/RK4-0.000025": null,
+    "full-source/DOP853": "constraint-drift",
+    "full-source/Radau": "constraint-drift",
+    "reduced-independent/RK4-0.0002": null,
+    "reduced-independent/RK4-0.0001": null,
+    "reduced-independent/RK4-0.00005": null,
+    "reduced-independent/RK4-0.000025": null,
+    "reduced-independent/DOP853": null,
+    "reduced-independent/Radau": null
+  },
+  "all_entries_checked_before_acceptance": true,
+  "runtime_entry_checks_sha256": "21e4d5d321783d3a1f6abb8d53ea070ecfbf78a636758b3b751b560ba12ca8e0",
+  "preflight_sha256": "1b9c66d0743432c82a4af9ddf1d25ed21f77e342cc35927ba0c17ba1eaf02f11",
+  "source_sha256": {
+    "education/tools/first_sliding_segment_engine.py": "f8c44a99a4b905b5e5130cdf00009b468848156e0c58f98db9c08d9ff21184ce",
+    "education/tools/preflight_first_sliding_segment.py": "1c23fd50d638ed643ef11a2fa614ec1745fad28be066261a4587fa74a8f9beb4",
+    "education/tools/run_first_sliding_segment.py": "66f7560d15aaffedb99924a5f89e8957b52202edb29442b1617d8f14d927d6be",
+    "education/tools/audit_first_sliding_segment.py": "c53dbf1aa6065a5bdd184a46e61afc472594f5ae8fe2208f4330430b1d522ed2",
+    "education/tests/first_sliding_segment.py": "17234b34eeb4cc9d26839f7d29cdaa55d2f86fa9e054039ea75d43add50f3d50",
+    "education/research/mechanical-closure/first-sliding-segment-exploratory-source.md": "81c7ce64f3907b1c019140961e503d285d68ebe2c7dd7fe01d79cc294520c07c"
+  },
+  "protocol_sha256": "1e04be36edbe8fefee1c6f994de41111fd8c06be47ed3b84ae53069e30511d2c",
+  "elapsed_s": 59.5293401950039,
+  "exploratory_only": true,
+  "qualified": false,
+  "full_combined_external_raw_replay_complete": false,
+  "historical_activation_external_raw_replay_complete": false,
+  "hidden_root_theorem": false
+}
