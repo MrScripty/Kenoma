@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "candidate_revision": "f110ad2d73f77feda18ccd273d9b8be119bdc77e",
+  "candidate_tree": "b71cef5a57379e522eddb0ddc3fe06e7e71570a2",
+  "author_ident": "MrScripty <TheEnvironmentGuy@protonmail.com> 1791272958 +0000",
+  "committer_ident": "MrScripty <TheEnvironmentGuy@protonmail.com> 1791272958 +0000",
+  "source_input_count": 865,
+  "source_input_differences": {},
+  "manifest_sha256": "416682bb231e96d35128896bb160f1beb8bdaee1fe5df09d94d5ab9a12bc2393",
+  "html_sha256": "c97f1d11d5d8192e3e9a957eb2770239404c53c5fd480868595bb0df7d0c7f77",
+  "app_sha256": "41a8ba9c98cdc4f93a34b3ba690e6a25158901305418118ce4340229fbe8d2f9",
+  "pdf_sha256": "8f8b26cd5ab8d0514d7c285b1455f0809b49c37a4c76e800769b7e996643aad2",
+  "executable_outputs_sha256": "5f80806692aef1f9b213d13e1874d7166864ffa22957c594df96e8a38b4f7cd1",
+  "test_sha256": {
+    "tests/browser.py": "ba1c7c813d0507c1560443dee2cf8bac53266f1e4bdd2040d720f312ec3c81fe",
+    "tests/mobile_startup.py": "83abefdf5537e010cd127eff29f0827478670e560f6c7321e2bc37fbd6f21887",
+    "tests/anatomical_inspection.py": "9d99d8be82cf4da08b780b751dfe66b534315090410acbdcab44cba9d9c89638",
+    "tests/coupled_inspection.py": "fd2de51f0956c2c86b4cb90db73eaec0cba93615908c9ce18000f15e508db242",
+    "tests/anatomical_arm_inspection.py": "51aba8b3a436845770dcce9c2a460376021028fed2b1f0ede44575b7127732e5",
+    "tests/worker_lifecycle.py": "1bb4df1a406c11a7661c9d227d1c3f2942d75175d1d7a564c1acfa0f890dadfa"
+  },
+  "preserved_historical_receipts": {},
+  "scope": "Fresh actual current-main53 browser reruns; no source edits, no dissipative successor; root owns artifact and publication gates",
+  "results": {
+    "mobile_startup": "PASS",
+    "anatomical_inspection": "PASS",
+    "coupled_inspection": "PASS",
+    "anatomical_arm_inspection": "PASS",
+    "worker_lifecycle": "PASS",
+    "browser": "PASS"
+  },
+  "receipt_sha256": {
+    "anatomical-arm-review/browser-receipt.json": "a8034dd269da2d674eefa69197f37f2dc04326df645d1e400a390c0a9abe8335",
+    "anatomy-review/browser-receipt.json": "6cb952030d206183cdb34c42db1e309deee604092198173ee7c4ece3226ab497",
+    "book/receipt.json": "448e298e53b52f5b00e09f9467de1bf105fd917904a7476b3be254cc1d25cb0c",
+    "coupled-review/browser-receipt.json": "ca259425f6694c9d860b6f8225d15472ff966b5cfaf87c24321bef3d2d1064f5",
+    "mobile/receipt.json": "4a0aeabbdbaa06776fc3f6774084bc45856f76f4a78381e2c7863f3491085a3d",
+    "worker-lifecycle-review/browser-receipt.json": "05e45e0fc639f329e3c559e8a0255fef44a33ffdd9820e68039ff5c2e11ccfc2"
+  },
+  "proof_cards": 53
+}

@@ -1,0 +1,26 @@
+{
+  "result": "PASS_BYTE_IDENTICAL_NORMAL_HISTORY_COMPOSITION",
+  "source_revision": "f110ad2d73f77feda18ccd273d9b8be119bdc77e",
+  "source_tree": "b71cef5a57379e522eddb0ddc3fe06e7e71570a2",
+  "parents": [
+    "f0973f46e55faa881ab3b34c6a848dfee313142e",
+    "041de5deed0d288f644017704d675b7f8c1b97a4"
+  ],
+  "accepted_revision": "f0973f46e55faa881ab3b34c6a848dfee313142e",
+  "main_revision": "041de5deed0d288f644017704d675b7f8c1b97a4",
+  "both_parents_are_ancestors": true,
+  "tracked_paths_differing_from_accepted": [],
+  "original_divergence_ahead_behind": [
+    "37",
+    "4"
+  ],
+  "source_input_count": 865,
+  "source_inputs_equal_accepted": true,
+  "executable_outputs_equal_accepted": true,
+  "source_input_mismatches": [],
+  "historical_endpoint_receipt_sha256": "7995b4d3a33cd07994c43007a9e4208170e35f5e1d5d14ba93e0c675cf1acdc3",
+  "merge_author": "MrScripty <TheEnvironmentGuy@protonmail.com>",
+  "merge_committer": "MrScripty <TheEnvironmentGuy@protonmail.com>",
+  "no_dissipative_lesson_added": true,
+  "historical_receipts_changed": false
+}
