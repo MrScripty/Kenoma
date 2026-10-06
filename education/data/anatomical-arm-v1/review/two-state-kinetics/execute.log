@@ -1,0 +1,63 @@
+{"grid": "R2.4-dx0.04", "baselineForceN1": 1.3177615159775051, "referenceMassError": 1.887379141862766e-15}
+{"grid": "R2.4-dx0.02", "baselineForceN1": 1.3177881859686222, "referenceMassError": 3.774758283725532e-15}
+{"grid": "R2.4-dx0.01", "baselineForceN1": 1.3177948546996787, "referenceMassError": 1.9984014443252818e-15}
+{"grid": "R3-dx0.04", "baselineForceN1": 1.3177615159775056, "referenceMassError": 4.884981308350689e-15}
+{"grid": "R3-dx0.02", "baselineForceN1": 1.317788185968623, "referenceMassError": 8.659739592076221e-15}
+{"grid": "R3-dx0.01", "baselineForceN1": 1.3177948546996796, "referenceMassError": 3.552713678800501e-15}
+{
+  "result": "PASS_FIXED_CAPACITY_KINETIC_TRANSPORT_BENCHMARK",
+  "cases": 144,
+  "grids": 6,
+  "refinements": {
+    "R2.4-pCa4.5-spatial": {
+      "relativeEquilibriumForceErrors": [
+        2.698574975198268e-05,
+        6.7474356989100646e-06,
+        1.686921322887747e-06
+      ],
+      "ratios": [
+        0.2500369921504338,
+        0.25000924768504884
+      ]
+    },
+    "R2.4-pCa6.1-spatial": {
+      "relativeEquilibriumForceErrors": [
+        2.698574975198268e-05,
+        6.7474356989100646e-06,
+        1.686921322887747e-06
+      ],
+      "ratios": [
+        0.2500369921504338,
+        0.25000924768504884
+      ]
+    },
+    "R3-pCa4.5-spatial": {
+      "relativeEquilibriumForceErrors": [
+        2.6985749751645686e-05,
+        6.747435698404575e-06,
+        1.68692132221376e-06
+      ],
+      "ratios": [
+        0.2500369921348245,
+        0.2500092476038906
+      ]
+    },
+    "R3-pCa6.1-spatial": {
+      "relativeEquilibriumForceErrors": [
+        2.6985749751645686e-05,
+        6.747435698404575e-06,
+        1.68692132221376e-06
+      ],
+      "ratios": [
+        0.2500369921348245,
+        0.2500092476038906
+      ]
+    },
+    "temporalRatiosRange": [
+      0.5046001251712829,
+      0.5095384064785554
+    ],
+    "maxMatchedExtentForceDifference": 7.37188088351104e-14
+  },
+  "failure": null
+}
