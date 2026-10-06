@@ -1,0 +1,35 @@
+{
+  "result": "BOUND_SINGLE_PRECOMMITTED_DIMENSIONLESS_INITIALIZER",
+  "files": [
+    {
+      "path": "tools/source_ce_series_initialization.py",
+      "bytes": 21880,
+      "sha256": "7abe962f9888621b99591142c6b477e745a8e31a028008fe38a97f97b615ffd5"
+    },
+    {
+      "path": "research/mechanical-closure/source-ce-series-initialization-design.md",
+      "bytes": 13270,
+      "sha256": "d6fd3da009818a38d4b304072d42ff3f73b54be4c43dbf8aa98e9574f494dd18"
+    },
+    {
+      "path": "research/mechanical-closure/source-ce-series-initialization-results.md",
+      "bytes": 8312,
+      "sha256": "65e12995b026523b8023b34ea87eedef3e0085d98db5b1d0657e17d0ad996b46"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/source-ce-series-initialization/execution-metadata.json",
+      "bytes": 1188,
+      "sha256": "55208012b65e6cd6acf94ff1a348787baec7a6ce86453c826a0cef8090bd308c"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/source-ce-series-initialization/execution.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/source-ce-series-initialization/summary.json",
+      "bytes": 67909,
+      "sha256": "75724c0700b629d2f32cb3f482143d4d8cf6e00e1fac62a8db05db7ecfaf6a6d"
+    }
+  ]
+}

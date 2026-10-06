@@ -1,0 +1,29 @@
+{
+  "status": "COMPLETED",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "education/tools/source_ce_series_initialization.py",
+    "--qualify",
+    "--protocol-commit",
+    "a0456a4fad7041cb71f3841888445a9f8f80e22b",
+    "--output",
+    "education/data/anatomical-arm-v1/review/source-ce-series-initialization/summary.json"
+  ],
+  "cwd": "/workspace/Kenoma-refinement-diagnosis",
+  "environment_override": {
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "parent_protocol_commit": "a0456a4fad7041cb71f3841888445a9f8f80e22b",
+  "parent_protocol_tree": "84013bf431a0fe80e2c1eca2306190fa658ee07d",
+  "runner_sha256": "7abe962f9888621b99591142c6b477e745a8e31a028008fe38a97f97b615ffd5",
+  "start_utc": "2026-10-06T08:36:27.683105+00:00",
+  "qualifier_attempt_count": 1,
+  "exit_code": 0,
+  "runtime_nanoseconds": 2039920323,
+  "end_utc": "2026-10-06T08:36:29.725380+00:00",
+  "execution.log_bytes": 0,
+  "execution.log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "summary.json_bytes": 67909,
+  "summary.json_sha256": "75724c0700b629d2f32cb3f482143d4d8cf6e00e1fac62a8db05db7ecfaf6a6d",
+  "receipt_status": "PASSED"
+}
