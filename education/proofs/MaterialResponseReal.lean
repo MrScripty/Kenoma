@@ -6,6 +6,7 @@ and assumed contact/virtual-work algebra. These do not prove constitutive real
 power derivatives, root existence/uniqueness, JavaScript refinement or biology.
 No checked status may be assigned until pinned mathlib compiles this source.
 -/
+noncomputable section
 namespace Kenoma.MaterialReal
 
 def volumeRatio (b h : ℝ) : ℝ := b * b * h

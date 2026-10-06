@@ -6,6 +6,7 @@ Geometric differentiation, exponential activation, continuous work balance and
 implementation refinement are not established by these polynomial identities.
 This proposed source must compile before any checked claim is displayed.
 -/
+noncomputable section
 namespace Kenoma.MechanicsReal
 
 def torque (rx ry fx fy : ℝ) : ℝ := rx * fy - ry * fx
