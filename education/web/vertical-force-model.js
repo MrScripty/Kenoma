@@ -62,6 +62,7 @@ export function createVerticalForceLab(P, controls) {
   function storage(z,cfg){const o=output(z,cfg,{target:cfg.target});return {fiber:F0*lf0*C.passive.integral(cfg.z[3],z[3]),tendon:F0*lt0*C.tendon.integral((cfg.L0-lf0*cfg.z[3])/lt0,o.s),load:.5*cfg.m*z[1]**2+cfg.m*g*z[0]};}
   function row(t,z,cfg,phase){const o=output(z,cfg,phase),E=storage(z,cfg);return {t,z:z.slice(),target:phase.target,mode:phase.mode||'PI',...o,...E,energyError:E.fiber+E.tendon+E.load-z[5]+z[6],momentumError:cfg.m*z[1]-z[10]};}
   function run(cfg,dt=P.fine_step_s){
+    if(!Number.isFinite(dt)||dt<=0)fail('input','Integration step must be finite and positive');
     let t=0,z=cfg.z.slice(),failure=null;const events=[],history=[],initial=cfg.z.slice();
     function save(phase){const r=row(t,z,cfg,phase);if(history.length&&Math.abs(history.at(-1).t-t)<1e-12)history[history.length-1]=r;else history.push(r);}
     const schedule=phases(cfg);for(let index=0;index<schedule.length&&!failure;index++){
@@ -79,7 +80,7 @@ export function createVerticalForceLab(P, controls) {
       if(!failure)events.push({type:'phase-end',t,phase:index});
     }
     let tracking={status:'not-applicable'};const window=P.tracking_windows_s[cfg.caseName];if(window){const rows=history.filter(r=>r.t>=window[0]-1e-10&&r.t<=window[1]+1e-10);tracking=t<window[1]-1e-10?{status:'window-not-reached',window}:{status:rows.length&&Math.max(...rows.map(r=>Math.abs(r.FT-r.target)))<=.01*cfg.m*g?'met':'missed',window,maxError:Math.max(...rows.map(r=>Math.abs(r.FT-r.target))),budget:.01*cfg.m*g};}
-    return {cfg:{...cfg,z:initial},dt,history,events,failure,acceptedTime:t,tracking,initialZeroVelocityCapacity:F0*(C.active.value(cfg.q0)+C.passive.value(cfg.q0)),numericalStatus:failure?'stopped-at-unqualified-or-failed-trial':'completed',motion:history.length?{displacement:z[0],velocity:z[1],acceleration:history.at(-1).acceleration}:null};
+    return {cfg:{...cfg,z:initial},dt,history,events,failure,acceptedTime:t,tracking,initialZeroVelocityCapacity:F0*(C.active.value(initial[3])+C.passive.value(initial[3])),numericalStatus:failure?'stopped-at-unqualified-or-failed-trial':'completed',motion:history.length?{displacement:z[0],velocity:z[1],acceleration:history.at(-1).acceleration}:null};
   }
   function descendingMass(){return F0*(.5*C.active.value(1.1)+C.passive.value(1.1))/g;}
   return {P,C,init,run,output,rhs,trialStep,storage,phases,validate,descendingMass,constants:{F0,lf0,lt0,vmax,beta,amin,g},TrialFailure};

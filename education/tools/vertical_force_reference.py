@@ -83,8 +83,9 @@ def jacobian(t,z,cfg,phase):
 def row(t,z,cfg,phase):
     o=output(z,cfg,phase);return dict(t=float(t),z=list(map(float,z)),target=phase['target'],mode=phase.get('mode','PI'),**{k:float(v) for k,v in o.items()})
 
-def replay(cfg,method):
-    t=0.;z=np.array(cfg['z'],float);history=[];events=[];failure=None;dense=[]
+def replay(cfg,method,with_quadrature=False):
+    t=0.;z=np.array(cfg['z'],float);history=[];events=[];failure=None;dense=[];integrals=np.zeros(6)
+    nodes,weights=np.polynomial.legendre.leggauss(8)
     def save(t,z,phase):
         r=row(t,z,cfg,phase)
         if history and abs(history[-1]['t']-t)<1e-12:history[-1]=r
@@ -110,6 +111,10 @@ def replay(cfg,method):
                 # Material/output events are sampled only from valid accepted steps.
                 grids=np.arange(math.floor((before+1e-10)/.001)+1,math.floor((new_t+1e-10)/.001)+1)*.001
                 for ti in grids:save(ti,solution(ti),phase)
+                if with_quadrature:
+                    for node,weight in zip(nodes,weights):
+                        ti=before+(new_t-before)*(node+1)/2;zi=solution(ti);o=output(zi,cfg,phase)
+                        integrals+=(new_t-before)*weight/2*np.array([o['Pactive'],o['D'],o['loadPower'],o['fiberPower'],o['tendonPower'],o['FT']-cfg['m']*P['gravity_m_per_s2']])
                 dense.append((before,new_t,solution,phase.copy()));t=new_t;z=new_z
                 if crossing:save(t,z,phase);events.append(dict(type='brake-crossing',t=t,armed=True,direction=direction));break
             except (TrialFailure,ValueError) as e:
@@ -119,11 +124,16 @@ def replay(cfg,method):
         save(t,z,phase)
         if phase.get('brake') and not crossing:events.append(dict(type='brake-timeout',t=t,armed=armed))
         events.append(dict(type='phase-end',t=t,phase=index))
-    return dict(cfg=cfg,method=method.__name__,acceptedTime=t,history=history,events=events,failure=failure),dense
+    result=dict(cfg=cfg,method=method.__name__,acceptedTime=t,history=history,events=events,failure=failure)
+    if with_quadrature:
+        errors=np.abs(integrals-(z[5:11]-np.array(cfg['z'][5:11])))
+        gates=np.array([P['budgets']['component_combined_work_J']]*5+[P['budgets']['momentum_N_s']])
+        result['independent_quadrature']=dict(passed=bool(np.all(errors<=gates)),method='Gauss-Legendre 8 on every actual accepted solver dense polynomial; independent power/force reevaluation',errors=dict(zip(['active_J','dissipation_J','load_J','fiber_J','tendon_J','momentum_N_s'],errors.tolist())),integrals=integrals.tolist(),accepted_interval_count=len(dense))
+    return result,dense
 
 if __name__=='__main__':
     from argparse import ArgumentParser
-    p=ArgumentParser();p.add_argument('--method',choices=['DOP853','Radau'],required=True);p.add_argument('--case');args=p.parse_args();out=DATA/'review';cases=json.loads((out/'cases.json').read_text());method={'DOP853':DOP853,'Radau':Radau}[args.method]
+    p=ArgumentParser();p.add_argument('--method',choices=['DOP853','Radau'],required=True);p.add_argument('--case');p.add_argument('--quadrature',action='store_true');args=p.parse_args();out=DATA/'review';cases=json.loads((out/'cases.json').read_text());method={'DOP853':DOP853,'Radau':Radau}[args.method]
     for entry in cases:
         if args.case and entry['id']!=args.case:continue
-        r,_=replay(entry['cfg'],method);(out/f"{entry['id']}-{args.method}.json").write_text(json.dumps(r)+'\n');print(entry['id'],args.method,r['acceptedTime'],r['failure']['code'] if r['failure'] else 'completed',flush=True)
+        r,_=replay(entry['cfg'],method,args.quadrature);(out/f"{entry['id']}-{args.method}.json").write_text(json.dumps(r)+'\n');print(entry['id'],args.method,r['acceptedTime'],r['failure']['code'] if r['failure'] else 'completed',r.get('independent_quadrature',{}).get('passed','no quadrature'),flush=True)
