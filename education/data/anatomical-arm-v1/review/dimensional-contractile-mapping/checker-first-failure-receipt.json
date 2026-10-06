@@ -1,0 +1,9 @@
+{
+  "result": "PRESERVED_READ_ONLY_CHECKER_FAILURE",
+  "sourceCommit": "c8bd0d04abc0e847bc8c5589cf22256831543220",
+  "sourceFile": "education/tools/check_contractile_mapping.py",
+  "sourceSHA256": "c0782339b9f4a2a09c8a7e6b43feac4b2b22195613eadcbf8289ba0e91257963",
+  "failureLogSHA256": "e51accd091835108932670ceddf98b3a67e49cde8a655657ece620de9e70a93c",
+  "error": "KeyError bytes: directory metadata omits this key, rather than recording null. No solver/physics/acceptance failure.",
+  "intendedCorrection": "Use optional bytes lookup for file-only checks; preserve all gates."
+}

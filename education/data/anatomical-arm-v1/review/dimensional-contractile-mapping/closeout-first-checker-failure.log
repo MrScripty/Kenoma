@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "/workspace/Kenoma-refinement-diagnosis/education/tools/check_contractile_mapping.py", line 23, in <module>
+    if f['bytes'] is not None:
+       ~^^^^^^^^^
+KeyError: 'bytes'
+{
+  "result": "PASS_BOUNDED_KINETIC_EVIDENCE_CLOSURE",
+  "manifestBindings": 28,
+  "acceptedCases": 144,
+  "matchedStateArchivePass": true,
+  "independentNumericalAuditPass": true,
+  "sourceExecutionCommitPreserved": true,
+  "originalEvidenceAndProtectedScopeUntouched": true,
+  "limitations": "Source-derived normalized equation fixture with disclosed PDF/table/code parity limits; no published-history, physiological, descending, spatial-continuum or arm qualification."
+}
+{
+  "result": "PASS_FIXED_COEFFICIENT_EVIDENCE_CLOSEOUT",
+  "preservedManifestBindings": 389,
+  "sourceBoundAuditReceipts": 27,
+  "currentAuditSourceBindings": 488,
+  "newRendererReceiptsChecked": 4,
+  "protectedScopeFilesUntouched": true,
+  "productionBookLeanUntouched": true,
+  "requestedAuditCommitIsAncestor": true
+}
