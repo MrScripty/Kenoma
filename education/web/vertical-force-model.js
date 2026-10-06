@@ -79,7 +79,7 @@ export function createVerticalForceLab(P, controls) {
       if(!failure&&phase.brake&&t>=phase.end-1e-12)events.push({type:'brake-timeout',t,armed});
       if(!failure)events.push({type:'phase-end',t,phase:index});
     }
-    let tracking={status:'not-applicable'};const window=P.tracking_windows_s[cfg.caseName];if(window){const rows=history.filter(r=>r.t>=window[0]-1e-10&&r.t<=window[1]+1e-10);tracking=t<window[1]-1e-10?{status:'window-not-reached',window}:{status:rows.length&&Math.max(...rows.map(r=>Math.abs(r.FT-r.target)))<=.01*cfg.m*g?'met':'missed',window,maxError:Math.max(...rows.map(r=>Math.abs(r.FT-r.target))),budget:.01*cfg.m*g};}
+    let tracking={status:'not-applicable'};const window=P.tracking_windows_s[cfg.caseName];if(window){const rows=history.filter(r=>r.t>=window[0]-1e-10&&r.t<=window[1]+1e-10),changed=rows.some(r=>Math.abs(r.target-rows[0].target)>1e-12||r.mode!==rows[0].mode);tracking=t<window[1]-1e-10?{status:'window-not-reached',window}:changed?{status:'window-invalid-command-change',window}:{status:rows.length&&Math.max(...rows.map(r=>Math.abs(r.FT-r.target)))<=.01*cfg.m*g?'met':'missed',window,maxError:Math.max(...rows.map(r=>Math.abs(r.FT-r.target))),budget:.01*cfg.m*g};}
     return {cfg:{...cfg,z:initial},dt,history,events,failure,acceptedTime:t,tracking,initialZeroVelocityCapacity:F0*(C.active.value(initial[3])+C.passive.value(initial[3])),numericalStatus:failure?'stopped-at-unqualified-or-failed-trial':'completed',motion:history.length?{displacement:z[0],velocity:z[1],acceleration:history.at(-1).acceleration}:null};
   }
   function descendingMass(){return F0*(.5*C.active.value(1.1)+C.passive.value(1.1))/g;}
