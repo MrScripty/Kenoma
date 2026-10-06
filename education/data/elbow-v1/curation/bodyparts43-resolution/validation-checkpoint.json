@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "capturedUTC": "2026-10-06T07:19:15.822782+00:00",
+  "followup_offline_audit": {
+    "verified": true,
+    "request_receipts": 9,
+    "followup_body_bytes": 4802368,
+    "catalog_bytes": 4528437,
+    "catalog_rows": 13312,
+    "retained_40_vertex_records": 2233,
+    "retained_40_triangles": 3784,
+    "live_43_meshes_acquired": 0,
+    "live_43_geometry_resolution_verified": false,
+    "additional_nlm_images": 0
+  },
+  "original_scout_offline_audit": "PASS; original images/receipts/contract unchanged",
+  "previous_checkpoint_commit": "b4cee16dae4c5199f4b31d14a02b32bfe011868c",
+  "previous_tracked_files_changed": [],
+  "mutation_checks": [
+    {
+      "case": "HTML promoted to geometry",
+      "rejected": true,
+      "reason": "False geometry acquisition"
+    },
+    {
+      "case": "fabricated full archive",
+      "rejected": true,
+      "reason": "Fabricated full archive"
+    },
+    {
+      "case": "expanded NLM acquisition",
+      "rejected": true,
+      "reason": "NLM scope or laterality changed"
+    },
+    {
+      "case": "catalog mistaken for mesh count",
+      "rejected": true,
+      "reason": "Uploaded catalog count promoted or altered"
+    }
+  ],
+  "new_evidence_sha256": {
+    "education/data/elbow-v1/curation/bodyparts43-resolution/nlm-elbow-localization-proposal.json": "b217e3947b9e5db54dcb9ded80be40ac2ab08de53f8898de6222a2f770db6143",
+    "education/data/elbow-v1/curation/bodyparts43-resolution/representative-arm-comparison.json": "33ee92242974c8c796cedb54fade4857bca08c6e3b0d7de8a6b1d6be7cd4e183",
+    "education/data/elbow-v1/curation/bodyparts43-resolution/README.md": "37a09381e7e16db77b8364a27bb0b0831740e55702f47e88821defd77d1b1f9d",
+    "education/data/elbow-v1/curation/bodyparts43-resolution/request-receipts.json": "77cf122a28d4c8b47e1bf64900a35086b554b4a6ddffa4b398ba00fef787cdec",
+    "education/data/elbow-v1/curation/bodyparts43-resolution/object-catalog-summary.json": "fcd0d9372fe377d593a0313f80f77ae6ddd40fb4200d737e3352a3842c3949c5",
+    "education/data/elbow-v1/scripts/audit_bodyparts43_resolution.py": "9c052255d74bf90dbffac706b47b7e947e6c71b3484347e7041205172309a4c5"
+  },
+  "raw_sources_in_git": false,
+  "validation_network_requests": 0
+}

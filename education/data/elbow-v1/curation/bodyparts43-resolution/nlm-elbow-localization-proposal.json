@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "specimen_id": "nlm-visible-human-male",
+  "source_checkpoint": "../official-anatomy-scouts/source-image-review.json",
+  "source_asset_hashes": {
+    "a_vm1450": "f357fbbcc43c0195e2994d187e63094216e02a4894ad94b2adf0dce9af4ba444",
+    "a_vm1550": "74546104c4c14b3b8a0a018f7c0284928d9d3e036ec2a46018e3e3c8553347ad",
+    "a_vm1600": "570cf80f01c6d9beaefcc4b0670cf8c561e6785321b22f469c4ef4bafda93ac4"
+  },
+  "pixel_evidence": "Inspected a_vm1600 display-right window [1550,1895) columns by [200,655) rows has multiple opposed curved bony profiles and pale intervening interfaces. Display-left arm is another candidate; patient laterality remains unverified.",
+  "laterality": "unverified",
+  "named_tissue_masks_created": false,
+  "additional_nlm_requests_in_this_followup": 0,
+  "proposal": {
+    "status": "proposal_only; acquisition not authorized by this checkpoint",
+    "anchor": "a_vm1600",
+    "proposed_localization_window": "a_vm1595 through a_vm1605, inclusive, same male original-color series; URLs, listed sizes, availability and local physical spacing must be checked before approval",
+    "max_images": 11,
+    "proposed_per_image_cap_bytes": 4194304,
+    "proposed_transfer_cap_bytes": 41943040,
+    "free_space_floor_bytes": 1610612736,
+    "rationale": "Inspect both image-side elbow candidates and trace the joint and bone continuity around the successful scout. Establish anatomical right side from official orientation evidence before selecting a right-arm crop. Eleven sections are a localization test, not a complete elbow/forearm segmentation volume.",
+    "raw_acquisition_executed": false,
+    "required_after_localization": "Explicit reviewed pixel bounds and slice identities; missing-section/cutting-artifact log; coordinate convention/laterality evidence; separate approved budget for any larger contiguous block; named fine-tissue decisions only from reviewed boundaries.",
+    "max_new_images": 10,
+    "reuse_existing_asset": "a_vm1600 with pinned acquired bytes"
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "anatomical_target": {
+    "fma_id": "FMA23130",
+    "name": "right humerus"
+  },
+  "source_identity": {
+    "geometry_set": "4.3",
+    "representation_id": "BP23164",
+    "object_ids": [
+      "FJ3368",
+      "FJ6462"
+    ],
+    "mapping_checkpoint": "../official-anatomy-scouts/bodyparts3d-options.json",
+    "mapping_file_sha256": "c3d16c891016da13447de2fc3241d05d92e8f9dc460e363233c03f420b935d4f"
+  },
+  "documented_export": {
+    "provenance": "Previously acquired official editor JavaScript, sha256 7bc7af5da632fc28db157d49b3c65a093d016dd77006de95dc9dc70ce85252fc; public ordinary UI form protocol, not a private/credential API.",
+    "javascript_source_lines": [
+      73237,
+      73275,
+      73285
+    ],
+    "object_selection_endpoint": "https://lifesciencedb.jp/bp3d/download-pallet-art_file.cgi",
+    "selection_method": "POST",
+    "selection_request_representation_ids": [
+      "BP23164"
+    ],
+    "selection_response": {
+      "art_ids": [
+        "FJ6462",
+        "FJ3368"
+      ],
+      "msg": null,
+      "rep_ids": [
+        "BP21795",
+        "BP23164"
+      ],
+      "success": true
+    },
+    "download_endpoint": "https://lifesciencedb.jp/bp3d/download.cgi",
+    "download_method": "POST",
+    "representation_parameter": "rep_id: JSON array of representation IDs",
+    "object_parameter": "ids: JSON array of object IDs",
+    "other_parameters": {
+      "type": "art_file",
+      "all_downloads": "1",
+      "filename": "chosen subset export name"
+    },
+    "scope": "Normal UI exports the selected pallet/object set. all_downloads is the flag used by that scoped form; it does not establish the presence or size of a whole-model archive. No all-model selection attempted.",
+    "observed_download_results": [
+      {
+        "receipt_id": "bp3d-FJ3368-export-with-representation",
+        "request_object_ids": [
+          "FJ3368"
+        ],
+        "finalURL": "https://lifesciencedb.jp/bp3d/",
+        "status": 200,
+        "bytecount": 84659,
+        "content_type": "text/html; charset=UTF-8",
+        "zip_payload": false,
+        "geometry_acquired": false
+      },
+      {
+        "receipt_id": "bp3d-official-FJ3368-export",
+        "request_object_ids": [
+          "FJ3368"
+        ],
+        "finalURL": "https://lifesciencedb.jp/bp3d/",
+        "status": 200,
+        "bytecount": 84659,
+        "content_type": "text/html; charset=UTF-8",
+        "zip_payload": false,
+        "geometry_acquired": false
+      },
+      {
+        "receipt_id": "bp3d-humerus-exact-ui-form",
+        "request_object_ids": [
+          "FJ6462",
+          "FJ3368"
+        ],
+        "finalURL": "https://lifesciencedb.jp/bp3d/",
+        "status": 200,
+        "bytecount": 84659,
+        "content_type": "text/html; charset=UTF-8",
+        "zip_payload": false,
+        "geometry_acquired": false,
+        "diagnosis": "Exact official UI recipe: complete IDs and representation IDs returned for the one selected humerus, with its documented numeric timestamp filename. Still redirects to editor homepage; no mesh payload."
+      }
+    ],
+    "selective_list_retry": {
+      "receipt_id": "bp3d-43-humerus-export-list-retry",
+      "diagnosis": "Official object table confirms BP23164, and the existing UI JavaScript uses lng=ja for this link. Exactly one retry corrected the language parameter.",
+      "status": 500,
+      "same_error_body_sha256_as_original": true,
+      "route_stopped": true
+    }
+  },
+  "retained_40_baseline": {
+    "object_id": "FJ3368",
+    "fma_id": "FMA23130",
+    "compatibility_version": "4.0",
+    "polygon_reduction_rate_percent": 99,
+    "path": "/workspace/Kenoma-anatomy/education/data/elbow-v1/sources/bodyparts3d/FJ3368.obj",
+    "bytes": 256564,
+    "sha256": "85f5445a11ecb029b027db0b9b34933982836d442b19ff531d1ca35a3bc3a237",
+    "vertex_records": 2233,
+    "face_records": 3784,
+    "face_arities": {
+      "3": 3784
+    },
+    "triangle_count": 3784,
+    "units": "millimetres from retained atlas documentation",
+    "bounds_from_vertices": [
+      [
+        -240.841,
+        -140.09
+      ],
+      [
+        -100.219,
+        -51.0391
+      ],
+      [
+        1029.2,
+        1336.54
+      ]
+    ]
+  },
+  "live_43_sample": {
+    "object_id_requested": "FJ3368",
+    "obj_bytes": null,
+    "vertex_records": null,
+    "face_records": null,
+    "triangle_count": null,
+    "geometry_resolution_verified": false,
+    "source_vertex_coordinates_compared": false,
+    "explanation": "Both ordinary download.cgi forms redirected to the editor homepage and returned HTML. HTTP 200 at that final URL is not a successful OBJ download."
+  },
+  "full_collection_downloaded": false,
+  "full_resolution_claim": "unverified; selecting original OBJ export in the UI is not a measured density or an unreduced-original guarantee",
+  "mesh_density_ratio_43_to_40": null,
+  "license_state": {
+    "exact_43_asset_rights": "unresolved; no relabeling or geometry redistribution",
+    "live_license_receipt_id": "bp3d-live-license",
+    "live_claim": "CC BY-SA 2.1 Japan; live page also points to archive for details",
+    "archive_license_receipt_id": "bp3d-archive-license",
+    "archive_claim": "CC BY 4.0",
+    "scope_limit": "Different live/archive statements are preserved. Archive grant is not automatically applied to exact 4.3 live exports or metadata ZIP."
+  }
+}

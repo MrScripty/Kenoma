@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "table_receipt_id": "bp3d-43-object-table",
+  "request_geometry_version": "4.3",
+  "request_tree": "isa",
+  "column_names": [
+    "row_number",
+    "object_id",
+    "representation_id",
+    "fma_id",
+    "fma_name",
+    "fma_synonym",
+    "original_obj_filename",
+    "object_group"
+  ],
+  "data_rows": 13312,
+  "distinct_uploaded_object_ids": 13312,
+  "rows_with_representation_id": 3215,
+  "distinct_mapping_referenced_object_ids": 3210,
+  "mapping_references_absent_from_catalog": [],
+  "mapping_references_absent_from_represented_rows": [],
+  "represented_object_ids_absent_from_prior_mapping": [
+    "FJ1658",
+    "FJ1674",
+    "FJ1721",
+    "FJ1791",
+    "FJ1792"
+  ],
+  "count_scope": "13,312 uploaded-object catalog entries are not a 4.3 mesh count. 3,215 rows have representation IDs; 3,210 referenced object IDs were in the separately acquired 4.3 relation map. Five represented catalog IDs are absent from that map. No count is a count of downloaded/inspected 4.3 meshes.",
+  "columns_absent": [
+    "file_byte_size",
+    "vertex_count",
+    "face_count",
+    "polygon_reduction_rate"
+  ],
+  "download_href_count": 0,
+  "selected_arm_rows": [
+    {
+      "row_number": "1886",
+      "object_id": "FJ1477",
+      "representation_id": "BP21319",
+      "fma_id": "FMA37697",
+      "fma_name": "Lateral head of right triceps brachii",
+      "fma_synonym": "",
+      "original_obj_filename": "110603-musculature of upper limb_bits_lat.head of r.triceps brachii.obj",
+      "object_group": "DBCLS__FUJIEDA_110603-musculature of upper limb_bits.obj"
+    },
+    {
+      "row_number": "1888",
+      "object_id": "FJ1478",
+      "representation_id": "BP23056",
+      "fma_id": "FMA37686",
+      "fma_name": "Long head of right biceps brachii",
+      "fma_synonym": "",
+      "original_obj_filename": "110603-musculature of upper limb_bits_long head of r.biceps brachii.obj",
+      "object_group": "DBCLS__FUJIEDA_110603-musculature of upper limb_bits.obj"
+    },
+    {
+      "row_number": "1890",
+      "object_id": "FJ1479",
+      "representation_id": "BP23146",
+      "fma_id": "FMA37699",
+      "fma_name": "Long head of right triceps brachii",
+      "fma_synonym": "",
+      "original_obj_filename": "110603-musculature of upper limb_bits_long head of r.triceps brachii.obj",
+      "object_group": "DBCLS__FUJIEDA_110603-musculature of upper limb_bits.obj"
+    },
+    {
+      "row_number": "1892",
+      "object_id": "FJ1480",
+      "representation_id": "BP23121",
+      "fma_id": "FMA37695",
+      "fma_name": "Medial head of right triceps brachii",
+      "fma_synonym": "",
+      "original_obj_filename": "110603-musculature of upper limb_bits_med. head of r.triceps brachii.obj",
+      "object_group": "DBCLS__FUJIEDA_110603-musculature of upper limb_bits.obj"
+    },
+    {
+      "row_number": "1904",
+      "object_id": "FJ1486",
+      "representation_id": "BP19754",
+      "fma_id": "FMA37668",
+      "fma_name": "Right brachialis",
+      "fma_synonym": "Right brachialis muscle",
+      "original_obj_filename": "110603-musculature of upper limb_bits_r.brachialis.obj",
+      "object_group": "DBCLS__FUJIEDA_110603-musculature of upper limb_bits.obj"
+    },
+    {
+      "row_number": "1906",
+      "object_id": "FJ1487",
+      "representation_id": "BP20916",
+      "fma_id": "FMA38486",
+      "fma_name": "Right brachioradialis",
+      "fma_synonym": "Right brachioradialis muscle",
+      "original_obj_filename": "110603-musculature of upper limb_bits_r.brachioradialis.obj",
+      "object_group": "DBCLS__FUJIEDA_110603-musculature of upper limb_bits.obj"
+    },
+    {
+      "row_number": "1956",
+      "object_id": "FJ1512",
+      "representation_id": "BP23133",
+      "fma_id": "FMA37684",
+      "fma_name": "Short head of right biceps brachii",
+      "fma_synonym": "",
+      "original_obj_filename": "110603-musculature of upper limb_bits_short head of r.biceps brachii.obj",
+      "object_group": "DBCLS__FUJIEDA_110603-musculature of upper limb_bits.obj"
+    },
+    {
+      "row_number": "3856",
+      "object_id": "FJ3349",
+      "representation_id": "BP23239",
+      "fma_id": "FMA23464",
+      "fma_name": "Right radius",
+      "fma_synonym": "",
+      "original_obj_filename": "130402_bone_r. radius.obj",
+      "object_group": "DBCLS__FUJIEDA_130402_bone-obj"
+    },
+    {
+      "row_number": "3875",
+      "object_id": "FJ3368",
+      "representation_id": "BP23164",
+      "fma_id": "FMA23130",
+      "fma_name": "Right humerus",
+      "fma_synonym": "",
+      "original_obj_filename": "130402_bone_r.humerus.obj",
+      "object_group": "DBCLS__FUJIEDA_130402_bone-obj"
+    },
+    {
+      "row_number": "3898",
+      "object_id": "FJ3391",
+      "representation_id": "BP23195",
+      "fma_id": "FMA23467",
+      "fma_name": "Right ulna",
+      "fma_synonym": "",
+      "original_obj_filename": "130402_bone_r.ulna .obj",
+      "object_group": "DBCLS__FUJIEDA_130402_bone-obj"
+    },
+    {
+      "row_number": "6986",
+      "object_id": "FJ6462",
+      "representation_id": "BP23164",
+      "fma_id": "FMA23130",
+      "fma_name": "Right humerus",
+      "fma_synonym": "",
+      "original_obj_filename": "FJ6462_140129_bone_r.humerus.obj",
+      "object_group": "140129_bone.obj"
+    }
+  ],
+  "full_43_archive_url": null,
+  "full_43_archive_size_bytes": null,
+  "resolution_inference_allowed": false,
+  "license_scope": "Exact 4.3 live asset rights unresolved; raw catalog remains external."
+}
