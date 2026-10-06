@@ -1,0 +1,43 @@
+{
+  "scope": "finite scalar force-command lab; no rest/height servo or anatomical calibration",
+  "frozen_benchmark": "0e89c60d03d3d6137e1ece686ecf942b83d05645",
+  "frozen_design": "41573e4581d2ab0b1054840ece57cd6239de69f3",
+  "kp": 0.4,
+  "ki_per_s": 8.0,
+  "gravity_m_per_s2": 9.80665,
+  "mass_range_kg": [0.1, 10.0],
+  "target_range_N": [0.0, 150.0],
+  "coarse_step_s": 0.0002,
+  "fine_step_s": 0.0001,
+  "ODE_rtol": 1e-9,
+  "ODE_atol": 1e-11,
+  "ODE_max_step_s": 0.0005,
+  "brake_arm_velocity_m_per_s": 1e-5,
+  "event_root_time_s": 1e-7,
+  "event_iterations": 32,
+  "velocity_bracket": [-10.0, 10.0],
+  "velocity_iterations": 64,
+  "budgets": {
+    "curve_value": 2e-12,
+    "curve_derivative": 2e-8,
+    "force_N": 1e-7,
+    "y_m": 1e-6,
+    "w_m_per_s": 1e-5,
+    "activation_q": 2e-6,
+    "replay_force_N": 1e-4,
+    "event_time_s": 2e-6,
+    "momentum_N_s": 1e-7,
+    "component_combined_work_J": 1e-5,
+    "tracking_relative_to_weight": 0.01
+  },
+  "tracking_windows_s": {
+    "baseline": [0.03, 0.05],
+    "pulse": [0.13, 0.15],
+    "lower": [0.25, 0.3],
+    "high": [0.13, 0.15],
+    "mass": [0.25, 0.3],
+    "descending_pi": [0.1, 0.15]
+  },
+  "all_negative_eigenvalues_acceptance": false,
+  "gain_search_permitted": false
+}
