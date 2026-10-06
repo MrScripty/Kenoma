@@ -1,0 +1,38 @@
+/workspace/kenoma-connected-specimen/education/proofs/AxisymmetricSpecimenReal.lean:20:42: error: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+/workspace/kenoma-connected-specimen/education/proofs/AxisymmetricSpecimenReal.lean:39:21: error: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+/workspace/kenoma-connected-specimen/education/proofs/AxisymmetricSpecimenReal.lean:39:51: error: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+/workspace/kenoma-connected-specimen/education/proofs/AxisymmetricSpecimenReal.lean:39:82: error: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+/workspace/kenoma-connected-specimen/education/proofs/AxisymmetricSpecimenReal.lean:48:77: error: unsolved goals
+area side axial sigma : ℝ
+haxial : axial ≠ 0
+⊢ area * (side ^ 2 * sigma) = area * side ^ 2 * sigma
+/workspace/kenoma-connected-specimen/education/proofs/AxisymmetricSpecimenReal.lean:52:2: error: unknown constant 'Real.pi'
+/workspace/kenoma-connected-specimen/education/proofs/AxisymmetricSpecimenReal.lean:57:7: error: unknown constant 'Real.pi'
+/workspace/kenoma-connected-specimen/education/proofs/AxisymmetricSpecimenReal.lean:61:7: error: unknown constant 'Real.pi'
+/workspace/kenoma-connected-specimen/education/proofs/AxisymmetricSpecimenReal.lean:66:6: error: unknown constant 'Real.pi'
+'Kenoma.AxisymmetricSpecimenReal.axis_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Kenoma.AxisymmetricSpecimenReal.uniform_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Kenoma.AxisymmetricSpecimenReal.logarithmic_energy_nonnegative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Kenoma.AxisymmetricSpecimenReal.logarithmic_energy_rest' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Kenoma.AxisymmetricSpecimenReal.logarithmic_energy_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Kenoma.AxisymmetricSpecimenReal.full_side_traction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Kenoma.AxisymmetricSpecimenReal.uniform_force_conversion' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'Kenoma.AxisymmetricSpecimenReal.profile_primitive_derivative' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'Kenoma.AxisymmetricSpecimenReal.frustum_primitive_endpoints' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

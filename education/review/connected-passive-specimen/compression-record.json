@@ -1,0 +1,166 @@
+{
+  "scope": "Lossless gzip of large raw numerical/browser JSON; original bytes and hashes preserved",
+  "files": [
+    {
+      "file": "numerical/experiment-final.json.gz",
+      "original_sha256": "71e87dd5294689412410ffa94232e102bac8b97b76545ac1771e342163be0303",
+      "original_bytes": 2354711,
+      "compressed_sha256": "f71d0e5a59118dc778110f8067130c9530e1206ce4fcf751944f4c556bef3cc6",
+      "compressed_bytes": 783004
+    },
+    {
+      "file": "numerical/experiment-browser-oracle.json.gz",
+      "original_sha256": "a50b6f0612594af81f0e532b4b9f553170c9b1c0a5e2477db28a9bfa6f2df049",
+      "original_bytes": 2354720,
+      "compressed_sha256": "360c91bb7170b27b105cc613908babce1e0603d28a9dd5b26b749c84bc0c1ede",
+      "compressed_bytes": 782997
+    },
+    {
+      "file": "browser/mobile-compression-state.json.gz",
+      "original_sha256": "ec42edd9c67672700348d7b79153036e85d9ac414a6b671d07cd07b1dcf7c098",
+      "original_bytes": 9396873,
+      "compressed_sha256": "9b31a6f4c6f9888988c066f123fead76235ed3f05f26b7ff7581a38374c46441",
+      "compressed_bytes": 1288089
+    },
+    {
+      "file": "browser/rest-static-state.json.gz",
+      "original_sha256": "209936d56eb4fd240f9b8d1c6918a217df8431f6e160b2358eb0f7f9a107bfb9",
+      "original_bytes": 5628625,
+      "compressed_sha256": "dc7a431511b196318442bf1e370bfeb0ed1a6f80a4cf359ab347dd0aa19463c4",
+      "compressed_bytes": 856116
+    },
+    {
+      "file": "browser/taper-compression-state.json.gz",
+      "original_sha256": "d2816f2c1446823148b3aeba11ece3ab94d97f8255ee819d1651591ef9fb7609",
+      "original_bytes": 9396873,
+      "compressed_sha256": "61c83ab54b23f7f0e069c6fc0f0687535e6ac498d4e9843d2050403e3fab0ec1",
+      "compressed_bytes": 1288084
+    },
+    {
+      "file": "browser/medium-compression-state.json.gz",
+      "original_sha256": "7e4585b1ea0feca07c2f171062942429c9184ebea81a5ccb4dadc53636ba5f9e",
+      "original_bytes": 4654372,
+      "compressed_sha256": "d65661a644d694caccc75c3111d87f1a178becde9d503fa482da3f96bb7a8849",
+      "compressed_bytes": 648900
+    },
+    {
+      "file": "browser/unsupported-retained-state.json.gz",
+      "original_sha256": "a6059dbf6c07ae0ec7a8caf3a1265276fbf9a7b8a3d5bd8a9606a8cec29d7d7f",
+      "original_bytes": 2300876,
+      "compressed_sha256": "cb3d5dafd54c19a791c22073008c7519e979b97869f528e7b3d2d11211b3e87f",
+      "compressed_bytes": 333084
+    },
+    {
+      "file": "browser/context-retry-state.json.gz",
+      "original_sha256": "51fb7a65a3ceb03bb16ffc60f7a6d320b3a304350ccfc3517993efdeb9be2e27",
+      "original_bytes": 9097416,
+      "compressed_sha256": "44cb6b467498171bec28e7c5937ab981f2b8d3d04a3f9beca8771aa67b6e9130",
+      "compressed_bytes": 1267740
+    },
+    {
+      "file": "browser/explicit-reset-state.json.gz",
+      "original_sha256": "011e11767dcda6cc5fe2c08bdfc724d01c937a243de014e10f2b7ba203cea2b2",
+      "original_bytes": 9097416,
+      "compressed_sha256": "36d918ec2715551a9d93eba475e6b8d86195c687c1577ab1cfbb8e1c28a4c0c8",
+      "compressed_bytes": 1267740
+    },
+    {
+      "file": "browser/front-view-state.json.gz",
+      "original_sha256": "ef89ae59da93323829d8014f8bd17f9d77f0b627c7b57813962e980af0e2b5bb",
+      "original_bytes": 2310352,
+      "compressed_sha256": "dd4363ee5a3d24f98806679d01c5592c79c103340d099b5b687bd35e0569bf99",
+      "compressed_bytes": 335362
+    },
+    {
+      "file": "browser/axis-probe-state.json.gz",
+      "original_sha256": "f8aa9cdce1c096d47ae5f95ba6fa854c1c90f7769b973a5882d6e0a5d9d47d38",
+      "original_bytes": 9396901,
+      "compressed_sha256": "96d76fb92929906c9616e09a4cefc26e31a063b7ac431521aa63cde8cbda0bfd",
+      "compressed_bytes": 1288000
+    },
+    {
+      "file": "browser/latest-request-wins-state.json.gz",
+      "original_sha256": "35f80f4166d8705dca7fe3204e2a2f5fe05b3789a55b2ba1e9c59fad61c1429e",
+      "original_bytes": 2310364,
+      "compressed_sha256": "df1f3a5deeb8217ad7a5c19d0e561be945e8857cfe8f674b33112d8c7248ec92",
+      "compressed_bytes": 335354
+    },
+    {
+      "file": "browser/worker-failure-retained-state.json.gz",
+      "original_sha256": "a6059dbf6c07ae0ec7a8caf3a1265276fbf9a7b8a3d5bd8a9606a8cec29d7d7f",
+      "original_bytes": 2300876,
+      "compressed_sha256": "cb3d5dafd54c19a791c22073008c7519e979b97869f528e7b3d2d11211b3e87f",
+      "compressed_bytes": 333084
+    },
+    {
+      "file": "browser/one-iteration-state.json.gz",
+      "original_sha256": "a6059dbf6c07ae0ec7a8caf3a1265276fbf9a7b8a3d5bd8a9606a8cec29d7d7f",
+      "original_bytes": 2300876,
+      "compressed_sha256": "cb3d5dafd54c19a791c22073008c7519e979b97869f528e7b3d2d11211b3e87f",
+      "compressed_bytes": 333084
+    },
+    {
+      "file": "browser/uniform-rest-state.json.gz",
+      "original_sha256": "b8096d0fa1d3e13cd627574e6ff9675cd58a37f5b38132ffde9da5aefc3b3230",
+      "original_bytes": 2217854,
+      "compressed_sha256": "ab5a17c03b13ec4f363fae3ef8bb8ff7e914a61d942a6c4d707daba1fe581b8f",
+      "compressed_bytes": 225831
+    },
+    {
+      "file": "browser/context-lost-state.json.gz",
+      "original_sha256": "8d8378819a7c7ec2fa9c0f2d80421ff2e272636a2ba681202bb6d55a4b9a2084",
+      "original_bytes": 5628644,
+      "compressed_sha256": "2567415b8c41704261d2c86d6c65186e66809834dd43c25aa3b3532719476d35",
+      "compressed_bytes": 856122
+    },
+    {
+      "file": "browser/taper-tension-state.json.gz",
+      "original_sha256": "c0dfc62116653bda829a1b03bb7263a9e91dbc2897cd092457fd034e8c788ec7",
+      "original_bytes": 9398294,
+      "compressed_sha256": "c9b2191d2180c143e693777775e4ca0280938ad2f3465fd16e4d5447a0cae12a",
+      "compressed_bytes": 1287454
+    },
+    {
+      "file": "browser/webgl-unavailable-numerical-state.json.gz",
+      "original_sha256": "0d6d9346bb0872251b11d62a9f7e26de59b7939febf2ff98889d66a5a8601fe7",
+      "original_bytes": 5863705,
+      "compressed_sha256": "98d43bb751a704900eb38b7dcadadf8c32e1610c95980f98cac1489d9e0e2513",
+      "compressed_bytes": 874403
+    },
+    {
+      "file": "browser/exported-state.json.gz",
+      "original_sha256": "1b6ad8da6f95a0069de889ef9e7b2c83e3d00c368d47354719694bcfebf4100e",
+      "original_bytes": 4058378,
+      "compressed_sha256": "5b96a0a7ab3272f02df4239cd579a66354d73d2758243262a4ee92159ac6ff72",
+      "compressed_bytes": 361844
+    },
+    {
+      "file": "browser/taper-rest-state.json.gz",
+      "original_sha256": "6540f8eceedf22625130770c48285dee0afc2b1d889735625a40dc258c8c205a",
+      "original_bytes": 9097398,
+      "compressed_sha256": "0be98510233ebcbf5a2c2b410c616a8f5f1ad82c44b17b2d3126aba2ac53e9f2",
+      "compressed_bytes": 1267739
+    },
+    {
+      "file": "browser/uniform-tension-state.json.gz",
+      "original_sha256": "65a9d18bf31f604fce03d20fb9e0cd84959cf96fef0b782c253cdb88790d0379",
+      "original_bytes": 2270155,
+      "compressed_sha256": "98977ccf15dc1a6199c267c28bf9d24629e027b4cc0de239329fbb6e9ac4b5ff",
+      "compressed_bytes": 234527
+    },
+    {
+      "file": "browser/uniform-compression-state.json.gz",
+      "original_sha256": "ad8cf7b2e301bb15c9d7e1ec2e01fdb5759f83dd7a4af3d7fd55b8987b1f88e5",
+      "original_bytes": 2256064,
+      "compressed_sha256": "7bdd0d176fb4b78c36c6b334ae51d806f438c8a8a0e6854119c5350f9e025a29",
+      "compressed_bytes": 233705
+    },
+    {
+      "file": "browser/coarse-compression-state.json.gz",
+      "original_sha256": "ae5fc4ca82e952dde0ea775cde71ce20ef8289fc1b4ea6999e7f5229082ce9e5",
+      "original_bytes": 2306507,
+      "compressed_sha256": "9ab4426d5d0d60a6172b2e7e27260a820d25b2655d6c0de8609f268f6f7d3dc9",
+      "compressed_bytes": 335520
+    }
+  ]
+}
