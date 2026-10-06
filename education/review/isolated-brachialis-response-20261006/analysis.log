@@ -1,0 +1,128 @@
+{
+  "result": "PRESERVED_REFUSED_RESPONSE_WITH_REQUESTED_METRICS",
+  "source": "df027f8031c40b19471839212aabdb578655e913",
+  "control45": {
+    "projectedMaximumN": 0.00005820077786236932,
+    "fullFreeMaximumN": 64.06683747708074,
+    "fullFreeL2N": 379.53198019357194,
+    "energyJ": -33.48083147770711,
+    "minimumCornerJ": 0.5594239031350546,
+    "reactions": {
+      "distal": {
+        "fullCapGradientSumN": [
+          -50.77074580761371,
+          -24.923383612825127,
+          -602.7124835495737
+        ],
+        "fullCapAxialReactionN": 605.1193134928182,
+        "originalBoundaryTranslationGradientN": [
+          -82.48709173409249,
+          -40.80536608697865,
+          -983.3623447749349
+        ],
+        "originalBoundaryTranslationAxialConjugateN": 987.2683077059609
+      },
+      "proximal": {
+        "fullCapGradientSumN": [
+          63.28949017362576,
+          30.087107567696243,
+          762.704468280399
+        ],
+        "fullCapAxialReactionN": -765.6589734722645,
+        "originalBoundaryTranslationGradientN": [
+          82.48709190228443,
+          40.80536571505926,
+          983.3623464763608
+        ],
+        "originalBoundaryTranslationAxialConjugateN": -987.2683094077715
+      }
+    }
+  },
+  "partial46": {
+    "status": "LAST_VALID_46_MODE_OPTIMIZATION_ITERATE_NOT_EQUILIBRIUM",
+    "iteration": 1,
+    "projectedMaximumN": 343.38593717301023,
+    "fullFreeMaximumN": 53.595914611257406,
+    "fullFreeL2N": 349.33883304250986,
+    "passesProjectedGate": false,
+    "passesFullFreeGate": false,
+    "energyJ": -33.7499971355736,
+    "energiesJ": {
+      "matrix": 0.01348989717297011,
+      "volume": 1.4190172507882306,
+      "passiveFiber": 3.4220366725524234,
+      "activePotential": -38.60454095608723
+    },
+    "minimumSampledJ": 0.45199014817808636,
+    "minimumCornerJ": 0.42739168218037515,
+    "globalVolumeRatio": 1.0450958125298628,
+    "referenceVolumeSampledBelow09": 0.10568260003635115,
+    "retainedOriginalForceL2N": 0.30527308891348487,
+    "addedDirectionForceN": -343.3859371730167,
+    "omitted46ForceL2N": 64.21545944438024,
+    "directCurvatureNPerM": 65833.14137107764,
+    "relaxedCurvatureNPerM": 56633.40964400873,
+    "projectedTangentPositive": true,
+    "reactions": {
+      "distal": {
+        "fullCapGradientSumN": [
+          -52.062133630122254,
+          -25.604291259907903,
+          -617.5823829581093
+        ],
+        "fullCapAxialReactionN": 620.0524174730566,
+        "originalBoundaryTranslationGradientN": [
+          -81.89063583620904,
+          -40.50713660098237,
+          -976.3924935971066
+        ],
+        "originalBoundaryTranslationAxialConjugateN": 980.269810653049
+      },
+      "proximal": {
+        "fullCapGradientSumN": [
+          64.94734682618427,
+          30.87073989138617,
+          782.6693923123526
+        ],
+        "fullCapAxialReactionN": -785.701242250753,
+        "originalBoundaryTranslationGradientN": [
+          81.96032542518175,
+          40.50896343001271,
+          977.1545970027689
+        ],
+        "originalBoundaryTranslationAxialConjugateN": -981.0347850719696
+      }
+    },
+    "orientation": {
+      "elements": 252,
+      "certifiedElements": 252
+    },
+    "additionalCoordinateM": 0.0007433158092602007
+  },
+  "comparison": {
+    "sameRulePointsPerElement": 2048,
+    "energyDifferenceJ": -0.2691656578664876,
+    "componentEnergyChangesJ": {
+      "matrix": 0.00018706203472589056,
+      "volume": -0.08430951665018704,
+      "passiveFiber": -0.014605448884066341,
+      "activePotential": -0.17043775436696507
+    },
+    "linearVirtualWorkAt45ControlJ": -0.28211211812590314,
+    "fullFreeMaximumChangeN": -10.470922865823333,
+    "minimumCornerJChange": -0.13203222095467948,
+    "distalFullNodalReactionChangeN": 14.933103980238457,
+    "scope": "45-mode projected equilibrium versus the first valid46-mode optimization step. No46-mode equilibrium, physical calibration, integration or spatial convergence achieved."
+  },
+  "refusal": {
+    "certifiedElements": 249,
+    "unqualifiedElements": [
+      247,
+      250,
+      251
+    ],
+    "minimumQueriedSampledJ": -0.7080521797671152,
+    "minimumQueriedCornerJ": -0.8373605730915902,
+    "file": "refused-trial-geometry.json"
+  }
+}
