@@ -1,0 +1,62 @@
+{
+  "baseline_commit": "455641c0aa9b4a9ad4b68e50fc1b6f5746180226",
+  "excludes": [
+    "education/data/sliding-constraint-policy-proposal-v1/packet-manifest.json"
+  ],
+  "files": {
+    "education/data/sliding-constraint-policy-proposal-v1/archived-predictor-defects.png": {
+      "sha256": "886e2315567318cb095980b340535ee46b301e9b9cb88bdfffc05cde21880097",
+      "bytes": 119011
+    },
+    "education/data/sliding-constraint-policy-proposal-v1/archived-predictor-defects.svg": {
+      "sha256": "e4869452dcdde90dbd0e753ee676e7b2506a8ef74dd6edeae7326bf4b5095d4d",
+      "bytes": 66172
+    },
+    "education/data/sliding-constraint-policy-proposal-v1/diagnosis.log": {
+      "sha256": "2a93583cadffa5442d31cd79b084525ef039bd96b4f7ab44a973a4f43060c022",
+      "bytes": 392
+    },
+    "education/data/sliding-constraint-policy-proposal-v1/predictor-curvature-diagnosis.json": {
+      "sha256": "23b9528f4c953f79be2ff7a8edd465a623e5089481d5031bad789b1eb7c47cf4",
+      "bytes": 6498
+    },
+    "education/data/sliding-constraint-policy-proposal-v1/render.log": {
+      "sha256": "f5831aa022a4ccd6c509f953b63c21df0a46a8f1b97046a61edbfa050dd20669",
+      "bytes": 73
+    },
+    "education/data/sliding-constraint-policy-proposal-v1/unchanged-gate-tests.log": {
+      "sha256": "2c3ea7c9fb3abac96ae66148eaaf799a4dd10100717e1214e54f51a634c5140b",
+      "bytes": 1797
+    },
+    "education/data/sliding-constraint-policy-proposal-v1/verification.json": {
+      "sha256": "55293a32b4941f4c527f21831827bca03f60962668f552feaab9b29c31aa4a6a",
+      "bytes": 1482
+    },
+    "education/data/sliding-constraint-policy-proposal-v1/verification.log": {
+      "sha256": "5489b0c4975d7506c79ea1d2b4fa91ac93b28d326f88ce35c336835343c337dc",
+      "bytes": 221
+    },
+    "education/research/mechanical-closure/sliding-constraint-policy-proposal.md": {
+      "sha256": "d7f795f04f8e254ae88897a21d83bdf12ac67fed99d095b6228bff5bdf345faf",
+      "bytes": 12461
+    },
+    "education/research/mechanical-closure/sliding-constraint-policy-receipt.md": {
+      "sha256": "87b910c830f9f5af006e0975ff7db8ce1428d8276ace48f48dbf1ca659f58349",
+      "bytes": 3073
+    },
+    "education/tools/diagnose_sliding_predictor_curvature.py": {
+      "sha256": "77dfde1275aec96bf5fa0f864cf71aa8b6dada059cfb916e9b170fb4a3ec9595",
+      "bytes": 6056
+    },
+    "education/tools/render_sliding_predictor_diagnosis.py": {
+      "sha256": "cca6f465c25e75236eab3d5858f0c45f09820db1dbd4a53da25335bc5bf08b71",
+      "bytes": 1976
+    },
+    "education/tools/verify_sliding_policy_proposal.py": {
+      "sha256": "7118072f35b993c71e5e0dc2e76649ab72db7830b2d5b20bd276e32d828afcea",
+      "bytes": 4624
+    }
+  },
+  "file_count": 13,
+  "total_bytes": 223836
+}

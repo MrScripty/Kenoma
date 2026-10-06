@@ -1,0 +1,36 @@
+{
+  "baseline_commit": "455641c0aa9b4a9ad4b68e50fc1b6f5746180226",
+  "baseline_tree": "8dfc931e72a58730ac61b8ea34a80a0abe2bb4bf",
+  "preserved_baseline_blobs": 2131,
+  "negative_controls_rejected": [
+    "accepted-state-count",
+    "revised-policy-executed",
+    "missing-cell",
+    "constraint-gate-relaxation",
+    "failed-rollback",
+    "curvature-disagreement"
+  ],
+  "archived_failed_inputs_sha256": {
+    "full-source/RK4-0.0002": "e3b516c448556c9ca2e49559b54fed1ee715617dd80053611f1994911c115150",
+    "full-source/DOP853": "e039a821d39ec86444ffaeaf18367e4e0f48ebc5600673033066b963cac27aec",
+    "full-source/Radau": "ec9a74ffe434ad5706c8f2117372eda35c2779c0518fc286f80120272b1cca06"
+  },
+  "new_ODE_steps": 0,
+  "accepted_states_added": 0,
+  "revised_policy_executed": false,
+  "completed_matrix_still_unqualified": true,
+  "unchanged_original_gate_tests": 14,
+  "source_freeze_commit": "a901dd4e03f6c061521494eb135f8e07d3347b6b",
+  "source_freeze_tree": "963af93d51610e89acfb33c433d65c275e051030",
+  "render": {
+    "path": "archived-predictor-defects.png",
+    "width_px": 1800,
+    "height_px": 990,
+    "visually_inspected": true,
+    "interpretation": "Archived unaccepted probes only; no new trajectory"
+  },
+  "independent_first_sliding_raw_replay_ACK_received": true,
+  "older_combined_external_raw_review_complete": false,
+  "historical_activation_raw_review_complete": false,
+  "source_sha256": "7118072f35b993c71e5e0dc2e76649ab72db7830b2d5b20bd276e32d828afcea"
+}
