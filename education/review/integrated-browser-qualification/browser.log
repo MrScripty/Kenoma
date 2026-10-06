@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/tmp/kenoma-integrated-browser/education/tests/browser.py", line 233, in <module>
+    if __name__=='__main__':check()
+                            ^^^^^^^
+  File "/tmp/kenoma-integrated-browser/education/tests/browser.py", line 106, in check
+    assert abs(before['state']['q']-3.141592653589793/2)<1e-12 and before['state']['work']>8.59
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

@@ -1,0 +1,25 @@
+{
+  "qualification_source_revision": "5a8e84081dbe579705535daffebdd2f98121f63c",
+  "copied_build_source_revision": "11b5dbd47ddb5364eae594bf1aae18050add5c65",
+  "scope": "Copied42-card actual book; current production controls match built input hashes; inspector refinements/final extra-proofs build pending",
+  "build_manifest_sha256": "4bd6403fbc4002b347415fc7d4347921e504e84d369a88311890b45a81a0c6a4",
+  "input_differences": {
+    "tools/check_real_lesson_artifact.py": {
+      "built": "eed06e6082b908ce8ee034f72c9544823ac0a3a254f2625e0bbc6e4ce12d187d",
+      "checkout": "ead50fb596977d3d4e36e7343849e4d788942b4799f5bf8f35831e8d5fd7dd51"
+    },
+    "tools/inspect_real_lesson_proofs.py": {
+      "built": "f88772625826ec625813a1062f8f08625b4716e0c9917d0bfdcc51f0f79feddb",
+      "checkout": "6afe1a9f1e20e23dd48e7dd2321ee2c3b5908b0c6cdc1a3fa6dd77c40204a2cb"
+    }
+  },
+  "app_sha256": "41a8ba9c98cdc4f93a34b3ba690e6a25158901305418118ce4340229fbe8d2f9",
+  "html_sha256": "ea43f49c7581b6cb665578458cbb5228ffee907361bf8f8f9b922f53f05ed909",
+  "browser_test_status": "FAIL at unchanged legacy work threshold (tests/browser.py:106)",
+  "mobile_test_status": "PASS",
+  "integrated_controls_status": "PASS",
+  "browser_corrected_test_sha256": "ba1c7c813d0507c1560443dee2cf8bac53266f1e4bdd2040d720f312ec3c81fe",
+  "browser_corrected_test_origin": "79cf93e",
+  "browser_corrected_test_status": "PASS",
+  "corrected_test_checkpoint": "979a396"
+}

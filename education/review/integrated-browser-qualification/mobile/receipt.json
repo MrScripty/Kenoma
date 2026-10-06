@@ -1,0 +1,88 @@
+{
+  "status": "passed",
+  "scope": "Pixel 7 touch emulation with default headless Chromium; not physical Android/WebView evidence",
+  "startup_draws": {
+    "force": {
+      "available": true,
+      "lost": false,
+      "width": 543,
+      "height": 450,
+      "unique_colors": 1207,
+      "vivid_geometry_pixels": 1989,
+      "sha256": "4b7444f746ed95b98c62fdf661219f9ffffa3c57a887b4a82f23c336a87ef1a8"
+    },
+    "torque": {
+      "available": true,
+      "lost": false,
+      "width": 543,
+      "height": 450,
+      "unique_colors": 1982,
+      "vivid_geometry_pixels": 5244,
+      "sha256": "2e2ce1045ad4aa550cb7a42a21b8afa67a1c3e3be6e56feb78b5ed0fd0bebb08"
+    },
+    "energy": {
+      "available": true,
+      "lost": false,
+      "width": 543,
+      "height": 450,
+      "unique_colors": 1847,
+      "vivid_geometry_pixels": 2098,
+      "sha256": "75b2bf6cd4fbffd3f3f3b749c849a851c9c9350c011d988c95e77540a2770031"
+    },
+    "elbow": {
+      "available": true,
+      "lost": false,
+      "width": 543,
+      "height": 450,
+      "unique_colors": 4036,
+      "vivid_geometry_pixels": 9474,
+      "sha256": "94d679e3b4574c30e24d6b28a10b1fc388e0427ed5592617b9f68af51220c4fc"
+    },
+    "series": {
+      "available": true,
+      "lost": false,
+      "width": 543,
+      "height": 450,
+      "unique_colors": 8338,
+      "vivid_geometry_pixels": 39078,
+      "sha256": "7d4a603bd2935fcb2450b670439c79892a462df92f63589e7ca8e9ed936ef98f"
+    },
+    "continuum": {
+      "available": true,
+      "lost": false,
+      "width": 543,
+      "height": 630,
+      "unique_colors": 1889,
+      "vivid_geometry_pixels": 64631,
+      "sha256": "b224e3c762b97495ec0fcf268409eadd45f330d7562234868f8d4bcf138dc0f2"
+    },
+    "spatial": {
+      "available": true,
+      "lost": false,
+      "width": 543,
+      "height": 630,
+      "unique_colors": 23254,
+      "vivid_geometry_pixels": 97745,
+      "sha256": "ba4c10ad9c198f62e7401c348355b7866f997e5e8f5aa4240cbb97dc0bcce401"
+    },
+    "atlas": {
+      "available": true,
+      "lost": false,
+      "width": 543,
+      "height": 540,
+      "unique_colors": 7429,
+      "vivid_geometry_pixels": 54129,
+      "sha256": "4f7a0ba90a7670a98850adf67799cbfc76054888e88cbbfa9683b41099f4673c"
+    }
+  },
+  "fault_tests": [
+    "Actual WebGL context loss exposes visible diagnostics, preserves static alternative and recovers on Retry without a download",
+    "Injected post-context draw failure produces in-viewport diagnostics and Retry restores real drawn geometry",
+    "Unavailable WebGL in all seven labs gives prominent in-viewport error plus functional numerical controls, explicitly without 3D"
+  ],
+  "executable_outputs_sha256": "db244ab1bea95f64676eaf3e2e9d0880d243dc6241dae293b15e4bb59aca9ef8",
+  "browser": "151.0.7922.173",
+  "downloads_on_start": [],
+  "html_sha256": "ea43f49c7581b6cb665578458cbb5228ffee907361bf8f8f9b922f53f05ed909",
+  "app_sha256": "41a8ba9c98cdc4f93a34b3ba690e6a25158901305418118ce4340229fbe8d2f9"
+}
