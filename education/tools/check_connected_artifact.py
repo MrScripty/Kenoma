@@ -23,6 +23,8 @@ def check(out=None):
     assert api['affected_experiment_sha256']==sha(out/'connected-end-face-experiment.json') and api['test_sha256']==sha(ROOT/'tests/axisymmetric_end_faces_browser.py') and api['base_test_sha256']==sha(ROOT/'tests/axisymmetric_browser.py')
     assert native['test_sha256']==sha(ROOT/'tests/axisymmetric_browser.py')
     assert integrated['result']=='PASS_INTEGRATED_CONNECTED_SPECIMEN' and not integrated['errors']
+    assert integrated['test_sha256']==sha(ROOT/'tests/connected_integration.py'),'Changed integrated browser test'
+    assert integrated['controls_capture_sha256']==sha(out/'connected-in-book-controls.png'),'Changed integrated controls capture'
     for field,path in [('manifest_sha256','build-manifest.json'),('html_sha256','index.html'),('child_manifest_sha256','connected-passive/axisymmetric-preview-manifest.json')]:assert integrated[field]==sha(out/path)
     assert integrated['native_receipt_sha256']==sha(out/'connected-qa/axisymmetric-browser-status.json') and integrated['api_receipt_sha256']==sha(out/'connected-api-qa/axisymmetric-end-face-browser-status.json')
     figure=json.loads((out/'connected-figure.json').read_text());assert figure['experiment_sha256']==sha(out/'connected-experiment.json') and figure['svg_sha256']==sha(out/'assets/connected-specimen.svg') and figure['generator_sha256']==sha(ROOT/'tools/connected-specimen-figure.mjs')
