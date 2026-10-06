@@ -1,0 +1,255 @@
+{
+  "schema_version": 1,
+  "checkpoint_parent": "e7a4ffc19709c32296917a395b4dc1a9b43863fd",
+  "inventory_owner": "education/data/elbow-v1/curation/source-inventory.json",
+  "inventory_file_sha256": "d56aa7b8cac7f008f0831aa53f6df0868e14052afe2cf134fb7758ec52a9ebcb",
+  "specimen_id": "nlm-visible-human-male",
+  "selection_reason": "Use one official male specimen already identified as an independent candidate in the inventory; do not substitute female, TARO, Denver, or model geometry.",
+  "milestone_status": "metadata_feasibility_only; source-raster access blocks localization and demonstrable image/label import",
+  "acquired_source_bytes": 0,
+  "source_images_imported": false,
+  "tissue_masks_imported": false,
+  "localized_region": null,
+  "terms": {
+    "dataset_copyright_status": "public-domain image library according to NLM overview",
+    "overview_url": "https://www.nlm.nih.gov/research/visible/visible_human.html",
+    "access_url": "https://www.nlm.nih.gov/research/visible/getting_data.html",
+    "access_statement": "NLM Data License replaced by Terms and Conditions in July 2019; no registration required for access.",
+    "terms_url": "https://www.nlm.nih.gov/databases/download/terms_and_conditions.html",
+    "terms_last_reviewed": "2019-05-21",
+    "required_attribution": "Courtesy of the U.S. National Library of Medicine",
+    "endorsement_rule": "Do not indicate or imply NLM endorsement.",
+    "redistribution_rule": "Maintain current data or make a clear, conspicuous notice that distributed products do not reflect the most current/accurate NLM data.",
+    "checkpoint_notice": "This pinned feasibility checkpoint does not establish the most current/accurate NLM data or anatomical segmentation.",
+    "warranty_and_liability": "NLM disclaims accuracy/completeness/fitness warranties and consequences of use; the linked terms include a hold-harmless provision.",
+    "ethical_reuse_evidence": "NLM overview acknowledges the people who willed their bodies to science. No additional VHP-specific ethical-reuse condition was located on the inspected pages; this is not an independent consent assessment.",
+    "third_party_segmentation_rights": "Not established by public-domain image status."
+  },
+  "modalities": [
+    {
+      "id": "male-original-color",
+      "acquisition_state": "cryosection",
+      "format": "lossless PNG recommended by NLM; original raw Z-compressed also listed",
+      "nominal_dimensions_columns_rows": [
+        2048,
+        1216
+      ],
+      "nominal_spacing_mm_xy": [
+        0.33,
+        0.33
+      ],
+      "nominal_section_interval_mm": 1,
+      "pixel_encoding": "24-bit RGB",
+      "plane": "axial",
+      "metadata_url": "https://www.nlm.nih.gov/research/visible/getting_data.html",
+      "asset_specific_geometry_verified": false
+    },
+    {
+      "id": "male-70mm-film-color",
+      "acquisition_state": "cryosection film scan",
+      "nominal_dimensions_columns_rows": [
+        4096,
+        2700
+      ],
+      "nominal_spacing_mm_xy": [
+        0.17,
+        0.17
+      ],
+      "nominal_section_interval_mm": 1,
+      "pixel_encoding": "24-bit RGB",
+      "metadata_url": "https://www.nlm.nih.gov/research/visible/getting_data.html",
+      "asset_specific_geometry_verified": false,
+      "use_limit": "Improves XY sampling, not section spacing; no sample from this series acquired."
+    },
+    {
+      "id": "male-ct",
+      "acquisition_states": [
+        "normalCT",
+        "frozenCT"
+      ],
+      "nominal_dimensions_columns_rows": [
+        512,
+        512
+      ],
+      "nominal_section_interval_mm": 1,
+      "pixel_encoding": "12-bit grayscale source; per-asset PNG encoding unverified",
+      "plane": "axial",
+      "metadata_url": "https://www.nlm.nih.gov/research/visible/visible_human.html",
+      "asset_specific_geometry_verified": false
+    },
+    {
+      "id": "male-mri",
+      "nominal_dimensions_columns_rows": [
+        256,
+        256
+      ],
+      "nominal_section_interval_mm": 4,
+      "nominal_spacing_mm_xy": null,
+      "pixel_encoding": "12-bit grayscale source",
+      "planes": "axial head/neck; longitudinal remainder",
+      "metadata_url": "https://www.nlm.nih.gov/research/visible/visible_human.html",
+      "asset_specific_geometry_verified": false,
+      "use_limit": "No arm-specific protocol or coverage verified."
+    }
+  ],
+  "header_observation": {
+    "status": "delegated web-readable field transcription; not raw-header acquisition or byte pin",
+    "source_url": "https://data.lhncbc.nlm.nih.gov/public/Visible-Human/Male-Images/radiological/frozenCTHeaders/c_vm1356.fro.txt",
+    "adjacent_source_url": "https://data.lhncbc.nlm.nih.gov/public/Visible-Human/Male-Images/radiological/frozenCTHeaders/c_vm1357.fro.txt",
+    "specimen_code": "6022",
+    "exam": 32,
+    "series": 4,
+    "patient_position": "Supine",
+    "patient_entry": "Head First",
+    "plane": "Axial",
+    "matrix": [
+      512,
+      512
+    ],
+    "pixel_size_mm": [
+      0.9375,
+      0.9375
+    ],
+    "slice_thickness_mm": 1,
+    "spacing_between_scans_mm": 1,
+    "normal_RAS": [
+      0,
+      0,
+      1
+    ],
+    "first": {
+      "filename": "c_vm1356.fro.txt",
+      "scanner_image_number": 357,
+      "center_RAS_mm": [
+        0,
+        0,
+        -370
+      ],
+      "top_left_RAS_mm": [
+        240,
+        240,
+        -370
+      ],
+      "top_right_RAS_mm": [
+        -240,
+        240,
+        -370
+      ],
+      "bottom_right_RAS_mm": [
+        -240,
+        -240,
+        -370
+      ]
+    },
+    "adjacent": {
+      "filename": "c_vm1357.fro.txt",
+      "scanner_image_number": 358,
+      "center_RAS_mm": [
+        0,
+        0,
+        -371
+      ]
+    },
+    "raw_sha256": null,
+    "pixel_center_convention": null,
+    "cryosection_affine": null,
+    "limits": "Two headers show local superior-coordinate decrease as filename suffix increases. No universal numbering, exact pixel-center transform, cryosection orientation, arm ROI or registration established."
+  },
+  "scout_candidates": [
+    {
+      "id": "a_vm1450",
+      "specimen_id": "nlm-visible-human-male",
+      "url": "https://data.lhncbc.nlm.nih.gov/public/Visible-Human/Male-Images/PNG_format/thorax/a_vm1450.png",
+      "listed_bytes": 3561524,
+      "listing_url": "https://data.lhncbc.nlm.nih.gov/public/Visible-Human/Male-Images/PNG_format/thorax/index.html",
+      "listed_modified_utc": "2024-08-28 (index timestamp; not acquisition date or immutable revision)",
+      "raw_sha256": null,
+      "source_byte_status": "not_acquired",
+      "visual_observation_status": "no raster available to inspect; browser resolved image locator only",
+      "region_status": "unlocalized_candidate; anatomical level not established from filename"
+    },
+    {
+      "id": "a_vm1550",
+      "specimen_id": "nlm-visible-human-male",
+      "url": "https://data.lhncbc.nlm.nih.gov/public/Visible-Human/Male-Images/PNG_format/abdomen/a_vm1550.png",
+      "listed_bytes": 3467492,
+      "listing_url": "https://data.lhncbc.nlm.nih.gov/public/Visible-Human/Male-Images/PNG_format/abdomen/index.html",
+      "listed_modified_utc": "2024-08-28 (index timestamp; not acquisition date or immutable revision)",
+      "raw_sha256": null,
+      "source_byte_status": "not_acquired",
+      "visual_observation_status": "no raster available to inspect; browser resolved image locator only",
+      "region_status": "unlocalized_candidate; anatomical level not established from filename"
+    },
+    {
+      "id": "a_vm1600",
+      "specimen_id": "nlm-visible-human-male",
+      "url": "https://data.lhncbc.nlm.nih.gov/public/Visible-Human/Male-Images/PNG_format/abdomen/a_vm1600.png",
+      "listed_bytes": 3450446,
+      "listing_url": "https://data.lhncbc.nlm.nih.gov/public/Visible-Human/Male-Images/PNG_format/abdomen/index.html",
+      "listed_modified_utc": "2024-08-28 (index timestamp; not acquisition date or immutable revision)",
+      "raw_sha256": null,
+      "source_byte_status": "not_acquired",
+      "visual_observation_status": "no raster available to inspect; browser resolved image locator only",
+      "region_status": "unlocalized_candidate; anatomical level not established from filename"
+    }
+  ],
+  "bounded_next_acquisition": {
+    "status": "plan_only; not executed; no automatic retry",
+    "total_scout_bytes": 10479462,
+    "per_image_limit_bytes": 4194304,
+    "scout_count": 3,
+    "transfer_budget_bytes": 12582912,
+    "free_space_floor_bytes": 1610612736,
+    "existing_network_helper": "education/data/elbow-v1/scripts/fetch_sources.py",
+    "procedure": "When official access is restored, explicitly acquire just these three male scouts to a new external directory; record byte hashes and receipts before adopting. Confirm orientation/side and actual arm extent, then separately plan a small contiguous elbow block. Stop if source identity or geometry differs.",
+    "full_volume_download": false
+  },
+  "observability": [
+    {
+      "tissues": [
+        "bone",
+        "muscle",
+        "fat",
+        "skin"
+      ],
+      "assessment": "conditional macroscopic-boundary candidates",
+      "evidence_status": "resolution-based inference, not image observation",
+      "limits": "First test actual visible contrast, separation and continuity in right-arm pixels. Fat may be separable macroscopically, but subcutaneous/intermuscular boundaries and fat pads remain unverified."
+    },
+    {
+      "tissues": [
+        "tendon",
+        "ligament",
+        "aponeurosis",
+        "fascia",
+        "capsule"
+      ],
+      "assessment": "fine connective-tissue identity unresolved",
+      "evidence_status": "resolution-based inference, not image observation",
+      "limits": "Distinct whiteness does not identify a named structure. Require traceable anatomical course, visible interfaces and adjacent sections; retain ambiguity, partial volume or not-resolvable status."
+    },
+    {
+      "tissues": [
+        "cartilage"
+      ],
+      "assessment": "articular-layer visibility unresolved",
+      "evidence_status": "resolution-based inference, not image observation",
+      "limits": "Inspect actual joint-level slices; distinguish layer from bone and joint space. XY improvement from film scans does not repair missing detail along 1 mm section intervals."
+    },
+    {
+      "tissues": [
+        "attachment",
+        "field"
+      ],
+      "assessment": "cannot derive measurement from nominal resolution alone",
+      "evidence_status": "measurement gap preserved",
+      "limits": "An enthesis material footprint, fibre field or insertion mechanics requires independent evidence beyond a coarse tissue class."
+    }
+  ],
+  "blockers": [
+    "Direct official NLM metadata acquisition failed at proxy 403 before payload; no source rasters obtained.",
+    "Browser image requests supplied locators, not inspectable raster pixels or byte hashes.",
+    "Exact same-specimen arm ROI, cryosection affine, anatomical laterality, contiguous elbow span and cross-modal registration remain unverified."
+  ],
+  "schema_owner": "education/data/elbow-v1/curation/nlm-arm-feasibility/segmentation-contract.json"
+}

@@ -1,0 +1,376 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "specimen_id",
+    "contract_sha256",
+    "stage",
+    "input_assets",
+    "image_geometry",
+    "region",
+    "voxel_label_artifact",
+    "uncertainty_artifact",
+    "annotations",
+    "clinical_validation",
+    "simulation_ready",
+    "source_images_imported",
+    "tissue_masks_imported"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "specimen_id": {
+      "const": "nlm-visible-human-male"
+    },
+    "contract_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "stage": {
+      "enum": [
+        "metadata_only",
+        "source_image_review",
+        "image_annotation"
+      ]
+    },
+    "input_assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "specimen_id",
+          "path",
+          "bytes",
+          "sha256",
+          "source_url",
+          "acquisition_state",
+          "series_id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "specimen_id": {
+            "const": "nlm-visible-human-male"
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "source_url": {
+            "type": "string",
+            "pattern": "^https://data[.]lhncbc[.]nlm[.]nih[.]gov/public/Visible-Human/Male-Images/"
+          },
+          "acquisition_state": {
+            "enum": [
+              "cryosection",
+              "cryosection film scan",
+              "frozenCT",
+              "normalCT",
+              "mri"
+            ]
+          },
+          "series_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "image_geometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "shape_rows_columns_slices",
+        "spacing_mm_columns_rows_slices",
+        "patient_affine_mm",
+        "pixel_center_convention",
+        "orientation_evidence"
+      ],
+      "properties": {
+        "shape_rows_columns_slices": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "spacing_mm_columns_rows_slices": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "patient_affine_mm": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 4,
+            "maxItems": 4
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "pixel_center_convention": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "orientation_evidence": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "region": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "laterality",
+        "bounds_columns_rows_slices",
+        "source_asset_ids",
+        "localization_evidence"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "not_localized",
+            "candidate_roi",
+            "reviewed_roi"
+          ]
+        },
+        "laterality": {
+          "enum": [
+            "unverified",
+            "right"
+          ]
+        },
+        "bounds_columns_rows_slices": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "source_asset_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "localization_evidence": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "voxel_label_artifact": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "uncertainty_artifact": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "annotations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "inventory_requirement_id",
+          "status",
+          "evidence_kind",
+          "source_asset_ids",
+          "annotation_artifact",
+          "annotator",
+          "reviewer",
+          "boundary_evidence",
+          "uncertainty",
+          "interpolation_status"
+        ],
+        "properties": {
+          "inventory_requirement_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "not_assessed",
+              "not_in_roi",
+              "not_resolvable",
+              "candidate_image_boundary",
+              "reviewed_image_annotation"
+            ]
+          },
+          "evidence_kind": {
+            "enum": [
+              "none",
+              "same_specimen_source_pixels",
+              "authored_prior"
+            ]
+          },
+          "source_asset_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "annotation_artifact": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "annotator": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reviewer": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "boundary_evidence": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "uncertainty": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "interpolation_status": {
+            "enum": [
+              "none",
+              "direct_sections_only",
+              "reconstructed_between_sections"
+            ]
+          }
+        }
+      }
+    },
+    "clinical_validation": {
+      "const": false
+    },
+    "simulation_ready": {
+      "const": false
+    },
+    "source_images_imported": {
+      "type": "boolean"
+    },
+    "tissue_masks_imported": {
+      "type": "boolean"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:kenoma:nlm-male-arm:annotation-sidecar:v1",
+  "title": "Single-specimen anatomical annotation sidecar",
+  "description": "Prospective structural schema; semantic/anatomical acceptance requires segmentation-contract.json. No image annotation or import is demonstrated by the shipped metadata-only state.",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "stage": {
+            "const": "metadata_only"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "input_assets": {
+            "maxItems": 0
+          },
+          "source_images_imported": {
+            "const": false
+          },
+          "tissue_masks_imported": {
+            "const": false
+          },
+          "voxel_label_artifact": {
+            "type": "null"
+          },
+          "uncertainty_artifact": {
+            "type": "null"
+          },
+          "annotations": {
+            "items": {
+              "properties": {
+                "status": {
+                  "const": "not_assessed"
+                },
+                "evidence_kind": {
+                  "const": "none"
+                },
+                "source_asset_ids": {
+                  "maxItems": 0
+                },
+                "annotation_artifact": {
+                  "type": "null"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

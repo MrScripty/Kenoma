@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-06T06:28:58.172317+00:00",
+  "parent_checkpoint": "e7a4ffc19709c32296917a395b4dc1a9b43863fd",
+  "evidence_origin": "Observed execution results in this workspace; summarized rather than original network receipts.",
+  "checks": [
+    {
+      "command": "python3 education/data/elbow-v1/scripts/audit_nlm_arm_feasibility.py",
+      "exit_code": 0,
+      "result": "metadata-only state verified; 40 voxel classes, 5 nonvoxel targets, 45 unassessed targets"
+    },
+    {
+      "command": "python3 -m unittest discover -s education/tests -p test_nlm_arm_feasibility.py -q",
+      "exit_code": 0,
+      "tests": 16,
+      "result": "OK"
+    },
+    {
+      "command": "python3 -m unittest discover -s education/tests -p test_arm_source_inventory.py -q",
+      "exit_code": 0,
+      "tests": 18,
+      "result": "OK"
+    },
+    {
+      "action": "Validate Draft202012 schema and actual annotation-state.json with installed jsonschema 4.26.0",
+      "exit_code": 0,
+      "result": "PASS; structural validation only"
+    }
+  ],
+  "independent_review": "No concrete defects found; header transcription and terms match delegated primary inspection; nominal sampling remains separate from observed geometry.",
+  "files": [
+    {
+      "path": "education/data/elbow-v1/curation/nlm-arm-feasibility/README.md",
+      "bytes": 10704,
+      "sha256": "ff479e2b497cade4979259277dc1b27b766c61a22ec0c35205d0d78c21ef41e6"
+    },
+    {
+      "path": "education/data/elbow-v1/curation/nlm-arm-feasibility/feasibility.json",
+      "bytes": 11111,
+      "sha256": "166bd5154f8eb359afe8528ecd6fc2dd192e97fba198e7d2ef4b8347348aa0bc"
+    },
+    {
+      "path": "education/data/elbow-v1/curation/nlm-arm-feasibility/segmentation-contract.json",
+      "bytes": 13733,
+      "sha256": "86e7bb34f5118dbc29583601c240ac8995cdb8d1f3128266566eae0471317cf5"
+    },
+    {
+      "path": "education/data/elbow-v1/curation/nlm-arm-feasibility/segmentation-schema.json",
+      "bytes": 8610,
+      "sha256": "a7ed5ea5ac749fc00d3b838168eac7d68173fb89f6b27b77480ef1032ccc7ff4"
+    },
+    {
+      "path": "education/data/elbow-v1/curation/nlm-arm-feasibility/annotation-state.json",
+      "bytes": 16190,
+      "sha256": "03643bd8bdbefc4a4227bf1b290abc540744d510a89fb4c9ef8fc636a6c255a9"
+    },
+    {
+      "path": "education/data/elbow-v1/curation/nlm-arm-feasibility/access-checkpoint.json",
+      "bytes": 1556,
+      "sha256": "69c2ee23660854bbb6dce49c7aef74a851e231e9a7baa9e44179b38e32228058"
+    },
+    {
+      "path": "education/data/elbow-v1/scripts/audit_nlm_arm_feasibility.py",
+      "bytes": 7621,
+      "sha256": "5c198fc3a31fad8a401215db11195e86c9bd9b76926f854924e78e67c01638ce"
+    },
+    {
+      "path": "education/tests/test_nlm_arm_feasibility.py",
+      "bytes": 4144,
+      "sha256": "5ebc7d9fba80720697b1cbc87ff9646535ccdb3fe92471d6517aadeda3c7e679"
+    }
+  ],
+  "source_images_imported": false,
+  "tissue_masks_imported": false,
+  "localized_region": null,
+  "remaining_blocker": "Source raster access and orientation/ROI localization unavailable; no real-image or label-import pipeline demonstrated."
+}

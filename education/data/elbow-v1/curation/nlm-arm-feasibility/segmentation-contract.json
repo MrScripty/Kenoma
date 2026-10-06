@@ -1,0 +1,399 @@
+{
+  "schema_version": 1,
+  "specimen_id": "nlm-visible-human-male",
+  "inventory_owner": "education/data/elbow-v1/curation/source-inventory.json",
+  "inventory_file_sha256": "d56aa7b8cac7f008f0831aa53f6df0868e14052afe2cf134fb7758ec52a9ebcb",
+  "required_roi": "right upper arm, elbow and proximal forearm; exact extents require source-pixel localization",
+  "reserved_values": {
+    "unknown_unassessed": 0,
+    "reviewed_background": 1,
+    "artifact_exclusion": 65534,
+    "ambiguous_tissue": 65535
+  },
+  "labels": [
+    {
+      "id": "humerus",
+      "name": "right humerus",
+      "tissue": "bone",
+      "inventory_requirement_id": "humerus",
+      "value": 2,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "radius",
+      "name": "right radius",
+      "tissue": "bone",
+      "inventory_requirement_id": "radius",
+      "value": 3,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "ulna",
+      "name": "right ulna",
+      "tissue": "bone",
+      "inventory_requirement_id": "ulna",
+      "value": 4,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "brachialis",
+      "name": "right brachialis",
+      "tissue": "muscle",
+      "inventory_requirement_id": "brachialis",
+      "value": 5,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "biceps_short",
+      "name": "short head of right biceps brachii",
+      "tissue": "muscle",
+      "inventory_requirement_id": "biceps_short",
+      "value": 6,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "biceps_long",
+      "name": "long head of right biceps brachii",
+      "tissue": "muscle",
+      "inventory_requirement_id": "biceps_long",
+      "value": 7,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "triceps_medial",
+      "name": "medial head of right triceps brachii",
+      "tissue": "muscle",
+      "inventory_requirement_id": "triceps_medial",
+      "value": 8,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "triceps_lateral",
+      "name": "lateral head of right triceps brachii",
+      "tissue": "muscle",
+      "inventory_requirement_id": "triceps_lateral",
+      "value": 9,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "triceps_long",
+      "name": "long head of right triceps brachii",
+      "tissue": "muscle",
+      "inventory_requirement_id": "triceps_long",
+      "value": 10,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "brachioradialis",
+      "name": "right brachioradialis",
+      "tissue": "muscle",
+      "inventory_requirement_id": "brachioradialis",
+      "value": 11,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "clavicle",
+      "name": "right clavicle",
+      "tissue": "bone",
+      "inventory_requirement_id": "clavicle",
+      "value": 12,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "scapula",
+      "name": "right scapula",
+      "tissue": "bone",
+      "inventory_requirement_id": "scapula",
+      "value": 13,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "anconeus",
+      "name": "right anconeus",
+      "tissue": "muscle",
+      "inventory_requirement_id": "anconeus",
+      "value": 14,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "coracobrachialis",
+      "name": "right coracobrachialis",
+      "tissue": "muscle",
+      "inventory_requirement_id": "coracobrachialis",
+      "value": 15,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "interosseous_membrane",
+      "name": "interosseous membrane of right forearm",
+      "tissue": "connective_membrane",
+      "inventory_requirement_id": "interosseous_membrane",
+      "value": 16,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "whole_body_skin",
+      "name": "skin",
+      "tissue": "skin",
+      "inventory_requirement_id": "whole_body_skin",
+      "value": 17,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "biceps_long_proximal_tendon",
+      "name": "proximal tendon of long head of right biceps brachii",
+      "tissue": "tendon",
+      "inventory_requirement_id": "biceps_long_proximal_tendon",
+      "value": 18,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "biceps_short_proximal_tendon",
+      "name": "proximal tendon of short head of right biceps brachii",
+      "tissue": "tendon",
+      "inventory_requirement_id": "biceps_short_proximal_tendon",
+      "value": 19,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "biceps_distal_tendon",
+      "name": "distal tendon of right biceps brachii",
+      "tissue": "tendon",
+      "inventory_requirement_id": "biceps_distal_tendon",
+      "value": 20,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "brachialis_tendon",
+      "name": "tendon of right brachialis",
+      "tissue": "tendon",
+      "inventory_requirement_id": "brachialis_tendon",
+      "value": 21,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "triceps_distal_tendon",
+      "name": "distal tendon of right triceps brachii",
+      "tissue": "tendon",
+      "inventory_requirement_id": "triceps_distal_tendon",
+      "value": 22,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "brachioradialis_tendon",
+      "name": "tendon of right brachioradialis",
+      "tissue": "tendon",
+      "inventory_requirement_id": "brachioradialis_tendon",
+      "value": 23,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "bicipital_aponeurosis",
+      "name": "right bicipital aponeurosis",
+      "tissue": "aponeurosis",
+      "inventory_requirement_id": "bicipital_aponeurosis",
+      "value": 24,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "internal_aponeuroses",
+      "name": "internal aponeuroses of right arm muscles",
+      "tissue": "aponeurosis",
+      "inventory_requirement_id": "internal_aponeuroses",
+      "value": 25,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "ulnar_collateral_anterior",
+      "name": "anterior bundle of right elbow ulnar collateral ligament",
+      "tissue": "ligament",
+      "inventory_requirement_id": "ulnar_collateral_anterior",
+      "value": 26,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "ulnar_collateral_posterior",
+      "name": "posterior bundle of right elbow ulnar collateral ligament",
+      "tissue": "ligament",
+      "inventory_requirement_id": "ulnar_collateral_posterior",
+      "value": 27,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "ulnar_collateral_transverse",
+      "name": "transverse bundle of right elbow ulnar collateral ligament",
+      "tissue": "ligament",
+      "inventory_requirement_id": "ulnar_collateral_transverse",
+      "value": 28,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "radial_collateral",
+      "name": "radial collateral ligament of right elbow",
+      "tissue": "ligament",
+      "inventory_requirement_id": "radial_collateral",
+      "value": 29,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "lateral_ulnar_collateral",
+      "name": "lateral ulnar collateral ligament of right elbow",
+      "tissue": "ligament",
+      "inventory_requirement_id": "lateral_ulnar_collateral",
+      "value": 30,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "annular_ligament",
+      "name": "annular ligament of right radius",
+      "tissue": "ligament",
+      "inventory_requirement_id": "annular_ligament",
+      "value": 31,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "quadrate_ligament",
+      "name": "right quadrate ligament",
+      "tissue": "ligament",
+      "inventory_requirement_id": "quadrate_ligament",
+      "value": 32,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "elbow_capsule",
+      "name": "right elbow joint capsule",
+      "tissue": "capsule",
+      "inventory_requirement_id": "elbow_capsule",
+      "value": 33,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "humeral_cartilage",
+      "name": "articular cartilage of right distal humerus",
+      "tissue": "cartilage",
+      "inventory_requirement_id": "humeral_cartilage",
+      "value": 34,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "radial_head_cartilage",
+      "name": "articular cartilage of right radial head",
+      "tissue": "cartilage",
+      "inventory_requirement_id": "radial_head_cartilage",
+      "value": 35,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "ulnar_cartilage",
+      "name": "articular cartilage of right trochlear notch",
+      "tissue": "cartilage",
+      "inventory_requirement_id": "ulnar_cartilage",
+      "value": 36,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "subcutaneous_fat",
+      "name": "subcutaneous fat of right arm",
+      "tissue": "fat",
+      "inventory_requirement_id": "subcutaneous_fat",
+      "value": 37,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "intermuscular_fat",
+      "name": "intermuscular fat of right arm",
+      "tissue": "fat",
+      "inventory_requirement_id": "intermuscular_fat",
+      "value": 38,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "elbow_fat_pads",
+      "name": "right elbow fat pads",
+      "tissue": "fat",
+      "inventory_requirement_id": "elbow_fat_pads",
+      "value": 39,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "brachial_fascia",
+      "name": "right brachial fascia",
+      "tissue": "fascia",
+      "inventory_requirement_id": "brachial_fascia",
+      "value": 40,
+      "representation": "uint16_voxel_label"
+    },
+    {
+      "id": "antebrachial_fascia",
+      "name": "right antebrachial fascia",
+      "tissue": "fascia",
+      "inventory_requirement_id": "antebrachial_fascia",
+      "value": 41,
+      "representation": "uint16_voxel_label"
+    }
+  ],
+  "nonvoxel_targets": [
+    {
+      "id": "coracoid_enthesis",
+      "name": "short-head biceps enthesis on right coracoid process",
+      "tissue": "attachment",
+      "inventory_requirement_id": "coracoid_enthesis",
+      "representation": "surface_footprint_or_landmark"
+    },
+    {
+      "id": "supraglenoid_enthesis",
+      "name": "long-head biceps enthesis in right supraglenoid region",
+      "tissue": "attachment",
+      "inventory_requirement_id": "supraglenoid_enthesis",
+      "representation": "surface_footprint_or_landmark"
+    },
+    {
+      "id": "infraglenoid_enthesis",
+      "name": "long-head triceps enthesis in right infraglenoid region",
+      "tissue": "attachment",
+      "inventory_requirement_id": "infraglenoid_enthesis",
+      "representation": "surface_footprint_or_landmark"
+    },
+    {
+      "id": "measured_entheses",
+      "name": "measured humeral radial and ulnar enthesis footprints",
+      "tissue": "attachment",
+      "inventory_requirement_id": "measured_entheses",
+      "representation": "surface_footprint_or_landmark"
+    },
+    {
+      "id": "muscle_fibres",
+      "name": "measured right arm muscle fibre and pennation fields",
+      "tissue": "field",
+      "inventory_requirement_id": "muscle_fibres",
+      "representation": "vector_field"
+    }
+  ],
+  "status_values": [
+    "not_assessed",
+    "not_in_roi",
+    "not_resolvable",
+    "candidate_image_boundary",
+    "reviewed_image_annotation"
+  ],
+  "evidence_kinds": [
+    "none",
+    "same_specimen_source_pixels",
+    "authored_prior"
+  ],
+  "quality_policy": {
+    "policy_origin": "Authored curation gates for this milestone; not source-provided clinical thresholds.",
+    "identity": "Exact source-byte hashes, same male specimen and explicit acquisition-state/series per asset; no silent source or side substitutions.",
+    "geometry": "Record original dimensions, row/column/slice indexing, pixel-center convention, sampling, orientation and origin. A CT header cannot supply the cryosection affine.",
+    "roi": "Verified laterality and explicit pixel bounds on source slices before an arm-region claim. Scouts are not an elbow volume.",
+    "annotation": "Annotator/reviewer provenance, visible-boundary citations and per-target status. Unknown voxels remain unknown, rather than background or invented tissue.",
+    "contrast": "Classify boundaries only where visible in source pixels; color or intensity alone is not a tissue identity rule.",
+    "partial_volume": "Report unresolved interfaces separately; do not merge fat with fascia/skin or cartilage with bone to claim tissue distinction.",
+    "continuity": "For a 3D annotation, inspect contiguous source slices, report gaps and mark interpolation as reconstructed rather than directly observed.",
+    "review": "Independent anatomical review, label exclusivity, per-target disagreement/uncertainty maps and source-linked corrections; topology is not an anatomical correctness test.",
+    "sampling": "Compare feature extent with axis-specific sampling, preserve thin-layer uncertainty; neither voxel size nor half a voxel is a certified segmentation error.",
+    "registration": "Any normal/frozen CT, MRI or color alignment requires a source-bound transform and measured residuals; shared specimen/filenames do not imply registration.",
+    "quantities": "Do not infer fibre fields, material laws, enthesis architecture or tendon attachment forces from coarse tissue labels.",
+    "release": "Retain attribution, provenance, missing-data states and a conspicuous version/accuracy notice. This checkpoint is not currentness or clinical validation."
+  }
+}

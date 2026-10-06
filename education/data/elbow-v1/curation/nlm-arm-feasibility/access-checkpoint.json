@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "observed_date_utc": "2026-10-06",
+  "record_origin": "Executed bounded urllib requests observed in workspace tool results; original HTTP headers and per-request timestamps were not captured.",
+  "requests": [
+    {
+      "url": "https://data.lhncbc.nlm.nih.gov/public/Visible-Human/Male-Images/README",
+      "method": "GET",
+      "read_cap_bytes": 128001,
+      "result": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "payload_bytes": 0,
+      "http_response_status": null,
+      "upstream_missing_data_claim": false
+    },
+    {
+      "url": "https://data.lhncbc.nlm.nih.gov/public/Visible-Human/Sample-Data/index.html",
+      "method": "GET",
+      "read_cap_bytes": 128001,
+      "result": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "payload_bytes": 0,
+      "http_response_status": null,
+      "upstream_missing_data_claim": false
+    },
+    {
+      "url": "https://www.nlm.nih.gov/research/visible/visible_human.html",
+      "method": "GET",
+      "read_cap_bytes": 128001,
+      "result": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "payload_bytes": 0,
+      "http_response_status": null,
+      "upstream_missing_data_claim": false
+    }
+  ],
+  "archive_403_routes_retried": false,
+  "raw_image_requests_executed": 0,
+  "specimen_substitutions": 0,
+  "record_scope": "Root workspace metadata probe only. Delegated probes also reported proxy403 but their requests/timestamps are not reconstructed or included in this receipt."
+}
