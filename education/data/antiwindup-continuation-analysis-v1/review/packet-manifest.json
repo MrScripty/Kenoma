@@ -1,0 +1,47 @@
+{
+  "source_commit": "fb81ec93600d1f154eaf6dbb33ee3032c502523b",
+  "source_tree": "761d7b20f26fcfc3acaac96b2f1de32f981b9363",
+  "frozen_commit": "504585b962fc4d1a5ad359d24e902d86cc3d7c4b",
+  "scope": "Mathematical continuation analysis and evaluation-only evidence; no trajectories advanced",
+  "files": [
+    {
+      "path": "education/data/antiwindup-continuation-analysis-v1/review/algebra-and-frozen-state-check.json",
+      "bytes": 20947,
+      "sha256": "32f5e5dec6b62cd8d663c34b85dea356eabbdf44f6c9980b48ea68d40d3e1337"
+    },
+    {
+      "path": "education/data/antiwindup-continuation-analysis-v1/review/algebra-run.log",
+      "bytes": 376,
+      "sha256": "aad6a9a640bb826990da7f1b06250c2dd9a7d6c51fe792aeca424d9aefb4300c"
+    },
+    {
+      "path": "education/data/antiwindup-continuation-analysis-v1/review/execution.json",
+      "bytes": 777,
+      "sha256": "d6d75425bb8ab944f35d12baf4a20bba8da6e4ed9ccaf6f7818194f87dbf2d4b"
+    },
+    {
+      "path": "education/data/antiwindup-continuation-analysis-v1/review/preservation-check.json",
+      "bytes": 362,
+      "sha256": "d2c62c7e549d4904d484bc97a8b36903e7581447993f2b632d6ff8ae74f867fb"
+    },
+    {
+      "path": "education/data/antiwindup-continuation-analysis-v1/review/primary-sources.json",
+      "bytes": 2655,
+      "sha256": "835b157d0b3a0530b9df6cc352f42a6841e8210d5c8e52ba721e08589d82a80f"
+    },
+    {
+      "path": "education/research/mechanical-closure/antiwindup-continuation-analysis.md",
+      "bytes": 18564,
+      "sha256": "aaae20b7a9b6e28e2a8d89b3806b1c4b8c50ac19d41f4ccc4050cdaaa95ca300"
+    },
+    {
+      "path": "education/tools/check_antiwindup_continuation_analysis.py",
+      "bytes": 6077,
+      "sha256": "e4de669fbf9c538a5eb927b876c4efac906eca62720aba0a494c7ef1ecbc9653"
+    }
+  ],
+  "excluded": [
+    "This manifest itself",
+    "education/data/antiwindup-continuation-analysis-v1/review/packet-verification.log"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "sources": [
+    {
+      "authors": [
+        "Luca Dieci",
+        "Luciano Lopez"
+      ],
+      "year": 2009,
+      "title": "Sliding Motion in Filippov Differential Systems: Theoretical Results and a Computational Approach",
+      "doi": "10.1137/080724599",
+      "primary_url": "https://epubs.siam.org/doi/10.1137/080724599",
+      "read_url": "https://www.researchgate.net/publication/220179347_Sliding_Motion_in_Filippov_Differential_Systems_Theoretical_Results_and_a_Computational_Approach",
+      "read_locations": [
+        "Section 2.1, equations 2.6\u20132.10: crossing/strict attracting sliding",
+        "Section 3: zero-normal/higher-order caution",
+        "Sections 5.1\u20135.2: one-sided integration and root localization"
+      ],
+      "access": "Author-provided full text read; original research paper"
+    },
+    {
+      "authors": [
+        "Jorge Cortes"
+      ],
+      "year": 2008,
+      "title": "Discontinuous Dynamical Systems: A Tutorial on Solutions, Nonsmooth Analysis, and Stability",
+      "doi": "10.1109/MCS.2008.919306",
+      "primary_url": "https://arxiv.org/pdf/0901.3583",
+      "read_locations": [
+        "Caratheodory/Filippov solution sections",
+        "Proposition 5: piecewise-field uniqueness"
+      ],
+      "access": "Author preprint read; mathematical exposition and solution definitions"
+    },
+    {
+      "authors": [
+        "Youbin Peng",
+        "Damir Vrancic",
+        "Raymond Hanus"
+      ],
+      "year": 1996,
+      "title": "Anti-windup, bumpless, and conditioned transfer techniques for PID controllers",
+      "doi": "10.1109/37.526915",
+      "primary_url": "https://doi.org/10.1109/37.526915",
+      "read_url": "https://www.researchgate.net/publication/3206463_Anti-windup_bumpless_and_conditioned_transfer_techniques_for_PID_controllers",
+      "read_locations": [
+        "Linear Feedback",
+        "Conditional Integration, equation 19"
+      ],
+      "access": "Author-uploaded original paper read; control-scheme distinction only, not source-plant tuning"
+    },
+    {
+      "authors": [
+        "Karl Johan Astrom",
+        "Lars Rundqwist"
+      ],
+      "year": 1989,
+      "title": "Integrator Windup and How to Avoid It",
+      "primary_url": "https://lup.lub.lu.se/record/8517647",
+      "pdf_url": "https://skoge.folk.ntnu.no/puublications_others/1989_Astrom-Rundqwist_anti-windup_ACC-conference.pdf",
+      "access": "Bibliography/publisher abstract verified; six-page scan located but no readable PDF text extracted; not a technical basis for the continuation proof"
+    }
+  ],
+  "full_copyright_papers_redistributed": false,
+  "verbatim_quotes_in_report": false
+}

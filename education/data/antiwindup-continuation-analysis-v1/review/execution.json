@@ -1,0 +1,15 @@
+{
+  "source_commit": "fb81ec93600d1f154eaf6dbb33ee3032c502523b",
+  "source_tree": "761d7b20f26fcfc3acaac96b2f1de32f981b9363",
+  "frozen_commit": "504585b962fc4d1a5ad359d24e902d86cc3d7c4b",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "command": "OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 python3 education/tools/check_antiwindup_continuation_analysis.py",
+  "exit_code": 0,
+  "scope": "Symbolic identities and stored-state evaluation only",
+  "continuation_implemented": false,
+  "new_trajectories": 0,
+  "new_qualified_trajectories": 0,
+  "acceptance_gains_physics_events_changed": false,
+  "render_scope": "No render changed; reviewed frozen HTML and screenshots remain hash-identical."
+}
