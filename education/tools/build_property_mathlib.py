@@ -1,4 +1,4 @@
-"""Build only the real-property proof imports from locked official source, two jobs.
+"""Build the real-property and actuator proof imports from locked official source, two jobs.
 No binary-cache dependency or changes to the existing Std-only proof bundle.
 """
 from pathlib import Path
@@ -47,10 +47,13 @@ def visit(name):
    for dep in match[1].split('--')[0].split():
     if source(dep) is not None:graph[name].add(dep);visit(dep)
   else:break
-for name in ['Mathlib.LinearAlgebra.Matrix.Determinant.Basic','Mathlib.Data.Real.Sqrt']:visit(name)
+for name in ['Mathlib.LinearAlgebra.Matrix.Determinant.Basic','Mathlib.Data.Real.Sqrt',
+             'Mathlib.Analysis.SpecialFunctions.ExpDeriv',
+             'Mathlib.Analysis.Calculus.Deriv.MeanValue',
+             'Mathlib.Tactic.Linarith','Mathlib.Tactic.FieldSimp','Mathlib.Tactic.Ring']:visit(name)
 print('SOURCE_MODULE_COUNT',len(graph),flush=True)
 # Preserve the workspace cache and no-download settings established above.
-logs=ROOT/'.tools/property-mathlib-source-logs';logs.mkdir(exist_ok=True)
+logs=ROOT/'.tools/real-mathlib-source-logs';logs.mkdir(exist_ok=True)
 def build(name):
  with (logs/(name+'.txt')).open('w') as stream:
   result=subprocess.run(['lake','--no-cache','build',name],cwd=root,env=env,stdout=stream,stderr=subprocess.STDOUT)
