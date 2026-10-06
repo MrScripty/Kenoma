@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "result": "PASS_PROPERTY_BOOK_RENDER_CAPTURE",
+  "inspector_sha256": "da83ee75403e1219ea172f863f6eaf81db36b9035fc80b555f87caaf530e38c2",
+  "html_sha256": "c97f1d11d5d8192e3e9a957eb2770239404c53c5fd480868595bb0df7d0c7f77",
+  "pdf_sha256": "2475b4dccf078c3bd6aa825c0748d7cd515c1c726cb283845cbe59944f6cffa2",
+  "build_manifest_sha256": "324028ce021c93f1c03aeaadc95b22772659118505278caf12282c07e02bbfca",
+  "browser": "151.0.7922.173",
+  "views": [
+    {
+      "name": "desktop",
+      "horizontalOverflow": false,
+      "proofCards": 53
+    },
+    {
+      "name": "mobile",
+      "horizontalOverflow": false,
+      "proofCards": 53
+    }
+  ],
+  "page_errors": [],
+  "pdf_pages": [
+    {
+      "page": 17,
+      "phrases": [
+        "Property lab 1"
+      ],
+      "image": "pdf-page-17.png"
+    },
+    {
+      "page": 20,
+      "phrases": [
+        "Property lab 2"
+      ],
+      "image": "pdf-page-20.png"
+    },
+    {
+      "page": 21,
+      "phrases": [
+        "Positive real axial stretch",
+        "KenomaProperties.isochoric_sqrt_construction"
+      ],
+      "image": "pdf-page-21.png"
+    },
+    {
+      "page": 22,
+      "phrases": [
+        "Property lab 3"
+      ],
+      "image": "pdf-page-22.png"
+    },
+    {
+      "page": 140,
+      "phrases": [
+        "KenomaProperties.isochoric_sqrt_construction"
+      ],
+      "image": "pdf-page-140.png"
+    },
+    {
+      "page": 141,
+      "phrases": [
+        "KenomaProperties.isochoric_sqrt_construction"
+      ],
+      "image": "pdf-page-141.png"
+    }
+  ],
+  "scope": "Capture and layout evidence; manual appearance review is recorded separately. No biological or browser-arithmetic refinement proof."
+}

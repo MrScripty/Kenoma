@@ -1,0 +1,26 @@
+
+> kenoma-education@0.1.0 test:python
+> python3 -m unittest discover -s tests -p 'test_*.py'
+
+....................................................
+----------------------------------------------------------------------
+Ran 52 tests in 14.512s
+
+OK
+PASS_HISTORICAL_AND_CURRENT_ENDPOINT_ARTIFACT_GATE
+REJECTED_PACKAGE changed HTML with stale browser hashes
+REJECTED_PACKAGE wrong proof source hash
+REJECTED_PACKAGE empty checked claims
+REJECTED_PACKAGE missing PDF
+REJECTED_PACKAGE missing linked app
+REJECTED_PACKAGE failed artifact status
+REJECTED_PACKAGE changed build input
+REJECTED_PACKAGE throwing anatomical worker
+REJECTED_PACKAGE throwing coupled worker
+REJECTED_PACKAGE changed anatomical subpage
+Freshly compiled 19 additional Real declarations
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
