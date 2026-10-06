@@ -1,0 +1,14 @@
+{
+  "result": "PASS_SOURCE_BOUND_MATERIAL_TANGENT_RENDER",
+  "inputs": {
+    "data/anatomical-arm-v1/audit/fixed-coefficient-acoustic-audit.json": "b12d639ade0b9a281d2bb8a0c17754a2d3f5e6a2077b8a34a3c4a1cbcabd2ed9",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-acoustic-audit-recheck.json": "6dd5953788d937ce18a9d6afffcd0b70650efeb838ce47f6d665f5a48430dcde",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-loaded-acoustic.json": "8f628b1552d408eca96614a48f18c4c418f0af5bee79f17cbcef5ab9d61e5d8a",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-loaded-acoustic-recheck.json": "eccef98c5fcbffa6c7fd1853a41c38d604af32d32214f087886ceee050e684dc"
+  },
+  "rendererSHA256": "7cb863a5b5f018f40afe21d0a22afc8d4add3e496f959abd34697823b71b1757",
+  "outputs": {
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/material-tangent-comparison.png": "60444a466a455fff4dc99a20521e949978b5cedc06ee768ad577b409a79b649c",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/material-tangent-comparison.pdf": "a4e62cb0c94a41faaf9010ea616e21d13a80b482dfc25fac56ae56daee6c1ba1"
+  }
+}

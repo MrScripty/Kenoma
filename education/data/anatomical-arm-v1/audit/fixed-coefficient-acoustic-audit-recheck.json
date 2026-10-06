@@ -1,0 +1,96 @@
+{
+  "result": "PASS_INDEPENDENT_FROZEN_ACOUSTIC_REPLAY",
+  "executionReceiptSHA256": "b12d639ade0b9a281d2bb8a0c17754a2d3f5e6a2077b8a34a3c4a1cbcabd2ed9",
+  "verifierSHA256": "8ec229aea6879f929ef67477d407f973e33f517453f6e1ceec08882061067032",
+  "rows": [
+    {
+      "name": "prism-full",
+      "minimumEigenvaluePa": 999.999999999759,
+      "relativeEigenvalueDifference": 1.9508661353034013e-13,
+      "stressProbes": [
+        {
+          "step": 1e-06,
+          "relativeFullAcousticMatrixError": 8.848044295903452e-11,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": 999.9999894961827
+        },
+        {
+          "step": 5e-07,
+          "relativeFullAcousticMatrixError": 2.418176524354131e-10,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": 999.9998410866392
+        }
+      ]
+    },
+    {
+      "name": "taper-affine-full",
+      "minimumEigenvaluePa": -26501752.131262265,
+      "relativeEigenvalueDifference": 1.1245415865368236e-15,
+      "stressProbes": [
+        {
+          "step": 1e-06,
+          "relativeFullAcousticMatrixError": 1.2956464662296453e-10,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": -26501752.130264904
+        },
+        {
+          "step": 5e-07,
+          "relativeFullAcousticMatrixError": 1.285566073869436e-10,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": -26501752.13337364
+        }
+      ]
+    },
+    {
+      "name": "original-fit-frozen",
+      "minimumEigenvaluePa": 641.047666937993,
+      "relativeEigenvalueDifference": 1.720250119881246e-14,
+      "stressProbes": [
+        {
+          "step": 1e-06,
+          "relativeFullAcousticMatrixError": 4.841389441477734e-10,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": 641.0476478828219
+        },
+        {
+          "step": 5e-07,
+          "relativeFullAcousticMatrixError": 2.55482305266768e-09,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": 641.0476831508275
+        }
+      ]
+    },
+    {
+      "name": "quadratic-original-rejected",
+      "minimumEigenvaluePa": -162779.64188929947,
+      "relativeEigenvalueDifference": 1.0727568921619633e-15,
+      "stressProbes": [
+        {
+          "step": 1e-06,
+          "relativeFullAcousticMatrixError": 1.3558717745882823e-10,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": -162779.64189607848
+        },
+        {
+          "step": 5e-07,
+          "relativeFullAcousticMatrixError": 1.4097763049879588e-10,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": -162779.64174434348
+        }
+      ]
+    },
+    {
+      "name": "quadratic-current-reduced-accepted",
+      "minimumEigenvaluePa": -163549.42308542464,
+      "relativeEigenvalueDifference": 3.5590257559676355e-15,
+      "stressProbes": [
+        {
+          "step": 1e-06,
+          "relativeFullAcousticMatrixError": 3.043285185740739e-11,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": -163549.42305490444
+        },
+        {
+          "step": 5e-07,
+          "relativeFullAcousticMatrixError": 1.972634136729059e-10,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": -163549.42308693624
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Independent stress and NumPy replay at saved worst points, not a repeated complete directional scan.",
+    "Finite tested directions and snapshots cannot establish strong ellipticity everywhere, global stability or envelope credibility."
+  ]
+}

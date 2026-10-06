@@ -1,0 +1,164 @@
+{
+  "result": "PASS_INDEPENDENT_FROZEN_ACOUSTIC_REPLAY",
+  "executionReceiptSHA256": "8f628b1552d408eca96614a48f18c4c418f0af5bee79f17cbcef5ab9d61e5d8a",
+  "verifierSHA256": "8ec229aea6879f929ef67477d407f973e33f517453f6e1ceec08882061067032",
+  "rows": [
+    {
+      "name": "FJ1486-step-7",
+      "minimumEigenvaluePa": -8356.430817216147,
+      "relativeEigenvalueDifference": 1.7414031835681089e-15,
+      "stressProbes": [
+        {
+          "step": 1e-06,
+          "relativeFullAcousticMatrixError": 6.633792584026211e-11,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": -8356.430809728483
+        },
+        {
+          "step": 5e-07,
+          "relativeFullAcousticMatrixError": 1.4359622228413427e-10,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": -8356.430824720293
+        }
+      ]
+    },
+    {
+      "name": "FJ1512-step-7",
+      "minimumEigenvaluePa": -729733.2569912083,
+      "relativeEigenvalueDifference": 6.381253462775227e-16,
+      "stressProbes": [
+        {
+          "step": 1e-06,
+          "relativeFullAcousticMatrixError": 8.427225457609373e-11,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": -729733.2569789917
+        },
+        {
+          "step": 5e-07,
+          "relativeFullAcousticMatrixError": 2.8167050965455766e-10,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": -729733.2570874491
+        }
+      ]
+    },
+    {
+      "name": "FJ1478-step-7",
+      "minimumEigenvaluePa": 979.1728340287397,
+      "relativeEigenvalueDifference": 1.993522426116301e-13,
+      "stressProbes": [
+        {
+          "step": 1e-06,
+          "relativeFullAcousticMatrixError": 1.179430402952018e-10,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": 979.1728336516618
+        },
+        {
+          "step": 5e-07,
+          "relativeFullAcousticMatrixError": 4.891207192697712e-10,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": 979.1728355049396
+        }
+      ]
+    },
+    {
+      "name": "FJ1486-step-10",
+      "minimumEigenvaluePa": -398.76420257384905,
+      "relativeEigenvalueDifference": 2.8509790243912836e-16,
+      "stressProbes": [
+        {
+          "step": 1e-06,
+          "relativeFullAcousticMatrixError": 8.128791904883263e-11,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": -398.76419681702544
+        },
+        {
+          "step": 5e-07,
+          "relativeFullAcousticMatrixError": 5.698622871516287e-10,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": -398.7641937279277
+        }
+      ]
+    },
+    {
+      "name": "FJ1512-step-10",
+      "minimumEigenvaluePa": -728836.0739679848,
+      "relativeEigenvalueDifference": 6.389108661602748e-16,
+      "stressProbes": [
+        {
+          "step": 1e-06,
+          "relativeFullAcousticMatrixError": 9.165315013837886e-11,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": -728836.0739245327
+        },
+        {
+          "step": 5e-07,
+          "relativeFullAcousticMatrixError": 1.3620908723016165e-10,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": -728836.0738096938
+        }
+      ]
+    },
+    {
+      "name": "FJ1478-step-10",
+      "minimumEigenvaluePa": 978.9865930918113,
+      "relativeEigenvalueDifference": 5.318619483036889e-14,
+      "stressProbes": [
+        {
+          "step": 1e-06,
+          "relativeFullAcousticMatrixError": 5.896284278123566e-11,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": 978.9865932284557
+        },
+        {
+          "step": 5e-07,
+          "relativeFullAcousticMatrixError": 3.273929505300392e-10,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": 978.986593429901
+        }
+      ]
+    },
+    {
+      "name": "FJ1486-step-30",
+      "minimumEigenvaluePa": 996.4710716872095,
+      "relativeEigenvalueDifference": 1.9395206706754616e-15,
+      "stressProbes": [
+        {
+          "step": 1e-06,
+          "relativeFullAcousticMatrixError": 8.74975963994661e-11,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": 996.4710717022175
+        },
+        {
+          "step": 5e-07,
+          "relativeFullAcousticMatrixError": 2.4569366298905305e-10,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": 996.4710716839624
+        }
+      ]
+    },
+    {
+      "name": "FJ1512-step-30",
+      "minimumEigenvaluePa": 993.5130439163725,
+      "relativeEigenvalueDifference": 4.5428366393225357e-14,
+      "stressProbes": [
+        {
+          "step": 1e-06,
+          "relativeFullAcousticMatrixError": 9.087736138346877e-11,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": 993.5130440417037
+        },
+        {
+          "step": 5e-07,
+          "relativeFullAcousticMatrixError": 3.323341153953113e-10,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": 993.5130439034147
+        }
+      ]
+    },
+    {
+      "name": "FJ1478-step-30",
+      "minimumEigenvaluePa": 987.2643702601767,
+      "relativeEigenvalueDifference": 8.175890593628495e-15,
+      "stressProbes": [
+        {
+          "step": 1e-06,
+          "relativeFullAcousticMatrixError": 1.0115186854578347e-10,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": 987.2643700286895
+        },
+        {
+          "step": 5e-07,
+          "relativeFullAcousticMatrixError": 1.5298624433523354e-10,
+          "minimumSymmetricFiniteDifferenceEigenvaluePa": 987.2643703012579
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Independent stress and NumPy replay at saved worst points, not a repeated complete directional scan.",
+    "Finite tested directions and snapshots cannot establish strong ellipticity everywhere, global stability or envelope credibility."
+  ]
+}

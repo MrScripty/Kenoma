@@ -1,0 +1,28 @@
+{
+  "result": "PASS_SOURCE_BOUND_FROZEN_MATERIAL_DIAGNOSIS",
+  "verifiedPriorControlManifestBindings": 85,
+  "sha256": {
+    "data/anatomical-arm-v1/audit/fixed-coefficient-acoustic-audit-recheck.json": "6dd5953788d937ce18a9d6afffcd0b70650efeb838ce47f6d665f5a48430dcde",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-acoustic-audit.json": "b12d639ade0b9a281d2bb8a0c17754a2d3f5e6a2077b8a34a3c4a1cbcabd2ed9",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-loaded-acoustic-recheck.json": "eccef98c5fcbffa6c7fd1853a41c38d604af32d32214f087886ceee050e684dc",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-loaded-acoustic.json": "8f628b1552d408eca96614a48f18c4c418f0af5bee79f17cbcef5ab9d61e5d8a",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/acoustic-execution.txt": "b9a4cb05f8346b3286e02773b2fc0d380bf82b2f450a00d57befbb8e6660f655",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/acoustic-fresh-replay.txt": "6dd5953788d937ce18a9d6afffcd0b70650efeb838ce47f6d665f5a48430dcde",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/acoustic-render-execution.txt": "38b33c42f0cccfea82bc43d3ebbb97d6faec139f1455b4330c9a9f6bb10b6ae3",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/acoustic-render-receipt.json": "c724f5cff0d4c3ee2ece9c71500ea5ae964106aad4e0934476b56ebf773856e0",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/acoustic-tests.txt": "04ade0a30d7ef131ab00dab2c365bbc61003cd891fe1e582afffd88778950896",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/loaded-acoustic-execution.txt": "328dba97d3e0bc513577e9b9db4d227f1dee69a94c891b32e4da787f0ceaa84c",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/loaded-acoustic-fresh-replay.txt": "eccef98c5fcbffa6c7fd1853a41c38d604af32d32214f087886ceee050e684dc",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/material-tangent-comparison.pdf": "a4e62cb0c94a41faaf9010ea616e21d13a80b482dfc25fac56ae56daee6c1ba1",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/material-tangent-comparison.png": "60444a466a455fff4dc99a20521e949978b5cedc06ee768ad577b409a79b649c",
+    "research/fixed-coefficient-acoustic-protocol.md": "088099379ce410efad63efe2cb6e8c844654b68e252e7c0838e9b6b6a063f743",
+    "research/fixed-coefficient-loaded-acoustic-protocol.md": "ea7b9f07921a95b48f38de1b4c3d267e4f54fef12cbcad0424902fe406aae047",
+    "research/fixed-coefficient-material-tangent-results.md": "79f8a4de3e164ecb94319b71b3836a6b1ea8f201657dd2a24be559a116171adb",
+    "tests/fixed-coefficient-acoustic.test.mjs": "bbe5158f2b8401700dab4e112d92e539cf46caf4fe0ef98fea88a1df056fc420",
+    "tools/fixed-coefficient-acoustic-audit.mjs": "734dd029888fab92f7cd003b4fd4771898217bf2e531e65636e5650e32b0bf50",
+    "tools/fixed-coefficient-acoustic.mjs": "e44b4616308f7a0ea0630c225a5a7502383927aba338005a2b7caf496737b52d",
+    "tools/fixed-coefficient-loaded-acoustic.mjs": "08d82ce7840c93e0b7aea8b9ce678e46dc56bc0debb887234ebea5826ffc69a0",
+    "tools/material_tangent_figure.py": "7cb863a5b5f018f40afe21d0a22afc8d4add3e496f959abd34697823b71b1757",
+    "tools/verify_fixed_coefficient_acoustic.py": "8ec229aea6879f929ef67477d407f973e33f517453f6e1ceec08882061067032"
+  }
+}

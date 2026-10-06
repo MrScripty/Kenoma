@@ -1,0 +1,826 @@
+{
+  "schema": 1,
+  "result": "PASS_SOURCE_BOUND_FROZEN_RANK_ONE_DIAGNOSIS",
+  "sourceHashes": {
+    "data/anatomical-arm-v1/audit/fixed-coefficient-prism.json": "32a54bd287ec264bf33a009e0714f7bd2a6ba6e5d8409d98687d866c24f8578d",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-taper.json": "690daa5b265d408137fc3d5aed93898c8e011907dc84d0e09c08f6bd78290066",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-taper-quadratic.json": "720b23d5dff2ad396c8988f6384cb8921149fc86c8fd7e17bc5ecf102113abaf",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-taper-quadratic-current-preconditioner.json": "9c5818990e73e0e3496b48b89ee5a852e31e5d978930ffc531e458e9e828425f",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-prism-recheck.json": "2c5d855d49a665b4048ff80a2b27b37c1ed8c4b765ed87934a2b4054abfe3e72",
+    "web/anatomical-aponeurosis.mjs": "1dbebfd2ea67427ee0d962b7b234d2d40a2f2cd4616a4f1199e20b3aba7316a0",
+    "web/anatomical-apparatus.mjs": "be60e6a3ba4db34ee01a4cb531bcdd19f868645ef26e06e1e30daedbc360cb98",
+    "web/anatomical-arm-worker.mjs": "dfadf3136b8ecac0fd6275f059085636eb8953346d920ca69a4d4382fa7b39d5",
+    "web/anatomical-arm.mjs": "9ec37ec7b23bb67643fef715f4554fc8811e897a581691231e6669fdd66c7569",
+    "web/anatomical-audit.mjs": "4f45bf4ce4459096e9595cd7bb1e0bcdfb0fafe858ee5da25444940604589f14",
+    "web/anatomical-comparison.mjs": "d812405b86541f756759bede9750071117edbab81e69efcfadf96f4f195fd09f",
+    "web/anatomical-contact-differential.mjs": "76f107f5eb1c41fdf6622c428648babc5a489113a709fd337782b1b3de3cac0b",
+    "web/anatomical-contact-refinement.mjs": "29830d2f311ee74a50acfd65f0ca8c245d2b390ed66d6eafd6c9b79de7607e07",
+    "web/anatomical-contact.mjs": "2e0ce22d3880b4d681cb24d700f694ea2b3bf8fc64fc66519e8ba998813aee1e",
+    "web/anatomical-coupled-fixture.mjs": "620afbb2e801f00ec361f5f1b5d39f010acc386812dcaa7239c0ca781d0bf4b9",
+    "web/anatomical-coupled-worker.mjs": "1c54d08f5e36ca837343fc96399ac85de8e92f8fe1ebd1d73a50e5885b93c435",
+    "web/anatomical-distance.mjs": "e11826c97f160220fda68f72cbe5e73f35f9527edcf4a4d58100c467cb50940a",
+    "web/anatomical-element.mjs": "3f67a6bd31565c83d2cbea591c3cf1862a48e50cc4efa780880fda7e808d4b1f",
+    "web/anatomical-fixture.mjs": "d53b5dca829883b4e91c02e5b88f3ac745ce7510cf28aabfcbd6cb978353a30a",
+    "web/anatomical-intersections.mjs": "a083a9838ac3c7508b65b58329c741aef65a065288aff82fc886d1c2c90375df",
+    "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+    "web/anatomical-modal.mjs": "12cd671bc963aa04dd5c0e173a776049de191283d850b0b60d0fe8e63be4c9a1",
+    "web/anatomical-newton.mjs": "e0b2193bff56a3fdb9595fa0893c469b5897a31512a282ff7a9b5519b2fe93fe",
+    "web/anatomical-preconditioner.mjs": "d234cd800784a57171514139a17d0720bb1a9d4d1089afcd9e7c783cead1b0b4",
+    "web/anatomical-retraction.mjs": "f5c4ef1115bc2a385d86e232cb9a6a36f8f61cd56d823b3495284de8e9c71819",
+    "web/anatomical-routing-audit.mjs": "e6ef4473a272c985cd05012cf4cbf424c45522b535c280ad5de49222dd459d9b",
+    "web/anatomical-routing.mjs": "83e52df556739786c97e4cb8ef6a7854d0d9a5fb36ca197b6bdc0b7597d09a3e",
+    "web/anatomical-solver.mjs": "2e23ae4e594c0947d15b21cdcd0422ad27e2bc3c2ac3af40293703c208906bfb",
+    "web/anatomical-tangent.mjs": "9b35daecd9efd68908e393998271f63cbc5728a5a2c4821560010ff5786f285c",
+    "web/anatomical-transfer.mjs": "1e82dabebf5a6247af9216a70292216b194a52545abf8f3b73c93ee6e2f22431",
+    "tools/anatomical-compression-quadrature.mjs": "f12e0d80224bad5e0bfa0649e08cac2f31a0baf162e2547ae8767b7371f48dc2",
+    "tools/anatomical-dense-quadrature.mjs": "2a9279268cc9a3c206e400293add90a537d7222c62af5992e08bc6467a078210",
+    "tools/fixed-coefficient-fixtures.mjs": "283d5e95ad01b2b784f812f1dd1ef555123dd39265ba4f3a6a5a1f6f005a5cc5",
+    "tools/fixed-coefficient-control-experiment.mjs": "db36b65defb0095abd6660d652f26254d706cc82e28dfe31d4d692c2ad216e2e",
+    "data/anatomical-arm-v1/generated/arm-reference.json": "1b80c1d3d9f2eb4370cd298f58f5e9c582625574f27072f6d3a1ea898ce4c036",
+    "data/anatomical-arm-v1/audit/modal-fixed-end-results.json": "b0eeecdade262b682279d9ebeb7a8147a4525a992976a85afc0ce5e63270d8b4",
+    "data/anatomical-arm-v1/config/attachments-apparatus.json": "070fee738e73e127e334ee5cbe680cb622f100396ad0728eb9df6723c2232389",
+    "data/anatomical-arm-v1/config/apparatus-routing.json": "b8580e8158e17730b65b64d0fdbe0f1cbbafc76235b9a5f0c2b01020818cd93f",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-taper-recheck.json": "06c7fa6fc53fdafc0fd50d5829ce41b91a1e4fda969dad3136cf35f5be276489",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-taper-quadratic-recheck.json": "fe1145f5444b504e84553ced7da5b8d702ca7273bdddf0e3fda6ca872af904a7",
+    "tools/fixed-coefficient-quadratic-space.mjs": "65a57e2297d7a4f3c1a7992f7ad77fd546afab68d01e72c832a6157c0767f96f",
+    "tools/fixed-coefficient-quadratic-experiment.mjs": "b4457bfb951aec3c0b3d26290d5d43fde1680982762e0d74407d2680513cf154",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-taper-quadratic-current-preconditioner-recheck.json": "3bd6cf28a57e2d1c5c2bd2521821ed8cf3c1c4ee7c25297d2b02a439a1294e76",
+    "tools/fixed-coefficient-quadratic-current-preconditioner.mjs": "910981f52b354696b9642e0e862924c8e87eb34bd0816d49a0e941d606be8555",
+    "tools/current-newton-preconditioner.mjs": "efa43824526ddd478ed8aec32290381958d8a2963fae6f04d45be0b01e0659ad",
+    "tools/fixed-coefficient-acoustic.mjs": "e44b4616308f7a0ea0630c225a5a7502383927aba338005a2b7caf496737b52d",
+    "tools/fixed-coefficient-acoustic-audit.mjs": "734dd029888fab92f7cd003b4fd4771898217bf2e531e65636e5650e32b0bf50",
+    "research/fixed-coefficient-acoustic-protocol.md": "088099379ce410efad63efe2cb6e8c844654b68e252e7c0838e9b6b6a063f743"
+  },
+  "rows": [
+    {
+      "name": "prism-full",
+      "activation": 1,
+      "reducedAccepted": true,
+      "material": {
+        "mu": 1000,
+        "bulk": 1000000,
+        "kf": 20000,
+        "b": 6,
+        "sigma0": 8708387.370104775,
+        "optimumStretch": 1,
+        "activeWidth": 0.5
+      },
+      "pointCount": 64512,
+      "directionCount": 13,
+      "directions": [
+        [
+          0.2318675649701817,
+          -0.03576198994377842,
+          0.9720897656029818
+        ],
+        [
+          0,
+          0.9993239792067792,
+          0.03676390325208445
+        ],
+        [
+          -0.9727473630469521,
+          -0.008524356725860166,
+          0.23171081767498838
+        ],
+        [
+          0.16395512752762786,
+          -0.7319163078974088,
+          0.6613752598874748
+        ],
+        [
+          0.16395512752762786,
+          0.6813412167014671,
+          0.7133672704723449
+        ],
+        [
+          0.85179138431946,
+          -0.019259915151861953,
+          0.5235269747276458
+        ],
+        [
+          -0.5238811292642043,
+          -0.03131517604407971,
+          0.8512155556321737
+        ],
+        [
+          0.6878362567918322,
+          0.7126563927455468,
+          -0.13784828515982891
+        ],
+        [
+          -0.6878362567918322,
+          0.7006011318533291,
+          0.18984029574469907
+        ],
+        [
+          0.6954847529605339,
+          -0.5926856232731353,
+          0.40623233544950654
+        ],
+        [
+          -0.42774715085677895,
+          -0.6025287025738228,
+          0.6737889413671123
+        ],
+        [
+          0.6954847529605338,
+          0.5612343135322284,
+          0.44868363432761116
+        ],
+        [
+          -0.42774715085677895,
+          0.551391234231541,
+          0.7162402402452169
+        ]
+      ],
+      "referenceVolumeFractionWithNegativeWitness": 0,
+      "referenceVolumeFractionJAboveE": 0,
+      "minimumIntegrationJ": 0.9999999999995737,
+      "maximumIntegrationJ": 1.0000000000004832,
+      "worst": {
+        "element": 209,
+        "point": 62,
+        "direction": 8,
+        "F": [
+          0.999999999999929,
+          4.973799150320701e-14,
+          -3.552713678800501e-15,
+          -4.263256414560601e-14,
+          1.0000000000000213,
+          -3.552713678800501e-15,
+          -6.821210263296962e-13,
+          2.2737367544323206e-13,
+          1.0000000000004263
+        ],
+        "fibre": [
+          0.2318675649701817,
+          -0.03576198994377842,
+          0.9720897656029818
+        ],
+        "m": [
+          -0.6878362567918322,
+          0.7006011318533291,
+          0.18984029574469907
+        ],
+        "Q": [
+          474276.42239578813,
+          -482059.49299118563,
+          -130622.56475929987,
+          -482059.4929911857,
+          492005.55993593193,
+          133046.6601786853,
+          -130622.56475929983,
+          133046.66017868527,
+          37051.35100101956
+        ],
+        "polarization": [
+          0.7135775512935771,
+          0.7005762473063601,
+          0
+        ],
+        "minimumEigenvaluePa": 999.9999999995639,
+        "relativeEigenResidual": 5.313847328655446e-14,
+        "referenceWeightM3": 1.4879281440598225e-10,
+        "J": 1.0000000000003766,
+        "stretch": 1.0000000000002367,
+        "rayleighPartsPa": {
+          "matrix": 999.9999999996141,
+          "volume": -4.0778904647238095e-11,
+          "passiveFiber": 3.0372035370546985e-31,
+          "active": 6.57645187675042e-27
+        },
+        "rayleighSumPa": 999.9999999995733,
+        "stressFiniteDifferences": [
+          {
+            "step": 0.000001,
+            "relativeVectorError": 1.8195559823390697e-8,
+            "rayleighPa": 999.9999845914338
+          },
+          {
+            "step": 5e-7,
+            "relativeVectorError": 3.693107603207889e-8,
+            "rayleighPa": 1000.0000035858993
+          }
+        ]
+      }
+    },
+    {
+      "name": "taper-affine-full",
+      "activation": 1,
+      "reducedAccepted": true,
+      "material": {
+        "mu": 1000,
+        "bulk": 1000000,
+        "kf": 20000,
+        "b": 6,
+        "sigma0": 8708387.370104775,
+        "optimumStretch": 1,
+        "activeWidth": 0.5
+      },
+      "pointCount": 64512,
+      "directionCount": 13,
+      "directions": [
+        [
+          0.2318675649701817,
+          -0.03576198994377842,
+          0.9720897656029818
+        ],
+        [
+          0,
+          0.9993239792067792,
+          0.03676390325208445
+        ],
+        [
+          -0.9727473630469521,
+          -0.008524356725860166,
+          0.23171081767498838
+        ],
+        [
+          0.16395512752762786,
+          -0.7319163078974088,
+          0.6613752598874748
+        ],
+        [
+          0.16395512752762786,
+          0.6813412167014671,
+          0.7133672704723449
+        ],
+        [
+          0.85179138431946,
+          -0.019259915151861953,
+          0.5235269747276458
+        ],
+        [
+          -0.5238811292642043,
+          -0.03131517604407971,
+          0.8512155556321737
+        ],
+        [
+          0.6878362567918322,
+          0.7126563927455468,
+          -0.13784828515982891
+        ],
+        [
+          -0.6878362567918322,
+          0.7006011318533291,
+          0.18984029574469907
+        ],
+        [
+          0.6954847529605339,
+          -0.5926856232731353,
+          0.40623233544950654
+        ],
+        [
+          -0.42774715085677895,
+          -0.6025287025738228,
+          0.6737889413671123
+        ],
+        [
+          0.6954847529605338,
+          0.5612343135322284,
+          0.44868363432761116
+        ],
+        [
+          -0.42774715085677895,
+          0.551391234231541,
+          0.7162402402452169
+        ]
+      ],
+      "referenceVolumeFractionWithNegativeWitness": 0.029326386881896722,
+      "referenceVolumeFractionJAboveE": 0,
+      "minimumIntegrationJ": 0.14176809354182054,
+      "maximumIntegrationJ": 2.2689642717144576,
+      "worst": {
+        "element": 210,
+        "point": 21,
+        "direction": 0,
+        "F": [
+          1.05358842543498,
+          -0.4093311484773645,
+          0.13520585023301024,
+          0.10646390782889315,
+          0.8484105923550644,
+          -0.028636212795990268,
+          -2.0819513465974566,
+          1.1580791184637818,
+          1.8040034470141606
+        ],
+        "fibre": [
+          0.2318675649701817,
+          -0.03576198994377842,
+          0.9720897656029818
+        ],
+        "m": [
+          0.2318675649701817,
+          -0.03576198994377842,
+          0.9720897656029818
+        ],
+        "Q": [
+          681551.8498648207,
+          189385.05631354294,
+          -8384287.50663975,
+          189385.05631354297,
+          2960453.27344521,
+          716360.5380545199,
+          -8384287.506639751,
+          716360.53805452,
+          -23895367.539011806
+        ],
+        "polarization": [
+          0.29480106477993534,
+          -0.025120958418934223,
+          0.9552283861217328
+        ],
+        "minimumEigenvaluePa": -26501752.131262235,
+        "relativeEigenResidual": 4.455763575626169e-16,
+        "referenceWeightM3": 1.7113792513216956e-10,
+        "J": 1.957198255213159,
+        "stretch": 1.290417944684822,
+        "rayleighPartsPa": {
+          "matrix": 2085.9058883323087,
+          "volume": 193379.02251452903,
+          "passiveFiber": 114226.22720795286,
+          "active": -26811443.286873054
+        },
+        "rayleighSumPa": -26501752.13126224,
+        "stressFiniteDifferences": [
+          {
+            "step": 0.000001,
+            "relativeVectorError": 5.118836285027421e-11,
+            "rayleighPa": -26501752.12992856
+          },
+          {
+            "step": 5e-7,
+            "relativeVectorError": 1.2204269106858303e-10,
+            "rayleighPa": -26501752.128028743
+          }
+        ]
+      }
+    },
+    {
+      "name": "original-fit-frozen",
+      "activation": 1,
+      "reducedAccepted": false,
+      "material": {
+        "mu": 1000,
+        "bulk": 1000000,
+        "kf": 20000,
+        "b": 6,
+        "sigma0": 8708387.370104775,
+        "optimumStretch": 1,
+        "activeWidth": 0.5
+      },
+      "pointCount": 64512,
+      "directionCount": 13,
+      "directions": [
+        [
+          0.2318675649701817,
+          -0.03576198994377842,
+          0.9720897656029818
+        ],
+        [
+          0,
+          0.9993239792067792,
+          0.03676390325208445
+        ],
+        [
+          -0.9727473630469521,
+          -0.008524356725860166,
+          0.23171081767498838
+        ],
+        [
+          0.16395512752762786,
+          -0.7319163078974088,
+          0.6613752598874748
+        ],
+        [
+          0.16395512752762786,
+          0.6813412167014671,
+          0.7133672704723449
+        ],
+        [
+          0.85179138431946,
+          -0.019259915151861953,
+          0.5235269747276458
+        ],
+        [
+          -0.5238811292642043,
+          -0.03131517604407971,
+          0.8512155556321737
+        ],
+        [
+          0.6878362567918322,
+          0.7126563927455468,
+          -0.13784828515982891
+        ],
+        [
+          -0.6878362567918322,
+          0.7006011318533291,
+          0.18984029574469907
+        ],
+        [
+          0.6954847529605339,
+          -0.5926856232731353,
+          0.40623233544950654
+        ],
+        [
+          -0.42774715085677895,
+          -0.6025287025738228,
+          0.6737889413671123
+        ],
+        [
+          0.6954847529605338,
+          0.5612343135322284,
+          0.44868363432761116
+        ],
+        [
+          -0.42774715085677895,
+          0.551391234231541,
+          0.7162402402452169
+        ]
+      ],
+      "referenceVolumeFractionWithNegativeWitness": 0,
+      "referenceVolumeFractionJAboveE": 0,
+      "minimumIntegrationJ": 0.6270242097402776,
+      "maximumIntegrationJ": 2.249265470392601,
+      "worst": {
+        "element": 8,
+        "point": 67,
+        "direction": 1,
+        "F": [
+          0.17636722867769095,
+          -0.7310968914378684,
+          0.8888650505558466,
+          1.1152359804595235,
+          0.36275442191394447,
+          -0.5019547281330698,
+          0.20498476890594475,
+          0.8665510904456823,
+          1.3926762741439518
+        ],
+        "fibre": [
+          0.3366299975565043,
+          -0.012997010589679416,
+          0.9415473022959812
+        ],
+        "m": [
+          0,
+          0.9993239792067792,
+          0.03676390325208445
+        ],
+        "Q": [
+          127490.65644112241,
+          -3999.865070208274,
+          -86512.53131159513,
+          -3999.865070208277,
+          767.982659919209,
+          2706.102630781288,
+          -86512.53131159513,
+          2706.1026307812886,
+          60232.29612170087
+        ],
+        "polarization": [
+          0.05669270665621174,
+          0.9977059248211877,
+          0.036997629500975605
+        ],
+        "minimumEigenvaluePa": 641.047666938004,
+        "relativeEigenResidual": 1.1774721980895477e-15,
+        "referenceWeightM3": 5.76718720542863e-10,
+        "J": 2.1694641149686467,
+        "stretch": 1.644693990716064,
+        "rayleighPartsPa": {
+          "matrix": 596.5540152260799,
+          "volume": 0.07899942876120569,
+          "passiveFiber": 44.41465228316305,
+          "active": 0
+        },
+        "rayleighSumPa": 641.0476669380041,
+        "stressFiniteDifferences": [
+          {
+            "step": 0.000001,
+            "relativeVectorError": 1.45346336688661e-7,
+            "rayleighPa": 641.0476610857646
+          },
+          {
+            "step": 5e-7,
+            "relativeVectorError": 2.1587398075595843e-7,
+            "rayleighPa": 641.0476702920627
+          }
+        ]
+      }
+    },
+    {
+      "name": "quadratic-original-rejected",
+      "activation": 0.01,
+      "reducedAccepted": false,
+      "material": {
+        "mu": 1000,
+        "bulk": 1000000,
+        "kf": 20000,
+        "b": 6,
+        "sigma0": 8708387.370104775,
+        "optimumStretch": 1,
+        "activeWidth": 0.5
+      },
+      "pointCount": 64512,
+      "directionCount": 13,
+      "directions": [
+        [
+          0.2318675649701817,
+          -0.03576198994377842,
+          0.9720897656029818
+        ],
+        [
+          0,
+          0.9993239792067792,
+          0.03676390325208445
+        ],
+        [
+          -0.9727473630469521,
+          -0.008524356725860166,
+          0.23171081767498838
+        ],
+        [
+          0.16395512752762786,
+          -0.7319163078974088,
+          0.6613752598874748
+        ],
+        [
+          0.16395512752762786,
+          0.6813412167014671,
+          0.7133672704723449
+        ],
+        [
+          0.85179138431946,
+          -0.019259915151861953,
+          0.5235269747276458
+        ],
+        [
+          -0.5238811292642043,
+          -0.03131517604407971,
+          0.8512155556321737
+        ],
+        [
+          0.6878362567918322,
+          0.7126563927455468,
+          -0.13784828515982891
+        ],
+        [
+          -0.6878362567918322,
+          0.7006011318533291,
+          0.18984029574469907
+        ],
+        [
+          0.6954847529605339,
+          -0.5926856232731353,
+          0.40623233544950654
+        ],
+        [
+          -0.42774715085677895,
+          -0.6025287025738228,
+          0.6737889413671123
+        ],
+        [
+          0.6954847529605338,
+          0.5612343135322284,
+          0.44868363432761116
+        ],
+        [
+          -0.42774715085677895,
+          0.551391234231541,
+          0.7162402402452169
+        ]
+      ],
+      "referenceVolumeFractionWithNegativeWitness": 0.12807729402750256,
+      "referenceVolumeFractionJAboveE": 0,
+      "minimumIntegrationJ": 0.34009553847507457,
+      "maximumIntegrationJ": 2.3714213195073968,
+      "worst": {
+        "element": 76,
+        "point": 3,
+        "direction": 0,
+        "F": [
+          -1.2246310426909304,
+          0.8239284163061598,
+          1.0086112148945148,
+          1.6969775973327756,
+          0.5048726124713312,
+          -0.6137424604724444,
+          -2.2817045737933768,
+          2.6506970926245685,
+          1.7164787102690298
+        ],
+        "fibre": [
+          0.2318675649701817,
+          -0.03576198994377842,
+          0.9720897656029818
+        ],
+        "m": [
+          0.2318675649701817,
+          -0.03576198994377842,
+          0.9720897656029818
+        ],
+        "Q": [
+          12897958.75718479,
+          3421067.4566125064,
+          -4798646.820961569,
+          3421067.456612507,
+          936869.0760352348,
+          -1207457.5638409697,
+          -4798646.820961569,
+          -1207457.5638409697,
+          1612317.9232627982
+        ],
+        "polarization": [
+          0.3863556288675154,
+          -0.21785233076154562,
+          0.8962531394779875
+        ],
+        "minimumEigenvaluePa": -162779.6418892993,
+        "relativeEigenResidual": 1.7769714578908018e-14,
+        "referenceWeightM3": 1.2872270406821705e-10,
+        "J": 1.3990959530049274,
+        "stretch": 1.2590954262967629,
+        "rayleighPartsPa": {
+          "matrix": 785.1991702303608,
+          "volume": 91.59209012697102,
+          "passiveFiber": 92406.68209394393,
+          "active": -256063.11524360022
+        },
+        "rayleighSumPa": -162779.64188929895,
+        "stressFiniteDifferences": [
+          {
+            "step": 0.000001,
+            "relativeVectorError": 4.055861402307224e-9,
+            "rayleighPa": -162779.64183753365
+          },
+          {
+            "step": 5e-7,
+            "relativeVectorError": 9.084812626951462e-9,
+            "rayleighPa": -162779.64192715488
+          }
+        ]
+      }
+    },
+    {
+      "name": "quadratic-current-reduced-accepted",
+      "activation": 0.01,
+      "reducedAccepted": true,
+      "material": {
+        "mu": 1000,
+        "bulk": 1000000,
+        "kf": 20000,
+        "b": 6,
+        "sigma0": 8708387.370104775,
+        "optimumStretch": 1,
+        "activeWidth": 0.5
+      },
+      "pointCount": 64512,
+      "directionCount": 13,
+      "directions": [
+        [
+          0.2318675649701817,
+          -0.03576198994377842,
+          0.9720897656029818
+        ],
+        [
+          0,
+          0.9993239792067792,
+          0.03676390325208445
+        ],
+        [
+          -0.9727473630469521,
+          -0.008524356725860166,
+          0.23171081767498838
+        ],
+        [
+          0.16395512752762786,
+          -0.7319163078974088,
+          0.6613752598874748
+        ],
+        [
+          0.16395512752762786,
+          0.6813412167014671,
+          0.7133672704723449
+        ],
+        [
+          0.85179138431946,
+          -0.019259915151861953,
+          0.5235269747276458
+        ],
+        [
+          -0.5238811292642043,
+          -0.03131517604407971,
+          0.8512155556321737
+        ],
+        [
+          0.6878362567918322,
+          0.7126563927455468,
+          -0.13784828515982891
+        ],
+        [
+          -0.6878362567918322,
+          0.7006011318533291,
+          0.18984029574469907
+        ],
+        [
+          0.6954847529605339,
+          -0.5926856232731353,
+          0.40623233544950654
+        ],
+        [
+          -0.42774715085677895,
+          -0.6025287025738228,
+          0.6737889413671123
+        ],
+        [
+          0.6954847529605338,
+          0.5612343135322284,
+          0.44868363432761116
+        ],
+        [
+          -0.42774715085677895,
+          0.551391234231541,
+          0.7162402402452169
+        ]
+      ],
+      "referenceVolumeFractionWithNegativeWitness": 0.12745213815885006,
+      "referenceVolumeFractionJAboveE": 0,
+      "minimumIntegrationJ": 0.33400135678844145,
+      "maximumIntegrationJ": 2.4012876926913886,
+      "worst": {
+        "element": 76,
+        "point": 3,
+        "direction": 0,
+        "F": [
+          -1.2293396620763133,
+          0.8097480642005053,
+          1.007896699541817,
+          1.6740207161527536,
+          0.5174369220233928,
+          -0.5993114145183966,
+          -2.2711405025052045,
+          2.6426391570151964,
+          1.7126099442999703
+        ],
+        "fibre": [
+          0.2318675649701817,
+          -0.03576198994377842,
+          0.9720897656029818
+        ],
+        "m": [
+          0.2318675649701817,
+          -0.03576198994377842,
+          0.9720897656029818
+        ],
+        "Q": [
+          13037046.851660991,
+          3589258.1757206134,
+          -4836730.546841246,
+          3589258.1757206134,
+          1018409.8923066829,
+          -1266175.2466710475,
+          -4836730.546841245,
+          -1266175.2466710475,
+          1620264.0948451026
+        ],
+        "polarization": [
+          0.3866983040445587,
+          -0.2131137663549298,
+          0.8972440828665735
+        ],
+        "minimumEigenvaluePa": -163549.42308542406,
+        "relativeEigenResidual": 7.28853913395007e-15,
+        "referenceWeightM3": 1.2872270406821705e-10,
+        "J": 1.3874954851926233,
+        "stretch": 1.2561430465701586,
+        "rayleighPartsPa": {
+          "matrix": 789.675480824068,
+          "volume": 91.58413856636435,
+          "passiveFiber": 90777.83883013911,
+          "active": -255208.5215349537
+        },
+        "rayleighSumPa": -163549.42308542418,
+        "stressFiniteDifferences": [
+          {
+            "step": 0.000001,
+            "relativeVectorError": 2.200303275518846e-8,
+            "rayleighPa": -163549.42304981055
+          },
+          {
+            "step": 5e-7,
+            "relativeVectorError": 3.3757876791762556e-8,
+            "rayleighPa": -163549.42332963715
+          }
+        ]
+      }
+    }
+  ],
+  "limits": [
+    "Finite thirteen-direction scan cannot prove positivity in all directions. A negative verified rank-one direction witnesses local curvature of the fixed-activation solve potential.",
+    "A frozen failed state stays rejected; reduced acceptance does not qualify full nodal equilibrium, global constrained stability or tissue credibility.",
+    "No optimizer, coefficient change, state advancement or loaded trajectory rerun."
+  ]
+}
