@@ -25,7 +25,7 @@ LABS={
   'description':'A rigid bar extends from a fixed pivot to a load. The yellow arrow points downward. The white projection marks the horizontal distance to the gravity line. This is a posed lever, not an active arm.',
   'caption':'Default: m = 5 kg, L = 0.30 m, θ = 0°. Torque about z is -14.715 N m. Original schematic geometry; no anatomical measurements.',
   'controls':[('mass','Point-load mass (kg)',1,10,0.5,5),('length','Lever length (m)',0.1,0.4,0.01,0.3),('angle','Angle from horizontal (°)',0,150,1,0)]},
- 'energy':{'title':'Laboratory 3 · Numerical energy','model':'Ideal undamped linear spring; fixed physics steps; 600-step playback limit.',
+ 'energy':{'title':'Laboratory 3 · Numerical energy','model':'Ideal undamped linear spring; fixed physics steps; 12 simulated seconds per trajectory; 120–2,400 fixed steps for the supported h.',
   'description':'A spring connects a wall to a mass marker. Extension is visually exaggerated and fitted to the view. The energy chart shows a solid numerical trace and a dashed initial-energy reference. Read numeric values when the chart rescales.',
   'caption':'Initial state: m = 1 kg, k = 40 N/m, x = 0.20 m, v = 0 m/s, E = 0.80 J. Default symplectic Euler step h = 0.02 s. Original schematic geometry.',
   'controls':[]},
@@ -79,10 +79,11 @@ def lab_block(key,web):
             controls+=f'<div class="control"><label for="series-{param}">{label}</label><select id="series-{param}" data-param="{param}">'+''.join(f'<option value="{value}"'+(' selected' if value in ['compliant',30000,'on',50000] else '')+f'>{text}</option>' for value,text in options)+'</select></div>'
     notice='Static reference diagram. Step, Play or Pulse starts live 3D; if unavailable, the display is explicitly numerical-only.' if key!='torque' else 'Static reference diagram. Start interactive 3D to view current results; numerical controls also work without 3D.'
     temporal='<button data-action="play">Play</button><button data-action="step">Single step</button>' if key!='torque' else ''
+    if key=='energy':temporal+='<button data-action="run">Run to 12 s</button><button data-action="export">Download trace</button>'
     if key in ['elbow','series']:temporal+='<button data-action="pulse">Pulse current state / release</button><button data-action="release">Release excitation</button><button data-action="export">Download trace</button>'
     chart=''
     if key=='energy':
-        chart='<svg class="energy-chart" viewBox="0 0 580 205" role="img" aria-label="Energy versus step number"><title>Energy versus step number</title><text class="scale" x="40" y="20" font-size="13">Energy range 0 to 0.96 J</text><path d="M40 30V160H540" fill="none" stroke="#456171"/><line class="reference" x1="40" x2="540" y1="52" y2="52" stroke="#754d1f" stroke-dasharray="5 4"/><polyline class="trace" fill="none" stroke="#087567" stroke-width="2" points="40,52"/><text x="40" y="185" font-size="13">0</text><text x="435" y="185" font-size="13">600 steps</text><text x="195" y="201" font-size="12">Solid: numerical energy · Dashed: initial 0.80 J</text></svg>'
+        chart='<svg class="energy-chart" viewBox="0 0 580 205" role="img" aria-label="Energy versus simulated time"><title>Energy versus simulated time</title><text class="scale" x="40" y="20" font-size="13">Energy range 0 to 0.96 J</text><path d="M40 30V160H540" fill="none" stroke="#456171"/><line class="reference" x1="40" x2="540" y1="52" y2="52" stroke="#754d1f" stroke-dasharray="5 4"/><polyline class="trace" fill="none" stroke="#087567" stroke-width="2" points="40,52"/><text x="40" y="185" font-size="13">0</text><text x="435" y="185" font-size="13">12 s</text><text x="195" y="201" font-size="12">Solid: numerical energy · Dashed: initial 0.80 J</text></svg>'
     return f'''\n<section class="laboratory" data-demo="{key}" id="lab-{key}" aria-labelledby="lab-{key}-heading">
 <div class="lab-heading"><h3 id="lab-{key}-heading">{e(lab['title'])}</h3><p class="model-label">{e(lab['model'])}</p></div>
 <div class="actions scene-toolbar"><button type="button" data-action="start">Start interactive 3D</button><p class="scene-notice" role="status">{notice}</p></div><figure class="static-figure"><img src="assets/{key}.svg" alt="{e(lab['description'])}"><figcaption>{e(lab['caption'])}</figcaption></figure>
