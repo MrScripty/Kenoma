@@ -51,8 +51,14 @@ export function createVerticalForceLab(P, controls) {
     const tau=u>a?.01*(.5+1.5*a):.04/(.5+1.5*a),adot=phase.mode==='fixed'?0:(u-Math.max(amin,Math.min(1,a)))/tau;
     return {FT,s,v,u,uraw,e,Idot,adot,lfdot,FA,FP,FD,residual,saturated:uraw>=1||uraw<=amin,Pactive:-FA*lfdot,D:FD*lfdot,loadPower:FT*w,fiberPower:FP*lfdot,tendonPower:FT*(-w-lfdot),acceleration:(FT-cfg.m*g)/cfg.m};
   }
-  function rhs(t,z,cfg,phase){let o;try{o=output(z,cfg,phase);}catch(e){e.stageTime=t;e.stageState=z.slice();throw e;}return [z[1],o.acceleration,o.adot,vmax*o.v,o.Idot,o.Pactive,o.D,o.loadPower,o.fiberPower,o.tendonPower,o.FT-cfg.m*g];}
-  function trialStep(t,z,h,cfg,phase){const add=(base,rate,k)=>base.map((v,i)=>v+k*rate[i]);const a=rhs(t,z,cfg,phase),b=rhs(t+h/2,add(z,a,h/2),cfg,phase),c=rhs(t+h/2,add(z,b,h/2),cfg,phase),d=rhs(t+h,add(z,c,h),cfg,phase);const next=z.map((v,i)=>v+h*(a[i]+2*b[i]+2*c[i]+d[i])/6);rhs(t+h,next,cfg,phase);return next;}
+  function rhs(t,z,cfg,phase){let o;try{o=output(z,cfg,phase);
+    if(!phase.mode&&Number.isFinite(phase.startRaw)){
+      const edot=-(F0/lt0*C.tendon.value(o.s,true)*(-z[1]-o.lfdot))/F0,df=P.kp*edot,di=df+P.ki_per_s*o.e;
+      const crossed=limit=>(phase.startRaw-limit)*(o.uraw-limit)<=0&&phase.startRaw!==o.uraw;
+      if((crossed(1)&&o.e>0&&df<0&&di>0)||(crossed(amin)&&o.e<0&&df>0&&di<0))fail('antiwindup-surface','Unqualified opposing anti-windup switching surface');
+    }
+  }catch(e){e.stageTime=t;e.stageState=z.slice();throw e;}return [z[1],o.acceleration,o.adot,vmax*o.v,o.Idot,o.Pactive,o.D,o.loadPower,o.fiberPower,o.tendonPower,o.FT-cfg.m*g];}
+  function trialStep(t,z,h,cfg,phase){phase={...phase,startRaw:output(z,cfg,phase).uraw};const add=(base,rate,k)=>base.map((v,i)=>v+k*rate[i]);const a=rhs(t,z,cfg,phase),b=rhs(t+h/2,add(z,a,h/2),cfg,phase),c=rhs(t+h/2,add(z,b,h/2),cfg,phase),d=rhs(t+h,add(z,c,h),cfg,phase);const next=z.map((v,i)=>v+h*(a[i]+2*b[i]+2*c[i]+d[i])/6);rhs(t+h,next,cfg,phase);return next;}
   function storage(z,cfg){const o=output(z,cfg,{target:cfg.target});return {fiber:F0*lf0*C.passive.integral(cfg.z[3],z[3]),tendon:F0*lt0*C.tendon.integral((cfg.L0-lf0*cfg.z[3])/lt0,o.s),load:.5*cfg.m*z[1]**2+cfg.m*g*z[0]};}
   function row(t,z,cfg,phase){const o=output(z,cfg,phase),E=storage(z,cfg);return {t,z:z.slice(),target:phase.target,mode:phase.mode||'PI',...o,...E,energyError:E.fiber+E.tendon+E.load-z[5]+z[6],momentumError:cfg.m*z[1]-z[10]};}
   function run(cfg,dt=P.fine_step_s){

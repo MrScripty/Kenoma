@@ -44,7 +44,14 @@ def output(z,cfg,phase):
     return dict(FT=ft,s=s,v=v,u=u,uraw=raw,e=e,Idot=0 if frozen else 8*e,adot=0 if mode=='fixed' else activation_rhs(a,u),FA=fa,FP=fp,FD=fd,residual=residual(v),Pactive=-fa*lf_dot,D=fd*lf_dot,loadPower=ft*w,fiberPower=fp*lf_dot,tendonPower=ft*(-w-lf_dot),acceleration=(ft-cfg['m']*P['gravity_m_per_s2'])/cfg['m'])
 
 def rhs(t,z,cfg,phase):
-    try:o=output(z,cfg,phase)
+    try:
+        o=output(z,cfg,phase)
+        if phase.get('mode','PI')=='PI' and '_acceptedRaw' in phase:
+            edot=-(100/.2*C['tendon'].value(o['s'],True)*(-z[1]-o['v']))/100
+            frozen=.4*edot;integrating=frozen+8*o['e'];previous=phase['_acceptedRaw']
+            crossed=lambda limit:(previous-limit)*(o['uraw']-limit)<=0 and previous!=o['uraw']
+            if (crossed(1) and o['e']>0 and frozen<0<integrating) or (crossed(.01) and o['e']<0 and integrating<0<frozen):
+                raise TrialFailure('antiwindup-surface','Unqualified opposing anti-windup switching surface')
     except (TrialFailure,ValueError) as e:
         if not isinstance(e,TrialFailure):e=TrialFailure('velocity-root',str(e))
         e.t=float(t);e.z=list(map(float,z));raise e
@@ -90,6 +97,7 @@ def replay(cfg,method):
         crossing=False
         while solver.status=='running':
             before=t;old=z.copy();direction=phase.get('brake',0)
+            phase['_acceptedRaw']=output(old,cfg,phase)['uraw']
             if direction and z[1]*direction>1e-5:armed=True
             try:
                 solver.step()
