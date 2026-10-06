@@ -255,13 +255,13 @@
     "education/research/mechanical-closure/filippov-bounded-experiment-results.md": "8c1a70a5732e26bf762f25b8e0d1309164fb0ffe59e40a9d097b6992727f083e"
   },
   "preparation_source_sha256": {
-    "education/tools/first_sliding_segment_preflight.py": "6a953bf978453d67eff722c22c80c4a1f43cd6d49b24f7e3b20393ba79100c9c",
-    "education/tests/first_sliding_segment_preflight.py": "4cd8e17b7cbd474f9db533e10779c121cd053efb1471e2e18f6fb8878886214e",
+    "education/tools/first_sliding_segment_preflight.py": "c37919171b0d98d30252390f73b782f8d39e3324298c50c12b9a2cabb8092b46",
+    "education/tests/first_sliding_segment_preflight.py": "701d6df97e8a28157d7ecd1db328db0d523560cc182a1a0a0d3c1910bd6b6948",
     "education/research/mechanical-closure/first-sliding-segment-protocol.md": "ed35604e5d27b39381e27221ee61c3251ce152c45e3b247e45974074af80adca"
   },
-  "preparation_revision": 3,
-  "prior_preparation_commit": "d83ff665cd4b3a9a3607aa85d915f555af8d0eda",
-  "prior_preparation_tree": "8e3bb031df253ef46c64484e206512294e4a78fb",
-  "revision_reason": "Report-only lossless NumPy scalar encoding including activation-side boolean; both failed outputs and prior protocols preserved; no numerical/law/gate/budget changes",
-  "prior_protocol_sha256": "ba0acde15bffe51d7e7aecbe9241f25ac45e4856ef2feb115e3efa280c066f9a"
+  "preparation_revision": 2,
+  "prior_preparation_commit": "c166e6589482fe85f1448d37de1d16caf72a8cc0",
+  "prior_preparation_tree": "8123ce74560a776342bb75651bc2732843f30458",
+  "revision_reason": "Report-only NumPy boolean conversion; original failed output and protocol preserved; no numerical/law/gate/budget changes",
+  "prior_protocol_sha256": "27f5df3c73a165c169fba32d0c189da349684e98e87968a9e9feb5a6f6a588f0"
 }

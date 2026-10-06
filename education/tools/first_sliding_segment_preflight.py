@@ -29,6 +29,13 @@ def admissibility(c):
     return dict(prospectively_admissible=not issues, issues=issues, accepted=False)
 
 
+def json_native_scalar(value):
+    """Preserve scalar values while encoding NumPy report diagnostics."""
+    if isinstance(value, np.generic):
+        return value.item()
+    raise TypeError(f"Unsupported report value: {type(value).__name__}")
+
+
 def bitwise_I_preserved(delta):
     """Return a JSON-native boolean for binary64 coordinate custody."""
     return bool(delta == 0)
@@ -176,7 +183,7 @@ def main():
     if out.exists():
         raise ValueError('Refuse to overwrite preparation diagnosis')
     out.parent.mkdir(exist_ok=True)
-    out.write_text(json.dumps(payload,indent=2)+'\n')
+    out.write_text(json.dumps(payload,indent=2,default=json_native_scalar)+'\n')
     print('H span coarse/refined',payload['old_H_residual_span'],payload['refined_H_residual_span'],'max I handoff',payload['max_refined_I_handoff_delta'],'ZERO sliding steps',flush=True)
 
 

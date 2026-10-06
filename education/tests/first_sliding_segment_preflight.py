@@ -7,7 +7,7 @@ import sys
 import unittest
 from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
-from first_sliding_segment_preflight import admissibility, review_allows_execution, relocalize, bitwise_I_preserved
+from first_sliding_segment_preflight import admissibility, review_allows_execution, relocalize, bitwise_I_preserved, json_native_scalar
 
 
 class Checks(unittest.TestCase):
@@ -68,6 +68,13 @@ class Checks(unittest.TestCase):
             result=bitwise_I_preserved(delta)
             self.assertIs(result, expected)
             self.assertEqual(json.loads(json.dumps(dict(exact=result))), dict(exact=expected))
+
+    def test_numpy_report_scalars_preserve_values_and_reject_opaque_objects(self):
+        values=dict(side=np.bool_(True), residual=np.float64(1e-14), iterations=np.int64(29))
+        decoded=json.loads(json.dumps(values,default=json_native_scalar))
+        self.assertEqual(decoded,dict(side=True,residual=1e-14,iterations=29))
+        with self.assertRaises(TypeError):
+            json.dumps(object(),default=json_native_scalar)
 
     def auxiliary(self):
         return dict(start=0.,trialEnd=.0002,dense=dict(kind='RK4-cubic',left_s=0.,right_s=.0002,
