@@ -1,0 +1,1036 @@
+{
+  "result": "PASS_PINNED_PUBLIC_REPOSITORY_METADATA_IDENTITY",
+  "repository": "timvanderzee/biophysical-muscle-model",
+  "commit": "8c766dfb308051309193e7290ddd0bac3b726d11",
+  "tree": "a802ec6f7299d0745dfab1d5b715a3d9b7aa6f20",
+  "commitDate": "2026-07-08T12:06:31Z",
+  "truncated": false,
+  "files": [
+    {
+      "path": "Common/Functions/compare_spatial_integral_functions.m",
+      "gitBlobSHA": "78c53cb62a10f6bbad23c8a6223659778ae8c974",
+      "bytes": 1642
+    },
+    {
+      "path": "Common/Functions/create_input.m",
+      "gitBlobSHA": "a8cd0ae046a384750bdcf1e1952f8ff9c3aace86",
+      "bytes": 1518
+    },
+    {
+      "path": "Common/Functions/get_IG_IGEf.m",
+      "gitBlobSHA": "dbecef0dd7df46702b302fd97921a90934e0fbde",
+      "bytes": 1576
+    },
+    {
+      "path": "Common/Functions/get_indices.m",
+      "gitBlobSHA": "3eadb90326bb460277a8e48d61aa21e5bfd2cc59",
+      "bytes": 624
+    },
+    {
+      "path": "Common/Functions/grad5.m",
+      "gitBlobSHA": "fb20a385550542eb09c9245c992266a355df0055",
+      "bytes": 792
+    },
+    {
+      "path": "Common/fiber/biophysical/fiber_dynamics_explicit_approximated.m",
+      "gitBlobSHA": "57b034e7b250afc8d8d405d894dd0a90db0c6edf",
+      "bytes": 2117
+    },
+    {
+      "path": "Common/fiber/biophysical/fiber_dynamics_explicit_discretized.m",
+      "gitBlobSHA": "37c94486239ff58f4830b3fb94715b0472d0fb1c",
+      "bytes": 2566
+    },
+    {
+      "path": "Common/fiber/biophysical/fiber_dynamics_implicit_approximated.m",
+      "gitBlobSHA": "1a06702546e82001dbae4870a99b4dbb471f7662",
+      "bytes": 1959
+    },
+    {
+      "path": "Common/fiber/get_PE.m",
+      "gitBlobSHA": "cb615867322c00c936638ca8f3934e26cd6955b0",
+      "bytes": 261
+    },
+    {
+      "path": "Common/fiber/get_force_and_stiffness.m",
+      "gitBlobSHA": "4320a5510c6dfa27ab2a3822d4c1b4058f81ca64",
+      "bytes": 923
+    },
+    {
+      "path": "Common/fiber/get_input_from_parms.m",
+      "gitBlobSHA": "162826c844e23e75f925693e19742b6847cbc27e",
+      "bytes": 449
+    },
+    {
+      "path": "Common/fiber/get_pq.m",
+      "gitBlobSHA": "38664f6e73d32a39cccd7b120ac3753cb9c1c4bb",
+      "bytes": 435
+    },
+    {
+      "path": "Common/fiber/hill/hill_explicit.m",
+      "gitBlobSHA": "45b1bffd7d47c6b8bf6cd4796fef0b6b5f5b4cfa",
+      "bytes": 828
+    },
+    {
+      "path": "Common/fiber/hill/hill_type_implicit.m",
+      "gitBlobSHA": "1df630dd6b71a65cc39689d31be79c605edc81cc",
+      "bytes": 851
+    },
+    {
+      "path": "Common/fiber/hill/hill_type_implicit_v2.m",
+      "gitBlobSHA": "b92eaa3324e7c0a69dcb6dad9b09202723654e08",
+      "bytes": 735
+    },
+    {
+      "path": "Common/myofilaments/CrossBridge_Dynamics.m",
+      "gitBlobSHA": "a28a3623ac546651af5a951e4f8f4279ad65b19a",
+      "bytes": 1856
+    },
+    {
+      "path": "Common/myofilaments/Length_dynamics.m",
+      "gitBlobSHA": "ca1c90c1e8d35fc72ca2c6183bab1567f2f3c83b",
+      "bytes": 511
+    },
+    {
+      "path": "Common/myofilaments/ThickFilament_Dynamics.m",
+      "gitBlobSHA": "8a53a214e7bbb5a23b1ccca474d79234085d4429",
+      "bytes": 163
+    },
+    {
+      "path": "Common/myofilaments/ThinFilament_Dynamics.m",
+      "gitBlobSHA": "3c4b57484464a1119cfbcddd97a7cf8283d3c664",
+      "bytes": 293
+    },
+    {
+      "path": "Common/myofilaments/implicit formulation/LengthEquilibrium.m",
+      "gitBlobSHA": "c87944a655f5004bad2f30a52a44697d2294f150",
+      "bytes": 318
+    },
+    {
+      "path": "Common/myofilaments/implicit formulation/MuscleEquilibrium.m",
+      "gitBlobSHA": "e3af06dc87486f8196836363c4a86733751d9ee8",
+      "bytes": 646
+    },
+    {
+      "path": "Common/myofilaments/implicit formulation/MuscleEquilibrium_full.m",
+      "gitBlobSHA": "c98dfd62e87c26cfde978cafda877549c338ade6",
+      "bytes": 554
+    },
+    {
+      "path": "Common/myofilaments/implicit formulation/ThickEquilibrium.m",
+      "gitBlobSHA": "d4960686c656315be64dfd91747e9c1fb2ae915e",
+      "bytes": 527
+    },
+    {
+      "path": "Common/myofilaments/implicit formulation/ThinEquilibrium.m",
+      "gitBlobSHA": "30b7c1a06d3c60b19655210b759439e76ee6c6d2",
+      "bytes": 232
+    },
+    {
+      "path": "Common/myofilaments/return_f_overlap.m",
+      "gitBlobSHA": "43f4afc0326caf06011607132c0ce3503e0a7018",
+      "bytes": 734
+    },
+    {
+      "path": "Common/protocols/isokinetic.m",
+      "gitBlobSHA": "8428b6a07dfb835111a919147bea874ef3c2a432",
+      "bytes": 228
+    },
+    {
+      "path": "Common/protocols/isometric.m",
+      "gitBlobSHA": "f2fe76b984d224e43f20318b27d8d50180f80026",
+      "bytes": 193
+    },
+    {
+      "path": "Common/protocols/ramp.m",
+      "gitBlobSHA": "01a91d02a20b399e8dd6bebc36255c15f53e25ad",
+      "bytes": 318
+    },
+    {
+      "path": "Common/protocols/sinusoidal.m",
+      "gitBlobSHA": "926a716a556118b3cb857a24a31ebe4fb33d1c74",
+      "bytes": 225
+    },
+    {
+      "path": "Common/simulate/find_steady_state.m",
+      "gitBlobSHA": "3c2937d8e9a29ddff548d11842270535f75b7263",
+      "bytes": 1024
+    },
+    {
+      "path": "Common/simulate/force_from_distribution.m",
+      "gitBlobSHA": "cd276fa390d6c2a1035d2ae37ef9e6bed740633a",
+      "bytes": 416
+    },
+    {
+      "path": "Common/simulate/get_Fpe.asv",
+      "gitBlobSHA": "3f59acc0cfc7fcfba4883bb69e18fdb27daceb9c",
+      "bytes": 178
+    },
+    {
+      "path": "Common/simulate/get_Fpe.m",
+      "gitBlobSHA": "4eac9ee6a77c71d15e9c2746156a6f2cdd619af7",
+      "bytes": 241
+    },
+    {
+      "path": "Common/simulate/get_force.m",
+      "gitBlobSHA": "fd5882e1eddb69e6c924b073c8b0bf13f11bd02f",
+      "bytes": 219
+    },
+    {
+      "path": "Common/simulate/get_steady_state.m",
+      "gitBlobSHA": "76406e95533069d113490fcca9fea26f14df9bb5",
+      "bytes": 1525
+    },
+    {
+      "path": "Common/simulate/look_up_model.m",
+      "gitBlobSHA": "fbd4927d6bfe9ae1692507ed410a66820e183eb6",
+      "bytes": 1158
+    },
+    {
+      "path": "Common/simulate/simulate_model.m",
+      "gitBlobSHA": "3fb14f1475d49b6af9e5e0541b7b54cae1200aa3",
+      "bytes": 3887
+    },
+    {
+      "path": "Data/Processing/calc_force_pCa.m",
+      "gitBlobSHA": "e2e4ed6427a094cb6e23c77439c0237d03c8cf1c",
+      "bytes": 2951
+    },
+    {
+      "path": "Data/Processing/determine_N_sarcomeres.m",
+      "gitBlobSHA": "ade7652c32dd5d17c93892d88c9eb133684a8c6b",
+      "bytes": 512
+    },
+    {
+      "path": "Data/Processing/normalize_data.m",
+      "gitBlobSHA": "6e5179a726d1a4dfa929dec3d7a4d3e3d10ba436",
+      "bytes": 7086
+    },
+    {
+      "path": "Data/Processing/prep_data_v2.m",
+      "gitBlobSHA": "82bdc6d686ca58bf0c3369323ee53f2458061efa",
+      "bytes": 1490
+    },
+    {
+      "path": "Data/Processing/reorganize_data.m",
+      "gitBlobSHA": "2259a7aaae4e7822ff685d1b809150a43089dfca",
+      "bytes": 3682
+    },
+    {
+      "path": "Data/README.md",
+      "gitBlobSHA": "290f6771ad8841b9590140393f8696f8f30f02b9",
+      "bytes": 2296
+    },
+    {
+      "path": "Data/SRS_data.mat",
+      "gitBlobSHA": "1ee15118e2e741585702c0cb7867be57642e8efb",
+      "bytes": 31483
+    },
+    {
+      "path": "Data/Visualizing/histogram_SRS.m",
+      "gitBlobSHA": "480300bf85689dc75d221306acf481cb88093d03",
+      "bytes": 745
+    },
+    {
+      "path": "Data/Visualizing/visualize_data.m",
+      "gitBlobSHA": "02b1a3a21cdcc57b51e437be37541e6894097d60",
+      "bytes": 1194
+    },
+    {
+      "path": "Data/Visualizing/visualize_force_pCa.m",
+      "gitBlobSHA": "c1c707e1cd0eb856ea84696e32954c845fa8c3e9",
+      "bytes": 224
+    },
+    {
+      "path": "Data/active_trials.mat",
+      "gitBlobSHA": "7b1ee00deddbde8504759692164ee3550113d1dc",
+      "bytes": 727
+    },
+    {
+      "path": "Data/calc_data_SRS.m",
+      "gitBlobSHA": "799e971b925086047ae8f05426f320fec84a5e9e",
+      "bytes": 6744
+    },
+    {
+      "path": "Data/data_processing_overview.png",
+      "gitBlobSHA": "0900af67693d35e86fdb43ff1f933535579684aa",
+      "bytes": 36138
+    },
+    {
+      "path": "Data/force_pCa.mat",
+      "gitBlobSHA": "49287cc837de16091987b619aa0c8f4b3076e3fb",
+      "bytes": 923
+    },
+    {
+      "path": "Data/process_data.m",
+      "gitBlobSHA": "40763b2fc4509eafac93337c52537b43b0538369",
+      "bytes": 1143
+    },
+    {
+      "path": "Fig1.png",
+      "gitBlobSHA": "bd653d4fe3d5c355e9f5a32dbab7845fdcdff7a6",
+      "bytes": 432069
+    },
+    {
+      "path": "Fitting/README.md",
+      "gitBlobSHA": "0a6d7e3c0dd7dda7e516b2c809ea052d1ac93e85",
+      "bytes": 3370
+    },
+    {
+      "path": "Fitting/fit_any_force_trajectory.m",
+      "gitBlobSHA": "de360c8c06a743ef63bbf15d471fb9c56f405f2e",
+      "bytes": 4514
+    },
+    {
+      "path": "Fitting/fit_model_parameters_v2.m",
+      "gitBlobSHA": "fd56f3368c01f9f38640875382fecd74ca59dccc",
+      "bytes": 11934
+    },
+    {
+      "path": "Fitting/get_initial_guess.m",
+      "gitBlobSHA": "99ca22bc42fd1e42a43ea87858de186369dd965f",
+      "bytes": 4062
+    },
+    {
+      "path": "README.md",
+      "gitBlobSHA": "dd5a92feeb29640667669ae072141bfd5671c615",
+      "bytes": 1316
+    },
+    {
+      "path": "Reproduce/Figures/Fig5.m",
+      "gitBlobSHA": "016df062108e47e86984d40f30fc17cebbcb83ee",
+      "bytes": 9921
+    },
+    {
+      "path": "Reproduce/Figures/Fig6.m",
+      "gitBlobSHA": "0c8e1121cf72a3f91c755599b61017ea74147053",
+      "bytes": 17627
+    },
+    {
+      "path": "Reproduce/Figures/Fig7.m",
+      "gitBlobSHA": "67f975a31ae732486dc6df2a1dfae97d8b3dd0ac",
+      "bytes": 13128
+    },
+    {
+      "path": "Reproduce/Figures/Fig8.m",
+      "gitBlobSHA": "882481cc577cef3e79c0435d58abfe09b90df9b7",
+      "bytes": 3642
+    },
+    {
+      "path": "Reproduce/Figures/FigS7.m",
+      "gitBlobSHA": "5eb24be29a2d690e662b09735ce01f6f6f747bc2",
+      "bytes": 4409
+    },
+    {
+      "path": "Reproduce/Figures/Figs2to4.m",
+      "gitBlobSHA": "2ec1a60c244f0ddf75f59f7bf30f426764cdbf8f",
+      "bytes": 9296
+    },
+    {
+      "path": "Reproduce/Figures/Miscellaneous/Fig10.m",
+      "gitBlobSHA": "5708d594c9367beb5eae053694cfc1101963d26c",
+      "bytes": 6789
+    },
+    {
+      "path": "Reproduce/Figures/Miscellaneous/Fig9E.m",
+      "gitBlobSHA": "4a511b0298003412c81f143bbeeff3cdf25453a4",
+      "bytes": 805
+    },
+    {
+      "path": "Reproduce/Figures/Miscellaneous/Fig9_new.m",
+      "gitBlobSHA": "ffd37922cb68cd736d69644e71e942d3d39e7b6b",
+      "bytes": 2326
+    },
+    {
+      "path": "Reproduce/Figures/Miscellaneous/plot_data.m",
+      "gitBlobSHA": "21ee8eaf19f49fe77a23fb9abca7e3affefcc581",
+      "bytes": 690
+    },
+    {
+      "path": "Reproduce/Figures/Miscellaneous/simple_SRS_plot.m",
+      "gitBlobSHA": "42fbce27d18c02bbd64446c80aeeb0afed7943dc",
+      "bytes": 3709
+    },
+    {
+      "path": "Reproduce/Figures/Miscellaneous/visualize_model_SRS.m",
+      "gitBlobSHA": "24d927858f1188bec05c7d95dcbc951e18d55dd2",
+      "bytes": 4070
+    },
+    {
+      "path": "Reproduce/Figures/force_pCa_figure.m",
+      "gitBlobSHA": "3e10737f6bf8291c3614149ada9c23218fc9ff44",
+      "bytes": 466
+    },
+    {
+      "path": "Reproduce/Figures/get_colors.m",
+      "gitBlobSHA": "d6db19d9a4a780bd22bc58264443026dbb270c8a",
+      "bytes": 361
+    },
+    {
+      "path": "Reproduce/Figures/get_data.m",
+      "gitBlobSHA": "fe6169ade0046e9038e15fd14455bee16fc30c21",
+      "bytes": 1029
+    },
+    {
+      "path": "Reproduce/Figures/investigate_rundown.m",
+      "gitBlobSHA": "5794784d2a45f0a1171705cd2c5887e200d5ddf5",
+      "bytes": 526
+    },
+    {
+      "path": "Reproduce/Figures/newpanel.m",
+      "gitBlobSHA": "5f957ca4636f88f66f8ddc97b57d19ba3ad1cf58",
+      "bytes": 2665
+    },
+    {
+      "path": "Reproduce/Model output/RMSD/Approximated/biophysical_full_alternative_RMSD.mat",
+      "gitBlobSHA": "a25693b3b0d75709b58c07a54ab78f962bed084e",
+      "bytes": 57947
+    },
+    {
+      "path": "Reproduce/Model output/RMSD/Approximated/biophysical_full_regular_RMSD.mat",
+      "gitBlobSHA": "5b7cba7633a48f6efcf7caf7492a1d1211419fb7",
+      "bytes": 57932
+    },
+    {
+      "path": "Reproduce/Model output/RMSD/Approximated/biophysical_no_regular_RMSD.mat",
+      "gitBlobSHA": "32224c53ac82a8d8b5914465df670b9f03d11859",
+      "bytes": 58006
+    },
+    {
+      "path": "Reproduce/Model output/RMSD/Approximated/biophysical_thin_regular_RMSD.mat",
+      "gitBlobSHA": "595853526d17cf6d865c1f5aedda0573f766b78d",
+      "bytes": 56069
+    },
+    {
+      "path": "Reproduce/Model output/RMSD/Discretized/biophysical_full_alternative_RMSD.mat",
+      "gitBlobSHA": "67a4ebfa5df64408da3a343ff49b79df625944de",
+      "bytes": 57969
+    },
+    {
+      "path": "Reproduce/Model output/RMSD/Discretized/biophysical_full_regular_RMSD.mat",
+      "gitBlobSHA": "ae8657c087ade3578a42c139d0c1359586eb8d99",
+      "bytes": 57946
+    },
+    {
+      "path": "Reproduce/Model output/RMSD/Discretized/biophysical_no_regular_RMSD.mat",
+      "gitBlobSHA": "412d9ae5559930ec1efa017af5220eac0091a372",
+      "bytes": 57931
+    },
+    {
+      "path": "Reproduce/Model output/RMSD/Discretized/biophysical_thin_regular_RMSD.mat",
+      "gitBlobSHA": "3e5ddd7f2041633b4bb448bbac56b32fa04d5e06",
+      "bytes": 56086
+    },
+    {
+      "path": "Reproduce/Model output/RMSD/Hill/Hill_alternative_RMSD.mat",
+      "gitBlobSHA": "a597ef3f4e132acc60593375904d573d701660e9",
+      "bytes": 55938
+    },
+    {
+      "path": "Reproduce/Model output/RMSD/Hill/Hill_regular_RMSD.mat",
+      "gitBlobSHA": "963dd75b8ea2da2d75461a92a40c0451dc9533f6",
+      "bytes": 57827
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Approximated/FigS5.pdf",
+      "gitBlobSHA": "8eaacbaf04188287715e851e25e655909b80bff8",
+      "bytes": 22852
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Approximated/biophysical_full_alternative_SRS.mat",
+      "gitBlobSHA": "ab79e10922d6e1d27be1b00b8222c5088edcb9e1",
+      "bytes": 329985
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Approximated/biophysical_full_regular_SRS.mat",
+      "gitBlobSHA": "a3485af2e31fd1b829f250632d0a22c35185c668",
+      "bytes": 329585
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Approximated/biophysical_no_regular_SRS.mat",
+      "gitBlobSHA": "6f6c1cb88563d6c75ca681612b5823fe3746eca8",
+      "bytes": 300167
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Approximated/biophysical_thin_regular_SRS.mat",
+      "gitBlobSHA": "0eef7d71aee42f33e86b868a0c617cba588d92d3",
+      "bytes": 283689
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Discretized/biophysical_full_alternative_SRS.mat",
+      "gitBlobSHA": "4d28ced83fff067b4ded380f3f7a2271491055a4",
+      "bytes": 298161
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Discretized/biophysical_full_regular_SRS.mat",
+      "gitBlobSHA": "6774cbde7ed73e911d890c204cc5c859f9d12390",
+      "bytes": 291479
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Discretized/biophysical_no_regular_SRS.mat",
+      "gitBlobSHA": "7ef7b78f70015bcdd0acd11a736e6472fba77200",
+      "bytes": 291964
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Discretized/biophysical_thin_regular_SRS.mat",
+      "gitBlobSHA": "05c5ceb15bddc111d53b05c7c4c71889517104aa",
+      "bytes": 313675
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Hill/Hill_alternative_SRS.mat",
+      "gitBlobSHA": "38771597264f40307c13584e680158caba7a10f5",
+      "bytes": 228877
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Hill/Hill_regular_SRS.mat",
+      "gitBlobSHA": "e0b8f2218bf68cca34dcd46fa764a1443e69b22d",
+      "bytes": 264381
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Miscellaneous/parms/Hill_alternative_SRS.mat",
+      "gitBlobSHA": "38771597264f40307c13584e680158caba7a10f5",
+      "bytes": 228877
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Miscellaneous/parms/biophysical_thin_regular_SRS.mat",
+      "gitBlobSHA": "0eef7d71aee42f33e86b868a0c617cba588d92d3",
+      "bytes": 283689
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v1d/biophysical_full_regular_SRS.mat",
+      "gitBlobSHA": "3211dcf0920cf9a610997d7439af2d8a4302c911",
+      "bytes": 261309
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v2d/biophysical_full_alternative_SRS.mat",
+      "gitBlobSHA": "4b7a45532a38d3a50420c8719aa08c81432c79cb",
+      "bytes": 296660
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v2d/biophysical_full_regular_SRS.mat",
+      "gitBlobSHA": "d11b1901242aadd9ed96d170840c2c5b41897c95",
+      "bytes": 302671
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v2d/biophysical_no_regular_SRS.mat",
+      "gitBlobSHA": "04c9de1045341067bc9fe288a78689e9411e4348",
+      "bytes": 291542
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v3/Hill_regular_SRS.mat",
+      "gitBlobSHA": "1a4dd89b240ad4d5ebc048a422926720eba9513d",
+      "bytes": 253257
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v3d/biophysical_full_alternative_SRS.mat",
+      "gitBlobSHA": "cba83d92534ccf763024270505db31b7e4517e57",
+      "bytes": 301101
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v3d/biophysical_full_regular_SRS.mat",
+      "gitBlobSHA": "a65407fa239d9be123013a54bf6e535e7b02fa1e",
+      "bytes": 318415
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v4/Hill_regular_SRS.mat",
+      "gitBlobSHA": "e0b8f2218bf68cca34dcd46fa764a1443e69b22d",
+      "bytes": 264381
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v4/biophysical_full_alternative_SRS.mat",
+      "gitBlobSHA": "83cf837c1355e82d689df2026f13a24f7f168dac",
+      "bytes": 325247
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v4/biophysical_full_alternative_SRS_old.mat",
+      "gitBlobSHA": "d0435ce176a6bdd3a4c4ecaf56d8e0eadabfdc6f",
+      "bytes": 315492
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v4/biophysical_full_regular_SRS.mat",
+      "gitBlobSHA": "93672cf9172e907240e0626ad7a54661b07f3e3f",
+      "bytes": 316163
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v4/biophysical_full_regular_SRS_old.mat",
+      "gitBlobSHA": "4fac29a2ae31ca5ee23b437441f7b654de45aeba",
+      "bytes": 314941
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v4/biophysical_no_regular_SRS.mat",
+      "gitBlobSHA": "6f6c1cb88563d6c75ca681612b5823fe3746eca8",
+      "bytes": 300167
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v4d/biophysical_full_alternative_SRS.mat",
+      "gitBlobSHA": "4d28ced83fff067b4ded380f3f7a2271491055a4",
+      "bytes": 298161
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v4d/biophysical_full_regular_SRS.mat",
+      "gitBlobSHA": "6774cbde7ed73e911d890c204cc5c859f9d12390",
+      "bytes": 291479
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v4d/biophysical_no_regular_SRS.mat",
+      "gitBlobSHA": "7ef7b78f70015bcdd0acd11a736e6472fba77200",
+      "bytes": 291964
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v4d/biophysical_thin_regular_SRS.mat",
+      "gitBlobSHA": "05c5ceb15bddc111d53b05c7c4c71889517104aa",
+      "bytes": 313675
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v5/biophysical_full_alternative_SRS.mat",
+      "gitBlobSHA": "29c2d29315ee21fc33d2517e40d7e82ff1461d64",
+      "bytes": 315908
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v5/biophysical_full_regular_SRS.mat",
+      "gitBlobSHA": "5f01a3168a1f9402e3495783d4bd034d20ce56c6",
+      "bytes": 318353
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v6/biophysical_full_alternative_SRS.mat",
+      "gitBlobSHA": "ab79e10922d6e1d27be1b00b8222c5088edcb9e1",
+      "bytes": 329985
+    },
+    {
+      "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v6/biophysical_full_regular_SRS.mat",
+      "gitBlobSHA": "a3485af2e31fd1b829f250632d0a22c35185c668",
+      "bytes": 329585
+    },
+    {
+      "path": "Reproduce/Model output/output_effect_of_bins_on_cost.mat",
+      "gitBlobSHA": "f0075713e7382b7c493f815b3044f981a6d62763",
+      "bytes": 51747046
+    },
+    {
+      "path": "Reproduce/Parameters/13Dec2017a/parms_Hill_alternative.mat",
+      "gitBlobSHA": "429fecaacc58ec562fe54d175ce942e4f287320b",
+      "bytes": 75061
+    },
+    {
+      "path": "Reproduce/Parameters/13Dec2017a/parms_Hill_regular.mat",
+      "gitBlobSHA": "059d0faf4c36ef4f27d256b7f7d9259dd1f1f8f6",
+      "bytes": 86947
+    },
+    {
+      "path": "Reproduce/Parameters/13Dec2017a/parms_biophysical_full_alternative.mat",
+      "gitBlobSHA": "dc4ecf8b117cd271827605ac4e58027e10a99832",
+      "bytes": 523526
+    },
+    {
+      "path": "Reproduce/Parameters/13Dec2017a/parms_biophysical_full_regular.mat",
+      "gitBlobSHA": "c2905e32a63ebd535e223d9f2acf61b7972d4d86",
+      "bytes": 432070
+    },
+    {
+      "path": "Reproduce/Parameters/13Dec2017a/parms_biophysical_no_regular.mat",
+      "gitBlobSHA": "cc28d2a9cf5cf441ae31c20528a5798b0d924d24",
+      "bytes": 401236
+    },
+    {
+      "path": "Reproduce/Parameters/13Dec2017a/parms_biophysical_thin_regular.mat",
+      "gitBlobSHA": "0dab3ef4c0a8b2e372e4c99cc6a85a6b5ee88eea",
+      "bytes": 296806
+    },
+    {
+      "path": "Reproduce/Parameters/13Dec2017b/parms_Hill_alternative.mat",
+      "gitBlobSHA": "558760daef4ec52fd865b1fa0c19bb4e97835e31",
+      "bytes": 75069
+    },
+    {
+      "path": "Reproduce/Parameters/13Dec2017b/parms_Hill_regular.mat",
+      "gitBlobSHA": "af20c269829498db468e28c59fd9bf5ad3f4afea",
+      "bytes": 107935
+    },
+    {
+      "path": "Reproduce/Parameters/13Dec2017b/parms_biophysical_full_alternative.mat",
+      "gitBlobSHA": "8178710e8befc760b51dcb978339190e3d6f9fb5",
+      "bytes": 684374
+    },
+    {
+      "path": "Reproduce/Parameters/13Dec2017b/parms_biophysical_full_regular.mat",
+      "gitBlobSHA": "938cc8e0fe65dccccd634489d6a4e3c79325a25f",
+      "bytes": 587326
+    },
+    {
+      "path": "Reproduce/Parameters/13Dec2017b/parms_biophysical_no_regular.mat",
+      "gitBlobSHA": "4dd3f2dd53f489458cbb602f92f2eee27d093644",
+      "bytes": 546028
+    },
+    {
+      "path": "Reproduce/Parameters/13Dec2017b/parms_biophysical_thin_regular.mat",
+      "gitBlobSHA": "4d32738257db8fc3fe3acee9bf78c73d5074d4a7",
+      "bytes": 369470
+    },
+    {
+      "path": "Reproduce/Parameters/14Dec2017b/parms_Hill_alternative.mat",
+      "gitBlobSHA": "8d68836e8b159401fb5c8562dfb0bde1c6814025",
+      "bytes": 83316
+    },
+    {
+      "path": "Reproduce/Parameters/14Dec2017b/parms_Hill_regular.mat",
+      "gitBlobSHA": "888a7225cc9273524718986334fed32fa335e308",
+      "bytes": 130991
+    },
+    {
+      "path": "Reproduce/Parameters/14Dec2017b/parms_biophysical_full_alternative.mat",
+      "gitBlobSHA": "6c6765fe1cbcf1ab04648a9d7f74ed28b18f4f93",
+      "bytes": 807995
+    },
+    {
+      "path": "Reproduce/Parameters/14Dec2017b/parms_biophysical_full_regular.mat",
+      "gitBlobSHA": "f0caa95372b113ff0e8e060aecd2007e904694a2",
+      "bytes": 703988
+    },
+    {
+      "path": "Reproduce/Parameters/14Dec2017b/parms_biophysical_no_regular.mat",
+      "gitBlobSHA": "0f55a1c35617e53de990c39ac7d66b32e05579a2",
+      "bytes": 640362
+    },
+    {
+      "path": "Reproduce/Parameters/14Dec2017b/parms_biophysical_thin_regular.mat",
+      "gitBlobSHA": "240e7e90cce99fed362a11a6b44181bc4c623b69",
+      "bytes": 700997
+    },
+    {
+      "path": "Reproduce/Parameters/18Dec2017a/parms_Hill_alternative.mat",
+      "gitBlobSHA": "e8c8682a6c68ccb1d9c1a30643eadf5823a887ac",
+      "bytes": 86989
+    },
+    {
+      "path": "Reproduce/Parameters/18Dec2017a/parms_Hill_regular.mat",
+      "gitBlobSHA": "5c0240aedf7966316e231f2f735b2392cabd3036",
+      "bytes": 130637
+    },
+    {
+      "path": "Reproduce/Parameters/18Dec2017a/parms_biophysical_full_alternative.mat",
+      "gitBlobSHA": "7d14249939dfaf53ba533bcffc346467e227b61e",
+      "bytes": 830877
+    },
+    {
+      "path": "Reproduce/Parameters/18Dec2017a/parms_biophysical_full_regular.mat",
+      "gitBlobSHA": "1ed3d445cc986b08394419aed6ef634abcdb3bd6",
+      "bytes": 720505
+    },
+    {
+      "path": "Reproduce/Parameters/18Dec2017a/parms_biophysical_no_regular.mat",
+      "gitBlobSHA": "19d50538421ff71025db8ff2c4ae5bb911468e9c",
+      "bytes": 651916
+    },
+    {
+      "path": "Reproduce/Parameters/18Dec2017a/parms_biophysical_thin_regular.mat",
+      "gitBlobSHA": "84a10ab095d16282aefe89921b1fe46b242aac13",
+      "bytes": 719769
+    },
+    {
+      "path": "Reproduce/Parameters/18Dec2017b/parms_Hill_alternative.mat",
+      "gitBlobSHA": "c99981773e72d364a55db20bc146d8a9b65063ae",
+      "bytes": 83309
+    },
+    {
+      "path": "Reproduce/Parameters/18Dec2017b/parms_Hill_regular.mat",
+      "gitBlobSHA": "9bf0e996efd213573b20dfd852293e0b673e5b7f",
+      "bytes": 130363
+    },
+    {
+      "path": "Reproduce/Parameters/18Dec2017b/parms_biophysical_full_alternative.mat",
+      "gitBlobSHA": "425f3641c5a32266df4152cb0228e823403e64a7",
+      "bytes": 837680
+    },
+    {
+      "path": "Reproduce/Parameters/18Dec2017b/parms_biophysical_full_regular.mat",
+      "gitBlobSHA": "223f2efd468d3f95c80627a285d754bb76b91d33",
+      "bytes": 718030
+    },
+    {
+      "path": "Reproduce/Parameters/18Dec2017b/parms_biophysical_no_regular.mat",
+      "gitBlobSHA": "68cf6fc26915be227b9d1d03dd85ac06c6f82ea5",
+      "bytes": 665855
+    },
+    {
+      "path": "Reproduce/Parameters/18Dec2017b/parms_biophysical_thin_regular.mat",
+      "gitBlobSHA": "4ffa7f0c1394842362aee9a3df534367b646ef43",
+      "bytes": 716816
+    },
+    {
+      "path": "Reproduce/Parameters/19Dec2017a/parms_Hill_alternative.mat",
+      "gitBlobSHA": "5aad22777b15eeaf52135625b68152461cd713c6",
+      "bytes": 83347
+    },
+    {
+      "path": "Reproduce/Parameters/19Dec2017a/parms_Hill_regular.mat",
+      "gitBlobSHA": "a99f74d2b087b283b51b807cad3b510778f7dcaa",
+      "bytes": 104733
+    },
+    {
+      "path": "Reproduce/Parameters/19Dec2017a/parms_biophysical_full_alternative.mat",
+      "gitBlobSHA": "0b583e05c5a06627d50d97673850cf335d4f7e97",
+      "bytes": 679226
+    },
+    {
+      "path": "Reproduce/Parameters/19Dec2017a/parms_biophysical_full_regular.mat",
+      "gitBlobSHA": "3cfb9c8c1eadb3faf02675aa32a389f4b715e32f",
+      "bytes": 592885
+    },
+    {
+      "path": "Reproduce/Parameters/19Dec2017a/parms_biophysical_no_regular.mat",
+      "gitBlobSHA": "a4e67acf0a133aab2f71ca66cc8bee9a82b94eba",
+      "bytes": 539388
+    },
+    {
+      "path": "Reproduce/Parameters/19Dec2017a/parms_biophysical_thin_regular.mat",
+      "gitBlobSHA": "fbdd593cb8310cd5948416442d562568ba0be9d2",
+      "bytes": 586498
+    },
+    {
+      "path": "Reproduce/Parameters/7Aug2018a/parms_Hill_alternative.mat",
+      "gitBlobSHA": "34db4a1c5dbbbaa8d5c35f9a9b8da3c28a3295f5",
+      "bytes": 75082
+    },
+    {
+      "path": "Reproduce/Parameters/7Aug2018a/parms_Hill_regular.mat",
+      "gitBlobSHA": "785ad83fdc059ef67a5e70b9edd371edfe4ad5c9",
+      "bytes": 99203
+    },
+    {
+      "path": "Reproduce/Parameters/7Aug2018a/parms_biophysical_full_alternative.mat",
+      "gitBlobSHA": "f4ce89624e5ab7a929b9813240c415d11b31faf3",
+      "bytes": 609499
+    },
+    {
+      "path": "Reproduce/Parameters/7Aug2018a/parms_biophysical_full_regular.mat",
+      "gitBlobSHA": "e26a9ed0f6d61cd44f35f15e0fb2c29aedaa3b74",
+      "bytes": 515927
+    },
+    {
+      "path": "Reproduce/Parameters/7Aug2018a/parms_biophysical_no_regular.mat",
+      "gitBlobSHA": "51750762436ff52f22abaa40614cf2c1a73f1c2d",
+      "bytes": 460311
+    },
+    {
+      "path": "Reproduce/Parameters/7Aug2018a/parms_biophysical_thin_regular.mat",
+      "gitBlobSHA": "ab2bf948f380a356cb9d6e887a72c6fb4a8072c7",
+      "bytes": 504635
+    },
+    {
+      "path": "Reproduce/Parameters/compare_parameter_values.m",
+      "gitBlobSHA": "a0bf64584ee843d0aa96747e8f3a7f40c35c2a3d",
+      "bytes": 1153
+    },
+    {
+      "path": "Reproduce/Parameters/compare_parms_versions.m",
+      "gitBlobSHA": "21dd969cadf9568406d37858e1b9a97f4a80ba2e",
+      "bytes": 3679
+    },
+    {
+      "path": "Reproduce/Parameters/complete_parms.m",
+      "gitBlobSHA": "f5656cc5dc7da581d29f68c74cc509c93ff6a155",
+      "bytes": 972
+    },
+    {
+      "path": "Reproduce/Parameters/create_reduced_parms.m",
+      "gitBlobSHA": "ffa627bfb2bc6b8e8345121a06f5a78fc36e0702",
+      "bytes": 1112
+    },
+    {
+      "path": "Reproduce/Parameters/evaluate_parameters.m",
+      "gitBlobSHA": "c0f7459218ea95ab1e95609735ac5ad913dfdd56",
+      "bytes": 1301
+    },
+    {
+      "path": "Reproduce/Parameters/get_parms.m",
+      "gitBlobSHA": "beb230d4cbe64a9d99f5f990d307e741efdd24aa",
+      "bytes": 1535
+    },
+    {
+      "path": "Reproduce/Parameters/investigate_parameters.m",
+      "gitBlobSHA": "79ad7ab7db107ed4452b75da673880182e1a0e2a",
+      "bytes": 996
+    },
+    {
+      "path": "Reproduce/Parameters/test_SEE_curve.m",
+      "gitBlobSHA": "fbbf2d91cca67caaa8ea8e0adc1fa2d9035250f3",
+      "bytes": 1051
+    },
+    {
+      "path": "Reproduce/Parameters/update_parms.m",
+      "gitBlobSHA": "7fd28da1ca08495976eb8c1ecf9ddac199e757b3",
+      "bytes": 726
+    },
+    {
+      "path": "Reproduce/Process/calc_RMSD.m",
+      "gitBlobSHA": "c7c24a3c2e1ca4d86eb1e51d8d3362dc8a18c747",
+      "bytes": 5493
+    },
+    {
+      "path": "Reproduce/Process/calc_model_SRS.m",
+      "gitBlobSHA": "8b73189665d8932d53ec17e6d9f06de9b8b7f7f0",
+      "bytes": 3898
+    },
+    {
+      "path": "Reproduce/Process/calc_model_forces.m",
+      "gitBlobSHA": "ddc6911e25e65b74e38856d7d91606b40f3f42f2",
+      "bytes": 10965
+    },
+    {
+      "path": "Reproduce/Process/get_model_folder.m",
+      "gitBlobSHA": "3e8854092f2edb8b7d7da16649761af211645ad7",
+      "bytes": 809
+    },
+    {
+      "path": "Reproduce/Process/make_ramp_protocols.m",
+      "gitBlobSHA": "9b93897c91f49e0e093497cf4a8f9d2a5cb003b3",
+      "bytes": 2610
+    },
+    {
+      "path": "Reproduce/Process/rescale_kpe.m",
+      "gitBlobSHA": "6f4e0f0e932b0e73f55e1be4f410e2404b0f0eb7",
+      "bytes": 3243
+    },
+    {
+      "path": "Reproduce/Process/save_model_forces.m",
+      "gitBlobSHA": "deef5eac92b6eac1c09e6d7c767cf476c079451b",
+      "bytes": 131
+    },
+    {
+      "path": "Reproduce/README.md",
+      "gitBlobSHA": "1256036690272e08d1d8cea43a6ec5ba1ceb5d9d",
+      "bytes": 3319
+    },
+    {
+      "path": "Reproduce/reproduce_manuscript_figures.m",
+      "gitBlobSHA": "5ea2a29cb50a7e83ded60ed0aa3ce262fb9b339e",
+      "bytes": 1084
+    },
+    {
+      "path": "Reproduce/reproduce_model_RMSD.m",
+      "gitBlobSHA": "9ef2642dcd6fa9b9c702c868be2a0dde422c5c90",
+      "bytes": 934
+    },
+    {
+      "path": "Reproduce/reproduce_model_SRS.m",
+      "gitBlobSHA": "8b428873bbaada76a69eb28820f8459eb41f8b9f",
+      "bytes": 915
+    },
+    {
+      "path": "Reproduce/reproduce_model_fitting.m",
+      "gitBlobSHA": "76ffc631d12bc6259d34f527863ba712ce65dee5",
+      "bytes": 11107
+    },
+    {
+      "path": "Reproduce/reproduce_model_forces.m",
+      "gitBlobSHA": "e4120d8090f90d1f608cfbb7ce9bdbc08968a62b",
+      "bytes": 7995
+    },
+    {
+      "path": "Test/Miscellaneous/compare_SRS.m",
+      "gitBlobSHA": "f682a0823e4a09598613b88707454e4b99ab2bae",
+      "bytes": 1002
+    },
+    {
+      "path": "Test/Miscellaneous/compare_original_versus_approximated.m",
+      "gitBlobSHA": "122f7963e9688ec33de2b7ca3837b7b019b79086",
+      "bytes": 7348
+    },
+    {
+      "path": "Test/Miscellaneous/compare_trials.m",
+      "gitBlobSHA": "d233a0e82708cdf78188ac1b810a659e28a6e111",
+      "bytes": 3201
+    },
+    {
+      "path": "Test/Miscellaneous/compare_two_discretized.m",
+      "gitBlobSHA": "035b9fca980479a2909463a8a75f848284343020",
+      "bytes": 3458
+    },
+    {
+      "path": "Test/Miscellaneous/compare_two_trials.m",
+      "gitBlobSHA": "e0710a9406074b0a7620b66a0ab68eba668b7880",
+      "bytes": 795
+    },
+    {
+      "path": "Test/Miscellaneous/effect_of_bins_on_cost.m",
+      "gitBlobSHA": "f9f5e07139350a4075a7e32a260b970f3f307625",
+      "bytes": 12358
+    },
+    {
+      "path": "Test/Miscellaneous/effect_of_bins_on_cost_old.m",
+      "gitBlobSHA": "6796f4e54098fde2196be88dcb507d502bbaedef",
+      "bytes": 9985
+    },
+    {
+      "path": "Test/Miscellaneous/fiber_dynamics_explicit_no_tendon_old.m",
+      "gitBlobSHA": "4297b6266d2a899cd0c4cf55056afbd6fed51831",
+      "bytes": 3619
+    },
+    {
+      "path": "Test/Miscellaneous/playing_with_functions.m",
+      "gitBlobSHA": "d8509ebecb134da68a4fe94429affc5fa87e5f52",
+      "bytes": 1396
+    },
+    {
+      "path": "Test/Miscellaneous/response_to_sine.m",
+      "gitBlobSHA": "9a9eb6c899ffe1ef154a9c90d2e30bfdf0082dce",
+      "bytes": 3106
+    },
+    {
+      "path": "Test/Miscellaneous/test_geometry.m",
+      "gitBlobSHA": "c0abc64d511c18098723077e5057569da5b62d03",
+      "bytes": 2717
+    },
+    {
+      "path": "Test/Miscellaneous/test_kens_method.m",
+      "gitBlobSHA": "a63bd1ae35b0cba780cb9f9ab515be4b1b9afa80",
+      "bytes": 4336
+    },
+    {
+      "path": "Test/Miscellaneous/test_overlap.m",
+      "gitBlobSHA": "c1a3304ee8ac8a89dd0a7c15d05410e04c9598fd",
+      "bytes": 1285
+    },
+    {
+      "path": "Test/Miscellaneous/test_single_trial.m",
+      "gitBlobSHA": "bf624559a54530e2432b3c04258d2f7f367fcd94",
+      "bytes": 5447
+    },
+    {
+      "path": "Test/Miscellaneous/test_specific_condition.m",
+      "gitBlobSHA": "805b060667a64c20bd230a9c39de576c7df03e13",
+      "bytes": 5732
+    },
+    {
+      "path": "Test/Miscellaneous/testing_pCa_curves.m",
+      "gitBlobSHA": "67b3777398edd90636019f475d45b5291be0e867",
+      "bytes": 337
+    },
+    {
+      "path": "Test/README.md",
+      "gitBlobSHA": "664bd1a4852242869d3d95ad35b594cd2fd62779",
+      "bytes": 2878
+    },
+    {
+      "path": "Test/test_model.m",
+      "gitBlobSHA": "c72388c7fd58180af35207dc70cfc0501a36d3bc",
+      "bytes": 3674
+    },
+    {
+      "path": "Test/test_model.png",
+      "gitBlobSHA": "b6a80a36af92ba72e7ad78a381130fa7d526fd8e",
+      "bytes": 54703
+    },
+    {
+      "path": "Test/test_model_pCa.m",
+      "gitBlobSHA": "d84ad57e9aac6b3d2c2d115c2bc155142322d256",
+      "bytes": 2814
+    },
+    {
+      "path": "get_paths.m",
+      "gitBlobSHA": "0e332f77a9b9a736ca72acdd8e06b951b635c5b4",
+      "bytes": 1172
+    }
+  ],
+  "scope": "Source file identity/size metadata only; no copied code, binary redistribution, source execution or final-publication parity claim."
+}

@@ -1,0 +1,124 @@
+{
+  "result": "BLOCKED_ORIGINAL_TABLE_PIXEL_VERIFICATION",
+  "date": "2026-10-06",
+  "sourceDOI": "10.1371/journal.pcbi.1014748",
+  "scope": "Original Table 2/3 rendered columns before any coupled release experiment",
+  "successfulTextPDF": {
+    "url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1014748&type=printable",
+    "nativeRef": "turn346365view1",
+    "pageCount": 37,
+    "extractedLineCount": 1320
+  },
+  "nativeScreenshotCheck": {
+    "tool": "mcp__codex_apps__search_service_web_run",
+    "pagesZeroBased": [
+      20,
+      21
+    ],
+    "resultKeys": [
+      "content",
+      "isError"
+    ],
+    "contentTypes": [
+      "text"
+    ],
+    "imageContentBlockCount": 0,
+    "rawResponse": {
+      "content": [
+        {
+          "type": "text",
+          "text": " (https://journals.plos.org/ploscompbiol/article/file?id=10.1371%2Fjournal.pcbi.1014748&type=printable)\n\u3010turn625598view0\u3011<<ImageDisplayed>>\n--------------------------------------------------------------------------------\n (https://journals.plos.org/ploscompbiol/article/file?id=10.1371%2Fjournal.pcbi.1014748&type=printable)\n\u3010turn625598view1\u3011<<ImageDisplayed>>"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "ordinaryRoutes": [
+    {
+      "route": "Publisher Table 2/3 HTML figure pages",
+      "refs": [
+        "turn202140view0",
+        "turn202140view1"
+      ],
+      "outcome": "not accessible via tool"
+    },
+    {
+      "route": "Publisher PNG larger-image links",
+      "refs": [
+        "turn853596view0",
+        "turn853596view1"
+      ],
+      "outcome": "text-only internal errors"
+    },
+    {
+      "route": "Native PDF screenshot refs reopened",
+      "refs": [
+        "turn719652view0",
+        "turn719652view1"
+      ],
+      "outcome": "original PDF extracted text; no pixels"
+    },
+    {
+      "route": "Publisher original TIFF links",
+      "refs": [
+        "turn719652view2",
+        "turn719652view3"
+      ],
+      "outcome": "text-only internal errors"
+    },
+    {
+      "route": "Ordinary PMC article URL",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13561430/",
+      "ref": "turn346365view0",
+      "outcome": "browser reCAPTCHA challenge; stopped"
+    },
+    {
+      "route": "Author institutional repository record and download",
+      "recordURL": "https://lirias.kuleuven.be/4442410",
+      "recordRef": "turn786483view0",
+      "downloadURL": "https://lirias.kuleuven.be/retrieve/3ee63ba9-239a-4ace-853b-9a6d825d224b",
+      "webRef": "turn853794view0",
+      "webOutcome": "TimeoutError",
+      "ordinaryShellOutcome": "URLError: Tunnel connection failed: 403 Forbidden; stopped"
+    }
+  ],
+  "authorRepository": {
+    "url": "https://api.github.com/repos/timvanderzee/biophysical-muscle-model/git/trees/main?recursive=1",
+    "truncated": false,
+    "renderedFiles": [
+      {
+        "path": "Data/data_processing_overview.png",
+        "sha": "0900af67693d35e86fdb43ff1f933535579684aa",
+        "size": 36138
+      },
+      {
+        "path": "Fig1.png",
+        "sha": "bd653d4fe3d5c355e9f5a32dbab7845fdcdff7a6",
+        "size": 432069
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Approximated/FigS5.pdf",
+        "sha": "8eaacbaf04188287715e851e25e655909b80bff8",
+        "size": 22852
+      },
+      {
+        "path": "Test/test_model.png",
+        "sha": "b6a80a36af92ba72e7ad78a381130fa7d526fd8e",
+        "size": 54703
+      }
+    ],
+    "originalManuscriptOrTablePresent": false,
+    "initialMainTreeQueryReturnedSHA": "8c766dfb308051309193e7290ddd0bac3b726d11",
+    "pinnedCommitSHA": "8c766dfb308051309193e7290ddd0bac3b726d11",
+    "verifiedTreeSHA": "a802ec6f7299d0745dfab1d5b715a3d9b7aa6f20",
+    "verifiedTreeURL": "https://api.github.com/repos/timvanderzee/biophysical-muscle-model/git/trees/a802ec6f7299d0745dfab1d5b715a3d9b7aa6f20?recursive=1",
+    "identityVerification": "Independent authorized GitHub GET of commits/8c766dfb308051309193e7290ddd0bac3b726d11 confirmed commit.tree.sha; GET of that actual tree returned sha a802ec6f7299d0745dfab1d5b715a3d9b7aa6f20, truncated=false, and the same four rendered files. The initial trees/main response identity is retained as observed, not treated as the verified tree identity."
+  },
+  "verifiedPixelFiles": [],
+  "localOriginalPDFPath": null,
+  "localOriginalPDFSHA256": null,
+  "visualInspectionCompleted": false,
+  "extractedTextVerificationRetained": true,
+  "nextExperimentVisualPrerequisiteSatisfied": false,
+  "accessConstraints": "No browser challenge, network restriction, signed URL, credential or service change bypassed; no authored reconstruction substitutes for the original table."
+}

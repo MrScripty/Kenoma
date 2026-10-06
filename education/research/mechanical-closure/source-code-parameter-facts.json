@@ -1,0 +1,107 @@
+{
+  "schema": "kenoma.pinned-source-parameter-facts.v1",
+  "audit_kind": "read_only_source_metadata_no_simulation",
+  "repository": "timvanderzee/biophysical-muscle-model",
+  "commit": "8c766dfb308051309193e7290ddd0bac3b726d11",
+  "tree": "a802ec6f7299d0745dfab1d5b715a3d9b7aa6f20",
+  "commit_time_utc": "2026-07-08T12:06:31Z",
+  "version_limitation": "Precedes September final publication; no final-publication algorithm parity assertion.",
+  "path": "Reproduce/Parameters/7Aug2018a/parms_biophysical_no_regular.mat",
+  "git_blob_sha": "51750762436ff52f22abaa40614cf2c1a73f1c2d",
+  "bytes": 460311,
+  "read_recipe": {
+    "tool": "mcp__codex_apps__github_fetch_file",
+    "ref": "8c766dfb308051309193e7290ddd0bac3b726d11",
+    "encoding": "base64",
+    "measurement": "scipy.io.loadmat on decoded in-memory bytes, simplify_cells=True",
+    "temporary_staging_deleted": true,
+    "author_code_executed": false,
+    "source_binary_retained": false
+  },
+  "redparms": {
+    "f": 59.60978106169219,
+    "k11": 7.095011829474687,
+    "k12": 2,
+    "k21": 23.219667463502386,
+    "k22": 0.7018824385221679,
+    "w": 0.16666666666666666,
+    "Fscale": 2,
+    "gamma": 130,
+    "lce0": 0,
+    "Lce0": -9.999999953798886,
+    "K": 100,
+    "kse": 0.18270123175971706,
+    "kse0": 0.1810599266136319,
+    "kpe": 0.0023943631682408345,
+    "n": 2.8363440515652822,
+    "kappa": 1.0811918539382133,
+    "kon": 0,
+    "koff": 0,
+    "koop": 0,
+    "J1": 0,
+    "J2": 0,
+    "JF": 145.0548,
+    "kF": 0,
+    "k": 0,
+    "b": 0,
+    "dLcrit": 0,
+    "Noverlap": 1,
+    "x0": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+    ]
+  },
+  "additional_newparms": {
+    "ps": 1,
+    "s": 0.0000026,
+    "h": 1.2e-8,
+    "Fmax": 120
+  },
+  "naming": {
+    "paper_beta": 0.5,
+    "paper_beta_status": "Conditional algebraic inference 1/Fscale, assuming same output normalizer; no beta normalization field stored.",
+    "code_beta_attachment": "f(x) normalized Gaussian attachment-rate array; distinct meaning."
+  },
+  "units": {
+    "time": "s",
+    "input_relative_length": "delta L / baseline L",
+    "input_velocity": "reference lengths / s",
+    "input_calcium": "micromolar",
+    "force_target": "dimensionless per-fiber normalized force",
+    "physical_force_calibration": "UNRESOLVED: raw divided by1000/gain, plot label kPa; sensor/area calibration not established",
+    "historical_Fmax_units": "UNRESOLVED",
+    "strain_coordinate": "powerstroke-normalized",
+    "physical_coordinate_pin": "INCOMPLETE: stored s and h imply gamma108.3333, stored gamma130; reproduction script resets h10nm to gamma130"
+  },
+  "gates": {
+    "original_table_pixels": "BLOCKED",
+    "publication_median_mapping": "NOT VISUALLY VERIFIED",
+    "coupled_release": "DO NOT EXECUTE before visual mapping gate",
+    "descending_force_length": "NOT supplied by Noverlap=1",
+    "human_calibration": "NONE",
+    "license_file": "None found in complete pinned tree"
+  },
+  "code_conventions": {
+    "two_state_detached": "M=1-B for zero-R physical initialization; not frozen1",
+    "noncooperative_ode_thin_lag_s": 0.005,
+    "noncooperative_fitting_thin": "algebraic sigmoid",
+    "runtime_PE_K": 100,
+    "fitting_PE_K": 1,
+    "lowercase_lce0_is_transport_origin": true,
+    "uppercase_Lce0_is_PE_onset": true,
+    "conditional_reported_force_origin_difference": "lce0*B before Fscale; zero for this inspected MAT"
+  },
+  "scope_exclusions": [
+    "no parameter selection",
+    "no source execution",
+    "no performance result",
+    "no original trajectory replay",
+    "no committed binary",
+    "no Git operation"
+  ]
+}
