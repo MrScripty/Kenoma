@@ -1,0 +1,16 @@
+{
+  "result": "PASS_FIXED_COEFFICIENT_PRISM_MILESTONE",
+  "scope": "Immutable protocol/operator tests and terminal prism execution/fresh replay; taper remains a separate live execution.",
+  "sha256": {
+    "tools/fixed-coefficient-fixtures.mjs": "283d5e95ad01b2b784f812f1dd1ef555123dd39265ba4f3a6a5a1f6f005a5cc5",
+    "tools/fixed-coefficient-control-experiment.mjs": "db36b65defb0095abd6660d652f26254d706cc82e28dfe31d4d692c2ad216e2e",
+    "tools/verify-fixed-coefficient-control.mjs": "ddb7544cd6663c83890e98f1810c9df275f726bec2677a5ededbe15d794c7ea2",
+    "tests/fixed-coefficient-controls.test.mjs": "879d1e14c011b07dc4b1c927eab751c32a523d75717f8ee51606d2ea1853d7e0",
+    "research/fixed-coefficient-control-protocol.md": "c345e86e29d20a90238c8d3f534cca36f62582610d25907d3cfdcaa56a29675e",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-prism.json": "32a54bd287ec264bf33a009e0714f7bd2a6ba6e5d8409d98687d866c24f8578d",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-prism-recheck.json": "2c5d855d49a665b4048ff80a2b27b37c1ed8c4b765ed87934a2b4054abfe3e72",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/fixture-tests.txt": "be2c5f9aab287bbbe5650523edb6d89a405625e1620c064596e45c5fa70ae33b",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/prism-execution.txt": "aea22fbeca2a637d8e27eaf6c29340f6330f2ce4ec3380b57a5670c90d534c65",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/prism-fresh-replay.txt": "247565aa5a5ca0624b1cc0e283b2d1588fcc2650942622a284797c91983d3c4b"
+  }
+}
