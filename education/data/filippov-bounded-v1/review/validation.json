@@ -1,0 +1,2076 @@
+{
+  "passed": false,
+  "checks": {
+    "high": {
+      "passed": false,
+      "status": "unqualified",
+      "missing_cells": [],
+      "completion": {
+        "full-source/RK4-0.0002": {
+          "passed": false,
+          "issues": [
+            "failure",
+            "endpoint-not-reached",
+            "missing-common-grid",
+            "missing-or-duplicate-accepted-entry"
+          ],
+          "missing_grid_times": [
+            0.106,
+            0.107
+          ]
+        },
+        "full-source/RK4-0.0001": {
+          "passed": false,
+          "issues": [
+            "failure",
+            "endpoint-not-reached",
+            "missing-common-grid",
+            "missing-or-duplicate-accepted-entry"
+          ],
+          "missing_grid_times": [
+            0.106,
+            0.107
+          ]
+        },
+        "full-source/RK4-0.00005": {
+          "passed": false,
+          "issues": [
+            "failure",
+            "endpoint-not-reached",
+            "missing-common-grid",
+            "missing-or-duplicate-accepted-entry"
+          ],
+          "missing_grid_times": [
+            0.106,
+            0.107
+          ]
+        },
+        "full-source/DOP853": {
+          "passed": false,
+          "issues": [
+            "failure",
+            "endpoint-not-reached",
+            "missing-common-grid",
+            "missing-or-duplicate-accepted-entry"
+          ],
+          "missing_grid_times": [
+            0.106,
+            0.107
+          ]
+        },
+        "full-source/Radau": {
+          "passed": false,
+          "issues": [
+            "failure",
+            "endpoint-not-reached",
+            "missing-common-grid",
+            "missing-or-duplicate-accepted-entry"
+          ],
+          "missing_grid_times": [
+            0.106,
+            0.107
+          ]
+        },
+        "reduced-independent/RK4-0.0002": {
+          "passed": false,
+          "issues": [
+            "failure",
+            "endpoint-not-reached",
+            "missing-common-grid",
+            "missing-or-duplicate-accepted-entry"
+          ],
+          "missing_grid_times": [
+            0.106,
+            0.107
+          ]
+        },
+        "reduced-independent/RK4-0.0001": {
+          "passed": false,
+          "issues": [
+            "failure",
+            "endpoint-not-reached",
+            "missing-common-grid",
+            "missing-or-duplicate-accepted-entry"
+          ],
+          "missing_grid_times": [
+            0.106,
+            0.107
+          ]
+        },
+        "reduced-independent/RK4-0.00005": {
+          "passed": false,
+          "issues": [
+            "failure",
+            "endpoint-not-reached",
+            "missing-common-grid",
+            "missing-or-duplicate-accepted-entry"
+          ],
+          "missing_grid_times": [
+            0.106,
+            0.107
+          ]
+        },
+        "reduced-independent/DOP853": {
+          "passed": false,
+          "issues": [
+            "failure",
+            "endpoint-not-reached",
+            "missing-common-grid",
+            "missing-or-duplicate-accepted-entry"
+          ],
+          "missing_grid_times": [
+            0.106,
+            0.107
+          ]
+        },
+        "reduced-independent/Radau": {
+          "passed": false,
+          "issues": [
+            "failure",
+            "endpoint-not-reached",
+            "missing-common-grid",
+            "missing-or-duplicate-accepted-entry"
+          ],
+          "missing_grid_times": [
+            0.106,
+            0.107
+          ]
+        }
+      },
+      "comparisons": {
+        "full-source:RK4-0.0002/RK4-0.0001": {
+          "passed": false,
+          "prefix_agreement_only": false,
+          "common_grid_count": 107,
+          "common_end_s": 0.1054,
+          "max_errors": {
+            "y_m": 1.6312714208946422e-09,
+            "w_m_per_s": 1.0198148397977391e-07,
+            "activation": 1.6768348654050413e-08,
+            "q": 1.601008425833328e-08,
+            "FT_N": 9.402671301117493e-06,
+            "I": 4.079261248235433e-09,
+            "raw": 3.892526545534736e-08
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 1.9073487234066988e-10,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "full-source:RK4-0.0001/RK4-0.00005": {
+          "passed": false,
+          "prefix_agreement_only": true,
+          "common_grid_count": 106,
+          "common_end_s": 0.105,
+          "max_errors": {
+            "y_m": 1.0428259297756703e-10,
+            "w_m_per_s": 6.509851158131852e-09,
+            "activation": 1.0569408681604386e-09,
+            "q": 1.0208865974803416e-09,
+            "FT_N": 5.991363680735162e-07,
+            "I": 2.603940257861481e-10,
+            "raw": 2.4811818155612286e-09
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 4.746203430272544e-15,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "full-source:DOP853/Radau": {
+          "passed": false,
+          "prefix_agreement_only": true,
+          "common_grid_count": 106,
+          "common_end_s": 0.105,
+          "max_errors": {
+            "y_m": 1.4339467113710924e-12,
+            "w_m_per_s": 7.11787295770705e-11,
+            "activation": 1.503952518078222e-11,
+            "q": 6.548650510751486e-12,
+            "FT_N": 8.191316069883214e-09,
+            "I": 2.84700041319752e-12,
+            "raw": 3.42381678564152e-11
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 4.784234119981079e-11,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "full-source:finest/DOP853": {
+          "passed": false,
+          "prefix_agreement_only": true,
+          "common_grid_count": 106,
+          "common_end_s": 0.105,
+          "max_errors": {
+            "y_m": 6.937054229660955e-12,
+            "w_m_per_s": 4.328076647075463e-10,
+            "activation": 6.999095747417527e-11,
+            "q": 6.719569345392529e-11,
+            "FT_N": 3.941027504339445e-08,
+            "I": 1.7312332123431418e-11,
+            "raw": 1.6327605933952327e-10
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 2.953920441584046e-11,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "full-source:finest/Radau": {
+          "passed": false,
+          "prefix_agreement_only": true,
+          "common_grid_count": 106,
+          "common_end_s": 0.105,
+          "max_errors": {
+            "y_m": 7.877134708400568e-12,
+            "w_m_per_s": 4.3798301097019987e-10,
+            "activation": 8.058936851185194e-11,
+            "q": 6.827027831945998e-11,
+            "FT_N": 3.97568902243961e-08,
+            "I": 1.7519360961948394e-11,
+            "raw": 1.6474599462412698e-10
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 7.738154561565125e-11,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "reduced-independent:RK4-0.0002/RK4-0.0001": {
+          "passed": false,
+          "prefix_agreement_only": false,
+          "common_grid_count": 107,
+          "common_end_s": 0.1054,
+          "max_errors": {
+            "y_m": 1.6312713844654492e-09,
+            "w_m_per_s": 1.019814826336285e-07,
+            "activation": 1.6768348376494657e-08,
+            "q": 1.6010083925266372e-08,
+            "FT_N": 9.402670877456387e-06,
+            "I": 4.0792612066020695e-09,
+            "raw": 3.892526379001282e-08
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 1.9073487234066988e-10,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "reduced-independent:RK4-0.0001/RK4-0.00005": {
+          "passed": false,
+          "prefix_agreement_only": true,
+          "common_grid_count": 106,
+          "common_end_s": 0.105,
+          "max_errors": {
+            "y_m": 1.0428262680467482e-10,
+            "w_m_per_s": 6.5098482993075635e-09,
+            "activation": 1.0569405906046825e-09,
+            "q": 1.0208863754357367e-09,
+            "FT_N": 5.991368237090455e-07,
+            "I": 2.603939563972091e-10,
+            "raw": 2.481183813962673e-09
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 4.746203430272544e-15,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "reduced-independent:DOP853/Radau": {
+          "passed": false,
+          "prefix_agreement_only": true,
+          "common_grid_count": 106,
+          "common_end_s": 0.105,
+          "max_errors": {
+            "y_m": 1.4338790571555293e-12,
+            "w_m_per_s": 7.118905465119951e-11,
+            "activation": 1.5040191314596996e-11,
+            "q": 6.550870956800736e-12,
+            "FT_N": 8.192283296182268e-09,
+            "I": 2.8474445024073702e-12,
+            "raw": 3.424205363700139e-11
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 1.3892367811685347e-10,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "reduced-independent:finest/DOP853": {
+          "passed": false,
+          "prefix_agreement_only": true,
+          "common_grid_count": 106,
+          "common_end_s": 0.105,
+          "max_errors": {
+            "y_m": 6.937114944982614e-12,
+            "w_m_per_s": 4.3281028760944196e-10,
+            "activation": 6.999217871950236e-11,
+            "q": 6.719647061004252e-11,
+            "FT_N": 3.940990911388553e-08,
+            "I": 1.7312401512370457e-11,
+            "raw": 1.632745050272888e-10
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 3.9870051704582465e-12,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "reduced-independent:finest/Radau": {
+          "passed": false,
+          "prefix_agreement_only": true,
+          "common_grid_count": 106,
+          "common_end_s": 0.105,
+          "max_errors": {
+            "y_m": 7.877169402870088e-12,
+            "w_m_per_s": 4.3798617510582005e-10,
+            "activation": 8.058970157875933e-11,
+            "q": 6.827083343097229e-11,
+            "FT_N": 3.9756766767595764e-08,
+            "I": 1.7519430350887433e-11,
+            "raw": 1.647453284903122e-10
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 1.3493667294639522e-10,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "representations:RK4-0.0002": {
+          "passed": false,
+          "prefix_agreement_only": true,
+          "common_grid_count": 107,
+          "common_end_s": 0.1054,
+          "max_errors": {
+            "y_m": 4.048844592929868e-15,
+            "w_m_per_s": 2.024491685403973e-13,
+            "activation": 2.1094237467877974e-14,
+            "q": 3.7636560534792807e-14,
+            "FT_N": 1.510791491909913e-11,
+            "I": 8.1601392309949e-15,
+            "raw": 6.461498003318411e-14
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 0.0,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "representations:RK4-0.0001": {
+          "passed": false,
+          "prefix_agreement_only": true,
+          "common_grid_count": 107,
+          "common_end_s": 0.1054,
+          "max_errors": {
+            "y_m": 3.920475055707584e-15,
+            "w_m_per_s": 2.0078383400345956e-13,
+            "activation": 2.1760371282653068e-14,
+            "q": 3.6415315207705135e-14,
+            "FT_N": 1.545963357330038e-11,
+            "I": 8.1601392309949e-15,
+            "raw": 6.605826996519681e-14
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 0.0,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "representations:RK4-0.00005": {
+          "passed": false,
+          "prefix_agreement_only": true,
+          "common_grid_count": 107,
+          "common_end_s": 0.10545,
+          "max_errors": {
+            "y_m": 3.986394547794703e-15,
+            "w_m_per_s": 2.0594637106796654e-13,
+            "activation": 2.19824158875781e-14,
+            "q": 3.708144902248023e-14,
+            "FT_N": 1.6189716234293883e-11,
+            "I": 8.104628079763643e-15,
+            "raw": 6.905587213168474e-14
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 0.0,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "representations:DOP853": {
+          "passed": false,
+          "prefix_agreement_only": true,
+          "common_grid_count": 106,
+          "common_end_s": 0.105,
+          "max_errors": {
+            "y_m": 4.270889197854899e-15,
+            "w_m_per_s": 2.1443957720634899e-13,
+            "activation": 2.19824158875781e-14,
+            "q": 4.007905118896815e-14,
+            "FT_N": 1.6894929899535782e-11,
+            "I": 8.659739592076221e-15,
+            "raw": 7.205347429817266e-14
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 3.3526209586298705e-11,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "representations:Radau": {
+          "passed": false,
+          "prefix_agreement_only": true,
+          "common_grid_count": 106,
+          "common_end_s": 0.105,
+          "max_errors": {
+            "y_m": 4.139050213680662e-15,
+            "w_m_per_s": 2.063904602778166e-13,
+            "activation": 2.19824158875781e-14,
+            "q": 3.8746783559417963e-14,
+            "FT_N": 1.531397231246956e-11,
+            "I": 8.271161533457416e-15,
+            "raw": 6.550315845288424e-14
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 5.755512733074397e-11,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        }
+      },
+      "balances": {
+        "full-source/RK4-0.0002": {
+          "passed": true,
+          "work_momentum_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 2.4424054671096096e-09,
+            "load_J": 4.9111440906862355e-11,
+            "combined_J": 2.456966921582371e-09,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 6.394318126205778e-14
+          },
+          "source_force_residual_N": 9.983125437429408e-13,
+          "independent_normal_disagreement_per_s": 3.5284219990217025e-11,
+          "independent_tangent_residual_per_s": 0.0,
+          "max_sliding_constraint": 0.0,
+          "physical_and_strict_sign_bounds_passed": true,
+          "quadrature": {
+            "integrals": [
+              0.25311684459529216,
+              0.0838535752835246,
+              0.16950477474587064,
+              0.0,
+              -0.000241505434103244,
+              0.265471503788227
+            ],
+            "errors": [
+              7.617063535469981e-09,
+              5.92850692149316e-09,
+              4.685613008703626e-12,
+              0.0,
+              1.355031984504756e-08,
+              2.150496447583805e-11
+            ],
+            "passed": true,
+            "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+          },
+          "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+        },
+        "full-source/RK4-0.0001": {
+          "passed": true,
+          "work_momentum_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 1.4742130086120575e-10,
+            "load_J": 2.9807757824518166e-12,
+            "combined_J": 1.483859979334312e-10,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 6.557994707175052e-14
+          },
+          "source_force_residual_N": 7.425171588693047e-13,
+          "independent_normal_disagreement_per_s": 3.5284219990217025e-11,
+          "independent_tangent_residual_per_s": 0.0,
+          "max_sliding_constraint": 0.0,
+          "physical_and_strict_sign_bounds_passed": true,
+          "quadrature": {
+            "integrals": [
+              0.2531168377913034,
+              0.08385357386653612,
+              0.16950477945392542,
+              0.0,
+              -0.00024151552915813968,
+              0.26547150111750234
+            ],
+            "errors": [
+              4.5856451968973033e-10,
+              3.9851917599253994e-10,
+              2.725319969698603e-13,
+              0.0,
+              8.574218135081087e-10,
+              9.393041899841137e-13
+            ],
+            "passed": true,
+            "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+          },
+          "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+        },
+        "full-source/RK4-0.00005": {
+          "passed": true,
+          "work_momentum_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 9.018622654233255e-12,
+            "load_J": 1.8357951064255223e-13,
+            "combined_J": 9.02402284841397e-12,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 6.594738318800586e-14
+          },
+          "source_force_residual_N": 7.922551503725117e-13,
+          "independent_normal_disagreement_per_s": 3.525713054841617e-11,
+          "independent_tangent_residual_per_s": 0.0,
+          "max_sliding_constraint": 0.0,
+          "physical_and_strict_sign_bounds_passed": true,
+          "quadrature": {
+            "integrals": [
+              0.2533847891719342,
+              0.08399777234157216,
+              0.1696271277889881,
+              0.0,
+              -0.00024011095862591476,
+              0.265456776438759
+            ],
+            "errors": [
+              2.8306412769296685e-11,
+              2.528971476678521e-11,
+              1.584843367652411e-14,
+              0.0,
+              5.367809159401854e-11,
+              3.5083047578154947e-14
+            ],
+            "passed": true,
+            "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+          },
+          "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+        },
+        "full-source/DOP853": {
+          "passed": true,
+          "work_momentum_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 9.856183794468287e-14,
+            "load_J": 3.00454106039183e-15,
+            "combined_J": 9.828680295857761e-14,
+            "momentum_N_s": 5.551115123125783e-17,
+            "power_ledger_J": 6.609450942281214e-14
+          },
+          "source_force_residual_N": 1.0835776720341528e-12,
+          "independent_normal_disagreement_per_s": 3.526956504629197e-11,
+          "independent_tangent_residual_per_s": 0.0,
+          "max_sliding_constraint": 0.0,
+          "physical_and_strict_sign_bounds_passed": true,
+          "quadrature": {
+            "integrals": [
+              0.2534203137858889,
+              0.08401688816919788,
+              0.16964334955686372,
+              0.0,
+              -0.00023992394017263575,
+              0.265454831148347
+            ],
+            "errors": [
+              8.776313009661862e-14,
+              2.8602120671905595e-13,
+              3.9718228705964975e-14,
+              0.0,
+              4.796262670879459e-13,
+              1.613709166292665e-13
+            ],
+            "passed": true,
+            "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+          },
+          "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+        },
+        "full-source/Radau": {
+          "passed": true,
+          "work_momentum_errors": {
+            "fiber_J": 6.930462116995732e-33,
+            "tendon_J": 1.066920401852911e-11,
+            "load_J": 2.4131668885374324e-11,
+            "combined_J": 3.486078092862499e-11,
+            "momentum_N_s": 8.673617379884035e-19,
+            "power_ledger_J": 6.51745909845125e-14
+          },
+          "source_force_residual_N": 1.0835776720341528e-12,
+          "independent_normal_disagreement_per_s": 3.515587820857036e-11,
+          "independent_tangent_residual_per_s": 0.0,
+          "max_sliding_constraint": 0.0,
+          "physical_and_strict_sign_bounds_passed": true,
+          "quadrature": {
+            "integrals": [
+              0.2534152300191551,
+              0.0840141526167617,
+              0.16964102812318296,
+              0.0,
+              -0.00023995072078954885,
+              0.2654551094296277
+            ],
+            "errors": [
+              3.885780586188048e-16,
+              4.3048897779840445e-14,
+              9.33975119465913e-14,
+              6.930462116995732e-33,
+              7.165353922179707e-14,
+              1.6525669721545455e-13
+            ],
+            "passed": true,
+            "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+          },
+          "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+        },
+        "reduced-independent/RK4-0.0002": {
+          "passed": true,
+          "work_momentum_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 2.4424044609699935e-09,
+            "load_J": 4.911144092041488e-11,
+            "combined_J": 2.4570300793946842e-09,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 4.34114549863196e-16
+          },
+          "source_force_residual_N": 1.1546319456101628e-13,
+          "independent_normal_disagreement_per_s": 1.7763568394002505e-15,
+          "independent_tangent_residual_per_s": 0.0,
+          "max_sliding_constraint": 0.0,
+          "physical_and_strict_sign_bounds_passed": true,
+          "quadrature": {
+            "integrals": [
+              0.2531168445952668,
+              0.08385357528353317,
+              0.16950477474588718,
+              0.0,
+              -0.00024150543415355982,
+              0.2654715037882111
+            ],
+            "errors": [
+              7.617057484754497e-09,
+              5.928526405907242e-09,
+              4.685946075611014e-12,
+              0.0,
+              1.3550270255456229e-08,
+              2.1515678128025684e-11
+            ],
+            "passed": true,
+            "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+          },
+          "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+        },
+        "reduced-independent/RK4-0.0001": {
+          "passed": true,
+          "work_momentum_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 1.4741895898451318e-10,
+            "load_J": 2.980775823109398e-12,
+            "combined_J": 1.4844889206777623e-10,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 1.7883914835148396e-16
+          },
+          "source_force_residual_N": 1.2612133559741778e-13,
+          "independent_normal_disagreement_per_s": 1.7763568394002505e-15,
+          "independent_tangent_residual_per_s": 0.0,
+          "max_sliding_constraint": 0.0,
+          "physical_and_strict_sign_bounds_passed": true,
+          "quadrature": {
+            "integrals": [
+              0.25311683779127836,
+              0.0838535738665447,
+              0.16950477945394096,
+              0.0,
+              -0.0002415155292074733,
+              0.2654715011174868
+            ],
+            "errors": [
+              4.5855907959690967e-10,
+              3.9853904898468073e-10,
+              2.7317037520901977e-13,
+              0.0,
+              8.573712058780429e-10,
+              9.487410856934275e-13
+            ],
+            "passed": true,
+            "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+          },
+          "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+        },
+        "reduced-independent/RK4-0.00005": {
+          "passed": true,
+          "work_momentum_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 9.018466529120417e-12,
+            "load_J": 1.835795513001337e-13,
+            "combined_J": 9.084982766083272e-12,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 2.3136874360840665e-16
+          },
+          "source_force_residual_N": 7.815970093361102e-14,
+          "independent_normal_disagreement_per_s": 1.7763568394002505e-15,
+          "independent_tangent_residual_per_s": 0.0,
+          "max_sliding_constraint": 0.0,
+          "physical_and_strict_sign_bounds_passed": true,
+          "quadrature": {
+            "integrals": [
+              0.25338478917190743,
+              0.08399777234158193,
+              0.16962712778900169,
+              0.0,
+              -0.00024011095867561839,
+              0.2654567764387386
+            ],
+            "errors": [
+              2.8300972676476022e-11,
+              2.5309504492199153e-11,
+              1.684763439868675e-14,
+              0.0,
+              5.36276732656521e-11,
+              4.6351811278100286e-14
+            ],
+            "passed": true,
+            "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+          },
+          "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+        },
+        "reduced-independent/DOP853": {
+          "passed": true,
+          "work_momentum_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 9.887067293351537e-14,
+            "load_J": 3.028827189055505e-15,
+            "combined_J": 9.880518712229724e-14,
+            "momentum_N_s": 2.7755575615628914e-17,
+            "power_ledger_J": 6.617427959765276e-16
+          },
+          "source_force_residual_N": 1.163513729807164e-13,
+          "independent_normal_disagreement_per_s": 1.7763568394002505e-15,
+          "independent_tangent_residual_per_s": 0.0,
+          "max_sliding_constraint": 0.0,
+          "physical_and_strict_sign_bounds_passed": true,
+          "quadrature": {
+            "integrals": [
+              0.25342015920402944,
+              0.08401680498953189,
+              0.16964327896908815,
+              0.0,
+              -0.00023992475459059606,
+              0.2654548396095333
+            ],
+            "errors": [
+              8.359979375427429e-14,
+              3.0857261190675445e-13,
+              3.3639757646142243e-14,
+              0.0,
+              4.2515516389569907e-13,
+              1.5326628854950286e-13
+            ],
+            "passed": true,
+            "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+          },
+          "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+        },
+        "reduced-independent/Radau": {
+          "passed": true,
+          "work_momentum_errors": {
+            "fiber_J": 6.930753912945927e-33,
+            "tendon_J": 1.066915045894179e-11,
+            "load_J": 2.4130697440227777e-11,
+            "combined_J": 3.480002397360238e-11,
+            "momentum_N_s": 1.734723475976807e-18,
+            "power_ledger_J": 2.1993041068868457e-16
+          },
+          "source_force_residual_N": 7.815970093361102e-14,
+          "independent_normal_disagreement_per_s": 1.7763568394002505e-15,
+          "independent_tangent_residual_per_s": 0.0,
+          "max_sliding_constraint": 0.0,
+          "physical_and_strict_sign_bounds_passed": true,
+          "quadrature": {
+            "integrals": [
+              0.25341528101855526,
+              0.08401418005937962,
+              0.1696410514113784,
+              0.0,
+              -0.0002399504522026925,
+              0.2654551066377814
+            ],
+            "errors": [
+              5.662137425588298e-15,
+              2.3342439092743916e-14,
+              9.267586698058494e-14,
+              6.930753912945927e-33,
+              1.2148143819015744e-13,
+              1.5437651157412802e-13
+            ],
+            "passed": true,
+            "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+          },
+          "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+        }
+      },
+      "candidate_entry_times_s": {
+        "full-source/RK4-0.0002": 0.10545806579589848,
+        "full-source/RK4-0.0001": 0.10545806598663335,
+        "full-source/RK4-0.00005": 0.1054580659866286,
+        "full-source/DOP853": 0.1054580660161678,
+        "full-source/Radau": 0.10545806606401015,
+        "reduced-independent/RK4-0.0002": 0.10545806579589848,
+        "reduced-independent/RK4-0.0001": 0.10545806598663335,
+        "reduced-independent/RK4-0.00005": 0.1054580659866286,
+        "reduced-independent/DOP853": 0.1054580659826416,
+        "reduced-independent/Radau": 0.10545806612156527
+      },
+      "accepted_endpoints_s": {
+        "full-source/RK4-0.0002": 0.10540000000000001,
+        "full-source/RK4-0.0001": 0.10540000000000001,
+        "full-source/RK4-0.00005": 0.10544999999999528,
+        "full-source/DOP853": 0.10545662811379837,
+        "full-source/Radau": 0.10545567960683308,
+        "reduced-independent/RK4-0.0002": 0.10540000000000001,
+        "reduced-independent/RK4-0.0001": 0.10540000000000001,
+        "reduced-independent/RK4-0.00005": 0.10544999999999528,
+        "reduced-independent/DOP853": 0.10545659927265288,
+        "reduced-independent/Radau": 0.10545568912210243
+      },
+      "failure_codes": {
+        "full-source/RK4-0.0002": "entry-refinement-block",
+        "full-source/RK4-0.0001": "entry-refinement-block",
+        "full-source/RK4-0.00005": "entry-refinement-block",
+        "full-source/DOP853": "entry-refinement-block",
+        "full-source/Radau": "entry-refinement-block",
+        "reduced-independent/RK4-0.0002": "entry-refinement-block",
+        "reduced-independent/RK4-0.0001": "entry-refinement-block",
+        "reduced-independent/RK4-0.00005": "entry-refinement-block",
+        "reduced-independent/DOP853": "entry-refinement-block",
+        "reduced-independent/Radau": "entry-refinement-block"
+      }
+    },
+    "mass-1": {
+      "passed": false,
+      "status": "unqualified",
+      "missing_cells": [],
+      "completion": {
+        "full-source/RK4-0.0002": {
+          "passed": false,
+          "issues": [
+            "failure",
+            "endpoint-not-reached",
+            "missing-common-grid",
+            "missing-or-duplicate-accepted-entry"
+          ],
+          "missing_grid_times": [
+            0.263,
+            0.264
+          ]
+        },
+        "full-source/RK4-0.0001": {
+          "passed": false,
+          "issues": [
+            "failure",
+            "endpoint-not-reached",
+            "missing-common-grid",
+            "missing-or-duplicate-accepted-entry"
+          ],
+          "missing_grid_times": [
+            0.263,
+            0.264
+          ]
+        },
+        "full-source/RK4-0.00005": {
+          "passed": false,
+          "issues": [
+            "failure",
+            "endpoint-not-reached",
+            "missing-common-grid",
+            "missing-or-duplicate-accepted-entry"
+          ],
+          "missing_grid_times": [
+            0.263,
+            0.264
+          ]
+        },
+        "full-source/DOP853": {
+          "passed": false,
+          "issues": [
+            "failure",
+            "endpoint-not-reached",
+            "missing-common-grid",
+            "missing-or-duplicate-accepted-entry"
+          ],
+          "missing_grid_times": [
+            0.262,
+            0.263,
+            0.264
+          ]
+        },
+        "full-source/Radau": {
+          "passed": false,
+          "issues": [
+            "failure",
+            "endpoint-not-reached",
+            "missing-common-grid",
+            "missing-or-duplicate-accepted-entry"
+          ],
+          "missing_grid_times": [
+            0.262,
+            0.263,
+            0.264
+          ]
+        },
+        "reduced-independent/RK4-0.0002": {
+          "passed": false,
+          "issues": [
+            "failure",
+            "endpoint-not-reached",
+            "missing-common-grid",
+            "missing-or-duplicate-accepted-entry"
+          ],
+          "missing_grid_times": [
+            0.263,
+            0.264
+          ]
+        },
+        "reduced-independent/RK4-0.0001": {
+          "passed": false,
+          "issues": [
+            "failure",
+            "endpoint-not-reached",
+            "missing-common-grid",
+            "missing-or-duplicate-accepted-entry"
+          ],
+          "missing_grid_times": [
+            0.263,
+            0.264
+          ]
+        },
+        "reduced-independent/RK4-0.00005": {
+          "passed": false,
+          "issues": [
+            "failure",
+            "endpoint-not-reached",
+            "missing-common-grid",
+            "missing-or-duplicate-accepted-entry"
+          ],
+          "missing_grid_times": [
+            0.263,
+            0.264
+          ]
+        },
+        "reduced-independent/DOP853": {
+          "passed": false,
+          "issues": [
+            "failure",
+            "endpoint-not-reached",
+            "missing-common-grid",
+            "missing-or-duplicate-accepted-entry"
+          ],
+          "missing_grid_times": [
+            0.262,
+            0.263,
+            0.264
+          ]
+        },
+        "reduced-independent/Radau": {
+          "passed": false,
+          "issues": [
+            "failure",
+            "endpoint-not-reached",
+            "missing-common-grid",
+            "missing-or-duplicate-accepted-entry"
+          ],
+          "missing_grid_times": [
+            0.262,
+            0.263,
+            0.264
+          ]
+        }
+      },
+      "comparisons": {
+        "full-source:RK4-0.0002/RK4-0.0001": {
+          "passed": false,
+          "prefix_agreement_only": false,
+          "common_grid_count": 263,
+          "common_end_s": 0.262,
+          "max_errors": {
+            "y_m": 3.1578095416318064e-09,
+            "w_m_per_s": 6.939932892247036e-08,
+            "activation": 1.668697094392435e-08,
+            "q": 2.985328495519468e-08,
+            "FT_N": 1.559316105570474e-06,
+            "I": 3.654484357490384e-09,
+            "raw": 8.798324676456692e-09
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 0.0,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [
+            3.0517577770394766e-09,
+            1.831056065104697e-08
+          ],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "full-source:RK4-0.0001/RK4-0.00005": {
+          "passed": false,
+          "prefix_agreement_only": false,
+          "common_grid_count": 263,
+          "common_end_s": 0.262,
+          "max_errors": {
+            "y_m": 1.0379246941083498e-09,
+            "w_m_per_s": 2.2439582476885267e-08,
+            "activation": 5.413998527270536e-09,
+            "q": 9.856166771626818e-09,
+            "FT_N": 5.014780217749149e-07,
+            "I": 2.6155424909246605e-09,
+            "raw": 3.490591520688424e-09
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 0.0,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [
+            3.0517628424320264e-09,
+            1.220703310655935e-08
+          ],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "full-source:DOP853/Radau": {
+          "passed": false,
+          "prefix_agreement_only": true,
+          "common_grid_count": 262,
+          "common_end_s": 0.261,
+          "max_errors": {
+            "y_m": 6.131042895596295e-11,
+            "w_m_per_s": 1.4507446355338516e-09,
+            "activation": 3.3061044873994305e-10,
+            "q": 5.647291523303011e-10,
+            "FT_N": 3.576174201214144e-08,
+            "I": 4.547058667092596e-10,
+            "raw": 5.255172581819512e-10
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 1.979696129250641e-08,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [
+            1.2787984560169718e-10,
+            1.3308105450970942e-09
+          ],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "full-source:finest/DOP853": {
+          "passed": false,
+          "prefix_agreement_only": false,
+          "common_grid_count": 262,
+          "common_end_s": 0.261,
+          "max_errors": {
+            "y_m": 5.333689705178113e-10,
+            "w_m_per_s": 1.1663442725518003e-08,
+            "activation": 2.8098366133821884e-09,
+            "q": 5.045980744355916e-09,
+            "FT_N": 2.5959319316370966e-07,
+            "I": 1.2983207148264952e-09,
+            "raw": 2.160024603625743e-09
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 2.5903029388096854e-08,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [
+            2.5440873019366705e-09,
+            7.121734785231482e-09
+          ],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "full-source:finest/Radau": {
+          "passed": false,
+          "prefix_agreement_only": false,
+          "common_grid_count": 262,
+          "common_end_s": 0.261,
+          "max_errors": {
+            "y_m": 4.730293969024135e-10,
+            "w_m_per_s": 1.027349412485723e-08,
+            "activation": 2.4792261646422453e-09,
+            "q": 4.484961069195492e-09,
+            "FT_N": 2.2923589426682156e-07,
+            "I": 1.7377097191739743e-09,
+            "raw": 2.0389171150048124e-09
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 4.5699990680603264e-08,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [
+            2.6719671475383677e-09,
+            8.452545330328576e-09
+          ],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "reduced-independent:RK4-0.0002/RK4-0.0001": {
+          "passed": false,
+          "prefix_agreement_only": false,
+          "common_grid_count": 263,
+          "common_end_s": 0.262,
+          "max_errors": {
+            "y_m": 3.1578093195872015e-09,
+            "w_m_per_s": 6.939932570282359e-08,
+            "activation": 1.6686970222279385e-08,
+            "q": 2.9853283400882447e-08,
+            "FT_N": 1.5593159208293628e-06,
+            "I": 3.6544846176989054e-09,
+            "raw": 8.798323680725417e-09
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 0.0,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [
+            3.0517577770394766e-09,
+            1.831056065104697e-08
+          ],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "reduced-independent:RK4-0.0001/RK4-0.00005": {
+          "passed": false,
+          "prefix_agreement_only": false,
+          "common_grid_count": 263,
+          "common_end_s": 0.262,
+          "max_errors": {
+            "y_m": 1.037924753088948e-09,
+            "w_m_per_s": 2.243958088093967e-08,
+            "activation": 5.413998915848595e-09,
+            "q": 9.856166549582213e-09,
+            "FT_N": 5.014773467593159e-07,
+            "I": 2.615542466638532e-09,
+            "raw": 3.490593907667927e-09
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 0.0,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [
+            3.0517628424320264e-09,
+            1.220703310655935e-08
+          ],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "reduced-independent:DOP853/Radau": {
+          "passed": false,
+          "prefix_agreement_only": true,
+          "common_grid_count": 263,
+          "common_end_s": 0.261,
+          "max_errors": {
+            "y_m": 1.0803970565409493e-10,
+            "w_m_per_s": 1.4338379789036182e-09,
+            "activation": 3.3028264151413467e-10,
+            "q": 1.0453209409178044e-09,
+            "FT_N": 3.474536747205548e-08,
+            "I": 9.408378034980736e-10,
+            "raw": 8.545160898321136e-10
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 1.182328495663576e-07,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [
+            2.0235609021757028e-10,
+            2.6532454844296893e-09
+          ],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "reduced-independent:finest/DOP853": {
+          "passed": false,
+          "prefix_agreement_only": false,
+          "common_grid_count": 263,
+          "common_end_s": 0.261,
+          "max_errors": {
+            "y_m": 5.333739457047404e-10,
+            "w_m_per_s": 1.1663381260795802e-08,
+            "activation": 2.8098355725481028e-09,
+            "q": 5.046048467960418e-09,
+            "FT_N": 2.5958592964059335e-07,
+            "I": 1.298320877890502e-09,
+            "raw": 1.3306258143941374e-09
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 2.1281248818727505e-08,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [
+            1.0529779825851904e-10,
+            4.68294528155333e-09
+          ],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "reduced-independent:finest/Radau": {
+          "passed": false,
+          "prefix_agreement_only": true,
+          "common_grid_count": 263,
+          "common_end_s": 0.261,
+          "max_errors": {
+            "y_m": 4.72729543010697e-10,
+            "w_m_per_s": 1.0275350431632191e-08,
+            "activation": 2.479552931033968e-09,
+            "q": 4.480964932440656e-09,
+            "FT_N": 2.2911545372039654e-07,
+            "I": 4.6003076781958585e-10,
+            "raw": 1.2365205664943701e-09
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 9.69516007476301e-08,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [
+            3.076538884760893e-10,
+            2.0296997971236408e-09
+          ],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "representations:RK4-0.0002": {
+          "passed": false,
+          "prefix_agreement_only": true,
+          "common_grid_count": 265,
+          "common_end_s": 0.262,
+          "max_errors": {
+            "y_m": 2.2065682614424986e-14,
+            "w_m_per_s": 5.461724822408698e-13,
+            "activation": 3.0905833448002795e-14,
+            "q": 1.9939605522267811e-13,
+            "FT_N": 6.252065531953122e-11,
+            "I": 5.1309650972442e-14,
+            "raw": 2.614332361705607e-13
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 0.0,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [
+            0.0,
+            0.0
+          ],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "representations:RK4-0.0001": {
+          "passed": false,
+          "prefix_agreement_only": true,
+          "common_grid_count": 265,
+          "common_end_s": 0.262,
+          "max_errors": {
+            "y_m": 2.1958129758914424e-14,
+            "w_m_per_s": 5.438548916769648e-13,
+            "activation": 3.0760116676020743e-14,
+            "q": 1.98507876802978e-13,
+            "FT_N": 6.220091108843917e-11,
+            "I": 5.101127853457399e-14,
+            "raw": 2.598303516787581e-13
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 0.0,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [
+            0.0,
+            0.0
+          ],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "representations:RK4-0.00005": {
+          "passed": false,
+          "prefix_agreement_only": true,
+          "common_grid_count": 265,
+          "common_end_s": 0.262,
+          "max_errors": {
+            "y_m": 2.1951190865010517e-14,
+            "w_m_per_s": 5.414974024731123e-13,
+            "activation": 3.082256672115591e-14,
+            "q": 1.98507876802978e-13,
+            "FT_N": 6.16857676050131e-11,
+            "I": 5.074066167232161e-14,
+            "raw": 2.579186864082317e-13
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 0.0,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [
+            0.0,
+            0.0
+          ],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "representations:DOP853": {
+          "passed": false,
+          "prefix_agreement_only": true,
+          "common_grid_count": 262,
+          "common_end_s": 0.261,
+          "max_errors": {
+            "y_m": 3.4812430715902565e-14,
+            "w_m_per_s": 8.852363286848686e-13,
+            "activation": 3.903127820947816e-13,
+            "q": 3.5016434196677437e-13,
+            "FT_N": 6.154898812837928e-11,
+            "I": 8.294094647198769e-10,
+            "raw": 8.295682890624434e-10
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 4.621780569369349e-09,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [
+            2.4387895036781515e-09,
+            2.4387895036781515e-09
+          ],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        },
+        "representations:Radau": {
+          "passed": false,
+          "prefix_agreement_only": false,
+          "common_grid_count": 262,
+          "common_end_s": 0.261,
+          "max_errors": {
+            "y_m": 2.2516224995605683e-12,
+            "w_m_per_s": 4.898668970465536e-11,
+            "activation": 1.8358520606498452e-10,
+            "q": 2.0930146504838376e-11,
+            "FT_N": 6.9018586401625726e-09,
+            "I": 1.3801868051221966e-09,
+            "raw": 1.3784056604460027e-09
+          },
+          "gates": {
+            "y_m": 1e-06,
+            "w_m_per_s": 1e-05,
+            "activation": 2e-06,
+            "q": 2e-06,
+            "FT_N": 0.0001,
+            "I": 1e-09,
+            "raw": 1e-08
+          },
+          "candidate_event_difference_s": 1.4265159142823336e-07,
+          "ordinary_event_types_match": true,
+          "ordinary_event_differences_s": [
+            2.3643132590622784e-09,
+            6.422845533204935e-09
+          ],
+          "event_gate_s": 2e-06,
+          "absolute_times_used": true,
+          "event_alignment_used": false
+        }
+      },
+      "balances": {
+        "full-source/RK4-0.0002": {
+          "passed": true,
+          "work_momentum_errors": {
+            "fiber_J": 3.5715874702191286e-13,
+            "tendon_J": 3.657595060158059e-12,
+            "load_J": 2.237650169323313e-13,
+            "combined_J": 3.6053798835311568e-12,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 1.683349640235754e-13
+          },
+          "source_force_residual_N": 8.490985692333197e-13,
+          "independent_normal_disagreement_per_s": 2.374898611101628e-10,
+          "independent_tangent_residual_per_s": 0.0,
+          "max_sliding_constraint": 0.0,
+          "physical_and_strict_sign_bounds_passed": true,
+          "quadrature": {
+            "integrals": [
+              -0.11021534925079675,
+              0.062395126637234406,
+              -0.25314521144707597,
+              0.07685843303916064,
+              0.0036763025198839634,
+              0.10358071558318094
+            ],
+            "errors": [
+              1.586519804419595e-11,
+              7.863078244074728e-12,
+              6.356692949793796e-12,
+              2.965712397884346e-11,
+              1.2117794614963096e-11,
+              2.2127591425835647e-11
+            ],
+            "passed": true,
+            "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+          },
+          "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+        },
+        "full-source/RK4-0.0001": {
+          "passed": true,
+          "work_momentum_errors": {
+            "fiber_J": 2.4993895841873837e-14,
+            "tendon_J": 2.2445760528011505e-13,
+            "load_J": 1.3858705849578712e-14,
+            "combined_J": 1.9762663727718177e-13,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 1.6798194779621411e-13
+          },
+          "source_force_residual_N": 1.3571366253017914e-12,
+          "independent_normal_disagreement_per_s": 2.384753089446079e-10,
+          "independent_tangent_residual_per_s": 0.0,
+          "max_sliding_constraint": 0.0,
+          "physical_and_strict_sign_bounds_passed": true,
+          "quadrature": {
+            "integrals": [
+              -0.1102153453096763,
+              0.06239513095780076,
+              -0.2531451992270068,
+              0.0768584215112405,
+              0.0036763014482892927,
+              0.10358069575611914
+            ],
+            "errors": [
+              6.601247326543103e-13,
+              7.741030039198904e-14,
+              4.5180525987120745e-13,
+              2.2488261253172936e-12,
+              1.9502498574408555e-12,
+              1.7356949211233541e-12
+            ],
+            "passed": true,
+            "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+          },
+          "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+        },
+        "full-source/RK4-0.00005": {
+          "passed": true,
+          "work_momentum_errors": {
+            "fiber_J": 3.774758283725532e-15,
+            "tendon_J": 1.3969728152041228e-14,
+            "load_J": 1.27675647831893e-15,
+            "combined_J": 1.5606960168668138e-13,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 1.6942870717517877e-13
+          },
+          "source_force_residual_N": 1.1315393066979595e-12,
+          "independent_normal_disagreement_per_s": 2.3831291107168084e-10,
+          "independent_tangent_residual_per_s": 0.0,
+          "max_sliding_constraint": 0.0,
+          "physical_and_strict_sign_bounds_passed": true,
+          "quadrature": {
+            "integrals": [
+              -0.1102153434250894,
+              0.06239513280822284,
+              -0.2531451949922691,
+              0.07685841772976015,
+              0.0036763010291950026,
+              0.10358069060852218
+            ],
+            "errors": [
+              2.948891131282494e-13,
+              4.3959974549423464e-13,
+              3.3306690738754696e-14,
+              4.173744683200198e-13,
+              1.0176828997565668e-12,
+              1.2596867993153182e-13
+            ],
+            "passed": true,
+            "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+          },
+          "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+        },
+        "full-source/DOP853": {
+          "passed": true,
+          "work_momentum_errors": {
+            "fiber_J": 1.734723475976807e-15,
+            "tendon_J": 2.63504496000877e-15,
+            "load_J": 6.106226635438361e-16,
+            "combined_J": 1.6926043899800902e-13,
+            "momentum_N_s": 9.71445146547012e-17,
+            "power_ledger_J": 1.6739734598480993e-13
+          },
+          "source_force_residual_N": 1.2025935802739696e-12,
+          "independent_normal_disagreement_per_s": 2.377154029176154e-10,
+          "independent_tangent_residual_per_s": 0.0,
+          "max_sliding_constraint": 0.0,
+          "physical_and_strict_sign_bounds_passed": true,
+          "quadrature": {
+            "integrals": [
+              -0.1102220271334681,
+              0.06238475109212926,
+              -0.25324660274125826,
+              0.07695415069827846,
+              0.0036856738173825037,
+              0.10375254931167027
+            ],
+            "errors": [
+              1.991878884055609e-13,
+              1.5144829834667917e-13,
+              4.440892098500626e-16,
+              2.6449675782913573e-13,
+              3.8454829598411067e-13,
+              1.4904744105592727e-14
+            ],
+            "passed": true,
+            "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+          },
+          "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+        },
+        "full-source/Radau": {
+          "passed": true,
+          "work_momentum_errors": {
+            "fiber_J": 3.0434543774049416e-12,
+            "tendon_J": 9.027954165491403e-13,
+            "load_J": 2.995104164682516e-12,
+            "combined_J": 2.4587199680750627e-12,
+            "momentum_N_s": 1.3877787807814457e-17,
+            "power_ledger_J": 1.6836705640788097e-13
+          },
+          "source_force_residual_N": 1.4885870314174099e-12,
+          "independent_normal_disagreement_per_s": 2.382539165957098e-10,
+          "independent_tangent_residual_per_s": 0.0,
+          "max_sliding_constraint": 0.0,
+          "physical_and_strict_sign_bounds_passed": true,
+          "quadrature": {
+            "integrals": [
+              -0.11021753939272487,
+              0.06239172422378008,
+              -0.25317848949007277,
+              0.07688984984822536,
+              0.003679376025342578,
+              0.10363725800329217
+            ],
+            "errors": [
+              2.5444923945627806e-13,
+              1.350586309456503e-13,
+              8.099076964640517e-14,
+              5.555556015224283e-13,
+              8.577773907836317e-13,
+              3.1211144779774713e-14
+            ],
+            "passed": true,
+            "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+          },
+          "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+        },
+        "reduced-independent/RK4-0.0002": {
+          "passed": true,
+          "work_momentum_errors": {
+            "fiber_J": 3.5751956950491603e-13,
+            "tendon_J": 3.657872615914215e-12,
+            "load_J": 2.2376414957059332e-13,
+            "combined_J": 3.773308054899616e-12,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 4.0245584642661925e-16
+          },
+          "source_force_residual_N": 1.7763568394002505e-14,
+          "independent_normal_disagreement_per_s": 2.220446049250313e-16,
+          "independent_tangent_residual_per_s": 0.0,
+          "max_sliding_constraint": 0.0,
+          "physical_and_strict_sign_bounds_passed": true,
+          "quadrature": {
+            "integrals": [
+              -0.11021534925056335,
+              0.06239512663701088,
+              -0.2531452114469253,
+              0.07685843303896601,
+              0.0036763025203849693,
+              0.10358071558312013
+            ],
+            "errors": [
+              1.617200817705111e-11,
+              8.168549170406436e-12,
+              6.357470105911034e-12,
+              2.9585653371633214e-11,
+              1.1602760852796878e-11,
+              2.2136764643576612e-11
+            ],
+            "passed": true,
+            "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+          },
+          "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+        },
+        "reduced-independent/RK4-0.0001": {
+          "passed": true,
+          "work_momentum_errors": {
+            "fiber_J": 2.8019253583977388e-14,
+            "tendon_J": 2.2250430664616516e-13,
+            "load_J": 1.3877787807814457e-14,
+            "combined_J": 2.353742201144371e-13,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 3.946495907847236e-16
+          },
+          "source_force_residual_N": 1.5987211554602254e-14,
+          "independent_normal_disagreement_per_s": 2.220446049250313e-16,
+          "independent_tangent_residual_per_s": 0.0,
+          "max_sliding_constraint": 0.0,
+          "physical_and_strict_sign_bounds_passed": true,
+          "quadrature": {
+            "integrals": [
+              -0.11021534530944206,
+              0.06239513095757529,
+              -0.2531451992268551,
+              0.07685842151103801,
+              0.003676301448800028,
+              0.10358069575605997
+            ],
+            "errors": [
+              9.675871215364396e-13,
+              2.2832430390806735e-13,
+              4.5297099404706387e-13,
+              2.171998692013233e-12,
+              1.4291306853209118e-12,
+              1.748573508209006e-12
+            ],
+            "passed": true,
+            "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+          },
+          "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+        },
+        "reduced-independent/RK4-0.00005": {
+          "passed": true,
+          "work_momentum_errors": {
+            "fiber_J": 6.5780714209040525e-15,
+            "tendon_J": 1.6118183177038503e-14,
+            "load_J": 2.3314683517128287e-15,
+            "combined_J": 1.5952517085082718e-14,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 1.1969591984239969e-15
+          },
+          "source_force_residual_N": 1.5987211554602254e-14,
+          "independent_normal_disagreement_per_s": 2.220446049250313e-16,
+          "independent_tangent_residual_per_s": 0.0,
+          "max_sliding_constraint": 0.0,
+          "physical_and_strict_sign_bounds_passed": true,
+          "quadrature": {
+            "integrals": [
+              -0.11021534342485614,
+              0.06239513280799901,
+              -0.25314519499212473,
+              0.0768584177295507,
+              0.0036763010297181506,
+              0.10358069060845825
+            ],
+            "errors": [
+              1.3850032232198828e-14,
+              1.332475796367305e-13,
+              3.480549182199866e-14,
+              3.3352487438520484e-13,
+              4.875579107110894e-13,
+              1.3815337762679292e-13
+            ],
+            "passed": true,
+            "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+          },
+          "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+        },
+        "reduced-independent/DOP853": {
+          "passed": true,
+          "work_momentum_errors": {
+            "fiber_J": 3.3306690738754696e-15,
+            "tendon_J": 2.6922908347160046e-15,
+            "load_J": 7.216449660063518e-16,
+            "combined_J": 1.8596235662471372e-15,
+            "momentum_N_s": 2.7755575615628914e-17,
+            "power_ledger_J": 4.865899350114944e-16
+          },
+          "source_force_residual_N": 1.865174681370263e-14,
+          "independent_normal_disagreement_per_s": 2.220446049250313e-16,
+          "independent_tangent_residual_per_s": 0.0,
+          "max_sliding_constraint": 0.0,
+          "physical_and_strict_sign_bounds_passed": true,
+          "quadrature": {
+            "integrals": [
+              -0.11022202727256306,
+              0.062384750875513206,
+              -0.2532466048527505,
+              0.0769541526913618,
+              0.00368567401331234,
+              0.10375255287590603
+            ],
+            "errors": [
+              1.0712264408851979e-13,
+              4.597294767094695e-13,
+              1.887379141862766e-15,
+              3.697736561392162e-13,
+              9.350823067244551e-13,
+              5.6343818499726694e-15
+            ],
+            "passed": true,
+            "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+          },
+          "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+        },
+        "reduced-independent/Radau": {
+          "passed": true,
+          "work_momentum_errors": {
+            "fiber_J": 2.9444918725474167e-12,
+            "tendon_J": 9.021923833008039e-13,
+            "load_J": 3.445466134621711e-12,
+            "combined_J": 2.454618783622256e-12,
+            "momentum_N_s": 6.938893903907228e-18,
+            "power_ledger_J": 3.972516759986888e-16
+          },
+          "source_force_residual_N": 1.5987211554602254e-14,
+          "independent_normal_disagreement_per_s": 2.220446049250313e-16,
+          "independent_tangent_residual_per_s": 0.0,
+          "max_sliding_constraint": 0.0,
+          "physical_and_strict_sign_bounds_passed": true,
+          "quadrature": {
+            "integrals": [
+              -0.11021754274705427,
+              0.0623917190078788,
+              -0.2531785405295309,
+              0.0768898980423964,
+              0.003679380732201873,
+              0.1036373446197121
+            ],
+            "errors": [
+              8.31279489688086e-14,
+              1.6768531008182208e-13,
+              7.416289804496046e-14,
+              3.8362368837141503e-13,
+              2.061887986737343e-13,
+              1.7708057242771247e-14
+            ],
+            "passed": true,
+            "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+          },
+          "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+        }
+      },
+      "candidate_entry_times_s": {
+        "full-source/RK4-0.0002": 0.26203076171874873,
+        "full-source/RK4-0.0001": 0.26203076171874873,
+        "full-source/RK4-0.00005": 0.26203076171874873,
+        "full-source/DOP853": 0.2620307876217781,
+        "full-source/Radau": 0.2620308074187394,
+        "reduced-independent/RK4-0.0002": 0.26203076171874873,
+        "reduced-independent/RK4-0.0001": 0.26203076171874873,
+        "reduced-independent/RK4-0.00005": 0.26203076171874873,
+        "reduced-independent/DOP853": 0.26203078299999755,
+        "reduced-independent/Radau": 0.262030664767148
+      },
+      "accepted_endpoints_s": {
+        "full-source/RK4-0.0002": 0.2619999999999987,
+        "full-source/RK4-0.0001": 0.2619999999999987,
+        "full-source/RK4-0.00005": 0.2619999999999987,
+        "full-source/DOP853": 0.26188272806898477,
+        "full-source/Radau": 0.26196146552530825,
+        "reduced-independent/RK4-0.0002": 0.2619999999999987,
+        "reduced-independent/RK4-0.0001": 0.2619999999999987,
+        "reduced-independent/RK4-0.00005": 0.2619999999999987,
+        "reduced-independent/DOP853": 0.26188272563019527,
+        "reduced-independent/Radau": 0.2619614064715357
+      },
+      "failure_codes": {
+        "full-source/RK4-0.0002": "entry-refinement-block",
+        "full-source/RK4-0.0001": "entry-refinement-block",
+        "full-source/RK4-0.00005": "entry-refinement-block",
+        "full-source/DOP853": "entry-refinement-block",
+        "full-source/Radau": "entry-refinement-block",
+        "reduced-independent/RK4-0.0002": "entry-refinement-block",
+        "reduced-independent/RK4-0.0001": "entry-refinement-block",
+        "reduced-independent/RK4-0.00005": "entry-refinement-block",
+        "reduced-independent/DOP853": "entry-refinement-block",
+        "reduced-independent/Radau": "entry-refinement-block"
+      }
+    }
+  },
+  "required_cells": 20,
+  "input_sha256": {
+    "education/data/filippov-bounded-v1/review/high-full-source-RK4-0.0002.json": "ad186de2be1bacb4167960a7454342d31fd5ba217b32f501d50f81f519e40338",
+    "education/data/filippov-bounded-v1/review/high-full-source-RK4-0.0001.json": "0e3375a00b047326df201b59ad015b2146041cc8b69b4e17c6d84cc1433bd35f",
+    "education/data/filippov-bounded-v1/review/high-full-source-RK4-0.00005.json": "9e3755daa41d8adb99f1045eb1c8a98b831b656979b177f574a6b1f0b23c9744",
+    "education/data/filippov-bounded-v1/review/high-full-source-DOP853.json": "803eb308dcd85e995bf918e22bdfc7d58feec000185a7da004cee65153f7eac6",
+    "education/data/filippov-bounded-v1/review/high-full-source-Radau.json": "1d79c4b43a4152e8d381667d7378957e5059d70c6a545992447ef88e126064bb",
+    "education/data/filippov-bounded-v1/review/high-reduced-independent-RK4-0.0002.json": "b7a5bb9829ecb3b68526ea7881c67f667b6480509dc21e610e31fbe16a290e10",
+    "education/data/filippov-bounded-v1/review/high-reduced-independent-RK4-0.0001.json": "4eca399c5e09329dad47d58b0513fea3cd0c2dd3b0079aca8c18d00d3dfabc5c",
+    "education/data/filippov-bounded-v1/review/high-reduced-independent-RK4-0.00005.json": "5219fc698a007137684e1518b1fc65c5bc218284c98b41178a01040cae2ba2a2",
+    "education/data/filippov-bounded-v1/review/high-reduced-independent-DOP853.json": "1f075d68a5c476e4940369b0bee0227a69b59bb2771a6cee665d899582bd66bd",
+    "education/data/filippov-bounded-v1/review/high-reduced-independent-Radau.json": "5612dd92d794ec8d61f65aef4b854e812e639d86e06440f76c389451f3e8b007",
+    "education/data/filippov-bounded-v1/review/mass-1-full-source-RK4-0.0002.json": "72458c8dba1fd06dabfc9c0c59c68236677b53ce9ab6b0a36d1e7f2cdfffeef7",
+    "education/data/filippov-bounded-v1/review/mass-1-full-source-RK4-0.0001.json": "b24760b24b3d49c0754159db171c43abf423d49c3367b788c9e8bff2d062b43b",
+    "education/data/filippov-bounded-v1/review/mass-1-full-source-RK4-0.00005.json": "4473dcc4e625887ce22a25d67ddddb5675624a63aa9427a787647b3fdf326488",
+    "education/data/filippov-bounded-v1/review/mass-1-full-source-DOP853.json": "45f4cf4357e3d90af9912499ba5cb103ef98cc79dbd019a68646de3e0039a6c1",
+    "education/data/filippov-bounded-v1/review/mass-1-full-source-Radau.json": "c71f32b68e25a55e4f6b621efd72c301a762a84f5de9d6040a9cf691e1db9724",
+    "education/data/filippov-bounded-v1/review/mass-1-reduced-independent-RK4-0.0002.json": "4ea0a08cedb136b66ba112b0eeef0ad0567b1926af4e46c8d3ced06e73d5c3b9",
+    "education/data/filippov-bounded-v1/review/mass-1-reduced-independent-RK4-0.0001.json": "cc1bb8bf01ebc6861b7a299132c2fe2c05918db2cee81ab6018a0c83e731a0a3",
+    "education/data/filippov-bounded-v1/review/mass-1-reduced-independent-RK4-0.00005.json": "8d698f551e6d271ad8521bc0a901262f26ef3b4ee2b57327b2f12728bc1cc3c0",
+    "education/data/filippov-bounded-v1/review/mass-1-reduced-independent-DOP853.json": "03f234ab9fcb6d7157b558bb0eff1ddf6c8224e2aafadc21e3e41545d2798a39",
+    "education/data/filippov-bounded-v1/review/mass-1-reduced-independent-Radau.json": "ea111d5a0e20f5d3d6580e215ec89cbfe51ccfe1a0be6bcaf6424c01d1e5f92b"
+  },
+  "executed_source_bindings_passed": true,
+  "source_sha256": {
+    "education/tools/audit_filippov_bounded_experiment.py": "adcc5af876b5b56a6fa6ad6f24a7c7d42cddf6eef2433838c3ba83b0fdf1bfb1"
+  },
+  "qualification_scope": "Short scalar research slices only; no adoption/anatomical/global continuation claim"
+}

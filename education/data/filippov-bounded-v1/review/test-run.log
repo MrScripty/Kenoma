@@ -1,0 +1,19 @@
+test_event_and_integral_gates_are_independent (__main__.AuditChecks.test_event_and_integral_gates_are_independent) ... ok
+test_missing_matrix_cell_is_unqualified (__main__.AuditChecks.test_missing_matrix_cell_is_unqualified) ... ok
+test_sparse_history_is_unqualified (__main__.AuditChecks.test_sparse_history_is_unqualified) ... ok
+test_truncated_agreement_is_not_full_completion (__main__.AuditChecks.test_truncated_agreement_is_not_full_completion) ... ok
+test_actual_source_slack_probe_cannot_advance (__main__.Checks.test_actual_source_slack_probe_cannot_advance) ... ok
+test_auxiliary_clips_without_freezing_or_accepting (__main__.Checks.test_auxiliary_clips_without_freezing_or_accepting) ... ok
+test_constraint_failure_is_atomic (__main__.Checks.test_constraint_failure_is_atomic) ... ok
+test_event_gate_cannot_be_replaced_by_integral_agreement (__main__.Checks.test_event_gate_cannot_be_replaced_by_integral_agreement) ... ok
+test_frozen_incoming_extension_retains_original_branch (__main__.Checks.test_frozen_incoming_extension_retains_original_branch) ... ok
+test_missing_entry_method_fails (__main__.Checks.test_missing_entry_method_fails) ... ok
+test_physical_stage_failure_retains_time_state_ledgers (__main__.Checks.test_physical_stage_failure_retains_time_state_ledgers) ... ok
+test_sliding_tangency_and_mechanical_fields (__main__.Checks.test_sliding_tangency_and_mechanical_fields) ... ok
+test_wrong_event_bracket_cannot_advance (__main__.Checks.test_wrong_event_bracket_cannot_advance) ... ok
+test_zero_error_is_not_sliding_policy (__main__.Checks.test_zero_error_is_not_sliding_policy) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.333s
+
+OK

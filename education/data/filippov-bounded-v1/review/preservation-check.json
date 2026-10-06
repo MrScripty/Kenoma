@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "baseline_commit": "9ab5f9c629a3c200c1c4edf0fadc250a384eb78f",
+  "baseline_tracked_files_byte_identical": 1748,
+  "modified_baseline_files": [],
+  "frozen_manifests_verified": {
+    "education/data/vertical-force-command-v1/review/packet-manifest.json": 148,
+    "education/data/vertical-force-completion-v1/review/packet-manifest.json": 24,
+    "education/data/antiwindup-continuation-analysis-v1/review/packet-manifest.json": 7,
+    "education/data/antiwindup-continuation-protocol-v1/review/packet-manifest.json": 5
+  },
+  "first_matrix_preserved_hashes": 33,
+  "original_full_presets": 10,
+  "original_prefix_only_presets": [
+    "high",
+    "mass-1"
+  ],
+  "no_book_lean_protected_figure_changes": true
+}

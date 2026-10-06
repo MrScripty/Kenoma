@@ -1,0 +1,378 @@
+{
+  "executed_matrix_source_commit": "034d2c8115ed5eff338b77f0e75bbfe036f6f3a8",
+  "audit_source_commit": "fc230c776a5de499de33b8e9e8e9f77cc8006530",
+  "report_source_commit": "bca3460651e83d5bb54e71c4cdc43a241cb472a3",
+  "report_source_tree": "2e8bfc3e473d437b81158e6edea999c0bf7cb982",
+  "scope": "Controlled failure evidence; no qualified sliding trajectory or anatomical claim",
+  "files": [
+    {
+      "path": "education/data/filippov-bounded-v1/review/audit-run.log",
+      "bytes": 1204,
+      "sha256": "c1b90044058580b77ea944c212291eb3db8162fa7f2924c140b11510282e335d"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/diagnostic-script-failure.log",
+      "bytes": 229,
+      "sha256": "c427f7d2ff4e5029baab956e872671c6e032e9fa4c1bd0203a0fb3eb60302cfe"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/diagnostic-summary.json",
+      "bytes": 20747,
+      "sha256": "cde4fad5801605ec2653e5f6d4ef36b7454ddd0563a20b94099a625ed4b25c90"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/entry-refinement.png",
+      "bytes": 199032,
+      "sha256": "51511ce0e38b496652528b1c9480a032b82848d70ac982f9e1d1eb07104a4763"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/entry-refinement.svg",
+      "bytes": 108940,
+      "sha256": "a4578daf5737d83954bf4e72743effe1e379d579fd47836ec9469ca23e5db492"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/execution.json",
+      "bytes": 1920,
+      "sha256": "88e2bf47d5e820862f3db966a290a6cf206e27eeabc78db67cc4bcee2acc9821"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/final-test-run.log",
+      "bytes": 1921,
+      "sha256": "03c6d0245e6fd75b167da47d06d6da5cf493fff11efd71a2bfa85475acfdc0ea"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/high-full-source-DOP853.json",
+      "bytes": 147361,
+      "sha256": "803eb308dcd85e995bf918e22bdfc7d58feec000185a7da004cee65153f7eac6"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/high-full-source-RK4-0.00005.json",
+      "bytes": 423264,
+      "sha256": "9e3755daa41d8adb99f1045eb1c8a98b831b656979b177f574a6b1f0b23c9744"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/high-full-source-RK4-0.0001.json",
+      "bytes": 265554,
+      "sha256": "0e3375a00b047326df201b59ad015b2146041cc8b69b4e17c6d84cc1433bd35f"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/high-full-source-RK4-0.0002.json",
+      "bytes": 185028,
+      "sha256": "ad186de2be1bacb4167960a7454342d31fd5ba217b32f501d50f81f519e40338"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/high-full-source-Radau.json",
+      "bytes": 186301,
+      "sha256": "1d79c4b43a4152e8d381667d7378957e5059d70c6a545992447ef88e126064bb"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/high-reduced-independent-DOP853.json",
+      "bytes": 151877,
+      "sha256": "1f075d68a5c476e4940369b0bee0227a69b59bb2771a6cee665d899582bd66bd"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/high-reduced-independent-RK4-0.00005.json",
+      "bytes": 425284,
+      "sha256": "5219fc698a007137684e1518b1fc65c5bc218284c98b41178a01040cae2ba2a2"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/high-reduced-independent-RK4-0.0001.json",
+      "bytes": 267230,
+      "sha256": "4eca399c5e09329dad47d58b0513fea3cd0c2dd3b0079aca8c18d00d3dfabc5c"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/high-reduced-independent-RK4-0.0002.json",
+      "bytes": 186871,
+      "sha256": "b7a5bb9829ecb3b68526ea7881c67f667b6480509dc21e610e31fbe16a290e10"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/high-reduced-independent-Radau.json",
+      "bytes": 196476,
+      "sha256": "5612dd92d794ec8d61f65aef4b854e812e639d86e06440f76c389451f3e8b007"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/mass-1-full-source-DOP853.json",
+      "bytes": 394918,
+      "sha256": "45f4cf4357e3d90af9912499ba5cb103ef98cc79dbd019a68646de3e0039a6c1"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/mass-1-full-source-RK4-0.00005.json",
+      "bytes": 1029621,
+      "sha256": "4473dcc4e625887ce22a25d67ddddb5675624a63aa9427a787647b3fdf326488"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/mass-1-full-source-RK4-0.0001.json",
+      "bytes": 641935,
+      "sha256": "b24760b24b3d49c0754159db171c43abf423d49c3367b788c9e8bff2d062b43b"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/mass-1-full-source-RK4-0.0002.json",
+      "bytes": 443328,
+      "sha256": "72458c8dba1fd06dabfc9c0c59c68236677b53ce9ab6b0a36d1e7f2cdfffeef7"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/mass-1-full-source-Radau.json",
+      "bytes": 376448,
+      "sha256": "c71f32b68e25a55e4f6b621efd72c301a762a84f5de9d6040a9cf691e1db9724"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/mass-1-reduced-independent-DOP853.json",
+      "bytes": 393260,
+      "sha256": "03f234ab9fcb6d7157b558bb0eff1ddf6c8224e2aafadc21e3e41545d2798a39"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/mass-1-reduced-independent-RK4-0.00005.json",
+      "bytes": 1029314,
+      "sha256": "8d698f551e6d271ad8521bc0a901262f26ef3b4ee2b57327b2f12728bc1cc3c0"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/mass-1-reduced-independent-RK4-0.0001.json",
+      "bytes": 641807,
+      "sha256": "cc1bb8bf01ebc6861b7a299132c2fe2c05918db2cee81ab6018a0c83e731a0a3"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/mass-1-reduced-independent-RK4-0.0002.json",
+      "bytes": 442995,
+      "sha256": "4ea0a08cedb136b66ba112b0eeef0ad0567b1926af4e46c8d3ced06e73d5c3b9"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/mass-1-reduced-independent-Radau.json",
+      "bytes": 397431,
+      "sha256": "ea111d5a0e20f5d3d6580e215ec89cbfe51ccfe1a0be6bcaf6424c01d1e5f92b"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/matrix-execution.json",
+      "bytes": 3131,
+      "sha256": "561411d16e09b2b689674c7871c08dc22f4da64bee986691cb6c791afe4476f8"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/matrix-run.log",
+      "bytes": 4716,
+      "sha256": "77591eea5221e9d90479189005481a0abfc37f9989163fd89a4746455ff4f978"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/audit-test-run.log",
+      "bytes": 1459,
+      "sha256": "271c045cdfb560a0f5173190ba4233ba82099ab128b921c26582a8b4b95a208b"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/entry-refinement.png",
+      "bytes": 147951,
+      "sha256": "fde0747709a7560e86d8d9d94443521cd371ba548ef81a0394fedc5499e1f79c"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/entry-refinement.svg",
+      "bytes": 104172,
+      "sha256": "8205cd517124855df878040829246052d55770409a30ce8f538f129c0ce5069f"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/executed-source/audit_filippov_bounded_experiment.py",
+      "bytes": 8468,
+      "sha256": "cb95b721cf44d06577f10308f6a8cc4a981f695630011537cdcc964036a60902"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/executed-source/filippov_bounded.py",
+      "bytes": 5301,
+      "sha256": "9162be9bfcb8596b4809b85a825e8d11b522bd3fcd8ab1a1714ba17d98390aec"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/executed-source/filippov_source_worker.mjs",
+      "bytes": 1372,
+      "sha256": "0d6b83efd7b63d7dbac21b857ba6c0af357139b6476675de4f4d46a47dfe8fcd"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/executed-source/run_filippov_bounded_experiment.py",
+      "bytes": 16017,
+      "sha256": "e851aa5fbe3ae25878d482cf737ef3ed84ba884880e9a30e97b9cec013cda93b"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/execution.json",
+      "bytes": 859,
+      "sha256": "337459e5bd40ab0f70ca9f0aee7293aa9e20c7da271a638355346133689d934c"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/first-audit-run.log",
+      "bytes": 3013,
+      "sha256": "1661a6dfea1ebe3161216ca665abdcbdfb9fdc21d2fdf29366a01d1076cac5f7"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/high-full-source-DOP853.json",
+      "bytes": 139232,
+      "sha256": "c82035b3793a06a4fc20679167f1861299f5e224bf1320799715e7832ea3d564"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/high-full-source-RK4-0.00005.json",
+      "bytes": 415133,
+      "sha256": "05bffc4f5a8e954d88f93618868db019bc368f9888ab6a6d83938f75a8b3c363"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/high-full-source-RK4-0.0001.json",
+      "bytes": 257430,
+      "sha256": "12c56a7972c0b0dc92b7e59abd6a91f96bf157e0c4117d2594628b0fc34322ec"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/high-full-source-RK4-0.0002.json",
+      "bytes": 176901,
+      "sha256": "6afccf1ef62f286b13a968f4dc79f36e7fc422516603f0cbd8cd54a0db0ef2f5"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/high-full-source-Radau.json",
+      "bytes": 178179,
+      "sha256": "b812ce20600a0396e81f7355b81961579dbd4686b88d2be5686f74d2238edd4f"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/high-reduced-independent-DOP853.json",
+      "bytes": 143760,
+      "sha256": "7e55a72ac7edabdb328e543d1661cc2227c9c55cfcf9adebf034fb98c6731349"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/high-reduced-independent-RK4-0.00005.json",
+      "bytes": 417162,
+      "sha256": "85be034a636141dbb9e925a99c351fe2614bd1831d399dfe3443a2657fb86a1b"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/high-reduced-independent-RK4-0.0001.json",
+      "bytes": 259112,
+      "sha256": "be1a3fa1e1862ba4bea6f6397aebe9518beba78852e2b1b7f4136db662203c03"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/high-reduced-independent-RK4-0.0002.json",
+      "bytes": 178748,
+      "sha256": "99e992105b589266c5cec92f7b0e8820a9af9f9dd0d5fe19986c4d03ec7ef04f"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/high-reduced-independent-Radau.json",
+      "bytes": 188349,
+      "sha256": "501d8902324fd91fb9926e730b188d56cff3cf929bd5c00b8feaa6fdf3cd1441"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/mass-1-full-source-DOP853.json",
+      "bytes": 163252,
+      "sha256": "bd6a1d8dca66775c624b41c07c376a3142733f70b55384fd067abf65436a13f1"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/mass-1-full-source-RK4-0.00005.json",
+      "bytes": 412162,
+      "sha256": "c3fdd087949b119fe870f7fa1e0f2d59d98d0902423036df20358deb0f50af76"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/mass-1-full-source-RK4-0.0001.json",
+      "bytes": 251930,
+      "sha256": "b7100238d201b967c81feff20ffd2ca9bb44c596068d10574a6f949e650c7d7f"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/mass-1-full-source-RK4-0.0002.json",
+      "bytes": 173267,
+      "sha256": "a7283d439f927a4d37b4f58a044f8091515072685fc1a15545e756a8a5deec7b"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/mass-1-full-source-Radau.json",
+      "bytes": 144536,
+      "sha256": "ccc1a0ca84502725eb4dc2296ae072e9b6511592ab728566ed013547facbc703"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/mass-1-reduced-independent-DOP853.json",
+      "bytes": 161630,
+      "sha256": "2f4e6d23b383acc083e387b2bf322daceb7b06ab3690bc1775afa752456345dc"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/mass-1-reduced-independent-RK4-0.00005.json",
+      "bytes": 411725,
+      "sha256": "0014d590f7ce5b00f35d13d523095d0efa323d6cbe6e8ff30eb7b94a321e8460"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/mass-1-reduced-independent-RK4-0.0001.json",
+      "bytes": 251545,
+      "sha256": "228f63595b68fbc1141ba084af6742ea1c37bfcd8925030e88276f7976cb36ab"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/mass-1-reduced-independent-RK4-0.0002.json",
+      "bytes": 172928,
+      "sha256": "70f31d2d6794f38747c3894a54be4d43acb8e752c3b22b11355538ab359ec21f"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/mass-1-reduced-independent-Radau.json",
+      "bytes": 166686,
+      "sha256": "d5554b1223fcb63c27561fa079f6bcefb4e8330440119ee3417201bfc7065fec"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/matrix-execution.json",
+      "bytes": 2065,
+      "sha256": "99d0f554e26936cd0f97cbe6258c54ee347f634876ab33ec899593722b9444f9"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/matrix-run.log",
+      "bytes": 3868,
+      "sha256": "bfce86d057af18a79c760728df8a0517a81b9bbd5500f2f1aca821e6d58d2aa3"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/packet-manifest.json",
+      "bytes": 8764,
+      "sha256": "9f8fcc6539efbc2e29d94ee29d0e648d49c2c9368d66d6fa48f56aa5bacf8dd6"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/preflight-test-run.log",
+      "bytes": 1000,
+      "sha256": "0382912f2350063a3c1761acdb931c457e2e856ebec0a308034167ca6d956f13"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/validation.json",
+      "bytes": 101085,
+      "sha256": "8317f9edc6b7c4398e403fddeecbef8b47f88327129edd142fcf02f31137a87c"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/preservation-check.json",
+      "bytes": 732,
+      "sha256": "ff16d5c14cdd9de6e892b997aa165890cf5c36c65bdddb1e102493fb8b244534"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/test-run-13.log",
+      "bytes": 1594,
+      "sha256": "784a98ea644779962897ea6bb75825452d0709002a4818b8f1dab292f055cdf2"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/test-run-16.log",
+      "bytes": 1921,
+      "sha256": "d3e834ba2a3fb1cb729a204edd429b0b5aba08b95fd1bc0b49833ab24abc1d8f"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/test-run.log",
+      "bytes": 1711,
+      "sha256": "f3a12213ea0d5a8fcf99f02eaaf1d69385778ddd2ad62a6635c4c64182333806"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/validation.json",
+      "bytes": 76072,
+      "sha256": "8c50e489069a06e3998f8aa350f15821c139629db073915ec56e84ff5c401593"
+    },
+    {
+      "path": "education/tools/run_filippov_bounded_experiment.py",
+      "bytes": 18261,
+      "sha256": "1f32681d69c5e9bf0d1b1f4ab468c95d2ad41421d509553869bfdfbd444ee7e8"
+    },
+    {
+      "path": "education/tools/filippov_source_worker.mjs",
+      "bytes": 1372,
+      "sha256": "0d6b83efd7b63d7dbac21b857ba6c0af357139b6476675de4f4d46a47dfe8fcd"
+    },
+    {
+      "path": "education/tools/audit_filippov_bounded_experiment.py",
+      "bytes": 10046,
+      "sha256": "adcc5af876b5b56a6fa6ad6f24a7c7d42cddf6eef2433838c3ba83b0fdf1bfb1"
+    },
+    {
+      "path": "education/tests/filippov_bounded.py",
+      "bytes": 6576,
+      "sha256": "b22233329f74cd42d9a665904f4562eab0d54043ebee015af22182b0f3e2ece0"
+    },
+    {
+      "path": "education/research/mechanical-closure/filippov-bounded-experiment-results.md",
+      "bytes": 11699,
+      "sha256": "8c1a70a5732e26bf762f25b8e0d1309164fb0ffe59e40a9d097b6992727f083e"
+    }
+  ],
+  "excluded": [
+    "This manifest itself",
+    "education/data/filippov-bounded-v1/review/packet-verification.log"
+  ]
+}
