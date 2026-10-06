@@ -16,10 +16,21 @@ def check(out=None):
     assert r['real_claims']==claims
     assert len(r['views'])==2 and {v['name'] for v in r['views']}=={'desktop','mobile'}
     assert all(v['real_cards']==len(claims) and not v['horizontal_overflow'] for v in r['views'])
-    expected={view+'-'+claim+'.png' for view in ['desktop','mobile'] for claim in claims}|{p['image'] for p in r['source_pages']}
-    assert len(r['source_pages'])>=len(FAMILIES) and set(r['outputs'])==expected
+    with fitz.open(out/'kenoma-mechanics.pdf') as doc:
+        assert len(doc)==r['pdf_pages']
+        names={Path(source).stem for source,*_ in FAMILIES}
+        headings={name:[] for name in names}
+        for index,page in enumerate(doc):
+            text=''.join(page.get_text().split())
+            for name in names:
+                if 'Checkedsourceappendix:'+name in text:headings[name].append(index)
+        assert all(headings.values()),'Missing Real source appendix heading'
+        first=min(index for positions in headings.values() for index in positions)
+        source_pages=[{'page':index+1,'image':f'pdf-source-page-{index+1}.png'} for index in range(first,len(doc))]
+    assert r['source_pages']==source_pages,'Incomplete Real source continuation captures'
+    expected={view+'-'+claim+'.png' for view in ['desktop','mobile'] for claim in claims}|{p['image'] for p in source_pages}
+    assert set(r['outputs'])==expected
     for name,value in r['outputs'].items():assert digest(folder/name)==value,'Changed Real render image: '+name
-    with fitz.open(out/'kenoma-mechanics.pdf') as doc:assert len(doc)==r['pdf_pages']
     print('PASS: current Real-card render evidence')
     return r
 if __name__=='__main__':check(sys.argv[1] if len(sys.argv)>1 else None)

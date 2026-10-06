@@ -17,6 +17,10 @@
     {
       "case": "stale PDF binding",
       "result": "REJECTED"
+    },
+    {
+      "case": "missing PDF continuation page and its row/hash",
+      "result": "REJECTED"
     }
   ]
 }
