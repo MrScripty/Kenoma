@@ -1,0 +1,23 @@
+{
+  "scope": "Fresh reduced numerical experiments; not full book/release or anatomical qualification",
+  "sourceRevision": "3ae6fa1837e0223d1ebc904a2819dc2bd13345fd",
+  "sourceHashes": {
+    "web/elbow.mjs": "96f0366af4043d9a17c4d44253a0233056aac410d444cce55ed41f04fdf0ec39",
+    "web/series.mjs": "54cd0690a7043fa5fe735b1707ec91485bb991dac5a841862736ee232dfdbf39",
+    "web/spatial.mjs": "4d3bbd478ea7c0db3c2f380d52af1d32af1d28be66ec04e519b7963201655d0f",
+    "web/tissue.mjs": "72d88e8afa18af7acf3f5ab45d6b1676a0beff523a124023f19cce99347b1b30",
+    "web/continuum-display.mjs": "169a23218d576b488ba66284672f07d87462355b60e48feaff99b7e988d3b662",
+    "web/advanced.mjs": "2cf33e78c7bb7042d615c8a8109724de5958d1050fb0b69ad81df5f3f7edff78",
+    "web/continuum-properties.mjs": "dafe703db471ec9de460b316dde9b56b5c16cedca720b1c48b2fba29c24d8988",
+    "web/tapered-bar.mjs": "9f68e29b3e708d8e53dd964d3d42fcfd9f530dd818ad33ed3641ad3a423feaec",
+    "tools/series-experiment.mjs": "e33700af40bcacd92bd022060c8fc1f8b86da1921481b5779c19ffd227aa394f",
+    "tools/spatial-experiment.mjs": "67e589e545a6c1d5ac37567477f40441df29afba7d516c657cd559c55e5c494c",
+    "tests/series-force-length.test.mjs": "51d02b3f45e63590d0211444d3b326e9b81fa5b762363b28a27676165be78dda",
+    "tests/continuum-display.test.mjs": "f20afd8dacf9598b99e263c87f1ddc33150c2479ce87cbee03923b06c404d88f",
+    "tests/property-names.test.mjs": "260f35b79fbadb0e5452cfd927088f2d506ac4681e11a82199e2460e335b6631"
+  },
+  "outputs": {
+    "series-experiment-diagnostic.json": "7ebdd494cb1621bfaa867b892419b9d1197f028eefcba6e582e81026f1b0e696",
+    "spatial-experiment-diagnostic.json": "48688b2dbf7d9727e2ff49f0849a03ca173439a5adb18ebad16e7a5a608505d6"
+  }
+}

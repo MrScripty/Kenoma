@@ -1,0 +1,17 @@
+✔ element stress field uses owning tetrahedra, retains discontinuities and matches independent uniaxial/shear invariants (55.058365ms)
+✔ matched nodal error uses its actual target and a fixed common SI scale across sweeps (134.690807ms)
+✔ actual Y material-line stretch includes shear and is invariant to rotation/translation (6.547809ms)
+✔ endpoint labels and narrow/wide geometry remain true when taper direction reverses (2.305197ms)
+✔ rigid tendon/contact-off cumulatively retains Lab4 force–length, moments and energy over the full pose/activation domain (2.677635ms)
+✔ compliant nonlinear equilibrium matches an independent tension-coordinate root and force–length law (8.747336ms)
+✔ implicit fiber velocity matches differentiated equilibria including active length slope and activation input (8.187668ms)
+✔ repaired law preserves fixed-end work balance, release lengthening, replay and trajectory refinement (163.593737ms)
+✔ spatial hinge consumer uses the repaired shared law without adding spatial tissue force to the hinge (376.828035ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 793.98024
