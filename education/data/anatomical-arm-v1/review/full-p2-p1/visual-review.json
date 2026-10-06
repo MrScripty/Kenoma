@@ -1,0 +1,10 @@
+{
+  "result": "PASS_RENDER_V2_VISUAL_REVIEW",
+  "originalRender": "REJECTED_LABEL_OVERLAP_LAYOUT_ONLY",
+  "correctedRender": "PASS_READABLE_LABELS_AND_ACTUAL_TERMINAL_GEOMETRY",
+  "outputs": {
+    "controlled-mixed-comparator.png": "b0ef3d76c6fda0d10c90632a2b3cf1addb948786585d1f6eefb583e848a3d379",
+    "controlled-mixed-comparator-v2.png": "3787ba498fa08db2e80ed7f9a303201f8729962c56df1fcfa3ad1eb5ae28693b"
+  },
+  "rawLabelCorrection": "Reference-stretch stability unassessed; frozen raw shortcut label retained and corrected by verification.json."
+}
