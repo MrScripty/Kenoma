@@ -6,7 +6,7 @@ from pathlib import Path
 from types import SimpleNamespace
 import numpy as np
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
-from run_filippov_bounded_experiment import Engine,Failure,entry_agreement,ROOT
+from run_filippov_bounded_experiment import Engine,Failure,entry_agreement,ROOT,CASES
 from audit_filippov_bounded_experiment import completion,compare,qualify
 
 class Checks(unittest.TestCase):
@@ -47,6 +47,14 @@ class Checks(unittest.TestCase):
         e.rhs=invalid;e.advance(.001,False)
         self.assertEqual(e.t,0);np.testing.assert_array_equal(e.x,old);np.testing.assert_array_equal(e.quad,np.zeros(6))
         self.assertEqual(e.history,history);self.assertEqual(e.failure['code'],'injected-physical')
+    def test_actual_source_slack_probe_cannot_advance(self):
+        e=self.engine();original=e.rhs;old=e.x.copy()
+        def slack(t,x):
+            probe=x.copy();probe[0]=.02
+            return original(t,probe)
+        e.rhs=slack;e.advance(.001,False)
+        self.assertEqual(e.failure['code'],'slack');self.assertEqual(e.t,0)
+        np.testing.assert_array_equal(e.x,old);np.testing.assert_array_equal(e.quad,np.zeros(6))
     def test_constraint_failure_is_atomic(self):
         e=self.engine();self.boundary(e);e.mode='sliding';old=e.x.copy();t=e.t;history=list(e.history)
         def invalid_dense(ti):z=old.copy();z[4]+=2e-8;return z
@@ -63,7 +71,7 @@ class Checks(unittest.TestCase):
 
 class AuditChecks(unittest.TestCase):
     def complete_metadata(self):
-        return dict(case='high',acceptedTime=.107,failure=None,history=[dict(t=k*.001,z=[0]*11,FT=4,uraw=.1) for k in range(108)],events=[dict(type='sliding-entry',t=.105)],candidate=dict(t=.105,accepted=True))
+        return dict(case='high',cfg=CASES['high'],declared_endpoint_s=.107,acceptedTime=.107,failure=None,history=[dict(t=k*.001,z=[0]*11,FT=4,uraw=.1) for k in range(108)],events=[dict(type='sliding-entry',t=.105)],candidate=dict(t=.105,accepted=True))
     def test_truncated_agreement_is_not_full_completion(self):
         a=self.complete_metadata();b=copy.deepcopy(a);b['acceptedTime']=.106;b['history']=b['history'][:-1]
         self.assertTrue(completion(a)['passed']);self.assertFalse(completion(b)['passed'])
@@ -77,5 +85,9 @@ class AuditChecks(unittest.TestCase):
         self.assertFalse(compare(a,b)['passed'])
         b=copy.deepcopy(a);b['history'][40]['z'][4]+=1e-8
         self.assertFalse(compare(a,b)['passed'])
+    def test_missing_failure_metadata_cannot_pass(self):
+        a=self.complete_metadata();del a['failure'];self.assertFalse(completion(a)['passed'])
+    def test_changed_command_cannot_pass(self):
+        a=copy.deepcopy(self.complete_metadata());a['cfg']['target']+=1;self.assertFalse(completion(a)['passed'])
 
 if __name__=='__main__':unittest.main(verbosity=2)

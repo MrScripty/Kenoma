@@ -11,7 +11,11 @@ GATES=np.array([1e-6,1e-5,2e-6,2e-6,1e-4,1e-9,1e-8])
 NAMES=['y_m','w_m_per_s','activation','q','FT_N','I','raw']
 
 def completion(r):
+    if r.get('case') not in ENDS:return dict(passed=False,issues=['undeclared-case'],missing_grid_times=[])
     end=ENDS[r['case']];h=r.get('history',[]);issues=[]
+    if r.get('cfg')!=CASES[r['case']]:issues.append('initialization-or-command-mismatch')
+    if r.get('declared_endpoint_s')!=end:issues.append('endpoint-policy-mismatch')
+    if 'failure' not in r:issues.append('missing-failure-report')
     if r.get('failure') is not None:issues.append('failure')
     if abs(r.get('acceptedTime',-1)-end)>1e-9:issues.append('endpoint-not-reached')
     if not h or abs(h[0]['t'])>1e-9 or abs(h[-1]['t']-r.get('acceptedTime',-1))>1e-9 or any(b['t']<=a['t'] for a,b in zip(h,h[1:])):issues.append('invalid-history')
@@ -54,6 +58,7 @@ def balances(r):
 def qualify(results):
     required=[rep+'/'+m for rep in REPS for m in METHODS];missing=sorted(set(required)-set(results))
     if missing:return dict(passed=False,status='unqualified',missing_cells=missing)
+    if any(f"{r.get('representation')}/{r.get('method')}"!=k for k,r in results.items()):return dict(passed=False,status='unqualified',issues=['cell-identity-mismatch'])
     comps={}
     for rep in REPS:
         for a,b in zip(METHODS[:3],METHODS[1:3]):comps[f'{rep}:{a}/{b}']=compare(results[rep+'/'+a],results[rep+'/'+b])
@@ -74,19 +79,21 @@ def render(results):
         rs=results[case];reference=rs['reduced-independent/DOP853'].get('candidate')
         if reference:
             for rep,color in zip(REPS,['#126e82','#ba4f23']):
-                ys=[(rs[rep+'/'+m]['candidate']['t']-reference['t'])*1e6 if rs[rep+'/'+m].get('candidate') else float('nan') for m in METHODS]
+                ys=[(rs[rep+'/'+m]['candidate']['t']-reference['t'])*1e9 if rs[rep+'/'+m].get('candidate') else float('nan') for m in METHODS]
                 ax.plot(range(5),ys,'o-',color=color,label=rep)
-        ax.axhspan(-2,2,color='#d8e9d9',alpha=.7,label='2 µs disagreement scale')
-        ax.set(xticks=range(5),xticklabels=['RK4\n200 µs','RK4\n100 µs','RK4\n50 µs','DOP853','Radau'],ylabel='Candidate entry minus independent DOP853 (µs)',title=case+' entry refinement')
+        ax.text(.02,.03,'Required pairwise span ≤ 2,000 ns',transform=ax.transAxes,fontsize=8)
+        ax.set(xticks=range(5),xticklabels=['RK4\n200 µs','RK4\n100 µs','RK4\n50 µs','DOP853','Radau'],ylabel='Candidate entry minus independent DOP853 (ns)',title=case+' entry refinement')
         ax.grid(alpha=.2);ax.legend(fontsize=7)
     for case,color in zip(CASES,['#126e82','#ba4f23']):
         r=results[case]['full-source/RK4-0.00005'];h=r['history'];accepted=any(e['type']=='sliding-entry' for e in r['events'])
         start=.104 if case=='high' else .260
         selected=[x for x in h if x['t']>=start]
-        axes[2].plot([(x['t']-start)*1000 for x in selected],[x['H'] for x in selected],'o-',markersize=3,color=color,label=case+(' (sliding accepted)' if accepted else ' (entry blocked)'))
-    axes[2].axhline(0,color='#555',lw=.8);axes[2].set(xlabel='Time from case-local plot start (ms)',ylabel='Oriented raw signal H',title='Accepted histories only');axes[2].grid(alpha=.2);axes[2].legend(fontsize=7)
+        normal=r['candidate']['normal_on'] if r.get('candidate') else 1.
+        axes[2].plot([(x['t']-start)*1000 for x in selected],[x['H']/normal*1e6 for x in selected],'o-',markersize=3,color=color,label=case+(' (sliding accepted)' if accepted else ' (entry blocked)'))
+    axes[2].axhline(0,color='#555',lw=.8);axes[2].set(xlabel='Time from case-local plot start (ms)',ylabel='H / incoming entry normal (µs; diagnostic)',title='Accepted histories only');axes[2].grid(alpha=.2);axes[2].legend(fontsize=7)
     fig.suptitle('Bounded Filippov research experiment — authored evidence, pending independent review',fontsize=12)
     for ext in ['png','svg']:fig.savefig(OUT/f'entry-refinement.{ext}',dpi=180)
+    svg=OUT/'entry-refinement.svg';svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
     plt.close(fig)
 
 def main():
@@ -96,10 +103,12 @@ def main():
         for rep in REPS:
             for method in METHODS:
                 p=OUT/f'{case}-{rep}-{method}.json';results[case][rep+'/'+method]=json.loads(p.read_text());inputs[str(p.relative_to(ROOT))]=hashlib.sha256(p.read_bytes()).hexdigest()
-    checks={case:qualify(rs) for case,rs in results.items()}
-    receipt=dict(passed=all(r['passed'] for r in checks.values()),checks=checks,required_cells=20,input_sha256=inputs,source_sha256={str(Path(__file__).relative_to(ROOT)):hashlib.sha256(Path(__file__).read_bytes()).hexdigest()},qualification_scope='Short scalar research slices only; no adoption/anatomical/global continuation claim')
+    checks={case:qualify(rs) if all(r.get('case')==case for r in rs.values()) else dict(passed=False,status='unqualified',issues=['case-identity-mismatch']) for case,rs in results.items()}
+    execution=json.loads((OUT/'matrix-execution.json').read_text())
+    source_bindings=all(hashlib.sha256((ROOT/p).read_bytes()).hexdigest()==digest for p,digest in execution['source_sha256'].items())
+    receipt=dict(passed=source_bindings and all(r['passed'] for r in checks.values()),checks=checks,required_cells=20,input_sha256=inputs,executed_source_bindings_passed=source_bindings,source_sha256={str(Path(__file__).relative_to(ROOT)):hashlib.sha256(Path(__file__).read_bytes()).hexdigest()},qualification_scope='Short scalar research slices only; no adoption/anatomical/global continuation claim')
     (OUT/'validation.json').write_text(json.dumps(receipt,indent=2)+'\n');render(results)
-    for case,r in checks.items():print(case,r['status'],r['failure_codes'],flush=True)
+    for case,r in checks.items():print(case,r['status'],r.get('failure_codes',r.get('issues')),flush=True)
     print('Overall authored bounded audit:',receipt['passed'],'— failures retained; no gates relaxed',flush=True)
 
 if __name__=='__main__':main()
