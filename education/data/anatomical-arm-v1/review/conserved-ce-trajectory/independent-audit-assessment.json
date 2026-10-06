@@ -1,0 +1,1327 @@
+{
+  "scope": "Postprocessing saved trajectory/reference arrays only; no integration or new gates",
+  "normalization": "state max L1 error / L1(initial postload - equilibrium); force max absolute error / abs(initial postload force - equilibrium force)",
+  "sourceHashes": {
+    "summary.json": "6d4b7b9be2e163039b92db52b56c659c46c976d3172a727e99ed7bdf882b2cfa",
+    "matched-states.npz": "b2be81c2243d6df40678614dcaee8886b083507263668e08b173014ab0d15e88",
+    "independent-audit.json": "f2811ae9576e07c97a5a89e0872ee531e2980cfcd8e1f3357c350c21e27c0fcb",
+    "independent-audit.log": "a9d63ef671f9d34a404d00cd1e943d63fcdf60ba35a0b810acf397947cbdb679",
+    "independent-reference.npz": "aa1335b374736c86bb3d35d61c3e1f7915a65edee34bf6b820702de37f0226de"
+  },
+  "normalizedCases": [
+    {
+      "name": "R2.4-dx0.04-pCa4.5-delta0.001-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0013819009315563743,
+      "initialShiftForceAbsolute": 0.0009986732480436664,
+      "stateErrorOverInitialShiftL1": 0.019045472712769608,
+      "forceErrorOverInitialShiftForce": 0.01983058861804011
+    },
+    {
+      "name": "R2.4-dx0.04-pCa4.5-delta0.001-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0013819009315563743,
+      "initialShiftForceAbsolute": 0.0009986732480436664,
+      "stateErrorOverInitialShiftL1": 0.009719567923253158,
+      "forceErrorOverInitialShiftForce": 0.010096923231411821
+    },
+    {
+      "name": "R2.4-dx0.04-pCa4.5-delta0.001-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0013819009315563743,
+      "initialShiftForceAbsolute": 0.0009986732480436664,
+      "stateErrorOverInitialShiftL1": 0.004910829838315806,
+      "forceErrorOverInitialShiftForce": 0.005094902822674875
+    },
+    {
+      "name": "R2.4-dx0.04-pCa4.5-delta-0.001-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.001381900931556382,
+      "initialShiftForceAbsolute": 0.0009986732480437922,
+      "stateErrorOverInitialShiftL1": 0.01894810160300069,
+      "forceErrorOverInitialShiftForce": 0.01974243918192585
+    },
+    {
+      "name": "R2.4-dx0.04-pCa4.5-delta-0.001-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.001381900931556382,
+      "initialShiftForceAbsolute": 0.0009986732480437922,
+      "stateErrorOverInitialShiftL1": 0.00966890784023402,
+      "forceErrorOverInitialShiftForce": 0.010059516140858324
+    },
+    {
+      "name": "R2.4-dx0.04-pCa4.5-delta-0.001-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.001381900931556382,
+      "initialShiftForceAbsolute": 0.0009986732480437922,
+      "stateErrorOverInitialShiftL1": 0.004884968269295317,
+      "forceErrorOverInitialShiftForce": 0.005078133585006881
+    },
+    {
+      "name": "R2.4-dx0.04-pCa4.5-delta0.0005-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0006909504657781793,
+      "initialShiftForceAbsolute": 0.0004993366240219056,
+      "stateErrorOverInitialShiftL1": 0.01904547264010036,
+      "forceErrorOverInitialShiftForce": 0.019830599646033176
+    },
+    {
+      "name": "R2.4-dx0.04-pCa4.5-delta0.0005-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0006909504657781793,
+      "initialShiftForceAbsolute": 0.0004993366240219056,
+      "stateErrorOverInitialShiftL1": 0.00971956788330989,
+      "forceErrorOverInitialShiftForce": 0.010096929131322492
+    },
+    {
+      "name": "R2.4-dx0.04-pCa4.5-delta0.0005-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0006909504657781793,
+      "initialShiftForceAbsolute": 0.0004993366240219056,
+      "stateErrorOverInitialShiftL1": 0.004910829817342476,
+      "forceErrorOverInitialShiftForce": 0.0050949058777265644
+    },
+    {
+      "name": "R2.4-dx0.04-pCa4.5-delta-0.0005-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0006909504657781876,
+      "initialShiftForceAbsolute": 0.0004993366240218232,
+      "stateErrorOverInitialShiftL1": 0.018948101415137794,
+      "forceErrorOverInitialShiftForce": 0.019742433495039947
+    },
+    {
+      "name": "R2.4-dx0.04-pCa4.5-delta-0.0005-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0006909504657781876,
+      "initialShiftForceAbsolute": 0.0004993366240218232,
+      "stateErrorOverInitialShiftL1": 0.00966890774018128,
+      "forceErrorOverInitialShiftForce": 0.010059513098154916
+    },
+    {
+      "name": "R2.4-dx0.04-pCa4.5-delta-0.0005-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0006909504657781876,
+      "initialShiftForceAbsolute": 0.0004993366240218232,
+      "stateErrorOverInitialShiftL1": 0.004884968217620053,
+      "forceErrorOverInitialShiftForce": 0.00507813200950542
+    },
+    {
+      "name": "R2.4-dx0.04-pCa6.1-delta0.001-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0007619058098659306,
+      "initialShiftForceAbsolute": 0.0005506146876861906,
+      "stateErrorOverInitialShiftL1": 0.019044909747246576,
+      "forceErrorOverInitialShiftForce": 0.0199322362667903
+    },
+    {
+      "name": "R2.4-dx0.04-pCa6.1-delta0.001-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0007619058098659306,
+      "initialShiftForceAbsolute": 0.0005506146876861906,
+      "stateErrorOverInitialShiftL1": 0.009719271215552844,
+      "forceErrorOverInitialShiftForce": 0.010150277768236746
+    },
+    {
+      "name": "R2.4-dx0.04-pCa6.1-delta0.001-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0007619058098659306,
+      "initialShiftForceAbsolute": 0.0005506146876861906,
+      "stateErrorOverInitialShiftL1": 0.004910677258762768,
+      "forceErrorOverInitialShiftForce": 0.005122259970976869
+    },
+    {
+      "name": "R2.4-dx0.04-pCa6.1-delta-0.001-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0007619058098659394,
+      "initialShiftForceAbsolute": 0.000550614687686229,
+      "stateErrorOverInitialShiftL1": 0.018950576410022745,
+      "forceErrorOverInitialShiftForce": 0.019815482361683977
+    },
+    {
+      "name": "R2.4-dx0.04-pCa6.1-delta-0.001-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0007619058098659394,
+      "initialShiftForceAbsolute": 0.000550614687686229,
+      "stateErrorOverInitialShiftL1": 0.009670206661688299,
+      "forceErrorOverInitialShiftForce": 0.010097864631161857
+    },
+    {
+      "name": "R2.4-dx0.04-pCa6.1-delta-0.001-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0007619058098659394,
+      "initialShiftForceAbsolute": 0.000550614687686229,
+      "stateErrorOverInitialShiftL1": 0.0048856341250803695,
+      "forceErrorOverInitialShiftForce": 0.005097799108958919
+    },
+    {
+      "name": "R2.4-dx0.04-pCa6.1-delta0.0005-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.00038095290493296303,
+      "initialShiftForceAbsolute": 0.00027530734384312343,
+      "stateErrorOverInitialShiftL1": 0.019044909703990018,
+      "forceErrorOverInitialShiftForce": 0.019932243543668154
+    },
+    {
+      "name": "R2.4-dx0.04-pCa6.1-delta0.0005-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.00038095290493296303,
+      "initialShiftForceAbsolute": 0.00027530734384312343,
+      "stateErrorOverInitialShiftL1": 0.009719271191796029,
+      "forceErrorOverInitialShiftForce": 0.010150281676547043
+    },
+    {
+      "name": "R2.4-dx0.04-pCa6.1-delta0.0005-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.00038095290493296303,
+      "initialShiftForceAbsolute": 0.00027530734384312343,
+      "stateErrorOverInitialShiftL1": 0.004910677246359678,
+      "forceErrorOverInitialShiftForce": 0.005122261999487018
+    },
+    {
+      "name": "R2.4-dx0.04-pCa6.1-delta-0.0005-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0003809529049329663,
+      "initialShiftForceAbsolute": 0.0002753073438430812,
+      "stateErrorOverInitialShiftL1": 0.018950576284441537,
+      "forceErrorOverInitialShiftForce": 0.01981547861620389
+    },
+    {
+      "name": "R2.4-dx0.04-pCa6.1-delta-0.0005-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0003809529049329663,
+      "initialShiftForceAbsolute": 0.0002753073438430812,
+      "stateErrorOverInitialShiftL1": 0.009670206594451449,
+      "forceErrorOverInitialShiftForce": 0.0100978626196252
+    },
+    {
+      "name": "R2.4-dx0.04-pCa6.1-delta-0.0005-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0003809529049329663,
+      "initialShiftForceAbsolute": 0.0002753073438430812,
+      "stateErrorOverInitialShiftL1": 0.004885634090203809,
+      "forceErrorOverInitialShiftForce": 0.0050977980648252135
+    },
+    {
+      "name": "R2.4-dx0.02-pCa4.5-delta0.001-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0013825528756901111,
+      "initialShiftForceAbsolute": 0.0009986874749039402,
+      "stateErrorOverInitialShiftL1": 0.019031702519716382,
+      "forceErrorOverInitialShiftForce": 0.019798517260812658
+    },
+    {
+      "name": "R2.4-dx0.02-pCa4.5-delta0.001-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0013825528756901111,
+      "initialShiftForceAbsolute": 0.0009986874749039402,
+      "stateErrorOverInitialShiftL1": 0.009712510306844998,
+      "forceErrorOverInitialShiftForce": 0.01008238234339853
+    },
+    {
+      "name": "R2.4-dx0.02-pCa4.5-delta0.001-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0013825528756901111,
+      "initialShiftForceAbsolute": 0.0009986874749039402,
+      "stateErrorOverInitialShiftL1": 0.004907256322012614,
+      "forceErrorOverInitialShiftForce": 0.005088070103944435
+    },
+    {
+      "name": "R2.4-dx0.02-pCa4.5-delta-0.001-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0013825528756901064,
+      "initialShiftForceAbsolute": 0.0009986874749040363,
+      "stateErrorOverInitialShiftL1": 0.018979825617892365,
+      "forceErrorOverInitialShiftForce": 0.019754109546701443
+    },
+    {
+      "name": "R2.4-dx0.02-pCa4.5-delta-0.001-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0013825528756901064,
+      "initialShiftForceAbsolute": 0.0009986874749040363,
+      "stateErrorOverInitialShiftL1": 0.0096855032374703,
+      "forceErrorOverInitialShiftForce": 0.01006350513993644
+    },
+    {
+      "name": "R2.4-dx0.02-pCa4.5-delta-0.001-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0013825528756901064,
+      "initialShiftForceAbsolute": 0.0009986874749040363,
+      "stateErrorOverInitialShiftL1": 0.004893464846412248,
+      "forceErrorOverInitialShiftForce": 0.005079596721012883
+    },
+    {
+      "name": "R2.4-dx0.02-pCa4.5-delta0.0005-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0006912764378450538,
+      "initialShiftForceAbsolute": 0.0004993437374519729,
+      "stateErrorOverInitialShiftL1": 0.019031702457018,
+      "forceErrorOverInitialShiftForce": 0.0197985268397992
+    },
+    {
+      "name": "R2.4-dx0.02-pCa4.5-delta0.0005-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0006912764378450538,
+      "initialShiftForceAbsolute": 0.0004993437374519729,
+      "stateErrorOverInitialShiftL1": 0.009712510272284897,
+      "forceErrorOverInitialShiftForce": 0.010082387468183705
+    },
+    {
+      "name": "R2.4-dx0.02-pCa4.5-delta0.0005-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0006912764378450538,
+      "initialShiftForceAbsolute": 0.0004993437374519729,
+      "stateErrorOverInitialShiftL1": 0.004907256303968251,
+      "forceErrorOverInitialShiftForce": 0.005088072757804561
+    },
+    {
+      "name": "R2.4-dx0.02-pCa4.5-delta-0.0005-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0006912764378450543,
+      "initialShiftForceAbsolute": 0.0004993437374520148,
+      "stateErrorOverInitialShiftL1": 0.01897982552619969,
+      "forceErrorOverInitialShiftForce": 0.019754102646198857
+    },
+    {
+      "name": "R2.4-dx0.02-pCa4.5-delta-0.0005-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0006912764378450543,
+      "initialShiftForceAbsolute": 0.0004993437374520148,
+      "stateErrorOverInitialShiftL1": 0.009685503189078343,
+      "forceErrorOverInitialShiftForce": 0.010063501447846372
+    },
+    {
+      "name": "R2.4-dx0.02-pCa4.5-delta-0.0005-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0006912764378450543,
+      "initialShiftForceAbsolute": 0.0004993437374520148,
+      "stateErrorOverInitialShiftL1": 0.004893464821352776,
+      "forceErrorOverInitialShiftForce": 0.005079594809047143
+    },
+    {
+      "name": "R2.4-dx0.02-pCa6.1-delta0.001-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0007622659150343569,
+      "initialShiftForceAbsolute": 0.0005506230071027151,
+      "stateErrorOverInitialShiftL1": 0.019031180846979457,
+      "forceErrorOverInitialShiftForce": 0.01989325873264678
+    },
+    {
+      "name": "R2.4-dx0.02-pCa6.1-delta0.001-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0007622659150343569,
+      "initialShiftForceAbsolute": 0.0005506230071027151,
+      "stateErrorOverInitialShiftL1": 0.009712235408633448,
+      "forceErrorOverInitialShiftForce": 0.010132113997098562
+    },
+    {
+      "name": "R2.4-dx0.02-pCa6.1-delta0.001-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0007622659150343569,
+      "initialShiftForceAbsolute": 0.0005506230071027151,
+      "stateErrorOverInitialShiftL1": 0.00490711497088114,
+      "forceErrorOverInitialShiftForce": 0.005113570319658004
+    },
+    {
+      "name": "R2.4-dx0.02-pCa6.1-delta-0.001-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0007622659150343515,
+      "initialShiftForceAbsolute": 0.0005506230071027774,
+      "stateErrorOverInitialShiftL1": 0.018980969851594247,
+      "forceErrorOverInitialShiftForce": 0.01983454263992127
+    },
+    {
+      "name": "R2.4-dx0.02-pCa6.1-delta-0.001-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0007622659150343515,
+      "initialShiftForceAbsolute": 0.0005506230071027774,
+      "stateErrorOverInitialShiftL1": 0.009686103247092917,
+      "forceErrorOverInitialShiftForce": 0.01010573044105674
+    },
+    {
+      "name": "R2.4-dx0.02-pCa6.1-delta-0.001-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0007622659150343515,
+      "initialShiftForceAbsolute": 0.0005506230071027774,
+      "stateErrorOverInitialShiftL1": 0.004893772259282886,
+      "forceErrorOverInitialShiftForce": 0.005101249387728362
+    },
+    {
+      "name": "R2.4-dx0.02-pCa6.1-delta0.0005-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.00038113295751717363,
+      "initialShiftForceAbsolute": 0.00027531150355136107,
+      "stateErrorOverInitialShiftL1": 0.019031180809685078,
+      "forceErrorOverInitialShiftForce": 0.019893265050442338
+    },
+    {
+      "name": "R2.4-dx0.02-pCa6.1-delta0.0005-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.00038113295751717363,
+      "initialShiftForceAbsolute": 0.00027531150355136107,
+      "stateErrorOverInitialShiftL1": 0.009712235388116865,
+      "forceErrorOverInitialShiftForce": 0.010132117390234287
+    },
+    {
+      "name": "R2.4-dx0.02-pCa6.1-delta0.0005-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.00038113295751717363,
+      "initialShiftForceAbsolute": 0.00027531150355136107,
+      "stateErrorOverInitialShiftL1": 0.004907114960182647,
+      "forceErrorOverInitialShiftForce": 0.005113572080805712
+    },
+    {
+      "name": "R2.4-dx0.02-pCa6.1-delta-0.0005-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.00038113295751718095,
+      "initialShiftForceAbsolute": 0.0002753115035513887,
+      "stateErrorOverInitialShiftL1": 0.018980969788563205,
+      "forceErrorOverInitialShiftForce": 0.019834538092681764
+    },
+    {
+      "name": "R2.4-dx0.02-pCa6.1-delta-0.0005-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.00038113295751718095,
+      "initialShiftForceAbsolute": 0.0002753115035513887,
+      "stateErrorOverInitialShiftL1": 0.009686103213644817,
+      "forceErrorOverInitialShiftForce": 0.010105727998974268
+    },
+    {
+      "name": "R2.4-dx0.02-pCa6.1-delta-0.0005-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.00038113295751718095,
+      "initialShiftForceAbsolute": 0.0002753115035513887,
+      "stateErrorOverInitialShiftL1": 0.0048937722417859595,
+      "forceErrorOverInitialShiftForce": 0.005101248120311387
+    },
+    {
+      "name": "R2.4-dx0.01-pCa4.5-delta0.001-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0013829791637897193,
+      "initialShiftForceAbsolute": 0.0009986910316593612,
+      "stateErrorOverInitialShiftL1": 0.019013980319886874,
+      "forceErrorOverInitialShiftForce": 0.01978487933097373
+    },
+    {
+      "name": "R2.4-dx0.01-pCa4.5-delta0.001-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0013829791637897193,
+      "initialShiftForceAbsolute": 0.0009986910316593612,
+      "stateErrorOverInitialShiftL1": 0.009703454655878506,
+      "forceErrorOverInitialShiftForce": 0.010076351327085223
+    },
+    {
+      "name": "R2.4-dx0.01-pCa4.5-delta0.001-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0013829791637897193,
+      "initialShiftForceAbsolute": 0.0009986910316593612,
+      "stateErrorOverInitialShiftL1": 0.004902678059444658,
+      "forceErrorOverInitialShiftForce": 0.005085284251590266
+    },
+    {
+      "name": "R2.4-dx0.01-pCa4.5-delta-0.001-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0013829791637897286,
+      "initialShiftForceAbsolute": 0.000998691031659341,
+      "stateErrorOverInitialShiftL1": 0.018987290034275017,
+      "forceErrorOverInitialShiftForce": 0.019762648149426045
+    },
+    {
+      "name": "R2.4-dx0.01-pCa4.5-delta-0.001-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0013829791637897286,
+      "initialShiftForceAbsolute": 0.000998691031659341,
+      "stateErrorOverInitialShiftL1": 0.009689555695063436,
+      "forceErrorOverInitialShiftForce": 0.010066898669571396
+    },
+    {
+      "name": "R2.4-dx0.01-pCa4.5-delta-0.001-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0013829791637897286,
+      "initialShiftForceAbsolute": 0.000998691031659341,
+      "stateErrorOverInitialShiftL1": 0.004895579286264884,
+      "forceErrorOverInitialShiftForce": 0.005081040427078926
+    },
+    {
+      "name": "R2.4-dx0.01-pCa4.5-delta0.0005-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0006914895818948653,
+      "initialShiftForceAbsolute": 0.0004993455158296132,
+      "stateErrorOverInitialShiftL1": 0.0190139802619388,
+      "forceErrorOverInitialShiftForce": 0.019784888211067508
+    },
+    {
+      "name": "R2.4-dx0.01-pCa4.5-delta0.0005-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0006914895818948653,
+      "initialShiftForceAbsolute": 0.0004993455158296132,
+      "stateErrorOverInitialShiftL1": 0.00970345462401341,
+      "forceErrorOverInitialShiftForce": 0.010076356078203848
+    },
+    {
+      "name": "R2.4-dx0.01-pCa4.5-delta0.0005-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0006914895818948653,
+      "initialShiftForceAbsolute": 0.0004993455158296132,
+      "stateErrorOverInitialShiftL1": 0.00490267804262601,
+      "forceErrorOverInitialShiftForce": 0.0050852867122840794
+    },
+    {
+      "name": "R2.4-dx0.01-pCa4.5-delta-0.0005-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0006914895818948594,
+      "initialShiftForceAbsolute": 0.0004993455158297305,
+      "stateErrorOverInitialShiftL1": 0.01898729000868954,
+      "forceErrorOverInitialShiftForce": 0.019762640609319673
+    },
+    {
+      "name": "R2.4-dx0.01-pCa4.5-delta-0.0005-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0006914895818948594,
+      "initialShiftForceAbsolute": 0.0004993455158297305,
+      "stateErrorOverInitialShiftL1": 0.009689555682045905,
+      "forceErrorOverInitialShiftForce": 0.010066894635335201
+    },
+    {
+      "name": "R2.4-dx0.01-pCa4.5-delta-0.0005-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0006914895818948594,
+      "initialShiftForceAbsolute": 0.0004993455158297305,
+      "stateErrorOverInitialShiftL1": 0.004895579279822055,
+      "forceErrorOverInitialShiftForce": 0.005081038337948897
+    },
+    {
+      "name": "R2.4-dx0.01-pCa6.1-delta0.001-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0007625011121660372,
+      "initialShiftForceAbsolute": 0.0005506250869780239,
+      "stateErrorOverInitialShiftL1": 0.01901347945125244,
+      "forceErrorOverInitialShiftForce": 0.019876106815731563
+    },
+    {
+      "name": "R2.4-dx0.01-pCa6.1-delta0.001-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0007625011121660372,
+      "initialShiftForceAbsolute": 0.0005506250869780239,
+      "stateErrorOverInitialShiftL1": 0.009703190744508648,
+      "forceErrorOverInitialShiftForce": 0.010124239540675881
+    },
+    {
+      "name": "R2.4-dx0.01-pCa6.1-delta0.001-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0007625011121660372,
+      "initialShiftForceAbsolute": 0.0005506250869780239,
+      "stateErrorOverInitialShiftL1": 0.0049025423644783635,
+      "forceErrorOverInitialShiftForce": 0.005109839583268887
+    },
+    {
+      "name": "R2.4-dx0.01-pCa6.1-delta-0.001-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0007625011121660408,
+      "initialShiftForceAbsolute": 0.000550625086978008,
+      "stateErrorOverInitialShiftL1": 0.018987657851479527,
+      "forceErrorOverInitialShiftForce": 0.01984671579509463
+    },
+    {
+      "name": "R2.4-dx0.01-pCa6.1-delta-0.001-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0007625011121660408,
+      "initialShiftForceAbsolute": 0.000550625086978008,
+      "stateErrorOverInitialShiftL1": 0.009689747987908887,
+      "forceErrorOverInitialShiftForce": 0.01011103069806403
+    },
+    {
+      "name": "R2.4-dx0.01-pCa6.1-delta-0.001-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0007625011121660408,
+      "initialShiftForceAbsolute": 0.000550625086978008,
+      "stateErrorOverInitialShiftL1": 0.004895677585563256,
+      "forceErrorOverInitialShiftForce": 0.005103670430503803
+    },
+    {
+      "name": "R2.4-dx0.01-pCa6.1-delta0.0005-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0003812505560830191,
+      "initialShiftForceAbsolute": 0.000275312543488982,
+      "stateErrorOverInitialShiftL1": 0.01901347941676427,
+      "forceErrorOverInitialShiftForce": 0.01987611267160844
+    },
+    {
+      "name": "R2.4-dx0.01-pCa6.1-delta0.0005-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0003812505560830191,
+      "initialShiftForceAbsolute": 0.000275312543488982,
+      "stateErrorOverInitialShiftL1": 0.009703190725604174,
+      "forceErrorOverInitialShiftForce": 0.010124242685876436
+    },
+    {
+      "name": "R2.4-dx0.01-pCa6.1-delta0.0005-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0003812505560830191,
+      "initialShiftForceAbsolute": 0.000275312543488982,
+      "stateErrorOverInitialShiftL1": 0.004902542354418303,
+      "forceErrorOverInitialShiftForce": 0.005109841215893299
+    },
+    {
+      "name": "R2.4-dx0.01-pCa6.1-delta-0.0005-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.00038125055608302085,
+      "initialShiftForceAbsolute": 0.00027531254348903394,
+      "stateErrorOverInitialShiftL1": 0.01898765783161508,
+      "forceErrorOverInitialShiftForce": 0.019846710825054327
+    },
+    {
+      "name": "R2.4-dx0.01-pCa6.1-delta-0.0005-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.00038125055608302085,
+      "initialShiftForceAbsolute": 0.00027531254348903394,
+      "stateErrorOverInitialShiftL1": 0.00968974797757549,
+      "forceErrorOverInitialShiftForce": 0.010111028028760776
+    },
+    {
+      "name": "R2.4-dx0.01-pCa6.1-delta-0.0005-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.00038125055608302085,
+      "initialShiftForceAbsolute": 0.00027531254348903394,
+      "stateErrorOverInitialShiftL1": 0.004895677580375114,
+      "forceErrorOverInitialShiftForce": 0.005103669044963067
+    },
+    {
+      "name": "R3-dx0.04-pCa4.5-delta0.001-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0013819009315563754,
+      "initialShiftForceAbsolute": 0.0009986732480437037,
+      "stateErrorOverInitialShiftL1": 0.019045472712793034,
+      "forceErrorOverInitialShiftForce": 0.019830588617958066
+    },
+    {
+      "name": "R3-dx0.04-pCa4.5-delta0.001-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0013819009315563754,
+      "initialShiftForceAbsolute": 0.0009986732480437037,
+      "stateErrorOverInitialShiftL1": 0.009719567923263086,
+      "forceErrorOverInitialShiftForce": 0.010096923231388766
+    },
+    {
+      "name": "R3-dx0.04-pCa4.5-delta0.001-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0013819009315563754,
+      "initialShiftForceAbsolute": 0.0009986732480437037,
+      "stateErrorOverInitialShiftL1": 0.004910829838306417,
+      "forceErrorOverInitialShiftForce": 0.005094902822669134
+    },
+    {
+      "name": "R3-dx0.04-pCa4.5-delta-0.001-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0013819009315563884,
+      "initialShiftForceAbsolute": 0.0009986732480437785,
+      "stateErrorOverInitialShiftL1": 0.018948101603007875,
+      "forceErrorOverInitialShiftForce": 0.01974243918183457
+    },
+    {
+      "name": "R3-dx0.04-pCa4.5-delta-0.001-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0013819009315563884,
+      "initialShiftForceAbsolute": 0.0009986732480437785,
+      "stateErrorOverInitialShiftL1": 0.00966890784025285,
+      "forceErrorOverInitialShiftForce": 0.010059516140850577
+    },
+    {
+      "name": "R3-dx0.04-pCa4.5-delta-0.001-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0013819009315563884,
+      "initialShiftForceAbsolute": 0.0009986732480437785,
+      "stateErrorOverInitialShiftL1": 0.0048849682693242686,
+      "forceErrorOverInitialShiftForce": 0.005078133584986229
+    },
+    {
+      "name": "R3-dx0.04-pCa4.5-delta0.0005-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.00069095046577818,
+      "initialShiftForceAbsolute": 0.0004993366240219102,
+      "stateErrorOverInitialShiftL1": 0.019045472640114535,
+      "forceErrorOverInitialShiftForce": 0.019830599646394036
+    },
+    {
+      "name": "R3-dx0.04-pCa4.5-delta0.0005-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.00069095046577818,
+      "initialShiftForceAbsolute": 0.0004993366240219102,
+      "stateErrorOverInitialShiftL1": 0.009719567883352442,
+      "forceErrorOverInitialShiftForce": 0.010096929131814635
+    },
+    {
+      "name": "R3-dx0.04-pCa4.5-delta0.0005-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.00069095046577818,
+      "initialShiftForceAbsolute": 0.0004993366240219102,
+      "stateErrorOverInitialShiftL1": 0.004910829817307285,
+      "forceErrorOverInitialShiftForce": 0.005094905878091657
+    },
+    {
+      "name": "R3-dx0.04-pCa4.5-delta-0.0005-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.000690950465778188,
+      "initialShiftForceAbsolute": 0.0004993366240218392,
+      "stateErrorOverInitialShiftL1": 0.018948101415129974,
+      "forceErrorOverInitialShiftForce": 0.01974243349497399
+    },
+    {
+      "name": "R3-dx0.04-pCa4.5-delta-0.0005-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.000690950465778188,
+      "initialShiftForceAbsolute": 0.0004993366240218392,
+      "stateErrorOverInitialShiftL1": 0.00966890774020306,
+      "forceErrorOverInitialShiftForce": 0.01005951309801607
+    },
+    {
+      "name": "R3-dx0.04-pCa4.5-delta-0.0005-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.000690950465778188,
+      "initialShiftForceAbsolute": 0.0004993366240218392,
+      "stateErrorOverInitialShiftL1": 0.00488496821760882,
+      "forceErrorOverInitialShiftForce": 0.005078132009237129
+    },
+    {
+      "name": "R3-dx0.04-pCa6.1-delta0.001-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0007619058098659313,
+      "initialShiftForceAbsolute": 0.0005506146876862104,
+      "stateErrorOverInitialShiftL1": 0.019044909747234634,
+      "forceErrorOverInitialShiftForce": 0.019932236266889752
+    },
+    {
+      "name": "R3-dx0.04-pCa6.1-delta0.001-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0007619058098659313,
+      "initialShiftForceAbsolute": 0.0005506146876862104,
+      "stateErrorOverInitialShiftL1": 0.009719271215550834,
+      "forceErrorOverInitialShiftForce": 0.010150277768358203
+    },
+    {
+      "name": "R3-dx0.04-pCa6.1-delta0.001-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0007619058098659313,
+      "initialShiftForceAbsolute": 0.0005506146876862104,
+      "stateErrorOverInitialShiftL1": 0.004910677258751906,
+      "forceErrorOverInitialShiftForce": 0.00512225997107823
+    },
+    {
+      "name": "R3-dx0.04-pCa6.1-delta-0.001-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0007619058098659408,
+      "initialShiftForceAbsolute": 0.0005506146876862329,
+      "stateErrorOverInitialShiftL1": 0.01895057641002425,
+      "forceErrorOverInitialShiftForce": 0.019815482361555482
+    },
+    {
+      "name": "R3-dx0.04-pCa6.1-delta-0.001-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0007619058098659408,
+      "initialShiftForceAbsolute": 0.0005506146876862329,
+      "stateErrorOverInitialShiftL1": 0.009670206661698641,
+      "forceErrorOverInitialShiftForce": 0.010097864631056587
+    },
+    {
+      "name": "R3-dx0.04-pCa6.1-delta-0.001-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0007619058098659408,
+      "initialShiftForceAbsolute": 0.0005506146876862329,
+      "stateErrorOverInitialShiftL1": 0.00488563412510478,
+      "forceErrorOverInitialShiftForce": 0.0050977991088965845
+    },
+    {
+      "name": "R3-dx0.04-pCa6.1-delta0.0005-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.00038095290493296574,
+      "initialShiftForceAbsolute": 0.000275307343843129,
+      "stateErrorOverInitialShiftL1": 0.01904490970402266,
+      "forceErrorOverInitialShiftForce": 0.019932243543667672
+    },
+    {
+      "name": "R3-dx0.04-pCa6.1-delta0.0005-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.00038095290493296574,
+      "initialShiftForceAbsolute": 0.000275307343843129,
+      "stateErrorOverInitialShiftL1": 0.00971927119183222,
+      "forceErrorOverInitialShiftForce": 0.010150281676640026
+    },
+    {
+      "name": "R3-dx0.04-pCa6.1-delta0.0005-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.00038095290493296574,
+      "initialShiftForceAbsolute": 0.000275307343843129,
+      "stateErrorOverInitialShiftL1": 0.0049106772463740084,
+      "forceErrorOverInitialShiftForce": 0.005122261999602363
+    },
+    {
+      "name": "R3-dx0.04-pCa6.1-delta-0.0005-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.00038095290493296325,
+      "initialShiftForceAbsolute": 0.00027530734384308315,
+      "stateErrorOverInitialShiftL1": 0.018950576284308095,
+      "forceErrorOverInitialShiftForce": 0.01981547861606875
+    },
+    {
+      "name": "R3-dx0.04-pCa6.1-delta-0.0005-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.00038095290493296325,
+      "initialShiftForceAbsolute": 0.00027530734384308315,
+      "stateErrorOverInitialShiftL1": 0.00967020659436748,
+      "forceErrorOverInitialShiftForce": 0.010097862619439766
+    },
+    {
+      "name": "R3-dx0.04-pCa6.1-delta-0.0005-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.00038095290493296325,
+      "initialShiftForceAbsolute": 0.00027530734384308315,
+      "stateErrorOverInitialShiftL1": 0.004885634090115048,
+      "forceErrorOverInitialShiftForce": 0.0050977980646213766
+    },
+    {
+      "name": "R3-dx0.02-pCa4.5-delta0.001-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0013825528756901124,
+      "initialShiftForceAbsolute": 0.0009986874749039693,
+      "stateErrorOverInitialShiftL1": 0.01903170251970241,
+      "forceErrorOverInitialShiftForce": 0.01979851726083928
+    },
+    {
+      "name": "R3-dx0.02-pCa4.5-delta0.001-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0013825528756901124,
+      "initialShiftForceAbsolute": 0.0009986874749039693,
+      "stateErrorOverInitialShiftL1": 0.009712510306835839,
+      "forceErrorOverInitialShiftForce": 0.010082382343404693
+    },
+    {
+      "name": "R3-dx0.02-pCa4.5-delta0.001-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0013825528756901124,
+      "initialShiftForceAbsolute": 0.0009986874749039693,
+      "stateErrorOverInitialShiftL1": 0.004907256322010428,
+      "forceErrorOverInitialShiftForce": 0.0050880701039397475
+    },
+    {
+      "name": "R3-dx0.02-pCa4.5-delta-0.001-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0013825528756901074,
+      "initialShiftForceAbsolute": 0.0009986874749040296,
+      "stateErrorOverInitialShiftL1": 0.018979825617900948,
+      "forceErrorOverInitialShiftForce": 0.01975410954671943
+    },
+    {
+      "name": "R3-dx0.02-pCa4.5-delta-0.001-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0013825528756901074,
+      "initialShiftForceAbsolute": 0.0009986874749040296,
+      "stateErrorOverInitialShiftL1": 0.009685503237461132,
+      "forceErrorOverInitialShiftForce": 0.010063505139918789
+    },
+    {
+      "name": "R3-dx0.02-pCa4.5-delta-0.001-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0013825528756901074,
+      "initialShiftForceAbsolute": 0.0009986874749040296,
+      "stateErrorOverInitialShiftL1": 0.00489346484640947,
+      "forceErrorOverInitialShiftForce": 0.005079596721071026
+    },
+    {
+      "name": "R3-dx0.02-pCa4.5-delta0.0005-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.000691276437845057,
+      "initialShiftForceAbsolute": 0.000499343737451981,
+      "stateErrorOverInitialShiftL1": 0.019031702456968887,
+      "forceErrorOverInitialShiftForce": 0.019798526839928707
+    },
+    {
+      "name": "R3-dx0.02-pCa4.5-delta0.0005-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.000691276437845057,
+      "initialShiftForceAbsolute": 0.000499343737451981,
+      "stateErrorOverInitialShiftL1": 0.00971251027226094,
+      "forceErrorOverInitialShiftForce": 0.010082387468504301
+    },
+    {
+      "name": "R3-dx0.02-pCa4.5-delta0.0005-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.000691276437845057,
+      "initialShiftForceAbsolute": 0.000499343737451981,
+      "stateErrorOverInitialShiftL1": 0.00490725630394995,
+      "forceErrorOverInitialShiftForce": 0.005088072757959079
+    },
+    {
+      "name": "R3-dx0.02-pCa4.5-delta-0.0005-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0006912764378450532,
+      "initialShiftForceAbsolute": 0.0004993437374520189,
+      "stateErrorOverInitialShiftL1": 0.01897982552622338,
+      "forceErrorOverInitialShiftForce": 0.01975410264608272
+    },
+    {
+      "name": "R3-dx0.02-pCa4.5-delta-0.0005-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0006912764378450532,
+      "initialShiftForceAbsolute": 0.0004993437374520189,
+      "stateErrorOverInitialShiftL1": 0.009685503189080825,
+      "forceErrorOverInitialShiftForce": 0.010063501447822904
+    },
+    {
+      "name": "R3-dx0.02-pCa4.5-delta-0.0005-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0006912764378450532,
+      "initialShiftForceAbsolute": 0.0004993437374520189,
+      "stateErrorOverInitialShiftL1": 0.004893464821394845,
+      "forceErrorOverInitialShiftForce": 0.005079594808985237
+    },
+    {
+      "name": "R3-dx0.02-pCa6.1-delta0.001-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0007622659150343576,
+      "initialShiftForceAbsolute": 0.000550623007102728,
+      "stateErrorOverInitialShiftL1": 0.019031180846957728,
+      "forceErrorOverInitialShiftForce": 0.01989325873269034
+    },
+    {
+      "name": "R3-dx0.02-pCa6.1-delta0.001-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0007622659150343576,
+      "initialShiftForceAbsolute": 0.000550623007102728,
+      "stateErrorOverInitialShiftL1": 0.009712235408630088,
+      "forceErrorOverInitialShiftForce": 0.01013211399712532
+    },
+    {
+      "name": "R3-dx0.02-pCa6.1-delta0.001-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0007622659150343576,
+      "initialShiftForceAbsolute": 0.000550623007102728,
+      "stateErrorOverInitialShiftL1": 0.004907114970882819,
+      "forceErrorOverInitialShiftForce": 0.005113570319724929
+    },
+    {
+      "name": "R3-dx0.02-pCa6.1-delta-0.001-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0007622659150343542,
+      "initialShiftForceAbsolute": 0.0005506230071027772,
+      "stateErrorOverInitialShiftL1": 0.018980969851612448,
+      "forceErrorOverInitialShiftForce": 0.019834542640009677
+    },
+    {
+      "name": "R3-dx0.02-pCa6.1-delta-0.001-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0007622659150343542,
+      "initialShiftForceAbsolute": 0.0005506230071027772,
+      "stateErrorOverInitialShiftL1": 0.009686103247108273,
+      "forceErrorOverInitialShiftForce": 0.010105730441215176
+    },
+    {
+      "name": "R3-dx0.02-pCa6.1-delta-0.001-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0007622659150343542,
+      "initialShiftForceAbsolute": 0.0005506230071027772,
+      "stateErrorOverInitialShiftL1": 0.004893772259294123,
+      "forceErrorOverInitialShiftForce": 0.005101249387894086
+    },
+    {
+      "name": "R3-dx0.02-pCa6.1-delta0.0005-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.00038113295751717363,
+      "initialShiftForceAbsolute": 0.000275311503551365,
+      "stateErrorOverInitialShiftL1": 0.019031180809679072,
+      "forceErrorOverInitialShiftForce": 0.01989326505035386
+    },
+    {
+      "name": "R3-dx0.02-pCa6.1-delta0.0005-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.00038113295751717363,
+      "initialShiftForceAbsolute": 0.000275311503551365,
+      "stateErrorOverInitialShiftL1": 0.009712235388139222,
+      "forceErrorOverInitialShiftForce": 0.01013211739009577
+    },
+    {
+      "name": "R3-dx0.02-pCa6.1-delta0.0005-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.00038113295751717363,
+      "initialShiftForceAbsolute": 0.000275311503551365,
+      "stateErrorOverInitialShiftL1": 0.004907114960181544,
+      "forceErrorOverInitialShiftForce": 0.0051135720805381675
+    },
+    {
+      "name": "R3-dx0.02-pCa6.1-delta-0.0005-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0003811329575171816,
+      "initialShiftForceAbsolute": 0.00027531150355139164,
+      "stateErrorOverInitialShiftL1": 0.01898096978858135,
+      "forceErrorOverInitialShiftForce": 0.019834538092650462
+    },
+    {
+      "name": "R3-dx0.02-pCa6.1-delta-0.0005-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0003811329575171816,
+      "initialShiftForceAbsolute": 0.00027531150355139164,
+      "stateErrorOverInitialShiftL1": 0.009686103213680174,
+      "forceErrorOverInitialShiftForce": 0.010105727999039726
+    },
+    {
+      "name": "R3-dx0.02-pCa6.1-delta-0.0005-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0003811329575171816,
+      "initialShiftForceAbsolute": 0.00027531150355139164,
+      "stateErrorOverInitialShiftL1": 0.00489377224181242,
+      "forceErrorOverInitialShiftForce": 0.0051012481202107
+    },
+    {
+      "name": "R3-dx0.01-pCa4.5-delta0.001-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.001382979163789726,
+      "initialShiftForceAbsolute": 0.0009986910316593788,
+      "stateErrorOverInitialShiftL1": 0.019013980319868437,
+      "forceErrorOverInitialShiftForce": 0.019784879331025997
+    },
+    {
+      "name": "R3-dx0.01-pCa4.5-delta0.001-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.001382979163789726,
+      "initialShiftForceAbsolute": 0.0009986910316593788,
+      "stateErrorOverInitialShiftL1": 0.009703454655856055,
+      "forceErrorOverInitialShiftForce": 0.010076351327115644
+    },
+    {
+      "name": "R3-dx0.01-pCa4.5-delta0.001-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.001382979163789726,
+      "initialShiftForceAbsolute": 0.0009986910316593788,
+      "stateErrorOverInitialShiftL1": 0.004902678059446104,
+      "forceErrorOverInitialShiftForce": 0.005085284251626903
+    },
+    {
+      "name": "R3-dx0.01-pCa4.5-delta-0.001-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0013829791637897275,
+      "initialShiftForceAbsolute": 0.0009986910316593426,
+      "stateErrorOverInitialShiftL1": 0.018987290034287667,
+      "forceErrorOverInitialShiftForce": 0.019762648149597106
+    },
+    {
+      "name": "R3-dx0.01-pCa4.5-delta-0.001-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0013829791637897275,
+      "initialShiftForceAbsolute": 0.0009986910316593426,
+      "stateErrorOverInitialShiftL1": 0.009689555695074646,
+      "forceErrorOverInitialShiftForce": 0.010066898669806843
+    },
+    {
+      "name": "R3-dx0.01-pCa4.5-delta-0.001-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0013829791637897275,
+      "initialShiftForceAbsolute": 0.0009986910316593426,
+      "stateErrorOverInitialShiftL1": 0.004895579286270085,
+      "forceErrorOverInitialShiftForce": 0.005081040427279608
+    },
+    {
+      "name": "R3-dx0.01-pCa4.5-delta0.0005-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0006914895818948638,
+      "initialShiftForceAbsolute": 0.0004993455158296284,
+      "stateErrorOverInitialShiftL1": 0.019013980261928593,
+      "forceErrorOverInitialShiftForce": 0.01978488821100351
+    },
+    {
+      "name": "R3-dx0.01-pCa4.5-delta0.0005-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0006914895818948638,
+      "initialShiftForceAbsolute": 0.0004993455158296284,
+      "stateErrorOverInitialShiftL1": 0.009703454623967383,
+      "forceErrorOverInitialShiftForce": 0.010076356078228063
+    },
+    {
+      "name": "R3-dx0.01-pCa4.5-delta0.0005-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0006914895818948638,
+      "initialShiftForceAbsolute": 0.0004993455158296284,
+      "stateErrorOverInitialShiftL1": 0.004902678042599754,
+      "forceErrorOverInitialShiftForce": 0.005085286712298382
+    },
+    {
+      "name": "R3-dx0.01-pCa4.5-delta-0.0005-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0006914895818948613,
+      "initialShiftForceAbsolute": 0.000499345515829727,
+      "stateErrorOverInitialShiftL1": 0.01898729000870751,
+      "forceErrorOverInitialShiftForce": 0.019762640609038186
+    },
+    {
+      "name": "R3-dx0.01-pCa4.5-delta-0.0005-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0006914895818948613,
+      "initialShiftForceAbsolute": 0.000499345515829727,
+      "stateErrorOverInitialShiftL1": 0.009689555682119929,
+      "forceErrorOverInitialShiftForce": 0.010066894635300814
+    },
+    {
+      "name": "R3-dx0.01-pCa4.5-delta-0.0005-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0006914895818948613,
+      "initialShiftForceAbsolute": 0.000499345515829727,
+      "stateErrorOverInitialShiftL1": 0.004895579279844636,
+      "forceErrorOverInitialShiftForce": 0.005081038337878202
+    },
+    {
+      "name": "R3-dx0.01-pCa6.1-delta0.001-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0007625011121660404,
+      "initialShiftForceAbsolute": 0.0005506250869780351,
+      "stateErrorOverInitialShiftL1": 0.01901347945124928,
+      "forceErrorOverInitialShiftForce": 0.019876106815620753
+    },
+    {
+      "name": "R3-dx0.01-pCa6.1-delta0.001-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0007625011121660404,
+      "initialShiftForceAbsolute": 0.0005506250869780351,
+      "stateErrorOverInitialShiftL1": 0.009703190744513052,
+      "forceErrorOverInitialShiftForce": 0.010124239540645492
+    },
+    {
+      "name": "R3-dx0.01-pCa6.1-delta0.001-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0007625011121660404,
+      "initialShiftForceAbsolute": 0.0005506250869780351,
+      "stateErrorOverInitialShiftL1": 0.00490254236447016,
+      "forceErrorOverInitialShiftForce": 0.005109839583309151
+    },
+    {
+      "name": "R3-dx0.01-pCa6.1-delta-0.001-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.0007625011121660411,
+      "initialShiftForceAbsolute": 0.0005506250869780076,
+      "stateErrorOverInitialShiftL1": 0.018987657851476904,
+      "forceErrorOverInitialShiftForce": 0.019846715795132093
+    },
+    {
+      "name": "R3-dx0.01-pCa6.1-delta-0.001-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.0007625011121660411,
+      "initialShiftForceAbsolute": 0.0005506250869780076,
+      "stateErrorOverInitialShiftL1": 0.009689747987916348,
+      "forceErrorOverInitialShiftForce": 0.010111030698115265
+    },
+    {
+      "name": "R3-dx0.01-pCa6.1-delta-0.001-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.0007625011121660411,
+      "initialShiftForceAbsolute": 0.0005506250869780076,
+      "stateErrorOverInitialShiftL1": 0.00489567758556293,
+      "forceErrorOverInitialShiftForce": 0.005103670430461328
+    },
+    {
+      "name": "R3-dx0.01-pCa6.1-delta0.0005-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.00038125055608301814,
+      "initialShiftForceAbsolute": 0.0002753125434889805,
+      "stateErrorOverInitialShiftL1": 0.01901347941674073,
+      "forceErrorOverInitialShiftForce": 0.01987611267151158
+    },
+    {
+      "name": "R3-dx0.01-pCa6.1-delta0.0005-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.00038125055608301814,
+      "initialShiftForceAbsolute": 0.0002753125434889805,
+      "stateErrorOverInitialShiftL1": 0.009703190725564217,
+      "forceErrorOverInitialShiftForce": 0.010124242685660584
+    },
+    {
+      "name": "R3-dx0.01-pCa6.1-delta0.0005-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.00038125055608301814,
+      "initialShiftForceAbsolute": 0.0002753125434889805,
+      "stateErrorOverInitialShiftL1": 0.004902542354409217,
+      "forceErrorOverInitialShiftForce": 0.005109841215875347
+    },
+    {
+      "name": "R3-dx0.01-pCa6.1-delta-0.0005-dt0.004",
+      "dt": 0.004,
+      "initialShiftStateL1": 0.00038125055608302264,
+      "initialShiftForceAbsolute": 0.00027531254348904093,
+      "stateErrorOverInitialShiftL1": 0.01898765783162654,
+      "forceErrorOverInitialShiftForce": 0.01984671082535482
+    },
+    {
+      "name": "R3-dx0.01-pCa6.1-delta-0.0005-dt0.002",
+      "dt": 0.002,
+      "initialShiftStateL1": 0.00038125055608302264,
+      "initialShiftForceAbsolute": 0.00027531254348904093,
+      "stateErrorOverInitialShiftL1": 0.009689747977587532,
+      "forceErrorOverInitialShiftForce": 0.010111028028994922
+    },
+    {
+      "name": "R3-dx0.01-pCa6.1-delta-0.0005-dt0.001",
+      "dt": 0.001,
+      "initialShiftStateL1": 0.00038125055608302264,
+      "initialShiftForceAbsolute": 0.00027531254348904093,
+      "stateErrorOverInitialShiftL1": 0.0048956775803582035,
+      "forceErrorOverInitialShiftForce": 0.005103669045019407
+    }
+  ],
+  "baselineSubtractedFiniteBinSpace": [
+    {
+      "radius": 2.4,
+      "pCa": 4.5,
+      "delta": 0.001,
+      "baselineSubtractedMatchedForceBinHalvingDifferences": [
+        2.3974687932692973e-06,
+        1.157263835094291e-06
+      ],
+      "ratio": 0.48270235606119966
+    },
+    {
+      "radius": 3.0,
+      "pCa": 4.5,
+      "delta": 0.001,
+      "baselineSubtractedMatchedForceBinHalvingDifferences": [
+        2.397468793491342e-06,
+        1.1572638352053133e-06
+      ],
+      "ratio": 0.4827023560628017
+    },
+    {
+      "radius": 2.4,
+      "pCa": 4.5,
+      "delta": -0.001,
+      "baselineSubtractedMatchedForceBinHalvingDifferences": [
+        2.0512614345991054e-06,
+        1.0707447266611325e-06
+      ],
+      "ratio": 0.5219933006103616
+    },
+    {
+      "radius": 3.0,
+      "pCa": 4.5,
+      "delta": -0.001,
+      "baselineSubtractedMatchedForceBinHalvingDifferences": [
+        2.0512614347101277e-06,
+        1.0707447267721548e-06
+      ],
+      "ratio": 0.5219933006362333
+    },
+    {
+      "radius": 2.4,
+      "pCa": 4.5,
+      "delta": 0.0005,
+      "baselineSubtractedMatchedForceBinHalvingDifferences": [
+        1.1987388542911148e-06,
+        5.786340604441165e-07
+      ],
+      "ratio": 0.48270234869987344
+    },
+    {
+      "radius": 3.0,
+      "pCa": 4.5,
+      "delta": 0.0005,
+      "baselineSubtractedMatchedForceBinHalvingDifferences": [
+        1.1987388541800925e-06,
+        5.786340604441165e-07
+      ],
+      "ratio": 0.48270234874457935
+    },
+    {
+      "radius": 2.4,
+      "pCa": 4.5,
+      "delta": -0.0005,
+      "baselineSubtractedMatchedForceBinHalvingDifferences": [
+        1.0256270225328379e-06,
+        5.353704108923552e-07
+      ],
+      "ratio": 0.5219932774101748
+    },
+    {
+      "radius": 3.0,
+      "pCa": 4.5,
+      "delta": -0.0005,
+      "baselineSubtractedMatchedForceBinHalvingDifferences": [
+        1.0256270225328379e-06,
+        5.353704108923552e-07
+      ],
+      "ratio": 0.5219932774101748
+    },
+    {
+      "radius": 2.4,
+      "pCa": 6.1,
+      "delta": 0.001,
+      "baselineSubtractedMatchedForceBinHalvingDifferences": [
+        1.360701296415634e-06,
+        6.577324210832458e-07
+      ],
+      "ratio": 0.4833775221761365
+    },
+    {
+      "radius": 3.0,
+      "pCa": 6.1,
+      "delta": 0.001,
+      "baselineSubtractedMatchedForceBinHalvingDifferences": [
+        1.3607012965266563e-06,
+        6.577324210832458e-07
+      ],
+      "ratio": 0.48337752213669677
+    },
+    {
+      "radius": 2.4,
+      "pCa": 6.1,
+      "delta": -0.001,
+      "baselineSubtractedMatchedForceBinHalvingDifferences": [
+        1.171851445658234e-06,
+        6.105361451957947e-07
+      ],
+      "ratio": 0.5210013158731513
+    },
+    {
+      "radius": 3.0,
+      "pCa": 6.1,
+      "delta": -0.001,
+      "baselineSubtractedMatchedForceBinHalvingDifferences": [
+        1.1718514455472118e-06,
+        6.105361449737501e-07
+      ],
+      "ratio": 0.5210013157330297
+    },
+    {
+      "radius": 2.4,
+      "pCa": 6.1,
+      "delta": 0.0005,
+      "baselineSubtractedMatchedForceBinHalvingDifferences": [
+        6.80352118642702e-07,
+        3.288669170320446e-07
+      ],
+      "ratio": 0.48337751587829547
+    },
+    {
+      "radius": 3.0,
+      "pCa": 6.1,
+      "delta": 0.0005,
+      "baselineSubtractedMatchedForceBinHalvingDifferences": [
+        6.803521187537243e-07,
+        3.2886691714306693e-07
+      ],
+      "ratio": 0.48337751596259976
+    },
+    {
+      "radius": 2.4,
+      "pCa": 6.1,
+      "delta": -0.0005,
+      "baselineSubtractedMatchedForceBinHalvingDifferences": [
+        5.859245043593475e-07,
+        3.0526742877956536e-07
+      ],
+      "ratio": 0.5210013005230872
+    },
+    {
+      "radius": 3.0,
+      "pCa": 6.1,
+      "delta": -0.0005,
+      "baselineSubtractedMatchedForceBinHalvingDifferences": [
+        5.859245043593475e-07,
+        3.0526742877956536e-07
+      ],
+      "ratio": 0.5210013005230872
+    }
+  ]
+}
