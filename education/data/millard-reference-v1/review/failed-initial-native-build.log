@@ -1,0 +1,12 @@
+/tmp/kenoma-millard-native-q7s5xwdt/oracle.cpp: In member function ‘double MuscleFirstOrderActivationDynamicModel::calcDerivative(double, double) const’:
+/tmp/kenoma-millard-native-q7s5xwdt/oracle.cpp:575:23: error: call of overloaded ‘clamp(double, double&, double)’ is ambiguous
+  575 |     activation = clamp(get_minimum_activation(), activation, 1.0);
+      |                  ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/kenoma-millard-native-q7s5xwdt/oracle.cpp:40:21: note: candidate: ‘T clamp(T, T, T) [with T = double]’
+   40 | template<class T> T clamp(T lo,T x,T hi){return max(lo,min(x,hi));}
+      |                     ^~~~~
+In file included from /usr/include/c++/14/algorithm:61,
+                 from /tmp/kenoma-millard-native-q7s5xwdt/oracle.cpp:11:
+/usr/include/c++/14/bits/stl_algo.h:3624:5: note: candidate: ‘constexpr const _Tp& std::clamp(const _Tp&, const _Tp&, const _Tp&) [with _Tp = double]’
+ 3624 |     clamp(const _Tp& __val, const _Tp& __lo, const _Tp& __hi)
+      |     ^~~~~

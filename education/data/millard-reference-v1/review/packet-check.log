@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "bound_files": 51,
+  "max_recomputed_force_balance_N": 1.9895196601282805e-13,
+  "max_recomputed_tendon_force_N": 1.9468870959826745e-12,
+  "matched_time_native_Python_error": 1.3870860016140796e-10,
+  "native_refinement_error": 2.794953157803093e-10,
+  "baseline_preserved": "b0d2c11d96a36eed7121a35cfbdda2f85dec2e32",
+  "all_tracked_changes_additions": true,
+  "protected_file_sha256": {
+    "education/book/chapters/00-scope.md": "dafdb4e81ab22e9f5317c9077acdf4ecfdeb0645df880a60bea7c5c85dbd23c8",
+    "education/tools/contact_trajectory_figure.py": "be7d946de26c025a69c7547b462a8f9a1d0184a7ef50d6a076baac297345e55b"
+  },
+  "failed_work_receipt_retained": true
+}

@@ -1,0 +1,267 @@
+{
+  "files": [
+    {
+      "path": "education/data/millard-reference-v1/review/execution.json",
+      "bytes": 1276,
+      "sha256": "8f349c034ee8234daeadf780982e95d6a0dcbd1739fdde8608ca36b500906edb"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/failed-coarse-work-python-run.log",
+      "bytes": 3588,
+      "sha256": "d7552556812d25b39cfc0ec93218a5963cdc4b7cc11cb06cce4155d23705c6f2"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/failed-coarse-work-summary.json",
+      "bytes": 2738,
+      "sha256": "7ea6104e155c6db8e2c97fe6a9eb5ab42416549983ef41314c651c600c7281c5"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/failed-initial-native-build.log",
+      "bytes": 1032,
+      "sha256": "f4cdab80845dc21b7d76ecd1c9bfb9a2e67e36c4ed29f61ba3189ec4d0da428f"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/failed-initial-python-report.log",
+      "bytes": 1852,
+      "sha256": "efb9eddce675aea77e8a92c9e552a66a3b5d7b7264c1c3faa3f9c169213faad6"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/native-activation.csv",
+      "bytes": 982,
+      "sha256": "e94ce2f4e1408ab09973811f1f80f9a959163266eccb56c09ec10107d72ce7b9"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/native-build.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/native-controls.json",
+      "bytes": 2917,
+      "sha256": "13c360473038d1d7ca86ea4aab7275cd991694cb8e8c195e6a239f3070e25eb3"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/native-force-minus-coarse.csv",
+      "bytes": 4158,
+      "sha256": "2d6c09533d352f722156c59213500eb5fcb3f650bd1800459c0e77c2539b2d61"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/native-force-minus-fine.csv",
+      "bytes": 4152,
+      "sha256": "56d9ac9cfdf03a3b9570e488d797da8923cb40bb18a86f70be159924ac3cc7a7"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/native-force-plus-coarse.csv",
+      "bytes": 4103,
+      "sha256": "0ccd29b075e196b06bb798e238ebe4612bf8bc8f1dc77fcaca11a0b03eb903e1"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/native-force-plus-fine.csv",
+      "bytes": 4097,
+      "sha256": "164e11cf7cddbe5db1fe2f9ff52dd621b75b2a06e6ab6bbe721440d083d9b496"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/native-held-coarse.csv",
+      "bytes": 28440,
+      "sha256": "2a524ead0ac5d5e1492f343b741fa6fc621289d2f31e20d3cae4daf562fe5863"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/native-held-fine.csv",
+      "bytes": 28462,
+      "sha256": "3f59964af712fcb2f0064c8ffe3830f181030dc63ad3950c25c9cb991018e56a"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/native-kernels.csv",
+      "bytes": 29275,
+      "sha256": "08571d876e1df846f3ccad4fbdea0ed16792fcfb482c6ed9e761227010138d6a"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/native-oracle.cpp",
+      "bytes": 28317,
+      "sha256": "53c815e7d0bca208aac2ceb21a117f9ec788bb7f8f1f49cd1312a0f793a78bfc"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/native-replay.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/native-run.log",
+      "bytes": 50,
+      "sha256": "03a8dc3970b35982a1c25b167bd3406cc33ccd5c5eaf2e6cae7009415be11cf0"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/pdfinfo.log",
+      "bytes": 455,
+      "sha256": "988e35aa7c3f5441b36ec7c7d5a295f7a756f3d9c320a5d1c2a119a354f78f9e"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/python-force-minus.csv",
+      "bytes": 6882,
+      "sha256": "cb44c4303eed5fcf81c82baa00c6436fe4ca6006541bee0e65301a355051928f"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/python-force-plus.csv",
+      "bytes": 6782,
+      "sha256": "4fdb42a7f6322b481d07605685aa6e443658fa78ee14d428328dcc3f083c23ab"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/python-held.csv",
+      "bytes": 38422,
+      "sha256": "d8abd0a6c8c6450cd20ca02be7ea03f9e528128978ef5692fea29c586c249f2c"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/python-run.log",
+      "bytes": 3007,
+      "sha256": "1a020d2f0fd6aac7defce7cf13035baf50b765adf0ff29a157b99023a0d434be"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/reference-cases-pdf-raster.png",
+      "bytes": 141105,
+      "sha256": "0f9976fd0d912a9194bb8531308dcb8d0506822d9926c3a0bed8ba0448a4623f"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/reference-cases.pdf",
+      "bytes": 28791,
+      "sha256": "c7fa78cd367ba9611bb2badcc11ec7094f29618fdcf1497418b3720cafbecf48"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/reference-cases.png",
+      "bytes": 373171,
+      "sha256": "ffff82e213d224004f6668235cf3687d5295a440886f8492c780422f43344d85"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/render.log",
+      "bytes": 30,
+      "sha256": "2ce30dcf046c02c9abea9c55cce54c7cc13fe0265782cdda1908f9f354359e8a"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/summary.json",
+      "bytes": 3007,
+      "sha256": "1a020d2f0fd6aac7defce7cf13035baf50b765adf0ff29a157b99023a0d434be"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/unit-tests.log",
+      "bytes": 795,
+      "sha256": "738fe63c8c0d7f6c368d23ae80a5d15af25151bbb3f97efabdd3ae7c7c0d7874"
+    },
+    {
+      "path": "education/data/millard-reference-v1/review/visual-inspection.json",
+      "bytes": 381,
+      "sha256": "aa213877bcca141b2ee3f78c93fbbeb311c1d0ba4ee7a0027a5946810d58b7f7"
+    },
+    {
+      "path": "education/data/millard-reference-v1/upstream/ActiveForceLengthCurve.cpp",
+      "bytes": 8679,
+      "sha256": "c5208cfbcbee202bce5546d19901b7d008cc48b7ff8f160d755eda6be25ce8fe"
+    },
+    {
+      "path": "education/data/millard-reference-v1/upstream/FiberForceLengthCurve.cpp",
+      "bytes": 17471,
+      "sha256": "885693023dc48a9b1565a7b1788f654a57d2f088a05b242dad5f6847d7a1de61"
+    },
+    {
+      "path": "education/data/millard-reference-v1/upstream/ForceVelocityCurve.cpp",
+      "bytes": 9193,
+      "sha256": "9c0a3ba35e8c5d9328cb8080ba64bab64c6e7a8352d917c5cf3d78185398cb73"
+    },
+    {
+      "path": "education/data/millard-reference-v1/upstream/LICENSE.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "education/data/millard-reference-v1/upstream/Millard2012EquilibriumMuscle.cpp",
+      "bytes": 78126,
+      "sha256": "9962d9093ae1da7ab9a0024ca59c163613d50041b49c68716130b292889f0e01"
+    },
+    {
+      "path": "education/data/millard-reference-v1/upstream/Millard2012EquilibriumMuscle.h",
+      "bytes": 33923,
+      "sha256": "e6091b935077e7e3287dcc1d1f81c4b17bdb31dda200d3f0c7f26403cc951f8a"
+    },
+    {
+      "path": "education/data/millard-reference-v1/upstream/Muscle.cpp",
+      "bytes": 28379,
+      "sha256": "eac421fab41c4ec7f72dae7e572efcd842a4f12f14f2764ccf3521ea9dd307d5"
+    },
+    {
+      "path": "education/data/millard-reference-v1/upstream/MuscleFirstOrderActivationDynamicModel.cpp",
+      "bytes": 5139,
+      "sha256": "7cda12111355cf7f04a906c4821582a203547b149ac9b43250c58a13734a18e9"
+    },
+    {
+      "path": "education/data/millard-reference-v1/upstream/NOTICE",
+      "bytes": 3869,
+      "sha256": "b2c1b5cb94d4cb080aa2e589cb03863f27fa7ed4bc2b6c6dfb42a46f0d38c2cd"
+    },
+    {
+      "path": "education/data/millard-reference-v1/upstream/SegmentedQuinticBezierToolkit.cpp",
+      "bytes": 38788,
+      "sha256": "79bfeb65c24809e4611937e3020964b3844aff5c8146e112d89dafeb851ddb32"
+    },
+    {
+      "path": "education/data/millard-reference-v1/upstream/SmoothSegmentedFunctionFactory.cpp",
+      "bytes": 30012,
+      "sha256": "83c25616e7249be321a7934fb24dd0f1c45a84c62f31256368646cef5bc9cbee"
+    },
+    {
+      "path": "education/data/millard-reference-v1/upstream/TendonForceLengthCurve.cpp",
+      "bytes": 13697,
+      "sha256": "2b4d7f908195106f499c222edc4b8d154d1f98c6853cb8b93d5a03bee13818c6"
+    },
+    {
+      "path": "education/data/millard-reference-v1/upstream/manifest.json",
+      "bytes": 4867,
+      "sha256": "0d9448dd2fc3e0dacf58722c80263708fe2df9addc83019ac24496134906573c"
+    },
+    {
+      "path": "education/research/mechanical-closure/constitutive-reference-decision.md",
+      "bytes": 12537,
+      "sha256": "12c4d5853c78fce9acd442831ea7f5ae43955e966a4031b7ad223bbdf59a63e6"
+    },
+    {
+      "path": "education/research/mechanical-closure/millard-reference-benchmark-protocol.md",
+      "bytes": 8319,
+      "sha256": "7eed5bad3f2333b17b4f4e5f2eec898a276f46ebde12d3a8c617e6f1ed53ee57"
+    },
+    {
+      "path": "education/research/mechanical-closure/millard-reference-benchmark-results.md",
+      "bytes": 7706,
+      "sha256": "5b302727904415dd44c399bb5094faf8b87efdaa464ec718e56ea49e0c4c81e5"
+    },
+    {
+      "path": "education/tools/check_millard_reference_packet.py",
+      "bytes": 3648,
+      "sha256": "903c13b5c74c46e30cc5aabd7681b885f26a885d76a74767556b4035963ee1ea"
+    },
+    {
+      "path": "education/tools/millard_reference_benchmark.py",
+      "bytes": 12565,
+      "sha256": "4a5210c7988c8ffc13cd1b6d1626ae9a5d6066ad9a5933ddb4036103e6eb667b"
+    },
+    {
+      "path": "education/tools/millard_reference_figure.py",
+      "bytes": 3459,
+      "sha256": "e3006438fe77df6bda49744e07616ccca57fcfbb0f7662051b85d6b5fd43c9e8"
+    },
+    {
+      "path": "education/tools/millard_source_oracle.py",
+      "bytes": 9673,
+      "sha256": "30b0cc37ceac3ed60e5242e85633a92f06f83c8b4913f27061aaba4d6a94f45b"
+    },
+    {
+      "path": "education/tools/test_millard_reference_benchmark.py",
+      "bytes": 2068,
+      "sha256": "e77b08e68dc57adb29653d85b501ef562e5a9d5ed253ac6068ebe68fef142489"
+    }
+  ],
+  "excluded_generated_audit_files": [
+    "packet-audit.json",
+    "packet-check.log",
+    "packet-manifest.json"
+  ],
+  "code_commit": "3ff0480f8e2341ba14fd082a9ff232fcdd521465",
+  "upstream_commit": "5bc7d3308eda742690f485ec060bfe725a349fa6",
+  "scope": "bounded source reproduction; preserves failures; no full OpenSim or physiological calibration"
+}

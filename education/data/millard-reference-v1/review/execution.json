@@ -1,0 +1,49 @@
+{
+  "code_commit": "3ff0480f8e2341ba14fd082a9ff232fcdd521465",
+  "code_tree": "e31d13936678483458e7b4bbc94d546388e49ff2",
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "education/tools/millard_source_oracle.py",
+        "--output",
+        "/workspace/Kenoma-refinement-diagnosis/education/data/millard-reference-v1/review"
+      ],
+      "exit_code": 0,
+      "seconds": 28.510293005005224,
+      "log": "native-replay.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "education/tools/millard_reference_benchmark.py"
+      ],
+      "exit_code": 0,
+      "seconds": 10.191532253011246,
+      "log": "python-run.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "education/tools",
+        "-p",
+        "test_millard_reference_benchmark.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 0.5069317349989433,
+      "log": "unit-tests.log"
+    }
+  ],
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "g++": "g++ (Debian 14.2.0-19) 14.2.0"
+  },
+  "scope": "source-kernel reproduction; no full OpenSim runtime; no continuum coupling; no physiological calibration"
+}

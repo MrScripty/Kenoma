@@ -1,0 +1,103 @@
+{
+  "scope": "bounded source-kernel/ODE reproduction, not full OpenSim or human calibration",
+  "upstream_commit": "5bc7d3308eda742690f485ec060bfe725a349fa6",
+  "parameters": {
+    "F0_N": 100.0,
+    "optimal_length_m": 0.1,
+    "tendon_slack_length_m": 0.2,
+    "pennation_rad": 0.0,
+    "vmax_optimal_lengths_per_s": 10.0,
+    "damping_beta": 0.1,
+    "tau_activation_s": 0.01,
+    "tau_deactivation_s": 0.04,
+    "minimum_activation": 0.01,
+    "initial_activation": 0.05,
+    "active": [
+      0.4441,
+      0.73,
+      1.0,
+      1.8123,
+      0.0,
+      0.8616,
+      1.0
+    ],
+    "velocity": [
+      1.4,
+      0.0,
+      0.25,
+      5.0,
+      0.0,
+      0.15,
+      0.6,
+      0.9
+    ],
+    "passive": [
+      0.0,
+      0.7,
+      0.2,
+      2.857142857142857,
+      0.75
+    ],
+    "tendon": [
+      0.049,
+      28.06122448979592,
+      0.6666666666666666,
+      0.5
+    ]
+  },
+  "initial_total_length_m": 0.3012157590749195,
+  "initial_static_residual_N": 4.558853294867049e-13,
+  "force_clamp_N": 97.44203673778073,
+  "control_point_error": 2.220446049250313e-16,
+  "curve_value_error": 4.135580766728708e-15,
+  "curve_derivative_native_error": 3.152478278423132e-13,
+  "active_derivative_finite_difference_error": 2.0832202629605945e-09,
+  "activation_kernel_error": 0.0,
+  "activation_exact_branch_error": 7.268685653372131e-12,
+  "max_force_balance_residual_N": 2.3314683517128287e-13,
+  "native_fine_vs_DOP853_max_state_error": 1.3870860016140796e-10,
+  "native_coarse_fine_max_state_error": 2.794953157803093e-10,
+  "DOP853_Radau_max_state_error": 1.409337091473617e-10,
+  "descending_total_slope_normalized": -0.9594624247203973,
+  "descending_growth_rate_per_s": 1.9633444730947247,
+  "growth_rate_finite_difference_per_s": 1.9633444725408449,
+  "perturbation_magnitude_ratios_at_0_05s": {
+    "force-plus": 1.1032044650916006,
+    "force-minus": 1.1030898865382888
+  },
+  "held_storage_change_J": 0.002338478752122225,
+  "held_active_minus_damping_work_J": 0.00229461030292695,
+  "held_work_quadrature_error_J": 4.386844919527502e-05,
+  "invalid_case": {
+    "q": 0.4,
+    "accepted": false,
+    "advanced_time": false,
+    "message": "fiber length violates lower bound; state/time not advanced"
+  },
+  "wall_seconds": 9.056549622997409,
+  "python": "3.12.14",
+  "checks": {
+    "source_controls": true,
+    "source_curve_values": true,
+    "source_curve_derivatives": true,
+    "finite_difference_derivatives": true,
+    "activation_kernel": true,
+    "exact_activation": true,
+    "force_balance": true,
+    "matched_time_native": true,
+    "native_refinement": true,
+    "independent_ODE": true,
+    "descending_retained": true,
+    "invalid_rejected": true,
+    "work_balance": false
+  },
+  "passed": false
+}
+Traceback (most recent call last):
+  File "/workspace/Kenoma-refinement-diagnosis/education/tools/millard_reference_benchmark.py", line 140, in <module>
+    if __name__=='__main__':run()
+                            ^^^^^
+  File "/workspace/Kenoma-refinement-diagnosis/education/tools/millard_reference_benchmark.py", line 137, in run
+    print(json.dumps(summary,indent=2));assert summary['passed'],checks
+                                               ~~~~~~~^^^^^^^^^^
+AssertionError: {'source_controls': True, 'source_curve_values': True, 'source_curve_derivatives': True, 'finite_difference_derivatives': True, 'activation_kernel': True, 'exact_activation': True, 'force_balance': True, 'matched_time_native': True, 'native_refinement': True, 'independent_ODE': True, 'descending_retained': True, 'invalid_rejected': True, 'work_balance': False}
