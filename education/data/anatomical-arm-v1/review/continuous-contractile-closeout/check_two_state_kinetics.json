@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python",
+    "education/tools/check_two_state_kinetics.py"
+  ],
+  "exitCode": 0,
+  "runtimeSeconds": 0.2171318531036377,
+  "scope": "read-only historical evidence closure; no original numerical packet rerun",
+  "sourceCommit": "f0aa3c11fd5a40107a68e35bcd8bf0a61fdd5800",
+  "environmentOverride": {
+    "OPENBLAS_NUM_THREADS": "1"
+  }
+}

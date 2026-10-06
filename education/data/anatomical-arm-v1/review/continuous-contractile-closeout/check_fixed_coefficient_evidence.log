@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/Kenoma-refinement-diagnosis/education/tools/check_fixed_coefficient_evidence.py", line 14, in <module>
+    for n,h in r.get('sha256',r.get('files',{})).items():
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'items'

@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python",
+    "education/tools/check_fixed_coefficient_evidence_v2.py"
+  ],
+  "exitCode": 0,
+  "runtimeSeconds": 0.28882646560668945,
+  "sourceSHA256": "82575b1d33cb1d359e34df2c5a14af9a6f6f1b7e03560e916f0c7ded0caf6789",
+  "scope": "read-only final evidence reload, bound hashes and arithmetic; no numerical history/operator rerun",
+  "environmentOverride": {
+    "OPENBLAS_NUM_THREADS": "1"
+  }
+}

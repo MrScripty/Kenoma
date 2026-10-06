@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python",
+    "education/tools/check_full_p2_p1_evidence.py"
+  ],
+  "exitCode": 0,
+  "runtimeSeconds": 0.06932950019836426,
+  "scope": "read-only historical evidence closure; no original numerical packet rerun",
+  "sourceCommit": "f0aa3c11fd5a40107a68e35bcd8bf0a61fdd5800",
+  "environmentOverride": {
+    "OPENBLAS_NUM_THREADS": "1"
+  }
+}

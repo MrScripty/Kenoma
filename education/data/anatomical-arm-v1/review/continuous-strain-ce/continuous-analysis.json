@@ -1,0 +1,53 @@
+{
+  "result": "ASSESS_CONTINUOUS_STRAIN_AND_OLD_BIN_MOMENTS",
+  "histories": 96,
+  "oldComparisons": 144,
+  "maximumInitialWeightedRHSL1PerSecond": 6.599437675173655e-15,
+  "maximumJumpIdentityError": 2.3505503099485736e-16,
+  "maximumTimePairMomentErrors": [
+    1.6653345369377348e-16,
+    3.3306690738754696e-16,
+    2.220446049250313e-16
+  ],
+  "maximumQuadraturePairMomentErrors": [
+    3.885780586188048e-15,
+    7.66053886991358e-15,
+    4.107825191113079e-15
+  ],
+  "maximumExtentMomentDifferences": [
+    1.1102230246251565e-16,
+    6.661338147750939e-16,
+    1.2212453270876722e-15
+  ],
+  "minimumAcceptedDensity": 0.0,
+  "acceptedNodes": 144240,
+  "forceErrorNormalization": "Own initial force increment |F(0+)-F(0-)|; subtract each model own equilibrium before response comparison",
+  "physicalAndAnatomicalQualification": false,
+  "scope": "Finite-domain held-N overlap-one source-informed direct CE; no PE/SE dynamics, human/SI calibration or chemical-energy closure",
+  "oldFinestTimeResponseByBinWidth": [
+    {
+      "dx": 0.04,
+      "count": 8,
+      "relativeForceResponseErrorRange": [
+        0.002976663425989431,
+        0.009224798250634273
+      ]
+    },
+    {
+      "dx": 0.02,
+      "count": 8,
+      "relativeForceResponseErrorRange": [
+        0.0031950188056982898,
+        0.007144678888016283
+      ]
+    },
+    {
+      "dx": 0.01,
+      "count": 8,
+      "relativeForceResponseErrorRange": [
+        0.004190438650753869,
+        0.006060805544268386
+      ]
+    }
+  ]
+}

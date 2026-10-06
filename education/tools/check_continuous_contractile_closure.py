@@ -85,12 +85,28 @@ def continuous():
     assert len(s['finiteBinComparisons']) == 144
     for name, h in s['comparisonSourceHashes'].items():
         assert digest(BASE/'conserved-ce-trajectory'/name) == h
+    separated = json.loads((folder/'bin-spatial-separation.json').read_text())
+    assert separated['referencesCompared'] == len(separated['rows']) == 48
+    assert len(separated['groups']) == 16
+    assert separated['analysisSourceSHA256'] == digest(ROOT/'tools/analyze_continuous_ce_bin_separation.py')
+    for name,h in separated['inputSHA256'].items():
+        assert digest(ROOT/name) == h
+    bins = np.load(BASE/'conserved-ce-trajectory/independent-reference.npz',allow_pickle=False)
+    old = np.load(BASE/'conserved-ce-trajectory/matched-states.npz',allow_pickle=False)
+    for q in separated['rows']:
+        x = old[f"R{q['R']:g}-dx{q['dx']:g}_x"]
+        p = bins[q['name']+'-maxstep0.0005']
+        force = np.array([math.fsum(row*(1+x))/.5 for row in p])
+        target = records[q['R'],800,q['pCa'],q['delta'],.0005][:,1]
+        error = (force-force[0])-(target-target[0])
+        assert np.max(np.abs(error-q['signedMatchedForceResponseErrors'])) <= 2e-12
+        assert abs(q['ownInitialForceIncrement']-abs(force[1]-force[0])) <= 2e-12
     render = json.loads((folder/'render-receipt.json').read_text())
     for name,h in render['files'].items():
         assert digest(folder/name) == h
     assert render['pngVisuallyInspected'] and render['pdfRasterVisuallyInspected']
     return dict(manifestBindings=count, continuousHistories=96,
-                oldMatchedMomentComparisons=144, acceptedNodes=sum(
+                oldMatchedMomentComparisons=144, isolatedBinReferenceComparisons=48, acceptedNodes=sum(
                     q['acceptedNodes'] for r in s['runs'] for q in r['segments']))
 
 

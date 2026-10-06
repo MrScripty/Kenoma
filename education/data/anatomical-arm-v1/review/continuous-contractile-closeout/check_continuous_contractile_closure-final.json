@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python",
+    "education/tools/check_continuous_contractile_closure.py"
+  ],
+  "exitCode": 0,
+  "runtimeSeconds": 0.4293251037597656,
+  "sourceSHA256": "277b09f7815793d110427749e6757ea5495e5e587ba2356b8cfb831e6c22db8e",
+  "scope": "read-only final evidence reload, bound hashes and arithmetic; no numerical history/operator rerun",
+  "environmentOverride": {
+    "OPENBLAS_NUM_THREADS": "1"
+  }
+}

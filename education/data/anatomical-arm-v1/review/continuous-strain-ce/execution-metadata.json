@@ -1,0 +1,34 @@
+{
+  "commandArgv": [
+    "python",
+    "education/tools/continuous_strain_ce_reference.py",
+    "--out",
+    "education/data/anatomical-arm-v1/review/continuous-strain-ce",
+    "--protocol",
+    "education/research/mechanical-closure/continuous-strain-ce-protocol.md",
+    "--protocol-commit",
+    "f0aa3c11fd5a40107a68e35bcd8bf0a61fdd5800",
+    "--compare-packet",
+    "education/data/anatomical-arm-v1/review/conserved-ce-trajectory"
+  ],
+  "command": "OPENBLAS_NUM_THREADS=1 python education/tools/continuous_strain_ce_reference.py --out education/data/anatomical-arm-v1/review/continuous-strain-ce --protocol education/research/mechanical-closure/continuous-strain-ce-protocol.md --protocol-commit f0aa3c11fd5a40107a68e35bcd8bf0a61fdd5800 --compare-packet education/data/anatomical-arm-v1/review/conserved-ce-trajectory",
+  "environmentOverrides": {
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "inheritedEnvironmentPreserved": true,
+  "workingDirectory": "/workspace/Kenoma-refinement-diagnosis",
+  "authorizedCommit": "f0aa3c11fd5a40107a68e35bcd8bf0a61fdd5800",
+  "authorizedTree": "76d0ae147eb795e06f61a201ce4034b91ce110f7",
+  "identityProvenance": "Full commit/tree provided by task owner; this lane performs no Git operation",
+  "sourceSHA256": "8f67cb3c84379ca1f1d6363e5f75d3e606113e120d17cf459240a9d944e0017e",
+  "protocolSHA256": "d390f39906f484e4178d7b264d9737f332c44e1a751dc0208a92da27e1fe0a00",
+  "attemptCount": 1,
+  "python": "3.12.14",
+  "startedUTC": "2026-10-06T08:41:50.501508+00:00",
+  "exitCode": 0,
+  "runtimeSeconds": 146.16153700400173,
+  "finishedUTC": "2026-10-06T08:44:16.663112+00:00",
+  "sourceSHA256After": "8f67cb3c84379ca1f1d6363e5f75d3e606113e120d17cf459240a9d944e0017e",
+  "sourceUnchanged": true,
+  "executionLogSHA256": "c2f2e1fc55527c4fb5528e5ae55814268a0f853fac56ebdbb38d31ba901dc75f"
+}

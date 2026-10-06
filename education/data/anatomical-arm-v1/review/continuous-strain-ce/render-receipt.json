@@ -1,0 +1,23 @@
+{
+  "command": [
+    "python",
+    "education/tools/render_continuous_ce_evidence.py"
+  ],
+  "exitCode": 0,
+  "attemptCount": 1,
+  "rendererSourceSHA256": "5aafdaec527ed9ae082a7801d957e88f9a8cdcdfa6b7ffa730a2e421c794ccb7",
+  "inputSHA256": {
+    "data/anatomical-arm-v1/review/continuous-strain-ce/summary.json": "931985179e42e14f933974571a0e7fffcce0661636ba63ca8d197b04734dafeb",
+    "data/anatomical-arm-v1/review/conserved-ce-trajectory/summary.json": "6d4b7b9be2e163039b92db52b56c659c46c976d3172a727e99ed7bdf882b2cfa"
+  },
+  "files": {
+    "continuous-reference.png": "e596ffa1a268596d2ca0694b7d01c78dc965c68d26fd64b6f8c58c5fd99f64c0",
+    "continuous-reference.pdf": "3e70eb6b61e8777a1d66559d163d70b3a4782d2c5d88338b2cdce57805dce7dd",
+    "continuous-reference-pdf-raster.png": "2b56c095e953d65c279dd314f16e0d861233cabaf22d9b2c154554c0d2d26170",
+    "continuous-analysis.json": "625d96d30b279d504a2b675697ba1f708865ef4cedf1e78c2f43187f7b4c0318"
+  },
+  "pngVisuallyInspected": true,
+  "pdfRasterVisuallyInspected": true,
+  "visualReview": "All four panels, event jumps, legends, axes, scientific notation and limitation footer readable; no clipping in PNG or actual one-page PDF raster",
+  "cacheWarning": "Default home Matplotlib/fontconfig cache was read-only; Matplotlib automatically used /tmp cache; exit0; no rendering retry or permission changes"
+}

@@ -1,0 +1,135 @@
+{
+  "result": "BOUND_READ_ONLY_CLOSEOUT_TESTS_AND_RETAINED_SCHEMA_FAILURE",
+  "files": [
+    {
+      "path": "tools/check_fixed_coefficient_evidence_v2.py",
+      "bytes": 3053,
+      "sha256": "82575b1d33cb1d359e34df2c5a14af9a6f6f1b7e03560e916f0c7ded0caf6789"
+    },
+    {
+      "path": "research/mechanical-closure/continuous-contractile-closeout.md",
+      "bytes": 5678,
+      "sha256": "be0102db654499a1d9fa33ae68c9a2c0958448ce86cf870afee0ac2588ebc6ec"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-contractile-closeout/check_active_stability_controls.json",
+      "bytes": 366,
+      "sha256": "21cfca89d2d7f9ec3329754c96db9924458a7a59f67e74e72fc18e11cf572e3a"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-contractile-closeout/check_active_stability_controls.log",
+      "bytes": 618,
+      "sha256": "dfd9a0e7289ac717c2b7fc566f963097cfc3f0060a68a3a3d9b4762fd797359b"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-contractile-closeout/check_conserved_ce_trajectory.json",
+      "bytes": 364,
+      "sha256": "0f487116cdf7e42908c667e8ef5d018b39422ef664723f678df11ccad9754f4c"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-contractile-closeout/check_conserved_ce_trajectory.log",
+      "bytes": 302,
+      "sha256": "e96c41235943e90a16c9a1d060e78a02bfca2f12ed6ff7da6fdca4e368639f3f"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-contractile-closeout/check_continuous_contractile_closure-final.json",
+      "bytes": 418,
+      "sha256": "068a8230c800bb2a7883f843e63f2505466e16e211c38124839c54160205c61d"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-contractile-closeout/check_continuous_contractile_closure-final.log",
+      "bytes": 389,
+      "sha256": "6b0daa12452d873e0e59ce2e0711896085e942e2ce5d02dbcb4a931cb0ce05b7"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-contractile-closeout/check_contractile_mapping.json",
+      "bytes": 361,
+      "sha256": "593155623bccbbf97e11e6c16fe3a440a524f8e6a72d53babbf179ac6cfe43ed"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-contractile-closeout/check_contractile_mapping.log",
+      "bytes": 624,
+      "sha256": "1b195bcc42bbd22c7f0e280be1076d1d251f1f898e63872b33d02802457db0fb"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-contractile-closeout/check_failure_export_evidence.json",
+      "bytes": 364,
+      "sha256": "e941b7ddbce6c8865d9c99d3e96ca7587fb18dad48917d4bee969141e658ae65"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-contractile-closeout/check_failure_export_evidence.log",
+      "bytes": 173,
+      "sha256": "b4df3af535f2f87148b5788a4a45dffcdf2ad960b243f7504b68f955c493ab58"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-contractile-closeout/check_fixed_coefficient_evidence.json",
+      "bytes": 367,
+      "sha256": "79903bef55334eecec8a4b90d4e15ea243ff633936c6afc178bdd7fd325c0bf8"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-contractile-closeout/check_fixed_coefficient_evidence.log",
+      "bytes": 325,
+      "sha256": "464f4f22d73fb7e97222fd78cd1bbb7fd21c306966ba3cf3945e275b4cb44bc4"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-contractile-closeout/check_fixed_coefficient_evidence_v2-final.json",
+      "bytes": 418,
+      "sha256": "66fd8d461c50393441de3f0dfadde82ca2235a4b849586f9588b440e044b0a77"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-contractile-closeout/check_fixed_coefficient_evidence_v2-final.log",
+      "bytes": 322,
+      "sha256": "1274d2865205df18ce676397c66539247b7e680dcc8d8a15aaf11fcd664d0d97"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-contractile-closeout/check_fixed_coefficient_evidence_v2-initial.json",
+      "bytes": 548,
+      "sha256": "8e3cce5a9147db5daaf8f75efe0e66d8b8b9769c7107c68cf597946efb5c6a24"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-contractile-closeout/check_fixed_coefficient_evidence_v2-initial.log",
+      "bytes": 322,
+      "sha256": "09602cefb185e68c05d8532d203a939ab6a29cbd50ef4ce2e7225cfe5ef1761c"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-contractile-closeout/check_full_p2_p1_evidence.json",
+      "bytes": 360,
+      "sha256": "0055e63950a0ce88dbe8d31cc019450cbd9b1a53d38e313e17f14105c9fd4d1c"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-contractile-closeout/check_full_p2_p1_evidence.log",
+      "bytes": 442,
+      "sha256": "76a160ce751de0041a46173b72dda69410b9113955ee1b86272ceff786b77e75"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-contractile-closeout/check_source_two_state_operator.json",
+      "bytes": 367,
+      "sha256": "8472ac6b730dde6ebe5ea371886c196149d3faf81c46ad63d222843dbebb5805"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-contractile-closeout/check_source_two_state_operator.log",
+      "bytes": 219,
+      "sha256": "9221141dc829e160a3b9201331b71d2d3601e5fa58f0a97e753487ddde02b31d"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-contractile-closeout/check_two_state_kinetics.json",
+      "bytes": 358,
+      "sha256": "d6978b71780bb9b8fee1baa0b838a13827761256c3af0ab548c30dc29741473c"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-contractile-closeout/check_two_state_kinetics.log",
+      "bytes": 475,
+      "sha256": "d6ab57eac1699e649b2fab37e379e4800451c7d45f0a8d418010c4b9be7c399c"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-contractile-closeout/git-transport-observation.json",
+      "bytes": 667,
+      "sha256": "a208b458acfbc8acf185ad7f1c011227f2e3b8b32934027482e7e7c0da70ccf1"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-contractile-closeout/lineage-scope-receipt.json",
+      "bytes": 4016,
+      "sha256": "82f592e245af58446c5bd39ad4f98d30a1c8febb791a2a8c3e51dd423fed7f7e"
+    }
+  ]
+}

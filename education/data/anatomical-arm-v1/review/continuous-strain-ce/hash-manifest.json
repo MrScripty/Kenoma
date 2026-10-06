@@ -1,0 +1,95 @@
+{
+  "result": "BOUND_SINGLE_PRECOMMITTED_CONTINUOUS_STRAIN_REFERENCE",
+  "files": [
+    {
+      "path": "tools/continuous_strain_ce_reference.py",
+      "bytes": 27696,
+      "sha256": "8f67cb3c84379ca1f1d6363e5f75d3e606113e120d17cf459240a9d944e0017e"
+    },
+    {
+      "path": "tools/render_continuous_ce_evidence.py",
+      "bytes": 6588,
+      "sha256": "5aafdaec527ed9ae082a7801d957e88f9a8cdcdfa6b7ffa730a2e421c794ccb7"
+    },
+    {
+      "path": "tools/analyze_continuous_ce_bin_separation.py",
+      "bytes": 4084,
+      "sha256": "0c16c966a0361c146759f32f4edc4226ab802e2765c49df2bb1d66a0586d1f98"
+    },
+    {
+      "path": "tools/check_continuous_contractile_closure.py",
+      "bytes": 8451,
+      "sha256": "277b09f7815793d110427749e6757ea5495e5e587ba2356b8cfb831e6c22db8e"
+    },
+    {
+      "path": "research/mechanical-closure/continuous-strain-ce-protocol.md",
+      "bytes": 6391,
+      "sha256": "d390f39906f484e4178d7b264d9737f332c44e1a751dc0208a92da27e1fe0a00"
+    },
+    {
+      "path": "research/mechanical-closure/continuous-strain-reference-design.md",
+      "bytes": 9662,
+      "sha256": "f8e9ae633ea70419761cf82e7e95b361e801b58c25985b81f8e509609c9e59d8"
+    },
+    {
+      "path": "research/mechanical-closure/continuous-strain-ce-internal-audit.md",
+      "bytes": 9913,
+      "sha256": "31332c094c185fc2290ba472609f2b60d4b5e16831607c3d9def992313561760"
+    },
+    {
+      "path": "research/mechanical-closure/continuous-strain-ce-results.md",
+      "bytes": 7182,
+      "sha256": "775c0c056dbddb05f14b44c61ae53d061680531b51dd78240139de5ddef02302"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-strain-ce/bin-spatial-separation.json",
+      "bytes": 40021,
+      "sha256": "cf549de338668cf8fb28a4a748cecc3aebb07e6b06eef1c5cc5be121b0d66b79"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-strain-ce/continuous-analysis.json",
+      "bytes": 1505,
+      "sha256": "625d96d30b279d504a2b675697ba1f708865ef4cedf1e78c2f43187f7b4c0318"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-strain-ce/continuous-reference-pdf-raster.png",
+      "bytes": 179309,
+      "sha256": "2b56c095e953d65c279dd314f16e0d861233cabaf22d9b2c154554c0d2d26170"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-strain-ce/continuous-reference.pdf",
+      "bytes": 34261,
+      "sha256": "3e70eb6b61e8777a1d66559d163d70b3a4782d2c5d88338b2cdce57805dce7dd"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-strain-ce/continuous-reference.png",
+      "bytes": 303080,
+      "sha256": "e596ffa1a268596d2ca0694b7d01c78dc965c68d26fd64b6f8c58c5fd99f64c0"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-strain-ce/execution-metadata.json",
+      "bytes": 1821,
+      "sha256": "356a95054bd5138f81fb00ee946dec56d414982b7a7e7630b168df16a2213ccd"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-strain-ce/execution.log",
+      "bytes": 10057,
+      "sha256": "c2f2e1fc55527c4fb5528e5ae55814268a0f853fac56ebdbb38d31ba901dc75f"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-strain-ce/matched-densities.npz",
+      "bytes": 7649767,
+      "sha256": "8fc1d2157f97b6d0625322fe8ca962140630333541389a2f48b0108c7b411992"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-strain-ce/render-receipt.json",
+      "bytes": 1360,
+      "sha256": "e52c4ff79d27bdfed04ba694aa1be231e42c9f915bfe363fe9901ab15b6a6739"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/continuous-strain-ce/summary.json",
+      "bytes": 593371,
+      "sha256": "931985179e42e14f933974571a0e7fffcce0661636ba63ca8d197b04734dafeb"
+    }
+  ]
+}

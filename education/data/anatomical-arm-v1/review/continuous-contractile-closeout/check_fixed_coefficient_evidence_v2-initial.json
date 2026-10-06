@@ -1,0 +1,12 @@
+{
+  "command": [
+    "python",
+    "education/tools/check_fixed_coefficient_evidence_v2.py"
+  ],
+  "exitCode": 0,
+  "runtimeSeconds": 0.3184356689453125,
+  "scope": "read-only schema compatibility; unchanged evidence/physical gates; original failed checker retained",
+  "reason": "New list manifest schema caused historical dictionary-only items call failure",
+  "sourceSHA256": "82575b1d33cb1d359e34df2c5a14af9a6f6f1b7e03560e916f0c7ded0caf6789",
+  "historicalFailureLogSHA256": "464f4f22d73fb7e97222fd78cd1bbb7fd21c306966ba3cf3945e275b4cb44bc4"
+}

@@ -1,0 +1,24 @@
+{
+  "initialPush": {
+    "command": [
+      "git",
+      "push",
+      "origin",
+      "education/continuous-contractile-closure"
+    ],
+    "head": "decede21d8188fa751fd3a3b730ad9b4a70e315c",
+    "exitCode": 1,
+    "error": "fatal: could not read Username for 'https://github.com': No such device or address; send-pack unexpected disconnect; remote end hung up unexpectedly"
+  },
+  "readOnlyProbe": {
+    "command": [
+      "git",
+      "ls-remote",
+      "origin",
+      "refs/heads/education/continuous-contractile-closure"
+    ],
+    "exitCode": 0,
+    "remoteHead": "f0aa3c11fd5a40107a68e35bcd8bf0a61fdd5800"
+  },
+  "credentialsOrAccessSettingsChanged": false
+}
