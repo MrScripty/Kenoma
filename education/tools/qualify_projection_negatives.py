@@ -53,7 +53,7 @@ def artifacts(site, output):
     site = Path(site).resolve(); check(site)
     before = {str(p.relative_to(site)):digest(p) for p in site.rglob('*') if p.is_file() and '__pycache__' not in str(p)}
     rows = []
-    for name in ['missing-receipt','stale-manifest','missing-proof','forged-kernel-source','rehashed-wrong-lab','changed-review-pdf']:
+    for name in ['missing-receipt','stale-manifest','missing-proof','forged-kernel-source','rehashed-wrong-lab','changed-review-pdf','forged-static-vector']:
         with tempfile.TemporaryDirectory(dir=ROOT/'.tools') as directory:
             copy = Path(directory)/'dist'; shutil.copytree(site,copy)
             if name=='missing-receipt': (copy/'projection-qa/integration.json').unlink()
@@ -68,15 +68,17 @@ def artifacts(site, output):
                 path=copy/'standalone/pressure-projection-lab.html';path.write_text(path.read_text().replace('weights = Object.freeze([1,3,2,2])','weights = Object.freeze([1,1,1,1])'))
                 path=copy/'projection-qa/receipt.json';r=json.loads(path.read_text());r['source_sha256']['standalone/pressure-projection-lab.html']=digest(copy/'standalone/pressure-projection-lab.html');path.write_text(json.dumps(r))
                 path=copy/'projection-qa/integration.json';r=json.loads(path.read_text());r['lab_sha256']=digest(copy/'standalone/pressure-projection-lab.html');r['standalone_receipt_sha256']=digest(copy/'projection-qa/receipt.json');path.write_text(json.dumps(r))
-            else:
+            elif name=='changed-review-pdf':
                 path=copy/'projection-qa/fixed-field-reference.pdf';path.write_bytes(path.read_bytes()+b'changed')
+            else:
+                path=copy/'assets/pressure-projection.svg';path.write_text(path.read_text().replace('y="223.75"','y="160"'))
             try: check(copy)
             except (AssertionError,FileNotFoundError) as error: rows.append({'case':name,'detected':True,'reason':str(error) or 'Required source/proof coverage rejected'})
             else: raise RuntimeError('Damaged projection artifact passed: '+name)
     assert before == {name:digest(site/name) for name in before}
     output.parent.mkdir(parents=True,exist_ok=True)
-    output.write_text(json.dumps({'result':'PASS_SIX_DAMAGED_PROJECTION_ARTIFACTS','original_unchanged':True,'manifest_sha256':digest(site/'build-manifest.json'),'cases':rows},indent=2)+'\n')
-    print('PASS six damaged projection artifacts')
+    output.write_text(json.dumps({'result':'PASS_SEVEN_DAMAGED_PROJECTION_ARTIFACTS','original_unchanged':True,'manifest_sha256':digest(site/'build-manifest.json'),'cases':rows},indent=2)+'\n')
+    print('PASS seven damaged projection artifacts')
 
 
 if __name__=='__main__':

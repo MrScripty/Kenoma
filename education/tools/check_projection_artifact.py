@@ -1,6 +1,6 @@
 """Fail closed on missing, stale or inconsistent projection qualification."""
 from pathlib import Path
-import hashlib, json, re, sys
+import hashlib, json, re, sys, tempfile
 from urllib.parse import urlparse
 import fitz
 ROOT = Path(__file__).resolve().parents[1]
@@ -12,6 +12,10 @@ def digest(path):
 
 def check(out=None):
     out = Path(out) if out else ROOT/'dist'
+    from projection_figure import generate
+    with tempfile.TemporaryDirectory() as directory:
+        generate(directory)
+        assert digest(Path(directory)/'pressure-projection.svg') == digest(out/'assets/pressure-projection.svg'), 'Static projection vectors differ from the source-bound figure'
     read = lambda name: json.loads((out/name).read_text())
     r = read('projection-qa/integration.json')
     assert r['result'] == 'PASS_INTEGRATED_FIXED_FIELD_PROJECTION' and not r['errors']
