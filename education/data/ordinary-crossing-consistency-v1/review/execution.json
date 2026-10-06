@@ -1,0 +1,179 @@
+{
+  "frozen_source_commit": "9af7fda0d65a08aeeb26b0506e869ff63a9af382",
+  "frozen_source_tree": "2cf917e7ad4d826c41888830ca0eed5f2c7ff06a",
+  "protocol_sha256": "375fdacfa448af3823eff989c4b07b3dab9286374698184982a41a70b1e14182",
+  "cells": [
+    {
+      "case": "high",
+      "representation": "full-source",
+      "method": "RK4-0.000025",
+      "exit_code": 0,
+      "log": "education/data/ordinary-crossing-consistency-v1/review/high-full-source-RK4-0.000025.log"
+    },
+    {
+      "case": "high",
+      "representation": "full-source",
+      "method": "RK4-0.0002",
+      "exit_code": 0,
+      "log": "education/data/ordinary-crossing-consistency-v1/review/high-full-source-RK4-0.0002.log"
+    },
+    {
+      "case": "high",
+      "representation": "full-source",
+      "method": "RK4-0.0001",
+      "exit_code": 0,
+      "log": "education/data/ordinary-crossing-consistency-v1/review/high-full-source-RK4-0.0001.log"
+    },
+    {
+      "case": "high",
+      "representation": "full-source",
+      "method": "RK4-0.00005",
+      "exit_code": 0,
+      "log": "education/data/ordinary-crossing-consistency-v1/review/high-full-source-RK4-0.00005.log"
+    },
+    {
+      "case": "high",
+      "representation": "full-source",
+      "method": "DOP853",
+      "exit_code": 0,
+      "log": "education/data/ordinary-crossing-consistency-v1/review/high-full-source-DOP853.log"
+    },
+    {
+      "case": "high",
+      "representation": "full-source",
+      "method": "Radau",
+      "exit_code": 0,
+      "log": "education/data/ordinary-crossing-consistency-v1/review/high-full-source-Radau.log"
+    },
+    {
+      "case": "high",
+      "representation": "reduced-independent",
+      "method": "RK4-0.000025",
+      "exit_code": 0,
+      "log": "education/data/ordinary-crossing-consistency-v1/review/high-reduced-independent-RK4-0.000025.log"
+    },
+    {
+      "case": "high",
+      "representation": "reduced-independent",
+      "method": "RK4-0.0002",
+      "exit_code": 0,
+      "log": "education/data/ordinary-crossing-consistency-v1/review/high-reduced-independent-RK4-0.0002.log"
+    },
+    {
+      "case": "mass-1",
+      "representation": "full-source",
+      "method": "RK4-0.000025",
+      "exit_code": 0,
+      "log": "education/data/ordinary-crossing-consistency-v1/review/mass-1-full-source-RK4-0.000025.log"
+    },
+    {
+      "case": "high",
+      "representation": "reduced-independent",
+      "method": "DOP853",
+      "exit_code": 0,
+      "log": "education/data/ordinary-crossing-consistency-v1/review/high-reduced-independent-DOP853.log"
+    },
+    {
+      "case": "high",
+      "representation": "reduced-independent",
+      "method": "RK4-0.0001",
+      "exit_code": 0,
+      "log": "education/data/ordinary-crossing-consistency-v1/review/high-reduced-independent-RK4-0.0001.log"
+    },
+    {
+      "case": "high",
+      "representation": "reduced-independent",
+      "method": "Radau",
+      "exit_code": 0,
+      "log": "education/data/ordinary-crossing-consistency-v1/review/high-reduced-independent-Radau.log"
+    },
+    {
+      "case": "mass-1",
+      "representation": "full-source",
+      "method": "RK4-0.0002",
+      "exit_code": 0,
+      "log": "education/data/ordinary-crossing-consistency-v1/review/mass-1-full-source-RK4-0.0002.log"
+    },
+    {
+      "case": "high",
+      "representation": "reduced-independent",
+      "method": "RK4-0.00005",
+      "exit_code": 0,
+      "log": "education/data/ordinary-crossing-consistency-v1/review/high-reduced-independent-RK4-0.00005.log"
+    },
+    {
+      "case": "mass-1",
+      "representation": "full-source",
+      "method": "DOP853",
+      "exit_code": 0,
+      "log": "education/data/ordinary-crossing-consistency-v1/review/mass-1-full-source-DOP853.log"
+    },
+    {
+      "case": "mass-1",
+      "representation": "full-source",
+      "method": "RK4-0.0001",
+      "exit_code": 0,
+      "log": "education/data/ordinary-crossing-consistency-v1/review/mass-1-full-source-RK4-0.0001.log"
+    },
+    {
+      "case": "mass-1",
+      "representation": "full-source",
+      "method": "Radau",
+      "exit_code": 0,
+      "log": "education/data/ordinary-crossing-consistency-v1/review/mass-1-full-source-Radau.log"
+    },
+    {
+      "case": "mass-1",
+      "representation": "full-source",
+      "method": "RK4-0.00005",
+      "exit_code": 0,
+      "log": "education/data/ordinary-crossing-consistency-v1/review/mass-1-full-source-RK4-0.00005.log"
+    },
+    {
+      "case": "mass-1",
+      "representation": "reduced-independent",
+      "method": "RK4-0.0002",
+      "exit_code": 0,
+      "log": "education/data/ordinary-crossing-consistency-v1/review/mass-1-reduced-independent-RK4-0.0002.log"
+    },
+    {
+      "case": "mass-1",
+      "representation": "reduced-independent",
+      "method": "DOP853",
+      "exit_code": 0,
+      "log": "education/data/ordinary-crossing-consistency-v1/review/mass-1-reduced-independent-DOP853.log"
+    },
+    {
+      "case": "mass-1",
+      "representation": "reduced-independent",
+      "method": "RK4-0.0001",
+      "exit_code": 0,
+      "log": "education/data/ordinary-crossing-consistency-v1/review/mass-1-reduced-independent-RK4-0.0001.log"
+    },
+    {
+      "case": "mass-1",
+      "representation": "reduced-independent",
+      "method": "Radau",
+      "exit_code": 0,
+      "log": "education/data/ordinary-crossing-consistency-v1/review/mass-1-reduced-independent-Radau.log"
+    },
+    {
+      "case": "mass-1",
+      "representation": "reduced-independent",
+      "method": "RK4-0.000025",
+      "exit_code": 0,
+      "log": "education/data/ordinary-crossing-consistency-v1/review/mass-1-reduced-independent-RK4-0.000025.log"
+    },
+    {
+      "case": "mass-1",
+      "representation": "reduced-independent",
+      "method": "RK4-0.00005",
+      "exit_code": 0,
+      "log": "education/data/ordinary-crossing-consistency-v1/review/mass-1-reduced-independent-RK4-0.00005.log"
+    }
+  ],
+  "elapsed_s": 322.7507408909878,
+  "worker_processes": 4,
+  "all_exit_zero": true,
+  "real_case_execution_after_source_commit": true
+}
