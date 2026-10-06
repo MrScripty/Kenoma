@@ -62,6 +62,28 @@ def check_state(state, expected):
         close(value, 0)
 
 
+def viewport_diagnostics(page, output, case):
+    """Retain actionable bounds and a screenshot before a viewport assertion."""
+    result = page.evaluate('''()=>({width:innerWidth,documentWidth:document.documentElement.scrollWidth,
+        documentClientWidth:document.documentElement.clientWidth,bodyFont:getComputedStyle(document.body).fontFamily,
+        state:PressureProjectionLab.state(),elements:[...document.querySelectorAll('body *')].filter(e=>{
+            const r=e.getBoundingClientRect();return r.width&&(r.right>innerWidth||r.left<0)
+        }).map(e=>{const r=e.getBoundingClientRect(),s=getComputedStyle(e);return {
+            tag:e.tagName,id:e.id,classes:e.getAttribute('class'),text:(e.innerText||'').slice(0,100),
+            bounds:{left:r.left,right:r.right,width:r.width},clientWidth:e.clientWidth,scrollWidth:e.scrollWidth,
+            minWidth:s.minWidth,overflowX:s.overflowX,gridTemplateColumns:s.gridTemplateColumns,
+            tableScrollAncestor:!!e.closest('.table-scroll')
+        }}),tableScroll:[...document.querySelectorAll('.table-scroll')].map(e=>({
+            clientWidth:e.clientWidth,scrollWidth:e.scrollWidth,scrollLeft:e.scrollLeft}))})''')
+    result['case'] = case
+    result['browser'] = page.context.browser.version
+    if result['documentWidth'] > result['width']:
+        prefix = output/f'viewport-failure-{case}'
+        prefix.with_suffix('.json').write_text(json.dumps(result, indent=2)+'\n')
+        page.screenshot(path=str(prefix.with_suffix('.png')), full_page=True)
+    return result
+
+
 def check(output):
     output.mkdir(parents=True, exist_ok=True)
     receipt = output/'receipt.json'
@@ -169,8 +191,10 @@ def check(output):
             page.screenshot(path=str(output/'desktop-paired.png'), full_page=True)
             page.locator('input[name=space][value="4"]').check()
             page.screenshot(path=str(output/'desktop-full.png'), full_page=True)
-            for width in (390,320):
+            viewport_cases = []
+            for width in (390,320,360,414,768):
                 page.set_viewport_size({'width':width, 'height':844})
+                viewport_cases.append(viewport_diagnostics(page, output, f'native-{width}'))
                 assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), width
                 assert page.locator('.controls').evaluate('(e)=>e.scrollWidth<=e.clientWidth'), width
                 page.locator('#reset').click()
@@ -178,6 +202,7 @@ def check(output):
                 check_state(state(), oracle(default, 8, 2))
                 page.locator('#reset').click()
                 page.screenshot(path=str(output/f'mobile-{width}.png'), full_page=True)
+            (output/'viewport-cases.json').write_text(json.dumps(viewport_cases, indent=2)+'\n')
             checks.append('Desktop 1280px and mobile 390/320px: usable controls, accessible chart names, keyboard radio refinement and no document overflow')
             page.set_viewport_size({'width':1280,'height':1100})
             page.emulate_media(media='print')

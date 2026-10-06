@@ -103,6 +103,7 @@ jobs:
           npm run build
           npm run pdf
           python3 tools/check_print_readability.py dist
+          python3 tests/projection_responsive.py --output dist/projection-responsive-qa
           python3 tests/projection_integration.py
           python3 tools/qualify_projection_negatives.py --runtime review/projection-negative-ci --site dist --output dist/projection-negative-artifacts.json
           python3 tools/check_print_readability.py dist
@@ -123,6 +124,15 @@ jobs:
           python3 tests/worker_lifecycle.py
           python3 tests/artifacts.py
           python3 tools/qualify_print_negatives.py
+      - name: Preserve projection viewport diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: kenoma-projection-viewport-diagnostics
+          path: |
+            education/dist/projection-qa/viewport-failure-*
+            education/dist/projection-responsive-qa/
+          if-no-files-found: ignore
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: kenoma-education-checked
