@@ -1,0 +1,256 @@
+{
+  "schema": 1,
+  "date_utc": "2026-10-06",
+  "base_commit": "ea6ab6d5ef7da27b6bed8dd9321466a8729a9c05",
+  "base_tree": "6aa5e6616d1014cc21d84aa37bce1f9ef2a92f44",
+  "status": "two_gaps_unresolved_no_parameter_adoption",
+  "accesses": [
+    {
+      "id": "H-publisher",
+      "url": "https://link.springer.com/article/10.1007/s004240050215",
+      "method": "browser public publisher page",
+      "result": "primary abstract/metadata accessible; subscription preview, no tables",
+      "source_bytes_sha256": null,
+      "known_record": true
+    },
+    {
+      "id": "G-html",
+      "url": "https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2021.682943/full",
+      "method": "browser public publisher page",
+      "result": "primary HTML accessible; Table1 renders mm^2; no Supplementary matching text; data by author request",
+      "source_bytes_sha256": null,
+      "known_record": true,
+      "locator": "Table1; Data availability statement"
+    },
+    {
+      "id": "G-pdf-text",
+      "url": "https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2021.682943/pdf",
+      "method": "browser public publisher PDF text extraction",
+      "result": "accessible; Table1 also renders mm^2; Methods inspected",
+      "source_bytes_sha256": null,
+      "known_record": true,
+      "locator": "printed p.3 Methods and p.5 Table1",
+      "pixel_verification": false
+    },
+    {
+      "id": "G-pdf-shell",
+      "url": "https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2021.682943/pdf",
+      "method": "ordinary urllib public PDF request, bounded to 5 MB",
+      "result": "URLError: Tunnel connection failed: 403 Forbidden",
+      "source_bytes_sha256": null,
+      "action": "stopped shell route; no PDF downloaded; no alternate download route/proxy modification"
+    },
+    {
+      "id": "G-pdf-screenshot",
+      "url": "https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2021.682943/pdf",
+      "method": "browser screenshot of zero-based page4",
+      "result": "tool returned text reference only; no inspectable image content",
+      "source_bytes_sha256": null,
+      "pixel_verification": false
+    },
+    {
+      "id": "G-xml",
+      "url": "https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2021.682943/xml",
+      "method": "browser click on publisher Download XML link",
+      "result": "Failed to fetch: (400) OK; no XML content inspected",
+      "source_bytes_sha256": null,
+      "known_publisher_link": true,
+      "action": "no retry"
+    },
+    {
+      "id": "H-kcl-search",
+      "url": "https://kclpure.kcl.ac.uk/portal/en/searchAll/?search=s004240050215",
+      "method": "browser public read",
+      "result": "not accessible via browser tool",
+      "source_bytes_sha256": null,
+      "purpose": "official institutional search URL"
+    },
+    {
+      "id": "H-pavia-search",
+      "url": "https://iris.unipv.it/simple-search?query=Whole-muscle%20and%20single-fibre",
+      "method": "browser public read",
+      "result": "not accessible via browser tool",
+      "source_bytes_sha256": null,
+      "purpose": "official institutional search URL"
+    },
+    {
+      "id": "H-ku-candidate",
+      "url": "https://researchprofiles.ku.dk/en/publications/whole-muscle-and-single-fibre-contractile-properties-and-myosin-hea/",
+      "method": "browser public read",
+      "result": "not accessible via browser tool",
+      "source_bytes_sha256": null,
+      "purpose": "unverified candidate publication path, not a located record"
+    },
+    {
+      "id": "H-ki-search",
+      "url": "https://openarchive.ki.se/search?query=s004240050215",
+      "method": "browser public read",
+      "result": "not accessible via browser tool",
+      "source_bytes_sha256": null,
+      "purpose": "institutional search candidate"
+    },
+    {
+      "id": "H-kcl-candidate",
+      "url": "https://kclpure.kcl.ac.uk/portal/en/publications/whole-muscle-and-single-fibre-contractile-properties-and-myosin-hea/",
+      "method": "browser public read",
+      "result": "not accessible via browser tool",
+      "source_bytes_sha256": null,
+      "purpose": "unverified candidate publication path, not a located record"
+    },
+    {
+      "id": "H-pavia-home",
+      "url": "https://iris.unipv.it/",
+      "method": "browser public read",
+      "result": "Failed to fetch: (403) Forbidden",
+      "source_bytes_sha256": null,
+      "purpose": "repository homepage; stopped this restricted route"
+    },
+    {
+      "id": "H-ki-home",
+      "url": "https://openarchive.ki.se/",
+      "method": "browser public read",
+      "result": "accessible search shell; no target article located",
+      "source_bytes_sha256": null,
+      "purpose": "official institutional homepage"
+    },
+    {
+      "id": "H-ki-linked-search",
+      "url": "https://openarchive.ki.se/",
+      "method": "browser public read",
+      "result": "linked SEARCH action returned Internal Error",
+      "source_bytes_sha256": null,
+      "purpose": "actual linked search action; no alternate workaround"
+    },
+    {
+      "id": "H-kcl-person-candidate",
+      "url": "https://kclpure.kcl.ac.uk/portal/en/persons/stephen.harridge/",
+      "method": "browser public read",
+      "result": "Internal Error",
+      "source_bytes_sha256": null,
+      "purpose": "unverified candidate author profile path"
+    },
+    {
+      "id": "G-sdu-candidate",
+      "url": "https://portal.findresearcher.sdu.dk/en/publications/contractile-properties-of-mhc-i-and-ii-fibers-from-highly-trained-arm/",
+      "method": "browser public read",
+      "result": "not accessible via browser tool",
+      "source_bytes_sha256": null,
+      "purpose": "unverified candidate institutional publication path"
+    },
+    {
+      "id": "G-au-candidate",
+      "url": "https://pure.au.dk/portal/en/publications/contractile-properties-of-mhc-i-and-ii-fibers-from-highly-trained-arm/",
+      "method": "browser public read",
+      "result": "not accessible via browser tool",
+      "source_bytes_sha256": null,
+      "purpose": "unverified candidate institutional publication path"
+    },
+    {
+      "id": "H-discovery-metadata",
+      "url": "https://api.openalex.org/works/https://doi.org/10.1007/s004240050215",
+      "method": "browser public read",
+      "result": "not accessible via browser tool",
+      "source_bytes_sha256": null,
+      "purpose": "discovery metadata only; not primary numeric evidence"
+    }
+  ],
+  "search_queries": [
+    "\"s004240050215\" manuscript",
+    "\"Whole-muscle and single-fibre\" Harridge",
+    "site:kclpure.kcl.ac.uk \"s004240050215\"",
+    "site:iris.unipv.it \"Whole-muscle\"",
+    "site:research.ku.dk \"s004240050215\""
+  ],
+  "search_outcome": "publisher/PubMed target records plus unrelated results; no authorized institutional manuscript located; no unrelated source used as evidence",
+  "preserved_original_access_failures": [
+    "Broad web searches often returned unrelated results; bounded search stopped.",
+    "NCBI eutils public shell search failed proxy tunnel403, no retry/bypass.",
+    "PubMed term search unresolved; no inferred citations or values.",
+    "PMC challenge and subscription preview limits retained, no access bypass.",
+    "Web screenshots returned no inspectable pixels; no pixel-verification claim."
+  ],
+  "prior_access_failure_provenance": [
+    {
+      "path": "education/data/anatomical-arm-v1/review/arm-muscle-property-evidence/evidence.json",
+      "commit": "ea6ab6d5ef7da27b6bed8dd9321466a8729a9c05",
+      "sha256": "a3cd2d1b8346a0a1b3c6716e0a356c6e370aa7b546e1f97947e4542c1b2f62b5"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/arm-muscle-property-evidence/verification.json",
+      "commit": "ea6ab6d5ef7da27b6bed8dd9321466a8729a9c05",
+      "sha256": "8f350990f46e6c290de9100c72e4fbe68d97b6d296e9470987732ef1ee3d184a"
+    },
+    {
+      "path": "education/research/mechanical-closure/arm-muscle-property-evidence.md",
+      "commit": "ea6ab6d5ef7da27b6bed8dd9321466a8729a9c05",
+      "sha256": "2dca92ebe712c51356aae17304c9840bdf643c9dbf9e99445fd35deec080624f"
+    }
+  ],
+  "Gejl_reconciliation": {
+    "original_status": "rendered HTML area unit unresolved",
+    "new_verified_source_evidence": "official PDF text repeats mm^2 label; Table1 n differs from Fig1 n",
+    "intended_area_unit": null,
+    "normalized_fiber_area_m2": null,
+    "publisher_typo_proven": false,
+    "extraction_error_excluded": false,
+    "table1_triceps": {
+      "MHC_I": {
+        "source_area_mean": 7619,
+        "source_area_SD": 2566,
+        "n": 27
+      },
+      "MHC_II": {
+        "source_area_mean": 8807,
+        "source_area_SD": 2142,
+        "n": 48
+      },
+      "rendered_unit": "mm^2; unresolved, no SI conversion"
+    },
+    "fig1_force_n_from_preserved_primary_audit": {
+      "MHC_I": 28,
+      "MHC_II": 60
+    },
+    "area_protocol": {
+      "measurement_length": "straightened slack",
+      "shape_assumption": "cylindrical",
+      "diameter_sites": 3,
+      "swelling_correction": false,
+      "cold_paraffin_preparation_temperature_C": [
+        0,
+        5
+      ],
+      "imaging_temperature_explicitly_repeated": false
+    },
+    "force_protocol": {
+      "temperature_C": 22.1,
+      "temperature_SD_C": 0.0,
+      "pCa": 4.7,
+      "stretch_relative_to_slack": 1.2,
+      "force_source_unit": "mN",
+      "specific_force_source_unit": "kN/m^2"
+    },
+    "new_SI_area_or_parameter_adoption": false
+  },
+  "Harridge_reconciliation": {
+    "full_protocol_obtained": false,
+    "absolute_triceps_speed": null,
+    "absolute_triceps_twitch_time": null,
+    "absolute_relaxation_time": null,
+    "measurement_temperature": null,
+    "velocity_normalization": null,
+    "unknowns_remain_unknown": true,
+    "acquisition_target": "https://link.springer.com/article/10.1007/s004240050215",
+    "required_pages": "913-920 including Methods and all original tables/captions; table numbers not visible in abstract"
+  },
+  "required_requests": {
+    "Harridge": "Authorized full primary article/author manuscript pp.913-920: triceps head/site, subject conditions, stimulation/posture, twitch and relaxation metrics, single-fiber preparation/temperature/length/CSA, Vo units/normalization, absolute values and uncertainty/sample counts.",
+    "Gejl": "Author/publisher confirmation or correction of Table1 CSA unit, calibrated diameter units, calculation/export convention, Table1 vs Fig1 sample relation, and force-normalization area configuration; raw data by author request, no linked dataset identified."
+  },
+  "source_bytes_archived": false,
+  "source_text_excerpt_policy": "No full source copies; only short unit label and bounded factual table/protocol extraction",
+  "credentials_or_network_changes": false,
+  "paywall_or_proxy_bypass": false,
+  "authors_contacted": false,
+  "production_or_parameter_changes": false,
+  "local_execution_note": "One initial ledger-writing command had a Python syntax error before execution; corrected without any file mutation or source retry."
+}

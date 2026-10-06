@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "date_utc": "2026-10-06",
+  "base_commit": "ea6ab6d5ef7da27b6bed8dd9321466a8729a9c05",
+  "base_tree": "6aa5e6616d1014cc21d84aa37bce1f9ef2a92f44",
+  "frozen_branch": "research/arm-muscle-property-evidence",
+  "frozen_branch_tip_unchanged": true,
+  "baseline_tracked_files": 1571,
+  "baseline_tracked_diff": [],
+  "baseline_path_SHA256_aggregate": "4f643cbed92a0d54639d26a838549c6958f8b06b7351b3372448379de7e3cfcc",
+  "aggregate_semantics": "SHA256 of sorted JSON path/SHA256 records for all baseline working bytes; tracked git diff against frozen base empty; original 1567-file receipt rechecked separately",
+  "original_1567_byte_hashes_match": true,
+  "original_artifact_hashes_match": true,
+  "original_access_failure_records_unchanged": true,
+  "unknown_unit_and_rate_fields_remain_null": true,
+  "parameter_or_solver_adoption": false,
+  "authors_contacted": false,
+  "only_additions_allowed": [
+    "education/research/mechanical-closure/arm-property-source-gap-followup.md",
+    "education/data/anatomical-arm-v1/review/arm-property-source-gap-followup/source-access-ledger.json",
+    "education/data/anatomical-arm-v1/review/arm-property-source-gap-followup/verification.json"
+  ],
+  "relative_document_links": [
+    "education/research/mechanical-closure/arm-muscle-property-evidence.md",
+    "education/data/anatomical-arm-v1/review/arm-property-source-gap-followup/source-access-ledger.json",
+    "education/data/anatomical-arm-v1/review/arm-property-source-gap-followup/verification.json"
+  ],
+  "artifact_hashes": [
+    {
+      "path": "education/research/mechanical-closure/arm-property-source-gap-followup.md",
+      "bytes": 5343,
+      "sha256": "f2a4d578496f43bbd2896661b37198fb2bf910bb428f94493a7b2de39160a4fd"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/arm-property-source-gap-followup/source-access-ledger.json",
+      "bytes": 11030,
+      "sha256": "07049efeebdd962a33c8ba85d178e8c0839d1ca77f7a3615f505b27906945464"
+    }
+  ],
+  "check_scope": "Source access, null handling, provenance/preservation and added-file scope; no solver or physiological validation"
+}
