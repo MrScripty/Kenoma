@@ -1,0 +1,64 @@
+{
+  "accesses": [
+    {
+      "route": "Haeger Dryad Needle_Table.xlsx and SINGLE_SARCEOMRE.zip ordinary browser clicks",
+      "result": "internal fetch errors",
+      "retrieved": false
+    },
+    {
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.tht76hdwp",
+      "method": "one ordinary urllib landing GET",
+      "result": "URLError Tunnel connection failed:403Forbidden",
+      "originServer403Established": false,
+      "stopped": true
+    },
+    {
+      "url": "https://royalsocietypublishing.org/doi/10.1098/rspb.2020.2133",
+      "result": "internal fetch error",
+      "retrievedArticle": false
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7661311/",
+      "result": "browser/reCAPTCHA challenge",
+      "stopped": true
+    },
+    {
+      "url": "https://elifesciences.org/articles/40532",
+      "result": "client challenge",
+      "stopped": true,
+      "adoptedSourceFacts": false
+    },
+    {
+      "url": "https://journals.physiology.org/doi/10.1152/japplphysiol.00433.2019",
+      "result": "internal fetch error",
+      "retrievedArticle": false
+    },
+    {
+      "url": "https://www.pnas.org/doi/10.1073/pnas.2302837120",
+      "result": "cookieAbsent page/login text",
+      "retrievedArticle": false
+    },
+    {
+      "url": "https://zenodo.org/api/records/7668420",
+      "result": "not accessible via browser tool",
+      "retrievedMetadata": false
+    },
+    {
+      "url": "https://zenodo.org/records/7668420/files/Data%20source%20file_dualfilament_regulation.xlsx?download=1",
+      "attempt": 1,
+      "inventoryBytesApprox": 1800000,
+      "maximumBytes": 3000000,
+      "browserOutcome": "Unicode decoding error; unsupported binary response, not denial",
+      "startedUTC": "2026-10-06T09:22:46.364438+00:00",
+      "networkSettingsChanged": false,
+      "errorType": "URLError",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "stopped": true
+    }
+  ],
+  "networkSettingsChanged": false,
+  "credentialsChanged": false,
+  "paidServicesUsed": false,
+  "deniedRoutesRetried": false,
+  "largeArchivesDownloaded": false
+}

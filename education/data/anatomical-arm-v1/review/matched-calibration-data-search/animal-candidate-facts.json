@@ -1,0 +1,147 @@
+{
+  "dateUTC": "2026-10-06",
+  "frozenBase": "306d0aba8e024086b9f4d04cc4d74f137b8b443a",
+  "scope": "original metadata/methods inventory; no calibration fit or symbolic/model run",
+  "candidates": [
+    {
+      "id": "altman2015",
+      "articleDOI": "10.1371/journal.pone.0121726",
+      "dataDOI": "10.5061/dryad.jf35g",
+      "articleMethodsRead": true,
+      "dataLandingRead": true,
+      "preparation": "permeabilized rabbit psoas fiber",
+      "temperatureC": 5,
+      "sarcomereSetpointMicrometres": 2.5,
+      "activationpCa": [
+        9,
+        4.5
+      ],
+      "geometry": "camera diameter and length; circular area estimate",
+      "forceInstrument": "Aurora400A",
+      "pairedAdvertisedFiles": [
+        "DA_052212_f3_A.dat",
+        "DA_052212_f3_B.dat"
+      ],
+      "fileCount": 18,
+      "totalArchiveSizeAdvertised": "5.92GB",
+      "individualFileSizeAdvertised": "approximately326\u2013333MB",
+      "dataRowsInspected": false,
+      "missing": [
+        "native DAT units/gain/zero specification",
+        "paired numeric diameter/reference length",
+        "total/passive/active force convention"
+      ],
+      "reuse": "Dryad terms \u00a74allow reuse and describe waiver; item-specific license badge not extracted",
+      "smallestUnit": "one untreated relaxed/activated fiber pair at its own recorded frequency/amplitude"
+    },
+    {
+      "id": "haeger2020",
+      "articleDOI": "10.1098/rspb.2020.2133",
+      "dataDOI": "10.5061/dryad.tht76hdwp",
+      "articleMethodsRead": false,
+      "dataLandingRead": true,
+      "preparation": "isolated myofibril/single sarcomere; species unverified here",
+      "forceCalibration": "cross-bending needle stiffness \u00d7needle-track displacement, described by official data record",
+      "inventory": [
+        {
+          "name": "Needle_Table.xlsx",
+          "advertisedSize": "15.10KB"
+        },
+        {
+          "name": "SINGLE_SARCEOMRE.zip",
+          "advertisedSize": "3.99MB"
+        },
+        {
+          "name": "MYOFIBRILS.zip",
+          "advertisedSize": "33MB"
+        },
+        {
+          "name": "FORCE_MEASURING_MACRO.xlsx",
+          "advertisedSize": "229.93KB"
+        }
+      ],
+      "dataRowsInspected": false,
+      "missing": [
+        "identified stiffness-to-track join",
+        "area and reference geometry",
+        "species/temperature/activation",
+        "passive correction"
+      ],
+      "reuse": "Dryad terms \u00a74; exact item badge unverified",
+      "smallestUnit": "one identified single-sarcomere track plus calibration/geometry row"
+    },
+    {
+      "id": "brunello2023",
+      "articleDOI": "10.1073/pnas.2302837120",
+      "dataDOI": "10.5281/zenodo.7668420",
+      "dataLandingRead": true,
+      "inventory": [
+        {
+          "name": "Data source file_dualfilament_regulation.xlsx",
+          "advertisedSize": "1.8MB",
+          "advertisedMD5": "b0bfbeafd922ea8c18ff8002290c216d"
+        }
+      ],
+      "dataRowsInspected": false,
+      "implementationURL": "https://github.com/lorenzomarcucci/FMM_model",
+      "visibleImplementationRoot": [
+        "Attach_detach.f90",
+        "CommonParams.f90",
+        "README.md"
+      ],
+      "implementationExecuted": false,
+      "missing": [
+        "matched force/area/geometry records",
+        "preparation/temperature/passive definitions",
+        "data reuse license"
+      ],
+      "numericCalibrationSelected": false
+    },
+    {
+      "id": "seebacher2019",
+      "articleDOI": "10.1152/japplphysiol.00433.2019",
+      "dataDOI": "10.5061/dryad.wh70rxwj6",
+      "dataLandingRead": true,
+      "species": "zebrafish Danio rerio",
+      "inventory": [
+        {
+          "name": "Seebacher_and_James_J_Appl_Physiol_data.xlsx",
+          "advertisedSize": "27.61KB"
+        }
+      ],
+      "dataRowsInspected": false,
+      "missing": [
+        "force units and calibration",
+        "area/reference geometry row linkage",
+        "temperature/activation/passive fields"
+      ],
+      "numericCalibrationSelected": false
+    },
+    {
+      "id": "shelley2024",
+      "articleDOI": "10.1242/jeb.247158",
+      "articleMethodsRead": true,
+      "speciesPreparation": "isolated mouse soleus/EDL whole muscle",
+      "temperatureC": 37,
+      "geometry": "reference length and mass measured; fiber fractions and density assumed; mean CSA derived",
+      "passiveMeasurement": "separate passive work; not a verified passive-force subtraction ledger",
+      "dataAvailability": "corresponding author upon reasonable request",
+      "dataRowsInspected": false,
+      "contactSent": false,
+      "numericCalibrationSelected": false
+    },
+    {
+      "id": "psilander2019",
+      "dataDOI": "10.17632/s677jds6t2.1",
+      "dataURL": "https://data.mendeley.com/datasets/s677jds6t2/1",
+      "dataLandingRead": true,
+      "license": "CC BY4.0",
+      "advertisedData": "training1RM/thickness and biopsy/single-fiber morphology",
+      "isolatedFiberContractileForceAdvertised": false,
+      "dataRowsInspected": false,
+      "numericCalibrationSelected": false
+    }
+  ],
+  "numericalCalibrationSelected": false,
+  "wholeHumanArmTransferClaimed": false
+}

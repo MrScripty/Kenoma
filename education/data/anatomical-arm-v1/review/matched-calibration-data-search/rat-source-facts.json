@@ -1,0 +1,1200 @@
+{
+  "schema": "matched-calibration-rat-source-search-v1",
+  "audit_date_utc": "2026-10-06",
+  "status": "NO_MATCHED_SI_CALIBRATION_BUNDLE_ADMITTED",
+  "scope": "Primary-source data inventory and read-only data parsing; no model execution, source implementation import, Git operation, or old file edit.",
+  "source_pin": {
+    "repository": "timvanderzee/biophysical-muscle-model",
+    "commit": "8c766dfb308051309193e7290ddd0bac3b726d11",
+    "tree": "a802ec6f7299d0745dfab1d5b715a3d9b7aa6f20",
+    "main_reread_same_commit": true,
+    "date": "2026-07-08T12:06:31Z",
+    "truncated": false,
+    "license_copying_named_files": []
+  },
+  "official_sources": [
+    {
+      "doi": "10.1371/journal.pcbi.1014748",
+      "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1014748",
+      "status": "READABLE",
+      "supplements": [
+        {
+          "doi": "10.1371/journal.pcbi.1014748.s001",
+          "description": "Short-range stiffness data part 1",
+          "format": "ZIP",
+          "status": "NORMAL_PUBLISHER_CLICK_INTERNAL_ERROR",
+          "inventory": null,
+          "bytes": null
+        },
+        {
+          "doi": "10.1371/journal.pcbi.1014748.s002",
+          "description": "Short-range stiffness data part 2",
+          "format": "ZIP",
+          "status": "NORMAL_PUBLISHER_CLICK_INTERNAL_ERROR",
+          "inventory": null,
+          "bytes": null
+        }
+      ],
+      "data_availability": "Experimental results attributed to S1/S2; code/model outputs attributed to official GitHub repository",
+      "article_license": "CC-BY; no separate supplement manifest/license inspected"
+    },
+    {
+      "doi": "10.1242/jeb.245456",
+      "url": "https://journals.biologists.com/jeb/article/226/18/jeb245456/329515/History-dependent-muscle-resistance-to-stretch",
+      "status": "READABLE",
+      "deposit_url": "https://osf.io/3jy62/?view_only=4f09424a1c5d468798baa1cf8d673100",
+      "deposit_status": "EXACT_PUBLISHED_LINK_NORMAL_CLICK_INTERNAL_ERROR",
+      "deposit_inventory": null,
+      "deposit_license": null,
+      "article_license": "CC-BY-4.0",
+      "specimen_context": {
+        "species": "rat",
+        "muscle": "soleus",
+        "preparation": "single permeabilized fibers",
+        "fibers": 11,
+        "animals": 2,
+        "sex": "female",
+        "strain": "Sprague-Dawley",
+        "bath_temperature_C": 22,
+        "sarcomere_target_um": 2.6,
+        "sampling_Hz": 1000,
+        "motor": "Aurora312",
+        "force_transducer": "Aurora403"
+      },
+      "body_text_searches": {
+        "diameter": "NO_MATCH",
+        "cross_sectional": "NO_MATCH"
+      },
+      "limitation": "Body-text search failure is not proof of absence from underlying raw records"
+    },
+    {
+      "url": "https://scholarblogs.emory.edu/neuromechanicslab/files/2024/06/Horslen-et-al-2023.pdf",
+      "status": "NORMAL_OPEN_INTERNAL_ERROR"
+    }
+  ],
+  "binary_inventory": {
+    "files": [
+      {
+        "path": "Data/SRS_data.mat",
+        "bytes": 31483,
+        "git_blob_sha1": "1ee15118e2e741585702c0cb7867be57642e8efb"
+      },
+      {
+        "path": "Data/active_trials.mat",
+        "bytes": 727,
+        "git_blob_sha1": "7b1ee00deddbde8504759692164ee3550113d1dc"
+      },
+      {
+        "path": "Data/force_pCa.mat",
+        "bytes": 923,
+        "git_blob_sha1": "49287cc837de16091987b619aa0c8f4b3076e3fb"
+      },
+      {
+        "path": "Reproduce/Model output/RMSD/Approximated/biophysical_full_alternative_RMSD.mat",
+        "bytes": 57947,
+        "git_blob_sha1": "a25693b3b0d75709b58c07a54ab78f962bed084e"
+      },
+      {
+        "path": "Reproduce/Model output/RMSD/Approximated/biophysical_full_regular_RMSD.mat",
+        "bytes": 57932,
+        "git_blob_sha1": "5b7cba7633a48f6efcf7caf7492a1d1211419fb7"
+      },
+      {
+        "path": "Reproduce/Model output/RMSD/Approximated/biophysical_no_regular_RMSD.mat",
+        "bytes": 58006,
+        "git_blob_sha1": "32224c53ac82a8d8b5914465df670b9f03d11859"
+      },
+      {
+        "path": "Reproduce/Model output/RMSD/Approximated/biophysical_thin_regular_RMSD.mat",
+        "bytes": 56069,
+        "git_blob_sha1": "595853526d17cf6d865c1f5aedda0573f766b78d"
+      },
+      {
+        "path": "Reproduce/Model output/RMSD/Discretized/biophysical_full_alternative_RMSD.mat",
+        "bytes": 57969,
+        "git_blob_sha1": "67a4ebfa5df64408da3a343ff49b79df625944de"
+      },
+      {
+        "path": "Reproduce/Model output/RMSD/Discretized/biophysical_full_regular_RMSD.mat",
+        "bytes": 57946,
+        "git_blob_sha1": "ae8657c087ade3578a42c139d0c1359586eb8d99"
+      },
+      {
+        "path": "Reproduce/Model output/RMSD/Discretized/biophysical_no_regular_RMSD.mat",
+        "bytes": 57931,
+        "git_blob_sha1": "412d9ae5559930ec1efa017af5220eac0091a372"
+      },
+      {
+        "path": "Reproduce/Model output/RMSD/Discretized/biophysical_thin_regular_RMSD.mat",
+        "bytes": 56086,
+        "git_blob_sha1": "3e5ddd7f2041633b4bb448bbac56b32fa04d5e06"
+      },
+      {
+        "path": "Reproduce/Model output/RMSD/Hill/Hill_alternative_RMSD.mat",
+        "bytes": 55938,
+        "git_blob_sha1": "a597ef3f4e132acc60593375904d573d701660e9"
+      },
+      {
+        "path": "Reproduce/Model output/RMSD/Hill/Hill_regular_RMSD.mat",
+        "bytes": 57827,
+        "git_blob_sha1": "963dd75b8ea2da2d75461a92a40c0451dc9533f6"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Approximated/biophysical_full_alternative_SRS.mat",
+        "bytes": 329985,
+        "git_blob_sha1": "ab79e10922d6e1d27be1b00b8222c5088edcb9e1"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Approximated/biophysical_full_regular_SRS.mat",
+        "bytes": 329585,
+        "git_blob_sha1": "a3485af2e31fd1b829f250632d0a22c35185c668"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Approximated/biophysical_no_regular_SRS.mat",
+        "bytes": 300167,
+        "git_blob_sha1": "6f6c1cb88563d6c75ca681612b5823fe3746eca8"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Approximated/biophysical_thin_regular_SRS.mat",
+        "bytes": 283689,
+        "git_blob_sha1": "0eef7d71aee42f33e86b868a0c617cba588d92d3"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Discretized/biophysical_full_alternative_SRS.mat",
+        "bytes": 298161,
+        "git_blob_sha1": "4d28ced83fff067b4ded380f3f7a2271491055a4"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Discretized/biophysical_full_regular_SRS.mat",
+        "bytes": 291479,
+        "git_blob_sha1": "6774cbde7ed73e911d890c204cc5c859f9d12390"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Discretized/biophysical_no_regular_SRS.mat",
+        "bytes": 291964,
+        "git_blob_sha1": "7ef7b78f70015bcdd0acd11a736e6472fba77200"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Discretized/biophysical_thin_regular_SRS.mat",
+        "bytes": 313675,
+        "git_blob_sha1": "05c5ceb15bddc111d53b05c7c4c71889517104aa"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Hill/Hill_alternative_SRS.mat",
+        "bytes": 228877,
+        "git_blob_sha1": "38771597264f40307c13584e680158caba7a10f5"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Hill/Hill_regular_SRS.mat",
+        "bytes": 264381,
+        "git_blob_sha1": "e0b8f2218bf68cca34dcd46fa764a1443e69b22d"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Miscellaneous/parms/Hill_alternative_SRS.mat",
+        "bytes": 228877,
+        "git_blob_sha1": "38771597264f40307c13584e680158caba7a10f5"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Miscellaneous/parms/biophysical_thin_regular_SRS.mat",
+        "bytes": 283689,
+        "git_blob_sha1": "0eef7d71aee42f33e86b868a0c617cba588d92d3"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v1d/biophysical_full_regular_SRS.mat",
+        "bytes": 261309,
+        "git_blob_sha1": "3211dcf0920cf9a610997d7439af2d8a4302c911"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v2d/biophysical_full_alternative_SRS.mat",
+        "bytes": 296660,
+        "git_blob_sha1": "4b7a45532a38d3a50420c8719aa08c81432c79cb"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v2d/biophysical_full_regular_SRS.mat",
+        "bytes": 302671,
+        "git_blob_sha1": "d11b1901242aadd9ed96d170840c2c5b41897c95"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v2d/biophysical_no_regular_SRS.mat",
+        "bytes": 291542,
+        "git_blob_sha1": "04c9de1045341067bc9fe288a78689e9411e4348"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v3/Hill_regular_SRS.mat",
+        "bytes": 253257,
+        "git_blob_sha1": "1a4dd89b240ad4d5ebc048a422926720eba9513d"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v3d/biophysical_full_alternative_SRS.mat",
+        "bytes": 301101,
+        "git_blob_sha1": "cba83d92534ccf763024270505db31b7e4517e57"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v3d/biophysical_full_regular_SRS.mat",
+        "bytes": 318415,
+        "git_blob_sha1": "a65407fa239d9be123013a54bf6e535e7b02fa1e"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v4/Hill_regular_SRS.mat",
+        "bytes": 264381,
+        "git_blob_sha1": "e0b8f2218bf68cca34dcd46fa764a1443e69b22d"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v4/biophysical_full_alternative_SRS.mat",
+        "bytes": 325247,
+        "git_blob_sha1": "83cf837c1355e82d689df2026f13a24f7f168dac"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v4/biophysical_full_alternative_SRS_old.mat",
+        "bytes": 315492,
+        "git_blob_sha1": "d0435ce176a6bdd3a4c4ecaf56d8e0eadabfdc6f"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v4/biophysical_full_regular_SRS.mat",
+        "bytes": 316163,
+        "git_blob_sha1": "93672cf9172e907240e0626ad7a54661b07f3e3f"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v4/biophysical_full_regular_SRS_old.mat",
+        "bytes": 314941,
+        "git_blob_sha1": "4fac29a2ae31ca5ee23b437441f7b654de45aeba"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v4/biophysical_no_regular_SRS.mat",
+        "bytes": 300167,
+        "git_blob_sha1": "6f6c1cb88563d6c75ca681612b5823fe3746eca8"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v4d/biophysical_full_alternative_SRS.mat",
+        "bytes": 298161,
+        "git_blob_sha1": "4d28ced83fff067b4ded380f3f7a2271491055a4"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v4d/biophysical_full_regular_SRS.mat",
+        "bytes": 291479,
+        "git_blob_sha1": "6774cbde7ed73e911d890c204cc5c859f9d12390"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v4d/biophysical_no_regular_SRS.mat",
+        "bytes": 291964,
+        "git_blob_sha1": "7ef7b78f70015bcdd0acd11a736e6472fba77200"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v4d/biophysical_thin_regular_SRS.mat",
+        "bytes": 313675,
+        "git_blob_sha1": "05c5ceb15bddc111d53b05c7c4c71889517104aa"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v5/biophysical_full_alternative_SRS.mat",
+        "bytes": 315908,
+        "git_blob_sha1": "29c2d29315ee21fc33d2517e40d7e82ff1461d64"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v5/biophysical_full_regular_SRS.mat",
+        "bytes": 318353,
+        "git_blob_sha1": "5f01a3168a1f9402e3495783d4bd034d20ce56c6"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v6/biophysical_full_alternative_SRS.mat",
+        "bytes": 329985,
+        "git_blob_sha1": "ab79e10922d6e1d27be1b00b8222c5088edcb9e1"
+      },
+      {
+        "path": "Reproduce/Model output/SRS/Miscellaneous/parms_v6/biophysical_full_regular_SRS.mat",
+        "bytes": 329585,
+        "git_blob_sha1": "a3485af2e31fd1b829f250632d0a22c35185c668"
+      },
+      {
+        "path": "Reproduce/Model output/output_effect_of_bins_on_cost.mat",
+        "bytes": 51747046,
+        "git_blob_sha1": "f0075713e7382b7c493f815b3044f981a6d62763"
+      },
+      {
+        "path": "Reproduce/Parameters/13Dec2017a/parms_Hill_alternative.mat",
+        "bytes": 75061,
+        "git_blob_sha1": "429fecaacc58ec562fe54d175ce942e4f287320b"
+      },
+      {
+        "path": "Reproduce/Parameters/13Dec2017a/parms_Hill_regular.mat",
+        "bytes": 86947,
+        "git_blob_sha1": "059d0faf4c36ef4f27d256b7f7d9259dd1f1f8f6"
+      },
+      {
+        "path": "Reproduce/Parameters/13Dec2017a/parms_biophysical_full_alternative.mat",
+        "bytes": 523526,
+        "git_blob_sha1": "dc4ecf8b117cd271827605ac4e58027e10a99832"
+      },
+      {
+        "path": "Reproduce/Parameters/13Dec2017a/parms_biophysical_full_regular.mat",
+        "bytes": 432070,
+        "git_blob_sha1": "c2905e32a63ebd535e223d9f2acf61b7972d4d86"
+      },
+      {
+        "path": "Reproduce/Parameters/13Dec2017a/parms_biophysical_no_regular.mat",
+        "bytes": 401236,
+        "git_blob_sha1": "cc28d2a9cf5cf441ae31c20528a5798b0d924d24"
+      },
+      {
+        "path": "Reproduce/Parameters/13Dec2017a/parms_biophysical_thin_regular.mat",
+        "bytes": 296806,
+        "git_blob_sha1": "0dab3ef4c0a8b2e372e4c99cc6a85a6b5ee88eea"
+      },
+      {
+        "path": "Reproduce/Parameters/13Dec2017b/parms_Hill_alternative.mat",
+        "bytes": 75069,
+        "git_blob_sha1": "558760daef4ec52fd865b1fa0c19bb4e97835e31"
+      },
+      {
+        "path": "Reproduce/Parameters/13Dec2017b/parms_Hill_regular.mat",
+        "bytes": 107935,
+        "git_blob_sha1": "af20c269829498db468e28c59fd9bf5ad3f4afea"
+      },
+      {
+        "path": "Reproduce/Parameters/13Dec2017b/parms_biophysical_full_alternative.mat",
+        "bytes": 684374,
+        "git_blob_sha1": "8178710e8befc760b51dcb978339190e3d6f9fb5"
+      },
+      {
+        "path": "Reproduce/Parameters/13Dec2017b/parms_biophysical_full_regular.mat",
+        "bytes": 587326,
+        "git_blob_sha1": "938cc8e0fe65dccccd634489d6a4e3c79325a25f"
+      },
+      {
+        "path": "Reproduce/Parameters/13Dec2017b/parms_biophysical_no_regular.mat",
+        "bytes": 546028,
+        "git_blob_sha1": "4dd3f2dd53f489458cbb602f92f2eee27d093644"
+      },
+      {
+        "path": "Reproduce/Parameters/13Dec2017b/parms_biophysical_thin_regular.mat",
+        "bytes": 369470,
+        "git_blob_sha1": "4d32738257db8fc3fe3acee9bf78c73d5074d4a7"
+      },
+      {
+        "path": "Reproduce/Parameters/14Dec2017b/parms_Hill_alternative.mat",
+        "bytes": 83316,
+        "git_blob_sha1": "8d68836e8b159401fb5c8562dfb0bde1c6814025"
+      },
+      {
+        "path": "Reproduce/Parameters/14Dec2017b/parms_Hill_regular.mat",
+        "bytes": 130991,
+        "git_blob_sha1": "888a7225cc9273524718986334fed32fa335e308"
+      },
+      {
+        "path": "Reproduce/Parameters/14Dec2017b/parms_biophysical_full_alternative.mat",
+        "bytes": 807995,
+        "git_blob_sha1": "6c6765fe1cbcf1ab04648a9d7f74ed28b18f4f93"
+      },
+      {
+        "path": "Reproduce/Parameters/14Dec2017b/parms_biophysical_full_regular.mat",
+        "bytes": 703988,
+        "git_blob_sha1": "f0caa95372b113ff0e8e060aecd2007e904694a2"
+      },
+      {
+        "path": "Reproduce/Parameters/14Dec2017b/parms_biophysical_no_regular.mat",
+        "bytes": 640362,
+        "git_blob_sha1": "0f55a1c35617e53de990c39ac7d66b32e05579a2"
+      },
+      {
+        "path": "Reproduce/Parameters/14Dec2017b/parms_biophysical_thin_regular.mat",
+        "bytes": 700997,
+        "git_blob_sha1": "240e7e90cce99fed362a11a6b44181bc4c623b69"
+      },
+      {
+        "path": "Reproduce/Parameters/18Dec2017a/parms_Hill_alternative.mat",
+        "bytes": 86989,
+        "git_blob_sha1": "e8c8682a6c68ccb1d9c1a30643eadf5823a887ac"
+      },
+      {
+        "path": "Reproduce/Parameters/18Dec2017a/parms_Hill_regular.mat",
+        "bytes": 130637,
+        "git_blob_sha1": "5c0240aedf7966316e231f2f735b2392cabd3036"
+      },
+      {
+        "path": "Reproduce/Parameters/18Dec2017a/parms_biophysical_full_alternative.mat",
+        "bytes": 830877,
+        "git_blob_sha1": "7d14249939dfaf53ba533bcffc346467e227b61e"
+      },
+      {
+        "path": "Reproduce/Parameters/18Dec2017a/parms_biophysical_full_regular.mat",
+        "bytes": 720505,
+        "git_blob_sha1": "1ed3d445cc986b08394419aed6ef634abcdb3bd6"
+      },
+      {
+        "path": "Reproduce/Parameters/18Dec2017a/parms_biophysical_no_regular.mat",
+        "bytes": 651916,
+        "git_blob_sha1": "19d50538421ff71025db8ff2c4ae5bb911468e9c"
+      },
+      {
+        "path": "Reproduce/Parameters/18Dec2017a/parms_biophysical_thin_regular.mat",
+        "bytes": 719769,
+        "git_blob_sha1": "84a10ab095d16282aefe89921b1fe46b242aac13"
+      },
+      {
+        "path": "Reproduce/Parameters/18Dec2017b/parms_Hill_alternative.mat",
+        "bytes": 83309,
+        "git_blob_sha1": "c99981773e72d364a55db20bc146d8a9b65063ae"
+      },
+      {
+        "path": "Reproduce/Parameters/18Dec2017b/parms_Hill_regular.mat",
+        "bytes": 130363,
+        "git_blob_sha1": "9bf0e996efd213573b20dfd852293e0b673e5b7f"
+      },
+      {
+        "path": "Reproduce/Parameters/18Dec2017b/parms_biophysical_full_alternative.mat",
+        "bytes": 837680,
+        "git_blob_sha1": "425f3641c5a32266df4152cb0228e823403e64a7"
+      },
+      {
+        "path": "Reproduce/Parameters/18Dec2017b/parms_biophysical_full_regular.mat",
+        "bytes": 718030,
+        "git_blob_sha1": "223f2efd468d3f95c80627a285d754bb76b91d33"
+      },
+      {
+        "path": "Reproduce/Parameters/18Dec2017b/parms_biophysical_no_regular.mat",
+        "bytes": 665855,
+        "git_blob_sha1": "68cf6fc26915be227b9d1d03dd85ac06c6f82ea5"
+      },
+      {
+        "path": "Reproduce/Parameters/18Dec2017b/parms_biophysical_thin_regular.mat",
+        "bytes": 716816,
+        "git_blob_sha1": "4ffa7f0c1394842362aee9a3df534367b646ef43"
+      },
+      {
+        "path": "Reproduce/Parameters/19Dec2017a/parms_Hill_alternative.mat",
+        "bytes": 83347,
+        "git_blob_sha1": "5aad22777b15eeaf52135625b68152461cd713c6"
+      },
+      {
+        "path": "Reproduce/Parameters/19Dec2017a/parms_Hill_regular.mat",
+        "bytes": 104733,
+        "git_blob_sha1": "a99f74d2b087b283b51b807cad3b510778f7dcaa"
+      },
+      {
+        "path": "Reproduce/Parameters/19Dec2017a/parms_biophysical_full_alternative.mat",
+        "bytes": 679226,
+        "git_blob_sha1": "0b583e05c5a06627d50d97673850cf335d4f7e97"
+      },
+      {
+        "path": "Reproduce/Parameters/19Dec2017a/parms_biophysical_full_regular.mat",
+        "bytes": 592885,
+        "git_blob_sha1": "3cfb9c8c1eadb3faf02675aa32a389f4b715e32f"
+      },
+      {
+        "path": "Reproduce/Parameters/19Dec2017a/parms_biophysical_no_regular.mat",
+        "bytes": 539388,
+        "git_blob_sha1": "a4e67acf0a133aab2f71ca66cc8bee9a82b94eba"
+      },
+      {
+        "path": "Reproduce/Parameters/19Dec2017a/parms_biophysical_thin_regular.mat",
+        "bytes": 586498,
+        "git_blob_sha1": "fbdd593cb8310cd5948416442d562568ba0be9d2"
+      },
+      {
+        "path": "Reproduce/Parameters/7Aug2018a/parms_Hill_alternative.mat",
+        "bytes": 75082,
+        "git_blob_sha1": "34db4a1c5dbbbaa8d5c35f9a9b8da3c28a3295f5"
+      },
+      {
+        "path": "Reproduce/Parameters/7Aug2018a/parms_Hill_regular.mat",
+        "bytes": 99203,
+        "git_blob_sha1": "785ad83fdc059ef67a5e70b9edd371edfe4ad5c9"
+      },
+      {
+        "path": "Reproduce/Parameters/7Aug2018a/parms_biophysical_full_alternative.mat",
+        "bytes": 609499,
+        "git_blob_sha1": "f4ce89624e5ab7a929b9813240c415d11b31faf3"
+      },
+      {
+        "path": "Reproduce/Parameters/7Aug2018a/parms_biophysical_full_regular.mat",
+        "bytes": 515927,
+        "git_blob_sha1": "e26a9ed0f6d61cd44f35f15e0fb2c29aedaa3b74"
+      },
+      {
+        "path": "Reproduce/Parameters/7Aug2018a/parms_biophysical_no_regular.mat",
+        "bytes": 460311,
+        "git_blob_sha1": "51750762436ff52f22abaa40614cf2c1a73f1c2d"
+      },
+      {
+        "path": "Reproduce/Parameters/7Aug2018a/parms_biophysical_thin_regular.mat",
+        "bytes": 504635,
+        "git_blob_sha1": "ab2bf948f380a356cb9d6e887a72c6fb4a8072c7"
+      }
+    ],
+    "total_bytes": 80545792,
+    "counts": {
+      "observational_data": 3,
+      "parameter_files": 42,
+      "model_output": 44
+    },
+    "large_file_not_downloaded": "Reproduce/Model output/output_effect_of_bins_on_cost.mat"
+  },
+  "bounded_downloads": [
+    {
+      "path": "Data/SRS_data.mat",
+      "bytes": 31483,
+      "git_blob_sha1": "1ee15118e2e741585702c0cb7867be57642e8efb",
+      "sha256": "a2d4edcbe9893b9d5671d7563a1dcbd808e6c51e41f42821303df6feee249024",
+      "route": "ordinary pinned raw.githubusercontent.com URL",
+      "max_read_bytes": 31484,
+      "size_and_git_blob_sha1_verified": true,
+      "local_directory": "/tmp/rat-source-data-inventory-20261006"
+    },
+    {
+      "path": "Data/force_pCa.mat",
+      "bytes": 923,
+      "git_blob_sha1": "49287cc837de16091987b619aa0c8f4b3076e3fb",
+      "sha256": "957d0a359c4cdab6070c8c2a2957d63e566e8a2bf2d9d0de3175b6f3960814b9",
+      "route": "ordinary pinned raw.githubusercontent.com URL",
+      "max_read_bytes": 924,
+      "size_and_git_blob_sha1_verified": true,
+      "local_directory": "/tmp/rat-source-data-inventory-20261006"
+    },
+    {
+      "path": "Data/active_trials.mat",
+      "bytes": 727,
+      "git_blob_sha1": "7b1ee00deddbde8504759692164ee3550113d1dc",
+      "sha256": "5de9d75c6d7ddedb5d0b302ee0be821713d5ec5b6fb04a444b6f4ffc3e6a6116",
+      "route": "ordinary pinned raw.githubusercontent.com URL",
+      "max_read_bytes": 728,
+      "size_and_git_blob_sha1_verified": true,
+      "local_directory": "/tmp/rat-source-data-inventory-20261006"
+    },
+    {
+      "path": "Reproduce/Parameters/13Dec2017a/parms_biophysical_no_regular.mat",
+      "bytes": 401236,
+      "git_blob_sha1": "cc28d2a9cf5cf441ae31c20528a5798b0d924d24",
+      "sha256": "94304696731c2eb13e7e8a5e92a62f752447512ec79736090aa36dc88e228529",
+      "role": "Historical fitted parameter/model output; not final article medians or admitted experimental trajectories",
+      "route": "ordinary pinned raw.githubusercontent.com URL",
+      "max_read_bytes": 401237,
+      "size_and_git_blob_sha1_verified": true,
+      "local_directory": "/tmp/rat-source-data-inventory-20261006"
+    }
+  ],
+  "total_downloaded_bytes": 434369,
+  "connector_binary_limitation": {
+    "status": "UNSUPPORTED_UTF8",
+    "message": "GitHub Fetch only accepts UTF-8 text",
+    "network_denial": false
+  },
+  "read_only_source_blobs": [
+    {
+      "path": "Data/README.md",
+      "sha": "290f6771ad8841b9590140393f8696f8f30f02b9"
+    },
+    {
+      "path": "Data/calc_data_SRS.m",
+      "sha": "799e971b925086047ae8f05426f320fec84a5e9e"
+    },
+    {
+      "path": "Data/Processing/reorganize_data.m",
+      "sha": "2259a7aaae4e7822ff685d1b809150a43089dfca"
+    },
+    {
+      "path": "Data/Processing/prep_data_v2.m",
+      "sha": "82bdc6d686ca58bf0c3369323ee53f2458061efa"
+    },
+    {
+      "path": "Data/Processing/calc_force_pCa.m",
+      "sha": "e2e4ed6427a094cb6e23c77439c0237d03c8cf1c"
+    },
+    {
+      "path": "Data/Processing/normalize_data.m",
+      "sha": "6e5179a726d1a4dfa929dec3d7a4d3e3d10ba436"
+    },
+    {
+      "path": "Data/Processing/determine_N_sarcomeres.m",
+      "sha": "ade7652c32dd5d17c93892d88c9eb133684a8c6b"
+    }
+  ],
+  "specimen_index": {
+    "embedded_in_three_data_mat_files": false,
+    "labels": [
+      "12Dec2017a",
+      "13Dec2017a",
+      "13Dec2017b",
+      "14Dec2017a",
+      "14Dec2017b",
+      "18Dec2017a",
+      "18Dec2017b",
+      "19Dec2017a",
+      "6Aug2018a",
+      "6Aug2018b",
+      "7Aug2018a"
+    ],
+    "evidence": "Identical hardcoded order in calc_force_pCa.m:3, normalize_data.m:3, reorganize_data.m:3, calc_data_SRS.m:22",
+    "status": "SOURCE_CODE_ORDER_LINKAGE; NOT AN EMBEDDED RAW_SPECIMEN_ID_MANIFEST",
+    "animal_linkage": "Individual rat membership not recovered"
+  },
+  "field_admission": [
+    {
+      "field": "force/Fmax",
+      "available": "11 denominators, 11x7 F0 array",
+      "status": "RECOVERED_PROCESSED_NUMBERS; SI_UNITS_UNVERIFIED",
+      "evidence": "force_pCa.mat; gain extraction/overrides and division /1000/gain in calc_force_pCa.m do not declare volts-to-newtons chain"
+    },
+    {
+      "field": "CSA/diameters/area configuration",
+      "status": "NOT_PRESENT_IN_THREE_PARSED_DATA_FILES; NOT_RECOVERED_FROM_PAPER_BODY; UNINSPECTED_DEPOSITS_UNKNOWN"
+    },
+    {
+      "field": "reference fiber length",
+      "status": "PAPER_COHORT_SUMMARY_AND_RECORDING_METHOD_ONLY; MATCHED_VALUES_UNRECOVERED"
+    },
+    {
+      "field": "sarcomere length",
+      "status": "PAPER_TARGET_AND_COHORT_SUMMARY_ONLY; RAW_FIELDS_EXPECTED_BY_PROCESSOR_BUT_FILES_UNRECOVERED"
+    },
+    {
+      "field": "temperature",
+      "status": "22C_PUBLICATION_COHORT_CONTEXT; NO_PER_TRIAL_FIELD"
+    },
+    {
+      "field": "activation",
+      "status": "pCas_RECOVERED; SOURCE_INDEX_LINKAGE; NO_BATH_CALIBRATION_RECORD"
+    },
+    {
+      "field": "passive",
+      "status": "pCa9_F0_VALUES_PRESENT; NO_PASSIVE_TIME_SERIES_OR_TARE_METADATA"
+    },
+    {
+      "field": "sensor/gain calibration",
+      "status": "PROCESSING_FORMULA_KNOWN; ORIGINAL_FILE_INFO_AND_CALIBRATION_UNKNOWN"
+    },
+    {
+      "field": "series compliance",
+      "status": "FITTED_COEFFICIENTS_PRESENT; INDEPENDENT_APParATUS_OR_SAME_SPECIMEN_COMPLIANCE_UNRECOVERED"
+    },
+    {
+      "field": "time series",
+      "status": "NOT_IN_THREE_DATA_FILES; SAVED_FIT_INPUT_AND_OUTPUT_ARRAYS_ARE_NOT_VERIFIED_EXPERIMENTAL_ARCHIVE"
+    }
+  ],
+  "known_source_data_mismatch": {
+    "file": "Data/calc_data_SRS.m",
+    "stored_thresholds": [
+      0,
+      0.05,
+      0.1,
+      0.25,
+      0.7,
+      1.5
+    ],
+    "source_active_thresholds": [
+      0,
+      0.05,
+      0.3,
+      0.7,
+      1.2
+    ],
+    "stored_fields": [
+      "F0",
+      "SRS_pre",
+      "SRS_post",
+      "th",
+      "SRSrel",
+      "F0s"
+    ],
+    "source_output_name": "SRS_data_DT10_new.mat",
+    "source_additional_field": "SRSrel2",
+    "interpretation": "Pinned script is not proven exact generator of stored SRS_data.mat; retain variants and negative SRS entries"
+  },
+  "license_usability": {
+    "repository_data_license": "NO_EXPLICIT_LICENSE_RECOVERED",
+    "implementations": "READ_ONLY; NO_AUTHOR_CODE_EXECUTION_IMPORT_OR_COMMITTED_COPY",
+    "downloaded_mats": "TEMPORARY_READ_ONLY_DATA_INSPECTION; NO_RELICENSING_OR_RAW_REDISTRIBUTION",
+    "uninspected_supplements_and_OSF": "UNKNOWN_FILE_CONTENTS_AND_FILE_LEVEL_LICENSE"
+  },
+  "parsed_observational_data": [
+    {
+      "name": "SRS_data.mat",
+      "mat_inventory": [
+        [
+          "F0",
+          [
+            7,
+            7,
+            8,
+            11
+          ],
+          "double"
+        ],
+        [
+          "SRS_pre",
+          [
+            7,
+            7,
+            8,
+            11
+          ],
+          "double"
+        ],
+        [
+          "SRS_post",
+          [
+            7,
+            7,
+            8,
+            11
+          ],
+          "double"
+        ],
+        [
+          "th",
+          [
+            1,
+            6
+          ],
+          "double"
+        ],
+        [
+          "SRSrel",
+          [
+            5,
+            7,
+            8,
+            11
+          ],
+          "double"
+        ],
+        [
+          "F0s",
+          [
+            5,
+            7,
+            8,
+            11
+          ],
+          "double"
+        ]
+      ],
+      "fields": {
+        "F0": {
+          "shape": [
+            7,
+            7,
+            8,
+            11
+          ],
+          "dtype": "float64",
+          "finite_count": 184,
+          "nan_count": 4128,
+          "min": 0.009886442416380493,
+          "max": 1.0196744005010738
+        },
+        "SRS_pre": {
+          "shape": [
+            7,
+            7,
+            8,
+            11
+          ],
+          "dtype": "float64",
+          "finite_count": 184,
+          "nan_count": 4128,
+          "min": -0.29454433728975615,
+          "max": 50.00495952537894
+        },
+        "SRS_post": {
+          "shape": [
+            7,
+            7,
+            8,
+            11
+          ],
+          "dtype": "float64",
+          "finite_count": 1750,
+          "nan_count": 2562,
+          "min": -60.2254846211252,
+          "max": 118.25611639724465
+        },
+        "th": {
+          "shape": [
+            6
+          ],
+          "dtype": "float64",
+          "finite_count": 6,
+          "nan_count": 0,
+          "min": 0.0,
+          "max": 1.5
+        },
+        "SRSrel": {
+          "shape": [
+            5,
+            7,
+            8,
+            11
+          ],
+          "dtype": "float64",
+          "finite_count": 1400,
+          "nan_count": 1680,
+          "min": -1.3729700989471583,
+          "max": 2.6959037831317034
+        },
+        "F0s": {
+          "shape": [
+            5,
+            7,
+            8,
+            11
+          ],
+          "dtype": "float64",
+          "finite_count": 144,
+          "nan_count": 2936,
+          "min": 0.011446715323117607,
+          "max": 1.0196744005010738
+        }
+      }
+    },
+    {
+      "name": "active_trials.mat",
+      "mat_inventory": [
+        [
+          "Aid",
+          [
+            11,
+            7
+          ],
+          "logical"
+        ],
+        [
+          "Fm",
+          [
+            7,
+            11
+          ],
+          "double"
+        ]
+      ],
+      "fields": {
+        "Aid": {
+          "shape": [
+            11,
+            7
+          ],
+          "dtype": "uint8",
+          "finite_count": 77,
+          "nan_count": 0,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "Fm": {
+          "shape": [
+            7,
+            11
+          ],
+          "dtype": "float64",
+          "finite_count": 57,
+          "nan_count": 20,
+          "min": 0.009627145765107469,
+          "max": 1.0078827886694615
+        }
+      }
+    },
+    {
+      "name": "force_pCa.mat",
+      "mat_inventory": [
+        [
+          "pCas",
+          [
+            1,
+            7
+          ],
+          "double"
+        ],
+        [
+          "F0",
+          [
+            11,
+            7
+          ],
+          "double"
+        ],
+        [
+          "Fmax",
+          [
+            11,
+            1
+          ],
+          "double"
+        ]
+      ],
+      "fields": {
+        "pCas": {
+          "shape": [
+            7
+          ],
+          "dtype": "float64",
+          "finite_count": 7,
+          "nan_count": 0,
+          "min": 4.5,
+          "max": 9.0
+        },
+        "F0": {
+          "shape": [
+            11,
+            7
+          ],
+          "dtype": "float64",
+          "finite_count": 61,
+          "nan_count": 16,
+          "min": 1.902620954780996,
+          "max": 321.2740665983838
+        },
+        "Fmax": {
+          "shape": [
+            11
+          ],
+          "dtype": "float64",
+          "finite_count": 11,
+          "nan_count": 0,
+          "min": 55.89757774227901,
+          "max": 321.2740665983838
+        }
+      }
+    }
+  ],
+  "independent_data_checks": {
+    "Fmax_equals_row_nanmax_F0_exact": true,
+    "Fmax_equals_pCa4p5_F0_exact": true
+  },
+  "sampled_fit_file": {
+    "mat_inventory": [
+      [
+        "bnds",
+        [
+          1,
+          1
+        ],
+        "struct"
+      ],
+      [
+        "newparms",
+        [
+          1,
+          1
+        ],
+        "struct"
+      ],
+      [
+        "optparms",
+        [
+          1,
+          10
+        ],
+        "cell"
+      ],
+      [
+        "out",
+        [
+          1,
+          1
+        ],
+        "struct"
+      ],
+      [
+        "redparms",
+        [
+          1,
+          1
+        ],
+        "struct"
+      ],
+      [
+        "__function_workspace__",
+        [
+          1,
+          51008
+        ],
+        "uint8"
+      ]
+    ],
+    "newparms_fields": [
+      "CB",
+      "xi",
+      "f",
+      "g1",
+      "b",
+      "k11",
+      "k12",
+      "k21",
+      "k22",
+      "k31",
+      "k32",
+      "J1",
+      "SRX0",
+      "J2",
+      "JF",
+      "kon",
+      "koff",
+      "koop",
+      "kon_to_off",
+      "Noverlap",
+      "Fscale",
+      "c",
+      "ps",
+      "w",
+      "analytical",
+      "f_func",
+      "g_func",
+      "k_func",
+      "b_func",
+      "gaussian",
+      "kse",
+      "kse0",
+      "kse_func",
+      "Fse_func",
+      "Lse_func",
+      "Fpe0",
+      "kpe",
+      "Fpe_func",
+      "h",
+      "s",
+      "lmtc0",
+      "lce0",
+      "lse0",
+      "Fpece0",
+      "kpece",
+      "Fpece_func",
+      "Fv_func",
+      "vF_func",
+      "vmax",
+      "e",
+      "Fmax",
+      "act_max",
+      "fHill",
+      "fcost",
+      "n",
+      "kappa",
+      "v",
+      "AMP",
+      "ISI",
+      "tiso",
+      "L_func",
+      "isometric",
+      "max",
+      "vmtc",
+      "no_tendon",
+      "alpha",
+      "show",
+      "guess",
+      "optvars",
+      "k",
+      "dLcrit",
+      "forcible_detachment",
+      "x0",
+      "actfunc",
+      "xss",
+      "opt_method",
+      "amin",
+      "ps2",
+      "act",
+      "approx",
+      "K",
+      "gamma",
+      "ti",
+      "vts",
+      "Cas",
+      "Lts",
+      "kF",
+      "PE_isw_SE",
+      "Lce0",
+      "kpe_func"
+    ],
+    "out_fields": [
+      "F",
+      "J",
+      "Fcost",
+      "Fcost9",
+      "s",
+      "Q0",
+      "Q1",
+      "Q2",
+      "Non",
+      "DRX",
+      "dQ0dt",
+      "dQ1dt",
+      "dQ2dt",
+      "Lts",
+      "F0dot",
+      "p",
+      "q",
+      "Ld",
+      "Fce",
+      "Fse",
+      "Fpe",
+      "t"
+    ],
+    "redparms_fields": [
+      "f",
+      "b",
+      "k11",
+      "k12",
+      "k21",
+      "k22",
+      "J1",
+      "J2",
+      "JF",
+      "kon",
+      "koff",
+      "koop",
+      "Noverlap",
+      "Fscale",
+      "w",
+      "Fpe0",
+      "approx",
+      "kse",
+      "kse0",
+      "kpe",
+      "lce0",
+      "vmax",
+      "e",
+      "act_max",
+      "n",
+      "kappa",
+      "k",
+      "dLcrit",
+      "x0",
+      "amin",
+      "K",
+      "gamma",
+      "kF",
+      "Lce0",
+      "xi"
+    ],
+    "input_arrays": {
+      "ti": [
+        10000
+      ],
+      "Cas": [
+        10000
+      ],
+      "Lts": [
+        10000
+      ],
+      "vts": [
+        10000
+      ]
+    },
+    "model_output_arrays": {
+      "F": [
+        2999
+      ],
+      "Fcost": [
+        388
+      ],
+      "Fcost9": [
+        81
+      ],
+      "t": [
+        2999
+      ]
+    },
+    "saved_Fmax": 120,
+    "matched_force_pCa_Fmax_source_row2": 207.21964733022145,
+    "Fmax_values_differ": true,
+    "function_workspace": "opaque 51008-byte MATLAB payload; not decoded or executed; no claims about hidden captured data",
+    "function_handles": "parsed as inert metadata; never evaluated"
+  },
+  "data_redistribution": "No binary copies or full array-value payloads committed; file hashes, schemas, missing counts, aggregate statistics and selected source facts only."
+}

@@ -1,0 +1,88 @@
+{
+  "schema": "official-matched-whole-muscle-search-v1",
+  "date": "2026-10-06",
+  "frozen_base_label": "306d0aba",
+  "review": "../../../../research/mechanical-closure/data-search-whole-muscle.md",
+  "result": "NO_ACCESSIBLE_MATCHED_NUMERIC_SPECIMEN_OBTAINED_IN_BOUNDED_SEARCH",
+  "classifications": {"M": "measured acquisition reported", "D": "derived or corrected", "A": "assumption/literature", "U": "unverified/not located"},
+  "inventory": [
+    {
+      "id": "bindermarkey2023",
+      "doi": "10.1113/JP284092",
+      "url": "https://physoc.onlinelibrary.wiley.com/doi/full/10.1113/JP284092",
+      "official_index": "https://pubmed.ncbi.nlm.nih.gov/36905200/",
+      "preparation": "living human gracilis surgical harvest",
+      "locators": ["Methods Eq1", "Muscle volume calculation", "Patient-specific optimal fibre length calculation", "Data availability"],
+      "fields": {"force": "M; maximum D", "volume": "M optical", "area": "D", "fibre_length": "D", "sarcomere": "M fixed passive biopsy", "activation_passive": "defined", "temperature": "U"},
+      "advertised_file": {"name": "tjp15497-sup-0001-StatisticalSummary.xlsx", "size_label": "48.3 KB", "contents_inspected": false, "prior_denied_url_retried": false},
+      "article_access": "Open Access full text",
+      "exact_data_license": null,
+      "individual_rows_obtained": false
+    },
+    {
+      "id": "persad2021passive",
+      "doi": "10.1242/jeb.242722",
+      "url": "https://journals.biologists.com/jeb/article/224/17/jeb242722/272026/In-vivo-human-gracilis-whole-muscle-passive-stress",
+      "preparation": "living human gracilis passive surgical measurement",
+      "locators": ["Methods Intraoperative data", "PCSA", "Optimal fiber length calculation", "Data processing", "Supplement S1-S3"],
+      "fields": {"force": "M passive N", "volume": "D corrected", "area": "D", "fibre_length": "A ratio", "sarcomere": "M JC1/2/4; D JC3", "activation_passive": "passive", "temperature": "U"},
+      "advertised_file": {"url": "https://journals.biologists.com/jeb/article-supplement/272026/pdf/jeb242722supp/", "format": "PDF", "pages": 2, "contents_inspected": "extracted text S1-S3 figures", "matched_table_found": false, "binary_saved": false},
+      "equation_and_table_images_transcribed": false,
+      "calibration_supplement_locator_matches_inspected_S3": false,
+      "article_copyright_notice": "2021 Company of Biologists",
+      "exact_data_license": null,
+      "individual_rows_obtained": false
+    },
+    {
+      "id": "persad2022protocol",
+      "doi": "10.1038/s41598-022-09861-y",
+      "url": "https://www.nature.com/articles/s41598-022-09861-y",
+      "preparation": "human gracilis surgical acquisition protocol",
+      "locators": ["Buckle force transducer calibration", "Intraoperative measurement", "Data availability", "Code availability", "Rights and permissions"],
+      "fields": {"force": "M workflow N", "volume": "workflow", "area": "workflow", "fibre_length": "workflow", "sarcomere": "fixed-biopsy workflow", "activation_passive": "defined workflow", "temperature": "U"},
+      "raw_data_status": "upon request",
+      "code_status": "upon request",
+      "article_license": "CC BY 4.0 with third-party exceptions",
+      "unreceived_data_license": null,
+      "individual_rows_obtained": false
+    },
+    {
+      "id": "wang2025",
+      "doi": "10.1113/JP288322",
+      "url": "https://physoc.onlinelibrary.wiley.com/doi/abs/10.1113/JP288322",
+      "preparation": "human gracilis intraoperative series",
+      "locators": ["Abstract", "Key points", "Data availability", "Supporting Information"],
+      "fields": {"force": "reported active; full correction U", "volume": "U", "area": "U", "fibre_length": "D curve width", "sarcomere": "shortening estimated", "activation_passive": "U detailed protocol", "temperature": "U"},
+      "raw_data_status": "reasonable request",
+      "advertised_file": {"name": "tjp16746-supp-0001-StatisticalSummary.xlsx", "size_label": "49.4 KB", "inventoried_before_attempt": true, "attempts": 1, "contents_inspected": false},
+      "full_route_result": "redirected to abstract",
+      "exact_data_license": null,
+      "individual_rows_obtained": false
+    }
+  ],
+  "access_receipts": [
+    {
+      "url": "https://physoc.onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1113%2FJP288322&file=tjp16746-supp-0001-StatisticalSummary.xlsx",
+      "method": "ordinary original publisher link",
+      "result": "403 Forbidden",
+      "attempts": 1,
+      "stopped": true,
+      "same_as_prior_Binder_Markey_endpoint": false
+    },
+    {"url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12912294/", "method": "ordinary browser open", "result": "browser/reCAPTCHA check", "stopped": true},
+    {"url": "https://www.clinbiomech.com/article/S0268-0033%2812%2900214-8/fulltext", "method": "ordinary browser open", "result": "403 Forbidden", "stopped": true, "measurement_claims_adopted": false},
+    {"url": "https://journals.physiology.org/doi/full/10.1152/japplphysiol.00296.2024", "method": "ordinary browser open", "result": "internal fetch error", "measurement_claims_adopted": false}
+  ],
+  "minimum_candidate": {
+    "selected_specimen": null,
+    "prospective_unit": "one identified anonymous gracilis in one procedure with four paired postures",
+    "observational_Tref_available_now": false,
+    "inferred_study_stress_normalizer_available_now": false,
+    "local_Cauchy_stress_identified": false,
+    "whole_human_arm_transfer": false,
+    "rat_22C_kinetic_calibration": false,
+    "required_fields": ["persistent linked specimen key", "actual N calibration and zero/gain/tendon thickness", "active force and passive baseline", "activation and posture", "paired volume and corrections", "MTU/slack/tendon geometry", "sarcomere measurements and inference labels", "fibre length and area projection/reference conventions", "actual temperature or explicit unknown", "reusable-data terms"]
+  },
+  "limitations": ["no source table was reconstructed from group means", "no cohorts joined", "file advertisement is not content verification", "article OA status does not establish unreceived data license", "absence here is not a global nonexistence claim"],
+  "operations": {"downloaded_specimen_records": 0, "binary_files_saved": 0, "author_contact_sent": false, "challenged_routes_bypassed": false, "prior_known_denied_Binder_route_retried": false, "simulations": 0, "symbolic_checks": 0, "git_operations": 0, "old_files_edited": 0}
+}
