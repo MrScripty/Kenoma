@@ -1,0 +1,15 @@
+{
+  "rendererSHA256": "385803f8eedd7a84e05ccc69253dc0bd92312f11149ad52742b067a7de1949be",
+  "inputs": {
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/summary.json": "7504e77a2aa9047ae034aaaf7510dcf194dd60ba678fa1d97580be87242af12f",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/coarse-1.01.json": "64029bff323e8cc387274b29aeb3494bc53a3dc30e8879e54da34a6236c41322",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/coarse-1.25-reclassification.json": "7a75a83ad9e2f85b115e5a6849329b0e3818a69284a6d544a2295bd58283b560",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/equivalence-control.json": "e33da5a8ba032d2e35bdeb653c7b54b4355825bcac67deb6e6e36eb22cc82b4c",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/fine-1.25.json": "62466537478860e6958c2b93afcf153cf99d51986cfa7d89e3823a169b461bc7"
+  },
+  "outputs": {
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/source-amplitude.png": "58525d46985d5f35da57a858d014e0231213b895ef27eb11dbf69c997d2b4ef8",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/source-amplitude.pdf": "47ffe1db1b19ed3b6afe079f10d264c414e63b531527fc151c32649b98a597f9"
+  },
+  "scope": "COMPOSITE_EDUCATIONAL_STATIC_AMPLITUDE_ONLY; NO_SPECIMEN_ARM_OR_CLINICAL_VALIDATION"
+}

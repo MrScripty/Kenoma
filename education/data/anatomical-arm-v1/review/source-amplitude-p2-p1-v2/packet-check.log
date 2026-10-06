@@ -1,0 +1,12 @@
+PASS 44 source/evidence/render hash bindings
+PASS exact primary table cell and SI conversion binding
+PASS coarse1.01 pressure rejection preserved; no curvature or fine solve
+PASS original equilibrium/pressure/geometry/replay/derivative gates; coarse-1.25-reclassification.json negative active and positive passive witness
+PASS original equilibrium/pressure/geometry/replay/derivative gates; fine-1.25.json negative active and positive passive witness
+PASS matched-static refinement and pressure-coupling trend
+PASS matched-alpha equivalence, original negative witness and no repeated coarse solves/history advancement
+PASS rendered PNG/PDF, actual raster and visual receipt
+PASS local deliverable links
+PASS requested/frozen bases retained; prior tracked evidence/protected files unchanged
+RESULT PASS_BOUNDED_EVIDENCE: one pressure rejection retained; matched1.25 pair passes numerical gates and retains negative curvature; no arm qualification
+PASS retained original equilibrium and primary-method receipt hashes

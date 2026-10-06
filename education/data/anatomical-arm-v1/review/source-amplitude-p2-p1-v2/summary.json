@@ -1,0 +1,78 @@
+{
+  "sourceCommit": "8015b76e0d1c90c0f5771d5afb92515f726eb35f",
+  "sourceHashes": {
+    "tools/source_amplitude_p2_p1.py": "ac12c5fb9ac8e4ec2251c4a855bd7c4e57bb964160b5a044a8510825efb37b23",
+    "tools/full_p2_p1.py": "c80a360fd897867e8cb2360766de8a9f5d548d61bf59b5e54dc8b8df2d5f6860",
+    "tools/run_full_p2_p1.py": "fe9e2df4a796451e2ff4cacab7b9d7b341f1e75a7b7254826c3677da07b3bdb8",
+    "tools/full-p2-p1-replay.mjs": "0b2db14ba4f7c25732280f64a9a85a95a7ff854bc96f4073c02d36aa0ba0fe61",
+    "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+    "web/anatomical-modal.mjs": "12cd671bc963aa04dd5c0e173a776049de191283d850b0b60d0fe8e63be4c9a1",
+    "web/anatomical-element.mjs": "3f67a6bd31565c83d2cbea591c3cf1862a48e50cc4efa780880fda7e808d4b1f",
+    "web/anatomical-intersections.mjs": "a083a9838ac3c7508b65b58329c741aef65a065288aff82fc886d1c2c90375df",
+    "tools/anatomical-compression-quadrature.mjs": "f12e0d80224bad5e0bfa0649e08cac2f31a0baf162e2547ae8767b7371f48dc2",
+    "research/mechanical-closure/source-amplitude-p2-p1-protocol.md": "a22e935e61060ddf0bc59ecd17fb72b6b29b55cf918124a539eece202c0c6aa5",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/primary-source-binding.json": "30cb9959afd5257fe9f9c9522e8512cb9176597b8c00e3a542cc444e64a40177",
+    "tools/source_amplitude_p2_p1_v2.py": "47c0783e62377fe5c3597d0d8d438fb224b4378892fd3f51383a56a79279235e",
+    "tools/verify_full_p2_p1.py": "f53d44e20fba98dfc0f428e2003579612fee4a4c704bfce11cd1bea16224389c",
+    "research/mechanical-closure/source-amplitude-gate-scope-correction.md": "e6c3d57d8a1d019805b786f37c29ea476f49e2bcb2f2f266407dc64d56f11a00"
+  },
+  "cases": [
+    {
+      "name": "coarse-1.25",
+      "result": "PASS_STATIONARY_ORIGINAL_DERIVATIVE_GATES",
+      "stationaryAccepted": true,
+      "derivativeGatesPass": true,
+      "forceResidualN": 9.659460896032542e-05,
+      "capForceN": 39.76114485757864,
+      "Jmin": 1.0002536445488348,
+      "Jmax": 1.0002543142367861,
+      "curvatureClassification": "NEGATIVE_STATIONARY_DIRECTION",
+      "minimumEigenvalueNPerM": -9477.446195040047,
+      "passiveStationary": true,
+      "passiveDerivativePass": true,
+      "passiveMinimumNPerM": 1.9789587592359115
+    },
+    {
+      "name": "fine-1.25",
+      "result": "PASS_STATIONARY_DERIVATIVE_GATES",
+      "stationaryAccepted": true,
+      "derivativeGatesPass": true,
+      "forceResidualN": 5.9210517461896585e-05,
+      "capForceN": 39.76114575286925,
+      "Jmin": 1.0002529210896585,
+      "Jmax": 1.0002548523478538,
+      "curvatureClassification": "NEGATIVE_STATIONARY_DIRECTION",
+      "minimumEigenvalueNPerM": -6705.235559303759,
+      "passiveStationary": true,
+      "passiveDerivativePass": true,
+      "passiveMinimumNPerM": 0.46849133782299857
+    }
+  ],
+  "refinement": [
+    {
+      "stretch": 1.25,
+      "maximumInterpolatedPositionDifferenceM": 2.9847160009688965e-09,
+      "relativeCapForceDifference": 2.251672046584667e-08,
+      "JExtremaDifference": 7.234591763438658e-07,
+      "infSupBetaRatio": 0.876693883788898,
+      "infSupTrendConcern": false,
+      "matchedStaticRefinementPass": true
+    }
+  ],
+  "skipped": [
+    {
+      "name": "fine-1.01",
+      "reason": "Retained coarse pointwise pressure rejection",
+      "originalReceiptSHA256": "64029bff323e8cc387274b29aeb3494bc53a3dc30e8879e54da34a6236c41322"
+    }
+  ],
+  "retainedNearReferenceRejection": {
+    "receiptSHA256": "64029bff323e8cc387274b29aeb3494bc53a3dc30e8879e54da34a6236c41322",
+    "forceResidualN": 3.0834378303687655e-05,
+    "pointwisePressureRMS": 0.00033512715455899305
+  },
+  "priorEquivalenceSHA256": "e33da5a8ba032d2e35bdeb653c7b54b4355825bcac67deb6e6e36eb22cc82b4c",
+  "physicalHistoryAdvanced": false,
+  "repeatedCoarseSolve": false,
+  "scope": "COMPOSITE_EDUCATIONAL_STATIC_AMPLITUDE_ONLY; NO_SPECIMEN_ARM_OR_CLINICAL_VALIDATION"
+}

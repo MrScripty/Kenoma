@@ -1,0 +1,236 @@
+{
+  "schema": "kenoma-source-amplitude-evidence-manifest-v1",
+  "frozen_base": "af9ad79d07106f46202588367f849366573fddf2",
+  "first_execution_commit": "873e53812db6e89ccfff44aba17d8687e3e0ab3a",
+  "successor_execution_commit": "8015b76e0d1c90c0f5771d5afb92515f726eb35f",
+  "files": [
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1/coarse-1.01-request.json",
+      "bytes": 8108,
+      "sha256": "10b69b807c0a302b9ea464f6bf644e7ca0fa5a2e559dc74def76f03690be0bdb"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1/coarse-1.01.json",
+      "bytes": 45915,
+      "sha256": "64029bff323e8cc387274b29aeb3494bc53a3dc30e8879e54da34a6236c41322"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1/coarse-1.25-request.json",
+      "bytes": 8190,
+      "sha256": "cdf679326d54d12d47e3ec4bf543409e6ed5dfae05ebffa17b1ec093dfb0b97c"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1/coarse-1.25.json",
+      "bytes": 89438,
+      "sha256": "b4379ec2700b50d2f9a28652a0efdde6fe2e97bd09415c3b769bac89f557690b"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1/coarse-mesh.json",
+      "bytes": 19544,
+      "sha256": "b8d7739144d4d940ef075db81fd04173ee296dd5a3d333c283faf8ad30e25ee9"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1/equivalence-control.json",
+      "bytes": 44458,
+      "sha256": "e33da5a8ba032d2e35bdeb653c7b54b4355825bcac67deb6e6e36eb22cc82b4c"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1/execution.json",
+      "bytes": 549,
+      "sha256": "3bfe4ea91c13fa5509b0e74d33a6ec9b234c066352df8f784b4d4f98cfa2456a"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1/execution.log",
+      "bytes": 1317,
+      "sha256": "ca8b1750d7e1380f56bf63ee5e3a470210b64bf7715803e8473e0a6f95feb373"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1/precommit-tests.log",
+      "bytes": 573,
+      "sha256": "23b2fd009be20bf1e6e26f9b9fca064ce43d56264beb3a0f73b318bb82b6cc43"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1/primary-source-binding.json",
+      "bytes": 2507,
+      "sha256": "30cb9959afd5257fe9f9c9522e8512cb9176597b8c00e3a542cc444e64a40177"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1/summary.json",
+      "bytes": 2934,
+      "sha256": "e6561b88cdbf7edbdd8474d9723ef50218ae10c3bea9ba36eb6ff74eaaf15b30"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/coarse-1.25-reclassification.json",
+      "bytes": 92045,
+      "sha256": "7a75a83ad9e2f85b115e5a6849329b0e3818a69284a6d544a2295bd58283b560"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/execution.json",
+      "bytes": 583,
+      "sha256": "b7f037f4dc40219a8918be451e3649479ff6253ffc779b6165baee8b5b68b23f"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/execution.log",
+      "bytes": 1258,
+      "sha256": "05190fc8b3f6a7694b4e8f95d191a0d1e9c2f8f9059e8eab8dfc68013ab05217"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/fine-1.25-request.json",
+      "bytes": 38049,
+      "sha256": "bd74d08db14896311c05a768a250b3777f2cc2b1d51c6a8db8f46b6c61565c2e"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/fine-1.25.json",
+      "bytes": 414004,
+      "sha256": "62466537478860e6958c2b93afcf153cf99d51986cfa7d89e3823a169b461bc7"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/fine-mesh.json",
+      "bytes": 101735,
+      "sha256": "dc46e330cf16c3eda8974a71684c364dc3f402831d702993adb17731e816767f"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/pdf-raster-receipt.json",
+      "bytes": 295,
+      "sha256": "6b9592799c4a1c47154eeab50007fbfd6d348d5da1dfd2b435262445aa49437f"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/precommit-tests.log",
+      "bytes": 268,
+      "sha256": "b7c4fab179bd517b1a86d6a2e72ca7e181a1e101f9276f14d9d61e2e50f13376"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/render-receipt.json",
+      "bytes": 1283,
+      "sha256": "bc5daebe4cf91ddfe4863e3762aa5f8db58b6fe532258bc187c564cc00402d4c"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/render.log",
+      "bytes": 261,
+      "sha256": "546bf5f7550666bb2944077eed061223f13e4f7ca7125d3b4f9d6ab05471fa0e"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/source-amplitude.pdf",
+      "bytes": 33256,
+      "sha256": "47ffe1db1b19ed3b6afe079f10d264c414e63b531527fc151c32649b98a597f9"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/source-amplitude.pdf-raster.png",
+      "bytes": 152918,
+      "sha256": "573e2a4374b5b0c35edae89a83253dae1a5d0e33399659a22899a3c4d1bc7574"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/source-amplitude.png",
+      "bytes": 192256,
+      "sha256": "58525d46985d5f35da57a858d014e0231213b895ef27eb11dbf69c997d2b4ef8"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/summary.json",
+      "bytes": 3879,
+      "sha256": "7504e77a2aa9047ae034aaaf7510dcf194dd60ba678fa1d97580be87242af12f"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/visual-inspection.json",
+      "bytes": 931,
+      "sha256": "e21f909c98b51a9f082c328b9071c67fb73884306ebcc1acbd432ff871d9e7f1"
+    },
+    {
+      "path": "education/research/mechanical-closure/source-amplitude-gate-scope-correction.md",
+      "bytes": 2495,
+      "sha256": "e6c3d57d8a1d019805b786f37c29ea476f49e2bcb2f2f266407dc64d56f11a00"
+    },
+    {
+      "path": "education/research/mechanical-closure/source-amplitude-p2-p1-protocol.md",
+      "bytes": 5885,
+      "sha256": "a22e935e61060ddf0bc59ecd17fb72b6b29b55cf918124a539eece202c0c6aa5"
+    },
+    {
+      "path": "education/research/mechanical-closure/source-amplitude-p2-p1-results.md",
+      "bytes": 6745,
+      "sha256": "84bb1e0a11d3d4dd18cd7ab3805e143fa18f049d8081436d73b4993b101a55c5"
+    },
+    {
+      "path": "education/tests/test_source_amplitude_p2_p1.py",
+      "bytes": 2080,
+      "sha256": "3f12575ee1a32363f680cb3bad55b7adbc5c4def1f98fd3c74fe13dd93a32e98"
+    },
+    {
+      "path": "education/tests/test_source_amplitude_scope.py",
+      "bytes": 1324,
+      "sha256": "0c96eea5b8e37aa2b8ea21afecf80ab5d8c599eb5fd2ed6f8c2d73b09e3c3ac1"
+    },
+    {
+      "path": "education/tools/anatomical-compression-quadrature.mjs",
+      "bytes": 3919,
+      "sha256": "f12e0d80224bad5e0bfa0649e08cac2f31a0baf162e2547ae8767b7371f48dc2"
+    },
+    {
+      "path": "education/tools/full-p2-p1-replay.mjs",
+      "bytes": 3712,
+      "sha256": "0b2db14ba4f7c25732280f64a9a85a95a7ff854bc96f4073c02d36aa0ba0fe61"
+    },
+    {
+      "path": "education/tools/full_p2_p1.py",
+      "bytes": 10644,
+      "sha256": "c80a360fd897867e8cb2360766de8a9f5d548d61bf59b5e54dc8b8df2d5f6860"
+    },
+    {
+      "path": "education/tools/run_full_p2_p1.py",
+      "bytes": 8478,
+      "sha256": "fe9e2df4a796451e2ff4cacab7b9d7b341f1e75a7b7254826c3677da07b3bdb8"
+    },
+    {
+      "path": "education/tools/source_amplitude_p2_p1.py",
+      "bytes": 18936,
+      "sha256": "ac12c5fb9ac8e4ec2251c4a855bd7c4e57bb964160b5a044a8510825efb37b23"
+    },
+    {
+      "path": "education/tools/source_amplitude_p2_p1_figure.py",
+      "bytes": 3276,
+      "sha256": "cf5169ac656dff6dd4db629e8d3aa2be36ed4e21f13a5c5ffdfa5db29e0a5e2e"
+    },
+    {
+      "path": "education/tools/source_amplitude_p2_p1_figure_v2.py",
+      "bytes": 3566,
+      "sha256": "385803f8eedd7a84e05ccc69253dc0bd92312f11149ad52742b067a7de1949be"
+    },
+    {
+      "path": "education/tools/source_amplitude_p2_p1_v2.py",
+      "bytes": 7567,
+      "sha256": "47c0783e62377fe5c3597d0d8d438fb224b4378892fd3f51383a56a79279235e"
+    },
+    {
+      "path": "education/tools/verify_full_p2_p1.py",
+      "bytes": 4975,
+      "sha256": "f53d44e20fba98dfc0f428e2003579612fee4a4c704bfce11cd1bea16224389c"
+    },
+    {
+      "path": "education/web/anatomical-element.mjs",
+      "bytes": 3397,
+      "sha256": "3f67a6bd31565c83d2cbea591c3cf1862a48e50cc4efa780880fda7e808d4b1f"
+    },
+    {
+      "path": "education/web/anatomical-intersections.mjs",
+      "bytes": 1298,
+      "sha256": "a083a9838ac3c7508b65b58329c741aef65a065288aff82fc886d1c2c90375df"
+    },
+    {
+      "path": "education/web/anatomical-material.mjs",
+      "bytes": 3733,
+      "sha256": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b"
+    },
+    {
+      "path": "education/web/anatomical-modal.mjs",
+      "bytes": 5352,
+      "sha256": "12cd671bc963aa04dd5c0e173a776049de191283d850b0b60d0fe8e63be4c9a1"
+    }
+  ],
+  "exclusions": [
+    "manifest self-hash",
+    "packet-check.log generated from manifest"
+  ],
+  "coarse_solves_repeated": false,
+  "equilibrium_and_derivative_scope": "Original comparator gates; pointwise pressure required at equilibria, diagnostic at derivative probes",
+  "anatomical_trajectory_qualified": false,
+  "physiological_or_clinical_validation": false
+}

@@ -1,0 +1,27 @@
+{
+  "result": "PASS_ACTUAL_PNG_AND_PDF_RASTER_VISUAL_INSPECTION",
+  "inspected": [
+    "source-amplitude.png",
+    "source-amplitude.pdf-raster.png"
+  ],
+  "findings": [
+    "Three axes, title, legend, values and scope notes readable; no clipping or overlap",
+    "Pressure-rejected1.01 shown only as residual diagnostic, not accepted curvature/refinement",
+    "Qualified coarse/fine1.25 negative values shown; static/source/normalization limits explicit"
+  ],
+  "sha256": {
+    "source-amplitude.png": "58525d46985d5f35da57a858d014e0231213b895ef27eb11dbf69c997d2b4ef8",
+    "source-amplitude.pdf": "47ffe1db1b19ed3b6afe079f10d264c414e63b531527fc151c32649b98a597f9",
+    "source-amplitude.pdf-raster.png": "573e2a4374b5b0c35edae89a83253dae1a5d0e33399659a22899a3c4d1bc7574"
+  },
+  "dimensions": {
+    "source-amplitude.png": [
+      2080,
+      816
+    ],
+    "source-amplitude.pdf-raster.png": [
+      1872,
+      735
+    ]
+  }
+}
