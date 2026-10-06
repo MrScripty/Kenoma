@@ -1,0 +1,642 @@
+{
+  "audit_date_utc": "2026-10-06",
+  "research_checkpoint": "7c8ec58ee8df051a387500b8555e9fac71b6569a",
+  "environment_config_version_supplied_by_owner": "cecfgver_6ac49e7962608194af804231e05220e7",
+  "network_settings_changed": false,
+  "secrets_settings_changed": false,
+  "proxy_settings_changed": false,
+  "source": {
+    "article_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1014748",
+    "requested_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1014748&type=printable",
+    "effective_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1014748&type=printable",
+    "method": "GET",
+    "status": 200,
+    "content_type": "application/pdf",
+    "redirects_followed": 0,
+    "connect_timeout_seconds": 20,
+    "total_timeout_seconds": 60,
+    "maximum_bytes": 25165824,
+    "response_date": "Tue, 06 Oct 2026 07:14:05 GMT",
+    "etag": "CNjH6dHI5JYDEAE=",
+    "last_modified": "2026-09-10T17:45:56.361Z",
+    "file_external_to_repository": "/tmp/kenoma-plos-visual-20261006/journal.pcbi.1014748.pdf",
+    "file_magic": "%PDF-1.4",
+    "bytes": 5532793,
+    "sha256": "20f16f9890d1ff1d65cb8e75d38f24e7c2b5a73779052825faa36f45a78531cf",
+    "pages": 37,
+    "page_points": [
+      612,
+      792
+    ],
+    "pdf_metadata": {
+      "format": "PDF 1.4",
+      "title": "Cross-bridge model for predicting muscle short-range stiffness during movement",
+      "author": "Tim J. van der Zee",
+      "subject": "DOI: 10.1371/journal.pcbi.1014748\rPLOS Computational Biology, Volume. 22, Issue. 9,   \r",
+      "keywords": "",
+      "creator": "Adobe InDesign 15.1 (Windows)",
+      "producer": "Adobe PDF Library 15.0",
+      "creationDate": "D:20260904164513+05'30'",
+      "modDate": "D:20260904164539+05'30'",
+      "trapped": "",
+      "encryption": null
+    },
+    "printed_publication_date": "2026-09-01",
+    "license": {
+      "name": "Creative Commons Attribution",
+      "url": "http://creativecommons.org/licenses/by/4.0/",
+      "copyright": "Copyright 2026 van der Zee et al.",
+      "original_notice_location": "Printed p1 copyright block [36.048,650.827,185.973,693.315]; continued printed p2 [36.072,95.404,182.967,115.892].",
+      "purpose": "Preserve original table and context pixels for a narrowly scoped source-verification audit.",
+      "attribution": "van der Zee TJ, Simha SN, Milburn GN, Campbell KS, Ting LH, De Groote F (2026). Cross-bridge model for predicting muscle short-range stiffness during movement. PLOS Computational Biology 22(9): e1014748. DOI 10.1371/journal.pcbi.1014748."
+    },
+    "acquisition": "Ordinary direct curl request through unchanged managed environment networking; no redirect, alternate host, challenge interaction, proxy alteration, or retry."
+  },
+  "coordinates": {
+    "convention": "PDF points (1/72 inch), top-left origin; rectangles [x0,y0,x1,y1]. Printed page equals zero-based page + 1. Table-rule coordinates rounded to 0.001 point.",
+    "table2": {
+      "pdf_page_zero_based": 20,
+      "printed_page": 21,
+      "body_rect": [
+        36,
+        532.93,
+        576,
+        698.468
+      ],
+      "column_boundaries_x": [
+        36,
+        80.162,
+        461.699,
+        514.205,
+        576
+      ],
+      "columns": [
+        "Symbol",
+        "Meaning",
+        "Value",
+        "Reference"
+      ],
+      "header_y": [
+        532.93,
+        545.738
+      ],
+      "rows": [
+        {
+          "symbol": "d_ps",
+          "value": "10 nm",
+          "reference": "105",
+          "y": [
+            545.738,
+            558.84
+          ]
+        },
+        {
+          "symbol": "k_CB",
+          "value": "0.5 pN/nm",
+          "reference": "106,107",
+          "y": [
+            558.84,
+            571.94
+          ]
+        },
+        {
+          "symbol": "w",
+          "value": "3 nm",
+          "reference": "sqrt(k_CB/(k_B*T)); 20,31; footnote 1",
+          "y": [
+            571.94,
+            594.246
+          ]
+        },
+        {
+          "symbol": "E_1",
+          "value": "2",
+          "reference": "31",
+          "y": [
+            594.246,
+            607.351
+          ]
+        },
+        {
+          "symbol": "Gamma_1",
+          "value": "3000 s^-1",
+          "reference": "39; footnote 2",
+          "y": [
+            607.351,
+            620.192
+          ]
+        },
+        {
+          "symbol": "phi_1",
+          "value": "1000 s^-1",
+          "reference": "39; footnote 2",
+          "y": [
+            620.192,
+            633.125
+          ]
+        },
+        {
+          "symbol": "N_overlap",
+          "value": "1",
+          "reference": "See text",
+          "y": [
+            633.125,
+            646.22
+          ]
+        },
+        {
+          "symbol": "k_off",
+          "value": "80 s^-1",
+          "reference": "108; footnote 3",
+          "y": [
+            646.22,
+            659.325
+          ]
+        },
+        {
+          "symbol": "k_1",
+          "value": "6.17 s^-1",
+          "reference": "20",
+          "y": [
+            659.325,
+            672.43
+          ]
+        },
+        {
+          "symbol": "k_2",
+          "value": "200 s^-1",
+          "reference": "20",
+          "y": [
+            672.43,
+            685.536
+          ]
+        },
+        {
+          "symbol": "beta",
+          "value": "0.5",
+          "reference": "109",
+          "y": [
+            685.536,
+            698.468
+          ]
+        }
+      ]
+    },
+    "table3": {
+      "pdf_page_zero_based": 21,
+      "printed_page": 22,
+      "body_rect": [
+        36,
+        107.388,
+        576,
+        326.995
+      ],
+      "column_boundaries_x": [
+        36,
+        93.678,
+        172.539,
+        224.089,
+        281.863,
+        344.533,
+        428.539,
+        512.545,
+        576
+      ],
+      "columns": [
+        "Parameter",
+        "Units",
+        "Hill (no SE)",
+        "Hill (with SE)",
+        "2-state XB",
+        "2-state XB coop",
+        "3-state XB coop",
+        "4-state XB coop"
+      ],
+      "header_y": [
+        107.388,
+        130.196
+      ],
+      "rows": [
+        {
+          "symbol": "n_H",
+          "unit_as_printed": "en dash",
+          "values": [
+            "4.4",
+            "3.3",
+            "3.1",
+            null,
+            null,
+            null
+          ],
+          "y": [
+            130.196,
+            143.003
+          ]
+        },
+        {
+          "symbol": "Ca_50",
+          "unit_as_printed": "microM",
+          "values": [
+            "0.77",
+            "0.78",
+            "0.83",
+            null,
+            null,
+            null
+          ],
+          "y": [
+            143.003,
+            156.201
+          ]
+        },
+        {
+          "symbol": "v_max",
+          "unit_as_printed": "x_ps * s^-1",
+          "values": [
+            "440",
+            "76",
+            null,
+            null,
+            null,
+            null
+          ],
+          "y": [
+            156.201,
+            170.495
+          ]
+        },
+        {
+          "symbol": "rho",
+          "unit_as_printed": "x_ps^-1",
+          "values": [
+            null,
+            "0.21",
+            "0.24",
+            "0.30",
+            "0.24",
+            "0.26"
+          ],
+          "y": [
+            170.495,
+            184.789
+          ]
+        },
+        {
+          "symbol": "sigma",
+          "unit_as_printed": "F_0",
+          "values": [
+            null,
+            "0.19",
+            "0.19",
+            "0.02",
+            "0.2",
+            "0.15"
+          ],
+          "y": [
+            184.789,
+            197.891
+          ]
+        },
+        {
+          "symbol": "k_PE",
+          "unit_as_printed": "F_0 * x_ps^-1",
+          "values": [
+            "0.03",
+            "0.006",
+            "0.002",
+            "0.004",
+            "0.002",
+            "0.002"
+          ],
+          "y": [
+            197.891,
+            212.184
+          ]
+        },
+        {
+          "symbol": "f_1",
+          "unit_as_printed": "s^-1",
+          "values": [
+            null,
+            null,
+            "52.0",
+            "67.1",
+            "84.5",
+            "79.5"
+          ],
+          "y": [
+            212.184,
+            226.488
+          ]
+        },
+        {
+          "symbol": "g_1",
+          "unit_as_printed": "s^-1",
+          "values": [
+            null,
+            null,
+            "4.0",
+            "3.4",
+            "3.5",
+            "6.4"
+          ],
+          "y": [
+            226.488,
+            240.792
+          ]
+        },
+        {
+          "symbol": "g_2",
+          "unit_as_printed": "s^-1",
+          "values": [
+            null,
+            null,
+            "21.1",
+            "26.6",
+            "23.8",
+            "21.2"
+          ],
+          "y": [
+            240.792,
+            255.096
+          ]
+        },
+        {
+          "symbol": "E_2",
+          "unit_as_printed": "en dash",
+          "values": [
+            null,
+            null,
+            "-0.6",
+            "-0.4",
+            "-0.6",
+            "-0.7"
+          ],
+          "y": [
+            255.096,
+            268.201
+          ]
+        },
+        {
+          "symbol": "k_on",
+          "unit_as_printed": "microM * s^-1",
+          "values": [
+            null,
+            null,
+            null,
+            "41.4",
+            "44.4",
+            "43.9"
+          ],
+          "y": [
+            268.201,
+            282.502
+          ]
+        },
+        {
+          "symbol": "k_c",
+          "unit_as_printed": "en dash",
+          "values": [
+            null,
+            null,
+            null,
+            "15.4",
+            "3.8",
+            "4.0"
+          ],
+          "y": [
+            282.502,
+            295.603
+          ]
+        },
+        {
+          "symbol": "k_F",
+          "unit_as_printed": "(F_CB,max with tilde)^-1",
+          "values": [
+            null,
+            null,
+            null,
+            null,
+            "210",
+            "223"
+          ],
+          "y": [
+            295.603,
+            314.187
+          ]
+        },
+        {
+          "symbol": "x_crit",
+          "unit_as_printed": "x_ps",
+          "values": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            "2.5"
+          ],
+          "y": [
+            314.187,
+            326.995
+          ]
+        }
+      ],
+      "null_meaning": "Visually blank gray model cell, not zero. String values preserve displayed decimal precision."
+    }
+  },
+  "original_pixel_renders": [
+    {
+      "file": "table-2-original.png",
+      "pdf_page_zero_based": 20,
+      "printed_page": 21,
+      "pdf_clip_points_top_left": [
+        34,
+        509,
+        578,
+        714
+      ],
+      "pixels_per_point": 3,
+      "renderer": "PyMuPDF 1.26.6",
+      "visually_inspected": true,
+      "modifications": "Rasterization and rectangular page clipping only; no redrawing, replacement, or cell edits.",
+      "bytes": 133931,
+      "sha256": "ddb2a72b9b4284cdbeec88f04cb73fbdb0373bbe3260477accaf38d6838caae3",
+      "format": "PNG",
+      "pixels": [
+        1632,
+        615
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "table-3-original.png",
+      "pdf_page_zero_based": 21,
+      "printed_page": 22,
+      "pdf_clip_points_top_left": [
+        34,
+        94,
+        578,
+        342
+      ],
+      "pixels_per_point": 3,
+      "renderer": "PyMuPDF 1.26.6",
+      "visually_inspected": true,
+      "modifications": "Rasterization and rectangular page clipping only; no redrawing, replacement, or cell edits.",
+      "bytes": 96207,
+      "sha256": "6613913b3fe735c021b6f73574af755c0b34c36ba177ecfd17693d9e82901fc5",
+      "format": "PNG",
+      "pixels": [
+        1632,
+        744
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "original-width-context.png",
+      "pdf_page_zero_based": 22,
+      "printed_page": 23,
+      "pdf_clip_points_top_left": [
+        34,
+        95,
+        579,
+        250
+      ],
+      "pixels_per_point": 2.5,
+      "renderer": "PyMuPDF 1.26.6",
+      "visually_inspected": true,
+      "modifications": "Rasterization and rectangular page clipping only; no redrawing, replacement, or cell edits.",
+      "bytes": 114762,
+      "sha256": "d848996df4dbc2e960318d4effa0bdb7b4b6d7281c33a362baaca9cf6ba21075",
+      "format": "PNG",
+      "pixels": [
+        1363,
+        388
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "original-population-context.png",
+      "pdf_page_zero_based": 23,
+      "printed_page": 24,
+      "pdf_clip_points_top_left": [
+        34,
+        292,
+        579,
+        458
+      ],
+      "pixels_per_point": 2.5,
+      "renderer": "PyMuPDF 1.26.6",
+      "visually_inspected": true,
+      "modifications": "Rasterization and rectangular page clipping only; no redrawing, replacement, or cell edits.",
+      "bytes": 88138,
+      "sha256": "bf10275b19e97bbe4bf9640d061d136fd0d6b6e995ee5156f8dd23e1133112ff",
+      "format": "PNG",
+      "pixels": [
+        1363,
+        415
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "original-series-context.png",
+      "pdf_page_zero_based": 24,
+      "printed_page": 25,
+      "pdf_clip_points_top_left": [
+        34,
+        94,
+        579,
+        715
+      ],
+      "pixels_per_point": 2.5,
+      "renderer": "PyMuPDF 1.26.6",
+      "visually_inspected": true,
+      "modifications": "Rasterization and rectangular page clipping only; no redrawing, replacement, or cell edits.",
+      "bytes": 202981,
+      "sha256": "10562cd4f0f32be4476bb616ba33e412d3a917b745b85422c1ad9faa61312196",
+      "format": "PNG",
+      "pixels": [
+        1363,
+        1553
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "original-beta-context.png",
+      "pdf_page_zero_based": 25,
+      "printed_page": 26,
+      "pdf_clip_points_top_left": [
+        34,
+        94,
+        579,
+        165
+      ],
+      "pixels_per_point": 2.5,
+      "renderer": "PyMuPDF 1.26.6",
+      "visually_inspected": true,
+      "modifications": "Rasterization and rectangular page clipping only; no redrawing, replacement, or cell edits.",
+      "bytes": 52933,
+      "sha256": "68390411e825d2cc5db668a37ee67864679c41c60c3ecf67c6a628f551cc9966",
+      "format": "PNG",
+      "pixels": [
+        1363,
+        178
+      ],
+      "mode": "RGB"
+    }
+  ],
+  "external_full_page_renders": [
+    {
+      "path": "/tmp/kenoma-plos-visual-20261006/original-page-21.png",
+      "renderer": "Poppler pdftoppm 26.05.0",
+      "dpi": 160,
+      "visually_inspected": true,
+      "bytes": 433454,
+      "sha256": "f7bc1a9dd4b1c8f7ebd8f5ff64f726f63a416bc874dc050535480383a0f21cc8",
+      "format": "PNG",
+      "pixels": [
+        1360,
+        1760
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "/tmp/kenoma-plos-visual-20261006/original-page-22.png",
+      "renderer": "Poppler pdftoppm 26.05.0",
+      "dpi": 160,
+      "visually_inspected": true,
+      "bytes": 227751,
+      "sha256": "c603adc7b29f008c4d95fbec83a91076f76b9663759a808ec4140c50f30e4c8b",
+      "format": "PNG",
+      "pixels": [
+        1360,
+        1760
+      ],
+      "mode": "RGB"
+    }
+  ],
+  "author_code": {
+    "commit": "8c766dfb308051309193e7290ddd0bac3b726d11",
+    "commit_date": "2026-07-08T12:06:31Z",
+    "tree_from_checkpoint": "a802ec6f7299d0745dfab1d5b715a3d9b7aa6f20",
+    "final_article_parity_established": false,
+    "independently_reread_blobs": {
+      "Reproduce/Parameters/complete_parms.m": "f5656cc5dc7da581d29f68c74cc509c93ff6a155",
+      "Common/simulate/get_steady_state.m": "76406e95533069d113490fcca9fea26f14df9bb5",
+      "Common/myofilaments/ThickFilament_Dynamics.m": "8a53a214e7bbb5a23b1ccca474d79234085d4429",
+      "Common/fiber/biophysical/fiber_dynamics_explicit_discretized.m": "37c94486239ff58f4830b3fb94715b0472d0fb1c",
+      "Reproduce/reproduce_model_fitting.m": "76ffc631d12bc6259d34f527863ba712ce65dee5",
+      "Common/fiber/get_PE.m": "cb615867322c00c936638ca8f3934e26cd6955b0"
+    },
+    "read_method": "Authorized GitHub connector, exact commit ref; returned blob SHA matches checkpoint. No author code imported, executed or redistributed. Fitting-script content read only at lines 335-357.",
+    "individual_MAT_values_provenance": "Prior checkpoint source-code-initialization-audit.md and source-code-parameter-facts.json; not remeasured in this audit."
+  },
+  "gates": {
+    "original_table_pixel_gate": "Satisfied for the hashed original PDF and listed renders; each image actually inspected.",
+    "source_version_parity": "Unresolved; published conventions differ from pinned code.",
+    "human_force_area_calibration": "Unresolved; not inferred.",
+    "controlled_experiment_executed": false,
+    "existing_evidence_modified": false,
+    "frozen_144_case_benchmark_modified": false
+  }
+}
