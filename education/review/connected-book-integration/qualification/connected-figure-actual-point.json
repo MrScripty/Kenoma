@@ -1,0 +1,153 @@
+{
+  "result": "PASS_ALL_14_LABELS",
+  "source_commit": "f2738acbdad860808d1d9e72ff1939df6d9bc407",
+  "pdf_sha256": "ab3ba81fc538c49a62f2e80cedb79df1f91871bdcc3b52caa0ba7c00f86dc433",
+  "build_manifest_sha256": "340acb0375ae8a33ae494821c9a420930bcf6cda90d04ef8d5cbb240586f77e3",
+  "actual_point_floor": 10,
+  "minimum_measured_pt": 13.15106201171875,
+  "measurements": [
+    {
+      "label": "figure:connected-specimen.svg:0:One connected passive taper",
+      "minimum_pt": 18.087398529052734,
+      "matched_glyphs": 24,
+      "pages": [
+        123
+      ],
+      "superscript_glyphs_exempted": 0,
+      "text_sha256": "443bce915a300197a4a668f7f0f3468ff838fb0f997e3a20d533cfa098a46d64"
+    },
+    {
+      "label": "figure:connected-specimen.svg:1:L\u2080 = 50 mm \u00b7 a\u2080 = 5 mm \u00b7 \u03bc = 1500 Pa \u00b7 K = 30000 Pa",
+      "minimum_pt": 13.15106201171875,
+      "matched_glyphs": 33,
+      "pages": [
+        123
+      ],
+      "superscript_glyphs_exempted": 0,
+      "text_sha256": "01cd331595f3fe6b163b4f4fd3becc84240e1669c5c0f63da0cfdc3697103765"
+    },
+    {
+      "label": "figure:connected-specimen.svg:2:\u221210% compression",
+      "minimum_pt": 13.15106201171875,
+      "matched_glyphs": 15,
+      "pages": [
+        123
+      ],
+      "superscript_glyphs_exempted": 0,
+      "text_sha256": "4e33941043c25166706a08667a640a6e20c16c6effa70b3b4bd7b6f7c2ee42b2"
+    },
+    {
+      "label": "figure:connected-specimen.svg:3:V/V\u2080 = 0.995307",
+      "minimum_pt": 13.15106201171875,
+      "matched_glyphs": 13,
+      "pages": [
+        123
+      ],
+      "superscript_glyphs_exempted": 0,
+      "text_sha256": "f908134d5d843f9db9eeb7eab0bcbba22f908abaa29ad4f71c27ba6f6d2b6b9d"
+    },
+    {
+      "label": "figure:connected-specimen.svg:4:Reaction -0.05851 N",
+      "minimum_pt": 13.15106201171875,
+      "matched_glyphs": 17,
+      "pages": [
+        123
+      ],
+      "superscript_glyphs_exempted": 0,
+      "text_sha256": "30e316c0f8573c6a59a627bcbe45d08bf6d7ab1c8eddf27a52fa0b9418954d0a"
+    },
+    {
+      "label": "figure:connected-specimen.svg:5:Zero end displacement",
+      "minimum_pt": 13.15106201171875,
+      "matched_glyphs": 19,
+      "pages": [
+        123
+      ],
+      "superscript_glyphs_exempted": 0,
+      "text_sha256": "e78bbd215abc8798fe5cf0f196dfb9d3f78234deb11c74dc11aaa10586be0fe1"
+    },
+    {
+      "label": "figure:connected-specimen.svg:6:V/V\u2080 = 1.000000",
+      "minimum_pt": 13.15106201171875,
+      "matched_glyphs": 13,
+      "pages": [
+        123
+      ],
+      "superscript_glyphs_exempted": 0,
+      "text_sha256": "84f10fe7c99224aedfb16eb5cacf042061de175ed9bd9c51d3d393eda32d42bf"
+    },
+    {
+      "label": "figure:connected-specimen.svg:7:Reaction 0.00000 N",
+      "minimum_pt": 13.15106201171875,
+      "matched_glyphs": 16,
+      "pages": [
+        123
+      ],
+      "superscript_glyphs_exempted": 0,
+      "text_sha256": "3b1087f07c983c58dcfb67c33c7cee00776c14308dfffe8734fb0902cbd0ab98"
+    },
+    {
+      "label": "figure:connected-specimen.svg:8:+10% tension",
+      "minimum_pt": 13.15106201171875,
+      "matched_glyphs": 11,
+      "pages": [
+        123
+      ],
+      "superscript_glyphs_exempted": 0,
+      "text_sha256": "f20ec578d578ed8820e97458d7535b5cbc6d28203d5051a39d9ac456db836973"
+    },
+    {
+      "label": "figure:connected-specimen.svg:9:V/V\u2080 = 1.004647",
+      "minimum_pt": 13.15106201171875,
+      "matched_glyphs": 13,
+      "pages": [
+        123
+      ],
+      "superscript_glyphs_exempted": 0,
+      "text_sha256": "7b9f7f54b69ac116e45080133d6c4f200e51de6ff60d1d96e295f1223f3cf99e"
+    },
+    {
+      "label": "figure:connected-specimen.svg:10:Reaction 0.04716 N",
+      "minimum_pt": 13.15106201171875,
+      "matched_glyphs": 16,
+      "pages": [
+        123
+      ],
+      "superscript_glyphs_exempted": 0,
+      "text_sha256": "01b56d95fb303a5caa71639cb97f3f0d945259c05077fcc5622396a2d04c7287"
+    },
+    {
+      "label": "figure:connected-specimen.svg:11:Gray dashed: reference \u00b7 teal: solved side \u00b7 fixed metre scale",
+      "minimum_pt": 13.15106201171875,
+      "matched_glyphs": 52,
+      "pages": [
+        123
+      ],
+      "superscript_glyphs_exempted": 0,
+      "text_sha256": "45262fdd3ee727edbf178bd6dbc1bd072a0021e3196b219df66507b4e59540b3"
+    },
+    {
+      "label": "figure:connected-specimen.svg:12:16 axial \u00d7 8 radial Q2 cells \u00b7 assembly quadrature order 7",
+      "minimum_pt": 13.15106201171875,
+      "matched_glyphs": 47,
+      "pages": [
+        123
+      ],
+      "superscript_glyphs_exempted": 0,
+      "text_sha256": "ee33d537a638fb298c3c844757fd8330d4553dae9642c913b1ee45ff16677475"
+    },
+    {
+      "label": "figure:connected-specimen.svg:13:Volume is solved with finite compliance; it is not corrected to J = 1.",
+      "minimum_pt": 13.15106201171875,
+      "matched_glyphs": 57,
+      "pages": [
+        123
+      ],
+      "superscript_glyphs_exempted": 0,
+      "text_sha256": "3779448927f6084771656a5ed69c8faffd0a1a22a89415e52f9d7e90f48fcd5d"
+    }
+  ],
+  "first_failure": "connected-undersized-first.pdf",
+  "first_failure_label_pt": 8.611186,
+  "fix": "Named print sizing and margins only; law, geometry, label font values and threshold preserved"
+}

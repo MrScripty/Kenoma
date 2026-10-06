@@ -1,0 +1,41 @@
+{
+  "result": "PASS_SEVEN_DAMAGED_CONNECTED_ARTIFACTS",
+  "cases": [
+    {
+      "case": "missing-integration",
+      "detected": true,
+      "reason": "[Errno 2] No such file or directory: '/workspace/Kenoma-connected-follow-on/education/.tools/tmps8f0cov0/dist/connected-integration.json'"
+    },
+    {
+      "case": "changed-worker",
+      "detected": true,
+      "reason": ""
+    },
+    {
+      "case": "wrong-figure",
+      "detected": true,
+      "reason": "Changed connected output: assets/connected-specimen.svg"
+    },
+    {
+      "case": "missing-proof",
+      "detected": true,
+      "reason": "[Errno 2] No such file or directory: '/workspace/Kenoma-connected-follow-on/education/.tools/tmpn8efrqfa/dist/axisymmetric-proof-status.json'"
+    },
+    {
+      "case": "changed-integration-test",
+      "detected": true,
+      "reason": "Changed integrated browser test"
+    },
+    {
+      "case": "changed-controls-capture",
+      "detected": true,
+      "reason": "Changed integrated controls capture"
+    },
+    {
+      "case": "rehashed-wrong-figure",
+      "detected": true,
+      "reason": "Figure differs from actual solved Q2 side"
+    }
+  ],
+  "original_unchanged": true
+}

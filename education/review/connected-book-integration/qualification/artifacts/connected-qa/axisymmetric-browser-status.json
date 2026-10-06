@@ -1,0 +1,676 @@
+{
+  "status": "PASS",
+  "browser": "Chromium 151.0.7922.173",
+  "render_scope": "Actual inspected headless Chromium controls, WebGL2 with SwiftShader; CPU map independently reconstructed and actual GPU position/index buffers read back. No physical mobile GPU or stability claim.",
+  "preview_manifest_sha256": "ca8a909fa1e71217a5a472d570f4bd21bb678f7ff5bc188be2db6b208278e581",
+  "oracle_sha256": "0b32a88bb4589338ad3eee2080657102fc375905d0625ae6bbe14f69bcde22dc",
+  "experiment_sha256": "9f7d0ee9a7861b27540630140e138dcccb1695adf69f85e24d873a9bb6830069",
+  "source_inputs": {
+    "web/axisymmetric-material.mjs": "3c977b401f2f76f95c5445a82d80c55ccc04e457c3d0c30350635ddf58cce561",
+    "web/axisymmetric-specimen.mjs": "39723a813efc3d92a8b4979d6652561354de109d68333ae8b1317e7e641c1a4e",
+    "web/axisymmetric-lab.mjs": "b8f99ffe6712e4d9a974856c1311f26c4c8bcc41a583b5685fb168fe05c0f640",
+    "web/axisymmetric-worker.mjs": "dee47f2148dba588a46c3ef84d27942a411f9eb7c0c3831bc19a2bf634562466",
+    "web/scene-status.mjs": "1719e9dba0573423ba6be04f609950efa3303d2a75800be7ec9c38df8606b8cb",
+    "web/axisymmetric-lab.css": "19b34c09cb27ac35ecd16e4429adcdb1554ece02797112790f90cccc03be9752",
+    "tools/build_axisymmetric_preview.py": "71861b3a9c7b0e6b0bdf91736334ab9542b7edfbc777ccdd51d6403b7a89802c",
+    "proofs/AxisymmetricSpecimenReal.lean": "7308734ec0108ec080d3ba54129f38655eb547bf887451a3668934000bbd2ec8",
+    "proofs/axisymmetric-specimen-real-claims.json": "7011d50d9483686f2adea169a7e48d3e5bf12d63024c4a137a61329d24fdeed4",
+    "tools/check_axisymmetric_proofs.py": "12d9e0bbe6633d394de9224b02616f788674c8173754ed41d2a97ae3c9904d4f",
+    "proofs/mathlib-lock.json": "cfeeea1b9e805fdfa169b7b7f41b3d29cf0a99d09fa79e04e38a8bd9683611da",
+    "web/connected-book-integration.css": "1994bbe86d3e861c784a5d58e528b43aad9dd8a34405906b6989ee533baca4e4",
+    "tools/connected_book.py": "2d1761450bf2e02a4f3e8f44ae2564675d47366662992c5a42899d80f6ffd833"
+  },
+  "cases": [
+    {
+      "case": "rest-static",
+      "state": {
+        "configuration": {
+          "epsilon": 0,
+          "ratio": 1.5,
+          "axialCells": 16,
+          "radialCells": 8,
+          "cap": 25
+        },
+        "converged": true,
+        "reactionN": 0,
+        "volumeRatio": 0.9999999999999958,
+        "probeJ": 1,
+        "scaledResidual": 0
+      }
+    },
+    {
+      "case": "taper-rest",
+      "state": {
+        "configuration": {
+          "epsilon": 0,
+          "ratio": 1.5,
+          "axialCells": 16,
+          "radialCells": 8,
+          "cap": 25
+        },
+        "converged": true,
+        "reactionN": 0,
+        "volumeRatio": 0.9999999999999958,
+        "probeJ": 1,
+        "scaledResidual": 0
+      },
+      "scene": {
+        "vertexCount": 33026,
+        "triangleCount": 66048,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "eec50df053962a149bd43f7b723879f75adeea268d1c20c8e88940db8448800c",
+        "gpuIndexSHA256": "d4ba265970a398d2bbf3f0d0df33f785a5f55ac7fab42b67e5d2f109d052de86",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.217111356830828e-06,
+        "integratedVolumeM3": 6.217735460229774e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "canvasSHA256": "9550ecfea9d5ca2ae0b852898a58d5a3ab788e78c3376c49f4d935f6aa4fde5b"
+    },
+    {
+      "case": "taper-tension",
+      "state": {
+        "configuration": {
+          "epsilon": 0.1,
+          "ratio": 1.5,
+          "cap": 25,
+          "axialCells": 16,
+          "radialCells": 8
+        },
+        "converged": true,
+        "reactionN": 0.047163275417517005,
+        "volumeRatio": 1.0046469928224353,
+        "probeJ": 1.004673424912294,
+        "scaledResidual": 1.050549386201204e-14
+      },
+      "scene": {
+        "vertexCount": 33026,
+        "triangleCount": 66048,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "926980361d87d011c6256b51267315ff5945edabd3a62770f9e98cd3566ee769",
+        "gpuIndexSHA256": "d4ba265970a398d2bbf3f0d0df33f785a5f55ac7fab42b67e5d2f109d052de86",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.246005138562272e-06,
+        "integratedVolumeM3": 6.246629232285289e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "canvasSHA256": "c83165491b9461679895fe0a74e2ae3b52622a2b28fee05c1e73ebe3f8ce0029"
+    },
+    {
+      "case": "taper-compression",
+      "state": {
+        "configuration": {
+          "epsilon": -0.1,
+          "ratio": 1.5,
+          "cap": 25,
+          "axialCells": 16,
+          "radialCells": 8
+        },
+        "converged": true,
+        "reactionN": -0.058509329764751414,
+        "volumeRatio": 0.9953065770992818,
+        "probeJ": 0.9952385174656418,
+        "scaledResidual": 1.2415545132274795e-14
+      },
+      "scene": {
+        "vertexCount": 33026,
+        "triangleCount": 66048,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "d16ddfbebc66b597145446705f9ea35f4b6c7bc970d722a75abbf448f04a936f",
+        "gpuIndexSHA256": "d4ba265970a398d2bbf3f0d0df33f785a5f55ac7fab42b67e5d2f109d052de86",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.187929722367453e-06,
+        "integratedVolumeM3": 6.18855299823015e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "canvasSHA256": "146c4dd635af299c0fccc2b683d7ff38d4536b932f287e444cc4134cad33a917"
+    },
+    {
+      "case": "axis-probe",
+      "state": {
+        "configuration": {
+          "epsilon": -0.1,
+          "ratio": 1.5,
+          "cap": 25,
+          "axialCells": 16,
+          "radialCells": 8
+        },
+        "converged": true,
+        "reactionN": -0.058509329764751414,
+        "volumeRatio": 0.9953065770992818,
+        "probeJ": 0.9960144983104877,
+        "scaledResidual": 1.2415545132274795e-14
+      },
+      "scene": {
+        "vertexCount": 33026,
+        "triangleCount": 66048,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "d16ddfbebc66b597145446705f9ea35f4b6c7bc970d722a75abbf448f04a936f",
+        "gpuIndexSHA256": "d4ba265970a398d2bbf3f0d0df33f785a5f55ac7fab42b67e5d2f109d052de86",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.187929722367453e-06,
+        "integratedVolumeM3": 6.18855299823015e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "canvasSHA256": "146c4dd635af299c0fccc2b683d7ff38d4536b932f287e444cc4134cad33a917"
+    },
+    {
+      "case": "medium-compression",
+      "state": {
+        "configuration": {
+          "epsilon": -0.1,
+          "ratio": 1.5,
+          "cap": 25,
+          "axialCells": 8,
+          "radialCells": 4
+        },
+        "converged": true,
+        "reactionN": -0.058510943173715906,
+        "volumeRatio": 0.9953064493657624,
+        "probeJ": 0.9961363296444206,
+        "scaledResidual": 1.3597164608686137e-14
+      },
+      "scene": {
+        "vertexCount": 16642,
+        "triangleCount": 33280,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "5fad5f601f86ffeade347a84ba0adc109989c6f15c122918dac22b33b5b0c333",
+        "gpuIndexSHA256": "a7a61cdea918bc770eb76fc9282bbfe4ef717bb33c7cb24d8ddb5adefea64dea",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.187920948657944e-06,
+        "integratedVolumeM3": 6.188552204016917e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "canvasSHA256": "d82003f51eb1a7097966c54520c928c4807c7e2c14545186683c50a1172925e6"
+    },
+    {
+      "case": "coarse-compression",
+      "state": {
+        "configuration": {
+          "epsilon": -0.1,
+          "ratio": 1.5,
+          "cap": 25,
+          "axialCells": 4,
+          "radialCells": 2
+        },
+        "converged": true,
+        "reactionN": -0.058515602410657314,
+        "volumeRatio": 0.995306079242812,
+        "probeJ": 0.996411323373921,
+        "scaledResidual": 1.1865562894608699e-14
+      },
+      "scene": {
+        "vertexCount": 8450,
+        "triangleCount": 16896,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "61a8fcabcf44d5587885f173c271f66e1dcb5df4f28fb2269b3392773bc9be8e",
+        "gpuIndexSHA256": "d3d2f4749719524ece84abfd44a8110c5dee3e8f1b02c9c4ee71dd1ba9532bab",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.1878815929629865e-06,
+        "integratedVolumeM3": 6.1885499026903235e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "canvasSHA256": "b0e613d9a2980589bddceda043ab8caf6d3eee7ebac0c6462fd728e2ec646cf0"
+    },
+    {
+      "case": "uniform-compression",
+      "state": {
+        "configuration": {
+          "epsilon": -0.1,
+          "ratio": 1,
+          "cap": 25,
+          "axialCells": 4,
+          "radialCells": 2
+        },
+        "converged": true,
+        "reactionN": -0.03882587443165137,
+        "volumeRatio": 0.9950687349392436,
+        "probeJ": 0.995068734939243,
+        "scaledResidual": 3.1604276720729656e-13
+      },
+      "scene": {
+        "vertexCount": 8450,
+        "triangleCount": 16896,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "87ce56e0457e35c2392893114a3be630ad69d59d28edef1175609ebaf8c455cf",
+        "gpuIndexSHA256": "d3d2f4749719524ece84abfd44a8110c5dee3e8f1b02c9c4ee71dd1ba9532bab",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 3.9072336585307995e-06,
+        "integratedVolumeM3": 3.907625784377522e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "canvasSHA256": "a2cd7f2b1f857da7cb29d98ee3cdf2c455b8718cd7879598f3adc2516fae9cbf"
+    },
+    {
+      "case": "uniform-tension",
+      "state": {
+        "configuration": {
+          "epsilon": 0.1,
+          "ratio": 1,
+          "cap": 25,
+          "axialCells": 4,
+          "radialCells": 2
+        },
+        "converged": true,
+        "reactionN": 0.03164262579323799,
+        "volumeRatio": 1.0049363110482807,
+        "probeJ": 1.0049363110482803,
+        "scaledResidual": 9.341009364471038e-14
+      },
+      "scene": {
+        "vertexCount": 8450,
+        "triangleCount": 16896,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "ebf0222703b9fb81061ea422e9b47a75945487f69e1e166224ba3a7214fd514b",
+        "gpuIndexSHA256": "d3d2f4749719524ece84abfd44a8110c5dee3e8f1b02c9c4ee71dd1ba9532bab",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 3.945979529448331e-06,
+        "integratedVolumeM3": 3.946375665143633e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "canvasSHA256": "98d1158bbbda36c23c048ab7cec5645599da9af24b15c2ac387db9463eec360a"
+    },
+    {
+      "case": "uniform-rest",
+      "state": {
+        "configuration": {
+          "epsilon": 0,
+          "ratio": 1,
+          "cap": 25,
+          "axialCells": 4,
+          "radialCells": 2
+        },
+        "converged": true,
+        "reactionN": 0,
+        "volumeRatio": 0.9999999999999989,
+        "probeJ": 1,
+        "scaledResidual": 0
+      },
+      "scene": {
+        "vertexCount": 8450,
+        "triangleCount": 16896,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "0f2d8ea18fa58d0d8486c6269c93457458f476559256f9e014c3f9cc07cd3919",
+        "gpuIndexSHA256": "d3d2f4749719524ece84abfd44a8110c5dee3e8f1b02c9c4ee71dd1ba9532bab",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 3.926596632365588e-06,
+        "integratedVolumeM3": 3.926990816987238e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "canvasSHA256": "87106cfb2671370250c328dcd2c3625a89b9eb86519570679c254841de8d0fb7"
+    },
+    {
+      "case": "one-iteration",
+      "state": {
+        "configuration": {
+          "epsilon": 0.1,
+          "ratio": 1.5,
+          "cap": 1,
+          "axialCells": 4,
+          "radialCells": 2
+        },
+        "converged": false,
+        "reactionN": -0.4255412149936483,
+        "volumeRatio": 0.9709066479438851,
+        "probeJ": 0.9761379081989493,
+        "scaledResidual": 8.68721643857413
+      },
+      "scene": {
+        "vertexCount": 8450,
+        "triangleCount": 16896,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "f78b3e012d00f983846ea26e149321f699dca4a4c077dc573f61e83fee752646",
+        "gpuIndexSHA256": "d3d2f4749719524ece84abfd44a8110c5dee3e8f1b02c9c4ee71dd1ba9532bab",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.036966951048079e-06,
+        "integratedVolumeM3": 6.036840693493545e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "canvasSHA256": "b8ab135223e12401ef442cf86562d28a7625260fb3d7e395b769e76dd82adf20"
+    },
+    {
+      "case": "unsupported-retained",
+      "state": {
+        "configuration": {
+          "epsilon": 0.1,
+          "ratio": 1.5,
+          "cap": 1,
+          "axialCells": 4,
+          "radialCells": 2
+        },
+        "converged": false,
+        "reactionN": -0.4255412149936483,
+        "volumeRatio": 0.9709066479438851,
+        "probeJ": 0.9761379081989493,
+        "scaledResidual": 8.68721643857413
+      },
+      "scene": {
+        "vertexCount": 8450,
+        "triangleCount": 16896,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "f78b3e012d00f983846ea26e149321f699dca4a4c077dc573f61e83fee752646",
+        "gpuIndexSHA256": "d3d2f4749719524ece84abfd44a8110c5dee3e8f1b02c9c4ee71dd1ba9532bab",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.036966951048079e-06,
+        "integratedVolumeM3": 6.036840693493545e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "canvasSHA256": "b8ab135223e12401ef442cf86562d28a7625260fb3d7e395b769e76dd82adf20"
+    },
+    {
+      "case": "worker-failure-retained",
+      "state": {
+        "configuration": {
+          "epsilon": 0.1,
+          "ratio": 1.5,
+          "cap": 1,
+          "axialCells": 4,
+          "radialCells": 2
+        },
+        "converged": false,
+        "reactionN": -0.4255412149936483,
+        "volumeRatio": 0.9709066479438851,
+        "probeJ": 0.9761379081989493,
+        "scaledResidual": 8.68721643857413
+      },
+      "scene": {
+        "vertexCount": 8450,
+        "triangleCount": 16896,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "f78b3e012d00f983846ea26e149321f699dca4a4c077dc573f61e83fee752646",
+        "gpuIndexSHA256": "d3d2f4749719524ece84abfd44a8110c5dee3e8f1b02c9c4ee71dd1ba9532bab",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.036966951048079e-06,
+        "integratedVolumeM3": 6.036840693493545e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "canvasSHA256": "b8ab135223e12401ef442cf86562d28a7625260fb3d7e395b769e76dd82adf20"
+    },
+    {
+      "case": "latest-request-wins",
+      "state": {
+        "configuration": {
+          "epsilon": 0.1,
+          "ratio": 1.5,
+          "cap": 25,
+          "axialCells": 4,
+          "radialCells": 2
+        },
+        "converged": true,
+        "reactionN": 0.04716745321820274,
+        "volumeRatio": 1.004647408877191,
+        "probeJ": 1.003427372473858,
+        "scaledResidual": 1.3740156125940882e-14
+      },
+      "scene": {
+        "vertexCount": 8450,
+        "triangleCount": 16896,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "6b6d3ce562e7e3a8e832eb9f83f72289bac0884066e7a3c2e9859352ecf22617",
+        "gpuIndexSHA256": "d3d2f4749719524ece84abfd44a8110c5dee3e8f1b02c9c4ee71dd1ba9532bab",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.246067550602126e-06,
+        "integratedVolumeM3": 6.246631819203698e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "canvasSHA256": "21366b1cff2aeb7a7c90cc1d97778042985305fed68f9918426e1fb4da9d703d"
+    },
+    {
+      "case": "front-view",
+      "state": {
+        "configuration": {
+          "epsilon": 0.1,
+          "ratio": 1.5,
+          "cap": 25,
+          "axialCells": 4,
+          "radialCells": 2
+        },
+        "converged": true,
+        "reactionN": 0.04716745321820274,
+        "volumeRatio": 1.004647408877191,
+        "probeJ": 1.003427372473858,
+        "scaledResidual": 1.3740156125940882e-14
+      },
+      "scene": {
+        "vertexCount": 8450,
+        "triangleCount": 16896,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "6b6d3ce562e7e3a8e832eb9f83f72289bac0884066e7a3c2e9859352ecf22617",
+        "gpuIndexSHA256": "d3d2f4749719524ece84abfd44a8110c5dee3e8f1b02c9c4ee71dd1ba9532bab",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.246067550602126e-06,
+        "integratedVolumeM3": 6.246631819203698e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "canvasSHA256": "68831ca3fd03167b1977084ad968509b4c4e6a76fd53a19fe40d5fb539f7c051"
+    },
+    {
+      "case": "explicit-reset",
+      "state": {
+        "configuration": {
+          "epsilon": 0,
+          "ratio": 1.5,
+          "axialCells": 16,
+          "radialCells": 8,
+          "cap": 25
+        },
+        "converged": true,
+        "reactionN": 0,
+        "volumeRatio": 0.9999999999999958,
+        "probeJ": 1,
+        "scaledResidual": 0
+      },
+      "scene": {
+        "vertexCount": 33026,
+        "triangleCount": 66048,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "eec50df053962a149bd43f7b723879f75adeea268d1c20c8e88940db8448800c",
+        "gpuIndexSHA256": "d4ba265970a398d2bbf3f0d0df33f785a5f55ac7fab42b67e5d2f109d052de86",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.217111356830828e-06,
+        "integratedVolumeM3": 6.217735460229774e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "canvasSHA256": "9550ecfea9d5ca2ae0b852898a58d5a3ab788e78c3376c49f4d935f6aa4fde5b"
+    },
+    {
+      "case": "context-lost",
+      "state": {
+        "configuration": {
+          "epsilon": 0,
+          "ratio": 1.5,
+          "axialCells": 16,
+          "radialCells": 8,
+          "cap": 25
+        },
+        "converged": true,
+        "reactionN": 0,
+        "volumeRatio": 0.9999999999999958,
+        "probeJ": 1,
+        "scaledResidual": 0
+      }
+    },
+    {
+      "case": "context-retry",
+      "state": {
+        "configuration": {
+          "epsilon": 0,
+          "ratio": 1.5,
+          "axialCells": 16,
+          "radialCells": 8,
+          "cap": 25
+        },
+        "converged": true,
+        "reactionN": 0,
+        "volumeRatio": 0.9999999999999958,
+        "probeJ": 1,
+        "scaledResidual": 0
+      },
+      "scene": {
+        "vertexCount": 33026,
+        "triangleCount": 66048,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "eec50df053962a149bd43f7b723879f75adeea268d1c20c8e88940db8448800c",
+        "gpuIndexSHA256": "d4ba265970a398d2bbf3f0d0df33f785a5f55ac7fab42b67e5d2f109d052de86",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.217111356830828e-06,
+        "integratedVolumeM3": 6.217735460229774e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "canvasSHA256": "9550ecfea9d5ca2ae0b852898a58d5a3ab788e78c3376c49f4d935f6aa4fde5b"
+    },
+    {
+      "case": "mobile-compression",
+      "state": {
+        "configuration": {
+          "epsilon": -0.1,
+          "ratio": 1.5,
+          "cap": 25,
+          "axialCells": 16,
+          "radialCells": 8
+        },
+        "converged": true,
+        "reactionN": -0.058509329764751414,
+        "volumeRatio": 0.9953065770992818,
+        "probeJ": 0.9952385174656418,
+        "scaledResidual": 1.2415545132274795e-14
+      },
+      "scene": {
+        "vertexCount": 33026,
+        "triangleCount": 66048,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "d16ddfbebc66b597145446705f9ea35f4b6c7bc970d722a75abbf448f04a936f",
+        "gpuIndexSHA256": "d4ba265970a398d2bbf3f0d0df33f785a5f55ac7fab42b67e5d2f109d052de86",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.187929722367453e-06,
+        "integratedVolumeM3": 6.18855299823015e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "canvasSHA256": "392b881843a60e75c9de9c859002ff4686729d8e60fbfaaf550955d92fa3536d"
+    },
+    {
+      "case": "webgl-unavailable-numerical",
+      "state": {
+        "configuration": {
+          "epsilon": 0.1,
+          "ratio": 1.5,
+          "cap": 25,
+          "axialCells": 16,
+          "radialCells": 8
+        },
+        "converged": true,
+        "reactionN": 0.047163275417517005,
+        "volumeRatio": 1.0046469928224353,
+        "probeJ": 1.004673424912294,
+        "scaledResidual": 1.050549386201204e-14
+      }
+    }
+  ],
+  "exports": [
+    "Current exported state matches actual numerical field"
+  ],
+  "page_errors": [],
+  "test_sha256": "4662ea0f8354f6bad9e85ec3a362e33e938af9783e942c392e657308bdfd3337"
+}

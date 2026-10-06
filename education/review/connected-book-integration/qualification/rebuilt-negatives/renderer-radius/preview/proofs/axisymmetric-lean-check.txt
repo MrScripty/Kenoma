@@ -1,0 +1,15 @@
+'Kenoma.AxisymmetricSpecimenReal.axis_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Kenoma.AxisymmetricSpecimenReal.uniform_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Kenoma.AxisymmetricSpecimenReal.logarithmic_energy_nonnegative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Kenoma.AxisymmetricSpecimenReal.logarithmic_energy_rest' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Kenoma.AxisymmetricSpecimenReal.logarithmic_energy_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Kenoma.AxisymmetricSpecimenReal.full_side_traction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Kenoma.AxisymmetricSpecimenReal.uniform_force_conversion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Kenoma.AxisymmetricSpecimenReal.profile_primitive_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Kenoma.AxisymmetricSpecimenReal.frustum_primitive_endpoints' depends on axioms: [propext, Classical.choice, Quot.sound]

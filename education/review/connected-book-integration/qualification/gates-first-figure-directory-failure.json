@@ -1,0 +1,28 @@
+{
+  "source_commit": "5661f0379058190a15ac16ecfa9971bfbf52213e",
+  "gates": [
+    {
+      "name": "responsive-browser",
+      "command": [
+        "python3",
+        "tests/projection_responsive.py",
+        "--output",
+        "dist/projection-responsive-qa"
+      ],
+      "exit_code": 0,
+      "duration_s": 11.224023818969727,
+      "log": "review/connected-book-integration/qualification/logs/responsive-browser.log"
+    },
+    {
+      "name": "book-build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "exit_code": 1,
+      "duration_s": 56.06502962112427,
+      "log": "review/connected-book-integration/qualification/logs/book-build.log"
+    }
+  ]
+}

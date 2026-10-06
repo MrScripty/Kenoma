@@ -1,0 +1,42 @@
+{
+  "result": "PASS_SEVEN_DAMAGED_PROJECTION_ARTIFACTS",
+  "original_unchanged": true,
+  "manifest_sha256": "340acb0375ae8a33ae494821c9a420930bcf6cda90d04ef8d5cbb240586f77e3",
+  "cases": [
+    {
+      "case": "missing-receipt",
+      "detected": true,
+      "reason": "[Errno 2] No such file or directory: '/workspace/Kenoma-connected-follow-on/education/.tools/tmpcqtgp7w9/dist/projection-qa/integration.json'"
+    },
+    {
+      "case": "stale-manifest",
+      "detected": true,
+      "reason": "Stale projection binding: build-manifest.json"
+    },
+    {
+      "case": "missing-proof",
+      "detected": true,
+      "reason": "Required source/proof coverage rejected"
+    },
+    {
+      "case": "forged-kernel-source",
+      "detected": true,
+      "reason": "Required source/proof coverage rejected"
+    },
+    {
+      "case": "rehashed-wrong-lab",
+      "detected": true,
+      "reason": "Changed projection source: standalone/pressure-projection-lab.html"
+    },
+    {
+      "case": "changed-review-pdf",
+      "detected": true,
+      "reason": "Required source/proof coverage rejected"
+    },
+    {
+      "case": "forged-static-vector",
+      "detected": true,
+      "reason": "Static projection vectors differ from the source-bound figure"
+    }
+  ]
+}

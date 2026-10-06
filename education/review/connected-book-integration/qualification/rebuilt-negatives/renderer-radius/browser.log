@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/workspace/Kenoma-connected-follow-on/education/review/connected-book-integration/qualification/rebuilt-negatives/renderer-radius/copy/tests/axisymmetric_browser.py", line 195, in <module>
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--preview',type=Path,required=True);p.add_argument('--out',type=Path,required=True);p.add_argument('--oracle',type=Path,required=True);p.add_argument('--experiment',type=Path,required=True);a=p.parse_args();qualify(a.preview.resolve(),a.out.resolve(),a.oracle.resolve(),a.experiment.resolve())
+                                                                                                                                                                                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Kenoma-connected-follow-on/education/review/connected-book-integration/qualification/rebuilt-negatives/renderer-radius/copy/tests/axisymmetric_browser.py", line 148, in qualify
+    lab.locator('[data-action=start]').click();expect(lab).to_have_attribute('data-scene-state','ready');rest=record(page,lab,'taper-rest',screenshot=True)
+                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Kenoma-connected-follow-on/education/review/connected-book-integration/qualification/rebuilt-negatives/renderer-radius/copy/tests/axisymmetric_browser.py", line 141, in record
+    if scene:row['scene']=verify_scene(page,p);row['canvasSHA256']=hashlib.sha256(lab.locator('canvas').screenshot()).hexdigest()
+                          ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Kenoma-connected-follow-on/education/review/connected-book-integration/qualification/rebuilt-negatives/renderer-radius/copy/tests/axisymmetric_browser.py", line 100, in verify_scene
+    for x,y in zip(got,want):close(float(x),y,'Actual displayed vertex from independent Q2 map',absolute=3e-9,relative=0)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Kenoma-connected-follow-on/education/review/connected-book-integration/qualification/rebuilt-negatives/renderer-radius/copy/tests/axisymmetric_browser.py", line 18, in close
+    assert abs(got-want)<=absolute+relative*abs(want),(label,got,want)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('Actual displayed vertex from independent Q2 map', 0.005249999929219484, np.float64(0.005))

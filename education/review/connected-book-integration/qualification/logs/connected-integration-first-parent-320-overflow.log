@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/Kenoma-connected-follow-on/education/tests/connected_integration.py", line 32, in <module>
+    if __name__=='__main__':run()
+                            ^^^^^
+  File "/workspace/Kenoma-connected-follow-on/education/tests/connected_integration.py", line 25, in run
+    page.set_viewport_size({'width':width,'height':844});assert page.evaluate('document.documentElement.scrollWidth<=innerWidth'),width;assert frame.evaluate('document.documentElement.scrollWidth<=innerWidth'),('frame',width)
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 320

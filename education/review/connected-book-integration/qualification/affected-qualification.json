@@ -1,0 +1,297 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "3:2:7:-0.1:1",
+      "reaction_N": -0.03882587443165155,
+      "volume_ratio": 0.9950687349392436,
+      "scaled_residual": 4.2797900380422054e-13,
+      "geometry_bounds": {
+        "cells": 6,
+        "lower_J_bound": 0.4975343674696199,
+        "upper_J_bound": 1.990137469878493,
+        "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+        "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+      },
+      "comparison": {
+        "independent_nominal_force_error_N": -1.2483070133129104e-14
+      }
+    },
+    {
+      "case": "3:2:7:0.1:1",
+      "reaction_N": 0.031642625793237636,
+      "volume_ratio": 1.0049363110482792,
+      "scaled_residual": 1.247017704102437e-13,
+      "geometry_bounds": {
+        "cells": 6,
+        "lower_J_bound": 0.5024681555241386,
+        "upper_J_bound": 2.0098726220965673,
+        "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+        "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+      },
+      "comparison": {
+        "independent_nominal_force_error_N": -2.456368441983159e-15
+      }
+    },
+    {
+      "case": "3:2:7:-0.1:1.5",
+      "reaction_N": -0.058518580721698514,
+      "volume_ratio": 0.9953058389100445,
+      "scaled_residual": 2.029734677701008e-14,
+      "geometry_bounds": {
+        "cells": 6,
+        "lower_J_bound": 0.3640113492517736,
+        "upper_J_bound": 2.710082731203101,
+        "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+        "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+      },
+      "comparison": {
+        "reaction_difference_N_from_frozen_fine": 9.250956947259859e-06,
+        "energy_difference_J_from_frozen_fine": 2.1429294653677435e-08,
+        "max_material_probe_J_difference_from_frozen_fine": 0.0003105447091072966,
+        "scope": "Observed differences on additional coarse radial meshes, not new continuum error/stability bounds"
+      }
+    },
+    {
+      "case": "3:2:7:0.1:1.5",
+      "reaction_N": 0.047170138277170835,
+      "volume_ratio": 1.004647673012633,
+      "scaled_residual": 1.1735180557431667e-14,
+      "geometry_bounds": {
+        "cells": 6,
+        "lower_J_bound": 0.37022988503804777,
+        "upper_J_bound": 2.7388281597991453,
+        "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+        "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+      },
+      "comparison": {
+        "reaction_difference_N_from_frozen_fine": 6.862859653095077e-06,
+        "energy_difference_J_from_frozen_fine": 1.7638734287287058e-08,
+        "max_material_probe_J_difference_from_frozen_fine": 0.00033446406596171485,
+        "scope": "Observed differences on additional coarse radial meshes, not new continuum error/stability bounds"
+      }
+    },
+    {
+      "case": "6:2:7:-0.1:1",
+      "reaction_N": -0.03882587443165112,
+      "volume_ratio": 0.9950687349392434,
+      "scaled_residual": 2.1415672069475563e-13,
+      "geometry_bounds": {
+        "cells": 12,
+        "lower_J_bound": 0.49753436746961927,
+        "upper_J_bound": 1.9901374698784946,
+        "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+        "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+      },
+      "comparison": {
+        "independent_nominal_force_error_N": -1.2052858711086856e-14
+      }
+    },
+    {
+      "case": "6:2:7:0.1:1",
+      "reaction_N": 0.03164262579323769,
+      "volume_ratio": 1.0049363110482792,
+      "scaled_residual": 6.329070488466695e-14,
+      "geometry_bounds": {
+        "cells": 12,
+        "lower_J_bound": 0.5024681555241381,
+        "upper_J_bound": 2.0098726220965695,
+        "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+        "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+      },
+      "comparison": {
+        "independent_nominal_force_error_N": -2.400857290751901e-15
+      }
+    },
+    {
+      "case": "6:2:7:-0.1:1.5",
+      "reaction_N": -0.0585126839608297,
+      "volume_ratio": 0.9953063123301122,
+      "scaled_residual": 2.093912618233957e-14,
+      "geometry_bounds": {
+        "cells": 12,
+        "lower_J_bound": 0.4213534421174032,
+        "upper_J_bound": 2.3354219300177737,
+        "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+        "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+      },
+      "comparison": {
+        "reaction_difference_N_from_frozen_fine": 3.3541960784491676e-06,
+        "energy_difference_J_from_frozen_fine": 7.563329492457334e-09,
+        "max_material_probe_J_difference_from_frozen_fine": 0.0003906136761099299,
+        "scope": "Observed differences on additional coarse radial meshes, not new continuum error/stability bounds"
+      }
+    },
+    {
+      "case": "6:2:7:0.1:1.5",
+      "reaction_N": 0.047165356565763816,
+      "volume_ratio": 1.004647201237738,
+      "scaled_residual": 1.035913435456904e-14,
+      "geometry_bounds": {
+        "cells": 12,
+        "lower_J_bound": 0.4294356830125816,
+        "upper_J_bound": 2.3651022499993135,
+        "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+        "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+      },
+      "comparison": {
+        "reaction_difference_N_from_frozen_fine": 2.0811482460761366e-06,
+        "energy_difference_J_from_frozen_fine": 5.528617451350118e-09,
+        "max_material_probe_J_difference_from_frozen_fine": 0.0003868059940796975,
+        "scope": "Observed differences on additional coarse radial meshes, not new continuum error/stability bounds"
+      }
+    },
+    {
+      "case": "12:2:7:-0.1:1",
+      "reaction_N": -0.0388258744316507,
+      "volume_ratio": 0.9950687349392439,
+      "scaled_residual": 1.0857318992441203e-13,
+      "geometry_bounds": {
+        "cells": 24,
+        "lower_J_bound": 0.4975343674696144,
+        "upper_J_bound": 1.990137469878515,
+        "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+        "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+      },
+      "comparison": {
+        "independent_nominal_force_error_N": -1.1629586182948515e-14
+      }
+    },
+    {
+      "case": "12:2:7:0.1:1",
+      "reaction_N": 0.03164262579323759,
+      "volume_ratio": 1.0049363110482827,
+      "scaled_residual": 3.257548063843563e-14,
+      "geometry_bounds": {
+        "cells": 24,
+        "lower_J_bound": 0.5024681555241332,
+        "upper_J_bound": 2.009872622096589,
+        "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+        "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+      },
+      "comparison": {
+        "independent_nominal_force_error_N": -2.5049406993105094e-15
+      }
+    },
+    {
+      "case": "12:2:7:-0.1:1.5",
+      "reaction_N": -0.058510703974516076,
+      "volume_ratio": 0.9953064708127313,
+      "scaled_residual": 9.181711946651135e-15,
+      "geometry_bounds": {
+        "cells": 24,
+        "lower_J_bound": 0.4548113160133684,
+        "upper_J_bound": 2.158004670556692,
+        "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+        "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+      },
+      "comparison": {
+        "reaction_difference_N_from_frozen_fine": 1.3742097648219986e-06,
+        "energy_difference_J_from_frozen_fine": 2.8433960392096596e-09,
+        "max_material_probe_J_difference_from_frozen_fine": 0.0002545412500566391,
+        "scope": "Observed differences on additional coarse radial meshes, not new continuum error/stability bounds"
+      }
+    },
+    {
+      "case": "12:2:7:0.1:1.5",
+      "reaction_N": 0.04716383179860028,
+      "volume_ratio": 1.0046470499791595,
+      "scaled_residual": 8.165575601224028e-15,
+      "geometry_bounds": {
+        "cells": 24,
+        "lower_J_bound": 0.464287102175645,
+        "upper_J_bound": 2.1883021457834593,
+        "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+        "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+      },
+      "comparison": {
+        "reaction_difference_N_from_frozen_fine": 5.563810825393034e-07,
+        "energy_difference_J_from_frozen_fine": 1.5593077941730054e-09,
+        "max_material_probe_J_difference_from_frozen_fine": 0.0002095876918999373,
+        "scope": "Observed differences on additional coarse radial meshes, not new continuum error/stability bounds"
+      }
+    },
+    {
+      "case": "24:2:7:-0.1:1",
+      "reaction_N": -0.038825874431650816,
+      "volume_ratio": 0.9950687349392456,
+      "scaled_residual": 5.400582400848506e-14,
+      "geometry_bounds": {
+        "cells": 48,
+        "lower_J_bound": 0.4975343674696079,
+        "upper_J_bound": 1.9901374698785392,
+        "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+        "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+      },
+      "comparison": {
+        "independent_nominal_force_error_N": -1.1747547379314938e-14
+      }
+    },
+    {
+      "case": "24:2:7:0.1:1",
+      "reaction_N": 0.03164262579323796,
+      "volume_ratio": 1.0049363110482878,
+      "scaled_residual": 1.7886454945746818e-14,
+      "geometry_bounds": {
+        "cells": 48,
+        "lower_J_bound": 0.5024681555241264,
+        "upper_J_bound": 2.009872622096616,
+        "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+        "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+      },
+      "comparison": {
+        "independent_nominal_force_error_N": -2.130240428499519e-15
+      }
+    },
+    {
+      "case": "24:2:7:-0.1:1.5",
+      "reaction_N": -0.05851040894774867,
+      "volume_ratio": 0.995306494578807,
+      "scaled_residual": 4.452385426809449e-14,
+      "geometry_bounds": {
+        "cells": 48,
+        "lower_J_bound": 0.473103197230089,
+        "upper_J_bound": 2.0728977325658673,
+        "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+        "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+      },
+      "comparison": {
+        "reaction_difference_N_from_frozen_fine": 1.0791829974168832e-06,
+        "energy_difference_J_from_frozen_fine": 2.0816286866161358e-09,
+        "max_material_probe_J_difference_from_frozen_fine": 9.214466521778597e-05,
+        "scope": "Observed differences on additional coarse radial meshes, not new continuum error/stability bounds"
+      }
+    },
+    {
+      "case": "24:2:7:0.1:1.5",
+      "reaction_N": 0.04716349183464611,
+      "volume_ratio": 1.0046470162500092,
+      "scaled_residual": 1.1909047939374204e-14,
+      "geometry_bounds": {
+        "cells": 48,
+        "lower_J_bound": 0.48294208385113063,
+        "upper_J_bound": 2.100650502946941,
+        "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+        "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+      },
+      "comparison": {
+        "reaction_difference_N_from_frozen_fine": 2.1641712837083826e-07,
+        "energy_difference_J_from_frozen_fine": 7.18761065680233e-10,
+        "max_material_probe_J_difference_from_frozen_fine": 7.719182461185525e-05,
+        "scope": "Observed differences on additional coarse radial meshes, not new continuum error/stability bounds"
+      }
+    }
+  ],
+  "accepted_axial_count_assignment_cases": 31,
+  "source_input_sha256": {
+    "web/axisymmetric-specimen.mjs": "39723a813efc3d92a8b4979d6652561354de109d68333ae8b1317e7e641c1a4e",
+    "web/axisymmetric-material.mjs": "3c977b401f2f76f95c5445a82d80c55ccc04e457c3d0c30350635ddf58cce561",
+    "web/axisymmetric-worker.mjs": "dee47f2148dba588a46c3ef84d27942a411f9eb7c0c3831bc19a2bf634562466",
+    "tools/axisymmetric-end-face-experiment.mjs": "eea0e1e78b8d94659ee267c1195c0b31a948f90280bbe32a2ee95718744c74fe"
+  },
+  "checker_sha256": "a69a03500df63a9be94526be655efbc92081df0d0a267321b7323db21572440d",
+  "data_sha256": "e2916c89d153e6a37863615fc7d4c381051d849221d49fbb249c5ce868431a12",
+  "independent_oracle_sha256": "0b32a88bb4589338ad3eee2080657102fc375905d0625ae6bbe14f69bcde22dc",
+  "frozen_fine_comparison_sha256": "9f7d0ee9a7861b27540630140e138dcccb1695adf69f85e24d873a9bb6830069",
+  "scope": "Complete imposed cap membership, strict closed-domain reference/render endpoints, independent cylinder forces and full stored-map positivity on 16 formerly affected cases. Existing material, residual, physical and geometry tolerances unchanged."
+}

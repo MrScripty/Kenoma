@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "method": "Symbolic differentiation of the five-component energy, independently coded 60-digit free-lateral root of restricted energy derivative; no reused production gradient or log-root equation",
+  "material": [
+    {
+      "v": [
+        1.07,
+        0.031,
+        -0.021,
+        0.965,
+        1.01
+      ],
+      "energy_absolute_error_pa": 2.1758822423730188e-13,
+      "gradient_max_absolute_error_pa": 7.138739615123205e-13,
+      "tangent_max_absolute_error_pa": 1.2457754962915152e-11
+    },
+    {
+      "v": [
+        0.92,
+        -0.06,
+        0.04,
+        1.06,
+        0.98
+      ],
+      "energy_absolute_error_pa": 3.375558625882958e-13,
+      "gradient_max_absolute_error_pa": 9.324109776657961e-13,
+      "tangent_max_absolute_error_pa": 8.322359633334681e-12
+    },
+    {
+      "v": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "energy_absolute_error_pa": 0.0,
+      "gradient_max_absolute_error_pa": 0.0,
+      "tangent_max_absolute_error_pa": 0.0
+    }
+  ],
+  "cylinders": [
+    {
+      "lambda": 0.9,
+      "side_stretch": 1.0514903364797394,
+      "J": 0.995068734939248,
+      "volume_change": -0.00493126506075208,
+      "nominal_axial_pa": -494.3463868528472,
+      "energy_density_pa": 23.794532497943077,
+      "lateral_energy_derivative_pa": -1.2751752321486856e-63,
+      "lateral_scalar_curvature_pa": 110184.12479757493
+    },
+    {
+      "lambda": 1.0,
+      "side_stretch": 1.0,
+      "J": 1.0,
+      "volume_change": 0.0,
+      "nominal_axial_pa": -1.0866814894592055e-67,
+      "energy_density_pa": 0.0,
+      "lateral_energy_derivative_pa": 1.0866814894592055e-67,
+      "lateral_scalar_curvature_pa": 122000.0
+    },
+    {
+      "lambda": 1.1,
+      "side_stretch": 0.955812986200411,
+      "J": 1.0049363110482816,
+      "volume_change": 0.004936311048281669,
+      "nominal_axial_pa": 402.8864245921013,
+      "energy_density_pa": 20.765934119620344,
+      "lateral_energy_derivative_pa": 4.1168699300594887e-63,
+      "lateral_scalar_curvature_pa": 133776.2510202265
+    }
+  ],
+  "input_sha256": {
+    "web/axisymmetric-material.mjs": "3c977b401f2f76f95c5445a82d80c55ccc04e457c3d0c30350635ddf58cce561",
+    "tools/qualify_axisymmetric_material.py": "149dc025c7473f4bf42e428b02b450f803da988250be2b79297473128909b04e"
+  },
+  "scope": "Local passive derivatives and homogeneous cylinder only; no assembled equilibrium, spatial refinement, stability, renderer or anatomy qualification"
+}

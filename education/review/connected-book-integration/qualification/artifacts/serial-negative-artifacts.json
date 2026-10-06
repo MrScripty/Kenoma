@@ -1,0 +1,39 @@
+{
+  "result": "PASS_SIX_DAMAGED_SERIAL_ARTIFACT_CONTROLS",
+  "source_manifest_sha256": "340acb0375ae8a33ae494821c9a420930bcf6cda90d04ef8d5cbb240586f77e3",
+  "checker_sha256": "9e1aa5458b086363a6b35551405af79c3d73d5ce7d48e71c8a193ad5bcae39bc",
+  "qualifier_sha256": "6cc21e05113cf32d79f8d539416b28a3b834daea075caee89b787ac67b2d0f66",
+  "original_unchanged": true,
+  "cases": [
+    {
+      "case": "missing-browser-receipt",
+      "detected": true,
+      "reason": "[Errno 2] No such file or directory: '/workspace/Kenoma-connected-follow-on/education/.artifact-tmp/tmpl4p32_es/serial-qa/receipt.json'"
+    },
+    {
+      "case": "stale-manifest-binding",
+      "detected": true,
+      "reason": "Stale serial manifest binding"
+    },
+    {
+      "case": "forged-rendered-local-volume",
+      "detected": true,
+      "reason": "('Actual rendered vertex block 0 0/1', -0.009167386312037708, -0.008333987770364865)"
+    },
+    {
+      "case": "forged-local-constraint-rejection",
+      "detected": true,
+      "reason": "('Counterexample local determinant', 1.0, 1.1)"
+    },
+    {
+      "case": "rehashed-false-static-geometry",
+      "detected": true,
+      "reason": "Serial generated physics/projection differs: property-serial.svg"
+    },
+    {
+      "case": "missing-real-claim",
+      "detected": true,
+      "reason": "Required proof/receipt coverage rejected"
+    }
+  ]
+}

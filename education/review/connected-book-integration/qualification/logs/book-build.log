@@ -1,0 +1,239 @@
+
+> kenoma-education@0.1.0 build
+> python3 tools/build.py
+
+{
+  "status": "PASS",
+  "method": "Symbolic differentiation of the five-component energy, independently coded 60-digit free-lateral root of restricted energy derivative; no reused production gradient or log-root equation",
+  "material": [
+    {
+      "v": [
+        1.07,
+        0.031,
+        -0.021,
+        0.965,
+        1.01
+      ],
+      "energy_absolute_error_pa": 2.1758822423730188e-13,
+      "gradient_max_absolute_error_pa": 7.138739615123205e-13,
+      "tangent_max_absolute_error_pa": 1.2457754962915152e-11
+    },
+    {
+      "v": [
+        0.92,
+        -0.06,
+        0.04,
+        1.06,
+        0.98
+      ],
+      "energy_absolute_error_pa": 3.375558625882958e-13,
+      "gradient_max_absolute_error_pa": 9.324109776657961e-13,
+      "tangent_max_absolute_error_pa": 8.322359633334681e-12
+    },
+    {
+      "v": [
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "energy_absolute_error_pa": 0.0,
+      "gradient_max_absolute_error_pa": 0.0,
+      "tangent_max_absolute_error_pa": 0.0
+    }
+  ],
+  "cylinders": [
+    {
+      "lambda": 0.9,
+      "side_stretch": 1.0514903364797394,
+      "J": 0.995068734939248,
+      "volume_change": -0.00493126506075208,
+      "nominal_axial_pa": -494.3463868528472,
+      "energy_density_pa": 23.794532497943077,
+      "lateral_energy_derivative_pa": -1.2751752321486856e-63,
+      "lateral_scalar_curvature_pa": 110184.12479757493
+    },
+    {
+      "lambda": 1.0,
+      "side_stretch": 1.0,
+      "J": 1.0,
+      "volume_change": 0.0,
+      "nominal_axial_pa": -1.0866814894592055e-67,
+      "energy_density_pa": 0.0,
+      "lateral_energy_derivative_pa": 1.0866814894592055e-67,
+      "lateral_scalar_curvature_pa": 122000.0
+    },
+    {
+      "lambda": 1.1,
+      "side_stretch": 0.955812986200411,
+      "J": 1.0049363110482816,
+      "volume_change": 0.004936311048281669,
+      "nominal_axial_pa": 402.8864245921013,
+      "energy_density_pa": 20.765934119620344,
+      "lateral_energy_derivative_pa": 4.1168699300594887e-63,
+      "lateral_scalar_curvature_pa": 133776.2510202265
+    }
+  ],
+  "input_sha256": {
+    "web/axisymmetric-material.mjs": "3c977b401f2f76f95c5445a82d80c55ccc04e457c3d0c30350635ddf58cce561",
+    "tools/qualify_axisymmetric_material.py": "149dc025c7473f4bf42e428b02b450f803da988250be2b79297473128909b04e"
+  },
+  "scope": "Local passive derivatives and homogeneous cylinder only; no assembled equilibrium, spatial refinement, stability, renderer or anatomy qualification"
+}
+PASS_BOUNDED_ENGINEERING_CHECKS
+{
+  "loaded": [
+    {
+      "epsilon": -0.1,
+      "reference": "16:8:7:-0.1:1.5",
+      "finite_volume_signal_rms": 0.0048108751309367676,
+      "global_volume_change": -0.00469342290071828,
+      "successive_8x4_to_16x8": {
+        "epsilon": -0.1,
+        "coarse": "8:4:5:-0.1:1.5",
+        "reference": "16:8:7:-0.1:1.5",
+        "volumeWeightedRmsJDifference": 9.04012454505895e-05,
+        "maxMaterialProbeJDifference": 5.6960704609476664e-05,
+        "volumeRatioDifference": 1.277335192062523e-07,
+        "reactionDifferenceN": 1.6134089616606784e-06,
+        "energyDifferenceJ": 3.6735896045785293e-09
+      },
+      "scaled_cut_force_variation": 0.0004046482481607923,
+      "max_declared_noncorner_side_traction_over_mu": 0.0001102100323592219,
+      "corner_limit": "Corner and near-corner gradients are recorded separately. Changing quadrature-point extrema do not establish converged pointwise corner stress/J or global stability."
+    },
+    {
+      "epsilon": 0.1,
+      "reference": "16:8:7:0.1:1.5",
+      "finite_volume_signal_rms": 0.004813308259746537,
+      "global_volume_change": 0.004646992822435081,
+      "successive_8x4_to_16x8": {
+        "epsilon": 0.1,
+        "coarse": "8:4:5:0.1:1.5",
+        "reference": "16:8:7:0.1:1.5",
+        "volumeWeightedRmsJDifference": 7.975100927720321e-05,
+        "maxMaterialProbeJDifference": 4.989448401548913e-05,
+        "volumeRatioDifference": 1.0572645070539011e-07,
+        "reactionDifferenceN": 1.0572792833660194e-06,
+        "energyDifferenceJ": 2.7895603397885696e-09
+      },
+      "scaled_cut_force_variation": 0.000403788444600872,
+      "max_declared_noncorner_side_traction_over_mu": 0.00011795235202889811,
+      "corner_limit": "Corner and near-corner gradients are recorded separately. Changing quadrature-point extrema do not establish converged pointwise corner stress/J or global stability."
+    }
+  ],
+  "conditioning": [
+    {
+      "epsilon": 0,
+      "free_dofs": 1024,
+      "original_tangent_independent_SciPy_scaled_Cholesky": "PASS",
+      "jacobi_scaled_smallest_eigenvalue": 0.0003203689501160567,
+      "jacobi_scaled_largest_eigenvalue": 2.9911141298799673,
+      "jacobi_scaled_spectral_condition_number": 9336.466997804899,
+      "scope": "Numerical original constrained discrete tangent at this state; no continuum or nonaxisymmetric stability theorem"
+    },
+    {
+      "epsilon": -0.1,
+      "free_dofs": 1024,
+      "original_tangent_independent_SciPy_scaled_Cholesky": "PASS",
+      "jacobi_scaled_smallest_eigenvalue": 0.00034723144635578906,
+      "jacobi_scaled_largest_eigenvalue": 3.0113945411971614,
+      "jacobi_scaled_spectral_condition_number": 8672.58588702692,
+      "scope": "Numerical original constrained discrete tangent at this state; no continuum or nonaxisymmetric stability theorem"
+    },
+    {
+      "epsilon": 0.1,
+      "free_dofs": 1024,
+      "original_tangent_independent_SciPy_scaled_Cholesky": "PASS",
+      "jacobi_scaled_smallest_eigenvalue": 0.00030030739455416683,
+      "jacobi_scaled_largest_eigenvalue": 2.9741828074584578,
+      "jacobi_scaled_spectral_condition_number": 9903.794782922005,
+      "scope": "Numerical original constrained discrete tangent at this state; no continuum or nonaxisymmetric stability theorem"
+    }
+  ],
+  "geometry": {
+    "4:2:5:-0.1:1": {
+      "cells": 8,
+      "lower_J_bound": 0.49753436746962015,
+      "upper_J_bound": 1.9901374698784917,
+      "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+      "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+    },
+    "4:2:5:0:1": {
+      "cells": 8,
+      "lower_J_bound": 0.49999999999999856,
+      "upper_J_bound": 2.0000000000000058,
+      "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+      "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+    },
+    "4:2:5:0.1:1": {
+      "cells": 8,
+      "lower_J_bound": 0.5024681555241389,
+      "upper_J_bound": 2.0098726220965664,
+      "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+      "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+    },
+    "16:8:7:-0.1:1.5": {
+      "cells": 128,
+      "lower_J_bound": 0.46665083261876994,
+      "upper_J_bound": 2.1122212039098938,
+      "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+      "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+    },
+    "16:8:7:0.1:1.5": {
+      "cells": 128,
+      "lower_J_bound": 0.47391081006103997,
+      "upper_J_bound": 2.143161576792228,
+      "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+      "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+    },
+    "16:8:7:0:1.5": {
+      "cells": 128,
+      "lower_J_bound": 0.47015610651974254,
+      "upper_J_bound": 2.1269531250000018,
+      "method": "Exact Fraction arithmetic on binary input nodes/displacements; tensor Bernstein coefficient bounds, including removed common radial parameter on the axis",
+      "scope": "Entire stored Q2 cell map orientation and positive radius/local determinant; not global injectivity, volume accuracy, stress accuracy or floating-point solver equivalence"
+    }
+  }
+}
+PASS 31 accepted counts and 16 affected solved cases, independent oracle, strict endpoints and positive Q2 maps
+
+  dist/connected-passive/assets/axisymmetric-app.js            521.2kb
+  dist/connected-passive/assets/axisymmetric-app.js.LEGAL.txt    188b 
+
+⚡ Done in 120ms
+
+  dist/connected-passive/assets/axisymmetric-worker.js  12.5kb
+
+⚡ Done in 5ms
+{
+  "result": "PASS",
+  "checks": 1010,
+  "clinical_validation": false,
+  "note": "Structural/data/provenance checks only; figures separately visually inspected."
+}
+Generated independent protocol frames and static reading figure
+Generated actual serial-block static geometry and numerical cases
+/workspace/Kenoma-connected-follow-on/education/dist/assets/anatomical-contact-trajectory.png
+
+  dist/assets/app.js            633.2kb
+  dist/assets/app.js.LEGAL.txt    188b 
+
+⚡ Done in 113ms
+/workspace/Kenoma-connected-follow-on/education/dist/anatomy-inspection/
+/workspace/Kenoma-connected-follow-on/education/dist/coupled-fixture/
+/workspace/Kenoma-connected-follow-on/education/dist/anatomical-arm/
+Checked 12 theorems with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+Checked 2 anatomical transfer identities with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+Checked 7 coupled mechanical properties with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+Checked 4 arm algebraic claims with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+Checked 4 real kinematic claims with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+Freshly compiled 5 material contracts with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+Freshly compiled 78 additional Real declarations
+Checked 27 research declarations with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+SOURCE_SHA256 d1411e4068ea99b9f7a85fd0a573e9ecd976b260617d0f209b6baebb3ae7e15e
+Checked 4 real kinematic claims with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+PASS nine fresh local Real identities; existing four kinematic declarations and all dependency pins checked
+Built separate connected prototype at /workspace/Kenoma-connected-follow-on/education/dist/connected-passive
+Built single-source Markdown and portable HTML in education/dist

@@ -1,0 +1,97 @@
+{
+  "source_commit": "7d674eba3fbe362eb717a1a1b992442c9a50b2df",
+  "gates": [
+    {
+      "name": "book-build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "exit_code": 0,
+      "duration_s": 76.20198559761047,
+      "log": "review/connected-book-integration/qualification/logs/book-build.log"
+    },
+    {
+      "name": "pdf",
+      "command": [
+        "npm",
+        "run",
+        "pdf"
+      ],
+      "exit_code": 0,
+      "duration_s": 7.596489429473877,
+      "log": "review/connected-book-integration/qualification/logs/pdf.log"
+    },
+    {
+      "name": "print-readability",
+      "command": [
+        "python3",
+        "tools/check_print_readability.py",
+        "dist"
+      ],
+      "exit_code": 0,
+      "duration_s": 6.412769794464111,
+      "log": "review/connected-book-integration/qualification/logs/print-readability.log"
+    },
+    {
+      "name": "projection-browser",
+      "command": [
+        "python3",
+        "tests/projection_integration.py"
+      ],
+      "exit_code": 0,
+      "duration_s": 16.69149351119995,
+      "log": "review/connected-book-integration/qualification/logs/projection-browser.log"
+    },
+    {
+      "name": "projection-artifact",
+      "command": [
+        "python3",
+        "tools/check_projection_artifact.py",
+        "dist"
+      ],
+      "exit_code": 0,
+      "duration_s": 0.24160289764404297,
+      "log": "review/connected-book-integration/qualification/logs/projection-artifact.log"
+    },
+    {
+      "name": "connected-native",
+      "command": [
+        "python3",
+        "tests/axisymmetric_browser.py",
+        "--preview",
+        "dist/connected-passive",
+        "--out",
+        "dist/connected-qa",
+        "--oracle",
+        "dist/connected-material-oracle.json",
+        "--experiment",
+        "dist/connected-experiment.json"
+      ],
+      "exit_code": 0,
+      "duration_s": 263.63358426094055,
+      "log": "review/connected-book-integration/qualification/logs/connected-native.log"
+    },
+    {
+      "name": "connected-api",
+      "command": [
+        "python3",
+        "tests/axisymmetric_end_faces_browser.py",
+        "--preview",
+        "dist/connected-passive",
+        "--out",
+        "dist/connected-api-qa",
+        "--oracle",
+        "dist/connected-material-oracle.json",
+        "--legacy-experiment",
+        "dist/connected-experiment.json",
+        "--affected-experiment",
+        "dist/connected-end-face-experiment.json"
+      ],
+      "exit_code": 0,
+      "duration_s": 137.4009563922882,
+      "log": "review/connected-book-integration/qualification/logs/connected-api.log"
+    }
+  ]
+}

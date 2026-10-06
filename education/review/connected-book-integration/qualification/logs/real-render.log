@@ -1,0 +1,236 @@
+{
+  "schema": 1,
+  "result": "PASS_REAL_PROOF_RENDER_CAPTURE",
+  "source_revision": "f2738acbdad860808d1d9e72ff1939df6d9bc407",
+  "inspector_sha256": "c2cc7ef79b99115b13de7ae13f09d2ceec23ad05403c6043eef0127e903373d5",
+  "html_sha256": "a6066ba945fc1b5ab4858de1c4caafb1e0f7f2638ddd02dc54795b1c9653d637",
+  "app_sha256": "bbb012a9380fe583049df7abe87164f65ef18077d0220c60811212af737f3473",
+  "pdf_sha256": "ab3ba81fc538c49a62f2e80cedb79df1f91871bdcc3b52caa0ba7c00f86dc433",
+  "manifest_sha256": "340acb0375ae8a33ae494821c9a420930bcf6cda90d04ef8d5cbb240586f77e3",
+  "browser": "151.0.7922.173",
+  "views": [
+    {
+      "name": "desktop",
+      "real_cards": 78,
+      "horizontal_overflow": false
+    },
+    {
+      "name": "mobile",
+      "real_cards": 78,
+      "horizontal_overflow": false
+    }
+  ],
+  "page_errors": [],
+  "real_claims": [
+    "material-real-confined-volume",
+    "material-real-bulk-sign",
+    "material-real-bulk-zero",
+    "material-real-separated-wall",
+    "material-real-lateral-work",
+    "force-real-pair",
+    "torque-real-linearity",
+    "virtual-real-power",
+    "actuator-real-activation-interval",
+    "actuator-real-activation-ode",
+    "actuator-real-active-force-bounds",
+    "actuator-real-active-force-derivative",
+    "actuator-real-gaussian-radius-bound",
+    "actuator-real-active-slope-bound",
+    "actuator-real-series-strict-monotone",
+    "actuator-real-series-unique-root",
+    "actuator-real-series-root-exists",
+    "actuator-real-series-lower-rejection",
+    "actuator-real-series-denominator",
+    "dissipative-real-storage-sign",
+    "dissipative-real-dissipation-sign",
+    "dissipative-real-storage-derivative",
+    "dissipative-real-power-balance",
+    "dissipative-real-elastic-recovery",
+    "dissipative-real-viscous-derivative",
+    "dissipative-real-viscous-bounds",
+    "dissipative-real-viscous-monotone",
+    "dissipative-real-viscous-antitone",
+    "dissipative-real-held-stress-bounds",
+    "dissipative-real-held-stress-decay",
+    "serial-real-energy-factor",
+    "serial-real-energy-sign",
+    "serial-real-energy-zero",
+    "serial-real-energy-derivative",
+    "serial-real-stress-identities",
+    "serial-real-stress-sign",
+    "serial-real-stress-difference",
+    "serial-real-stress-monotone",
+    "serial-real-root-unique",
+    "serial-real-volume",
+    "serial-real-tension-order",
+    "serial-real-compression-order",
+    "projection-inner-comm",
+    "projection-inner-add-right",
+    "projection-inner-add-left",
+    "projection-inner-sub-right",
+    "projection-inner-sub-left",
+    "projection-inner-smul-right",
+    "projection-inner-smul-left",
+    "projection-normSq-nonneg",
+    "projection-normSq-eq-zero-iff",
+    "projection-normSq-sub",
+    "projection-normSq-smul",
+    "projection-project-eq-self-iff",
+    "projection-project-idempotent",
+    "projection-inner-project",
+    "projection-project-self-adjoint",
+    "projection-optimizer-mem",
+    "projection-square-completion",
+    "projection-optimizer-value",
+    "projection-objective-le-condensed",
+    "projection-value-eq-iff-optimizer",
+    "projection-unique-maximizer",
+    "projection-pythagoras",
+    "projection-pointwise-minus-condensed",
+    "projection-condensed-nonneg",
+    "projection-gap-nonneg",
+    "projection-gap-zero-iff-represented",
+    "projection-nested-energy-monotone",
+    "axis-real-axis-determinant",
+    "axis-real-uniform-determinant",
+    "axis-real-logarithmic-energy-nonnegative",
+    "axis-real-logarithmic-energy-rest",
+    "axis-real-logarithmic-energy-derivative",
+    "axis-real-full-side-traction",
+    "axis-real-uniform-force-conversion",
+    "axis-real-profile-primitive-derivative",
+    "axis-real-frustum-primitive-endpoints"
+  ],
+  "pdf_pages": 221,
+  "source_pages": [
+    {
+      "page": 190,
+      "image": "pdf-source-page-190.png"
+    },
+    {
+      "page": 191,
+      "image": "pdf-source-page-191.png"
+    },
+    {
+      "page": 192,
+      "image": "pdf-source-page-192.png"
+    },
+    {
+      "page": 193,
+      "image": "pdf-source-page-193.png"
+    },
+    {
+      "page": 194,
+      "image": "pdf-source-page-194.png"
+    },
+    {
+      "page": 195,
+      "image": "pdf-source-page-195.png"
+    },
+    {
+      "page": 196,
+      "image": "pdf-source-page-196.png"
+    },
+    {
+      "page": 197,
+      "image": "pdf-source-page-197.png"
+    },
+    {
+      "page": 198,
+      "image": "pdf-source-page-198.png"
+    },
+    {
+      "page": 199,
+      "image": "pdf-source-page-199.png"
+    },
+    {
+      "page": 200,
+      "image": "pdf-source-page-200.png"
+    },
+    {
+      "page": 201,
+      "image": "pdf-source-page-201.png"
+    },
+    {
+      "page": 202,
+      "image": "pdf-source-page-202.png"
+    },
+    {
+      "page": 203,
+      "image": "pdf-source-page-203.png"
+    },
+    {
+      "page": 204,
+      "image": "pdf-source-page-204.png"
+    },
+    {
+      "page": 205,
+      "image": "pdf-source-page-205.png"
+    },
+    {
+      "page": 206,
+      "image": "pdf-source-page-206.png"
+    },
+    {
+      "page": 207,
+      "image": "pdf-source-page-207.png"
+    },
+    {
+      "page": 208,
+      "image": "pdf-source-page-208.png"
+    },
+    {
+      "page": 209,
+      "image": "pdf-source-page-209.png"
+    },
+    {
+      "page": 210,
+      "image": "pdf-source-page-210.png"
+    },
+    {
+      "page": 211,
+      "image": "pdf-source-page-211.png"
+    },
+    {
+      "page": 212,
+      "image": "pdf-source-page-212.png"
+    },
+    {
+      "page": 213,
+      "image": "pdf-source-page-213.png"
+    },
+    {
+      "page": 214,
+      "image": "pdf-source-page-214.png"
+    },
+    {
+      "page": 215,
+      "image": "pdf-source-page-215.png"
+    },
+    {
+      "page": 216,
+      "image": "pdf-source-page-216.png"
+    },
+    {
+      "page": 217,
+      "image": "pdf-source-page-217.png"
+    },
+    {
+      "page": 218,
+      "image": "pdf-source-page-218.png"
+    },
+    {
+      "page": 219,
+      "image": "pdf-source-page-219.png"
+    },
+    {
+      "page": 220,
+      "image": "pdf-source-page-220.png"
+    },
+    {
+      "page": 221,
+      "image": "pdf-source-page-221.png"
+    }
+  ],
+  "scope": "Actual generated desktop/mobile card captures, source-bound metadata and complete PDF theorem/hash text with durable links. Appearance review is separate; no numerical refinement or biological certificate."
+}

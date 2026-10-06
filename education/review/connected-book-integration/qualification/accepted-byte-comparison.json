@@ -1,0 +1,83 @@
+{
+  "source_commit": "f2738acbdad860808d1d9e72ff1939df6d9bc407",
+  "source_tree": "ad418b24810490b0d068b706980f5bb9d252128f",
+  "accepted_source": "1c90c63827abce0649286734ecd5fb6d1276c83e",
+  "accepted_evidence": "05fd23cdb6a414415f1117fced93443aa9936c48",
+  "files": [
+    {
+      "path": "proofs/AxisymmetricSpecimenReal.lean",
+      "sha256": "7308734ec0108ec080d3ba54129f38655eb547bf887451a3668934000bbd2ec8",
+      "equal_to_immutable_source": true
+    },
+    {
+      "path": "proofs/axisymmetric-specimen-real-claims.json",
+      "sha256": "7011d50d9483686f2adea169a7e48d3e5bf12d63024c4a137a61329d24fdeed4",
+      "equal_to_immutable_source": true
+    },
+    {
+      "path": "tools/axisymmetric-end-face-experiment.mjs",
+      "sha256": "eea0e1e78b8d94659ee267c1195c0b31a948f90280bbe32a2ee95718744c74fe",
+      "equal_to_immutable_source": true
+    },
+    {
+      "path": "tools/axisymmetric-experiment.mjs",
+      "sha256": "f64d5f56276c7e3f6be73ec18180ce10402dcc11ad2387045917df31e3d8f05f",
+      "equal_to_immutable_source": true
+    },
+    {
+      "path": "tools/build_axisymmetric_preview.py",
+      "sha256": "71861b3a9c7b0e6b0bdf91736334ab9542b7edfbc777ccdd51d6403b7a89802c",
+      "equal_to_immutable_source": true
+    },
+    {
+      "path": "tools/check_axisymmetric_proofs.py",
+      "sha256": "12d9e0bbe6633d394de9224b02616f788674c8173754ed41d2a97ae3c9904d4f",
+      "equal_to_immutable_source": true
+    },
+    {
+      "path": "tools/qualify_axisymmetric_end_faces.py",
+      "sha256": "a69a03500df63a9be94526be655efbc92081df0d0a267321b7323db21572440d",
+      "equal_to_immutable_source": true
+    },
+    {
+      "path": "tools/qualify_axisymmetric_experiment.py",
+      "sha256": "be0f3ed02336b4439a1ed39ccd600eda8c0b11ade0c8bd718ccddbf159a32857",
+      "equal_to_immutable_source": true
+    },
+    {
+      "path": "tools/qualify_axisymmetric_material.py",
+      "sha256": "149dc025c7473f4bf42e428b02b450f803da988250be2b79297473128909b04e",
+      "equal_to_immutable_source": true
+    },
+    {
+      "path": "tools/qualify_axisymmetric_negatives.py",
+      "sha256": "f5fdaf2ae284a72b1296b1fa77e10acab3c3ce9dce36bae47510616890feca01",
+      "equal_to_immutable_source": true
+    },
+    {
+      "path": "web/axisymmetric-lab.css",
+      "sha256": "19b34c09cb27ac35ecd16e4429adcdb1554ece02797112790f90cccc03be9752",
+      "equal_to_immutable_source": true
+    },
+    {
+      "path": "web/axisymmetric-lab.mjs",
+      "sha256": "b8f99ffe6712e4d9a974856c1311f26c4c8bcc41a583b5685fb168fe05c0f640",
+      "equal_to_immutable_source": true
+    },
+    {
+      "path": "web/axisymmetric-material.mjs",
+      "sha256": "3c977b401f2f76f95c5445a82d80c55ccc04e457c3d0c30350635ddf58cce561",
+      "equal_to_immutable_source": true
+    },
+    {
+      "path": "web/axisymmetric-specimen.mjs",
+      "sha256": "39723a813efc3d92a8b4979d6652561354de109d68333ae8b1317e7e641c1a4e",
+      "equal_to_immutable_source": true
+    },
+    {
+      "path": "web/axisymmetric-worker.mjs",
+      "sha256": "dee47f2148dba588a46c3ef84d27942a411f9eb7c0c3831bc19a2bf634562466",
+      "equal_to_immutable_source": true
+    }
+  ]
+}

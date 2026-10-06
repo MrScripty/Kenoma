@@ -1,0 +1,26 @@
+✔ every accepted axial count assigns every prescribed cap DOF by topology (106.338206ms)
+✔ three-cell uniform compression has oracle reaction and all end-face DOFs (207.629343ms)
+✔ three-cell uniform tension has oracle reaction and all end-face DOFs (240.917493ms)
+✔ rounded-count reference endpoints and all accepted render subdivisions remain inside the exact domain (1674.11433ms)
+✔ otherwise-delivered axial counts render the top endpoint with subdivision three (10.628862ms)
+✔ reference material is stress free with finite bulk compliance (1.491268ms)
+✔ independent tensor stress, mean stress and symmetric tangent agree at shear and dilation (2.205811ms)
+✔ energy forces and analytic tangent pass separate centered differences at two scales (1.202957ms)
+✔ uniform free-lateral oracle solves finite-volume response at zero and signed ten percent (0.851573ms)
+✔ invalid material orientation and unsupported oracle domain fail explicitly (0.869076ms)
+✔ Q2 partition and derivatives reproduce the exact frustum reference volume (55.498224ms)
+✔ assembled energy force and ORIGINAL tangent pass directional derivatives (31.612766ms)
+✔ free-lateral connected cylinder qualifies all nodes and material-point stresses against independent scalar oracle (118.088526ms)
+✔ complete cap axial displacement, free radial end DOFs and regular axis are explicit (137.27573ms)
+✔ connected tapered solution develops meridional shear with actual finite local volume compliance (112.285924ms)
+✔ watertight renderer follows solved geometry, has one component and exposes tessellation error without correction (129.595442ms)
+✔ finite iteration cap remains an explicit approximation and original tangent linear solves are checked (89.551824ms)
+✔ load continuation reaches the fine compressed taper without changing the original Hessian (4199.891021ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5005.914456

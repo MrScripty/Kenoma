@@ -1,0 +1,68 @@
+[
+  {
+    "name": "node-focused",
+    "command": [
+      "node",
+      "--test",
+      "tests/axisymmetric_material.test.mjs",
+      "tests/axisymmetric_specimen.test.mjs",
+      "tests/axisymmetric_end_faces.test.mjs"
+    ],
+    "exit_code": 0,
+    "duration_s": 5.084316253662109
+  },
+  {
+    "name": "material-oracle",
+    "command": [
+      "python3",
+      "tools/qualify_axisymmetric_material.py",
+      "/workspace/Kenoma-connected-follow-on/education/review/connected-book-integration/qualification/material-oracle.json"
+    ],
+    "exit_code": 0,
+    "duration_s": 0.9231066703796387
+  },
+  {
+    "name": "delivered-experiment",
+    "command": [
+      "node",
+      "tools/axisymmetric-experiment.mjs",
+      "/workspace/Kenoma-connected-follow-on/education/review/connected-book-integration/qualification/delivered-experiment.json"
+    ],
+    "exit_code": 0,
+    "duration_s": 103.96064734458923
+  },
+  {
+    "name": "delivered-qualification",
+    "command": [
+      "python3",
+      "tools/qualify_axisymmetric_experiment.py",
+      "/workspace/Kenoma-connected-follow-on/education/review/connected-book-integration/qualification/delivered-experiment.json",
+      "/workspace/Kenoma-connected-follow-on/education/review/connected-book-integration/qualification/delivered-qualification.json"
+    ],
+    "exit_code": 0,
+    "duration_s": 1.4832098484039307
+  },
+  {
+    "name": "affected-experiment",
+    "command": [
+      "node",
+      "tools/axisymmetric-end-face-experiment.mjs",
+      "/workspace/Kenoma-connected-follow-on/education/review/connected-book-integration/qualification/affected-experiment.json"
+    ],
+    "exit_code": 0,
+    "duration_s": 16.092692136764526
+  },
+  {
+    "name": "affected-qualification",
+    "command": [
+      "python3",
+      "tools/qualify_axisymmetric_end_faces.py",
+      "/workspace/Kenoma-connected-follow-on/education/review/connected-book-integration/qualification/affected-experiment.json",
+      "/workspace/Kenoma-connected-follow-on/education/review/connected-book-integration/qualification/material-oracle.json",
+      "/workspace/Kenoma-connected-follow-on/education/review/connected-book-integration/qualification/delivered-experiment.json",
+      "/workspace/Kenoma-connected-follow-on/education/review/connected-book-integration/qualification/affected-qualification.json"
+    ],
+    "exit_code": 0,
+    "duration_s": 0.7960832118988037
+  }
+]

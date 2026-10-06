@@ -1,0 +1,38 @@
+{
+  "source_commit": "1b9896b985908e49ba8d418bf6edbdbdf104fcf7",
+  "gates": [
+    {
+      "name": "book-build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "exit_code": 0,
+      "duration_s": 76.69609498977661,
+      "log": "review/connected-book-integration/qualification/logs/book-build.log"
+    },
+    {
+      "name": "pdf",
+      "command": [
+        "npm",
+        "run",
+        "pdf"
+      ],
+      "exit_code": 0,
+      "duration_s": 7.954068899154663,
+      "log": "review/connected-book-integration/qualification/logs/pdf.log"
+    },
+    {
+      "name": "print-readability",
+      "command": [
+        "python3",
+        "tools/check_print_readability.py",
+        "dist"
+      ],
+      "exit_code": 1,
+      "duration_s": 6.891908884048462,
+      "log": "review/connected-book-integration/qualification/logs/print-readability.log"
+    }
+  ]
+}

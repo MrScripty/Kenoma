@@ -1,0 +1,125 @@
+{
+  "result": "PASS_INTEGRATED_CONNECTED_SPECIMEN",
+  "browser": "151.0.7922.173",
+  "manifest_sha256": "340acb0375ae8a33ae494821c9a420930bcf6cda90d04ef8d5cbb240586f77e3",
+  "html_sha256": "a6066ba945fc1b5ab4858de1c4caafb1e0f7f2638ddd02dc54795b1c9653d637",
+  "child_manifest_sha256": "ca8a909fa1e71217a5a472d570f4bd21bb678f7ff5bc188be2db6b208278e581",
+  "native_receipt_sha256": "a10c00dda8618b541b09c26c1caae0ed2f0fa0c738c95c8229e6b724c2ee4464",
+  "api_receipt_sha256": "5274cce569d1fb73206a7bf9ac6501923f827235c0ba4f63ef520d561798f8c2",
+  "test_sha256": "26a320ccb1159182662951c202b34ef159db0ba3c97754478b613e9a276fd2df",
+  "widths": [
+    320,
+    360,
+    390,
+    414,
+    768,
+    1280
+  ],
+  "actual_cases": [
+    {
+      "epsilon": -0.1,
+      "state": {
+        "configuration": {
+          "epsilon": -0.1,
+          "ratio": 1.5,
+          "cap": 25,
+          "axialCells": 16,
+          "radialCells": 8
+        },
+        "converged": true,
+        "reactionN": -0.058509329764751414,
+        "volumeRatio": 0.9953065770992818,
+        "probeJ": 0.9952385174656418,
+        "scaledResidual": 1.2415545132274795e-14
+      },
+      "scene": {
+        "vertexCount": 33026,
+        "triangleCount": 66048,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "d16ddfbebc66b597145446705f9ea35f4b6c7bc970d722a75abbf448f04a936f",
+        "gpuIndexSHA256": "d4ba265970a398d2bbf3f0d0df33f785a5f55ac7fab42b67e5d2f109d052de86",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.187929722367453e-06,
+        "integratedVolumeM3": 6.18855299823015e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      }
+    },
+    {
+      "epsilon": 0.1,
+      "state": {
+        "configuration": {
+          "epsilon": 0.1,
+          "ratio": 1.5,
+          "cap": 25,
+          "axialCells": 16,
+          "radialCells": 8
+        },
+        "converged": true,
+        "reactionN": 0.047163275417517005,
+        "volumeRatio": 1.0046469928224353,
+        "probeJ": 1.004673424912294,
+        "scaledResidual": 1.050549386201204e-14
+      },
+      "scene": {
+        "vertexCount": 33026,
+        "triangleCount": 66048,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "926980361d87d011c6256b51267315ff5945edabd3a62770f9e98cd3566ee769",
+        "gpuIndexSHA256": "d4ba265970a398d2bbf3f0d0df33f785a5f55ac7fab42b67e5d2f109d052de86",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.246005138562272e-06,
+        "integratedVolumeM3": 6.246629232285289e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      }
+    },
+    {
+      "epsilon": 0.0,
+      "state": {
+        "configuration": {
+          "epsilon": 0,
+          "ratio": 1.5,
+          "cap": 25,
+          "axialCells": 16,
+          "radialCells": 8
+        },
+        "converged": true,
+        "reactionN": 0,
+        "volumeRatio": 0.9999999999999958,
+        "probeJ": 1,
+        "scaledResidual": 0
+      },
+      "scene": {
+        "vertexCount": 33026,
+        "triangleCount": 66048,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "eec50df053962a149bd43f7b723879f75adeea268d1c20c8e88940db8448800c",
+        "gpuIndexSHA256": "d4ba265970a398d2bbf3f0d0df33f785a5f55ac7fab42b67e5d2f109d052de86",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.217111356830828e-06,
+        "integratedVolumeM3": 6.217735460229774e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "controls_capture_sha256": "59c5df9f8de5abd9182be291702f901775ee5b8623d6bf89398f97ef6d710f11",
+  "scope": "Actual embedded controls and GPU reconstruction, strict parent/child no-overflow, warning and explicit reset. No clinical or continuum/stability claim."
+}

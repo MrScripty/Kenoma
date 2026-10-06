@@ -1,0 +1,27 @@
+
+> kenoma-education@0.1.0 build
+> python3 tools/build.py
+
+Checked 12 theorems with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+Checked 2 anatomical transfer identities with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+Checked 7 coupled mechanical properties with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+Checked 4 arm algebraic claims with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+Checked 4 real kinematic claims with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+Freshly compiled 5 material contracts with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+Traceback (most recent call last):
+  File "/workspace/Kenoma-connected-follow-on/education/tools/build.py", line 320, in <module>
+    if __name__=='__main__':build()
+                            ^^^^^^^
+  File "/workspace/Kenoma-connected-follow-on/education/tools/build.py", line 115, in build
+    real_lessons=check_real_lessons(properties)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Kenoma-connected-follow-on/education/tools/check_real_lesson_proofs.py", line 41, in check
+    if result.returncode: raise RuntimeError(transcript)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: /workspace/Kenoma-connected-follow-on/education/proofs/AxisymmetricSpecimenReal.lean:1:0: error: object file '././.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Log/Deriv.olean' of module Mathlib.Analysis.SpecialFunctions.Log.Deriv does not exist
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

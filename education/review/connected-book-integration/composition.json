@@ -41,5 +41,29 @@
     "anatomical capstone",
     "other ongoing research"
   ],
-  "no_anatomical_completion": true
+  "no_anatomical_completion": true,
+  "follow_on_commits": [
+    "951cca92e7b57693c24eef93173d8a8fa1aef705",
+    "df90211b30d7c506607e21257130ce979b40008a",
+    "f022452fed160a91ec92f66aff5ec056e1b7f229",
+    "44dd8c882f716631104c547b6acbd6ce99d5489c",
+    "5661f0379058190a15ac16ecfa9971bfbf52213e",
+    "1b9896b985908e49ba8d418bf6edbdbdf104fcf7",
+    "7d674eba3fbe362eb717a1a1b992442c9a50b2df",
+    "458638b84fbb0d7fecd9889af36cb258f32a18f9",
+    "01b50601300ae937beb0de0cea711429c91517c8",
+    "f2738acbdad860808d1d9e72ff1939df6d9bc407"
+  ],
+  "follow_on_merge_commits": [],
+  "saved_proposal_sha256": "c92411292b4244cfd0ed41d04ea6737a83bda51609d1bc147f2c6d21b6c0a12c",
+  "inherited_composition": "../accepted-book-integration/composition.json",
+  "frozen_book_lineage": [
+    "9c4ab8b23adf56c84bcabdcab28cfe8ea59ff99f",
+    "e7d56450f6a806fa14b0a511bfcf6405d592fc27",
+    "98b384dcb8f5bf0431c61d5ecf5b9b4ac6163a30"
+  ],
+  "qualified_source": "f2738acbdad860808d1d9e72ff1939df6d9bc407",
+  "qualified_source_tree": "ad418b24810490b0d068b706980f5bb9d252128f",
+  "editorial_reconciliation": "Scope reading path, coverage table and research roadmap now distinguish the adopted connected passive body from the remaining active/controller/anatomical gaps.",
+  "presentation_adapter": "Accepted preview builder and canonical CSS remain byte exact. The book adapter adds one separately bound stylesheet and HTML link; original builder output hashes are retained and every other builder output must stay unchanged. Screen wrapping of long book headings/plain dependency hashes prevents document overflow without root clipping or font reduction."
 }

@@ -1,0 +1,9 @@
+{
+  "repository": "https://github.com/leanprover-community/mathlib4",
+  "tag": "v4.19.0",
+  "commit": "c44e0c8ee63ca166450922a373c7409c5d26b00b",
+  "manifest_sha256": "5c6421b650bc87a2427a892a39e5522dc44543ca4ac1bd6e9f08d536c044a752",
+  "toolchain": "leanprover/lean4:v4.19.0",
+  "license": "Apache-2.0",
+  "qualification": "Fresh compilation required; this lock alone is not proof evidence."
+}

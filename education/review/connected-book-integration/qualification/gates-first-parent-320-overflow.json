@@ -1,0 +1,107 @@
+{
+  "source_commit": "458638b84fbb0d7fecd9889af36cb258f32a18f9",
+  "gates": [
+    {
+      "name": "book-build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "exit_code": 0,
+      "duration_s": 77.75102353096008,
+      "log": "review/connected-book-integration/qualification/logs/book-build.log"
+    },
+    {
+      "name": "pdf",
+      "command": [
+        "npm",
+        "run",
+        "pdf"
+      ],
+      "exit_code": 0,
+      "duration_s": 7.451835632324219,
+      "log": "review/connected-book-integration/qualification/logs/pdf.log"
+    },
+    {
+      "name": "print-readability",
+      "command": [
+        "python3",
+        "tools/check_print_readability.py",
+        "dist"
+      ],
+      "exit_code": 0,
+      "duration_s": 6.785778045654297,
+      "log": "review/connected-book-integration/qualification/logs/print-readability.log"
+    },
+    {
+      "name": "projection-browser",
+      "command": [
+        "python3",
+        "tests/projection_integration.py"
+      ],
+      "exit_code": 0,
+      "duration_s": 16.102123260498047,
+      "log": "review/connected-book-integration/qualification/logs/projection-browser.log"
+    },
+    {
+      "name": "projection-artifact",
+      "command": [
+        "python3",
+        "tools/check_projection_artifact.py",
+        "dist"
+      ],
+      "exit_code": 0,
+      "duration_s": 0.2099776268005371,
+      "log": "review/connected-book-integration/qualification/logs/projection-artifact.log"
+    },
+    {
+      "name": "connected-native",
+      "command": [
+        "python3",
+        "tests/axisymmetric_browser.py",
+        "--preview",
+        "dist/connected-passive",
+        "--out",
+        "dist/connected-qa",
+        "--oracle",
+        "dist/connected-material-oracle.json",
+        "--experiment",
+        "dist/connected-experiment.json"
+      ],
+      "exit_code": 0,
+      "duration_s": 266.0977301597595,
+      "log": "review/connected-book-integration/qualification/logs/connected-native.log"
+    },
+    {
+      "name": "connected-api",
+      "command": [
+        "python3",
+        "tests/axisymmetric_end_faces_browser.py",
+        "--preview",
+        "dist/connected-passive",
+        "--out",
+        "dist/connected-api-qa",
+        "--oracle",
+        "dist/connected-material-oracle.json",
+        "--legacy-experiment",
+        "dist/connected-experiment.json",
+        "--affected-experiment",
+        "dist/connected-end-face-experiment.json"
+      ],
+      "exit_code": 0,
+      "duration_s": 142.80823874473572,
+      "log": "review/connected-book-integration/qualification/logs/connected-api.log"
+    },
+    {
+      "name": "connected-integration",
+      "command": [
+        "python3",
+        "tests/connected_integration.py"
+      ],
+      "exit_code": 1,
+      "duration_s": 113.37614011764526,
+      "log": "review/connected-book-integration/qualification/logs/connected-integration.log"
+    }
+  ]
+}

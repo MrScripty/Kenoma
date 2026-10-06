@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/workspace/Kenoma-connected-follow-on/education/tools/check_print_readability.py", line 366, in <module>
+    main()
+  File "/workspace/Kenoma-connected-follow-on/education/tools/check_print_readability.py", line 359, in main
+    result = qualify(args.dist, args.baseline_pdf)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Kenoma-connected-follow-on/education/tools/check_print_readability.py", line 308, in qualify
+    assert not errors, 'Print readability failed:\n' + '\n'.join(errors)
+           ^^^^^^^^^^
+AssertionError: Print readability failed:
+figure:connected-specimen.svg:1:L₀ = 50 mm · a₀ = 5 mm · μ = 1500 Pa · K = 30000 Pa: 8.611186 pt below 10 pt
+figure:connected-specimen.svg:2:−10% compression: 8.611186 pt below 10 pt
+figure:connected-specimen.svg:3:V/V₀ = 0.995307: 8.611186 pt below 10 pt
+figure:connected-specimen.svg:4:Reaction -0.05851 N: 8.611186 pt below 10 pt
+figure:connected-specimen.svg:5:Zero end displacement: 8.611186 pt below 10 pt
+figure:connected-specimen.svg:6:V/V₀ = 1.000000: 8.611186 pt below 10 pt
+figure:connected-specimen.svg:7:Reaction 0.00000 N: 8.611186 pt below 10 pt
+figure:connected-specimen.svg:8:+10% tension: 8.611186 pt below 10 pt
+figure:connected-specimen.svg:9:V/V₀ = 1.004647: 8.611186 pt below 10 pt
+figure:connected-specimen.svg:10:Reaction 0.04716 N: 8.611186 pt below 10 pt
+figure:connected-specimen.svg:11:Gray dashed: reference · teal: solved side · fixed metre scale: 8.611186 pt below 10 pt
+figure:connected-specimen.svg:12:16 axial × 8 radial Q2 cells · assembly quadrature order 7: 8.611186 pt below 10 pt
+figure:connected-specimen.svg:13:Volume is solved with finite compliance; it is not corrected to J = 1.: 8.611186 pt below 10 pt
