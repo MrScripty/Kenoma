@@ -1,0 +1,3 @@
+Lab 3 stopped after 600 steps, so learners could not perform the stated twelve-second comparison at h=0.01 or h=0.005. Bound trajectories by twelve simulated seconds (120–2,400 fixed steps across the supported choices), add a pausable/resumable Run to 12 s action in bounded frame batches, and retain every sample for the reported maximum energy deviation and analytic position error. Use simulated time for the plot axis and expose duration/step accounting in readouts and downloaded traces. Preserve the oscillator equations, reset semantics and silent ordinary playback.
+
+Validation: exact-source results and inspected screenshots are documented in `education/review/lab3-duration/README.md`. Full-book/PDF/release qualification remains the parent’s publication gate.

@@ -1,0 +1,456 @@
+{
+  "scope": "Generated production lab HTML + production app bundle; not a full book/proof build",
+  "source_revision": "f2d1eb7acc0552f708aae81d2834e102ace7db8b",
+  "source_sha256": {
+    "web/energy-run.mjs": "cc82fe0ba609de1539bee507f0c144b1290e4e0c57ff1ec1a087583c0186f4a3",
+    "web/tissue.mjs": "72d88e8afa18af7acf3f5ab45d6b1676a0beff523a124023f19cce99347b1b30",
+    "web/tapered-bar.mjs": "9f68e29b3e708d8e53dd964d3d42fcfd9f530dd818ad33ed3641ad3a423feaec",
+    "web/spatial.mjs": "4d3bbd478ea7c0db3c2f380d52af1d32af1d28be66ec04e519b7963201655d0f",
+    "web/series.mjs": "54cd0690a7043fa5fe735b1707ec91485bb991dac5a841862736ee232dfdbf39",
+    "web/scene-status.mjs": "1719e9dba0573423ba6be04f609950efa3303d2a75800be7ec9c38df8606b8cb",
+    "web/readout.mjs": "90f24c70b456e7e96e8ed56884ee587aee7bc0d12dcefc08134f9c2992fe9ada",
+    "web/pulse.mjs": "0a5ec266342f07185cce7b7a66dfdb52702647a7c5d3e6124c8cd8b7955c32a1",
+    "web/property-labs.mjs": "cf135d2dcd5ab359f6cf9a0d5f0062f01cbeaa487478188baa18ef5490c64eaa",
+    "web/mechanics.mjs": "a22e0c9f613f755397244275f2a6c7f542276cc89cbe67911fa9471d32ad09d4",
+    "web/material-response.mjs": "513dc004fe16dba2fa781f8534cb248b609fb20c59ffff9a759960b41a1d52e8",
+    "web/material-lab.mjs": "e884134063616720211036496f5f0bff0347137b27027b97718de00c78226f8b",
+    "web/evidence.mjs": "920a61aabf59159cdf97d4c07ed6603957da8f874ba39c0e925e91b7f82c7b69",
+    "web/elbow.mjs": "96f0366af4043d9a17c4d44253a0233056aac410d444cce55ed41f04fdf0ec39",
+    "web/continuum-properties.mjs": "dafe703db471ec9de460b316dde9b56b5c16cedca720b1c48b2fba29c24d8988",
+    "web/continuum-display.mjs": "169a23218d576b488ba66284672f07d87462355b60e48feaff99b7e988d3b662",
+    "web/app.mjs": "ffe7f23feba12b4dc728b2c776128c8be86854e2a4943370526b59bf3d2045a9",
+    "web/anatomical-transfer.mjs": "1e82dabebf5a6247af9216a70292216b194a52545abf8f3b73c93ee6e2f22431",
+    "web/anatomical-tangent.mjs": "9b35daecd9efd68908e393998271f63cbc5728a5a2c4821560010ff5786f285c",
+    "web/anatomical-solver.mjs": "2e23ae4e594c0947d15b21cdcd0422ad27e2bc3c2ac3af40293703c208906bfb",
+    "web/anatomical-routing.mjs": "83e52df556739786c97e4cb8ef6a7854d0d9a5fb36ca197b6bdc0b7597d09a3e",
+    "web/anatomical-routing-audit.mjs": "e6ef4473a272c985cd05012cf4cbf424c45522b535c280ad5de49222dd459d9b",
+    "web/anatomical-retraction.mjs": "f5c4ef1115bc2a385d86e232cb9a6a36f8f61cd56d823b3495284de8e9c71819",
+    "web/anatomical-preconditioner.mjs": "d234cd800784a57171514139a17d0720bb1a9d4d1089afcd9e7c783cead1b0b4",
+    "web/anatomical-newton.mjs": "e0b2193bff56a3fdb9595fa0893c469b5897a31512a282ff7a9b5519b2fe93fe",
+    "web/anatomical-modal.mjs": "12cd671bc963aa04dd5c0e173a776049de191283d850b0b60d0fe8e63be4c9a1",
+    "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+    "web/anatomical-intersections.mjs": "a083a9838ac3c7508b65b58329c741aef65a065288aff82fc886d1c2c90375df",
+    "web/anatomical-fixture.mjs": "d53b5dca829883b4e91c02e5b88f3ac745ce7510cf28aabfcbd6cb978353a30a",
+    "web/anatomical-element.mjs": "3f67a6bd31565c83d2cbea591c3cf1862a48e50cc4efa780880fda7e808d4b1f",
+    "web/anatomical-distance.mjs": "e11826c97f160220fda68f72cbe5e73f35f9527edcf4a4d58100c467cb50940a",
+    "web/anatomical-coupled-worker.mjs": "1c54d08f5e36ca837343fc96399ac85de8e92f8fe1ebd1d73a50e5885b93c435",
+    "web/anatomical-coupled-fixture.mjs": "620afbb2e801f00ec361f5f1b5d39f010acc386812dcaa7239c0ca781d0bf4b9",
+    "web/anatomical-contact.mjs": "ca3abc6a6c885651d6e43d0d0e2b08738b63a536d3850b854087a701695a1e67",
+    "web/anatomical-contact-refinement.mjs": "29830d2f311ee74a50acfd65f0ca8c245d2b390ed66d6eafd6c9b79de7607e07",
+    "web/anatomical-contact-differential.mjs": "76f107f5eb1c41fdf6622c428648babc5a489113a709fd337782b1b3de3cac0b",
+    "web/anatomical-comparison.mjs": "d812405b86541f756759bede9750071117edbab81e69efcfadf96f4f195fd09f",
+    "web/anatomical-audit.mjs": "4f45bf4ce4459096e9595cd7bb1e0bcdfb0fafe858ee5da25444940604589f14",
+    "web/anatomical-arm.mjs": "9ec37ec7b23bb67643fef715f4554fc8811e897a581691231e6669fdd66c7569",
+    "web/anatomical-arm-worker.mjs": "dfadf3136b8ecac0fd6275f059085636eb8953346d920ca69a4d4382fa7b39d5",
+    "web/anatomical-apparatus.mjs": "be60e6a3ba4db34ee01a4cb531bcdd19f868645ef26e06e1e30daedbc360cb98",
+    "web/anatomical-aponeurosis.mjs": "1dbebfd2ea67427ee0d962b7b234d2d40a2f2cd4616a4f1199e20b3aba7316a0",
+    "web/advanced.mjs": "2cf33e78c7bb7042d615c8a8109724de5958d1050fb0b69ad81df5f3f7edff78",
+    "tools/build.py": "fca4460ab01df8490ab46a33af6a7665f60fe6d9c5bc3899c0c4c0d3f18261f1",
+    "tools/property_labs.py": "7f384ed486743f90b3d3d1c621fa5bc1e5e14a2fadb23df80324ed7c3a42bc61",
+    "tools/property-experiment.mjs": "a248f76d166fc6a7eb7772bee227844391c920b4671b91d9a10078bfe23ff23c",
+    "tools/figures.py": "e3044e51893cba69c4302c91cdf17371ef245c6468ca5dc7fe6337adf40e515f",
+    "tools/spatial_figures.py": "00379529c5c6714e1ec81d37a48288da12129e2a7f8816d93b5fe57aaf6b1f72",
+    "tools/spatial-experiment.mjs": "67e589e545a6c1d5ac37567477f40441df29afba7d516c657cd559c55e5c494c",
+    "contributions/continuum_reference/continuum.mjs": "88e69aa2cb83db4f6441259a8f8bdfb56a3cc20708587eae3415c559a7c9ea19",
+    "contributions/continuum_reference/data/example.json": "a61b87f04092e0fb48880079f5ba9403d59195b12b90876d626d263ac1c50fe6",
+    "tests/teaching_controls_browser.py": "c955f141859ce9328c8405f3b15c4c8d96dec34e56a8058c6353fbcaaeac38f6"
+  },
+  "case": "energy",
+  "status": "PASS",
+  "html_sha256": "b480018e313247bd73dc36c01437f5339b64a69bbb09b456e4b6547f15d8ac8f",
+  "bundle_sha256": "41a8ba9c98cdc4f93a34b3ba690e6a25158901305418118ce4340229fbe8d2f9",
+  "browser_version": "151.0.7922.173",
+  "observed": {
+    "energy": {
+      "runs": [
+        {
+          "method": "explicit",
+          "h": 0.005,
+          "run": {
+            "durationS": 12,
+            "stepLimit": 2400,
+            "completedSteps": 2400,
+            "timeS": 12,
+            "sampleCount": 2401,
+            "maxAbsoluteRelativeEnergyDeviation": 10.009965303866085,
+            "absolutePositionErrorM": 0.41546242645789355
+          },
+          "finalState": {
+            "x": 0.5913191618463938,
+            "v": -1.9051536524692365
+          },
+          "trace": "energy-explicit-0.005-trace.json"
+        },
+        {
+          "method": "symplectic",
+          "h": 0.005,
+          "run": {
+            "durationS": 12,
+            "stepLimit": 2400,
+            "completedSteps": 2400,
+            "timeS": 12,
+            "sampleCount": 2401,
+            "maxAbsoluteRelativeEnergyDeviation": 0.01606540164537895,
+            "absolutePositionErrorM": 0.001817314104517409
+          },
+          "finalState": {
+            "x": 0.1740394212839828,
+            "v": -0.6060654562923009
+          },
+          "trace": "energy-symplectic-0.005-trace.json"
+        },
+        {
+          "method": "verlet",
+          "h": 0.005,
+          "run": {
+            "durationS": 12,
+            "stepLimit": 2400,
+            "completedSteps": 2400,
+            "timeS": 12,
+            "sampleCount": 2401,
+            "maxAbsoluteRelativeEnergyDeviation": 0.00024999996021690674,
+            "absolutePositionErrorM": 0.0003021504637874539
+          },
+          "finalState": {
+            "x": 0.17555458492471276,
+            "v": -0.6059139399282275
+          },
+          "trace": "energy-verlet-0.005-trace.json"
+        },
+        {
+          "method": "explicit",
+          "h": 0.01,
+          "run": {
+            "durationS": 12,
+            "stepLimit": 1200,
+            "completedSteps": 1200,
+            "timeS": 12,
+            "sampleCount": 1201,
+            "maxAbsoluteRelativeEnergyDeviation": 119.35257060908222,
+            "absolutePositionErrorM": 1.8488824338844205
+          },
+          "finalState": {
+            "x": 2.024739169272921,
+            "v": -5.34615420943052
+          },
+          "trace": "energy-explicit-0.01-trace.json"
+        },
+        {
+          "method": "symplectic",
+          "h": 0.01,
+          "run": {
+            "durationS": 12,
+            "stepLimit": 1200,
+            "completedSteps": 1200,
+            "timeS": 12,
+            "sampleCount": 1201,
+            "maxAbsoluteRelativeEnergyDeviation": 0.0326554314600318,
+            "absolutePositionErrorM": 0.004303591366850712
+          },
+          "finalState": {
+            "x": 0.1715531440216495,
+            "v": -0.6168099209408231
+          },
+          "trace": "energy-symplectic-0.01-trace.json"
+        },
+        {
+          "method": "verlet",
+          "h": 0.01,
+          "run": {
+            "durationS": 12,
+            "stepLimit": 1200,
+            "completedSteps": 1200,
+            "timeS": 12,
+            "sampleCount": 1201,
+            "maxAbsoluteRelativeEnergyDeviation": 0.000999942847908608,
+            "absolutePositionErrorM": 0.0012195417621463644
+          },
+          "finalState": {
+            "x": 0.17463719362635385,
+            "v": -0.6161931110198864
+          },
+          "trace": "energy-verlet-0.01-trace.json"
+        },
+        {
+          "method": "explicit",
+          "h": 0.02,
+          "run": {
+            "durationS": 12,
+            "stepLimit": 600,
+            "completedSteps": 600,
+            "timeS": 12,
+            "sampleCount": 601,
+            "maxAbsoluteRelativeEnergyDeviation": 13683.368756975044,
+            "absolutePositionErrorM": 23.113553229580226
+          },
+          "finalState": {
+            "x": 23.289409964968726,
+            "v": -14.111178211073945
+          },
+          "trace": "energy-explicit-0.02-trace.json"
+        },
+        {
+          "method": "symplectic",
+          "h": 0.02,
+          "run": {
+            "durationS": 12,
+            "stepLimit": 600,
+            "completedSteps": 600,
+            "timeS": 12,
+            "sampleCount": 601,
+            "maxAbsoluteRelativeEnergyDeviation": 0.06751557054553414,
+            "absolutePositionErrorM": 0.011646021894355763
+          },
+          "finalState": {
+            "x": 0.16421071349414446,
+            "v": -0.6593730146124601
+          },
+          "trace": "energy-symplectic-0.02-trace.json"
+        },
+        {
+          "method": "verlet",
+          "h": 0.02,
+          "run": {
+            "durationS": 12,
+            "stepLimit": 600,
+            "completedSteps": 600,
+            "timeS": 12,
+            "sampleCount": 601,
+            "maxAbsoluteRelativeEnergyDeviation": 0.003999990674790621,
+            "absolutePositionErrorM": 0.0050522917482312135
+          },
+          "finalState": {
+            "x": 0.170804443640269,
+            "v": -0.6567355225540106
+          },
+          "trace": "energy-verlet-0.02-trace.json"
+        },
+        {
+          "method": "explicit",
+          "h": 0.05,
+          "run": {
+            "durationS": 12,
+            "stepLimit": 240,
+            "completedSteps": 240,
+            "timeS": 12,
+            "sampleCount": 241,
+            "maxAbsoluteRelativeEnergyDeviation": 8594971440.069193,
+            "absolutePositionErrorM": 5847.922908610034
+          },
+          "finalState": {
+            "x": -5847.747051874646,
+            "v": 111283.90935980981
+          },
+          "trace": "energy-explicit-0.05-trace.json"
+        },
+        {
+          "method": "symplectic",
+          "h": 0.05,
+          "run": {
+            "durationS": 12,
+            "stepLimit": 240,
+            "completedSteps": 240,
+            "timeS": 12,
+            "sampleCount": 241,
+            "maxAbsoluteRelativeEnergyDeviation": 0.18780677043621585,
+            "absolutePositionErrorM": 0.06220332464514969
+          },
+          "finalState": {
+            "x": 0.11365341074335053,
+            "v": -0.9333581397324432
+          },
+          "trace": "energy-symplectic-0.05-trace.json"
+        },
+        {
+          "method": "verlet",
+          "h": 0.05,
+          "run": {
+            "durationS": 12,
+            "stepLimit": 240,
+            "completedSteps": 240,
+            "timeS": 12,
+            "sampleCount": 241,
+            "maxAbsoluteRelativeEnergyDeviation": 0.02499922990536274,
+            "absolutePositionErrorM": 0.03886937115183853
+          },
+          "finalState": {
+            "x": 0.1369873642366617,
+            "v": -0.9100241862391323
+          },
+          "trace": "energy-verlet-0.05-trace.json"
+        },
+        {
+          "method": "explicit",
+          "h": 0.1,
+          "run": {
+            "durationS": 12,
+            "stepLimit": 120,
+            "completedSteps": 120,
+            "timeS": 12,
+            "sampleCount": 121,
+            "maxAbsoluteRelativeEnergyDeviation": 343055416973096800,
+            "absolutePositionErrorM": 15054892.640984599
+          },
+          "finalState": {
+            "x": 15054892.816841334,
+            "v": 734726258.7167358
+          },
+          "trace": "energy-explicit-0.1-trace.json"
+        },
+        {
+          "method": "symplectic",
+          "h": 0.1,
+          "run": {
+            "durationS": 12,
+            "stepLimit": 120,
+            "completedSteps": 120,
+            "timeS": 12,
+            "sampleCount": 121,
+            "maxAbsoluteRelativeEnergyDeviation": 0.4624704064205416,
+            "absolutePositionErrorM": 0.2901289480051453
+          },
+          "finalState": {
+            "x": -0.1142722126166451,
+            "v": -1.2915152673795185
+          },
+          "trace": "energy-symplectic-0.1-trace.json"
+        },
+        {
+          "method": "verlet",
+          "h": 0.1,
+          "run": {
+            "durationS": 12,
+            "stepLimit": 120,
+            "completedSteps": 120,
+            "timeS": 12,
+            "sampleCount": 121,
+            "maxAbsoluteRelativeEnergyDeviation": 0.09997330107300073,
+            "absolutePositionErrorM": 0.22555318463616958
+          },
+          "finalState": {
+            "x": -0.049696449247669354,
+            "v": -1.1623637406415661
+          },
+          "trace": "energy-verlet-0.1-trace.json"
+        }
+      ],
+      "paused": {
+        "schema": 1,
+        "scene": "energy",
+        "parameters": {
+          "mass": 1,
+          "stiffness": 40,
+          "dt": 0.005,
+          "method": "symplectic",
+          "x": 0.2,
+          "v": 0
+        },
+        "step": 256,
+        "state": {
+          "x": -0.05095818932103573,
+          "v": -1.22827057546342
+        },
+        "view": "front",
+        "pulse": null,
+        "display": "live",
+        "run": {
+          "durationS": 12,
+          "stepLimit": 2400,
+          "completedSteps": 256,
+          "timeS": 1.28,
+          "sampleCount": 257,
+          "maxAbsoluteRelativeEnergyDeviation": 0.016063326597504535,
+          "absolutePositionErrorM": 0.0031361861071374786
+        }
+      },
+      "paced": {
+        "schema": 1,
+        "scene": "energy",
+        "parameters": {
+          "mass": 1,
+          "stiffness": 40,
+          "dt": 0.005,
+          "method": "symplectic",
+          "x": 0.2,
+          "v": 0
+        },
+        "step": 176,
+        "state": {
+          "x": 0.15278988554096937,
+          "v": 0.8316388862379138
+        },
+        "view": "front",
+        "pulse": null,
+        "display": "live",
+        "run": {
+          "durationS": 12,
+          "stepLimit": 2400,
+          "completedSteps": 176,
+          "timeS": 0.88,
+          "sampleCount": 177,
+          "maxAbsoluteRelativeEnergyDeviation": 0.016063326597504535,
+          "absolutePositionErrorM": 0.0021095943131830552
+        }
+      },
+      "reset": {
+        "schema": 1,
+        "scene": "energy",
+        "parameters": {
+          "mass": 1,
+          "stiffness": 40,
+          "dt": 0.02,
+          "method": "symplectic",
+          "x": 0.2,
+          "v": 0
+        },
+        "step": 0,
+        "state": {
+          "x": 0.2,
+          "v": 0
+        },
+        "view": "front",
+        "pulse": null,
+        "display": "live",
+        "run": {
+          "durationS": 12,
+          "stepLimit": 600,
+          "completedSteps": 0,
+          "timeS": 0,
+          "sampleCount": 1,
+          "maxAbsoluteRelativeEnergyDeviation": 0,
+          "absolutePositionErrorM": 0
+        }
+      }
+    },
+    "energyNumericalOnly": {
+      "schema": 1,
+      "scene": "energy",
+      "parameters": {
+        "mass": 1,
+        "stiffness": 40,
+        "dt": 0.005,
+        "method": "symplectic",
+        "x": 0.2,
+        "v": 0
+      },
+      "step": 2400,
+      "state": {
+        "x": 0.1740394212839828,
+        "v": -0.6060654562923009
+      },
+      "view": "front",
+      "pulse": null,
+      "display": "numerical-only",
+      "run": {
+        "durationS": 12,
+        "stepLimit": 2400,
+        "completedSteps": 2400,
+        "timeS": 12,
+        "sampleCount": 2401,
+        "maxAbsoluteRelativeEnergyDeviation": 0.01606540164537895,
+        "absolutePositionErrorM": 0.001817314104517409
+      }
+    }
+  },
+  "javascript_errors": []
+}

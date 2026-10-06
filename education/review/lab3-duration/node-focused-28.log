@@ -1,0 +1,36 @@
+✔ elbow current row matches release/change before stepping and preserves completed history (7.943141ms)
+✔ series current row matches release/change before stepping and preserves completed history (20.644778ms)
+✔ explicit h=0.005 actual controller reaches 12s, preserves every sample and measured maximum (14.133955ms)
+✔ symplectic h=0.005 actual controller reaches 12s, preserves every sample and measured maximum (8.861629ms)
+✔ verlet h=0.005 actual controller reaches 12s, preserves every sample and measured maximum (7.030543ms)
+✔ explicit h=0.01 actual controller reaches 12s, preserves every sample and measured maximum (2.892578ms)
+✔ symplectic h=0.01 actual controller reaches 12s, preserves every sample and measured maximum (3.883353ms)
+✔ verlet h=0.01 actual controller reaches 12s, preserves every sample and measured maximum (2.29404ms)
+✔ explicit h=0.02 actual controller reaches 12s, preserves every sample and measured maximum (2.50071ms)
+✔ symplectic h=0.02 actual controller reaches 12s, preserves every sample and measured maximum (3.64101ms)
+✔ verlet h=0.02 actual controller reaches 12s, preserves every sample and measured maximum (2.634551ms)
+✔ explicit h=0.05 actual controller reaches 12s, preserves every sample and measured maximum (2.948536ms)
+✔ symplectic h=0.05 actual controller reaches 12s, preserves every sample and measured maximum (0.806459ms)
+✔ verlet h=0.05 actual controller reaches 12s, preserves every sample and measured maximum (0.689654ms)
+✔ explicit h=0.1 actual controller reaches 12s, preserves every sample and measured maximum (0.359239ms)
+✔ symplectic h=0.1 actual controller reaches 12s, preserves every sample and measured maximum (0.28615ms)
+✔ verlet h=0.1 actual controller reaches 12s, preserves every sample and measured maximum (0.353721ms)
+✔ batch pause/resume and single steps retain current trajectory; edit/reset start new trajectories (0.699439ms)
+✔ paced Play uses chosen fixed h and bounded catch-up, with one redraw per frame (0.373009ms)
+✔ duration bounds reject unsupported fractional, excessive or invalid step budgets (0.569644ms)
+✔ force worked example and work-energy consistency across signed forces (1.084416ms)
+✔ lever sign, zero moment arm and exact scaled worked example (0.838417ms)
+✔ potential gradient gives the negative gravitational torque (0.170255ms)
+✔ torque identities hold for a deterministic grid of integer inputs (1.264797ms)
+✔ step/replay/reset gives identical sequences (9.446656ms)
+✔ energy diagnostics distinguish unstable explicit from bounded symplectic and Verlet (3.005217ms)
+✔ Verlet convergence against independent analytic oscillator (0.477105ms)
+✔ invalid domains fail explicitly (0.473439ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 190.815764
