@@ -7,6 +7,9 @@ SPECS={
  'isochoric':('Property lab 2 · Volume and cross-section',[
  ('axial','Axial stretch',.4,1.7,.01,.8),('lateral','Independent lateral stretch',.4,1.7,.01,1)])}
 def block(key,web):
+ if key=='material':
+  from material_lab import block as material_block
+  return material_block(web)
  title,controls=SPECS[key]
  caption='Authored 80 × 60 × 50 mm reference. Gray is reference; blue is prescribed geometry. This lesson imposes kinematics and does not solve force equilibrium.'
  if key=='tapered':caption='Small-strain constant-modulus bar; no distributed axial load. Strain by axial position, with blue extension and red compression. Area controls an axial resultant, not a complete muscle law.'

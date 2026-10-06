@@ -7,6 +7,7 @@ from check_anatomical_proofs import check as check_transfer
 from check_coupled_proofs import check as check_coupled
 from check_arm_proofs import check as check_arm
 from check_property_proofs import check as check_properties
+from check_material_proofs import check as check_material
 from property_labs import block as property_block
 from figures import generate
 from evidence_figures import generate as evidence_figures
@@ -96,6 +97,7 @@ def build():
     coupled=check_coupled()
     arm=check_arm()
     properties=check_properties()
+    material=check_material()
     data=ROOT/'data/elbow-v1'
     subprocess.run(['python3',str(data/'scripts/validate_package.py')],check=True)
     continuum=ROOT/'contributions/continuum_reference'
@@ -109,11 +111,12 @@ def build():
       (transfer,(ROOT/'proofs/AnatomicalTransfer.lean').read_text(),'transfer-proof-status.json','transfer-lean-check.txt','transfer-source-appendix','transfer-proof-receipt','transfer-kernel-report'),
       (coupled,(ROOT/'proofs/CoupledMechanics.lean').read_text(),'coupled-proof-status.json','coupled-lean-check.txt','coupled-source-appendix','coupled-proof-receipt','coupled-kernel-report'),
       (arm,(ROOT/'proofs/AnatomicalArm.lean').read_text(),'arm-proof-status.json','arm-lean-check.txt','arm-source-appendix','arm-proof-receipt','arm-kernel-report'),
-      (properties,(ROOT/'proofs/ContinuumProperties.lean').read_text(),'property-proof-status.json','property-lean-check.txt','property-source-appendix','property-proof-receipt','property-kernel-report')]
+      (properties,(ROOT/'proofs/ContinuumProperties.lean').read_text(),'property-proof-status.json','property-lean-check.txt','property-source-appendix','property-proof-receipt','property-kernel-report'),
+      (material,(ROOT/'proofs/MaterialResponse.lean').read_text(),'material-proof-status.json','material-lean-check.txt','material-source-appendix','material-proof-receipt','material-kernel-report')]
     claim_bundles={c['id']:b for b in bundles for c in b[0]['claims']}
     for receipt,checked_source,receipt_path,transcript_path,*_ in bundles[1:]:
         (OUT/receipt_path).write_text(json.dumps(receipt,indent=2)+'\n')
-        if receipt is properties:continue  # Fresh property checker already wrote its transcript here.
+        if receipt is properties or receipt is material:continue  # Fresh checkers already wrote their transcripts here.
         original={id(transfer):'lean-check.txt',id(coupled):'coupled-lean-check.txt',id(arm):'arm-lean-check.txt'}[id(receipt)]
         shutil.copy(ROOT/'data/anatomical-arm-v1/audit'/original,OUT/transcript_path)
     def dependency_description(receipt):
@@ -213,6 +216,7 @@ def build():
     staging.unlink()
     assets=OUT/'assets';generate(assets)
     subprocess.run(['node',str(ROOT/'tools/property-experiment.mjs'),str(assets),str(OUT/'property-experiment.json')],cwd=ROOT,check=True)
+    subprocess.run(['node',str(ROOT/'tools/material-experiment.mjs'),str(assets),str(OUT/'material-experiment.json')],cwd=ROOT,check=True)
     evidence_figures(assets)
     advanced_figures(assets,spatial)
     from coupled_figures import generate as coupled_figures
@@ -230,7 +234,7 @@ def build():
     shutil.copytree(ROOT/'web',OUT/'web',dirs_exist_ok=True)
     subprocess.run([str(ROOT/'node_modules/.bin/esbuild'),str(ROOT/'web/app.mjs'),'--bundle','--minify','--format=esm','--target=es2022',f'--outfile={assets/"app.js"}','--legal-comments=external'],check=True)
     proofs=OUT/'proofs';proofs.mkdir(exist_ok=True)
-    for file in ['Mechanics.lean','AnatomicalTransfer.lean','CoupledMechanics.lean','AnatomicalArm.lean','anatomical-claims.json','coupled-claims.json','arm-claims.json','ContinuumProperties.lean','property-claims.json','mathlib-lock.json','lean-toolchain','claims.json']:shutil.copy(ROOT/'proofs'/file,proofs/file)
+    for file in ['Mechanics.lean','AnatomicalTransfer.lean','CoupledMechanics.lean','AnatomicalArm.lean','anatomical-claims.json','coupled-claims.json','arm-claims.json','ContinuumProperties.lean','property-claims.json','MaterialResponse.lean','material-claims.json','mathlib-lock.json','lean-toolchain','claims.json']:shutil.copy(ROOT/'proofs'/file,proofs/file)
     subprocess.run(['node',str(ROOT/'tools/build-anatomy-inspector.mjs')],check=True)
     subprocess.run(['node',str(ROOT/'tools/build-coupled-inspector.mjs')],check=True)
     subprocess.run(['node',str(ROOT/'tools/build-anatomical-arm-inspector.mjs')],check=True)
@@ -251,6 +255,7 @@ def build():
       'executable_outputs':executable_outputs(OUT),
       'proof_families':[b[2] for b in bundles],'property_mathlib':properties['mathlib'],
       'property_experiment':'property-experiment.json',
+      'material_experiment':'material-experiment.json',
       'git_revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
       'original_plans_base':'9b0c67fd25e1b645833a68bb9b1c2aba1404bbce',
       'determinism':'State progression repeatable in the pinned implementation; cross-browser transcendental bit identity and PDF byte identity not asserted.'}

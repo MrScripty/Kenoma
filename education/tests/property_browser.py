@@ -70,8 +70,8 @@ def check(destination):
         browser.close()
         browser=p.chromium.launch(headless=True,executable_path=os.environ.get('CHROMIUM_EXECUTABLE') or shutil.which('chromium'))
         page=browser.new_page(java_script_enabled=False);page.goto(f'http://127.0.0.1:{server.server_port}/index.html')
-        assert page.locator('.property-lesson .static-figure img').count()==3
-        assert page.locator('.property-lesson .static-figure img').evaluate_all('(els)=>els.every(x=>x.complete&&x.naturalWidth>0)')
+        assert page.locator('.property-lesson[data-property] .static-figure img').count()==3
+        assert page.locator('.property-lesson[data-property] .static-figure img').evaluate_all('(els)=>els.every(x=>x.complete&&x.naturalWidth>0)')
         browser.close();checks.append('Desktop/mobile geometry and summaries; static print/PDF and zero-JavaScript alternatives')
     finally:server.shutdown()
     (qa/('browser-check.json' if preview_mode else 'property-browser-check.json')).write_text(json.dumps({'schema':1,'result':'PASS_PROPERTY_PREVIEW' if preview_mode else 'PASS_INTEGRATED_PROPERTY_LABS','checks':checks,'javascript_errors':errors,'manifest':manifest_name,'manifest_sha256':hashlib.sha256((out/manifest_name).read_bytes()).hexdigest(),'html_sha256':hashlib.sha256((out/'index.html').read_bytes()).hexdigest(),'app_sha256':hashlib.sha256((out/('web/property-labs.mjs' if preview_mode else 'assets/app.js')).read_bytes()).hexdigest(),'source_revision':revision,'proof_cards':expected_proofs},indent=2)+'\n');print('\n'.join(checks))

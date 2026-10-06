@@ -7,6 +7,7 @@ import sys
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
 from recorded_inputs import recorded_input_matches
 from check_endpoint_warning_audit import check as check_endpoint_warning_audit
+from check_material_artifact import check as check_material_artifact
 ROOT=Path(__file__).resolve().parents[1];out=ROOT/'dist'
 proof=json.loads((out/'proof-status.json').read_text())
 assert proof['source_sha256']==hashlib.sha256((ROOT/'proofs/Mechanics.lean').read_bytes()).hexdigest()
@@ -14,7 +15,7 @@ assert proof['claims_sha256']==hashlib.sha256((ROOT/'proofs/claims.json').read_b
 assert len(proof['claims'])==12 and all(c['status']=='checked' for c in proof['claims'])
 assert all(set(c['axioms'])<={'propext','Quot.sound','Classical.choice'} for c in proof['claims'])
 families=[(proof,'checked-source-appendix','proof-check-receipt','kernel-dependency-report')]
-for receipt_name,source_name,claims_name,prefix,count in [('transfer-proof-status.json','AnatomicalTransfer.lean','anatomical-claims.json','transfer',2),('coupled-proof-status.json','CoupledMechanics.lean','coupled-claims.json','coupled',7),('arm-proof-status.json','AnatomicalArm.lean','arm-claims.json','arm',4),('property-proof-status.json','ContinuumProperties.lean','property-claims.json','property',4)]:
+for receipt_name,source_name,claims_name,prefix,count in [('transfer-proof-status.json','AnatomicalTransfer.lean','anatomical-claims.json','transfer',2),('coupled-proof-status.json','CoupledMechanics.lean','coupled-claims.json','coupled',7),('arm-proof-status.json','AnatomicalArm.lean','arm-claims.json','arm',4),('property-proof-status.json','ContinuumProperties.lean','property-claims.json','property',4),('material-proof-status.json','MaterialResponse.lean','material-claims.json','material',5)]:
  receipt=json.loads((out/receipt_name).read_text())
  assert receipt['source_sha256']==hashlib.sha256((ROOT/'proofs'/source_name).read_bytes()).hexdigest()
  assert receipt['claims_sha256']==hashlib.sha256((ROOT/'proofs'/claims_name).read_bytes()).hexdigest()
@@ -46,6 +47,7 @@ assert property_browser['html_sha256']==hashlib.sha256((out/'index.html').read_b
 assert property_browser['app_sha256']==hashlib.sha256((out/'assets/app.js').read_bytes()).hexdigest()
 assert property_browser['manifest_sha256']==hashlib.sha256((out/'build-manifest.json').read_bytes()).hexdigest()
 check_endpoint_warning_audit(out)
+check_material_artifact(out)
 property_render=json.loads((out/'property-book-review/render-receipt.json').read_text())
 assert property_render['result']=='PASS_PROPERTY_BOOK_RENDER_CAPTURE'
 assert property_render['html_sha256']==hashlib.sha256((out/'index.html').read_bytes()).hexdigest()
