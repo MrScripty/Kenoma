@@ -23,6 +23,9 @@ class EndpointAuditContract(unittest.TestCase):
     def test_changed_delivered_historical_renderer_rejected(self):
         (self.base/'endpoint-warning-history/web/property-labs.mjs').write_text('changed')
         with self.assertRaisesRegex(AssertionError,'historical renderer'):check(self.out)
+    def test_changed_delivered_historical_numerical_module_rejected(self):
+        (self.base/'endpoint-warning-history/web/tapered-bar.mjs').write_text('changed')
+        with self.assertRaisesRegex(AssertionError,'historical numerical module'):check(self.out)
     def test_stale_current_renderer_rejected(self):
         self.change('endpoint-warning-browser-audit.json',lambda r:r['sourceHashes'].update({'web/property-labs.mjs':'0'*64}))
         with self.assertRaisesRegex(AssertionError,'Current endpoint input'):check(self.out)

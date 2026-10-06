@@ -2,8 +2,8 @@
 import html
 SPECS={
  'deformation':('Property lab 1 · Measure deformation',[
- ('sx','Axial stretch',.4,1.7,.01,1.2),('sy','Y stretch',.4,1.7,.01,.85),('sz','Z stretch',.4,1.7,.01,1.03),('shear','Simple shear',-.8,.8,.01,.25),('angle','Rotation (degrees)',-180,180,1,20),('tx','Translation X (mm)',-50,50,1,0),('ty','Translation Y (mm)',-50,50,1,0),('tz','Translation Z (mm)',-50,50,1,0)]),
- 'tapered':('Property lab 3 · Uneven axial strain',[('length','Reference length (m)',.05,.5,.01,.2),('area','Narrow area (m²)',.0001,.001,.0001,.0003),('ratio','End area ratio',.5,4,.1,2),('modulus','Modulus E (Pa)',50000,500000,10000,100000),('force','Passive tensile force (N)',-1,1,.1,.3),('activeStress','Active stress offset (Pa)',0,2000,100,1000),('activation','Activation fraction',0,1,.05,1)]),
+ ('sx','X diagonal coefficient sx',.4,1.7,.01,1.2),('sy','Y diagonal coefficient sy',.4,1.7,.01,.85),('sz','Z diagonal coefficient sz',.4,1.7,.01,1.03),('shear','Off-diagonal coefficient k (Uxy)',-.8,.8,.01,.25),('angle','Rotation (degrees)',-180,180,1,20),('tx','Translation X (mm)',-50,50,1,0),('ty','Translation Y (mm)',-50,50,1,0),('tz','Translation Z (mm)',-50,50,1,0)]),
+ 'tapered':('Property lab 3 · Uneven axial strain',[('length','Reference length (m)',.05,.5,.01,.2),('area','Reference area A1 at s=0 (m²)',.0001,.001,.0001,.0003),('ratio','End area ratio A2/A1',.5,4,.1,2),('modulus','Modulus E (Pa)',50000,500000,10000,100000),('force','Passive tensile force (N)',-1,1,.1,.3),('activeStress','Active stress offset (Pa)',0,2000,100,1000),('activation','Activation fraction',0,1,.05,1)]),
  'isochoric':('Property lab 2 · Volume and cross-section',[
  ('axial','Axial stretch',.4,1.7,.01,.8),('lateral','Independent lateral stretch',.4,1.7,.01,1)])}
 def block(key,web):

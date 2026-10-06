@@ -43,7 +43,7 @@ export class Lab {
     root.querySelector('[data-action="release"]')?.addEventListener('click',()=>{this.pulse=false;this.params.excitation=0;this.sync();this.update();this.status.textContent='Excitation released. Activation and velocity continue from the current state.';});
     root.querySelector('[data-action="pulse"]')?.addEventListener('click',()=>this.pulseCurrent());
     root.querySelector('[data-action="export"]')?.addEventListener('click',()=>{
-      const blob=new Blob([JSON.stringify({schema:1,model:this.kind==='series'?'series-affine-tissue-v1':'schematic-elbow-v1',units:'SI, angle radians',tracePolicy:'One row per step; current row refreshed after same-time input changes. Its excitation applies to the next step; time, state and accumulated work do not advance.',parameters:this.params,initialEnergy:this.initialEnergy,pulse:this.pulse||null,trace:this.history},null,2)],{type:'application/json'});
+      const blob=new Blob([JSON.stringify({schema:1,model:this.kind==='series'?'series-force-length-affine-tissue-v2':'schematic-elbow-v1',units:'SI, angle radians',tracePolicy:'One row per step; current row refreshed after same-time input changes. Its excitation applies to the next step; time, state and accumulated work do not advance.',parameters:this.params,initialEnergy:this.initialEnergy,pulse:this.pulse||null,trace:this.history},null,2)],{type:'application/json'});
       const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=this.kind==='series'?'kenoma-series-trace.json':'kenoma-elbow-trace.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
       this.status.textContent='Downloaded the current trace with model parameters and energy accounting.';
     });

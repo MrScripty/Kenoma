@@ -25,6 +25,8 @@ For reference vertices $X_i$ and current vertices $x_i$, each in metres, constru
 
 $$F=D_sD_m^{-1},\qquad J=\det F,\qquad E_G=\frac12(F^TF-I).$$
 
+The controls impose $F=R_z(\theta)U$ with $U=\begin{pmatrix}s_x&k&0\\0&s_y&0\\0&0&s_z\end{pmatrix}$, then add a common translation: $x=FX+t$. Column vectors are used; $U$ acts first, the rigid rotation second. The off-diagonal coefficient $k$ is entered directly; this is not a shear matrix multiplied after a separately defined stretch. The diagonal coefficients are not all material-line stretches when shear is present. The reference X, Y and Z line stretches are $s_x$, $\sqrt{s_y^2+k^2}$ and $s_z$, respectively; the browser independently measures them from the transformed edges. Rotation and translation leave those line lengths unchanged.
+
 Translation cancels from the edges. A rigid rotation has $E_G=0$; simple shear can have $J=1$ while $E_G\ne0$. Volume preservation does not mean absence of strain.
 
 The independent measurement uses the oriented boundary triangles. For any common origin $o$, with outward face ordering,
@@ -35,7 +37,7 @@ The browser computes this triangle sum without calling the determinant helper. I
 
 {{property:deformation}}
 
-**Try and predict.** Set all three stretches to 1, shear and rotation to 0. The measured $J$ and boundary-volume ratio should both be 1, and Green strain should be zero. Change only translation X to 30 mm: it moves the tetrahedron but changes neither measurement. Next set axial stretch to 1.2: expect $J=1.2$. Restore unit stretches and set shear to 0.25: volume stays the same, but Green strain is nonzero. Rotation alone also keeps volume and strain unchanged; the components of $F$ can still change.
+**Try and predict.** Set all three diagonal coefficients to 1, shear and rotation to 0. The measured $J$ and boundary-volume ratio should both be 1, and Green strain should be zero. Change only translation X to 30 mm: it moves the tetrahedron but changes neither measurement. Next set axial stretch to 1.2: expect $J=1.2$. Restore unit diagonal coefficients and set shear to 0.25: volume stays the same, but Green strain is nonzero. Rotation alone also keeps volume and strain unchanged; the components of $F$ can still change.
 
 The controls prescribe the vertices. This lab measures $F$, $J$, Green strain and an independent boundary volume; it solves no forces, material energy, contact or equilibrium. A valid positive volume is a geometry check, not evidence of a realistic muscle response.
 
@@ -68,6 +70,8 @@ This volume-preserving motion is **prescribed kinematics**, not material-driven 
 Take a small-strain bar with length $L$ in metres, positive area $A(s)$ in square metres, constant modulus $E$ in pascals, no distributed axial load, and a tensile-positive resultant $N$ in newtons. Force balance gives $dN/ds=0$. The passive law gives $\epsilon(s)=N/[EA(s)]$, so
 
 $$\Delta L=\int_0^L\epsilon(s)\,ds=N\int_0^L\frac{ds}{EA(s)}.$$
+
+A1 is the reference area at s=0 and A2=rA1 is the end area at s=L. The ratio permits either direction of taper: for r<1, A2 is the narrow end; for r>1, A1 is the narrow end. The readout derives narrow/wide areas from the selected geometry.
 
 For linear **area** taper $A(s)=A_1[1+(r-1)s/L]$, the exact compliance is $L\ln(r)/[EA_1(r-1)]$, with limit $L/(EA_1)$ at $r=1$. Numerical midpoint integration is compared with that analytic integral. Linear area taper is a separate geometric assumption from a radius taper. The exterior surface influences surface traction and contact; it does not replace $A(s)$ in this axial law.
 

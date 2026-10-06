@@ -10,21 +10,22 @@ The tissue block's boundary is the rendered surface. There is no separate skin m
 
 Let l be the synthetic musculotendon path from Laboratory 4, l_f the fiber length and l_T the tendon length. There is zero pennation and l = l_f + l_T. An active force source in parallel with a passive fiber spring supplies
 
-$$F_A=aF_0,\qquad F_P=k_M\max(0,l_f-l_0),\qquad
+$$F_A=aF_0f_l(l_f),\qquad f_l(l_f)=\exp[-((l_f/l_0-1)/w)^2],\qquad F_P=k_M\max(0,l_f-l_0),\qquad
 F_T=k_T\max(0,l_T-l_{Ts}),\qquad F_T=F_A+F_P.$$
 
-The active source is deliberately independent of fiber length and velocity in this lesson. It is a tensile teaching actuator, not a calibrated Hill model. This choice differs from Laboratory 4's bell-shaped active curve and is disclosed rather than attributing that change to tendon compliance alone. A rigid/compliant comparison **within Laboratory 5** changes only the tendon assumption. Millard and colleagues' original comparison motivates making tendon assumptions and internal state explicit; the formulas here are original simpler teaching laws. [Original actuator comparison](#source-muscle)
+This is the same bell-shaped active force–length law, passive spring, activation and hinge geometry as Laboratory 4. The compliant tendon changes fiber length, so its effect on active tension is solved inside the equilibrium rather than attributed to a changed actuator law. The rigid-tendon/contact-off limit recovers Laboratory 4 at identical angle, activation and velocity. Neither lesson implements a measured force–velocity law or calibrated Hill model. [Original actuator comparison](#source-muscle)
 
-Write c_T = 1/k_T and Δ = l − l_Ts − l₀. The equilibrium is piecewise analytic. If Δ − c_T F_A ≤ 0, the passive spring is slack and F_T = F_A. Otherwise,
+Set $c_T=1/k_T$ (zero for the rigid switch), $L=l-l_{Ts}$ and solve for the real fiber length $f$:
 
-$$F_T=\frac{F_A+k_M\Delta}{1+k_Mc_T},\qquad
-l_T=l_{Ts}+c_TF_T,\qquad l_f=l-l_T.$$
+$$H(f)=f+c_T[F_A(f,a)+k_M\max(0,f-l_0)]-L=0.$$
 
-Both cases retain tensile tendon force. At zero activation and sufficiently short path, the tendon carries no force; a slack tendon is not a compressive strut. The rigid switch sets c_T = 0, so the tendon cannot store energy. The supported fiber domain is l_f ≥ 0.04 m; leaving it stops the teaching solve instead of extrapolating toward zero fiber length. This is an authored admissibility bound, not a physiological threshold.
+The supported tendon stiffnesses 15,000–60,000 N/m retain a unique root in $[0,L]$. The active slope satisfies $|\partial F_A/\partial f|\leq F_0\sqrt{2/e}/(wl_0)$, about 8,578 N/m at full activation. Therefore $H'(f)\geq1-c_TF_0\sqrt{2/e}/(wl_0)>0$ on either passive branch. For the supported pose/activation domain, $H(0)\leq0$ and $H(L)\geq0$; the executable bracket checks the lower end before bisection. A nonpositive-root candidate is explicitly inadmissible. This derivative/bracket argument is a real mathematical derivation; its real-domain Lean formalization remains **unfinished**, and integer algebra cards do not prove it.
 
-For the passive-taut case set d = 1 + k_M c_T; in the passive-slack case d = 1. Differentiating the equilibrium gives
+The implementation bisects the monotone scalar equation, then reports $l_T=l-f$, $F_T=F_A+F_P$ and the independent tendon-force residual $k_T(l_T-l_{Ts})-F_T$. At zero activation and a short path, the tendon carries zero force; it is not a compressive strut. The rigid switch sets $f=L$ and stores no tendon energy. The supported fiber domain remains $f\geq0.04$ m; leaving it stops the teaching solve. Material coefficients and that admissibility bound are unchanged.
 
-$$\dot l_f=\frac{\dot l-c_TF_0\dot a}{d},\qquad
+Write $F_{A,f}=\partial F_A/\partial f$ and $F_{A,a}=F_0f_l(f)$. With $d=1+c_T(F_{A,f}+k_M\mathbf1_{f>l_0})>0$, differentiating the equilibrium gives
+
+$$\dot l_f=\frac{\dot l-c_TF_{A,a}\dot a}{d},\qquad
 \dot l_T=\dot l-\dot l_f.$$
 
 Thus a held joint can have l̇ = 0 while fibers shorten and the tendon lengthens as activation rises. Release can lengthen an active fiber while the whole path remains fixed. “Isometric” must name the quantity that is held: joint angle, total path, or fiber length. The controls show all three length quantities and the fiber velocity.
@@ -33,7 +34,7 @@ Thus a held joint can have l̇ = 0 while fibers shorten and the tendon lengthens
 
 {{series-holds}}
 
-All values belong to the authored schematic. At this pose the passive fiber spring is slack. The compliant case stores about 8.60 J in the tendon while the rigid case stores none. That energy does not come from motion of the prescribed skeleton: it comes from active fiber shortening. No metabolic efficiency or ATP consumption is modeled.
+All values belong to the authored schematic. At this pose the passive fiber spring is slack. The compliant case stores about 5.92 J in the tendon while the rigid case stores none. That energy does not come from motion of the prescribed skeleton: it comes from active fiber shortening. No metabolic efficiency or ATP consumption is modeled.
 
 ## Count active work at the fiber, not twice at the hinge
 

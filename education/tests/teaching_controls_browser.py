@@ -10,7 +10,7 @@ from threading import Thread
 from tempfile import TemporaryDirectory
 from io import BytesIO
 import argparse, hashlib, json, os, shutil, subprocess, sys
-from math import tan, pi
+from math import tan, pi, exp, hypot
 from PIL import Image
 from playwright.sync_api import sync_playwright, expect
 
@@ -30,6 +30,90 @@ def marker_x(canvas, path):
 
 def check(page, out, case='all'):
     observed = {}
+    if case in ['all', 'alignment']:
+        lab = page.locator('[data-property=deformation]')
+        expect(lab.locator('label[for=property-deformation-sy]')).to_have_text('Y diagonal coefficient sy')
+        for key, value in [('sy', '.8'), ('shear', '.6')]:
+            lab.locator(f'input[type=number][data-param={key}]').fill(value)
+        imposed = state(lab)
+        assert abs(imposed['measurements']['materialLineStretches'][1]-1) < 1e-12
+        expect(lab.locator('.readout')).to_contain_text('Y material-line stretch')
+        lab.screenshot(path=str(out/'property-shear-line-stretch.png'))
+        observed['deformation'] = imposed
+        lab = page.locator('[data-property=tapered]')
+        expect(lab.locator('label[for=property-tapered-area]')).to_have_text('Reference area A1 at s=0 (m²)')
+        lab.locator('input[type=number][data-param=ratio]').fill('.5')
+        reversed_taper = state(lab)
+        measurements = reversed_taper['measurements']
+        assert measurements['narrowAreaM2'] == reversed_taper['parameters']['area']*.5
+        assert measurements['endpointStrains'][1] > measurements['endpointStrains'][0]
+        expect(lab.locator('.readout')).to_contain_text('Narrow area from geometry')
+        lab.screenshot(path=str(out/'property-reversed-taper.png'))
+        observed['reversedTaper'] = reversed_taper
+        # Same actual controls/time/input compare earlier law with rigid series limit.
+        forces = []
+        for kind in ['elbow', 'series']:
+            lab = page.locator('#lab-'+kind)
+            lab.locator('[data-action=reset]').click()
+            lab.locator('select[data-param=mode]').select_option('prescribed')
+            lab.locator('input[type=number][data-param=angle]').fill('90')
+            if kind == 'series':
+                lab.locator('select[data-param=tendon]').select_option('rigid')
+                lab.locator('select[data-param=contact]').select_option('off')
+            lab.evaluate('(lab)=>{for(let i=0;i<60;i++)lab.querySelector("[data-action=step]").click()}')
+            current = state(lab)
+            with page.expect_download() as info: lab.locator('[data-action=export]').click()
+            info.value.save_as(str(out/f'{kind}-force-length-trace.json'))
+            trace = json.loads((out/f'{kind}-force-length-trace.json').read_text())
+            row, p = trace['trace'][-1], current['parameters']
+            fiber = hypot(p['origin'], p['insertion'])-p['tendonLength']
+            expected = p['maxForce']*current['state']['a']*exp(-((fiber/p['optimalFiber']-1)/p['width'])**2)
+            assert abs(row['active']-expected) < 1e-8
+            assert row['active'] < p['maxForce']*current['state']['a']-40
+            forces.append(row['active'])
+            lab.screenshot(path=str(out/f'{kind}-rigid-force-length.png'))
+            observed[kind+'RigidLimit'] = {'current': current, 'row': row}
+        assert abs(forces[0]-forces[1]) < 1e-8
+        lab = page.locator('#lab-series')
+        lab.locator('select[data-param=tendon]').select_option('compliant')
+        lab.evaluate('(lab)=>{for(let i=0;i<60;i++)lab.querySelector("[data-action=step]").click()}')
+        with page.expect_download() as info: lab.locator('[data-action=export]').click()
+        info.value.save_as(str(out/'series-compliant-force-length-trace.json'))
+        row = json.loads((out/'series-compliant-force-length-trace.json').read_text())['trace'][-1]
+        assert row['fiber'] < fiber and row['tendonEnergy'] > 0 and row['active'] < forces[1]
+        assert abs(row['forceResidual']) < 1e-8 and abs(row['balanceResidual']) < 1e-5
+        lab.screenshot(path=str(out/'series-compliant-force-length.png'))
+        observed['seriesCompliant'] = row
+        # Actual Lab6 fields, common scales, fixed-node forces and retained assembly.
+        lab = page.locator('#lab-continuum')
+        lab.locator('[data-action=start]').click()
+        expect(lab).to_have_attribute('data-scene-state', 'ready')
+        lab.locator('select[data-param=case]').select_option('affine')
+        lab.locator('select[data-param=comparison]').select_option('static')
+        affine = state(lab)
+        assert affine['diagnostics']['colour']['max'] == 4000
+        assert all(abs(v-1600) < 1e-6 for v in sum(affine['diagnostics']['colour']['fields'], []))
+        assert abs(affine['diagnostics']['referenceReactionN'][0]+.96) < 1e-8
+        expect(lab.locator('.readout')).to_contain_text('force ON block xyz')
+        lab.screenshot(path=str(out/'continuum-affine-stress-reaction.png'))
+        lab.locator('select[data-param=case]').select_option('quadratic')
+        lab.screenshot(path=str(out/'continuum-quadratic-stress.png'))
+        lab.locator('select[data-param=comparison]').select_option('implicit')
+        lab.locator('select[data-param=colorBy]').select_option('error')
+        lab.locator('select[data-param=h]').select_option('0.002')
+        lab.locator('select[data-param=sweeps]').select_option('1')
+        coarse = state(lab)
+        lab.screenshot(path=str(out/'continuum-coarse-error.png'))
+        lab.locator('select[data-param=sweeps]').select_option('100')
+        refined = state(lab)
+        assert coarse['diagnostics']['colour']['max'] == refined['diagnostics']['colour']['max'] == .0005
+        assert refined['diagnostics']['colour']['observedMax'] < coarse['diagnostics']['colour']['observedMax']/10
+        assert coarse['diagnostics']['colour']['fields'][0] == [0]*len(coarse['diagnostics']['colour']['fields'][0])
+        assert refined['diagnostics']['assemblyCount'] == coarse['diagnostics']['assemblyCount']
+        lab.screenshot(path=str(out/'continuum-refined-error.png'))
+        lab.locator('select[data-param=magnification]').select_option('100')
+        assert state(lab)['diagnostics']['colour'] == refined['diagnostics']['colour']
+        observed['continuum'] = {'affine': affine, 'coarse': coarse, 'refined': refined}
     if case in ['all', 'workflows']:
         for kind in ['elbow', 'series', 'spatial']:
             lab = page.locator('#lab-'+kind)
@@ -221,7 +305,7 @@ def check(page, out, case='all'):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--out', type=Path, default=Path('/tmp/kenoma-teaching-controls'))
-    parser.add_argument('--case', choices=['all', 'force', 'property', 'spatial', 'elbow', 'workflows'], default='all')
+    parser.add_argument('--case', choices=['all', 'force', 'property', 'spatial', 'elbow', 'workflows', 'alignment'], default='all')
     args = parser.parse_args(); out = args.out.resolve(); out.mkdir(parents=True, exist_ok=True)
     sys.path.insert(0, str(ROOT/'tools'))
     from build import lab_block
@@ -230,17 +314,18 @@ def main():
     from spatial_figures import generate as generate_advanced_figures
     receipt = {'scope': 'Generated production lab HTML + production app bundle; not a full book/proof build',
                'source_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
-               'source_sha256': {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in list((ROOT/'web').glob('*.mjs'))+[ROOT/'tools/build.py', ROOT/'tools/property_labs.py', ROOT/'tools/figures.py', ROOT/'tools/spatial_figures.py', ROOT/'tools/spatial-experiment.mjs', ROOT/'contributions/continuum_reference/data/example.json', Path(__file__).resolve()]},
+               'source_sha256': {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in list((ROOT/'web').glob('*.mjs'))+[ROOT/'tools/build.py', ROOT/'tools/property_labs.py', ROOT/'tools/property-experiment.mjs', ROOT/'tools/figures.py', ROOT/'tools/spatial_figures.py', ROOT/'tools/spatial-experiment.mjs', ROOT/'contributions/continuum_reference/continuum.mjs', ROOT/'contributions/continuum_reference/data/example.json', Path(__file__).resolve()]},
                'case': args.case, 'status': 'FAIL'}
     with TemporaryDirectory(prefix='kenoma-controls-') as temp:
         site = Path(temp)
         generate_figures(site/'assets')
+        subprocess.check_output(['node', str(ROOT/'tools/property-experiment.mjs'), str(site/'assets')], text=True)
         spatial = json.loads(subprocess.check_output(['node', str(ROOT/'tools/spatial-experiment.mjs')], text=True))
         generate_advanced_figures(site/'assets', spatial)
         shutil.copy(ROOT/'web/style.css', site/'style.css')
         html = '<!doctype html><html lang="en"><meta charset="utf-8"><title>Teaching control qualification</title><link rel="stylesheet" href="style.css"><body><main>'
-        html += ''.join(lab_block(key, True) for key in ['force', 'energy', 'elbow', 'series', 'spatial'])
-        html += block('tapered', True)+'</main><script type="module" src="app.js"></script></body></html>'
+        html += ''.join(lab_block(key, True) for key in ['force', 'energy', 'elbow', 'series', 'spatial', 'continuum'])
+        html += block('deformation', True)+block('tapered', True)+'</main><script type="module" src="app.js"></script></body></html>'
         (site/'index.html').write_text(html)
         subprocess.run([str(ROOT/'node_modules/.bin/esbuild'), str(ROOT/'web/app.mjs'), '--bundle', '--minify', '--format=esm', '--target=es2022', f'--outfile={site/"app.js"}', '--legal-comments=external'], check=True)
         receipt['html_sha256'] = hashlib.sha256((site/'index.html').read_bytes()).hexdigest()

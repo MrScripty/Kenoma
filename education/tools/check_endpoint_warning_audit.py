@@ -4,6 +4,7 @@ import hashlib,json,sys
 ROOT=Path(__file__).resolve().parents[1]
 HISTORICAL_RECEIPT_SHA256='7995b4d3a33cd07994c43007a9e4208170e35f5e1d5d14ba93e0c675cf1acdc3'
 HISTORICAL_RENDERER='data/property-labs-v1/endpoint-warning-history/web/property-labs.mjs'
+HISTORICAL_NUMERICAL='data/property-labs-v1/endpoint-warning-history/web/tapered-bar.mjs'
 NUMERICAL_INPUTS={'web/tapered-bar.mjs','web/property-labs.mjs','tests/tapered_bar.test.mjs',
                   'data/property-labs-v1/review/first-preview/web/tapered-bar.mjs',
                   'tools/tapered-bar-current-endpoint-audit.mjs'}
@@ -18,10 +19,13 @@ def check(out):
     historical=json.loads(path.read_text())
     assert historical['result']=='PASS_PRESERVED_WARNING_FAILURE_AND_ENDPOINT_CORRECTION'
     for relative,expected in historical['sourceHashes'].items():
-        source=ROOT/(HISTORICAL_RENDERER if relative=='web/property-labs.mjs' else relative)
+        archived={'web/property-labs.mjs':HISTORICAL_RENDERER,'web/tapered-bar.mjs':HISTORICAL_NUMERICAL}.get(relative)
+        source=ROOT/(archived or relative)
         assert digest(source)==expected,'Historical endpoint input changed: '+relative
         if relative=='web/property-labs.mjs':
             assert digest(Path(out)/HISTORICAL_RENDERER)==expected,'Delivered historical renderer changed'
+        if relative=='web/tapered-bar.mjs':
+            assert digest(Path(out)/HISTORICAL_NUMERICAL)==expected,'Delivered historical numerical module changed'
     current=json.loads((base/'endpoint-warning-current-audit.json').read_text())
     assert current['result']=='PASS_CURRENT_ENDPOINT_CORRECTION'
     assert current['historicalReceiptSHA256']==HISTORICAL_RECEIPT_SHA256

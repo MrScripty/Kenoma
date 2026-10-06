@@ -121,7 +121,7 @@ def check():
         expect(series.locator('.readout')).to_contain_text('Lengthening')
         with page.expect_download() as info:series.locator('[data-action=export]').click()
         info.value.save_as(str(out/'series-trace.json'));trace=json.loads((out/'series-trace.json').read_text());r=trace['trace'][-1]
-        assert trace['model']=='series-affine-tissue-v1' and len(trace['trace'])==62
+        assert trace['model']=='series-force-length-affine-tissue-v2' and len(trace['trace'])==62
         assert r['tissue']['normal']>5.5 and r['tissue']['volumeRatio']>.99 and abs(r['tissue']['skinVolumeRatio']-.5)<1e-12
         assert r['fiberSpeed']>0 and r['activePower']<0 and r['hingeMusclePower']==0
         series.screenshot(path=str(out/'series-desktop.png'))
