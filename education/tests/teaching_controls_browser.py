@@ -118,7 +118,7 @@ def check(page, out, case='all'):
         spoken = lab.locator('.announce').text_content()
         lab.locator('.announce').evaluate('(el)=>{el.mutations=0;el.observer=new MutationObserver(rows=>el.mutations+=rows.length);el.observer.observe(el,{childList:true,characterData:true,subtree:true});}')
         lab.locator('[data-action=play]').click()
-        page.wait_for_timeout(300)
+        expect(lab.locator('.readout div').filter(has=lab.locator('dt', has_text='Step')).locator('dd')).not_to_have_text('0 / 2400', timeout=10000)
         lab.locator('[data-action=play]').click()
         assert lab.locator('.announce').text_content() == spoken
         assert lab.locator('.announce').evaluate('(el)=>{el.observer.disconnect();return el.mutations;}') == 0
