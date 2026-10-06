@@ -19,6 +19,7 @@ export function barGeometry(p){
 export function totalDuration(p){return 2*p.ramp+p.hold+p.recovery;}
 export function initialState(p){validateParameters(p);return {time:0,z:0,c:0,force:0,workJ:0,dissipationJ:0,phase:'load',heldC:null,unloadN:null,maxResidualJ:0};}
 function moments(k,h){
+ if(k===0)return {I0:h,I1:h*h/2}; // Continuous limit when the rate underflows.
  // I0=integral exp(-kt)dt and I1=integral t exp(-kt)dt.
  const x=k*h,I0=-Math.expm1(-x)/k;
  const I1=Math.abs(x)<.001?h*h*(.5-x/3+x*x/8-x*x*x/30+x**4/144):(-Math.expm1(-x)-x*Math.exp(-x))/(k*k);

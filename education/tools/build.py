@@ -139,12 +139,12 @@ def build():
         stmt='theorem '+name+statement.group(1)
         meta=f"Lean 4.19.0; {dependency_description(receipt)}; transitive axioms: {', '.join(c['axioms']) or 'none'}; source SHA-256: {receipt['source_sha256']}"
         if not web:
-            claim_text=c['claim'].replace('*',r'\*');assumptions=c['assumptions'].replace('*',r'\*');limits=c['limitations'].replace('*',r'\*')
+            claim_text=c['claim'].replace('*',r'\*').replace('^',r'\^');assumptions=c['assumptions'].replace('*',r'\*').replace('^',r'\^');limits=c['limitations'].replace('*',r'\*').replace('^',r'\^')
             return f"\n**Checked claim {id}:** {claim_text}\n\n**Assumptions:** {assumptions}\n\n```lean\n{stmt}\n```\n\n**Limits:** {limits}\n\nDeclaration: `{c['theorem']}`. {meta}. [Full checked source]({receipt['source']}); [receipt]({receipt_path}).\n"
         e=html.escape
         # Pandoc parses prose inside aside elements as Markdown. Claim-map
         # multiplication signs are literal text, not emphasis delimiters.
-        def prose(value):return e(value).replace('*','&#42;')
+        def prose(value):return e(value).replace('*','&#42;').replace('^','&#94;')
         implementation=c.get('implementation','See the adjacent derivation and original mechanics claim map.')
         match=re.match(r'(web/[^: ]+)',implementation)
         implementation_html=(f'<a href="{e(match[1])}">{prose(implementation)}</a>' if match else prose(implementation))

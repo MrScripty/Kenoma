@@ -213,3 +213,12 @@ test('parameter and state errors reject without mutating the last valid physical
  assert.throws(()=>stepProtocol(p,{...unloading,unloadN:0}),RangeError,'force must agree with the stored unloading ramp');
  assert.throws(()=>stepProtocol(p,{...unloading,workJ:unloading.workJ+.01}),RangeError);
 });
+
+// The real branch is too small to resolve in double arithmetic; direct per-cell
+// rates underflow to zero too. The limiting formula must still give finite states.
+test('a representable branch with an underflowed rate remains finite and agrees with the independent cell equations',()=>{
+ const p={...SLS_DEFAULTS,segments:8,E1:Number.MIN_VALUE},result=runProtocol(p);
+ compareReference(p,result);
+ assert.equal(result.state.phase,'done');
+ assert.equal(result.state.dissipationJ,0);
+});
