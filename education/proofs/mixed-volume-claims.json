@@ -107,7 +107,7 @@
     "id": "projection-inner-project",
     "theorem": "KenomaMixedVolume.inner_project",
     "claim": "Projection preserves pairing with admissible vectors",
-    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic. Supplied real linear projection into Q with residual orthogonal to every vector in Q.",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic. Supplied real linear projection into Q with residual orthogonal to every vector in Q. Candidate p belongs to Q.",
     "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
     "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
   },

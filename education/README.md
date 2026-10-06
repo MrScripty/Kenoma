@@ -18,11 +18,13 @@ python3 -m playwright install chromium
 python3 tools/install_lean.py --directory .tools
 export LEAN="$PWD/.tools/lean-4.19.0-linux/bin/lean"
 python3 tools/build_property_mathlib.py
+python3 tools/check_mixed_volume_proofs.py --build-dependencies
 npm test
 npm run build
 npm run pdf
 npm run test:browser
 npm run test:mobile
+python3 tests/projection_integration.py
 python3 tests/anatomical_arm_inspection.py
 python3 tests/property_browser.py dist
 python3 tests/worker_lifecycle.py
@@ -51,14 +53,14 @@ A system Chromium can be used when installed; `CHROMIUM_EXECUTABLE=/absolute/pat
 - `{{demo:force}}`, `{{demo:torque}}`, `{{demo:energy}}`, `{{demo:elbow}}`, `{{demo:series}}` expand into HTML laboratories or static Markdown descriptions. `{{demo:continuum}}` and `{{demo:spatial}}` add the advanced lessons. Original SVGs are generated from actual solved fixture coordinates as well as elementary diagrams.
 - `{{proof:ID}}` connects a claim to the declaration in `proofs/claims.json`. `tools/check_proofs.py` invokes Lean afresh, rejects unknown/custom axiom dependencies and admissions, and writes a source-bound receipt only on success. No manual checked flag is accepted.
 - `{{property:deformation}}`, `{{property:isochoric}}` and `{{property:tapered}}` add independent boundary-volume and axial-bar lessons with static print figures. `tools/check_property_proofs.py` freshly checks their four real kinematic declarations and pins each transitive Git dependency before emitting a receipt.
-- `tools/check_real_lesson_proofs.py` uses the same pinned dependency check, then compiles the separate real material, mechanics, actuator, SLS and serial-block sources. All five additional Real family receipts are withheld if any declaration fails. Real cards state their assumptions and limits; integer contracts, numerical checks and remaining finite-bulk specimen derivative/equilibrium and numerical refinement obligations remain distinct.
+- `tools/check_real_lesson_proofs.py` uses the same pinned dependency check, then compiles the separate real material, mechanics, actuator, SLS, serial-block and fixed-vector projection sources. All six additional Real family receipts are withheld if any declaration fails. Real cards state their assumptions and limits; integer contracts, numerical checks and remaining finite-bulk specimen derivative/equilibrium and numerical refinement obligations remain distinct.
 - `{{dissipative:sls}}` adds the passive axial load/hold/unload/recovery protocol and energy ledger. `{{serial:assembly}}` adds two separate incompressible neo-Hookean blocks with bilateral sliding fixtures, a shared signed force, actual 3D geometry, local volume measurements and visible root residuals. The serial lesson has twelve scoped Real declarations; it proves neither continuous-taper fields nor unrestricted stability.
 - `{{experiment}}` executes the browser's pure mechanics module to generate the table and JSON result. Tests independently compare reference values and convergence, without claiming implementation refinement proofs.
 - The PDF prints the same HTML manuscript with native MathML and static diagrams. Controls and canvases are omitted; all prose, worked examples and exact claims remain.
 
 Each 3D laboratory initializes only when requested and keeps one canvas for its surface. Numerical controls work without WebGL. A zero-JavaScript reader retains all chapter text, figures, mathematical claims and the numerical experiment table. Labs start paused; Reset restores all parameters and camera. Only deliberate requested summaries are announced, rather than every frame.
 
-Thirty declarations use exact integer domains and bundled Std. Forty-six declarations use reals with pinned mathlib. Four of those declarations in `ContinuumProperties.lean` use real matrices and the real square root with pinned mathlib v4.19.0; `proofs/mathlib-lock.json` binds its commit and dependency manifest. The source build uses two jobs and does not require a binary cache. These are mathematical contracts, not real-valued biological model validation. The original twelve Mechanics checks cover cancellation, torque identities, kinetic-energy numerator nonnegativity, an exact worked torque, an integer convex-mixture numerator bound and signed virtual-power algebra, plus element-gradient resultants, centroid force-transfer power, a compliant-denominator bound and Armijo acceptance. Every card declares its domain and limits. These exact contracts do not prove the numerical implementation or biological response.
+Thirty declarations use exact integer domains and bundled Std. Seventy-three declarations use reals with pinned mathlib. Four of those declarations in `ContinuumProperties.lean` use real matrices and the real square root with pinned mathlib v4.19.0; `proofs/mathlib-lock.json` binds its commit and dependency manifest. The source build uses two jobs and does not require a binary cache. These are mathematical contracts, not real-valued biological model validation. The original twelve Mechanics checks cover cancellation, torque identities, kinetic-energy numerator nonnegativity, an exact worked torque, an integer convex-mixture numerator bound and signed virtual-power algebra, plus element-gradient resultants, centroid force-transfer power, a compliant-denominator bound and Armijo acceptance. Every card declares its domain and limits. These exact contracts do not prove the numerical implementation or biological response.
 
 ## GitHub Pages foundation
 
