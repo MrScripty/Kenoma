@@ -1,0 +1,238 @@
+{
+  "schema": 1,
+  "result": "PASS_SOURCE_BOUND_CONTROL_SUMMARY",
+  "samePhysicalOldState": true,
+  "coarsePhysicalEndpointExactlyReproduced": true,
+  "fixed": {
+    "bodyPointsPerElement": 256,
+    "maxIterationsPerFrozenContactRule": 120,
+    "stationarityToleranceN": 0.0001
+  },
+  "cases": [
+    {
+      "factor": 1,
+      "hS": 0.03,
+      "result": "ACCEPTED_ISOLATED_INTERVAL",
+      "acceptedSteps": 1,
+      "acceptedEndpointTimeS": 0.43000000000000016,
+      "acceptedEndpointAngleDeg": 33.534950964707086,
+      "maximumAcceptedIndependentResidualN": 0.00004248022990923023,
+      "minimumAcceptedCornerJ": 0.9742469759549923,
+      "attempts": [
+        {
+          "accepted": true,
+          "targetTimeS": 0.43000000000000016,
+          "residualN": 0.0000424802298708009,
+          "iterationsAcrossFrozenContactRules": 7,
+          "contactRefinement": [
+            {
+              "round": 0,
+              "converged": true,
+              "residualN": 0.0000424802298708009,
+              "iterations": 7,
+              "evaluations": 8,
+              "added": 0,
+              "bodyWitnesses": 0,
+              "boneWitnesses": 0,
+              "tendonWitnesses": 0,
+              "softWitnesses": 0,
+              "examples": []
+            }
+          ],
+          "recordedIterationSummary": {
+            "rows": 7,
+            "frozenRuleIterationCounterRestarts": 0,
+            "minimumRecordedIterationResidualN": 0.0000424802298708009,
+            "finalRecordedIterationResidualN": 0.0000424802298708009,
+            "minimumAcceptedLineSearchStep": 1,
+            "maximumRegularizationNPerM": 1000,
+            "maximumCGIterations": 1
+          }
+        }
+      ],
+      "traceIterations": 7,
+      "rejectedReplay": null,
+      "rollback": null
+    },
+    {
+      "factor": 3,
+      "hS": 0.01,
+      "result": "ACCEPTED_ISOLATED_INTERVAL",
+      "acceptedSteps": 3,
+      "acceptedEndpointTimeS": 0.43000000000000016,
+      "acceptedEndpointAngleDeg": 33.808657958830956,
+      "maximumAcceptedIndependentResidualN": 0.000029325310196382653,
+      "minimumAcceptedCornerJ": 0.9703146398349959,
+      "attempts": [
+        {
+          "accepted": true,
+          "targetTimeS": 0.41000000000000014,
+          "residualN": 0.000004927672670909265,
+          "iterationsAcrossFrozenContactRules": 76,
+          "contactRefinement": [
+            {
+              "round": 0,
+              "converged": true,
+              "residualN": 0.000021901757884212154,
+              "iterations": 41,
+              "evaluations": 67,
+              "added": 6,
+              "bodyWitnesses": 2,
+              "boneWitnesses": 4,
+              "tendonWitnesses": 0,
+              "softWitnesses": 0,
+              "examples": [
+                {
+                  "kind": "muscle-bone",
+                  "body": 6,
+                  "bone": 1,
+                  "face": 9,
+                  "t": 0.618452078961772,
+                  "pointM": [
+                    -0.25423972824724245,
+                    -0.12238543913402522,
+                    0.9496837754659687
+                  ],
+                  "signedDistanceM": -0.00007463697571243688,
+                  "interval": [
+                    0.5276502933977981,
+                    0.7092538645257458
+                  ]
+                },
+                {
+                  "kind": "muscle-bone",
+                  "body": 6,
+                  "bone": 1,
+                  "face": 28,
+                  "t": 0.38154792103822854,
+                  "pointM": [
+                    -0.25423972824724245,
+                    -0.12238543913402522,
+                    0.9496837754659686
+                  ],
+                  "signedDistanceM": -0.00007463697571244112,
+                  "interval": [
+                    0.2907461354742549,
+                    0.4723497066022022
+                  ]
+                }
+              ]
+            },
+            {
+              "round": 1,
+              "converged": true,
+              "residualN": 0.000004927672670909265,
+              "iterations": 35,
+              "evaluations": 67,
+              "added": 0,
+              "bodyWitnesses": 0,
+              "boneWitnesses": 0,
+              "tendonWitnesses": 0,
+              "softWitnesses": 0,
+              "examples": []
+            }
+          ],
+          "recordedIterationSummary": {
+            "rows": 76,
+            "frozenRuleIterationCounterRestarts": 1,
+            "minimumRecordedIterationResidualN": 0.000004927672670909265,
+            "finalRecordedIterationResidualN": 0.000004927672670909265,
+            "minimumAcceptedLineSearchStep": 0.000244140625,
+            "maximumRegularizationNPerM": 10000,
+            "maximumCGIterations": 4
+          }
+        },
+        {
+          "accepted": true,
+          "targetTimeS": 0.42000000000000015,
+          "residualN": 0.000029325310279178654,
+          "iterationsAcrossFrozenContactRules": 26,
+          "contactRefinement": [
+            {
+              "round": 0,
+              "converged": true,
+              "residualN": 0.000029325310279178654,
+              "iterations": 26,
+              "evaluations": 35,
+              "added": 0,
+              "bodyWitnesses": 0,
+              "boneWitnesses": 0,
+              "tendonWitnesses": 0,
+              "softWitnesses": 0,
+              "examples": []
+            }
+          ],
+          "recordedIterationSummary": {
+            "rows": 26,
+            "frozenRuleIterationCounterRestarts": 0,
+            "minimumRecordedIterationResidualN": 0.000029325310279178654,
+            "finalRecordedIterationResidualN": 0.000029325310279178654,
+            "minimumAcceptedLineSearchStep": 0.0078125,
+            "maximumRegularizationNPerM": 100000,
+            "maximumCGIterations": 5
+          }
+        },
+        {
+          "accepted": true,
+          "targetTimeS": 0.43000000000000016,
+          "residualN": 0.0000014087847436853413,
+          "iterationsAcrossFrozenContactRules": 59,
+          "contactRefinement": [
+            {
+              "round": 0,
+              "converged": true,
+              "residualN": 0.0000014087847436853413,
+              "iterations": 59,
+              "evaluations": 121,
+              "added": 0,
+              "bodyWitnesses": 0,
+              "boneWitnesses": 0,
+              "tendonWitnesses": 0,
+              "softWitnesses": 0,
+              "examples": []
+            }
+          ],
+          "recordedIterationSummary": {
+            "rows": 59,
+            "frozenRuleIterationCounterRestarts": 0,
+            "minimumRecordedIterationResidualN": 0.0000014087847436853413,
+            "finalRecordedIterationResidualN": 0.0000014087847436853413,
+            "minimumAcceptedLineSearchStep": 0.0001220703125,
+            "maximumRegularizationNPerM": 100000,
+            "maximumCGIterations": 5
+          }
+        }
+      ],
+      "traceIterations": 161,
+      "rejectedReplay": null,
+      "rollback": null
+    }
+  ],
+  "localMatchedEndpoint": {
+    "timeS": 0.43000000000000016,
+    "angleDifferenceDeg": 0.2737069941238718,
+    "maximumNodalDifferenceM": 0.0005957758504728777,
+    "activation": 0.0002590675376713519
+  },
+  "fullReleaseMatchedEndpoint": {
+    "timeS": 0.43000000000000016,
+    "coarseAngleDeg": 33.534950964707086,
+    "fineAngleDeg": 38.25633035900602,
+    "angleDifferenceDeg": 4.721379394298936,
+    "maximumNodalDifferenceM": 0.0074036776038493915,
+    "coarseIndependentResidualN": 0.00004248022990923023,
+    "fineIndependentResidualN": 7.281126307931169e-7
+  },
+  "sourceHashes": {
+    "data/anatomical-arm-v1/audit/dense-controlled-release-interval.json": "d88b444442e176a0de5b1abfa52cb16ca890f9aa88b1a0d8b046d81a767c6f8a",
+    "data/anatomical-arm-v1/audit/dense-controlled-release-interval-recheck.json": "f6d6df435b2749226b34c13ef8db286ac1c81e5e33e13c38182a0c5ec4c49e27",
+    "data/anatomical-arm-v1/audit/anatomical-dense-trajectory.json": "695c2b682d5d97a4a3bd4876bb7352724e80a7f3cf050568d456d29ec1b7532b",
+    "data/anatomical-arm-v1/audit/dense-release-secant-matched-times.json": "2b4b4573d66e14c107faf4acde335c44882cf723478f3751dfa4df9e87a606b1",
+    "tools/summarize-dense-release-controls.mjs": "34d953b98cd3f7464a865d4ac4b781f14f2fec2688dd4c0a9236dafe21baf8b0"
+  },
+  "limits": [
+    "Both controls start from identical accepted physical state and constitutive law. Different explicit seeds and adaptive contact quadrature prevent attributing the result solely to timestep.",
+    "The local interval and full release refinement have different histories; their differences cannot be subtracted to identify a causal error contribution.",
+    "Independent P2 force projection into the existing reduced basis is not full-nodal equilibrium, mesh/quadrature/timestep convergence, or anatomical calibration."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "result": "PASS_CONTROL_FIGURE_RENDER",
+  "sourceSummarySHA256": "c0956f5f5e4a3e147b5aa24b1047dade6497cf5341dbd4c33353875502525bcb",
+  "rendererSHA256": "bd8963d510142082f851098ac5efe65f2ad241869d7057624e7096d35f11f2be",
+  "renderedSHA256": {
+    "data/anatomical-arm-v1/review/dense-controlled-release-interval/common-state-release-control.png": "b6652dc87f641bad1c20402dc2783322832b1a1b1a9038d27fa6f5c08b69cfc0",
+    "data/anatomical-arm-v1/review/dense-controlled-release-interval/common-state-release-control.pdf": "3a315f3fe5d58ea2b7463a11f6c532194ebcb65d4ce6ae224c4ed0c08dbab80d"
+  },
+  "limits": [
+    "Only recorded accepted states are plotted; no endpoint interpolation or promotion of a rejected candidate.",
+    "Fine and coarse explicit seed choices and adaptive contact quadrature differ; this is not timestep convergence acceptance."
+  ]
+}

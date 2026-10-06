@@ -1,0 +1,22 @@
+{
+  "result": "PASS_COMMON_STATE_DENSE_RELEASE_EVIDENCE",
+  "sha256": {
+    "education/data/anatomical-arm-v1/audit/dense-controlled-release-interval-recheck.json": "f6d6df435b2749226b34c13ef8db286ac1c81e5e33e13c38182a0c5ec4c49e27",
+    "education/data/anatomical-arm-v1/audit/dense-controlled-release-interval-summary.json": "c0956f5f5e4a3e147b5aa24b1047dade6497cf5341dbd4c33353875502525bcb",
+    "education/data/anatomical-arm-v1/audit/dense-controlled-release-interval.json": "d88b444442e176a0de5b1abfa52cb16ca890f9aa88b1a0d8b046d81a767c6f8a",
+    "education/data/anatomical-arm-v1/review/dense-controlled-release-interval/appearance-review.json": "1b73f0d23b439ba128bc3a70053b210b68c7e0b7eed26e49166cf0bde8091fda",
+    "education/data/anatomical-arm-v1/review/dense-controlled-release-interval/common-state-release-control.pdf": "3a315f3fe5d58ea2b7463a11f6c532194ebcb65d4ce6ae224c4ed0c08dbab80d",
+    "education/data/anatomical-arm-v1/review/dense-controlled-release-interval/common-state-release-control.png": "b6652dc87f641bad1c20402dc2783322832b1a1b1a9038d27fa6f5c08b69cfc0",
+    "education/data/anatomical-arm-v1/review/dense-controlled-release-interval/execution.txt": "75e4fce35f324440665ecc83b3423fe6ae2227e4f9be85fb9f36db0da8d26b4d",
+    "education/data/anatomical-arm-v1/review/dense-controlled-release-interval/fresh-replay.txt": "0304e1b03b2394c454e78f0ebb6f4e8b7c7676fa97cae5e5e0b1680917f818c9",
+    "education/data/anatomical-arm-v1/review/dense-controlled-release-interval/integrity-checks.txt": "ba2d24d03a322b992c3655bbcc7fc749d0a8f1237584fabba437e4191bd5566d",
+    "education/data/anatomical-arm-v1/review/dense-controlled-release-interval/render-execution.txt": "7d9636147eac1916d2cfe7ba8fff7855750533db10bb2891a863faa2beb994ce",
+    "education/data/anatomical-arm-v1/review/dense-controlled-release-interval/render-receipt.json": "7d9636147eac1916d2cfe7ba8fff7855750533db10bb2891a863faa2beb994ce",
+    "education/data/anatomical-arm-v1/review/dense-controlled-release-interval/summary-execution.txt": "c0956f5f5e4a3e147b5aa24b1047dade6497cf5341dbd4c33353875502525bcb",
+    "education/data/anatomical-arm-v1/review/dense-controlled-release-interval/syntax-checks.json": "522e3d57619c167ac4198d2cce077cbabf884e0bb8d0b8012741b9dcb52be49f",
+    "education/research/dense-release-common-state-control.md": "d889d849e564cdb404769ee9c12fdf96a0d6650d0889e3730ff3cf96f1595410",
+    "education/tools/dense_release_control_figure.py": "bd8963d510142082f851098ac5efe65f2ad241869d7057624e7096d35f11f2be",
+    "education/tools/summarize-dense-release-controls.mjs": "34d953b98cd3f7464a865d4ac4b781f14f2fec2688dd4c0a9236dafe21baf8b0"
+  },
+  "scope": "Four freshly replayed accepted control states from one common physical old state. No general convergence or whole-envelope acceptance."
+}

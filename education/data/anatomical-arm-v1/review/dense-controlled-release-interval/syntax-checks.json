@@ -1,0 +1,26 @@
+{
+  "result": "PASS_RESEARCH_TOOL_SYNTAX",
+  "checks": [
+    {
+      "command": [
+        "node",
+        "--check",
+        "tools/summarize-dense-release-controls.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "py_compile",
+        "tools/dense_release_control_figure.py"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}
