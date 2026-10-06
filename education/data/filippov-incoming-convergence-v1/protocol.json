@@ -1,0 +1,150 @@
+{
+  "scope": "Separately predeclared convergence diagnostic only; not trajectory qualification or a replacement matrix",
+  "preserved_commit": "402fffdd4d8fc91764e188a1a1cd7b29d090f16a",
+  "cases": [
+    "high",
+    "mass-1"
+  ],
+  "representations": [
+    "full-source",
+    "reduced-independent"
+  ],
+  "additional_step_s": 2.5e-05,
+  "additional_cells": 4,
+  "original_initializations_and_command_schedule": true,
+  "termination": "Hold attracting candidate as auxiliary evidence; retain last incoming accepted state; never call sliding",
+  "max_time_limits_s": {
+    "high": 0.107,
+    "mass-1": 0.264
+  },
+  "accepted_step_watchdog": 12000,
+  "watchdog_reason": "The added resolution needs up to .264/.000025 = 10560 steps before event/grid splits. This separately bounded diagnostic watchdog is declared before execution; the original 10000-step watchdog/results remain unchanged.",
+  "velocity_root_iterations": 64,
+  "event_localization_iterations": 32,
+  "event_bracket_gate_s": 1e-07,
+  "event_surface_gate": 1e-09,
+  "physical_controller_event_gates_unchanged": true,
+  "segments": {
+    "high": {
+      "initial_equilibrium": [
+        0,
+        0.049
+      ],
+      "command_transient": [
+        0.05,
+        0.06
+      ],
+      "later_smooth_incoming": [
+        0.061,
+        null
+      ]
+    },
+    "mass-1": {
+      "before_activation_equality": [
+        0,
+        0.002
+      ],
+      "activation_transition_window": [
+        0.002,
+        0.003
+      ],
+      "after_activation_before_frozen": [
+        0.003,
+        0.107
+      ],
+      "ordinary_outward_transition_window": [
+        0.107,
+        0.108
+      ],
+      "frozen_interval": [
+        0.108,
+        0.249
+      ],
+      "ordinary_inward_transition_window": [
+        0.249,
+        0.25
+      ],
+      "after_ordinary_inward": [
+        0.25,
+        null
+      ]
+    }
+  },
+  "segment_endpoint_policy": "Inclusive endpoints on common stored 1ms grid. Transition windows reported separately; no accepted states interpolated or time-aligned. Each comparison stops at its common accepted horizon.",
+  "activation_diagnostic": {
+    "case": "mass-1",
+    "fixed_search_window_s": [
+      0.002,
+      0.003
+    ],
+    "quantity": "u-a",
+    "diagnostic_dense_polynomial_root_only": true,
+    "accept_or_split_state": false
+  },
+  "auxiliary_relocalization": {
+    "methods": "RK4 only; reconstruct exactly from four stored stages, validate original candidate state reproduction",
+    "max_iterations": 32,
+    "target_bracket_width_s": 1e-12,
+    "target_surface_residual": 1e-13,
+    "affects_existing_or_new_accepted_states": false,
+    "adaptive": "Original stored brackets/residuals only; dense coefficients were not serialized, so no inferred adaptive polynomial"
+  },
+  "event_metrics": [
+    "original bracket endpoints/width",
+    "H and incoming normal",
+    "abs(H)/abs(normal): local linear surface-residual timing proxy, not an orbit error bound",
+    "max distance from recorded event to bracket endpoints",
+    "root force residual separately; it does not bound position/raw orbit error",
+    "pairwise abs(8e_event)*abs(delta_event_time), with original and diagnostic-only relocalized times kept separate"
+  ],
+  "comparisons": [
+    "All old coarse/fine/finer results retained",
+    "Adjacent RK4 levels 200/100/50/25 us in each representation",
+    "Each RK4 against both existing adaptive methods",
+    "Matching methods across representations",
+    "Frozen plateau signed integral difference at .200s, plus separately labeled after-inward increments without correcting original error"
+  ],
+  "raw_identity": "delta raw = delta I - .004 delta FT at equal command; retain both signed contributions",
+  "new_trajectories_qualified": 0,
+  "sliding_allowed": false,
+  "parameter_search_allowed": false,
+  "input_sha256": {
+    "education/data/filippov-bounded-v1/review/high-full-source-RK4-0.0002.json": "ad186de2be1bacb4167960a7454342d31fd5ba217b32f501d50f81f519e40338",
+    "education/data/filippov-bounded-v1/review/high-full-source-RK4-0.0001.json": "0e3375a00b047326df201b59ad015b2146041cc8b69b4e17c6d84cc1433bd35f",
+    "education/data/filippov-bounded-v1/review/high-full-source-RK4-0.00005.json": "9e3755daa41d8adb99f1045eb1c8a98b831b656979b177f574a6b1f0b23c9744",
+    "education/data/filippov-bounded-v1/review/high-full-source-DOP853.json": "803eb308dcd85e995bf918e22bdfc7d58feec000185a7da004cee65153f7eac6",
+    "education/data/filippov-bounded-v1/review/high-full-source-Radau.json": "1d79c4b43a4152e8d381667d7378957e5059d70c6a545992447ef88e126064bb",
+    "education/data/filippov-bounded-v1/review/high-reduced-independent-RK4-0.0002.json": "b7a5bb9829ecb3b68526ea7881c67f667b6480509dc21e610e31fbe16a290e10",
+    "education/data/filippov-bounded-v1/review/high-reduced-independent-RK4-0.0001.json": "4eca399c5e09329dad47d58b0513fea3cd0c2dd3b0079aca8c18d00d3dfabc5c",
+    "education/data/filippov-bounded-v1/review/high-reduced-independent-RK4-0.00005.json": "5219fc698a007137684e1518b1fc65c5bc218284c98b41178a01040cae2ba2a2",
+    "education/data/filippov-bounded-v1/review/high-reduced-independent-DOP853.json": "1f075d68a5c476e4940369b0bee0227a69b59bb2771a6cee665d899582bd66bd",
+    "education/data/filippov-bounded-v1/review/high-reduced-independent-Radau.json": "5612dd92d794ec8d61f65aef4b854e812e639d86e06440f76c389451f3e8b007",
+    "education/data/filippov-bounded-v1/review/mass-1-full-source-RK4-0.0002.json": "72458c8dba1fd06dabfc9c0c59c68236677b53ce9ab6b0a36d1e7f2cdfffeef7",
+    "education/data/filippov-bounded-v1/review/mass-1-full-source-RK4-0.0001.json": "b24760b24b3d49c0754159db171c43abf423d49c3367b788c9e8bff2d062b43b",
+    "education/data/filippov-bounded-v1/review/mass-1-full-source-RK4-0.00005.json": "4473dcc4e625887ce22a25d67ddddb5675624a63aa9427a787647b3fdf326488",
+    "education/data/filippov-bounded-v1/review/mass-1-full-source-DOP853.json": "45f4cf4357e3d90af9912499ba5cb103ef98cc79dbd019a68646de3e0039a6c1",
+    "education/data/filippov-bounded-v1/review/mass-1-full-source-Radau.json": "c71f32b68e25a55e4f6b621efd72c301a762a84f5de9d6040a9cf691e1db9724",
+    "education/data/filippov-bounded-v1/review/mass-1-reduced-independent-RK4-0.0002.json": "4ea0a08cedb136b66ba112b0eeef0ad0567b1926af4e46c8d3ced06e73d5c3b9",
+    "education/data/filippov-bounded-v1/review/mass-1-reduced-independent-RK4-0.0001.json": "cc1bb8bf01ebc6861b7a299132c2fe2c05918db2cee81ab6018a0c83e731a0a3",
+    "education/data/filippov-bounded-v1/review/mass-1-reduced-independent-RK4-0.00005.json": "8d698f551e6d271ad8521bc0a901262f26ef3b4ee2b57327b2f12728bc1cc3c0",
+    "education/data/filippov-bounded-v1/review/mass-1-reduced-independent-DOP853.json": "03f234ab9fcb6d7157b558bb0eff1ddf6c8224e2aafadc21e3e41545d2798a39",
+    "education/data/filippov-bounded-v1/review/mass-1-reduced-independent-Radau.json": "ea111d5a0e20f5d3d6580e215ec89cbfe51ccfe1a0be6bcaf6424c01d1e5f92b",
+    "education/data/filippov-bounded-v1/review/matrix-execution.json": "561411d16e09b2b689674c7871c08dc22f4da64bee986691cb6c791afe4476f8",
+    "education/data/filippov-bounded-v1/review/validation.json": "8c50e489069a06e3998f8aa350f15821c139629db073915ec56e84ff5c401593",
+    "education/data/filippov-bounded-v1/review/packet-manifest.json": "6f2fe7566587eba290f95d74d9b11d0993f3ab215314e37a10a426d7c8954432",
+    "education/tools/run_filippov_bounded_experiment.py": "1f32681d69c5e9bf0d1b1f4ab468c95d2ad41421d509553869bfdfbd444ee7e8",
+    "education/tools/filippov_source_worker.mjs": "0d6b83efd7b63d7dbac21b857ba6c0af357139b6476675de4f4d46a47dfe8fcd",
+    "education/tools/vertical_force_reference.py": "18fb8a6d533010afc5211fb7a286bfc53e2d7a1b0c1544a350e1896e3ea63fed",
+    "education/tools/millard_reference_benchmark.py": "4a5210c7988c8ffc13cd1b6d1626ae9a5d6066ad9a5933ddb4036103e6eb667b",
+    "education/web/vertical-force-model.js": "58ca8de8ae7d9e65083f6460bfb25dc32eccd1953853da78d8325274c0ddcf80",
+    "education/data/vertical-force-command-v1/protocol.json": "2619577a9e7e73b33e8cf500e065869059fc053951deb246237234b652e8a153",
+    "education/data/vertical-force-command-v1/review/cases.json": "b67002861424bf214295f00ee189763078375579e5f3c8b3f1beb0e0f3b66b9b",
+    "education/data/millard-reference-v1/review/native-controls.json": "13c360473038d1d7ca86ea4aab7275cd991694cb8e8c195e6a239f3070e25eb3"
+  },
+  "diagnostic_source_sha256": {
+    "education/tools/run_filippov_incoming_diagnostic.py": "ef965de025b5da5d689367c0115d5b8cb4571ba38a1f80b865843c984460355e",
+    "education/tools/analyze_filippov_incoming_diagnostic.py": "00cf244a1300ea6c844e1652948916a9c364360bd545b2e6a9753d6868ea4924",
+    "education/tests/filippov_incoming_diagnostic.py": "f10886bed5e0894c3567be227646b759d5a8997e13fe45b41263532dcda87c58",
+    "education/research/mechanical-closure/filippov-incoming-convergence-protocol.md": "f965834d9c4e7a65c23beb6be28832b8794addc948aa080300933e9aca214716"
+  }
+}
