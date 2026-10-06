@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "cases": [
+    "taper-rest",
+    "taper-tension",
+    "taper-compression",
+    "axis-probe",
+    "medium-compression",
+    "coarse-compression",
+    "uniform-compression",
+    "uniform-tension",
+    "uniform-rest",
+    "one-iteration",
+    "unsupported-retained",
+    "worker-failure-retained",
+    "latest-request-wins",
+    "front-view",
+    "explicit-reset",
+    "context-retry",
+    "mobile-compression"
+  ],
+  "count": 17,
+  "scope": "All 17 live original native cases have exactly identical actual GPU position/index byte hashes. Source/bundle manifests differ as expected. Framebuffer screenshot hashes are not claimed identical."
+}

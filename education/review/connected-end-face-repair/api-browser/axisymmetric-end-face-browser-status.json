@@ -1,0 +1,585 @@
+{
+  "status": "PASS",
+  "browser": "Chromium 151.0.7922.173",
+  "cases": [
+    {
+      "case": "3:2:7:-0.1:1",
+      "state": {
+        "configuration": {
+          "epsilon": -0.1,
+          "ratio": 1,
+          "axialCells": 3,
+          "radialCells": 2,
+          "cap": 25
+        },
+        "converged": true,
+        "reactionN": -0.03882587443165155,
+        "volumeRatio": 0.9950687349392436,
+        "probeJ": 0.9950687349392431,
+        "scaledResidual": 4.2797900380422054e-13
+      },
+      "scene": {
+        "vertexCount": 6402,
+        "triangleCount": 12800,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "a0eb5a661e904c17d44be2c20625cd35bedc9131c03794bcdcb45d6062a1aa5f",
+        "gpuIndexSHA256": "a61ea64a3f86a7b39ed36c92df0b5a429d1a5a8c9a8726a39a295b71679f1261",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 3.9072336585307995e-06,
+        "integratedVolumeM3": 3.907625784377522e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "scope": "Actual compiled worker and GPU geometry via qualification API; this extra mesh is not in the user-facing native menu"
+    },
+    {
+      "case": "3:2:7:0.1:1",
+      "state": {
+        "configuration": {
+          "epsilon": 0.1,
+          "ratio": 1,
+          "axialCells": 3,
+          "radialCells": 2,
+          "cap": 25
+        },
+        "converged": true,
+        "reactionN": 0.031642625793237636,
+        "volumeRatio": 1.0049363110482792,
+        "probeJ": 1.0049363110482805,
+        "scaledResidual": 1.247017704102437e-13
+      },
+      "scene": {
+        "vertexCount": 6402,
+        "triangleCount": 12800,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "eab5ee76e4a67811c307bcf4117755749238564f85b7aec21efe10093b09cd9f",
+        "gpuIndexSHA256": "a61ea64a3f86a7b39ed36c92df0b5a429d1a5a8c9a8726a39a295b71679f1261",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 3.945979529448331e-06,
+        "integratedVolumeM3": 3.946375665143627e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "scope": "Actual compiled worker and GPU geometry via qualification API; this extra mesh is not in the user-facing native menu"
+    },
+    {
+      "case": "3:2:7:-0.1:1.5",
+      "state": {
+        "configuration": {
+          "epsilon": -0.1,
+          "ratio": 1.5,
+          "axialCells": 3,
+          "radialCells": 2,
+          "cap": 25
+        },
+        "converged": true,
+        "reactionN": -0.058518580721698264,
+        "volumeRatio": 0.9953058389100446,
+        "probeJ": 0.9951549557779292,
+        "scaledResidual": 1.3147512080070306e-14
+      },
+      "scene": {
+        "vertexCount": 6402,
+        "triangleCount": 12800,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "d2ef00d00abff7c276ee3f4a93d14df354edda0edd9ee6333f9fd2b1dd32d872",
+        "gpuIndexSHA256": "a61ea64a3f86a7b39ed36c92df0b5a429d1a5a8c9a8726a39a295b71679f1261",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.187840107331134e-06,
+        "integratedVolumeM3": 6.188548408364754e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "scope": "Actual compiled worker and GPU geometry via qualification API; this extra mesh is not in the user-facing native menu"
+    },
+    {
+      "case": "3:2:7:0.1:1.5",
+      "state": {
+        "configuration": {
+          "epsilon": 0.1,
+          "ratio": 1.5,
+          "axialCells": 3,
+          "radialCells": 2,
+          "cap": 25
+        },
+        "converged": true,
+        "reactionN": 0.04717013827717075,
+        "volumeRatio": 1.004647673012633,
+        "probeJ": 1.0047654914304835,
+        "scaledResidual": 1.715377527906672e-14
+      },
+      "scene": {
+        "vertexCount": 6402,
+        "triangleCount": 12800,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "c2b77631f22e1a87c5ff09d62bca54b989e424eed95ad3c383156fed3b40da4f",
+        "gpuIndexSHA256": "a61ea64a3f86a7b39ed36c92df0b5a429d1a5a8c9a8726a39a295b71679f1261",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.246121015764657e-06,
+        "integratedVolumeM3": 6.246633461528001e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "scope": "Actual compiled worker and GPU geometry via qualification API; this extra mesh is not in the user-facing native menu"
+    },
+    {
+      "case": "6:2:7:-0.1:1",
+      "state": {
+        "configuration": {
+          "epsilon": -0.1,
+          "ratio": 1,
+          "axialCells": 6,
+          "radialCells": 2,
+          "cap": 25
+        },
+        "converged": true,
+        "reactionN": -0.03882587443165112,
+        "volumeRatio": 0.9950687349392434,
+        "probeJ": 0.995068734939243,
+        "scaledResidual": 2.1415672069475563e-13
+      },
+      "scene": {
+        "vertexCount": 12546,
+        "triangleCount": 25088,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "7673aea0a755c51b54e487c237a32ccdadb2ffd290bd792f77595003a18610a8",
+        "gpuIndexSHA256": "10e20a368d0b71154aea4a336c61f5d3e34ed333133e378f218e68a2128e0f72",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 3.9072336585307995e-06,
+        "integratedVolumeM3": 3.907625784377521e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "scope": "Actual compiled worker and GPU geometry via qualification API; this extra mesh is not in the user-facing native menu"
+    },
+    {
+      "case": "6:2:7:0.1:1",
+      "state": {
+        "configuration": {
+          "epsilon": 0.1,
+          "ratio": 1,
+          "axialCells": 6,
+          "radialCells": 2,
+          "cap": 25
+        },
+        "converged": true,
+        "reactionN": 0.03164262579323769,
+        "volumeRatio": 1.0049363110482792,
+        "probeJ": 1.0049363110482803,
+        "scaledResidual": 6.329070488466695e-14
+      },
+      "scene": {
+        "vertexCount": 12546,
+        "triangleCount": 25088,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "a31c80068cdc6b8d7a52bc4653d554fbbecc4cd136494e2bd8c2d471321782bc",
+        "gpuIndexSHA256": "10e20a368d0b71154aea4a336c61f5d3e34ed333133e378f218e68a2128e0f72",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 3.945979529448331e-06,
+        "integratedVolumeM3": 3.946375665143627e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "scope": "Actual compiled worker and GPU geometry via qualification API; this extra mesh is not in the user-facing native menu"
+    },
+    {
+      "case": "6:2:7:-0.1:1.5",
+      "state": {
+        "configuration": {
+          "epsilon": -0.1,
+          "ratio": 1.5,
+          "axialCells": 6,
+          "radialCells": 2,
+          "cap": 25
+        },
+        "converged": true,
+        "reactionN": -0.05851268396082939,
+        "volumeRatio": 0.9953063123301124,
+        "probeJ": 0.9953256622653547,
+        "scaledResidual": 1.1044455424645853e-14
+      },
+      "scene": {
+        "vertexCount": 12546,
+        "triangleCount": 25088,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "6fa5b76bcca94556561f46bd2fd01d4839d52f74c525e4e8a534114e3b5b6396",
+        "gpuIndexSHA256": "10e20a368d0b71154aea4a336c61f5d3e34ed333133e378f218e68a2128e0f72",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.187910839614621e-06,
+        "integratedVolumeM3": 6.188551351965496e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "scope": "Actual compiled worker and GPU geometry via qualification API; this extra mesh is not in the user-facing native menu"
+    },
+    {
+      "case": "6:2:7:0.1:1.5",
+      "state": {
+        "configuration": {
+          "epsilon": 0.1,
+          "ratio": 1.5,
+          "axialCells": 6,
+          "radialCells": 2,
+          "cap": 25
+        },
+        "converged": true,
+        "reactionN": 0.047165356565763955,
+        "volumeRatio": 1.0046472012377379,
+        "probeJ": 1.0045955841907237,
+        "scaledResidual": 9.902335126026056e-15
+      },
+      "scene": {
+        "vertexCount": 12546,
+        "triangleCount": 25088,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "100c1c2dfd6e78e3e2708bd37f7ede607833f40a43b79957e29b55b456fea278",
+        "gpuIndexSHA256": "10e20a368d0b71154aea4a336c61f5d3e34ed333133e378f218e68a2128e0f72",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.246029682315408e-06,
+        "integratedVolumeM3": 6.2466305281565065e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "scope": "Actual compiled worker and GPU geometry via qualification API; this extra mesh is not in the user-facing native menu"
+    },
+    {
+      "case": "12:2:7:-0.1:1",
+      "state": {
+        "configuration": {
+          "epsilon": -0.1,
+          "ratio": 1,
+          "axialCells": 12,
+          "radialCells": 2,
+          "cap": 25
+        },
+        "converged": true,
+        "reactionN": -0.0388258744316507,
+        "volumeRatio": 0.9950687349392439,
+        "probeJ": 0.9950687349392429,
+        "scaledResidual": 1.0857318992441203e-13
+      },
+      "scene": {
+        "vertexCount": 24834,
+        "triangleCount": 49664,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "2b20e133f23adcc37695c165a64baa9b58365fb72cf3f87e1fe09a73d35898d5",
+        "gpuIndexSHA256": "5af5f4228d2153dd84dca966d6fccf477fa877eacf36276951e74279381eff9a",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 3.9072336585308e-06,
+        "integratedVolumeM3": 3.907625784377523e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "scope": "Actual compiled worker and GPU geometry via qualification API; this extra mesh is not in the user-facing native menu"
+    },
+    {
+      "case": "12:2:7:0.1:1",
+      "state": {
+        "configuration": {
+          "epsilon": 0.1,
+          "ratio": 1,
+          "axialCells": 12,
+          "radialCells": 2,
+          "cap": 25
+        },
+        "converged": true,
+        "reactionN": 0.03164262579323759,
+        "volumeRatio": 1.0049363110482827,
+        "probeJ": 1.0049363110482803,
+        "scaledResidual": 3.257548063843563e-14
+      },
+      "scene": {
+        "vertexCount": 24834,
+        "triangleCount": 49664,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "677bf4a5c3efd3aabf82d212869912885ab2bc357313646ca261b997a6f1490f",
+        "gpuIndexSHA256": "5af5f4228d2153dd84dca966d6fccf477fa877eacf36276951e74279381eff9a",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 3.945979529448331e-06,
+        "integratedVolumeM3": 3.946375665143641e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "scope": "Actual compiled worker and GPU geometry via qualification API; this extra mesh is not in the user-facing native menu"
+    },
+    {
+      "case": "12:2:7:-0.1:1.5",
+      "state": {
+        "configuration": {
+          "epsilon": -0.1,
+          "ratio": 1.5,
+          "axialCells": 12,
+          "radialCells": 2,
+          "cap": 25
+        },
+        "converged": true,
+        "reactionN": -0.05851070397451727,
+        "volumeRatio": 0.9953064708127314,
+        "probeJ": 0.9952738890326458,
+        "scaledResidual": 1.5768064584545817e-14
+      },
+      "scene": {
+        "vertexCount": 24834,
+        "triangleCount": 49664,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "dbb3abfc9afcc40db64824336cd5b111d53463207ecdee6dc540c3f28c60896f",
+        "gpuIndexSHA256": "5af5f4228d2153dd84dca966d6fccf477fa877eacf36276951e74279381eff9a",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.1879271081945975e-06,
+        "integratedVolumeM3": 6.188552337368496e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "scope": "Actual compiled worker and GPU geometry via qualification API; this extra mesh is not in the user-facing native menu"
+    },
+    {
+      "case": "12:2:7:0.1:1.5",
+      "state": {
+        "configuration": {
+          "epsilon": 0.1,
+          "ratio": 1.5,
+          "axialCells": 12,
+          "radialCells": 2,
+          "cap": 25
+        },
+        "converged": true,
+        "reactionN": 0.047163831798601376,
+        "volumeRatio": 1.0046470499791595,
+        "probeJ": 1.0046396615692612,
+        "scaledResidual": 1.1050264814526275e-14
+      },
+      "scene": {
+        "vertexCount": 24834,
+        "triangleCount": 49664,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "20afc1b05c2484573ed23d2b4726b7576c046ac79679897469a3d17d17926d76",
+        "gpuIndexSHA256": "5af5f4228d2153dd84dca966d6fccf477fa877eacf36276951e74279381eff9a",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.246008154049494e-06,
+        "integratedVolumeM3": 6.24662958767068e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "scope": "Actual compiled worker and GPU geometry via qualification API; this extra mesh is not in the user-facing native menu"
+    },
+    {
+      "case": "24:2:7:-0.1:1",
+      "state": {
+        "configuration": {
+          "epsilon": -0.1,
+          "ratio": 1,
+          "axialCells": 24,
+          "radialCells": 2,
+          "cap": 25
+        },
+        "converged": true,
+        "reactionN": -0.038825874431650816,
+        "volumeRatio": 0.9950687349392456,
+        "probeJ": 0.9950687349392425,
+        "scaledResidual": 5.400582400848506e-14
+      },
+      "scene": {
+        "vertexCount": 49410,
+        "triangleCount": 98816,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "c4f75b1e2ebdb7083617c784c93417083ddbf93bfa216661cdd14922ae49c1e9",
+        "gpuIndexSHA256": "b14b2698f7d30e555bfcea430ed10bdd7f55bfb060502b7efe742511d6c62963",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 3.9072336585307995e-06,
+        "integratedVolumeM3": 3.907625784377529e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "scope": "Actual compiled worker and GPU geometry via qualification API; this extra mesh is not in the user-facing native menu"
+    },
+    {
+      "case": "24:2:7:0.1:1",
+      "state": {
+        "configuration": {
+          "epsilon": 0.1,
+          "ratio": 1,
+          "axialCells": 24,
+          "radialCells": 2,
+          "cap": 25
+        },
+        "converged": true,
+        "reactionN": 0.03164262579323796,
+        "volumeRatio": 1.0049363110482878,
+        "probeJ": 1.0049363110482799,
+        "scaledResidual": 1.7886454945746818e-14
+      },
+      "scene": {
+        "vertexCount": 49410,
+        "triangleCount": 98816,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "74219b96bf3e667e41df91dfe9a2fc7ab5546895cbfdc500496ad7d823e691f2",
+        "gpuIndexSHA256": "b14b2698f7d30e555bfcea430ed10bdd7f55bfb060502b7efe742511d6c62963",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 3.945979529448331e-06,
+        "integratedVolumeM3": 3.946375665143661e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "scope": "Actual compiled worker and GPU geometry via qualification API; this extra mesh is not in the user-facing native menu"
+    },
+    {
+      "case": "24:2:7:-0.1:1.5",
+      "state": {
+        "configuration": {
+          "epsilon": -0.1,
+          "ratio": 1.5,
+          "axialCells": 24,
+          "radialCells": 2,
+          "cap": 25
+        },
+        "converged": true,
+        "reactionN": -0.058510408947749296,
+        "volumeRatio": 0.995306494578807,
+        "probeJ": 0.9952557424925228,
+        "scaledResidual": 1.6923500464921236e-14
+      },
+      "scene": {
+        "vertexCount": 49410,
+        "triangleCount": 98816,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "ab64412f503bfe040ce5f31a13e92624917b1c9812ca06519db306f3541864ec",
+        "gpuIndexSHA256": "b14b2698f7d30e555bfcea430ed10bdd7f55bfb060502b7efe742511d6c62963",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.187930496271885e-06,
+        "integratedVolumeM3": 6.188552485139668e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "scope": "Actual compiled worker and GPU geometry via qualification API; this extra mesh is not in the user-facing native menu"
+    },
+    {
+      "case": "24:2:7:0.1:1.5",
+      "state": {
+        "configuration": {
+          "epsilon": 0.1,
+          "ratio": 1.5,
+          "axialCells": 24,
+          "radialCells": 2,
+          "cap": 25
+        },
+        "converged": true,
+        "reactionN": 0.047163491834646055,
+        "volumeRatio": 1.0046470162500096,
+        "probeJ": 1.0046605723457287,
+        "scaledResidual": 2.3881423980316176e-14
+      },
+      "scene": {
+        "vertexCount": 49410,
+        "triangleCount": 98816,
+        "connectedComponents": 1,
+        "closedOrientedShell": true,
+        "physicalScale": 1,
+        "gpuPositionSHA256": "e023ec56dd9392ec93864215c2acba8cd84840e92133ef34343b76add4c9b1a8",
+        "gpuIndexSHA256": "b14b2698f7d30e555bfcea430ed10bdd7f55bfb060502b7efe742511d6c62963",
+        "gpuIndexConstructor": "Uint16Array",
+        "actualGPUVolumeM3": 6.246003518461979e-06,
+        "integratedVolumeM3": 6.246629377951749e-06,
+        "gpuContext": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "vendor": "WebKit",
+          "renderer": "WebKit WebGL"
+        }
+      },
+      "scope": "Actual compiled worker and GPU geometry via qualification API; this extra mesh is not in the user-facing native menu"
+    }
+  ],
+  "preview_manifest_sha256": "9860803340e2645a91ffaa5be8f319e5f7a3005325ae5f3ec77b0ad78719f733",
+  "affected_experiment_sha256": "e2916c89d153e6a37863615fc7d4c381051d849221d49fbb249c5ce868431a12",
+  "oracle_sha256": "0b32a88bb4589338ad3eee2080657102fc375905d0625ae6bbe14f69bcde22dc",
+  "base_test_sha256": "9dfc4d3d5c3bcb9bf28b758c9c57cb7331c96f8ea0196ce6231443ee950d9815",
+  "test_sha256": "37b5f445ce41a6d6099574c26bc38fc6d94f92a0cbf0a13cadf8015a7943ab39",
+  "source_inputs": {
+    "web/axisymmetric-material.mjs": "3c977b401f2f76f95c5445a82d80c55ccc04e457c3d0c30350635ddf58cce561",
+    "web/axisymmetric-specimen.mjs": "39723a813efc3d92a8b4979d6652561354de109d68333ae8b1317e7e641c1a4e",
+    "web/axisymmetric-lab.mjs": "b8f99ffe6712e4d9a974856c1311f26c4c8bcc41a583b5685fb168fe05c0f640",
+    "web/axisymmetric-worker.mjs": "dee47f2148dba588a46c3ef84d27942a411f9eb7c0c3831bc19a2bf634562466",
+    "web/scene-status.mjs": "1719e9dba0573423ba6be04f609950efa3303d2a75800be7ec9c38df8606b8cb",
+    "web/axisymmetric-lab.css": "19b34c09cb27ac35ecd16e4429adcdb1554ece02797112790f90cccc03be9752",
+    "tools/build_axisymmetric_preview.py": "71861b3a9c7b0e6b0bdf91736334ab9542b7edfbc777ccdd51d6403b7a89802c",
+    "proofs/AxisymmetricSpecimenReal.lean": "7308734ec0108ec080d3ba54129f38655eb547bf887451a3668934000bbd2ec8",
+    "proofs/axisymmetric-specimen-real-claims.json": "7011d50d9483686f2adea169a7e48d3e5bf12d63024c4a137a61329d24fdeed4",
+    "tools/check_axisymmetric_proofs.py": "12d9e0bbe6633d394de9224b02616f788674c8173754ed41d2a97ae3c9904d4f",
+    "proofs/mathlib-lock.json": "cfeeea1b9e805fdfa169b7b7f41b3d29cf0a99d09fa79e04e38a8bd9683611da"
+  },
+  "scope": "16 formerly affected meshes through actual compiled worker/render API with strict endpoints, independent Q2 geometry, oracle/force checks and GPU readback. Native menu remains 4/8/16 and has a separate unchanged 20-case qualification. Headless SwiftShader, no physical mobile hardware/stability claim."
+}
