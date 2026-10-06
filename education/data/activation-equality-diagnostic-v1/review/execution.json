@@ -1,0 +1,179 @@
+{
+  "frozen_source_commit": "d54020fb3e05a3cc770036483392c94292c172dc",
+  "frozen_source_tree": "f5377333181ffb6b7e03eb007718da47e0a5caad",
+  "protocol_sha256": "de11d380272e109c05a1d7a3045ee40689dcb2c7c42c39d743a4b445d561b948",
+  "cells": [
+    {
+      "policy": "control",
+      "representation": "full-source",
+      "method": "RK4-0.000025",
+      "exit_code": 0,
+      "log": "education/data/activation-equality-diagnostic-v1/review/control-full-source-RK4-0.000025.log"
+    },
+    {
+      "policy": "split",
+      "representation": "full-source",
+      "method": "RK4-0.000025",
+      "exit_code": 0,
+      "log": "education/data/activation-equality-diagnostic-v1/review/split-full-source-RK4-0.000025.log"
+    },
+    {
+      "policy": "control",
+      "representation": "full-source",
+      "method": "RK4-0.0002",
+      "exit_code": 0,
+      "log": "education/data/activation-equality-diagnostic-v1/review/control-full-source-RK4-0.0002.log"
+    },
+    {
+      "policy": "control",
+      "representation": "full-source",
+      "method": "RK4-0.0001",
+      "exit_code": 0,
+      "log": "education/data/activation-equality-diagnostic-v1/review/control-full-source-RK4-0.0001.log"
+    },
+    {
+      "policy": "control",
+      "representation": "full-source",
+      "method": "DOP853",
+      "exit_code": 0,
+      "log": "education/data/activation-equality-diagnostic-v1/review/control-full-source-DOP853.log"
+    },
+    {
+      "policy": "control",
+      "representation": "full-source",
+      "method": "Radau",
+      "exit_code": 0,
+      "log": "education/data/activation-equality-diagnostic-v1/review/control-full-source-Radau.log"
+    },
+    {
+      "policy": "control",
+      "representation": "full-source",
+      "method": "RK4-0.00005",
+      "exit_code": 0,
+      "log": "education/data/activation-equality-diagnostic-v1/review/control-full-source-RK4-0.00005.log"
+    },
+    {
+      "policy": "control",
+      "representation": "reduced-independent",
+      "method": "RK4-0.0002",
+      "exit_code": 0,
+      "log": "education/data/activation-equality-diagnostic-v1/review/control-reduced-independent-RK4-0.0002.log"
+    },
+    {
+      "policy": "control",
+      "representation": "reduced-independent",
+      "method": "RK4-0.000025",
+      "exit_code": 0,
+      "log": "education/data/activation-equality-diagnostic-v1/review/control-reduced-independent-RK4-0.000025.log"
+    },
+    {
+      "policy": "control",
+      "representation": "reduced-independent",
+      "method": "RK4-0.0001",
+      "exit_code": 0,
+      "log": "education/data/activation-equality-diagnostic-v1/review/control-reduced-independent-RK4-0.0001.log"
+    },
+    {
+      "policy": "control",
+      "representation": "reduced-independent",
+      "method": "DOP853",
+      "exit_code": 0,
+      "log": "education/data/activation-equality-diagnostic-v1/review/control-reduced-independent-DOP853.log"
+    },
+    {
+      "policy": "control",
+      "representation": "reduced-independent",
+      "method": "Radau",
+      "exit_code": 0,
+      "log": "education/data/activation-equality-diagnostic-v1/review/control-reduced-independent-Radau.log"
+    },
+    {
+      "policy": "split",
+      "representation": "full-source",
+      "method": "RK4-0.0002",
+      "exit_code": 0,
+      "log": "education/data/activation-equality-diagnostic-v1/review/split-full-source-RK4-0.0002.log"
+    },
+    {
+      "policy": "split",
+      "representation": "full-source",
+      "method": "RK4-0.0001",
+      "exit_code": 0,
+      "log": "education/data/activation-equality-diagnostic-v1/review/split-full-source-RK4-0.0001.log"
+    },
+    {
+      "policy": "split",
+      "representation": "full-source",
+      "method": "DOP853",
+      "exit_code": 0,
+      "log": "education/data/activation-equality-diagnostic-v1/review/split-full-source-DOP853.log"
+    },
+    {
+      "policy": "split",
+      "representation": "full-source",
+      "method": "Radau",
+      "exit_code": 0,
+      "log": "education/data/activation-equality-diagnostic-v1/review/split-full-source-Radau.log"
+    },
+    {
+      "policy": "control",
+      "representation": "reduced-independent",
+      "method": "RK4-0.00005",
+      "exit_code": 0,
+      "log": "education/data/activation-equality-diagnostic-v1/review/control-reduced-independent-RK4-0.00005.log"
+    },
+    {
+      "policy": "split",
+      "representation": "full-source",
+      "method": "RK4-0.00005",
+      "exit_code": 0,
+      "log": "education/data/activation-equality-diagnostic-v1/review/split-full-source-RK4-0.00005.log"
+    },
+    {
+      "policy": "split",
+      "representation": "reduced-independent",
+      "method": "RK4-0.000025",
+      "exit_code": 0,
+      "log": "education/data/activation-equality-diagnostic-v1/review/split-reduced-independent-RK4-0.000025.log"
+    },
+    {
+      "policy": "split",
+      "representation": "reduced-independent",
+      "method": "RK4-0.0002",
+      "exit_code": 0,
+      "log": "education/data/activation-equality-diagnostic-v1/review/split-reduced-independent-RK4-0.0002.log"
+    },
+    {
+      "policy": "split",
+      "representation": "reduced-independent",
+      "method": "DOP853",
+      "exit_code": 0,
+      "log": "education/data/activation-equality-diagnostic-v1/review/split-reduced-independent-DOP853.log"
+    },
+    {
+      "policy": "split",
+      "representation": "reduced-independent",
+      "method": "Radau",
+      "exit_code": 0,
+      "log": "education/data/activation-equality-diagnostic-v1/review/split-reduced-independent-Radau.log"
+    },
+    {
+      "policy": "split",
+      "representation": "reduced-independent",
+      "method": "RK4-0.0001",
+      "exit_code": 0,
+      "log": "education/data/activation-equality-diagnostic-v1/review/split-reduced-independent-RK4-0.0001.log"
+    },
+    {
+      "policy": "split",
+      "representation": "reduced-independent",
+      "method": "RK4-0.00005",
+      "exit_code": 0,
+      "log": "education/data/activation-equality-diagnostic-v1/review/split-reduced-independent-RK4-0.00005.log"
+    }
+  ],
+  "elapsed_s": 234.89481232401158,
+  "worker_processes": 4,
+  "all_exit_zero": true,
+  "real_case_prefix_execution_after_freeze": true
+}
