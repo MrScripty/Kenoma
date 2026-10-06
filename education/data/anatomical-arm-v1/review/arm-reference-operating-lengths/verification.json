@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "review_date_utc": "2026-10-06",
+  "base_commit": "09e6698fdd1c20a7d44109f1209500f8d9122458",
+  "base_tree": "d59f6187445e57545a7e5b33a48b0a0324f8f4ea",
+  "branch": "research/arm-reference-operating-lengths",
+  "existing_tracked_file_count": 1554,
+  "existing_tracked_bytes_checked": 445445399,
+  "all_existing_tracked_git_blobs_and_executable_modes_match_base": true,
+  "all_existing_tracked_sha256_records_digest": "27c7c5cb3908472218f5b526f964aa663b7563f514dbbf66d9b4fda18bad12ad",
+  "preserved_pressure_volume_file_count": 94,
+  "existing_tracked_changes": [],
+  "prior_acceptance_threshold_or_failure_label_changes": false,
+  "numerical_model_or_solver_runs": 0,
+  "model_or_production_parameter_changes": 0,
+  "source_convention_checks": {
+    "Murray2000_optimal_sarcomere_um": 2.8,
+    "Holzbaur2005_optimal_sarcomere_um": 2.7,
+    "Blemker2005_stretch": "deviatoric; lambda_bar = J^(-1/3) abs(F a0)",
+    "Adkins2021_passive_pose": "85 degrees shoulder adduction; 10 degrees horizontal shoulder flexion; 25 degrees elbow flexion; mid-prosupination; wrist/fingers zero, literal source wording",
+    "Adkins2022_wording_discrepancy_unresolved": true
+  },
+  "arithmetic_and_local_link_checks_passed": true,
+  "source_fulltext_count": 7,
+  "primary_abstract_access_count": 5,
+  "author_identity_verified": "MrScripty <TheEnvironmentGuy@protonmail.com>",
+  "committer_identity_verified": "MrScripty <TheEnvironmentGuy@protonmail.com>",
+  "remaining_blocks": [
+    "No atlas-specific measured passive natural metric, fascicle/sarcomere field, series reference prestrain or unloaded tendon CSA.",
+    "Exact coherent published path/model release must be selected and hash-bound before adopting priors.",
+    "Adkins shoulder coordinate wording requires clarification; abstract-only source protocols remain unextracted."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "base_commit": "09e6698fdd1c20a7d44109f1209500f8d9122458",
+  "base_tree": "d59f6187445e57545a7e5b33a48b0a0324f8f4ea",
+  "scope": "Research-only primary-source review; additive files only; no numerical run.",
+  "artifacts": [
+    {
+      "path": "education/research/mechanical-closure/arm-reference-operating-lengths-primary-review.md",
+      "bytes": 19821,
+      "sha256": "606bc680910c2e7f12b6ab0983e4231016ad5b117730f459fae96702afe6aea7"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/arm-reference-operating-lengths/source-access-ledger.json",
+      "bytes": 6485,
+      "sha256": "63cfad37b989ad0e229b22292357c66b63461268ac58d3f22cec52da293426f2"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/arm-reference-operating-lengths/preserved-pressure-volume-files.json",
+      "bytes": 28104,
+      "sha256": "c17e45c2d80e5dd0c99e07fd1ddbb37fc5cc662cc8d8fd92241a3af53bad088e"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/arm-reference-operating-lengths/verification.json",
+      "bytes": 1847,
+      "sha256": "fe2579604812920af718d90a012179c11be99442f643792f421e2a8eec406ea7"
+    }
+  ]
+}

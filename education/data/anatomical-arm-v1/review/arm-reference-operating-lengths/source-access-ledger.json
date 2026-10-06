@@ -1,0 +1,112 @@
+{
+  "schema": 1,
+  "review_date_utc": "2026-10-06",
+  "base_commit": "09e6698fdd1c20a7d44109f1209500f8d9122458",
+  "source_access_method": "Public primary sources through web text extraction. No source PDF downloaded or archived successfully; no source-byte hash claimed.",
+  "screenshot_pixel_review_performed": false,
+  "sources": [
+    {
+      "id": "Murray2000",
+      "citation": "Murray, Buchanan and Delp (2000), The isometric functional capacity of muscles that cross the elbow",
+      "url": "https://nmbl.stanford.edu/publications/pdf/Murray2000.pdf",
+      "access": "full_primary_text_extraction",
+      "locator": "Methods equations 1-4; Table 2 p.947; operating-range assumptions",
+      "scope_limit": "Cadaver-derived optimum 2.8 um; equivalent tendon is not measured slack"
+    },
+    {
+      "id": "Holzbaur2005",
+      "citation": "Holzbaur, Murray and Delp (2005), A model of the upper extremity for simulating musculoskeletal surgery and analyzing neuromuscular control",
+      "url": "https://nmbl.stanford.edu/publications/pdf/Holzbaur2005.pdf",
+      "access": "full_primary_text_extraction",
+      "locator": "Methods pp.831-833; Table 1 p.832; slack-selection paragraph p.833",
+      "scope_limit": "Optimum 2.7 um; selected model slack; major-elbow specimen differs from population mean"
+    },
+    {
+      "id": "Adkins2021",
+      "citation": "Adkins et al. (2021), Serial sarcomere number is substantially decreased within the paretic biceps brachii in individuals with chronic hemiparetic stroke",
+      "url": "https://www.pnas.org/doi/full/10.1073/pnas.2008597118",
+      "access": "full_primary_text_extraction",
+      "locator": "Methods Participants, Sarcomere Length, Fascicle Length; Fig.5; equations 4-6",
+      "scope_limit": "One matched live long-head pose; literal shoulder adduction wording retained"
+    },
+    {
+      "id": "Adkins2022",
+      "citation": "Adkins, Fong, Dewald and Murray (2022), Variability of in vivo Sarcomere Length Measures in the Upper Limb Obtained With Second Harmonic Generation Microendoscopy",
+      "url": "https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2021.817334/full",
+      "access": "full_primary_text_extraction",
+      "locator": "Publication date 8 February 2022; Methods Data Collection; uncertainty Discussion",
+      "scope_limit": "DOI 2021 does not change publication year; abduction/extended wording retained; pooled muscle range not biceps prior"
+    },
+    {
+      "id": "Nelson2016",
+      "citation": "Nelson, Dewald and Murray (2016), In vivo measurements of biceps brachii and triceps brachii fascicle lengths using extended field-of-view ultrasound",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27083062/",
+      "access": "primary_abstract_and_figure_descriptions_only",
+      "locator": "Abstract; figure descriptions",
+      "scope_limit": "Exact posture angles not extracted; PMC4885783 full-text challenge not bypassed"
+    },
+    {
+      "id": "Murray1995",
+      "citation": "Murray, Delp and Buchanan (1995), Variation of muscle moment arms with elbow and forearm position",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7775488/",
+      "access": "primary_abstract_only",
+      "locator": "Abstract",
+      "scope_limit": "Two anatomic specimens; full trajectories and specimen demographics unextracted"
+    },
+    {
+      "id": "Jarrett2012",
+      "citation": "Jarrett et al. (2012; epub 2011), Anatomic and biomechanical analysis of the short and long head components of the distal biceps tendon",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21813298/",
+      "access": "primary_abstract_only",
+      "locator": "Abstract",
+      "scope_limit": "Footprint area is not tendon CSA; no unloaded prestrain extracted"
+    },
+    {
+      "id": "Asakawa2002",
+      "citation": "Asakawa, Pappas, Delp and Drace (2002), Aponeurosis length and fascicle insertion angles of the biceps brachii",
+      "url": "https://nmbl.stanford.edu/publications/pdf/Asakawa2002b.pdf",
+      "access": "full_primary_text_extraction",
+      "locator": "Methods; Results; Table 2",
+      "scope_limit": "Internal aponeurosis; MRI near extension; ultrasound pose and load conflated"
+    },
+    {
+      "id": "Keener2010",
+      "citation": "Keener et al. (2010), Insertional anatomy of the triceps brachii tendon",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20056450/",
+      "access": "primary_abstract_only",
+      "locator": "Abstract",
+      "scope_limit": "Insertion thickness/width do not close unloaded tensile CSA"
+    },
+    {
+      "id": "Ocran2025",
+      "citation": "Ocran et al. (2025), Mechanical properties of the bicipital aponeurosis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39746286/",
+      "access": "primary_abstract_only",
+      "locator": "Abstract",
+      "scope_limit": "External bicipital aponeurosis; protocol strain not physiological reference prestrain"
+    },
+    {
+      "id": "Blemker2005",
+      "citation": "Blemker, Pinsky and Delp (2005), A 3D model of muscle reveals the causes of nonuniform strains in the biceps brachii",
+      "url": "https://nmbl.stanford.edu/publications/pdf/Blemker2005.pdf",
+      "access": "full_primary_text_extraction",
+      "locator": "Equations 1-3 p.658; Tables 1-2 pp.659-660",
+      "scope_limit": "Deviatoric fiber stretch; dimensionless optimum 1.4; not a measured atlas reference"
+    },
+    {
+      "id": "Krivickas2011",
+      "citation": "Krivickas et al. (2011), Relationship between force and size in human single muscle fibres",
+      "url": "https://physoc.onlinelibrary.wiley.com/doi/full/10.1113/expphysiol.2010.055269",
+      "access": "full_primary_text_extraction",
+      "locator": "Methods; Table 1 specific-force row and swelling-correction footnote",
+      "scope_limit": "Skinned vastus lateralis 15 C Type I amplitude; not biceps calibration"
+    }
+  ],
+  "access_limits": [
+    "Direct ordinary nmbl PDF downloads through execution shell failed with proxy tunnel 403; web PDF text extraction worked. No bypass, credentials or network configuration changes.",
+    "PNAS canonical publisher text read; PMC8256086 challenge was not bypassed.",
+    "No usable screenshot pixels were returned; tables were checked against primary text extraction, not an image inspection.",
+    "Brachialis Herbert/Gandevia 1995 and inaccessible candidate distal-triceps full text not independently verified; no quantitative claim imported."
+  ],
+  "no_source_fulltext_copies_committed": true
+}
