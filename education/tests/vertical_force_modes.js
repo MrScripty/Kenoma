@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {createHash} from 'node:crypto';
+import {createVerticalForceLab} from '../web/vertical-force-model.js';
+import {createModeAwareVerticalForceLab} from '../web/vertical-force-mode-aware.js';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..'),out=path.join(root,'education/data/vertical-force-completion-v1/review');fs.mkdirSync(out,{recursive:true});
+const P=JSON.parse(fs.readFileSync(path.join(root,'education/data/vertical-force-command-v1/protocol.json'))),C=JSON.parse(fs.readFileSync(path.join(root,'education/data/millard-reference-v1/review/native-controls.json'))),base=createVerticalForceLab(P,C),lab=createModeAwareVerticalForceLab(P,C),checks=[];
+const zero=lab.run(lab.init('release',.5,0)),high=lab.run(lab.init('release',.5,150));
+assert.deepEqual(zero.history.map(r=>r.z),high.history.map(r=>r.z));assert.deepEqual(high.history.map(r=>r.z),base.run(base.init('release',.5,150)).history.map(r=>r.z));
+assert(zero.history.filter(r=>r.mode==='release').every(r=>!r.forceTargetApplicable&&!r.capacityComparisonApplicable&&!r.saturated&&r.excitationFloorDrive&&r.uraw===null&&r.e===null&&r.driveMode==='floor-drive'));checks.push('Release 150 N and 0 N are identical physical trajectories; bypass/floor metadata is explicit');
+const cfg=lab.init('descending_fixed',lab.descendingMass(),150,1e-4),fixed=lab.run(cfg),original=base.run(cfg);
+assert.deepEqual(fixed.history.map(r=>r.z),original.history.map(r=>r.z));assert(fixed.history.every(r=>!r.forceTargetApplicable&&!r.saturated&&!r.capacityComparisonApplicable&&r.driveMode==='fixed-activation'&&r.uraw===null));checks.push('Fixed activation 150 N delegates identical physics and suppresses dormant PI claims');
+for(const mode of ['release','fixed']){const phase={target:300,mode},b=base.output(cfg.z,cfg,phase),n=lab.output(cfg.z,cfg,phase);assert(b.saturated);assert(!n.saturated&&!n.forceTargetApplicable);for(const key of ['FT','v','u','adot','Idot','Pactive','D','acceleration','residual'])assert.equal(n[key],b[key]);}checks.push('Dormant raw PI clipping does not label release/fixed excitation as PI saturation');
+const phase={target:300},active=lab.output(cfg.z,cfg,phase);assert(active.saturated&&active.forceTargetApplicable&&active.capacityComparisonApplicable&&active.uraw!==null);checks.push('Active PI retains its target, capacity and saturation metadata');
+const sources=['education/web/vertical-force-model.js','education/web/vertical-force-mode-aware.js','education/tests/vertical_force_modes.js','education/data/vertical-force-command-v1/protocol.json','education/data/millard-reference-v1/review/native-controls.json'];
+const receipt={passed:true,checks,physics_gains_source_law_changed:false,release_state_series_exactly_equal:true,fixed_state_series_exactly_equal:true,source_sha256:Object.fromEntries(sources.map(p=>[p,createHash('sha256').update(fs.readFileSync(path.join(root,p))).digest('hex')]))};fs.writeFileSync(path.join(out,'mode-model-check.json'),JSON.stringify(receipt,null,2)+'\n');console.log(checks.join('\n'));
