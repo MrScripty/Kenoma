@@ -6,6 +6,6 @@ The actual production card inspector captured all eight additional Real cards in
 
 Actually inspected here: desktop-material-real-confined-volume.png, mobile-virtual-real-power.png and PDF source pages 70, 71 and 72. Mobile theorem blocks scroll horizontally, following the book's existing source-code presentation. Other screenshots are automated captures, not a claim of exhaustive appearance review or accessibility certification. No biological, floating-point refinement or hosted-publication claim.
 
-Four actual negative controls rejected a changed screenshot, false mobile overflow, missing Real claim coverage and stale PDF hash, then restored and rechecked the original evidence. Their source-bound receipt digest is in negative-controls.json.
+Five actual negative controls rejected a changed screenshot, false mobile overflow, missing Real claim coverage, stale PDF hash and a missing source continuation page, then restored and rechecked the original evidence. Their source-bound receipt digest is in negative-controls.json.
 
 The constitutive source build and proposed harder Real proofs remain independent pending work. Full combined browser/artifact/package qualification remains pending; this checkpoint is narrower HTML/PDF evidence.

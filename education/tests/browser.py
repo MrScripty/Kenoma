@@ -1,6 +1,7 @@
 """Behavior checks and screenshots for the built portable static artifact."""
 from pathlib import Path
 import hashlib,json,os,shutil,sys
+from math import exp
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
 from render_pdf import serve
 from executable_outputs import checked_build_outputs,executable_digest,unchanged_outputs
@@ -103,12 +104,18 @@ def check():
         series.locator('select[data-param=mode]').select_option('prescribed');series.locator('input[type=number][data-param=angle]').fill('90')
         series.evaluate('(lab)=>{for(let i=0;i<60;i++)lab.querySelector("[data-action=step]").click()}')
         series.locator('[data-action=copy]').click();before=json.loads(series.locator('.preset').input_value())
-        assert abs(before['state']['q']-3.141592653589793/2)<1e-12 and before['state']['work']>8.59
+        assert abs(before['state']['q']-3.141592653589793/2)<1e-12
+        assert abs(before['state']['a']-.6*(1-exp(-.3/.05)))<1e-12
+        assert abs(before['state']['work']-5.91990214)<1e-5
         series.locator('[data-action=release]').click();series.locator('[data-action=copy]').click()
         released=json.loads(series.locator('.preset').input_value());assert released['state']==before['state']
         with page.expect_download() as info:series.locator('[data-action=export]').click()
         info.value.save_as(str(out/'series-immediate-release.json'));instant=json.loads((out/'series-immediate-release.json').read_text());current=instant['trace'][-1]
         assert len(instant['trace'])==61 and current['step']==60 and current['excitation']==0
+        parameters=instant['parameters']
+        gaussian=current['a']*parameters['maxForce']*exp(-((current['fiber']/parameters['optimalFiber']-1)/parameters['width'])**2)
+        assert abs(current['active']-gaussian)<1e-9
+        assert abs(current['energy']-instant['initialEnergy']-current['work'])<1e-5
         assert current['fiberSpeed']>0 and current['activePower']<0 and current['work']==before['state']['work']
         assert current['a']==before['state']['a'] and 'current row refreshed' in instant['tracePolicy']
         series.locator('input[type=number][data-param=excitation]').fill('0.8')
