@@ -1,0 +1,1241 @@
+{
+  "schema_version": 1,
+  "reviewed_utc": "2026-10-06",
+  "repository_base": "2e05953581cdbd4f58c9070cd27e9ebce0d8c276",
+  "lane": "arm anatomical source curation only",
+  "scope": "Existing right elbow/arm proof-of-concept plus explicit tissue and attachment completion gaps. This is not a complete upper-limb or whole-body inventory; hand and complete shoulder/forearm muscle coverage require a later inventory.",
+  "clinical_validation": false,
+  "simulation_ready": false,
+  "owners": {
+    "concept_to_elements": "education/data/elbow-v1/sources/bodyparts_isa_element_parts.txt",
+    "archive_directory": "education/data/elbow-v1/audit/bodyparts_archive_entries.json",
+    "source_member_pins": "education/data/elbow-v1/audit/bodyparts_subset_members.json",
+    "source_coordinates": "education/data/elbow-v1/data/bodyparts3d_right_arm_m.json",
+    "source_acquisition": "education/data/elbow-v1/scripts/fetch_sources.py",
+    "source_subset_acquisition": "education/data/elbow-v1/scripts/fetch_atlas_subset.py",
+    "historical_attachments": "education/data/anatomical-arm-v1/config/attachments.json",
+    "current_attachments": "education/data/anatomical-arm-v1/config/attachments-apparatus.json",
+    "attachment_builder": "education/tools/build-anatomical-attachments.mjs",
+    "origin_partition": "education/tools/partition-anatomical-origins.mjs",
+    "origin_partition_receipt": "education/data/anatomical-arm-v1/audit/triceps-origin-ownership.json",
+    "shoulder_acquisition": "education/data/anatomical-arm-v1/scripts/fetch_shoulder_sources.py",
+    "shoulder_receipt": "education/data/anatomical-arm-v1/audit/shoulder_download_log.json",
+    "apparatus_routing": "education/data/anatomical-arm-v1/config/apparatus-routing.json",
+    "radial_gap_receipt": "education/data/anatomical-arm-v1/audit/radial-apposition-results.json",
+    "requirement_contract": "education/data/elbow-v1/curation/requirements-v1.json"
+  },
+  "sources": [
+    {
+      "id": "bodyparts3d-4.0-isa-99",
+      "version": "4.0",
+      "tree": "IS-A",
+      "ontology_version": "FMA 3.0 (confirmed in retained OBJ headers)",
+      "release_note_date": "2013-05-16",
+      "archive_update_date": "2013-06-19",
+      "download_url": "https://dbarchive.biosciencedbc.jp/en/bodyparts3d/download.html",
+      "archive": {
+        "url": "https://dbarchive.biosciencedbc.jp/data/bodyparts3d/LATEST/isa_BP3D_4.0_obj_99.zip",
+        "dated_locator": "https://dbarchive.biosciencedbc.jp/data/bodyparts3d/20130619/isa_BP3D_4.0_obj_99.zip",
+        "bytes": 142903898,
+        "sha256": null,
+        "sha256_status": "full archive deliberately not downloaded",
+        "immutable_url": false,
+        "identity": "pinned central directory bytes plus per-member acquisition-time SHA-256; no full-file identity claimed",
+        "polygon_reduction_rate_percent": 99
+      },
+      "license": {
+        "id": "CC-BY-4.0",
+        "url": "https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html",
+        "terms_url": "https://creativecommons.org/licenses/by/4.0/",
+        "official_notice_updated": "2025-02-25",
+        "attribution": "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International",
+        "historical_obj_notice": "CC BY-SA 2.1 Japan, retained without alteration",
+        "clearance_scope": "Archive Release 4.0 as retained; not automatic clearance of exact 4.3 assets"
+      },
+      "coordinates": {
+        "source_unit": "mm",
+        "derived_unit": "m",
+        "transform": "position_m = position_mm / 1000; preserve original origin and axes",
+        "axes": {
+          "x_positive": "anatomical left",
+          "y_positive": "posterior",
+          "z_positive": "superior"
+        },
+        "reference_pose": "Static atlas coordinates; exact volunteer acquisition pose and calibrated joint angles not established. No pose normalization performed.",
+        "evidence": "education/data/elbow-v1/sources/bodyparts_coordinate_system.png"
+      },
+      "provenance": {
+        "specimen_id": "TARO-derived reconstructed adult male atlas",
+        "origin": "Male-volunteer MRI framework plus anatomical reconstruction; distinct from NLM cadavers",
+        "evidence_class": "constructed_anatomical_reference_atlas",
+        "per_part_observed_vs_reconstructed": "not supplied; each retained surface is classified reconstructed atlas, never direct observed tissue segmentation",
+        "primary_process_reference": "https://doi.org/10.1093/nar/gkn613",
+        "registered_to_other_people": false
+      },
+      "readme_url": "https://dbarchive.biosciencedbc.jp/data/bodyparts3d/LATEST/README_e.html",
+      "import_rules": [
+        "Retain all concept-to-FJ relationships; determine leaf identity from OBJ header or separately verified primary mapping.",
+        "COMPOUND concepts reuse ELEMENT members; do not count compound membership rows as individual meshes.",
+        "A one-member relationship alone cannot prove leaf identity when its OBJ header has not been inspected.",
+        "Preserve M suffixes and separate bilateral and mirrored provenance; do not infer observation from a suffix."
+      ]
+    },
+    {
+      "id": "bodyparts3d-4.3-candidate",
+      "version": "4.3; 4.3i relation extension separate",
+      "status": "exact assets and attribution-only license scope unresolved",
+      "license": {
+        "id": null,
+        "live_notice": "CC BY-SA 2.1 Japan",
+        "archive_notice": "CC BY 4.0",
+        "clearance": "unresolved_for_exact_4.3_assets",
+        "live_url": "https://lifesciencedb.jp/bp3d/info_en/license/index.html",
+        "archive_url": "https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html"
+      },
+      "version_reference": "https://lifesciencedb.jp/bp3d/info_en/index.html",
+      "version_rules": "Decimal updates add/replace OBJ parts; integer changes concern coordinates. 4.3i adds inferred part-of relations; 3899 is a concept count, not a mesh count.",
+      "archive_url": null,
+      "sha256": null,
+      "acquired_meshes": 0,
+      "coordinates": "not verified for exact candidate assets",
+      "specimen": "Do not assume unchanged Release 4.0 tissue provenance for replaced parts.",
+      "third_party_lead": {
+        "url": "https://github.com/olivercase/body_parts_3d_api",
+        "status": "delegated source-audit lead; not acquired or authoritative",
+        "import_hazard": "First containing FMA concept is not necessarily the leaf (e.g. brachialis group FMA37348 versus leaf FMA37668). CSV rows are not unique tissue counts."
+      }
+    },
+    {
+      "id": "nlm-visible-human-male",
+      "version": "Visible Man initial release 1994; exact image revision not selected",
+      "status": "public-domain imaging candidate; segmentation required",
+      "license": {
+        "id": "public-domain",
+        "url": "https://www.nlm.nih.gov/research/visible/visible_human.html"
+      },
+      "specimen": "NLM male cadaver, separate from TARO and female cadaver",
+      "payload": "Cryosection, CT, MRI images, not a supplied tissue-distinct arm mesh set",
+      "coordinates": "Image pixel/slice spacing documented by NLM; arm registration, labels and reference pose not established here",
+      "sha256": null,
+      "acquired_bytes": 0
+    },
+    {
+      "id": "nlm-visible-human-female",
+      "version": "Visible Woman initial release 1995; exact image revision not selected",
+      "status": "public-domain imaging candidate; segmentation required",
+      "license": {
+        "id": "public-domain",
+        "url": "https://www.nlm.nih.gov/research/visible/visible_human.html"
+      },
+      "specimen": "NLM female cadaver; do not combine with male or atlas as one observed anatomy",
+      "coordinates": "Not acquired or registered here",
+      "sha256": null,
+      "acquired_bytes": 0
+    },
+    {
+      "id": "denver-lower-body-lead",
+      "version": null,
+      "status": "out_of_arm_scope; delegated task evidence only",
+      "license": {
+        "id": null,
+        "status": "exact release and source license not audited in this lane"
+      },
+      "source_url": null,
+      "provenance": "User-supplied source assessment: lower body only with fat/fascia or fat/skin combined. Does not establish tissue-distinct arm coverage.",
+      "coordinates": null,
+      "sha256": null,
+      "acquired_bytes": 0
+    },
+    {
+      "id": "arm26-model-reference",
+      "version": "84b487c4e3245359a64381e01f01b9cf4772d457",
+      "status": "existing independent model parameter evidence, not anatomical tissue geometry",
+      "license": {
+        "id": "CC-BY-3.0",
+        "evidence": "education/data/elbow-v1/LICENSES_AND_ATTRIBUTION.txt"
+      },
+      "owner": "education/data/elbow-v1/sources/arm26.osim",
+      "registration_to_atlas": false
+    },
+    {
+      "id": "openarm-recorded-reference",
+      "version": "Multisensor 2.0 participant code 2 trial 1b",
+      "status": "existing independent recorded signals, not anatomical tissue geometry",
+      "license": {
+        "id": "CC-BY-4.0",
+        "evidence": "education/data/elbow-v1/LICENSES_AND_ATTRIBUTION.txt"
+      },
+      "owner": "education/data/elbow-v1/provenance.json",
+      "registration_to_atlas": false
+    }
+  ],
+  "input_pins": [
+    {
+      "path": "education/data/elbow-v1/sources/bodyparts_isa_element_parts.txt",
+      "bytes": 1142159,
+      "sha256": "a3de74423f943b0d724ae8f59b3a817f87c423a544f8db98113b1980817cbeaf",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/elbow-v1/audit/bodyparts_archive_entries.json",
+      "bytes": 419224,
+      "sha256": "7e88e9e2cc97512a7bebcec607ce06484b477d5921fae0ea2a1c6a1870cc2a42",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/elbow-v1/audit/bodyparts_subset_members.json",
+      "bytes": 3739,
+      "sha256": "146c3a2f5d7073087d5496502275835a2b3af20de102feb3b67c18e8414ed247",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/elbow-v1/data/bodyparts3d_right_arm_m.json",
+      "bytes": 954664,
+      "sha256": "c3ca97df0d41302de5c3e553cb9974c4c0bd68a30866c26a18e1ba41ceab4257",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/config/attachments-apparatus.json",
+      "bytes": 495217,
+      "sha256": "070fee738e73e127e334ee5cbe680cb622f100396ad0728eb9df6723c2232389",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/elbow-v1/audit/bodyparts_zip_central_directory.bin",
+      "bytes": 170025,
+      "sha256": "edde15c7c5f34b2b9743935fb3c1873cce3a9789164427ddf8343c879bcde96b",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/elbow-v1/audit/bodyparts_zip_end_record.bin",
+      "bytes": 22,
+      "sha256": "0f6688d48623420b5f59f5bd91304895193883f6727af9fca3dff66fec8ca99e",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/elbow-v1/audit/download_log.json",
+      "bytes": 5646,
+      "sha256": "3336e0c0102493f1526ef1ba88d33bfc6d14bea871af7a91e83ec52589621545",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/elbow-v1/audit/bodyparts_subset_download_log.json",
+      "bytes": 15168,
+      "sha256": "e9d32167cb335b41d905d736c197925d9b0d4a4915cf93f98d7af9a2b2afc6c4",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/elbow-v1/audit/source_document_pins.json",
+      "bytes": 3151,
+      "sha256": "5c83ee5666559494e39513c6bc832ba2a5cae7550c88fe98866b5636704dd7e3",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/elbow-v1/sources/bodyparts_license.html",
+      "bytes": 14694,
+      "sha256": "07878f88d57f9d8acf88c6e33cf4d5cd3185a4c1ddae3904892720af006da423",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/elbow-v1/sources/bodyparts_README.html",
+      "bytes": 19263,
+      "sha256": "f9a90b4d945ad0fe50db45c712e931aa54e52667187b30d7085b6cc394f40107",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/elbow-v1/sources/bodyparts_release_4.0.html",
+      "bytes": 6310,
+      "sha256": "771bd30a47ab11396eb6333e73a946426093c57fa4d4a1db8f718910fea7d985",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/elbow-v1/sources/bodyparts_coordinate_system.png",
+      "bytes": 28425,
+      "sha256": "338736275c11eac8c89531fdc14193c9a8adf5baab674033d9d89259f152a5f6",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/audit/triceps-origin-ownership.json",
+      "bytes": 31516,
+      "sha256": "d93148f738e138d4b0a84868747058c9b4114be93626a49678d5ae07e012cd6b",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/audit/shoulder_download_log.json",
+      "bytes": 339,
+      "sha256": "097d222b758125f76d82aa9adbd3e1ee60977be7e2d44cf1b5bf65e5531156fb",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/config/apparatus-routing.json",
+      "bytes": 447475,
+      "sha256": "b8580e8158e17730b65b64d0fdbe0f1cbbafc76235b9a5f0c2b01020818cd93f",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/audit/radial-apposition-results.json",
+      "bytes": 604956,
+      "sha256": "f57daa7f84045f9113d42b81c37db4e089650e950c383ff389636b9383d35630",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/elbow-v1/sources/bodyparts3d/FJ3368.obj",
+      "bytes": 256564,
+      "sha256": "85f5445a11ecb029b027db0b9b34933982836d442b19ff531d1ca35a3bc3a237",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/elbow-v1/sources/bodyparts3d/FJ3349.obj",
+      "bytes": 42701,
+      "sha256": "0f824e639b13ea02959734a0d9bd8d7ca67d0b51f531a138d769e1d3b22e0c98",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/elbow-v1/sources/bodyparts3d/FJ3391.obj",
+      "bytes": 54174,
+      "sha256": "0aad73148e036c980ab24dfa675fcc1f109e5c60d82c12f3696420cf93cb4a98",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/elbow-v1/sources/bodyparts3d/FJ1486.obj",
+      "bytes": 127901,
+      "sha256": "be5f40b153fd6ce0c8c274eb4c26be8d1a29b4bbe75dd0e4a0dfe5c4d251fa03",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/elbow-v1/sources/bodyparts3d/FJ1512.obj",
+      "bytes": 161507,
+      "sha256": "2173b7cce29f11036907b80e068e9bd6c16f22359d6e7994af9684454b99b4d5",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/elbow-v1/sources/bodyparts3d/FJ1478.obj",
+      "bytes": 105386,
+      "sha256": "2442d2b5ac30c5da42e72eeff83d143df51c7617001cbc6552096a504f29bc07",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/elbow-v1/sources/bodyparts3d/FJ1480.obj",
+      "bytes": 61608,
+      "sha256": "1ea653667afa5ff0bf0e01d71ac648819655241c130e8dd1778ed2f9561c34c5",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/elbow-v1/sources/bodyparts3d/FJ1477.obj",
+      "bytes": 182250,
+      "sha256": "1d1c3b42eec0dffe696bd25cffa81784c87c15f16c9605050fdf1cb2f47698dd",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/elbow-v1/sources/bodyparts3d/FJ1479.obj",
+      "bytes": 113287,
+      "sha256": "acc48f746bd07a117357a9c49a1a9850c96b85d7c63cf90a662a45717875a315",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/elbow-v1/sources/bodyparts3d/FJ1487.obj",
+      "bytes": 359055,
+      "sha256": "0ff651a5417f240c6a5205bef5218336a61fe3474752cca1b483d02aae0b92ad",
+      "pin_origin": "retained_repository_input_at_base_2e05953581cdbd4f58c9070cd27e9ebce0d8c276; not a fresh download"
+    },
+    {
+      "path": "education/data/elbow-v1/curation/requirements-v1.json",
+      "bytes": 10763,
+      "sha256": "1de4812561bf8cba101a34dc474afda64d0f020aca1ccea26cc94de237e347a6",
+      "pin_origin": "Reviewed new curation requirements contract at this checkpoint; not an upstream acquisition or base-commit file."
+    }
+  ],
+  "requirements": [
+    {
+      "id": "humerus",
+      "name": "right humerus",
+      "tissue": "bone",
+      "scope": "existing_poc",
+      "availability": "individual_surface",
+      "concepts": [
+        {
+          "id": "FMA23130",
+          "name": "right humerus"
+        }
+      ],
+      "expected_elements": [
+        "FJ3368"
+      ],
+      "query_names": [
+        "right humerus"
+      ],
+      "gap": "Reconstructed reduced atlas surface; no independent tissue segmentation, material/fibre field, or measured enthesis supplied."
+    },
+    {
+      "id": "radius",
+      "name": "right radius",
+      "tissue": "bone",
+      "scope": "existing_poc",
+      "availability": "individual_surface",
+      "concepts": [
+        {
+          "id": "FMA23464",
+          "name": "right radius"
+        }
+      ],
+      "expected_elements": [
+        "FJ3349"
+      ],
+      "query_names": [
+        "right radius"
+      ],
+      "gap": "Reconstructed reduced atlas surface; no independent tissue segmentation, material/fibre field, or measured enthesis supplied."
+    },
+    {
+      "id": "ulna",
+      "name": "right ulna",
+      "tissue": "bone",
+      "scope": "existing_poc",
+      "availability": "individual_surface",
+      "concepts": [
+        {
+          "id": "FMA23467",
+          "name": "right ulna"
+        }
+      ],
+      "expected_elements": [
+        "FJ3391"
+      ],
+      "query_names": [
+        "right ulna"
+      ],
+      "gap": "Reconstructed reduced atlas surface; no independent tissue segmentation, material/fibre field, or measured enthesis supplied."
+    },
+    {
+      "id": "brachialis",
+      "name": "right brachialis",
+      "tissue": "muscle",
+      "scope": "existing_poc",
+      "availability": "individual_surface",
+      "concepts": [
+        {
+          "id": "FMA37668",
+          "name": "right brachialis"
+        }
+      ],
+      "expected_elements": [
+        "FJ1486"
+      ],
+      "query_names": [
+        "right brachialis"
+      ],
+      "gap": "Reconstructed reduced atlas surface; no independent tissue segmentation, material/fibre field, or measured enthesis supplied."
+    },
+    {
+      "id": "biceps_short",
+      "name": "short head of right biceps brachii",
+      "tissue": "muscle",
+      "scope": "existing_poc",
+      "availability": "individual_surface",
+      "concepts": [
+        {
+          "id": "FMA37684",
+          "name": "short head of right biceps brachii"
+        }
+      ],
+      "expected_elements": [
+        "FJ1512"
+      ],
+      "query_names": [
+        "short head of right biceps brachii"
+      ],
+      "gap": "Reconstructed reduced atlas surface; no independent tissue segmentation, material/fibre field, or measured enthesis supplied."
+    },
+    {
+      "id": "biceps_long",
+      "name": "long head of right biceps brachii",
+      "tissue": "muscle",
+      "scope": "existing_poc",
+      "availability": "individual_surface",
+      "concepts": [
+        {
+          "id": "FMA37686",
+          "name": "long head of right biceps brachii"
+        }
+      ],
+      "expected_elements": [
+        "FJ1478"
+      ],
+      "query_names": [
+        "long head of right biceps brachii"
+      ],
+      "gap": "Reconstructed reduced atlas surface; no independent tissue segmentation, material/fibre field, or measured enthesis supplied."
+    },
+    {
+      "id": "triceps_medial",
+      "name": "medial head of right triceps brachii",
+      "tissue": "muscle",
+      "scope": "existing_poc",
+      "availability": "individual_surface",
+      "concepts": [
+        {
+          "id": "FMA37695",
+          "name": "medial head of right triceps brachii"
+        }
+      ],
+      "expected_elements": [
+        "FJ1480"
+      ],
+      "query_names": [
+        "medial head of right triceps brachii"
+      ],
+      "gap": "Reconstructed reduced atlas surface; no independent tissue segmentation, material/fibre field, or measured enthesis supplied."
+    },
+    {
+      "id": "triceps_lateral",
+      "name": "lateral head of right triceps brachii",
+      "tissue": "muscle",
+      "scope": "existing_poc",
+      "availability": "individual_surface",
+      "concepts": [
+        {
+          "id": "FMA37697",
+          "name": "lateral head of right triceps brachii"
+        }
+      ],
+      "expected_elements": [
+        "FJ1477"
+      ],
+      "query_names": [
+        "lateral head of right triceps brachii"
+      ],
+      "gap": "Reconstructed reduced atlas surface; no independent tissue segmentation, material/fibre field, or measured enthesis supplied."
+    },
+    {
+      "id": "triceps_long",
+      "name": "long head of right triceps brachii",
+      "tissue": "muscle",
+      "scope": "existing_poc",
+      "availability": "individual_surface",
+      "concepts": [
+        {
+          "id": "FMA37699",
+          "name": "long head of right triceps brachii"
+        }
+      ],
+      "expected_elements": [
+        "FJ1479"
+      ],
+      "query_names": [
+        "long head of right triceps brachii"
+      ],
+      "gap": "Reconstructed reduced atlas surface; no independent tissue segmentation, material/fibre field, or measured enthesis supplied."
+    },
+    {
+      "id": "brachioradialis",
+      "name": "right brachioradialis",
+      "tissue": "muscle",
+      "scope": "existing_poc",
+      "availability": "individual_surface",
+      "concepts": [
+        {
+          "id": "FMA38486",
+          "name": "right brachioradialis"
+        }
+      ],
+      "expected_elements": [
+        "FJ1487"
+      ],
+      "query_names": [
+        "right brachioradialis"
+      ],
+      "gap": "Reconstructed reduced atlas surface; no independent tissue segmentation, material/fibre field, or measured enthesis supplied."
+    },
+    {
+      "id": "clavicle",
+      "name": "right clavicle",
+      "tissue": "bone",
+      "scope": "arm_completion",
+      "availability": "single_member_representation_uninspected",
+      "concepts": [
+        {
+          "id": "FMA13322",
+          "name": "right clavicle"
+        }
+      ],
+      "expected_elements": [
+        "FJ3362"
+      ],
+      "query_names": [
+        "right clavicle"
+      ],
+      "gap": "Mapped individual archive member; not acquired or inspected. Coordinate agreement and segmentation boundaries remain unchecked. Reuse existing shoulder acquisition owner for scapula/clavicle."
+    },
+    {
+      "id": "scapula",
+      "name": "right scapula",
+      "tissue": "bone",
+      "scope": "arm_completion",
+      "availability": "single_member_representation_uninspected",
+      "concepts": [
+        {
+          "id": "FMA13395",
+          "name": "right scapula"
+        }
+      ],
+      "expected_elements": [
+        "FJ3384"
+      ],
+      "query_names": [
+        "right scapula"
+      ],
+      "gap": "Mapped individual archive member; not acquired or inspected. Coordinate agreement and segmentation boundaries remain unchecked. Reuse existing shoulder acquisition owner for scapula/clavicle."
+    },
+    {
+      "id": "anconeus",
+      "name": "right anconeus",
+      "tissue": "muscle",
+      "scope": "arm_completion",
+      "availability": "single_member_representation_uninspected",
+      "concepts": [
+        {
+          "id": "FMA37705",
+          "name": "right anconeus"
+        }
+      ],
+      "expected_elements": [
+        "FJ1485"
+      ],
+      "query_names": [
+        "right anconeus"
+      ],
+      "gap": "Mapped individual archive member; not acquired or inspected. Coordinate agreement and segmentation boundaries remain unchecked. Reuse existing shoulder acquisition owner for scapula/clavicle."
+    },
+    {
+      "id": "coracobrachialis",
+      "name": "right coracobrachialis",
+      "tissue": "muscle",
+      "scope": "arm_completion",
+      "availability": "single_member_representation_uninspected",
+      "concepts": [
+        {
+          "id": "FMA37665",
+          "name": "right coracobrachialis"
+        }
+      ],
+      "expected_elements": [
+        "FJ1488"
+      ],
+      "query_names": [
+        "right coracobrachialis"
+      ],
+      "gap": "Mapped individual archive member; not acquired or inspected. Coordinate agreement and segmentation boundaries remain unchecked. Reuse existing shoulder acquisition owner for scapula/clavicle."
+    },
+    {
+      "id": "interosseous_membrane",
+      "name": "interosseous membrane of right forearm",
+      "tissue": "connective_membrane",
+      "scope": "arm_completion",
+      "availability": "single_member_representation_uninspected",
+      "concepts": [
+        {
+          "id": "FMA23707",
+          "name": "interosseous membrane of right forearm"
+        }
+      ],
+      "expected_elements": [
+        "FJ1476"
+      ],
+      "query_names": [
+        "interosseous membrane of right forearm"
+      ],
+      "gap": "Mapped individual archive member; not acquired or inspected. Coordinate agreement and segmentation boundaries remain unchecked. Reuse existing shoulder acquisition owner for scapula/clavicle."
+    },
+    {
+      "id": "upper_limb_muscle_group",
+      "name": "muscle of free upper limb",
+      "tissue": "muscle",
+      "scope": "ontology_example",
+      "availability": "compound_representation",
+      "concepts": [
+        {
+          "id": "FMA37348",
+          "name": "muscle of free upper limb"
+        }
+      ],
+      "expected_elements": [
+        "FJ1466",
+        "FJ1466M",
+        "FJ1469",
+        "FJ1469M",
+        "FJ1470",
+        "FJ1470M",
+        "FJ1472",
+        "FJ1472M",
+        "FJ1475",
+        "FJ1475M",
+        "FJ1482",
+        "FJ1482M",
+        "FJ1483",
+        "FJ1483M",
+        "FJ1484",
+        "FJ1484M",
+        "FJ1485",
+        "FJ1485M",
+        "FJ1486",
+        "FJ1486M",
+        "FJ1487",
+        "FJ1487M",
+        "FJ1488",
+        "FJ1488M",
+        "FJ1489",
+        "FJ1489M",
+        "FJ1490",
+        "FJ1490M",
+        "FJ1491",
+        "FJ1491M",
+        "FJ1492",
+        "FJ1492M",
+        "FJ1493",
+        "FJ1493M",
+        "FJ1494",
+        "FJ1494M",
+        "FJ1495",
+        "FJ1495M",
+        "FJ1496",
+        "FJ1496M",
+        "FJ1497",
+        "FJ1497M",
+        "FJ1498",
+        "FJ1498M",
+        "FJ1499",
+        "FJ1499M",
+        "FJ1501",
+        "FJ1501M",
+        "FJ1502",
+        "FJ1502M",
+        "FJ1503",
+        "FJ1503M",
+        "FJ1505",
+        "FJ1505M",
+        "FJ1517",
+        "FJ1517M"
+      ],
+      "query_names": [
+        "muscle of free upper limb"
+      ],
+      "gap": "56 component files, including bilateral members; group membership is not the leaf identity of any individual muscle or a complete arm."
+    },
+    {
+      "id": "generic_tendon",
+      "name": "tendon",
+      "tissue": "tendon",
+      "scope": "ontology_example",
+      "availability": "related_concept_only",
+      "concepts": [
+        {
+          "id": "FMA9721",
+          "name": "tendon"
+        }
+      ],
+      "expected_elements": [
+        "FJ1343",
+        "FJ1465",
+        "FJ1465M",
+        "FJ1581",
+        "FJ2552",
+        "FJ2553"
+      ],
+      "query_names": [
+        "tendon"
+      ],
+      "gap": "Six files for unrelated named tendons. Generic ontology membership does not establish biceps, brachialis, triceps or brachioradialis tendon meshes."
+    },
+    {
+      "id": "generic_limb_ligament",
+      "name": "ligament of limb",
+      "tissue": "ligament",
+      "scope": "ontology_example",
+      "availability": "related_concept_only",
+      "concepts": [
+        {
+          "id": "FMA265180",
+          "name": "ligament of limb"
+        }
+      ],
+      "expected_elements": [
+        "FJ1424",
+        "FJ1424M"
+      ],
+      "query_names": [
+        "ligament of limb"
+      ],
+      "gap": "Two long plantar ligament members; no elbow ligament coverage established."
+    },
+    {
+      "id": "generic_cartilage",
+      "name": "cartilage organ",
+      "tissue": "cartilage",
+      "scope": "ontology_example",
+      "availability": "related_concept_only",
+      "concepts": [
+        {
+          "id": "FMA55107",
+          "name": "cartilage organ"
+        }
+      ],
+      "expected_elements": [
+        "FJ2440",
+        "FJ2554",
+        "FJ2555",
+        "FJ2556",
+        "FJ2557",
+        "FJ2558",
+        "FJ2769",
+        "FJ2773",
+        "FJ2775",
+        "FJ2776",
+        "FJ2792",
+        "FJ2793",
+        "FJ2795",
+        "FJ2808",
+        "FJ3202",
+        "FJ3203",
+        "FJ3204",
+        "FJ3205",
+        "FJ3206",
+        "FJ3207",
+        "FJ3208",
+        "FJ3209",
+        "FJ3210",
+        "FJ3211",
+        "FJ3212",
+        "FJ3213",
+        "FJ3214",
+        "FJ3215",
+        "FJ3216",
+        "FJ3217",
+        "FJ3218",
+        "FJ3219",
+        "FJ3220",
+        "FJ3221",
+        "FJ3222",
+        "FJ3223",
+        "FJ3224"
+      ],
+      "query_names": [
+        "cartilage organ"
+      ],
+      "gap": "37 mapped files elsewhere; generic cartilage does not establish elbow articular-cartilage layers."
+    },
+    {
+      "id": "whole_body_skin",
+      "name": "skin",
+      "tissue": "skin",
+      "scope": "boundary_context",
+      "availability": "regional_segmentation_required",
+      "concepts": [
+        {
+          "id": "FMA7163",
+          "name": "skin"
+        }
+      ],
+      "expected_elements": [
+        "FJ2810"
+      ],
+      "query_names": [
+        "skin"
+      ],
+      "gap": "One whole-body skin member FJ2810 (14,465,502 uncompressed bytes), not acquired. Does not establish an individually segmented arm shell or fat thickness."
+    },
+    {
+      "id": "biceps_long_proximal_tendon",
+      "name": "proximal tendon of long head of right biceps brachii",
+      "tissue": "tendon",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "proximal tendon of long head of right biceps brachii"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    },
+    {
+      "id": "biceps_short_proximal_tendon",
+      "name": "proximal tendon of short head of right biceps brachii",
+      "tissue": "tendon",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "proximal tendon of short head of right biceps brachii"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    },
+    {
+      "id": "biceps_distal_tendon",
+      "name": "distal tendon of right biceps brachii",
+      "tissue": "tendon",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "distal tendon of right biceps brachii"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    },
+    {
+      "id": "brachialis_tendon",
+      "name": "tendon of right brachialis",
+      "tissue": "tendon",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "tendon of right brachialis"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    },
+    {
+      "id": "triceps_distal_tendon",
+      "name": "distal tendon of right triceps brachii",
+      "tissue": "tendon",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "distal tendon of right triceps brachii"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    },
+    {
+      "id": "brachioradialis_tendon",
+      "name": "tendon of right brachioradialis",
+      "tissue": "tendon",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "tendon of right brachioradialis"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    },
+    {
+      "id": "bicipital_aponeurosis",
+      "name": "right bicipital aponeurosis",
+      "tissue": "aponeurosis",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "right bicipital aponeurosis"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    },
+    {
+      "id": "internal_aponeuroses",
+      "name": "internal aponeuroses of right arm muscles",
+      "tissue": "aponeurosis",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "internal aponeuroses of right arm muscles"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    },
+    {
+      "id": "ulnar_collateral_anterior",
+      "name": "anterior bundle of right elbow ulnar collateral ligament",
+      "tissue": "ligament",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "anterior bundle of right elbow ulnar collateral ligament"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    },
+    {
+      "id": "ulnar_collateral_posterior",
+      "name": "posterior bundle of right elbow ulnar collateral ligament",
+      "tissue": "ligament",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "posterior bundle of right elbow ulnar collateral ligament"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    },
+    {
+      "id": "ulnar_collateral_transverse",
+      "name": "transverse bundle of right elbow ulnar collateral ligament",
+      "tissue": "ligament",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "transverse bundle of right elbow ulnar collateral ligament"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    },
+    {
+      "id": "radial_collateral",
+      "name": "radial collateral ligament of right elbow",
+      "tissue": "ligament",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "radial collateral ligament of right elbow"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    },
+    {
+      "id": "lateral_ulnar_collateral",
+      "name": "lateral ulnar collateral ligament of right elbow",
+      "tissue": "ligament",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "lateral ulnar collateral ligament of right elbow"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    },
+    {
+      "id": "annular_ligament",
+      "name": "annular ligament of right radius",
+      "tissue": "ligament",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "annular ligament of right radius"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    },
+    {
+      "id": "quadrate_ligament",
+      "name": "right quadrate ligament",
+      "tissue": "ligament",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "right quadrate ligament"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    },
+    {
+      "id": "elbow_capsule",
+      "name": "right elbow joint capsule",
+      "tissue": "capsule",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "right elbow joint capsule"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    },
+    {
+      "id": "humeral_cartilage",
+      "name": "articular cartilage of right distal humerus",
+      "tissue": "cartilage",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "articular cartilage of right distal humerus"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    },
+    {
+      "id": "radial_head_cartilage",
+      "name": "articular cartilage of right radial head",
+      "tissue": "cartilage",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "articular cartilage of right radial head"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    },
+    {
+      "id": "ulnar_cartilage",
+      "name": "articular cartilage of right trochlear notch",
+      "tissue": "cartilage",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "articular cartilage of right trochlear notch"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    },
+    {
+      "id": "subcutaneous_fat",
+      "name": "subcutaneous fat of right arm",
+      "tissue": "fat",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "subcutaneous fat of right arm"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    },
+    {
+      "id": "intermuscular_fat",
+      "name": "intermuscular fat of right arm",
+      "tissue": "fat",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "intermuscular fat of right arm"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    },
+    {
+      "id": "elbow_fat_pads",
+      "name": "right elbow fat pads",
+      "tissue": "fat",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "right elbow fat pads"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    },
+    {
+      "id": "brachial_fascia",
+      "name": "right brachial fascia",
+      "tissue": "fascia",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "right brachial fascia"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    },
+    {
+      "id": "antebrachial_fascia",
+      "name": "right antebrachial fascia",
+      "tissue": "fascia",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "right antebrachial fascia"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    },
+    {
+      "id": "coracoid_enthesis",
+      "name": "short-head biceps enthesis on right coracoid process",
+      "tissue": "attachment",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "short-head biceps enthesis on right coracoid process"
+      ],
+      "gap": "Existing source-face selections or atlas-tip origin estimates are authored; no measured enthesis segmentation. Scapular bone membership does not establish these landmark footprints."
+    },
+    {
+      "id": "supraglenoid_enthesis",
+      "name": "long-head biceps enthesis in right supraglenoid region",
+      "tissue": "attachment",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "long-head biceps enthesis in right supraglenoid region"
+      ],
+      "gap": "Existing source-face selections or atlas-tip origin estimates are authored; no measured enthesis segmentation. Scapular bone membership does not establish these landmark footprints."
+    },
+    {
+      "id": "infraglenoid_enthesis",
+      "name": "long-head triceps enthesis in right infraglenoid region",
+      "tissue": "attachment",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "long-head triceps enthesis in right infraglenoid region"
+      ],
+      "gap": "Existing source-face selections or atlas-tip origin estimates are authored; no measured enthesis segmentation. Scapular bone membership does not establish these landmark footprints."
+    },
+    {
+      "id": "measured_entheses",
+      "name": "measured humeral radial and ulnar enthesis footprints",
+      "tissue": "attachment",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "measured humeral radial and ulnar enthesis footprints"
+      ],
+      "gap": "Existing source-face selections or atlas-tip origin estimates are authored; no measured enthesis segmentation. Scapular bone membership does not establish these landmark footprints."
+    },
+    {
+      "id": "muscle_fibres",
+      "name": "measured right arm muscle fibre and pennation fields",
+      "tissue": "field",
+      "scope": "arm_completion",
+      "availability": "no_matching_mesh_in_inspected_mapping",
+      "concepts": [],
+      "expected_elements": [],
+      "query_names": [
+        "measured right arm muscle fibre and pennation fields"
+      ],
+      "gap": "No exact named row or independent mesh established in the inspected IS-A mapping. This is not a claim of absence from FMA, other trees, releases, or imaging. Existing authored apparatus or patches cannot fill observed-data coverage."
+    }
+  ],
+  "unresolved_inputs": [
+    {
+      "url": "https://dbarchive.biosciencedbc.jp/data/bodyparts3d/LATEST/isa_parts_list.txt",
+      "status": "web-readable, raw-byte acquisition unavailable (proxy 403); no content pin or representation-kind inference claimed"
+    },
+    {
+      "url": "https://dbarchive.biosciencedbc.jp/data/bodyparts3d/LATEST/partof_element_parts.txt",
+      "status": "not acquired; no absence claim about PART-OF tree"
+    }
+  ],
+  "evidence_policy": [
+    "Related ontology concepts, archive-member availability, locally verified source surfaces, observed segmentations and authored geometry remain separate.",
+    "Do not invent missing tissue geometry, attachment coordinates or source identifiers.",
+    "Do not combine specimens into one observed anatomy.",
+    "Offline audits never download. Acquisition is an explicit bounded command with pinned bytes, license attribution and receipts.",
+    "A source comparison is not clinical validation or a simulation readiness certificate."
+  ]
+}

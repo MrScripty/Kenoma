@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "started_utc": "2026-10-06T06:14:31.940717+00:00",
+  "inventory_sha256": "d56aa7b8cac7f008f0831aa53f6df0868e14052afe2cf134fb7758ec52a9ebcb",
+  "scope": "Current bounded reacquisition of accepted metadata bytes only; no full archive or new source adoption.",
+  "byte_budget": 31457280,
+  "free_space_floor_bytes": 1610612736,
+  "license_id": "CC-BY-4.0",
+  "attribution": "BodyParts3D, \u00a9 The Database Center for Life Science licensed under CC Attribution 4.0 International",
+  "items": [
+    {
+      "item": "mapping",
+      "url": "https://dbarchive.biosciencedbc.jp/data/bodyparts3d/LATEST/isa_element_parts.txt",
+      "range": null,
+      "expected_bytes": 1142159,
+      "expected_sha256": "a3de74423f943b0d724ae8f59b3a817f87c423a544f8db98113b1980817cbeaf",
+      "started_utc": "2026-10-06T06:14:31.940888+00:00",
+      "result": "unavailable_or_pin_mismatch",
+      "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "completed_utc": "2026-10-06T06:14:31.952689+00:00"
+    },
+    {
+      "item": "directory",
+      "url": "https://dbarchive.biosciencedbc.jp/data/bodyparts3d/LATEST/isa_BP3D_4.0_obj_99.zip",
+      "range": "142733851-142903875",
+      "expected_bytes": 170025,
+      "expected_sha256": "edde15c7c5f34b2b9743935fb3c1873cce3a9789164427ddf8343c879bcde96b",
+      "started_utc": "2026-10-06T06:14:31.952865+00:00",
+      "result": "unavailable_or_pin_mismatch",
+      "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "completed_utc": "2026-10-06T06:14:31.955472+00:00"
+    },
+    {
+      "item": "end-record",
+      "url": "https://dbarchive.biosciencedbc.jp/data/bodyparts3d/LATEST/isa_BP3D_4.0_obj_99.zip",
+      "range": "142903876-142903897",
+      "expected_bytes": 22,
+      "expected_sha256": "0f6688d48623420b5f59f5bd91304895193883f6727af9fca3dff66fec8ca99e",
+      "started_utc": "2026-10-06T06:14:31.955615+00:00",
+      "result": "unavailable_or_pin_mismatch",
+      "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "completed_utc": "2026-10-06T06:14:31.957929+00:00"
+    },
+    {
+      "item": "license",
+      "url": "https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html",
+      "range": null,
+      "expected_bytes": 14694,
+      "expected_sha256": "07878f88d57f9d8acf88c6e33cf4d5cd3185a4c1ddae3904892720af006da423",
+      "started_utc": "2026-10-06T06:14:31.958046+00:00",
+      "result": "unavailable_or_pin_mismatch",
+      "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "completed_utc": "2026-10-06T06:14:31.960457+00:00"
+    },
+    {
+      "item": "readme",
+      "url": "https://dbarchive.biosciencedbc.jp/data/bodyparts3d/LATEST/README_e.html",
+      "range": null,
+      "expected_bytes": 19263,
+      "expected_sha256": "f9a90b4d945ad0fe50db45c712e931aa54e52667187b30d7085b6cc394f40107",
+      "started_utc": "2026-10-06T06:14:31.960762+00:00",
+      "result": "unavailable_or_pin_mismatch",
+      "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "completed_utc": "2026-10-06T06:14:31.963108+00:00"
+    },
+    {
+      "item": "coordinate-system",
+      "url": "https://dbarchive.biosciencedbc.jp/data/bodyparts3d/20130619/coordinate_system.png",
+      "range": null,
+      "expected_bytes": 28425,
+      "expected_sha256": "338736275c11eac8c89531fdc14193c9a8adf5baab674033d9d89259f152a5f6",
+      "started_utc": "2026-10-06T06:14:31.963284+00:00",
+      "result": "unavailable_or_pin_mismatch",
+      "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "completed_utc": "2026-10-06T06:14:31.965763+00:00"
+    },
+    {
+      "item": "release-note",
+      "url": "https://dbarchive.biosciencedbc.jp/data/bodyparts3d/20130619/release_4.0_e.html",
+      "range": null,
+      "expected_bytes": 6310,
+      "expected_sha256": "771bd30a47ab11396eb6333e73a946426093c57fa4d4a1db8f718910fea7d985",
+      "started_utc": "2026-10-06T06:14:31.965876+00:00",
+      "result": "unavailable_or_pin_mismatch",
+      "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "completed_utc": "2026-10-06T06:14:31.968325+00:00"
+    }
+  ],
+  "completed_utc": "2026-10-06T06:14:31.968332+00:00",
+  "downloaded_bytes": 0,
+  "complete": false
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-06T06:15:29.174053+00:00",
+  "evidence_origin": "Executed workspace commands and observed tool results; this record summarizes those results.",
+  "repository_base": "2e05953581cdbd4f58c9070cd27e9ebce0d8c276",
+  "checks": [
+    {
+      "command": "python3 education/data/elbow-v1/scripts/audit_source_inventory.py",
+      "exit_code": 0,
+      "result": "verified; generated coverage matches pinned inputs"
+    },
+    {
+      "command": "python3 -m unittest discover -s education/tests -p test_arm_source_inventory.py -v",
+      "exit_code": 0,
+      "tests": 18,
+      "result": "OK"
+    },
+    {
+      "command": "python3 education/data/elbow-v1/scripts/validate_package.py",
+      "exit_code": 0,
+      "checks": 1010,
+      "result": "PASS"
+    }
+  ],
+  "independent_review": "Two initially reproduced coverage-validation defects repaired and rechecked; no remaining review blockers.",
+  "files": [
+    {
+      "path": "education/data/elbow-v1/curation/source-inventory.json",
+      "sha256": "d56aa7b8cac7f008f0831aa53f6df0868e14052afe2cf134fb7758ec52a9ebcb"
+    },
+    {
+      "path": "education/data/elbow-v1/curation/requirements-v1.json",
+      "sha256": "1de4812561bf8cba101a34dc474afda64d0f020aca1ccea26cc94de237e347a6"
+    },
+    {
+      "path": "education/data/elbow-v1/curation/coverage.json",
+      "sha256": "ac852e9ab44b7dc660c1de9df1d376679fa234834ba66014f04576751c55485e"
+    },
+    {
+      "path": "education/data/elbow-v1/scripts/audit_source_inventory.py",
+      "sha256": "d6bebc4f71e491b1f433e1ff9fa2affe356d3f58335d1765724f7cffb22fc89a"
+    },
+    {
+      "path": "education/data/elbow-v1/scripts/reacquire_inventory_inputs.py",
+      "sha256": "9e796a64732b0e4bcb0c8169ccfeb4ae42f98cf73beacb1bb00041232e37ad58"
+    },
+    {
+      "path": "education/tests/test_arm_source_inventory.py",
+      "sha256": "d4a85b7cc46fd74487119dd994c0d3a4f31165b928ca36d2de0404c9df2744ad"
+    }
+  ],
+  "network_reacquisition": "incomplete; 7 proxy 403 errors and zero payload bytes; see reacquisition-checkpoint.json",
+  "clinical_validation": false,
+  "simulation_ready": false
+}

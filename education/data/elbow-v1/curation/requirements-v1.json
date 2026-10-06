@@ -1,0 +1,449 @@
+{
+  "schema_version": 1,
+  "scope": "Reviewed right-arm proof-of-concept and completion requirements; labels do not assert independent segmentation.",
+  "requirements": [
+    {
+      "id": "humerus",
+      "name": "right humerus",
+      "tissue": "bone",
+      "scope": "existing_poc",
+      "concepts": [
+        {
+          "id": "FMA23130",
+          "name": "right humerus"
+        }
+      ]
+    },
+    {
+      "id": "radius",
+      "name": "right radius",
+      "tissue": "bone",
+      "scope": "existing_poc",
+      "concepts": [
+        {
+          "id": "FMA23464",
+          "name": "right radius"
+        }
+      ]
+    },
+    {
+      "id": "ulna",
+      "name": "right ulna",
+      "tissue": "bone",
+      "scope": "existing_poc",
+      "concepts": [
+        {
+          "id": "FMA23467",
+          "name": "right ulna"
+        }
+      ]
+    },
+    {
+      "id": "brachialis",
+      "name": "right brachialis",
+      "tissue": "muscle",
+      "scope": "existing_poc",
+      "concepts": [
+        {
+          "id": "FMA37668",
+          "name": "right brachialis"
+        }
+      ]
+    },
+    {
+      "id": "biceps_short",
+      "name": "short head of right biceps brachii",
+      "tissue": "muscle",
+      "scope": "existing_poc",
+      "concepts": [
+        {
+          "id": "FMA37684",
+          "name": "short head of right biceps brachii"
+        }
+      ]
+    },
+    {
+      "id": "biceps_long",
+      "name": "long head of right biceps brachii",
+      "tissue": "muscle",
+      "scope": "existing_poc",
+      "concepts": [
+        {
+          "id": "FMA37686",
+          "name": "long head of right biceps brachii"
+        }
+      ]
+    },
+    {
+      "id": "triceps_medial",
+      "name": "medial head of right triceps brachii",
+      "tissue": "muscle",
+      "scope": "existing_poc",
+      "concepts": [
+        {
+          "id": "FMA37695",
+          "name": "medial head of right triceps brachii"
+        }
+      ]
+    },
+    {
+      "id": "triceps_lateral",
+      "name": "lateral head of right triceps brachii",
+      "tissue": "muscle",
+      "scope": "existing_poc",
+      "concepts": [
+        {
+          "id": "FMA37697",
+          "name": "lateral head of right triceps brachii"
+        }
+      ]
+    },
+    {
+      "id": "triceps_long",
+      "name": "long head of right triceps brachii",
+      "tissue": "muscle",
+      "scope": "existing_poc",
+      "concepts": [
+        {
+          "id": "FMA37699",
+          "name": "long head of right triceps brachii"
+        }
+      ]
+    },
+    {
+      "id": "brachioradialis",
+      "name": "right brachioradialis",
+      "tissue": "muscle",
+      "scope": "existing_poc",
+      "concepts": [
+        {
+          "id": "FMA38486",
+          "name": "right brachioradialis"
+        }
+      ]
+    },
+    {
+      "id": "clavicle",
+      "name": "right clavicle",
+      "tissue": "bone",
+      "scope": "arm_completion",
+      "concepts": [
+        {
+          "id": "FMA13322",
+          "name": "right clavicle"
+        }
+      ]
+    },
+    {
+      "id": "scapula",
+      "name": "right scapula",
+      "tissue": "bone",
+      "scope": "arm_completion",
+      "concepts": [
+        {
+          "id": "FMA13395",
+          "name": "right scapula"
+        }
+      ]
+    },
+    {
+      "id": "anconeus",
+      "name": "right anconeus",
+      "tissue": "muscle",
+      "scope": "arm_completion",
+      "concepts": [
+        {
+          "id": "FMA37705",
+          "name": "right anconeus"
+        }
+      ]
+    },
+    {
+      "id": "coracobrachialis",
+      "name": "right coracobrachialis",
+      "tissue": "muscle",
+      "scope": "arm_completion",
+      "concepts": [
+        {
+          "id": "FMA37665",
+          "name": "right coracobrachialis"
+        }
+      ]
+    },
+    {
+      "id": "interosseous_membrane",
+      "name": "interosseous membrane of right forearm",
+      "tissue": "connective_membrane",
+      "scope": "arm_completion",
+      "concepts": [
+        {
+          "id": "FMA23707",
+          "name": "interosseous membrane of right forearm"
+        }
+      ]
+    },
+    {
+      "id": "upper_limb_muscle_group",
+      "name": "muscle of free upper limb",
+      "tissue": "muscle",
+      "scope": "ontology_example",
+      "concepts": [
+        {
+          "id": "FMA37348",
+          "name": "muscle of free upper limb"
+        }
+      ]
+    },
+    {
+      "id": "generic_tendon",
+      "name": "tendon",
+      "tissue": "tendon",
+      "scope": "ontology_example",
+      "concepts": [
+        {
+          "id": "FMA9721",
+          "name": "tendon"
+        }
+      ]
+    },
+    {
+      "id": "generic_limb_ligament",
+      "name": "ligament of limb",
+      "tissue": "ligament",
+      "scope": "ontology_example",
+      "concepts": [
+        {
+          "id": "FMA265180",
+          "name": "ligament of limb"
+        }
+      ]
+    },
+    {
+      "id": "generic_cartilage",
+      "name": "cartilage organ",
+      "tissue": "cartilage",
+      "scope": "ontology_example",
+      "concepts": [
+        {
+          "id": "FMA55107",
+          "name": "cartilage organ"
+        }
+      ]
+    },
+    {
+      "id": "whole_body_skin",
+      "name": "skin",
+      "tissue": "skin",
+      "scope": "boundary_context",
+      "concepts": [
+        {
+          "id": "FMA7163",
+          "name": "skin"
+        }
+      ]
+    },
+    {
+      "id": "biceps_long_proximal_tendon",
+      "name": "proximal tendon of long head of right biceps brachii",
+      "tissue": "tendon",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "biceps_short_proximal_tendon",
+      "name": "proximal tendon of short head of right biceps brachii",
+      "tissue": "tendon",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "biceps_distal_tendon",
+      "name": "distal tendon of right biceps brachii",
+      "tissue": "tendon",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "brachialis_tendon",
+      "name": "tendon of right brachialis",
+      "tissue": "tendon",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "triceps_distal_tendon",
+      "name": "distal tendon of right triceps brachii",
+      "tissue": "tendon",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "brachioradialis_tendon",
+      "name": "tendon of right brachioradialis",
+      "tissue": "tendon",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "bicipital_aponeurosis",
+      "name": "right bicipital aponeurosis",
+      "tissue": "aponeurosis",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "internal_aponeuroses",
+      "name": "internal aponeuroses of right arm muscles",
+      "tissue": "aponeurosis",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "ulnar_collateral_anterior",
+      "name": "anterior bundle of right elbow ulnar collateral ligament",
+      "tissue": "ligament",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "ulnar_collateral_posterior",
+      "name": "posterior bundle of right elbow ulnar collateral ligament",
+      "tissue": "ligament",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "ulnar_collateral_transverse",
+      "name": "transverse bundle of right elbow ulnar collateral ligament",
+      "tissue": "ligament",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "radial_collateral",
+      "name": "radial collateral ligament of right elbow",
+      "tissue": "ligament",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "lateral_ulnar_collateral",
+      "name": "lateral ulnar collateral ligament of right elbow",
+      "tissue": "ligament",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "annular_ligament",
+      "name": "annular ligament of right radius",
+      "tissue": "ligament",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "quadrate_ligament",
+      "name": "right quadrate ligament",
+      "tissue": "ligament",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "elbow_capsule",
+      "name": "right elbow joint capsule",
+      "tissue": "capsule",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "humeral_cartilage",
+      "name": "articular cartilage of right distal humerus",
+      "tissue": "cartilage",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "radial_head_cartilage",
+      "name": "articular cartilage of right radial head",
+      "tissue": "cartilage",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "ulnar_cartilage",
+      "name": "articular cartilage of right trochlear notch",
+      "tissue": "cartilage",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "subcutaneous_fat",
+      "name": "subcutaneous fat of right arm",
+      "tissue": "fat",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "intermuscular_fat",
+      "name": "intermuscular fat of right arm",
+      "tissue": "fat",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "elbow_fat_pads",
+      "name": "right elbow fat pads",
+      "tissue": "fat",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "brachial_fascia",
+      "name": "right brachial fascia",
+      "tissue": "fascia",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "antebrachial_fascia",
+      "name": "right antebrachial fascia",
+      "tissue": "fascia",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "coracoid_enthesis",
+      "name": "short-head biceps enthesis on right coracoid process",
+      "tissue": "attachment",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "supraglenoid_enthesis",
+      "name": "long-head biceps enthesis in right supraglenoid region",
+      "tissue": "attachment",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "infraglenoid_enthesis",
+      "name": "long-head triceps enthesis in right infraglenoid region",
+      "tissue": "attachment",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "measured_entheses",
+      "name": "measured humeral radial and ulnar enthesis footprints",
+      "tissue": "attachment",
+      "scope": "arm_completion",
+      "concepts": []
+    },
+    {
+      "id": "muscle_fibres",
+      "name": "measured right arm muscle fibre and pennation fields",
+      "tissue": "field",
+      "scope": "arm_completion",
+      "concepts": []
+    }
+  ]
+}
