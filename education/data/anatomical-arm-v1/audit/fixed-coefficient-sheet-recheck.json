@@ -1,0 +1,252 @@
+{
+  "schema": 1,
+  "result": "PASS_PRESERVED_CONTROL_REJECTION",
+  "case": "sheet",
+  "executionReceiptSHA256": "5a808779425349a80e1e327a920974719232fa93e099b2fd411ace9737211d32",
+  "verifierSHA256": "ddb7544cd6663c83890e98f1810c9df275f726bec2677a5ededbe15d794c7ea2",
+  "unchangedStationarityToleranceN": 0.0001,
+  "verifiedAcceptedStages": 1,
+  "lastAcceptedActivation": 0,
+  "rows": [
+    {
+      "index": 0,
+      "activation": 0,
+      "accepted": true,
+      "gates": {
+        "solverConverged": true,
+        "reducedForce": true,
+        "independentReducedForce": true,
+        "independentAssembly": true,
+        "positiveIntegrationDeterminants": true,
+        "positiveCornerDeterminants": true,
+        "finitePositions": true,
+        "heldCaps": true
+      },
+      "residualN": 3.6208672387159383e-13,
+      "independentResidualN": 3.62086723871592e-13,
+      "maximumAssemblyDifferenceN": 2.748391393790005e-26,
+      "maximumFreeNodalComponentN": 8.435314104469308e-12,
+      "passesFullNodalForceGate": true,
+      "minimumCornerJ": 0.9999999999988063,
+      "globalVolumeRatio": 0.999999999999629,
+      "fields": {
+        "J": {
+          "minimum": 0.9999999999978968,
+          "maximum": 1.000000000002947,
+          "mean": 1.0000000000000049,
+          "q01": 0.9999999999998881,
+          "q05": 0.9999999999999432,
+          "median": 1,
+          "q95": 1.0000000000000568,
+          "q99": 1.0000000000001137
+        },
+        "stretch": {
+          "minimum": 0.9999999999978829,
+          "maximum": 1.0000000000024893,
+          "mean": 1.0000000000000029,
+          "q01": 0.9999999999999006,
+          "q05": 0.9999999999999473,
+          "median": 1.0000000000000002,
+          "q95": 1.0000000000000533,
+          "q99": 1.0000000000001006
+        },
+        "forceLength": {
+          "minimum": 1,
+          "maximum": 1,
+          "mean": 1,
+          "q01": 1,
+          "q05": 1,
+          "median": 1,
+          "q95": 1,
+          "q99": 1
+        },
+        "activeCauchyAlongFiberPa": {
+          "minimum": 0,
+          "maximum": 0,
+          "mean": 0,
+          "q01": 0,
+          "q05": 0,
+          "median": 0,
+          "q95": 0,
+          "q99": 0
+        },
+        "bulkMeanCauchyPa": {
+          "minimum": -0.0000021032064978565318,
+          "maximum": 0.0000029469759965519886,
+          "mean": 1.8400825581288262e-10,
+          "q01": -1.1191048088223456e-7,
+          "q05": -5.684341886081286e-8,
+          "median": 0,
+          "q95": 5.684341886080317e-8,
+          "q99": 1.1368683772159664e-7
+        }
+      },
+      "fractions": {
+        "JBelow09": 0,
+        "stretchBelowActiveWindow": 0,
+        "stretchAboveActiveWindow": 0
+      },
+      "reactions": {
+        "matrix": {
+          "directDistalN": 1.5485419831856877e-16,
+          "axialVirtualForceN": -7.970698958172634e-17,
+          "virtualMinusDirectN": -2.3456118790029513e-16
+        },
+        "volume": {
+          "directDistalN": 4.9368790753986096e-14,
+          "axialVirtualForceN": 8.182045558346132e-14,
+          "virtualMinusDirectN": 3.245166482947522e-14
+        },
+        "passiveFiber": {
+          "directDistalN": 7.999856038486549e-14,
+          "axialVirtualForceN": 1.142753146162943e-13,
+          "virtualMinusDirectN": 3.4276754231428816e-14
+        },
+        "active": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 0,
+          "virtualMinusDirectN": 0
+        },
+        "sheetAxial": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 0,
+          "virtualMinusDirectN": 0
+        },
+        "sheetMatrix": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 0,
+          "virtualMinusDirectN": 0
+        },
+        "support": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 0,
+          "virtualMinusDirectN": 0
+        }
+      }
+    },
+    {
+      "index": 1,
+      "activation": 0.01,
+      "accepted": false,
+      "gates": {
+        "solverConverged": false,
+        "reducedForce": false,
+        "independentReducedForce": false,
+        "independentAssembly": true,
+        "positiveIntegrationDeterminants": true,
+        "positiveCornerDeterminants": true,
+        "finitePositions": true,
+        "heldCaps": true
+      },
+      "residualN": 0.018716181322255863,
+      "independentResidualN": 0.01871618132297561,
+      "maximumAssemblyDifferenceN": 2.268394205925863e-12,
+      "maximumFreeNodalComponentN": 5.374303101352038,
+      "passesFullNodalForceGate": false,
+      "minimumCornerJ": 0.782875994371228,
+      "globalVolumeRatio": 1.0002874694079835,
+      "fields": {
+        "J": {
+          "minimum": 0.8053017609870003,
+          "maximum": 1.1110855406050073,
+          "mean": 1.0002874694081,
+          "q01": 0.9308383090646539,
+          "q05": 0.9746718928332649,
+          "median": 0.9991720964079752,
+          "q95": 1.0389591524891233,
+          "q99": 1.0768727680549972
+        },
+        "stretch": {
+          "minimum": 0.5127180379115909,
+          "maximum": 1.7525870711541025,
+          "mean": 0.7948265087496105,
+          "q01": 0.6114626529021512,
+          "q05": 0.6363849659274716,
+          "median": 0.7374281112600697,
+          "q95": 1.2542896250951459,
+          "q99": 1.5590407892565579
+        },
+        "forceLength": {
+          "minimum": 0,
+          "maximum": 0.9999999682639875,
+          "mean": 0.5130763506208305,
+          "q01": 0,
+          "q05": 0.17837551778797772,
+          "median": 0.5017108580381907,
+          "q95": 0.9562926280275889,
+          "q99": 0.9983522543391335
+        },
+        "activeCauchyAlongFiberPa": {
+          "minimum": 0,
+          "maximum": 105359.60906600676,
+          "mean": 36155.70912908476,
+          "q01": 0,
+          "q05": 10288.893803020193,
+          "median": 32328.331420014634,
+          "q95": 83868.11549508573,
+          "q99": 89909.78618687301
+        },
+        "bulkMeanCauchyPa": {
+          "minimum": -268890.7735295139,
+          "maximum": 94805.93355589973,
+          "mean": -460.55438376590155,
+          "q01": -76994.78047299165,
+          "q05": -26321.047092416724,
+          "median": -828.9327698939927,
+          "q95": 36786.23649232505,
+          "q99": 68774.37881430358
+        }
+      },
+      "fractions": {
+        "JBelow09": 0.004076509260168115,
+        "stretchBelowActiveWindow": 0,
+        "stretchAboveActiveWindow": 0.015994319000826953
+      },
+      "reactions": {
+        "matrix": {
+          "directDistalN": -0.1289830707723604,
+          "axialVirtualForceN": -0.5114581382974434,
+          "virtualMinusDirectN": -0.382475067525083
+        },
+        "volume": {
+          "directDistalN": -6.301115271983423,
+          "axialVirtualForceN": -0.09788290310648899,
+          "virtualMinusDirectN": 6.203232368876933
+        },
+        "passiveFiber": {
+          "directDistalN": 0.11659194761699646,
+          "axialVirtualForceN": 1.3699603904205189,
+          "virtualMinusDirectN": 1.2533684428035223
+        },
+        "active": {
+          "directDistalN": 15.351594267372084,
+          "axialVirtualForceN": 19.505191433478302,
+          "virtualMinusDirectN": 4.153597166106218
+        },
+        "sheetAxial": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 0.24480127763419604,
+          "virtualMinusDirectN": 0.24480127763419604
+        },
+        "sheetMatrix": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 1.9819422103019983e-17,
+          "virtualMinusDirectN": 1.9819422103019983e-17
+        },
+        "support": {
+          "directDistalN": -20.506960269201564,
+          "axialVirtualForceN": -20.50696026920156,
+          "virtualMinusDirectN": 3.552713678800501e-15
+        }
+      }
+    }
+  ],
+  "limits": [
+    "This is an isolated reduced diagnostic fixture, not an accepted full nodal or coupled-arm equilibrium. Full free-nodal forces are reported separately.",
+    "The named head retains exact current coefficients, constitutive potentials, force-length window and Newton implementation. No force target is fitted.",
+    "Both geometry controls have the same volume, length, P2 connectivity, seven transverse-affine ring planes, axial fibers and ideal fixed caps; sheets and contact are absent.",
+    "Attachment controls freeze the authored head support targets, routing guides, shared sheet and joint at reference; they do not reproduce the moving coupled apparatus.",
+    "Only accepted reduced force/geometry states advance activation within this isolated continuation. Failure ends the predeclared schedule and retains the old accepted state.",
+    "No bone or neighboring-muscle contact, skin, constitutive edits or publication changes."
+  ]
+}

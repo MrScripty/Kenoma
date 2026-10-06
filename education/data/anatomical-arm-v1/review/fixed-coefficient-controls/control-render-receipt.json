@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "result": "PASS_SOURCE_BOUND_CONTROL_RENDER",
+  "rendererSHA256": "463d3d07fc7849fcf20f40afbbaf015c802408beabf2f78c171772df40a43a7e",
+  "inputs": {
+    "audit/fixed-coefficient-prism.json": "32a54bd287ec264bf33a009e0714f7bd2a6ba6e5d8409d98687d866c24f8578d",
+    "audit/fixed-coefficient-prism-recheck.json": "2c5d855d49a665b4048ff80a2b27b37c1ed8c4b765ed87934a2b4054abfe3e72",
+    "audit/fixed-coefficient-taper.json": "690daa5b265d408137fc3d5aed93898c8e011907dc84d0e09c08f6bd78290066",
+    "audit/fixed-coefficient-taper-recheck.json": "06c7fa6fc53fdafc0fd50d5829ce41b91a1e4fda969dad3136cf35f5be276489",
+    "audit/fixed-coefficient-attachment.json": "0a8e7e58e9f46c872e82f292b899f5fd3064d35e6ec6ec22b9fa1f0987289402",
+    "audit/fixed-coefficient-attachment-recheck.json": "cb30ac5d22329f7974bb96c131d785368dd55d74fbeacc6fcf893a4bea635c60",
+    "audit/fixed-coefficient-sheet.json": "5a808779425349a80e1e327a920974719232fa93e099b2fd411ace9737211d32",
+    "audit/fixed-coefficient-sheet-recheck.json": "e14180408e87b9b5f291b73db0e8d77d6e24c4ba8775f5347da12ff4b934bc60"
+  },
+  "outputs": {
+    "fixed-coefficient-controls.png": "38c59c829f5405afd2641d7cd0d3f7b6e27cf450c5d0cbc81b75869bce454ab5",
+    "fixed-coefficient-controls.pdf": "d2bdc5dbbf675db9d0c4ae66f3fd4e3e8107acea5a78a09f85dab2c0b2580b1e"
+  },
+  "cases": [
+    {
+      "case": "prism",
+      "executionResult": "PASS_REDUCED_CONTROL",
+      "freshReplayResult": "PASS_REDUCED_CONTROL_REPLAY",
+      "acceptedStages": 6,
+      "lastAcceptedActivation": 1,
+      "terminalCandidateAccepted": true,
+      "terminalCandidateActivation": 1,
+      "terminalCandidateIndependentResidualN": 8.408333980005039e-12,
+      "terminalCandidateFullNodalResidualN": 3.1314237679376072e-12,
+      "terminalCandidateMinimumCornerJ": 0.9999999999996028,
+      "terminalCandidateGlobalVolumeRatio": 1.0000000000002658,
+      "terminalCandidateMeanForceLength": 1,
+      "terminalCandidateDirectBodyAndSheetForceN": 3872.2405082638,
+      "terminalCandidateVirtualBodyAndSheetForceN": 3872.240508263801
+    },
+    {
+      "case": "taper",
+      "executionResult": "PASS_REDUCED_CONTROL",
+      "freshReplayResult": "PASS_REDUCED_CONTROL_REPLAY",
+      "acceptedStages": 6,
+      "lastAcceptedActivation": 1,
+      "terminalCandidateAccepted": true,
+      "terminalCandidateActivation": 1,
+      "terminalCandidateIndependentResidualN": 6.488179229660607e-05,
+      "terminalCandidateFullNodalResidualN": 143.7290509077305,
+      "terminalCandidateMinimumCornerJ": 0.11101021503539181,
+      "terminalCandidateGlobalVolumeRatio": 1.0522831285019598,
+      "terminalCandidateMeanForceLength": 0.1607490637881496,
+      "terminalCandidateDirectBodyAndSheetForceN": 302.8634550771322,
+      "terminalCandidateVirtualBodyAndSheetForceN": 712.8842901689083
+    },
+    {
+      "case": "attachment",
+      "executionResult": "REJECTED_CONTROL_STAGE",
+      "freshReplayResult": "PASS_PRESERVED_CONTROL_REJECTION",
+      "acceptedStages": 1,
+      "lastAcceptedActivation": 0,
+      "terminalCandidateAccepted": false,
+      "terminalCandidateActivation": 0.01,
+      "terminalCandidateIndependentResidualN": 0.024469685221630517,
+      "terminalCandidateFullNodalResidualN": 5.104927231032057,
+      "terminalCandidateMinimumCornerJ": 0.7885501608671374,
+      "terminalCandidateGlobalVolumeRatio": 1.0003226455515872,
+      "terminalCandidateMeanForceLength": 0.5219586699231776,
+      "terminalCandidateDirectBodyAndSheetForceN": 9.21062178367168,
+      "terminalCandidateVirtualBodyAndSheetForceN": 20.623730791860808
+    },
+    {
+      "case": "sheet",
+      "executionResult": "REJECTED_CONTROL_STAGE",
+      "freshReplayResult": "PASS_PRESERVED_CONTROL_REJECTION",
+      "acceptedStages": 1,
+      "lastAcceptedActivation": 0,
+      "terminalCandidateAccepted": false,
+      "terminalCandidateActivation": 0.01,
+      "terminalCandidateIndependentResidualN": 0.01871618132297561,
+      "terminalCandidateFullNodalResidualN": 5.374303101352038,
+      "terminalCandidateMinimumCornerJ": 0.782875994371228,
+      "terminalCandidateGlobalVolumeRatio": 1.0002874694079835,
+      "terminalCandidateMeanForceLength": 0.5130763506208305,
+      "terminalCandidateDirectBodyAndSheetForceN": 9.038087872233298,
+      "terminalCandidateVirtualBodyAndSheetForceN": 20.510612060129084
+    }
+  ],
+  "limits": [
+    "Accepted reduced states and rejected candidates are explicitly separated.",
+    "Full free nodal forces remain a separate failing diagnostic for the tapered control.",
+    "No constitutive assumption, coefficient, iteration budget, activation schedule or acceptance gate changes."
+  ]
+}

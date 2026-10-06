@@ -1,0 +1,716 @@
+{
+  "schema": 1,
+  "result": "PASS_REDUCED_CONTROL_REPLAY",
+  "case": "taper",
+  "executionReceiptSHA256": "690daa5b265d408137fc3d5aed93898c8e011907dc84d0e09c08f6bd78290066",
+  "verifierSHA256": "ddb7544cd6663c83890e98f1810c9df275f726bec2677a5ededbe15d794c7ea2",
+  "unchangedStationarityToleranceN": 0.0001,
+  "verifiedAcceptedStages": 6,
+  "lastAcceptedActivation": 1,
+  "rows": [
+    {
+      "index": 0,
+      "activation": 0,
+      "accepted": true,
+      "gates": {
+        "solverConverged": true,
+        "reducedForce": true,
+        "independentReducedForce": true,
+        "independentAssembly": true,
+        "positiveIntegrationDeterminants": true,
+        "positiveCornerDeterminants": true,
+        "finitePositions": true,
+        "heldCaps": true
+      },
+      "residualN": 3.6208672387159383e-13,
+      "independentResidualN": 3.62086723871592e-13,
+      "maximumAssemblyDifferenceN": 2.748391393790005e-26,
+      "maximumFreeNodalComponentN": 8.435314104469308e-12,
+      "passesFullNodalForceGate": true,
+      "minimumCornerJ": 0.9999999999988063,
+      "globalVolumeRatio": 0.999999999999629,
+      "fields": {
+        "J": {
+          "minimum": 0.9999999999978968,
+          "maximum": 1.000000000002947,
+          "mean": 1.0000000000000049,
+          "q01": 0.9999999999998881,
+          "q05": 0.9999999999999432,
+          "median": 1,
+          "q95": 1.0000000000000568,
+          "q99": 1.0000000000001137
+        },
+        "stretch": {
+          "minimum": 0.9999999999978829,
+          "maximum": 1.0000000000024893,
+          "mean": 1.0000000000000029,
+          "q01": 0.9999999999999006,
+          "q05": 0.9999999999999473,
+          "median": 1.0000000000000002,
+          "q95": 1.0000000000000533,
+          "q99": 1.0000000000001006
+        },
+        "forceLength": {
+          "minimum": 1,
+          "maximum": 1,
+          "mean": 1,
+          "q01": 1,
+          "q05": 1,
+          "median": 1,
+          "q95": 1,
+          "q99": 1
+        },
+        "activeCauchyAlongFiberPa": {
+          "minimum": 0,
+          "maximum": 0,
+          "mean": 0,
+          "q01": 0,
+          "q05": 0,
+          "median": 0,
+          "q95": 0,
+          "q99": 0
+        },
+        "bulkMeanCauchyPa": {
+          "minimum": -0.0000021032064978565318,
+          "maximum": 0.0000029469759965519886,
+          "mean": 1.8400825581288262e-10,
+          "q01": -1.1191048088223456e-7,
+          "q05": -5.684341886081286e-8,
+          "median": 0,
+          "q95": 5.684341886080317e-8,
+          "q99": 1.1368683772159664e-7
+        }
+      },
+      "fractions": {
+        "JBelow09": 0,
+        "stretchBelowActiveWindow": 0,
+        "stretchAboveActiveWindow": 0
+      },
+      "reactions": {
+        "matrix": {
+          "directDistalN": 1.5485419831856877e-16,
+          "axialVirtualForceN": -7.970698958172634e-17,
+          "virtualMinusDirectN": -2.3456118790029513e-16
+        },
+        "volume": {
+          "directDistalN": 4.9368790753986096e-14,
+          "axialVirtualForceN": 8.182045558346132e-14,
+          "virtualMinusDirectN": 3.245166482947522e-14
+        },
+        "passiveFiber": {
+          "directDistalN": 7.999856038486549e-14,
+          "axialVirtualForceN": 1.142753146162943e-13,
+          "virtualMinusDirectN": 3.4276754231428816e-14
+        },
+        "active": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 0,
+          "virtualMinusDirectN": 0
+        },
+        "sheetAxial": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 0,
+          "virtualMinusDirectN": 0
+        },
+        "sheetMatrix": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 0,
+          "virtualMinusDirectN": 0
+        },
+        "support": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 0,
+          "virtualMinusDirectN": 0
+        }
+      }
+    },
+    {
+      "index": 1,
+      "activation": 0.01,
+      "accepted": true,
+      "gates": {
+        "solverConverged": true,
+        "reducedForce": true,
+        "independentReducedForce": true,
+        "independentAssembly": true,
+        "positiveIntegrationDeterminants": true,
+        "positiveCornerDeterminants": true,
+        "finitePositions": true,
+        "heldCaps": true
+      },
+      "residualN": 0.000052662807459646094,
+      "independentResidualN": 0.000052662806896808245,
+      "maximumAssemblyDifferenceN": 1.5470294858523082e-12,
+      "maximumFreeNodalComponentN": 10.58777875000198,
+      "passesFullNodalForceGate": false,
+      "minimumCornerJ": 0.8386364655025296,
+      "globalVolumeRatio": 1.0086293669767628,
+      "fields": {
+        "J": {
+          "minimum": 0.6759443887547725,
+          "maximum": 1.547738263140116,
+          "mean": 1.0086293669769841,
+          "q01": 0.842130664684899,
+          "q05": 0.911891053082466,
+          "median": 0.9968296267771111,
+          "q95": 1.174654699777369,
+          "q99": 1.331373630441428
+        },
+        "stretch": {
+          "minimum": 0.7057293811796815,
+          "maximum": 1.7115834269482857,
+          "mean": 0.900876305714541,
+          "q01": 0.7169981506490988,
+          "q05": 0.7346303161344392,
+          "median": 0.8042763805507117,
+          "q95": 1.444903434290306,
+          "q99": 1.568323248575035
+        },
+        "forceLength": {
+          "minimum": 0,
+          "maximum": 0.9999999543471071,
+          "mean": 0.616079564028326,
+          "q01": 0,
+          "q05": 0.043365453844277695,
+          "median": 0.6416258707438982,
+          "q95": 0.930240369950104,
+          "q99": 0.9921642853192137
+        },
+        "activeCauchyAlongFiberPa": {
+          "minimum": 0,
+          "maximum": 112811.50232833283,
+          "mean": 45734.84496066982,
+          "q01": 0,
+          "q05": 4857.845454373798,
+          "median": 44627.92800653183,
+          "q95": 76386.83535509142,
+          "q99": 98778.20602743233
+        },
+        "bulkMeanCauchyPa": {
+          "minimum": -579403.3917498562,
+          "maximum": 282214.82314894913,
+          "mean": 363.3577522826331,
+          "q01": -204030.2060875143,
+          "q05": -101146.6831166519,
+          "median": -3185.50875514353,
+          "q95": 137039.61845786625,
+          "q99": 214974.37500393152
+        }
+      },
+      "fractions": {
+        "JBelow09": 0.038165209289539107,
+        "stretchBelowActiveWindow": 0,
+        "stretchAboveActiveWindow": 0.030127817927605566
+      },
+      "reactions": {
+        "matrix": {
+          "directDistalN": 0.08733191100221147,
+          "axialVirtualForceN": -0.20444660199515993,
+          "virtualMinusDirectN": -0.2917785129973714
+        },
+        "volume": {
+          "directDistalN": 8.126944315956804,
+          "axialVirtualForceN": 0.05028268697001915,
+          "virtualMinusDirectN": -8.076661628986784
+        },
+        "passiveFiber": {
+          "directDistalN": 6.8784667730839075,
+          "axialVirtualForceN": 2.783766954488407,
+          "virtualMinusDirectN": -4.094699818595501
+        },
+        "active": {
+          "directDistalN": 3.7277447750640125,
+          "axialVirtualForceN": 23.487998211780823,
+          "virtualMinusDirectN": 19.76025343671681
+        },
+        "sheetAxial": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 0,
+          "virtualMinusDirectN": 0
+        },
+        "sheetMatrix": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 0,
+          "virtualMinusDirectN": 0
+        },
+        "support": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 0,
+          "virtualMinusDirectN": 0
+        }
+      }
+    },
+    {
+      "index": 2,
+      "activation": 0.03,
+      "accepted": true,
+      "gates": {
+        "solverConverged": true,
+        "reducedForce": true,
+        "independentReducedForce": true,
+        "independentAssembly": true,
+        "positiveIntegrationDeterminants": true,
+        "positiveCornerDeterminants": true,
+        "finitePositions": true,
+        "heldCaps": true
+      },
+      "residualN": 0.0000783642404124377,
+      "independentResidualN": 0.00007836423997209518,
+      "maximumAssemblyDifferenceN": 1.063419724457379e-12,
+      "maximumFreeNodalComponentN": 17.853277207012592,
+      "passesFullNodalForceGate": false,
+      "minimumCornerJ": 0.662038874748563,
+      "globalVolumeRatio": 1.0151416336465038,
+      "fields": {
+        "J": {
+          "minimum": 0.5385012418978339,
+          "maximum": 1.8065094122463656,
+          "mean": 1.015141633646704,
+          "q01": 0.7761094741543264,
+          "q05": 0.8670683193153311,
+          "median": 0.9966674073352921,
+          "q95": 1.273751906918275,
+          "q99": 1.4921296422210584
+        },
+        "stretch": {
+          "minimum": 0.5991015063847099,
+          "maximum": 1.9981435724764094,
+          "mean": 0.8544408323286952,
+          "q01": 0.6155481902632626,
+          "q05": 0.6416439919039402,
+          "median": 0.7264461558681323,
+          "q95": 1.6194951631231493,
+          "q99": 1.7764224075244497
+        },
+        "forceLength": {
+          "minimum": 0,
+          "maximum": 0.9999999912671964,
+          "mean": 0.40346872593336586,
+          "q01": 0,
+          "q05": 0,
+          "median": 0.4237727752539463,
+          "q95": 0.823722435832705,
+          "q99": 0.9846183909458288
+        },
+        "activeCauchyAlongFiberPa": {
+          "minimum": 0,
+          "maximum": 404956.7036015522,
+          "mean": 82337.30785134532,
+          "q01": 0,
+          "q05": 0,
+          "median": 79958.01852130838,
+          "q95": 197229.23879775443,
+          "q99": 277766.7490256732
+        },
+        "bulkMeanCauchyPa": {
+          "minimum": -1149422.5602711302,
+          "maximum": 327369.7207410064,
+          "mean": -2203.3455034116205,
+          "q01": -326579.82185321173,
+          "q05": -164505.497960179,
+          "median": -3349.3200394077953,
+          "q95": 189963.83937041936,
+          "q99": 268210.1998724982
+        }
+      },
+      "fractions": {
+        "JBelow09": 0.07618863074709305,
+        "stretchBelowActiveWindow": 0,
+        "stretchAboveActiveWindow": 0.09483966776455688
+      },
+      "reactions": {
+        "matrix": {
+          "directDistalN": 0.11629270774759114,
+          "axialVirtualForceN": -0.41823101905355475,
+          "virtualMinusDirectN": -0.5345237268011459
+        },
+        "volume": {
+          "directDistalN": 13.880316108833084,
+          "axialVirtualForceN": -1.1719675643764964,
+          "virtualMinusDirectN": -15.05228367320958
+        },
+        "passiveFiber": {
+          "directDistalN": 20.9694854079499,
+          "axialVirtualForceN": 8.623088144066099,
+          "virtualMinusDirectN": -12.346397263883802
+        },
+        "active": {
+          "directDistalN": 0.9733482617992306,
+          "axialVirtualForceN": 45.84776396615142,
+          "virtualMinusDirectN": 44.87441570435219
+        },
+        "sheetAxial": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 0,
+          "virtualMinusDirectN": 0
+        },
+        "sheetMatrix": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 0,
+          "virtualMinusDirectN": 0
+        },
+        "support": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 0,
+          "virtualMinusDirectN": 0
+        }
+      }
+    },
+    {
+      "index": 3,
+      "activation": 0.1,
+      "accepted": true,
+      "gates": {
+        "solverConverged": true,
+        "reducedForce": true,
+        "independentReducedForce": true,
+        "independentAssembly": true,
+        "positiveIntegrationDeterminants": true,
+        "positiveCornerDeterminants": true,
+        "finitePositions": true,
+        "heldCaps": true
+      },
+      "residualN": 0.0000621093816685747,
+      "independentResidualN": 0.00006210938091472107,
+      "maximumAssemblyDifferenceN": 2.6169366864746847e-12,
+      "maximumFreeNodalComponentN": 26.483108724604012,
+      "passesFullNodalForceGate": false,
+      "minimumCornerJ": 0.4661103589317073,
+      "globalVolumeRatio": 1.0235086208294442,
+      "fields": {
+        "J": {
+          "minimum": 0.3895874047297424,
+          "maximum": 2.028953100758381,
+          "mean": 1.0235086208296607,
+          "q01": 0.7176453408959655,
+          "q05": 0.8311089827741565,
+          "median": 0.9958952258933363,
+          "q95": 1.3757744913443475,
+          "q99": 1.6533903594112216
+        },
+        "stretch": {
+          "minimum": 0.4717573290593841,
+          "maximum": 2.239901570733347,
+          "mean": 0.8190294921667005,
+          "q01": 0.5456649945489881,
+          "q05": 0.5726810180204042,
+          "median": 0.6685160932509928,
+          "q95": 1.75287022499864,
+          "q99": 1.9394298611277543
+        },
+        "forceLength": {
+          "minimum": 0,
+          "maximum": 0.999999959596575,
+          "mean": 0.26656232921017664,
+          "q01": 0,
+          "q05": 0,
+          "median": 0.26128443975884036,
+          "q95": 0.7110786063868606,
+          "q99": 0.9748522505369077
+        },
+        "activeCauchyAlongFiberPa": {
+          "minimum": 0,
+          "maximum": 1381569.6272037267,
+          "mean": 173710.01688174042,
+          "q01": 0,
+          "q05": 0,
+          "median": 151431.09659319086,
+          "q95": 542124.1109774512,
+          "q99": 869282.4564717577
+        },
+        "bulkMeanCauchyPa": {
+          "minimum": -2419654.8066349803,
+          "maximum": 348711.82870168606,
+          "mean": -6233.980255167065,
+          "q01": -462317.2021700034,
+          "q05": -222587.35017982183,
+          "median": -4130.175253554181,
+          "q95": 231881.63538638144,
+          "q99": 304119.3147106122
+        }
+      },
+      "fractions": {
+        "JBelow09": 0.10125359859017835,
+        "stretchBelowActiveWindow": 0.0003278196898737624,
+        "stretchAboveActiveWindow": 0.12414924713514477
+      },
+      "reactions": {
+        "matrix": {
+          "directDistalN": 0.12748565742757428,
+          "axialVirtualForceN": -0.7184926013420632,
+          "virtualMinusDirectN": -0.8459782587696374
+        },
+        "volume": {
+          "directDistalN": 22.605437300692977,
+          "axialVirtualForceN": -3.096172602334523,
+          "virtualMinusDirectN": -25.7016099030275
+        },
+        "passiveFiber": {
+          "directDistalN": 48.722879943755856,
+          "axialVirtualForceN": 21.373391392458167,
+          "virtualMinusDirectN": -27.34948855129769
+        },
+        "active": {
+          "directDistalN": -0.009429243125477663,
+          "axialVirtualForceN": 100.9491804452358,
+          "virtualMinusDirectN": 100.95860968836128
+        },
+        "sheetAxial": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 0,
+          "virtualMinusDirectN": 0
+        },
+        "sheetMatrix": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 0,
+          "virtualMinusDirectN": 0
+        },
+        "support": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 0,
+          "virtualMinusDirectN": 0
+        }
+      }
+    },
+    {
+      "index": 4,
+      "activation": 0.3,
+      "accepted": true,
+      "gates": {
+        "solverConverged": true,
+        "reducedForce": true,
+        "independentReducedForce": true,
+        "independentAssembly": true,
+        "positiveIntegrationDeterminants": true,
+        "positiveCornerDeterminants": true,
+        "finitePositions": true,
+        "heldCaps": true
+      },
+      "residualN": 0.00006634869236225554,
+      "independentResidualN": 0.000066348691524349,
+      "maximumAssemblyDifferenceN": 7.76771507358942e-12,
+      "maximumFreeNodalComponentN": 44.51552651281578,
+      "passesFullNodalForceGate": false,
+      "minimumCornerJ": 0.2700598355146551,
+      "globalVolumeRatio": 1.033955295372597,
+      "fields": {
+        "J": {
+          "minimum": 0.26311442358245307,
+          "maximum": 2.1681620869770377,
+          "mean": 1.0339552953728166,
+          "q01": 0.6698375400996703,
+          "q05": 0.7997598144373435,
+          "median": 0.9943729199280824,
+          "q95": 1.4801438332668435,
+          "q99": 1.8038396132214205
+        },
+        "stretch": {
+          "minimum": 0.3484346542124499,
+          "maximum": 2.4393725161208413,
+          "mean": 0.7969808905290041,
+          "q01": 0.5031960242305986,
+          "q05": 0.535092203616877,
+          "median": 0.6335575236643384,
+          "q95": 1.854741605617423,
+          "q99": 2.0700604887355807
+        },
+        "forceLength": {
+          "minimum": 0,
+          "maximum": 0.999999987842134,
+          "mean": 0.19310347805048894,
+          "q01": 0,
+          "q05": 0,
+          "median": 0.1561992904395692,
+          "q95": 0.618865286064111,
+          "q99": 0.96715632890181
+        },
+        "activeCauchyAlongFiberPa": {
+          "minimum": 0,
+          "maximum": 4344494.36716569,
+          "mean": 372136.56861509336,
+          "q01": 0,
+          "q05": 0,
+          "median": 255878.4081092505,
+          "q95": 1373940.5970783923,
+          "q99": 2449470.8824383854
+        },
+        "bulkMeanCauchyPa": {
+          "minimum": -5074470.08258005,
+          "maximum": 356928.96245941357,
+          "mean": -11337.4416926366,
+          "q01": -598234.7203220214,
+          "q05": -279388.66683788825,
+          "median": -5674.904874914498,
+          "q95": 264933.2172186039,
+          "q99": 327034.34782540053
+        }
+      },
+      "fractions": {
+        "JBelow09": 0.10861315650355945,
+        "stretchBelowActiveWindow": 0.007774853004822882,
+        "stretchAboveActiveWindow": 0.12920904115685333
+      },
+      "reactions": {
+        "matrix": {
+          "directDistalN": 0.12928990997556616,
+          "axialVirtualForceN": -1.0283707208107429,
+          "virtualMinusDirectN": -1.157660630786309
+        },
+        "volume": {
+          "directDistalN": 35.30818746443747,
+          "axialVirtualForceN": -5.659432529299514,
+          "virtualMinusDirectN": -40.96761999373698
+        },
+        "passiveFiber": {
+          "directDistalN": 94.85040802025947,
+          "axialVirtualForceN": 45.41793888706292,
+          "virtualMinusDirectN": -49.43246913319655
+        },
+        "active": {
+          "directDistalN": -0.00004198836518955236,
+          "axialVirtualForceN": 219.9011670114675,
+          "virtualMinusDirectN": 219.90120899983268
+        },
+        "sheetAxial": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 0,
+          "virtualMinusDirectN": 0
+        },
+        "sheetMatrix": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 0,
+          "virtualMinusDirectN": 0
+        },
+        "support": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 0,
+          "virtualMinusDirectN": 0
+        }
+      }
+    },
+    {
+      "index": 5,
+      "activation": 1,
+      "accepted": true,
+      "gates": {
+        "solverConverged": true,
+        "reducedForce": true,
+        "independentReducedForce": true,
+        "independentAssembly": true,
+        "positiveIntegrationDeterminants": true,
+        "positiveCornerDeterminants": true,
+        "finitePositions": true,
+        "heldCaps": true
+      },
+      "residualN": 0.00006488179287661598,
+      "independentResidualN": 0.00006488179229660607,
+      "maximumAssemblyDifferenceN": 3.9471324321006807e-11,
+      "maximumFreeNodalComponentN": 143.7290509077305,
+      "passesFullNodalForceGate": false,
+      "minimumCornerJ": 0.11101021503539181,
+      "globalVolumeRatio": 1.0522831285019598,
+      "fields": {
+        "J": {
+          "minimum": 0.14176809354182054,
+          "maximum": 2.2689642717144576,
+          "mean": 1.0522831285022338,
+          "q01": 0.5780437036628303,
+          "q05": 0.7609338014459416,
+          "median": 0.9953026354873917,
+          "q95": 1.6490702183988868,
+          "q99": 1.9609576511252775
+        },
+        "stretch": {
+          "minimum": 0.27120809153858105,
+          "maximum": 2.6312024634630125,
+          "mean": 0.7853126694235946,
+          "q01": 0.43034661392274626,
+          "q05": 0.5065370776423876,
+          "median": 0.6150847725718953,
+          "q95": 1.9676849700804364,
+          "q99": 2.2408422460327144
+        },
+        "forceLength": {
+          "minimum": 0,
+          "maximum": 0.9999999940978546,
+          "mean": 0.1607490637881496,
+          "q01": 0,
+          "q05": 0,
+          "median": 0.11305590518192397,
+          "q95": 0.5641171934138451,
+          "q99": 0.9548856551892831
+        },
+        "activeCauchyAlongFiberPa": {
+          "minimum": 0,
+          "maximum": 40580377.70779887,
+          "mean": 1031919.4832019532,
+          "q01": 0,
+          "q05": 0,
+          "median": 596462.1985092744,
+          "q95": 4204017.819683107,
+          "q99": 7453663.780389779
+        },
+        "bulkMeanCauchyPa": {
+          "minimum": -13779988.512787526,
+          "maximum": 361100.2031270943,
+          "mean": -25050.490318602308,
+          "q01": -948208.2372347602,
+          "q05": -359044.2602057766,
+          "median": -4730.653404372801,
+          "q95": 303329.488036859,
+          "q99": 343420.4461498598
+        }
+      },
+      "fractions": {
+        "JBelow09": 0.10437674649061872,
+        "stretchBelowActiveWindow": 0.04226059554083746,
+        "stretchAboveActiveWindow": 0.122798279214079
+      },
+      "reactions": {
+        "matrix": {
+          "directDistalN": 0.13143530614980767,
+          "axialVirtualForceN": -1.2390276769325501,
+          "virtualMinusDirectN": -1.3704629830823578
+        },
+        "volume": {
+          "directDistalN": 57.34475449138673,
+          "axialVirtualForceN": -12.556218220472633,
+          "virtualMinusDirectN": -69.90097271185937
+        },
+        "passiveFiber": {
+          "directDistalN": 245.38726527959562,
+          "axialVirtualForceN": 114.67484550776778,
+          "virtualMinusDirectN": -130.71241977182785
+        },
+        "active": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 612.0046905585457,
+          "virtualMinusDirectN": 612.0046905585457
+        },
+        "sheetAxial": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 0,
+          "virtualMinusDirectN": 0
+        },
+        "sheetMatrix": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 0,
+          "virtualMinusDirectN": 0
+        },
+        "support": {
+          "directDistalN": 0,
+          "axialVirtualForceN": 0,
+          "virtualMinusDirectN": 0
+        }
+      }
+    }
+  ],
+  "limits": [
+    "This is an isolated reduced diagnostic fixture, not an accepted full nodal or coupled-arm equilibrium. Full free-nodal forces are reported separately.",
+    "The named head retains exact current coefficients, constitutive potentials, force-length window and Newton implementation. No force target is fitted.",
+    "Both geometry controls have the same volume, length, P2 connectivity, seven transverse-affine ring planes, axial fibers and ideal fixed caps; sheets and contact are absent.",
+    "Attachment controls freeze the authored head support targets, routing guides, shared sheet and joint at reference; they do not reproduce the moving coupled apparatus.",
+    "Only accepted reduced force/geometry states advance activation within this isolated continuation. Failure ends the predeclared schedule and retains the old accepted state.",
+    "No bone or neighboring-muscle contact, skin, constitutive edits or publication changes."
+  ]
+}

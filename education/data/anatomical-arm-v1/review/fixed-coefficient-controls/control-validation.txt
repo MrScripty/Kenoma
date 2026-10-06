@@ -1,0 +1,7 @@
+PASS prism: PASS_REDUCED_CONTROL_REPLAY, 6 accepted stages, exact execution/verifier/source bindings; fixed coefficients and gates
+PASS taper: PASS_REDUCED_CONTROL_REPLAY, 6 accepted stages, exact execution/verifier/source bindings; fixed coefficients and gates
+PASS attachment: PASS_PRESERVED_CONTROL_REJECTION, 1 accepted stages, exact execution/verifier/source bindings; fixed coefficients and gates
+PASS sheet: PASS_PRESERVED_CONTROL_REJECTION, 1 accepted stages, exact execution/verifier/source bindings; fixed coefficients and gates
+PASS existing PNG/PDF render: 8 exact execution/replay bindings, renderer and both output hashes
+PASS 128 prior manifest bindings remain unchanged
+PASS manual PNG review: all four panels, force gate, legends and rejected-candidate markers legible; scientific limits explicit.
