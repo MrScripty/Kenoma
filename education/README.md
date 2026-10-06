@@ -47,7 +47,7 @@ A system Chromium can be used when installed; `CHROMIUM_EXECUTABLE=/absolute/pat
 
 ## Authoring and evidence
 
-- Edit canonical chapter Markdown in `book/chapters/`; order comes from `book/book.json`.
+- Edit canonical chapter Markdown in `book/chapters/`; order comes from `book/book.json`. The integrated spatial-continuum text is `10a-spatial-continuum.md`; the contributed chapter remains an exact provenance-bound archive.
 - `{{demo:force}}`, `{{demo:torque}}`, `{{demo:energy}}`, `{{demo:elbow}}`, `{{demo:series}}` expand into HTML laboratories or static Markdown descriptions. `{{demo:continuum}}` and `{{demo:spatial}}` add the advanced lessons. Original SVGs are generated from actual solved fixture coordinates as well as elementary diagrams.
 - `{{proof:ID}}` connects a claim to the declaration in `proofs/claims.json`. `tools/check_proofs.py` invokes Lean afresh, rejects unknown/custom axiom dependencies and admissions, and writes a source-bound receipt only on success. No manual checked flag is accepted.
 - `{{property:deformation}}`, `{{property:isochoric}}` and `{{property:tapered}}` add independent boundary-volume and axial-bar lessons with static print figures. `tools/check_property_proofs.py` freshly checks their four real kinematic declarations and pins each transitive Git dependency before emitting a receipt.
