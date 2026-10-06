@@ -1,0 +1,46 @@
+# Archived brachialis segment geometry and globalization proposal
+
+This successor diagnoses the saved 45/46 response refusal without retrying the response. It starts from frozen evidence `cfe6d18b742b2f85cb1bb849adf3b6f9dc52e1cf` on a separate research branch. The previous experiment and report remain byte-for-byte unchanged. The audit performs only reference geometry preparation, archived-vector arithmetic and exact determinant polynomial calculations. No constitutive evaluation, optimization, force fitting, expanded mode solve, physical state advancement or publication is authorized here.
+
+The source-only stage is followed by a reproducible receipt from `node education/tools/audit-isolated-segment.mjs`. Its manifest binds the previous experiment's entire source inventory plus its stored states. The source verifies those hashes before computing. The review receipt supplies the exact certified segment bounds and scaling/descent numbers; this proposal does not preselect a new trial.
+
+## Correct labels and comparable residuals
+
+The reference target is **987.26 N**. **987.2744117188512 N** is the old achieved fit, not the target. Those values were already correct in the raw results. This document corrects the label in the new reporting lineage without editing old evidence.
+
+| Stored field | Original 45-coordinate maximum, N | Extended 46-coordinate maximum, N | Full 1485-free-component maximum, N |
+|---|---:|---:|---:|
+| Unchanged 45 control, extra coefficient zero | 0.000058200778 | 379.531980194 | 64.066837477 |
+| Last valid 46 iterate | 0.877878551 | 343.385937173 | 53.595914611 |
+
+The 46-coordinate residual decreases from 379.531980 N to 343.385937 N. The original 45-coordinate residual increases to 0.877879 N. Comparing 343.385937 N directly with the control's 0.0000582 N mixes different spaces. Neither 46-coordinate state passes the unchanged projected or full-nodal `1e-4 N` physical gate. The refused trial has no evaluated material energy, force or residual.
+
+The valid step changes the archived total fixed-activation potential from −33.48083147770711 J to −33.7499971355736 J (−0.2691656578664876 J). Its archived components are matrix 0.01348989717297011 J, volume 1.4190172507882306 J, passive fibre 3.4220366725524234 J and active potential −38.60454095608723 J. Active potential is not passive stored energy. Minimum queried sampled/corner J goes from 0.5683147059934479/0.5594239031350546 to 0.45199014817808636/0.42739168218037515. These queried minima do not constitute whole-element bounds. Whole-element exact orientation certificates were already accepted for the valid field.
+
+## Local descent versus a finite geometry failure
+
+The selected direction is the negative omitted full-free gradient at the same 2048-point 45 control, normalized once in the 1485-component Euclidean nodal norm. It has exact zero held rows and is numerically orthogonal to the original columns. Its coordinate has units of metres, but the coordinate value is not the maximum nodal displacement. The held set remains the complete 90-node union of source caps; the 495 free nodes remain unchanged.
+
+The audit reconstructs all saved fields in the existing basis, checks exact held positions and direction zeros, computes the maximum physical nodal increment for each saved step, and obtains virtual work by dotting the stored valid-state gradient with that increment. The accepted step's slope agrees with its recorded −0.2821121181258962 J. The next saved step also has negative local slope, yet its finite endpoint inverts three element corners. A negative differential derivative at the valid starting field does not license a finite step outside the material domain. The 0.2 mm nodal bound is an absolute displacement bound and does not control the deformation gradient in a thin/distorted element.
+
+The unscaled Newton vector and original scaling factor were not archived. Reconstructing them would require a tangent calculation/solve outside this task. Accordingly the audit certifies the actual scaled physical increments and source direction normalization, not an invented raw scaling factor.
+
+## Entire saved-segment certification
+
+Let `y(t)=y_valid+t(y_refused−y_valid)`, for `0≤t≤1`, with endpoints interpreted as exact stored binary64 dyadic rationals. The P2 element's spatial Jacobian is affine in barycentric coordinates and affine in t. Multilinearity of the determinant yields a cubic in space and a cubic in t. The audit retains the existing 20 spatial degree-three Bernstein coefficients and expands each in four time powers using integer arithmetic. It independently matches all reference/start/end coefficients against the unchanged exact spatial compiler.
+
+For each coefficient it forms `det(current)−epsilon*det(reference)`, using the exact binary64 value of the existing `epsilon=1e-6` guard. It converts the time polynomial on `[0,s]` to degree-three Bernstein controls. Positive reference coefficients and all **20,160** guarded space×time controls strictly positive certify `J>epsilon` at every point of all 252 elements throughout that prefix. Bernstein basis functions are nonnegative and sum to one on the closed domains, so this is a whole-path sufficient certificate, including its endpoints. Caps stay fixed throughout by linearity of the two archived endpoint traces.
+
+A 40-bit rational bisection locates the boundary of this particular sufficient certificate. Its lower bound is certified safe. Its upper bound is unsupported by this certificate, which is not evidence of inversion there and does not identify the maximal physically admissible interval. The audit separately records exact pure-corner polynomial zero brackets where saved t=1 is negative, with derivative controls indicating whether a unique monotone crossing is proven. The retained per-cell minima have their own spatial denominators: their raw integer numerators must not be compared as a physical global margin.
+
+The damage test has positive determinant at both endpoints and negative determinant in between. It establishes why endpoint-only tests cannot certify a path. Additional tests cover a known affine guard crossing and curved P2 endpoint agreement. This saved-path certificate says nothing about energy or force along the prefix and cannot be transferred to a future Newton direction or to separately rounded trial positions.
+
+## Proposal requiring frozen review before another experiment
+
+A future, separately authorized protocol may change the handling of a refused trial from immediate experiment abort to bounded geometry-first backtracking. It must retain the same source geometry, original/free columns and single frozen extra direction, caps, material laws and parameters, activation, 2048-point potential, analytic tangent, positive Cholesky requirement, maximum initial physical nodal step 0.0002 m, Armijo constant `1e-4`, minimum line fraction `2^-20`, maximum 60 iterations and unchanged `1e-4 N` force gates. Apply the policy equally to the paired 45/46 controls. Do not refit force or add modes.
+
+At each valid current field, require a finite descending slope from the unchanged projected Newton step. For fractions `1,1/2,…,2^-20`, construct the candidate, first check finite coordinates and exact caps, then unchanged whole-element orientation and domain gates. If the protocol claims an admissible intervening path, certify that actual candidate's rounded-endpoint path with the space×time method above before evaluating its energy. An unsupported geometry certificate is logged and the fraction reduced; it is not accepted on sampled J or on endpoint signs alone. Evaluate the unchanged material/potential only after geometry/domain certification, then apply the unchanged Armijo sufficient-decrease test. Advance state only after every check passes. No such backtracking is run here.
+
+Stop and retain the last valid state and every rejection for a nonfinite/nondescent direction, invalid initial state, nonpositive tangent, exhausted 21 fractions, no representable displacement or no sufficient decrease, or the 60-iteration ceiling. No material call is permitted on a refused geometry. Projected success must be recorded separately from the full-nodal physical gate; full-nodal failure remains a failure. Report source/basis/rule identities, iteration and accepted fraction, physical maximum and Euclidean step norms, exact geometry evidence, queried J minima, total and component energies, original-45/added/46 projected gradients, full-free gradient/max/L2, and cap reactions separately. Preserve refused geometry with undefined material quantities.
+
+This is a globalization investigation, not a continuum, equilibrium, stability, spatial/quadrature-convergence or anatomical completion claim. The original [Armijo paper](https://msp.org/pjm/1966/16-1/pjm-v16-n1-p01-s.pdf) supplies the sufficient-decrease idea; its convergence assumptions have not been established for this problem. No general convergence theorem is asserted. A dimensionless local deformation-step diagnostic could inform a later proposal, but corner sampling cannot replace the exact whole-path gate. The frozen proposal must receive independent review before any next response experiment.
