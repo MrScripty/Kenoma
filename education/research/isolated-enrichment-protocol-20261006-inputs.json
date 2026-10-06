@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "diagnosis_commit": "645022c3c22a8b1b30b3928b668d583f0cb0c9d8",
+  "diagnosis_qualified_source": "401c306e1564be5dc82427193c159d1452f81787",
+  "base_main": "596df78f5cb652b4ac70917a82d8aa908b617056",
+  "physical_force_gate_N": 0.0001,
+  "activation": 1,
+  "paired_comparison_body_points_per_element": 2048,
+  "controlled_body_rules": [
+    32,
+    256,
+    2048
+  ],
+  "nonlinear_solves_authorized": false,
+  "force_rematching_authorized": false,
+  "inputs": {
+    "data/anatomical-arm-v1/generated/arm-reference.json": "1b80c1d3d9f2eb4370cd298f58f5e9c582625574f27072f6d3a1ea898ce4c036",
+    "data/anatomical-arm-v1/audit/modal-fixed-end-results.json": "b0eeecdade262b682279d9ebeb7a8147a4525a992976a85afc0ce5e63270d8b4",
+    "data/anatomical-arm-v1/audit/modal-fixed-end-recheck.json": "1f8f9b764f748c6fde38c61645fd56b6794240e414ac143c02f43fcda25816ab",
+    "data/anatomical-arm-v1/audit/anatomical-fixed-end-compression.json": "1abfd611d64cb9c57d07bbbb5fa9c7f7a6f6ce30d18041efa2c22d9b304b2208",
+    "data/anatomical-arm-v1/audit/anatomical-calibration-nodal.json": "c1ea8baa13dddff9f728e30f9035e2b2fdb5715bdf0feddc7d6fcd9a5b52020a",
+    "data/anatomical-arm-v1/audit/anatomical-further-integration.json": "d8c6444ccc947d32c658666a7b995f5bf7fe728413309ad80457483c2f9045ae",
+    "data/anatomical-arm-v1/audit/anatomical-pressure-space.json": "71f7dcf724e4abc7b954456451e2417d8d1accbea806f156b56cc2fddeb66226",
+    "data/elbow-v1/sources/arm26.osim": "e2224d0044eb393b05d64926c3fa1682c451a9adc7f510e5517ef9958d3d41b9",
+    "web/anatomical-modal.mjs": "12cd671bc963aa04dd5c0e173a776049de191283d850b0b60d0fe8e63be4c9a1",
+    "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+    "web/anatomical-element.mjs": "3f67a6bd31565c83d2cbea591c3cf1862a48e50cc4efa780880fda7e808d4b1f",
+    "web/anatomical-aponeurosis.mjs": "1dbebfd2ea67427ee0d962b7b234d2d40a2f2cd4616a4f1199e20b3aba7316a0",
+    "tools/anatomical-compression-quadrature.mjs": "f12e0d80224bad5e0bfa0649e08cac2f31a0baf162e2547ae8767b7371f48dc2",
+    "tools/anatomical-integration-refinement.mjs": "4e304b9132c914762f15d4f51dc058d67181161e35b4bf4c24789f8e9df1898f",
+    "tools/anatomical-bernstein-orientation.mjs": "5622685f19e7fabdd820fee11268950f0f97c58dc4818dbae8652e320cc5ca95",
+    "research/isolated-calibration-resolution-20261006-inputs.json": "c88d57b8a0ef87e1a2c5fec86a1ea3ed8969ae8a687f52b7aa50290944894452",
+    "review/isolated-calibration-resolution-20261006/results.json": "0c7a864aa463e78479ffb67e44ac3c7768768955fc449d7f7a7f7acafb2cf1dd",
+    "review/isolated-calibration-resolution-20261006/verification.json": "b33882813d227cbaacd6cfc69c1b2d7fd3c4afc00c25c3c4059c1fdfbacc7512",
+    "tools/anatomical-further-integration-audit.mjs": "c5d49d8e9da6f4afbb5377dc467ac09fe3d5c2d5cb8f97a81d89a518d1bf79b2",
+    "tools/anatomical-dense-quadrature.mjs": "2a9279268cc9a3c206e400293add90a537d7222c62af5992e08bc6467a078210",
+    "data/anatomical-arm-v1/audit/anatomical-dense-loading-prefix.json": "31ef26d3584d5b937d9086b8df80fcd60624eb007cdfbf6f68ac11c07040b582",
+    "data/anatomical-arm-v1/audit/anatomical-enriched-step.json": "4c465823cd82e78814259791056d5b23efc094a3ed6b4892e829d682686d8b85",
+    "data/anatomical-arm-v1/audit/anatomical-enriched-step-recheck.json": "dcdf325e7710426f9417c31aad8bb16aa23c244dbe3a0f8e7cc85cbdb17ef42a",
+    "research/anatomical-dense-qualification.md": "04197bfd349a6232eb479ab609f0ced50094a3360a435215b18aff4cd42a2dbb"
+  }
+}
