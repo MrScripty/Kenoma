@@ -1,0 +1,26 @@
+AUDIT high full-source/RK4-0.0002 balances True dense 4.163336342344337e-16
+AUDIT high full-source/RK4-0.0001 balances True dense 4.163336342344337e-16
+AUDIT high full-source/RK4-0.00005 balances True dense 4.163336342344337e-16
+AUDIT high full-source/RK4-0.000025 balances True dense 4.163336342344337e-16
+AUDIT high full-source/DOP853 balances True dense 4.0245584642661925e-16
+AUDIT high full-source/Radau balances True dense 4.0245584642661925e-16
+AUDIT high reduced-independent/RK4-0.0002 balances True dense 4.163336342344337e-16
+AUDIT high reduced-independent/RK4-0.0001 balances True dense 4.0245584642661925e-16
+AUDIT high reduced-independent/RK4-0.00005 balances True dense 4.163336342344337e-16
+AUDIT high reduced-independent/RK4-0.000025 balances True dense 4.0245584642661925e-16
+AUDIT high reduced-independent/DOP853 balances True dense 4.163336342344337e-16
+AUDIT high reduced-independent/Radau balances True dense 4.163336342344337e-16
+AUDIT mass-1 full-source/RK4-0.0002 balances True dense 1.9567680809018384e-15
+AUDIT mass-1 full-source/RK4-0.0001 balances True dense 1.9567680809018384e-15
+AUDIT mass-1 full-source/RK4-0.00005 balances True dense 1.9567680809018384e-15
+AUDIT mass-1 full-source/RK4-0.000025 balances True dense 2.220446049250313e-16
+AUDIT mass-1 full-source/DOP853 balances True dense 2.220446049250313e-16
+AUDIT mass-1 full-source/Radau balances True dense 2.220446049250313e-16
+AUDIT mass-1 reduced-independent/RK4-0.0002 balances True dense 1.9567680809018384e-15
+AUDIT mass-1 reduced-independent/RK4-0.0001 balances True dense 1.9567680809018384e-15
+AUDIT mass-1 reduced-independent/RK4-0.00005 balances True dense 1.9567680809018384e-15
+AUDIT mass-1 reduced-independent/RK4-0.000025 balances True dense 2.220446049250313e-16
+AUDIT mass-1 reduced-independent/DOP853 balances True dense 2.220446049250313e-16
+AUDIT mass-1 reduced-independent/Radau balances True dense 2.220446049250313e-16
+high adaptive_state_consistency True max {'y_m': 1.4367951273186463e-12, 'w_m_per_s': 7.127332057876856e-11, 'a': 1.5041190515319158e-11, 'q': 6.588729561940454e-12, 'FT_N': 8.196815670657998e-09, 'I': 2.850830682632477e-12, 'raw': 3.4253266889550105e-11}
+mass-1 adaptive_state_consistency True max {'y_m': 6.139466365850943e-11, 'w_m_per_s': 1.4507467865909618e-09, 'a': 3.3061044873994305e-10, 'q': 5.679690051607622e-10, 'FT_N': 3.576132812099786e-08, 'I': 8.110295074414964e-11, 'raw': 1.9511806406691257e-10}

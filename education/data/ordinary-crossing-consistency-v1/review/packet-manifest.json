@@ -1,0 +1,329 @@
+{
+  "frozen_source_commit": "9af7fda0d65a08aeeb26b0506e869ff63a9af382",
+  "frozen_source_tree": "2cf917e7ad4d826c41888830ca0eed5f2c7ff06a",
+  "raw_results_commit": "53b259bfeeb1b0d7586d81a78393dac852aa9f37",
+  "raw_results_tree": "0354481818756bb1fb988d21fd45bd2d87475c2c",
+  "protocol_sha256": "375fdacfa448af3823eff989c4b07b3dab9286374698184982a41a70b1e14182",
+  "scope": "Ordinary crossing incoming-prefix consistency only; original failed evidence and gates preserved",
+  "files": [
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/preflight/preflight.json",
+      "bytes": 2244,
+      "sha256": "4446f23930af96d8b6fa79eb0607b76f03d0c8f4e46953c28a7952799661178b"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/preflight/tests.log",
+      "bytes": 876,
+      "sha256": "ef5426624a5167d27cf9d649013d0db39038725bbf4e9e4db472755949344eb5"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/protocol.json",
+      "bytes": 11788,
+      "sha256": "375fdacfa448af3823eff989c4b07b3dab9286374698184982a41a70b1e14182"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/accepted-restart-checks.json",
+      "bytes": 41501,
+      "sha256": "a92b3f338bc10a59d53c364b452a71313326123ac94659ad2deebe68083b9c04"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/analysis.json",
+      "bytes": 1051416,
+      "sha256": "eee0d947dc172ea0f1d755f9d208c597aa38dec1778586dc112d4738c7e92e3b"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/audit.log",
+      "bytes": 2444,
+      "sha256": "df24c31ca3a5445607473e3282ce07720ca4c4a976f99e843f8a74146efa94c0"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/crossing-consistency.png",
+      "bytes": 310051,
+      "sha256": "670d5d0a67a34238bfe2fcdad8834733e0b5451389f1b1edc59527b0bcabb4cb"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/crossing-consistency.svg",
+      "bytes": 159741,
+      "sha256": "6e1a5cfb8415ded0ae0482e9e101f3279bf8a97df88b3309bd1393af5af8535e"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/execution.json",
+      "bytes": 6046,
+      "sha256": "ce10a5f58cac3a2567ecda1ca65cdcfa430daa8e4d4c7e76cf2ed5574c8e8b61"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/high-full-source-DOP853.json",
+      "bytes": 814565,
+      "sha256": "bcd3b28ba4ba2e0e83236e33c2f1eff928878c4a65532d5b1d0c4461ba6c8816"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/high-full-source-DOP853.log",
+      "bytes": 128,
+      "sha256": "8d58ec2c14ef6f8fdb80c1e0df1c2c869baa54f147fb14cadd70e7af0369bf33"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/high-full-source-RK4-0.000025.json",
+      "bytes": 7318329,
+      "sha256": "9f3d9cf7d3bc2ad68336eefc0bb1691fa6b72661031dc62b01bd8652e1798a9b"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/high-full-source-RK4-0.000025.log",
+      "bytes": 135,
+      "sha256": "4671bc2ca2bf275545448935cf7bb41ea3022c0d6cc6cef3eebc56edfc12d660"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/high-full-source-RK4-0.00005.json",
+      "bytes": 3713041,
+      "sha256": "18cb9563ba339b9d56453da3b277afb6d68208fb0bc7b301edc526fa50c77ffd"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/high-full-source-RK4-0.00005.log",
+      "bytes": 133,
+      "sha256": "0145d773afc02097bc56ae71d1ee8bda84650bc726cbe6596875a4e70242c383"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/high-full-source-RK4-0.0001.json",
+      "bytes": 1909229,
+      "sha256": "057b5d149a452bfcff0f6e40bdce508a93bfc33c3a1f53c14e184bb7578d5722"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/high-full-source-RK4-0.0001.log",
+      "bytes": 134,
+      "sha256": "b6c45c3f7d33ade3ea9c6af8c10a6e86503bbd4bfb084b0df14592e5afd65558"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/high-full-source-RK4-0.0002.json",
+      "bytes": 1007430,
+      "sha256": "45256fd20a062795fa711e258e8d7e966a6e145edd9ed948f6e8ea6bff40126e"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/high-full-source-RK4-0.0002.log",
+      "bytes": 133,
+      "sha256": "bf021c2fac783126644d92fccb5cfbc31d57af8527486ab503ebb76ba30aff04"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/high-full-source-Radau.json",
+      "bytes": 1055821,
+      "sha256": "bdf154caa8b22098800972434e4b3e47d7dcf5c57c358ef8fc7e2392c400bcc4"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/high-full-source-Radau.log",
+      "bytes": 127,
+      "sha256": "3da100e77c875567b627122a67db5a93d0afc9b3905d16fb7f40a36269bbe931"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/high-reduced-independent-DOP853.json",
+      "bytes": 850091,
+      "sha256": "e21653535cac25c7ad6149cc673a0664901c5b088ee310edca1dfad6a415dd15"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/high-reduced-independent-DOP853.log",
+      "bytes": 135,
+      "sha256": "401458f32f63a77391ef0c7bac20479f19a0169c61b4c1a7755e22958a377717"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/high-reduced-independent-RK4-0.000025.json",
+      "bytes": 7551984,
+      "sha256": "660e2ae16e182c5a3ed697a662913837826bc0df6cb320d33538f00fda8ab267"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/high-reduced-independent-RK4-0.000025.log",
+      "bytes": 143,
+      "sha256": "d7a5a1ff983d1af2c66acd8c37c5198a93abd7fe6a4237e5503a46120caf1a18"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/high-reduced-independent-RK4-0.00005.json",
+      "bytes": 3827657,
+      "sha256": "e989d1d8b8fbea78eb80cf883aaa5dc7b0f974db3453509d235e4a7fa2999b01"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/high-reduced-independent-RK4-0.00005.log",
+      "bytes": 141,
+      "sha256": "24e922e2e8045f351f16c5c0155cc5bde66eb7aa0a783f338570e5a5fc04fdaf"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/high-reduced-independent-RK4-0.0001.json",
+      "bytes": 1960678,
+      "sha256": "e259655f77687f89bd7c766e35b0f21e130cd89f4a89a3ef9dde5f406755ab87"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/high-reduced-independent-RK4-0.0001.log",
+      "bytes": 142,
+      "sha256": "f3b55c5ce59a657e0660483ded74670ede60ea831a347529a07063f4501b3fb1"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/high-reduced-independent-RK4-0.0002.json",
+      "bytes": 1036305,
+      "sha256": "7264a254bd30bab8caa9baaaf2bbf6a8153a94893f04509ff91c8dde9e8ec150"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/high-reduced-independent-RK4-0.0002.log",
+      "bytes": 141,
+      "sha256": "4cd04b657cfb41bea2964a1f08d9b83ce1a31a357d51101e293bbeb4376391c5"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/high-reduced-independent-Radau.json",
+      "bytes": 1194881,
+      "sha256": "95f40cefecb387d2415033877a223f8cfc47d017cd71396070d40a8d4e296304"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/high-reduced-independent-Radau.log",
+      "bytes": 136,
+      "sha256": "9f10ab3e83e195f572c6e5e86a02716e81e0f7d3d518916df4e2710565fc9f5f"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/mass-1-full-source-DOP853.json",
+      "bytes": 2217815,
+      "sha256": "ea2e53dc91b80709042b01237f24e86b322b38023fb93c4da55e5b61bd242228"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/mass-1-full-source-DOP853.log",
+      "bytes": 131,
+      "sha256": "f74893d605de470d105adf65107bb1a6d23a5f5b476138127e9609007322ca7d"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/mass-1-full-source-RK4-0.000025.json",
+      "bytes": 20403671,
+      "sha256": "123c27ed77ce83de6bdf540a0320019d58ba71d78fa743d4f691f673ba0daf3a"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/mass-1-full-source-RK4-0.000025.log",
+      "bytes": 138,
+      "sha256": "dea7921ffff70550a4be73b3bb76b199684a6b0daae9933e4c0e9d01552d7bf5"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/mass-1-full-source-RK4-0.00005.json",
+      "bytes": 10336919,
+      "sha256": "46f5bbd1e202cfa50aed20891eb18aa071eb18b78373960c24e140903df925e3"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/mass-1-full-source-RK4-0.00005.log",
+      "bytes": 135,
+      "sha256": "2cb5523314e6f1951af3fda306dae61d3094608fd0ccd460edd1100307c1013e"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/mass-1-full-source-RK4-0.0001.json",
+      "bytes": 5305130,
+      "sha256": "1a2751b02d689c1ec4d3e0d10c52f6307f01d2db4219ca147cf4207915ae5344"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/mass-1-full-source-RK4-0.0001.log",
+      "bytes": 135,
+      "sha256": "46eb519db4fda0dbf0442c0e2feacba21ee130416dec7a8fff2daa27aedb042c"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/mass-1-full-source-RK4-0.0002.json",
+      "bytes": 2782343,
+      "sha256": "ca4050b8d2cb028eef85eb17ab644d6acad33148bd82605da8ed0f2b2052b976"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/mass-1-full-source-RK4-0.0002.log",
+      "bytes": 135,
+      "sha256": "8c83be9cf7fdd6e43fcf72f28f0c7ca07ca311ae4cd84fb8efc5d7392e51410a"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/mass-1-full-source-Radau.json",
+      "bytes": 1588829,
+      "sha256": "9a12039c731cb1041fe0836378a919b8b8ea228edf18a69efc5e1bbf60a8dc5f"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/mass-1-full-source-Radau.log",
+      "bytes": 129,
+      "sha256": "0baec82ca766cc47330641de5f51894b5f476401a89e92aa342a5453d7434aca"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/mass-1-reduced-independent-DOP853.json",
+      "bytes": 2216605,
+      "sha256": "05634668f817947bee60cc5b0895deb2abb99965eef7f6138e3c4d9a18272441"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/mass-1-reduced-independent-DOP853.log",
+      "bytes": 138,
+      "sha256": "61c50ea8e420c6e4cf1e85c2d609b74e49dc35341b92ee2f1912f08cd377dabf"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/mass-1-reduced-independent-RK4-0.000025.json",
+      "bytes": 20403661,
+      "sha256": "2f5b861aeeb44c076392130ffd72d73f5f58997e88b9095cfe506ed082ffd722"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/mass-1-reduced-independent-RK4-0.000025.log",
+      "bytes": 145,
+      "sha256": "9c7ac3c926f40a82579a6e53b6bf2c4c23ebe9bc0c5c7c60f679991abe717b3a"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/mass-1-reduced-independent-RK4-0.00005.json",
+      "bytes": 10337036,
+      "sha256": "c5a0510c3a8e22a483b8b6c66e12f45824fb516ec198bfe15d71cb977b7b46c0"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/mass-1-reduced-independent-RK4-0.00005.log",
+      "bytes": 144,
+      "sha256": "b9365b2a5118305578dc4e3c383fc4cc41d147f5349e12d935f783fc5c597829"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/mass-1-reduced-independent-RK4-0.0001.json",
+      "bytes": 5305193,
+      "sha256": "3081dfc1ee138a5efc6f3ac19b63091f546dc1659d64fd71a8a7af6902b1865e"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/mass-1-reduced-independent-RK4-0.0001.log",
+      "bytes": 141,
+      "sha256": "70ccc607a6f658e1dd5706110f278ebd52c25a9d97624f310aa992c1a2bf61a3"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/mass-1-reduced-independent-RK4-0.0002.json",
+      "bytes": 2780735,
+      "sha256": "0d8f0ce66140451b2e2b3bd3582993a52d9f2b95a13cdcf1918a3e65e2e2b950"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/mass-1-reduced-independent-RK4-0.0002.log",
+      "bytes": 142,
+      "sha256": "4197678c8665c1d0aea03b8df91dd2688ac031c37e4ab9a6263962f2386fb30a"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/mass-1-reduced-independent-Radau.json",
+      "bytes": 1607329,
+      "sha256": "668603665d58787197e1594041afe1047820feefca6d0a005b1d6b9ee3428c32"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/mass-1-reduced-independent-Radau.log",
+      "bytes": 137,
+      "sha256": "83a0dd2b5d7e889742f1066cc791fd0000ddc8ff08089ec8848d89d7b9e068b8"
+    },
+    {
+      "path": "education/data/ordinary-crossing-consistency-v1/review/verification.json",
+      "bytes": 849,
+      "sha256": "710bbf96339d351fbaf01a741be78a5b3073cd2452f8a268796b21298a2b7b84"
+    },
+    {
+      "path": "education/tools/run_ordinary_crossing_consistency.py",
+      "bytes": 9016,
+      "sha256": "9bf1d1fcf2b76c2cc7812a3229064021856fe2b1f774cc156d1041c82c6b02b3"
+    },
+    {
+      "path": "education/tools/audit_ordinary_crossing_consistency.py",
+      "bytes": 8883,
+      "sha256": "8de7a413e535fc8381a47a70e5130dd5937106df7c7c4791af067b82c17a86f5"
+    },
+    {
+      "path": "education/tests/ordinary_crossing_consistency.py",
+      "bytes": 3435,
+      "sha256": "f56bc5aa5aa7f163dbb5c3461d8e5dbd39d75ac1215db40a427ab6fd528aa95c"
+    },
+    {
+      "path": "education/research/mechanical-closure/ordinary-crossing-consistency-protocol.md",
+      "bytes": 4533,
+      "sha256": "9140f667245a7506c63ab319717547f8e8d58a780cb4f8f3df9b9abfff3a9596"
+    },
+    {
+      "path": "education/research/mechanical-closure/ordinary-crossing-consistency-results.md",
+      "bytes": 12042,
+      "sha256": "21f95af1bb661b4075639b6c9d5fa565fa4920fd06a65c68c4d8613fb0b2a4a2"
+    }
+  ],
+  "excluded": [
+    "This manifest itself",
+    "education/data/ordinary-crossing-consistency-v1/review/packet-verification.log"
+  ]
+}

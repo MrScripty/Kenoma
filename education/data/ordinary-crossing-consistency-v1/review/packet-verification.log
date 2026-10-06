@@ -1,0 +1,20 @@
+PASS 63 new packet artifact/source hashes
+PASS 1848 baseline git blobs byte-identical to 998b65d554524f6233bc64790dcf55876fa39106
+PASS source/protocol/preflight committed and pushed before all 24 runs
+PASS eight preflight tests (raw output in preflight/tests.log)
+PASS 24 runs / zero physical failures / zero attracting or sliding states accepted
+PASS all 24 independent force/work/impulse/actual dense quadrature audits
+PASS 58787 accepted interval polynomials retained; 4400 grid and 48 event states replayed
+PASS 24 ordinary event states and next restart states identical in all 11 coordinates
+PASS ordinary targets: max iterations 30 <=32; max bracket 9.5237706609907491e-13 s <=1e-12; max |H| 9.977262072080606e-14 <=1e-13
+PASS 88 comparisons / 440 segments / 3080 maxima independently recomputed
+PASS signed witnesses, matched-time integral values and exact seven error margins
+PASS all six adaptive reference pairs consistent under unchanged gates in both cases
+PASS all old coarse levels, original failed classifications and activation handling preserved
+PASS original SciPy dense implementation hashes unchanged; inspected PNG and parsed SVG
+PASS no controller/gain/law/acceptance-gate change, book/Lean/protected-file edit or production adoption
+FROZEN SOURCE 9af7fda0d65a08aeeb26b0506e869ff63a9af382
+FROZEN TREE 2cf917e7ad4d826c41888830ca0eed5f2c7ff06a
+RAW SOURCE 53b259bfeeb1b0d7586d81a78393dac852aa9f37
+RAW TREE 0354481818756bb1fb988d21fd45bd2d87475c2c
+PROTOCOL SHA256 375fdacfa448af3823eff989c4b07b3dab9286374698184982a41a70b1e14182
