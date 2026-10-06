@@ -1,0 +1,94 @@
+{
+  "repository": "https://github.com/opensim-org/opensim-core",
+  "release_tag": "4.5.2",
+  "tag_object": "7fcf7c1009ca636a3e0a2d14745109d684072e2a",
+  "commit": "5bc7d3308eda742690f485ec060bfe725a349fa6",
+  "tree": "19ea9bb15e9c43a3f7506966ea6ac0ca14002df1",
+  "license": "Apache-2.0",
+  "files": [
+    {
+      "upstream_path": "LICENSE.txt",
+      "local_name": "LICENSE.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "bytes": 11358,
+      "url": "https://github.com/opensim-org/opensim-core/blob/5bc7d3308eda742690f485ec060bfe725a349fa6/LICENSE.txt"
+    },
+    {
+      "upstream_path": "NOTICE",
+      "local_name": "NOTICE",
+      "sha256": "b2c1b5cb94d4cb080aa2e589cb03863f27fa7ed4bc2b6c6dfb42a46f0d38c2cd",
+      "bytes": 3869,
+      "url": "https://github.com/opensim-org/opensim-core/blob/5bc7d3308eda742690f485ec060bfe725a349fa6/NOTICE"
+    },
+    {
+      "upstream_path": "OpenSim/Common/SmoothSegmentedFunctionFactory.cpp",
+      "local_name": "SmoothSegmentedFunctionFactory.cpp",
+      "sha256": "83c25616e7249be321a7934fb24dd0f1c45a84c62f31256368646cef5bc9cbee",
+      "bytes": 30012,
+      "url": "https://github.com/opensim-org/opensim-core/blob/5bc7d3308eda742690f485ec060bfe725a349fa6/OpenSim/Common/SmoothSegmentedFunctionFactory.cpp"
+    },
+    {
+      "upstream_path": "OpenSim/Common/SegmentedQuinticBezierToolkit.cpp",
+      "local_name": "SegmentedQuinticBezierToolkit.cpp",
+      "sha256": "79bfeb65c24809e4611937e3020964b3844aff5c8146e112d89dafeb851ddb32",
+      "bytes": 38788,
+      "url": "https://github.com/opensim-org/opensim-core/blob/5bc7d3308eda742690f485ec060bfe725a349fa6/OpenSim/Common/SegmentedQuinticBezierToolkit.cpp"
+    },
+    {
+      "upstream_path": "OpenSim/Actuators/Millard2012EquilibriumMuscle.cpp",
+      "local_name": "Millard2012EquilibriumMuscle.cpp",
+      "sha256": "9962d9093ae1da7ab9a0024ca59c163613d50041b49c68716130b292889f0e01",
+      "bytes": 78126,
+      "url": "https://github.com/opensim-org/opensim-core/blob/5bc7d3308eda742690f485ec060bfe725a349fa6/OpenSim/Actuators/Millard2012EquilibriumMuscle.cpp"
+    },
+    {
+      "upstream_path": "OpenSim/Actuators/Millard2012EquilibriumMuscle.h",
+      "local_name": "Millard2012EquilibriumMuscle.h",
+      "sha256": "e6091b935077e7e3287dcc1d1f81c4b17bdb31dda200d3f0c7f26403cc951f8a",
+      "bytes": 33923,
+      "url": "https://github.com/opensim-org/opensim-core/blob/5bc7d3308eda742690f485ec060bfe725a349fa6/OpenSim/Actuators/Millard2012EquilibriumMuscle.h"
+    },
+    {
+      "upstream_path": "OpenSim/Actuators/MuscleFirstOrderActivationDynamicModel.cpp",
+      "local_name": "MuscleFirstOrderActivationDynamicModel.cpp",
+      "sha256": "7cda12111355cf7f04a906c4821582a203547b149ac9b43250c58a13734a18e9",
+      "bytes": 5139,
+      "url": "https://github.com/opensim-org/opensim-core/blob/5bc7d3308eda742690f485ec060bfe725a349fa6/OpenSim/Actuators/MuscleFirstOrderActivationDynamicModel.cpp"
+    },
+    {
+      "upstream_path": "OpenSim/Actuators/ActiveForceLengthCurve.cpp",
+      "local_name": "ActiveForceLengthCurve.cpp",
+      "sha256": "c5208cfbcbee202bce5546d19901b7d008cc48b7ff8f160d755eda6be25ce8fe",
+      "bytes": 8679,
+      "url": "https://github.com/opensim-org/opensim-core/blob/5bc7d3308eda742690f485ec060bfe725a349fa6/OpenSim/Actuators/ActiveForceLengthCurve.cpp"
+    },
+    {
+      "upstream_path": "OpenSim/Actuators/FiberForceLengthCurve.cpp",
+      "local_name": "FiberForceLengthCurve.cpp",
+      "sha256": "885693023dc48a9b1565a7b1788f654a57d2f088a05b242dad5f6847d7a1de61",
+      "bytes": 17471,
+      "url": "https://github.com/opensim-org/opensim-core/blob/5bc7d3308eda742690f485ec060bfe725a349fa6/OpenSim/Actuators/FiberForceLengthCurve.cpp"
+    },
+    {
+      "upstream_path": "OpenSim/Actuators/TendonForceLengthCurve.cpp",
+      "local_name": "TendonForceLengthCurve.cpp",
+      "sha256": "2b4d7f908195106f499c222edc4b8d154d1f98c6853cb8b93d5a03bee13818c6",
+      "bytes": 13697,
+      "url": "https://github.com/opensim-org/opensim-core/blob/5bc7d3308eda742690f485ec060bfe725a349fa6/OpenSim/Actuators/TendonForceLengthCurve.cpp"
+    },
+    {
+      "upstream_path": "OpenSim/Actuators/ForceVelocityCurve.cpp",
+      "local_name": "ForceVelocityCurve.cpp",
+      "sha256": "9c0a3ba35e8c5d9328cb8080ba64bab64c6e7a8352d917c5cf3d78185398cb73",
+      "bytes": 9193,
+      "url": "https://github.com/opensim-org/opensim-core/blob/5bc7d3308eda742690f485ec060bfe725a349fa6/OpenSim/Actuators/ForceVelocityCurve.cpp"
+    },
+    {
+      "upstream_path": "OpenSim/Simulation/Model/Muscle.cpp",
+      "local_name": "Muscle.cpp",
+      "sha256": "eac421fab41c4ec7f72dae7e572efcd842a4f12f14f2764ccf3521ea9dd307d5",
+      "bytes": 28379,
+      "url": "https://github.com/opensim-org/opensim-core/blob/5bc7d3308eda742690f485ec060bfe725a349fa6/OpenSim/Simulation/Model/Muscle.cpp"
+    }
+  ]
+}
