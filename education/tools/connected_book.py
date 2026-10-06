@@ -4,6 +4,7 @@ import hashlib,json,shutil,subprocess,sys
 ROOT=Path(__file__).resolve().parents[1]
 def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def prepare(out):
+    (out/'assets').mkdir(parents=True,exist_ok=True)
     from check_axisymmetric_proofs import check
     from build_axisymmetric_preview import build
     def run(*args):subprocess.run(list(args),cwd=ROOT,check=True)
