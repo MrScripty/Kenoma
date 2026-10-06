@@ -1,0 +1,51 @@
+{
+  "scope": "Preparation only; combined execution remains held pending independent activation review",
+  "baseline_commit": "2f78f47416951b5ec8cb3721fefcbfa46a9bf80a",
+  "candidate_matrix_execution_authorized": false,
+  "combined_candidate_prefixes_executed": 0,
+  "files": [
+    {
+      "path": "education/data/combined-incoming-protocol-v1/preflight/checks.log",
+      "bytes": 1197,
+      "sha256": "69605692259b2a73437ee1f33a7dce9179e70e604d86f2cc4ab87cfe2760a214"
+    },
+    {
+      "path": "education/data/combined-incoming-protocol-v1/preflight/execution.json",
+      "bytes": 999,
+      "sha256": "cd0b8a8746386b0a1eacb1ce7aa63a1ce8cab96cb84783def5efe1790f32331d"
+    },
+    {
+      "path": "education/data/combined-incoming-protocol-v1/preflight/stored-structure.json",
+      "bytes": 28030,
+      "sha256": "c015b97a6df09bcb365e5464efce9aa75568739ccb690caddb50e2fbcc45a1dd"
+    },
+    {
+      "path": "education/data/combined-incoming-protocol-v1/preflight/tests.log",
+      "bytes": 1911,
+      "sha256": "5006fea493f5f1afc3e1c2cf7c368ea206de1eb97b0c3f16ea543cd905818eff"
+    },
+    {
+      "path": "education/data/combined-incoming-protocol-v1/protocol.json",
+      "bytes": 27405,
+      "sha256": "dde6eb681517c55cf1016fce1c120da1f2e031a78d9d1fd78b293517f9162d45"
+    },
+    {
+      "path": "education/research/mechanical-closure/combined-incoming-protocol.md",
+      "bytes": 12261,
+      "sha256": "c8e6995daf1fb20f26bee65933bbfa2056a4236385740445745c89101dac64bb"
+    },
+    {
+      "path": "education/tests/combined_incoming_preflight.py",
+      "bytes": 5876,
+      "sha256": "1df0321322ba535232770baae404b6a48b99dc30dd6e0546521aac49a3169cb2"
+    },
+    {
+      "path": "education/tools/combined_incoming_preflight.py",
+      "bytes": 9321,
+      "sha256": "00cda21aa438b5cef9b6c053c9dc3f525d2c57a442adfaabbc34144a5fdebebc"
+    }
+  ],
+  "excluded": [
+    "This manifest itself"
+  ]
+}

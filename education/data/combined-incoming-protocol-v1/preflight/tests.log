@@ -1,0 +1,19 @@
+test_activation_tangency_or_noninterior_equality_stops (__main__.Checks.test_activation_tangency_or_noninterior_equality_stops) ... ok
+test_attracting_event_never_advances (__main__.Checks.test_attracting_event_never_advances) ... ok
+test_command_root_coincidence_has_no_guessed_priority (__main__.Checks.test_command_root_coincidence_has_no_guessed_priority) ... ok
+test_controller_cut_carries_pending_activation_remainder (__main__.Checks.test_controller_cut_carries_pending_activation_remainder) ... ok
+test_controller_equality_implies_bound_activation_not_interior (__main__.Checks.test_controller_equality_implies_bound_activation_not_interior) ... ok
+test_earliest_actual_activation_recrossing_stops (__main__.Checks.test_earliest_actual_activation_recrossing_stops) ... ok
+test_earliest_independent_event_accepted_later_suffix_discarded (__main__.Checks.test_earliest_independent_event_accepted_later_suffix_discarded) ... ok
+test_equality_prefix_changes_only_activation_branch (__main__.Checks.test_equality_prefix_changes_only_activation_branch) ... ok
+test_execution_hold_is_explicit (__main__.Checks.test_execution_hold_is_explicit) ... ok
+test_failed_or_held_prefix_does_not_advance_any_coordinate (__main__.Checks.test_failed_or_held_prefix_does_not_advance_any_coordinate) ... ok
+test_later_auxiliary_activation_candidate_is_recomputed_after_controller (__main__.Checks.test_later_auxiliary_activation_candidate_is_recomputed_after_controller) ... ok
+test_outward_then_inward_retain_negative_activation (__main__.Checks.test_outward_then_inward_retain_negative_activation) ... ok
+test_overlapping_event_order_stops (__main__.Checks.test_overlapping_event_order_stops) ... ok
+test_restart_copies_all_eleven_event_coordinates (__main__.Checks.test_restart_copies_all_eleven_event_coordinates) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.001s
+
+OK

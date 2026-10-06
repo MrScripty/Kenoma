@@ -1,0 +1,23 @@
+{
+  "scope": "Preparation only; stored-evidence read and pure structural checks",
+  "baseline_commit": "2f78f47416951b5ec8cb3721fefcbfa46a9bf80a",
+  "baseline_blobs_byte_identical": 1982,
+  "protocol_sha256": "dde6eb681517c55cf1016fce1c120da1f2e031a78d9d1fd78b293517f9162d45",
+  "frozen_input_binding_count": 108,
+  "preparation_source_binding_count": 3,
+  "test_exit_code": 0,
+  "structural_tests_passed": 14,
+  "old_longer_prefixes_checked": 12,
+  "old_activation_prefixes_read": 24,
+  "combined_matrix_runs": 0,
+  "actual_combined_mechanical_prefixes": 0,
+  "activation_review_disposition": "pending",
+  "raw_file_independent_certification_completed": false,
+  "stored_event_bracket_gaps_s": {
+    "activation_to_first_ordinary_s": 0.10545573143362501,
+    "ordinary_outward_to_inward_s": 0.14199958808513657,
+    "ordinary_inward_to_attracting_s": 0.012147912350295664,
+    "high_command_to_attracting_s": 0.05545806579589847
+  },
+  "original_files_and_failed_classifications_unchanged": true
+}

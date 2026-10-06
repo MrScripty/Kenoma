@@ -1,0 +1,1031 @@
+{
+  "scope": "Old separate experiments only; not a composed trajectory",
+  "activation_observations": {
+    "control/full-source/RK4-0.0002": {
+      "time": 0.0024273558486253024,
+      "bracket": [
+        0.0024273558482527735,
+        0.0024273558486253024
+      ],
+      "accepted": false,
+      "normal": -0.23063674160484093
+    },
+    "control/full-source/RK4-0.0001": {
+      "time": 0.0024273759815841905,
+      "bracket": [
+        0.0024273759812116612,
+        0.0024273759815841905
+      ],
+      "accepted": false,
+      "normal": -0.2306380073949072
+    },
+    "control/full-source/RK4-0.00005": {
+      "time": 0.0024273999162018286,
+      "bracket": [
+        0.0024273999162018286,
+        0.0024273999169468867
+      ],
+      "accepted": false,
+      "normal": -0.23063951408943284
+    },
+    "control/full-source/RK4-0.000025": {
+      "time": 0.0024273922570049737,
+      "bracket": [
+        0.0024273922570049737,
+        0.002427392257750032
+      ],
+      "accepted": false,
+      "normal": -0.23063903210690367
+    },
+    "control/full-source/DOP853": {
+      "time": 0.0024273917603802007,
+      "bracket": [
+        0.0024273917596021634,
+        0.0024273917603802007
+      ],
+      "accepted": false,
+      "normal": -0.2306390006054854
+    },
+    "control/full-source/Radau": {
+      "time": 0.002427392564823043,
+      "bracket": [
+        0.002427392564823043,
+        0.002427392565722299
+      ],
+      "accepted": false,
+      "normal": -0.23063905147946254
+    },
+    "control/reduced-independent/RK4-0.0002": {
+      "time": 0.0024273558486253024,
+      "bracket": [
+        0.0024273558482527735,
+        0.0024273558486253024
+      ],
+      "accepted": false,
+      "normal": -0.2306367415966591
+    },
+    "control/reduced-independent/RK4-0.0001": {
+      "time": 0.0024273759815841905,
+      "bracket": [
+        0.0024273759812116612,
+        0.0024273759815841905
+      ],
+      "accepted": false,
+      "normal": -0.23063800738656054
+    },
+    "control/reduced-independent/RK4-0.00005": {
+      "time": 0.0024273999162018286,
+      "bracket": [
+        0.0024273999162018286,
+        0.0024273999169468867
+      ],
+      "accepted": false,
+      "normal": -0.2306395140809513
+    },
+    "control/reduced-independent/RK4-0.000025": {
+      "time": 0.0024273922570049737,
+      "bracket": [
+        0.0024273922570049737,
+        0.002427392257750032
+      ],
+      "accepted": false,
+      "normal": -0.23063903209894876
+    },
+    "control/reduced-independent/DOP853": {
+      "time": 0.00242739176009578,
+      "bracket": [
+        0.00242739176009578,
+        0.0024273917604847985
+      ],
+      "accepted": false,
+      "normal": -0.2306390005751208
+    },
+    "control/reduced-independent/Radau": {
+      "time": 0.002427392565049483,
+      "bracket": [
+        0.0024273925645966893,
+        0.002427392565049483
+      ],
+      "accepted": false,
+      "normal": -0.23063905149354877
+    },
+    "split/full-source/RK4-0.0002": {
+      "time": 0.0024273925416171548,
+      "bracket": [
+        0.0024273925416171548,
+        0.002427392542362213
+      ],
+      "accepted": true,
+      "normal": -0.23063905176650853
+    },
+    "split/full-source/RK4-0.0001": {
+      "time": 0.002427392595633863,
+      "bracket": [
+        0.002427392595633863,
+        0.0024273925960063922
+      ],
+      "accepted": true,
+      "normal": -0.2306390536401094
+    },
+    "split/full-source/RK4-0.00005": {
+      "time": 0.002427392590790986,
+      "bracket": [
+        0.002427392590045928,
+        0.002427392590790986
+      ],
+      "accepted": true,
+      "normal": -0.23063905314545413
+    },
+    "split/full-source/RK4-0.000025": {
+      "time": 0.002427392589300868,
+      "bracket": [
+        0.0024273925885558104,
+        0.002427392589300868
+      ],
+      "accepted": true,
+      "normal": -0.2306390530251189
+    },
+    "split/full-source/DOP853": {
+      "time": 0.0024273925893940045,
+      "bracket": [
+        0.002427392588928343,
+        0.0024273925893940045
+      ],
+      "accepted": true,
+      "normal": -0.23063905303214283
+    },
+    "split/full-source/Radau": {
+      "time": 0.002427392606103505,
+      "bracket": [
+        0.0024273926057603373,
+        0.002427392606103505
+      ],
+      "accepted": true,
+      "normal": -0.23063905425889292
+    },
+    "split/reduced-independent/RK4-0.0002": {
+      "time": 0.0024273925416171548,
+      "bracket": [
+        0.0024273925416171548,
+        0.002427392542362213
+      ],
+      "accepted": true,
+      "normal": -0.23063905175836005
+    },
+    "split/reduced-independent/RK4-0.0001": {
+      "time": 0.002427392595633863,
+      "bracket": [
+        0.002427392595633863,
+        0.0024273925960063922
+      ],
+      "accepted": true,
+      "normal": -0.2306390536320357
+    },
+    "split/reduced-independent/RK4-0.00005": {
+      "time": 0.002427392590790986,
+      "bracket": [
+        0.002427392590045928,
+        0.002427392590790986
+      ],
+      "accepted": true,
+      "normal": -0.23063905313747934
+    },
+    "split/reduced-independent/RK4-0.000025": {
+      "time": 0.002427392589300868,
+      "bracket": [
+        0.0024273925885558104,
+        0.002427392589300868
+      ],
+      "accepted": true,
+      "normal": -0.2306390530173105
+    },
+    "split/reduced-independent/DOP853": {
+      "time": 0.0024273925893940045,
+      "bracket": [
+        0.002427392588928343,
+        0.0024273925893940045
+      ],
+      "accepted": true,
+      "normal": -0.23063905302420112
+    },
+    "split/reduced-independent/Radau": {
+      "time": 0.0024273926061583874,
+      "bracket": [
+        0.0024273926058152196,
+        0.0024273926061583874
+      ],
+      "accepted": true,
+      "normal": -0.23063905425518344
+    }
+  },
+  "ordinary_timelines": {
+    "high": {
+      "full-source/RK4-0.0002": [
+        {
+          "kind": "attracting",
+          "time": 0.10545806579589848,
+          "bracket": [
+            0.10545806579589848,
+            0.1054580688476563
+          ]
+        }
+      ],
+      "full-source/RK4-0.0001": [
+        {
+          "kind": "attracting",
+          "time": 0.10545806598663335,
+          "bracket": [
+            0.10545806598663335,
+            0.1054580661773682
+          ]
+        }
+      ],
+      "full-source/RK4-0.00005": [
+        {
+          "kind": "attracting",
+          "time": 0.1054580659866286,
+          "bracket": [
+            0.1054580659866286,
+            0.10545806617736346
+          ]
+        }
+      ],
+      "full-source/RK4-0.000025": [
+        {
+          "kind": "attracting",
+          "time": 0.10545806598662516,
+          "bracket": [
+            0.10545806598662516,
+            0.10545806617736002
+          ]
+        }
+      ],
+      "full-source/DOP853": [
+        {
+          "kind": "attracting",
+          "time": 0.1054580660161678,
+          "bracket": [
+            0.1054580660161678,
+            0.10545806685557374
+          ]
+        }
+      ],
+      "full-source/Radau": [
+        {
+          "kind": "attracting",
+          "time": 0.10545806606401015,
+          "bracket": [
+            0.10545806584616833,
+            0.10545806606401015
+          ]
+        }
+      ],
+      "reduced-independent/RK4-0.0002": [
+        {
+          "kind": "attracting",
+          "time": 0.10545806579589848,
+          "bracket": [
+            0.10545806579589848,
+            0.1054580688476563
+          ]
+        }
+      ],
+      "reduced-independent/RK4-0.0001": [
+        {
+          "kind": "attracting",
+          "time": 0.10545806598663335,
+          "bracket": [
+            0.10545806598663335,
+            0.1054580661773682
+          ]
+        }
+      ],
+      "reduced-independent/RK4-0.00005": [
+        {
+          "kind": "attracting",
+          "time": 0.1054580659866286,
+          "bracket": [
+            0.1054580659866286,
+            0.10545806617736346
+          ]
+        }
+      ],
+      "reduced-independent/RK4-0.000025": [
+        {
+          "kind": "attracting",
+          "time": 0.10545806598662516,
+          "bracket": [
+            0.10545806598662516,
+            0.10545806617736002
+          ]
+        }
+      ],
+      "reduced-independent/DOP853": [
+        {
+          "kind": "attracting",
+          "time": 0.1054580659826416,
+          "bracket": [
+            0.1054580659826416,
+            0.10545806619244134
+          ]
+        }
+      ],
+      "reduced-independent/Radau": [
+        {
+          "kind": "attracting",
+          "time": 0.10545806612156527,
+          "bracket": [
+            0.10545806590331172,
+            0.10545806612156527
+          ]
+        }
+      ]
+    },
+    "mass-1": {
+      "full-source/RK4-0.0002": [
+        {
+          "kind": "ordinary-outward",
+          "time": 0.10788313539959493,
+          "bracket": [
+            0.1078831353992224,
+            0.10788313539959493
+          ]
+        },
+        {
+          "kind": "ordinary-inward",
+          "time": 0.24988275171201677,
+          "bracket": [
+            0.24988275171201677,
+            0.24988275171220303
+          ]
+        },
+        {
+          "kind": "attracting",
+          "time": 0.26203076171874873,
+          "bracket": [
+            0.2620306640624987,
+            0.26203076171874873
+          ]
+        }
+      ],
+      "full-source/RK4-0.0001": [
+        {
+          "kind": "ordinary-outward",
+          "time": 0.10788313235566024,
+          "bracket": [
+            0.10788313235566024,
+            0.1078831323564053
+          ]
+        },
+        {
+          "kind": "ordinary-inward",
+          "time": 0.24988273056371618,
+          "bracket": [
+            0.24988273056371618,
+            0.24988273056446125
+          ]
+        },
+        {
+          "kind": "attracting",
+          "time": 0.26203076171874873,
+          "bracket": [
+            0.2620306640624987,
+            0.26203076171874873
+          ]
+        }
+      ],
+      "full-source/RK4-0.00005": [
+        {
+          "kind": "ordinary-outward",
+          "time": 0.10788313135094443,
+          "bracket": [
+            0.1078831313505719,
+            0.10788313135094443
+          ]
+        },
+        {
+          "kind": "ordinary-inward",
+          "time": 0.24988272348529028,
+          "bracket": [
+            0.24988272348491777,
+            0.24988272348529028
+          ]
+        },
+        {
+          "kind": "attracting",
+          "time": 0.26203076171874873,
+          "bracket": [
+            0.2620306640624987,
+            0.26203076171874873
+          ]
+        }
+      ],
+      "full-source/RK4-0.000025": [
+        {
+          "kind": "ordinary-outward",
+          "time": 0.10788313185255133,
+          "bracket": [
+            0.10788313185255133,
+            0.1078831318527376
+          ]
+        },
+        {
+          "kind": "ordinary-inward",
+          "time": 0.24988272700773856,
+          "bracket": [
+            0.2498827270075523,
+            0.24988272700773856
+          ]
+        },
+        {
+          "kind": "attracting",
+          "time": 0.26203076171874873,
+          "bracket": [
+            0.2620306640624987,
+            0.26203076171874873
+          ]
+        }
+      ],
+      "full-source/DOP853": [
+        {
+          "kind": "ordinary-outward",
+          "time": 0.10788313187323137,
+          "bracket": [
+            0.10788313187289439,
+            0.10788313187323137
+          ]
+        },
+        {
+          "kind": "ordinary-inward",
+          "time": 0.24988272708225634,
+          "bracket": [
+            0.24988272708132503,
+            0.24988272708225634
+          ]
+        },
+        {
+          "kind": "attracting",
+          "time": 0.26203075352072674,
+          "bracket": [
+            0.2620307140364807,
+            0.26203075352072674
+          ]
+        }
+      ],
+      "full-source/Radau": [
+        {
+          "kind": "ordinary-outward",
+          "time": 0.10788313180889157,
+          "bracket": [
+            0.10788313180889157,
+            0.10788313180909598
+          ]
+        },
+        {
+          "kind": "ordinary-inward",
+          "time": 0.24988272669520778,
+          "bracket": [
+            0.24988272669520778,
+            0.24988272669568265
+          ]
+        },
+        {
+          "kind": "attracting",
+          "time": 0.26203069300246357,
+          "bracket": [
+            0.26203069300246357,
+            0.2620307369745596
+          ]
+        }
+      ],
+      "reduced-independent/RK4-0.0002": [
+        {
+          "kind": "ordinary-outward",
+          "time": 0.10788313539959493,
+          "bracket": [
+            0.1078831353992224,
+            0.10788313539959493
+          ]
+        },
+        {
+          "kind": "ordinary-inward",
+          "time": 0.2498827517118305,
+          "bracket": [
+            0.2498827517118305,
+            0.24988275171220303
+          ]
+        },
+        {
+          "kind": "attracting",
+          "time": 0.26203076171874873,
+          "bracket": [
+            0.2620306640624987,
+            0.26203076171874873
+          ]
+        }
+      ],
+      "reduced-independent/RK4-0.0001": [
+        {
+          "kind": "ordinary-outward",
+          "time": 0.10788313235566024,
+          "bracket": [
+            0.10788313235566024,
+            0.1078831323564053
+          ]
+        },
+        {
+          "kind": "ordinary-inward",
+          "time": 0.24988273056371618,
+          "bracket": [
+            0.24988273056297114,
+            0.24988273056371618
+          ]
+        },
+        {
+          "kind": "attracting",
+          "time": 0.26203076171874873,
+          "bracket": [
+            0.2620306640624987,
+            0.26203076171874873
+          ]
+        }
+      ],
+      "reduced-independent/RK4-0.00005": [
+        {
+          "kind": "ordinary-outward",
+          "time": 0.10788313135094443,
+          "bracket": [
+            0.1078831313505719,
+            0.10788313135094443
+          ]
+        },
+        {
+          "kind": "ordinary-inward",
+          "time": 0.2498827234847315,
+          "bracket": [
+            0.2498827234847315,
+            0.24988272348491777
+          ]
+        },
+        {
+          "kind": "attracting",
+          "time": 0.26203076171874873,
+          "bracket": [
+            0.2620306640624987,
+            0.26203076171874873
+          ]
+        }
+      ],
+      "reduced-independent/RK4-0.000025": [
+        {
+          "kind": "ordinary-outward",
+          "time": 0.10788313185255133,
+          "bracket": [
+            0.10788313185255133,
+            0.1078831318527376
+          ]
+        },
+        {
+          "kind": "ordinary-inward",
+          "time": 0.24988272700717978,
+          "bracket": [
+            0.24988272700717978,
+            0.2498827270075523
+          ]
+        },
+        {
+          "kind": "attracting",
+          "time": 0.26203076171874873,
+          "bracket": [
+            0.2620306640624987,
+            0.26203076171874873
+          ]
+        }
+      ],
+      "reduced-independent/DOP853": [
+        {
+          "kind": "ordinary-outward",
+          "time": 0.1078831318731946,
+          "bracket": [
+            0.10788313187252063,
+            0.1078831318731946
+          ]
+        },
+        {
+          "kind": "ordinary-inward",
+          "time": 0.24988272708175394,
+          "bracket": [
+            0.24988272708175394,
+            0.2498827270822196
+          ]
+        },
+        {
+          "kind": "attracting",
+          "time": 0.26203075352301713,
+          "bracket": [
+            0.2620307140387703,
+            0.26203075352301713
+          ]
+        }
+      ],
+      "reduced-independent/Radau": [
+        {
+          "kind": "ordinary-outward",
+          "time": 0.10788313180900526,
+          "bracket": [
+            0.10788313180900526,
+            0.10788313180928094
+          ]
+        },
+        {
+          "kind": "ordinary-inward",
+          "time": 0.24988272669039063,
+          "bracket": [
+            0.24988272668943826,
+            0.24988272669039063
+          ]
+        },
+        {
+          "kind": "attracting",
+          "time": 0.26203069307289983,
+          "bracket": [
+            0.26203069307289983,
+            0.26203073704499186
+          ]
+        }
+      ]
+    }
+  },
+  "controller_bound_activation_sides": {
+    "high": {},
+    "mass-1": {
+      "full-source/RK4-0.0002/ordinary-outward": {
+        "a": 0.0310837972408533,
+        "B": 0.01,
+        "g_at_exact_controller_bound": -0.021083797240853297,
+        "original_normals": [
+          0.5000523834275239,
+          0.1599781943565816
+        ]
+      },
+      "full-source/RK4-0.0002/ordinary-inward": {
+        "a": 0.01322200246949859,
+        "B": 0.01,
+        "g_at_exact_controller_bound": -0.003222002469498589,
+        "original_normals": [
+          -0.011311879769859645,
+          -0.35138606883962475
+        ]
+      },
+      "full-source/RK4-0.0001/ordinary-outward": {
+        "a": 0.031083796895760664,
+        "B": 0.01,
+        "g_at_exact_controller_bound": -0.021083796895760662,
+        "original_normals": [
+          0.5000527439071815,
+          0.15997850367129898
+        ]
+      },
+      "full-source/RK4-0.0001/ordinary-inward": {
+        "a": 0.013222003655621688,
+        "B": 0.01,
+        "g_at_exact_controller_bound": -0.003222003655621688,
+        "original_normals": [
+          -0.011311834254046582,
+          -0.3513860744926939
+        ]
+      },
+      "full-source/RK4-0.00005/ordinary-outward": {
+        "a": 0.031083795940030853,
+        "B": 0.01,
+        "g_at_exact_controller_bound": -0.021083795940030854,
+        "original_normals": [
+          0.5000526158052969,
+          0.15997835885232722
+        ]
+      },
+      "full-source/RK4-0.00005/ordinary-inward": {
+        "a": 0.013222003385335149,
+        "B": 0.01,
+        "g_at_exact_controller_bound": -0.0032220033853351485,
+        "original_normals": [
+          -0.011311881356613707,
+          -0.3513861383068962
+        ]
+      },
+      "full-source/RK4-0.000025/ordinary-outward": {
+        "a": 0.031083796314235274,
+        "B": 0.01,
+        "g_at_exact_controller_bound": -0.02108379631423527,
+        "original_normals": [
+          0.5000526496324166,
+          0.15997840105128877
+        ]
+      },
+      "full-source/RK4-0.000025/ordinary-inward": {
+        "a": 0.01322200344810264,
+        "B": 0.01,
+        "g_at_exact_controller_bound": -0.0032220034481026394,
+        "original_normals": [
+          -0.011311864480483325,
+          -0.3513861130620752
+        ]
+      },
+      "full-source/DOP853/ordinary-outward": {
+        "a": 0.03108379611837594,
+        "B": 0.01,
+        "g_at_exact_controller_bound": -0.021083796118375943,
+        "original_normals": [
+          0.5000525930734685,
+          0.15997834480309037
+        ]
+      },
+      "full-source/DOP853/ordinary-inward": {
+        "a": 0.013222003430677112,
+        "B": 0.01,
+        "g_at_exact_controller_bound": -0.0032220034306771114,
+        "original_normals": [
+          -0.011311864661409876,
+          -0.35138611293017347
+        ]
+      },
+      "full-source/Radau/ordinary-outward": {
+        "a": 0.031083796258842725,
+        "B": 0.01,
+        "g_at_exact_controller_bound": -0.021083796258842727,
+        "original_normals": [
+          0.5000526402768813,
+          0.1599783909675663
+        ]
+      },
+      "full-source/Radau/ordinary-inward": {
+        "a": 0.013222003412634152,
+        "B": 0.01,
+        "g_at_exact_controller_bound": -0.003222003412634152,
+        "original_normals": [
+          -0.011311868797639901,
+          -0.3513861181089831
+        ]
+      },
+      "reduced-independent/RK4-0.0002/ordinary-outward": {
+        "a": 0.031083797240883528,
+        "B": 0.01,
+        "g_at_exact_controller_bound": -0.02108379724088353,
+        "original_normals": [
+          0.500052383432087,
+          0.1599781943606044
+        ]
+      },
+      "reduced-independent/RK4-0.0002/ordinary-inward": {
+        "a": 0.013222002469510833,
+        "B": 0.01,
+        "g_at_exact_controller_bound": -0.003222002469510833,
+        "original_normals": [
+          -0.011311879771158107,
+          -0.3513860688412199
+        ]
+      },
+      "reduced-independent/RK4-0.0001/ordinary-outward": {
+        "a": 0.031083796895790803,
+        "B": 0.01,
+        "g_at_exact_controller_bound": -0.021083796895790805,
+        "original_normals": [
+          0.5000527439103554,
+          0.1599785036738977
+        ]
+      },
+      "reduced-independent/RK4-0.0001/ordinary-inward": {
+        "a": 0.013222003655626096,
+        "B": 0.01,
+        "g_at_exact_controller_bound": -0.003222003655626096,
+        "original_normals": [
+          -0.011311834254469522,
+          -0.3513860744921012
+        ]
+      },
+      "reduced-independent/RK4-0.00005/ordinary-outward": {
+        "a": 0.031083795940060985,
+        "B": 0.01,
+        "g_at_exact_controller_bound": -0.021083795940060983,
+        "original_normals": [
+          0.50005261580842,
+          0.15997835885487155
+        ]
+      },
+      "reduced-independent/RK4-0.00005/ordinary-inward": {
+        "a": 0.0132220033853629,
+        "B": 0.01,
+        "g_at_exact_controller_bound": -0.0032220033853629006,
+        "original_normals": [
+          -0.011311881356357911,
+          -0.35138613830952264
+        ]
+      },
+      "reduced-independent/RK4-0.000025/ordinary-outward": {
+        "a": 0.031083796314265548,
+        "B": 0.01,
+        "g_at_exact_controller_bound": -0.021083796314265546,
+        "original_normals": [
+          0.5000526496373646,
+          0.15997840105571137
+        ]
+      },
+      "reduced-independent/RK4-0.000025/ordinary-inward": {
+        "a": 0.01322200344813047,
+        "B": 0.01,
+        "g_at_exact_controller_bound": -0.0032220034481304696,
+        "original_normals": [
+          -0.011311864482099254,
+          -0.35138611306663003
+        ]
+      },
+      "reduced-independent/DOP853/ordinary-outward": {
+        "a": 0.03108379611843519,
+        "B": 0.01,
+        "g_at_exact_controller_bound": -0.021083796118435187,
+        "original_normals": [
+          0.500052593079844,
+          0.15997834480894244
+        ]
+      },
+      "reduced-independent/DOP853/ordinary-inward": {
+        "a": 0.013222003430705231,
+        "B": 0.01,
+        "g_at_exact_controller_bound": -0.0032220034307052312,
+        "original_normals": [
+          -0.011311864659862614,
+          -0.3513861129311114
+        ]
+      },
+      "reduced-independent/Radau/ordinary-outward": {
+        "a": 0.031083796237508673,
+        "B": 0.01,
+        "g_at_exact_controller_bound": -0.021083796237508674,
+        "original_normals": [
+          0.5000526342505449,
+          0.15997838494171585
+        ]
+      },
+      "reduced-independent/Radau/ordinary-inward": {
+        "a": 0.013222003410743588,
+        "B": 0.01,
+        "g_at_exact_controller_bound": -0.0032220034107435878,
+        "original_normals": [
+          -0.011311868866215602,
+          -0.3513861181755804
+        ]
+      }
+    }
+  },
+  "original_frozen_integral_memory": {
+    "full-source/RK4-0.0002": {
+      "I": -0.02202954054655265,
+      "samples": 143,
+      "max_I_change": 0.0
+    },
+    "full-source/RK4-0.0001": {
+      "I": -0.02202953798815282,
+      "samples": 143,
+      "max_I_change": 0.0
+    },
+    "full-source/RK4-0.00005": {
+      "I": -0.02202953715241986,
+      "samples": 143,
+      "max_I_change": 0.0
+    },
+    "full-source/RK4-0.000025": {
+      "I": -0.022029537570872667,
+      "samples": 143,
+      "max_I_change": 0.0
+    },
+    "full-source/DOP853": {
+      "I": -0.022029537586509444,
+      "samples": 143,
+      "max_I_change": 0.0
+    },
+    "full-source/Radau": {
+      "I": -0.02202953753443669,
+      "samples": 143,
+      "max_I_change": 0.0
+    },
+    "reduced-independent/RK4-0.0002": {
+      "I": -0.0220295405465127,
+      "samples": 143,
+      "max_I_change": 0.0
+    },
+    "reduced-independent/RK4-0.0001": {
+      "I": -0.02202953798811312,
+      "samples": 143,
+      "max_I_change": 0.0
+    },
+    "reduced-independent/RK4-0.00005": {
+      "I": -0.02202953715238013,
+      "samples": 143,
+      "max_I_change": 0.0
+    },
+    "reduced-independent/RK4-0.000025": {
+      "I": -0.022029537570832983,
+      "samples": 143,
+      "max_I_change": 0.0
+    },
+    "reduced-independent/DOP853": {
+      "I": -0.02202953758645697,
+      "samples": 143,
+      "max_I_change": 0.0
+    },
+    "reduced-independent/Radau": {
+      "I": -0.022029537534464006,
+      "samples": 143,
+      "max_I_change": 0.0
+    }
+  },
+  "minimum_stored_bracket_separations_s": {
+    "activation_to_first_ordinary_s": 0.10545573143362501,
+    "ordinary_outward_to_inward_s": 0.14199958808513657,
+    "ordinary_inward_to_attracting_s": 0.012147912350295664,
+    "high_command_to_attracting_s": 0.05545806579589847
+  },
+  "all_stored_event_gaps_exceed_original_max_step": true,
+  "high_initial_equality_ranges": {
+    "full-source/RK4-0.0002": {
+      "precommand_g_min": -1.186550857568136e-15,
+      "precommand_g_max": 0.46038669999999887,
+      "postcommand_g_min": 0.13150115289186726,
+      "postcommand_g_max": 0.3992855832376647
+    },
+    "full-source/RK4-0.0001": {
+      "precommand_g_min": -1.1518563880486e-15,
+      "precommand_g_max": 7.147060721024445e-16,
+      "postcommand_g_min": 0.1315011647473846,
+      "postcommand_g_max": 0.4603866999999989
+    },
+    "full-source/RK4-0.00005": {
+      "precommand_g_min": -9.575673587391975e-16,
+      "precommand_g_max": 7.147060721024445e-16,
+      "postcommand_g_min": 0.13150116550146784,
+      "postcommand_g_max": 0.46038669999999915
+    },
+    "full-source/RK4-0.000025": {
+      "precommand_g_min": -5.620504062164855e-16,
+      "precommand_g_max": 0.46038669999999954,
+      "postcommand_g_min": 0.1315011655487759,
+      "postcommand_g_max": 0.3992855557649857
+    },
+    "full-source/DOP853": {
+      "precommand_g_min": -9.228728892196614e-16,
+      "precommand_g_max": 7.147060721024445e-16,
+      "postcommand_g_min": 0.13150116555160185,
+      "postcommand_g_max": 0.4603866999999994
+    },
+    "full-source/Radau": {
+      "precommand_g_min": -9.228728892196614e-16,
+      "precommand_g_max": 7.147060721024445e-16,
+      "postcommand_g_min": 0.13150116556335278,
+      "postcommand_g_max": 0.4603866999999994
+    },
+    "reduced-independent/RK4-0.0002": {
+      "precommand_g_min": -1.214306433183765e-15,
+      "precommand_g_max": 0.4603866999999988,
+      "postcommand_g_min": 0.13150115289184727,
+      "postcommand_g_max": 0.3992855832376615
+    },
+    "reduced-independent/RK4-0.0001": {
+      "precommand_g_min": -1.2698175844150228e-15,
+      "precommand_g_max": 2.1510571102112408e-15,
+      "postcommand_g_min": 0.13150116474736628,
+      "postcommand_g_max": 0.4603866999999987
+    },
+    "reduced-independent/RK4-0.00005": {
+      "precommand_g_min": -1.3114509478384662e-15,
+      "precommand_g_max": 1.8665624601510444e-15,
+      "postcommand_g_min": 0.1315011655014504,
+      "postcommand_g_max": 0.4603866999999987
+    },
+    "reduced-independent/RK4-0.000025": {
+      "precommand_g_min": -1.2559397966072083e-15,
+      "precommand_g_max": 0.46038669999999876,
+      "postcommand_g_min": 0.13150116554875513,
+      "postcommand_g_max": 0.3992855557649827
+    },
+    "reduced-independent/DOP853": {
+      "precommand_g_min": -7.979727989493313e-16,
+      "precommand_g_max": 2.1441182163073336e-15,
+      "postcommand_g_min": 0.13150116555157632,
+      "postcommand_g_max": 0.4603866999999994
+    },
+    "reduced-independent/Radau": {
+      "precommand_g_min": -1.1310397063368782e-15,
+      "precommand_g_max": 1.4641066137244252e-15,
+      "postcommand_g_min": 0.1315011655633337,
+      "postcommand_g_max": 0.4603866999999991
+    }
+  },
+  "high_unchanged_coarse_negative_control": {
+    "I_error": 4.079261248235433e-09,
+    "I_margin": -3.079261248235433e-09,
+    "raw_error": 3.892526545534736e-08,
+    "raw_margin": -2.8925265455347357e-08
+  },
+  "combined_candidate_prefixes_executed": 0,
+  "activation_independent_review_disposition": "pending"
+}
