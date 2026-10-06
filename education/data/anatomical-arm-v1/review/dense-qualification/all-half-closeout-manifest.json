@@ -1,6 +1,7 @@
 {
   "schema": 1,
-  "scope": "Completed existing all-half fine execution and fresh replay; interpolated pending",
+  "result": "PASS_EXISTING_REFINEMENT_CLOSEOUT",
+  "scope": "Two accepted 30-state existing trajectories, preserved 34-state rejection, existing comparison/render, and unchanged unexecuted control plan. Original launcher console metadata failure is preserved.",
   "files": {
     "data/anatomical-arm-v1/audit/anatomical-dense-fine-trajectory.json": {
       "sha256": "2e4b37080685001f65fa8db47ccf2f66b29cba4967f6284a28cecf8ac5073b7c",
@@ -10,6 +11,18 @@
       "sha256": "69f5cd3277b721ed300cbd586b4e55e0e1c5a9a17c4d101abdd015a184d8df0b",
       "bytes": 371590
     },
+    "data/anatomical-arm-v1/audit/anatomical-dense-interpolated-trajectory.json": {
+      "sha256": "b566fdae5d6fa65a9f092b78abf48b5d032f8857cc228873062acc9253d5f00d",
+      "bytes": 16862712
+    },
+    "data/anatomical-arm-v1/audit/anatomical-dense-interpolated-trajectory-recheck.json": {
+      "sha256": "f33e1d5c7c7a89814ba73db967e77c3a97d787fad3076f0e01c905efe36a8613",
+      "bytes": 371605
+    },
+    "data/anatomical-arm-v1/audit/anatomical-dense-matched-times.json": {
+      "sha256": "e35c550c53d5465b4be7e695892a9bc86a2482cbf20445b1d8de223a19915547",
+      "bytes": 64810
+    },
     "data/anatomical-arm-v1/review/dense-qualification/fine-execution.txt": {
       "sha256": "75d5f25455a99a84597a58db7c99a1d4acc48eba510e2ebba641c4c2d8cbe58e",
       "bytes": 141190
@@ -17,6 +30,70 @@
     "data/anatomical-arm-v1/review/dense-qualification/fine-fresh-replay.txt": {
       "sha256": "07ab48094c9e15817aadd406faeab3e9f514e59575af5d418077e21f56d6836c",
       "bytes": 1531
+    },
+    "data/anatomical-arm-v1/review/dense-qualification/fine-interpolated-execution.txt": {
+      "sha256": "73278fdf16ba33c66bccde79093661d200ac466e69aa937c6d5e644336b588af",
+      "bytes": 127855
+    },
+    "data/anatomical-arm-v1/review/dense-qualification/fine-interpolated-fresh-replay.txt": {
+      "sha256": "ad866c6c1b7b1f62b731a288ea8391721422940ead2a4fe2979b13f29da91789",
+      "bytes": 1533
+    },
+    "data/anatomical-arm-v1/review/dense-qualification/refinement-replay-monitor.txt": {
+      "sha256": "1a82a1f4334cd542de76024f5863b5d898c4a366c724521dad902714f7a11809",
+      "bytes": 1528
+    },
+    "data/anatomical-arm-v1/review/dense-qualification/matched-times-execution.txt": {
+      "sha256": "b5d422d6cb7ab5ecafb331283435fc4e59f491788f94aa9ba7b7457c6c9966f9",
+      "bytes": 46331
+    },
+    "data/anatomical-arm-v1/review/dense-qualification/refinement-render-execution.txt": {
+      "sha256": "6b92150892e5221059f8588613bb851ab99d711eec1c6832527c3a3e0daf0455",
+      "bytes": 2405
+    },
+    "data/anatomical-arm-v1/review/dense-qualification/dense-qualification.png": {
+      "sha256": "5ac70905e87e9f79d44616da30ec03fff84016c708ef0dadbfcff182233f684d",
+      "bytes": 406802
+    },
+    "data/anatomical-arm-v1/review/dense-qualification/dense-qualification.svg": {
+      "sha256": "6198cc27743053d2142690ea7c3ab069e7cbed48b95fd3483b5d8c759b125027",
+      "bytes": 92499
+    },
+    "data/anatomical-arm-v1/review/dense-qualification/render-receipt.json": {
+      "sha256": "5a38ae99792f800e29126a2ada022e37b7db8e586fb380b62466c5f0298a626d",
+      "bytes": 2511
+    },
+    "data/anatomical-arm-v1/review/dense-qualification/original-finalizer.py": {
+      "sha256": "5b3fab054a8253248bf2794eede54ef4a81eb81ef0a80bee983623907d02db1a",
+      "bytes": 1283
+    },
+    "data/anatomical-arm-v1/review/dense-qualification/finalizer-closeout-note.txt": {
+      "sha256": "72e15faf065c3ee1ac33aa7570998cd5202847b7245eadb6ef66dcd5731cfe3c",
+      "bytes": 724
+    },
+    "data/anatomical-arm-v1/review/dense-qualification/appearance-review.json": {
+      "sha256": "c2c0f6fbd47b79df2cc71984d35eb4970954e2922bd6c7f3196ff7252bfb57f5",
+      "bytes": 495
+    },
+    "data/anatomical-arm-v1/review/dense-qualification/closeout-validation.txt": {
+      "sha256": "2772f39144019e260969b298cb4fd862bff86bde527a9a6b64b52b62819ab047",
+      "bytes": 1627
+    },
+    "tools/anatomical-dense-matched-times.mjs": {
+      "sha256": "4393aa11aad6374f2c1375da4aea92d3154c314541aebdf8e5c635b886d4b1c5",
+      "bytes": 5991
+    },
+    "research/dense-all-half-closeout.md": {
+      "sha256": "e6838aa7ff775a575e26fe9186e30f41a7d295fdf85b239c14cf159ef7c48e60",
+      "bytes": 7327
+    },
+    "research/fixed-coefficient-calibration-control-plan.md": {
+      "sha256": "03edb4eadb53a77c206eeb4f95744b362c2a8bd6cf9b42b51c4b8d8ec38fe507",
+      "bytes": 6027
+    },
+    "data/anatomical-arm-v1/review/dense-qualification/staged-whitespace-check.json": {
+      "sha256": "00219b8978c21188d610881147768633864111ddc5da9fbc816eb617fc883945",
+      "bytes": 72818
     }
   }
 }

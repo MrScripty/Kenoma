@@ -1,0 +1,13 @@
+PASS anatomical-dense-fine-trajectory: PASS_DENSE_TRAJECTORY, 30 accepted states, exact execution/verifier/source bindings; unchanged force gate
+  execution SHA256 2e4b37080685001f65fa8db47ccf2f66b29cba4967f6284a28cecf8ac5073b7c; replay SHA256 69f5cd3277b721ed300cbd586b4e55e0e1c5a9a17c4d101abdd015a184d8df0b
+PASS anatomical-dense-interpolated-trajectory: PASS_DENSE_TRAJECTORY, 30 accepted states, exact execution/verifier/source bindings; unchanged force gate
+  execution SHA256 b566fdae5d6fa65a9f092b78abf48b5d032f8857cc228873062acc9253d5f00d; replay SHA256 f33e1d5c7c7a89814ba73db967e77c3a97d787fad3076f0e01c905efe36a8613
+PASS anatomical-dense-release-refinement: PASS_PRESERVED_REJECTION, 34 accepted states, exact execution/verifier/source bindings; unchanged force gate
+  execution SHA256 7a2d9aabf693d402b5e4275c9563742236ce06e64f48356a7f2cd2cd106869dd; replay SHA256 a08bee573c84ddb569636cbc91f686f24f77e69a1f2361297b3bc228cab0011b
+PASS matched-time comparison: 17 exact input/tool hashes; actual matched states only
+PASS existing render: 15 exact inputs, exact renderer, 2 outputs
+PASS 95 earlier manifest bindings remain unchanged
+No optimizer or fresh replay was launched by this read-only validation. Original finalizer exit 1 after successful comparison/render is separately documented.
+PASS git diff --check after final research report and notes.
+PRESERVED staged full whitespace check: exit 2, 502 native SVG path-data trailing-space diagnostics; raw output stored in staged-whitespace-check.json.
+PASS staged whitespace check excluding only exact source-bound generated SVG; renderer bytes retained unchanged.

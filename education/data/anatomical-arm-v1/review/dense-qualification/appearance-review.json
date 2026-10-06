@@ -1,0 +1,14 @@
+{
+  "result": "PASS_VISUAL_REVIEW",
+  "image": "dense-qualification.png",
+  "method": "Manual inspection of the existing PNG with view_image",
+  "findings": [
+    "All four panels and legends are legible.",
+    "Accepted release-only prefix stops before its rejected final target.",
+    "Force gate and frozen failed audit are distinguished.",
+    "Compression and sensitivity panels retain explicit limitations."
+  ],
+  "limits": [
+    "Visual inspection is not mechanics qualification."
+  ]
+}

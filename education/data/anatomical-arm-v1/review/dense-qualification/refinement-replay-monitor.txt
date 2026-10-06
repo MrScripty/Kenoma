@@ -1,0 +1,7 @@
+FRESH_REPLAY_STARTED anatomical-dense-release-refinement execution REJECTED_INCREMENT accepted 34
+FRESH_REPLAY_FINISHED anatomical-dense-release-refinement {"result": "PASS_PRESERVED_REJECTION", "verifiedSteps": 34, "executionReceiptSHA256": "7a2d9aabf693d402b5e4275c9563742236ce06e64f48356a7f2cd2cd106869dd"}
+FRESH_REPLAY_STARTED anatomical-dense-fine-trajectory execution ACCEPTED_DENSE_TRAJECTORY accepted 30
+FRESH_REPLAY_FINISHED anatomical-dense-fine-trajectory {"result": "PASS_DENSE_TRAJECTORY", "verifiedSteps": 30, "executionReceiptSHA256": "2e4b37080685001f65fa8db47ccf2f66b29cba4967f6284a28cecf8ac5073b7c"}
+FRESH_REPLAY_STARTED anatomical-dense-interpolated-trajectory execution ACCEPTED_DENSE_TRAJECTORY accepted 30
+FRESH_REPLAY_FINISHED anatomical-dense-interpolated-trajectory {"result": "PASS_DENSE_TRAJECTORY", "verifiedSteps": 30, "executionReceiptSHA256": "b566fdae5d6fa65a9f092b78abf48b5d032f8857cc228873062acc9253d5f00d"}
+RESULT {"anatomical-dense-release-refinement": {"result": "PASS_PRESERVED_REJECTION", "verifiedSteps": 34, "executionReceiptSHA256": "7a2d9aabf693d402b5e4275c9563742236ce06e64f48356a7f2cd2cd106869dd"}, "anatomical-dense-fine-trajectory": {"result": "PASS_DENSE_TRAJECTORY", "verifiedSteps": 30, "executionReceiptSHA256": "2e4b37080685001f65fa8db47ccf2f66b29cba4967f6284a28cecf8ac5073b7c"}, "anatomical-dense-interpolated-trajectory": {"result": "PASS_DENSE_TRAJECTORY", "verifiedSteps": 30, "executionReceiptSHA256": "b566fdae5d6fa65a9f092b78abf48b5d032f8857cc228873062acc9253d5f00d"}}

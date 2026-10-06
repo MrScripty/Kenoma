@@ -1,0 +1,4 @@
+Observed original finalizer session 35398 exit code: 1.
+Comparison and render files were created by the original finalizer; matched-time result and exact render input/output hashes passed independent read-only validation.
+Source-level diagnosis: original-finalizer.py prints a list of required metadata keys after both subprocesses complete. The first legacy contact-lift-release comparison omits executionResult, so the console summary indexes an absent field (KeyError). No original finalizer stderr was available from the completed session at closeout; this cause is inferred from the preserved source and exact emitted receipt.
+No comparison, render, replay or optimizer was rerun to repair this reporting-only failure.
