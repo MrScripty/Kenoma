@@ -1,0 +1,42 @@
+{
+  "results": {
+    "continuousP1": {
+      "termCount": 49152,
+      "naiveEnergyJ": 1.9016590741587245,
+      "pairwiseEnergyJ": 1.901659074157323,
+      "compensatedEnergyJ": 1.901659074157323,
+      "minimumWeightedEnergyTermJ": 3.868935290847278e-05,
+      "maximumWeightedEnergyTermJ": 3.868935290847608e-05,
+      "naiveDifferenceFromPythonJ": 1.4011014570769476e-12,
+      "pairwiseDifferenceFromPythonJ": -4.440892098500626e-16,
+      "compensatedDifferenceFromPythonJ": -4.440892098500626e-16
+    },
+    "brokenP1": {
+      "termCount": 49152,
+      "naiveEnergyJ": 1.9016590741587245,
+      "pairwiseEnergyJ": 1.901659074157323,
+      "compensatedEnergyJ": 1.901659074157323,
+      "minimumWeightedEnergyTermJ": 3.868935290847278e-05,
+      "maximumWeightedEnergyTermJ": 3.868935290847607e-05,
+      "naiveDifferenceFromPythonJ": 1.4011014570769476e-12,
+      "pairwiseDifferenceFromPythonJ": -4.440892098500626e-16,
+      "compensatedDifferenceFromPythonJ": -4.440892098500626e-16
+    },
+    "pointwise": {
+      "termCount": 49152,
+      "naiveEnergyJ": 1.9016590741587245,
+      "pairwiseEnergyJ": 1.901659074157323,
+      "compensatedEnergyJ": 1.9016590741573227,
+      "minimumWeightedEnergyTermJ": 3.868935290847277e-05,
+      "maximumWeightedEnergyTermJ": 3.868935290847608e-05,
+      "naiveDifferenceFromPythonJ": 1.4011014570769476e-12,
+      "pairwiseDifferenceFromPythonJ": -4.440892098500626e-16,
+      "compensatedDifferenceFromPythonJ": -6.661338147750939e-16
+    }
+  },
+  "scope": "Same retained frozen terms only; no original failure reclassification or threshold change",
+  "sourceSHA256": "ea8cfdd68c8f5ff798679ee35a87cdff49ef8bd4a51d54eb15e00f9de7d2e88c",
+  "assembledInputSHA256": "c2a9172a0dbd43013fff4062e888f205cd9919a76a65acdaf536901674263291",
+  "retainedEnergyTargetJ": 1e-12,
+  "originalEnergyFailuresPreserved": true
+}

@@ -1,0 +1,135 @@
+{
+  "scope": "Separates original force/pressure/reaction/geometry gates from retained unit energy precision target; no classification or receipt changed.",
+  "rows": [
+    {
+      "case": "coarse-1.01",
+      "space": "continuousP1",
+      "originalPhysicalStationarityGatesPass": true,
+      "retainedUnitEnergyReplayCheckPass": true,
+      "rawCombinedFlag": true,
+      "rawClassification": "NEGATIVE_FROZEN_STATIONARY_DIRECTION",
+      "rawFlagsUnchanged": true
+    },
+    {
+      "case": "coarse-1.01",
+      "space": "brokenP1",
+      "originalPhysicalStationarityGatesPass": true,
+      "retainedUnitEnergyReplayCheckPass": true,
+      "rawCombinedFlag": true,
+      "rawClassification": "POSITIVE_FROZEN_FULL_SPECTRUM",
+      "rawFlagsUnchanged": true
+    },
+    {
+      "case": "coarse-1.01",
+      "space": "pointwise",
+      "originalPhysicalStationarityGatesPass": true,
+      "retainedUnitEnergyReplayCheckPass": true,
+      "rawCombinedFlag": true,
+      "rawClassification": "POSITIVE_FROZEN_FULL_SPECTRUM",
+      "rawFlagsUnchanged": true
+    },
+    {
+      "case": "coarse-1.25",
+      "space": "continuousP1",
+      "originalPhysicalStationarityGatesPass": true,
+      "retainedUnitEnergyReplayCheckPass": true,
+      "rawCombinedFlag": true,
+      "rawClassification": "NEGATIVE_FROZEN_STATIONARY_DIRECTION",
+      "rawFlagsUnchanged": true
+    },
+    {
+      "case": "coarse-1.25",
+      "space": "brokenP1",
+      "originalPhysicalStationarityGatesPass": true,
+      "retainedUnitEnergyReplayCheckPass": true,
+      "rawCombinedFlag": true,
+      "rawClassification": "NEGATIVE_FROZEN_STATIONARY_DIRECTION",
+      "rawFlagsUnchanged": true
+    },
+    {
+      "case": "coarse-1.25",
+      "space": "pointwise",
+      "originalPhysicalStationarityGatesPass": true,
+      "retainedUnitEnergyReplayCheckPass": true,
+      "rawCombinedFlag": true,
+      "rawClassification": "NEGATIVE_FROZEN_STATIONARY_DIRECTION",
+      "rawFlagsUnchanged": true
+    },
+    {
+      "case": "fine-1.01",
+      "space": "continuousP1",
+      "originalPhysicalStationarityGatesPass": true,
+      "retainedUnitEnergyReplayCheckPass": true,
+      "rawCombinedFlag": true,
+      "rawClassification": "NEGATIVE_FROZEN_STATIONARY_DIRECTION",
+      "rawFlagsUnchanged": true
+    },
+    {
+      "case": "fine-1.01",
+      "space": "brokenP1",
+      "originalPhysicalStationarityGatesPass": true,
+      "retainedUnitEnergyReplayCheckPass": true,
+      "rawCombinedFlag": true,
+      "rawClassification": "POSITIVE_FROZEN_FULL_SPECTRUM",
+      "rawFlagsUnchanged": true
+    },
+    {
+      "case": "fine-1.01",
+      "space": "pointwise",
+      "originalPhysicalStationarityGatesPass": true,
+      "retainedUnitEnergyReplayCheckPass": true,
+      "rawCombinedFlag": true,
+      "rawClassification": "POSITIVE_FROZEN_FULL_SPECTRUM",
+      "rawFlagsUnchanged": true
+    },
+    {
+      "case": "fine-1.25",
+      "space": "continuousP1",
+      "originalPhysicalStationarityGatesPass": true,
+      "retainedUnitEnergyReplayCheckPass": false,
+      "rawCombinedFlag": false,
+      "rawClassification": "UNQUALIFIED_OPERATOR_CHECK_FAILURE",
+      "rawFlagsUnchanged": true
+    },
+    {
+      "case": "fine-1.25",
+      "space": "brokenP1",
+      "originalPhysicalStationarityGatesPass": true,
+      "retainedUnitEnergyReplayCheckPass": false,
+      "rawCombinedFlag": false,
+      "rawClassification": "UNQUALIFIED_OPERATOR_CHECK_FAILURE",
+      "rawFlagsUnchanged": true
+    },
+    {
+      "case": "fine-1.25",
+      "space": "pointwise",
+      "originalPhysicalStationarityGatesPass": true,
+      "retainedUnitEnergyReplayCheckPass": false,
+      "rawCombinedFlag": false,
+      "rawClassification": "UNQUALIFIED_OPERATOR_CHECK_FAILURE",
+      "rawFlagsUnchanged": true
+    }
+  ],
+  "retainedFailedChecks": [
+    {
+      "case": "fine-1.25",
+      "space": "continuousP1",
+      "gate": "256 points: energy replay"
+    },
+    {
+      "case": "fine-1.25",
+      "space": "brokenP1",
+      "gate": "256 points: energy replay"
+    },
+    {
+      "case": "fine-1.25",
+      "space": "pointwise",
+      "gate": "256 points: energy replay"
+    }
+  ],
+  "maximumIndependentGradientRelativeError": 3.840397049359027e-05,
+  "previousPacketFileCount": 47,
+  "priorPacketHashesUnchanged": true,
+  "nonlinearSolves": 0,
+  "stabilizationParameters": 0
+}

@@ -1,0 +1,324 @@
+{
+  "result": "COMPLETED_FROZEN_OPERATOR_COMPARISON",
+  "sourceCommit": "8e7c8f7d4cd1bc4cc1d746c442516d7cbb4ae3c0",
+  "sourceHashes": {
+    "tools/frozen_pressure_spaces.py": "bd343b6a4f1d4a5a1cb3b42124783c9134cadfaa56ae66c88c66ce26bfa4efcb",
+    "tools/frozen-pressure-replay.mjs": "19235f4b4dae2a4253e28e849c9e8c1d04db266b11285d6eb6679bd82be5e98e",
+    "tools/run_frozen_pressure_spaces.py": "79807e03abfc959460101d55491e88723398dbd66e76e79ca65228ecbf549bf0",
+    "tests/test_frozen_pressure_spaces.py": "51c2dd7fcefcb618d0efd87c2901a767576b05dd89121f348d2f0ca06bf51850",
+    "research/mechanical-closure/frozen-pressure-space-protocol.md": "b554f6972a985aec169df74a20471ea9298d0d2b808c50a46419e903aea2c619",
+    "tools/full_p2_p1.py": "c80a360fd897867e8cb2360766de8a9f5d548d61bf59b5e54dc8b8df2d5f6860",
+    "tools/source_amplitude_p2_p1.py": "ac12c5fb9ac8e4ec2251c4a855bd7c4e57bb964160b5a044a8510825efb37b23",
+    "tools/run_full_p2_p1.py": "fe9e2df4a796451e2ff4cacab7b9d7b341f1e75a7b7254826c3677da07b3bdb8",
+    "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+    "web/anatomical-modal.mjs": "12cd671bc963aa04dd5c0e173a776049de191283d850b0b60d0fe8e63be4c9a1",
+    "web/anatomical-element.mjs": "3f67a6bd31565c83d2cbea591c3cf1862a48e50cc4efa780880fda7e808d4b1f",
+    "web/anatomical-intersections.mjs": "a083a9838ac3c7508b65b58329c741aef65a065288aff82fc886d1c2c90375df",
+    "tools/anatomical-compression-quadrature.mjs": "f12e0d80224bad5e0bfa0649e08cac2f31a0baf162e2547ae8767b7371f48dc2"
+  },
+  "cases": [
+    {
+      "name": "coarse-1.01",
+      "comparisons": {
+        "brokenP1-pointwise": {
+          "energyDifferenceJ": 0.0,
+          "maximumForceDifferenceN": 1.7763568394002505e-14,
+          "maximumPressureSampleDifferencePa": 5.427571281302335e-09,
+          "maximumTangentEntryDifferenceNPerM": 8.003553375601768e-11,
+          "tangentFrobeniusRelativeDifference": 2.637138424112942e-15
+        },
+        "continuousP1-pointwise": {
+          "energyDifferenceJ": 0.0,
+          "maximumForceDifferenceN": 1.616484723854228e-13,
+          "maximumPressureSampleDifferencePa": 5.885260279114846e-09,
+          "maximumTangentEntryDifferenceNPerM": 29208.368128755916,
+          "tangentFrobeniusRelativeDifference": 0.7929961728309624
+        },
+        "continuousP1-brokenP1": {
+          "energyDifferenceJ": 0.0,
+          "maximumForceDifferenceN": 1.6697754290362354e-13,
+          "maximumPressureSampleDifferencePa": 1.3222507533328098e-09,
+          "maximumTangentEntryDifferenceNPerM": 29208.368128755894,
+          "tangentFrobeniusRelativeDifference": 0.7929961728309622
+        }
+      },
+      "operators": {
+        "continuousP1": {
+          "energyJ": 0.08684233486978053,
+          "forceResidualN": 3.913314515259328e-13,
+          "pointwisePressureRMS": 9.371519633321194e-16,
+          "lowestEigenvalueNPerM": -32.2354364886245,
+          "negativeEigenvalueCount": 9,
+          "pressureCount": 20,
+          "rank": 20,
+          "nullity": 0,
+          "betaIncludingNulls": 0.5796137382122541,
+          "smallestPositiveBeta": 0.5796137382122541,
+          "originalStationarityGatesPass": true,
+          "derivativeGatesPass": true,
+          "classification": "NEGATIVE_FROZEN_STATIONARY_DIRECTION"
+        },
+        "brokenP1": {
+          "energyJ": 0.08684233486978053,
+          "forceResidualN": 5.196881701654328e-13,
+          "pointwisePressureRMS": 8.798459153203385e-16,
+          "lowestEigenvalueNPerM": 2.1719289853385275,
+          "negativeEigenvalueCount": 0,
+          "pressureCount": 96,
+          "rank": 86,
+          "nullity": 10,
+          "betaIncludingNulls": 0.0,
+          "smallestPositiveBeta": 0.13953259883426508,
+          "originalStationarityGatesPass": true,
+          "derivativeGatesPass": true,
+          "classification": "POSITIVE_FROZEN_FULL_SPECTRUM"
+        },
+        "pointwise": {
+          "energyJ": 0.08684233486978053,
+          "forceResidualN": 5.180154187214025e-13,
+          "pointwisePressureRMS": 2.963354581624602e-22,
+          "lowestEigenvalueNPerM": 2.1719289853446213,
+          "negativeEigenvalueCount": 0,
+          "pressureCount": 6144,
+          "rank": 86,
+          "nullity": 6058,
+          "betaIncludingNulls": 0.0,
+          "smallestPositiveBeta": 0.1395325988342647,
+          "originalStationarityGatesPass": true,
+          "derivativeGatesPass": true,
+          "classification": "POSITIVE_FROZEN_FULL_SPECTRUM"
+        }
+      }
+    },
+    {
+      "name": "coarse-1.25",
+      "comparisons": {
+        "brokenP1-pointwise": {
+          "energyDifferenceJ": 0.0,
+          "maximumForceDifferenceN": 1.3322676295501878e-14,
+          "maximumPressureSampleDifferencePa": 4.9664947709970875e-09,
+          "maximumTangentEntryDifferenceNPerM": 2.3283064365386963e-10,
+          "tangentFrobeniusRelativeDifference": 4.131340621640688e-15
+        },
+        "continuousP1-pointwise": {
+          "energyDifferenceJ": 0.0,
+          "maximumForceDifferenceN": 5.98702733666117e-14,
+          "maximumPressureSampleDifferencePa": 5.4698432450095424e-09,
+          "maximumTangentEntryDifferenceNPerM": 36140.14905447692,
+          "tangentFrobeniusRelativeDifference": 0.795067383377581
+        },
+        "continuousP1-brokenP1": {
+          "energyDifferenceJ": 0.0,
+          "maximumForceDifferenceN": 5.985551908713158e-14,
+          "maximumPressureSampleDifferencePa": 8.636220627522562e-10,
+          "maximumTangentEntryDifferenceNPerM": 36140.14905447671,
+          "tangentFrobeniusRelativeDifference": 0.7950673833775808
+        }
+      },
+      "operators": {
+        "continuousP1": {
+          "energyJ": 1.9016590741573225,
+          "forceResidualN": 1.491391604817257e-11,
+          "pointwisePressureRMS": 8.811072980828667e-16,
+          "lowestEigenvalueNPerM": -9477.446661727425,
+          "negativeEigenvalueCount": 63,
+          "pressureCount": 20,
+          "rank": 20,
+          "nullity": 0,
+          "betaIncludingNulls": 0.5852731066601634,
+          "smallestPositiveBeta": 0.5852731066601634,
+          "originalStationarityGatesPass": true,
+          "derivativeGatesPass": true,
+          "classification": "NEGATIVE_FROZEN_STATIONARY_DIRECTION"
+        },
+        "brokenP1": {
+          "energyJ": 1.9016590741573225,
+          "forceResidualN": 1.4940180664036517e-11,
+          "pointwisePressureRMS": 8.580609034259149e-16,
+          "lowestEigenvalueNPerM": -4991.552805406673,
+          "negativeEigenvalueCount": 46,
+          "pressureCount": 96,
+          "rank": 86,
+          "nullity": 10,
+          "betaIncludingNulls": 0.0,
+          "smallestPositiveBeta": 0.11889552720512028,
+          "originalStationarityGatesPass": true,
+          "derivativeGatesPass": true,
+          "classification": "NEGATIVE_FROZEN_STATIONARY_DIRECTION"
+        },
+        "pointwise": {
+          "energyJ": 1.9016590741573225,
+          "forceResidualN": 1.4940610681113576e-11,
+          "pointwisePressureRMS": 0.0,
+          "lowestEigenvalueNPerM": -4991.552805406655,
+          "negativeEigenvalueCount": 46,
+          "pressureCount": 6144,
+          "rank": 86,
+          "nullity": 6058,
+          "betaIncludingNulls": 0.0,
+          "smallestPositiveBeta": 0.11889552720512044,
+          "originalStationarityGatesPass": true,
+          "derivativeGatesPass": true,
+          "classification": "NEGATIVE_FROZEN_STATIONARY_DIRECTION"
+        }
+      }
+    },
+    {
+      "name": "fine-1.01",
+      "comparisons": {
+        "brokenP1-pointwise": {
+          "energyDifferenceJ": 0.0,
+          "maximumForceDifferenceN": 9.769962616701378e-15,
+          "maximumPressureSampleDifferencePa": 1.2026740492387944e-08,
+          "maximumTangentEntryDifferenceNPerM": 1.3460521586239338e-10,
+          "tangentFrobeniusRelativeDifference": 2.9596361567545174e-15
+        },
+        "continuousP1-pointwise": {
+          "energyDifferenceJ": 0.0,
+          "maximumForceDifferenceN": 8.970602038971265e-14,
+          "maximumPressureSampleDifferencePa": 1.216820955107778e-08,
+          "maximumTangentEntryDifferenceNPerM": 20938.110199107992,
+          "tangentFrobeniusRelativeDifference": 0.8921107050055613
+        },
+        "continuousP1-brokenP1": {
+          "energyDifferenceJ": 0.0,
+          "maximumForceDifferenceN": 8.748557434046234e-14,
+          "maximumPressureSampleDifferencePa": 4.2230841046375645e-09,
+          "maximumTangentEntryDifferenceNPerM": 20938.110199107905,
+          "tangentFrobeniusRelativeDifference": 0.8921107050055612
+        }
+      },
+      "operators": {
+        "continuousP1": {
+          "energyJ": 0.08684233486978055,
+          "forceResidualN": 4.605988850218977e-13,
+          "pointwisePressureRMS": 1.9028839502118146e-15,
+          "lowestEigenvalueNPerM": -27.953658509900215,
+          "negativeEigenvalueCount": 48,
+          "pressureCount": 81,
+          "rank": 81,
+          "nullity": 0,
+          "betaIncludingNulls": 0.5126730101891835,
+          "smallestPositiveBeta": 0.5126730101891835,
+          "originalStationarityGatesPass": true,
+          "derivativeGatesPass": true,
+          "classification": "NEGATIVE_FROZEN_STATIONARY_DIRECTION"
+        },
+        "brokenP1": {
+          "energyJ": 0.08684233486978055,
+          "forceResidualN": 8.098876608365859e-13,
+          "pointwisePressureRMS": 1.7603135461569548e-15,
+          "lowestEigenvalueNPerM": 0.3640333530899791,
+          "negativeEigenvalueCount": 0,
+          "pressureCount": 768,
+          "rank": 632,
+          "nullity": 136,
+          "betaIncludingNulls": 0.0,
+          "smallestPositiveBeta": 0.09017855742475876,
+          "originalStationarityGatesPass": true,
+          "derivativeGatesPass": true,
+          "classification": "POSITIVE_FROZEN_FULL_SPECTRUM"
+        },
+        "pointwise": {
+          "energyJ": 0.08684233486978055,
+          "forceResidualN": 8.1003916243968e-13,
+          "pointwisePressureRMS": 3.9594225045622357e-22,
+          "lowestEigenvalueNPerM": 0.3640333530946653,
+          "negativeEigenvalueCount": 0,
+          "pressureCount": 49152,
+          "rank": 632,
+          "nullity": 48520,
+          "betaIncludingNulls": 0.0,
+          "smallestPositiveBeta": 0.0901785574247588,
+          "originalStationarityGatesPass": true,
+          "derivativeGatesPass": true,
+          "classification": "POSITIVE_FROZEN_FULL_SPECTRUM"
+        }
+      }
+    },
+    {
+      "name": "fine-1.25",
+      "comparisons": {
+        "brokenP1-pointwise": {
+          "energyDifferenceJ": 0.0,
+          "maximumForceDifferenceN": 4.6629367034256575e-15,
+          "maximumPressureSampleDifferencePa": 1.4259939007388311e-08,
+          "maximumTangentEntryDifferenceNPerM": 1.6370904631912708e-10,
+          "tangentFrobeniusRelativeDifference": 4.3229368440587696e-15
+        },
+        "continuousP1-pointwise": {
+          "energyDifferenceJ": 0.0,
+          "maximumForceDifferenceN": 8.516024968400702e-14,
+          "maximumPressureSampleDifferencePa": 1.4983214668973233e-08,
+          "maximumTangentEntryDifferenceNPerM": 25907.17907207691,
+          "tangentFrobeniusRelativeDifference": 0.9016181916184869
+        },
+        "continuousP1-brokenP1": {
+          "energyDifferenceJ": 0.0,
+          "maximumForceDifferenceN": 8.516294542779218e-14,
+          "maximumPressureSampleDifferencePa": 3.483080490696011e-09,
+          "maximumTangentEntryDifferenceNPerM": 25907.179072076837,
+          "tangentFrobeniusRelativeDifference": 0.901618191618487
+        }
+      },
+      "operators": {
+        "continuousP1": {
+          "energyJ": 1.9016590741573234,
+          "forceResidualN": 8.166143047471802e-12,
+          "pointwisePressureRMS": 1.875448137518648e-15,
+          "lowestEigenvalueNPerM": -6705.236024163507,
+          "negativeEigenvalueCount": 359,
+          "pressureCount": 81,
+          "rank": 81,
+          "nullity": 0,
+          "betaIncludingNulls": 0.5131053515005419,
+          "smallestPositiveBeta": 0.5131053515005419,
+          "originalStationarityGatesPass": false,
+          "derivativeGatesPass": true,
+          "classification": "UNQUALIFIED_OPERATOR_CHECK_FAILURE"
+        },
+        "brokenP1": {
+          "energyJ": 1.9016590741573234,
+          "forceResidualN": 8.19552845779182e-12,
+          "pointwisePressureRMS": 1.768440972155831e-15,
+          "lowestEigenvalueNPerM": -4127.585677869137,
+          "negativeEigenvalueCount": 244,
+          "pressureCount": 768,
+          "rank": 632,
+          "nullity": 136,
+          "betaIncludingNulls": 0.0,
+          "smallestPositiveBeta": 0.07758111729772812,
+          "originalStationarityGatesPass": false,
+          "derivativeGatesPass": true,
+          "classification": "UNQUALIFIED_OPERATOR_CHECK_FAILURE"
+        },
+        "pointwise": {
+          "energyJ": 1.9016590741573234,
+          "forceResidualN": 8.195866908096174e-12,
+          "pointwisePressureRMS": 0.0,
+          "lowestEigenvalueNPerM": -4127.585677869138,
+          "negativeEigenvalueCount": 244,
+          "pressureCount": 49152,
+          "rank": 632,
+          "nullity": 48520,
+          "betaIncludingNulls": 0.0,
+          "smallestPositiveBeta": 0.07758111729772818,
+          "originalStationarityGatesPass": false,
+          "derivativeGatesPass": true,
+          "classification": "UNQUALIFIED_OPERATOR_CHECK_FAILURE"
+        }
+      }
+    }
+  ],
+  "elapsedSeconds": 106.81312370300293,
+  "priorPacketHashesUnchanged": true,
+  "priorPacketFileCount": 47,
+  "nonlinearSolves": 0,
+  "stabilizationParameters": 0,
+  "physicalHistoryAdvanced": false,
+  "limitations": [
+    "Affine operator identity does not establish nonaffine equivalence, incompressible inf-sup stability, locking freedom, nonlinear convergence or anatomy.",
+    "Negative curvature and pressure nulls are retained; no pressure null mode or gauge removed.",
+    "Euclidean nodal spectra are mesh dependent; geometry and boundary checks retain original sampled/triangulated limitations."
+  ]
+}

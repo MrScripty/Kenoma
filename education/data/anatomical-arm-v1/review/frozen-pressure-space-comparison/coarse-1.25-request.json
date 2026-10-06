@@ -1,0 +1,504 @@
+{
+  "sourceCommit": "8e7c8f7d4cd1bc4cc1d746c442516d7cbb4ae3c0",
+  "sourceHashes": {
+    "tools/frozen_pressure_spaces.py": "bd343b6a4f1d4a5a1cb3b42124783c9134cadfaa56ae66c88c66ce26bfa4efcb",
+    "tools/frozen-pressure-replay.mjs": "19235f4b4dae2a4253e28e849c9e8c1d04db266b11285d6eb6679bd82be5e98e",
+    "tools/run_frozen_pressure_spaces.py": "79807e03abfc959460101d55491e88723398dbd66e76e79ca65228ecbf549bf0",
+    "tests/test_frozen_pressure_spaces.py": "51c2dd7fcefcb618d0efd87c2901a767576b05dd89121f348d2f0ca06bf51850",
+    "research/mechanical-closure/frozen-pressure-space-protocol.md": "b554f6972a985aec169df74a20471ea9298d0d2b808c50a46419e903aea2c619",
+    "tools/full_p2_p1.py": "c80a360fd897867e8cb2360766de8a9f5d548d61bf59b5e54dc8b8df2d5f6860",
+    "tools/source_amplitude_p2_p1.py": "ac12c5fb9ac8e4ec2251c4a855bd7c4e57bb964160b5a044a8510825efb37b23",
+    "tools/run_full_p2_p1.py": "fe9e2df4a796451e2ff4cacab7b9d7b341f1e75a7b7254826c3677da07b3bdb8",
+    "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+    "web/anatomical-modal.mjs": "12cd671bc963aa04dd5c0e173a776049de191283d850b0b60d0fe8e63be4c9a1",
+    "web/anatomical-element.mjs": "3f67a6bd31565c83d2cbea591c3cf1862a48e50cc4efa780880fda7e808d4b1f",
+    "web/anatomical-intersections.mjs": "a083a9838ac3c7508b65b58329c741aef65a065288aff82fc886d1c2c90375df",
+    "tools/anatomical-compression-quadrature.mjs": "f12e0d80224bad5e0bfa0649e08cac2f31a0baf162e2547ae8767b7371f48dc2"
+  },
+  "previousPacketHashes": {
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/execution.log": "ca8b1750d7e1380f56bf63ee5e3a470210b64bf7715803e8473e0a6f95feb373",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/coarse-1.25.json": "b4379ec2700b50d2f9a28652a0efdde6fe2e97bd09415c3b769bac89f557690b",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/coarse-1.01-request.json": "10b69b807c0a302b9ea464f6bf644e7ca0fa5a2e559dc74def76f03690be0bdb",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/primary-source-binding.json": "30cb9959afd5257fe9f9c9522e8512cb9176597b8c00e3a542cc444e64a40177",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/coarse-1.01.json": "64029bff323e8cc387274b29aeb3494bc53a3dc30e8879e54da34a6236c41322",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/execution.json": "3bfe4ea91c13fa5509b0e74d33a6ec9b234c066352df8f784b4d4f98cfa2456a",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/equivalence-control.json": "e33da5a8ba032d2e35bdeb653c7b54b4355825bcac67deb6e6e36eb22cc82b4c",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/precommit-tests.log": "23b2fd009be20bf1e6e26f9b9fca064ce43d56264beb3a0f73b318bb82b6cc43",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/summary.json": "e6561b88cdbf7edbdd8474d9723ef50218ae10c3bea9ba36eb6ff74eaaf15b30",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/coarse-mesh.json": "b8d7739144d4d940ef075db81fd04173ee296dd5a3d333c283faf8ad30e25ee9",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/coarse-1.25-request.json": "cdf679326d54d12d47e3ec4bf543409e6ed5dfae05ebffa17b1ec093dfb0b97c",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/coarse-1.25-reclassification.json": "7a75a83ad9e2f85b115e5a6849329b0e3818a69284a6d544a2295bd58283b560",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/visual-inspection.json": "e21f909c98b51a9f082c328b9071c67fb73884306ebcc1acbd432ff871d9e7f1",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/execution.log": "05190fc8b3f6a7694b4e8f95d191a0d1e9c2f8f9059e8eab8dfc68013ab05217",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/fine-1.25.json": "62466537478860e6958c2b93afcf153cf99d51986cfa7d89e3823a169b461bc7",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/execution.json": "b7f037f4dc40219a8918be451e3649479ff6253ffc779b6165baee8b5b68b23f",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/render.log": "546bf5f7550666bb2944077eed061223f13e4f7ca7125d3b4f9d6ab05471fa0e",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/pdf-raster-receipt.json": "6b9592799c4a1c47154eeab50007fbfd6d348d5da1dfd2b435262445aa49437f",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/precommit-tests.log": "b7c4fab179bd517b1a86d6a2e72ca7e181a1e101f9276f14d9d61e2e50f13376",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/summary.json": "7504e77a2aa9047ae034aaaf7510dcf194dd60ba678fa1d97580be87242af12f",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/packet-check.log": "d184404c9a435c23fed0896b0ebfc8bfb69eb045a27029b36338179e42d61419",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/fine-mesh.json": "dc46e330cf16c3eda8974a71684c364dc3f402831d702993adb17731e816767f",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/source-amplitude.pdf-raster.png": "573e2a4374b5b0c35edae89a83253dae1a5d0e33399659a22899a3c4d1bc7574",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/manifest.json": "d7d1c677e2975068bd35f1e6cbd0b839b660286b1d0bf3344526f6f7c272e696",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/fine-1.25-request.json": "bd74d08db14896311c05a768a250b3777f2cc2b1d51c6a8db8f46b6c61565c2e",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/source-amplitude.png": "58525d46985d5f35da57a858d014e0231213b895ef27eb11dbf69c997d2b4ef8",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/source-amplitude.pdf": "47ffe1db1b19ed3b6afe079f10d264c414e63b531527fc151c32649b98a597f9",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/render-receipt.json": "bc5daebe4cf91ddfe4863e3762aa5f8db58b6fe532258bc187c564cc00402d4c",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/fine-export-failure.json": "9213054155fc8c1b0b07f67784fa505ab6293e70721d0e611dc8356ed3ed70af",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/coarse.json": "8b97b3b2480721c0bda56a59caba6aac7aec3982cecaa90857f34c18e5a777d2",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/fine.log": "84609a95e994b5ae0bee2e5c08934d8715898d471389e4f29c473a7586381023",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/diagnose_pressure_residual-v1.py": "48f71d2b11b37edba7b87275d09e74ca8d0aa340ac7e9f28464dd74e6aa0d99a",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/fine-recovery-request.json": "6ef1695f6f40147a45cdeedd4e8f3daa6f5e8d2f75264dd1039251a475fe62a8",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/export-regression.log": "19ef556a0f57316e6b8c6d36f372ebc7e9bce051d41ecd3367648fe40bc9969a",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/coarse.log": "6bbb0f504ec968f6157211a1c74a340dab89f633df0a2f1b668c6e8588fbdd1f",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/coarse-request.json": "57c5f42e7612b1f0af1a2e0a98110f1cbf317ccc635398bb8cf3b5183f690982",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/operator.log": "cdd4e6a8787f9df926c80e4c635f5362523113aedcf23c72a548dc574f7a6023",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/fine-request.json": "6315a655a7dbe53b06621fc3a4d96ae1ed7bab80f063bbc53e0d574b04c1b11b",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/tests.log": "d754a72a7124656adb587ace11d5139fd1eaca06502b2cbb08035397b5f3d907",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/fine-recovery.log": "294a3a5aa1b1c696fbbfe920da68d75b0f29995ecfd3cc9711d4027dece0f00c",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/pointwise-comparison.log": "0ac6468e348b108cbff7ee12290e6920d0b2f8e64e1eb7e8565b418e68f53ef1",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/summary.json": "6f34dc5e77defbef9023ca548c8748fbbe3b9d8fc46b5a5f3e8deb9fa0301d83",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/fine-recovery.json": "194c01da5c99151beb738ffeee4b8d136b6e6eb79c280833926eadbe728267fe",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/pointwise-comparison.json": "ee34fabc19530f9a4e882a254e3952195079981935610463d5940af059e900be",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/manifest.json": "c7a5c0a3815c1e3087713fb4c35ac53e5566a83ce23acd0f11cd0496b429bbad",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/operator.json": "544c2463addcd11343c5b7aced2d2eab2e10cce62167606dfdda453c307135a3",
+    "data/anatomical-arm-v1/review/pressure-residual-diagnosis/fine-recovery-solver-terminal.json": "7ff8db4ae0ccd9b31ede5aa2523d97396fa7b57d8e2f02b463ef87c1b665f304"
+  },
+  "material": {
+    "mu": 1000.0,
+    "bulk": 1000000.0,
+    "kf": 20000.0,
+    "b": 6.0,
+    "sigma0": 155000.0,
+    "optimumStretch": 1.0,
+    "activeWidth": 0.5
+  },
+  "activation": 1.0,
+  "stretch": 1.25,
+  "positionsM": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.017890816309170707
+    ],
+    [
+      0.0,
+      0.017890816309170707,
+      0.0
+    ],
+    [
+      0.0,
+      0.017890816309170707,
+      0.017890816309170707
+    ],
+    [
+      0.043750000000000004,
+      0.0,
+      0.0
+    ],
+    [
+      0.043750000000000004,
+      0.0,
+      0.017890816309170707
+    ],
+    [
+      0.043750000000000004,
+      0.017890816309170707,
+      0.0
+    ],
+    [
+      0.043750000000000004,
+      0.017890816309170707,
+      0.017890816309170707
+    ],
+    [
+      0.08750000000000001,
+      0.0,
+      0.0
+    ],
+    [
+      0.08750000000000001,
+      0.0,
+      0.017890816309170707
+    ],
+    [
+      0.08750000000000001,
+      0.017890816309170707,
+      0.0
+    ],
+    [
+      0.08750000000000001,
+      0.017890816309170707,
+      0.017890816309170707
+    ],
+    [
+      0.13125,
+      0.0,
+      0.0
+    ],
+    [
+      0.13125,
+      0.0,
+      0.017890816309170707
+    ],
+    [
+      0.13125,
+      0.017890816309170707,
+      0.0
+    ],
+    [
+      0.13125,
+      0.017890816309170707,
+      0.017890816309170707
+    ],
+    [
+      0.17500000000000002,
+      0.0,
+      0.0
+    ],
+    [
+      0.17500000000000002,
+      0.0,
+      0.017890816309170707
+    ],
+    [
+      0.17500000000000002,
+      0.017890816309170707,
+      0.0
+    ],
+    [
+      0.17500000000000002,
+      0.017890816309170707,
+      0.017890816309170707
+    ],
+    [
+      0.021875000000000002,
+      0.0,
+      0.0
+    ],
+    [
+      0.021875000000000002,
+      0.008945408154585353,
+      0.0
+    ],
+    [
+      0.021875000000000002,
+      0.008945408154585353,
+      0.008945408154585353
+    ],
+    [
+      0.043750000000000004,
+      0.008945408154585353,
+      0.0
+    ],
+    [
+      0.043750000000000004,
+      0.008945408154585353,
+      0.008945408154585353
+    ],
+    [
+      0.043750000000000004,
+      0.017890816309170707,
+      0.008945408154585353
+    ],
+    [
+      0.021875000000000002,
+      0.0,
+      0.008945408154585353
+    ],
+    [
+      0.043750000000000004,
+      0.0,
+      0.008945408154585353
+    ],
+    [
+      0.043750000000000004,
+      0.008945408154585353,
+      0.017890816309170707
+    ],
+    [
+      0.0,
+      0.008945408154585353,
+      0.0
+    ],
+    [
+      0.021875000000000002,
+      0.017890816309170707,
+      0.0
+    ],
+    [
+      0.021875000000000002,
+      0.017890816309170707,
+      0.008945408154585353
+    ],
+    [
+      0.0,
+      0.008945408154585353,
+      0.008945408154585353
+    ],
+    [
+      0.0,
+      0.017890816309170707,
+      0.008945408154585353
+    ],
+    [
+      0.021875000000000002,
+      0.017890816309170707,
+      0.017890816309170707
+    ],
+    [
+      0.0,
+      0.0,
+      0.008945408154585353
+    ],
+    [
+      0.021875000000000002,
+      0.0,
+      0.017890816309170707
+    ],
+    [
+      0.021875000000000002,
+      0.008945408154585353,
+      0.017890816309170707
+    ],
+    [
+      0.0,
+      0.008945408154585353,
+      0.017890816309170707
+    ],
+    [
+      0.065625,
+      0.0,
+      0.0
+    ],
+    [
+      0.065625,
+      0.008945408154585353,
+      0.0
+    ],
+    [
+      0.065625,
+      0.008945408154585353,
+      0.008945408154585353
+    ],
+    [
+      0.08750000000000001,
+      0.008945408154585353,
+      0.0
+    ],
+    [
+      0.08750000000000001,
+      0.008945408154585353,
+      0.008945408154585353
+    ],
+    [
+      0.08750000000000001,
+      0.017890816309170707,
+      0.008945408154585353
+    ],
+    [
+      0.065625,
+      0.0,
+      0.008945408154585353
+    ],
+    [
+      0.08750000000000001,
+      0.0,
+      0.008945408154585353
+    ],
+    [
+      0.08750000000000001,
+      0.008945408154585353,
+      0.017890816309170707
+    ],
+    [
+      0.065625,
+      0.017890816309170707,
+      0.0
+    ],
+    [
+      0.065625,
+      0.017890816309170707,
+      0.008945408154585353
+    ],
+    [
+      0.065625,
+      0.017890816309170707,
+      0.017890816309170707
+    ],
+    [
+      0.065625,
+      0.0,
+      0.017890816309170707
+    ],
+    [
+      0.065625,
+      0.008945408154585353,
+      0.017890816309170707
+    ],
+    [
+      0.10937500000000001,
+      0.0,
+      0.0
+    ],
+    [
+      0.10937500000000001,
+      0.008945408154585353,
+      0.0
+    ],
+    [
+      0.10937500000000001,
+      0.008945408154585353,
+      0.008945408154585353
+    ],
+    [
+      0.13125,
+      0.008945408154585353,
+      0.0
+    ],
+    [
+      0.13125,
+      0.008945408154585353,
+      0.008945408154585353
+    ],
+    [
+      0.13125,
+      0.017890816309170707,
+      0.008945408154585353
+    ],
+    [
+      0.10937500000000001,
+      0.0,
+      0.008945408154585353
+    ],
+    [
+      0.13125,
+      0.0,
+      0.008945408154585353
+    ],
+    [
+      0.13125,
+      0.008945408154585353,
+      0.017890816309170707
+    ],
+    [
+      0.10937500000000001,
+      0.017890816309170707,
+      0.0
+    ],
+    [
+      0.10937500000000001,
+      0.017890816309170707,
+      0.008945408154585353
+    ],
+    [
+      0.10937500000000001,
+      0.017890816309170707,
+      0.017890816309170707
+    ],
+    [
+      0.10937500000000001,
+      0.0,
+      0.017890816309170707
+    ],
+    [
+      0.10937500000000001,
+      0.008945408154585353,
+      0.017890816309170707
+    ],
+    [
+      0.153125,
+      0.0,
+      0.0
+    ],
+    [
+      0.153125,
+      0.008945408154585353,
+      0.0
+    ],
+    [
+      0.153125,
+      0.008945408154585353,
+      0.008945408154585353
+    ],
+    [
+      0.17500000000000002,
+      0.008945408154585353,
+      0.0
+    ],
+    [
+      0.17500000000000002,
+      0.008945408154585353,
+      0.008945408154585353
+    ],
+    [
+      0.17500000000000002,
+      0.017890816309170707,
+      0.008945408154585353
+    ],
+    [
+      0.153125,
+      0.0,
+      0.008945408154585353
+    ],
+    [
+      0.17500000000000002,
+      0.0,
+      0.008945408154585353
+    ],
+    [
+      0.17500000000000002,
+      0.008945408154585353,
+      0.017890816309170707
+    ],
+    [
+      0.153125,
+      0.017890816309170707,
+      0.0
+    ],
+    [
+      0.153125,
+      0.017890816309170707,
+      0.008945408154585353
+    ],
+    [
+      0.153125,
+      0.017890816309170707,
+      0.017890816309170707
+    ],
+    [
+      0.153125,
+      0.0,
+      0.017890816309170707
+    ],
+    [
+      0.153125,
+      0.008945408154585353,
+      0.017890816309170707
+    ]
+  ],
+  "analytic": {
+    "transverseStretch": 0.8945408154585353,
+    "J": 1.0002540881515265,
+    "pressurePa": 254.05587659912814,
+    "capForceN": 39.76114573531327
+  },
+  "pressureSpaces": [
+    "continuousP1",
+    "brokenP1",
+    "pointwise"
+  ],
+  "baseQuadraturePoints": 256,
+  "independentReplayPoints": [
+    32,
+    256
+  ],
+  "nonlinearSolves": 0,
+  "stabilizationParameters": 0,
+  "physicalHistoryAdvanced": false
+}
