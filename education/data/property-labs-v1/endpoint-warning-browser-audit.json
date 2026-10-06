@@ -9,13 +9,18 @@
     "web/continuum-properties.mjs": "29bcfa030f0a1af6d0c17ed72e2801f580c69c5fa45af26459e1028ba5dc5753",
     "tools/property_labs.py": "c1c265d11713eb9dfaa22d3af5272b93252cd6174e1c1a04757388d32df7460a",
     "tools/build_property_preview.py": "0ddc45275a028737fd3c6620606fa047a8b7e0404ccea15165f12121f52e1fa6",
-    "tests/endpoint_warning_audit.py": "619298baf7889f8ebf9dc3f7834708380d116f24cde1e21dc8e809fa6bcc1401"
+    "tests/endpoint_warning_audit.py": "507c63336799d63b546ddcc426dea4c45da9c7b4519542a06f227a045f6eba79"
   },
   "previewHTMLSHA256": "6f7405cd2fced9ef46850d3f79cbbfcdbe901e576fd2b70c9c77912931878e84",
   "counterexample": {
     "endpointMaximumStrain": 0.05454545454545454,
     "midpointMaximumStrain": 0.045933014354066985,
     "warningVisible": true
+  },
+  "visibilityEvidence": {
+    "assertion": "Playwright expect(specific Small-strain scope dd).to_be_visible after scroll_into_view_if_needed",
+    "screenshot": "data/property-labs-v1/endpoint-warning-current-visible.png",
+    "sha256": "d0e3b8d4ec44d02e0b1c0d78b31a50137f51b3cc76b8fb6a0abfa8325eb87652"
   },
   "checks": [
     "Actual Chromium endpoint controls expose 5.4545% strain despite midpoint samples below 5%",
