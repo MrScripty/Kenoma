@@ -1,0 +1,254 @@
+{
+  "schema": 1,
+  "result": "PASS_FRESH_REAL_SERIAL_KERNEL",
+  "source_commit": "00754d63f7a483ed9b2c17b6314b6483ec256777",
+  "source": "proofs/SerialSpecimenReal.lean",
+  "source_sha256": "b0b4ccb250f7a10561c66fc32def5aad4f3ec900eeb3575a3e8bd4aacf0f3fbe",
+  "claims_sha256": "bc9f43e657a1612866611c903c0c768f580881c35ca8788aaf07d4937cbc010e",
+  "lean_version": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)",
+  "mathlib": {
+    "repository": "https://github.com/leanprover-community/mathlib4",
+    "tag": "v4.19.0",
+    "commit": "c44e0c8ee63ca166450922a373c7409c5d26b00b",
+    "manifest_sha256": "5c6421b650bc87a2427a892a39e5522dc44543ca4ac1bd6e9f08d536c044a752",
+    "toolchain": "leanprover/lean4:v4.19.0",
+    "license": "Apache-2.0",
+    "qualification": "Fresh compilation required; this lock alone is not proof evidence."
+  },
+  "mathlib_identity": {
+    "actual_commit": "c44e0c8ee63ca166450922a373c7409c5d26b00b",
+    "manifest_sha256": "5c6421b650bc87a2427a892a39e5522dc44543ca4ac1bd6e9f08d536c044a752",
+    "source_pristine": true,
+    "packages": [
+      {
+        "name": "plausible",
+        "expected_commit": "77e08eddc486491d7b9e470926b3dbe50319451a",
+        "actual_commit": "77e08eddc486491d7b9e470926b3dbe50319451a",
+        "source_pristine": true
+      },
+      {
+        "name": "LeanSearchClient",
+        "expected_commit": "25078369972d295301f5a1e53c3e5850cf6d9d4c",
+        "actual_commit": "25078369972d295301f5a1e53c3e5850cf6d9d4c",
+        "source_pristine": true
+      },
+      {
+        "name": "importGraph",
+        "expected_commit": "e6a9f0f5ee3ccf7443a0070f92b62f8db12ae82b",
+        "actual_commit": "e6a9f0f5ee3ccf7443a0070f92b62f8db12ae82b",
+        "source_pristine": true
+      },
+      {
+        "name": "proofwidgets",
+        "expected_commit": "c4919189477c3221e6a204008998b0d724f49904",
+        "actual_commit": "c4919189477c3221e6a204008998b0d724f49904",
+        "source_pristine": true
+      },
+      {
+        "name": "aesop",
+        "expected_commit": "5d50b08dedd7d69b3d9b3176e0d58a23af228884",
+        "actual_commit": "5d50b08dedd7d69b3d9b3176e0d58a23af228884",
+        "source_pristine": true
+      },
+      {
+        "name": "Qq",
+        "expected_commit": "fa4f7f15d97591a9cf3aa7724ba371c7fc6dda02",
+        "actual_commit": "fa4f7f15d97591a9cf3aa7724ba371c7fc6dda02",
+        "source_pristine": true
+      },
+      {
+        "name": "batteries",
+        "expected_commit": "f5d04a9c4973d401c8c92500711518f7c656f034",
+        "actual_commit": "f5d04a9c4973d401c8c92500711518f7c656f034",
+        "source_pristine": true
+      },
+      {
+        "name": "Cli",
+        "expected_commit": "02dbd02bc00ec4916e99b04b2245b30200e200d0",
+        "actual_commit": "02dbd02bc00ec4916e99b04b2245b30200e200d0",
+        "source_pristine": true
+      }
+    ]
+  },
+  "command": [
+    "lake",
+    "--no-cache",
+    "env",
+    "lean",
+    "-DwarningAsError=true",
+    "/workspace/kenoma-serial-real-proof/education/proofs/SerialSpecimenReal.lean"
+  ],
+  "cwd": "/workspace/kenoma-serial-real-proof/education/.tools/mathlib4",
+  "claims": [
+    {
+      "id": "serial-real-energy-factor",
+      "theorem": "Kenoma.SerialSpecimenReal.energy_factor",
+      "claim": "The real homogeneous neo-Hookean energy has the exact nonnegative-factor form.",
+      "assumptions": "Real mu; lambda>0.",
+      "limitations": "W=mu/(2*lambda)*(lambda-1)^2*(lambda+2); signs are not assumed in this algebraic identity. Real local homogeneous incompressible material law only; no JavaScript refinement, numerical root or mesh-volume validation, continuous stepped-solid interface, global stability, bulk-penalty calibration or anatomical claim.",
+      "implementation": "Local serial-specimen law; runtime implementation and qualification remain separate.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "serial-real-energy-sign",
+      "theorem": "Kenoma.SerialSpecimenReal.energy_nonnegative",
+      "claim": "Real homogeneous stored energy is nonnegative.",
+      "assumptions": "Real mu>=0 and lambda>0.",
+      "limitations": "W=mu/2*(lambda^2+2/lambda-3); this is local energy, not global specimen stability. Real local homogeneous incompressible material law only; no JavaScript refinement, numerical root or mesh-volume validation, continuous stepped-solid interface, global stability, bulk-penalty calibration or anatomical claim.",
+      "implementation": "Local serial-specimen law; runtime implementation and qualification remain separate.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "serial-real-energy-zero",
+      "theorem": "Kenoma.SerialSpecimenReal.energy_zero_iff",
+      "claim": "Real homogeneous stored energy vanishes exactly at lambda=1.",
+      "assumptions": "Real mu>0 and lambda>0.",
+      "limitations": "The zero-energy state of this one-parameter homogeneous law is unique; no global minimization is certified. Real local homogeneous incompressible material law only; no JavaScript refinement, numerical root or mesh-volume validation, continuous stepped-solid interface, global stability, bulk-penalty calibration or anatomical claim.",
+      "implementation": "Local serial-specimen law; runtime implementation and qualification remain separate.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "serial-real-energy-derivative",
+      "theorem": "Kenoma.SerialSpecimenReal.energy_hasDerivAt",
+      "claim": "The exact real derivative of W with respect to lambda equals nominal axial stress P.",
+      "assumptions": "Fixed real mu; lambda>0.",
+      "limitations": "HasDerivAt W P lambda, with P=mu*(lambda-1/lambda^2); no numerical differentiation is certified. Real local homogeneous incompressible material law only; no JavaScript refinement, numerical root or mesh-volume validation, continuous stepped-solid interface, global stability, bulk-penalty calibration or anatomical claim.",
+      "implementation": "Local serial-specimen law; runtime implementation and qualification remain separate.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "serial-real-stress-identities",
+      "theorem": "Kenoma.SerialSpecimenReal.nominal_factor_and_cauchy",
+      "claim": "Nominal stress factors through lambda-1, and axial Cauchy stress equals lambda*P.",
+      "assumptions": "Real mu and lambda>0.",
+      "limitations": "P=mu*(lambda-1)*(lambda^2+lambda+1)/lambda^2; sigma=mu*(lambda^2-1/lambda)=lambda*P. Lateral pressure and matrix stress equations are not proved here. Real local homogeneous incompressible material law only; no JavaScript refinement, numerical root or mesh-volume validation, continuous stepped-solid interface, global stability, bulk-penalty calibration or anatomical claim.",
+      "implementation": "Local serial-specimen law; runtime implementation and qualification remain separate.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "serial-real-stress-sign",
+      "theorem": "Kenoma.SerialSpecimenReal.nominal_sign",
+      "claim": "Nominal stress is tensile, zero or compressive exactly when lambda is above, equal to or below one.",
+      "assumptions": "Real mu>0 and lambda>0.",
+      "limitations": "All three sign equivalences concern this homogeneous local law. Real local homogeneous incompressible material law only; no JavaScript refinement, numerical root or mesh-volume validation, continuous stepped-solid interface, global stability, bulk-penalty calibration or anatomical claim.",
+      "implementation": "Local serial-specimen law; runtime implementation and qualification remain separate.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "serial-real-stress-difference",
+      "theorem": "Kenoma.SerialSpecimenReal.nominal_difference",
+      "claim": "The real nominal-stress difference has an exact positive-factor identity.",
+      "assumptions": "Real mu; positive stretches u>0 and v>0.",
+      "limitations": "P(v)-P(u)=mu*(v-u)*(1+(u+v)/(u^2*v^2)); this row states an algebraic identity. Real local homogeneous incompressible material law only; no JavaScript refinement, numerical root or mesh-volume validation, continuous stepped-solid interface, global stability, bulk-penalty calibration or anatomical claim.",
+      "implementation": "Local serial-specimen law; runtime implementation and qualification remain separate.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "serial-real-stress-monotone",
+      "theorem": "Kenoma.SerialSpecimenReal.nominal_strictMono",
+      "claim": "Real nominal stress is strictly increasing on positive axial stretches.",
+      "assumptions": "Fixed real mu>0; stretches in (0,infinity).",
+      "limitations": "StrictMonoOn P (Set.Ioi 0); no global multiaxial stability is certified. Real local homogeneous incompressible material law only; no JavaScript refinement, numerical root or mesh-volume validation, continuous stepped-solid interface, global stability, bulk-penalty calibration or anatomical claim.",
+      "implementation": "Local serial-specimen law; runtime implementation and qualification remain separate.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "serial-real-root-unique",
+      "theorem": "Kenoma.SerialSpecimenReal.homogeneous_root_unique",
+      "claim": "A fixed axial force has at most one positive homogeneous stretch root.",
+      "assumptions": "Real mu>0, reference area A>0 and any real N; u>0,v>0 with A*P(u)=N and A*P(v)=N.",
+      "limitations": "Uniqueness only; existence, bisection brackets, termination and residual accuracy are not proved. Real local homogeneous incompressible material law only; no JavaScript refinement, numerical root or mesh-volume validation, continuous stepped-solid interface, global stability, bulk-penalty calibration or anatomical claim.",
+      "implementation": "Local serial-specimen law; runtime implementation and qualification remain separate.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "serial-real-volume",
+      "theorem": "Kenoma.SerialSpecimenReal.area_length_volume",
+      "claim": "The imposed current area and length preserve each block reference volume exactly.",
+      "assumptions": "Real reference area A and length L; lambda>0; current area is A/lambda and current length is L*lambda.",
+      "limitations": "(A/lambda)*(L*lambda)=A*L. Incompressibility and these geometric formulas are assumptions; mesh boundary integration and det(F) are not certified. Real local homogeneous incompressible material law only; no JavaScript refinement, numerical root or mesh-volume validation, continuous stepped-solid interface, global stability, bulk-penalty calibration or anatomical claim.",
+      "implementation": "Local serial-specimen law; runtime implementation and qualification remain separate.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "serial-real-tension-order",
+      "theorem": "Kenoma.SerialSpecimenReal.same_force_tension_order",
+      "claim": "Under equal tensile force, the narrower reference block stretches more.",
+      "assumptions": "Common real mu>0; 0<A1<A2; N>0; positive stretches lambda1,lambda2 satisfying A1*P(lambda1)=A2*P(lambda2)=N.",
+      "limitations": "1<lambda2<lambda1. Equal force is an explicit assumption for separate homogeneous blocks connected through ideal massless lateral-sliding axial fixtures. Real local homogeneous incompressible material law only; no JavaScript refinement, numerical root or mesh-volume validation, continuous stepped-solid interface, global stability, bulk-penalty calibration or anatomical claim.",
+      "implementation": "Local serial-specimen law; runtime implementation and qualification remain separate.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "serial-real-compression-order",
+      "theorem": "Kenoma.SerialSpecimenReal.same_force_compression_order",
+      "claim": "Under equal compressive force, the narrower reference block compresses more.",
+      "assumptions": "Common real mu>0; 0<A1<A2; N<0; positive stretches lambda1,lambda2 satisfying A1*P(lambda1)=A2*P(lambda2)=N.",
+      "limitations": "lambda1<lambda2<1. Equal force is an explicit assumption for separate homogeneous blocks connected through ideal massless lateral-sliding axial fixtures. Real local homogeneous incompressible material law only; no JavaScript refinement, numerical root or mesh-volume validation, continuous stepped-solid interface, global stability, bulk-penalty calibration or anatomical claim.",
+      "implementation": "Local serial-specimen law; runtime implementation and qualification remain separate.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "existing_property_receipt_sha256": "85d886cc422f4be2023558c4c10315574de1d697b11d22155e1a90133e7ec876",
+  "scope": "Real local homogeneous incompressible serial-block law only; no runtime, numerical, global-stability or biological qualification."
+}
