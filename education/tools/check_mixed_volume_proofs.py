@@ -35,6 +35,15 @@ def git(path, *args):
     return subprocess.check_output(['git', *args], cwd=path, text=True).strip()
 
 
+def require_source_binding():
+    binding = not bool(git(ROOT, 'status', '--porcelain', '--',
+        'proofs/MixedLogVolume.lean', 'tools/check_mixed_volume_proofs.py',
+        'research/mixed-log-volume-projection.md'))
+    if not binding:
+        raise RuntimeError('Research source files do not match HEAD; refusing success receipt')
+    return binding
+
+
 def environment():
     env = os.environ.copy()
     env['PATH'] = str(ROOT / '.tools/lean-4.19.0-linux/bin') + os.pathsep + env['PATH']
@@ -182,6 +191,7 @@ def check(output, prepare):
     receipt.unlink(missing_ok=True)
     compiled = output.resolve() / 'MixedLogVolume.olean'
     compiled.unlink(missing_ok=True)
+    require_source_binding()
     lock = json.loads(LOCK_FILE.read_text())
     env = environment()
     if prepare:
@@ -226,12 +236,11 @@ def check(output, prepare):
             raise RuntimeError('Unapproved dependency: ' + full + ': ' + str(axioms))
         reports[full] = axioms
     verify_dependencies(lock)
+    binding = require_source_binding()
     payload = {
         'schema': 1, 'result': 'PASS_RESEARCH_WEIGHTED_PROJECTION_ALGEBRA',
         'source_commit': git(ROOT, 'rev-parse', 'HEAD'),
-        'source_files_match_commit': not bool(git(ROOT, 'status', '--porcelain', '--',
-            'proofs/MixedLogVolume.lean', 'tools/check_mixed_volume_proofs.py',
-            'research/mixed-log-volume-projection.md')),
+        'source_files_match_commit': binding,
         'source': 'education/proofs/MixedLogVolume.lean', 'source_sha256': source_hash,
         'checker_sha256': digest(Path(__file__).resolve()),
         'explanation_sha256': digest(ROOT / 'research/mixed-log-volume-projection.md'),
