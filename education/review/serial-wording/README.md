@@ -1,0 +1,9 @@
+# Serial-block scope and approximation wording successor
+
+Source **4ce48764e5fe819e799bd633d56f4cd972e8b699**, tree `2886501fcf570e7e5fad740aefc20a243ef401b1`, branch `education/serial-specimen-wording`, from frozen `57614206`. The readable serial candidate, print-only candidate and PR8 remain frozen.
+
+The current scope, roadmap and completion text explicitly leave the connected continuous specimen with varying cross section, coupled local axial/lateral deformation and volume **unimplemented**. The historical model-selection note now distinguishes already implemented reduced axial strain from that missing connected 3D demonstration. Its single changed inventory entry and additive note identify the correction; remaining historical evidence is unchanged.
+
+Candidate rejection now reports that the **preceding displayed approximation** was retained and that its force-residual qualification is unchanged. Actual native controls reject the local-volume candidate after cap8 leaves the preceding state nonconverged; parameters, state, uploaded mesh buffers, camera, actual pixels and warning all remain unchanged. The existing converged rejection path still passes. All ten serial numerical tests and the full actual standalone serial-control suite passed. The root also inspected the focused full-lab capture, including the warning, candidate message and actual canvas.
+
+This is focused source/standalone qualification, not a fresh complete-book, Lean, PDF, archive or hosted qualification. Numerical laws, fixtures, constants, bracket and residual criteria, all proof sources and maps are unchanged. No continuous solver or design document is added here. `qualification.json` records limits and the preserved extra-capture development failure. `inventory.json` hashes all other evidence. Parent coordinates any PR; no merge or deployment was performed.

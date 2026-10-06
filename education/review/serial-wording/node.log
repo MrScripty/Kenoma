@@ -1,0 +1,18 @@
+✔ default force-driven meshes match an independent cubic root, tetra volumes and full free-side stress (5.822362ms)
+✔ all supported load, area, ratio and modulus corners fit the positive bracket and independent root (8.165585ms)
+✔ full constrained energy differentiates to the signed axial resultant, for each block and the assembly (1.634471ms)
+✔ nominal stress is strictly increasing and equals the derivative of the constrained energy (0.347031ms)
+✔ material, geometry, force reversal and equal-area controls change solved lengths and areas coherently (1.278558ms)
+✔ coarse bisection retains valid volume but cannot claim converged shared-force equilibrium (0.437686ms)
+✔ triangle-volume readouts agree with an independent tetra oracle after arbitrary rigid transformations (0.507241ms)
+✔ using current area in the nominal force law fails the independent reference-area equilibrium oracle (1.397546ms)
+✔ invalid parameters and unsupported solves reject without mutating valid input or output (1.828252ms)
+✔ global-volume-only candidate is rejected despite correct weighted total, retaining the valid state (3.201231ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 98.510694
