@@ -1,0 +1,72 @@
+[
+  {
+    "theorem": "KenomaFilippov.normal_gap_positive",
+    "description": "Opposite strict normal signs imply a positive normal difference.",
+    "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem"
+  },
+  {
+    "theorem": "KenomaFilippov.denominator_nonzero",
+    "description": "Opposite strict normal signs exclude a zero normal difference.",
+    "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem"
+  },
+  {
+    "theorem": "KenomaFilippov.weight_positive",
+    "description": "Under strict attraction the integrating-field weight is strictly positive.",
+    "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem"
+  },
+  {
+    "theorem": "KenomaFilippov.weight_below_one",
+    "description": "Under strict attraction the integrating-field weight is strictly below one.",
+    "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem"
+  },
+  {
+    "theorem": "KenomaFilippov.weighted_normal_zero",
+    "description": "For a nonzero normal difference the derived weight has exactly zero scalar mixed normal.",
+    "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem"
+  },
+  {
+    "theorem": "KenomaFilippov.unique_zero_normal_weight",
+    "description": "For a nonzero normal difference any real zero-normal weight equals the derived weight.",
+    "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem"
+  },
+  {
+    "theorem": "KenomaFilippov.strict_attraction_selection",
+    "description": "Combine strict bounds, zero normal and uniqueness under explicit opposite signs.",
+    "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem"
+  },
+  {
+    "theorem": "KenomaFilippov.source_normal_gap",
+    "description": "The declared on/off normals differ by eta times k.",
+    "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem"
+  },
+  {
+    "theorem": "KenomaFilippov.source_integrating_rate_nonzero",
+    "description": "Opposite source-normal signs imply k is nonzero.",
+    "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem"
+  },
+  {
+    "theorem": "KenomaFilippov.source_weight_identity",
+    "description": "For nonzero eta and k the general normal weight equals minus d over k.",
+    "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem"
+  },
+  {
+    "theorem": "KenomaFilippov.source_weight_strict_bounds",
+    "description": "The model weight minus d over k has strict unit-interval bounds under the declared normal signs.",
+    "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem"
+  },
+  {
+    "theorem": "KenomaFilippov.source_integral_rate",
+    "description": "The weighted integrating/frozen scalar I rates equal minus d when k is nonzero.",
+    "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem"
+  },
+  {
+    "theorem": "KenomaFilippov.source_normal_tangency",
+    "description": "Substituting the weighted I rate makes the declared scalar normal-rate expression zero.",
+    "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem"
+  },
+  {
+    "theorem": "KenomaFilippov.source_unique_weight",
+    "description": "For nonzero eta and k any real zero mixed-normal weight equals minus d over k.",
+    "scope": "Exact real scalar algebra; no ODE, event, numerical accuracy or stability theorem"
+  }
+]
