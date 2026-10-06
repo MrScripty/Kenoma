@@ -1,0 +1,12 @@
+{
+  "result": "PASS_6_STRUCTURAL_TESTS",
+  "qualifiedProtocolSource": "b14ac8ee41ff5ceafb848ffdd02e1466918453c5",
+  "command": "node --test tests/isolated_displacement_family.test.mjs",
+  "exitCode": 0,
+  "tests": 6,
+  "passed": 6,
+  "failed": 0,
+  "durationMs": 403.481538,
+  "testSha256": "5d75552f770d10783646b9511ad08afdd51d508bcad766f8318dceece9c09b75",
+  "scope": "Executed before source commit; committed test bytes unchanged; no nonlinear solves."
+}

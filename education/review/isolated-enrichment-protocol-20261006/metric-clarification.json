@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "kind": "DOCUMENTED_SUCCESSOR_METRIC_CLARIFICATION",
+  "originalDiagnosisCommit": "645022c3c22a8b1b30b3928b668d583f0cb0c9d8",
+  "originalDiagnosisSource": "401c306e1564be5dc82427193c159d1452f81787",
+  "originalDiagnosisResultsSha256": "0c7a864aa463e78479ffb67e44ac3c7768768955fc449d7f7a7f7acafb2cf1dd",
+  "originalCoupledEvidenceSha256": "d8c6444ccc947d32c658666a7b995f5bf7fe728413309ad80457483c2f9045ae",
+  "coupled2048ResidualN": 0.017385155329473496,
+  "coupled256ResidualN": 0.00009000557728744418,
+  "coupledTimeS": 0.1,
+  "coupledGeneralizedCoordinateCount": 460,
+  "coupledMetric": "Infinity norm of the coupled generalized incremental-gradient vector, with higher-quadrature body contributions substituted into the existing coupled configuration gradient. The scaled joint coordinate includes inertia/gravity/stop/damping; other coupled potential terms remain. Not the 1485-component isolated free nodal maximum.",
+  "isolatedMetric": "Infinity norm of 1485 free P2 nodal energy-gradient components of one isolated fixed-cap body plus embedded sheets, at activation1; no coupled joint/contact/inertia.",
+  "conclusion": "Both STATE and METRIC differ. These residuals are not a same-metric convergence comparison. Their separate unchanged0.0001N gates remain failed.",
+  "noOriginalEvidenceModified": true
+}
