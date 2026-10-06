@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "scope": "Completed existing all-half fine execution and fresh replay; interpolated pending",
+  "files": {
+    "data/anatomical-arm-v1/audit/anatomical-dense-fine-trajectory.json": {
+      "sha256": "2e4b37080685001f65fa8db47ccf2f66b29cba4967f6284a28cecf8ac5073b7c",
+      "bytes": 16859745
+    },
+    "data/anatomical-arm-v1/audit/anatomical-dense-fine-trajectory-recheck.json": {
+      "sha256": "69f5cd3277b721ed300cbd586b4e55e0e1c5a9a17c4d101abdd015a184d8df0b",
+      "bytes": 371590
+    },
+    "data/anatomical-arm-v1/review/dense-qualification/fine-execution.txt": {
+      "sha256": "75d5f25455a99a84597a58db7c99a1d4acc48eba510e2ebba641c4c2d8cbe58e",
+      "bytes": 141190
+    },
+    "data/anatomical-arm-v1/review/dense-qualification/fine-fresh-replay.txt": {
+      "sha256": "07ab48094c9e15817aadd406faeab3e9f514e59575af5d418077e21f56d6836c",
+      "bytes": 1531
+    }
+  }
+}
