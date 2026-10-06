@@ -3,6 +3,7 @@ import './property-labs.mjs';
 import './material-lab.mjs';
 import {formatReadout} from './readout.mjs';
 import {SceneStatus} from './scene-status.mjs';
+import {currentPulse,pulseDue} from './pulse.mjs';
 import {DEFAULTS,forceState,leverState,springStep,springEnergy} from './mechanics.mjs';
 import {ELBOW,elbowInitial,elbowResults,elbowStep} from './elbow.mjs';
 import {SERIES,seriesInitial,seriesResults,seriesStep} from './series.mjs';
@@ -13,7 +14,7 @@ const defaultsFor=kind=>kind==='series'?SERIES:kind==='elbow'?ELBOW:DEFAULTS[kin
 
 const fmt=(v,d=3)=>Math.abs(v)<1e-12?'0':Math.abs(v)>1e5?v.toExponential(3):v.toFixed(d);
 let active=null;
-class Lab {
+export class Lab {
   constructor(root) {
     this.root=root; this.kind=root.dataset.demo; this.running=false; this.index=0; this.view='front';
     this.articulated=['elbow','series'].includes(this.kind);
@@ -30,19 +31,19 @@ class Lab {
     });
     root.querySelector('[data-action="summary"]').addEventListener('click',()=>{this.status.textContent=formatReadout(this.readout);});
     root.querySelector('[data-action="copy"]').addEventListener('click',async()=>{
-      const text=JSON.stringify({schema:1,scene:this.kind,parameters:this.params,step:this.index,state:this.state,initialEnergy:this.initialEnergy,view:this.view},null,2);
+      const text=JSON.stringify({schema:1,scene:this.kind,parameters:this.params,step:this.index,state:this.state,initialEnergy:this.initialEnergy,view:this.view,pulse:this.pulse||null,display:this.root.dataset.runDisplay},null,2);
       const preset=root.querySelector('.preset'); preset.hidden=false; preset.value=text;
       preset.focus(); preset.select();
       this.status.textContent='Reproducible state shown below. Copy the selected text.';
     });
     const step=root.querySelector('[data-action="step"]');
-    if(step)step.addEventListener('click',()=>{this.pause();this.step();});
+    if(step)step.addEventListener('click',()=>{this.sceneStatus.run(()=>this.start());this.pause();this.step();});
     const play=root.querySelector('[data-action="play"]');
     if(play)play.addEventListener('click',()=>this.running?this.pause():this.play());
     root.querySelector('[data-action="release"]')?.addEventListener('click',()=>{this.pulse=false;this.params.excitation=0;this.sync();this.update();this.status.textContent='Excitation released. Activation and velocity continue from the current state.';});
-    root.querySelector('[data-action="pulse"]')?.addEventListener('click',()=>{this.reset();this.pulse=true;this.play();this.status.textContent='Forward lift pulse: excitation 0.6 until 0.30 s, then release. No tracking motor.';});
+    root.querySelector('[data-action="pulse"]')?.addEventListener('click',()=>this.pulseCurrent());
     root.querySelector('[data-action="export"]')?.addEventListener('click',()=>{
-      const blob=new Blob([JSON.stringify({schema:1,model:this.kind==='series'?'series-affine-tissue-v1':'schematic-elbow-v1',units:'SI, angle radians',tracePolicy:'One row per step; current row refreshed after same-time input changes. Its excitation applies to the next step; time, state and accumulated work do not advance.',parameters:this.params,initialEnergy:this.initialEnergy,trace:this.history},null,2)],{type:'application/json'});
+      const blob=new Blob([JSON.stringify({schema:1,model:this.kind==='series'?'series-affine-tissue-v1':'schematic-elbow-v1',units:'SI, angle radians',tracePolicy:'One row per step; current row refreshed after same-time input changes. Its excitation applies to the next step; time, state and accumulated work do not advance.',parameters:this.params,initialEnergy:this.initialEnergy,pulse:this.pulse||null,trace:this.history},null,2)],{type:'application/json'});
       const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=this.kind==='series'?'kenoma-series-trace.json':'kenoma-elbow-trace.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
       this.status.textContent='Downloaded the current trace with model parameters and energy accounting.';
     });
@@ -78,6 +79,7 @@ class Lab {
     if(this.articulated && (this.index>=1200||this.state.halted))return;
     if(this.kind==='energy' && this.index>=600)return;
     if(this.kind==='force' && this.params.time>=2)return;
+    this.sceneStatus.run(()=>this.start());
     if(active && active!==this)active.pause();
     this.running=true;this.last=0;this.accumulator=0;
     this.root.querySelector('[data-action="play"]').textContent='Pause';
@@ -91,6 +93,11 @@ class Lab {
     };
     this.frame=requestAnimationFrame(tick);
   }
+  pulseCurrent(){
+    if(this.state.halted||this.index>=1200){this.status.textContent='Pulse unavailable at the domain/step limit. Reset defaults or set a new experiment before running.';return;}
+    this.pulse=currentPulse(this.state.time,this.params.excitation);this.play();
+    this.status.textContent=`Current-state pulse: selected excitation ${this.params.excitation} for 0.30 additional simulated seconds, released at the first step boundary at or after ${this.pulse.releaseTime.toFixed(3)} s. Selected parameters and hold mode retained.`;
+  }
   step(){
     if(this.kind==='force') {
       if(this.params.time>=2){this.pause();return;}
@@ -102,7 +109,7 @@ class Lab {
       if(this.index>=600)this.pause();
     } else if(this.articulated) {
       if(this.index>=1200||this.state.halted){this.pause();return;}
-      if(this.pulse && this.index*this.params.dt>=0.3 && this.params.excitation!==0){this.params.excitation=0;this.sync();this.update();}
+      if(pulseDue(this.pulse,this.state.time)){this.pulse=false;this.params.excitation=0;this.sync();this.update();}
       this.state=(this.kind==='series'?seriesStep:elbowStep)(this.state,this.params);
       if(this.state.halted){this.pause();this.status.textContent='Paused at the last admissible state: a trial left the angle/fiber teaching domain. Joint-stop impact is not modeled.';}
       else this.index++;

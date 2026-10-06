@@ -25,6 +25,10 @@ The continuum solver's static manufactured solution independently assesses spati
 
 The numerical tests verify derivatives, units, default fixtures, activation continuity, force/energy bookkeeping, deterministic resets and the stated ablations. The browser checks verify that the user can reach those results through controls, view the paired scenes and export the current state. The PDF uses the same canonical text and static solved-geometry illustrations. Neither a passing test count nor a convincing image is a medical validation claim.
 
+Real-domain formal verification of the material-response lesson remains **unfinished**: its five integer arithmetic cards do not prove the real specimen's energy sign, energy derivatives, wall complementarity or virtual-work identities. The lesson lists the real obligations and matching derivations separately. The four real kinematic identities address their actual stated geometry only. Real force/torque identities, the exponential activation bound, continuous work/energy balances and solver convergence also remain unfinished formal obligations where the associated cards quantify integers or assume the equation to be checked.
+
+The chain, equal-cost substep, reduced-basis/probe, sliding-pad and two-way paddle exercises in the fast-methods and interfaces chapters are **unfinished implementation exercises**, with no corresponding interactive controls in this edition. Their theoretical instructions do not establish an implemented demonstration. Laboratory 7's explicitly one-way edge/volume experiment addresses its own stated same-pose question; it does not implement those two-way or sliding exercises.
+
 ## Reproduce and inspect the source
 
 The downloadable portable edition includes `build-manifest.json`, the complete checked Lean source/receipt and the original licensed data notices. `spatial-experiment.json` contains the capstone's coordinates and diagnostics; `contributions/continuum_reference/data/reference.json` contains the continuum refinement and matched-cost results. Each contribution's stated runtime and source hashes remain attached to its results.

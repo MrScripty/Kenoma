@@ -30,6 +30,76 @@ def marker_x(canvas, path):
 
 def check(page, out, case='all'):
     observed = {}
+    if case in ['all', 'workflows']:
+        for kind in ['elbow', 'series', 'spatial']:
+            lab = page.locator('#lab-'+kind)
+            lab.locator('[data-action=reset]').click()
+            for key, value in [('load', '8'), ('angle', '45')]:
+                lab.locator(f'input[type=number][data-param={key}]').fill(value)
+            lab.locator('select[data-param=dt]').select_option('0.01')
+            lab.locator('select[data-param=mode]').select_option('prescribed')
+            lab.locator('input[type=number][data-param=excitation]').fill('.35')
+            if kind == 'spatial':
+                lab.locator('select[data-param=sweeps]').select_option('80')
+                lab.locator('select[data-param=skin]').select_option('off')
+                lab.locator('select[data-param=activeShape]').select_option('off')
+            lab.evaluate('(lab)=>{for(let i=0;i<40;i++)lab.querySelector("[data-action=step]").click()}')
+            expect(lab).to_have_attribute('data-scene-state', 'ready')
+            expect(lab).to_have_attribute('data-run-display', 'live')
+            before = state(lab)
+            lab.evaluate('(lab)=>{lab.querySelector("[data-action=pulse]").click();lab.querySelector("[data-action=play]").click();}')
+            scheduled = state(lab)
+            assert scheduled['parameters'] == before['parameters']
+            assert scheduled['state'] == before['state'] and scheduled['step'] == before['step']
+            assert abs(scheduled['pulse']['releaseTime']-before['state']['time']-.3) < 1e-12
+            lab.evaluate('(lab)=>{for(let i=0;i<30;i++)lab.querySelector("[data-action=step]").click()}')
+            boundary = state(lab)
+            assert boundary['parameters']['excitation'] == .35
+            lab.locator('[data-action=step]').click()
+            released = state(lab)
+            assert released['parameters']['excitation'] == 0
+            assert released['pulse'] is None
+            assert 0 < released['state']['a'] < boundary['state']['a']
+            assert released['state']['q'] == before['state']['q'] and released['state']['w'] == 0
+            if kind == 'series': expect(lab.locator('.readout')).to_contain_text('Lengthening')
+            lab.screenshot(path=str(out/f'{kind}-current-pulse-release.png'))
+            observed[kind+'Pulse'] = {'before': before, 'scheduled': scheduled, 'boundary': boundary, 'released': released}
+            lab.locator('[data-action=reset]').click()
+            reset = state(lab)
+            assert reset['parameters']['load'] == 5 and reset['parameters']['dt'] == .005
+            assert reset['state']['a'] == 0 and reset['state']['time'] == 0
+        # Step before Start must produce an actual moving canvas.
+        lab = page.locator('#lab-force')
+        # A fresh page ensures no previously started renderer masks the original path.
+        page.reload(wait_until='networkidle')
+        expect(lab).to_have_attribute('data-scene-state', 'idle')
+        lab.locator('[data-action=step]').click()
+        expect(lab).to_have_attribute('data-scene-state', 'ready')
+        expect(lab.locator('canvas')).to_be_visible()
+        first = marker_x(lab.locator('canvas'), out/'step-first-live.png')
+        lab.evaluate('(lab)=>{for(let i=0;i<9;i++)lab.querySelector("[data-action=step]").click()}')
+        later = marker_x(lab.locator('canvas'), out/'step-later-live.png')
+        assert later > first+5
+        observed['stepLive'] = {'firstMarkerX': first, 'laterMarkerX': later, 'state': state(lab)}
+        # Inject unavailable WebGL in a fresh page; qualify the explicit fallback.
+        failed = page.context.new_page()
+        failed.add_init_script('''const original=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(type,...args){return type.includes('webgl')?null:original.call(this,type,...args);};''')
+        failed.goto(page.url, wait_until='networkidle')
+        for kind in ['force', 'energy', 'elbow', 'series', 'spatial']:
+            lab = failed.locator('#lab-'+kind)
+            lab.locator('[data-action=step]').click()
+            expect(lab).to_have_attribute('data-scene-state', 'error')
+            expect(lab).to_have_attribute('data-run-display', 'numerical-only')
+            expect(lab.locator('.scene-notice')).to_contain_text('static reference diagram does not move')
+            expect(lab.locator('.static-figure')).to_be_visible()
+            assert lab.locator('canvas').count() == 0
+            current = state(lab)
+            assert current['step'] == 1
+            if kind in ['elbow', 'series', 'spatial']: assert current['state']['time'] > 0
+            lab.locator('[data-action=step]').click()
+            assert state(lab)['step'] == 2
+        failed.locator('#lab-series').screenshot(path=str(out/'numerical-only-series.png'))
+        failed.close()
     if case in ['all', 'force']:
         lab = page.locator('#lab-force')
         lab.locator('[data-action=reset]').click()
@@ -151,20 +221,25 @@ def check(page, out, case='all'):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--out', type=Path, default=Path('/tmp/kenoma-teaching-controls'))
-    parser.add_argument('--case', choices=['all', 'force', 'property', 'spatial', 'elbow'], default='all')
+    parser.add_argument('--case', choices=['all', 'force', 'property', 'spatial', 'elbow', 'workflows'], default='all')
     args = parser.parse_args(); out = args.out.resolve(); out.mkdir(parents=True, exist_ok=True)
     sys.path.insert(0, str(ROOT/'tools'))
     from build import lab_block
     from property_labs import block
+    from figures import generate as generate_figures
+    from spatial_figures import generate as generate_advanced_figures
     receipt = {'scope': 'Generated production lab HTML + production app bundle; not a full book/proof build',
                'source_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
-               'source_sha256': {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in list((ROOT/'web').glob('*.mjs'))+[ROOT/'tools/build.py', ROOT/'tools/property_labs.py', Path(__file__).resolve()]},
+               'source_sha256': {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in list((ROOT/'web').glob('*.mjs'))+[ROOT/'tools/build.py', ROOT/'tools/property_labs.py', ROOT/'tools/figures.py', ROOT/'tools/spatial_figures.py', ROOT/'tools/spatial-experiment.mjs', ROOT/'contributions/continuum_reference/data/example.json', Path(__file__).resolve()]},
                'case': args.case, 'status': 'FAIL'}
     with TemporaryDirectory(prefix='kenoma-controls-') as temp:
         site = Path(temp)
+        generate_figures(site/'assets')
+        spatial = json.loads(subprocess.check_output(['node', str(ROOT/'tools/spatial-experiment.mjs')], text=True))
+        generate_advanced_figures(site/'assets', spatial)
         shutil.copy(ROOT/'web/style.css', site/'style.css')
         html = '<!doctype html><html lang="en"><meta charset="utf-8"><title>Teaching control qualification</title><link rel="stylesheet" href="style.css"><body><main>'
-        html += ''.join(lab_block(key, True) for key in ['force', 'elbow', 'spatial'])
+        html += ''.join(lab_block(key, True) for key in ['force', 'energy', 'elbow', 'series', 'spatial'])
         html += block('tapered', True)+'</main><script type="module" src="app.js"></script></body></html>'
         (site/'index.html').write_text(html)
         subprocess.run([str(ROOT/'node_modules/.bin/esbuild'), str(ROOT/'web/app.mjs'), '--bundle', '--minify', '--format=esm', '--target=es2022', f'--outfile={site/"app.js"}', '--legal-comments=external'], check=True)
@@ -178,7 +253,8 @@ def main():
             with sync_playwright() as p:
                 browser = p.chromium.launch(headless=True, executable_path=os.environ.get('CHROMIUM_EXECUTABLE') or shutil.which('chromium'))
                 receipt['browser_version'] = browser.version
-                page = browser.new_page(viewport={'width': 1280, 'height': 900}, reduced_motion='reduce')
+                context = browser.new_context(viewport={'width': 1280, 'height': 900}, reduced_motion='reduce')
+                page = context.new_page()
                 errors = []; page.on('pageerror', lambda e: errors.append(str(e)))
                 page.goto(f'http://127.0.0.1:{server.server_port}/index.html', wait_until='networkidle')
                 receipt['observed'] = check(page, out, args.case)

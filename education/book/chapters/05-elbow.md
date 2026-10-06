@@ -63,7 +63,7 @@ The red muscle belly is a one-way drawing following path length. Its transverse 
 
 ## Lift, release, or prescribe a hold
 
-**Try the pulse.** Click “Lift / release pulse.” It resets the scenario, applies u = 0.6 for 0.30 simulated seconds, and then releases it. Watch initial gravity-driven lowering before activation builds, subsequent flexion, and continued motion during activation decay. A falling angle is not proof that the muscle is inactive; inspect activation and fiber velocity separately. Pause, single-step, and download the trace to inspect q, a, moments and work.
+**Try the pulse.** Click “Pulse current state / release.” It keeps the selected load, angle, time step, excitation and mode, continues the current activation and velocity, and releases excitation at the first step boundary at or after 0.30 additional simulated seconds. Use “Reset defaults” first to reproduce the default u = 0.6 forward experiment. Step, Play and Pulse start live 3D automatically; if WebGL fails, a prominent numerical-only notice identifies the static reference diagram. Watch initial gravity-driven lowering before activation builds, subsequent flexion, and continued motion during activation decay. A falling angle is not proof that the muscle is inactive; inspect activation and fiber velocity separately. Pause, single-step, and download the trace to inspect q, a, moments and work.
 
 **Try an unassisted load change.** Increase the dumbbell mass and replay with the same excitation. The model may lower or leave its domain. No hidden motor raises a weak actuator to the requested pose. Reset clears state, camera, and stale input validation.
 

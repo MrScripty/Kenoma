@@ -13,7 +13,7 @@ Distance, bending and volume conditions can share this projection structure. App
 
 The original [Müller et al. paper](https://matthias-research.github.io/pages/publications/posBasedDyn.pdf) targets controllable, robust interactive animation. A finite projection budget leaves error. In ordinary PBD, apparent stiffness also depends on the time step and iteration count, so a value such as 0.8 is an algorithmic setting rather than a material modulus.
 
-**Reader exercise.** Hang a short chain under gravity. Change the iteration count without changing its nominal stiffness. Plot its equilibrium extension. Then increase chain length; local information takes additional iterations to propagate through the constraints.
+**Reader implementation exercise — unfinished in this edition.** Hang a short chain under gravity. Change the iteration count without changing its nominal stiffness. Plot its equilibrium extension. Then increase chain length; local information takes additional iterations to propagate through the constraints.
 
 ## 2 XPBD makes compliance explicit
 
@@ -60,7 +60,7 @@ For unilateral contact, clamp the *accumulated* normal multiplier, then apply on
 
 A long time step linearizes a large change. Several smaller steps refresh velocities, geometry and constraint directions. [Macklin et al., Small Steps](https://mmacklin.com/smallsteps.pdf), compares these choices within XPBD and reports improved behavior in its tested examples. This is a reason to benchmark both strategies, not a universal statement that one iteration is sufficient or that collision detection can be skipped between substeps.
 
-**Reader exercise.** Fix a total constraint-evaluation budget and compare one large step with many sweeps against many small steps with fewer sweeps. Record deformation error, damping and runtime. Count collision detection separately; its cost and sampling frequency may change the result.
+**Reader implementation exercise — unfinished in this edition.** Fix a total constraint-evaluation budget and compare one large step with many sweeps against many small steps with fewer sweeps. Record deformation error, damping and runtime. Count collision detection separately; its cost and sampling frequency may change the result.
 
 ## 4 Projective dynamics reuses global structure
 
@@ -113,7 +113,7 @@ A fixed basis can contain vibration modes, sampled deformations or other structu
 
 If the reference shape follows a rig, **x** = **x**_base(t)+**U**(t)**z**, velocities and accelerations include base-motion and basis-derivative terms. Ignoring them changes secondary-motion dynamics. A quasi-static pose-correction system can legitimately ignore inertia, but must be labeled that way.
 
-**Reader exercise.** Train a reduced basis using bending and then press a small probe into the tissue at an unseen location. Display the full-space residual and deformation mismatch. This reveals why an attractive trained motion does not guarantee general contact behavior.
+**Reader implementation exercise — unfinished in this edition.** Train a reduced basis using bending and then press a small probe into the tissue at an unseen location. Display the full-space residual and deformation mismatch. This reveals why an attractive trained motion does not guarantee general contact behavior.
 
 ## 6 Shape matching and baked correctives occupy different places
 
