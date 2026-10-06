@@ -77,3 +77,5 @@ The eleven declarations below quantify real local constitutive variables. They c
 {{proof:dissipative-real-held-stress-decay}}
 
 Continue to [anatomical evidence](#anatomy-is-evidence) before deciding which properties a named tissue would need. The anatomical capstone and its calibration obligations remain separate.
+
+Continue with [unequal blocks under one force](#serial-specimen-volume) to connect finite force-driven stretches, current areas and local incompressibility in a separate two-block 3D assembly. The SLS law and energy history above remain unchanged.

@@ -8,6 +8,7 @@ FAMILIES = [
     ('MechanicsReal.lean', 'mechanics-real-claims.json', 'mechanics-real', 3),
     ('ActuatorConstitutiveReal.lean', 'actuator-real-claims.json', 'actuator-real', 11),
     ('DissipativeBarReal.lean', 'dissipative-real-claims.json', 'dissipative-real', 11),
+    ('SerialSpecimenReal.lean', 'serial-specimen-real-claims.json', 'serial-real', 12),
 ]
 
 def check(existing=None):

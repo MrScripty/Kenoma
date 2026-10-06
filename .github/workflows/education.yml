@@ -107,6 +107,9 @@ jobs:
           python3 tests/dissipative_browser.py dist --output dist/dissipative-qa
           python3 tests/dissipative_browser.py --negative-controls --output review/dissipative-negative-ci
           python3 tools/qualify_dissipative_negatives.py dist dist/dissipative-negative-artifacts.json
+          python3 tests/serial_browser.py dist --output dist/serial-qa
+          python3 tests/serial_browser.py --negative-controls --output review/serial-negative-ci
+          python3 tools/qualify_serial_negatives.py dist dist/serial-negative-artifacts.json
           python3 tools/inspect_property_integration.py
           python3 tools/inspect_real_lesson_proofs.py
           python3 tests/render_capture_rerun.py

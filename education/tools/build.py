@@ -11,6 +11,7 @@ from check_material_proofs import check as check_material
 from check_real_lesson_proofs import check as check_real_lessons, FAMILIES as REAL_FAMILIES
 from property_labs import block as property_block
 from dissipative_lab import block as dissipative_block
+from serial_lab import block as serial_block
 from figures import generate
 from evidence_figures import generate as evidence_figures
 from spatial_figures import generate as advanced_figures
@@ -194,6 +195,14 @@ def build():
     for name in ['creep','relaxation']:
         for row in dissipative['cases'][name]['frames']:
             dissipative_table+=f"| {name} | {row['time']:.1f} | {row['force']:.6f} | {1000*row['extensionM']:.6f} | {1000*row['storageJ']:.6f} | {1000*row['workJ']:.6f} | {1000*row['dissipationJ']:.6f} |\n"
+    subprocess.run(['node',str(ROOT/'tools/serial-experiment.mjs'),str(OUT/'assets')],check=True)
+    shutil.copy(OUT/'assets/serial-experiment.json',OUT/'serial-experiment.json')
+    serial=json.loads((OUT/'serial-experiment.json').read_text())
+    serial_table='| Load (N) | Block | Stretch λ | Axial strain | Area (mm²) | Volume (mm³) | Force residual (N) |\n|--:|--:|--:|--:|--:|--:|--:|\n'
+    for name in ['tension','rest','compression']:
+        state=serial['cases'][name]
+        for i,c in enumerate(state['cells']):
+            serial_table+=f"| {state['parameters']['force']:.3f} | {i+1} | {c['stretch']:.6f} | {c['engineeringStrain']:.6f} | {1e6*c['currentAreaM2']:.3f} | {1e9*c['currentBoundaryVolumeM3']:.3f} | {c['forceResidualN']:.3g} |\n"
     chapters='\n\n'.join(((ROOT/'book'/p).read_text()+'\n\n{{demo:continuum}}\n\n{{proof:compliance-denominator}}\n') if p.startswith('../contributions/') else (ROOT/'book/chapters'/p).read_text() for p in manifest['chapters'])
     coupling_receipt=json.loads((ROOT/'data/anatomical-arm-v1/audit/coupling-results.json').read_text())
     profile_table='| Mesh | Solver | Objective calls | HVP calls | Time (s) | Loaded length (mm) | Max nodal force (N) |\n|:--|:--|--:|--:|--:|--:|--:|\n'
@@ -208,6 +217,8 @@ def build():
         text=re.sub(r'\{\{property:(\w+)\}\}',lambda m:property_block(m[1],web),text)
         text=re.sub(r'\{\{dissipative:(\w+)\}\}',lambda m:dissipative_block(m[1],web),text)
         text=text.replace('{{dissipative-table}}',dissipative_table)
+        text=re.sub(r'\{\{serial:(\w+)\}\}',lambda m:serial_block(m[1],web),text)
+        text=text.replace('{{serial-table}}',serial_table)
         text=re.sub(r'\{\{proof:([\w-]+)\}\}',lambda m:proof_block(m[1],web),text)
         text=text.replace('{{evidence}}',(ROOT/'web/evidence.html').read_text() if web else 'The web edition provides a resettable static atlas viewer and a recorded-bin slider. The figures, source tables and downloads above and below provide the reading alternative.')
         text=text.replace('{{experiment}}',table).replace('{{spatial-experiment}}',spatial_table).replace('{{spatial-summary}}',spatial_summary)
@@ -225,7 +236,7 @@ def build():
       '--template',str(ROOT/'web/template.html'),'-o',str(OUT/'index.html')],check=True,capture_output=True,text=True)
     if 'Could not convert TeX math' in pandoc_result.stderr:raise RuntimeError(pandoc_result.stderr)
     html_path=OUT/"index.html"
-    rendered=html_path.read_text().replace('</head>','<link rel="stylesheet" href="assets/dissipative-lab.css">\n</head>')
+    rendered=html_path.read_text().replace('</head>','<link rel="stylesheet" href="assets/dissipative-lab.css">\n<link rel="stylesheet" href="assets/serial-lab.css">\n</head>')
     # MathML matrix fences can fail to stretch in Chromium's PDF font fallback.
     # Preserve the semantic operators; draw full-height fences around the table.
     rendered=re.sub(r'<mrow>(<mo[^>]*>\[</mo>)(<mtable>.*?</mtable>)(<mo[^>]*>\]</mo>)</mrow>',
@@ -258,6 +269,7 @@ def build():
     shutil.copytree(ROOT/'data/property-labs-v1',OUT/'data/property-labs-v1',dirs_exist_ok=True)
     shutil.copy(ROOT/'web/style.css',assets/'style.css')
     shutil.copy(ROOT/'web/dissipative-lab.css',assets/'dissipative-lab.css')
+    shutil.copy(ROOT/'web/serial-lab.css',assets/'serial-lab.css')
     shutil.copytree(ROOT/'web',OUT/'web',dirs_exist_ok=True)
     subprocess.run([str(ROOT/'node_modules/.bin/esbuild'),str(ROOT/'web/app.mjs'),'--bundle','--minify','--format=esm','--target=es2022',f'--outfile={assets/"app.js"}','--legal-comments=external'],check=True)
     proofs=OUT/'proofs';proofs.mkdir(exist_ok=True)
@@ -286,6 +298,7 @@ def build():
       'property_experiment':'property-experiment.json',
       'material_experiment':'material-experiment.json',
       'dissipative_outputs':{name:hashlib.sha256((OUT/name).read_bytes()).hexdigest() for name in ['assets/property-dissipative.svg','dissipative-experiment.json']},
+      'serial_outputs':{name:hashlib.sha256((OUT/name).read_bytes()).hexdigest() for name in ['assets/property-serial.svg','serial-experiment.json']},
       'git_revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
       'original_plans_base':'9b0c67fd25e1b645833a68bb9b1c2aba1404bbce',
       'determinism':'State progression repeatable in the pinned implementation; cross-browser transcendental bit identity and PDF byte identity not asserted.'}
