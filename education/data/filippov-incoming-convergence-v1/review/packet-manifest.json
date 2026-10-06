@@ -1,0 +1,129 @@
+{
+  "frozen_source_commit": "62721a3bd0204a48f8fa03bcedbbac18ea1e07ed",
+  "source_tree": "9870fd29f2b089c874498dbeb515e789782f51d2",
+  "protocol_sha256": "7101ad7731dcd699c6af7b47cc81bd3a85f3735926429c666a986201b7e144a7",
+  "report_source_commit": "a2cbd88f44defacc9a3f04f5a301a3da59b517ac",
+  "report_source_tree": "8740baf4e07e4b26879b435d7ca402a5d1c23b40",
+  "scope": "Predeclared incoming convergence evidence; original coarse results and failed classification retained",
+  "files": [
+    {
+      "path": "education/data/filippov-incoming-convergence-v1/review/analysis-run.log",
+      "bytes": 6328,
+      "sha256": "a28fefdab3d016d98b5a62850918f1090b0e54994b9075846135ede588bab46c"
+    },
+    {
+      "path": "education/data/filippov-incoming-convergence-v1/review/decision-summary.json",
+      "bytes": 125825,
+      "sha256": "01ec9ff6449d48e4a06dcc257f519c0fd5e0c778f4910cb5cf16f8793d59a5cc"
+    },
+    {
+      "path": "education/data/filippov-incoming-convergence-v1/review/execution.json",
+      "bytes": 1944,
+      "sha256": "06f29debdc10637e1f478a370198afadb43d8984639ff803b1ef57f24b7d676e"
+    },
+    {
+      "path": "education/data/filippov-incoming-convergence-v1/review/high-full-source-RK4-0.000025.json",
+      "bytes": 738810,
+      "sha256": "7e968409264ae971a5bd451e305b2d719ccd76fb5826095ce70455e337d77895"
+    },
+    {
+      "path": "education/data/filippov-incoming-convergence-v1/review/high-full-source-run.log",
+      "bytes": 149,
+      "sha256": "4f4d954ed20ac1b508c65e6046c3632554e37171ced22d6dbef7d19d594469b8"
+    },
+    {
+      "path": "education/data/filippov-incoming-convergence-v1/review/high-reduced-independent-RK4-0.000025.json",
+      "bytes": 740856,
+      "sha256": "aecc5b22557395dddcfee4c49156482aac25bf0b75c46a6ae0c16723f4f7c8b2"
+    },
+    {
+      "path": "education/data/filippov-incoming-convergence-v1/review/high-reduced-independent-run.log",
+      "bytes": 157,
+      "sha256": "d48b3c9c102ac09b53565dbd556ae42c353d23bdffec60a79ec09cad4bbce1d2"
+    },
+    {
+      "path": "education/data/filippov-incoming-convergence-v1/review/legacy-auxiliary-diagnostics.json",
+      "bytes": 129926,
+      "sha256": "b1e9b3dfd42acae2b3ac0568d999f37ae48f82c5f321e1de906f812f9e3e86b7"
+    },
+    {
+      "path": "education/data/filippov-incoming-convergence-v1/review/mass-1-full-source-RK4-0.000025.json",
+      "bytes": 1824595,
+      "sha256": "0cae3f87e8e9aa61853b9679b3f39d6d1c040a81526ce82f85a1c7fa7a97caef"
+    },
+    {
+      "path": "education/data/filippov-incoming-convergence-v1/review/mass-1-full-source-run.log",
+      "bytes": 151,
+      "sha256": "1af77c30639ccbcd86ebd0a070e80d21e89600dd7c0fb381e0f3a19a16947efa"
+    },
+    {
+      "path": "education/data/filippov-incoming-convergence-v1/review/mass-1-reduced-independent-RK4-0.000025.json",
+      "bytes": 1824174,
+      "sha256": "e062f9ab4578f96de43457e7f1133eb0c4cad4fa6aa3383923dab847a845fb5d"
+    },
+    {
+      "path": "education/data/filippov-incoming-convergence-v1/review/mass-1-reduced-independent-run.log",
+      "bytes": 160,
+      "sha256": "0e2315a6f18682afd88d79e50f08bf6d98a0116696aa9982f71be5257fe4c178"
+    },
+    {
+      "path": "education/data/filippov-incoming-convergence-v1/review/preservation-check.json",
+      "bytes": 957,
+      "sha256": "455383c641ed43f30c4d212791acb138b1b59eeb40158b5c4cbb95bf4c32a3cc"
+    },
+    {
+      "path": "education/data/filippov-incoming-convergence-v1/review/segmented-analysis.json",
+      "bytes": 765351,
+      "sha256": "4ab05a6dcdaed46184b4be926fa553649e71aae6297d3f112c960b7ab329d732"
+    },
+    {
+      "path": "education/data/filippov-incoming-convergence-v1/review/segmented-refinement.png",
+      "bytes": 334809,
+      "sha256": "bbab2c5cee31aea0e44aadfcafcb48a44dab399bf0aa73be7630b4563d957c92"
+    },
+    {
+      "path": "education/data/filippov-incoming-convergence-v1/review/segmented-refinement.svg",
+      "bytes": 181001,
+      "sha256": "1990fad78a1b5088e73f5b2cdb13f9705a2c65c3d3349597a151bee084f37680"
+    },
+    {
+      "path": "education/data/filippov-incoming-convergence-v1/review/test-run.log",
+      "bytes": 1080,
+      "sha256": "650f487c0557c7ccc428e2629645821b60b6479e51c05eabeeb9f7610bb18d92"
+    },
+    {
+      "path": "education/data/filippov-incoming-convergence-v1/protocol.json",
+      "bytes": 8886,
+      "sha256": "7101ad7731dcd699c6af7b47cc81bd3a85f3735926429c666a986201b7e144a7"
+    },
+    {
+      "path": "education/tools/run_filippov_incoming_diagnostic.py",
+      "bytes": 6333,
+      "sha256": "ef965de025b5da5d689367c0115d5b8cb4571ba38a1f80b865843c984460355e"
+    },
+    {
+      "path": "education/tools/analyze_filippov_incoming_diagnostic.py",
+      "bytes": 11967,
+      "sha256": "00cf244a1300ea6c844e1652948916a9c364360bd545b2e6a9753d6868ea4924"
+    },
+    {
+      "path": "education/tests/filippov_incoming_diagnostic.py",
+      "bytes": 3716,
+      "sha256": "f10886bed5e0894c3567be227646b759d5a8997e13fe45b41263532dcda87c58"
+    },
+    {
+      "path": "education/research/mechanical-closure/filippov-incoming-convergence-protocol.md",
+      "bytes": 4607,
+      "sha256": "f965834d9c4e7a65c23beb6be28832b8794addc948aa080300933e9aca214716"
+    },
+    {
+      "path": "education/research/mechanical-closure/filippov-incoming-convergence-results.md",
+      "bytes": 9695,
+      "sha256": "a0f83db05b0a1658406b6d154774a914c37ffad154fa891cf24d56d5f0bfa9d3"
+    }
+  ],
+  "excluded": [
+    "This manifest itself",
+    "education/data/filippov-incoming-convergence-v1/review/packet-verification.log"
+  ]
+}

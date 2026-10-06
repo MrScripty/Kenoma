@@ -1,0 +1,16 @@
+PASS 23 diagnostic packet hashes
+PASS 1823 files from 402fffdd byte-identical
+PASS 257 frozen manifest hashes
+PASS protocol/source committed before four runs; all bound hashes match
+PASS four 25us incoming diagnostic prefixes; no physical failure or sliding acceptance
+PASS eight tests; four independent prefix force/work/impulse checks
+PASS all 24 old/new incoming result inputs retained in segment comparisons
+PASS 32 actual RK4 auxiliaries reproduced/relocalized; no states/events/ledgers corrected
+PASS adaptive original brackets retained; no adaptive polynomial inferred
+PASS original ten-full/two-prefix and failed twenty-cell classifications unchanged
+PASS inspected PNG and parsed SVG; no book/Lean/protected figure changes
+FROZEN SOURCE 62721a3bd0204a48f8fa03bcedbbac18ea1e07ed
+FROZEN TREE 9870fd29f2b089c874498dbeb515e789782f51d2
+PROTOCOL SHA256 7101ad7731dcd699c6af7b47cc81bd3a85f3735926429c666a986201b7e144a7
+REPORT SOURCE a2cbd88f44defacc9a3f04f5a301a3da59b517ac
+REPORT TREE 8740baf4e07e4b26879b435d7ca402a5d1c23b40

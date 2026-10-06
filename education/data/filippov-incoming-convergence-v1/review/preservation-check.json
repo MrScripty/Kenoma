@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "scope": "Integrity and preservation only, not trajectory qualification",
+  "baseline_commit": "402fffdd4d8fc91764e188a1a1cd7b29d090f16a",
+  "baseline_tracked_files_byte_identical": 1823,
+  "modified_baseline_files": [],
+  "frozen_manifest_hashes": {
+    "education/data/vertical-force-command-v1/review/packet-manifest.json": 148,
+    "education/data/vertical-force-completion-v1/review/packet-manifest.json": 24,
+    "education/data/antiwindup-continuation-analysis-v1/review/packet-manifest.json": 7,
+    "education/data/antiwindup-continuation-protocol-v1/review/packet-manifest.json": 5,
+    "education/data/filippov-bounded-v1/review/packet-manifest.json": 73
+  },
+  "frozen_protocol_and_source_preserved": true,
+  "original_scalar_full_presets": 10,
+  "original_scalar_prefix_only_presets": [
+    "high",
+    "mass-1"
+  ],
+  "old_twenty_cell_experiment_reclassified": false,
+  "no_book_lean_or_protected_figure_changes": true
+}

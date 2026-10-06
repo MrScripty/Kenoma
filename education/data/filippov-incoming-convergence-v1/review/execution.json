@@ -1,0 +1,34 @@
+{
+  "frozen_source_commit": "62721a3bd0204a48f8fa03bcedbbac18ea1e07ed",
+  "frozen_source_tree": "9870fd29f2b089c874498dbeb515e789782f51d2",
+  "protocol_sha256": "7101ad7731dcd699c6af7b47cc81bd3a85f3735926429c666a986201b7e144a7",
+  "report_source_commit": "a2cbd88f44defacc9a3f04f5a301a3da59b517ac",
+  "report_source_tree": "8740baf4e07e4b26879b435d7ca402a5d1c23b40",
+  "preserved_commit": "402fffdd4d8fc91764e188a1a1cd7b29d090f16a",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "commands": [
+    "OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 python3 education/tests/filippov_incoming_diagnostic.py",
+    "OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 python3 -u education/tools/run_filippov_incoming_diagnostic.py --case CASE --rep REPRESENTATION (four independent cells)",
+    "OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 MPLCONFIGDIR=/tmp/kenoma-incoming-mpl XDG_CACHE_HOME=/tmp/kenoma-incoming-cache python3 -u education/tools/analyze_filippov_incoming_diagnostic.py"
+  ],
+  "new_cell_exit_codes": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "analysis_exit_code": 0,
+  "test_exit_code": 0,
+  "tests": 8,
+  "new_incoming_prefixes": 4,
+  "new_accepted_sliding_entries": 0,
+  "new_qualified_trajectories": 0,
+  "parameter_gain_law_gate_changes": false,
+  "accepted_step_watchdog": 12000,
+  "watchdog_predeclared_reason": "The added resolution needs up to .264/.000025 = 10560 steps before event/grid splits. This separately bounded diagnostic watchdog is declared before execution; the original 10000-step watchdog/results remain unchanged.",
+  "diagnostic_polynomial_relocalizations": 32,
+  "adaptive_polynomials_not_inferred": true,
+  "render_inspected": true,
+  "remaining_decision": "Review stronger ordinary-event localization and numerical treatment of existing continuous activation equality; no implementation/adoption authorized by this diagnostic."
+}
