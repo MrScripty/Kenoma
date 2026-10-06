@@ -1,0 +1,16 @@
+test_constraint_and_I_gates_not_relaxed (__main__.Checks.test_constraint_and_I_gates_not_relaxed) ... ok
+test_no_integrator_or_state_acceptance_call_in_preflight (__main__.Checks.test_no_integrator_or_state_acceptance_call_in_preflight) ... ok
+test_nonconvex_weights_stopped_without_clipping (__main__.Checks.test_nonconvex_weights_stopped_without_clipping) ... ok
+test_nonfinite_diagnostics_stop (__main__.Checks.test_nonfinite_diagnostics_stop) ... ok
+test_physical_order_and_activation_ambiguity_stop (__main__.Checks.test_physical_order_and_activation_ambiguity_stop) ... ok
+test_readonly_refinement_is_unaccepted_and_uses_fixed_budget (__main__.Checks.test_readonly_refinement_is_unaccepted_and_uses_fixed_budget) ... ok
+test_reduced_I_discrepancy_is_not_bitwise_continuity (__main__.Checks.test_reduced_I_discrepancy_is_not_bitwise_continuity) ... ok
+test_scoped_incoming_ACK_does_not_authorize_sliding (__main__.Checks.test_scoped_incoming_ACK_does_not_authorize_sliding) ... ok
+test_strict_sign_loss_stops (__main__.Checks.test_strict_sign_loss_stops) ... ok
+test_unresolved_root_does_not_add_iterations (__main__.Checks.test_unresolved_root_does_not_add_iterations) ... ok
+test_valid_static_point_is_never_accepted (__main__.Checks.test_valid_static_point_is_never_accepted) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.007s
+
+OK
