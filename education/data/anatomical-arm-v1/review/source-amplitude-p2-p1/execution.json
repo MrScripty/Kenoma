@@ -1,0 +1,17 @@
+{
+  "sourceCommit": "873e53812db6e89ccfff44aba17d8687e3e0ab3a",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-u",
+    "education/tools/source_amplitude_p2_p1.py"
+  ],
+  "startedUTC": "2026-10-06T09:56:49.238080+00:00",
+  "elapsedSeconds": 16.677016991001437,
+  "exitCode": 0,
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "OPENBLAS_NUM_THREADS": "1",
+  "rawLogSHA256": "ca8b1750d7e1380f56bf63ee5e3a470210b64bf7715803e8473e0a6f95feb373",
+  "physicalHistoryAdvanced": false
+}

@@ -1,0 +1,6 @@
+EQUIVALENCE PASS_EQUIVALENCE_NEGATIVE_WITNESS_RETAINED matched activation 0.5618314432325662 Rayleigh [-4293.98749642736, -4293.987496427361]
+START coarse-1.01 activation 1.0 sigma0 155000.0
+RESULT coarse-1.01 REJECTED_GATES_NO_ADVANCEMENT residual 3.0834378303687655e-05 curvature None minimum None
+START coarse-1.25 activation 1.0 sigma0 155000.0
+RESULT coarse-1.25 REJECTED_GATES_NO_ADVANCEMENT residual 9.659460896032542e-05 curvature UNQUALIFIED_DERIVATIVE_FAILURE minimum -9477.446195040047
+COMPLETE [{"name": "coarse-1.01", "result": "REJECTED_GATES_NO_ADVANCEMENT", "stationaryAccepted": false, "derivativeGatesPass": false, "forceResidualN": 3.0834378303687655e-05, "capForceN": 62.04468028763933, "Jmin": 0.9975807124929694, "Jmax": 1.0018893754140359, "curvatureClassification": null, "minimumEigenvalueNPerM": null, "passiveStationary": null, "passiveMinimumNPerM": null}, {"name": "coarse-1.25", "result": "REJECTED_GATES_NO_ADVANCEMENT", "stationaryAccepted": true, "derivativeGatesPass": false, "forceResidualN": 9.659460896032542e-05, "capForceN": 39.76114485757864, "Jmin": 1.0002536445488348, "Jmax": 1.0002543142367861, "curvatureClassification": "UNQUALIFIED_DERIVATIVE_FAILURE", "minimumEigenvalueNPerM": -9477.446195040047, "passiveStationary": true, "passiveMinimumNPerM": 1.9789587592359115}]
