@@ -28,17 +28,17 @@ class RealReceiptTests(unittest.TestCase):
             result=checker.check();prerequisite.assert_called_once();return result
     def no_receipts(self):
         self.assertFalse(list((self.root/'dist').glob('*-proof-status.json')))
-    def test_receipts_bind_both_sources_and_maps_after_complete_check(self):
+    def test_receipts_bind_all_sources_and_maps_after_complete_check(self):
         receipts=self.run_check()
         self.assertEqual(sum(len(r['claims']) for r in receipts),sum(count for *_,count in checker.FAMILIES))
         for r,(_,_,prefix,_) in zip(receipts,checker.FAMILIES):
             self.assertTrue(all(c['status']=='checked' for c in r['claims']))
             self.assertEqual(json.loads((self.root/'dist'/(prefix+'-proof-status.json')).read_text()),r)
     def test_later_compile_failure_removes_every_stale_receipt(self):
-        def fail_second(command,**kwargs):
-            if command[-1].endswith('MechanicsReal.lean'):return SimpleNamespace(returncode=1,stdout='',stderr='kernel failure fixture')
+        def fail_last(command,**kwargs):
+            if command[-1].endswith(checker.FAMILIES[-1][0]):return SimpleNamespace(returncode=1,stdout='',stderr='kernel failure fixture')
             return self.compile(command,**kwargs)
-        with self.assertRaisesRegex(RuntimeError,'kernel failure'):self.run_check(fail_second)
+        with self.assertRaisesRegex(RuntimeError,'kernel failure'):self.run_check(fail_last)
         self.no_receipts()
     def test_missing_theorem_report_rejects(self):
         with self.assertRaisesRegex(RuntimeError,'Missing kernel'):

@@ -42,15 +42,25 @@ The implementation uses τ = 0.05 s while excitation is at least the current act
 
 The exported trace has one row per step. A same-time excitation change refreshes the current row's input and instantaneous derived outputs, so an immediate download matches the display. Earlier rows remain intact; time, state and accumulated work do not advance. The current row's excitation applies to the next step. Intermediate input edits with zero elapsed time are not separate events.
 
-The exact real-arithmetic update is a convex mixture of a and u with weight e^(−h/τ). The following checked contract concerns integer-weighted mixture numerators only. Neither the exponential implementation nor the physiological validity of those time constants is formally established.
+The exact real-arithmetic update is a convex mixture of a and u with weight e^(−h/τ). The first contract below concerns integer-weighted mixture numerators. The separate real claims prove the exponential update's interval bound and its constant-input derivative. The derivative treats τ as fixed; the implementation selects its rise/fall value for each step. These claims do not prove floating-point equivalence or the physiological validity of the authored time constants.
 
 {{proof:activation-bound}}
+
+{{proof:actuator-real-activation-interval}}
+
+{{proof:actuator-real-activation-ode}}
 
 For this authored force law, define fiber length l_f = l − l_T with a rigid tendon segment of length l_T, normalized fiber length λ = l_f/l_opt, and extension δ = max(0,l_f − l_opt):
 
 $$F_A=F_0a\exp\left[-\left(\frac{\lambda-1}{w}\right)^2\right],\quad F_P=k_P\delta,\quad \tau_A=rF_A,\quad\tau_P=rF_P.$$
 
 The bell curve, tension-only passive law, and their parameters are teaching choices. Force–velocity dependence and pennation are deliberately omitted. This is not an implementation of Millard's calibrated muscle curves or a prediction of human shortening speed. The rigid tendon removes fiber/tendon redistribution and tendon elastic energy. The original actuator comparison explains why compliant and rigid-tendon formulations answer different questions. [Millard et al.](#source-muscle)
+
+The following real claims prove the Gaussian force bound and its derivative with respect to fiber length. The same force law is used in Laboratory 5; the compliant equilibrium changes its fiber length rather than its constitutive definition.
+
+{{proof:actuator-real-active-force-bounds}}
+
+{{proof:actuator-real-active-force-derivative}}
 
 | Parameter | Current value | Identification context |
 |:--|:--|:--|

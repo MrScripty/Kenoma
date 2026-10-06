@@ -19,7 +19,19 @@ Set $c_T=1/k_T$ (zero for the rigid switch), $L=l-l_{Ts}$ and solve for the real
 
 $$H(f)=f+c_T[F_A(f,a)+k_M\max(0,f-l_0)]-L=0.$$
 
-The supported tendon stiffnesses 15,000–60,000 N/m retain a unique root in $[0,L]$. The active slope satisfies $|\partial F_A/\partial f|\leq F_0\sqrt{2/e}/(wl_0)$, about 8,578 N/m at full activation. Therefore $H'(f)\geq1-c_TF_0\sqrt{2/e}/(wl_0)>0$ on either passive branch. For the supported pose/activation domain, $H(0)\leq0$ and $H(L)\geq0$; the executable bracket checks the lower end before bisection. A nonpositive-root candidate is explicitly inadmissible. This derivative/bracket argument is a real mathematical derivation; its real-domain Lean formalization remains **unfinished**, and integer algebra cards do not prove it.
+The supported tendon stiffnesses 15,000–60,000 N/m retain a unique root in $[0,L]$. The active slope satisfies $|\partial F_A/\partial f|\leq F_0\sqrt{2/e}/(wl_0)$, about 8,578 N/m at full activation. Therefore $H'(f)\geq1-c_TF_0\sqrt{2/e}/(wl_0)>0$ on either passive branch. For the supported pose/activation domain, $H(0)\leq0$ and $H(L)\geq0$; the executable bracket checks the lower end before bisection. A nonpositive-root candidate is explicitly inadmissible. The real claims below prove the exact Gaussian slope bound, strict monotonicity including the passive kink, and root uniqueness under the same sufficient guard. A separate continuity result proves bracket existence given $L\geq0$ and $H(0)\leq0$; it does not certify that every application supplies those assumptions.
+
+{{proof:actuator-real-gaussian-radius-bound}}
+
+{{proof:actuator-real-active-slope-bound}}
+
+{{proof:actuator-real-series-strict-monotone}}
+
+{{proof:actuator-real-series-unique-root}}
+
+{{proof:actuator-real-series-root-exists}}
+
+{{proof:actuator-real-series-lower-rejection}}
 
 The implementation bisects the monotone scalar equation, then reports $l_T=l-f$, $F_T=F_A+F_P$ and the independent tendon-force residual $k_T(l_T-l_{Ts})-F_T$. At zero activation and a short path, the tendon carries zero force; it is not a compressive strut. The rigid switch sets $f=L$ and stores no tendon energy. The supported fiber domain remains $f\geq0.04$ m; leaving it stops the teaching solve. Material coefficients and that admissibility bound are unchanged.
 
@@ -29,6 +41,10 @@ $$\dot l_f=\frac{\dot l-c_TF_{A,a}\dot a}{d},\qquad
 \dot l_T=\dot l-\dot l_f.$$
 
 Thus a held joint can have l̇ = 0 while fibers shorten and the tendon lengthens as activation rises. Release can lengthen an active fiber while the whole path remains fixed. “Isometric” must name the quantity that is held: joint angle, total path, or fiber length. The controls show all three length quantities and the fiber velocity.
+
+The real denominator claim below applies to either nonnegative passive branch stiffness under the same guard. It does not claim that the passive kink is differentiable or that binary64 division and the reported velocities refine this real derivation. Finite-precision root residuals, minimum-fiber acceptance, solver termination and continuous work/energy formalization remain separate obligations.
+
+{{proof:actuator-real-series-denominator}}
 
 **Try a fixed-end activation.** Choose prescribed hold, q = 90°, and step through activation. Compare rigid and compliant tendon after resetting the experiment. The generated 0.30 s fixture is:
 
