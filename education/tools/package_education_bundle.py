@@ -9,6 +9,7 @@ from check_real_lesson_proofs import FAMILIES as REAL_FAMILIES
 from check_real_lesson_artifact import check as check_real_lesson_artifact
 from check_dissipative_artifact import check as check_dissipative_artifact
 from check_serial_artifact import check as check_serial_artifact
+from check_print_readability import check as check_print_readability
 ROOT=Path(__file__).resolve().parents[1]
 FAMILIES=[('proof-status.json','Mechanics.lean','claims.json',12),('transfer-proof-status.json','AnatomicalTransfer.lean','anatomical-claims.json',2),('coupled-proof-status.json','CoupledMechanics.lean','coupled-claims.json',7),('arm-proof-status.json','AnatomicalArm.lean','arm-claims.json',4),('property-proof-status.json','ContinuumProperties.lean','property-claims.json',4)]
 FAMILIES += [('material-proof-status.json','MaterialResponse.lean','material-claims.json',5)]
@@ -51,6 +52,7 @@ def validate_build(out,manifest):
     if any(name in real_receipts for name,*_ in FAMILIES):check_real_lesson_artifact(out)
     if 'dissipative-real-proof-status.json' in manifest.get('proof_families',[]):check_dissipative_artifact(out)
     if 'serial-real-proof-status.json' in manifest.get('proof_families',[]):check_serial_artifact(out)
+    check_print_readability(out)
     require(digest(local('proofs/mathlib-lake-manifest.json'))==lock['manifest_sha256'],'Wrong bundled dependency manifest')
     html=digest(local('index.html'));app=digest(local('assets/app.js'));manifest_hash=digest(local('build-manifest.json'))
     for name in ['browser-check.json','mobile-startup-check.json']:

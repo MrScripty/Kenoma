@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "inputSHA256": "c201d8671477503a23edbd3d48abd62de77796c6f7fa648c1ff70adc18940d3d",
-  "rendererSHA256": "cb7e19b5f26edc7451bed0cf329787f8ce01535f159dc6e59e16f693ed6b2e95",
+  "inputSHA256": "197a33e8b32f75d92d0707ca00079f5305bb901e67ec1979fa6efbedb1fcf560",
+  "rendererSHA256": "82d2316d1b50ebef74586d0eb53dc5d48b1b81fa4a7282eb69f49c03ba2cf7cd",
   "pythonVersion": "3.12.14",
   "matplotlibVersion": "3.10.8",
   "outputs": {
-    "nodal-force-components.svg": "8a3fdc8ae8ad31dfc8a4bb0c882a06687e28245b6038e85fbdf5d74073500f60",
-    "nodal-force-components.png": "087c88629ef44eaeff6e311c55211b58083779a22adc24f105e98d669c62ffd6"
+    "nodal-force-components.svg": "976426db3214fc95305fc6466a983625a3fb341a4cbfd85a1a6688b8e12d8802",
+    "nodal-force-components.png": "e22db400f1a362a4ceb16f978ee105710d4b79dbe8cd9c1c59c82f07d08b49d4"
   },
   "limits": [
     "Components are scalar virtual-work derivatives in six normalized excluded shapes, not isolated nodal traction vectors.",
