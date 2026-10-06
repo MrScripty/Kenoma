@@ -1,0 +1,19 @@
+{
+  "command": [
+    "python",
+    "education/tools/audit_source_units_and_identifiability.py",
+    "--protocol-commit",
+    "a1078e07b9bee1936d775a463dd4b659a8067d74",
+    "--output",
+    "education/data/anatomical-arm-v1/review/source-unit-calibration/symbolic-unit-audit.json"
+  ],
+  "protocolCommit": "a1078e07b9bee1936d775a463dd4b659a8067d74",
+  "sourceSHA256": "c58dae4d5f745299d795b9511cde15272dc4330541b53bb7badaa1ffa8355486",
+  "startedUTC": "2026-10-06T09:10:44.302794+00:00",
+  "wallTimeSeconds": 0.6908681570057524,
+  "exitCode": 0,
+  "attempt": 1,
+  "sourceChanged": false,
+  "physicalCalibrationSelected": false,
+  "kineticOrAnatomicalSolveExecuted": false
+}

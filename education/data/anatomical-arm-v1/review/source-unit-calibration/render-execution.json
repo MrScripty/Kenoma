@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python",
+    "education/tools/render_source_unit_contract.py",
+    "--receipt",
+    "education/data/anatomical-arm-v1/review/source-unit-calibration/symbolic-unit-audit.json",
+    "--output-prefix",
+    "education/data/anatomical-arm-v1/review/source-unit-calibration/conditional-unit-contract"
+  ],
+  "sourceSHA256": "a472285d214c4b29c35739dac35f6645246d2d765db0774438b796a1f84dc112",
+  "startedUTC": "2026-10-06T09:10:56.295129+00:00",
+  "wallTimeSeconds": 2.1227184960007435,
+  "exitCode": 0,
+  "attempt": 1,
+  "physicalCalibrationSelected": false
+}
