@@ -44,7 +44,7 @@ def check():
                 .hero,.charts,.details-grid,.definition,.footer{display:block}
                 .chart svg{width:310px!important;max-width:100%!important;margin:auto}
                 .chart{margin:12px 0;break-inside:avoid}.panel{break-inside:avoid}
-                .controls{display:none!important}svg text{font-size:14px!important}}
+                .controls{display:none!important}svg text,.chart-vector{font-size:14px!important}}
             ''')
             page.evaluate('document.fonts.ready')
             assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1'), 'Review print overflow'
