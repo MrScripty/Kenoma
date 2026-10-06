@@ -1,0 +1,25 @@
+{
+  "result": "PASS_ACTUAL_PNG_AND_PDF_RASTER_INSPECTION",
+  "method": "Both actual images viewed using view_image after generation",
+  "imageSHA256": {
+    "matched-force-contractile-state.png": "32362cc2a0ee4b884d44a26fe1d06a109ba41f60b7ae48d84b32741631b67158",
+    "matched-force-contractile-state.pdf-raster.png": "8d907150e9bf5a954cf46172155e787ba2d9846f783015d0af6c23d7b3b8101c"
+  },
+  "dimensions": {
+    "matched-force-contractile-state.png": [
+      2400,
+      864
+    ],
+    "matched-force-contractile-state.pdf-raster.png": [
+      1620,
+      584
+    ]
+  },
+  "findings": [
+    "Titles, axes, legends, numeric annotation and scope footer readable",
+    "Active tangent and negative sampled response clearly distinguished",
+    "Energy labels separate powered input and detachment removal",
+    "Positive small block eigenvalues resolved numerically in the results table"
+  ],
+  "reviewLimit": "Static inspection; no thermodynamic or anatomical validation"
+}

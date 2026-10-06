@@ -1,0 +1,23 @@
+{
+  "protocolCommit": "455f0126669628181431c504a65d9514662e3317",
+  "sourceHashes": {
+    "data/anatomical-arm-v1/review/continuous-strain-ce/summary.json": "931985179e42e14f933974571a0e7fffcce0661636ba63ca8d197b04734dafeb",
+    "data/anatomical-arm-v1/review/continuous-strain-ce/matched-densities.npz": "8fc1d2157f97b6d0625322fe8ca962140630333541389a2f48b0108c7b411992",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/coarse-1.25-reclassification.json": "7a75a83ad9e2f85b115e5a6849329b0e3818a69284a6d544a2295bd58283b560",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/coarse-mesh.json": "b8d7739144d4d940ef075db81fd04173ee296dd5a3d333c283faf8ad30e25ee9",
+    "tools/continuous_strain_ce_reference.py": "8f67cb3c84379ca1f1d6363e5f75d3e606113e120d17cf459240a9d944e0017e",
+    "tools/full_p2_p1.py": "c80a360fd897867e8cb2360766de8a9f5d548d61bf59b5e54dc8b8df2d5f6860",
+    "tools/source_amplitude_p2_p1.py": "ac12c5fb9ac8e4ec2251c4a855bd7c4e57bb964160b5a044a8510825efb37b23",
+    "research/mechanical-closure/matched-force-contractile-state-protocol.md": "064fe191625b9ba757819c87102287a4189f50f18645c3ee62e4c4e6248e6cf2",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/primary-source-binding.json": "30cb9959afd5257fe9f9c9522e8512cb9176597b8c00e3a542cc444e64a40177",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/summary.json": "e6561b88cdbf7edbdd8474d9723ef50218ae10c3bea9ba36eb6ff74eaaf15b30",
+    "data/anatomical-arm-v1/review/matched-force-contractile-state/frozen-mode-inspection.json": "b400853b417dc371c400ddd5951244014fdd6afeaf2ef1a3eb1a4cad14015ae3",
+    "tools/matched_force_contractile_state.py": "8eb36a84c92472c992e9e194db82b698be09d80ee8c4e0641ea17e90a0068bca"
+  },
+  "sigma0Pa": 155000.0,
+  "kinematicGain": 130.0,
+  "lambda0": 1.25,
+  "newODEIntegration": false,
+  "newNonlinearSolve": false,
+  "physicalHistoryAdvanced": false
+}

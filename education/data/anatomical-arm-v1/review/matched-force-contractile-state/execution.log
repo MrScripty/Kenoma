@@ -1,0 +1,110 @@
+{
+  "result": "PASS_BOUNDED_MATCHED_FORCE_COUPLING",
+  "gates": 480,
+  "failed": [],
+  "initialMacroForceN": 39.76114573531328,
+  "tangentChecks": 12,
+  "block": {
+    "diagnosisNPerM": {
+      "matrix": 62.72788996607728,
+      "passiveFiber": 2283.431169220482,
+      "activeForceLengthAxial": -11844.433632150838,
+      "activeOrientationTension": 2.1668176190805997,
+      "pressurePrestress": -4.043136465872122,
+      "weakVolumeResponse": 22.70469677101402,
+      "total": -9477.446195040056,
+      "independentQuadrature": -9477.446195040067,
+      "logJDirectionalRMSPerM": 16.859294142625853
+    },
+    "responses": [
+      {
+        "timeSeconds": 0.0,
+        "endpoint": "step/hold",
+        "addedOldWitnessResponseNPerM": 291732.07440260524,
+        "oldWitnessResponseNPerM": 282254.6282075652,
+        "lowestSampledEigenvaluesNPerM": [
+          13.544754441327793,
+          17.16382173956557,
+          20.790390352392762
+        ],
+        "quadraticFormAbsoluteDifferenceNPerM": 5.820766091346741e-11
+      },
+      {
+        "timeSeconds": 0.008,
+        "endpoint": "step/hold",
+        "addedOldWitnessResponseNPerM": 227909.78837759388,
+        "oldWitnessResponseNPerM": 218432.34218255372,
+        "lowestSampledEigenvaluesNPerM": [
+          13.544725650915195,
+          17.163741327416275,
+          20.790372494060385
+        ],
+        "quadraticFormAbsoluteDifferenceNPerM": 2.9103830456733704e-11
+      },
+      {
+        "timeSeconds": 0.02,
+        "endpoint": "step/hold",
+        "addedOldWitnessResponseNPerM": 159442.18464018215,
+        "oldWitnessResponseNPerM": 149964.7384451421,
+        "lowestSampledEigenvaluesNPerM": [
+          13.54466750358943,
+          17.16357918680579,
+          20.790336441596615
+        ],
+        "quadraticFormAbsoluteDifferenceNPerM": 8.731149137020111e-11
+      },
+      {
+        "timeSeconds": 0.04,
+        "endpoint": "step/hold",
+        "addedOldWitnessResponseNPerM": 89710.20318303318,
+        "oldWitnessResponseNPerM": 80232.75698799315,
+        "lowestSampledEigenvaluesNPerM": [
+          13.544506161809839,
+          17.16313103702805,
+          20.79023651226754
+        ],
+        "quadraticFormAbsoluteDifferenceNPerM": 0.0
+      },
+      {
+        "timeSeconds": 0.1,
+        "endpoint": "step/hold",
+        "addedOldWitnessResponseNPerM": 16894.64637082079,
+        "oldWitnessResponseNPerM": 7417.200175780731,
+        "lowestSampledEigenvaluesNPerM": [
+          13.541043428576433,
+          17.153749359487797,
+          20.788113194887707
+        ],
+        "quadraticFormAbsoluteDifferenceNPerM": 0.0
+      },
+      {
+        "timeSeconds": 0.2,
+        "endpoint": "step/hold",
+        "addedOldWitnessResponseNPerM": 1108.8364306602093,
+        "oldWitnessResponseNPerM": -8368.60976437985,
+        "lowestSampledEigenvaluesNPerM": [
+          -8368.812532550388,
+          -7248.081700444522,
+          -5712.886128924647
+        ],
+        "quadraticFormAbsoluteDifferenceNPerM": 2.2737367544323206e-13
+      },
+      {
+        "timeSeconds": null,
+        "endpoint": "analytic relaxed",
+        "addedOldWitnessResponseNPerM": 0.0,
+        "oldWitnessResponseNPerM": -9477.446195040056,
+        "lowestSampledEigenvaluesNPerM": [
+          -9477.446195040047,
+          -8221.467635761077,
+          -6493.111357937741
+        ],
+        "quadraticFormAbsoluteDifferenceNPerM": 0.0
+      }
+    ],
+    "classification": "POWERED_ENDPOINT_RESPONSE_OPERATOR; NOT_STORED_ENERGY_HESSIAN",
+    "sameFrozenPositions": true,
+    "newNonlinearSolve": false,
+    "physicalHistoryAdvanced": false
+  }
+}

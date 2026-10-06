@@ -1,0 +1,108 @@
+{
+  "result": "PASS_INDEPENDENT_MATCHED_FIELD_AND_OPERATOR_AUDIT",
+  "checksPassed": 480,
+  "immutableBindingsChecked": 12,
+  "initialFieldChecks": [
+    {
+      "pointsPerTet": 32,
+      "independentNewGradientVersusOriginalNodeMaximumN": 1.4988010832439613e-14,
+      "initialMatchedForceResidualN": 9.659460894284273e-05,
+      "Jrange": [
+        1.0002537243665794,
+        1.0002542724597945
+      ]
+    },
+    {
+      "pointsPerTet": 256,
+      "independentNewGradientVersusOriginalNodeMaximumN": 2.0245957688125316e-14,
+      "initialMatchedForceResidualN": 9.659460896048199e-05,
+      "Jrange": [
+        1.0002536844796364,
+        1.0002542933482919
+      ]
+    }
+  ],
+  "independentlyScatteredOperatorChecks": [
+    {
+      "timeSeconds": 0.0,
+      "eigenvalueMaximumDifferenceNPerM": 2.12843076496938e-11,
+      "witnessDifferenceNPerM": 0.0
+    },
+    {
+      "timeSeconds": 0.008,
+      "eigenvalueMaximumDifferenceNPerM": 1.2850165376221412e-11,
+      "witnessDifferenceNPerM": 2.9103830456733704e-11
+    },
+    {
+      "timeSeconds": 0.02,
+      "eigenvalueMaximumDifferenceNPerM": 1.1027623258996755e-11,
+      "witnessDifferenceNPerM": 0.0
+    },
+    {
+      "timeSeconds": 0.04,
+      "eigenvalueMaximumDifferenceNPerM": 1.4921397450962104e-13,
+      "witnessDifferenceNPerM": 0.0
+    },
+    {
+      "timeSeconds": 0.1,
+      "eigenvalueMaximumDifferenceNPerM": 1.3944401189291966e-11,
+      "witnessDifferenceNPerM": 0.0
+    },
+    {
+      "timeSeconds": 0.2,
+      "eigenvalueMaximumDifferenceNPerM": 3.637978807091713e-12,
+      "witnessDifferenceNPerM": 0.0
+    },
+    {
+      "timeSeconds": null,
+      "eigenvalueMaximumDifferenceNPerM": 0.0,
+      "witnessDifferenceNPerM": 0.0
+    }
+  ],
+  "displacementRefinement": [
+    {
+      "count": 200,
+      "maxStepSeconds": 0.001,
+      "coarseMaximumRelativeError": 7.394126386104767e-07,
+      "halfDisplacementMaximumRelativeError": 1.848700265079343e-07,
+      "matchedTimeMaximumTangentDifferencePa": 1.1248717783018947
+    },
+    {
+      "count": 200,
+      "maxStepSeconds": 0.0005,
+      "coarseMaximumRelativeError": 7.394126386104767e-07,
+      "halfDisplacementMaximumRelativeError": 1.8487206387059593e-07,
+      "matchedTimeMaximumTangentDifferencePa": 1.1248698867857456
+    },
+    {
+      "count": 400,
+      "maxStepSeconds": 0.001,
+      "coarseMaximumRelativeError": 7.394146783552837e-07,
+      "halfDisplacementMaximumRelativeError": 1.848679915274193e-07,
+      "matchedTimeMaximumTangentDifferencePa": 1.1248670485801995
+    },
+    {
+      "count": 400,
+      "maxStepSeconds": 0.0005,
+      "coarseMaximumRelativeError": 7.39413659673953e-07,
+      "halfDisplacementMaximumRelativeError": 1.8487002889008097e-07,
+      "matchedTimeMaximumTangentDifferencePa": 1.1248727240599692
+    },
+    {
+      "count": 800,
+      "maxStepSeconds": 0.001,
+      "coarseMaximumRelativeError": 7.394126357268271e-07,
+      "halfDisplacementMaximumRelativeError": 1.848679862616214e-07,
+      "matchedTimeMaximumTangentDifferencePa": 1.1248708325438201
+    },
+    {
+      "count": 800,
+      "maxStepSeconds": 0.0005,
+      "coarseMaximumRelativeError": 7.394126357268271e-07,
+      "halfDisplacementMaximumRelativeError": 1.848679862616214e-07,
+      "matchedTimeMaximumTangentDifferencePa": 1.1248698863200843
+    }
+  ],
+  "sourceSHA256": "c052fbff8d81a2d3c3549f56eff699c01dd1791512692bf24aef5d1a17251b89",
+  "summarySHA256": "a7a092710c2b5a4747c27194fcc1588c86bc9b180d18d41c700c6a16b5bc46c5"
+}

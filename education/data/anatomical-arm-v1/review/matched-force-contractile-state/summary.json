@@ -1,0 +1,5168 @@
+{
+  "result": "PASS_BOUNDED_MATCHED_FORCE_COUPLING",
+  "protocolCommit": "455f0126669628181431c504a65d9514662e3317",
+  "sourceHashes": {
+    "data/anatomical-arm-v1/review/continuous-strain-ce/summary.json": "931985179e42e14f933974571a0e7fffcce0661636ba63ca8d197b04734dafeb",
+    "data/anatomical-arm-v1/review/continuous-strain-ce/matched-densities.npz": "8fc1d2157f97b6d0625322fe8ca962140630333541389a2f48b0108c7b411992",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/coarse-1.25-reclassification.json": "7a75a83ad9e2f85b115e5a6849329b0e3818a69284a6d544a2295bd58283b560",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/coarse-mesh.json": "b8d7739144d4d940ef075db81fd04173ee296dd5a3d333c283faf8ad30e25ee9",
+    "tools/continuous_strain_ce_reference.py": "8f67cb3c84379ca1f1d6363e5f75d3e606113e120d17cf459240a9d944e0017e",
+    "tools/full_p2_p1.py": "c80a360fd897867e8cb2360766de8a9f5d548d61bf59b5e54dc8b8df2d5f6860",
+    "tools/source_amplitude_p2_p1.py": "ac12c5fb9ac8e4ec2251c4a855bd7c4e57bb964160b5a044a8510825efb37b23",
+    "research/mechanical-closure/matched-force-contractile-state-protocol.md": "064fe191625b9ba757819c87102287a4189f50f18645c3ee62e4c4e6248e6cf2",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/primary-source-binding.json": "30cb9959afd5257fe9f9c9522e8512cb9176597b8c00e3a542cc444e64a40177",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/summary.json": "e6561b88cdbf7edbdd8474d9723ef50218ae10c3bea9ba36eb6ff74eaaf15b30",
+    "data/anatomical-arm-v1/review/matched-force-contractile-state/frozen-mode-inspection.json": "b400853b417dc371c400ddd5951244014fdd6afeaf2ef1a3eb1a4cad14015ae3",
+    "tools/matched_force_contractile_state.py": "8eb36a84c92472c992e9e194db82b698be09d80ee8c4e0641ea17e90a0068bca"
+  },
+  "scope": "EDUCATIONAL COMPOSITE; NO ARM VALIDATION",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "physicalHistoryAdvanced": false,
+  "newODEIntegration": false,
+  "newNonlinearSolve": false,
+  "timesSeconds": [
+    0.0,
+    0.008,
+    0.02,
+    0.04,
+    0.1,
+    0.2
+  ],
+  "initialMacroForceN": 39.76114573531328,
+  "originalFrozenResidualN": 9.659460896032542e-05,
+  "passivePointTangentPa": 730262.3073006904,
+  "passivePointStoredEnergyJ": 0.06620074082398907,
+  "sigma0Pa": 155000.0,
+  "kinematicGain": 130.0,
+  "runs": [
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.001",
+      "initialRawMoments": [
+        0.49934610862403067,
+        0.9883400823517446,
+        0.5304839358485609
+      ],
+      "calibrationMultiplier": 1.0117974752379877,
+      "initialMacroForceN": 39.76114573531328,
+      "initialAttachmentInputW": 0.5398668063638741,
+      "initialDetachmentRemovalW": 0.5398668063638742,
+      "jump": {
+        "delta": 0.001,
+        "macroStretchChange": 7.692307692307692e-06,
+        "activeMechanicalWorkJ": 3.7575896912611366e-05,
+        "signedEnvelopeRecruitmentWorkJ": -8.27802711166474e-07,
+        "activeLinkStorageChangeJ": 3.674809420143789e-05,
+        "endpointDetachmentRemovalJ": 1.619859024133218e-26,
+        "normalizedActiveIdentityError": 1.0360568173658015e-16,
+        "passiveStorageChangeJ": 5.263212997415394e-06,
+        "passiveWorkJ": 5.263212997416842e-06,
+        "passiveWorkDensityIdentityErrorPa": 2.5854318685958333e-14,
+        "passiveWorkDensityQuadratureErrorEstimatePa": 1.0434536166497432e-15
+      },
+      "holds": [
+        {
+          "timeSeconds": 0.0,
+          "attachmentElasticInputW": 0.5398446578684998,
+          "detachmentElasticRemovalW": 0.5409788755070459,
+          "activeLinkStorageRateW": -0.0011342176385460583,
+          "activeLinkStorageJ": 0.020195550506995903
+        },
+        {
+          "timeSeconds": 0.008,
+          "attachmentElasticInputW": 0.5398624930506375,
+          "detachmentElasticRemovalW": 0.5407367932828712,
+          "activeLinkStorageRateW": -0.0008743002322335798,
+          "activeLinkStorageJ": 0.020187569349559092
+        },
+        {
+          "timeSeconds": 0.02,
+          "attachmentElasticInputW": 0.5398689840360769,
+          "detachmentElasticRemovalW": 0.5404714918846829,
+          "activeLinkStorageRateW": -0.0006025078486060273,
+          "activeLinkStorageJ": 0.020178822472198443
+        },
+        {
+          "timeSeconds": 0.04,
+          "attachmentElasticInputW": 0.5398635304457515,
+          "detachmentElasticRemovalW": 0.5401968547030319,
+          "activeLinkStorageRateW": -0.0003333242572804003,
+          "activeLinkStorageJ": 0.020169747845689524
+        },
+        {
+          "timeSeconds": 0.1,
+          "attachmentElasticInputW": 0.5398486465078343,
+          "detachmentElasticRemovalW": 0.5399096029618162,
+          "activeLinkStorageRateW": -6.095645398193603e-05,
+          "activeLinkStorageJ": 0.020160179359042768
+        },
+        {
+          "timeSeconds": 0.2,
+          "attachmentElasticInputW": 0.5398449064248096,
+          "detachmentElasticRemovalW": 0.5398487771132382,
+          "activeLinkStorageRateW": -3.870688428563846e-06,
+          "activeLinkStorageJ": 0.020158118032658108
+        }
+      ]
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.0005",
+      "initialRawMoments": [
+        0.49934610862403067,
+        0.9883400823517446,
+        0.5304839358485609
+      ],
+      "calibrationMultiplier": 1.0117974752379877,
+      "initialMacroForceN": 39.76114573531328,
+      "initialAttachmentInputW": 0.5398668063638741,
+      "initialDetachmentRemovalW": 0.5398668063638742,
+      "jump": {
+        "delta": 0.001,
+        "macroStretchChange": 7.692307692307692e-06,
+        "activeMechanicalWorkJ": 3.7575896912611366e-05,
+        "signedEnvelopeRecruitmentWorkJ": -8.27802711166474e-07,
+        "activeLinkStorageChangeJ": 3.674809420143789e-05,
+        "endpointDetachmentRemovalJ": 1.619859024133218e-26,
+        "normalizedActiveIdentityError": 1.0360568173658015e-16,
+        "passiveStorageChangeJ": 5.263212997415394e-06,
+        "passiveWorkJ": 5.263212997416842e-06,
+        "passiveWorkDensityIdentityErrorPa": 2.5854318685958333e-14,
+        "passiveWorkDensityQuadratureErrorEstimatePa": 1.0434536166497432e-15
+      },
+      "holds": [
+        {
+          "timeSeconds": 0.0,
+          "attachmentElasticInputW": 0.5398446578684998,
+          "detachmentElasticRemovalW": 0.5409788755070459,
+          "activeLinkStorageRateW": -0.0011342176385460583,
+          "activeLinkStorageJ": 0.020195550506995903
+        },
+        {
+          "timeSeconds": 0.008,
+          "attachmentElasticInputW": 0.5398624930506375,
+          "detachmentElasticRemovalW": 0.540736793282871,
+          "activeLinkStorageRateW": -0.0008743002322335783,
+          "activeLinkStorageJ": 0.020187569349559092
+        },
+        {
+          "timeSeconds": 0.02,
+          "attachmentElasticInputW": 0.5398689840360769,
+          "detachmentElasticRemovalW": 0.5404714918846829,
+          "activeLinkStorageRateW": -0.0006025078486060221,
+          "activeLinkStorageJ": 0.020178822472198443
+        },
+        {
+          "timeSeconds": 0.04,
+          "attachmentElasticInputW": 0.5398635304457515,
+          "detachmentElasticRemovalW": 0.5401968547030319,
+          "activeLinkStorageRateW": -0.00033332425728043054,
+          "activeLinkStorageJ": 0.020169747845689524
+        },
+        {
+          "timeSeconds": 0.1,
+          "attachmentElasticInputW": 0.5398486465078343,
+          "detachmentElasticRemovalW": 0.5399096029618162,
+          "activeLinkStorageRateW": -6.0956453981922154e-05,
+          "activeLinkStorageJ": 0.020160179359042768
+        },
+        {
+          "timeSeconds": 0.2,
+          "attachmentElasticInputW": 0.5398449064248096,
+          "detachmentElasticRemovalW": 0.5398487771132382,
+          "activeLinkStorageRateW": -3.870688428578435e-06,
+          "activeLinkStorageJ": 0.020158118032658108
+        }
+      ]
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.001",
+      "initialRawMoments": [
+        0.49934610862403067,
+        0.9883400823517446,
+        0.5304839358485609
+      ],
+      "calibrationMultiplier": 1.0117974752379877,
+      "initialMacroForceN": 39.76114573531328,
+      "initialAttachmentInputW": 0.5398668063638741,
+      "initialDetachmentRemovalW": 0.5398668063638742,
+      "jump": {
+        "delta": -0.001,
+        "macroStretchChange": -7.692307692307692e-06,
+        "activeMechanicalWorkJ": -3.753948665952716e-05,
+        "signedEnvelopeRecruitmentWorkJ": 8.262534004245273e-07,
+        "activeLinkStorageChangeJ": -3.6713233259094364e-05,
+        "endpointDetachmentRemovalJ": 3.1999784945069537e-28,
+        "normalizedActiveIdentityError": 1.2237254396046e-16,
+        "passiveStorageChangeJ": -5.260793193330755e-06,
+        "passiveWorkJ": -5.260793193321536e-06,
+        "passiveWorkDensityIdentityErrorPa": 1.646321967641029e-13,
+        "passiveWorkDensityQuadratureErrorEstimatePa": 1.042973880538727e-15
+      },
+      "holds": [
+        {
+          "timeSeconds": 0.0,
+          "attachmentElasticInputW": 0.5398889546320853,
+          "detachmentElasticRemovalW": 0.5387564869724689,
+          "activeLinkStorageRateW": 0.0011324676596164752,
+          "activeLinkStorageJ": 0.020122089179535375
+        },
+        {
+          "timeSeconds": 0.008,
+          "attachmentElasticInputW": 0.5398712687910899,
+          "detachmentElasticRemovalW": 0.5389980845421473,
+          "activeLinkStorageRateW": 0.0008731842489426146,
+          "activeLinkStorageJ": 0.02013005909042052
+        },
+        {
+          "timeSeconds": 0.02,
+          "attachmentElasticInputW": 0.5398648281668993,
+          "detachmentElasticRemovalW": 0.5392629204575629,
+          "activeLinkStorageRateW": 0.0006019077093364474,
+          "activeLinkStorageJ": 0.020138796040992717
+        },
+        {
+          "timeSeconds": 0.04,
+          "attachmentElasticInputW": 0.5398702312862362,
+          "detachmentElasticRemovalW": 0.5395371477310326,
+          "activeLinkStorageRateW": 0.0003330835552036828,
+          "activeLinkStorageJ": 0.020147862881106874
+        },
+        {
+          "timeSeconds": 0.1,
+          "attachmentElasticInputW": 0.5398849941436491,
+          "detachmentElasticRemovalW": 0.5398240598261583,
+          "activeLinkStorageRateW": 6.09343174907823e-05,
+          "activeLinkStorageJ": 0.02015742596035335
+        },
+        {
+          "timeSeconds": 0.2,
+          "attachmentElasticInputW": 0.5398887075831825,
+          "detachmentElasticRemovalW": 0.539884836929395,
+          "activeLinkStorageRateW": 3.87065378751928e-06,
+          "activeLinkStorageJ": 0.02015948677106877
+        }
+      ]
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.0005",
+      "initialRawMoments": [
+        0.49934610862403067,
+        0.9883400823517446,
+        0.5304839358485609
+      ],
+      "calibrationMultiplier": 1.0117974752379877,
+      "initialMacroForceN": 39.76114573531328,
+      "initialAttachmentInputW": 0.5398668063638741,
+      "initialDetachmentRemovalW": 0.5398668063638742,
+      "jump": {
+        "delta": -0.001,
+        "macroStretchChange": -7.692307692307692e-06,
+        "activeMechanicalWorkJ": -3.753948665952716e-05,
+        "signedEnvelopeRecruitmentWorkJ": 8.262534004245273e-07,
+        "activeLinkStorageChangeJ": -3.6713233259094364e-05,
+        "endpointDetachmentRemovalJ": 3.1999784945069537e-28,
+        "normalizedActiveIdentityError": 1.2237254396046e-16,
+        "passiveStorageChangeJ": -5.260793193330755e-06,
+        "passiveWorkJ": -5.260793193321536e-06,
+        "passiveWorkDensityIdentityErrorPa": 1.646321967641029e-13,
+        "passiveWorkDensityQuadratureErrorEstimatePa": 1.042973880538727e-15
+      },
+      "holds": [
+        {
+          "timeSeconds": 0.0,
+          "attachmentElasticInputW": 0.5398889546320853,
+          "detachmentElasticRemovalW": 0.5387564869724689,
+          "activeLinkStorageRateW": 0.0011324676596164752,
+          "activeLinkStorageJ": 0.020122089179535375
+        },
+        {
+          "timeSeconds": 0.008,
+          "attachmentElasticInputW": 0.5398712687910897,
+          "detachmentElasticRemovalW": 0.5389980845421474,
+          "activeLinkStorageRateW": 0.0008731842489423488,
+          "activeLinkStorageJ": 0.020130059090420524
+        },
+        {
+          "timeSeconds": 0.02,
+          "attachmentElasticInputW": 0.5398648281668993,
+          "detachmentElasticRemovalW": 0.5392629204575629,
+          "activeLinkStorageRateW": 0.0006019077093364713,
+          "activeLinkStorageJ": 0.020138796040992713
+        },
+        {
+          "timeSeconds": 0.04,
+          "attachmentElasticInputW": 0.5398702312862365,
+          "detachmentElasticRemovalW": 0.5395371477310326,
+          "activeLinkStorageRateW": 0.0003330835552039445,
+          "activeLinkStorageJ": 0.020147862881106874
+        },
+        {
+          "timeSeconds": 0.1,
+          "attachmentElasticInputW": 0.5398849941436491,
+          "detachmentElasticRemovalW": 0.5398240598261583,
+          "activeLinkStorageRateW": 6.093431749082065e-05,
+          "activeLinkStorageJ": 0.02015742596035335
+        },
+        {
+          "timeSeconds": 0.2,
+          "attachmentElasticInputW": 0.5398887075831824,
+          "detachmentElasticRemovalW": 0.5398848369293952,
+          "activeLinkStorageRateW": 3.870653787224686e-06,
+          "activeLinkStorageJ": 0.020159486771068772
+        }
+      ]
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.001",
+      "initialRawMoments": [
+        0.49934610862403067,
+        0.9883400823517446,
+        0.5304839358485609
+      ],
+      "calibrationMultiplier": 1.0117974752379877,
+      "initialMacroForceN": 39.76114573531328,
+      "initialAttachmentInputW": 0.5398668063638741,
+      "initialDetachmentRemovalW": 0.5398668063638742,
+      "jump": {
+        "delta": 0.0005,
+        "macroStretchChange": 3.846153846153846e-06,
+        "activeMechanicalWorkJ": 1.8783397370279147e-05,
+        "signedEnvelopeRecruitmentWorkJ": -4.137075925521749e-07,
+        "activeLinkStorageChangeJ": 1.8369689777740415e-05,
+        "endpointDetachmentRemovalJ": 8.029768952110849e-27,
+        "normalizedActiveIdentityError": 1.9901377920804616e-16,
+        "passiveStorageChangeJ": 2.631304024718702e-06,
+        "passiveWorkJ": 2.6313040247124584e-06,
+        "passiveWorkDensityIdentityErrorPa": 1.1148720835407744e-13,
+        "passiveWorkDensityQuadratureErrorEstimatePa": 5.216668416115381e-16
+      },
+      "holds": [
+        {
+          "timeSeconds": 0.0,
+          "attachmentElasticInputW": 0.5398557321445802,
+          "detachmentElasticRemovalW": 0.5404226220670859,
+          "activeLinkStorageRateW": -0.0005668899225057205,
+          "activeLinkStorageJ": 0.020177172102572204
+        },
+        {
+          "timeSeconds": 0.008,
+          "attachmentElasticInputW": 0.539864631080926,
+          "detachmentElasticRemovalW": 0.5403016416040922,
+          "activeLinkStorageRateW": -0.0004370105231662636,
+          "activeLinkStorageJ": 0.020173182930642655
+        },
+        {
+          "timeSeconds": 0.02,
+          "attachmentElasticInputW": 0.5398678702836209,
+          "detachmentElasticRemovalW": 0.5401690491535323,
+          "activeLinkStorageRateW": -0.00030117886991134406,
+          "activeLinkStorageJ": 0.02016881073357541
+        },
+        {
+          "timeSeconds": 0.04,
+          "attachmentElasticInputW": 0.5398651497943359,
+          "detachmentElasticRemovalW": 0.5400317818456287,
+          "activeLinkStorageRateW": -0.00016663205129288045,
+          "activeLinkStorageJ": 0.020164274393804953
+        },
+        {
+          "timeSeconds": 0.1,
+          "attachmentElasticInputW": 0.5398577229492842,
+          "detachmentElasticRemovalW": 0.5398881984274977,
+          "activeLinkStorageRateW": -3.047547821350983e-05,
+          "activeLinkStorageJ": 0.02015949082513249
+        },
+        {
+          "timeSeconds": 0.2,
+          "attachmentElasticInputW": 0.5398558562346268,
+          "detachmentElasticRemovalW": 0.5398577915769388,
+          "activeLinkStorageRateW": -1.935342311873017e-06,
+          "activeLinkStorageJ": 0.02015846022556088
+        }
+      ]
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.0005",
+      "initialRawMoments": [
+        0.49934610862403067,
+        0.9883400823517446,
+        0.5304839358485609
+      ],
+      "calibrationMultiplier": 1.0117974752379877,
+      "initialMacroForceN": 39.76114573531328,
+      "initialAttachmentInputW": 0.5398668063638741,
+      "initialDetachmentRemovalW": 0.5398668063638742,
+      "jump": {
+        "delta": 0.0005,
+        "macroStretchChange": 3.846153846153846e-06,
+        "activeMechanicalWorkJ": 1.8783397370279147e-05,
+        "signedEnvelopeRecruitmentWorkJ": -4.137075925521749e-07,
+        "activeLinkStorageChangeJ": 1.8369689777740415e-05,
+        "endpointDetachmentRemovalJ": 8.029768952110849e-27,
+        "normalizedActiveIdentityError": 1.9901377920804616e-16,
+        "passiveStorageChangeJ": 2.631304024718702e-06,
+        "passiveWorkJ": 2.6313040247124584e-06,
+        "passiveWorkDensityIdentityErrorPa": 1.1148720835407744e-13,
+        "passiveWorkDensityQuadratureErrorEstimatePa": 5.216668416115381e-16
+      },
+      "holds": [
+        {
+          "timeSeconds": 0.0,
+          "attachmentElasticInputW": 0.5398557321445802,
+          "detachmentElasticRemovalW": 0.5404226220670859,
+          "activeLinkStorageRateW": -0.0005668899225057205,
+          "activeLinkStorageJ": 0.020177172102572204
+        },
+        {
+          "timeSeconds": 0.008,
+          "attachmentElasticInputW": 0.5398646310809257,
+          "detachmentElasticRemovalW": 0.5403016416040923,
+          "activeLinkStorageRateW": -0.00043701052316652236,
+          "activeLinkStorageJ": 0.020173182930642658
+        },
+        {
+          "timeSeconds": 0.02,
+          "attachmentElasticInputW": 0.5398678702836207,
+          "detachmentElasticRemovalW": 0.5401690491535324,
+          "activeLinkStorageRateW": -0.0003011788699117112,
+          "activeLinkStorageJ": 0.020168810733575418
+        },
+        {
+          "timeSeconds": 0.04,
+          "attachmentElasticInputW": 0.5398651497943356,
+          "detachmentElasticRemovalW": 0.5400317818456288,
+          "activeLinkStorageRateW": -0.00016663205129320915,
+          "activeLinkStorageJ": 0.020164274393804957
+        },
+        {
+          "timeSeconds": 0.1,
+          "attachmentElasticInputW": 0.5398577229492842,
+          "detachmentElasticRemovalW": 0.5398881984274977,
+          "activeLinkStorageRateW": -3.047547821351614e-05,
+          "activeLinkStorageJ": 0.02015949082513249
+        },
+        {
+          "timeSeconds": 0.2,
+          "attachmentElasticInputW": 0.5398558562346268,
+          "detachmentElasticRemovalW": 0.5398577915769388,
+          "activeLinkStorageRateW": -1.9353423118723857e-06,
+          "activeLinkStorageJ": 0.02015846022556088
+        }
+      ]
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.001",
+      "initialRawMoments": [
+        0.49934610862403067,
+        0.9883400823517446,
+        0.5304839358485609
+      ],
+      "calibrationMultiplier": 1.0117974752379877,
+      "initialMacroForceN": 39.76114573531328,
+      "initialAttachmentInputW": 0.5398668063638741,
+      "initialDetachmentRemovalW": 0.5398668063638742,
+      "jump": {
+        "delta": -0.0005,
+        "macroStretchChange": -3.846153846153846e-06,
+        "activeMechanicalWorkJ": -1.8774294807007392e-05,
+        "signedEnvelopeRecruitmentWorkJ": 4.1332026486729927e-07,
+        "activeLinkStorageChangeJ": -1.836097454214516e-05,
+        "endpointDetachmentRemovalJ": 1.585435459458609e-28,
+        "normalizedActiveIdentityError": 7.49971441804962e-17,
+        "passiveStorageChangeJ": -2.630699073684809e-06,
+        "passiveWorkJ": -2.6306990736886776e-06,
+        "passiveWorkDensityIdentityErrorPa": 6.907668881339646e-14,
+        "passiveWorkDensityQuadratureErrorEstimatePa": 5.21546907583793e-16
+      },
+      "holds": [
+        {
+          "timeSeconds": 0.0,
+          "attachmentElasticInputW": 0.5398778805263774,
+          "detachmentElasticRemovalW": 0.5393114280985609,
+          "activeLinkStorageRateW": 0.000566452427816565,
+          "activeLinkStorageJ": 0.020140441438252322
+        },
+        {
+          "timeSeconds": 0.008,
+          "attachmentElasticInputW": 0.5398690189253111,
+          "detachmentElasticRemovalW": 0.5394322873979583,
+          "activeLinkStorageRateW": 0.0004367315273527965,
+          "activeLinkStorageJ": 0.02014442779854415
+        },
+        {
+          "timeSeconds": 0.02,
+          "attachmentElasticInputW": 0.5398657923129307,
+          "detachmentElasticRemovalW": 0.539564763477844,
+          "activeLinkStorageRateW": 0.0003010288350867741,
+          "activeLinkStorageJ": 0.020148797513914254
+        },
+        {
+          "timeSeconds": 0.04,
+          "attachmentElasticInputW": 0.5398685001844757,
+          "detachmentElasticRemovalW": 0.5397019283087091,
+          "activeLinkStorageRateW": 0.00016657187576671882,
+          "activeLinkStorageJ": 0.02015333190708585
+        },
+        {
+          "timeSeconds": 0.1,
+          "attachmentElasticInputW": 0.5398758967594021,
+          "detachmentElasticRemovalW": 0.5398454268153101,
+          "activeLinkStorageRateW": 3.046994409190861e-05,
+          "activeLinkStorageJ": 0.020158114123908128
+        },
+        {
+          "timeSeconds": 0.2,
+          "attachmentElasticInputW": 0.539877756813183,
+          "detachmentElasticRemovalW": 0.5398758214795311,
+          "activeLinkStorageRateW": 1.9353336519081435e-06,
+          "activeLinkStorageJ": 0.02015914459456252
+        }
+      ]
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.0005",
+      "initialRawMoments": [
+        0.49934610862403067,
+        0.9883400823517446,
+        0.5304839358485609
+      ],
+      "calibrationMultiplier": 1.0117974752379877,
+      "initialMacroForceN": 39.76114573531328,
+      "initialAttachmentInputW": 0.5398668063638741,
+      "initialDetachmentRemovalW": 0.5398668063638742,
+      "jump": {
+        "delta": -0.0005,
+        "macroStretchChange": -3.846153846153846e-06,
+        "activeMechanicalWorkJ": -1.8774294807007392e-05,
+        "signedEnvelopeRecruitmentWorkJ": 4.1332026486729927e-07,
+        "activeLinkStorageChangeJ": -1.836097454214516e-05,
+        "endpointDetachmentRemovalJ": 1.585435459458609e-28,
+        "normalizedActiveIdentityError": 7.49971441804962e-17,
+        "passiveStorageChangeJ": -2.630699073684809e-06,
+        "passiveWorkJ": -2.6306990736886776e-06,
+        "passiveWorkDensityIdentityErrorPa": 6.907668881339646e-14,
+        "passiveWorkDensityQuadratureErrorEstimatePa": 5.21546907583793e-16
+      },
+      "holds": [
+        {
+          "timeSeconds": 0.0,
+          "attachmentElasticInputW": 0.5398778805263774,
+          "detachmentElasticRemovalW": 0.5393114280985609,
+          "activeLinkStorageRateW": 0.000566452427816565,
+          "activeLinkStorageJ": 0.020140441438252322
+        },
+        {
+          "timeSeconds": 0.008,
+          "attachmentElasticInputW": 0.5398690189253111,
+          "detachmentElasticRemovalW": 0.5394322873979585,
+          "activeLinkStorageRateW": 0.00043673152735273797,
+          "activeLinkStorageJ": 0.02014442779854415
+        },
+        {
+          "timeSeconds": 0.02,
+          "attachmentElasticInputW": 0.5398657923129305,
+          "detachmentElasticRemovalW": 0.5395647634778441,
+          "activeLinkStorageRateW": 0.00030102883508643284,
+          "activeLinkStorageJ": 0.020148797513914258
+        },
+        {
+          "timeSeconds": 0.04,
+          "attachmentElasticInputW": 0.5398685001844757,
+          "detachmentElasticRemovalW": 0.5397019283087091,
+          "activeLinkStorageRateW": 0.00016657187576664742,
+          "activeLinkStorageJ": 0.020153331907085854
+        },
+        {
+          "timeSeconds": 0.1,
+          "attachmentElasticInputW": 0.5398758967594021,
+          "detachmentElasticRemovalW": 0.5398454268153102,
+          "activeLinkStorageRateW": 3.0469944091830204e-05,
+          "activeLinkStorageJ": 0.020158114123908128
+        },
+        {
+          "timeSeconds": 0.2,
+          "attachmentElasticInputW": 0.539877756813183,
+          "detachmentElasticRemovalW": 0.539875821479531,
+          "activeLinkStorageRateW": 1.9353336519606426e-06,
+          "activeLinkStorageJ": 0.02015914459456252
+        }
+      ]
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.001",
+      "initialRawMoments": [
+        0.49934610862403395,
+        0.9883400823517511,
+        0.5304839358485643
+      ],
+      "calibrationMultiplier": 1.011797475237981,
+      "initialMacroForceN": 39.76114573531328,
+      "initialAttachmentInputW": 0.5398668063638742,
+      "initialDetachmentRemovalW": 0.5398668063638742,
+      "jump": {
+        "delta": 0.001,
+        "macroStretchChange": 7.692307692307692e-06,
+        "activeMechanicalWorkJ": 3.7575896912611366e-05,
+        "signedEnvelopeRecruitmentWorkJ": -8.278027111664741e-07,
+        "activeLinkStorageChangeJ": 3.6748094201433906e-05,
+        "endpointDetachmentRemovalJ": 1.619859024133187e-26,
+        "normalizedActiveIdentityError": 1.6261507903999823e-16,
+        "passiveStorageChangeJ": 5.263212997415394e-06,
+        "passiveWorkJ": 5.263212997416842e-06,
+        "passiveWorkDensityIdentityErrorPa": 2.5854318685958333e-14,
+        "passiveWorkDensityQuadratureErrorEstimatePa": 1.0434536166497432e-15
+      },
+      "holds": [
+        {
+          "timeSeconds": 0.0,
+          "attachmentElasticInputW": 0.5398446578684996,
+          "detachmentElasticRemovalW": 0.5409788755070459,
+          "activeLinkStorageRateW": -0.0011342176385462609,
+          "activeLinkStorageJ": 0.020195550506995903
+        },
+        {
+          "timeSeconds": 0.008,
+          "attachmentElasticInputW": 0.5398624930506376,
+          "detachmentElasticRemovalW": 0.540736793282871,
+          "activeLinkStorageRateW": -0.0008743002322334588,
+          "activeLinkStorageJ": 0.02018756934955909
+        },
+        {
+          "timeSeconds": 0.02,
+          "attachmentElasticInputW": 0.5398689840360769,
+          "detachmentElasticRemovalW": 0.5404714918846829,
+          "activeLinkStorageRateW": -0.0006025078486060244,
+          "activeLinkStorageJ": 0.020178822472198446
+        },
+        {
+          "timeSeconds": 0.04,
+          "attachmentElasticInputW": 0.5398635304457513,
+          "detachmentElasticRemovalW": 0.540196854703032,
+          "activeLinkStorageRateW": -0.00033332425728071856,
+          "activeLinkStorageJ": 0.020169747845689524
+        },
+        {
+          "timeSeconds": 0.1,
+          "attachmentElasticInputW": 0.5398486465078343,
+          "detachmentElasticRemovalW": 0.5399096029618161,
+          "activeLinkStorageRateW": -6.095645398178974e-05,
+          "activeLinkStorageJ": 0.020160179359042768
+        },
+        {
+          "timeSeconds": 0.2,
+          "attachmentElasticInputW": 0.5398449064248094,
+          "detachmentElasticRemovalW": 0.5398487771132383,
+          "activeLinkStorageRateW": -3.870688428843468e-06,
+          "activeLinkStorageJ": 0.020158118032658108
+        }
+      ]
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.0005",
+      "initialRawMoments": [
+        0.49934610862403395,
+        0.9883400823517511,
+        0.5304839358485643
+      ],
+      "calibrationMultiplier": 1.011797475237981,
+      "initialMacroForceN": 39.76114573531328,
+      "initialAttachmentInputW": 0.5398668063638742,
+      "initialDetachmentRemovalW": 0.5398668063638742,
+      "jump": {
+        "delta": 0.001,
+        "macroStretchChange": 7.692307692307692e-06,
+        "activeMechanicalWorkJ": 3.7575896912611366e-05,
+        "signedEnvelopeRecruitmentWorkJ": -8.278027111664741e-07,
+        "activeLinkStorageChangeJ": 3.6748094201433906e-05,
+        "endpointDetachmentRemovalJ": 1.619859024133187e-26,
+        "normalizedActiveIdentityError": 1.6261507903999823e-16,
+        "passiveStorageChangeJ": 5.263212997415394e-06,
+        "passiveWorkJ": 5.263212997416842e-06,
+        "passiveWorkDensityIdentityErrorPa": 2.5854318685958333e-14,
+        "passiveWorkDensityQuadratureErrorEstimatePa": 1.0434536166497432e-15
+      },
+      "holds": [
+        {
+          "timeSeconds": 0.0,
+          "attachmentElasticInputW": 0.5398446578684996,
+          "detachmentElasticRemovalW": 0.5409788755070459,
+          "activeLinkStorageRateW": -0.0011342176385462609,
+          "activeLinkStorageJ": 0.020195550506995903
+        },
+        {
+          "timeSeconds": 0.008,
+          "attachmentElasticInputW": 0.5398624930506373,
+          "detachmentElasticRemovalW": 0.540736793282871,
+          "activeLinkStorageRateW": -0.0008743002322337442,
+          "activeLinkStorageJ": 0.020187569349559096
+        },
+        {
+          "timeSeconds": 0.02,
+          "attachmentElasticInputW": 0.5398689840360769,
+          "detachmentElasticRemovalW": 0.5404714918846829,
+          "activeLinkStorageRateW": -0.0006025078486060152,
+          "activeLinkStorageJ": 0.02017882247219844
+        },
+        {
+          "timeSeconds": 0.04,
+          "attachmentElasticInputW": 0.5398635304457515,
+          "detachmentElasticRemovalW": 0.5401968547030319,
+          "activeLinkStorageRateW": -0.0003333242572804235,
+          "activeLinkStorageJ": 0.02016974784568952
+        },
+        {
+          "timeSeconds": 0.1,
+          "attachmentElasticInputW": 0.5398486465078343,
+          "detachmentElasticRemovalW": 0.5399096029618161,
+          "activeLinkStorageRateW": -6.0956453981794733e-05,
+          "activeLinkStorageJ": 0.020160179359042768
+        },
+        {
+          "timeSeconds": 0.2,
+          "attachmentElasticInputW": 0.5398449064248094,
+          "detachmentElasticRemovalW": 0.5398487771132383,
+          "activeLinkStorageRateW": -3.870688428868239e-06,
+          "activeLinkStorageJ": 0.020158118032658108
+        }
+      ]
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.001",
+      "initialRawMoments": [
+        0.49934610862403395,
+        0.9883400823517511,
+        0.5304839358485643
+      ],
+      "calibrationMultiplier": 1.011797475237981,
+      "initialMacroForceN": 39.76114573531328,
+      "initialAttachmentInputW": 0.5398668063638742,
+      "initialDetachmentRemovalW": 0.5398668063638742,
+      "jump": {
+        "delta": -0.001,
+        "macroStretchChange": -7.692307692307692e-06,
+        "activeMechanicalWorkJ": -3.753948665952716e-05,
+        "signedEnvelopeRecruitmentWorkJ": 8.262534004245274e-07,
+        "activeLinkStorageChangeJ": -3.671323325909788e-05,
+        "endpointDetachmentRemovalJ": 3.199978494506891e-28,
+        "normalizedActiveIdentityError": 7.035963880136243e-17,
+        "passiveStorageChangeJ": -5.260793193330755e-06,
+        "passiveWorkJ": -5.260793193321536e-06,
+        "passiveWorkDensityIdentityErrorPa": 1.646321967641029e-13,
+        "passiveWorkDensityQuadratureErrorEstimatePa": 1.042973880538727e-15
+      },
+      "holds": [
+        {
+          "timeSeconds": 0.0,
+          "attachmentElasticInputW": 0.5398889546320854,
+          "detachmentElasticRemovalW": 0.5387564869724689,
+          "activeLinkStorageRateW": 0.001132467659616517,
+          "activeLinkStorageJ": 0.020122089179535372
+        },
+        {
+          "timeSeconds": 0.008,
+          "attachmentElasticInputW": 0.5398712687910897,
+          "detachmentElasticRemovalW": 0.5389980845421474,
+          "activeLinkStorageRateW": 0.0008731842489424019,
+          "activeLinkStorageJ": 0.020130059090420524
+        },
+        {
+          "timeSeconds": 0.02,
+          "attachmentElasticInputW": 0.5398648281668996,
+          "detachmentElasticRemovalW": 0.5392629204575627,
+          "activeLinkStorageRateW": 0.0006019077093368736,
+          "activeLinkStorageJ": 0.02013879604099271
+        },
+        {
+          "timeSeconds": 0.04,
+          "attachmentElasticInputW": 0.5398702312862365,
+          "detachmentElasticRemovalW": 0.5395371477310325,
+          "activeLinkStorageRateW": 0.0003330835552040257,
+          "activeLinkStorageJ": 0.02014786288110687
+        },
+        {
+          "timeSeconds": 0.1,
+          "attachmentElasticInputW": 0.539884994143649,
+          "detachmentElasticRemovalW": 0.5398240598261584,
+          "activeLinkStorageRateW": 6.093431749055191e-05,
+          "activeLinkStorageJ": 0.020157425960353352
+        },
+        {
+          "timeSeconds": 0.2,
+          "attachmentElasticInputW": 0.5398887075831824,
+          "detachmentElasticRemovalW": 0.539884836929395,
+          "activeLinkStorageRateW": 3.870653787305155e-06,
+          "activeLinkStorageJ": 0.020159486771068772
+        }
+      ]
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.0005",
+      "initialRawMoments": [
+        0.49934610862403395,
+        0.9883400823517511,
+        0.5304839358485643
+      ],
+      "calibrationMultiplier": 1.011797475237981,
+      "initialMacroForceN": 39.76114573531328,
+      "initialAttachmentInputW": 0.5398668063638742,
+      "initialDetachmentRemovalW": 0.5398668063638742,
+      "jump": {
+        "delta": -0.001,
+        "macroStretchChange": -7.692307692307692e-06,
+        "activeMechanicalWorkJ": -3.753948665952716e-05,
+        "signedEnvelopeRecruitmentWorkJ": 8.262534004245274e-07,
+        "activeLinkStorageChangeJ": -3.671323325909788e-05,
+        "endpointDetachmentRemovalJ": 3.199978494506891e-28,
+        "normalizedActiveIdentityError": 7.035963880136243e-17,
+        "passiveStorageChangeJ": -5.260793193330755e-06,
+        "passiveWorkJ": -5.260793193321536e-06,
+        "passiveWorkDensityIdentityErrorPa": 1.646321967641029e-13,
+        "passiveWorkDensityQuadratureErrorEstimatePa": 1.042973880538727e-15
+      },
+      "holds": [
+        {
+          "timeSeconds": 0.0,
+          "attachmentElasticInputW": 0.5398889546320854,
+          "detachmentElasticRemovalW": 0.5387564869724689,
+          "activeLinkStorageRateW": 0.001132467659616517,
+          "activeLinkStorageJ": 0.020122089179535372
+        },
+        {
+          "timeSeconds": 0.008,
+          "attachmentElasticInputW": 0.5398712687910897,
+          "detachmentElasticRemovalW": 0.5389980845421473,
+          "activeLinkStorageRateW": 0.0008731842489424651,
+          "activeLinkStorageJ": 0.020130059090420524
+        },
+        {
+          "timeSeconds": 0.02,
+          "attachmentElasticInputW": 0.5398648281668996,
+          "detachmentElasticRemovalW": 0.5392629204575627,
+          "activeLinkStorageRateW": 0.0006019077093368215,
+          "activeLinkStorageJ": 0.02013879604099271
+        },
+        {
+          "timeSeconds": 0.04,
+          "attachmentElasticInputW": 0.5398702312862365,
+          "detachmentElasticRemovalW": 0.5395371477310325,
+          "activeLinkStorageRateW": 0.00033308355520404156,
+          "activeLinkStorageJ": 0.02014786288110687
+        },
+        {
+          "timeSeconds": 0.1,
+          "attachmentElasticInputW": 0.539884994143649,
+          "detachmentElasticRemovalW": 0.5398240598261583,
+          "activeLinkStorageRateW": 6.0934317490616876e-05,
+          "activeLinkStorageJ": 0.02015742596035335
+        },
+        {
+          "timeSeconds": 0.2,
+          "attachmentElasticInputW": 0.5398887075831824,
+          "detachmentElasticRemovalW": 0.539884836929395,
+          "activeLinkStorageRateW": 3.870653787299555e-06,
+          "activeLinkStorageJ": 0.020159486771068772
+        }
+      ]
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.001",
+      "initialRawMoments": [
+        0.49934610862403395,
+        0.9883400823517511,
+        0.5304839358485643
+      ],
+      "calibrationMultiplier": 1.011797475237981,
+      "initialMacroForceN": 39.76114573531328,
+      "initialAttachmentInputW": 0.5398668063638742,
+      "initialDetachmentRemovalW": 0.5398668063638742,
+      "jump": {
+        "delta": 0.0005,
+        "macroStretchChange": 3.846153846153846e-06,
+        "activeMechanicalWorkJ": 1.8783397370279147e-05,
+        "signedEnvelopeRecruitmentWorkJ": -4.1370759255217497e-07,
+        "activeLinkStorageChangeJ": 1.83696897777403e-05,
+        "endpointDetachmentRemovalJ": 8.029768952110695e-27,
+        "normalizedActiveIdentityError": 1.9726465617196603e-16,
+        "passiveStorageChangeJ": 2.631304024718702e-06,
+        "passiveWorkJ": 2.6313040247124584e-06,
+        "passiveWorkDensityIdentityErrorPa": 1.1148720835407744e-13,
+        "passiveWorkDensityQuadratureErrorEstimatePa": 5.216668416115381e-16
+      },
+      "holds": [
+        {
+          "timeSeconds": 0.0,
+          "attachmentElasticInputW": 0.5398557321445803,
+          "detachmentElasticRemovalW": 0.540422622067086,
+          "activeLinkStorageRateW": -0.0005668899225056832,
+          "activeLinkStorageJ": 0.02017717210257221
+        },
+        {
+          "timeSeconds": 0.008,
+          "attachmentElasticInputW": 0.5398646310809259,
+          "detachmentElasticRemovalW": 0.5403016416040924,
+          "activeLinkStorageRateW": -0.00043701052316650826,
+          "activeLinkStorageJ": 0.020173182930642658
+        },
+        {
+          "timeSeconds": 0.02,
+          "attachmentElasticInputW": 0.5398678702836208,
+          "detachmentElasticRemovalW": 0.5401690491535325,
+          "activeLinkStorageRateW": -0.00030117886991162324,
+          "activeLinkStorageJ": 0.02016881073357542
+        },
+        {
+          "timeSeconds": 0.04,
+          "attachmentElasticInputW": 0.539865149794336,
+          "detachmentElasticRemovalW": 0.5400317818456288,
+          "activeLinkStorageRateW": -0.00016663205129282172,
+          "activeLinkStorageJ": 0.02016427439380496
+        },
+        {
+          "timeSeconds": 0.1,
+          "attachmentElasticInputW": 0.5398577229492841,
+          "detachmentElasticRemovalW": 0.5398881984274978,
+          "activeLinkStorageRateW": -3.047547821376808e-05,
+          "activeLinkStorageJ": 0.020159490825132492
+        },
+        {
+          "timeSeconds": 0.2,
+          "attachmentElasticInputW": 0.5398558562346271,
+          "detachmentElasticRemovalW": 0.5398577915769388,
+          "activeLinkStorageRateW": -1.935342311763667e-06,
+          "activeLinkStorageJ": 0.020158460225560886
+        }
+      ]
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.0005",
+      "initialRawMoments": [
+        0.49934610862403395,
+        0.9883400823517511,
+        0.5304839358485643
+      ],
+      "calibrationMultiplier": 1.011797475237981,
+      "initialMacroForceN": 39.76114573531328,
+      "initialAttachmentInputW": 0.5398668063638742,
+      "initialDetachmentRemovalW": 0.5398668063638742,
+      "jump": {
+        "delta": 0.0005,
+        "macroStretchChange": 3.846153846153846e-06,
+        "activeMechanicalWorkJ": 1.8783397370279147e-05,
+        "signedEnvelopeRecruitmentWorkJ": -4.1370759255217497e-07,
+        "activeLinkStorageChangeJ": 1.83696897777403e-05,
+        "endpointDetachmentRemovalJ": 8.029768952110695e-27,
+        "normalizedActiveIdentityError": 1.9726465617196603e-16,
+        "passiveStorageChangeJ": 2.631304024718702e-06,
+        "passiveWorkJ": 2.6313040247124584e-06,
+        "passiveWorkDensityIdentityErrorPa": 1.1148720835407744e-13,
+        "passiveWorkDensityQuadratureErrorEstimatePa": 5.216668416115381e-16
+      },
+      "holds": [
+        {
+          "timeSeconds": 0.0,
+          "attachmentElasticInputW": 0.5398557321445803,
+          "detachmentElasticRemovalW": 0.540422622067086,
+          "activeLinkStorageRateW": -0.0005668899225056832,
+          "activeLinkStorageJ": 0.02017717210257221
+        },
+        {
+          "timeSeconds": 0.008,
+          "attachmentElasticInputW": 0.5398646310809262,
+          "detachmentElasticRemovalW": 0.5403016416040923,
+          "activeLinkStorageRateW": -0.0004370105231662279,
+          "activeLinkStorageJ": 0.020173182930642658
+        },
+        {
+          "timeSeconds": 0.02,
+          "attachmentElasticInputW": 0.5398678702836208,
+          "detachmentElasticRemovalW": 0.5401690491535324,
+          "activeLinkStorageRateW": -0.0003011788699116136,
+          "activeLinkStorageJ": 0.02016881073357542
+        },
+        {
+          "timeSeconds": 0.04,
+          "attachmentElasticInputW": 0.539865149794336,
+          "detachmentElasticRemovalW": 0.5400317818456289,
+          "activeLinkStorageRateW": -0.00016663205129290417,
+          "activeLinkStorageJ": 0.02016427439380496
+        },
+        {
+          "timeSeconds": 0.1,
+          "attachmentElasticInputW": 0.5398577229492841,
+          "detachmentElasticRemovalW": 0.5398881984274978,
+          "activeLinkStorageRateW": -3.0475478213759996e-05,
+          "activeLinkStorageJ": 0.020159490825132492
+        },
+        {
+          "timeSeconds": 0.2,
+          "attachmentElasticInputW": 0.5398558562346271,
+          "detachmentElasticRemovalW": 0.5398577915769389,
+          "activeLinkStorageRateW": -1.935342311827901e-06,
+          "activeLinkStorageJ": 0.020158460225560886
+        }
+      ]
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.001",
+      "initialRawMoments": [
+        0.49934610862403395,
+        0.9883400823517511,
+        0.5304839358485643
+      ],
+      "calibrationMultiplier": 1.011797475237981,
+      "initialMacroForceN": 39.76114573531328,
+      "initialAttachmentInputW": 0.5398668063638742,
+      "initialDetachmentRemovalW": 0.5398668063638742,
+      "jump": {
+        "delta": -0.0005,
+        "macroStretchChange": -3.846153846153846e-06,
+        "activeMechanicalWorkJ": -1.8774294807007392e-05,
+        "signedEnvelopeRecruitmentWorkJ": 4.133202648672993e-07,
+        "activeLinkStorageChangeJ": -1.8360974542145042e-05,
+        "endpointDetachmentRemovalJ": 1.5854354594585784e-28,
+        "normalizedActiveIdentityError": 7.324802114441606e-17,
+        "passiveStorageChangeJ": -2.630699073684809e-06,
+        "passiveWorkJ": -2.6306990736886776e-06,
+        "passiveWorkDensityIdentityErrorPa": 6.907668881339646e-14,
+        "passiveWorkDensityQuadratureErrorEstimatePa": 5.21546907583793e-16
+      },
+      "holds": [
+        {
+          "timeSeconds": 0.0,
+          "attachmentElasticInputW": 0.5398778805263775,
+          "detachmentElasticRemovalW": 0.5393114280985609,
+          "activeLinkStorageRateW": 0.0005664524278165845,
+          "activeLinkStorageJ": 0.020140441438252325
+        },
+        {
+          "timeSeconds": 0.008,
+          "attachmentElasticInputW": 0.5398690189253109,
+          "detachmentElasticRemovalW": 0.5394322873979583,
+          "activeLinkStorageRateW": 0.00043673152735255403,
+          "activeLinkStorageJ": 0.02014442779854415
+        },
+        {
+          "timeSeconds": 0.02,
+          "attachmentElasticInputW": 0.5398657923129306,
+          "detachmentElasticRemovalW": 0.5395647634778441,
+          "activeLinkStorageRateW": 0.0003010288350865366,
+          "activeLinkStorageJ": 0.020148797513914254
+        },
+        {
+          "timeSeconds": 0.04,
+          "attachmentElasticInputW": 0.5398685001844755,
+          "detachmentElasticRemovalW": 0.5397019283087091,
+          "activeLinkStorageRateW": 0.00016657187576649658,
+          "activeLinkStorageJ": 0.020153331907085854
+        },
+        {
+          "timeSeconds": 0.1,
+          "attachmentElasticInputW": 0.5398758967594022,
+          "detachmentElasticRemovalW": 0.5398454268153101,
+          "activeLinkStorageRateW": 3.0469944091950334e-05,
+          "activeLinkStorageJ": 0.020158114123908125
+        },
+        {
+          "timeSeconds": 0.2,
+          "attachmentElasticInputW": 0.5398777568131827,
+          "detachmentElasticRemovalW": 0.539875821479531,
+          "activeLinkStorageRateW": 1.9353336517435807e-06,
+          "activeLinkStorageJ": 0.02015914459456252
+        }
+      ]
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.0005",
+      "initialRawMoments": [
+        0.49934610862403395,
+        0.9883400823517511,
+        0.5304839358485643
+      ],
+      "calibrationMultiplier": 1.011797475237981,
+      "initialMacroForceN": 39.76114573531328,
+      "initialAttachmentInputW": 0.5398668063638742,
+      "initialDetachmentRemovalW": 0.5398668063638742,
+      "jump": {
+        "delta": -0.0005,
+        "macroStretchChange": -3.846153846153846e-06,
+        "activeMechanicalWorkJ": -1.8774294807007392e-05,
+        "signedEnvelopeRecruitmentWorkJ": 4.133202648672993e-07,
+        "activeLinkStorageChangeJ": -1.8360974542145042e-05,
+        "endpointDetachmentRemovalJ": 1.5854354594585784e-28,
+        "normalizedActiveIdentityError": 7.324802114441606e-17,
+        "passiveStorageChangeJ": -2.630699073684809e-06,
+        "passiveWorkJ": -2.6306990736886776e-06,
+        "passiveWorkDensityIdentityErrorPa": 6.907668881339646e-14,
+        "passiveWorkDensityQuadratureErrorEstimatePa": 5.21546907583793e-16
+      },
+      "holds": [
+        {
+          "timeSeconds": 0.0,
+          "attachmentElasticInputW": 0.5398778805263775,
+          "detachmentElasticRemovalW": 0.5393114280985609,
+          "activeLinkStorageRateW": 0.0005664524278165845,
+          "activeLinkStorageJ": 0.020140441438252325
+        },
+        {
+          "timeSeconds": 0.008,
+          "attachmentElasticInputW": 0.5398690189253109,
+          "detachmentElasticRemovalW": 0.5394322873979583,
+          "activeLinkStorageRateW": 0.00043673152735258943,
+          "activeLinkStorageJ": 0.020144427798544147
+        },
+        {
+          "timeSeconds": 0.02,
+          "attachmentElasticInputW": 0.5398657923129306,
+          "detachmentElasticRemovalW": 0.5395647634778441,
+          "activeLinkStorageRateW": 0.00030102883508653346,
+          "activeLinkStorageJ": 0.020148797513914254
+        },
+        {
+          "timeSeconds": 0.04,
+          "attachmentElasticInputW": 0.5398685001844755,
+          "detachmentElasticRemovalW": 0.5397019283087091,
+          "activeLinkStorageRateW": 0.00016657187576643885,
+          "activeLinkStorageJ": 0.020153331907085858
+        },
+        {
+          "timeSeconds": 0.1,
+          "attachmentElasticInputW": 0.5398758967594018,
+          "detachmentElasticRemovalW": 0.5398454268153102,
+          "activeLinkStorageRateW": 3.046994409162337e-05,
+          "activeLinkStorageJ": 0.020158114123908128
+        },
+        {
+          "timeSeconds": 0.2,
+          "attachmentElasticInputW": 0.539877756813183,
+          "detachmentElasticRemovalW": 0.539875821479531,
+          "activeLinkStorageRateW": 1.935333652000284e-06,
+          "activeLinkStorageJ": 0.020159144594562518
+        }
+      ]
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.001",
+      "initialRawMoments": [
+        0.49934610862403017,
+        0.9883400823517435,
+        0.5304839358485604
+      ],
+      "calibrationMultiplier": 1.0117974752379888,
+      "initialMacroForceN": 39.76114573531328,
+      "initialAttachmentInputW": 0.5398668063638742,
+      "initialDetachmentRemovalW": 0.5398668063638742,
+      "jump": {
+        "delta": 0.001,
+        "macroStretchChange": 7.692307692307692e-06,
+        "activeMechanicalWorkJ": 3.7575896912611366e-05,
+        "signedEnvelopeRecruitmentWorkJ": -8.278027111664742e-07,
+        "activeLinkStorageChangeJ": 3.6748094201434184e-05,
+        "endpointDetachmentRemovalJ": 1.619859024133224e-26,
+        "normalizedActiveIdentityError": 1.5847817012560822e-16,
+        "passiveStorageChangeJ": 5.263212997415394e-06,
+        "passiveWorkJ": 5.263212997416842e-06,
+        "passiveWorkDensityIdentityErrorPa": 2.5854318685958333e-14,
+        "passiveWorkDensityQuadratureErrorEstimatePa": 1.0434536166497432e-15
+      },
+      "holds": [
+        {
+          "timeSeconds": 0.0,
+          "attachmentElasticInputW": 0.5398446578684999,
+          "detachmentElasticRemovalW": 0.5409788755070459,
+          "activeLinkStorageRateW": -0.0011342176385460518,
+          "activeLinkStorageJ": 0.020195550506995907
+        },
+        {
+          "timeSeconds": 0.008,
+          "attachmentElasticInputW": 0.5398624930506378,
+          "detachmentElasticRemovalW": 0.540736793282871,
+          "activeLinkStorageRateW": -0.0008743002322332511,
+          "activeLinkStorageJ": 0.020187569349559092
+        },
+        {
+          "timeSeconds": 0.02,
+          "attachmentElasticInputW": 0.5398689840360769,
+          "detachmentElasticRemovalW": 0.540471491884683,
+          "activeLinkStorageRateW": -0.0006025078486060802,
+          "activeLinkStorageJ": 0.020178822472198446
+        },
+        {
+          "timeSeconds": 0.04,
+          "attachmentElasticInputW": 0.5398635304457516,
+          "detachmentElasticRemovalW": 0.5401968547030321,
+          "activeLinkStorageRateW": -0.00033332425728048703,
+          "activeLinkStorageJ": 0.020169747845689527
+        },
+        {
+          "timeSeconds": 0.1,
+          "attachmentElasticInputW": 0.5398486465078344,
+          "detachmentElasticRemovalW": 0.5399096029618162,
+          "activeLinkStorageRateW": -6.0956453981854656e-05,
+          "activeLinkStorageJ": 0.020160179359042768
+        },
+        {
+          "timeSeconds": 0.2,
+          "attachmentElasticInputW": 0.5398449064248098,
+          "detachmentElasticRemovalW": 0.5398487771132383,
+          "activeLinkStorageRateW": -3.87068842858674e-06,
+          "activeLinkStorageJ": 0.02015811803265811
+        }
+      ]
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.0005",
+      "initialRawMoments": [
+        0.49934610862403017,
+        0.9883400823517435,
+        0.5304839358485604
+      ],
+      "calibrationMultiplier": 1.0117974752379888,
+      "initialMacroForceN": 39.76114573531328,
+      "initialAttachmentInputW": 0.5398668063638742,
+      "initialDetachmentRemovalW": 0.5398668063638742,
+      "jump": {
+        "delta": 0.001,
+        "macroStretchChange": 7.692307692307692e-06,
+        "activeMechanicalWorkJ": 3.7575896912611366e-05,
+        "signedEnvelopeRecruitmentWorkJ": -8.278027111664742e-07,
+        "activeLinkStorageChangeJ": 3.6748094201434184e-05,
+        "endpointDetachmentRemovalJ": 1.619859024133224e-26,
+        "normalizedActiveIdentityError": 1.5847817012560822e-16,
+        "passiveStorageChangeJ": 5.263212997415394e-06,
+        "passiveWorkJ": 5.263212997416842e-06,
+        "passiveWorkDensityIdentityErrorPa": 2.5854318685958333e-14,
+        "passiveWorkDensityQuadratureErrorEstimatePa": 1.0434536166497432e-15
+      },
+      "holds": [
+        {
+          "timeSeconds": 0.0,
+          "attachmentElasticInputW": 0.5398446578684999,
+          "detachmentElasticRemovalW": 0.5409788755070459,
+          "activeLinkStorageRateW": -0.0011342176385460518,
+          "activeLinkStorageJ": 0.020195550506995907
+        },
+        {
+          "timeSeconds": 0.008,
+          "attachmentElasticInputW": 0.5398624930506376,
+          "detachmentElasticRemovalW": 0.5407367932828712,
+          "activeLinkStorageRateW": -0.0008743002322335265,
+          "activeLinkStorageJ": 0.020187569349559092
+        },
+        {
+          "timeSeconds": 0.02,
+          "attachmentElasticInputW": 0.5398689840360769,
+          "detachmentElasticRemovalW": 0.540471491884683,
+          "activeLinkStorageRateW": -0.000602507848606072,
+          "activeLinkStorageJ": 0.020178822472198446
+        },
+        {
+          "timeSeconds": 0.04,
+          "attachmentElasticInputW": 0.5398635304457519,
+          "detachmentElasticRemovalW": 0.540196854703032,
+          "activeLinkStorageRateW": -0.00033332425728018074,
+          "activeLinkStorageJ": 0.020169747845689524
+        },
+        {
+          "timeSeconds": 0.1,
+          "attachmentElasticInputW": 0.5398486465078344,
+          "detachmentElasticRemovalW": 0.5399096029618161,
+          "activeLinkStorageRateW": -6.0956453981846463e-05,
+          "activeLinkStorageJ": 0.020160179359042768
+        },
+        {
+          "timeSeconds": 0.2,
+          "attachmentElasticInputW": 0.5398449064248095,
+          "detachmentElasticRemovalW": 0.5398487771132383,
+          "activeLinkStorageRateW": -3.870688428861868e-06,
+          "activeLinkStorageJ": 0.02015811803265811
+        }
+      ]
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.001",
+      "initialRawMoments": [
+        0.49934610862403017,
+        0.9883400823517435,
+        0.5304839358485604
+      ],
+      "calibrationMultiplier": 1.0117974752379888,
+      "initialMacroForceN": 39.76114573531328,
+      "initialAttachmentInputW": 0.5398668063638742,
+      "initialDetachmentRemovalW": 0.5398668063638742,
+      "jump": {
+        "delta": -0.001,
+        "macroStretchChange": -7.692307692307692e-06,
+        "activeMechanicalWorkJ": -3.753948665952716e-05,
+        "signedEnvelopeRecruitmentWorkJ": 8.262534004245275e-07,
+        "activeLinkStorageChangeJ": -3.6713233259101906e-05,
+        "endpointDetachmentRemovalJ": 3.199978494506965e-28,
+        "normalizedActiveIdentityError": 1.0711578655714596e-17,
+        "passiveStorageChangeJ": -5.260793193330755e-06,
+        "passiveWorkJ": -5.260793193321536e-06,
+        "passiveWorkDensityIdentityErrorPa": 1.646321967641029e-13,
+        "passiveWorkDensityQuadratureErrorEstimatePa": 1.042973880538727e-15
+      },
+      "holds": [
+        {
+          "timeSeconds": 0.0,
+          "attachmentElasticInputW": 0.5398889546320853,
+          "detachmentElasticRemovalW": 0.5387564869724688,
+          "activeLinkStorageRateW": 0.0011324676596165095,
+          "activeLinkStorageJ": 0.020122089179535372
+        },
+        {
+          "timeSeconds": 0.008,
+          "attachmentElasticInputW": 0.5398712687910897,
+          "detachmentElasticRemovalW": 0.5389980845421473,
+          "activeLinkStorageRateW": 0.0008731842489423842,
+          "activeLinkStorageJ": 0.020130059090420524
+        },
+        {
+          "timeSeconds": 0.02,
+          "attachmentElasticInputW": 0.5398648281668995,
+          "detachmentElasticRemovalW": 0.5392629204575627,
+          "activeLinkStorageRateW": 0.0006019077093368245,
+          "activeLinkStorageJ": 0.02013879604099271
+        },
+        {
+          "timeSeconds": 0.04,
+          "attachmentElasticInputW": 0.5398702312862365,
+          "detachmentElasticRemovalW": 0.5395371477310326,
+          "activeLinkStorageRateW": 0.0003330835552039673,
+          "activeLinkStorageJ": 0.020147862881106874
+        },
+        {
+          "timeSeconds": 0.1,
+          "attachmentElasticInputW": 0.539884994143649,
+          "detachmentElasticRemovalW": 0.5398240598261584,
+          "activeLinkStorageRateW": 6.093431749049418e-05,
+          "activeLinkStorageJ": 0.02015742596035335
+        },
+        {
+          "timeSeconds": 0.2,
+          "attachmentElasticInputW": 0.5398887075831824,
+          "detachmentElasticRemovalW": 0.539884836929395,
+          "activeLinkStorageRateW": 3.870653787230932e-06,
+          "activeLinkStorageJ": 0.02015948677106877
+        }
+      ]
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.0005",
+      "initialRawMoments": [
+        0.49934610862403017,
+        0.9883400823517435,
+        0.5304839358485604
+      ],
+      "calibrationMultiplier": 1.0117974752379888,
+      "initialMacroForceN": 39.76114573531328,
+      "initialAttachmentInputW": 0.5398668063638742,
+      "initialDetachmentRemovalW": 0.5398668063638742,
+      "jump": {
+        "delta": -0.001,
+        "macroStretchChange": -7.692307692307692e-06,
+        "activeMechanicalWorkJ": -3.753948665952716e-05,
+        "signedEnvelopeRecruitmentWorkJ": 8.262534004245275e-07,
+        "activeLinkStorageChangeJ": -3.6713233259101906e-05,
+        "endpointDetachmentRemovalJ": 3.199978494506965e-28,
+        "normalizedActiveIdentityError": 1.0711578655714596e-17,
+        "passiveStorageChangeJ": -5.260793193330755e-06,
+        "passiveWorkJ": -5.260793193321536e-06,
+        "passiveWorkDensityIdentityErrorPa": 1.646321967641029e-13,
+        "passiveWorkDensityQuadratureErrorEstimatePa": 1.042973880538727e-15
+      },
+      "holds": [
+        {
+          "timeSeconds": 0.0,
+          "attachmentElasticInputW": 0.5398889546320853,
+          "detachmentElasticRemovalW": 0.5387564869724688,
+          "activeLinkStorageRateW": 0.0011324676596165095,
+          "activeLinkStorageJ": 0.020122089179535372
+        },
+        {
+          "timeSeconds": 0.008,
+          "attachmentElasticInputW": 0.5398712687910897,
+          "detachmentElasticRemovalW": 0.5389980845421473,
+          "activeLinkStorageRateW": 0.0008731842489424639,
+          "activeLinkStorageJ": 0.020130059090420524
+        },
+        {
+          "timeSeconds": 0.02,
+          "attachmentElasticInputW": 0.5398648281668995,
+          "detachmentElasticRemovalW": 0.5392629204575627,
+          "activeLinkStorageRateW": 0.000601907709336791,
+          "activeLinkStorageJ": 0.02013879604099271
+        },
+        {
+          "timeSeconds": 0.04,
+          "attachmentElasticInputW": 0.5398702312862365,
+          "detachmentElasticRemovalW": 0.5395371477310326,
+          "activeLinkStorageRateW": 0.0003330835552039641,
+          "activeLinkStorageJ": 0.020147862881106874
+        },
+        {
+          "timeSeconds": 0.1,
+          "attachmentElasticInputW": 0.539884994143649,
+          "detachmentElasticRemovalW": 0.5398240598261583,
+          "activeLinkStorageRateW": 6.0934317490569286e-05,
+          "activeLinkStorageJ": 0.020157425960353345
+        },
+        {
+          "timeSeconds": 0.2,
+          "attachmentElasticInputW": 0.5398887075831824,
+          "detachmentElasticRemovalW": 0.539884836929395,
+          "activeLinkStorageRateW": 3.870653787320354e-06,
+          "activeLinkStorageJ": 0.020159486771068765
+        }
+      ]
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.001",
+      "initialRawMoments": [
+        0.49934610862403017,
+        0.9883400823517435,
+        0.5304839358485604
+      ],
+      "calibrationMultiplier": 1.0117974752379888,
+      "initialMacroForceN": 39.76114573531328,
+      "initialAttachmentInputW": 0.5398668063638742,
+      "initialDetachmentRemovalW": 0.5398668063638742,
+      "jump": {
+        "delta": 0.0005,
+        "macroStretchChange": 3.846153846153846e-06,
+        "activeMechanicalWorkJ": 1.8783397370279147e-05,
+        "signedEnvelopeRecruitmentWorkJ": -4.13707592552175e-07,
+        "activeLinkStorageChangeJ": 1.836968977773669e-05,
+        "endpointDetachmentRemovalJ": 8.029768952110876e-27,
+        "normalizedActiveIdentityError": 1.438219593979032e-16,
+        "passiveStorageChangeJ": 2.631304024718702e-06,
+        "passiveWorkJ": 2.6313040247124584e-06,
+        "passiveWorkDensityIdentityErrorPa": 1.1148720835407744e-13,
+        "passiveWorkDensityQuadratureErrorEstimatePa": 5.216668416115381e-16
+      },
+      "holds": [
+        {
+          "timeSeconds": 0.0,
+          "attachmentElasticInputW": 0.5398557321445802,
+          "detachmentElasticRemovalW": 0.5404226220670859,
+          "activeLinkStorageRateW": -0.0005668899225057159,
+          "activeLinkStorageJ": 0.020177172102572208
+        },
+        {
+          "timeSeconds": 0.008,
+          "attachmentElasticInputW": 0.5398646310809261,
+          "detachmentElasticRemovalW": 0.5403016416040923,
+          "activeLinkStorageRateW": -0.00043701052316628974,
+          "activeLinkStorageJ": 0.020173182930642658
+        },
+        {
+          "timeSeconds": 0.02,
+          "attachmentElasticInputW": 0.539867870283621,
+          "detachmentElasticRemovalW": 0.5401690491535324,
+          "activeLinkStorageRateW": -0.0003011788699114003,
+          "activeLinkStorageJ": 0.02016881073357542
+        },
+        {
+          "timeSeconds": 0.04,
+          "attachmentElasticInputW": 0.5398651497943358,
+          "detachmentElasticRemovalW": 0.5400317818456289,
+          "activeLinkStorageRateW": -0.00016663205129320013,
+          "activeLinkStorageJ": 0.020164274393804964
+        },
+        {
+          "timeSeconds": 0.1,
+          "attachmentElasticInputW": 0.539857722949284,
+          "detachmentElasticRemovalW": 0.5398881984274979,
+          "activeLinkStorageRateW": -3.047547821384434e-05,
+          "activeLinkStorageJ": 0.020159490825132492
+        },
+        {
+          "timeSeconds": 0.2,
+          "attachmentElasticInputW": 0.539855856234627,
+          "detachmentElasticRemovalW": 0.5398577915769388,
+          "activeLinkStorageRateW": -1.935342311825381e-06,
+          "activeLinkStorageJ": 0.020158460225560886
+        }
+      ]
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.0005",
+      "initialRawMoments": [
+        0.49934610862403017,
+        0.9883400823517435,
+        0.5304839358485604
+      ],
+      "calibrationMultiplier": 1.0117974752379888,
+      "initialMacroForceN": 39.76114573531328,
+      "initialAttachmentInputW": 0.5398668063638742,
+      "initialDetachmentRemovalW": 0.5398668063638742,
+      "jump": {
+        "delta": 0.0005,
+        "macroStretchChange": 3.846153846153846e-06,
+        "activeMechanicalWorkJ": 1.8783397370279147e-05,
+        "signedEnvelopeRecruitmentWorkJ": -4.13707592552175e-07,
+        "activeLinkStorageChangeJ": 1.836968977773669e-05,
+        "endpointDetachmentRemovalJ": 8.029768952110876e-27,
+        "normalizedActiveIdentityError": 1.438219593979032e-16,
+        "passiveStorageChangeJ": 2.631304024718702e-06,
+        "passiveWorkJ": 2.6313040247124584e-06,
+        "passiveWorkDensityIdentityErrorPa": 1.1148720835407744e-13,
+        "passiveWorkDensityQuadratureErrorEstimatePa": 5.216668416115381e-16
+      },
+      "holds": [
+        {
+          "timeSeconds": 0.0,
+          "attachmentElasticInputW": 0.5398557321445802,
+          "detachmentElasticRemovalW": 0.5404226220670859,
+          "activeLinkStorageRateW": -0.0005668899225057159,
+          "activeLinkStorageJ": 0.020177172102572208
+        },
+        {
+          "timeSeconds": 0.008,
+          "attachmentElasticInputW": 0.5398646310809261,
+          "detachmentElasticRemovalW": 0.5403016416040923,
+          "activeLinkStorageRateW": -0.00043701052316629457,
+          "activeLinkStorageJ": 0.020173182930642658
+        },
+        {
+          "timeSeconds": 0.02,
+          "attachmentElasticInputW": 0.539867870283621,
+          "detachmentElasticRemovalW": 0.5401690491535324,
+          "activeLinkStorageRateW": -0.0003011788699113496,
+          "activeLinkStorageJ": 0.020168810733575415
+        },
+        {
+          "timeSeconds": 0.04,
+          "attachmentElasticInputW": 0.539865149794336,
+          "detachmentElasticRemovalW": 0.5400317818456288,
+          "activeLinkStorageRateW": -0.00016663205129291382,
+          "activeLinkStorageJ": 0.020164274393804957
+        },
+        {
+          "timeSeconds": 0.1,
+          "attachmentElasticInputW": 0.539857722949284,
+          "detachmentElasticRemovalW": 0.5398881984274978,
+          "activeLinkStorageRateW": -3.0475478213764017e-05,
+          "activeLinkStorageJ": 0.020159490825132492
+        },
+        {
+          "timeSeconds": 0.2,
+          "attachmentElasticInputW": 0.5398558562346267,
+          "detachmentElasticRemovalW": 0.5398577915769389,
+          "activeLinkStorageRateW": -1.935342312164119e-06,
+          "activeLinkStorageJ": 0.02015846022556089
+        }
+      ]
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.001",
+      "initialRawMoments": [
+        0.49934610862403017,
+        0.9883400823517435,
+        0.5304839358485604
+      ],
+      "calibrationMultiplier": 1.0117974752379888,
+      "initialMacroForceN": 39.76114573531328,
+      "initialAttachmentInputW": 0.5398668063638742,
+      "initialDetachmentRemovalW": 0.5398668063638742,
+      "jump": {
+        "delta": -0.0005,
+        "macroStretchChange": -3.846153846153846e-06,
+        "activeMechanicalWorkJ": -1.8774294807007392e-05,
+        "signedEnvelopeRecruitmentWorkJ": 4.133202648672994e-07,
+        "activeLinkStorageChangeJ": -1.836097454214893e-05,
+        "endpointDetachmentRemovalJ": 1.585435459458614e-28,
+        "normalizedActiveIdentityError": 1.308276268328689e-16,
+        "passiveStorageChangeJ": -2.630699073684809e-06,
+        "passiveWorkJ": -2.6306990736886776e-06,
+        "passiveWorkDensityIdentityErrorPa": 6.907668881339646e-14,
+        "passiveWorkDensityQuadratureErrorEstimatePa": 5.21546907583793e-16
+      },
+      "holds": [
+        {
+          "timeSeconds": 0.0,
+          "attachmentElasticInputW": 0.5398778805263774,
+          "detachmentElasticRemovalW": 0.5393114280985609,
+          "activeLinkStorageRateW": 0.0005664524278165855,
+          "activeLinkStorageJ": 0.020140441438252322
+        },
+        {
+          "timeSeconds": 0.008,
+          "attachmentElasticInputW": 0.5398690189253109,
+          "detachmentElasticRemovalW": 0.5394322873979583,
+          "activeLinkStorageRateW": 0.0004367315273525369,
+          "activeLinkStorageJ": 0.020144427798544147
+        },
+        {
+          "timeSeconds": 0.02,
+          "attachmentElasticInputW": 0.5398657923129305,
+          "detachmentElasticRemovalW": 0.539564763477844,
+          "activeLinkStorageRateW": 0.0003010288350865274,
+          "activeLinkStorageJ": 0.020148797513914254
+        },
+        {
+          "timeSeconds": 0.04,
+          "attachmentElasticInputW": 0.5398685001844755,
+          "detachmentElasticRemovalW": 0.5397019283087091,
+          "activeLinkStorageRateW": 0.0001665718757664656,
+          "activeLinkStorageJ": 0.02015333190708585
+        },
+        {
+          "timeSeconds": 0.1,
+          "attachmentElasticInputW": 0.5398758967594021,
+          "detachmentElasticRemovalW": 0.5398454268153101,
+          "activeLinkStorageRateW": 3.0469944091882246e-05,
+          "activeLinkStorageJ": 0.020158114123908128
+        },
+        {
+          "timeSeconds": 0.2,
+          "attachmentElasticInputW": 0.5398777568131827,
+          "detachmentElasticRemovalW": 0.539875821479531,
+          "activeLinkStorageRateW": 1.935333651724815e-06,
+          "activeLinkStorageJ": 0.02015914459456252
+        }
+      ]
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.0005",
+      "initialRawMoments": [
+        0.49934610862403017,
+        0.9883400823517435,
+        0.5304839358485604
+      ],
+      "calibrationMultiplier": 1.0117974752379888,
+      "initialMacroForceN": 39.76114573531328,
+      "initialAttachmentInputW": 0.5398668063638742,
+      "initialDetachmentRemovalW": 0.5398668063638742,
+      "jump": {
+        "delta": -0.0005,
+        "macroStretchChange": -3.846153846153846e-06,
+        "activeMechanicalWorkJ": -1.8774294807007392e-05,
+        "signedEnvelopeRecruitmentWorkJ": 4.133202648672994e-07,
+        "activeLinkStorageChangeJ": -1.836097454214893e-05,
+        "endpointDetachmentRemovalJ": 1.585435459458614e-28,
+        "normalizedActiveIdentityError": 1.308276268328689e-16,
+        "passiveStorageChangeJ": -2.630699073684809e-06,
+        "passiveWorkJ": -2.6306990736886776e-06,
+        "passiveWorkDensityIdentityErrorPa": 6.907668881339646e-14,
+        "passiveWorkDensityQuadratureErrorEstimatePa": 5.21546907583793e-16
+      },
+      "holds": [
+        {
+          "timeSeconds": 0.0,
+          "attachmentElasticInputW": 0.5398778805263774,
+          "detachmentElasticRemovalW": 0.5393114280985609,
+          "activeLinkStorageRateW": 0.0005664524278165855,
+          "activeLinkStorageJ": 0.020140441438252322
+        },
+        {
+          "timeSeconds": 0.008,
+          "attachmentElasticInputW": 0.5398690189253109,
+          "detachmentElasticRemovalW": 0.5394322873979583,
+          "activeLinkStorageRateW": 0.00043673152735256086,
+          "activeLinkStorageJ": 0.020144427798544147
+        },
+        {
+          "timeSeconds": 0.02,
+          "attachmentElasticInputW": 0.5398657923129305,
+          "detachmentElasticRemovalW": 0.539564763477844,
+          "activeLinkStorageRateW": 0.0003010288350865127,
+          "activeLinkStorageJ": 0.020148797513914254
+        },
+        {
+          "timeSeconds": 0.04,
+          "attachmentElasticInputW": 0.5398685001844755,
+          "detachmentElasticRemovalW": 0.5397019283087091,
+          "activeLinkStorageRateW": 0.00016657187576642334,
+          "activeLinkStorageJ": 0.020153331907085854
+        },
+        {
+          "timeSeconds": 0.1,
+          "attachmentElasticInputW": 0.5398758967594021,
+          "detachmentElasticRemovalW": 0.5398454268153102,
+          "activeLinkStorageRateW": 3.046994409186201e-05,
+          "activeLinkStorageJ": 0.020158114123908128
+        },
+        {
+          "timeSeconds": 0.2,
+          "attachmentElasticInputW": 0.5398777568131828,
+          "detachmentElasticRemovalW": 0.5398758214795308,
+          "activeLinkStorageRateW": 1.9353336519979616e-06,
+          "activeLinkStorageJ": 0.020159144594562518
+        }
+      ]
+    }
+  ],
+  "sensitivity": {
+    "200": {
+      "sphi": [
+        0.9986922172480628,
+        0.7802081151119505,
+        0.5458216043856318,
+        0.3071067242438177,
+        0.057835779210248926,
+        0.003795901824539283
+      ],
+      "senergy": [
+        0.9883400823517451,
+        0.7784619708613848,
+        0.548416368386412,
+        0.30971776177938476,
+        0.0579916976311547,
+        0.003754103575996533
+      ],
+      "phi0": 0.9883400823517446,
+      "B0": 0.49934610862403067,
+      "E0": 0.5304839358485609,
+      "N": 0.9999874357482508,
+      "reactionEigenvalueRange": [
+        -1616.507147620839,
+        -24.681774539449762
+      ],
+      "finiteDomainPhiDerivativeEndpointCorrection": 2.177646890802561e-22,
+      "activeEndpointTangentPa": [
+        10988094.235474352,
+        8482498.449804628,
+        5794532.379267239,
+        3056928.170026602,
+        198266.03736067537,
+        -421468.248621328
+      ],
+      "totalEndpointTangentPa": [
+        11718356.542775042,
+        9212760.757105319,
+        6524794.68656793,
+        3787190.477327293,
+        928528.3446613658,
+        308794.05867936247
+      ]
+    },
+    "400": {
+      "sphi": [
+        0.9986922172480651,
+        0.7802081151119532,
+        0.5458216043856343,
+        0.3071067242438196,
+        0.0578357792102495,
+        0.0037959018245393448
+      ],
+      "senergy": [
+        0.9883400823517484,
+        0.7784619708613882,
+        0.548416368386415,
+        0.3097177617793868,
+        0.05799169763115529,
+        0.0037541035759965967
+      ],
+      "phi0": 0.9883400823517511,
+      "B0": 0.49934610862403395,
+      "E0": 0.5304839358485643,
+      "N": 0.9999874357482508,
+      "reactionEigenvalueRange": [
+        -1617.028557602992,
+        -24.675184993114758
+      ],
+      "finiteDomainPhiDerivativeEndpointCorrection": 2.177646890802533e-22,
+      "activeEndpointTangentPa": [
+        10988094.235474303,
+        8482498.4498046,
+        5794532.379267228,
+        3056928.170026601,
+        198266.03736067755,
+        -421468.24862132745
+      ],
+      "totalEndpointTangentPa": [
+        11718356.542774994,
+        9212760.75710529,
+        6524794.686567918,
+        3787190.4773272914,
+        928528.344661368,
+        308794.058679363
+      ]
+    },
+    "800": {
+      "sphi": [
+        0.9986922172480605,
+        0.7802081151119485,
+        0.5458216043856307,
+        0.30710672424381635,
+        0.05783577921024864,
+        0.003795901824539249
+      ],
+      "senergy": [
+        0.9883400823517441,
+        0.7784619708613836,
+        0.5484163683864114,
+        0.3097177617793843,
+        0.05799169763115437,
+        0.0037541035759964874
+      ],
+      "phi0": 0.9883400823517435,
+      "B0": 0.49934610862403017,
+      "E0": 0.5304839358485604,
+      "N": 0.9999874357482508,
+      "reactionEigenvalueRange": [
+        -1617.1593184078915,
+        -24.673593671016118
+      ],
+      "finiteDomainPhiDerivativeEndpointCorrection": 2.177646890802566e-22,
+      "activeEndpointTangentPa": [
+        10988094.235474337,
+        8482498.449804617,
+        5794532.379267233,
+        3056928.1700265906,
+        198266.03736067275,
+        -421468.2486213282
+      ],
+      "totalEndpointTangentPa": [
+        11718356.542775027,
+        9212760.757105308,
+        6524794.686567924,
+        3787190.477327281,
+        928528.3446613632,
+        308794.05867936224
+      ]
+    }
+  },
+  "tangentChecks": [
+    {
+      "count": 200,
+      "maxStepSeconds": 0.001,
+      "delta": 0.001,
+      "finiteDifferencePa": [
+        11718356.540583119,
+        9212760.096001366,
+        6524793.429904167,
+        3787188.9774776357,
+        928527.6580957725,
+        308793.9821488544
+      ],
+      "analyticPa": [
+        11718356.542775042,
+        9212760.757105319,
+        6524794.68656793,
+        3787190.477327293,
+        928528.3446613658,
+        308794.05867936247
+      ],
+      "relativeErrors": [
+        1.8705042389783208e-10,
+        7.175959195143356e-08,
+        1.925982078104773e-07,
+        3.960322740674294e-07,
+        7.394126386104767e-07,
+        2.4783672452783303e-07
+      ]
+    },
+    {
+      "count": 200,
+      "maxStepSeconds": 0.001,
+      "delta": 0.0005,
+      "finiteDifferencePa": [
+        11718356.542209076,
+        9212760.591812694,
+        6524794.372385805,
+        3787190.102349414,
+        928528.1730043062,
+        308794.03953033034
+      ],
+      "analyticPa": [
+        11718356.542775042,
+        9212760.757105319,
+        6524794.68656793,
+        3787190.477327293,
+        928528.3446613658,
+        308794.05867936247
+      ],
+      "relativeErrors": [
+        4.829743737298405e-11,
+        1.7941703767427508e-08,
+        4.815203238175901e-08,
+        9.901215188552569e-08,
+        1.848700265079343e-07,
+        6.201230753035716e-08
+      ]
+    },
+    {
+      "count": 200,
+      "maxStepSeconds": 0.0005,
+      "delta": 0.001,
+      "finiteDifferencePa": [
+        11718356.540583119,
+        9212760.09600042,
+        6524793.429904167,
+        3787188.9774795272,
+        928527.6580957725,
+        308793.98214790854
+      ],
+      "analyticPa": [
+        11718356.542775042,
+        9212760.757105319,
+        6524794.68656793,
+        3787190.477327293,
+        928528.3446613658,
+        308794.05867936247
+      ],
+      "relativeErrors": [
+        1.8705042389783208e-10,
+        7.175969465937972e-08,
+        1.925982078104773e-07,
+        3.960317746164088e-07,
+        7.394126386104767e-07,
+        2.478397876518254e-07
+      ]
+    },
+    {
+      "count": 200,
+      "maxStepSeconds": 0.0005,
+      "delta": 0.0005,
+      "finiteDifferencePa": [
+        11718356.542209076,
+        9212760.591812694,
+        6524794.372385805,
+        3787190.102349414,
+        928528.1730024144,
+        308794.0395322221
+      ],
+      "analyticPa": [
+        11718356.542775042,
+        9212760.757105319,
+        6524794.68656793,
+        3787190.477327293,
+        928528.3446613658,
+        308794.05867936247
+      ],
+      "relativeErrors": [
+        4.829743737298405e-11,
+        1.7941703767427508e-08,
+        4.815203238175901e-08,
+        9.901215188552569e-08,
+        1.8487206387059593e-07,
+        6.200618128237241e-08
+      ]
+    },
+    {
+      "count": 400,
+      "maxStepSeconds": 0.001,
+      "delta": 0.001,
+      "finiteDifferencePa": [
+        11718356.540584065,
+        9212760.095999476,
+        6524793.429905113,
+        3787188.9774804735,
+        928527.6580938807,
+        308793.9821488544
+      ],
+      "analyticPa": [
+        11718356.542774994,
+        9212760.75710529,
+        6524794.686567918,
+        3787190.4773272914,
+        928528.344661368,
+        308794.058679363
+      ],
+      "relativeErrors": [
+        1.8696554403382984e-10,
+        7.175979413243016e-08,
+        1.9259806107795154e-07,
+        3.9603152439907095e-07,
+        7.394146783552837e-07,
+        2.4783672622433203e-07
+      ]
+    },
+    {
+      "count": 400,
+      "maxStepSeconds": 0.001,
+      "delta": 0.0005,
+      "finiteDifferencePa": [
+        11718356.542210968,
+        9212760.591810802,
+        6524794.372387696,
+        3787190.102347522,
+        928528.1730061979,
+        308794.03953033034
+      ],
+      "analyticPa": [
+        11718356.542774994,
+        9212760.75710529,
+        6524794.686567918,
+        3787190.4773272914,
+        928528.344661368,
+        308794.058679363
+      ],
+      "relativeErrors": [
+        4.813181037243908e-11,
+        1.7941906150604936e-08,
+        4.815174077227384e-08,
+        9.901265109063246e-08,
+        1.848679915274193e-07,
+        6.201230922685649e-08
+      ]
+    },
+    {
+      "count": 400,
+      "maxStepSeconds": 0.0005,
+      "delta": 0.001,
+      "finiteDifferencePa": [
+        11718356.540584065,
+        9212760.096002312,
+        6524793.429904167,
+        3787188.9774785815,
+        928527.6580948266,
+        308793.98215074616
+      ],
+      "analyticPa": [
+        11718356.542774994,
+        9212760.75710529,
+        6524794.686567918,
+        3787190.4773272914,
+        928528.344661368,
+        308794.058679363
+      ],
+      "relativeErrors": [
+        1.8696554403382984e-10,
+        7.175948621077268e-08,
+        1.925982060976466e-07,
+        3.960320239730485e-07,
+        7.39413659673953e-07,
+        2.4783059997634726e-07
+      ]
+    },
+    {
+      "count": 400,
+      "maxStepSeconds": 0.0005,
+      "delta": 0.0005,
+      "finiteDifferencePa": [
+        11718356.542210968,
+        9212760.591810802,
+        6524794.372385805,
+        3787190.1023513055,
+        928528.1730043062,
+        308794.03953033034
+      ],
+      "analyticPa": [
+        11718356.542774994,
+        9212760.75710529,
+        6524794.686567918,
+        3787190.4773272914,
+        928528.344661368,
+        308794.058679363
+      ],
+      "relativeErrors": [
+        4.813181037243908e-11,
+        1.7941906150604936e-08,
+        4.8152030668928054e-08,
+        9.901165206563437e-08,
+        1.8487002889008097e-07,
+        6.201230922685649e-08
+      ]
+    },
+    {
+      "count": 800,
+      "maxStepSeconds": 0.001,
+      "delta": 0.001,
+      "finiteDifferencePa": [
+        11718356.540583119,
+        9212760.09599853,
+        6524793.429905113,
+        3787188.9774785815,
+        928527.6580957725,
+        308793.9821498003
+      ],
+      "analyticPa": [
+        11718356.542775027,
+        9212760.757105308,
+        6524794.686567924,
+        3787190.477327281,
+        928528.3446613632,
+        308794.05867936224
+      ],
+      "relativeErrors": [
+        1.8704915228938282e-10,
+        7.175989866000515e-08,
+        1.9259806193436689e-07,
+        3.9603202126799726e-07,
+        7.394126357268271e-07,
+        2.478336606498411e-07
+      ]
+    },
+    {
+      "count": 800,
+      "maxStepSeconds": 0.001,
+      "delta": 0.0005,
+      "finiteDifferencePa": [
+        11718356.54221286,
+        9212760.591812694,
+        6524794.372385805,
+        3787190.102349414,
+        928528.1730061979,
+        308794.03953033034
+      ],
+      "analyticPa": [
+        11718356.542775027,
+        9212760.757105308,
+        6524794.686567924,
+        3787190.477327281,
+        928528.3446613632,
+        308794.05867936224
+      ],
+      "relativeErrors": [
+        4.797317721836594e-11,
+        1.7941702554341553e-08,
+        4.815203152534353e-08,
+        9.901214881160292e-08,
+        1.848679862616214e-07,
+        6.201230677635746e-08
+      ]
+    },
+    {
+      "count": 800,
+      "maxStepSeconds": 0.0005,
+      "delta": 0.001,
+      "finiteDifferencePa": [
+        11718356.540583119,
+        9212760.096001366,
+        6524793.429904167,
+        3787188.9774776357,
+        928527.6580957725,
+        308793.98215074616
+      ],
+      "analyticPa": [
+        11718356.542775027,
+        9212760.757105308,
+        6524794.686567924,
+        3787190.477327281,
+        928528.3446613632,
+        308794.05867936224
+      ],
+      "relativeErrors": [
+        1.8704915228938282e-10,
+        7.175959073834767e-08,
+        1.9259820695406196e-07,
+        3.960322709935075e-07,
+        7.394126357268271e-07,
+        2.478305975258487e-07
+      ]
+    },
+    {
+      "count": 800,
+      "maxStepSeconds": 0.0005,
+      "delta": 0.0005,
+      "finiteDifferencePa": [
+        11718356.54221286,
+        9212760.591812694,
+        6524794.372383913,
+        3787190.102347522,
+        928528.1730061979,
+        308794.03953411384
+      ],
+      "analyticPa": [
+        11718356.542775027,
+        9212760.757105308,
+        6524794.686567924,
+        3787190.477327281,
+        928528.3446613632,
+        308794.05867936224
+      ],
+      "relativeErrors": [
+        4.797317721836594e-11,
+        1.7941702554341553e-08,
+        4.815232142199774e-08,
+        9.901264838558043e-08,
+        1.848679862616214e-07,
+        6.200005428038795e-08
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "Original frozen initial force",
+      "measured": 9.659460896032542e-05,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "Original frozen initial gradient reproduction",
+      "measured": 0.0,
+      "limit": 2e-06,
+      "passed": true
+    },
+    {
+      "name": "Initial matched macro field gradient change",
+      "measured": 0.0,
+      "limit": 2e-06,
+      "passed": true
+    },
+    {
+      "name": "Initial force versus original analytic",
+      "measured": 7.105427357601002e-15,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "Intentional Gamma force multiplier rejected",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.001: immutable initial RHS",
+      "measured": 1.2692618427201317e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.001: immutable initial adaptive moments",
+      "measured": 2.7755575615628914e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.001: immutable loading identities",
+      "measured": 7.025630077706069e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.001: immutable reversal identities",
+      "measured": 6.071532165918825e-18,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.001: archived moments replay",
+      "measured": 0.0,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.001: strict populations",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "200: reaction similarity action",
+      "measured": 2.1940645626309048e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "200: initial stationary density",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "200: finite-domain endpoint correction",
+      "measured": 2.177646890802561e-22,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "200: independent initial transport derivative",
+      "measured": 1.4432899320127035e-15,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "200: independent reaction derivative h=1e-07",
+      "measured": 1.9314224713877563e-10,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "200: independent reaction derivative h=5e-08",
+      "measured": 4.809369829000222e-10,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.001: hold rate ledger at 0.0",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.001: hold rate ledger at 0.008",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.001: hold rate ledger at 0.02",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.001: hold rate ledger at 0.04",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.001: hold rate ledger at 0.1",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.001: hold rate ledger at 0.2",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.001: initial powered stationary ledger",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.001: jump energy/work",
+      "measured": 1.0360568173658015e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.001: passive work",
+      "measured": 2.5854318685958333e-14,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.001: positive band geometry",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.0005: immutable initial RHS",
+      "measured": 1.2692618427201317e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.0005: immutable initial adaptive moments",
+      "measured": 2.7755575615628914e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.0005: immutable loading identities",
+      "measured": 7.025630077706069e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.0005: immutable reversal identities",
+      "measured": 2.1597307275911248e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.0005: archived moments replay",
+      "measured": 0.0,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.0005: strict populations",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.0005: hold rate ledger at 0.0",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.0005: hold rate ledger at 0.008",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.0005: hold rate ledger at 0.02",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.0005: hold rate ledger at 0.04",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.0005: hold rate ledger at 0.1",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.0005: hold rate ledger at 0.2",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.0005: initial powered stationary ledger",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.0005: jump energy/work",
+      "measured": 1.0360568173658015e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.0005: passive work",
+      "measured": 2.5854318685958333e-14,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.001-maxstep0.0005: positive band geometry",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.001: immutable initial RHS",
+      "measured": 1.2692618427201317e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.001: immutable initial adaptive moments",
+      "measured": 2.7755575615628914e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.001: immutable loading identities",
+      "measured": 1.5178830414797062e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.001: immutable reversal identities",
+      "measured": 1.9212062496443139e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.001: archived moments replay",
+      "measured": 0.0,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.001: strict populations",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.001: hold rate ledger at 0.0",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.001: hold rate ledger at 0.008",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.001: hold rate ledger at 0.02",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.001: hold rate ledger at 0.04",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.001: hold rate ledger at 0.1",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.001: hold rate ledger at 0.2",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.001: initial powered stationary ledger",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.001: jump energy/work",
+      "measured": 1.2237254396046e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.001: passive work",
+      "measured": 1.646321967641029e-13,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.001: positive band geometry",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.0005: immutable initial RHS",
+      "measured": 1.2692618427201317e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.0005: immutable initial adaptive moments",
+      "measured": 2.7755575615628914e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.0005: immutable loading identities",
+      "measured": 1.5178830414797062e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.0005: immutable reversal identities",
+      "measured": 1.4181364416110398e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.0005: archived moments replay",
+      "measured": 0.0,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.0005: strict populations",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.0005: hold rate ledger at 0.0",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.0005: hold rate ledger at 0.008",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.0005: hold rate ledger at 0.02",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.0005: hold rate ledger at 0.04",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.0005: hold rate ledger at 0.1",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.0005: hold rate ledger at 0.2",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.0005: initial powered stationary ledger",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.0005: jump energy/work",
+      "measured": 1.2237254396046e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.0005: passive work",
+      "measured": 1.646321967641029e-13,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.001-maxstep0.0005: positive band geometry",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.001: immutable initial RHS",
+      "measured": 1.2692618427201317e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.001: immutable initial adaptive moments",
+      "measured": 2.7755575615628914e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.001: immutable loading identities",
+      "measured": 9.063930161978817e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.001: immutable reversal identities",
+      "measured": 2.312603233911581e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.001: archived moments replay",
+      "measured": 0.0,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.001: strict populations",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.001: hold rate ledger at 0.0",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.001: hold rate ledger at 0.008",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.001: hold rate ledger at 0.02",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.001: hold rate ledger at 0.04",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.001: hold rate ledger at 0.1",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.001: hold rate ledger at 0.2",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.001: initial powered stationary ledger",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.001: jump energy/work",
+      "measured": 1.9901377920804616e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.001: passive work",
+      "measured": 1.1148720835407744e-13,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.001: positive band geometry",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.0005: immutable initial RHS",
+      "measured": 1.2692618427201317e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.0005: immutable initial adaptive moments",
+      "measured": 2.7755575615628914e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.0005: immutable loading identities",
+      "measured": 9.063930161978817e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.0005: immutable reversal identities",
+      "measured": 1.1600963245594897e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.0005: archived moments replay",
+      "measured": 0.0,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.0005: strict populations",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.0005: hold rate ledger at 0.0",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.0005: hold rate ledger at 0.008",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.0005: hold rate ledger at 0.02",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.0005: hold rate ledger at 0.04",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.0005: hold rate ledger at 0.1",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.0005: hold rate ledger at 0.2",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.0005: initial powered stationary ledger",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.0005: jump energy/work",
+      "measured": 1.9901377920804616e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.0005: passive work",
+      "measured": 1.1148720835407744e-13,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta0.0005-maxstep0.0005: positive band geometry",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.001: immutable initial RHS",
+      "measured": 1.2692618427201317e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.001: immutable initial adaptive moments",
+      "measured": 2.7755575615628914e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.001: immutable loading identities",
+      "measured": 1.3140530330524314e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.001: immutable reversal identities",
+      "measured": 8.673617379884035e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.001: archived moments replay",
+      "measured": 0.0,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.001: strict populations",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.001: hold rate ledger at 0.0",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.001: hold rate ledger at 0.008",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.001: hold rate ledger at 0.02",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.001: hold rate ledger at 0.04",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.001: hold rate ledger at 0.1",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.001: hold rate ledger at 0.2",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.001: initial powered stationary ledger",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.001: jump energy/work",
+      "measured": 7.49971441804962e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.001: passive work",
+      "measured": 6.907668881339646e-14,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.001: positive band geometry",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.0005: immutable initial RHS",
+      "measured": 1.2692618427201317e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.0005: immutable initial adaptive moments",
+      "measured": 2.7755575615628914e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.0005: immutable loading identities",
+      "measured": 1.3140530330524314e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.0005: immutable reversal identities",
+      "measured": 5.551115124446304e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.0005: archived moments replay",
+      "measured": 0.0,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.0005: strict populations",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.0005: hold rate ledger at 0.0",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.0005: hold rate ledger at 0.008",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.0005: hold rate ledger at 0.02",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.0005: hold rate ledger at 0.04",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.0005: hold rate ledger at 0.1",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.0005: hold rate ledger at 0.2",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.0005: initial powered stationary ledger",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.0005: jump energy/work",
+      "measured": 7.49971441804962e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.0005: passive work",
+      "measured": 6.907668881339646e-14,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes200-pCa4.5-delta-0.0005-maxstep0.0005: positive band geometry",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.001: immutable initial RHS",
+      "measured": 7.531011693961687e-16,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.001: immutable initial adaptive moments",
+      "measured": 9.2148511043888e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.001: immutable loading identities",
+      "measured": 6.375108774214766e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.001: immutable reversal identities",
+      "measured": 5.551115122915375e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.001: archived moments replay",
+      "measured": 0.0,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.001: strict populations",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "400: reaction similarity action",
+      "measured": 2.500226021159763e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "400: initial stationary density",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "400: finite-domain endpoint correction",
+      "measured": 2.177646890802533e-22,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "400: independent initial transport derivative",
+      "measured": 2.7755575615628914e-15,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "400: independent reaction derivative h=1e-07",
+      "measured": 8.052238549592856e-10,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "400: independent reaction derivative h=5e-08",
+      "measured": 5.445409681188281e-10,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.001: hold rate ledger at 0.0",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.001: hold rate ledger at 0.008",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.001: hold rate ledger at 0.02",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.001: hold rate ledger at 0.04",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.001: hold rate ledger at 0.1",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.001: hold rate ledger at 0.2",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.001: initial powered stationary ledger",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.001: jump energy/work",
+      "measured": 1.6261507903999823e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.001: passive work",
+      "measured": 2.5854318685958333e-14,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.001: positive band geometry",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.0005: immutable initial RHS",
+      "measured": 7.531011693961687e-16,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.0005: immutable initial adaptive moments",
+      "measured": 9.2148511043888e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.0005: immutable loading identities",
+      "measured": 6.375108774214766e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.0005: immutable reversal identities",
+      "measured": 1.1037178115902435e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.0005: archived moments replay",
+      "measured": 0.0,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.0005: strict populations",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.0005: hold rate ledger at 0.0",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.0005: hold rate ledger at 0.008",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.0005: hold rate ledger at 0.02",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.0005: hold rate ledger at 0.04",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.0005: hold rate ledger at 0.1",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.0005: hold rate ledger at 0.2",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.0005: initial powered stationary ledger",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.0005: jump energy/work",
+      "measured": 1.6261507903999823e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.0005: passive work",
+      "measured": 2.5854318685958333e-14,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.001-maxstep0.0005: positive band geometry",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.001: immutable initial RHS",
+      "measured": 7.531011693961687e-16,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.001: immutable initial adaptive moments",
+      "measured": 9.2148511043888e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.001: immutable loading identities",
+      "measured": 4.7271214720367993e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.001: immutable reversal identities",
+      "measured": 7.45931094670027e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.001: archived moments replay",
+      "measured": 0.0,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.001: strict populations",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.001: hold rate ledger at 0.0",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.001: hold rate ledger at 0.008",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.001: hold rate ledger at 0.02",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.001: hold rate ledger at 0.04",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.001: hold rate ledger at 0.1",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.001: hold rate ledger at 0.2",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.001: initial powered stationary ledger",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.001: jump energy/work",
+      "measured": 7.035963880136243e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.001: passive work",
+      "measured": 1.646321967641029e-13,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.001: positive band geometry",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.0005: immutable initial RHS",
+      "measured": 7.531011693961687e-16,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.0005: immutable initial adaptive moments",
+      "measured": 9.2148511043888e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.0005: immutable loading identities",
+      "measured": 4.7271214720367993e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.0005: immutable reversal identities",
+      "measured": 7.45931094670027e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.0005: archived moments replay",
+      "measured": 0.0,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.0005: strict populations",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.0005: hold rate ledger at 0.0",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.0005: hold rate ledger at 0.008",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.0005: hold rate ledger at 0.02",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.0005: hold rate ledger at 0.04",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.0005: hold rate ledger at 0.1",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.0005: hold rate ledger at 0.2",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.0005: initial powered stationary ledger",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.0005: jump energy/work",
+      "measured": 7.035963880136243e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.0005: passive work",
+      "measured": 1.646321967641029e-13,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.001-maxstep0.0005: positive band geometry",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.001: immutable initial RHS",
+      "measured": 7.531011693961687e-16,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.001: immutable initial adaptive moments",
+      "measured": 9.2148511043888e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.001: immutable loading identities",
+      "measured": 2.3635607360183997e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.001: immutable reversal identities",
+      "measured": 1.2468324983583301e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.001: archived moments replay",
+      "measured": 0.0,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.001: strict populations",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.001: hold rate ledger at 0.0",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.001: hold rate ledger at 0.008",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.001: hold rate ledger at 0.02",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.001: hold rate ledger at 0.04",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.001: hold rate ledger at 0.1",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.001: hold rate ledger at 0.2",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.001: initial powered stationary ledger",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.001: jump energy/work",
+      "measured": 1.9726465617196603e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.001: passive work",
+      "measured": 1.1148720835407744e-13,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.001: positive band geometry",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.0005: immutable initial RHS",
+      "measured": 7.531011693961687e-16,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.0005: immutable initial adaptive moments",
+      "measured": 9.2148511043888e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.0005: immutable loading identities",
+      "measured": 2.3635607360183997e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.0005: immutable reversal identities",
+      "measured": 1.192622389734055e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.0005: archived moments replay",
+      "measured": 0.0,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.0005: strict populations",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.0005: hold rate ledger at 0.0",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.0005: hold rate ledger at 0.008",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.0005: hold rate ledger at 0.02",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.0005: hold rate ledger at 0.04",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.0005: hold rate ledger at 0.1",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.0005: hold rate ledger at 0.2",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.0005: initial powered stationary ledger",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.0005: jump energy/work",
+      "measured": 1.9726465617196603e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.0005: passive work",
+      "measured": 1.1148720835407744e-13,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta0.0005-maxstep0.0005: positive band geometry",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.001: immutable initial RHS",
+      "measured": 7.531011693961687e-16,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.001: immutable initial adaptive moments",
+      "measured": 9.2148511043888e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.001: immutable loading identities",
+      "measured": 3.415236843329339e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.001: immutable reversal identities",
+      "measured": 8.348356728138384e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.001: archived moments replay",
+      "measured": 0.0,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.001: strict populations",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.001: hold rate ledger at 0.0",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.001: hold rate ledger at 0.008",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.001: hold rate ledger at 0.02",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.001: hold rate ledger at 0.04",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.001: hold rate ledger at 0.1",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.001: hold rate ledger at 0.2",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.001: initial powered stationary ledger",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.001: jump energy/work",
+      "measured": 7.324802114441606e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.001: passive work",
+      "measured": 6.907668881339646e-14,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.001: positive band geometry",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.0005: immutable initial RHS",
+      "measured": 7.531011693961687e-16,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.0005: immutable initial adaptive moments",
+      "measured": 9.2148511043888e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.0005: immutable loading identities",
+      "measured": 3.415236843329339e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.0005: immutable reversal identities",
+      "measured": 1.3845261742639892e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.0005: archived moments replay",
+      "measured": 0.0,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.0005: strict populations",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.0005: hold rate ledger at 0.0",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.0005: hold rate ledger at 0.008",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.0005: hold rate ledger at 0.02",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.0005: hold rate ledger at 0.04",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.0005: hold rate ledger at 0.1",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.0005: hold rate ledger at 0.2",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.0005: initial powered stationary ledger",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.0005: jump energy/work",
+      "measured": 7.324802114441606e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.0005: passive work",
+      "measured": 6.907668881339646e-14,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes400-pCa4.5-delta-0.0005-maxstep0.0005: positive band geometry",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.001: immutable initial RHS",
+      "measured": 1.1445351037022366e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.001: immutable initial adaptive moments",
+      "measured": 1.6653345369377348e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.001: immutable loading identities",
+      "measured": 7.134050294954619e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.001: immutable reversal identities",
+      "measured": 6.938893903907228e-18,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.001: archived moments replay",
+      "measured": 0.0,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.001: strict populations",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "800: reaction similarity action",
+      "measured": 3.8247554965803473e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "800: initial stationary density",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "800: finite-domain endpoint correction",
+      "measured": 2.177646890802566e-22,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "800: independent initial transport derivative",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "800: independent reaction derivative h=1e-07",
+      "measured": 2.359565302967669e-10,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "800: independent reaction derivative h=5e-08",
+      "measured": 4.0219068893720227e-10,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.001: hold rate ledger at 0.0",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.001: hold rate ledger at 0.008",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.001: hold rate ledger at 0.02",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.001: hold rate ledger at 0.04",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.001: hold rate ledger at 0.1",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.001: hold rate ledger at 0.2",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.001: initial powered stationary ledger",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.001: jump energy/work",
+      "measured": 1.5847817012560822e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.001: passive work",
+      "measured": 2.5854318685958333e-14,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.001: positive band geometry",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.0005: immutable initial RHS",
+      "measured": 1.1445351037022366e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.0005: immutable initial adaptive moments",
+      "measured": 1.6653345369377348e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.0005: immutable loading identities",
+      "measured": 7.134050294954619e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.0005: immutable reversal identities",
+      "measured": 1.0408340855860843e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.0005: archived moments replay",
+      "measured": 0.0,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.0005: strict populations",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.0005: hold rate ledger at 0.0",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.0005: hold rate ledger at 0.008",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.0005: hold rate ledger at 0.02",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.0005: hold rate ledger at 0.04",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.0005: hold rate ledger at 0.1",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.0005: hold rate ledger at 0.2",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.0005: initial powered stationary ledger",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.0005: jump energy/work",
+      "measured": 1.5847817012560822e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.0005: passive work",
+      "measured": 2.5854318685958333e-14,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.001-maxstep0.0005: positive band geometry",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.001: immutable initial RHS",
+      "measured": 1.1445351037022366e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.001: immutable initial adaptive moments",
+      "measured": 1.6653345369377348e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.001: immutable loading identities",
+      "measured": 3.968179951296946e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.001: immutable reversal identities",
+      "measured": 5.55111512046215e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.001: archived moments replay",
+      "measured": 0.0,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.001: strict populations",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.001: hold rate ledger at 0.0",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.001: hold rate ledger at 0.008",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.001: hold rate ledger at 0.02",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.001: hold rate ledger at 0.04",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.001: hold rate ledger at 0.1",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.001: hold rate ledger at 0.2",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.001: initial powered stationary ledger",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.001: jump energy/work",
+      "measured": 1.0711578655714596e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.001: passive work",
+      "measured": 1.646321967641029e-13,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.001: positive band geometry",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.0005: immutable initial RHS",
+      "measured": 1.1445351037022366e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.0005: immutable initial adaptive moments",
+      "measured": 1.6653345369377348e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.0005: immutable loading identities",
+      "measured": 3.968179951296946e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.0005: immutable reversal identities",
+      "measured": 8.153200337090993e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.0005: archived moments replay",
+      "measured": 0.0,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.0005: strict populations",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.0005: hold rate ledger at 0.0",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.0005: hold rate ledger at 0.008",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.0005: hold rate ledger at 0.02",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.0005: hold rate ledger at 0.04",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.0005: hold rate ledger at 0.1",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.0005: hold rate ledger at 0.2",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.0005: initial powered stationary ledger",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.0005: jump energy/work",
+      "measured": 1.0711578655714596e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.0005: passive work",
+      "measured": 1.646321967641029e-13,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.001-maxstep0.0005: positive band geometry",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.001: immutable initial RHS",
+      "measured": 1.1445351037022366e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.001: immutable initial adaptive moments",
+      "measured": 1.6653345369377348e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.001: immutable loading identities",
+      "measured": 9.118140270603092e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.001: immutable reversal identities",
+      "measured": 8.673617379884035e-18,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.001: archived moments replay",
+      "measured": 0.0,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.001: strict populations",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.001: hold rate ledger at 0.0",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.001: hold rate ledger at 0.008",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.001: hold rate ledger at 0.02",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.001: hold rate ledger at 0.04",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.001: hold rate ledger at 0.1",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.001: hold rate ledger at 0.2",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.001: initial powered stationary ledger",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.001: jump energy/work",
+      "measured": 1.438219593979032e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.001: passive work",
+      "measured": 1.1148720835407744e-13,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.001: positive band geometry",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.0005: immutable initial RHS",
+      "measured": 1.1445351037022366e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.0005: immutable initial adaptive moments",
+      "measured": 1.6653345369377348e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.0005: immutable loading identities",
+      "measured": 9.118140270603092e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.0005: immutable reversal identities",
+      "measured": 8.782037597132586e-18,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.0005: archived moments replay",
+      "measured": 0.0,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.0005: strict populations",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.0005: hold rate ledger at 0.0",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.0005: hold rate ledger at 0.008",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.0005: hold rate ledger at 0.02",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.0005: hold rate ledger at 0.04",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.0005: hold rate ledger at 0.1",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.0005: hold rate ledger at 0.2",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.0005: initial powered stationary ledger",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.0005: jump energy/work",
+      "measured": 1.438219593979032e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.0005: passive work",
+      "measured": 1.1148720835407744e-13,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta0.0005-maxstep0.0005: positive band geometry",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.001: immutable initial RHS",
+      "measured": 1.1445351037022366e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.001: immutable initial adaptive moments",
+      "measured": 1.6653345369377348e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.001: immutable loading identities",
+      "measured": 3.0357660829594124e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.001: immutable reversal identities",
+      "measured": 2.3744027577432547e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.001: archived moments replay",
+      "measured": 0.0,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.001: strict populations",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.001: hold rate ledger at 0.0",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.001: hold rate ledger at 0.008",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.001: hold rate ledger at 0.02",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.001: hold rate ledger at 0.04",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.001: hold rate ledger at 0.1",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.001: hold rate ledger at 0.2",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.001: initial powered stationary ledger",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.001: jump energy/work",
+      "measured": 1.308276268328689e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.001: passive work",
+      "measured": 6.907668881339646e-14,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.001: positive band geometry",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.0005: immutable initial RHS",
+      "measured": 1.1445351037022366e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.0005: immutable initial adaptive moments",
+      "measured": 1.6653345369377348e-15,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.0005: immutable loading identities",
+      "measured": 3.0357660829594124e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.0005: immutable reversal identities",
+      "measured": 8.738669510233166e-17,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.0005: archived moments replay",
+      "measured": 0.0,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.0005: strict populations",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.0005: hold rate ledger at 0.0",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.0005: hold rate ledger at 0.008",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.0005: hold rate ledger at 0.02",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.0005: hold rate ledger at 0.04",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.0005: hold rate ledger at 0.1",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.0005: hold rate ledger at 0.2",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.0005: initial powered stationary ledger",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.0005: jump energy/work",
+      "measured": 1.308276268328689e-16,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.0005: passive work",
+      "measured": 6.907668881339646e-14,
+      "limit": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "R3-nodes800-pCa4.5-delta-0.0005-maxstep0.0005: positive band geometry",
+      "measured": 0.0,
+      "limit": 0.0,
+      "passed": true
+    },
+    {
+      "name": "200, 0.001, 0.001: passive derivative",
+      "measured": 1.0312254897986399e-10,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "200, 0.001, 0.001: endpoint tangent",
+      "measured": 7.394126386104767e-07,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "200, 0.001, 0.0005: passive derivative",
+      "measured": 1.0535947094549808e-11,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "200, 0.001, 0.0005: endpoint tangent",
+      "measured": 1.848700265079343e-07,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "200, 0.0005, 0.001: passive derivative",
+      "measured": 1.0312254897986399e-10,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "200, 0.0005, 0.001: endpoint tangent",
+      "measured": 7.394126386104767e-07,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "200, 0.0005, 0.0005: passive derivative",
+      "measured": 1.0535947094549808e-11,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "200, 0.0005, 0.0005: endpoint tangent",
+      "measured": 1.8487206387059593e-07,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "200, 0.001: time B",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "200, 0.001: time phi/E",
+      "measured": 2.220446049250313e-16,
+      "limit": 2e-10,
+      "passed": true
+    },
+    {
+      "name": "200, -0.001: time B",
+      "measured": 5.551115123125783e-17,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "200, -0.001: time phi/E",
+      "measured": 2.220446049250313e-16,
+      "limit": 2e-10,
+      "passed": true
+    },
+    {
+      "name": "200, 0.0005: time B",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "200, 0.0005: time phi/E",
+      "measured": 2.220446049250313e-16,
+      "limit": 2e-10,
+      "passed": true
+    },
+    {
+      "name": "200, -0.0005: time B",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "200, -0.0005: time phi/E",
+      "measured": 1.1102230246251565e-16,
+      "limit": 2e-10,
+      "passed": true
+    },
+    {
+      "name": "400, 0.001, 0.001: passive derivative",
+      "measured": 1.0312254897986399e-10,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "400, 0.001, 0.001: endpoint tangent",
+      "measured": 7.394146783552837e-07,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "400, 0.001, 0.0005: passive derivative",
+      "measured": 1.0535947094549808e-11,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "400, 0.001, 0.0005: endpoint tangent",
+      "measured": 1.848679915274193e-07,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "400, 0.0005, 0.001: passive derivative",
+      "measured": 1.0312254897986399e-10,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "400, 0.0005, 0.001: endpoint tangent",
+      "measured": 7.39413659673953e-07,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "400, 0.0005, 0.0005: passive derivative",
+      "measured": 1.0535947094549808e-11,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "400, 0.0005, 0.0005: endpoint tangent",
+      "measured": 1.8487002889008097e-07,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "400, 0.001: time B",
+      "measured": 5.551115123125783e-17,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "400, 0.001: time phi/E",
+      "measured": 1.1102230246251565e-16,
+      "limit": 2e-10,
+      "passed": true
+    },
+    {
+      "name": "400, -0.001: time B",
+      "measured": 5.551115123125783e-17,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "400, -0.001: time phi/E",
+      "measured": 1.1102230246251565e-16,
+      "limit": 2e-10,
+      "passed": true
+    },
+    {
+      "name": "400, 0.0005: time B",
+      "measured": 5.551115123125783e-17,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "400, 0.0005: time phi/E",
+      "measured": 2.220446049250313e-16,
+      "limit": 2e-10,
+      "passed": true
+    },
+    {
+      "name": "400, -0.0005: time B",
+      "measured": 5.551115123125783e-17,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "400, -0.0005: time phi/E",
+      "measured": 2.220446049250313e-16,
+      "limit": 2e-10,
+      "passed": true
+    },
+    {
+      "name": "800, 0.001, 0.001: passive derivative",
+      "measured": 1.0312254897986399e-10,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "800, 0.001, 0.001: endpoint tangent",
+      "measured": 7.394126357268271e-07,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "800, 0.001, 0.0005: passive derivative",
+      "measured": 1.0535947094549808e-11,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "800, 0.001, 0.0005: endpoint tangent",
+      "measured": 1.848679862616214e-07,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "800, 0.0005, 0.001: passive derivative",
+      "measured": 1.0312254897986399e-10,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "800, 0.0005, 0.001: endpoint tangent",
+      "measured": 7.394126357268271e-07,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "800, 0.0005, 0.0005: passive derivative",
+      "measured": 1.0535947094549808e-11,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "800, 0.0005, 0.0005: endpoint tangent",
+      "measured": 1.848679862616214e-07,
+      "limit": 0.0001,
+      "passed": true
+    },
+    {
+      "name": "800, 0.001: time B",
+      "measured": 5.551115123125783e-17,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "800, 0.001: time phi/E",
+      "measured": 1.1102230246251565e-16,
+      "limit": 2e-10,
+      "passed": true
+    },
+    {
+      "name": "800, -0.001: time B",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "800, -0.001: time phi/E",
+      "measured": 2.220446049250313e-16,
+      "limit": 2e-10,
+      "passed": true
+    },
+    {
+      "name": "800, 0.0005: time B",
+      "measured": 1.1102230246251565e-16,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "800, 0.0005: time phi/E",
+      "measured": 2.220446049250313e-16,
+      "limit": 2e-10,
+      "passed": true
+    },
+    {
+      "name": "800, -0.0005: time B",
+      "measured": 5.551115123125783e-17,
+      "limit": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "800, -0.0005: time phi/E",
+      "measured": 1.1102230246251565e-16,
+      "limit": 2e-10,
+      "passed": true
+    },
+    {
+      "name": "200->400, 0.001, 0.001: quadrature moments",
+      "measured": 6.5503158452884236e-15,
+      "limit": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "200->400, 0.001, 0.0005: quadrature moments",
+      "measured": 6.5503158452884236e-15,
+      "limit": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "200->400, -0.001, 0.001: quadrature moments",
+      "measured": 6.439293542825908e-15,
+      "limit": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "200->400, -0.001, 0.0005: quadrature moments",
+      "measured": 6.439293542825908e-15,
+      "limit": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "200->400, 0.0005, 0.001: quadrature moments",
+      "measured": 6.5503158452884236e-15,
+      "limit": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "200->400, 0.0005, 0.0005: quadrature moments",
+      "measured": 6.439293542825908e-15,
+      "limit": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "200->400, -0.0005, 0.001: quadrature moments",
+      "measured": 6.5503158452884236e-15,
+      "limit": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "200->400, -0.0005, 0.0005: quadrature moments",
+      "measured": 6.5503158452884236e-15,
+      "limit": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "400->800, 0.001, 0.001: quadrature moments",
+      "measured": 7.549516567451064e-15,
+      "limit": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "400->800, 0.001, 0.0005: quadrature moments",
+      "measured": 7.549516567451064e-15,
+      "limit": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "400->800, -0.001, 0.001: quadrature moments",
+      "measured": 7.549516567451064e-15,
+      "limit": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "400->800, -0.001, 0.0005: quadrature moments",
+      "measured": 7.66053886991358e-15,
+      "limit": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "400->800, 0.0005, 0.001: quadrature moments",
+      "measured": 7.549516567451064e-15,
+      "limit": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "400->800, 0.0005, 0.0005: quadrature moments",
+      "measured": 7.549516567451064e-15,
+      "limit": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "400->800, -0.0005, 0.001: quadrature moments",
+      "measured": 7.66053886991358e-15,
+      "limit": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "400->800, -0.0005, 0.0005: quadrature moments",
+      "measured": 7.549516567451064e-15,
+      "limit": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Independent frozen Rayleigh assembly",
+      "measured": 1.0913936421275139e-11,
+      "limit": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "Block 0.0: added response quadratic form",
+      "measured": 5.820766091346741e-11,
+      "limit": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "Block 0.008: added response quadratic form",
+      "measured": 2.9103830456733704e-11,
+      "limit": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "Block 0.02: added response quadratic form",
+      "measured": 8.731149137020111e-11,
+      "limit": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "Block 0.04: added response quadratic form",
+      "measured": 0.0,
+      "limit": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "Block 0.1: added response quadratic form",
+      "measured": 0.0,
+      "limit": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "Block 0.2: added response quadratic form",
+      "measured": 2.2737367544323206e-13,
+      "limit": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "Block None: added response quadratic form",
+      "measured": 0.0,
+      "limit": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "Relaxed/reset exact original operator",
+      "measured": 0.0,
+      "limit": 1e-12,
+      "passed": true
+    }
+  ],
+  "block": {
+    "diagnosisNPerM": {
+      "matrix": 62.72788996607728,
+      "passiveFiber": 2283.431169220482,
+      "activeForceLengthAxial": -11844.433632150838,
+      "activeOrientationTension": 2.1668176190805997,
+      "pressurePrestress": -4.043136465872122,
+      "weakVolumeResponse": 22.70469677101402,
+      "total": -9477.446195040056,
+      "independentQuadrature": -9477.446195040067,
+      "logJDirectionalRMSPerM": 16.859294142625853
+    },
+    "responses": [
+      {
+        "timeSeconds": 0.0,
+        "endpoint": "step/hold",
+        "addedOldWitnessResponseNPerM": 291732.07440260524,
+        "oldWitnessResponseNPerM": 282254.6282075652,
+        "lowestSampledEigenvaluesNPerM": [
+          13.544754441327793,
+          17.16382173956557,
+          20.790390352392762
+        ],
+        "quadraticFormAbsoluteDifferenceNPerM": 5.820766091346741e-11
+      },
+      {
+        "timeSeconds": 0.008,
+        "endpoint": "step/hold",
+        "addedOldWitnessResponseNPerM": 227909.78837759388,
+        "oldWitnessResponseNPerM": 218432.34218255372,
+        "lowestSampledEigenvaluesNPerM": [
+          13.544725650915195,
+          17.163741327416275,
+          20.790372494060385
+        ],
+        "quadraticFormAbsoluteDifferenceNPerM": 2.9103830456733704e-11
+      },
+      {
+        "timeSeconds": 0.02,
+        "endpoint": "step/hold",
+        "addedOldWitnessResponseNPerM": 159442.18464018215,
+        "oldWitnessResponseNPerM": 149964.7384451421,
+        "lowestSampledEigenvaluesNPerM": [
+          13.54466750358943,
+          17.16357918680579,
+          20.790336441596615
+        ],
+        "quadraticFormAbsoluteDifferenceNPerM": 8.731149137020111e-11
+      },
+      {
+        "timeSeconds": 0.04,
+        "endpoint": "step/hold",
+        "addedOldWitnessResponseNPerM": 89710.20318303318,
+        "oldWitnessResponseNPerM": 80232.75698799315,
+        "lowestSampledEigenvaluesNPerM": [
+          13.544506161809839,
+          17.16313103702805,
+          20.79023651226754
+        ],
+        "quadraticFormAbsoluteDifferenceNPerM": 0.0
+      },
+      {
+        "timeSeconds": 0.1,
+        "endpoint": "step/hold",
+        "addedOldWitnessResponseNPerM": 16894.64637082079,
+        "oldWitnessResponseNPerM": 7417.200175780731,
+        "lowestSampledEigenvaluesNPerM": [
+          13.541043428576433,
+          17.153749359487797,
+          20.788113194887707
+        ],
+        "quadraticFormAbsoluteDifferenceNPerM": 0.0
+      },
+      {
+        "timeSeconds": 0.2,
+        "endpoint": "step/hold",
+        "addedOldWitnessResponseNPerM": 1108.8364306602093,
+        "oldWitnessResponseNPerM": -8368.60976437985,
+        "lowestSampledEigenvaluesNPerM": [
+          -8368.812532550388,
+          -7248.081700444522,
+          -5712.886128924647
+        ],
+        "quadraticFormAbsoluteDifferenceNPerM": 2.2737367544323206e-13
+      },
+      {
+        "timeSeconds": null,
+        "endpoint": "analytic relaxed",
+        "addedOldWitnessResponseNPerM": 0.0,
+        "oldWitnessResponseNPerM": -9477.446195040056,
+        "lowestSampledEigenvaluesNPerM": [
+          -9477.446195040047,
+          -8221.467635761077,
+          -6493.111357937741
+        ],
+        "quadraticFormAbsoluteDifferenceNPerM": 0.0
+      }
+    ],
+    "classification": "POWERED_ENDPOINT_RESPONSE_OPERATOR; NOT_STORED_ENERGY_HESSIAN",
+    "sameFrozenPositions": true,
+    "newNonlinearSolve": false,
+    "physicalHistoryAdvanced": false
+  },
+  "energyLimit": "Attachment elastic input and detachment removal are not full ATP/heat accounting; powered subsystem is not passive.",
+  "relaxedActiveTangentPa": -465000.0,
+  "relaxedTotalPointTangentPa": 265262.30730069045
+}
