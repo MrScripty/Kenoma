@@ -74,7 +74,7 @@ export class Lab {
     this.status.textContent='Reset to the documented default state; playback paused.';
   }
   pause(){
-    if(this.kind==='energy' && this.running)this.status.textContent=`Paused at ${(this.index*this.params.dt).toFixed(3)} of ${ENERGY_DURATION_S} simulated seconds; ${this.index} of ${energyStepLimit(this.params.dt)} fixed steps. Play or Run to 12 s resumes this trajectory.`;
+    if(this.kind==='energy' && this.running && this.energyFast)this.status.textContent=`Paused at ${(this.index*this.params.dt).toFixed(3)} of ${ENERGY_DURATION_S} simulated seconds; ${this.index} of ${energyStepLimit(this.params.dt)} fixed steps. Play or Run to 12 s resumes this trajectory.`;
     this.running=false;cancelAnimationFrame(this.frame);
     const button=this.root.querySelector('[data-action="play"]');if(button)button.textContent='Play';
     const run=this.root.querySelector('[data-action="run"]');if(run)run.textContent='Run to 12 s';
@@ -122,7 +122,7 @@ export class Lab {
     if(this.index>=energyStepLimit(this.params.dt))return;
     this.sceneStatus.run(()=>this.start());
     if(active && active!==this)active.pause();
-    this.running=true;this.last=null;this.accumulator=0;
+    this.running=true;this.energyFast=fast;this.last=null;this.accumulator=0;
     this.root.querySelector('[data-action="play"]').textContent='Pause';
     this.root.querySelector('[data-action="run"]').textContent='Pause run';
     const tick=timestamp=>{
@@ -136,7 +136,7 @@ export class Lab {
       if(advanced)this.update(); // One plot/readout/3D redraw per bounded frame batch.
       if(this.running)this.frame=requestAnimationFrame(tick);
     };
-    this.status.textContent=fast?'Running to 12 simulated seconds in bounded batches; Pause keeps the current trajectory.':'Playing fixed physics steps at approximately one simulated second per wall-clock second; Pause keeps the current trajectory.';
+    if(fast)this.status.textContent='Running to 12 simulated seconds in bounded batches; Pause keeps the current trajectory.';
     this.frame=requestAnimationFrame(tick);
   }
   pulseCurrent(){
