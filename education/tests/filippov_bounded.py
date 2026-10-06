@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """Physical rollback, explicit sliding and event-qualification negative controls."""
 import unittest,sys,json
+import copy
 from pathlib import Path
 from types import SimpleNamespace
 import numpy as np
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
 from run_filippov_bounded_experiment import Engine,Failure,entry_agreement,ROOT
+from audit_filippov_bounded_experiment import completion,compare,qualify
 
 class Checks(unittest.TestCase):
     def engine(self,rep='full-source'):
@@ -52,5 +54,22 @@ class Checks(unittest.TestCase):
     def test_event_gate_cannot_be_replaced_by_integral_agreement(self):
         cells=[SimpleNamespace(failure=None,candidate={'t':.1+(3e-6 if k==9 else 0)},history=[{'t':0,'z':[0]*11,'uraw':.1}],rep=str(k),method='dummy') for k in range(10)]
         r=entry_agreement(cells);self.assertFalse(r['passed']);self.assertEqual(r['max_integral_difference'],0);self.assertEqual(r['max_raw_difference'],0)
+
+class AuditChecks(unittest.TestCase):
+    def complete_metadata(self):
+        return dict(case='high',acceptedTime=.107,failure=None,history=[dict(t=k*.001,z=[0]*11,FT=4,uraw=.1) for k in range(108)],events=[dict(type='sliding-entry',t=.105)],candidate=dict(t=.105,accepted=True))
+    def test_truncated_agreement_is_not_full_completion(self):
+        a=self.complete_metadata();b=copy.deepcopy(a);b['acceptedTime']=.106;b['history']=b['history'][:-1]
+        self.assertTrue(completion(a)['passed']);self.assertFalse(completion(b)['passed'])
+        self.assertFalse(compare(a,b)['passed']);self.assertTrue(compare(a,b)['prefix_agreement_only'])
+    def test_missing_matrix_cell_is_unqualified(self):self.assertFalse(qualify({})['passed'])
+    def test_sparse_history_is_unqualified(self):
+        a=self.complete_metadata();a['history']=a['history'][::3]+[a['history'][-1]]
+        self.assertFalse(completion(a)['passed'])
+    def test_event_and_integral_gates_are_independent(self):
+        a=self.complete_metadata();b=copy.deepcopy(a);b['candidate']['t']+=3e-6
+        self.assertFalse(compare(a,b)['passed'])
+        b=copy.deepcopy(a);b['history'][40]['z'][4]+=1e-8
+        self.assertFalse(compare(a,b)['passed'])
 
 if __name__=='__main__':unittest.main(verbosity=2)
