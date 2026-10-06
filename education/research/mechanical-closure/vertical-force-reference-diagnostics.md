@@ -1,0 +1,11 @@
+# Independent replay diagnostics before the second run
+
+The initial Node launch used CommonJS in the repository's ES-module package; the raw launch error is preserved and module packaging was corrected. No mechanics changed.
+
+Initial Radau replays stopped in the baseline and mass-1 kg cases after finite-difference Jacobian factors overflowed while probing a diagnostic active-work accumulator. The rejected stage changed that accumulator to infinity while all five physical/controller state values remained finite. Preserve the original logs and failed-stage receipts. The second replay supplies an explicit within-mode Jacobian with exactly zero columns for the six independent work/momentum accumulators. This is a numerical implementation correction; curve laws, PI gains, physical budgets and excitation/activation rules are unchanged. Activation and saturation switch boundaries retain their one-sided behavior.
+
+Initial Radau also failed near the high-command anti-windup boundary around .105458 s, before the RK4 run's later slack event. DOP853 stalled in that same case and was interrupted after more than six minutes, with the interrupted log preserved. No completed high-command independent replay was obtained from that attempt.
+
+Before the second independent run, impose a **failure-only watchdog**: stop and save the last accepted state if an adaptive accepted step becomes shorter than 1e−10 s, or if a case exceeds 10,000 accepted steps. These limits do not relax accuracy or make a failure pass; they prevent an endless numerical stall and supply a concrete receipt. Preserve all accepted prefixes and distinguish independent replay truncation from the primary RK4 prefix's domain event. Do not infer high-command trajectory qualification beyond the common verified prefix.
+
+The conditional integrator remains exactly the preregistered controller. No sliding-mode regularization, force law, gain adjustment, smoothed saturation, additional support or opportunistic restart is introduced. A persistent high-command replay/refinement failure is a remaining blocker for that full preset; it does not block qualification of other independently passing cases or presentation of honestly labeled numerical outcomes.

@@ -50,6 +50,29 @@ def rhs(t,z,cfg,phase):
         e.t=float(t);e.z=list(map(float,z));raise e
     return np.array([z[1],o['acceleration'],o['adot'],10*o['v'],o['Idot'],o['Pactive'],o['D'],o['loadPower'],o['fiberPower'],o['tendonPower'],o['FT']-cfg['m']*P['gravity_m_per_s2']])
 
+def jacobian(t,z,cfg,phase):
+    """Exact within-mode Jacobian; diagnostic accumulators have ZERO columns.
+    Avoids finite-difference factor overflow in autonomous quadrature columns.
+    Nonsmooth controller/activation guards remain part of the model, not smoothed.
+    """
+    o=output(z,cfg,phase);y,w,a,q,I=z[:5];v=o['v'];mode=phase.get('mode','PI')
+    dft=np.array([-100/.2*C['tendon'].value(o['s'],True),0,0,-100*.1/.2*C['tendon'].value(o['s'],True),0])
+    fl=C['active'].value(q);flq=C['active'].value(q,True);fv=C['velocity'].value(v);fvv=C['velocity'].value(v,True);pq=C['passive'].value(q,True)
+    dv=dft.copy();dv[2]-=100*fl*fv;dv[3]-=100*(a*flq*fv+pq);dv/=100*(a*fl*fvv+.1)
+    dfa=100*a*fl*fvv*dv;dfa[2]+=100*fl*fv;dfa[3]+=100*a*flq*fv
+    dfp=np.zeros(5);dfp[3]=100*pq;de=-dft/100;du=.4*de;du[4]+=1
+    if mode in ['fixed','release'] or o['uraw']<=.01 or o['uraw']>=1:du=np.zeros(5)
+    ae=float(np.clip(a,.01,1));mask=1 if .01<=a<=1 else 0
+    tau=.01*(.5+1.5*ae) if o['u']>ae else .04/(.5+1.5*ae)
+    dtau=.015 if o['u']>ae else -.06/(.5+1.5*ae)**2
+    da=du/tau;da[2]-=mask/tau+(o['u']-ae)*dtau*mask/tau**2
+    if mode=='fixed':da=np.zeros(5)
+    frozen=mode in ['fixed','release'] or (o['uraw']>=1 and o['e']>0) or (o['uraw']<=.01 and o['e']<0)
+    dw=np.array([0,1,0,0,0]);J=np.zeros((11,11));J[0,:5]=dw;J[1,:5]=dft/cfg['m'];J[2,:5]=da;J[3,:5]=10*dv;J[4,:5]=0 if frozen else 8*de
+    J[5,:5]=-dfa*v-o['FA']*dv;J[6,:5]=20*v*dv;J[7,:5]=dft*w+o['FT']*dw
+    J[8,:5]=dfp*v+o['FP']*dv;J[9,:5]=dft*(-w-v)-o['FT']*(dw+dv);J[10,:5]=dft
+    return J
+
 def row(t,z,cfg,phase):
     o=output(z,cfg,phase);return dict(t=float(t),z=list(map(float,z)),target=phase['target'],mode=phase.get('mode','PI'),**{k:float(v) for k,v in o.items()})
 
@@ -62,7 +85,8 @@ def replay(cfg,method):
     for index,phase in enumerate(phases(cfg)):
         if phase['end']<=t+1e-12:continue
         save(t,z,phase);armed=False
-        solver=method(lambda t,z:rhs(t,z,cfg,phase),t,z,phase['end'],rtol=1e-9,atol=1e-11,max_step=.0005)
+        kwargs=dict(jac=lambda t,z:jacobian(t,z,cfg,phase)) if method is Radau else {}
+        solver=method(lambda t,z:rhs(t,z,cfg,phase),t,z,phase['end'],rtol=1e-9,atol=1e-11,max_step=.0005,**kwargs)
         crossing=False
         while solver.status=='running':
             before=t;old=z.copy();direction=phase.get('brake',0)
@@ -71,6 +95,8 @@ def replay(cfg,method):
                 solver.step()
                 if solver.status=='failed':raise TrialFailure('ODE-step',str(solver.status),before,old)
                 new_t=float(solver.t);new_z=solver.y.copy();output(new_z,cfg,phase);solution=solver.dense_output()
+                if new_t-before<1e-10 or len(dense)>=10000:
+                    raise TrialFailure('ODE-stall','Independent replay reached a tiny-step/accepted-step failure budget',new_t,new_z)
                 if direction and armed and old[1]*direction>0 and new_z[1]*direction<=0:
                     crossing=True;new_t=brentq(lambda t:float(solution(t)[1]),before,new_t,xtol=1e-10);new_z=solution(new_t);output(new_z,cfg,phase)
                 # Material/output events are sampled only from valid accepted steps.

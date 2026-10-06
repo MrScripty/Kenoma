@@ -2,7 +2,7 @@
  * Source curve kernels: OpenSim 4.5.2, Apache-2.0, Stanford/Authors 2005-2017.
  * This new numerical/controller implementation is separate from that runtime.
  */
-function createVerticalForceLab(P, controls) {
+export function createVerticalForceLab(P, controls) {
   const F0=100, lf0=.1, lt0=.2, vmax=10, beta=.1, amin=.01, g=P.gravity_m_per_s2;
   class TrialFailure extends Error { constructor(code,message){super(message);this.code=code;} }
   const fail=(code,message)=>{throw new TrialFailure(code,message);};
@@ -78,5 +78,4 @@ function createVerticalForceLab(P, controls) {
   function descendingMass(){return F0*(.5*C.active.value(1.1)+C.passive.value(1.1))/g;}
   return {P,C,init,run,output,rhs,trialStep,storage,phases,validate,descendingMass,constants:{F0,lf0,lt0,vmax,beta,amin,g},TrialFailure};
 }
-if(typeof module!=='undefined'&&module.exports)module.exports={createVerticalForceLab};
 if(typeof window!=='undefined')window.createVerticalForceLab=createVerticalForceLab;
