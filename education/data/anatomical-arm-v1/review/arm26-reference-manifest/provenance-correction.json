@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "date_utc": "2026-10-06",
+  "scope": "Documentation/provenance-only successor; frozen model values, source bytes, validator and validation result unchanged.",
+  "frozen_predecessor_commit": "783b28f9a9030ca9332a6f6e8565d04b3f0309ca",
+  "frozen_predecessor_tree": "315be8e55d985ad60eae184597e70add55591bba",
+  "review_source": {
+    "type": "parent_delegation_of_independent_review",
+    "source_thread_id": "01a103c3-a2e6-7606-8c1e-06987ac710f1",
+    "reported_date_utc": "2026-10-06"
+  },
+  "model_tree_correction": {
+    "model_commit": "84b487c4e3245359a64381e01f01b9cf4772d457",
+    "old_value": null,
+    "verified_value": "c83b1825e10d531b1319e6492796c68dd7dcb17b",
+    "primary_source_url": "https://api.github.com/repos/opensim-org/opensim-models/git/commits/84b487c4e3245359a64381e01f01b9cf4772d457",
+    "verification_by": "independent reviewer, reported by parent; no new tree retrieval by this worker",
+    "original_failed_access_records_preserved": true
+  },
+  "registration_locator_correction": {
+    "source_commit": "5bc7d3308eda742690f485ec060bfe725a349fa6",
+    "path": "OpenSim/Actuators/RegisterTypes_osimActuators.cpp",
+    "source_url": "https://raw.githubusercontent.com/opensim-org/opensim-core/5bc7d3308eda742690f485ec060bfe725a349fa6/OpenSim/Actuators/RegisterTypes_osimActuators.cpp",
+    "bytes": 5724,
+    "sha256": "bab8288d88ee354404dcad857679050b79ef5cd294977591ab9079ece631ed34",
+    "old_web_extraction_line": 57,
+    "correct_raw_source_line": 62,
+    "raw_source_line_57": "Object::registerType( BodyActuator() );",
+    "raw_source_line_62": "Object::registerType( Thelen2003Muscle() );",
+    "this_worker_raw_source_http_status": 200,
+    "source_bytes_match_original_hash": true
+  },
+  "preservation": {
+    "all_other_reference_manifest_values_identical": true,
+    "all_other_source_provenance_values_identical": true,
+    "validator_identical": true,
+    "validation_receipt_identical": true,
+    "frozen_tracked_file_count": 1566,
+    "frozen_files_identical_outside_authorized_metadata": 1562,
+    "authorized_modified_metadata_paths": [
+      "education/research/mechanical-closure/arm26-reference-manifest-proposal.md",
+      "education/data/anatomical-arm-v1/review/arm26-reference-manifest/reference-manifest.json",
+      "education/data/anatomical-arm-v1/review/arm26-reference-manifest/source-provenance.json",
+      "education/data/anatomical-arm-v1/review/arm26-reference-manifest/artifact-manifest.json"
+    ]
+  },
+  "solver_runs": 0,
+  "model_activation_or_parameter_changes": 0,
+  "affected_artifact_hashes_before_after": [
+    {
+      "path": "education/research/mechanical-closure/arm26-reference-manifest-proposal.md",
+      "predecessor_sha256": "13f6abc05363803b787c3514663dc94c93a1986e8b7eb8676537db8e4161d9f0",
+      "successor_sha256": "94adb7ffb3772d437733263de5c713dda53e118e08ee3b1560718930e4a84959"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/arm26-reference-manifest/reference-manifest.json",
+      "predecessor_sha256": "74fc0a67fa8176fee1ef767e5ab343de20632c8223a7059e5c529907d137d632",
+      "successor_sha256": "60638811d513994d442eda19abfee7c5056246ca63c87c0c76322e07a9709d92"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/arm26-reference-manifest/source-provenance.json",
+      "predecessor_sha256": "e3962a627a599341c968de3019388b2f2abb8c88ca397835512b58dace0515f2",
+      "successor_sha256": "9a96b5fd14b7bb69ae253a64efe7090686e0fb9426494d4e0331c8671b0b7a15"
+    }
+  ]
+}

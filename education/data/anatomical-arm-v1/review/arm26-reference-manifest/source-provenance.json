@@ -3,8 +3,8 @@
   "model_asset": {
     "repository": "https://github.com/opensim-org/opensim-models",
     "commit": "84b487c4e3245359a64381e01f01b9cf4772d457",
-    "repository_tree": null,
-    "repository_tree_status": "not independently retrieved; commit-addressed asset bytes verified",
+    "repository_tree": "c83b1825e10d531b1319e6492796c68dd7dcb17b",
+    "repository_tree_status": "verified by independent reviewer; exact commit/tree pair reported by parent delegation",
     "path": "Models/Arm26/arm26.osim",
     "url": "https://github.com/opensim-org/opensim-models/blob/84b487c4e3245359a64381e01f01b9cf4772d457/Models/Arm26/arm26.osim",
     "raw_url": "https://raw.githubusercontent.com/opensim-org/opensim-models/84b487c4e3245359a64381e01f01b9cf4772d457/Models/Arm26/arm26.osim",
@@ -15,7 +15,15 @@
     "git_blob_status": "computed from identical local and official raw bytes; upstream API inaccessible",
     "OpenSimDocument_version": "40000",
     "length_unit_declaration": "meters",
-    "force_unit_declaration": "N"
+    "force_unit_declaration": "N",
+    "repository_tree_provenance": {
+      "primary_source_url": "https://api.github.com/repos/opensim-org/opensim-models/git/commits/84b487c4e3245359a64381e01f01b9cf4772d457",
+      "tree_source_url": "https://api.github.com/repos/opensim-org/opensim-models/git/trees/c83b1825e10d531b1319e6492796c68dd7dcb17b",
+      "verification": "Independently retrieved by the reviewer; commit/tree pair supplied by parent delegation dated 2026-10-06.",
+      "review_source_thread_id": "01a103c3-a2e6-7606-8c1e-06987ac710f1",
+      "retrieved_by_this_worker": false,
+      "local_receipt": "education/data/anatomical-arm-v1/review/arm26-reference-manifest/provenance-correction.json"
+    }
   },
   "raw_fetch_http_status": 200,
   "raw_fetch_bytes": 90192,
@@ -57,7 +65,7 @@
       "http_status": 200
     }
   ],
-  "core_registration_primary_locator": "RegisterTypes_osimActuators.cpp line 57; Object::registerType( Thelen2003Muscle() )",
+  "core_registration_primary_locator": "RegisterTypes_osimActuators.cpp raw source line 62; Object::registerType( Thelen2003Muscle() )",
   "license_deed_read": "https://creativecommons.org/licenses/by/3.0/",
   "large_mesh_downloads": 0,
   "source_changes": false

@@ -9,8 +9,8 @@
   "artifacts": [
     {
       "path": "education/research/mechanical-closure/arm26-reference-manifest-proposal.md",
-      "bytes": 11278,
-      "sha256": "13f6abc05363803b787c3514663dc94c93a1986e8b7eb8676537db8e4161d9f0"
+      "bytes": 11849,
+      "sha256": "94adb7ffb3772d437733263de5c713dda53e118e08ee3b1560718930e4a84959"
     },
     {
       "path": "education/data/anatomical-arm-v1/review/arm26-reference-manifest/core-context-source-manifest.json",
@@ -19,13 +19,13 @@
     },
     {
       "path": "education/data/anatomical-arm-v1/review/arm26-reference-manifest/reference-manifest.json",
-      "bytes": 150321,
-      "sha256": "74fc0a67fa8176fee1ef767e5ab343de20632c8223a7059e5c529907d137d632"
+      "bytes": 150978,
+      "sha256": "60638811d513994d442eda19abfee7c5056246ca63c87c0c76322e07a9709d92"
     },
     {
       "path": "education/data/anatomical-arm-v1/review/arm26-reference-manifest/source-provenance.json",
-      "bytes": 3083,
-      "sha256": "e3962a627a599341c968de3019388b2f2abb8c88ca397835512b58dace0515f2"
+      "bytes": 3832,
+      "sha256": "9a96b5fd14b7bb69ae253a64efe7090686e0fb9426494d4e0331c8671b0b7a15"
     },
     {
       "path": "education/data/anatomical-arm-v1/review/arm26-reference-manifest/validate_manifest.py",
@@ -36,6 +36,12 @@
       "path": "education/data/anatomical-arm-v1/review/arm26-reference-manifest/validation.json",
       "bytes": 1090,
       "sha256": "faaaa17f0872bfd68b64af5a5c4adcb2807f87ac8abb7f626613744da3197e73"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/arm26-reference-manifest/provenance-correction.json",
+      "bytes": 3512,
+      "sha256": "c2cda7636c8bc884d5f9aab4236611ae93b4a472ae66e8129dab705f12630b22"
     }
-  ]
+  ],
+  "provenance_successor_of": "783b28f9a9030ca9332a6f6e8565d04b3f0309ca"
 }

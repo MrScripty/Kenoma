@@ -18,8 +18,8 @@
     "asset": {
       "repository": "https://github.com/opensim-org/opensim-models",
       "commit": "84b487c4e3245359a64381e01f01b9cf4772d457",
-      "repository_tree": null,
-      "repository_tree_status": "not independently retrieved; commit-addressed asset bytes verified",
+      "repository_tree": "c83b1825e10d531b1319e6492796c68dd7dcb17b",
+      "repository_tree_status": "verified by independent reviewer; exact commit/tree pair reported by parent delegation",
       "path": "Models/Arm26/arm26.osim",
       "url": "https://github.com/opensim-org/opensim-models/blob/84b487c4e3245359a64381e01f01b9cf4772d457/Models/Arm26/arm26.osim",
       "raw_url": "https://raw.githubusercontent.com/opensim-org/opensim-models/84b487c4e3245359a64381e01f01b9cf4772d457/Models/Arm26/arm26.osim",
@@ -30,7 +30,15 @@
       "git_blob_status": "computed from identical local and official raw bytes; upstream API inaccessible",
       "OpenSimDocument_version": "40000",
       "length_unit_declaration": "meters",
-      "force_unit_declaration": "N"
+      "force_unit_declaration": "N",
+      "repository_tree_provenance": {
+        "primary_source_url": "https://api.github.com/repos/opensim-org/opensim-models/git/commits/84b487c4e3245359a64381e01f01b9cf4772d457",
+        "tree_source_url": "https://api.github.com/repos/opensim-org/opensim-models/git/trees/c83b1825e10d531b1319e6492796c68dd7dcb17b",
+        "verification": "Independently retrieved by the reviewer; commit/tree pair supplied by parent delegation dated 2026-10-06.",
+        "review_source_thread_id": "01a103c3-a2e6-7606-8c1e-06987ac710f1",
+        "retrieved_by_this_worker": false,
+        "local_receipt": "education/data/anatomical-arm-v1/review/arm26-reference-manifest/provenance-correction.json"
+      }
     },
     "license": {
       "id": "CC-BY-3.0",
@@ -121,7 +129,7 @@
         "http_status": 200
       }
     ],
-    "type_compatibility": "Thelen2003Muscle concrete class exists in pinned header and registration source (line 57). Source-level type compatibility only; no runtime load qualification.",
+    "type_compatibility": "Thelen2003Muscle concrete class exists in pinned header and registration source (raw source line 62). Source-level type compatibility only; no runtime load qualification.",
     "actuator_translation": "None. No replacement of Thelen2003Muscle with Millard2012EquilibriumMuscle; scalar/path reuse would require a separate reviewed adapter."
   },
   "quantity_contract": {
@@ -4244,7 +4252,6 @@
     "Atlas/head-specific fascicle and sarcomere reference observations; passive natural metrics/prestress.",
     "Tendon/aponeurosis unloaded dimensions, tensile CSA, prestrain and physical partition.",
     "Model-to-atlas registration and pose correspondence; scalar source priors are not atlas measurements.",
-    "Version-specific model load/path/moment-arm evaluation and any separate actuator-class adapter remain outside this proposal.",
-    "Source family commit-addressed bytes verified; upstream repository tree not independently retrieved."
+    "Version-specific model load/path/moment-arm evaluation and any separate actuator-class adapter remain outside this proposal."
   ]
 }
