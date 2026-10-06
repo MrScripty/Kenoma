@@ -1,5 +1,6 @@
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
+import Mathlib.Data.Real.Sqrt
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
@@ -10,9 +11,8 @@ The definitions match the mathematical expressions in web/elbow.mjs and
 web/series.mjs. These results do not prove JavaScript floating-point refinement,
 solver termination, finite-precision root residuals, or biological calibration.
 
-The slope estimate below is deliberately a sufficient bound, F0/(w*l0), rather
-than the sharper F0*sqrt(2/e)/(w*l0) used by the JavaScript domain guard. Thus the
-monotonicity theorem requires the explicitly stronger sufficient condition.
+The slope estimate below is the F0*sqrt(2/e)/(w*l0) coefficient used by the
+JavaScript domain guard, with e represented by the exact real exponential of 1.
 -/
 noncomputable section
 namespace Kenoma.ActuatorReal
@@ -83,19 +83,32 @@ theorem active_force_hasDerivAt (fiber a maxForce optimalFiber width : ℝ)
     <;> ring
 
 theorem gaussian_weighted_radius_bound (z : ℝ) :
-    2 * |z| * Real.exp (-(z ^ 2)) ≤ 1 := by
-  have hp : 2 * |z| ≤ z ^ 2 + 1 := by
-    nlinarith [sq_nonneg (|z| - 1), sq_abs z]
-  have he : 2 * |z| ≤ Real.exp (z ^ 2) := hp.trans (Real.add_one_le_exp _)
+    2 * |z| * Real.exp (-(z ^ 2)) ≤ Real.sqrt (2 / Real.exp 1) := by
+  have he : 2 * z ^ 2 ≤ Real.exp (2 * z ^ 2 - 1) := by
+    linarith [Real.add_one_le_exp (2 * z ^ 2 - 1)]
+  have hexpSquare : Real.exp (-(z ^ 2)) ^ 2 = Real.exp (-2 * z ^ 2) := by
+    rw [pow_two, ← Real.exp_add]
+    congr 1
+    ring
+  apply Real.le_sqrt_of_sq_le
   calc
-    2 * |z| * Real.exp (-(z ^ 2)) ≤ Real.exp (z ^ 2) * Real.exp (-(z ^ 2)) :=
-      mul_le_mul_of_nonneg_right he (Real.exp_nonneg _)
-    _ = 1 := by rw [← Real.exp_add]; simp
+    (2 * |z| * Real.exp (-(z ^ 2))) ^ 2 = 4 * z ^ 2 * Real.exp (-2 * z ^ 2) := by
+      rw [mul_pow, mul_pow, sq_abs, hexpSquare]
+      ring
+    _ = (2 * z ^ 2) * (2 * Real.exp (-2 * z ^ 2)) := by ring
+    _ ≤ Real.exp (2 * z ^ 2 - 1) * (2 * Real.exp (-2 * z ^ 2)) :=
+      mul_le_mul_of_nonneg_right he (mul_nonneg (by norm_num) (Real.exp_nonneg _))
+    _ = 2 * Real.exp (-1) := by
+      rw [mul_comm (Real.exp (2 * z ^ 2 - 1)), ← mul_assoc, ← Real.exp_add]
+      congr 1
+      ring
+    _ = 2 / Real.exp 1 := by rw [Real.exp_neg, div_eq_mul_inv]
 
 theorem active_slope_bound (fiber a maxForce optimalFiber width : ℝ)
     (ha0 : 0 ≤ a) (ha1 : a ≤ 1) (hF : 0 ≤ maxForce)
     (hl : 0 < optimalFiber) (hw : 0 < width) :
-    |activeSlope fiber a maxForce optimalFiber width| ≤ maxForce / (width * optimalFiber) := by
+    |activeSlope fiber a maxForce optimalFiber width| ≤
+      maxForce * Real.sqrt (2 / Real.exp 1) / (width * optimalFiber) := by
   have hden : 0 < width * optimalFiber := mul_pos hw hl
   have hcoef : 0 ≤ a * maxForce / (width * optimalFiber) :=
     div_nonneg (mul_nonneg ha0 hF) hden.le
@@ -109,18 +122,18 @@ theorem active_slope_bound (fiber a maxForce optimalFiber width : ℝ)
         abs_of_pos (Real.exp_pos _)]
       norm_num
       ring
-    _ ≤ 1 * (a * maxForce / (width * optimalFiber)) :=
+    _ ≤ Real.sqrt (2 / Real.exp 1) * (a * maxForce / (width * optimalFiber)) :=
       mul_le_mul_of_nonneg_right (gaussian_weighted_radius_bound _) hcoef
-    _ ≤ maxForce / (width * optimalFiber) := by
-      rw [one_mul]
-      exact div_le_div_of_nonneg_right
-        ((mul_le_mul_of_nonneg_right ha1 hF).trans_eq (one_mul _)) hden.le
+    _ ≤ Real.sqrt (2 / Real.exp 1) * (maxForce / (width * optimalFiber)) :=
+      mul_le_mul_of_nonneg_left (div_le_div_of_nonneg_right
+        ((mul_le_mul_of_nonneg_right ha1 hF).trans_eq (one_mul _)) hden.le) (Real.sqrt_nonneg _)
+    _ = maxForce * Real.sqrt (2 / Real.exp 1) / (width * optimalFiber) := by ring
 
 theorem series_residual_strictMono (a maxForce optimalFiber width compliance passiveK totalFiber : ℝ)
     (ha0 : 0 ≤ a) (ha1 : a ≤ 1) (hF : 0 ≤ maxForce)
     (hl : 0 < optimalFiber) (hw : 0 < width)
     (hc : 0 ≤ compliance) (hk : 0 ≤ passiveK)
-    (hbound : compliance * (maxForce / (width * optimalFiber)) < 1) :
+    (hbound : compliance * (maxForce * Real.sqrt (2 / Real.exp 1) / (width * optimalFiber)) < 1) :
     StrictMono (fun f => seriesResidual f a maxForce optimalFiber width compliance passiveK totalFiber) := by
   have hcore : StrictMono (fun f => f + compliance * activeForce f a maxForce optimalFiber width) := by
     apply strictMono_of_hasDerivAt_pos
@@ -141,7 +154,7 @@ theorem series_equilibrium_unique (a maxForce optimalFiber width compliance pass
     (ha0 : 0 ≤ a) (ha1 : a ≤ 1) (hF : 0 ≤ maxForce)
     (hl : 0 < optimalFiber) (hw : 0 < width)
     (hc : 0 ≤ compliance) (hk : 0 ≤ passiveK)
-    (hbound : compliance * (maxForce / (width * optimalFiber)) < 1)
+    (hbound : compliance * (maxForce * Real.sqrt (2 / Real.exp 1) / (width * optimalFiber)) < 1)
     (hx : seriesResidual x a maxForce optimalFiber width compliance passiveK totalFiber = 0)
     (hy : seriesResidual y a maxForce optimalFiber width compliance passiveK totalFiber = 0) : x = y := by
   exact (series_residual_strictMono a maxForce optimalFiber width compliance passiveK totalFiber
