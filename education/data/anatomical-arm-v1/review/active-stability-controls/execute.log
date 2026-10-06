@@ -1,0 +1,16 @@
+START coarse-1.01 activation 0.01
+RESULT {"name": "coarse-1.01", "activation": 0.01, "stationaryAccepted": true, "forceResidualN": 2.719166194670461e-05, "fullMinimumNPerM": 5.433012268275898, "weakProjectedMinimumNPerM": 5.4501972909024285, "strictLocalMinimumPa": 999.9933353795008, "axialDerivativeNPerM": 29.283042150314763, "derivativeChecksPass": true}
+START coarse-1.01 activation 0.0
+RESULT {"name": "coarse-1.01", "activation": 0.0, "stationaryAccepted": true, "forceResidualN": 2.716819385463873e-05, "fullMinimumNPerM": 0.23723081665850915, "weakProjectedMinimumNPerM": 0.23723082400111642, "strictLocalMinimumPa": 999.9933353795008, "axialDerivativeNPerM": 69.0768890767458, "derivativeChecksPass": true}
+START coarse-1.25 activation 0.01
+RESULT {"name": "coarse-1.25", "activation": 0.01, "stationaryAccepted": true, "forceResidualN": 6.544742225951505e-11, "fullMinimumNPerM": -4293.987496427353, "weakProjectedMinimumNPerM": -4285.347755754769, "strictLocalMinimumPa": -47538.89754227899, "axialDerivativeNPerM": -484.5571917352792, "derivativeChecksPass": true}
+START coarse-1.25 activation 0.0
+RESULT {"name": "coarse-1.25", "activation": 0.0, "stationaryAccepted": true, "forceResidualN": 6.215054315481414e-11, "fullMinimumNPerM": 1.9789589546255695, "weakProjectedMinimumNPerM": 1.9789615897289328, "strictLocalMinimumPa": 999.8306437579882, "axialDerivativeNPerM": 261.8760114165588, "derivativeChecksPass": true}
+START fine-1.01 activation 0.01
+RESULT {"name": "fine-1.01", "activation": 0.01, "stationaryAccepted": true, "forceResidualN": 1.269308970354352e-05, "fullMinimumNPerM": 1.0249804054972937, "weakProjectedMinimumNPerM": 1.0281078704947655, "strictLocalMinimumPa": 999.9933353795008, "axialDerivativeNPerM": 29.283042150314763, "derivativeChecksPass": true}
+START fine-1.01 activation 0.0
+RESULT {"name": "fine-1.01", "activation": 0.0, "stationaryAccepted": true, "forceResidualN": 1.2688573690364993e-05, "fullMinimumNPerM": 0.052485529468948466, "weakProjectedMinimumNPerM": 0.052485558152042824, "strictLocalMinimumPa": 999.9933353795008, "axialDerivativeNPerM": 69.0768890767458, "derivativeChecksPass": true}
+START fine-1.25 activation 0.01
+RESULT {"name": "fine-1.25", "activation": 0.01, "stationaryAccepted": true, "forceResidualN": 5.481398433502148e-10, "fullMinimumNPerM": -3033.9661597517224, "weakProjectedMinimumNPerM": -3031.6226990028576, "strictLocalMinimumPa": -47538.89754227899, "axialDerivativeNPerM": -484.5571917352792, "derivativeChecksPass": true}
+START fine-1.25 activation 0.0
+RESULT {"name": "fine-1.25", "activation": 0.0, "stationaryAccepted": true, "forceResidualN": 5.477671951387916e-10, "fullMinimumNPerM": 0.46855679209751944, "weakProjectedMinimumNPerM": 0.4685569822384573, "strictLocalMinimumPa": 999.8306437579882, "axialDerivativeNPerM": 261.8760114165588, "derivativeChecksPass": true}

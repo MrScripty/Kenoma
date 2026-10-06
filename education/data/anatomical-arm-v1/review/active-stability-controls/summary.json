@@ -1,0 +1,112 @@
+{
+  "result": "COMPLETED_BOUNDED_ACTIVE_CONTROL_COMPARISON",
+  "sourceHashes": {
+    "tools/full_p2_p1.py": "c80a360fd897867e8cb2360766de8a9f5d548d61bf59b5e54dc8b8df2d5f6860",
+    "tools/full-p2-p1-replay.mjs": "0b2db14ba4f7c25732280f64a9a85a95a7ff854bc96f4073c02d36aa0ba0fe61",
+    "tools/run_full_p2_p1.py": "fe9e2df4a796451e2ff4cacab7b9d7b341f1e75a7b7254826c3677da07b3bdb8",
+    "tests/test_full_p2_p1.py": "d7db4c83f223caa7e37a85f8c6f30683f3d7ddb0b35808eccdcf7a188732b33d",
+    "research/mechanical-closure/full-p2-p1-protocol.md": "6c90b7626378a7dd2d8314ace1aee0696b866e551575890f028e1fc49f1e18f4",
+    "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+    "web/anatomical-modal.mjs": "12cd671bc963aa04dd5c0e173a776049de191283d850b0b60d0fe8e63be4c9a1",
+    "web/anatomical-element.mjs": "3f67a6bd31565c83d2cbea591c3cf1862a48e50cc4efa780880fda7e808d4b1f",
+    "web/anatomical-intersections.mjs": "a083a9838ac3c7508b65b58329c741aef65a065288aff82fc886d1c2c90375df",
+    "tools/anatomical-compression-quadrature.mjs": "f12e0d80224bad5e0bfa0649e08cac2f31a0baf162e2547ae8767b7371f48dc2",
+    "tools/active_stability_controls.py": "41dd5a0be9b81cb4a0bf4d703795b425e260012123a0a28492072ea678b054ab",
+    "research/mechanical-closure/active-stability-controls-protocol.md": "16f2662914eb1ba5ecf3d4da6ca62d285ce9c88951d227819e960b59490d4781"
+  },
+  "sourceCommit": "a38c874d069e160eb9b9ef37629674419bc3353d",
+  "cases": [
+    {
+      "name": "coarse-1.01",
+      "activation": 0.01,
+      "stationaryAccepted": true,
+      "forceResidualN": 2.719166194670461e-05,
+      "fullMinimumNPerM": 5.433012268275898,
+      "weakProjectedMinimumNPerM": 5.4501972909024285,
+      "strictLocalMinimumPa": 999.9933353795008,
+      "axialDerivativeNPerM": 29.283042150314763,
+      "derivativeChecksPass": true
+    },
+    {
+      "name": "coarse-1.01",
+      "activation": 0.0,
+      "stationaryAccepted": true,
+      "forceResidualN": 2.716819385463873e-05,
+      "fullMinimumNPerM": 0.23723081665850915,
+      "weakProjectedMinimumNPerM": 0.23723082400111642,
+      "strictLocalMinimumPa": 999.9933353795008,
+      "axialDerivativeNPerM": 69.0768890767458,
+      "derivativeChecksPass": true
+    },
+    {
+      "name": "coarse-1.25",
+      "activation": 0.01,
+      "stationaryAccepted": true,
+      "forceResidualN": 6.544742225951505e-11,
+      "fullMinimumNPerM": -4293.987496427353,
+      "weakProjectedMinimumNPerM": -4285.347755754769,
+      "strictLocalMinimumPa": -47538.89754227899,
+      "axialDerivativeNPerM": -484.5571917352792,
+      "derivativeChecksPass": true
+    },
+    {
+      "name": "coarse-1.25",
+      "activation": 0.0,
+      "stationaryAccepted": true,
+      "forceResidualN": 6.215054315481414e-11,
+      "fullMinimumNPerM": 1.9789589546255695,
+      "weakProjectedMinimumNPerM": 1.9789615897289328,
+      "strictLocalMinimumPa": 999.8306437579882,
+      "axialDerivativeNPerM": 261.8760114165588,
+      "derivativeChecksPass": true
+    },
+    {
+      "name": "fine-1.01",
+      "activation": 0.01,
+      "stationaryAccepted": true,
+      "forceResidualN": 1.269308970354352e-05,
+      "fullMinimumNPerM": 1.0249804054972937,
+      "weakProjectedMinimumNPerM": 1.0281078704947655,
+      "strictLocalMinimumPa": 999.9933353795008,
+      "axialDerivativeNPerM": 29.283042150314763,
+      "derivativeChecksPass": true
+    },
+    {
+      "name": "fine-1.01",
+      "activation": 0.0,
+      "stationaryAccepted": true,
+      "forceResidualN": 1.2688573690364993e-05,
+      "fullMinimumNPerM": 0.052485529468948466,
+      "weakProjectedMinimumNPerM": 0.052485558152042824,
+      "strictLocalMinimumPa": 999.9933353795008,
+      "axialDerivativeNPerM": 69.0768890767458,
+      "derivativeChecksPass": true
+    },
+    {
+      "name": "fine-1.25",
+      "activation": 0.01,
+      "stationaryAccepted": true,
+      "forceResidualN": 5.481398433502148e-10,
+      "fullMinimumNPerM": -3033.9661597517224,
+      "weakProjectedMinimumNPerM": -3031.6226990028576,
+      "strictLocalMinimumPa": -47538.89754227899,
+      "axialDerivativeNPerM": -484.5571917352792,
+      "derivativeChecksPass": true
+    },
+    {
+      "name": "fine-1.25",
+      "activation": 0.0,
+      "stationaryAccepted": true,
+      "forceResidualN": 5.477671951387916e-10,
+      "fullMinimumNPerM": 0.46855679209751944,
+      "weakProjectedMinimumNPerM": 0.4685569822384573,
+      "strictLocalMinimumPa": 999.8306437579882,
+      "axialDerivativeNPerM": 261.8760114165588,
+      "derivativeChecksPass": true
+    }
+  ],
+  "limits": [
+    "No optimizer, changed coefficient, constitutive switch, anatomical calibration or dynamic stability claim.",
+    "Activation-zero isolation is not a proposed active muscle replacement."
+  ]
+}
