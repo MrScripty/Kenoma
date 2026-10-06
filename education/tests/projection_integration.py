@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'tools'))
 from render_pdf import serve
 from executable_outputs import checked_build_outputs, unchanged_outputs
+from check_projection_print_limits import measure as measure_limits, check as check_limits, RENDER_INPUTS
 
 
 def digest(path):
@@ -47,6 +48,12 @@ def check():
                 .controls{display:none!important}svg text,.chart-vector{font-size:14px!important}}
             ''')
             page.evaluate('document.fonts.ready')
+            # Closed <details> retains its summary in Chromium print while
+            # omitting the assumptions. Open only the review-render DOM;
+            # preserve the accepted standalone source and screen behavior.
+            limits = page.locator('footer details')
+            limits.evaluate('(element)=>element.open=true')
+            expect(limits.locator('p')).to_be_visible()
             assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1'), 'Review print overflow'
             graphics = page.locator('svg[role=img]').evaluate_all('(nodes)=>nodes.map(n=>n.outerHTML)')
             page.evaluate('''revision=>{for(const a of document.querySelectorAll('a[href]')){
@@ -65,6 +72,11 @@ def check():
                     receipt['evidence_sha256'][target.name]=digest(target)
                 receipt['portable_pdf_links'] = portable_links(doc)
                 receipt['review_print_qualification'] = {'minimum_actual_pt':min(glyphs),'diagram_labels':labels,'source_commit':revision,'original_unqualified_pdf_sha256':original_pdf_hash,'pages':len(doc)}
+            receipt['review_print_qualification'].update({
+                'interpretation_and_limits': measure_limits(pdf, out/'standalone/pressure-projection-lab.html'),
+                'renderer_source_commit': subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
+                'render_input_sha256': {name:digest(ROOT/name) for name in RENDER_INPUTS},
+            })
             receipt['evidence_sha256'][pdf.name] = digest(pdf)
             receipt_path.write_text(json.dumps(receipt,indent=2)+'\n')
             page.emulate_media(media='screen');page.set_viewport_size({'width':1280,'height':900})
@@ -91,6 +103,7 @@ def check():
         'standalone_receipt_sha256':digest(out/'projection-qa/receipt.json'), 'book_capture_sha256':digest(out/'projection-qa/book-controls.png'),
         'checks':['Shipped source equals accepted standalone bytes', '5625 independent rational browser cases and real desktop/mobile controls', 'Actual in-book iframe refinement and Reset', 'Executable outputs and build manifest unchanged'], 'errors':errors}
     (out/'projection-qa/integration.json').write_text(json.dumps(result,indent=2)+'\n')
+    check_limits(out)
     print(result['result'])
 
 
