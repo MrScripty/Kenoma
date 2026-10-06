@@ -1,0 +1,1030 @@
+{
+  "schema": 1,
+  "date_utc": "2026-10-06",
+  "status": "research_only_not_adopted",
+  "base_commit": "297828af89ac0818dcab1282513cb28c6219cfac",
+  "base_tree": "d54f63cae1b00f2f6008a6894b4c83ec7980c370",
+  "sources": [
+    {
+      "id": "S1",
+      "citation": "Murray, Buchanan and Delp (2000), The isometric functional capacity of muscles that cross the elbow",
+      "url": "https://nmbl.stanford.edu/publications/pdf/Murray2000.pdf",
+      "access": "fresh_primary_pdf_text",
+      "locator": "Methods equations 1-4; Table 2 printed p.947",
+      "scale": "human/cadaver architecture",
+      "limitation": "No pixel verification/source-byte archive",
+      "source_bytes_sha256": null
+    },
+    {
+      "id": "S2",
+      "citation": "Mattiello-Sverzut and Martins (2023), Does the early phase of aging affect the morphology of biceps brachii and torque and total work of elbow flexors in healthy volunteers?",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9925190/",
+      "access": "fresh_primary_methods_plus_prior_repository_table_audit",
+      "locator": "Methods; Table 2 in prior frozen audit",
+      "scale": "human/biceps biopsy, head unknown",
+      "limitation": "Subsequent browser challenge; numeric cells not freshly reread",
+      "source_bytes_sha256": null
+    },
+    {
+      "id": "S3",
+      "citation": "Maeo et al. (2024), Long-Term Resistance Trained Human Muscles Have More Fibers, More Myofibrils, and Tighter Myofilament Packing Than Untrained",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38875487/",
+      "access": "fresh_primary_abstract_figure_captions",
+      "locator": "Abstract; Figs.3-4 captions",
+      "scale": "human/biceps MRI, biopsy and subcellular",
+      "limitation": "Absolute areas/mixture/preparation unavailable; linked PMC challenge not bypassed",
+      "source_bytes_sha256": null
+    },
+    {
+      "id": "S4",
+      "citation": "Kawakami et al. (1994), Specific tension of elbow flexor and extensor muscles based on magnetic resonance imaging",
+      "url": "https://link.springer.com/article/10.1007/BF00244027",
+      "access": "fresh_primary_abstract",
+      "locator": "Abstract",
+      "scale": "human/MRI and inverse whole-muscle force",
+      "limitation": "Full inverse-force sharing/protocol/table values not available",
+      "source_bytes_sha256": null
+    },
+    {
+      "id": "S5",
+      "citation": "Gejl et al. (2021), Contractile Properties of MHC I and II Fibers From Highly Trained Arm and Leg Muscles of Cross-Country Skiers",
+      "url": "https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2021.682943/full",
+      "access": "fresh_primary_full_html_text",
+      "locator": "Methods; Results MHC Distribution; Table 1; Fig.1",
+      "scale": "human/distal lateral triceps homogenate and skinned fibers",
+      "limitation": "Rendered absolute CSA unit unresolved; hybrids/outliers excluded; previous-data overlap",
+      "source_bytes_sha256": null
+    },
+    {
+      "id": "S6",
+      "citation": "Harridge et al. (1996), Whole-muscle and single-fibre contractile properties and myosin heavy chain isoforms in humans",
+      "url": "https://link.springer.com/article/10.1007/s004240050215",
+      "access": "fresh_primary_abstract",
+      "locator": "Abstract",
+      "scale": "human/triceps whole muscle and skinned fibers, head unknown",
+      "limitation": "Subscription preview; absolute timing/speed/protocol units inaccessible",
+      "source_bytes_sha256": null
+    },
+    {
+      "id": "S7",
+      "citation": "Bottinelli et al. (1996), Force-velocity properties of human skeletal muscle fibres: myosin heavy chain isoform and temperature dependence",
+      "url": "https://physoc.onlinelibrary.wiley.com/doi/10.1113/jphysiol.1996.sp021617",
+      "access": "fresh_primary_abstract",
+      "locator": "Abstract",
+      "scale": "human/skinned fiber; muscle origin unestablished",
+      "limitation": "No arm assignment/absolute speed/velocity units extracted",
+      "source_bytes_sha256": null
+    },
+    {
+      "id": "S8",
+      "citation": "Official OpenSim Models Arm26 XML",
+      "url": "https://github.com/opensim-org/opensim-models/blob/84b487c4e3245359a64381e01f01b9cf4772d457/Models/Arm26/arm26.osim",
+      "access": "fresh_local_byte_hash_xml_parse; prior official raw-byte equality audit",
+      "locator": "ForceSet/objects/Thelen2003Muscle",
+      "scale": "reference model",
+      "limitation": "Source inspection only; no runtime qualification",
+      "source_bytes_sha256": "e2224d0044eb393b05d64926c3fa1682c451a9adc7f510e5517ef9958d3d41b9",
+      "bytes": 90192,
+      "license": "CC-BY-3.0",
+      "commit": "84b487c4e3245359a64381e01f01b9cf4772d457",
+      "repository_tree": "c83b1825e10d531b1319e6492796c68dd7dcb17b",
+      "repository_tree_provenance": "Independent reviewer pair recorded in unchanged Arm26 provenance correction; not freshly fetched here"
+    },
+    {
+      "id": "S9",
+      "citation": "Official OpenSim core 4.5.2 implementation",
+      "url": "https://github.com/opensim-org/opensim-core/tree/5bc7d3308eda742690f485ec060bfe725a349fa6",
+      "access": "fresh_bounded_official_raw_source",
+      "locator": "Thelen2003Muscle.cpp lines131-138,185-190,512; activation cpp78-86",
+      "scale": "reference-model implementation",
+      "limitation": "Defaults not measured human timing; no runtime tests",
+      "source_bytes_sha256": null,
+      "license": "Apache-2.0",
+      "commit": "5bc7d3308eda742690f485ec060bfe725a349fa6",
+      "tree": "19ea9bb15e9c43a3f7506966ea6ac0ca14002df1",
+      "bounded_sources": [
+        {
+          "path": "OpenSim/Actuators/MuscleFirstOrderActivationDynamicModel.cpp",
+          "url": "https://raw.githubusercontent.com/opensim-org/opensim-core/5bc7d3308eda742690f485ec060bfe725a349fa6/OpenSim/Actuators/MuscleFirstOrderActivationDynamicModel.cpp",
+          "bytes": 5139,
+          "sha256": "7cda12111355cf7f04a906c4821582a203547b149ac9b43250c58a13734a18e9"
+        },
+        {
+          "path": "OpenSim/Actuators/Thelen2003Muscle.cpp",
+          "url": "https://raw.githubusercontent.com/opensim-org/opensim-core/5bc7d3308eda742690f485ec060bfe725a349fa6/OpenSim/Actuators/Thelen2003Muscle.cpp",
+          "bytes": 63048,
+          "sha256": "cbad8e1e57d65a1f4d3f3280bf92936c14cfec752c64f8b9fc3f80f69e133203"
+        },
+        {
+          "path": "OpenSim/Actuators/Thelen2003Muscle.h",
+          "url": "https://raw.githubusercontent.com/opensim-org/opensim-core/5bc7d3308eda742690f485ec060bfe725a349fa6/OpenSim/Actuators/Thelen2003Muscle.h",
+          "bytes": 16759,
+          "sha256": "1285a85fd1e2e31c1010427f8a03247f1ef024dd8e37e90c8d24c485ebae6219"
+        }
+      ]
+    },
+    {
+      "id": "S10",
+      "citation": "Holzbaur, Murray and Delp (2005), A model of the upper extremity for simulating musculoskeletal surgery and analyzing neuromuscular control",
+      "url": "https://nmbl.stanford.edu/publications/pdf/Holzbaur2005.pdf",
+      "access": "prior_repository_primary_full_text_audit",
+      "locator": "Methods pp.831-833; Table 1 footnote",
+      "scale": "reference-model prior",
+      "limitation": "No fresh numerical re-extraction this review",
+      "source_bytes_sha256": null
+    },
+    {
+      "id": "S11",
+      "citation": "Krivickas et al. (2011), Relationship between force and size in human single muscle fibres",
+      "url": "https://physoc.onlinelibrary.wiley.com/doi/full/10.1113/expphysiol.2010.055269",
+      "access": "prior_repository_primary_full_text_audit",
+      "locator": "Methods; Table 1",
+      "scale": "human/skinned vastus lateralis",
+      "limitation": "Retained amplitude provenance only; no arm calibration",
+      "source_bytes_sha256": null
+    }
+  ],
+  "prior_audit_provenance": [
+    {
+      "commit": "297828af89ac0818dcab1282513cb28c6219cfac",
+      "path": "education/research/measured-fibre-property-map.md",
+      "sha256": "d70f91c995f00ba205c7f6bb59ada766c254e76e8053dd43efee161e54ae3f04"
+    },
+    {
+      "commit": "297828af89ac0818dcab1282513cb28c6219cfac",
+      "path": "education/research/mechanical-closure/arm-reference-operating-lengths-primary-review.md",
+      "sha256": "606bc680910c2e7f12b6ab0983e4231016ad5b117730f459fae96702afe6aea7"
+    },
+    {
+      "commit": "297828af89ac0818dcab1282513cb28c6219cfac",
+      "path": "education/data/anatomical-arm-v1/review/arm-reference-operating-lengths/source-access-ledger.json",
+      "sha256": "63cfad37b989ad0e229b22292357c66b63461268ac58d3f22cec52da293426f2"
+    },
+    {
+      "commit": "297828af89ac0818dcab1282513cb28c6219cfac",
+      "path": "education/data/anatomical-arm-v1/review/arm26-reference-manifest/provenance-correction.json",
+      "sha256": "c2cda7636c8bc884d5f9aab4236611ae93b4a472ae66e8129dab705f12630b22"
+    }
+  ],
+  "numeric_observations": [
+    {
+      "id": "pcsa_bic_long",
+      "source": "S1",
+      "quantity": "PCSA",
+      "structure": "biceps long",
+      "status": "derived",
+      "value": 0.00025,
+      "unit": "m^2",
+      "uncertainty": {
+        "kind": "SD",
+        "value": 0.00011000000000000002,
+        "unit": "m^2"
+      },
+      "n_architecture": 6,
+      "source_value": 2.5,
+      "source_SD": 1.1,
+      "source_unit": "cm^2",
+      "conversion_to_SI": 0.0001,
+      "method": "mass/(density*optimal fascicle length)",
+      "density_g_cm3": 1.06,
+      "optimal_sarcomere_um": 2.8,
+      "independent_medial_area": null,
+      "atlas_subject_measurement": false,
+      "adoption_status": "candidate_population_prior_not_adopted"
+    },
+    {
+      "id": "pcsa_bic_short",
+      "source": "S1",
+      "quantity": "PCSA",
+      "structure": "biceps short",
+      "status": "derived",
+      "value": 0.00021,
+      "unit": "m^2",
+      "uncertainty": {
+        "kind": "SD",
+        "value": 6e-05,
+        "unit": "m^2"
+      },
+      "n_architecture": 8,
+      "source_value": 2.1,
+      "source_SD": 0.6,
+      "source_unit": "cm^2",
+      "conversion_to_SI": 0.0001,
+      "method": "mass/(density*optimal fascicle length)",
+      "density_g_cm3": 1.06,
+      "optimal_sarcomere_um": 2.8,
+      "independent_medial_area": null,
+      "atlas_subject_measurement": false,
+      "adoption_status": "candidate_population_prior_not_adopted"
+    },
+    {
+      "id": "pcsa_bra",
+      "source": "S1",
+      "quantity": "PCSA",
+      "structure": "brachialis",
+      "status": "derived",
+      "value": 0.0005400000000000001,
+      "unit": "m^2",
+      "uncertainty": {
+        "kind": "SD",
+        "value": 0.00013000000000000002,
+        "unit": "m^2"
+      },
+      "n_architecture": 9,
+      "source_value": 5.4,
+      "source_SD": 1.3,
+      "source_unit": "cm^2",
+      "conversion_to_SI": 0.0001,
+      "method": "mass/(density*optimal fascicle length)",
+      "density_g_cm3": 1.06,
+      "optimal_sarcomere_um": 2.8,
+      "independent_medial_area": null,
+      "atlas_subject_measurement": false,
+      "adoption_status": "candidate_population_prior_not_adopted"
+    },
+    {
+      "id": "pcsa_tri_long",
+      "source": "S1",
+      "quantity": "PCSA",
+      "structure": "triceps long",
+      "status": "derived",
+      "value": 0.00043,
+      "unit": "m^2",
+      "uncertainty": {
+        "kind": "SD",
+        "value": 0.00018,
+        "unit": "m^2"
+      },
+      "n_architecture": 9,
+      "source_value": 4.3,
+      "source_SD": 1.8,
+      "source_unit": "cm^2",
+      "conversion_to_SI": 0.0001,
+      "method": "mass/(density*optimal fascicle length)",
+      "density_g_cm3": 1.06,
+      "optimal_sarcomere_um": 2.8,
+      "independent_medial_area": null,
+      "atlas_subject_measurement": false,
+      "adoption_status": "candidate_population_prior_not_adopted"
+    },
+    {
+      "id": "pcsa_tri_lat_med",
+      "source": "S1",
+      "quantity": "PCSA",
+      "structure": "triceps lateral plus medial",
+      "status": "derived",
+      "value": 0.0010500000000000002,
+      "unit": "m^2",
+      "uncertainty": {
+        "kind": "SD",
+        "value": 0.0005200000000000001,
+        "unit": "m^2"
+      },
+      "n_architecture": 8,
+      "source_value": 10.5,
+      "source_SD": 5.2,
+      "source_unit": "cm^2",
+      "conversion_to_SI": 0.0001,
+      "method": "mass/(density*optimal fascicle length)",
+      "density_g_cm3": 1.06,
+      "optimal_sarcomere_um": 2.8,
+      "independent_medial_area": false,
+      "atlas_subject_measurement": false,
+      "adoption_status": "candidate_population_prior_not_adopted"
+    },
+    {
+      "id": "pcsa_tri_combined",
+      "source": "S1",
+      "quantity": "PCSA",
+      "structure": "triceps combined",
+      "status": "derived",
+      "value": 0.00149,
+      "unit": "m^2",
+      "uncertainty": {
+        "kind": "SD",
+        "value": 0.00067,
+        "unit": "m^2"
+      },
+      "n_architecture": null,
+      "source_value": 14.9,
+      "source_SD": 6.7,
+      "source_unit": "cm^2",
+      "conversion_to_SI": 0.0001,
+      "method": "mass/(density*optimal fascicle length)",
+      "density_g_cm3": 1.06,
+      "optimal_sarcomere_um": 2.8,
+      "independent_medial_area": false,
+      "atlas_subject_measurement": false,
+      "adoption_status": "candidate_population_prior_not_adopted"
+    },
+    {
+      "id": "pcsa_brd",
+      "source": "S1",
+      "quantity": "PCSA",
+      "structure": "brachioradialis",
+      "status": "derived",
+      "value": 0.00012,
+      "unit": "m^2",
+      "uncertainty": {
+        "kind": "SD",
+        "value": 6e-05,
+        "unit": "m^2"
+      },
+      "n_architecture": 10,
+      "source_value": 1.2,
+      "source_SD": 0.6,
+      "source_unit": "cm^2",
+      "conversion_to_SI": 0.0001,
+      "method": "mass/(density*optimal fascicle length)",
+      "density_g_cm3": 1.06,
+      "optimal_sarcomere_um": 2.8,
+      "independent_medial_area": null,
+      "atlas_subject_measurement": false,
+      "adoption_status": "candidate_population_prior_not_adopted"
+    },
+    {
+      "id": "diameter_bic_2a_female",
+      "source": "S2",
+      "quantity": "smallest section diameter",
+      "structure": "biceps head unresolved",
+      "status": "measured",
+      "value": 5.06e-05,
+      "unit": "m",
+      "uncertainty": {
+        "kind": "95%CI",
+        "value": [
+          4.95e-05,
+          5.179999999999999e-05
+        ],
+        "unit": "m"
+      },
+      "sex": "female",
+      "type_label": "histochemical Type 2A",
+      "source_value": 50.6,
+      "source_unit": "um",
+      "conversion_to_SI": 1e-06,
+      "access_qualification": "prior frozen repository primary-table audit; current Methods reread only",
+      "atlas_subject_measurement": false,
+      "adoption_status": "candidate_population_prior_not_adopted"
+    },
+    {
+      "id": "diameter_bic_2a_male",
+      "source": "S2",
+      "quantity": "smallest section diameter",
+      "structure": "biceps head unresolved",
+      "status": "measured",
+      "value": 6.42e-05,
+      "unit": "m",
+      "uncertainty": {
+        "kind": "95%CI",
+        "value": [
+          6.29e-05,
+          6.56e-05
+        ],
+        "unit": "m"
+      },
+      "sex": "male",
+      "type_label": "histochemical Type 2A",
+      "source_value": 64.2,
+      "source_unit": "um",
+      "conversion_to_SI": 1e-06,
+      "access_qualification": "prior frozen repository primary-table audit; current Methods reread only",
+      "atlas_subject_measurement": false,
+      "adoption_status": "candidate_population_prior_not_adopted"
+    },
+    {
+      "id": "tri_lat_I_specific_force",
+      "source": "S5",
+      "quantity": "maximum specific force",
+      "structure": "distal lateral triceps",
+      "status": "derived",
+      "value": 90000,
+      "unit": "Pa",
+      "uncertainty": {
+        "kind": "SD",
+        "value": 43000,
+        "unit": "Pa"
+      },
+      "type_label": "MHC I",
+      "n_fibers": 28,
+      "source_value": 90,
+      "source_unit": "kN/m^2",
+      "conversion_to_SI": 1000,
+      "CSA_unit_status": "unresolved rendered Table1; stress retained as directly reported",
+      "atlas_subject_measurement": false,
+      "adoption_status": "candidate_population_prior_not_adopted"
+    },
+    {
+      "id": "tri_lat_I_force",
+      "source": "S5",
+      "quantity": "maximum Ca activated force",
+      "structure": "distal lateral triceps",
+      "status": "measured",
+      "value": 0.00066,
+      "unit": "N",
+      "uncertainty": {
+        "kind": "SD",
+        "value": 0.00028000000000000003,
+        "unit": "N"
+      },
+      "type_label": "MHC I",
+      "n_fibers": 28,
+      "source_value": 0.66,
+      "source_unit": "mN",
+      "conversion_to_SI": 0.001,
+      "atlas_subject_measurement": false,
+      "adoption_status": "candidate_population_prior_not_adopted"
+    },
+    {
+      "id": "tri_lat_II_specific_force",
+      "source": "S5",
+      "quantity": "maximum specific force",
+      "structure": "distal lateral triceps",
+      "status": "derived",
+      "value": 127000,
+      "unit": "Pa",
+      "uncertainty": {
+        "kind": "SD",
+        "value": 55000,
+        "unit": "Pa"
+      },
+      "type_label": "MHC II",
+      "n_fibers": 60,
+      "source_value": 127,
+      "source_unit": "kN/m^2",
+      "conversion_to_SI": 1000,
+      "CSA_unit_status": "unresolved rendered Table1; stress retained as directly reported",
+      "atlas_subject_measurement": false,
+      "adoption_status": "candidate_population_prior_not_adopted"
+    },
+    {
+      "id": "tri_lat_II_force",
+      "source": "S5",
+      "quantity": "maximum Ca activated force",
+      "structure": "distal lateral triceps",
+      "status": "measured",
+      "value": 0.00108,
+      "unit": "N",
+      "uncertainty": {
+        "kind": "SD",
+        "value": 0.00042,
+        "unit": "N"
+      },
+      "type_label": "MHC II",
+      "n_fibers": 60,
+      "source_value": 1.08,
+      "source_unit": "mN",
+      "conversion_to_SI": 0.001,
+      "atlas_subject_measurement": false,
+      "adoption_status": "candidate_population_prior_not_adopted"
+    },
+    {
+      "id": "tri_lat_MHC_I_fraction",
+      "source": "S5",
+      "quantity": "homogenate MHC content fraction",
+      "structure": "distal lateral triceps",
+      "status": "measured",
+      "value": 0.39,
+      "unit": "1",
+      "uncertainty": {
+        "kind": "SD",
+        "value": 0.06,
+        "unit": "1"
+      },
+      "type_label": "MHC I",
+      "source_value": 39,
+      "source_unit": "%",
+      "conversion_to_SI": 0.01,
+      "not_fiber_count_fraction": true,
+      "atlas_subject_measurement": false,
+      "adoption_status": "candidate_population_prior_not_adopted"
+    },
+    {
+      "id": "tri_lat_MHC_II_fraction",
+      "source": "S5",
+      "quantity": "homogenate MHC content fraction",
+      "structure": "distal lateral triceps",
+      "status": "measured",
+      "value": 0.61,
+      "unit": "1",
+      "uncertainty": {
+        "kind": "SD",
+        "value": 0.06,
+        "unit": "1"
+      },
+      "type_label": "MHC II",
+      "source_value": 61,
+      "source_unit": "%",
+      "conversion_to_SI": 0.01,
+      "not_fiber_count_fraction": true,
+      "atlas_subject_measurement": false,
+      "adoption_status": "candidate_population_prior_not_adopted"
+    },
+    {
+      "id": "flexor_extensor_pcsa_ratio",
+      "source": "S4",
+      "quantity": "triceps/summed flexor PCSA ratio",
+      "structure": "whole groups",
+      "status": "derived",
+      "value": 1.9,
+      "unit": "1",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "1"
+      },
+      "atlas_subject_measurement": false,
+      "adoption_status": "context_only_not_adopted"
+    },
+    {
+      "id": "trained_bic_maximal_ACSA_relative_difference",
+      "source": "S3",
+      "quantity": "maximal_ACSA_relative_difference",
+      "structure": "biceps head unresolved",
+      "status": "measured",
+      "value": 0.7,
+      "unit": "1",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "1"
+      },
+      "comparison": "cross-sectional trained vs untrained groups; not transient contraction",
+      "atlas_subject_measurement": false,
+      "adoption_status": "context_only_not_adopted"
+    },
+    {
+      "id": "trained_bic_mean_fiber_area_relative_difference",
+      "source": "S3",
+      "quantity": "mean_fiber_area_relative_difference",
+      "structure": "biceps head unresolved",
+      "status": "measured",
+      "value": 0.29,
+      "unit": "1",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "1"
+      },
+      "comparison": "cross-sectional trained vs untrained groups; not transient contraction",
+      "atlas_subject_measurement": false,
+      "adoption_status": "context_only_not_adopted"
+    },
+    {
+      "id": "trained_bic_estimated_fiber_count_relative_difference",
+      "source": "S3",
+      "quantity": "estimated_fiber_count_relative_difference",
+      "structure": "biceps head unresolved",
+      "status": "derived",
+      "value": 0.34,
+      "unit": "1",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "1"
+      },
+      "comparison": "cross-sectional trained vs untrained groups; not transient contraction",
+      "atlas_subject_measurement": false,
+      "adoption_status": "context_only_not_adopted"
+    },
+    {
+      "id": "Vmax_Q10",
+      "source": "S7",
+      "quantity": "temperature coefficient of fitted Vmax",
+      "structure": "muscle origin not verified",
+      "status": "derived",
+      "value": 5.88,
+      "unit": "1",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "1"
+      },
+      "temperature_range_C": [
+        12,
+        22
+      ],
+      "not_arm_specific": true,
+      "atlas_subject_measurement": false,
+      "adoption_status": "context_only_not_adopted"
+    }
+  ],
+  "model_inputs": [
+    {
+      "source": "S8",
+      "structure": "TRIlong",
+      "status": "model_assumed",
+      "quantity": "max_contraction_velocity",
+      "value": 10.0,
+      "unit": "optimal_fiber_lengths/s",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "optimal_fiber_lengths/s"
+      },
+      "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/max_contraction_velocity"
+    },
+    {
+      "source": "S8",
+      "structure": "TRIlong",
+      "status": "model_assumed",
+      "quantity": "activation_time_constant",
+      "value": 0.01,
+      "unit": "s",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "s"
+      },
+      "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/activation_time_constant"
+    },
+    {
+      "source": "S8",
+      "structure": "TRIlong",
+      "status": "model_assumed",
+      "quantity": "deactivation_time_constant",
+      "value": 0.04,
+      "unit": "s",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "s"
+      },
+      "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/deactivation_time_constant"
+    },
+    {
+      "source": "S8",
+      "structure": "TRIlong",
+      "status": "model_assumed",
+      "quantity": "Flen",
+      "value": 1.8,
+      "unit": "1",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "1"
+      },
+      "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/Flen"
+    },
+    {
+      "source": "S8",
+      "structure": "TRIlat",
+      "status": "model_assumed",
+      "quantity": "max_contraction_velocity",
+      "value": 10.0,
+      "unit": "optimal_fiber_lengths/s",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "optimal_fiber_lengths/s"
+      },
+      "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/max_contraction_velocity"
+    },
+    {
+      "source": "S8",
+      "structure": "TRIlat",
+      "status": "model_assumed",
+      "quantity": "activation_time_constant",
+      "value": 0.01,
+      "unit": "s",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "s"
+      },
+      "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/activation_time_constant"
+    },
+    {
+      "source": "S8",
+      "structure": "TRIlat",
+      "status": "model_assumed",
+      "quantity": "deactivation_time_constant",
+      "value": 0.04,
+      "unit": "s",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "s"
+      },
+      "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/deactivation_time_constant"
+    },
+    {
+      "source": "S8",
+      "structure": "TRIlat",
+      "status": "model_assumed",
+      "quantity": "Flen",
+      "value": 1.8,
+      "unit": "1",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "1"
+      },
+      "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/Flen"
+    },
+    {
+      "source": "S8",
+      "structure": "TRImed",
+      "status": "model_assumed",
+      "quantity": "max_contraction_velocity",
+      "value": 10.0,
+      "unit": "optimal_fiber_lengths/s",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "optimal_fiber_lengths/s"
+      },
+      "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/max_contraction_velocity"
+    },
+    {
+      "source": "S8",
+      "structure": "TRImed",
+      "status": "model_assumed",
+      "quantity": "activation_time_constant",
+      "value": 0.01,
+      "unit": "s",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "s"
+      },
+      "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/activation_time_constant"
+    },
+    {
+      "source": "S8",
+      "structure": "TRImed",
+      "status": "model_assumed",
+      "quantity": "deactivation_time_constant",
+      "value": 0.04,
+      "unit": "s",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "s"
+      },
+      "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/deactivation_time_constant"
+    },
+    {
+      "source": "S8",
+      "structure": "TRImed",
+      "status": "model_assumed",
+      "quantity": "Flen",
+      "value": 1.8,
+      "unit": "1",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "1"
+      },
+      "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/Flen"
+    },
+    {
+      "source": "S8",
+      "structure": "BIClong",
+      "status": "model_assumed",
+      "quantity": "max_contraction_velocity",
+      "value": 10.0,
+      "unit": "optimal_fiber_lengths/s",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "optimal_fiber_lengths/s"
+      },
+      "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/max_contraction_velocity"
+    },
+    {
+      "source": "S8",
+      "structure": "BIClong",
+      "status": "model_assumed",
+      "quantity": "activation_time_constant",
+      "value": 0.01,
+      "unit": "s",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "s"
+      },
+      "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/activation_time_constant"
+    },
+    {
+      "source": "S8",
+      "structure": "BIClong",
+      "status": "model_assumed",
+      "quantity": "deactivation_time_constant",
+      "value": 0.04,
+      "unit": "s",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "s"
+      },
+      "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/deactivation_time_constant"
+    },
+    {
+      "source": "S8",
+      "structure": "BIClong",
+      "status": "model_assumed",
+      "quantity": "Flen",
+      "value": 1.8,
+      "unit": "1",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "1"
+      },
+      "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/Flen"
+    },
+    {
+      "source": "S8",
+      "structure": "BICshort",
+      "status": "model_assumed",
+      "quantity": "max_contraction_velocity",
+      "value": 10.0,
+      "unit": "optimal_fiber_lengths/s",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "optimal_fiber_lengths/s"
+      },
+      "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/max_contraction_velocity"
+    },
+    {
+      "source": "S8",
+      "structure": "BICshort",
+      "status": "model_assumed",
+      "quantity": "activation_time_constant",
+      "value": 0.01,
+      "unit": "s",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "s"
+      },
+      "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/activation_time_constant"
+    },
+    {
+      "source": "S8",
+      "structure": "BICshort",
+      "status": "model_assumed",
+      "quantity": "deactivation_time_constant",
+      "value": 0.04,
+      "unit": "s",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "s"
+      },
+      "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/deactivation_time_constant"
+    },
+    {
+      "source": "S8",
+      "structure": "BICshort",
+      "status": "model_assumed",
+      "quantity": "Flen",
+      "value": 1.8,
+      "unit": "1",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "1"
+      },
+      "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/Flen"
+    },
+    {
+      "source": "S8",
+      "structure": "BRA",
+      "status": "model_assumed",
+      "quantity": "max_contraction_velocity",
+      "value": 10.0,
+      "unit": "optimal_fiber_lengths/s",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "optimal_fiber_lengths/s"
+      },
+      "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BRA']/max_contraction_velocity"
+    },
+    {
+      "source": "S8",
+      "structure": "BRA",
+      "status": "model_assumed",
+      "quantity": "activation_time_constant",
+      "value": 0.01,
+      "unit": "s",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "s"
+      },
+      "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BRA']/activation_time_constant"
+    },
+    {
+      "source": "S8",
+      "structure": "BRA",
+      "status": "model_assumed",
+      "quantity": "deactivation_time_constant",
+      "value": 0.04,
+      "unit": "s",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "s"
+      },
+      "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BRA']/deactivation_time_constant"
+    },
+    {
+      "source": "S8",
+      "structure": "BRA",
+      "status": "model_assumed",
+      "quantity": "Flen",
+      "value": 1.8,
+      "unit": "1",
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "1"
+      },
+      "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BRA']/Flen"
+    }
+  ],
+  "unknowns": {
+    "BIClong": {
+      "measured_head_fiber_count_mixture": null,
+      "measured_head_fiber_CSA_m2": null,
+      "measured_head_concentric_velocity": null,
+      "measured_head_eccentric_velocity": null,
+      "measured_head_activation_time_s": null,
+      "measured_head_relaxation_time_s": null
+    },
+    "BICshort": {
+      "measured_head_fiber_count_mixture": null,
+      "measured_head_fiber_CSA_m2": null,
+      "measured_head_concentric_velocity": null,
+      "measured_head_eccentric_velocity": null,
+      "measured_head_activation_time_s": null,
+      "measured_head_relaxation_time_s": null
+    },
+    "BRA": {
+      "measured_head_fiber_count_mixture": null,
+      "measured_head_fiber_CSA_m2": null,
+      "measured_head_concentric_velocity": null,
+      "measured_head_eccentric_velocity": null,
+      "measured_head_activation_time_s": null,
+      "measured_head_relaxation_time_s": null
+    },
+    "TRIlong": {
+      "measured_head_fiber_count_mixture": null,
+      "measured_head_fiber_CSA_m2": null,
+      "measured_head_concentric_velocity": null,
+      "measured_head_eccentric_velocity": null,
+      "measured_head_activation_time_s": null,
+      "measured_head_relaxation_time_s": null
+    },
+    "TRIlat": {
+      "measured_head_fiber_count_mixture": null,
+      "measured_head_fiber_CSA_m2": null,
+      "measured_head_concentric_velocity": null,
+      "measured_head_eccentric_velocity": null,
+      "measured_head_activation_time_s": null,
+      "measured_head_relaxation_time_s": null,
+      "measured_head_fiber_CSA_reason": "Rendered Table1 unit unresolved; do not infer from group mean force/stress"
+    },
+    "TRImed": {
+      "measured_head_fiber_count_mixture": null,
+      "measured_head_fiber_CSA_m2": null,
+      "measured_head_concentric_velocity": null,
+      "measured_head_eccentric_velocity": null,
+      "measured_head_activation_time_s": null,
+      "measured_head_relaxation_time_s": null
+    },
+    "brachioradialis": {
+      "measured_head_fiber_count_mixture": null,
+      "measured_head_fiber_CSA_m2": null,
+      "measured_head_concentric_velocity": null,
+      "measured_head_eccentric_velocity": null,
+      "measured_head_activation_time_s": null,
+      "measured_head_relaxation_time_s": null
+    }
+  },
+  "unknown_semantics": "null means unextracted/unverified in this bounded review; never zero or proof of no literature",
+  "head_coverage": "brachioradialis absent from selected Arm26; triceps medial has no independently derived S1 PCSA",
+  "species_policy": "Selected numerical biological studies human only; animal studies not transferred",
+  "artifact_policy": {
+    "solver_changes": false,
+    "parameter_adoption": false,
+    "new_anatomy_measurements": false,
+    "clinical_advice": false,
+    "source_fulltext_copies_committed": false,
+    "pixel_table_digitization": false,
+    "ONNX_downloads": 0,
+    "mesh_downloads": 0
+  },
+  "access_limits": [
+    "Broad web searches often returned unrelated results; bounded search stopped.",
+    "NCBI eutils public shell search failed proxy tunnel403, no retry/bypass.",
+    "PubMed term search unresolved; no inferred citations or values.",
+    "PMC challenge and subscription preview limits retained, no access bypass.",
+    "Web screenshots returned no inspectable pixels; no pixel-verification claim."
+  ],
+  "next_step": "Obtain S6 full protocol/tables through normal authorized access and resolve S5 absolute CSA units before any head-specific rate/area adoption."
+}

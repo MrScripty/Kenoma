@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "date_utc": "2026-10-06",
+  "base_commit": "297828af89ac0818dcab1282513cb28c6219cfac",
+  "base_tree": "d54f63cae1b00f2f6008a6894b4c83ec7980c370",
+  "tracked_baseline_files_checked": 1567,
+  "changed_baseline_files": [],
+  "checks": {
+    "all_baseline_byte_hashes_unchanged": true,
+    "tracked_git_diff_empty": true,
+    "numeric_ids_sources_units_and_conversions": true,
+    "model_inputs_equal_pinned_local_XML": true,
+    "brachioradialis_not_in_Arm26": true,
+    "unknowns_remain_null": true,
+    "prior_audit_hashes_match_frozen_base": true,
+    "bounded_raw_implementation_hashes_match": true,
+    "relative_markdown_links_exist": true,
+    "observations_separate_from_candidate_prior_adoption": true
+  },
+  "numeric_observations": 20,
+  "explicit_model_inputs": 24,
+  "primary_sources": 11,
+  "relative_links": [
+    "education/data/anatomical-arm-v1/review/arm-muscle-property-evidence/evidence.json",
+    "education/data/anatomical-arm-v1/review/arm-muscle-property-evidence/verification.json",
+    "education/research/mechanical-closure/arm-reference-operating-lengths-primary-review.md"
+  ],
+  "artifact_hashes": [
+    {
+      "path": "education/research/mechanical-closure/arm-muscle-property-evidence.md",
+      "bytes": 14731,
+      "sha256": "2dca92ebe712c51356aae17304c9840bdf643c9dbf9e99445fd35deec080624f"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/arm-muscle-property-evidence/evidence.json",
+      "bytes": 35044,
+      "sha256": "a3cd2d1b8346a0a1b3c6716e0a356c6e370aa7b546e1f97947e4542c1b2f62b5"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/arm-muscle-property-evidence/preserved-baseline.json",
+      "bytes": 326625,
+      "sha256": "823acb0a1462cbcd8b31a1656e9afe076725bf97a55478dfea253c012bd824be"
+    }
+  ],
+  "validation_scope": "Evidence/provenance only; no solver/calibration/activation/runtime test or physiological validation",
+  "initial_validation_failures": [
+    {
+      "check": "relative link existence",
+      "reason": "verification.json checked before its creation"
+    },
+    {
+      "check": "relative link count",
+      "reason": "unnecessary assertion expected four rather than actual three"
+    }
+  ],
+  "validation_correction": "Check each actual link after receipt creation; all other evidence/hash/unit assertions passed both initial attempts. No evidence or baseline change.",
+  "prohibited_scope_changes": []
+}
