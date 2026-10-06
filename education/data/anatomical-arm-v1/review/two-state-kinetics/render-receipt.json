@@ -1,0 +1,12 @@
+{
+  "result": "PASS_RENDER_FROM_BOUND_KINETIC_RECEIPTS",
+  "rendererSHA256": "1e4034c2cb57bc625258fbd8e23f9a463ed0ac78b436ce3401b9296282e7e97a",
+  "inputs": {
+    "data/anatomical-arm-v1/review/two-state-kinetics/summary.json": "8c69d36ae52259e0850ce62ba62215231d290bec9c9937ef240a32016b11a473"
+  },
+  "outputs": {
+    "data/anatomical-arm-v1/review/two-state-kinetics/two-state-kinetics.png": "c4ada39cf63b62e0ac80b5f35f436935d7965d2735da18c50b408e3da19e5d83",
+    "data/anatomical-arm-v1/review/two-state-kinetics/two-state-kinetics.pdf": "ca92819fbeb443fb3250e43883b90b8062db6a644a5421296be1c981aa61242d"
+  },
+  "scope": "Static scientific figure, equation-only normalized kinetic fixture"
+}
