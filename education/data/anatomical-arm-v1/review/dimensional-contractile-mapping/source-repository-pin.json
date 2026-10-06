@@ -1,0 +1,234 @@
+{
+  "repository": "timvanderzee/biophysical-muscle-model",
+  "commit": "8c766dfb308051309193e7290ddd0bac3b726d11",
+  "tree": "a802ec6f7299d0745dfab1d5b715a3d9b7aa6f20",
+  "commitDate": "2026-07-08T12:06:31Z",
+  "access": "Authorized GitHub read connector, public repository GET. No credential/network change. Earlier web/shell access failures retained.",
+  "note": "This July 2026 code revision precedes the September 2026 final article; identity does not imply equation/version parity. No LICENSE file present in inspected recursive tree.",
+  "files": [
+    {
+      "path": "Common/fiber",
+      "gitBlobSHA": "076423cb09fc16dcd1ddeb6a3fceb26aec81cbdb"
+    },
+    {
+      "path": "Common/fiber/biophysical",
+      "gitBlobSHA": "fc5b91057312fea1535651687aa2701a98f49cbb"
+    },
+    {
+      "path": "Common/fiber/biophysical/fiber_dynamics_explicit_approximated.m",
+      "gitBlobSHA": "57b034e7b250afc8d8d405d894dd0a90db0c6edf",
+      "bytes": 2117
+    },
+    {
+      "path": "Common/fiber/biophysical/fiber_dynamics_explicit_discretized.m",
+      "gitBlobSHA": "37c94486239ff58f4830b3fb94715b0472d0fb1c",
+      "bytes": 2566
+    },
+    {
+      "path": "Common/fiber/biophysical/fiber_dynamics_implicit_approximated.m",
+      "gitBlobSHA": "1a06702546e82001dbae4870a99b4dbb471f7662",
+      "bytes": 1959
+    },
+    {
+      "path": "Common/fiber/get_PE.m",
+      "gitBlobSHA": "cb615867322c00c936638ca8f3934e26cd6955b0",
+      "bytes": 261
+    },
+    {
+      "path": "Common/fiber/get_force_and_stiffness.m",
+      "gitBlobSHA": "4320a5510c6dfa27ab2a3822d4c1b4058f81ca64",
+      "bytes": 923
+    },
+    {
+      "path": "Common/fiber/get_input_from_parms.m",
+      "gitBlobSHA": "162826c844e23e75f925693e19742b6847cbc27e",
+      "bytes": 449
+    },
+    {
+      "path": "Common/fiber/get_pq.m",
+      "gitBlobSHA": "38664f6e73d32a39cccd7b120ac3753cb9c1c4bb",
+      "bytes": 435
+    },
+    {
+      "path": "Common/fiber/hill",
+      "gitBlobSHA": "95555f6bf41301f7b1d303f2988f7fb899ee0f82"
+    },
+    {
+      "path": "Common/fiber/hill/hill_explicit.m",
+      "gitBlobSHA": "45b1bffd7d47c6b8bf6cd4796fef0b6b5f5b4cfa",
+      "bytes": 828
+    },
+    {
+      "path": "Common/fiber/hill/hill_type_implicit.m",
+      "gitBlobSHA": "1df630dd6b71a65cc39689d31be79c605edc81cc",
+      "bytes": 851
+    },
+    {
+      "path": "Common/fiber/hill/hill_type_implicit_v2.m",
+      "gitBlobSHA": "b92eaa3324e7c0a69dcb6dad9b09202723654e08",
+      "bytes": 735
+    },
+    {
+      "path": "Common/myofilaments",
+      "gitBlobSHA": "eb5e4cdea835722e41e81f3056bdce9694250eee"
+    },
+    {
+      "path": "Common/myofilaments/CrossBridge_Dynamics.m",
+      "gitBlobSHA": "a28a3623ac546651af5a951e4f8f4279ad65b19a",
+      "bytes": 1856
+    },
+    {
+      "path": "Common/myofilaments/Length_dynamics.m",
+      "gitBlobSHA": "ca1c90c1e8d35fc72ca2c6183bab1567f2f3c83b",
+      "bytes": 511
+    },
+    {
+      "path": "Common/myofilaments/ThickFilament_Dynamics.m",
+      "gitBlobSHA": "8a53a214e7bbb5a23b1ccca474d79234085d4429",
+      "bytes": 163
+    },
+    {
+      "path": "Common/myofilaments/ThinFilament_Dynamics.m",
+      "gitBlobSHA": "3c4b57484464a1119cfbcddd97a7cf8283d3c664",
+      "bytes": 293
+    },
+    {
+      "path": "Common/myofilaments/implicit formulation",
+      "gitBlobSHA": "0d31e44395adb4839435c36419a70d8d57f6d4a7"
+    },
+    {
+      "path": "Common/myofilaments/implicit formulation/LengthEquilibrium.m",
+      "gitBlobSHA": "c87944a655f5004bad2f30a52a44697d2294f150",
+      "bytes": 318
+    },
+    {
+      "path": "Common/myofilaments/implicit formulation/MuscleEquilibrium.m",
+      "gitBlobSHA": "e3af06dc87486f8196836363c4a86733751d9ee8",
+      "bytes": 646
+    },
+    {
+      "path": "Common/myofilaments/implicit formulation/MuscleEquilibrium_full.m",
+      "gitBlobSHA": "c98dfd62e87c26cfde978cafda877549c338ade6",
+      "bytes": 554
+    },
+    {
+      "path": "Common/myofilaments/implicit formulation/ThickEquilibrium.m",
+      "gitBlobSHA": "d4960686c656315be64dfd91747e9c1fb2ae915e",
+      "bytes": 527
+    },
+    {
+      "path": "Common/myofilaments/implicit formulation/ThinEquilibrium.m",
+      "gitBlobSHA": "30b7c1a06d3c60b19655210b759439e76ee6c6d2",
+      "bytes": 232
+    },
+    {
+      "path": "Common/myofilaments/return_f_overlap.m",
+      "gitBlobSHA": "43f4afc0326caf06011607132c0ce3503e0a7018",
+      "bytes": 734
+    },
+    {
+      "path": "Common/simulate",
+      "gitBlobSHA": "c9fd8d8146edc29d0222ae284294661ddbc9539b"
+    },
+    {
+      "path": "Common/simulate/find_steady_state.m",
+      "gitBlobSHA": "3c2937d8e9a29ddff548d11842270535f75b7263",
+      "bytes": 1024
+    },
+    {
+      "path": "Common/simulate/force_from_distribution.m",
+      "gitBlobSHA": "cd276fa390d6c2a1035d2ae37ef9e6bed740633a",
+      "bytes": 416
+    },
+    {
+      "path": "Common/simulate/get_Fpe.asv",
+      "gitBlobSHA": "3f59acc0cfc7fcfba4883bb69e18fdb27daceb9c",
+      "bytes": 178
+    },
+    {
+      "path": "Common/simulate/get_Fpe.m",
+      "gitBlobSHA": "4eac9ee6a77c71d15e9c2746156a6f2cdd619af7",
+      "bytes": 241
+    },
+    {
+      "path": "Common/simulate/get_force.m",
+      "gitBlobSHA": "fd5882e1eddb69e6c924b073c8b0bf13f11bd02f",
+      "bytes": 219
+    },
+    {
+      "path": "Common/simulate/get_steady_state.m",
+      "gitBlobSHA": "76406e95533069d113490fcca9fea26f14df9bb5",
+      "bytes": 1525
+    },
+    {
+      "path": "Common/simulate/look_up_model.m",
+      "gitBlobSHA": "fbd4927d6bfe9ae1692507ed410a66820e183eb6",
+      "bytes": 1158
+    },
+    {
+      "path": "Common/simulate/simulate_model.m",
+      "gitBlobSHA": "3fb14f1475d49b6af9e5e0541b7b54cae1200aa3",
+      "bytes": 3887
+    },
+    {
+      "path": "Data/README.md",
+      "gitBlobSHA": "290f6771ad8841b9590140393f8696f8f30f02b9",
+      "bytes": 2296
+    },
+    {
+      "path": "Fitting/README.md",
+      "gitBlobSHA": "0a6d7e3c0dd7dda7e516b2c809ea052d1ac93e85",
+      "bytes": 3370
+    },
+    {
+      "path": "README.md",
+      "gitBlobSHA": "dd5a92feeb29640667669ae072141bfd5671c615",
+      "bytes": 1316
+    },
+    {
+      "path": "Reproduce/Parameters/complete_parms.m",
+      "gitBlobSHA": "f5656cc5dc7da581d29f68c74cc509c93ff6a155",
+      "bytes": 972
+    },
+    {
+      "path": "Reproduce/Parameters/create_reduced_parms.m",
+      "gitBlobSHA": "ffa627bfb2bc6b8e8345121a06f5a78fc36e0702",
+      "bytes": 1112
+    },
+    {
+      "path": "Reproduce/Parameters/get_parms.m",
+      "gitBlobSHA": "beb230d4cbe64a9d99f5f990d307e741efdd24aa",
+      "bytes": 1535
+    },
+    {
+      "path": "Reproduce/Parameters/update_parms.m",
+      "gitBlobSHA": "7fd28da1ca08495976eb8c1ecf9ddac199e757b3",
+      "bytes": 726
+    },
+    {
+      "path": "Reproduce/README.md",
+      "gitBlobSHA": "1256036690272e08d1d8cea43a6ec5ba1ceb5d9d",
+      "bytes": 3319
+    },
+    {
+      "path": "Test/README.md",
+      "gitBlobSHA": "664bd1a4852242869d3d95ad35b594cd2fd62779",
+      "bytes": 2878
+    },
+    {
+      "path": "Test/test_model.m",
+      "gitBlobSHA": "c72388c7fd58180af35207dc70cfc0501a36d3bc",
+      "bytes": 3674
+    },
+    {
+      "path": "Test/test_model.png",
+      "gitBlobSHA": "b6a80a36af92ba72e7ad78a381130fa7d526fd8e",
+      "bytes": 54703
+    },
+    {
+      "path": "Test/test_model_pCa.m",
+      "gitBlobSHA": "d84ad57e9aac6b3d2c2d115c2bc155142322d256",
+      "bytes": 2814
+    }
+  ]
+}
