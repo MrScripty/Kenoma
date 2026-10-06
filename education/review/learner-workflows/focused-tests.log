@@ -1,0 +1,16 @@
+✔ elbow pulse retains selected inputs and evolved physical state; releases relative to current time (7.550842ms)
+✔ series pulse retains selected inputs and evolved physical state; releases relative to current time (7.938093ms)
+✔ spatial pulse retains selected inputs and evolved physical state; releases relative to current time (7720.287165ms)
+✔ failed 3D startup labels numerical-only stepping and does not retry every step (0.652668ms)
+✔ elbow current row matches release/change before stepping and preserves completed history (7.007337ms)
+✔ series current row matches release/change before stepping and preserves completed history (12.649207ms)
+✔ compression control ablations preserve activation/pose and produce the named physical effect (15627.151063ms)
+✔ parameter edits preserve evolved state, halt, accounting and counters; pose/hold edits enforce kinematics (1753.920543ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 17506.248645

@@ -1,0 +1,11 @@
+# Current-setting pulse and display repair checkpoint
+
+Code commit: 4b30b0b, based on preserved material checkpoint 2875d184 plus isolated scope-instruction correction d7ccec5. PR7's branch/head are untouched; its independent scope-only correction is 38c2096 on origin/education/pr7-scope-instructions.
+
+- Pulse preserves current physical state/selected settings/hold mode; release schedule is relative to current simulated time, with explicit first-boundary semantics. Reset defaults remains explicit. Compression fixture cancels a previous schedule and deliberately initializes state.
+- Step and Play attempt live rendering. Failed WebGL clearly identifies numerical-only advancement and the static reference diagram, retaining Retry and diagnostics. Copy/export include current pulse schedule; state copy also identifies display mode.
+- The full claim-code map identifies Lab5's real cumulative force-length defect for separate repair. Lab7's explicitly taught one-way edge/volume model is not treated as an undisclosed FEM/feedback defect. Missing implementation exercises and material real-domain formal obligations are labeled unfinished; Int contracts are not reused as real proofs.
+
+Verification: full Node 152/152 and Python 24/24 passed during implementation; the final code additionally passed eight focused state/trace/spatial invariant tests and source-bound production-control Chromium qualification (`--case all`). The browser receipt hashes match 4b30b0b's exact source. Actual pixel marker movement, selected nondefault pulse from t=.4 to release=.7, active release behavior, compression ablations, deterministic reset, and injected failed WebGL were checked. Final series live and numerical-only screenshots were visually inspected; fallback contains the actual generated reference SVG and an explicit static-reference notice. No physical-phone or whole-book release claim is made.
+
+No new PR, merge or deployment performed. Parent coordinates publication/re-review. Full local book build still requires missing pinned mathlib; numerical and browser qualification do not substitute for that release gate. A separate successor implements newly received force-length, property-label and Lab6 diagnostic findings.
