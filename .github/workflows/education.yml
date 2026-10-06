@@ -43,7 +43,9 @@ jobs:
           python3 tools/install_lean.py --directory .tools
           echo "$PWD/.tools/lean-4.19.0-linux/bin" >> "$GITHUB_PATH"
       - name: Compile pinned real-proof dependencies from source
-        run: python3 tools/build_property_mathlib.py
+        run: |
+          python3 tools/build_property_mathlib.py
+          python3 tools/check_mixed_volume_proofs.py --build-dependencies
       - name: Preserve dependency diagnostics
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
@@ -100,6 +102,8 @@ jobs:
           python3 tools/check_endpoint_warning_audit.py
           npm run build
           npm run pdf
+          python3 tools/check_print_readability.py dist
+          python3 tests/projection_integration.py
           python3 tools/check_print_readability.py dist
           npm run test:browser
           npm run test:mobile

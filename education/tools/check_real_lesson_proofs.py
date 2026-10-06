@@ -9,6 +9,7 @@ FAMILIES = [
     ('ActuatorConstitutiveReal.lean', 'actuator-real-claims.json', 'actuator-real', 11),
     ('DissipativeBarReal.lean', 'dissipative-real-claims.json', 'dissipative-real', 11),
     ('SerialSpecimenReal.lean', 'serial-specimen-real-claims.json', 'serial-real', 12),
+    ('MixedLogVolume.lean', 'mixed-volume-claims.json', 'mixed-volume', 27),
 ]
 
 def check(existing=None):

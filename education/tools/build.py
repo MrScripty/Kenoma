@@ -112,6 +112,8 @@ def build():
     properties=check_properties()
     material=check_material()
     real_lessons=check_real_lessons(properties)
+    from check_mixed_volume_proofs import check as check_mixed
+    check_mixed(OUT/'mixed-volume-kernel', False)
     data=ROOT/'data/elbow-v1'
     subprocess.run(['python3',str(data/'scripts/validate_package.py')],check=True)
     continuum=ROOT/'contributions/continuum_reference'
@@ -252,6 +254,11 @@ def build():
     html_path.write_text(rendered)
     staging.unlink()
     assets=OUT/'assets';generate(assets)
+    from projection_figure import generate as projection_figure
+    projection_figure(assets)
+    standalone=OUT/'standalone';standalone.mkdir(exist_ok=True)
+    for name in ['pressure-projection-lab.html','pressure-projection-proof-guide.md','pressure-projection-lab-check.py']:
+        shutil.copy(ROOT/'standalone'/name,standalone/name)
     subprocess.run(['node',str(ROOT/'tools/property-experiment.mjs'),str(assets),str(OUT/'property-experiment.json')],cwd=ROOT,check=True)
     subprocess.run(['node',str(ROOT/'tools/material-experiment.mjs'),str(assets),str(OUT/'material-experiment.json')],cwd=ROOT,check=True)
     evidence_figures(assets)
@@ -287,6 +294,8 @@ def build():
     shutil.copy(ROOT.parent/'LICENSE',OUT/'LICENSE')
     (OUT/'.nojekyll').touch()
     inputs={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for folder in ['book','web','proofs','tools','data','contributions'] for p in sorted((ROOT/folder).rglob('*')) if p.is_file() and '__pycache__' not in str(p)}
+    for name in ['pressure-projection-lab.html','pressure-projection-proof-guide.md','pressure-projection-lab-check.py']:
+        relative='standalone/'+name;inputs[relative]=hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()
     for relative in ['package.json','package-lock.json','requirements.txt']:
         inputs[relative]=hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()
     manifest_out={'schema':1,'milestone':'full-spatial-book','input_sha256':inputs,'lean':evidence['lean_version'],
