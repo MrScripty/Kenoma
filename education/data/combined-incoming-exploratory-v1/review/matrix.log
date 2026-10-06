@@ -1,0 +1,13 @@
+full-source RK4-0.0002 accepted 0.2619999999999987 candidate 0.2620307656591513 failure None steps 1313 elapsed 18.67096846200002
+full-source RK4-0.0001 accepted 0.2619999999999987 candidate 0.26203073905637375 failure None steps 2623 elapsed 36.10142089800502
+full-source RK4-0.00005 accepted 0.2619999999999987 candidate 0.2620307217375545 failure None steps 5243 elapsed 70.56821483100066
+full-source DOP853 accepted 0.26188272667355134 candidate 0.26203072243812087 failure None steps 526 elapsed 8.718482149008196
+full-source Radau accepted 0.2619614369565097 candidate 0.2620307004835998 failure None steps 600 elapsed 9.673929009004496
+reduced-independent RK4-0.0002 accepted 0.2619999999999987 candidate 0.2620307656591513 failure None steps 1313 elapsed 60.170104766992154
+full-source RK4-0.000025 accepted 0.2620249999999987 candidate 0.262030771977257 failure None steps 10484 elapsed 141.42115573100455
+reduced-independent RK4-0.0001 accepted 0.2619999999999987 candidate 0.26203073905637375 failure None steps 2623 elapsed 117.60552958601329
+reduced-independent RK4-0.00005 accepted 0.2619999999999987 candidate 0.2620307217375545 failure None steps 5243 elapsed 232.15724630100885
+reduced-independent DOP853 accepted 0.26188272667360346 candidate 0.2620307224383923 failure None steps 526 elapsed 31.25781269201252
+reduced-independent Radau accepted 0.2619614369041167 candidate 0.26203070043552124 failure None steps 600 elapsed 31.467390895995777
+reduced-independent RK4-0.000025 accepted 0.2620249999999987 candidate 0.262030771977257 failure None steps 10484 elapsed 488.1438610059995
+MATRIX 12 source 44783cb668a3250076e086e862bd5af48811b34e elapsed 782.3728600239992

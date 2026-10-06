@@ -1,0 +1,203 @@
+{
+  "scope": "Authorized exploratory combined incoming matrix; no full qualification",
+  "source_commit": "44783cb668a3250076e086e862bd5af48811b34e",
+  "source_tree": "b0b152711dafc8f27bde4ea17154dde81eece8f9",
+  "protocol_sha256": "10f6ff423473b884e7b3e455e4e6050fdd61d93d493d32c8597dd08fc4121f2f",
+  "historical_review_limitation": "Full independent raw replay of activation-only evidence remains incomplete because owner download was canceled. Original source semantics and compact receipts have independent scoped acceptance. Owner removed only the extra prerequisite for exploratory execution, with every numerical/physical acceptance condition unchanged. No transfer retry/reroute; no full qualification.",
+  "independent_raw_replay_complete": false,
+  "required_cells": 12,
+  "executed_cells": 12,
+  "cell_processes": [
+    {
+      "representation": "full-source",
+      "method": "RK4-0.0002",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/Kenoma-refinement-diagnosis/education/tools/run_combined_incoming_exploratory.py",
+        "--rep",
+        "full-source",
+        "--method",
+        "RK4-0.0002"
+      ],
+      "returncode": 0,
+      "log_sha256": "1fd316a7e00fdd018b56b531d52dd096281491cfe3ad11edb916cfba77bd3866",
+      "result_present": true
+    },
+    {
+      "representation": "full-source",
+      "method": "RK4-0.0001",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/Kenoma-refinement-diagnosis/education/tools/run_combined_incoming_exploratory.py",
+        "--rep",
+        "full-source",
+        "--method",
+        "RK4-0.0001"
+      ],
+      "returncode": 0,
+      "log_sha256": "ec4f11db0d55c0171f745ab201e6b16c5b2d5ff4ac81e53ce94df2e1bcb8a884",
+      "result_present": true
+    },
+    {
+      "representation": "full-source",
+      "method": "RK4-0.00005",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/Kenoma-refinement-diagnosis/education/tools/run_combined_incoming_exploratory.py",
+        "--rep",
+        "full-source",
+        "--method",
+        "RK4-0.00005"
+      ],
+      "returncode": 0,
+      "log_sha256": "5c1018443e7b386167649fb07ae17aa26557660cca6f03be39623c6714caf165",
+      "result_present": true
+    },
+    {
+      "representation": "full-source",
+      "method": "RK4-0.000025",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/Kenoma-refinement-diagnosis/education/tools/run_combined_incoming_exploratory.py",
+        "--rep",
+        "full-source",
+        "--method",
+        "RK4-0.000025"
+      ],
+      "returncode": 0,
+      "log_sha256": "6b3bc62ca37c42fc580cdfaa4e00fe6fd7d774423939efbacae73b549a2bf0ed",
+      "result_present": true
+    },
+    {
+      "representation": "full-source",
+      "method": "DOP853",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/Kenoma-refinement-diagnosis/education/tools/run_combined_incoming_exploratory.py",
+        "--rep",
+        "full-source",
+        "--method",
+        "DOP853"
+      ],
+      "returncode": 0,
+      "log_sha256": "c8b0640bf087b374c6bd42f55c58e5e371df83cde37dcfe4aa4a8e21d1edd816",
+      "result_present": true
+    },
+    {
+      "representation": "full-source",
+      "method": "Radau",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/Kenoma-refinement-diagnosis/education/tools/run_combined_incoming_exploratory.py",
+        "--rep",
+        "full-source",
+        "--method",
+        "Radau"
+      ],
+      "returncode": 0,
+      "log_sha256": "27d8b665d5db5bdd733caea1681a894e20f2aea7400c1fd78b491344444da4b3",
+      "result_present": true
+    },
+    {
+      "representation": "reduced-independent",
+      "method": "RK4-0.0002",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/Kenoma-refinement-diagnosis/education/tools/run_combined_incoming_exploratory.py",
+        "--rep",
+        "reduced-independent",
+        "--method",
+        "RK4-0.0002"
+      ],
+      "returncode": 0,
+      "log_sha256": "089f04915e17ef82b408348d0aef5607d25d715afa50f78239911e5c112c8c0f",
+      "result_present": true
+    },
+    {
+      "representation": "reduced-independent",
+      "method": "RK4-0.0001",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/Kenoma-refinement-diagnosis/education/tools/run_combined_incoming_exploratory.py",
+        "--rep",
+        "reduced-independent",
+        "--method",
+        "RK4-0.0001"
+      ],
+      "returncode": 0,
+      "log_sha256": "bfd0780123f614cf4a2c4b1426b6ae061614686d43d8aba85bab467d35b0aaf7",
+      "result_present": true
+    },
+    {
+      "representation": "reduced-independent",
+      "method": "RK4-0.00005",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/Kenoma-refinement-diagnosis/education/tools/run_combined_incoming_exploratory.py",
+        "--rep",
+        "reduced-independent",
+        "--method",
+        "RK4-0.00005"
+      ],
+      "returncode": 0,
+      "log_sha256": "47dc23cb82a17e1d18ef09138e0efd7643a92d243230ce3a27b97079745ff5eb",
+      "result_present": true
+    },
+    {
+      "representation": "reduced-independent",
+      "method": "RK4-0.000025",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/Kenoma-refinement-diagnosis/education/tools/run_combined_incoming_exploratory.py",
+        "--rep",
+        "reduced-independent",
+        "--method",
+        "RK4-0.000025"
+      ],
+      "returncode": 0,
+      "log_sha256": "bd1a7c1a5d4155c2db32f2c25fc928a3e9d7bec19a6d09ef34c7bb1bb3a14ce2",
+      "result_present": true
+    },
+    {
+      "representation": "reduced-independent",
+      "method": "DOP853",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/Kenoma-refinement-diagnosis/education/tools/run_combined_incoming_exploratory.py",
+        "--rep",
+        "reduced-independent",
+        "--method",
+        "DOP853"
+      ],
+      "returncode": 0,
+      "log_sha256": "7e31d43c23aaf16fe404236170fa78323cd0a367c8b591c6639e269dd15d448e",
+      "result_present": true
+    },
+    {
+      "representation": "reduced-independent",
+      "method": "Radau",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/Kenoma-refinement-diagnosis/education/tools/run_combined_incoming_exploratory.py",
+        "--rep",
+        "reduced-independent",
+        "--method",
+        "Radau"
+      ],
+      "returncode": 0,
+      "log_sha256": "bcaae58378b3f6c1c4c976f1205556ec0fa1666def042c03ac0ba00e9a44fc78",
+      "result_present": true
+    }
+  ],
+  "elapsed_s": 782.3728600239992,
+  "physical_gates_changed": false,
+  "source_sha256": {
+    "education/tools/run_combined_incoming_exploratory.py": "e0ba0e4624cdcf7c3553aa6f90b878c0f253450288d69b1958fdb2d57793625c",
+    "education/tools/audit_combined_incoming_exploratory.py": "9aa48e955947010579b68c135d8371d317ed3ceb55a51c0082c5aa8761c21ec4",
+    "education/tools/execute_combined_incoming_matrix.py": "06abb17a5f065f15a78d9518b13eb0ecded5e108951808b1a8b2f81ecb6b1a85",
+    "education/tests/combined_incoming_exploratory.py": "1d8fdc6864eb36508d3299ac0b6948eb803a27112f16498ad76b708bd4131dda",
+    "education/research/mechanical-closure/combined-incoming-exploratory-protocol.md": "3df0aa93873553ebccbcf6ce7ae06eaf58e511983dbf05d915ba10db565ae5f0"
+  },
+  "accepted_sliding_states": 0,
+  "qualified_trajectories": 0
+}
