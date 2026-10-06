@@ -1,0 +1,4250 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_id": "kenoma.educational.arm26-reference.v1.proposal",
+  "status": "proposed_not_adopted",
+  "date_utc": "2026-10-06",
+  "base_commit": "1a63fb6be3d9d8131769856cbf9796c873ffa2ce",
+  "scope": {
+    "use": "Educational reference metadata only",
+    "solver_activation": false,
+    "production_parameter_adoption": false,
+    "anatomical_accuracy_claim": false,
+    "runtime_model_load": false,
+    "moment_arm_or_path_length_evaluation": false,
+    "meshes_downloaded": 0
+  },
+  "source_family": {
+    "choice": "Official OpenSim Models Arm26, adapted Holzbaur/Murray/Delp lineage",
+    "asset": {
+      "repository": "https://github.com/opensim-org/opensim-models",
+      "commit": "84b487c4e3245359a64381e01f01b9cf4772d457",
+      "repository_tree": null,
+      "repository_tree_status": "not independently retrieved; commit-addressed asset bytes verified",
+      "path": "Models/Arm26/arm26.osim",
+      "url": "https://github.com/opensim-org/opensim-models/blob/84b487c4e3245359a64381e01f01b9cf4772d457/Models/Arm26/arm26.osim",
+      "raw_url": "https://raw.githubusercontent.com/opensim-org/opensim-models/84b487c4e3245359a64381e01f01b9cf4772d457/Models/Arm26/arm26.osim",
+      "local_path": "education/data/elbow-v1/sources/arm26.osim",
+      "bytes": 90192,
+      "sha256": "e2224d0044eb393b05d64926c3fa1682c451a9adc7f510e5517ef9958d3d41b9",
+      "computed_git_blob_sha1": "2ff458149668bb2f0de24572f80658f8dd9db1d9",
+      "git_blob_status": "computed from identical local and official raw bytes; upstream API inaccessible",
+      "OpenSimDocument_version": "40000",
+      "length_unit_declaration": "meters",
+      "force_unit_declaration": "N"
+    },
+    "license": {
+      "id": "CC-BY-3.0",
+      "url": "https://creativecommons.org/licenses/by/3.0/",
+      "grant_locator": {
+        "asset": "arm26",
+        "xpath": "/OpenSimDocument/Model/credits"
+      },
+      "attribution": "Arm26: OpenSim Development Team (J. Reinbolt, A. Seth, A. Habib, S. Hamner), adapted from Kate Holzbaur (2004-11-22).",
+      "full_notice_preserved_in": "education/data/elbow-v1/sources/arm26.osim",
+      "modification_notice": "Source XML unchanged; numerical/reference metadata and path/wrap definitions extracted into this research proposal; missing values retained as null.",
+      "publication_url": "https://doi.org/10.1007/s10439-005-3320-7",
+      "derived_model_fields_license": "CC-BY-3.0",
+      "not_inherited_from_core_license": true
+    },
+    "lineage_convention": {
+      "optimal_sarcomere_length": {
+        "value": 2.7e-06,
+        "unit": "m",
+        "status": "model_assumed",
+        "source": {
+          "url": "https://nmbl.stanford.edu/publications/pdf/Holzbaur2005.pdf",
+          "locator": "Methods pp.831-833; Table 1 footnote a",
+          "source_value": 2.7,
+          "source_unit": "um",
+          "conversion_to_m": 1e-06
+        },
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "Published lineage normalization; XML has no sarcomere-length field; not an independently measured optimum"
+      },
+      "Murray2000_comparison_convention": {
+        "value": 2.8e-06,
+        "unit": "m",
+        "status": "model_assumed",
+        "source": {
+          "url": "https://nmbl.stanford.edu/publications/pdf/Murray2000.pdf",
+          "locator": "Methods equation 1",
+          "source_value": 2.8,
+          "source_unit": "um",
+          "conversion_to_m": 1e-06
+        },
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "Separate population architecture normalization; no conversion applied to Arm26 bytes/values"
+      },
+      "field_level_lineage_limit": "Embedded publication establishes family attribution, not a full parameter change history or atlas correspondence."
+    }
+  },
+  "OpenSim_context": {
+    "release_tag": "4.5.2",
+    "tag_object": "7fcf7c1009ca636a3e0a2d14745109d684072e2a",
+    "commit": "5bc7d3308eda742690f485ec060bfe725a349fa6",
+    "tree": "19ea9bb15e9c43a3f7506966ea6ac0ca14002df1",
+    "pin_evidence": {
+      "kenoma_commit": "0e89c60d03d3d6137e1ece686ecf942b83d05645",
+      "path": "education/data/millard-reference-v1/upstream/manifest.json",
+      "sha256": "0d9448dd2fc3e0dacf58722c80263708fe2df9addc83019ac24496134906573c",
+      "local_snapshot_path": "education/data/anatomical-arm-v1/review/arm26-reference-manifest/core-context-source-manifest.json"
+    },
+    "core_license": "Apache-2.0",
+    "bounded_source_access": [
+      {
+        "path": "OpenSim/Actuators/Thelen2003Muscle.h",
+        "url": "https://raw.githubusercontent.com/opensim-org/opensim-core/5bc7d3308eda742690f485ec060bfe725a349fa6/OpenSim/Actuators/Thelen2003Muscle.h",
+        "bytes": 16759,
+        "sha256": "1285a85fd1e2e31c1010427f8a03247f1ef024dd8e37e90c8d24c485ebae6219",
+        "http_status": 200
+      },
+      {
+        "path": "OpenSim/Actuators/RegisterTypes_osimActuators.cpp",
+        "url": "https://raw.githubusercontent.com/opensim-org/opensim-core/5bc7d3308eda742690f485ec060bfe725a349fa6/OpenSim/Actuators/RegisterTypes_osimActuators.cpp",
+        "bytes": 5724,
+        "sha256": "bab8288d88ee354404dcad857679050b79ef5cd294977591ab9079ece631ed34",
+        "http_status": 200
+      },
+      {
+        "path": "LICENSE.txt",
+        "url": "https://raw.githubusercontent.com/opensim-org/opensim-core/5bc7d3308eda742690f485ec060bfe725a349fa6/LICENSE.txt",
+        "bytes": 11358,
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "http_status": 200
+      }
+    ],
+    "type_compatibility": "Thelen2003Muscle concrete class exists in pinned header and registration source (line 57). Source-level type compatibility only; no runtime load qualification.",
+    "actuator_translation": "None. No replacement of Thelen2003Muscle with Millard2012EquilibriumMuscle; scalar/path reuse would require a separate reviewed adapter."
+  },
+  "quantity_contract": {
+    "statuses": [
+      "measured",
+      "derived",
+      "model_assumed",
+      "derived_not_evaluated",
+      "unknown"
+    ],
+    "unknown_encoding": "value=null, status=unknown; not numeric zero",
+    "uncertainty_encoding": "not_reported with null, not zero SD; file precision is not biological uncertainty",
+    "base_units": {
+      "length": "m",
+      "area": "m^2",
+      "angle": "rad",
+      "stress": "Pa",
+      "dimensionless": "1",
+      "moment_arm": "m for derivative with respect to rad"
+    },
+    "frames": "Each source path/wrap point remains in its named model body frame. No identification with atlas axes."
+  },
+  "atlas_datum": {
+    "path": "education/data/anatomical-arm-v1/generated/arm-reference.json",
+    "sha256": "1b80c1d3d9f2eb4370cd298f58f5e9c582625574f27072f6d3a1ea898ce4c036",
+    "source_sha256": "c3ca97df0d41302de5c3e553cb9974c4c0bd68a30866c26a18e1ba41ceab4257",
+    "status": "derived",
+    "frame_axes": "meters; +X anatomical left, +Y posterior, +Z superior; authored atlas joint frame distinct from OpenSim body frames",
+    "bind_angle": {
+      "value": 0.2841100888248933,
+      "unit": "rad",
+      "status": "derived",
+      "source": {
+        "asset": "atlas",
+        "json_pointer": "/frame/atlas_bind_angle_rad"
+      },
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "rad"
+      },
+      "meaning": "Authored atlas bind angle; no material-state meaning"
+    },
+    "material_unloading_state": {
+      "value": null,
+      "unit": "1",
+      "status": "unknown",
+      "source": null,
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "1"
+      },
+      "meaning": "Atlas acquisition/passive stress-free state is unidentified"
+    },
+    "model_registration": {
+      "value": null,
+      "unit": "1",
+      "status": "unknown",
+      "source": null,
+      "uncertainty": {
+        "kind": "not_reported",
+        "value": null,
+        "unit": "1"
+      },
+      "meaning": "No model-to-atlas transform, scale or correspondence beyond named heads"
+    }
+  },
+  "poses": {
+    "source_default": {
+      "status": "model_assumed",
+      "coordinates": [
+        {
+          "name": "r_shoulder_elev",
+          "angle": {
+            "value": 0.0,
+            "unit": "rad",
+            "status": "model_assumed",
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_shoulder']/coordinates/Coordinate[@name='r_shoulder_elev']/default_value"
+            },
+            "uncertainty": {
+              "kind": "not_reported",
+              "value": null,
+              "unit": "rad"
+            },
+            "meaning": "Source default coordinate; no material-state interpretation"
+          }
+        },
+        {
+          "name": "r_elbow_flex",
+          "angle": {
+            "value": 0.0,
+            "unit": "rad",
+            "status": "model_assumed",
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_elbow']/coordinates/Coordinate[@name='r_elbow_flex']/default_value"
+            },
+            "uncertainty": {
+              "kind": "not_reported",
+              "value": null,
+              "unit": "rad"
+            },
+            "meaning": "Source default coordinate; no material-state interpretation"
+          }
+        }
+      ],
+      "meaning": "Source coordinate defaults, not passive stress-free or active-optimal reference"
+    },
+    "educational_comparison": {
+      "status": "model_assumed",
+      "coordinates": [
+        {
+          "name": "r_shoulder_elev",
+          "angle": {
+            "value": 0.0,
+            "unit": "rad",
+            "status": "model_assumed",
+            "source": {
+              "proposal": "comparison pose v1"
+            },
+            "uncertainty": {
+              "kind": "not_reported",
+              "value": null,
+              "unit": "rad"
+            },
+            "meaning": "Chosen source-coordinate shoulder elevation"
+          }
+        },
+        {
+          "name": "r_elbow_flex",
+          "angle": {
+            "value": 1.5707963267948966,
+            "unit": "rad",
+            "status": "model_assumed",
+            "source": {
+              "proposal": "comparison pose v1"
+            },
+            "uncertainty": {
+              "kind": "not_reported",
+              "value": null,
+              "unit": "rad"
+            },
+            "meaning": "Chosen 90 degree elbow flexion"
+          }
+        }
+      ],
+      "meaning": "Declared hypothetical comparison pose only; no state equilibration or geometry evaluation",
+      "forearm_rotation": {
+        "value": null,
+        "unit": "rad",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "rad"
+        },
+        "meaning": "Not an independent Arm26 coordinate; preserve welded source arrangement rather than relabeling neutral pronation/supination"
+      },
+      "shoulder_other_degrees_of_freedom": {
+        "value": null,
+        "unit": "rad",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "rad"
+        },
+        "meaning": "Only elevation is variable; other source joint transform rotations fixed by XML"
+      },
+      "activation_or_internal_state": {
+        "value": null,
+        "unit": "1",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "1"
+        },
+        "meaning": "No muscle state or passive/active equilibrium selected"
+      }
+    }
+  },
+  "source_kinematics": {
+    "body_frames": [
+      "/bodyset/base",
+      "/bodyset/r_humerus",
+      "/bodyset/r_ulna_radius_hand"
+    ],
+    "coordinates": [
+      {
+        "name": "r_shoulder_elev",
+        "joint": "r_shoulder",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_shoulder']/coordinates/Coordinate[@name='r_shoulder_elev']"
+        },
+        "default_value": {
+          "value": 0.0,
+          "unit": "rad",
+          "status": "model_assumed",
+          "source": {
+            "asset": "arm26",
+            "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_shoulder']/coordinates/Coordinate[@name='r_shoulder_elev']/default_value"
+          },
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "rad"
+          },
+          "meaning": "Source default coordinate; no material-state interpretation"
+        },
+        "range": {
+          "value": [
+            -1.57079633,
+            3.14159265
+          ],
+          "unit": "rad",
+          "status": "model_assumed",
+          "source": {
+            "asset": "arm26",
+            "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_shoulder']/coordinates/Coordinate[@name='r_shoulder_elev']/range"
+          },
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "rad"
+          },
+          "meaning": "Declared source coordinate range, not observed population range"
+        },
+        "locked": false,
+        "clamped": false
+      },
+      {
+        "name": "r_elbow_flex",
+        "joint": "r_elbow",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_elbow']/coordinates/Coordinate[@name='r_elbow_flex']"
+        },
+        "default_value": {
+          "value": 0.0,
+          "unit": "rad",
+          "status": "model_assumed",
+          "source": {
+            "asset": "arm26",
+            "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_elbow']/coordinates/Coordinate[@name='r_elbow_flex']/default_value"
+          },
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "rad"
+          },
+          "meaning": "Source default coordinate; no material-state interpretation"
+        },
+        "range": {
+          "value": [
+            0.0,
+            2.26892803
+          ],
+          "unit": "rad",
+          "status": "model_assumed",
+          "source": {
+            "asset": "arm26",
+            "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_elbow']/coordinates/Coordinate[@name='r_elbow_flex']/range"
+          },
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "rad"
+          },
+          "meaning": "Declared source coordinate range, not observed population range"
+        },
+        "locked": false,
+        "clamped": false
+      }
+    ],
+    "joints": [
+      {
+        "name": "offset",
+        "type": "WeldJoint",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/JointSet/objects/WeldJoint[@name='offset']"
+        },
+        "parent_frame_socket": "ground_offset",
+        "child_frame_socket": "base_offset",
+        "offset_frames": [
+          {
+            "name": "ground_offset",
+            "parent_frame": "/ground",
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/JointSet/objects/WeldJoint[@name='offset']/frames/PhysicalOffsetFrame[@name='ground_offset']"
+            },
+            "translation": {
+              "value": [
+                0.0,
+                0.8,
+                0.0
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/JointSet/objects/WeldJoint[@name='offset']/frames/PhysicalOffsetFrame[@name='ground_offset']/translation"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Offset expressed in source parent frame, not atlas/world coordinates"
+            },
+            "orientation": {
+              "value": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "unit": "rad",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/JointSet/objects/WeldJoint[@name='offset']/frames/PhysicalOffsetFrame[@name='ground_offset']/orientation"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "rad"
+              },
+              "meaning": "Source PhysicalOffsetFrame orientation; no atlas registration applied"
+            }
+          },
+          {
+            "name": "base_offset",
+            "parent_frame": "/bodyset/base",
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/JointSet/objects/WeldJoint[@name='offset']/frames/PhysicalOffsetFrame[@name='base_offset']"
+            },
+            "translation": {
+              "value": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/JointSet/objects/WeldJoint[@name='offset']/frames/PhysicalOffsetFrame[@name='base_offset']/translation"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Offset expressed in source parent frame, not atlas/world coordinates"
+            },
+            "orientation": {
+              "value": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "unit": "rad",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/JointSet/objects/WeldJoint[@name='offset']/frames/PhysicalOffsetFrame[@name='base_offset']/orientation"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "rad"
+              },
+              "meaning": "Source PhysicalOffsetFrame orientation; no atlas registration applied"
+            }
+          }
+        ],
+        "transform_axes": [],
+        "coordinate_names": []
+      },
+      {
+        "name": "r_shoulder",
+        "type": "CustomJoint",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_shoulder']"
+        },
+        "parent_frame_socket": "base_offset",
+        "child_frame_socket": "r_humerus_offset",
+        "offset_frames": [
+          {
+            "name": "base_offset",
+            "parent_frame": "/bodyset/base",
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_shoulder']/frames/PhysicalOffsetFrame[@name='base_offset']"
+            },
+            "translation": {
+              "value": [
+                -0.017545,
+                -0.007,
+                0.17
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_shoulder']/frames/PhysicalOffsetFrame[@name='base_offset']/translation"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Offset expressed in source parent frame, not atlas/world coordinates"
+            },
+            "orientation": {
+              "value": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "unit": "rad",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_shoulder']/frames/PhysicalOffsetFrame[@name='base_offset']/orientation"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "rad"
+              },
+              "meaning": "Source PhysicalOffsetFrame orientation; no atlas registration applied"
+            }
+          },
+          {
+            "name": "r_humerus_offset",
+            "parent_frame": "/bodyset/r_humerus",
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_shoulder']/frames/PhysicalOffsetFrame[@name='r_humerus_offset']"
+            },
+            "translation": {
+              "value": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_shoulder']/frames/PhysicalOffsetFrame[@name='r_humerus_offset']/translation"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Offset expressed in source parent frame, not atlas/world coordinates"
+            },
+            "orientation": {
+              "value": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "unit": "rad",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_shoulder']/frames/PhysicalOffsetFrame[@name='r_humerus_offset']/orientation"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "rad"
+              },
+              "meaning": "Source PhysicalOffsetFrame orientation; no atlas registration applied"
+            }
+          }
+        ],
+        "transform_axes": [
+          {
+            "name": "rotation1",
+            "coordinates": [
+              "r_shoulder_elev"
+            ],
+            "axis": {
+              "value": [
+                -0.05889802,
+                0.0023,
+                0.99826136
+              ],
+              "unit": "1",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_shoulder']/SpatialTransform/TransformAxis[@name='rotation1']/axis"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "1"
+              },
+              "meaning": "Source transform direction"
+            },
+            "function_type": "LinearFunction",
+            "function_parameters": {
+              "output_unit": "rad",
+              "gain": {
+                "value": 1.0,
+                "unit": "1",
+                "status": "model_assumed",
+                "source": {
+                  "asset": "arm26",
+                  "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_shoulder']/SpatialTransform/TransformAxis[@name='rotation1']/LinearFunction[@name='function']/coefficients",
+                  "component_index": 0
+                },
+                "uncertainty": {
+                  "kind": "not_reported",
+                  "value": null,
+                  "unit": "1"
+                },
+                "meaning": "Native source linear gain"
+              },
+              "offset": {
+                "value": 0.0,
+                "unit": "rad",
+                "status": "model_assumed",
+                "source": {
+                  "asset": "arm26",
+                  "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_shoulder']/SpatialTransform/TransformAxis[@name='rotation1']/LinearFunction[@name='function']/coefficients",
+                  "component_index": 1
+                },
+                "uncertainty": {
+                  "kind": "not_reported",
+                  "value": null,
+                  "unit": "rad"
+                },
+                "meaning": "Native source linear offset"
+              }
+            }
+          },
+          {
+            "name": "rotation2",
+            "coordinates": [],
+            "axis": {
+              "value": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "unit": "1",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_shoulder']/SpatialTransform/TransformAxis[@name='rotation2']/axis"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "1"
+              },
+              "meaning": "Source transform direction"
+            },
+            "function_type": "Constant",
+            "function_parameters": {
+              "output_unit": "rad",
+              "constant": {
+                "value": 0.0,
+                "unit": "rad",
+                "status": "model_assumed",
+                "source": {
+                  "asset": "arm26",
+                  "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_shoulder']/SpatialTransform/TransformAxis[@name='rotation2']/Constant[@name='function']/value"
+                },
+                "uncertainty": {
+                  "kind": "not_reported",
+                  "value": null,
+                  "unit": "rad"
+                },
+                "meaning": "Native coefficients; current translational functions are constants zero"
+              }
+            }
+          },
+          {
+            "name": "rotation3",
+            "coordinates": [],
+            "axis": {
+              "value": [
+                0.99826136,
+                -0.0,
+                0.05889802
+              ],
+              "unit": "1",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_shoulder']/SpatialTransform/TransformAxis[@name='rotation3']/axis"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "1"
+              },
+              "meaning": "Source transform direction"
+            },
+            "function_type": "Constant",
+            "function_parameters": {
+              "output_unit": "rad",
+              "constant": {
+                "value": 0.0,
+                "unit": "rad",
+                "status": "model_assumed",
+                "source": {
+                  "asset": "arm26",
+                  "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_shoulder']/SpatialTransform/TransformAxis[@name='rotation3']/Constant[@name='function']/value"
+                },
+                "uncertainty": {
+                  "kind": "not_reported",
+                  "value": null,
+                  "unit": "rad"
+                },
+                "meaning": "Native coefficients; current translational functions are constants zero"
+              }
+            }
+          },
+          {
+            "name": "translation1",
+            "coordinates": [],
+            "axis": {
+              "value": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "unit": "1",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_shoulder']/SpatialTransform/TransformAxis[@name='translation1']/axis"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "1"
+              },
+              "meaning": "Source transform direction"
+            },
+            "function_type": "Constant",
+            "function_parameters": {
+              "output_unit": "m",
+              "constant": {
+                "value": 0.0,
+                "unit": "m",
+                "status": "model_assumed",
+                "source": {
+                  "asset": "arm26",
+                  "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_shoulder']/SpatialTransform/TransformAxis[@name='translation1']/Constant[@name='function']/value"
+                },
+                "uncertainty": {
+                  "kind": "not_reported",
+                  "value": null,
+                  "unit": "m"
+                },
+                "meaning": "Native coefficients; current translational functions are constants zero"
+              }
+            }
+          },
+          {
+            "name": "translation2",
+            "coordinates": [],
+            "axis": {
+              "value": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "unit": "1",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_shoulder']/SpatialTransform/TransformAxis[@name='translation2']/axis"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "1"
+              },
+              "meaning": "Source transform direction"
+            },
+            "function_type": "Constant",
+            "function_parameters": {
+              "output_unit": "m",
+              "constant": {
+                "value": 0.0,
+                "unit": "m",
+                "status": "model_assumed",
+                "source": {
+                  "asset": "arm26",
+                  "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_shoulder']/SpatialTransform/TransformAxis[@name='translation2']/Constant[@name='function']/value"
+                },
+                "uncertainty": {
+                  "kind": "not_reported",
+                  "value": null,
+                  "unit": "m"
+                },
+                "meaning": "Native coefficients; current translational functions are constants zero"
+              }
+            }
+          },
+          {
+            "name": "translation3",
+            "coordinates": [],
+            "axis": {
+              "value": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "unit": "1",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_shoulder']/SpatialTransform/TransformAxis[@name='translation3']/axis"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "1"
+              },
+              "meaning": "Source transform direction"
+            },
+            "function_type": "Constant",
+            "function_parameters": {
+              "output_unit": "m",
+              "constant": {
+                "value": 0.0,
+                "unit": "m",
+                "status": "model_assumed",
+                "source": {
+                  "asset": "arm26",
+                  "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_shoulder']/SpatialTransform/TransformAxis[@name='translation3']/Constant[@name='function']/value"
+                },
+                "uncertainty": {
+                  "kind": "not_reported",
+                  "value": null,
+                  "unit": "m"
+                },
+                "meaning": "Native coefficients; current translational functions are constants zero"
+              }
+            }
+          }
+        ],
+        "coordinate_names": [
+          "r_shoulder_elev"
+        ]
+      },
+      {
+        "name": "r_elbow",
+        "type": "CustomJoint",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_elbow']"
+        },
+        "parent_frame_socket": "r_humerus_offset",
+        "child_frame_socket": "r_ulna_radius_hand_offset",
+        "offset_frames": [
+          {
+            "name": "r_humerus_offset",
+            "parent_frame": "/bodyset/r_humerus",
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_elbow']/frames/PhysicalOffsetFrame[@name='r_humerus_offset']"
+            },
+            "translation": {
+              "value": [
+                0.0061,
+                -0.2904,
+                -0.0123
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_elbow']/frames/PhysicalOffsetFrame[@name='r_humerus_offset']/translation"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Offset expressed in source parent frame, not atlas/world coordinates"
+            },
+            "orientation": {
+              "value": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "unit": "rad",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_elbow']/frames/PhysicalOffsetFrame[@name='r_humerus_offset']/orientation"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "rad"
+              },
+              "meaning": "Source PhysicalOffsetFrame orientation; no atlas registration applied"
+            }
+          },
+          {
+            "name": "r_ulna_radius_hand_offset",
+            "parent_frame": "/bodyset/r_ulna_radius_hand",
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_elbow']/frames/PhysicalOffsetFrame[@name='r_ulna_radius_hand_offset']"
+            },
+            "translation": {
+              "value": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_elbow']/frames/PhysicalOffsetFrame[@name='r_ulna_radius_hand_offset']/translation"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Offset expressed in source parent frame, not atlas/world coordinates"
+            },
+            "orientation": {
+              "value": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "unit": "rad",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_elbow']/frames/PhysicalOffsetFrame[@name='r_ulna_radius_hand_offset']/orientation"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "rad"
+              },
+              "meaning": "Source PhysicalOffsetFrame orientation; no atlas registration applied"
+            }
+          }
+        ],
+        "transform_axes": [
+          {
+            "name": "rotation1",
+            "coordinates": [
+              "r_elbow_flex"
+            ],
+            "axis": {
+              "value": [
+                0.04940001,
+                0.03660001,
+                0.99810825
+              ],
+              "unit": "1",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_elbow']/SpatialTransform/TransformAxis[@name='rotation1']/axis"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "1"
+              },
+              "meaning": "Source transform direction"
+            },
+            "function_type": "LinearFunction",
+            "function_parameters": {
+              "output_unit": "rad",
+              "gain": {
+                "value": 1.0,
+                "unit": "1",
+                "status": "model_assumed",
+                "source": {
+                  "asset": "arm26",
+                  "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_elbow']/SpatialTransform/TransformAxis[@name='rotation1']/LinearFunction[@name='function']/coefficients",
+                  "component_index": 0
+                },
+                "uncertainty": {
+                  "kind": "not_reported",
+                  "value": null,
+                  "unit": "1"
+                },
+                "meaning": "Native source linear gain"
+              },
+              "offset": {
+                "value": 0.0,
+                "unit": "rad",
+                "status": "model_assumed",
+                "source": {
+                  "asset": "arm26",
+                  "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_elbow']/SpatialTransform/TransformAxis[@name='rotation1']/LinearFunction[@name='function']/coefficients",
+                  "component_index": 1
+                },
+                "uncertainty": {
+                  "kind": "not_reported",
+                  "value": null,
+                  "unit": "rad"
+                },
+                "meaning": "Native source linear offset"
+              }
+            }
+          },
+          {
+            "name": "rotation2",
+            "coordinates": [],
+            "axis": {
+              "value": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "unit": "1",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_elbow']/SpatialTransform/TransformAxis[@name='rotation2']/axis"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "1"
+              },
+              "meaning": "Source transform direction"
+            },
+            "function_type": "Constant",
+            "function_parameters": {
+              "output_unit": "rad",
+              "constant": {
+                "value": 0.0,
+                "unit": "rad",
+                "status": "model_assumed",
+                "source": {
+                  "asset": "arm26",
+                  "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_elbow']/SpatialTransform/TransformAxis[@name='rotation2']/Constant[@name='function']/value"
+                },
+                "uncertainty": {
+                  "kind": "not_reported",
+                  "value": null,
+                  "unit": "rad"
+                },
+                "meaning": "Native coefficients; current translational functions are constants zero"
+              }
+            }
+          },
+          {
+            "name": "rotation3",
+            "coordinates": [],
+            "axis": {
+              "value": [
+                0.99810825,
+                0.0,
+                -0.04940001
+              ],
+              "unit": "1",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_elbow']/SpatialTransform/TransformAxis[@name='rotation3']/axis"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "1"
+              },
+              "meaning": "Source transform direction"
+            },
+            "function_type": "Constant",
+            "function_parameters": {
+              "output_unit": "rad",
+              "constant": {
+                "value": 0.0,
+                "unit": "rad",
+                "status": "model_assumed",
+                "source": {
+                  "asset": "arm26",
+                  "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_elbow']/SpatialTransform/TransformAxis[@name='rotation3']/Constant[@name='function']/value"
+                },
+                "uncertainty": {
+                  "kind": "not_reported",
+                  "value": null,
+                  "unit": "rad"
+                },
+                "meaning": "Native coefficients; current translational functions are constants zero"
+              }
+            }
+          },
+          {
+            "name": "translation1",
+            "coordinates": [],
+            "axis": {
+              "value": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "unit": "1",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_elbow']/SpatialTransform/TransformAxis[@name='translation1']/axis"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "1"
+              },
+              "meaning": "Source transform direction"
+            },
+            "function_type": "Constant",
+            "function_parameters": {
+              "output_unit": "m",
+              "constant": {
+                "value": 0.0,
+                "unit": "m",
+                "status": "model_assumed",
+                "source": {
+                  "asset": "arm26",
+                  "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_elbow']/SpatialTransform/TransformAxis[@name='translation1']/Constant[@name='function']/value"
+                },
+                "uncertainty": {
+                  "kind": "not_reported",
+                  "value": null,
+                  "unit": "m"
+                },
+                "meaning": "Native coefficients; current translational functions are constants zero"
+              }
+            }
+          },
+          {
+            "name": "translation2",
+            "coordinates": [],
+            "axis": {
+              "value": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "unit": "1",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_elbow']/SpatialTransform/TransformAxis[@name='translation2']/axis"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "1"
+              },
+              "meaning": "Source transform direction"
+            },
+            "function_type": "Constant",
+            "function_parameters": {
+              "output_unit": "m",
+              "constant": {
+                "value": 0.0,
+                "unit": "m",
+                "status": "model_assumed",
+                "source": {
+                  "asset": "arm26",
+                  "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_elbow']/SpatialTransform/TransformAxis[@name='translation2']/Constant[@name='function']/value"
+                },
+                "uncertainty": {
+                  "kind": "not_reported",
+                  "value": null,
+                  "unit": "m"
+                },
+                "meaning": "Native coefficients; current translational functions are constants zero"
+              }
+            }
+          },
+          {
+            "name": "translation3",
+            "coordinates": [],
+            "axis": {
+              "value": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "unit": "1",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_elbow']/SpatialTransform/TransformAxis[@name='translation3']/axis"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "1"
+              },
+              "meaning": "Source transform direction"
+            },
+            "function_type": "Constant",
+            "function_parameters": {
+              "output_unit": "m",
+              "constant": {
+                "value": 0.0,
+                "unit": "m",
+                "status": "model_assumed",
+                "source": {
+                  "asset": "arm26",
+                  "xpath": "/OpenSimDocument/Model/JointSet/objects/CustomJoint[@name='r_elbow']/SpatialTransform/TransformAxis[@name='translation3']/Constant[@name='function']/value"
+                },
+                "uncertainty": {
+                  "kind": "not_reported",
+                  "value": null,
+                  "unit": "m"
+                },
+                "meaning": "Native coefficients; current translational functions are constants zero"
+              }
+            }
+          }
+        ],
+        "coordinate_names": [
+          "r_elbow_flex"
+        ]
+      }
+    ],
+    "wrap_objects": [
+      {
+        "name": "TRIlongglen",
+        "type": "WrapCylinder",
+        "body_frame": "/bodyset/base",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/BodySet/objects/Body[@name='base']/WrapObjectSet/objects/WrapCylinder[@name='TRIlongglen']"
+        },
+        "active_source_property": true,
+        "quadrant": "x",
+        "properties": {
+          "xyz_body_rotation": {
+            "value": [
+              1.37532,
+              -0.294612,
+              2.43596
+            ],
+            "unit": "rad",
+            "status": "model_assumed",
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/BodySet/objects/Body[@name='base']/WrapObjectSet/objects/WrapCylinder[@name='TRIlongglen']/xyz_body_rotation"
+            },
+            "uncertainty": {
+              "kind": "not_reported",
+              "value": null,
+              "unit": "rad"
+            },
+            "meaning": "Source body-local wrap geometry, not a measured tissue surface"
+          },
+          "translation": {
+            "value": [
+              -0.043905,
+              -0.0039,
+              0.1478
+            ],
+            "unit": "m",
+            "status": "model_assumed",
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/BodySet/objects/Body[@name='base']/WrapObjectSet/objects/WrapCylinder[@name='TRIlongglen']/translation"
+            },
+            "uncertainty": {
+              "kind": "not_reported",
+              "value": null,
+              "unit": "m"
+            },
+            "meaning": "Source body-local wrap geometry, not a measured tissue surface"
+          },
+          "radius": {
+            "value": 0.003,
+            "unit": "m",
+            "status": "model_assumed",
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/BodySet/objects/Body[@name='base']/WrapObjectSet/objects/WrapCylinder[@name='TRIlongglen']/radius"
+            },
+            "uncertainty": {
+              "kind": "not_reported",
+              "value": null,
+              "unit": "m"
+            },
+            "meaning": "Source body-local wrap geometry, not a measured tissue surface"
+          },
+          "length": {
+            "value": 0.03,
+            "unit": "m",
+            "status": "model_assumed",
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/BodySet/objects/Body[@name='base']/WrapObjectSet/objects/WrapCylinder[@name='TRIlongglen']/length"
+            },
+            "uncertainty": {
+              "kind": "not_reported",
+              "value": null,
+              "unit": "m"
+            },
+            "meaning": "Source body-local wrap geometry, not a measured tissue surface"
+          }
+        }
+      },
+      {
+        "name": "TRIlonghh",
+        "type": "WrapEllipsoid",
+        "body_frame": "/bodyset/r_humerus",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/BodySet/objects/Body[@name='r_humerus']/WrapObjectSet/objects/WrapEllipsoid[@name='TRIlonghh']"
+        },
+        "active_source_property": true,
+        "quadrant": "z",
+        "properties": {
+          "xyz_body_rotation": {
+            "value": [
+              3.00162,
+              -0.853466,
+              2.57419
+            ],
+            "unit": "rad",
+            "status": "model_assumed",
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/BodySet/objects/Body[@name='r_humerus']/WrapObjectSet/objects/WrapEllipsoid[@name='TRIlonghh']/xyz_body_rotation"
+            },
+            "uncertainty": {
+              "kind": "not_reported",
+              "value": null,
+              "unit": "rad"
+            },
+            "meaning": "Source body-local wrap geometry, not a measured tissue surface"
+          },
+          "translation": {
+            "value": [
+              -0.0078,
+              -0.0041,
+              -0.0014
+            ],
+            "unit": "m",
+            "status": "model_assumed",
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/BodySet/objects/Body[@name='r_humerus']/WrapObjectSet/objects/WrapEllipsoid[@name='TRIlonghh']/translation"
+            },
+            "uncertainty": {
+              "kind": "not_reported",
+              "value": null,
+              "unit": "m"
+            },
+            "meaning": "Source body-local wrap geometry, not a measured tissue surface"
+          },
+          "dimensions": {
+            "value": [
+              0.035,
+              0.02,
+              0.02
+            ],
+            "unit": "m",
+            "status": "model_assumed",
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/BodySet/objects/Body[@name='r_humerus']/WrapObjectSet/objects/WrapEllipsoid[@name='TRIlonghh']/dimensions"
+            },
+            "uncertainty": {
+              "kind": "not_reported",
+              "value": null,
+              "unit": "m"
+            },
+            "meaning": "Source body-local wrap geometry, not a measured tissue surface"
+          }
+        }
+      },
+      {
+        "name": "BIClonghh",
+        "type": "WrapEllipsoid",
+        "body_frame": "/bodyset/r_humerus",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/BodySet/objects/Body[@name='r_humerus']/WrapObjectSet/objects/WrapEllipsoid[@name='BIClonghh']"
+        },
+        "active_source_property": true,
+        "quadrant": "-y",
+        "properties": {
+          "xyz_body_rotation": {
+            "value": [
+              -2.00434,
+              -1.00164,
+              0.975465
+            ],
+            "unit": "rad",
+            "status": "model_assumed",
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/BodySet/objects/Body[@name='r_humerus']/WrapObjectSet/objects/WrapEllipsoid[@name='BIClonghh']/xyz_body_rotation"
+            },
+            "uncertainty": {
+              "kind": "not_reported",
+              "value": null,
+              "unit": "rad"
+            },
+            "meaning": "Source body-local wrap geometry, not a measured tissue surface"
+          },
+          "translation": {
+            "value": [
+              0.0033,
+              0.0073,
+              0.0003
+            ],
+            "unit": "m",
+            "status": "model_assumed",
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/BodySet/objects/Body[@name='r_humerus']/WrapObjectSet/objects/WrapEllipsoid[@name='BIClonghh']/translation"
+            },
+            "uncertainty": {
+              "kind": "not_reported",
+              "value": null,
+              "unit": "m"
+            },
+            "meaning": "Source body-local wrap geometry, not a measured tissue surface"
+          },
+          "dimensions": {
+            "value": [
+              0.025,
+              0.02,
+              0.02
+            ],
+            "unit": "m",
+            "status": "model_assumed",
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/BodySet/objects/Body[@name='r_humerus']/WrapObjectSet/objects/WrapEllipsoid[@name='BIClonghh']/dimensions"
+            },
+            "uncertainty": {
+              "kind": "not_reported",
+              "value": null,
+              "unit": "m"
+            },
+            "meaning": "Source body-local wrap geometry, not a measured tissue surface"
+          }
+        }
+      },
+      {
+        "name": "TRI",
+        "type": "WrapCylinder",
+        "body_frame": "/bodyset/r_humerus",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/BodySet/objects/Body[@name='r_humerus']/WrapObjectSet/objects/WrapCylinder[@name='TRI']"
+        },
+        "active_source_property": true,
+        "quadrant": "all",
+        "properties": {
+          "xyz_body_rotation": {
+            "value": [
+              -0.14015,
+              -0.00628319,
+              0.154985
+            ],
+            "unit": "rad",
+            "status": "model_assumed",
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/BodySet/objects/Body[@name='r_humerus']/WrapObjectSet/objects/WrapCylinder[@name='TRI']/xyz_body_rotation"
+            },
+            "uncertainty": {
+              "kind": "not_reported",
+              "value": null,
+              "unit": "rad"
+            },
+            "meaning": "Source body-local wrap geometry, not a measured tissue surface"
+          },
+          "translation": {
+            "value": [
+              0.0028,
+              -0.2919,
+              -0.0069
+            ],
+            "unit": "m",
+            "status": "model_assumed",
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/BodySet/objects/Body[@name='r_humerus']/WrapObjectSet/objects/WrapCylinder[@name='TRI']/translation"
+            },
+            "uncertainty": {
+              "kind": "not_reported",
+              "value": null,
+              "unit": "m"
+            },
+            "meaning": "Source body-local wrap geometry, not a measured tissue surface"
+          },
+          "radius": {
+            "value": 0.016,
+            "unit": "m",
+            "status": "model_assumed",
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/BodySet/objects/Body[@name='r_humerus']/WrapObjectSet/objects/WrapCylinder[@name='TRI']/radius"
+            },
+            "uncertainty": {
+              "kind": "not_reported",
+              "value": null,
+              "unit": "m"
+            },
+            "meaning": "Source body-local wrap geometry, not a measured tissue surface"
+          },
+          "length": {
+            "value": 0.05,
+            "unit": "m",
+            "status": "model_assumed",
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/BodySet/objects/Body[@name='r_humerus']/WrapObjectSet/objects/WrapCylinder[@name='TRI']/length"
+            },
+            "uncertainty": {
+              "kind": "not_reported",
+              "value": null,
+              "unit": "m"
+            },
+            "meaning": "Source body-local wrap geometry, not a measured tissue surface"
+          }
+        }
+      }
+    ]
+  },
+  "heads": [
+    {
+      "id": "biceps_brachii_long",
+      "side": "right",
+      "model_name": "BIClong",
+      "atlas_entity_id_name_correspondence": "FJ1478",
+      "atlas_correspondence_status": "name/ontology correspondence only; no spatial registration or geometry transfer",
+      "actuator_class": "Thelen2003Muscle",
+      "source": {
+        "asset": "arm26",
+        "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']"
+      },
+      "optimal_fiber_length": {
+        "value": 0.1157,
+        "unit": "m",
+        "status": "model_assumed",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/optimal_fiber_length"
+        },
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "Actuator optimum; 2.7 um lineage convention, not atlas Lf,ref"
+      },
+      "pennation_at_optimum": {
+        "value": 0.0,
+        "unit": "rad",
+        "status": "model_assumed",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/pennation_angle_at_optimal"
+        },
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "rad"
+        },
+        "meaning": "Scalar model pennation at optimum; not spatial/reference-pose pennation"
+      },
+      "fascicle_reference_length": {
+        "value": null,
+        "unit": "m",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "No measured contractile fascicle arc at atlas or proposed comparison pose"
+      },
+      "reference_sarcomere_length": {
+        "value": null,
+        "unit": "m",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "No atlas/head-specific paired sarcomere observation"
+      },
+      "reference_pennation": {
+        "value": null,
+        "unit": "rad",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "rad"
+        },
+        "meaning": "Source optimal pennation does not specify reference-pose pennation"
+      },
+      "active_optimal_reference_stretch": {
+        "value": null,
+        "unit": "1",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "1"
+        },
+        "meaning": "Cannot form Lopt/Lf,ref without an identified contractile reference arc"
+      },
+      "passive_reference": {
+        "natural_fascicle_length": {
+          "value": null,
+          "unit": "m",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m"
+          },
+          "meaning": "No biological passive natural length identified"
+        },
+        "natural_metric": {
+          "value": null,
+          "unit": "1",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "1"
+          },
+          "meaning": "No local passive material metric identified"
+        },
+        "reference_prestress": {
+          "value": null,
+          "unit": "Pa",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "Pa"
+          },
+          "meaning": "No atlas/reference passive prestress measured"
+        }
+      },
+      "tendon": {
+        "slack_length": {
+          "value": 0.2723,
+          "unit": "m",
+          "status": "model_assumed",
+          "source": {
+            "asset": "arm26",
+            "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/tendon_slack_length"
+          },
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m"
+          },
+          "meaning": "Selected lumped model slack; not measured unloaded free tendon/aponeurosis length"
+        },
+        "model_length_at_comparison_pose": {
+          "value": null,
+          "unit": "m",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m"
+          },
+          "meaning": "Requires a declared state/partition; not evaluated"
+        },
+        "reference_geometric_length": {
+          "value": null,
+          "unit": "m",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m"
+          },
+          "meaning": "No atlas-specific series partition or unloaded reference observation"
+        },
+        "reference_strain": {
+          "value": null,
+          "unit": "1",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "1"
+          },
+          "meaning": "No physiological tendon prestrain identified"
+        },
+        "unloaded_cross_section_area": {
+          "value": null,
+          "unit": "m^2",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m^2"
+          },
+          "meaning": "No unloaded tensile area; do not substitute footprint or PCSA"
+        }
+      },
+      "attachments_and_path": {
+        "status": "model_assumed",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/GeometryPath"
+        },
+        "points": [
+          {
+            "name": "BIClong-P1",
+            "type": "PathPoint",
+            "role": "model_origin",
+            "parent_frame": "/bodyset/base",
+            "location": {
+              "value": [
+                -0.039235,
+                0.00347,
+                0.14795
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/GeometryPath/PathPointSet/objects/PathPoint[@name='BIClong-P1']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/GeometryPath/PathPointSet/objects/PathPoint[@name='BIClong-P1']"
+            }
+          },
+          {
+            "name": "BIClong-P2",
+            "type": "PathPoint",
+            "role": "model_via_point",
+            "parent_frame": "/bodyset/base",
+            "location": {
+              "value": [
+                -0.028945,
+                0.01391,
+                0.15639
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/GeometryPath/PathPointSet/objects/PathPoint[@name='BIClong-P2']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/GeometryPath/PathPointSet/objects/PathPoint[@name='BIClong-P2']"
+            }
+          },
+          {
+            "name": "BIClong-P3",
+            "type": "PathPoint",
+            "role": "model_via_point",
+            "parent_frame": "/bodyset/r_humerus",
+            "location": {
+              "value": [
+                0.02131,
+                0.01793,
+                0.01028
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/GeometryPath/PathPointSet/objects/PathPoint[@name='BIClong-P3']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/GeometryPath/PathPointSet/objects/PathPoint[@name='BIClong-P3']"
+            }
+          },
+          {
+            "name": "BIClong-P4",
+            "type": "PathPoint",
+            "role": "model_via_point",
+            "parent_frame": "/bodyset/r_humerus",
+            "location": {
+              "value": [
+                0.02378,
+                -0.00511,
+                0.01201
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/GeometryPath/PathPointSet/objects/PathPoint[@name='BIClong-P4']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/GeometryPath/PathPointSet/objects/PathPoint[@name='BIClong-P4']"
+            }
+          },
+          {
+            "name": "BIClong-P5",
+            "type": "PathPoint",
+            "role": "model_via_point",
+            "parent_frame": "/bodyset/r_humerus",
+            "location": {
+              "value": [
+                0.01345,
+                -0.02827,
+                0.00136
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/GeometryPath/PathPointSet/objects/PathPoint[@name='BIClong-P5']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/GeometryPath/PathPointSet/objects/PathPoint[@name='BIClong-P5']"
+            }
+          },
+          {
+            "name": "BIClong-P6",
+            "type": "PathPoint",
+            "role": "model_via_point",
+            "parent_frame": "/bodyset/r_humerus",
+            "location": {
+              "value": [
+                0.01068,
+                -0.07736,
+                -0.00165
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/GeometryPath/PathPointSet/objects/PathPoint[@name='BIClong-P6']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/GeometryPath/PathPointSet/objects/PathPoint[@name='BIClong-P6']"
+            }
+          },
+          {
+            "name": "BIClong-P7",
+            "type": "PathPoint",
+            "role": "model_via_point",
+            "parent_frame": "/bodyset/r_humerus",
+            "location": {
+              "value": [
+                0.01703,
+                -0.12125,
+                0.00024
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/GeometryPath/PathPointSet/objects/PathPoint[@name='BIClong-P7']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/GeometryPath/PathPointSet/objects/PathPoint[@name='BIClong-P7']"
+            }
+          },
+          {
+            "name": "BIClong-P8",
+            "type": "PathPoint",
+            "role": "model_via_point",
+            "parent_frame": "/bodyset/r_humerus",
+            "location": {
+              "value": [
+                0.0228,
+                -0.1754,
+                -0.0063
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/GeometryPath/PathPointSet/objects/PathPoint[@name='BIClong-P8']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/GeometryPath/PathPointSet/objects/PathPoint[@name='BIClong-P8']"
+            }
+          },
+          {
+            "name": "BIClong-P9",
+            "type": "PathPoint",
+            "role": "model_insertion",
+            "parent_frame": "/bodyset/r_ulna_radius_hand",
+            "location": {
+              "value": [
+                0.00751,
+                -0.04839,
+                0.02179
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/GeometryPath/PathPointSet/objects/PathPoint[@name='BIClong-P9']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/GeometryPath/PathPointSet/objects/PathPoint[@name='BIClong-P9']"
+            }
+          }
+        ],
+        "wraps": [
+          {
+            "name": "pathwrap",
+            "wrap_object": "BIClonghh",
+            "method": "hybrid",
+            "range": {
+              "value": [
+                2.0,
+                3.0
+              ],
+              "unit": "1",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/GeometryPath/PathWrapSet/objects/PathWrap[@name='pathwrap']/range"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "1"
+              },
+              "meaning": "Native OpenSim path-point index restriction; -1 means source sentinel, not a negative length"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/GeometryPath/PathWrapSet/objects/PathWrap[@name='pathwrap']"
+            }
+          }
+        ],
+        "registration_to_atlas": {
+          "value": null,
+          "unit": "1",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "1"
+          },
+          "meaning": "No atlas-from-model transformation identified"
+        }
+      },
+      "moment_arms": {
+        "status": "derived_not_evaluated",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/GeometryPath"
+        },
+        "value": null,
+        "unit": "m",
+        "angle_derivative_unit": "rad",
+        "definition": "r_j = -d L_MT / d q_j, q_j in radians; tensile generalized torque T*r_j",
+        "coordinate_names": [
+          "r_shoulder_elev",
+          "r_elbow_flex"
+        ],
+        "pose_ref": "poses.educational_comparison",
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "GeometryPath-derived lever arms pending evaluation; no Murray average or straight-chord substitute imported"
+      },
+      "musculotendon_path_length_at_comparison_pose": {
+        "value": null,
+        "unit": "m",
+        "status": "derived_not_evaluated",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BIClong']/GeometryPath"
+        },
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "GeometryPath evaluation and wraps required; not evaluated"
+      }
+    },
+    {
+      "id": "biceps_brachii_short",
+      "side": "right",
+      "model_name": "BICshort",
+      "atlas_entity_id_name_correspondence": "FJ1512",
+      "atlas_correspondence_status": "name/ontology correspondence only; no spatial registration or geometry transfer",
+      "actuator_class": "Thelen2003Muscle",
+      "source": {
+        "asset": "arm26",
+        "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']"
+      },
+      "optimal_fiber_length": {
+        "value": 0.1321,
+        "unit": "m",
+        "status": "model_assumed",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/optimal_fiber_length"
+        },
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "Actuator optimum; 2.7 um lineage convention, not atlas Lf,ref"
+      },
+      "pennation_at_optimum": {
+        "value": 0.0,
+        "unit": "rad",
+        "status": "model_assumed",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/pennation_angle_at_optimal"
+        },
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "rad"
+        },
+        "meaning": "Scalar model pennation at optimum; not spatial/reference-pose pennation"
+      },
+      "fascicle_reference_length": {
+        "value": null,
+        "unit": "m",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "No measured contractile fascicle arc at atlas or proposed comparison pose"
+      },
+      "reference_sarcomere_length": {
+        "value": null,
+        "unit": "m",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "No atlas/head-specific paired sarcomere observation"
+      },
+      "reference_pennation": {
+        "value": null,
+        "unit": "rad",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "rad"
+        },
+        "meaning": "Source optimal pennation does not specify reference-pose pennation"
+      },
+      "active_optimal_reference_stretch": {
+        "value": null,
+        "unit": "1",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "1"
+        },
+        "meaning": "Cannot form Lopt/Lf,ref without an identified contractile reference arc"
+      },
+      "passive_reference": {
+        "natural_fascicle_length": {
+          "value": null,
+          "unit": "m",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m"
+          },
+          "meaning": "No biological passive natural length identified"
+        },
+        "natural_metric": {
+          "value": null,
+          "unit": "1",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "1"
+          },
+          "meaning": "No local passive material metric identified"
+        },
+        "reference_prestress": {
+          "value": null,
+          "unit": "Pa",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "Pa"
+          },
+          "meaning": "No atlas/reference passive prestress measured"
+        }
+      },
+      "tendon": {
+        "slack_length": {
+          "value": 0.1923,
+          "unit": "m",
+          "status": "model_assumed",
+          "source": {
+            "asset": "arm26",
+            "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/tendon_slack_length"
+          },
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m"
+          },
+          "meaning": "Selected lumped model slack; not measured unloaded free tendon/aponeurosis length"
+        },
+        "model_length_at_comparison_pose": {
+          "value": null,
+          "unit": "m",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m"
+          },
+          "meaning": "Requires a declared state/partition; not evaluated"
+        },
+        "reference_geometric_length": {
+          "value": null,
+          "unit": "m",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m"
+          },
+          "meaning": "No atlas-specific series partition or unloaded reference observation"
+        },
+        "reference_strain": {
+          "value": null,
+          "unit": "1",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "1"
+          },
+          "meaning": "No physiological tendon prestrain identified"
+        },
+        "unloaded_cross_section_area": {
+          "value": null,
+          "unit": "m^2",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m^2"
+          },
+          "meaning": "No unloaded tensile area; do not substitute footprint or PCSA"
+        }
+      },
+      "attachments_and_path": {
+        "status": "model_assumed",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/GeometryPath"
+        },
+        "points": [
+          {
+            "name": "BICshort-P1",
+            "type": "PathPoint",
+            "role": "model_origin",
+            "parent_frame": "/bodyset/base",
+            "location": {
+              "value": [
+                0.004675,
+                -0.01231,
+                0.13475
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/GeometryPath/PathPointSet/objects/PathPoint[@name='BICshort-P1']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/GeometryPath/PathPointSet/objects/PathPoint[@name='BICshort-P1']"
+            }
+          },
+          {
+            "name": "BICshort-P2",
+            "type": "PathPoint",
+            "role": "model_via_point",
+            "parent_frame": "/bodyset/base",
+            "location": {
+              "value": [
+                -0.007075,
+                -0.04004,
+                0.14507
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/GeometryPath/PathPointSet/objects/PathPoint[@name='BICshort-P2']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/GeometryPath/PathPointSet/objects/PathPoint[@name='BICshort-P2']"
+            }
+          },
+          {
+            "name": "BICshort-P3",
+            "type": "PathPoint",
+            "role": "model_via_point",
+            "parent_frame": "/bodyset/r_humerus",
+            "location": {
+              "value": [
+                0.01117,
+                -0.07576,
+                -0.01101
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/GeometryPath/PathPointSet/objects/PathPoint[@name='BICshort-P3']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/GeometryPath/PathPointSet/objects/PathPoint[@name='BICshort-P3']"
+            }
+          },
+          {
+            "name": "BICshort-P4",
+            "type": "PathPoint",
+            "role": "model_via_point",
+            "parent_frame": "/bodyset/r_humerus",
+            "location": {
+              "value": [
+                0.01703,
+                -0.12125,
+                -0.01079
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/GeometryPath/PathPointSet/objects/PathPoint[@name='BICshort-P4']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/GeometryPath/PathPointSet/objects/PathPoint[@name='BICshort-P4']"
+            }
+          },
+          {
+            "name": "BICshort-P5",
+            "type": "PathPoint",
+            "role": "model_via_point",
+            "parent_frame": "/bodyset/r_humerus",
+            "location": {
+              "value": [
+                0.0228,
+                -0.1754,
+                -0.0063
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/GeometryPath/PathPointSet/objects/PathPoint[@name='BICshort-P5']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/GeometryPath/PathPointSet/objects/PathPoint[@name='BICshort-P5']"
+            }
+          },
+          {
+            "name": "BICshort-P6",
+            "type": "PathPoint",
+            "role": "model_insertion",
+            "parent_frame": "/bodyset/r_ulna_radius_hand",
+            "location": {
+              "value": [
+                0.00751,
+                -0.04839,
+                0.02179
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/GeometryPath/PathPointSet/objects/PathPoint[@name='BICshort-P6']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/GeometryPath/PathPointSet/objects/PathPoint[@name='BICshort-P6']"
+            }
+          }
+        ],
+        "wraps": [],
+        "registration_to_atlas": {
+          "value": null,
+          "unit": "1",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "1"
+          },
+          "meaning": "No atlas-from-model transformation identified"
+        }
+      },
+      "moment_arms": {
+        "status": "derived_not_evaluated",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/GeometryPath"
+        },
+        "value": null,
+        "unit": "m",
+        "angle_derivative_unit": "rad",
+        "definition": "r_j = -d L_MT / d q_j, q_j in radians; tensile generalized torque T*r_j",
+        "coordinate_names": [
+          "r_shoulder_elev",
+          "r_elbow_flex"
+        ],
+        "pose_ref": "poses.educational_comparison",
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "GeometryPath-derived lever arms pending evaluation; no Murray average or straight-chord substitute imported"
+      },
+      "musculotendon_path_length_at_comparison_pose": {
+        "value": null,
+        "unit": "m",
+        "status": "derived_not_evaluated",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BICshort']/GeometryPath"
+        },
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "GeometryPath evaluation and wraps required; not evaluated"
+      }
+    },
+    {
+      "id": "brachialis",
+      "side": "right",
+      "model_name": "BRA",
+      "atlas_entity_id_name_correspondence": "FJ1486",
+      "atlas_correspondence_status": "name/ontology correspondence only; no spatial registration or geometry transfer",
+      "actuator_class": "Thelen2003Muscle",
+      "source": {
+        "asset": "arm26",
+        "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BRA']"
+      },
+      "optimal_fiber_length": {
+        "value": 0.0858,
+        "unit": "m",
+        "status": "model_assumed",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BRA']/optimal_fiber_length"
+        },
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "Actuator optimum; 2.7 um lineage convention, not atlas Lf,ref"
+      },
+      "pennation_at_optimum": {
+        "value": 0.0,
+        "unit": "rad",
+        "status": "model_assumed",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BRA']/pennation_angle_at_optimal"
+        },
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "rad"
+        },
+        "meaning": "Scalar model pennation at optimum; not spatial/reference-pose pennation"
+      },
+      "fascicle_reference_length": {
+        "value": null,
+        "unit": "m",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "No measured contractile fascicle arc at atlas or proposed comparison pose"
+      },
+      "reference_sarcomere_length": {
+        "value": null,
+        "unit": "m",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "No atlas/head-specific paired sarcomere observation"
+      },
+      "reference_pennation": {
+        "value": null,
+        "unit": "rad",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "rad"
+        },
+        "meaning": "Source optimal pennation does not specify reference-pose pennation"
+      },
+      "active_optimal_reference_stretch": {
+        "value": null,
+        "unit": "1",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "1"
+        },
+        "meaning": "Cannot form Lopt/Lf,ref without an identified contractile reference arc"
+      },
+      "passive_reference": {
+        "natural_fascicle_length": {
+          "value": null,
+          "unit": "m",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m"
+          },
+          "meaning": "No biological passive natural length identified"
+        },
+        "natural_metric": {
+          "value": null,
+          "unit": "1",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "1"
+          },
+          "meaning": "No local passive material metric identified"
+        },
+        "reference_prestress": {
+          "value": null,
+          "unit": "Pa",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "Pa"
+          },
+          "meaning": "No atlas/reference passive prestress measured"
+        }
+      },
+      "tendon": {
+        "slack_length": {
+          "value": 0.0535,
+          "unit": "m",
+          "status": "model_assumed",
+          "source": {
+            "asset": "arm26",
+            "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BRA']/tendon_slack_length"
+          },
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m"
+          },
+          "meaning": "Selected lumped model slack; not measured unloaded free tendon/aponeurosis length"
+        },
+        "model_length_at_comparison_pose": {
+          "value": null,
+          "unit": "m",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m"
+          },
+          "meaning": "Requires a declared state/partition; not evaluated"
+        },
+        "reference_geometric_length": {
+          "value": null,
+          "unit": "m",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m"
+          },
+          "meaning": "No atlas-specific series partition or unloaded reference observation"
+        },
+        "reference_strain": {
+          "value": null,
+          "unit": "1",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "1"
+          },
+          "meaning": "No physiological tendon prestrain identified"
+        },
+        "unloaded_cross_section_area": {
+          "value": null,
+          "unit": "m^2",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m^2"
+          },
+          "meaning": "No unloaded tensile area; do not substitute footprint or PCSA"
+        }
+      },
+      "attachments_and_path": {
+        "status": "model_assumed",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BRA']/GeometryPath"
+        },
+        "points": [
+          {
+            "name": "BRA-P1",
+            "type": "PathPoint",
+            "role": "model_origin",
+            "parent_frame": "/bodyset/r_humerus",
+            "location": {
+              "value": [
+                0.0068,
+                -0.1739,
+                -0.0036
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BRA']/GeometryPath/PathPointSet/objects/PathPoint[@name='BRA-P1']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BRA']/GeometryPath/PathPointSet/objects/PathPoint[@name='BRA-P1']"
+            }
+          },
+          {
+            "name": "BRA-P2",
+            "type": "PathPoint",
+            "role": "model_insertion",
+            "parent_frame": "/bodyset/r_ulna_radius_hand",
+            "location": {
+              "value": [
+                -0.0032,
+                -0.0239,
+                0.0009
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BRA']/GeometryPath/PathPointSet/objects/PathPoint[@name='BRA-P2']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BRA']/GeometryPath/PathPointSet/objects/PathPoint[@name='BRA-P2']"
+            }
+          }
+        ],
+        "wraps": [
+          {
+            "name": "pathwrap",
+            "wrap_object": "TRI",
+            "method": "hybrid",
+            "range": {
+              "value": [
+                -1.0,
+                -1.0
+              ],
+              "unit": "1",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BRA']/GeometryPath/PathWrapSet/objects/PathWrap[@name='pathwrap']/range"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "1"
+              },
+              "meaning": "Native OpenSim path-point index restriction; -1 means source sentinel, not a negative length"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BRA']/GeometryPath/PathWrapSet/objects/PathWrap[@name='pathwrap']"
+            }
+          }
+        ],
+        "registration_to_atlas": {
+          "value": null,
+          "unit": "1",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "1"
+          },
+          "meaning": "No atlas-from-model transformation identified"
+        }
+      },
+      "moment_arms": {
+        "status": "derived_not_evaluated",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BRA']/GeometryPath"
+        },
+        "value": null,
+        "unit": "m",
+        "angle_derivative_unit": "rad",
+        "definition": "r_j = -d L_MT / d q_j, q_j in radians; tensile generalized torque T*r_j",
+        "coordinate_names": [
+          "r_shoulder_elev",
+          "r_elbow_flex"
+        ],
+        "pose_ref": "poses.educational_comparison",
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "GeometryPath-derived lever arms pending evaluation; no Murray average or straight-chord substitute imported"
+      },
+      "musculotendon_path_length_at_comparison_pose": {
+        "value": null,
+        "unit": "m",
+        "status": "derived_not_evaluated",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='BRA']/GeometryPath"
+        },
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "GeometryPath evaluation and wraps required; not evaluated"
+      }
+    },
+    {
+      "id": "triceps_brachii_long",
+      "side": "right",
+      "model_name": "TRIlong",
+      "atlas_entity_id_name_correspondence": "FJ1479",
+      "atlas_correspondence_status": "name/ontology correspondence only; no spatial registration or geometry transfer",
+      "actuator_class": "Thelen2003Muscle",
+      "source": {
+        "asset": "arm26",
+        "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']"
+      },
+      "optimal_fiber_length": {
+        "value": 0.134,
+        "unit": "m",
+        "status": "model_assumed",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/optimal_fiber_length"
+        },
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "Actuator optimum; 2.7 um lineage convention, not atlas Lf,ref"
+      },
+      "pennation_at_optimum": {
+        "value": 0.20943951,
+        "unit": "rad",
+        "status": "model_assumed",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/pennation_angle_at_optimal"
+        },
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "rad"
+        },
+        "meaning": "Scalar model pennation at optimum; not spatial/reference-pose pennation"
+      },
+      "fascicle_reference_length": {
+        "value": null,
+        "unit": "m",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "No measured contractile fascicle arc at atlas or proposed comparison pose"
+      },
+      "reference_sarcomere_length": {
+        "value": null,
+        "unit": "m",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "No atlas/head-specific paired sarcomere observation"
+      },
+      "reference_pennation": {
+        "value": null,
+        "unit": "rad",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "rad"
+        },
+        "meaning": "Source optimal pennation does not specify reference-pose pennation"
+      },
+      "active_optimal_reference_stretch": {
+        "value": null,
+        "unit": "1",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "1"
+        },
+        "meaning": "Cannot form Lopt/Lf,ref without an identified contractile reference arc"
+      },
+      "passive_reference": {
+        "natural_fascicle_length": {
+          "value": null,
+          "unit": "m",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m"
+          },
+          "meaning": "No biological passive natural length identified"
+        },
+        "natural_metric": {
+          "value": null,
+          "unit": "1",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "1"
+          },
+          "meaning": "No local passive material metric identified"
+        },
+        "reference_prestress": {
+          "value": null,
+          "unit": "Pa",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "Pa"
+          },
+          "meaning": "No atlas/reference passive prestress measured"
+        }
+      },
+      "tendon": {
+        "slack_length": {
+          "value": 0.143,
+          "unit": "m",
+          "status": "model_assumed",
+          "source": {
+            "asset": "arm26",
+            "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/tendon_slack_length"
+          },
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m"
+          },
+          "meaning": "Selected lumped model slack; not measured unloaded free tendon/aponeurosis length"
+        },
+        "model_length_at_comparison_pose": {
+          "value": null,
+          "unit": "m",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m"
+          },
+          "meaning": "Requires a declared state/partition; not evaluated"
+        },
+        "reference_geometric_length": {
+          "value": null,
+          "unit": "m",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m"
+          },
+          "meaning": "No atlas-specific series partition or unloaded reference observation"
+        },
+        "reference_strain": {
+          "value": null,
+          "unit": "1",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "1"
+          },
+          "meaning": "No physiological tendon prestrain identified"
+        },
+        "unloaded_cross_section_area": {
+          "value": null,
+          "unit": "m^2",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m^2"
+          },
+          "meaning": "No unloaded tensile area; do not substitute footprint or PCSA"
+        }
+      },
+      "attachments_and_path": {
+        "status": "model_assumed",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/GeometryPath"
+        },
+        "points": [
+          {
+            "name": "TRIlong-P1",
+            "type": "PathPoint",
+            "role": "model_origin",
+            "parent_frame": "/bodyset/base",
+            "location": {
+              "value": [
+                -0.05365,
+                -0.01373,
+                0.14723
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRIlong-P1']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRIlong-P1']"
+            }
+          },
+          {
+            "name": "TRIlong-P2",
+            "type": "PathPoint",
+            "role": "model_via_point",
+            "parent_frame": "/bodyset/r_humerus",
+            "location": {
+              "value": [
+                -0.02714,
+                -0.11441,
+                -0.00664
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRIlong-P2']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRIlong-P2']"
+            }
+          },
+          {
+            "name": "TRIlong-P3",
+            "type": "PathPoint",
+            "role": "model_via_point",
+            "parent_frame": "/bodyset/r_humerus",
+            "location": {
+              "value": [
+                -0.03184,
+                -0.22637,
+                -0.01217
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRIlong-P3']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRIlong-P3']"
+            }
+          },
+          {
+            "name": "TRIlong-P4",
+            "type": "PathPoint",
+            "role": "model_via_point",
+            "parent_frame": "/bodyset/r_humerus",
+            "location": {
+              "value": [
+                -0.01743,
+                -0.26757,
+                -0.01208
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRIlong-P4']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRIlong-P4']"
+            }
+          },
+          {
+            "name": "TRIlong-P5",
+            "type": "PathPoint",
+            "role": "model_insertion",
+            "parent_frame": "/bodyset/r_ulna_radius_hand",
+            "location": {
+              "value": [
+                -0.0219,
+                0.01046,
+                -0.00078
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRIlong-P5']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRIlong-P5']"
+            }
+          }
+        ],
+        "wraps": [
+          {
+            "name": "TRIlong-wrap-cylinder1",
+            "wrap_object": "TRI",
+            "method": "hybrid",
+            "range": {
+              "value": [
+                -1.0,
+                -1.0
+              ],
+              "unit": "1",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/GeometryPath/PathWrapSet/objects/PathWrap[@name='TRIlong-wrap-cylinder1']/range"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "1"
+              },
+              "meaning": "Native OpenSim path-point index restriction; -1 means source sentinel, not a negative length"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/GeometryPath/PathWrapSet/objects/PathWrap[@name='TRIlong-wrap-cylinder1']"
+            }
+          },
+          {
+            "name": "TRIlong-wrap-ellipsoid",
+            "wrap_object": "TRIlonghh",
+            "method": "hybrid",
+            "range": {
+              "value": [
+                -1.0,
+                -1.0
+              ],
+              "unit": "1",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/GeometryPath/PathWrapSet/objects/PathWrap[@name='TRIlong-wrap-ellipsoid']/range"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "1"
+              },
+              "meaning": "Native OpenSim path-point index restriction; -1 means source sentinel, not a negative length"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/GeometryPath/PathWrapSet/objects/PathWrap[@name='TRIlong-wrap-ellipsoid']"
+            }
+          },
+          {
+            "name": "TRIlong-wrap-cylinder2",
+            "wrap_object": "TRIlongglen",
+            "method": "hybrid",
+            "range": {
+              "value": [
+                -1.0,
+                -1.0
+              ],
+              "unit": "1",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/GeometryPath/PathWrapSet/objects/PathWrap[@name='TRIlong-wrap-cylinder2']/range"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "1"
+              },
+              "meaning": "Native OpenSim path-point index restriction; -1 means source sentinel, not a negative length"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/GeometryPath/PathWrapSet/objects/PathWrap[@name='TRIlong-wrap-cylinder2']"
+            }
+          }
+        ],
+        "registration_to_atlas": {
+          "value": null,
+          "unit": "1",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "1"
+          },
+          "meaning": "No atlas-from-model transformation identified"
+        }
+      },
+      "moment_arms": {
+        "status": "derived_not_evaluated",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/GeometryPath"
+        },
+        "value": null,
+        "unit": "m",
+        "angle_derivative_unit": "rad",
+        "definition": "r_j = -d L_MT / d q_j, q_j in radians; tensile generalized torque T*r_j",
+        "coordinate_names": [
+          "r_shoulder_elev",
+          "r_elbow_flex"
+        ],
+        "pose_ref": "poses.educational_comparison",
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "GeometryPath-derived lever arms pending evaluation; no Murray average or straight-chord substitute imported"
+      },
+      "musculotendon_path_length_at_comparison_pose": {
+        "value": null,
+        "unit": "m",
+        "status": "derived_not_evaluated",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlong']/GeometryPath"
+        },
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "GeometryPath evaluation and wraps required; not evaluated"
+      }
+    },
+    {
+      "id": "triceps_brachii_lateral",
+      "side": "right",
+      "model_name": "TRIlat",
+      "atlas_entity_id_name_correspondence": "FJ1477",
+      "atlas_correspondence_status": "name/ontology correspondence only; no spatial registration or geometry transfer",
+      "actuator_class": "Thelen2003Muscle",
+      "source": {
+        "asset": "arm26",
+        "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']"
+      },
+      "optimal_fiber_length": {
+        "value": 0.1138,
+        "unit": "m",
+        "status": "model_assumed",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/optimal_fiber_length"
+        },
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "Actuator optimum; 2.7 um lineage convention, not atlas Lf,ref"
+      },
+      "pennation_at_optimum": {
+        "value": 0.15707963,
+        "unit": "rad",
+        "status": "model_assumed",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/pennation_angle_at_optimal"
+        },
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "rad"
+        },
+        "meaning": "Scalar model pennation at optimum; not spatial/reference-pose pennation"
+      },
+      "fascicle_reference_length": {
+        "value": null,
+        "unit": "m",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "No measured contractile fascicle arc at atlas or proposed comparison pose"
+      },
+      "reference_sarcomere_length": {
+        "value": null,
+        "unit": "m",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "No atlas/head-specific paired sarcomere observation"
+      },
+      "reference_pennation": {
+        "value": null,
+        "unit": "rad",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "rad"
+        },
+        "meaning": "Source optimal pennation does not specify reference-pose pennation"
+      },
+      "active_optimal_reference_stretch": {
+        "value": null,
+        "unit": "1",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "1"
+        },
+        "meaning": "Cannot form Lopt/Lf,ref without an identified contractile reference arc"
+      },
+      "passive_reference": {
+        "natural_fascicle_length": {
+          "value": null,
+          "unit": "m",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m"
+          },
+          "meaning": "No biological passive natural length identified"
+        },
+        "natural_metric": {
+          "value": null,
+          "unit": "1",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "1"
+          },
+          "meaning": "No local passive material metric identified"
+        },
+        "reference_prestress": {
+          "value": null,
+          "unit": "Pa",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "Pa"
+          },
+          "meaning": "No atlas/reference passive prestress measured"
+        }
+      },
+      "tendon": {
+        "slack_length": {
+          "value": 0.098,
+          "unit": "m",
+          "status": "model_assumed",
+          "source": {
+            "asset": "arm26",
+            "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/tendon_slack_length"
+          },
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m"
+          },
+          "meaning": "Selected lumped model slack; not measured unloaded free tendon/aponeurosis length"
+        },
+        "model_length_at_comparison_pose": {
+          "value": null,
+          "unit": "m",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m"
+          },
+          "meaning": "Requires a declared state/partition; not evaluated"
+        },
+        "reference_geometric_length": {
+          "value": null,
+          "unit": "m",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m"
+          },
+          "meaning": "No atlas-specific series partition or unloaded reference observation"
+        },
+        "reference_strain": {
+          "value": null,
+          "unit": "1",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "1"
+          },
+          "meaning": "No physiological tendon prestrain identified"
+        },
+        "unloaded_cross_section_area": {
+          "value": null,
+          "unit": "m^2",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m^2"
+          },
+          "meaning": "No unloaded tensile area; do not substitute footprint or PCSA"
+        }
+      },
+      "attachments_and_path": {
+        "status": "model_assumed",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/GeometryPath"
+        },
+        "points": [
+          {
+            "name": "TRIlat-P1",
+            "type": "PathPoint",
+            "role": "model_origin",
+            "parent_frame": "/bodyset/r_humerus",
+            "location": {
+              "value": [
+                -0.00599,
+                -0.12646,
+                0.00428
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRIlat-P1']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRIlat-P1']"
+            }
+          },
+          {
+            "name": "TRIlat-P2",
+            "type": "PathPoint",
+            "role": "model_via_point",
+            "parent_frame": "/bodyset/r_humerus",
+            "location": {
+              "value": [
+                -0.02344,
+                -0.14528,
+                0.00928
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRIlat-P2']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRIlat-P2']"
+            }
+          },
+          {
+            "name": "TRIlat-P3",
+            "type": "PathPoint",
+            "role": "model_via_point",
+            "parent_frame": "/bodyset/r_humerus",
+            "location": {
+              "value": [
+                -0.03184,
+                -0.22637,
+                -0.01217
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRIlat-P3']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRIlat-P3']"
+            }
+          },
+          {
+            "name": "TRIlat-P4",
+            "type": "PathPoint",
+            "role": "model_via_point",
+            "parent_frame": "/bodyset/r_humerus",
+            "location": {
+              "value": [
+                -0.01743,
+                -0.26757,
+                -0.01208
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRIlat-P4']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRIlat-P4']"
+            }
+          },
+          {
+            "name": "TRIlat-P5",
+            "type": "PathPoint",
+            "role": "model_insertion",
+            "parent_frame": "/bodyset/r_ulna_radius_hand",
+            "location": {
+              "value": [
+                -0.0219,
+                0.01046,
+                -0.00078
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRIlat-P5']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRIlat-P5']"
+            }
+          }
+        ],
+        "wraps": [
+          {
+            "name": "pathwrap",
+            "wrap_object": "TRI",
+            "method": "hybrid",
+            "range": {
+              "value": [
+                -1.0,
+                -1.0
+              ],
+              "unit": "1",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/GeometryPath/PathWrapSet/objects/PathWrap[@name='pathwrap']/range"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "1"
+              },
+              "meaning": "Native OpenSim path-point index restriction; -1 means source sentinel, not a negative length"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/GeometryPath/PathWrapSet/objects/PathWrap[@name='pathwrap']"
+            }
+          }
+        ],
+        "registration_to_atlas": {
+          "value": null,
+          "unit": "1",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "1"
+          },
+          "meaning": "No atlas-from-model transformation identified"
+        }
+      },
+      "moment_arms": {
+        "status": "derived_not_evaluated",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/GeometryPath"
+        },
+        "value": null,
+        "unit": "m",
+        "angle_derivative_unit": "rad",
+        "definition": "r_j = -d L_MT / d q_j, q_j in radians; tensile generalized torque T*r_j",
+        "coordinate_names": [
+          "r_shoulder_elev",
+          "r_elbow_flex"
+        ],
+        "pose_ref": "poses.educational_comparison",
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "GeometryPath-derived lever arms pending evaluation; no Murray average or straight-chord substitute imported"
+      },
+      "musculotendon_path_length_at_comparison_pose": {
+        "value": null,
+        "unit": "m",
+        "status": "derived_not_evaluated",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRIlat']/GeometryPath"
+        },
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "GeometryPath evaluation and wraps required; not evaluated"
+      }
+    },
+    {
+      "id": "triceps_brachii_medial",
+      "side": "right",
+      "model_name": "TRImed",
+      "atlas_entity_id_name_correspondence": "FJ1480",
+      "atlas_correspondence_status": "name/ontology correspondence only; no spatial registration or geometry transfer",
+      "actuator_class": "Thelen2003Muscle",
+      "source": {
+        "asset": "arm26",
+        "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']"
+      },
+      "optimal_fiber_length": {
+        "value": 0.1138,
+        "unit": "m",
+        "status": "model_assumed",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/optimal_fiber_length"
+        },
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "Actuator optimum; 2.7 um lineage convention, not atlas Lf,ref"
+      },
+      "pennation_at_optimum": {
+        "value": 0.15707963,
+        "unit": "rad",
+        "status": "model_assumed",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/pennation_angle_at_optimal"
+        },
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "rad"
+        },
+        "meaning": "Scalar model pennation at optimum; not spatial/reference-pose pennation"
+      },
+      "fascicle_reference_length": {
+        "value": null,
+        "unit": "m",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "No measured contractile fascicle arc at atlas or proposed comparison pose"
+      },
+      "reference_sarcomere_length": {
+        "value": null,
+        "unit": "m",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "No atlas/head-specific paired sarcomere observation"
+      },
+      "reference_pennation": {
+        "value": null,
+        "unit": "rad",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "rad"
+        },
+        "meaning": "Source optimal pennation does not specify reference-pose pennation"
+      },
+      "active_optimal_reference_stretch": {
+        "value": null,
+        "unit": "1",
+        "status": "unknown",
+        "source": null,
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "1"
+        },
+        "meaning": "Cannot form Lopt/Lf,ref without an identified contractile reference arc"
+      },
+      "passive_reference": {
+        "natural_fascicle_length": {
+          "value": null,
+          "unit": "m",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m"
+          },
+          "meaning": "No biological passive natural length identified"
+        },
+        "natural_metric": {
+          "value": null,
+          "unit": "1",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "1"
+          },
+          "meaning": "No local passive material metric identified"
+        },
+        "reference_prestress": {
+          "value": null,
+          "unit": "Pa",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "Pa"
+          },
+          "meaning": "No atlas/reference passive prestress measured"
+        }
+      },
+      "tendon": {
+        "slack_length": {
+          "value": 0.0908,
+          "unit": "m",
+          "status": "model_assumed",
+          "source": {
+            "asset": "arm26",
+            "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/tendon_slack_length"
+          },
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m"
+          },
+          "meaning": "Selected lumped model slack; not measured unloaded free tendon/aponeurosis length"
+        },
+        "model_length_at_comparison_pose": {
+          "value": null,
+          "unit": "m",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m"
+          },
+          "meaning": "Requires a declared state/partition; not evaluated"
+        },
+        "reference_geometric_length": {
+          "value": null,
+          "unit": "m",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m"
+          },
+          "meaning": "No atlas-specific series partition or unloaded reference observation"
+        },
+        "reference_strain": {
+          "value": null,
+          "unit": "1",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "1"
+          },
+          "meaning": "No physiological tendon prestrain identified"
+        },
+        "unloaded_cross_section_area": {
+          "value": null,
+          "unit": "m^2",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "m^2"
+          },
+          "meaning": "No unloaded tensile area; do not substitute footprint or PCSA"
+        }
+      },
+      "attachments_and_path": {
+        "status": "model_assumed",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/GeometryPath"
+        },
+        "points": [
+          {
+            "name": "TRImed-P1",
+            "type": "PathPoint",
+            "role": "model_origin",
+            "parent_frame": "/bodyset/r_humerus",
+            "location": {
+              "value": [
+                -0.00838,
+                -0.13695,
+                -0.00906
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRImed-P1']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRImed-P1']"
+            }
+          },
+          {
+            "name": "TRImed-P2",
+            "type": "PathPoint",
+            "role": "model_via_point",
+            "parent_frame": "/bodyset/r_humerus",
+            "location": {
+              "value": [
+                -0.02601,
+                -0.15139,
+                -0.0108
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRImed-P2']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRImed-P2']"
+            }
+          },
+          {
+            "name": "TRImed-P3",
+            "type": "PathPoint",
+            "role": "model_via_point",
+            "parent_frame": "/bodyset/r_humerus",
+            "location": {
+              "value": [
+                -0.03184,
+                -0.22637,
+                -0.01217
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRImed-P3']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRImed-P3']"
+            }
+          },
+          {
+            "name": "TRImed-P4",
+            "type": "PathPoint",
+            "role": "model_via_point",
+            "parent_frame": "/bodyset/r_humerus",
+            "location": {
+              "value": [
+                -0.01743,
+                -0.26757,
+                -0.01208
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRImed-P4']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRImed-P4']"
+            }
+          },
+          {
+            "name": "TRImed-P5",
+            "type": "PathPoint",
+            "role": "model_insertion",
+            "parent_frame": "/bodyset/r_ulna_radius_hand",
+            "location": {
+              "value": [
+                -0.0219,
+                0.01046,
+                -0.00078
+              ],
+              "unit": "m",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRImed-P5']/location"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "m"
+              },
+              "meaning": "Body-local source path point; not an atlas landmark measurement"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/GeometryPath/PathPointSet/objects/PathPoint[@name='TRImed-P5']"
+            }
+          }
+        ],
+        "wraps": [
+          {
+            "name": "pathwrap",
+            "wrap_object": "TRI",
+            "method": "hybrid",
+            "range": {
+              "value": [
+                -1.0,
+                -1.0
+              ],
+              "unit": "1",
+              "status": "model_assumed",
+              "source": {
+                "asset": "arm26",
+                "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/GeometryPath/PathWrapSet/objects/PathWrap[@name='pathwrap']/range"
+              },
+              "uncertainty": {
+                "kind": "not_reported",
+                "value": null,
+                "unit": "1"
+              },
+              "meaning": "Native OpenSim path-point index restriction; -1 means source sentinel, not a negative length"
+            },
+            "source": {
+              "asset": "arm26",
+              "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/GeometryPath/PathWrapSet/objects/PathWrap[@name='pathwrap']"
+            }
+          }
+        ],
+        "registration_to_atlas": {
+          "value": null,
+          "unit": "1",
+          "status": "unknown",
+          "source": null,
+          "uncertainty": {
+            "kind": "not_reported",
+            "value": null,
+            "unit": "1"
+          },
+          "meaning": "No atlas-from-model transformation identified"
+        }
+      },
+      "moment_arms": {
+        "status": "derived_not_evaluated",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/GeometryPath"
+        },
+        "value": null,
+        "unit": "m",
+        "angle_derivative_unit": "rad",
+        "definition": "r_j = -d L_MT / d q_j, q_j in radians; tensile generalized torque T*r_j",
+        "coordinate_names": [
+          "r_shoulder_elev",
+          "r_elbow_flex"
+        ],
+        "pose_ref": "poses.educational_comparison",
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "GeometryPath-derived lever arms pending evaluation; no Murray average or straight-chord substitute imported"
+      },
+      "musculotendon_path_length_at_comparison_pose": {
+        "value": null,
+        "unit": "m",
+        "status": "derived_not_evaluated",
+        "source": {
+          "asset": "arm26",
+          "xpath": "/OpenSimDocument/Model/ForceSet/objects/Thelen2003Muscle[@name='TRImed']/GeometryPath"
+        },
+        "uncertainty": {
+          "kind": "not_reported",
+          "value": null,
+          "unit": "m"
+        },
+        "meaning": "GeometryPath evaluation and wraps required; not evaluated"
+      }
+    }
+  ],
+  "omitted_or_unresolved_structures": [
+    {
+      "structure": "brachioradialis",
+      "atlas_entity_id": "FJ1487",
+      "reason": "Absent from selected Arm26 ForceSet; do not import a seventh actuator from another family."
+    },
+    {
+      "structure": "anconeus, pronators, supinator and other upper-limb muscles",
+      "reason": "Absent from six-actuator model; full upper-limb coverage is not claimed."
+    },
+    {
+      "structure": "independent radius/ulna articulation and forearm rotation",
+      "reason": "Ulna/radius/hand combined in one source body."
+    },
+    {
+      "structure": "internal aponeuroses, external bicipital aponeurosis, fascia, distributed tendon/contractile partition",
+      "reason": "Lumped line actuators do not supply separate material/geometry/reference maps."
+    },
+    {
+      "structure": "separate scapular motion and full shoulder axes",
+      "reason": "Base and one variable shoulder coordinate are a reduced kinematic model."
+    },
+    {
+      "structure": "source display bone meshes/contact surfaces",
+      "reason": "References exist in XML, but no meshes acquired or interpreted as mechanics/contact evidence."
+    }
+  ],
+  "remaining_source_gaps": [
+    "Atlas/head-specific fascicle and sarcomere reference observations; passive natural metrics/prestress.",
+    "Tendon/aponeurosis unloaded dimensions, tensile CSA, prestrain and physical partition.",
+    "Model-to-atlas registration and pose correspondence; scalar source priors are not atlas measurements.",
+    "Version-specific model load/path/moment-arm evaluation and any separate actuator-class adapter remain outside this proposal.",
+    "Source family commit-addressed bytes verified; upstream repository tree not independently retrieved."
+  ]
+}

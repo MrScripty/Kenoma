@@ -1,0 +1,64 @@
+{
+  "date_utc": "2026-10-06",
+  "model_asset": {
+    "repository": "https://github.com/opensim-org/opensim-models",
+    "commit": "84b487c4e3245359a64381e01f01b9cf4772d457",
+    "repository_tree": null,
+    "repository_tree_status": "not independently retrieved; commit-addressed asset bytes verified",
+    "path": "Models/Arm26/arm26.osim",
+    "url": "https://github.com/opensim-org/opensim-models/blob/84b487c4e3245359a64381e01f01b9cf4772d457/Models/Arm26/arm26.osim",
+    "raw_url": "https://raw.githubusercontent.com/opensim-org/opensim-models/84b487c4e3245359a64381e01f01b9cf4772d457/Models/Arm26/arm26.osim",
+    "local_path": "education/data/elbow-v1/sources/arm26.osim",
+    "bytes": 90192,
+    "sha256": "e2224d0044eb393b05d64926c3fa1682c451a9adc7f510e5517ef9958d3d41b9",
+    "computed_git_blob_sha1": "2ff458149668bb2f0de24572f80658f8dd9db1d9",
+    "git_blob_status": "computed from identical local and official raw bytes; upstream API inaccessible",
+    "OpenSimDocument_version": "40000",
+    "length_unit_declaration": "meters",
+    "force_unit_declaration": "N"
+  },
+  "raw_fetch_http_status": 200,
+  "raw_fetch_bytes": 90192,
+  "raw_equals_retained_source": true,
+  "git_api_metadata_attempts": [
+    {
+      "url": "https://api.github.com/repos/opensim-org/opensim-models/git/commits/84b487c4e3245359a64381e01f01b9cf4772d457",
+      "success": false,
+      "error": "Tunnel connection failed: 403 Forbidden"
+    },
+    {
+      "url": "https://api.github.com/repos/opensim-org/opensim-models/contents/Models/Arm26/arm26.osim?ref=84b487c4e3245359a64381e01f01b9cf4772d457",
+      "success": false,
+      "error": "Tunnel connection failed: 403 Forbidden"
+    }
+  ],
+  "no_restricted_access_bypass": true,
+  "core_context_read_only_from_other_worker": true,
+  "core_source_access": [
+    {
+      "path": "OpenSim/Actuators/Thelen2003Muscle.h",
+      "url": "https://raw.githubusercontent.com/opensim-org/opensim-core/5bc7d3308eda742690f485ec060bfe725a349fa6/OpenSim/Actuators/Thelen2003Muscle.h",
+      "bytes": 16759,
+      "sha256": "1285a85fd1e2e31c1010427f8a03247f1ef024dd8e37e90c8d24c485ebae6219",
+      "http_status": 200
+    },
+    {
+      "path": "OpenSim/Actuators/RegisterTypes_osimActuators.cpp",
+      "url": "https://raw.githubusercontent.com/opensim-org/opensim-core/5bc7d3308eda742690f485ec060bfe725a349fa6/OpenSim/Actuators/RegisterTypes_osimActuators.cpp",
+      "bytes": 5724,
+      "sha256": "bab8288d88ee354404dcad857679050b79ef5cd294977591ab9079ece631ed34",
+      "http_status": 200
+    },
+    {
+      "path": "LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/opensim-org/opensim-core/5bc7d3308eda742690f485ec060bfe725a349fa6/LICENSE.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "http_status": 200
+    }
+  ],
+  "core_registration_primary_locator": "RegisterTypes_osimActuators.cpp line 57; Object::registerType( Thelen2003Muscle() )",
+  "license_deed_read": "https://creativecommons.org/licenses/by/3.0/",
+  "large_mesh_downloads": 0,
+  "source_changes": false
+}
