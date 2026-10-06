@@ -48,7 +48,21 @@ No new browser render, full book build, publication, or empirical qualification
 is claimed on this isolated branch. Those gates remain the parent's combined
 integration responsibility.
 
-Remaining obligations include root existence
-and numerical root residuals, binary64/transcendental refinement, event splitting,
-continuous mechanical work/energy balance, fractional-power material derivatives,
-and empirical validation. The proposed proofs do not discharge those obligations.
+The separately compiled extension source checkpoint is `a30b249`.
+All eleven registered declarations passed the same strict command and allowed
+axiom check. `qualification-11/` preserves its fresh transcript and computed
+source/metadata/pin receipt. The canonical metadata remains literal prose with
+no manually assigned status fields.
+
+The three added results prove bracket-root existence from `totalFiber>=0` and
+`H(0)<=0` plus the stated physical signs; exclude any nonnegative root when
+`H(0)>0` under the exact guard; and prove the algebraic branch denominator is
+positive for either nonnegative passive branch stiffness. Existence does not
+assert uniqueness without the separate guard. The denominator result does not
+assert differentiability of the tension-only passive term at its kink.
+
+Remaining obligations include the minimum-fiber acceptance threshold, numerical
+root residuals and bisection termination, binary64/transcendental refinement,
+event splitting, continuous mechanical work/energy balance, fractional-power
+material derivatives, and empirical validation. These proofs do not discharge
+those obligations.
