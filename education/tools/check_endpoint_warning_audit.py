@@ -39,6 +39,12 @@ def check(out):
     case=browser['counterexample']
     assert case['warningVisible'] and case['midpointMaximumStrain']<.05
     assert abs(case['endpointMaximumStrain']-3/55)<1e-15
+    visibility=browser['visibilityEvidence']
+    assert visibility['assertion']=='Playwright expect(specific Small-strain scope dd).to_be_visible after scroll_into_view_if_needed'
+    screenshot='data/property-labs-v1/endpoint-warning-current-visible.png'
+    assert visibility['screenshot']==screenshot
+    assert digest(ROOT/screenshot)==visibility['sha256'],'Current endpoint screenshot changed'
+    assert digest(Path(out)/screenshot)==visibility['sha256'],'Delivered endpoint screenshot changed'
     for receipt in [current,browser]:
         assert 'web/property-labs.mjs' in receipt['sourceHashes']
         for relative,expected in receipt['sourceHashes'].items():

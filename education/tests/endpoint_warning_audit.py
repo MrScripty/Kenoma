@@ -36,6 +36,12 @@ def check():
                 assert measured['smallStrainWarning'] and abs(measured['maxAbsStrain']-3/55)<1e-15
                 assert max(abs(s['strain']) for s in measured['samples'])<.05
                 expect(lab.locator('.readout')).to_contain_text('Exceeded 5%')
+                warning=lab.locator('.readout div').filter(has=page.locator('dt',has_text='Small-strain scope')).locator('dd')
+                expect(warning).to_contain_text('Exceeded 5%')
+                warning.scroll_into_view_if_needed()
+                expect(warning).to_be_visible()
+                evidence=ROOT/'data/property-labs-v1/endpoint-warning-current-visible.png'
+                lab.locator('.readout').screenshot(path=str(evidence))
                 expect(lab.locator('.readout')).to_contain_text('Expanded beyond ±0.05')
                 expect(lab.locator('input[type=number][data-param=activation]')).to_be_disabled()
                 lab.locator('select[data-param=mode]').select_option('active-fixed')
@@ -51,6 +57,8 @@ def check():
                  'currentNumericalReceiptSHA256':digest('data/property-labs-v1/endpoint-warning-current-audit.json'),
                  'sourceHashes':{p:digest(p) for p in paths},'previewHTMLSHA256':hashlib.sha256((out/'index.html').read_bytes()).hexdigest(),
                  'counterexample':{'endpointMaximumStrain':measured['maxAbsStrain'],'midpointMaximumStrain':max(abs(s['strain']) for s in measured['samples']),'warningVisible':True},
+                 'visibilityEvidence':{'assertion':'Playwright expect(specific Small-strain scope dd).to_be_visible after scroll_into_view_if_needed',
+                                       'screenshot':'data/property-labs-v1/endpoint-warning-current-visible.png','sha256':hashlib.sha256(evidence.read_bytes()).hexdigest()},
                  'checks':['Actual Chromium endpoint controls expose 5.4545% strain despite midpoint samples below 5%',
                            'Current renderer exposes expanded strain scale and disables inactive controls',
                            'Active/passive round trip preserves passive endpoint measurements'],
