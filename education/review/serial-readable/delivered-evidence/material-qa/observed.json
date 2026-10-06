@@ -1,0 +1,602 @@
+{
+  "default-desktop": {
+    "schema": 1,
+    "lesson": "material-compression",
+    "parameters": {
+      "heightStretch": 0.8,
+      "mu": 1500,
+      "bulk": 50000,
+      "iterations": 64
+    },
+    "reference": {
+      "widthM": 0.08,
+      "heightM": 0.06,
+      "depthM": 0.05,
+      "volumeM3": 0.00023999999999999998
+    },
+    "free": {
+      "boundary": "free",
+      "b": 1.1146268835553577,
+      "heightStretch": 0.8,
+      "J": 0.9939144716354632,
+      "volumeM3": 0.00023853947319251115,
+      "widthM": 0.08917015068442861,
+      "heightM": 0.048,
+      "depthM": 0.055731344177767886,
+      "referenceVolumeM3": 0.00023999999999999998,
+      "energyJ": 0.024977266334915958,
+      "bulkEnergyJ": 0.00022220193285349133,
+      "shearEnergyJ": 0.024755064402062467,
+      "nominalLateralStressPa": -9.379164112033322e-12,
+      "nominalAxialStressPa": -1134.0927579489517,
+      "plateForceN": 4.536371031795807,
+      "platePressurePa": 912.8292546804987,
+      "wallActive": false,
+      "wallReactionPa": 0,
+      "wallPressurePa": 0,
+      "wallForceXN": 0,
+      "wallForceZN": 0,
+      "gapXM": null,
+      "gapZM": null,
+      "lateralResidualPa": -9.379164112033322e-12,
+      "complementarityJ": 0,
+      "accepted": true,
+      "converged": true,
+      "validity": "Supported homogeneous elastic ansatz; no calibrated material validity or plastic failure prediction"
+    },
+    "confined": {
+      "boundary": "confined",
+      "b": 1,
+      "heightStretch": 0.8,
+      "J": 0.8,
+      "volumeM3": 0.000192,
+      "widthM": 0.08,
+      "heightM": 0.048,
+      "depthM": 0.05,
+      "referenceVolumeM3": 0.00023999999999999998,
+      "energyJ": 0.2514207534331979,
+      "bulkEnergyJ": 0.23999999999999985,
+      "shearEnergyJ": 0.011420753433198066,
+      "nominalLateralStressPa": -7791.128502487424,
+      "nominalAxialStressPa": -10522.178743781435,
+      "plateForceN": 42.08871497512574,
+      "platePressurePa": 10522.178743781435,
+      "wallActive": true,
+      "wallReactionPa": 7791.128502487424,
+      "wallPressurePa": 9738.910628109279,
+      "wallForceXN": 23.373385507462274,
+      "wallForceZN": 37.397416811939635,
+      "gapXM": 0,
+      "gapZM": 0,
+      "lateralResidualPa": 0,
+      "complementarityJ": 0,
+      "accepted": true,
+      "converged": true,
+      "validity": "Supported homogeneous elastic ansatz; no calibrated material validity or plastic failure prediction"
+    },
+    "solve": {
+      "free": {
+        "b": 1.1146268835553577,
+        "iterations": 50,
+        "cap": 64,
+        "bracket": [
+          1.1146268835553577,
+          1.1146268835553579
+        ],
+        "bracketWidth": 2.220446049250313e-16
+      },
+      "confined": {
+        "b": 1,
+        "iterations": 0,
+        "cap": 64,
+        "bracket": [
+          1,
+          1
+        ],
+        "bracketWidth": 0
+      },
+      "residualCriterionPa": 1e-05
+    },
+    "scope": "Reduced quasistatic homogeneous elastic equilibrium; no spatial muscle, anatomy, friction, dynamics, plasticity or proved global optimum"
+  },
+  "high-bulk-desktop": {
+    "schema": 1,
+    "lesson": "material-compression",
+    "parameters": {
+      "heightStretch": 0.8,
+      "mu": 1500,
+      "bulk": 250000,
+      "iterations": 64
+    },
+    "reference": {
+      "widthM": 0.08,
+      "heightM": 0.06,
+      "depthM": 0.05,
+      "volumeM3": 0.00023999999999999998
+    },
+    "free": {
+      "boundary": "free",
+      "b": 1.117352099404687,
+      "heightStretch": 0.8,
+      "J": 0.9987805712352493,
+      "volumeM3": 0.00023970733709645982,
+      "widthM": 0.08938816795237496,
+      "heightM": 0.048,
+      "depthM": 0.05586760497023435,
+      "referenceVolumeM3": 0.00023999999999999998,
+      "energyJ": 0.02515536888074212,
+      "bulkEnergyJ": 4.461019536904064e-05,
+      "shearEnergyJ": 0.025110758685373078,
+      "nominalLateralStressPa": 1.3642420526593924e-12,
+      "nominalAxialStressPa": -1141.8203983484777,
+      "plateForceN": 4.567281593393911,
+      "platePressurePa": 914.5715735630082,
+      "wallActive": false,
+      "wallReactionPa": 0,
+      "wallPressurePa": 0,
+      "wallForceXN": 0,
+      "wallForceZN": 0,
+      "gapXM": null,
+      "gapZM": null,
+      "lateralResidualPa": 1.3642420526593924e-12,
+      "complementarityJ": 0,
+      "accepted": true,
+      "converged": true,
+      "validity": "Supported homogeneous elastic ansatz; no calibrated material validity or plastic failure prediction"
+    },
+    "confined": {
+      "boundary": "confined",
+      "b": 1,
+      "heightStretch": 0.8,
+      "J": 0.8,
+      "volumeM3": 0.000192,
+      "widthM": 0.08,
+      "heightM": 0.048,
+      "depthM": 0.05,
+      "referenceVolumeM3": 0.00023999999999999998,
+      "energyJ": 1.2114207534331973,
+      "bulkEnergyJ": 1.1999999999999993,
+      "shearEnergyJ": 0.011420753433198039,
+      "nominalLateralStressPa": -39791.128502487416,
+      "nominalAxialStressPa": -50522.17874378142,
+      "plateForceN": 202.0887149751257,
+      "platePressurePa": 50522.17874378142,
+      "wallActive": true,
+      "wallReactionPa": 39791.128502487416,
+      "wallPressurePa": 49738.91062810927,
+      "wallForceXN": 119.37338550746225,
+      "wallForceZN": 190.99741681193962,
+      "gapXM": 0,
+      "gapZM": 0,
+      "lateralResidualPa": 0,
+      "complementarityJ": 0,
+      "accepted": true,
+      "converged": true,
+      "validity": "Supported homogeneous elastic ansatz; no calibrated material validity or plastic failure prediction"
+    },
+    "solve": {
+      "free": {
+        "b": 1.117352099404687,
+        "iterations": 51,
+        "cap": 64,
+        "bracket": [
+          1.1173520994046868,
+          1.117352099404687
+        ],
+        "bracketWidth": 2.220446049250313e-16
+      },
+      "confined": {
+        "b": 1,
+        "iterations": 0,
+        "cap": 64,
+        "bracket": [
+          1,
+          1
+        ],
+        "bracketWidth": 0
+      },
+      "residualCriterionPa": 1e-05
+    },
+    "scope": "Reduced quasistatic homogeneous elastic equilibrium; no spatial muscle, anatomy, friction, dynamics, plasticity or proved global optimum"
+  },
+  "zero-bulk-desktop": {
+    "schema": 1,
+    "lesson": "material-compression",
+    "parameters": {
+      "heightStretch": 0.8,
+      "mu": 1500,
+      "bulk": 0,
+      "iterations": 64
+    },
+    "reference": {
+      "widthM": 0.08,
+      "heightM": 0.06,
+      "depthM": 0.05,
+      "volumeM3": 0.00023999999999999998
+    },
+    "free": {
+      "boundary": "free",
+      "b": 0.8,
+      "heightStretch": 0.8,
+      "J": 0.5120000000000001,
+      "volumeM3": 0.00012288000000000002,
+      "widthM": 0.064,
+      "heightM": 0.048,
+      "depthM": 0.04000000000000001,
+      "referenceVolumeM3": 0.00023999999999999998,
+      "energyJ": 0,
+      "bulkEnergyJ": 0,
+      "shearEnergyJ": 0,
+      "nominalLateralStressPa": 0,
+      "nominalAxialStressPa": 0,
+      "plateForceN": 0,
+      "platePressurePa": 0,
+      "wallActive": false,
+      "wallReactionPa": 0,
+      "wallPressurePa": 0,
+      "wallForceXN": 0,
+      "wallForceZN": 0,
+      "gapXM": null,
+      "gapZM": null,
+      "lateralResidualPa": 0,
+      "complementarityJ": 0,
+      "accepted": true,
+      "converged": true,
+      "validity": "Supported homogeneous elastic ansatz; no calibrated material validity or plastic failure prediction"
+    },
+    "confined": {
+      "boundary": "confined",
+      "b": 0.8,
+      "heightStretch": 0.8,
+      "J": 0.5120000000000001,
+      "volumeM3": 0.00012288000000000002,
+      "widthM": 0.064,
+      "heightM": 0.048,
+      "depthM": 0.04000000000000001,
+      "referenceVolumeM3": 0.00023999999999999998,
+      "energyJ": 0,
+      "bulkEnergyJ": 0,
+      "shearEnergyJ": 0,
+      "nominalLateralStressPa": 0,
+      "nominalAxialStressPa": 0,
+      "plateForceN": 0,
+      "platePressurePa": 0,
+      "wallActive": false,
+      "wallReactionPa": 0,
+      "wallPressurePa": 0,
+      "wallForceXN": 0,
+      "wallForceZN": 0,
+      "gapXM": 0.007999999999999998,
+      "gapZM": 0.004999999999999999,
+      "lateralResidualPa": 0,
+      "complementarityJ": 0,
+      "accepted": true,
+      "converged": true,
+      "validity": "Supported homogeneous elastic ansatz; no calibrated material validity or plastic failure prediction"
+    },
+    "solve": {
+      "free": {
+        "b": 0.8,
+        "iterations": 0,
+        "cap": 64,
+        "bracket": [
+          0.8,
+          0.8
+        ],
+        "bracketWidth": 0
+      },
+      "confined": {
+        "b": 0.8,
+        "iterations": 0,
+        "cap": 64,
+        "bracket": [
+          0.8,
+          0.8
+        ],
+        "bracketWidth": 0
+      },
+      "residualCriterionPa": 1e-05
+    },
+    "scope": "Reduced quasistatic homogeneous elastic equilibrium; no spatial muscle, anatomy, friction, dynamics, plasticity or proved global optimum"
+  },
+  "weak-bulk-desktop": {
+    "schema": 1,
+    "lesson": "material-compression",
+    "parameters": {
+      "heightStretch": 0.8,
+      "mu": 1500,
+      "bulk": 500,
+      "iterations": 64
+    },
+    "reference": {
+      "widthM": 0.08,
+      "heightM": 0.06,
+      "depthM": 0.05,
+      "volumeM3": 0.00023999999999999998
+    },
+    "free": {
+      "boundary": "free",
+      "b": 0.9004311478719762,
+      "heightStretch": 0.8,
+      "J": 0.6486210016464358,
+      "volumeM3": 0.00015566904039514458,
+      "widthM": 0.0720344918297581,
+      "heightM": 0.048,
+      "depthM": 0.04502155739359881,
+      "referenceVolumeM3": 0.00023999999999999998,
+      "energyJ": 0.010681516345796442,
+      "bulkEnergyJ": 0.007408032029037246,
+      "shearEnergyJ": 0.0032734843167591962,
+      "nominalLateralStressPa": 1.4210854715202004e-14,
+      "nominalAxialStressPa": -427.3346210055186,
+      "plateForceN": 1.7093384840220744,
+      "platePressurePa": 527.0684975303459,
+      "wallActive": false,
+      "wallReactionPa": 0,
+      "wallPressurePa": 0,
+      "wallForceXN": 0,
+      "wallForceZN": 0,
+      "gapXM": null,
+      "gapZM": null,
+      "lateralResidualPa": 1.4210854715202004e-14,
+      "complementarityJ": 0,
+      "accepted": true,
+      "converged": true,
+      "validity": "Supported homogeneous elastic ansatz; no calibrated material validity or plastic failure prediction"
+    },
+    "confined": {
+      "boundary": "confined",
+      "b": 0.9004311478719762,
+      "heightStretch": 0.8,
+      "J": 0.6486210016464358,
+      "volumeM3": 0.00015566904039514458,
+      "widthM": 0.0720344918297581,
+      "heightM": 0.048,
+      "depthM": 0.04502155739359881,
+      "referenceVolumeM3": 0.00023999999999999998,
+      "energyJ": 0.010681516345796442,
+      "bulkEnergyJ": 0.007408032029037246,
+      "shearEnergyJ": 0.0032734843167591962,
+      "nominalLateralStressPa": 1.4210854715202004e-14,
+      "nominalAxialStressPa": -427.3346210055186,
+      "plateForceN": 1.7093384840220744,
+      "platePressurePa": 527.0684975303459,
+      "wallActive": false,
+      "wallReactionPa": 0,
+      "wallPressurePa": 0,
+      "wallForceXN": 0,
+      "wallForceZN": 0,
+      "gapXM": 0.003982754085120952,
+      "gapZM": 0.002489221303200595,
+      "lateralResidualPa": 1.4210854715202004e-14,
+      "complementarityJ": 0,
+      "accepted": true,
+      "converged": true,
+      "validity": "Supported homogeneous elastic ansatz; no calibrated material validity or plastic failure prediction"
+    },
+    "solve": {
+      "free": {
+        "b": 0.9004311478719762,
+        "iterations": 51,
+        "cap": 64,
+        "bracket": [
+          0.9004311478719761,
+          0.9004311478719762
+        ],
+        "bracketWidth": 1.1102230246251565e-16
+      },
+      "confined": {
+        "b": 0.9004311478719762,
+        "iterations": 51,
+        "cap": 64,
+        "bracket": [
+          0.9004311478719761,
+          0.9004311478719762
+        ],
+        "bracketWidth": 1.1102230246251565e-16
+      },
+      "residualCriterionPa": 1e-05
+    },
+    "scope": "Reduced quasistatic homogeneous elastic equilibrium; no spatial muscle, anatomy, friction, dynamics, plasticity or proved global optimum"
+  },
+  "coarse-desktop": {
+    "schema": 1,
+    "lesson": "material-compression",
+    "parameters": {
+      "heightStretch": 0.8,
+      "mu": 1500,
+      "bulk": 50000,
+      "iterations": 8
+    },
+    "reference": {
+      "widthM": 0.08,
+      "heightM": 0.06,
+      "depthM": 0.05,
+      "volumeM3": 0.00023999999999999998
+    },
+    "free": {
+      "boundary": "free",
+      "b": 1.1149281880785091,
+      "heightStretch": 0.8,
+      "J": 0.994451891657622,
+      "volumeM3": 0.00023866845399782928,
+      "widthM": 0.08919425504628073,
+      "heightM": 0.048,
+      "depthM": 0.05574640940392546,
+      "referenceVolumeM3": 0.00023999999999999998,
+      "energyJ": 0.0249790034511169,
+      "bulkEnergyJ": 0.00018468903707258316,
+      "shearEnergyJ": 0.024794314414044318,
+      "nominalLateralStressPa": 24.025369987597344,
+      "nominalAxialStressPa": -1101.4651873578175,
+      "plateForceN": 4.4058607494312705,
+      "platePressurePa": 886.0882635734692,
+      "wallActive": false,
+      "wallReactionPa": 0,
+      "wallPressurePa": 0,
+      "wallForceXN": 0,
+      "wallForceZN": 0,
+      "gapXM": null,
+      "gapZM": null,
+      "lateralResidualPa": 24.025369987597344,
+      "complementarityJ": 0,
+      "accepted": true,
+      "converged": false,
+      "validity": "Supported homogeneous elastic ansatz; no calibrated material validity or plastic failure prediction"
+    },
+    "confined": {
+      "boundary": "confined",
+      "b": 1,
+      "heightStretch": 0.8,
+      "J": 0.8,
+      "volumeM3": 0.000192,
+      "widthM": 0.08,
+      "heightM": 0.048,
+      "depthM": 0.05,
+      "referenceVolumeM3": 0.00023999999999999998,
+      "energyJ": 0.2514207534331979,
+      "bulkEnergyJ": 0.23999999999999985,
+      "shearEnergyJ": 0.011420753433198066,
+      "nominalLateralStressPa": -7791.128502487424,
+      "nominalAxialStressPa": -10522.178743781435,
+      "plateForceN": 42.08871497512574,
+      "platePressurePa": 10522.178743781435,
+      "wallActive": true,
+      "wallReactionPa": 7791.128502487424,
+      "wallPressurePa": 9738.910628109279,
+      "wallForceXN": 23.373385507462274,
+      "wallForceZN": 37.397416811939635,
+      "gapXM": 0,
+      "gapZM": 0,
+      "lateralResidualPa": 0,
+      "complementarityJ": 0,
+      "accepted": true,
+      "converged": true,
+      "validity": "Supported homogeneous elastic ansatz; no calibrated material validity or plastic failure prediction"
+    },
+    "solve": {
+      "free": {
+        "b": 1.1149281880785091,
+        "iterations": 8,
+        "cap": 8,
+        "bracket": [
+          1.114307027944232,
+          1.1155493482127863
+        ],
+        "bracketWidth": 0.0012423202685543089
+      },
+      "confined": {
+        "b": 1,
+        "iterations": 0,
+        "cap": 8,
+        "bracket": [
+          1,
+          1
+        ],
+        "bracketWidth": 0
+      },
+      "residualCriterionPa": 1e-05
+    },
+    "scope": "Reduced quasistatic homogeneous elastic equilibrium; no spatial muscle, anatomy, friction, dynamics, plasticity or proved global optimum"
+  },
+  "default-mobile": {
+    "schema": 1,
+    "lesson": "material-compression",
+    "parameters": {
+      "heightStretch": 0.8,
+      "mu": 1500,
+      "bulk": 50000,
+      "iterations": 64
+    },
+    "reference": {
+      "widthM": 0.08,
+      "heightM": 0.06,
+      "depthM": 0.05,
+      "volumeM3": 0.00023999999999999998
+    },
+    "free": {
+      "boundary": "free",
+      "b": 1.1146268835553577,
+      "heightStretch": 0.8,
+      "J": 0.9939144716354632,
+      "volumeM3": 0.00023853947319251115,
+      "widthM": 0.08917015068442861,
+      "heightM": 0.048,
+      "depthM": 0.055731344177767886,
+      "referenceVolumeM3": 0.00023999999999999998,
+      "energyJ": 0.024977266334915958,
+      "bulkEnergyJ": 0.00022220193285349133,
+      "shearEnergyJ": 0.024755064402062467,
+      "nominalLateralStressPa": -9.379164112033322e-12,
+      "nominalAxialStressPa": -1134.0927579489517,
+      "plateForceN": 4.536371031795807,
+      "platePressurePa": 912.8292546804987,
+      "wallActive": false,
+      "wallReactionPa": 0,
+      "wallPressurePa": 0,
+      "wallForceXN": 0,
+      "wallForceZN": 0,
+      "gapXM": null,
+      "gapZM": null,
+      "lateralResidualPa": -9.379164112033322e-12,
+      "complementarityJ": 0,
+      "accepted": true,
+      "converged": true,
+      "validity": "Supported homogeneous elastic ansatz; no calibrated material validity or plastic failure prediction"
+    },
+    "confined": {
+      "boundary": "confined",
+      "b": 1,
+      "heightStretch": 0.8,
+      "J": 0.8,
+      "volumeM3": 0.000192,
+      "widthM": 0.08,
+      "heightM": 0.048,
+      "depthM": 0.05,
+      "referenceVolumeM3": 0.00023999999999999998,
+      "energyJ": 0.2514207534331979,
+      "bulkEnergyJ": 0.23999999999999985,
+      "shearEnergyJ": 0.011420753433198066,
+      "nominalLateralStressPa": -7791.128502487424,
+      "nominalAxialStressPa": -10522.178743781435,
+      "plateForceN": 42.08871497512574,
+      "platePressurePa": 10522.178743781435,
+      "wallActive": true,
+      "wallReactionPa": 7791.128502487424,
+      "wallPressurePa": 9738.910628109279,
+      "wallForceXN": 23.373385507462274,
+      "wallForceZN": 37.397416811939635,
+      "gapXM": 0,
+      "gapZM": 0,
+      "lateralResidualPa": 0,
+      "complementarityJ": 0,
+      "accepted": true,
+      "converged": true,
+      "validity": "Supported homogeneous elastic ansatz; no calibrated material validity or plastic failure prediction"
+    },
+    "solve": {
+      "free": {
+        "b": 1.1146268835553577,
+        "iterations": 50,
+        "cap": 64,
+        "bracket": [
+          1.1146268835553577,
+          1.1146268835553579
+        ],
+        "bracketWidth": 2.220446049250313e-16
+      },
+      "confined": {
+        "b": 1,
+        "iterations": 0,
+        "cap": 64,
+        "bracket": [
+          1,
+          1
+        ],
+        "bracketWidth": 0
+      },
+      "residualCriterionPa": 1e-05
+    },
+    "scope": "Reduced quasistatic homogeneous elastic equilibrium; no spatial muscle, anatomy, friction, dynamics, plasticity or proved global optimum"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "base": "ae239015fc471fe0be1cd21a6a47cca6be0b312f",
+  "source": "9fb31ed243c5e4c75b7f90433e76631e1496d562",
+  "base_inputs": 887,
+  "current_inputs": 889,
+  "changed": [
+    "web/style.css",
+    "tools/dense_envelope_figure.py",
+    "tools/dense_qualification_figure.py",
+    "tools/dissipative-experiment.mjs",
+    "tools/nodal_force_figure.py",
+    "tools/package_education_bundle.py",
+    "tools/render_pdf.py",
+    "data/anatomical-arm-v1/review/dense-qualification/coarse/dense-qualification.png",
+    "data/anatomical-arm-v1/review/dense-qualification/coarse/dense-qualification.svg",
+    "data/anatomical-arm-v1/review/dense-qualification/coarse/render-receipt.json",
+    "data/anatomical-arm-v1/review/dense-qualification/envelope/dense-envelope.png",
+    "data/anatomical-arm-v1/review/dense-qualification/envelope/dense-envelope.svg",
+    "data/anatomical-arm-v1/review/dense-qualification/envelope/render-receipt.json",
+    "data/anatomical-arm-v1/review/dense-qualification/force-components/nodal-force-components.png",
+    "data/anatomical-arm-v1/review/dense-qualification/force-components/nodal-force-components.svg",
+    "data/anatomical-arm-v1/review/dense-qualification/force-components/render-receipt.json"
+  ],
+  "added": [
+    "tools/check_print_readability.py",
+    "tools/print_layout.js"
+  ],
+  "serial_model_text_proofs_controller_and_regressions_unchanged": true
+}

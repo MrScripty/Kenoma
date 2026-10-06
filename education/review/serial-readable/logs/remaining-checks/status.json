@@ -1,0 +1,152 @@
+{
+  "source_commit": "9fb31ed243c5e4c75b7f90433e76631e1496d562",
+  "build_manifest_sha256": "c6b08be4320cd977fa4b7f6890affa9455294c2cf411948041e571f56873f304",
+  "steps": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tests/dissipative_browser.py",
+        "dist",
+        "--output",
+        "dist/dissipative-qa"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 105.85704278945923,
+      "log": "dissipative_browser.log"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tools/qualify_serial_negatives.py",
+        "dist",
+        "dist/serial-negative-artifacts.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.6913416385650635,
+      "log": "qualify_serial_negatives.log"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tools/qualify_dissipative_negatives.py",
+        "dist",
+        "dist/dissipative-negative-artifacts.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.633389949798584,
+      "log": "qualify_dissipative_negatives.log"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tests/browser.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 241.56031036376953,
+      "log": "browser.log"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tests/mobile_startup.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 16.32811164855957,
+      "log": "mobile_startup.log"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tests/property_browser.py",
+        "dist"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 25.666359901428223,
+      "log": "property_browser.log"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tests/material_browser.py",
+        "dist"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 45.25195550918579,
+      "log": "material_browser.log"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tools/inspect_property_integration.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 10.81941843032837,
+      "log": "inspect_property_integration.log"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tools/inspect_real_lesson_proofs.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 24.735680103302002,
+      "log": "inspect_real_lesson_proofs.log"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tests/render_capture_rerun.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 10.036120176315308,
+      "log": "render_capture_rerun.log"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tests/anatomical_arm_inspection.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 57.49193739891052,
+      "log": "anatomical_arm_inspection.log"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tests/coupled_inspection.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 8.226830959320068,
+      "log": "coupled_inspection.log"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tests/anatomical_inspection.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 7.94966983795166,
+      "log": "anatomical_inspection.log"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tests/worker_lifecycle.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 32.34343147277832,
+      "log": "worker_lifecycle.log"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "tests/artifacts.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 14.017680644989014,
+      "log": "artifacts.log"
+    }
+  ],
+  "final_manifest_sha256": "c6b08be4320cd977fa4b7f6890affa9455294c2cf411948041e571f56873f304",
+  "all_passed": true
+}
