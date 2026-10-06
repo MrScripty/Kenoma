@@ -1,0 +1,7 @@
+{
+  "classification": "Preflight test compared two different actual excitations; not physical/residual failure",
+  "observed_rate_difference_per_s": 1.5566714584025476e-13,
+  "correction": "Check original one-sided kernel with each actual excitation held equal, rather than changing rate formula or tolerance",
+  "real_case_prefix_runs": 0,
+  "initial_test_source_sha256": "3b8a4cd0b5d48b4bb731c4a9ba8dcf1c6d8f83ee73ab92eceef0b8ec425e0bb2"
+}

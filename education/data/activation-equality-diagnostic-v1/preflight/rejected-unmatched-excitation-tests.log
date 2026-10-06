@@ -1,0 +1,22 @@
+test_both_representations_retain_original_fields_on_physical_side (__main__.Checks.test_both_representations_retain_original_fields_on_physical_side) ... ok
+test_high_equilibrium_serialization_step (__main__.Checks.test_high_equilibrium_serialization_step) ... ok
+test_input_change_rejected (__main__.Checks.test_input_change_rejected) ... ok
+test_localization_is_transversal_auxiliary_without_projection (__main__.Checks.test_localization_is_transversal_auxiliary_without_projection) ... ok
+test_one_sided_rates_agree_at_equality_derivatives_differ (__main__.Checks.test_one_sided_rates_agree_at_equality_derivatives_differ) ... ok
+test_ordinary_crossing_implementation_fixed (__main__.Checks.test_ordinary_crossing_implementation_fixed) ... ok
+test_physical_failure_retains_all_state_and_ledgers (__main__.Checks.test_physical_failure_retains_all_state_and_ledgers) ... ok
+test_source_and_reference_extension_agree_on_opposite_trial_side (__main__.Checks.test_source_and_reference_extension_agree_on_opposite_trial_side) ... FAIL
+test_wrong_side_accepted_interval_rejected_before_mutation (__main__.Checks.test_wrong_side_accepted_interval_rejected_before_mutation) ... ok
+
+======================================================================
+FAIL: test_source_and_reference_extension_agree_on_opposite_trial_side (__main__.Checks.test_source_and_reference_extension_agree_on_opposite_trial_side)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/Kenoma-refinement-diagnosis/education/tests/activation_equality_diagnostic.py", line 33, in test_source_and_reference_extension_agree_on_opposite_trial_side
+    self.assertAlmostEqual(native['adot'],independent['adot'],places=14)
+AssertionError: -0.1066516186964274 != -0.10665161869658307 within 14 places (1.5566714584025476e-13 difference)
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.244s
+
+FAILED (failures=1)

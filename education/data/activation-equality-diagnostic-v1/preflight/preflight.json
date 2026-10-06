@@ -1,0 +1,15 @@
+{
+  "baseline_commit": "b1689d07e12dd6ea0c061f99f8804067e480901a",
+  "baseline_files_byte_identical": 1913,
+  "real_case_prefix_matrix_executions_before_freeze": 0,
+  "preflight_contains_high_equilibrium_serialization_step": true,
+  "preflight_contains_injected_failure_kernel_probes": true,
+  "nine_corrected_tests_passed": true,
+  "initial_unmatched_excitation_test_failure_preserved": true,
+  "scipy_version": "1.17.0",
+  "dense_implementation_sha256": {
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/integrate/_ivp/rk.py": "fa5d6300917f4f949e699b116f59ae147159d5c6147d55d940dc9d3303891056",
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/integrate/_ivp/radau.py": "d0aa4593431ef39ee07825db6ef0324e4a9bacef0e23fda42d377318ba6a6256"
+  },
+  "protocol_sha256": "de11d380272e109c05a1d7a3045ee40689dcb2c7c42c39d743a4b445d561b948"
+}
