@@ -1,0 +1,9 @@
+PASS required 2 representations x 5 methods x 2 cases = 20 proposed cells; zero executed
+PASS lower-surface linear sensitivity 22.400892527 microseconds > 2 microseconds; independent event refinement retained
+PASS 1742 files from 277ce67 byte-identical
+PASS 179 preserved manifest hashes (148 + 24 + 7)
+PASS original classifications unchanged: ten full, two prefix only
+PASS original 5-symbolic/11-state receipt and all bound inputs/sources unchanged; checks not rerun
+PASS no controller/gain/force/gate/qualification or render changes
+SOURCE e7ed432ce656d5475d39c7c5875b554f05672a67
+TREE 48469904c52a8d3b7cf9ae9fa5c3b4ca164242fc

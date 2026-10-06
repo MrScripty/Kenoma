@@ -1,0 +1,81 @@
+{
+  "passed": true,
+  "scope": "Documentation refinement and frozen-evidence verification only; no solver executed",
+  "source_commit": "e7ed432ce656d5475d39c7c5875b554f05672a67",
+  "source_tree": "48469904c52a8d3b7cf9ae9fa5c3b4ca164242fc",
+  "preserved_commit": "277ce67fdf1bf88182aebd1cda7b20c10fe8f5a5",
+  "all_preserved_tracked_files_unchanged": 1742,
+  "preserved_manifests_verified": {
+    "education/data/vertical-force-command-v1/review/packet-manifest.json": 148,
+    "education/data/vertical-force-completion-v1/review/packet-manifest.json": 24,
+    "education/data/antiwindup-continuation-analysis-v1/review/packet-manifest.json": 7
+  },
+  "modified_preserved_files": [],
+  "retained_full_presets": 10,
+  "retained_prefix_only_presets": [
+    "high",
+    "mass-1"
+  ],
+  "retained_symbolic_identities": 5,
+  "retained_frozen_state_diagnostics": 11,
+  "algebra_checks_rerun": false,
+  "required_matrix": {
+    "cases": [
+      "high",
+      "mass-1"
+    ],
+    "representations": [
+      "full-five-state",
+      "independent-four-mechanical-state-on-sliding"
+    ],
+    "methods": [
+      {
+        "method": "RK4",
+        "step_s": 0.0002
+      },
+      {
+        "method": "RK4",
+        "step_s": 0.0001
+      },
+      {
+        "method": "RK4",
+        "step_s": 5e-05
+      },
+      {
+        "method": "DOP853",
+        "rtol": 1e-09,
+        "atol": 1e-11,
+        "max_step_s": 0.0005
+      },
+      {
+        "method": "Radau",
+        "rtol": 1e-09,
+        "atol": 1e-11,
+        "max_step_s": 0.0005
+      }
+    ],
+    "cells_per_case": 10,
+    "total_cells": 20,
+    "executed_cells": 0
+  },
+  "lower_surface_linear_sensitivity": {
+    "incoming_normal_magnitude_per_s": 0.01785643136819476,
+    "existing_matched_force_allowance_N": 0.0001,
+    "raw_force_error_contribution": 4.0000000000000003e-07,
+    "event_time_sensitivity_s": 2.2400892527297802e-05,
+    "unchanged_event_disagreement_gate_s": 2e-06,
+    "sensitivity_to_gate_ratio": 11.200446263648901,
+    "is_error_bound_or_localized_event": false,
+    "event_refinement_required_independently": true
+  },
+  "input_sha256": {
+    "education/data/antiwindup-continuation-analysis-v1/review/algebra-and-frozen-state-check.json": "32f5e5dec6b62cd8d663c34b85dea356eabbdf44f6c9980b48ea68d40d3e1337",
+    "education/data/vertical-force-completion-v1/review/completion-validation.json": "d04798a422af62714309b7d02e0308576bbcb9224f190fdb454b6722af584b3d",
+    "education/data/vertical-force-command-v1/protocol.json": "2619577a9e7e73b33e8cf500e065869059fc053951deb246237234b652e8a153"
+  },
+  "continuation_implemented": false,
+  "new_trajectories": 0,
+  "new_qualified_trajectories": 0,
+  "controller_gains_forces_gates_qualification_changed": false,
+  "owner_execution_authorization_pending": true
+}

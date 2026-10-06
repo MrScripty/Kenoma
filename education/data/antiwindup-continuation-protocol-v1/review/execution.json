@@ -1,0 +1,13 @@
+{
+  "source_commit": "e7ed432ce656d5475d39c7c5875b554f05672a67",
+  "source_tree": "48469904c52a8d3b7cf9ae9fa5c3b4ca164242fc",
+  "preserved_commit": "277ce67fdf1bf88182aebd1cda7b20c10fe8f5a5",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "scope": "Documentation-only clarification, immutable packet/hash verification and scalar sensitivity recalculation",
+  "solver_executed": false,
+  "continuation_implemented": false,
+  "new_trajectories": 0,
+  "new_qualified_trajectories": 0,
+  "render_evidence": "Existing reviewed HTML and screenshots verified hash-identical through preserved manifests; no new render made."
+}

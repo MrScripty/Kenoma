@@ -1,0 +1,36 @@
+{
+  "source_commit": "e7ed432ce656d5475d39c7c5875b554f05672a67",
+  "source_tree": "48469904c52a8d3b7cf9ae9fa5c3b4ca164242fc",
+  "preserved_commit": "277ce67fdf1bf88182aebd1cda7b20c10fe8f5a5",
+  "scope": "Research-only protocol clarification; no execution authority or new trajectory evidence",
+  "files": [
+    {
+      "path": "education/data/antiwindup-continuation-protocol-v1/review/execution.json",
+      "bytes": 696,
+      "sha256": "f2e704641db03eb4e22c06bb678b3cab0714642a0a2c0bd82e936502706ce7c5"
+    },
+    {
+      "path": "education/data/antiwindup-continuation-protocol-v1/review/protocol-verification.json",
+      "bytes": 2778,
+      "sha256": "62af10ba8b2178832496ef92c744985dac274815d898f676bb89c0185b1e417e"
+    },
+    {
+      "path": "education/data/antiwindup-continuation-protocol-v1/review/protocol-verification.log",
+      "bytes": 630,
+      "sha256": "b597fb2fcf1b1a315fbbd2663c68be454cc143f84f61963417fdb336221425e6"
+    },
+    {
+      "path": "education/data/antiwindup-continuation-protocol-v1/review/verification-schema-failure.log",
+      "bytes": 270,
+      "sha256": "ce98da86b1782efee51454c2f765890d964d512a65dd94460b1854520e3b25f3"
+    },
+    {
+      "path": "education/research/mechanical-closure/antiwindup-continuation-protocol-clarifications.md",
+      "bytes": 7771,
+      "sha256": "b8139dd5ad709e4a82226186e1996b23e1c7efea2f6609693240edacf3859c90"
+    }
+  ],
+  "excluded": [
+    "This manifest itself"
+  ]
+}
