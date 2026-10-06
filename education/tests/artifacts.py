@@ -10,6 +10,7 @@ from check_endpoint_warning_audit import check as check_endpoint_warning_audit
 from check_material_artifact import check as check_material_artifact
 from check_real_lesson_artifact import check as check_real_lesson_artifact
 from check_real_lesson_proofs import FAMILIES as REAL_FAMILIES
+from check_print_readability import check as check_print_readability
 ROOT=Path(__file__).resolve().parents[1];out=ROOT/'dist'
 proof=json.loads((out/'proof-status.json').read_text())
 assert proof['source_sha256']==hashlib.sha256((ROOT/'proofs/Mechanics.lean').read_bytes()).hexdigest()
@@ -59,6 +60,7 @@ assert property_browser['manifest_sha256']==hashlib.sha256((out/'build-manifest.
 check_endpoint_warning_audit(out)
 check_material_artifact(out)
 check_real_lesson_artifact(out)
+print_readability=check_print_readability(out)
 property_render=json.loads((out/'property-book-review/render-receipt.json').read_text())
 assert property_render['result']=='PASS_PROPERTY_BOOK_RENDER_CAPTURE'
 assert property_render['html_sha256']==hashlib.sha256((out/'index.html').read_bytes()).hexdigest()
@@ -191,5 +193,6 @@ for label in ['Humerus','Triceps medial head','Unit 1','Elapsed time from retain
  print_label_sizes[label]=round(min(sizes),2)
 results={'status':'passed','pdf_pages':len(doc),'proof_cards':total_claims,'pdf_links':'no loopback or file URLs','pdf_proof_destinations':proof_destinations,'browser':browser['browser_version'],
  'print_figure_label_minimum_pt':print_label_sizes,
+ 'print_readability':{'minimum_measured_pt':print_readability['minimum_measured_pt'],'theorem_statements':print_readability['theorem_statements'],'complete_source_appendices':print_readability['complete_source_appendices'],'dense_figure_labels':print_readability['dense_figure_labels']},
  'scope':'Content, hash, glyph and page-bounds sanity; PDF appearance still requires visual review.'}
 (out/'artifact-check.json').write_text(json.dumps(results,indent=2)+'\n');print(json.dumps(results,indent=2))

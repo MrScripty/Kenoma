@@ -31,6 +31,8 @@ def serve():
     return server,f'http://127.0.0.1:{server.server_port}'
 
 def render():
+    for name in ('kenoma-mechanics.pdf','pdf-render.json','print-readability-check.json'):
+        (ROOT/'dist'/name).unlink(missing_ok=True)
     server,url=serve()
     try:
         with sync_playwright() as p:
@@ -38,7 +40,11 @@ def render():
             page=browser.new_page()
             page.goto(url+'/index.html',wait_until='networkidle')
             page.emulate_media(media='print')
+            # Match A4's printable width before measuring MathML. Let long
+            # formulas wrap at semantic boundaries instead of shrinking all text.
+            page.set_viewport_size({'width':658,'height':1000})
             page.evaluate('document.fonts.ready')
+            print_layout=page.evaluate((ROOT/'tools/print_layout.js').read_text())
             heading_titles=page.locator('h1,h2,h3,h4,h5,h6').all_text_contents()
             # PDF links must survive the print server's lifetime. Web downloads stay relative.
             revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
@@ -67,7 +73,7 @@ def render():
               prefer_css_page_size=True,tagged=True,outline=True)
             repair_outline_titles(ROOT/'dist/kenoma-mechanics.pdf',heading_titles)
             version=browser.version;browser.close()
-        (ROOT/'dist/pdf-render.json').write_text(json.dumps({'renderer':'Playwright Chromium','browser_version':version,'source':'index.html','static_diagrams':True,'tagged':True,'pdf_byte_identity_asserted':False},indent=2)+'\n')
+        (ROOT/'dist/pdf-render.json').write_text(json.dumps({'renderer':'Playwright Chromium','browser_version':version,'source':'index.html','static_diagrams':True,'tagged':True,'pdf_byte_identity_asserted':False,'print_layout':print_layout},indent=2)+'\n')
         print('Rendered illustrated PDF from the same HTML content')
     finally:server.shutdown();server.server_close()
 if __name__=='__main__':render()
