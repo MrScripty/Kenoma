@@ -41,6 +41,10 @@ def validate_build(out,manifest):
             require(actual.get('status')=='checked' and isinstance(actual.get('axioms'),list) and set(actual['axioms'])<={'propext','Quot.sound','Classical.choice'},'Unqualified proof: '+name)
     lock=json.loads((ROOT/'proofs/mathlib-lock.json').read_text())
     require(read('property-proof-status.json').get('mathlib')==lock==manifest.get('property_mathlib'),'Wrong pinned mathlib identity')
+    real_receipts={prefix+'-proof-status.json' for _,_,prefix,_ in REAL_FAMILIES}
+    for name,*_ in FAMILIES:
+        if name in real_receipts:
+            require(read(name).get('mathlib')==lock,'Wrong pinned mathlib identity: '+name)
     require(digest(local('proofs/mathlib-lake-manifest.json'))==lock['manifest_sha256'],'Wrong bundled dependency manifest')
     html=digest(local('index.html'));app=digest(local('assets/app.js'));manifest_hash=digest(local('build-manifest.json'))
     for name in ['browser-check.json','mobile-startup-check.json']:

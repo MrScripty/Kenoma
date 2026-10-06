@@ -5,7 +5,7 @@
     "claim": "An assumed real equal-and-opposite force pair cancels",
     "assumptions": "One real force component and its assumed equal-and-opposite partner.",
     "limitations": "Does not prove an interface follows an action-reaction or constitutive law.",
-    "implementation": "web/mechanics.mjs: force bookkeeping."
+    "implementation": "book/chapters/01-force.md: assumed internal-pair bookkeeping; no interface or pair solver is claimed."
   },
   {
     "id": "torque-real-linearity",
@@ -13,7 +13,7 @@
     "claim": "Real planar torque is additive in applied force at a fixed point",
     "assumptions": "Real planar point coordinates; two real applied forces share that application point and torque origin.",
     "limitations": "No geometric differentiation or floating-point equivalence.",
-    "implementation": "web/mechanics.mjs: planar torque."
+    "implementation": "web/mechanics.mjs: cross2 implements the planar torque expression."
   },
   {
     "id": "virtual-real-power",
