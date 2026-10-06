@@ -54,11 +54,7 @@ theorem activation_hasDerivAt (a u h tau : ℝ) (htau : tau ≠ 0) :
       ((u - activation a u h tau) / tau) h := by
   have hd := ((((hasDerivAt_id h).neg).div_const tau).exp).const_mul (a - u)
   have hd' := hd.const_add u
-  convert hd' using 1
-  · simp only [activation, id_eq]
-  · simp only [activation, id_eq]
-    field_simp [htau]
-    <;> ring
+  convert hd' using 1 <;> simp only [activation, id_eq] <;> field_simp [htau] <;> ring
 
 theorem active_force_bounds (fiber a maxForce optimalFiber width : ℝ)
     (ha : 0 ≤ a) (hF : 0 ≤ maxForce) :
@@ -76,11 +72,9 @@ theorem active_force_hasDerivAt (fiber a maxForce optimalFiber width : ℝ)
       (activeSlope fiber a maxForce optimalFiber width) fiber := by
   have hz := (((hasDerivAt_id fiber).div_const optimalFiber).sub_const 1).div_const width
   have hd := (((hz.pow 2).neg).exp).const_mul (a * maxForce)
-  convert hd using 1
-  · simp only [activeForce, normalizedFiber, id_eq]
-  · simp only [activeSlope, activeForce, normalizedFiber, id_eq]
-    field_simp [hl, hw]
-    <;> ring
+  convert hd using 1 <;>
+    simp only [activeSlope, activeForce, normalizedFiber, id_eq] <;>
+    field_simp [hl, hw] <;> ring
 
 theorem gaussian_weighted_radius_bound (z : ℝ) :
     2 * |z| * Real.exp (-(z ^ 2)) ≤ Real.sqrt (2 / Real.exp 1) := by
@@ -99,8 +93,8 @@ theorem gaussian_weighted_radius_bound (z : ℝ) :
     _ ≤ Real.exp (2 * z ^ 2 - 1) * (2 * Real.exp (-2 * z ^ 2)) :=
       mul_le_mul_of_nonneg_right he (mul_nonneg (by norm_num) (Real.exp_nonneg _))
     _ = 2 * Real.exp (-1) := by
-      rw [mul_comm (Real.exp (2 * z ^ 2 - 1)), ← mul_assoc, ← Real.exp_add]
-      congr 1
+      rw [mul_comm (Real.exp (2 * z ^ 2 - 1)), mul_assoc, ← Real.exp_add]
+      congr 2
       ring
     _ = 2 / Real.exp 1 := by rw [Real.exp_neg, div_eq_mul_inv]
 
