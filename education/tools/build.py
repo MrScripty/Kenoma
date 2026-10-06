@@ -17,6 +17,13 @@ from spatial_figures import generate as advanced_figures
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'dist'
 
+def theorem_statement(checked_source,name):
+    # A checked theorem may use a term proof or a tactic proof. Stop at its
+    # assignment, and never borrow a later declaration's proof delimiter.
+    statement=re.search(r'^theorem '+re.escape(name)+r'\b(?:(?!^\s*(?:theorem|def|lemma)\b).)*?\s:=',checked_source,re.S|re.M)
+    if not statement:raise ValueError('Missing theorem statement: '+name)
+    return statement.group(0).rsplit(':=',1)[0].rstrip()
+
 LABS={
  'force':{'title':'Laboratory 1 · Constant force','model':'Analytic planar motion; constant net force; no contact or anatomy.',
   'description':'A position marker moves along x. Position scale is fixed over the 0–2 s trajectory for the selected mass and force; grid spacing is reported below. Yellow force and violet velocity arrows use separate scales. Values retain SI units.',
@@ -134,9 +141,7 @@ def build():
     def proof_block(id,web):
         receipt,checked_source,receipt_path,transcript_path,*_=claim_bundles[id]
         c=next(c for c in receipt['claims'] if c['id']==id);name=c['theorem'].split('.')[-1]
-        statement=re.search(r'theorem '+re.escape(name)+r'\b(.*?) := by',checked_source,re.S)
-        if not statement: raise ValueError('Missing theorem source')
-        stmt='theorem '+name+statement.group(1)
+        stmt=theorem_statement(checked_source,name)
         meta=f"Lean 4.19.0; {dependency_description(receipt)}; transitive axioms: {', '.join(c['axioms']) or 'none'}; source SHA-256: {receipt['source_sha256']}"
         if not web:
             claim_text=c['claim'].replace('*',r'\*').replace('^',r'\^');assumptions=c['assumptions'].replace('*',r'\*').replace('^',r'\^');limits=c['limitations'].replace('*',r'\*').replace('^',r'\^')
