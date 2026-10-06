@@ -1,0 +1,13 @@
+test_auxiliary_clips_without_freezing_or_accepting (__main__.Checks.test_auxiliary_clips_without_freezing_or_accepting) ... ok
+test_constraint_failure_is_atomic (__main__.Checks.test_constraint_failure_is_atomic) ... ok
+test_event_gate_cannot_be_replaced_by_integral_agreement (__main__.Checks.test_event_gate_cannot_be_replaced_by_integral_agreement) ... ok
+test_missing_entry_method_fails (__main__.Checks.test_missing_entry_method_fails) ... ok
+test_physical_stage_failure_retains_time_state_ledgers (__main__.Checks.test_physical_stage_failure_retains_time_state_ledgers) ... ok
+test_sliding_tangency_and_mechanical_fields (__main__.Checks.test_sliding_tangency_and_mechanical_fields) ... ok
+test_wrong_event_bracket_cannot_advance (__main__.Checks.test_wrong_event_bracket_cannot_advance) ... ok
+test_zero_error_is_not_sliding_policy (__main__.Checks.test_zero_error_is_not_sliding_policy) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.319s
+
+OK

@@ -1,0 +1,44 @@
+{
+  "scope": "Owner-approved isolated bounded experiment, pending independent review",
+  "entry_checks": {
+    "high": {
+      "passed": false,
+      "event_time_span_s": 3.2566679908363483e-10,
+      "event_gate_s": 2e-06,
+      "common_pre_entry_grid_count": 106,
+      "max_integral_difference": 4.357174898661498e-09,
+      "integral_gate": 1e-09,
+      "max_raw_difference": 4.1571196041090275e-08,
+      "raw_gate": 1e-08,
+      "times": {
+        "full-source/RK4-0.0002": 0.10545806579589848,
+        "full-source/RK4-0.0001": 0.10545806598663335,
+        "full-source/RK4-0.00005": 0.1054580659866286,
+        "full-source/DOP853": 0.1054580660161678,
+        "full-source/Radau": 0.10545806606401015,
+        "reduced-independent/RK4-0.0002": 0.10545806579589848,
+        "reduced-independent/RK4-0.0001": 0.10545806598663335,
+        "reduced-independent/RK4-0.00005": 0.1054580659866286,
+        "reduced-independent/DOP853": 0.1054580659826416,
+        "reduced-independent/Radau": 0.10545806612156527
+      }
+    },
+    "mass-1": {
+      "passed": false,
+      "reason": "missing-or-failed-entry-cell"
+    }
+  },
+  "required_cells": 20,
+  "executed_cells": 20,
+  "source_sha256": {
+    "education/tools/run_filippov_bounded_experiment.py": "e851aa5fbe3ae25878d482cf737ef3ed84ba884880e9a30e97b9cec013cda93b",
+    "education/tools/filippov_source_worker.mjs": "0d6b83efd7b63d7dbac21b857ba6c0af357139b6476675de4f4d46a47dfe8fcd",
+    "education/tools/vertical_force_reference.py": "18fb8a6d533010afc5211fb7a286bfc53e2d7a1b0c1544a350e1896e3ea63fed",
+    "education/web/vertical-force-model.js": "58ca8de8ae7d9e65083f6460bfb25dc32eccd1953853da78d8325274c0ddcf80",
+    "education/data/vertical-force-command-v1/protocol.json": "2619577a9e7e73b33e8cf500e065869059fc053951deb246237234b652e8a153",
+    "education/data/millard-reference-v1/review/native-controls.json": "13c360473038d1d7ca86ea4aab7275cd991694cb8e8c195e6a239f3070e25eb3"
+  },
+  "elapsed_s": 311.61372344000847,
+  "original_trajectories_modified": false,
+  "physical_gains_gates_changed": false
+}

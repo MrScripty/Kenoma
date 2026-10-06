@@ -1,0 +1,186 @@
+{
+  "execution": {
+    "matrix_source_commit": "213cca56ac73e9a2289cd5c4016903267b805482",
+    "matrix_source_tree": "d57173fab0bf2c36c61fac41003d8383e1d9b736",
+    "audit_and_12_test_source_commit": "d3f89638875473f1bde702acbe670c326f9c49ba",
+    "preflight_8_test_source_commit": "213cca56ac73e9a2289cd5c4016903267b805482",
+    "scope": "First matrix retained unchanged; high entry-controller gates fail, lower ordinary crossing was stopped as unsupported strict-entry event",
+    "qualified": false,
+    "new_accepted_sliding_segments": 0,
+    "path_relocation_mapping": {
+      "from": "education/data/filippov-bounded-v1/review/",
+      "to": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/"
+    },
+    "source_hash_resolution": "First receipts retain original path names; changed authored sources are preserved in executed-source snapshots and original commit history."
+  },
+  "files": [
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/audit-test-run.log",
+      "bytes": 1459,
+      "sha256": "271c045cdfb560a0f5173190ba4233ba82099ab128b921c26582a8b4b95a208b"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/entry-refinement.png",
+      "bytes": 147951,
+      "sha256": "fde0747709a7560e86d8d9d94443521cd371ba548ef81a0394fedc5499e1f79c"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/entry-refinement.svg",
+      "bytes": 104172,
+      "sha256": "8205cd517124855df878040829246052d55770409a30ce8f538f129c0ce5069f"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/executed-source/audit_filippov_bounded_experiment.py",
+      "bytes": 8468,
+      "sha256": "cb95b721cf44d06577f10308f6a8cc4a981f695630011537cdcc964036a60902"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/executed-source/filippov_bounded.py",
+      "bytes": 5301,
+      "sha256": "9162be9bfcb8596b4809b85a825e8d11b522bd3fcd8ab1a1714ba17d98390aec"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/executed-source/filippov_source_worker.mjs",
+      "bytes": 1372,
+      "sha256": "0d6b83efd7b63d7dbac21b857ba6c0af357139b6476675de4f4d46a47dfe8fcd"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/executed-source/run_filippov_bounded_experiment.py",
+      "bytes": 16017,
+      "sha256": "e851aa5fbe3ae25878d482cf737ef3ed84ba884880e9a30e97b9cec013cda93b"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/execution.json",
+      "bytes": 859,
+      "sha256": "337459e5bd40ab0f70ca9f0aee7293aa9e20c7da271a638355346133689d934c"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/first-audit-run.log",
+      "bytes": 3013,
+      "sha256": "1661a6dfea1ebe3161216ca665abdcbdfb9fdc21d2fdf29366a01d1076cac5f7"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/high-full-source-DOP853.json",
+      "bytes": 139232,
+      "sha256": "c82035b3793a06a4fc20679167f1861299f5e224bf1320799715e7832ea3d564"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/high-full-source-RK4-0.00005.json",
+      "bytes": 415133,
+      "sha256": "05bffc4f5a8e954d88f93618868db019bc368f9888ab6a6d83938f75a8b3c363"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/high-full-source-RK4-0.0001.json",
+      "bytes": 257430,
+      "sha256": "12c56a7972c0b0dc92b7e59abd6a91f96bf157e0c4117d2594628b0fc34322ec"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/high-full-source-RK4-0.0002.json",
+      "bytes": 176901,
+      "sha256": "6afccf1ef62f286b13a968f4dc79f36e7fc422516603f0cbd8cd54a0db0ef2f5"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/high-full-source-Radau.json",
+      "bytes": 178179,
+      "sha256": "b812ce20600a0396e81f7355b81961579dbd4686b88d2be5686f74d2238edd4f"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/high-reduced-independent-DOP853.json",
+      "bytes": 143760,
+      "sha256": "7e55a72ac7edabdb328e543d1661cc2227c9c55cfcf9adebf034fb98c6731349"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/high-reduced-independent-RK4-0.00005.json",
+      "bytes": 417162,
+      "sha256": "85be034a636141dbb9e925a99c351fe2614bd1831d399dfe3443a2657fb86a1b"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/high-reduced-independent-RK4-0.0001.json",
+      "bytes": 259112,
+      "sha256": "be1a3fa1e1862ba4bea6f6397aebe9518beba78852e2b1b7f4136db662203c03"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/high-reduced-independent-RK4-0.0002.json",
+      "bytes": 178748,
+      "sha256": "99e992105b589266c5cec92f7b0e8820a9af9f9dd0d5fe19986c4d03ec7ef04f"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/high-reduced-independent-Radau.json",
+      "bytes": 188349,
+      "sha256": "501d8902324fd91fb9926e730b188d56cff3cf929bd5c00b8feaa6fdf3cd1441"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/mass-1-full-source-DOP853.json",
+      "bytes": 163252,
+      "sha256": "bd6a1d8dca66775c624b41c07c376a3142733f70b55384fd067abf65436a13f1"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/mass-1-full-source-RK4-0.00005.json",
+      "bytes": 412162,
+      "sha256": "c3fdd087949b119fe870f7fa1e0f2d59d98d0902423036df20358deb0f50af76"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/mass-1-full-source-RK4-0.0001.json",
+      "bytes": 251930,
+      "sha256": "b7100238d201b967c81feff20ffd2ca9bb44c596068d10574a6f949e650c7d7f"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/mass-1-full-source-RK4-0.0002.json",
+      "bytes": 173267,
+      "sha256": "a7283d439f927a4d37b4f58a044f8091515072685fc1a15545e756a8a5deec7b"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/mass-1-full-source-Radau.json",
+      "bytes": 144536,
+      "sha256": "ccc1a0ca84502725eb4dc2296ae072e9b6511592ab728566ed013547facbc703"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/mass-1-reduced-independent-DOP853.json",
+      "bytes": 161630,
+      "sha256": "2f4e6d23b383acc083e387b2bf322daceb7b06ab3690bc1775afa752456345dc"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/mass-1-reduced-independent-RK4-0.00005.json",
+      "bytes": 411725,
+      "sha256": "0014d590f7ce5b00f35d13d523095d0efa323d6cbe6e8ff30eb7b94a321e8460"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/mass-1-reduced-independent-RK4-0.0001.json",
+      "bytes": 251545,
+      "sha256": "228f63595b68fbc1141ba084af6742ea1c37bfcd8925030e88276f7976cb36ab"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/mass-1-reduced-independent-RK4-0.0002.json",
+      "bytes": 172928,
+      "sha256": "70f31d2d6794f38747c3894a54be4d43acb8e752c3b22b11355538ab359ec21f"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/mass-1-reduced-independent-Radau.json",
+      "bytes": 166686,
+      "sha256": "d5554b1223fcb63c27561fa079f6bcefb4e8330440119ee3417201bfc7065fec"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/matrix-execution.json",
+      "bytes": 2065,
+      "sha256": "99d0f554e26936cd0f97cbe6258c54ee347f634876ab33ec899593722b9444f9"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/matrix-run.log",
+      "bytes": 3868,
+      "sha256": "bfce86d057af18a79c760728df8a0517a81b9bbd5500f2f1aca821e6d58d2aa3"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/preflight-test-run.log",
+      "bytes": 1000,
+      "sha256": "0382912f2350063a3c1761acdb931c457e2e856ebec0a308034167ca6d956f13"
+    },
+    {
+      "path": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/validation.json",
+      "bytes": 101085,
+      "sha256": "8317f9edc6b7c4398e403fddeecbef8b47f88327129edd142fcf02f31137a87c"
+    }
+  ],
+  "excluded": [
+    "This manifest itself"
+  ]
+}

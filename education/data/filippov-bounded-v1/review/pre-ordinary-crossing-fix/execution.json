@@ -1,0 +1,14 @@
+{
+  "matrix_source_commit": "213cca56ac73e9a2289cd5c4016903267b805482",
+  "matrix_source_tree": "d57173fab0bf2c36c61fac41003d8383e1d9b736",
+  "audit_and_12_test_source_commit": "d3f89638875473f1bde702acbe670c326f9c49ba",
+  "preflight_8_test_source_commit": "213cca56ac73e9a2289cd5c4016903267b805482",
+  "scope": "First matrix retained unchanged; high entry-controller gates fail, lower ordinary crossing was stopped as unsupported strict-entry event",
+  "qualified": false,
+  "new_accepted_sliding_segments": 0,
+  "path_relocation_mapping": {
+    "from": "education/data/filippov-bounded-v1/review/",
+    "to": "education/data/filippov-bounded-v1/review/pre-ordinary-crossing-fix/"
+  },
+  "source_hash_resolution": "First receipts retain original path names; changed authored sources are preserved in executed-source snapshots and original commit history."
+}

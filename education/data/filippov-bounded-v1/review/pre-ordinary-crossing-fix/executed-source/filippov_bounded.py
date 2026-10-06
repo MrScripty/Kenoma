@@ -32,12 +32,6 @@ class Checks(unittest.TestCase):
             self.assertEqual(physical,[slide[k] for k in ['FT','v','acceleration','Pactive','D']])
             self.assertAlmostEqual(slide['Idot']+slide['d'],0);self.assertGreater(slide['normal_on'],0);self.assertLess(slide['normal_off'],0)
             self.assertEqual(z[:4].tolist(),zs[:4].tolist())
-    def test_frozen_incoming_extension_retains_original_branch(self):
-        e=Engine('mass-1','reduced-independent','RK4-0.0002')
-        r=json.loads((ROOT/'education/data/vertical-force-command-v1/review/mass-1-Radau.json').read_text())
-        row=next(x for x in r['history'] if abs(x['t']-.12)<1e-10)
-        e.x=np.array(row['z']);e.controller_mode='frozen';z,o=e.evaluate(e.x)
-        self.assertGreater(o['H'],0);self.assertEqual(o['Idot'],0);self.assertEqual(o['u'],.01)
     def test_zero_error_is_not_sliding_policy(self):
         e=self.engine();self.boundary(e);_,o=e.evaluate(e.x);e.target=o['FT'];e.mode='sliding'
         with self.assertRaisesRegex(Failure,'Strict attracting'):e.evaluate(e.x)

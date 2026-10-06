@@ -39,7 +39,7 @@ class Engine:
         self.case,self.rep,self.method=case,rep,method;self.cfg=CASES[case]
         self.bound,self.eta=(1.,1.) if case=='high' else (.01,-1.)
         self.source=Source() if rep=='full-source' else None
-        self.mode='incoming';self.controller_mode='integrating';self.target=self.cfg['m']*P['gravity_m_per_s2'] if case=='high' else self.cfg['target']
+        self.mode='incoming';self.target=self.cfg['m']*P['gravity_m_per_s2'] if case=='high' else self.cfg['target']
         self.t=0.;self.x=np.array(self.cfg['z'],float);self.history=[];self.events=[];self.probes=[];self.intervals=[];self.failure=None;self.candidate=None
         self.stage_records=[];self.max_residual=0.;self.min_q=float('inf');self.min_s=float('inf')
         self.quad=np.zeros(6);self.steps=0;self.save(0.,self.x)
@@ -66,12 +66,7 @@ class Engine:
             if self.eta*o['e']<=0 or o['normal_on']<=1e-8 or o['normal_off']>=-1e-8:
                 raise Failure('strict-sign-loss','Strict attracting/outward-error margin lost; no automatic exit')
             o['Idot']=-d
-        else:
-            if self.controller_mode=='frozen' and self.eta*o['e']<=0:
-                raise Failure('unsupported-error-transition','Frozen outward-error assumption lost; no undeclared transition')
-            # Ordinary crossings retain the original branches. Their one-sided
-            # probe extensions use that incoming branch and original clipping.
-            o['Idot']=8*o['e'] if self.controller_mode=='integrating' else 0.
+        else:o['Idot']=8*o['e']  # declared incoming auxiliary; clipping remains in output
         return z,o
     def rhs(self,t,x):
         try:
@@ -92,7 +87,7 @@ class Engine:
     def save(self,t,x):
         z,o=self.evaluate(x)
         if self.mode=='sliding' and abs(o['H'])>1e-9:raise Failure('constraint-drift','Full state constraint drift exceeds 1e-9',t,z)
-        r=dict(t=float(t),z=z.tolist(),target=self.target,mode=self.mode,controller_mode=self.controller_mode,**{k:float(o[k]) for k in ['FT','u','uraw','e','H','normal_on','normal_off','residual','v','Idot']})
+        r=dict(t=float(t),z=z.tolist(),target=self.target,mode=self.mode,**{k:float(o[k]) for k in ['FT','u','uraw','e','H','normal_on','normal_off','residual','v']})
         if self.history and abs(self.history[-1]['t']-t)<1e-12:self.history[-1]=r
         else:self.history.append(r)
     def step_rk(self,t,x,h):
@@ -105,21 +100,16 @@ class Engine:
         lo,hi=left,right;records=[]
         self.localization_records=records
         _,a=self.evaluate(dense(lo));_,b=self.evaluate(dense(hi))
-        direction=1 if self.controller_mode=='integrating' else -1
-        if not direction*a['H']<0<=direction*b['H']:raise Failure('event-bracket','Incoming extension has no oriented crossing bracket')
+        if not a['H']<0<=b['H']:raise Failure('event-bracket','Incoming extension has no oriented crossing bracket')
         for iteration in range(32):
             mid=(lo+hi)/2;x=dense(mid);z,o=self.evaluate(x)
             if self.eta*o['e']<=0:raise Failure('event-error-direction','Outward error lost in localization',mid,z)
             records.append(dict(t=mid,z=z.tolist(),H=o['H'],u=o['u'],residual_N=o['residual'],accepted=False))
-            if direction*o['H']<0:lo=mid
+            if o['H']<0:lo=mid
             else:hi=mid
             if hi-lo<=1e-7 and abs(o['H'])<=1e-9:
-                on,off=o['normal_on'],o['normal_off']
-                if on>1e-8 and off<-1e-8:classification='attracting'
-                elif direction==1 and on>1e-8 and off>1e-8:classification='ordinary-outward'
-                elif direction==-1 and on<-1e-8 and off<-1e-8:classification='ordinary-inward'
-                else:raise Failure('event-strict-sign','Candidate is neither certified crossing nor strict attraction',mid,z)
-                return dict(t=mid,x=x.tolist(),z=z.tolist(),H=o['H'],normal_on=on,normal_off=off,classification=classification,weight=-o['d']/o['k'] if classification=='attracting' else None,bracket=[lo,hi],iterations=iteration+1,probes=records,accepted=False)
+                if o['normal_on']<=1e-8 or o['normal_off']>=-1e-8:raise Failure('event-strict-sign','Candidate is not certified strictly attracting',mid,z)
+                return dict(t=mid,x=x.tolist(),z=z.tolist(),H=o['H'],normal_on=o['normal_on'],normal_off=o['normal_off'],weight=-o['d']/o['k'],bracket=[lo,hi],iterations=iteration+1,probes=records,accepted=False)
         raise Failure('event-localization','32-iteration bracket/constraint criterion not met')
     def accept(self,stop,newx,dense):
         before=self.t;old=self.x.copy();old_quad=self.quad.copy();old_history=list(self.history)
@@ -128,7 +118,7 @@ class Engine:
             # All evaluations are validated before any accepted state/ledger mutation.
             for node,weight in zip(NODES,WEIGHTS):
                 ti=before+(stop-before)*(node+1)/2;xi=dense(ti);z,o=self.evaluate(xi)
-                if self.mode=='incoming' and (1 if self.controller_mode=='integrating' else -1)*o['H']>1e-9:raise Failure('missed-entry','Auxiliary beyond-surface point cannot enter accepted interval',ti,z)
+                if self.mode=='incoming' and o['H']>1e-9:raise Failure('missed-entry','Auxiliary beyond-surface point cannot enter accepted interval',ti,z)
                 if self.mode=='sliding' and abs(o['H'])>1e-9:raise Failure('constraint-drift','Dense sliding constraint exceeds 1e-9',ti,z)
                 # Independent kernels re-evaluate accepted dense physical powers.
                 ref=reference_output(z,self.cfg,{'target':self.target})
@@ -161,15 +151,8 @@ class Engine:
                     nt,nx,dense=float(solver.t),solver.y.copy(),solver.dense_output()
                 if nt-before<1e-10 or self.steps>=10000:raise Failure('ODE-stall','Tiny-step or 10000-step budget reached')
                 _,o=self.evaluate(nx)
-                direction=1 if self.controller_mode=='integrating' else -1
-                if seek_entry and direction*o['H']>=0:
+                if seek_entry and o['H']>=0:
                     candidate=self.localize(before,nt,dense)
-                    if candidate['classification']!='attracting':
-                        self.probes.append(dict(start=before,trialEnd=nt,startState=self.decode(old).tolist(),ordinary_crossing=candidate,stages=self.stage_records,accepted=False))
-                        self.accept(candidate['t'],np.array(candidate['x']),dense)
-                        self.events.append(dict(type=candidate['classification'],t=self.t,bracket=candidate['bracket'],H=candidate['H'],normal_on=candidate['normal_on'],normal_off=candidate['normal_off'],integral_reset=False,mechanical_jump=0.))
-                        self.controller_mode='frozen' if direction==1 else 'integrating'
-                        self.save(self.t,self.x);solver=None;continue
                     # Keep the candidate extension privately until all methods agree.
                     self.candidate=candidate;self.pending_dense=dense
                     self.probes.append(dict(start=before,trialEnd=nt,startState=self.decode(old).tolist(),candidate=candidate,stages=self.stage_records,accepted=False))
@@ -210,10 +193,7 @@ def entry_agreement(engines):
     maxI=maxraw=0.
     for t in common:
         vals=[m[t] for m in maps];maxI=max(maxI,max(r['z'][4] for r in vals)-min(r['z'][4] for r in vals));maxraw=max(maxraw,max(r['uraw'] for r in vals)-min(r['uraw'] for r in vals))
-    ordinary=[[x for x in getattr(e,'events',[]) if x['type'].startswith('ordinary-')] for e in engines]
-    types_match=all([x['type'] for x in events]==[x['type'] for x in ordinary[0]] for events in ordinary)
-    ordinary_spans=[max(events[j]['t'] for events in ordinary)-min(events[j]['t'] for events in ordinary) for j in range(len(ordinary[0]))] if types_match else []
-    return dict(passed=span<=2e-6 and maxI<=1e-9 and maxraw<=1e-8 and types_match and max(ordinary_spans,default=0)<=2e-6,event_time_span_s=span,event_gate_s=2e-6,ordinary_event_types_match=types_match,ordinary_event_time_spans_s=ordinary_spans,common_pre_entry_grid_count=len(common),max_integral_difference=maxI,integral_gate=1e-9,max_raw_difference=maxraw,raw_gate=1e-8,times={e.rep+'/'+e.method:e.candidate['t'] for e in engines})
+    return dict(passed=span<=2e-6 and maxI<=1e-9 and maxraw<=1e-8,event_time_span_s=span,event_gate_s=2e-6,common_pre_entry_grid_count=len(common),max_integral_difference=maxI,integral_gate=1e-9,max_raw_difference=maxraw,raw_gate=1e-8,times={e.rep+'/'+e.method:e.candidate['t'] for e in engines})
 
 def main():
     OUT.mkdir(parents=True,exist_ok=True);engines=[];entry_checks={};started=time.monotonic()

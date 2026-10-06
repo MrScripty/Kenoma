@@ -29,11 +29,8 @@ def compare(a,b):
         x,y=ma[t],mb[t]
         errors=np.maximum(errors,[*(np.abs(np.array(x['z'][:4])-y['z'][:4])),abs(x['FT']-y['FT']),abs(x['z'][4]-y['z'][4]),abs(x['uraw']-y['uraw'])])
     ca,cb=a.get('candidate'),b.get('candidate');dt=abs(ca['t']-cb['t']) if ca and cb else None
-    ea=[e for e in a['events'] if e['type'].startswith('ordinary-')];eb=[e for e in b['events'] if e['type'].startswith('ordinary-')]
-    ordinary_match=[e['type'] for e in ea]==[e['type'] for e in eb]
-    ordinary_errors=[abs(x['t']-y['t']) for x,y in zip(ea,eb)]
-    numerical=bool(len(times)>2 and np.all(errors<=GATES) and dt is not None and dt<=2e-6 and ordinary_match and max(ordinary_errors,default=0)<=2e-6)
-    return dict(passed=bool(numerical and completion(a)['passed'] and completion(b)['passed']),prefix_agreement_only=numerical,common_grid_count=len(times),common_end_s=times[-1] if times else None,max_errors=dict(zip(NAMES,errors.tolist())),gates=dict(zip(NAMES,GATES.tolist())),candidate_event_difference_s=dt,ordinary_event_types_match=ordinary_match,ordinary_event_differences_s=ordinary_errors,event_gate_s=2e-6,absolute_times_used=True,event_alignment_used=False)
+    numerical=bool(len(times)>2 and np.all(errors<=GATES) and dt is not None and dt<=2e-6)
+    return dict(passed=bool(numerical and completion(a)['passed'] and completion(b)['passed']),prefix_agreement_only=numerical,common_grid_count=len(times),common_end_s=times[-1] if times else None,max_errors=dict(zip(NAMES,errors.tolist())),gates=dict(zip(NAMES,GATES.tolist())),candidate_event_difference_s=dt,event_gate_s=2e-6,absolute_times_used=True,event_alignment_used=False)
 
 def balances(r):
     cfg=r['cfg'];start=r['history'][0]['z'];s0=(cfg['L0']-start[0]-.1*start[3])/.2
@@ -46,7 +43,7 @@ def balances(r):
         d=.4*500*C['tendon'].value(o['s'],True)*(z[1]+o['v'])/100;k=8*o['e']
         normals=max(normals,abs(eta*(d+k)-row['normal_on']),abs(eta*d-row['normal_off']))
         if row['mode']=='sliding':
-            constraint=max(constraint,abs(row['H']));tangent=max(tangent,abs(d+row['Idot']))
+            constraint=max(constraint,abs(row['H']));tangent=max(tangent,abs(d-eta*row['normal_off']))
             bounds.append(row['normal_on']>1e-8 and row['normal_off']<-1e-8 and eta*o['e']>0)
     gates=np.array([1e-5]*4+[1e-7,1e-5]);passed=bool(np.all(errors<=gates) and maxforce<=1e-7 and normals<=1e-8 and tangent<=1e-8 and constraint<=1e-9 and all(bounds) and r['independent_quadrature']['passed'])
     return dict(passed=passed,work_momentum_errors=dict(zip(['fiber_J','tendon_J','load_J','combined_J','momentum_N_s','power_ledger_J'],errors.tolist())),source_force_residual_N=maxforce,independent_normal_disagreement_per_s=normals,independent_tangent_residual_per_s=tangent,max_sliding_constraint=constraint,physical_and_strict_sign_bounds_passed=all(bounds),quadrature=r['independent_quadrature'],scope='Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion')
