@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "result": "PASS_PROPERTY_BOOK_RENDER_CAPTURE",
+  "inspector_sha256": "da83ee75403e1219ea172f863f6eaf81db36b9035fc80b555f87caaf530e38c2",
+  "html_sha256": "b199fb0f3a06ff3b96b586872a334646a826dcaf554d49298c20e005f1e1e158",
+  "pdf_sha256": "2f6bb5320e85a9f853eb4c4160b14f2c468f6eeea8033ba1fa219afbe4061051",
+  "build_manifest_sha256": "eb8d86a2001fca16f845f5c573c012437eccfb4a809c0806688f981264afba75",
+  "browser": "151.0.7922.173",
+  "views": [
+    {
+      "name": "desktop",
+      "horizontalOverflow": false,
+      "proofCards": 103
+    },
+    {
+      "name": "mobile",
+      "horizontalOverflow": false,
+      "proofCards": 103
+    }
+  ],
+  "page_errors": [],
+  "pdf_pages": [
+    {
+      "page": 17,
+      "phrases": [
+        "Property lab 1"
+      ],
+      "image": "pdf-page-17.png"
+    },
+    {
+      "page": 20,
+      "phrases": [
+        "Property lab 2"
+      ],
+      "image": "pdf-page-20.png"
+    },
+    {
+      "page": 21,
+      "phrases": [
+        "Positive real axial stretch",
+        "KenomaProperties.isochoric_sqrt_construction"
+      ],
+      "image": "pdf-page-21.png"
+    },
+    {
+      "page": 22,
+      "phrases": [
+        "Property lab 3"
+      ],
+      "image": "pdf-page-22.png"
+    },
+    {
+      "page": 178,
+      "phrases": [
+        "KenomaProperties.isochoric_sqrt_construction"
+      ],
+      "image": "pdf-page-178.png"
+    },
+    {
+      "page": 179,
+      "phrases": [
+        "KenomaProperties.isochoric_sqrt_construction"
+      ],
+      "image": "pdf-page-179.png"
+    }
+  ],
+  "outputs": {
+    "desktop-volume-det-compose.png": "eddcd35f32c617d787eb326aaed23a2a70caa98c072a67ec61f7e9de85d18e68",
+    "desktop-volume-diagonal.png": "45d6318e96f2bd0f84de4ce86de3bb614a2d70795f8e05e2ca7e9037d1346425",
+    "desktop-volume-edge-translation.png": "c4da74abfb57fd89321885fbc31d3c104af861571e8a141bdc5c7eeb22b073a8",
+    "desktop-volume-isochoric-sqrt.png": "1f2d6a8904cf1ec434b6d7c7196842cad916beb17740dcf3ebb24e950cd8cb8c",
+    "mobile-volume-det-compose.png": "c9bb1841c99693556a89474e1897b76e0fb298a1177ed3fec436e7feced208d8",
+    "mobile-volume-diagonal.png": "4b09aa6fa7aab88576ac1ec08662145363c5da763a944c4ac00342c9cc26129b",
+    "mobile-volume-edge-translation.png": "c461457772d0f6071a45734e066fb2f7e78cf3dd193debb3e7efe47fc8993402",
+    "mobile-volume-isochoric-sqrt.png": "734792c6133d186b3e0f2f70136310752c04b474235a6c86dc6ff0bfb595d1e9",
+    "pdf-page-17.png": "011dc573e702c4a9cba3518b0d4c0e3525d979617cd8b99560498cccb3e9a0c0",
+    "pdf-page-178.png": "66dea89b6fd7ab5e3c8e466000eda52b6f7c4cef8d48b8ce4ac6f7baf0b681a3",
+    "pdf-page-179.png": "fbf4bedfeb2589bb26c2ae3de8e4c74af21b6c8f2ca2a5241036e33008b2e748",
+    "pdf-page-20.png": "b12815240a2b0e7e9f159473852a7ffedf67752c472cb1844dbf3aa236df14b5",
+    "pdf-page-21.png": "675411b5b6fd47e3bd71a464114bfbb813bf5703299e326fbc4b8e842c596c03",
+    "pdf-page-22.png": "f9f1084878c15d77d0a380be5be19b14b7300d61d4b58d872151d1025a8aa36f"
+  },
+  "scope": "Capture and layout evidence; manual appearance review is recorded separately. No biological or browser-arithmetic refinement proof."
+}

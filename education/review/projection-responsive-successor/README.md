@@ -1,5 +1,7 @@
 # Responsive repair: same-executor checkpoint
 
+This file preserves the historical access checkpoint. The subsequent completed rebuild and local qualification are recorded in [qualification/README.md](qualification/README.md), with exact source/tree, fresh artifact hashes, all local gates and the hosted/local distinction.
+
 This is an isolated, local successor on `education/projection-responsive-successor-20261006` in `/workspace/Kenoma-mobile-successor`. Its source commit is **8f5bec15cf69643e3d6a9ab8f1164ef6ff452fd1**, directly parented by the preserved print-limits successor **e7d56450f6a806fa14b0a511bfcf6405d592fc27**. No remote push or new hosted qualification has been requested. The published 153-page edition, main, PR8, old branches, and deployment are unaffected.
 
 ## Cause and concrete repair

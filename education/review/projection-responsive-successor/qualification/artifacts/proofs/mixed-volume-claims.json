@@ -1,0 +1,218 @@
+[
+  {
+    "id": "projection-inner-comm",
+    "theorem": "KenomaMixedVolume.inner_comm",
+    "claim": "Weighted inner-product symmetry",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-inner-add-right",
+    "theorem": "KenomaMixedVolume.inner_add_right",
+    "claim": "Right addition linearity",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-inner-add-left",
+    "theorem": "KenomaMixedVolume.inner_add_left",
+    "claim": "Left addition linearity",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-inner-sub-right",
+    "theorem": "KenomaMixedVolume.inner_sub_right",
+    "claim": "Right subtraction linearity",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-inner-sub-left",
+    "theorem": "KenomaMixedVolume.inner_sub_left",
+    "claim": "Left subtraction linearity",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-inner-smul-right",
+    "theorem": "KenomaMixedVolume.inner_smul_right",
+    "claim": "Right scalar linearity",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-inner-smul-left",
+    "theorem": "KenomaMixedVolume.inner_smul_left",
+    "claim": "Left scalar linearity",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-normSq-nonneg",
+    "theorem": "KenomaMixedVolume.normSq_nonneg",
+    "claim": "Nonnegative squared weighted norm",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-normSq-eq-zero-iff",
+    "theorem": "KenomaMixedVolume.normSq_eq_zero_iff",
+    "claim": "Positive-definite squared weighted norm",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-normSq-sub",
+    "theorem": "KenomaMixedVolume.normSq_sub",
+    "claim": "Squared norm of a difference",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-normSq-smul",
+    "theorem": "KenomaMixedVolume.normSq_smul",
+    "claim": "Squared norm under scalar multiplication",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-project-eq-self-iff",
+    "theorem": "KenomaMixedVolume.project_eq_self_iff",
+    "claim": "Projection fixes exactly represented vectors",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic. Supplied real linear projection into Q with residual orthogonal to every vector in Q.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-project-idempotent",
+    "theorem": "KenomaMixedVolume.project_idempotent",
+    "claim": "Projection is idempotent",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic. Supplied real linear projection into Q with residual orthogonal to every vector in Q.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-inner-project",
+    "theorem": "KenomaMixedVolume.inner_project",
+    "claim": "Projection preserves pairing with admissible vectors",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic. Supplied real linear projection into Q with residual orthogonal to every vector in Q. Candidate p belongs to Q.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-project-self-adjoint",
+    "theorem": "KenomaMixedVolume.project_self_adjoint",
+    "claim": "Weighted self-adjoint projection",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic. Supplied real linear projection into Q with residual orthogonal to every vector in Q.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-optimizer-mem",
+    "theorem": "KenomaMixedVolume.optimizer_mem",
+    "claim": "Optimizer belongs to the pressure space",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic. Supplied real linear projection into Q with residual orthogonal to every vector in Q.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-square-completion",
+    "theorem": "KenomaMixedVolume.square_completion",
+    "claim": "Square completion of the mixed objective",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic. Supplied real linear projection into Q with residual orthogonal to every vector in Q. One constant K>0. Candidate p belongs to Q.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-optimizer-value",
+    "theorem": "KenomaMixedVolume.optimizer_value",
+    "claim": "Attained condensed energy",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic. Supplied real linear projection into Q with residual orthogonal to every vector in Q. One constant K>0.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-objective-le-condensed",
+    "theorem": "KenomaMixedVolume.objective_le_condensed",
+    "claim": "Admissible objective bounded by condensed energy",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic. Supplied real linear projection into Q with residual orthogonal to every vector in Q. One constant K>0. Candidate p belongs to Q.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-value-eq-iff-optimizer",
+    "theorem": "KenomaMixedVolume.value_eq_iff_optimizer",
+    "claim": "Maximum value exactly at the optimizer",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic. Supplied real linear projection into Q with residual orthogonal to every vector in Q. One constant K>0. Candidate p belongs to Q.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-unique-maximizer",
+    "theorem": "KenomaMixedVolume.unique_maximizer",
+    "claim": "Unique maximizing sampled pressure vector",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic. Supplied real linear projection into Q with residual orthogonal to every vector in Q. One constant K>0. Candidate p belongs to Q.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-pythagoras",
+    "theorem": "KenomaMixedVolume.pythagoras",
+    "claim": "Weighted Pythagorean decomposition",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic. Supplied real linear projection into Q with residual orthogonal to every vector in Q.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-pointwise-minus-condensed",
+    "theorem": "KenomaMixedVolume.pointwise_minus_condensed",
+    "claim": "Exact pointwise-minus-condensed residual energy",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic. Supplied real linear projection into Q with residual orthogonal to every vector in Q.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-condensed-nonneg",
+    "theorem": "KenomaMixedVolume.condensed_nonneg",
+    "claim": "Nonnegative condensed energy",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic. Supplied real linear projection into Q with residual orthogonal to every vector in Q. One constant K>0.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-gap-nonneg",
+    "theorem": "KenomaMixedVolume.gap_nonneg",
+    "claim": "Nonnegative fixed-vector energy gap",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic. Supplied real linear projection into Q with residual orthogonal to every vector in Q. One constant K>0.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-gap-zero-iff-represented",
+    "theorem": "KenomaMixedVolume.gap_zero_iff_represented",
+    "claim": "Zero gap exactly for represented vectors",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic. Supplied real linear projection into Q with residual orthogonal to every vector in Q. One constant K>0.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  },
+  {
+    "id": "projection-nested-energy-monotone",
+    "theorem": "KenomaMixedVolume.nested_energy_monotone",
+    "claim": "Nested-space monotonicity at the same field",
+    "assumptions": "Finite vectors Fin n -> Real (including n=0); strictly positive diagonal weights; exact real arithmetic. Supplied real linear projection into Q with residual orthogonal to every vector in Q. One constant K>0. Q is contained in R; both projectors use the same weights, K and fixed g.",
+    "limitations": "Conditional finite-vector algebra only; no numerical-projector refinement, re-equilibrated stability, inf-sup, nonlinear derivative/Hessian, continuum or anatomical guarantee. Vector uniqueness does not imply basis-coefficient uniqueness without injective evaluation.",
+    "implementation": "standalone/pressure-projection-lab.html: fixed four-sample group means; separate numerical checks, not a Lean instantiation."
+  }
+]

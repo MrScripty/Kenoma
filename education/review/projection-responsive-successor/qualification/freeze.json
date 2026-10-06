@@ -1,0 +1,544 @@
+{
+  "schema": 1,
+  "result": "PASS_LOCAL_RESPONSIVE_BOOK_SUCCESSOR",
+  "branch": "education/projection-responsive-successor-20261006",
+  "qualified_source_commit": "142806f492567191e1edd9f8171f3e18e05383a0",
+  "qualified_source_tree": "a00f18c80051dfd1fd4bf1a4d1d4e76143613bbf",
+  "local_browser": "151.0.7922.173",
+  "local_browser_limit": "Exact CI Chrome/headless 151.0.7922.34 unavailable due official download proxy HTTP403; no retry or alternative route; no browser-version causation claim",
+  "source_composition": "composition.json",
+  "chapters": 25,
+  "checked_claims": 103,
+  "proof_sources": 12,
+  "integer_std_claims": 30,
+  "real_mathlib_claims": 73,
+  "gates": [
+    {
+      "name": "python-tests",
+      "command": [
+        "npm",
+        "run",
+        "test:python"
+      ],
+      "exit_code": 0,
+      "duration_s": 17.063175201416016,
+      "log": "review/projection-responsive-successor/qualification/logs/python-tests.log"
+    },
+    {
+      "name": "responsive-browser",
+      "command": [
+        "python3",
+        "tests/projection_responsive.py",
+        "--output",
+        "dist/projection-responsive-qa"
+      ],
+      "exit_code": 0,
+      "duration_s": 10.850175380706787,
+      "log": "review/projection-responsive-successor/qualification/logs/responsive-browser.log"
+    },
+    {
+      "name": "book-build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "exit_code": 0,
+      "duration_s": 59.529210567474365,
+      "log": "review/projection-responsive-successor/qualification/logs/book-build.log"
+    },
+    {
+      "name": "pdf",
+      "command": [
+        "npm",
+        "run",
+        "pdf"
+      ],
+      "exit_code": 0,
+      "duration_s": 7.3868043422698975,
+      "log": "review/projection-responsive-successor/qualification/logs/pdf.log"
+    },
+    {
+      "name": "print-readability",
+      "command": [
+        "python3",
+        "tools/check_print_readability.py",
+        "dist"
+      ],
+      "exit_code": 0,
+      "duration_s": 5.849866151809692,
+      "log": "review/projection-responsive-successor/qualification/logs/print-readability.log"
+    },
+    {
+      "name": "projection-browser",
+      "command": [
+        "python3",
+        "tests/projection_integration.py"
+      ],
+      "exit_code": 0,
+      "duration_s": 15.915201663970947,
+      "log": "review/projection-responsive-successor/qualification/logs/projection-browser.log"
+    },
+    {
+      "name": "projection-artifact",
+      "command": [
+        "python3",
+        "tools/check_projection_artifact.py",
+        "dist"
+      ],
+      "exit_code": 0,
+      "duration_s": 0.1943652629852295,
+      "log": "review/projection-responsive-successor/qualification/logs/projection-artifact.log"
+    },
+    {
+      "name": "browser",
+      "command": [
+        "npm",
+        "run",
+        "test:browser"
+      ],
+      "exit_code": 0,
+      "duration_s": 283.70372557640076,
+      "log": "review/projection-responsive-successor/qualification/logs/browser.log"
+    },
+    {
+      "name": "mobile",
+      "command": [
+        "npm",
+        "run",
+        "test:mobile"
+      ],
+      "exit_code": 0,
+      "duration_s": 20.974549293518066,
+      "log": "review/projection-responsive-successor/qualification/logs/mobile.log"
+    },
+    {
+      "name": "property-browser",
+      "command": [
+        "python3",
+        "tests/property_browser.py",
+        "dist"
+      ],
+      "exit_code": 0,
+      "duration_s": 29.569385051727295,
+      "log": "review/projection-responsive-successor/qualification/logs/property-browser.log"
+    },
+    {
+      "name": "material-browser",
+      "command": [
+        "python3",
+        "tests/material_browser.py",
+        "dist"
+      ],
+      "exit_code": 0,
+      "duration_s": 44.5694580078125,
+      "log": "review/projection-responsive-successor/qualification/logs/material-browser.log"
+    },
+    {
+      "name": "sls-browser",
+      "command": [
+        "python3",
+        "tests/dissipative_browser.py",
+        "dist",
+        "--output",
+        "dist/dissipative-qa"
+      ],
+      "exit_code": 0,
+      "duration_s": 121.2316324710846,
+      "log": "review/projection-responsive-successor/qualification/logs/sls-browser.log"
+    },
+    {
+      "name": "serial-browser",
+      "command": [
+        "python3",
+        "tests/serial_browser.py",
+        "dist",
+        "--output",
+        "dist/serial-qa"
+      ],
+      "exit_code": 0,
+      "duration_s": 19.266663551330566,
+      "log": "review/projection-responsive-successor/qualification/logs/serial-browser.log"
+    },
+    {
+      "name": "property-render",
+      "command": [
+        "python3",
+        "tools/inspect_property_integration.py"
+      ],
+      "exit_code": 0,
+      "duration_s": 10.937968969345093,
+      "log": "review/projection-responsive-successor/qualification/logs/property-render.log"
+    },
+    {
+      "name": "real-render",
+      "command": [
+        "python3",
+        "tools/inspect_real_lesson_proofs.py"
+      ],
+      "exit_code": 0,
+      "duration_s": 39.69062399864197,
+      "log": "review/projection-responsive-successor/qualification/logs/real-render.log"
+    },
+    {
+      "name": "render-rerun",
+      "command": [
+        "python3",
+        "tests/render_capture_rerun.py"
+      ],
+      "exit_code": 0,
+      "duration_s": 10.757862329483032,
+      "log": "review/projection-responsive-successor/qualification/logs/render-rerun.log"
+    },
+    {
+      "name": "anatomy-browser",
+      "command": [
+        "python3",
+        "tests/anatomical_inspection.py"
+      ],
+      "exit_code": 0,
+      "duration_s": 8.75011944770813,
+      "log": "review/projection-responsive-successor/qualification/logs/anatomy-browser.log"
+    },
+    {
+      "name": "coupled-browser",
+      "command": [
+        "python3",
+        "tests/coupled_inspection.py"
+      ],
+      "exit_code": 0,
+      "duration_s": 9.437184572219849,
+      "log": "review/projection-responsive-successor/qualification/logs/coupled-browser.log"
+    },
+    {
+      "name": "arm-browser",
+      "command": [
+        "python3",
+        "tests/anatomical_arm_inspection.py"
+      ],
+      "exit_code": 0,
+      "duration_s": 65.05383968353271,
+      "log": "review/projection-responsive-successor/qualification/logs/arm-browser.log"
+    },
+    {
+      "name": "worker-lifecycle",
+      "command": [
+        "python3",
+        "tests/worker_lifecycle.py"
+      ],
+      "exit_code": 0,
+      "duration_s": 40.780601024627686,
+      "log": "review/projection-responsive-successor/qualification/logs/worker-lifecycle.log"
+    },
+    {
+      "name": "artifacts",
+      "command": [
+        "python3",
+        "tests/artifacts.py"
+      ],
+      "exit_code": 0,
+      "duration_s": 17.071545839309692,
+      "log": "review/projection-responsive-successor/qualification/logs/artifacts.log"
+    },
+    {
+      "name": "sls-runtime-negatives",
+      "command": [
+        "python3",
+        "tests/dissipative_browser.py",
+        "--negative-controls",
+        "--output",
+        "review/projection-responsive-successor/qualification/sls-runtime-negatives"
+      ],
+      "exit_code": 0,
+      "duration_s": 127.09092974662781,
+      "log": "review/projection-responsive-successor/qualification/logs/sls-runtime-negatives.log"
+    },
+    {
+      "name": "serial-runtime-negatives",
+      "command": [
+        "python3",
+        "tests/serial_browser.py",
+        "--negative-controls",
+        "--output",
+        "review/projection-responsive-successor/qualification/serial-runtime-negatives"
+      ],
+      "exit_code": 0,
+      "duration_s": 16.9395272731781,
+      "log": "review/projection-responsive-successor/qualification/logs/serial-runtime-negatives.log"
+    },
+    {
+      "name": "sls-artifact-negatives",
+      "command": [
+        "python3",
+        "tools/qualify_dissipative_negatives.py",
+        "dist",
+        "dist/dissipative-negative-artifacts.json"
+      ],
+      "exit_code": 0,
+      "duration_s": 2.0199170112609863,
+      "log": "review/projection-responsive-successor/qualification/logs/sls-artifact-negatives.log"
+    },
+    {
+      "name": "serial-artifact-negatives",
+      "command": [
+        "python3",
+        "tools/qualify_serial_negatives.py",
+        "dist",
+        "dist/serial-negative-artifacts.json"
+      ],
+      "exit_code": 0,
+      "duration_s": 0.8767838478088379,
+      "log": "review/projection-responsive-successor/qualification/logs/serial-artifact-negatives.log"
+    },
+    {
+      "name": "projection-artifact-negatives",
+      "command": [
+        "python3",
+        "tools/qualify_projection_negatives.py",
+        "--runtime",
+        "review/projection-responsive-successor/qualification/projection-runtime-negatives",
+        "--site",
+        "dist",
+        "--output",
+        "dist/projection-negative-artifacts.json"
+      ],
+      "exit_code": 0,
+      "duration_s": 6.769014596939087,
+      "log": "review/projection-responsive-successor/qualification/logs/projection-artifact-negatives.log"
+    },
+    {
+      "name": "print-negatives",
+      "command": [
+        "python3",
+        "tools/qualify_print_negatives.py"
+      ],
+      "exit_code": 0,
+      "duration_s": 24.628296852111816,
+      "log": "review/projection-responsive-successor/qualification/logs/print-negatives.log"
+    },
+    {
+      "name": "package",
+      "command": [
+        "python3",
+        "tools/package_education_bundle.py",
+        "/workspace/kenoma-responsive-successor-portable.zip"
+      ],
+      "exit_code": 0,
+      "duration_s": 26.4380841255188,
+      "log": "review/projection-responsive-successor/qualification/logs/package.log"
+    }
+  ],
+  "python_tests": 55,
+  "node_tests": {
+    "fresh_local_run": false,
+    "preserved_hosted_run": 37489843475,
+    "passed": 208,
+    "failed": 0,
+    "scope": "Laws/JS bodies unchanged; original hosted 208-test pass preserved separately from fresh local gates"
+  },
+  "dependency_source_build": {
+    "fresh_dependency_rebuild": false,
+    "cached_official_pinned_sources": true,
+    "base_import_modules": 1910,
+    "projection_import_modules": 902,
+    "dependency_sources_and_locks_unchanged": true,
+    "fresh_lesson_kernel_compilation": true
+  },
+  "responsive": {
+    "fixed_cases": 42,
+    "widths": [
+      320,
+      360,
+      390,
+      414,
+      560,
+      768,
+      1280
+    ],
+    "fonts": [
+      "native",
+      "DejaVu Sans"
+    ],
+    "spaces": [
+      1,
+      2,
+      4
+    ],
+    "frozen_failure_document_width": 345,
+    "fixed_320_document_widths": [
+      320
+    ],
+    "root_clipping_rejected": true,
+    "keyboard_accessibility": "Existing overflow-auto table region now has tabindex=0, role=region and accessible name. Actual focus+ArrowRight must move scrollLeft, and scrolling to the end must expose the final sample column. All six columns and all rows remain available. Root no-overflow assertion remains strict.",
+    "receipt": "artifacts/projection-responsive-qa/receipt.json"
+  },
+  "print": {
+    "pages": 208,
+    "mandatory_minimum_pt": 10.0,
+    "minimum_measured_pt": 10.377959251403809,
+    "complete_statements": 103,
+    "complete_sources": 12,
+    "diagram_labels": 176,
+    "receipt": "artifacts/print-readability-check.json"
+  },
+  "projection": {
+    "checked_lean_declarations": 27,
+    "independent_rational_browser_states": 5625,
+    "review_pages": 4,
+    "minimum_actual_pt": 10.5,
+    "complete_diagram_labels": 33,
+    "complete_interpretation_and_limits": {
+      "heading": {
+        "label": "projection:limits-heading",
+        "minimum_pt": 10.5,
+        "matched_glyphs": 23,
+        "pages": [
+          4
+        ],
+        "superscript_glyphs_exempted": 0,
+        "text_sha256": "88e286c082822d8554b5fdb1a4b5eb17e42893c4aa259a46e0bed3e042eb1626"
+      },
+      "paragraph": {
+        "label": "projection:complete-limits-paragraph",
+        "minimum_pt": 10.5,
+        "matched_glyphs": 416,
+        "pages": [
+          4
+        ],
+        "superscript_glyphs_exempted": 0,
+        "text_sha256": "4ac5edd171b1c46bc0a1516e7c9777c2da59e766727e544d9e8cf99a43bffa82"
+      }
+    },
+    "pdf_sha256": "21efde6884b593b983f5a201f1061e9e2009c15e68ed9ec797f282d86198a487",
+    "kernel_receipt": "artifacts/mixed-volume-kernel/receipt.json"
+  },
+  "rehashed_omission_negative": {
+    "result": "PASS_REHASHED_OMISSION_REJECTED",
+    "source_commit": "142806f492567191e1edd9f8171f3e18e05383a0",
+    "legacy_size_labels_links_and_bindings": "PASS",
+    "mandatory_complete_paragraph_gate": "REJECTED",
+    "reason": "projection:complete-limits-paragraph: missing or truncated printed text",
+    "historical_pdf_sha256": "68777646f3a24518972b32dd7f459584bdc856ff52f8169b8e306d2520e44542",
+    "positive_pdf_sha256": "21efde6884b593b983f5a201f1061e9e2009c15e68ed9ec797f282d86198a487",
+    "positive_unchanged": true
+  },
+  "open_local_failures": [],
+  "prior_failures_preserved": {
+    "hosted_original": 37484501133,
+    "hosted_print_limits_successor": 37489843475,
+    "immutable_predecessor": "e7d56450f6a806fa14b0a511bfcf6405d592fc27",
+    "heading_only_pdf_sha256": "68777646f3a24518972b32dd7f459584bdc856ff52f8169b8e306d2520e44542"
+  },
+  "portable_archive": {
+    "schema": 2,
+    "result": "PASS_CHECKED_BOOK_BUNDLE",
+    "source_revision": "142806f492567191e1edd9f8171f3e18e05383a0",
+    "build_manifest_sha256": "eb8d86a2001fca16f845f5c573c012437eccfb4a809c0806688f981264afba75",
+    "archive": "kenoma-responsive-successor-portable.zip",
+    "archive_bytes": 90352480,
+    "archive_sha256": "44b8720e66db133eeb97340ba03e2eaf2492f4e807d24bc025c022f6794ec791",
+    "file_count": 1231,
+    "qualification": "Local coherent book, source-bound proofs, numerical and browser evidence; no hosted publication or biological validation"
+  },
+  "artifact_sha256": {
+    "artifacts/dissipative-negative-artifacts.json": "b7cd944c11742801f372ef290d5ee5331e61882988ee324302d71fbb3365e46c",
+    "artifacts/artifact-check.json": "8cffa7c45d557258119238b622fc9a981e88fb19ab22b41d3c44f537d161ceb8",
+    "artifacts/lean-check.txt": "a79abb7a2fd627d1aa676b7a7a2702a9c4151667c9bcd3a9b4c55bd99aca23f3",
+    "artifacts/transfer-proof-status.json": "244789dca7fc31e86e199c8fe6f744889964c009b747f94729b75d567bcdc2f5",
+    "artifacts/pdf-render.json": "29cfcf56a1d99bbc151764e43aa58e37d5de807bbc2651e42d4e65542c2eda45",
+    "artifacts/material-real-lean-check.txt": "10778aabbab163c99bb0e5cd890ee1117779624f405bccb839b2c2fc640c56b6",
+    "artifacts/build-manifest.json": "eb8d86a2001fca16f845f5c573c012437eccfb4a809c0806688f981264afba75",
+    "artifacts/mixed-volume-proof-status.json": "a1b32d63821a7fd28669e9f8ba234ee186ace6aaf8a1d48b7fe8649bebce08ff",
+    "artifacts/browser-check.json": "af99815318625d6980de1a23879f0105a7ec409bd6ef610458562f985b989873",
+    "artifacts/property-lean-check.txt": "bc83f610a9d1578487810f3881e81a70f5b54fb522ff2dbd425699402ee1d49f",
+    "artifacts/mixed-volume-lean-check.txt": "cd23ba0ede908c9742677d6fbf12d60014f20c7c16c5480bf6fcb6ba99c1a381",
+    "artifacts/mechanics-real-proof-status.json": "90980e40cb70f08a3fe028a8cad1e2d45c96f05c516c88c28b368901a03f7780",
+    "artifacts/serial-real-proof-status.json": "4cd2a8225d5427c60fe0b2152d6d894a71a1f093f7b15bc15e271c17845b191a",
+    "artifacts/dissipative-real-proof-status.json": "fbd24d79357c93a4134baa447d29d5f9d49ce5d23a8b8aba852345f651496322",
+    "artifacts/serial-negative-artifacts.json": "a116bee823ef5a765f1c51b7781f096774f467230da7de65c03e6e6b034933e8",
+    "artifacts/material-proof-status.json": "fcf12ffb8a482f610ba2ab0f0009b214a672ee82d7c302f570502a2ca0ebdfc8",
+    "artifacts/property-proof-status.json": "85d886cc422f4be2023558c4c10315574de1d697b11d22155e1a90133e7ec876",
+    "artifacts/transfer-lean-check.txt": "df44db9b886aff1d1d1c90c05f23d0ee3b5efe2599331d8decd7b9ba359da4c9",
+    "artifacts/serial-real-lean-check.txt": "4e857ab9818784a3a39ca52112421fee485b0325999545e37407688f31f93902",
+    "artifacts/print-negative-results.json": "33d3d549340b61d576dec3f6060ec0a5d0b56b538b97c2332d41252952804305",
+    "artifacts/material-real-proof-status.json": "39c48f86b1c1de5b1560c1c1bbe261cf960b77cc96ff4b120e9e20687fe0dfde",
+    "artifacts/mobile-startup-check.json": "30c05d0e7226925f9c32f4537333d5be1a81345b7cdb66dda214c01b014bf36f",
+    "artifacts/actuator-real-lean-check.txt": "38f1c8d7495897c7ac0668a654c1e23c0db70537b1a7fc75612dcb23f5bd1d45",
+    "artifacts/kenoma-mechanics.pdf": "2f6bb5320e85a9f853eb4c4160b14f2c468f6eeea8033ba1fa219afbe4061051",
+    "artifacts/actuator-real-proof-status.json": "7bce1a9d76d2efa73d093a86a4f01795072fbef18a8ae2b256bdb2dc64660b69",
+    "artifacts/arm-proof-status.json": "8568fd5746025b5c5261e44d4683c61dd9adc89f75b985f95a4053c910a92e56",
+    "artifacts/coupled-lean-check.txt": "653f542840de74ea9607277f18c3ea70ef44129cf72ed79438af90eab221f563",
+    "artifacts/material-lean-check.txt": "8e5de7631cc083b321ed0722f0e5ac87f69b3911377b974a23ecefb32b017f0a",
+    "artifacts/mechanics-real-lean-check.txt": "272165421ecd364096f9310a4034a1119b4b57044e0ec7d86b116a3fdf63ca2c",
+    "artifacts/arm-lean-check.txt": "f570cbb6b0161d8cff60600f90e0b0d225fa8581555d60862e282806dac90703",
+    "artifacts/coupled-proof-status.json": "f25ce78723c1b141af29986e1dfa60ea14374eea03562538a088d99fa0a6d74d",
+    "artifacts/kenoma-mechanics.md": "d0c4a4501e07b513e2a2e3c9baa98fb31e32697857147756fa356badd6214127",
+    "artifacts/proof-status.json": "8b51a6cad8ee9626caf0bd8af0618ec7b0914d42ad8b6c99ae70e6583d81c0ad",
+    "artifacts/projection-negative-artifacts.json": "883ec728d6d46a9e83fc1c890773c8adc5a51f073f91bff073a6ee0b5e152336",
+    "artifacts/print-readability-check.json": "f9611f7926db4cf55a8cbcc248625fc23822f0d38d184431d735e6898745cc09",
+    "artifacts/dissipative-real-lean-check.txt": "90502dc5611b3bede064245cecb4d7852e69a88709d3e26c0b475ba3a06e8c91",
+    "artifacts/worker-lifecycle-review/browser-receipt.json": "05e45e0fc639f329e3c559e8a0255fef44a33ffdd9820e68039ff5c2e11ccfc2",
+    "artifacts/projection-responsive-qa/fixed-native-320.png": "ecbc910fcf59fb8407b61ba00246c4479619fca3197dce81fa4f0efee50b838b",
+    "artifacts/projection-responsive-qa/viewport-failure-frozen-dejavu-320.json": "bfb4105c071a0ef2fc6200239ea9d792db24a01be6b1a2dd907f877c133a4325",
+    "artifacts/projection-responsive-qa/viewport-failure-frozen-dejavu-320.png": "2683c80d8f7df8920ede1a41da38d314676062a18f92f1c550480d27a2d900eb",
+    "artifacts/projection-responsive-qa/fixed-dejavu-320.png": "ce04af585410df5473540f5fa8ef0192c707887af8b4d2330c897cd733eaf140",
+    "artifacts/projection-responsive-qa/receipt.json": "565ce6bff805afde2a1648d8844fad2a5f1f735f4721ac3058cccb305882a145",
+    "artifacts/anatomy-review/browser-receipt.json": "6cb952030d206183cdb34c42db1e309deee604092198173ee7c4ece3226ab497",
+    "artifacts/projection-qa/mobile-768.png": "bf6518cf3607e24279b388fcf43f54636c7ce1d1fe3801454d541a794e210216",
+    "artifacts/projection-qa/mobile-360.png": "f4e687612b941d3c91a5b0f83675527e80cddcad601b770d9d113fbf11a78ddb",
+    "artifacts/projection-qa/fixed-field-reference.pdf": "21efde6884b593b983f5a201f1061e9e2009c15e68ed9ec797f282d86198a487",
+    "artifacts/projection-qa/desktop-full.png": "0e9ebb7b6524c03d34a666f3cb9a2ef6e5b988261fa23ed72300cbd56b1e2d19",
+    "artifacts/projection-qa/mobile-320.png": "429f63d80d4c9e8686cea58c38a52be78b2e019741fc0fa8e9d651bd2878d6cb",
+    "artifacts/projection-qa/review-chart-2.svg": "561770077196735ac706b8b62941050edd0c7f6150d655cb3b1101c8f620d734",
+    "artifacts/projection-qa/mobile-414.png": "2dc7be2f9b2050a12ad81eaa2915e610c839933e28fd1d0de8fc660d5764001d",
+    "artifacts/projection-qa/desktop-paired.png": "aa4ee4dbbd18140384ba274d1c648ce6cb62f1cdb7b28232a02949c8fa88ecd1",
+    "artifacts/projection-qa/review-chart-1.svg": "4e88bc3b5557c5aa18282a8ad164534a358f04e16f4144a3a4e98a3018392fb7",
+    "artifacts/projection-qa/desktop-coarse.png": "c933a8aab96b3378cde3b1e139ccaf24f8cafc1d53811a52cceb10bffa01d833",
+    "artifacts/projection-qa/viewport-cases.json": "ce4d2913afd78f16bd48b18ab3a0b72b3b649dcb8b3acc26ca53b3efce7fbbc6",
+    "artifacts/projection-qa/mobile-390.png": "9bee802167a3769d103ecf8f653804b8cfb4f9a10861bf851bb3a5175a0f4cc3",
+    "artifacts/projection-qa/book-controls.png": "25963617fa9e807aa10be19dc7368acc08f9c6d21c13d735e180a3783f14c099",
+    "artifacts/projection-qa/integration.json": "4a5f1d8914c064945aecd79607118fff3188a0fc83e89c1afdde2c32c50d2ae7",
+    "artifacts/projection-qa/receipt.json": "18df3bda8f58ed0cdd584606191e8dac8b3905f31b0353c0981ffb67845c872b",
+    "artifacts/projection-qa/review-chart-0.svg": "eac09f9cdc0c9373dfd3d7d83f9d73db89bb3a01ff9d981489a42987678be8e4",
+    "artifacts/proofs/DissipativeBarReal.lean": "7368497bd84dcb8ab8e020270a4823d233424601b0225e546393114b7141c972",
+    "artifacts/proofs/dissipative-real-claims.json": "73faf38ad39f2e91ec18cad29e4c6afed1707bb3e349da9a8262d8961ea8bf48",
+    "artifacts/proofs/mathlib-LICENSE": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+    "artifacts/proofs/CoupledMechanics.lean": "84c4e1ad43e792d0fd530996e4814102fc3d31c1c5b3a689bf4ce6c060a4c2ab",
+    "artifacts/proofs/actuator-real-claims.json": "409ce86cb88b8b16ec19bb0ef5c177276b18b62e60356444a877f6e4ee00e66e",
+    "artifacts/proofs/serial-specimen-real-claims.json": "ae5102fb1f62d0499af6aa4aa7ab7faf0d2ad4830da441d5c4e991fded772ec1",
+    "artifacts/proofs/MixedLogVolume.lean": "d1411e4068ea99b9f7a85fd0a573e9ecd976b260617d0f209b6baebb3ae7e15e",
+    "artifacts/proofs/mixed-volume-claims.json": "4af9bb7096ea3e76dc3212f95769cddddd414047be9c5b369f165f130a6fad72",
+    "artifacts/proofs/claims.json": "e5aee4e575fd3325ea676b0234801b31c9003b46943b3f13dc84ee987298e7b6",
+    "artifacts/proofs/SerialSpecimenReal.lean": "b0b4ccb250f7a10561c66fc32def5aad4f3ec900eeb3575a3e8bd4aacf0f3fbe",
+    "artifacts/proofs/MechanicsReal.lean": "aff41fbe28d5d546f1af36b1187c427cc536ea5c2853017d1539ac35ea645cdf",
+    "artifacts/proofs/anatomical-claims.json": "893e0689eda0e0f194d20bc9ae8d6ff097c23666ba6d4711366848e428fc2afa",
+    "artifacts/proofs/Mechanics.lean": "6b45c1d9a32fbd0cf6e034d3e4d15d26dc720215afe6845bbbb9d7de07bff2fd",
+    "artifacts/proofs/material-real-claims.json": "7d6c40ad2fe4d991085e6a03edd417b32247d95b86bd7b5ad108d04e0473f3c0",
+    "artifacts/proofs/property-claims.json": "481b28474107cfcc8096b3364e140d842fc7751bacd45f19ffc4de35c033e4f3",
+    "artifacts/proofs/material-claims.json": "c997267322002413263b8a7f9d04a41807a5b24e2d95f78285cff3404f08fdc9",
+    "artifacts/proofs/ContinuumProperties.lean": "33945605131f1a0fc3568467cbc1026463867a8fa241fb25e2174c23a229f12e",
+    "artifacts/proofs/coupled-claims.json": "79ea43a2ed7f73ab8fad8eaa66e87cc4ad71af9a80d0d236ce012445ccbbe0e3",
+    "artifacts/proofs/ActuatorConstitutiveReal.lean": "ca84ad202854c712c05d58d948b16f9bc48e1b7b557613124ebb2920f41c6453",
+    "artifacts/proofs/MaterialResponseReal.lean": "2e30769e073b719b66cfcb38c527d7319034fcf55f2723771a54405337e53258",
+    "artifacts/proofs/arm-claims.json": "a56d39ba3dfe805189ca13ef91f696b99b2762e7258e6b22246b81eba36baa83",
+    "artifacts/proofs/mathlib-lake-manifest.json": "5c6421b650bc87a2427a892a39e5522dc44543ca4ac1bd6e9f08d536c044a752",
+    "artifacts/proofs/MaterialResponse.lean": "8ce7f4b5bf4b68f9eeb0d85b06925f417995f945b64498a4533347ead1864092",
+    "artifacts/proofs/AnatomicalTransfer.lean": "9c733f15d8b9016646bc024764595bb750041dd84cb0db4c0f0d896d4be423c8",
+    "artifacts/proofs/mathlib-lock.json": "cfeeea1b9e805fdfa169b7b7f41b3d29cf0a99d09fa79e04e38a8bd9683611da",
+    "artifacts/proofs/lean-toolchain": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea",
+    "artifacts/proofs/mechanics-real-claims.json": "f3e626d2abc7eac8586912ade41204bdeaef13cc35ef7373144bf642f085ad5b",
+    "artifacts/proofs/AnatomicalArm.lean": "843f04f8e8f5c81a902d6816f0136726d006be6574aff5245360b8c2006ef025",
+    "artifacts/material-qa/browser-check.json": "9f7b846f01016e86d93334c8f117a0a0e838d1c9de382841394d344fcd297570",
+    "artifacts/qa/property-browser-check.json": "8b88df88d24bfc63e365706b53643f9e20de99e39d0afa1c49701a0e32f4f898",
+    "artifacts/property-book-review/render-receipt.json": "cfcc6892d8b72229febc3deb235a5ca4b652f66ea1e495e5602aee62bbd5544d",
+    "artifacts/dissipative-qa/receipt.json": "c0e9f60ce7e9890e155cb7b4db78018d45b726a7e04efbe403e9ab7c15ac64dd",
+    "artifacts/mixed-volume-kernel/lean-check.txt": "cd23ba0ede908c9742677d6fbf12d60014f20c7c16c5480bf6fcb6ba99c1a381",
+    "artifacts/mixed-volume-kernel/MixedLogVolume.olean": "c32f4455d49a25820cc3677193a37732785431a58e77ef94ded2e5b3b89c1a75",
+    "artifacts/mixed-volume-kernel/receipt.json": "cd46ad5e7308eab147f01e4afcdcdebb41df9a56a0e6eb138657fdcf0afbc8df",
+    "artifacts/real-proof-review/render-receipt.json": "7c15f4a8c5676794df96582ce3aeb314b6a3217894ef56caa8a9810136e705d3",
+    "artifacts/anatomical-arm-review/browser-receipt.json": "a8034dd269da2d674eefa69197f37f2dc04326df645d1e400a390c0a9abe8335",
+    "artifacts/coupled-review/browser-receipt.json": "ca259425f6694c9d860b6f8225d15472ff966b5cfaf87c24321bef3d2d1064f5",
+    "artifacts/serial-qa/receipt.json": "c20d34a2f446f8a94a8d31ea001e95a790483ef7a9b76fa225a1a3c8b528632c"
+  },
+  "scope": "Fresh local build/artifact qualification at the recorded source. Hosted qualification is separate and not inferred. Published 153-page edition untouched. No new research accepted, anatomical completion, PR, merge, cancellation, publication, deployment, credentials or protection changes."
+}

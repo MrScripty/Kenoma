@@ -1,0 +1,32 @@
+{
+  "renderer": "Playwright Chromium",
+  "browser_version": "151.0.7922.173",
+  "source": "index.html",
+  "static_diagrams": true,
+  "tagged": true,
+  "pdf_byte_identity_asserted": false,
+  "print_layout": {
+    "reflowed": [
+      {
+        "tex": "F_A=aF_0f_l(l_f),\\qquad f_l(l_f)=\\exp[-((l_f/l_0-1)/w)^2],\\qquad F_P=k_M\\max(0,l_f-l_0),\\qquad\nF_T=k_T\\max(0,l_T-l_{Ts}),\\qquad F_T=F_A+F_P.",
+        "rows": 2,
+        "tokenCount": 35,
+        "maximumRowWidthPx": 638.875
+      },
+      {
+        "tex": "\\Phi(x,q)=\\frac{I}{2h^2}(q-q_n-h\\omega_n)^2+U_{pas}(x)+U_{act}(x,a_{next})+U_{tendon}(x,q)+V_g(q)+\\frac{D}{2h}(q-q_n)^2.",
+        "rows": 2,
+        "tokenCount": 21,
+        "maximumRowWidthPx": 600.84375
+      },
+      {
+        "tex": "\\Phi(x,q)=W_{\\mathrm{body}}+W_{\\mathrm{tendon}}+W_{\\mathrm{interface}}+W_{\\mathrm{contact}}+V_g(q)+\\frac{I}{2h^2}(q-q_n-h\\omega_n)^2+\\frac{d}{2h}(q-q_n)^2+W_{\\mathrm{stop}}(q).",
+        "rows": 2,
+        "tokenCount": 23,
+        "maximumRowWidthPx": 556.265625
+      }
+    ],
+    "viewportWidthPx": 658,
+    "documentWidthPx": 658
+  }
+}

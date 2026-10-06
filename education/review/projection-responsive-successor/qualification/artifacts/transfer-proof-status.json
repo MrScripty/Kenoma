@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "lean_version": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)",
+  "source": "proofs/AnatomicalTransfer.lean",
+  "source_sha256": "9c733f15d8b9016646bc024764595bb750041dd84cb0db4c0f0d896d4be423c8",
+  "claims_sha256": "893e0689eda0e0f194d20bc9ae8d6ff097c23666ba6d4711366848e428fc2afa",
+  "command": "lean -DwarningAsError=true proofs/AnatomicalTransfer.lean",
+  "claims": [
+    {
+      "id": "attachment-transpose-power",
+      "theorem": "Kenoma.Anatomical.attachment_transpose_power",
+      "claim": "The exact one-DOF attachment transpose preserves three-coordinate power.",
+      "assumptions": "Integer B, force and angular velocity in compatible positive scales; the velocity mapping B*omega is assumed.",
+      "implementation": "web/anatomical-transfer.mjs: attachmentMap returns B; tendonTransfer computes QNm=dot(B,boneForce).",
+      "numerical_evidence": "tests/anatomical-fixture.test.mjs independently differences the actual energy and rigid map and checks power.",
+      "limitations": "Does not prove the geometric derivative, floating-point equality, solver convergence, anatomical axis, material response or biology.",
+      "status": "checked",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "id": "paired-attachment-work",
+      "theorem": "Kenoma.Anatomical.paired_attachment_work",
+      "claim": "Transferred equal-opposite attachment powers cancel the assumed potential-rate expression.",
+      "assumptions": "Integer coordinate quantities in compatible positive scales; potential-rate expression and force pairing are supplied, not derived.",
+      "implementation": "web/anatomical-transfer.mjs: nodeForce=-boneForce, nodeGradient=boneForce, qGradient=-QNm.",
+      "numerical_evidence": "tests/anatomical-fixture.test.mjs differences nodal and joint potential derivatives and tests paired work.",
+      "limitations": "No real calculus, rounding bound, finite-element convergence, anatomy or biological validation is established.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    }
+  ]
+}
