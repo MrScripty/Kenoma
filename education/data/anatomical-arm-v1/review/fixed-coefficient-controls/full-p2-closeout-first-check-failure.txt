@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/Kenoma-refinement-diagnosis/education/tools/check_fixed_coefficient_evidence.py", line 23, in <module>
+    assert r['result'].startswith('PASS_'),(p,r['result'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (PosixPath('/workspace/Kenoma-refinement-diagnosis/education/data/anatomical-arm-v1/audit/fixed-coefficient-attachment.json'), 'REJECTED_CONTROL_STAGE')

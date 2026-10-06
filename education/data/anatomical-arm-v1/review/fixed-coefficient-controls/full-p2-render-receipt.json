@@ -1,0 +1,14 @@
+{
+  "result": "PASS_SOURCE_BOUND_FULL_P2_RENDER",
+  "inputs": {
+    "data/anatomical-arm-v1/audit/fixed-coefficient-full-p2-operator.json": "02afc4b2d44a29abd28191a6d89b2e0cfed97715859bff5ebccc5833223f2351",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-full-p2-spectrum.json": "7fc251a60512a3e98093de524e75702de30e84e8c9a88366d1a4e37909beb941",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-full-p2-curvature-recheck.json": "d00c4836a4f104d4e7e30614e41e85a8cf6ea633426d659d1c3db819bed899cf",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-full-p2-bulk-curvature.json": "45c97f6b42dbe6385f9ef705c2cbc85f64cf561150f8610d4608d5ed18eac3d7"
+  },
+  "rendererSHA256": "170f7891c4582f68eaa3afe9ad1d10d2b6d3b2b114bd124260471778bbe9a67a",
+  "outputs": {
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/full-p2-curvature-comparison.png": "6a6ef7a5055539ceeed6ffc32fad377af04510c1c470ca3c705de342d0b16895",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/full-p2-curvature-comparison.pdf": "05df7f26f7c6bfaea2e465c300091fa2bd5cfce20369df9e57c65aa256e00964"
+  }
+}

@@ -1,0 +1,286 @@
+{
+  "schema": 1,
+  "result": "PASS_SOURCE_BOUND_FROZEN_BULK_CURVATURE_SPLIT",
+  "sourceHashes": {
+    "data/anatomical-arm-v1/audit/fixed-coefficient-full-p2-operator.json": "02afc4b2d44a29abd28191a6d89b2e0cfed97715859bff5ebccc5833223f2351",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-full-p2-spectrum.json": "7fc251a60512a3e98093de524e75702de30e84e8c9a88366d1a4e37909beb941",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-full-p2-curvature-recheck.json": "d00c4836a4f104d4e7e30614e41e85a8cf6ea633426d659d1c3db819bed899cf",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-taper.json": "690daa5b265d408137fc3d5aed93898c8e011907dc84d0e09c08f6bd78290066",
+    "tools/full-p2-bulk-curvature.mjs": "90b16acc6ba7672b0a42433cf104a01bae0496244fdea60eadeaad4af10fa972",
+    "tools/fixed-coefficient-quadratic-space.mjs": "65a57e2297d7a4f3c1a7992f7ad77fd546afab68d01e72c832a6157c0767f96f",
+    "tools/anatomical-compression-quadrature.mjs": "f12e0d80224bad5e0bfa0649e08cac2f31a0baf162e2547ae8767b7371f48dc2",
+    "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b"
+  },
+  "formula": "D2 Wvol[D,D] = K (G:D)^2 - K log(J) tr[(F^-1 D)^2], integrated with positive reference weights. D is gradient of the fixed norm-one nodal eigen-direction; stiffness units N/m.",
+  "groups": {
+    "compressed": {
+      "referenceVolumeM3": 0.000029826311406208117,
+      "firstVariationSquaredNPerM": 229.84929071445947,
+      "prestressGeometricNPerM": -1871.0070157530708,
+      "volumeCurvatureNPerM": -1641.1577250386033,
+      "volumeFirstDerivativeN": -0.11018839323412385,
+      "pointCount": 32932
+    },
+    "expanded": {
+      "referenceVolumeM3": 0.00003376264709262943,
+      "firstVariationSquaredNPerM": 495.189032116887,
+      "prestressGeometricNPerM": -244.4009203400147,
+      "volumeCurvatureNPerM": 250.78811177687138,
+      "volumeFirstDerivativeN": 0.734641623584074,
+      "pointCount": 31580
+    }
+  },
+  "summed": {
+    "firstVariationSquaredNPerM": 725.0383228313465,
+    "prestressGeometricNPerM": -2115.4079360930855,
+    "volumeCurvatureNPerM": -1390.369613261732,
+    "volumeFirstDerivativeN": 0.6244532303499502
+  },
+  "mostNegativeIntegratedPoints": [
+    {
+      "element": 225,
+      "point": 13,
+      "J": 0.33400135678844145,
+      "meanBulkCauchyPa": -3283250.8056769497,
+      "firstVariationLogJPerM": 153.5098563012632,
+      "traceFInvDeltaFSquaredPerM2": -525914.2900840626,
+      "firstVariationSquaredNPerM": 1.9163627591154895,
+      "prestressGeometricNPerM": -46.899958061805016,
+      "volumeCurvatureNPerM": -44.98359530268953,
+      "referenceWeightM3": 8.132146470972804e-11
+    },
+    {
+      "element": 225,
+      "point": 29,
+      "J": 0.3420082840231847,
+      "meanBulkCauchyPa": -3137117.9297228362,
+      "firstVariationLogJPerM": 184.03943785177285,
+      "traceFInvDeltaFSquaredPerM2": -468047.05736094643,
+      "firstVariationSquaredNPerM": 2.75439986463965,
+      "prestressGeometricNPerM": -40.83778532768575,
+      "volumeCurvatureNPerM": -38.0833854630461,
+      "referenceWeightM3": 8.132146470971745e-11
+    },
+    {
+      "element": 225,
+      "point": 14,
+      "J": 0.3630352765415328,
+      "meanBulkCauchyPa": -2791065.591577305,
+      "firstVariationLogJPerM": 120.12893317118642,
+      "traceFInvDeltaFSquaredPerM2": -465209.4277188331,
+      "firstVariationSquaredNPerM": 1.1735468519275354,
+      "prestressGeometricNPerM": -38.33297892347199,
+      "volumeCurvatureNPerM": -37.15943207154446,
+      "referenceWeightM3": 8.132146470968602e-11
+    },
+    {
+      "element": 225,
+      "point": 30,
+      "J": 0.36787945274352074,
+      "meanBulkCauchyPa": -2718281.657445579,
+      "firstVariationLogJPerM": 152.7526317596762,
+      "traceFInvDeltaFSquaredPerM2": -416393.02263590693,
+      "firstVariationSquaredNPerM": 1.8975035411607344,
+      "prestressGeometricNPerM": -33.861689430480446,
+      "volumeCurvatureNPerM": -31.96418588931971,
+      "referenceWeightM3": 8.132146470967194e-11
+    },
+    {
+      "element": 225,
+      "point": 229,
+      "J": 0.4239609171309544,
+      "meanBulkCauchyPa": -2024040.3534922581,
+      "firstVariationLogJPerM": 40.6785137192478,
+      "traceFInvDeltaFSquaredPerM2": -413750.08628926356,
+      "firstVariationSquaredNPerM": 0.1345660007399408,
+      "prestressGeometricNPerM": -28.872758573985838,
+      "volumeCurvatureNPerM": -28.738192573245897,
+      "referenceWeightM3": 8.132146470969187e-11
+    },
+    {
+      "element": 225,
+      "point": 12,
+      "J": 0.4364833615526239,
+      "meanBulkCauchyPa": -1899282.0696383894,
+      "firstVariationLogJPerM": 17.0892349565529,
+      "traceFInvDeltaFSquaredPerM2": -426386.85241544875,
+      "firstVariationSquaredNPerM": 0.02374927924456027,
+      "prestressGeometricNPerM": -28.745254539882335,
+      "volumeCurvatureNPerM": -28.721505260637777,
+      "referenceWeightM3": 8.132146470973876e-11
+    },
+    {
+      "element": 225,
+      "point": 3,
+      "J": 0.38228871279860477,
+      "meanBulkCauchyPa": -2515321.8784230268,
+      "firstVariationLogJPerM": 160.71352824294206,
+      "traceFInvDeltaFSquaredPerM2": -391878.8910771977,
+      "firstVariationSquaredNPerM": 2.1004389509448553,
+      "prestressGeometricNPerM": -30.64376382808073,
+      "volumeCurvatureNPerM": -28.543324877135873,
+      "referenceWeightM3": 8.132146470969527e-11
+    },
+    {
+      "element": 225,
+      "point": 244,
+      "J": 0.4188134121902867,
+      "meanBulkCauchyPa": -2078084.7744577585,
+      "firstVariationLogJPerM": 58.629892547563486,
+      "traceFInvDeltaFSquaredPerM2": -396489.15866606217,
+      "firstVariationSquaredNPerM": 0.279539631774555,
+      "prestressGeometricNPerM": -28.062111806317887,
+      "volumeCurvatureNPerM": -27.782572174543333,
+      "referenceWeightM3": 8.132146470968855e-11
+    },
+    {
+      "element": 225,
+      "point": 18,
+      "J": 0.40041834667803355,
+      "meanBulkCauchyPa": -2285722.967765341,
+      "firstVariationLogJPerM": 124.730703044022,
+      "traceFInvDeltaFSquaredPerM2": -386765.2054148497,
+      "firstVariationSquaredNPerM": 1.2651788778656472,
+      "prestressGeometricNPerM": -28.786585163953585,
+      "volumeCurvatureNPerM": -27.521406286087938,
+      "referenceWeightM3": 8.132146470971922e-11
+    },
+    {
+      "element": 225,
+      "point": 225,
+      "J": 0.3984151343079464,
+      "meanBulkCauchyPa": -2309803.737428218,
+      "firstVariationLogJPerM": 122.4381580725269,
+      "traceFInvDeltaFSquaredPerM2": -364021.27224584506,
+      "firstVariationSquaredNPerM": 1.219098417157864,
+      "prestressGeometricNPerM": -27.242242997921732,
+      "volumeCurvatureNPerM": -26.02314458076387,
+      "referenceWeightM3": 8.132146470971337e-11
+    },
+    {
+      "element": 225,
+      "point": 137,
+      "J": 0.43642657210540453,
+      "meanBulkCauchyPa": -1899827.349061009,
+      "firstVariationLogJPerM": 22.448992291487002,
+      "traceFInvDeltaFSquaredPerM2": -382474.9224249865,
+      "firstVariationSquaredNPerM": 0.04098254211979717,
+      "prestressGeometricNPerM": -25.788939171211407,
+      "volumeCurvatureNPerM": -25.74795662909161,
+      "referenceWeightM3": 8.132146470967185e-11
+    },
+    {
+      "element": 225,
+      "point": 245,
+      "J": 0.4468208322236725,
+      "meanBulkCauchyPa": -1802954.4045118438,
+      "firstVariationLogJPerM": 43.9772046877531,
+      "traceFInvDeltaFSquaredPerM2": -358614.1604363648,
+      "firstVariationSquaredNPerM": 0.15727526809486705,
+      "prestressGeometricNPerM": -23.493665638861117,
+      "volumeCurvatureNPerM": -23.33639037076625,
+      "referenceWeightM3": 8.132146470969862e-11
+    },
+    {
+      "element": 225,
+      "point": 240,
+      "J": 0.44755716992015127,
+      "meanBulkCauchyPa": -1796309.0515542352,
+      "firstVariationLogJPerM": 35.47285759757483,
+      "traceFInvDeltaFSquaredPerM2": -346605.2750070351,
+      "firstVariationSquaredNPerM": 0.10232872035635156,
+      "prestressGeometricNPerM": -22.660523441101443,
+      "volumeCurvatureNPerM": -22.558194720745092,
+      "referenceWeightM3": 8.13214647097023e-11
+    },
+    {
+      "element": 225,
+      "point": 226,
+      "J": 0.42193172254891714,
+      "meanBulkCauchyPa": -2045145.5219607714,
+      "firstVariationLogJPerM": 103.21991678007782,
+      "traceFInvDeltaFSquaredPerM2": -329122.596276275,
+      "firstVariationSquaredNPerM": 0.8664274467487573,
+      "prestressGeometricNPerM": -23.095601995809552,
+      "volumeCurvatureNPerM": -22.229174549060794,
+      "referenceWeightM3": 8.13214647096783e-11
+    },
+    {
+      "element": 225,
+      "point": 26,
+      "J": 0.43750010925749694,
+      "meanBulkCauchyPa": -1889549.9817270313,
+      "firstVariationLogJPerM": 95.11114647198417,
+      "traceFInvDeltaFSquaredPerM2": -323378.6676410099,
+      "firstVariationSquaredNPerM": 0.7356445564537234,
+      "prestressGeometricNPerM": -21.739678123463243,
+      "volumeCurvatureNPerM": -21.004033567009518,
+      "referenceWeightM3": 8.13214647097038e-11
+    },
+    {
+      "element": 225,
+      "point": 46,
+      "J": 0.45547663181392894,
+      "meanBulkCauchyPa": -1726566.8772969556,
+      "firstVariationLogJPerM": 54.24039739504656,
+      "traceFInvDeltaFSquaredPerM2": -325666.6891220971,
+      "firstVariationSquaredNPerM": 0.23924943330876453,
+      "prestressGeometricNPerM": -20.82706328822116,
+      "volumeCurvatureNPerM": -20.587813854912397,
+      "referenceWeightM3": 8.132146470971766e-11
+    },
+    {
+      "element": 225,
+      "point": 149,
+      "J": 0.46125923743231556,
+      "meanBulkCauchyPa": -1677570.862714598,
+      "firstVariationLogJPerM": 27.78179303667389,
+      "traceFInvDeltaFSquaredPerM2": -325689.44083233515,
+      "firstVariationSquaredNPerM": 0.06276618544269812,
+      "prestressGeometricNPerM": -20.494381763738645,
+      "volumeCurvatureNPerM": -20.431615578295947,
+      "referenceWeightM3": 8.132146470967228e-11
+    },
+    {
+      "element": 225,
+      "point": 248,
+      "J": 0.48785601978031523,
+      "meanBulkCauchyPa": -1471202.4224263087,
+      "firstVariationLogJPerM": -12.365915025853838,
+      "traceFInvDeltaFSquaredPerM2": -336191.3074722013,
+      "firstVariationSquaredNPerM": 0.012435341259307352,
+      "prestressGeometricNPerM": -19.62256480268068,
+      "volumeCurvatureNPerM": -19.610129461421373,
+      "referenceWeightM3": 8.132146470968634e-11
+    },
+    {
+      "element": 225,
+      "point": 7,
+      "J": 0.4329964049583789,
+      "meanBulkCauchyPa": -1933101.1621935072,
+      "firstVariationLogJPerM": 118.35680981685948,
+      "traceFInvDeltaFSquaredPerM2": -302794.81039634446,
+      "firstVariationSquaredNPerM": 1.139178273992597,
+      "prestressGeometricNPerM": -20.61068815037895,
+      "volumeCurvatureNPerM": -19.471509876386353,
+      "referenceWeightM3": 8.132146470967894e-11
+    },
+    {
+      "element": 225,
+      "point": 145,
+      "J": 0.46849735102035145,
+      "meanBulkCauchyPa": -1618418.6097113064,
+      "firstVariationLogJPerM": 24.640427018774858,
+      "traceFInvDeltaFSquaredPerM2": -315683.397917822,
+      "firstVariationSquaredNPerM": 0.04937437964248963,
+      "prestressGeometricNPerM": -19.46502375509016,
+      "volumeCurvatureNPerM": -19.41564937544767,
+      "referenceWeightM3": 8.132146470970937e-11
+    }
+  ],
+  "limits": [
+    "Same saved nonstationary full P2 field and same independently verified negative eigen-direction; no new optimizer or spectrum.",
+    "General nodal perturbation gradients need not be rank one. The prestress geometric term can be negative while the tested rank-one volume acoustic term is positive.",
+    "Compressed/expanded partition is a diagnostic at quadrature points, not a causal proof for the full trajectory or a bulk-coefficient retuning prescription."
+  ]
+}
