@@ -1,0 +1,52 @@
+{
+  "schema": "kenoma-source-amplitude-primary-binding-v1",
+  "date_utc": "2026-10-06",
+  "doi": "10.1113/expphysiol.2010.055269",
+  "title": "Relationship between force and size in human single muscle fibres",
+  "official_html_url": "https://physoc.onlinelibrary.wiley.com/doi/full/10.1113/expphysiol.2010.055269",
+  "official_pdf_url": "https://physoc.onlinelibrary.wiley.com/doi/pdf/10.1113/expphysiol.2010.055269",
+  "fresh_read": "Original publisher HTML and PDF text; no new access to MMU or denied routes",
+  "table_binding": {
+    "table": "Table 1. Morphological and physiological parameters of type I and IIa muscle fibres.",
+    "printed_page": 543,
+    "pdf_page_one_based": 5,
+    "row": "SF (N cm\u22122)",
+    "column": "I",
+    "cell": "15.5 (5.0)",
+    "footnote_interpretation": "mean (SD); SF corrected for fibre swelling",
+    "mean_decimal": "15.5",
+    "SD_decimal": "5.0",
+    "subjects": 113,
+    "fibers": 1863,
+    "selected": "mean only; SD not adopted as an interval"
+  },
+  "methods_binding": {
+    "section": "Experimental procedure",
+    "printed_page": 541,
+    "pdf_page_one_based": 3,
+    "exact_temperature_sentence": "All experiments were performed at 15\u00b0C.",
+    "preparation": "chemically skinned human vastus lateralis",
+    "activation_pCa": "4.5",
+    "sarcomere_setting_um": [
+      "2.75",
+      "2.85"
+    ],
+    "force_convention": "peak tension minus resting tension",
+    "area_convention": "ellipse from width/depth measured in solution",
+    "reported_correction": "20% swelling correction adopted by source; do not reapply"
+  },
+  "unit_conversion": {
+    "cm_to_m": "10^-2",
+    "cm_squared_to_m_squared": "10^-4",
+    "N_per_cm_squared_to_Pa": "10^4",
+    "exact_decimal_expression": "15.5 * 10^4",
+    "selected_Pa": 155000
+  },
+  "source_caution": "Original paper questions area-based normalization across fiber sizes; no universal constant or upper-arm transfer is claimed",
+  "retained_methods_receipt": "education/data/anatomical-arm-v1/review/source-unit-calibration/measured-fiber-facts.json",
+  "retained_methods_receipt_sha256": "a69d205568912515ebcfa7860d6fa3856cbb8273365f7589ab39e1aad6ca336f",
+  "screenshot_attempt": "Publisher PDF page5 web screenshot returned citation-only response; no inspectable pixels, no pixel-verification claim",
+  "raw_sensor_coefficients_required_for_this_use": false,
+  "claim": "COMPOSITE_EDUCATIONAL_AMPLITUDE; NO_MATCHED_SPECIMEN_OR_SOURCE_FORCE_LENGTH_REPRODUCTION",
+  "numerical_gates_changed": false
+}
