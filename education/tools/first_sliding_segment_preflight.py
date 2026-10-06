@@ -29,6 +29,11 @@ def admissibility(c):
     return dict(prospectively_admissible=not issues, issues=issues, accepted=False)
 
 
+def bitwise_I_preserved(delta):
+    """Return a JSON-native boolean for binary64 coordinate custody."""
+    return bool(delta == 0)
+
+
 def review_allows_execution(p):
     return all(p.get(key, False) for key in ['combined_result_review_accepted',
                                            'proposed_protocol_review_accepted',
@@ -135,7 +140,7 @@ def custody(path, p):
                     prospective_entry_quadrature=quadrature.tolist(),
                     prospective_entry_quadrature_errors=error.tolist(),
                     full_coordinate_handoff_bitwise_I_preserved=True,
-                    reduced_coordinate_handoff_bitwise_I_preserved=refined['I_handoff_delta']==0,
+                    reduced_coordinate_handoff_bitwise_I_preserved=bitwise_I_preserved(refined['I_handoff_delta']),
                     physical_and_six_ledger_coordinates_unchanged=True,
                     sliding_steps_executed=0, accepted_states_added=0)
     finally:

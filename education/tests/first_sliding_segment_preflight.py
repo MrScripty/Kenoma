@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 import ast
+import json
+import numpy as np
 from pathlib import Path
 import sys
 import unittest
 from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
-from first_sliding_segment_preflight import admissibility, review_allows_execution, relocalize
+from first_sliding_segment_preflight import admissibility, review_allows_execution, relocalize, bitwise_I_preserved
 
 
 class Checks(unittest.TestCase):
@@ -60,6 +62,12 @@ class Checks(unittest.TestCase):
         self.assertNotEqual(old,reconstructed)
         self.assertEqual(old[:4]+old[5:],reconstructed[:4]+reconstructed[5:])
         self.assertLess(abs(reconstructed[4]-old[4]),1e-9)
+
+    def test_binary64_handoff_boolean_serializes(self):
+        for delta, expected in [(np.float64(0.), True), (np.float64(1e-14), False)]:
+            result=bitwise_I_preserved(delta)
+            self.assertIs(result, expected)
+            self.assertEqual(json.loads(json.dumps(dict(exact=result))), dict(exact=expected))
 
     def auxiliary(self):
         return dict(start=0.,trialEnd=.0002,dense=dict(kind='RK4-cubic',left_s=0.,right_s=.0002,

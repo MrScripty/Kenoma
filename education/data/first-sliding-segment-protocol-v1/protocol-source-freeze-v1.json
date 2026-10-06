@@ -255,13 +255,8 @@
     "education/research/mechanical-closure/filippov-bounded-experiment-results.md": "8c1a70a5732e26bf762f25b8e0d1309164fb0ffe59e40a9d097b6992727f083e"
   },
   "preparation_source_sha256": {
-    "education/tools/first_sliding_segment_preflight.py": "c37919171b0d98d30252390f73b782f8d39e3324298c50c12b9a2cabb8092b46",
-    "education/tests/first_sliding_segment_preflight.py": "701d6df97e8a28157d7ecd1db328db0d523560cc182a1a0a0d3c1910bd6b6948",
+    "education/tools/first_sliding_segment_preflight.py": "5650c9da64b32c483f2f52a04c0036b8b3c773b9c25b689e5bb270dad7a8314a",
+    "education/tests/first_sliding_segment_preflight.py": "3c9f2f4d41b6b7f995fa927b92d1cdff4a439f1f66362c3fb76237bb89c5e726",
     "education/research/mechanical-closure/first-sliding-segment-protocol.md": "ed35604e5d27b39381e27221ee61c3251ce152c45e3b247e45974074af80adca"
-  },
-  "preparation_revision": 2,
-  "prior_preparation_commit": "c166e6589482fe85f1448d37de1d16caf72a8cc0",
-  "prior_preparation_tree": "8123ce74560a776342bb75651bc2732843f30458",
-  "revision_reason": "Report-only NumPy boolean conversion; original failed output and protocol preserved; no numerical/law/gate/budget changes",
-  "prior_protocol_sha256": "27f5df3c73a165c169fba32d0c189da349684e98e87968a9e9feb5a6f6a588f0"
+  }
 }

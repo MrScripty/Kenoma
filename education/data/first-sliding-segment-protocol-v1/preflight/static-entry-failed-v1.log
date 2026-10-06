@@ -1,0 +1,39 @@
+STATIC INCOMING full-source/RK4-0.0002 target 0.26203073810264343 iterations 28 I coordinate delta -4.898859096158503e-15
+STATIC INCOMING full-source/RK4-0.0001 target 0.2620307299442577 iterations 27 I coordinate delta -1.3634926521177704e-15
+STATIC INCOMING full-source/RK4-0.00005 target 0.2620307361610221 iterations 26 I coordinate delta -5.585809592645319e-15
+STATIC INCOMING full-source/RK4-0.000025 target 0.26203073408082 iterations 25 I coordinate delta 5.627442956068762e-15
+STATIC INCOMING full-source/DOP853 target 0.26203073413288025 iterations 29 I coordinate delta -4.989064716909297e-15
+STATIC INCOMING full-source/Radau target 0.26203073463297993 iterations 28 I coordinate delta -1.2871648191747909e-15
+STATIC INCOMING reduced-independent/RK4-0.0002 target 0.26203073810264343 iterations 28 I coordinate delta -5.117434254131581e-15
+STATIC INCOMING reduced-independent/RK4-0.0001 target 0.262030729948728 iterations 27 I coordinate delta -1.5171891520893155e-14
+STATIC INCOMING reduced-independent/RK4-0.00005 target 0.2620307361565518 iterations 26 I coordinate delta -4.777428452840127e-15
+STATIC INCOMING reduced-independent/RK4-0.000025 target 0.26203073408082 iterations 25 I coordinate delta 1.0061396160665481e-16
+STATIC INCOMING reduced-independent/DOP853 target 0.2620307341331518 iterations 29 I coordinate delta 7.032568971609976e-15
+STATIC INCOMING reduced-independent/Radau target 0.2620307345634329 iterations 28 I coordinate delta -1.1195905313954313e-14
+Traceback (most recent call last):
+  File "/workspace/Kenoma-refinement-diagnosis/education/tools/first_sliding_segment_preflight.py", line 179, in <module>
+    main()
+  File "/workspace/Kenoma-refinement-diagnosis/education/tools/first_sliding_segment_preflight.py", line 174, in main
+    out.write_text(json.dumps(payload,indent=2)+'\n')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  [Previous line repeated 1 more time]
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bool is not JSON serializable
