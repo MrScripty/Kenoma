@@ -1,0 +1,351 @@
+{
+  "scope": "Activation-equality-only continuous-state diagnostic; no controller event or qualification",
+  "baseline_commit": "b1689d07e12dd6ea0c061f99f8804067e480901a",
+  "verified_anatomical_base_commit": "08f5f3b7fd4b987d3f049c13fdf4338bfaa2928e",
+  "frozen_source_commit": "d54020fb3e05a3cc770036483392c94292c172dc",
+  "frozen_source_tree": "f5377333181ffb6b7e03eb007718da47e0a5caad",
+  "raw_results_commit": "88823764304f3902d12d185a6e8b11aa92b7df2a",
+  "raw_results_tree": "9c6e92550987a2b36c06478ed5301e0729428a58",
+  "protocol_sha256": "de11d380272e109c05a1d7a3045ee40689dcb2c7c42c39d743a4b445d561b948",
+  "files": [
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/preflight/preflight.json",
+      "bytes": 941,
+      "sha256": "53b1a6561bd85d60cba6629b1333b0b0dbaa12d48145ee413622c73a7c3d6f1f"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/preflight/rejected-unmatched-excitation-test-source.txt",
+      "bytes": 3954,
+      "sha256": "3b8a4cd0b5d48b4bb731c4a9ba8dcf1c6d8f83ee73ab92eceef0b8ec425e0bb2"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/preflight/rejected-unmatched-excitation-tests.log",
+      "bytes": 1984,
+      "sha256": "d6deb40e7a32ddd4a6fc7a349b573a85e8e7eab3b4f3873ca5d14cc1b2af4f7a"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/preflight/rejected-unmatched-excitation.json",
+      "bytes": 442,
+      "sha256": "34e2fd33dc69be9a5e7a8b94f5e62cee3a5e1c3b61fbfffe0c00d768fdef3694"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/preflight/tests.log",
+      "bytes": 1271,
+      "sha256": "4a686a64157cf35d75caa0724b7390b02a8a07185e8fa3a3c6b2d9bda6eda4c2"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/protocol.json",
+      "bytes": 13368,
+      "sha256": "de11d380272e109c05a1d7a3045ee40689dcb2c7c42c39d743a4b445d561b948"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/activation-refinement.png",
+      "bytes": 260804,
+      "sha256": "f1abbaed4489d7a29dd3bb268b25f4eb0cd626ba4abafc8378fc7425920900a6"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/activation-refinement.svg",
+      "bytes": 199656,
+      "sha256": "a19ecff2e11bd8d455837cad410aa744c9bce417344cfff3eff8e06610af9767"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/analysis.json",
+      "bytes": 1705577,
+      "sha256": "d020f5f5cf56b20dc4db9d4c3d6175d10963824c10932e7ef50cd71e7ea1f155"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/audit.log",
+      "bytes": 1861,
+      "sha256": "11e24cb572ec584a622a38c14b3162f1b96c82cb54abccf966b15dcafd3e710c"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/control-full-source-DOP853.json",
+      "bytes": 957142,
+      "sha256": "e9d2152e2b98133aff793e2f89152b6ccc17630a3b76b45f05e89d7b4b738ed2"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/control-full-source-DOP853.log",
+      "bytes": 118,
+      "sha256": "9d11165abe4142f4507f5b6e1b78d0904847c91e2b166fa145c2f713d782e473"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/control-full-source-RK4-0.000025.json",
+      "bytes": 8630305,
+      "sha256": "49742513642c1b77641e36de8e82b2e75d603c133573f6ec8e85b419ef4e5893"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/control-full-source-RK4-0.000025.log",
+      "bytes": 139,
+      "sha256": "6028626003cbb745ac883735d85022704fc222fd96e588a09cd51b1cbb4f1012"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/control-full-source-RK4-0.00005.json",
+      "bytes": 4379828,
+      "sha256": "33a3d872151b93d809bfd877787113509f92991bd60e10eed59661464f5befe2"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/control-full-source-RK4-0.00005.log",
+      "bytes": 139,
+      "sha256": "b5864d0d63d94a8240b9cbbbdad6feba77c5a71595f65485aad1fb0da30a622c"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/control-full-source-RK4-0.0001.json",
+      "bytes": 2252728,
+      "sha256": "f4bea2314776b428241d451596c15f32f28e0301d187c4e7615225d78756e416"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/control-full-source-RK4-0.0001.log",
+      "bytes": 124,
+      "sha256": "9c5222d08124b050d78fd8d9e393d3a6a31503b684c71fb5c130590b74eb3f82"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/control-full-source-RK4-0.0002.json",
+      "bytes": 1191663,
+      "sha256": "5b28b76eed5ffc369b231950eeadf9c312314b0f6a757948f3911517943c3990"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/control-full-source-RK4-0.0002.log",
+      "bytes": 116,
+      "sha256": "d73c9f25c857badcf2c51263d46517f222508ea3e1af6ed4c64e8969787768d5"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/control-full-source-Radau.json",
+      "bytes": 730976,
+      "sha256": "a6fd00f6ce812b825d59031b99ae0e0006627e429ef139f42c1f49f2121973b8"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/control-full-source-Radau.log",
+      "bytes": 117,
+      "sha256": "cf70d671274fa2ceb0491e7a7922b9e5c3a5d3823ed609512944cada6275d5a8"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/control-reduced-independent-DOP853.json",
+      "bytes": 957741,
+      "sha256": "cddc36ee3103d60fb3a14c08d2020b6f4987a4afb33793d286de0716339098d9"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/control-reduced-independent-DOP853.log",
+      "bytes": 124,
+      "sha256": "5ed26fe2add4424ced3e1068537a45f30fb7eef8b4044ca069c097ada8b514f8"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/control-reduced-independent-RK4-0.000025.json",
+      "bytes": 8630287,
+      "sha256": "0903bf0cd5abd8f38c65dd69bf3c67485d72bba1f27a2b8f251540314244eb69"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/control-reduced-independent-RK4-0.000025.log",
+      "bytes": 148,
+      "sha256": "f4df502cc48a7d721b15880a7a8a095af5bf70ae4c9d701520af4e66b3780462"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/control-reduced-independent-RK4-0.00005.json",
+      "bytes": 4379294,
+      "sha256": "880a9d262ffe313b2906c2f93ea95248e25e9141fd6144020488cb6ea0e35649"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/control-reduced-independent-RK4-0.00005.log",
+      "bytes": 146,
+      "sha256": "ec59f33f3936d75aab8f64212369c77d032f2e545248e8fe65811c76113d67a6"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/control-reduced-independent-RK4-0.0001.json",
+      "bytes": 2252565,
+      "sha256": "9818e3c393bc4c38b9cdb4405e75aaafd4af8397434673a772dbd6074209231e"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/control-reduced-independent-RK4-0.0001.log",
+      "bytes": 132,
+      "sha256": "e52212d7d238e5ff1a506cb61f3fb5500792c282383bb57345bd460ca7b11913"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/control-reduced-independent-RK4-0.0002.json",
+      "bytes": 1191376,
+      "sha256": "3005997d9838aa665d723255626dcb795f5cab87c674a5c1ce6f2c96071e5643"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/control-reduced-independent-RK4-0.0002.log",
+      "bytes": 130,
+      "sha256": "e0ad8a1b29963e90b3e402fbb7b6681718fe474564a198667a7a1a16f29a0644"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/control-reduced-independent-Radau.json",
+      "bytes": 731605,
+      "sha256": "99fa535d82bc9c0e87ef81a2dc53910cbf9af08dd3f349c6202c2ae2730b5c26"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/control-reduced-independent-Radau.log",
+      "bytes": 124,
+      "sha256": "8c3f8a76ec61f4a3489eca89b07dc35e5249386e98fa255764b51c598c893b35"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/decision-summary.json",
+      "bytes": 32841,
+      "sha256": "dff3cca9da933b7ce67fc0c1d1818b3c26f5416964ece0adcd2bbba3f7f33984"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/execution.json",
+      "bytes": 6167,
+      "sha256": "25790bd95fcb29122f0d936b722ac36dc0e207baa1b6222b033863d4521220b9"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/split-full-source-DOP853.json",
+      "bytes": 931375,
+      "sha256": "f504ebfc145772040ceed4b3aaf6c12276485b7c3e1cbc074186f799990126b5"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/split-full-source-DOP853.log",
+      "bytes": 117,
+      "sha256": "47adad45dc94b26aa9017a83ac5e27e485c44b7fe4425a56633f123f50da6e36"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/split-full-source-RK4-0.000025.json",
+      "bytes": 8676489,
+      "sha256": "053bd17e4c07dc160c9895a39dac629e9728efc74170286da1b8e7086a4c463b"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/split-full-source-RK4-0.000025.log",
+      "bytes": 136,
+      "sha256": "0e287df9093112bc98842bf3f697f8eeeacd2bb4a22a7392fb74b2c570f1cba5"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/split-full-source-RK4-0.00005.json",
+      "bytes": 4404549,
+      "sha256": "df34bfa39a009c50774518199589107c2f47a9c1f4d25f9a0145b5fe8e53da27"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/split-full-source-RK4-0.00005.log",
+      "bytes": 135,
+      "sha256": "f277be7410e155035f56c19e35837d0ec2bc15480a7983c9c0d796db83da7622"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/split-full-source-RK4-0.0001.json",
+      "bytes": 2266507,
+      "sha256": "0813af1e04927a11b96e71cdb02dbd5964eb9e7a9e66f889a5764d0a60e205d6"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/split-full-source-RK4-0.0001.log",
+      "bytes": 121,
+      "sha256": "d17b2779f0d86897b6d0992d01defb862abc28d4369257fabdb4050f3e2af740"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/split-full-source-RK4-0.0002.json",
+      "bytes": 1199027,
+      "sha256": "0313e692144090c337cb8e0dc13aad802708bec86fa35f931634387ad60e7e26"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/split-full-source-RK4-0.0002.log",
+      "bytes": 121,
+      "sha256": "59abdd7e8875fbd6bd988cdec956f0432d1f3b113db7854fe1c8cea840bd99d0"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/split-full-source-Radau.json",
+      "bytes": 722768,
+      "sha256": "76cfa86592b0136bfe9aee72ffe6abde42533bf6c55c3d3cc4cc5ad0eee5da5f"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/split-full-source-Radau.log",
+      "bytes": 113,
+      "sha256": "7ba5a7c1c47330cb641ae739caaa4169ee33a5cf33a09c4837beaf2e37967a72"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/split-reduced-independent-DOP853.json",
+      "bytes": 930958,
+      "sha256": "9840ee2a5e359145c61f75c88cc8b06d89e46d7c8e7d55b84af49df54b5a9ce8"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/split-reduced-independent-DOP853.log",
+      "bytes": 125,
+      "sha256": "6205f50e4a623bb756f740046a210c26084994b6c5cf86457ec51d7502628b2f"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/split-reduced-independent-RK4-0.000025.json",
+      "bytes": 8676311,
+      "sha256": "bd83f305a815d613df608d7a48d574f49688c9f0205e42b297306731cdc3283f"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/split-reduced-independent-RK4-0.000025.log",
+      "bytes": 145,
+      "sha256": "c086f72c0eded6d88f4562b5ddcc8b2dd860787bf141ddf5967b170a788529f3"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/split-reduced-independent-RK4-0.00005.json",
+      "bytes": 4404190,
+      "sha256": "629c860033ae5f5b86c395fba382b466f91c47c1a5788956bfe90d783d357fe6"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/split-reduced-independent-RK4-0.00005.log",
+      "bytes": 143,
+      "sha256": "d6184fd1f8fd9125c696a0c6ad4e41ae2942f1e03d00fc8c9cf22397025a032f"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/split-reduced-independent-RK4-0.0001.json",
+      "bytes": 2265981,
+      "sha256": "4e3878fadfbe2e93a2e6b446ec71d3ec41a5007be7f678e3fda2f224aec6a4e9"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/split-reduced-independent-RK4-0.0001.log",
+      "bytes": 129,
+      "sha256": "fd8259016f84d00f596647a3a533f06adf9b8c50195b0c4a159473f53e7a7ce1"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/split-reduced-independent-RK4-0.0002.json",
+      "bytes": 1198467,
+      "sha256": "b0f714d317be78e007dcdf64041ad1a9d6a5240b31abdf80b7f0de060daaaac2"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/split-reduced-independent-RK4-0.0002.log",
+      "bytes": 129,
+      "sha256": "c48102e34cca1455ff2a84a6c6fa8ff48541d53a56f086756f50853ac2a2abca"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/split-reduced-independent-Radau.json",
+      "bytes": 722388,
+      "sha256": "45ccf0df90c8d782a918a3ad48f200191444014e8dddb8ddf32391e9f959d463"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/split-reduced-independent-Radau.log",
+      "bytes": 123,
+      "sha256": "be0a2bc0d5f39f3c59467839d08f149ce4d8e6a8b1c1c9bf3777f5d1d3e0dc44"
+    },
+    {
+      "path": "education/data/activation-equality-diagnostic-v1/review/verification.json",
+      "bytes": 8871,
+      "sha256": "50cedd455d7bc0597a1164ad159066001d0e114ca5a192877fd09ceb4f23a83d"
+    },
+    {
+      "path": "education/tools/run_activation_equality_diagnostic.py",
+      "bytes": 9697,
+      "sha256": "2f3bfa75f82275303e946a3f8f50b4f751a90f950ffd1b35b27973f03d5ba82c"
+    },
+    {
+      "path": "education/tools/audit_activation_equality_diagnostic.py",
+      "bytes": 8860,
+      "sha256": "f5c892597db44fec2ea1e06746d6d61453cf229a55deeab4a1c35a4b632a9d6f"
+    },
+    {
+      "path": "education/tools/activation_equality_worker.mjs",
+      "bytes": 1484,
+      "sha256": "4063f56d84e491c8785ee5f01b7f177467d9e7f4272ee5092cefeff89954b452"
+    },
+    {
+      "path": "education/tests/activation_equality_diagnostic.py",
+      "bytes": 4097,
+      "sha256": "6a20bff7bd7803052e1407ab48ef75f8f409b1d7559bdaaf439d091e23e51c5e"
+    },
+    {
+      "path": "education/research/mechanical-closure/activation-equality-diagnostic-protocol.md",
+      "bytes": 6331,
+      "sha256": "d279d7b6ba71689efed7e6875c3cfb7faba25a4a47c05279703c4011703dfce9"
+    },
+    {
+      "path": "education/research/mechanical-closure/activation-equality-diagnostic-results.md",
+      "bytes": 13921,
+      "sha256": "15f77b3213a5d0a7001d103b629eee73e2915d3ff9cc172be0073837de10115e"
+    }
+  ],
+  "excluded": [
+    "This manifest itself",
+    "education/data/activation-equality-diagnostic-v1/review/packet-verification.log"
+  ]
+}

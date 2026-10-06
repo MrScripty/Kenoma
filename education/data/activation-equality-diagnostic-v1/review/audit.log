@@ -1,0 +1,25 @@
+AUDIT control/full-source/RK4-0.0002 failure None balance True event True
+AUDIT control/full-source/RK4-0.0001 failure None balance True event True
+AUDIT control/full-source/RK4-0.00005 failure None balance True event True
+AUDIT control/full-source/RK4-0.000025 failure None balance True event True
+AUDIT control/full-source/DOP853 failure None balance True event True
+AUDIT control/full-source/Radau failure None balance True event True
+AUDIT control/reduced-independent/RK4-0.0002 failure None balance True event True
+AUDIT control/reduced-independent/RK4-0.0001 failure None balance True event True
+AUDIT control/reduced-independent/RK4-0.00005 failure None balance True event True
+AUDIT control/reduced-independent/RK4-0.000025 failure None balance True event True
+AUDIT control/reduced-independent/DOP853 failure None balance True event True
+AUDIT control/reduced-independent/Radau failure None balance True event True
+AUDIT split/full-source/RK4-0.0002 failure None balance True event True
+AUDIT split/full-source/RK4-0.0001 failure None balance True event True
+AUDIT split/full-source/RK4-0.00005 failure None balance True event True
+AUDIT split/full-source/RK4-0.000025 failure None balance True event True
+AUDIT split/full-source/DOP853 failure None balance True event True
+AUDIT split/full-source/Radau failure None balance True event True
+AUDIT split/reduced-independent/RK4-0.0002 failure None balance True event True
+AUDIT split/reduced-independent/RK4-0.0001 failure None balance True event True
+AUDIT split/reduced-independent/RK4-0.00005 failure None balance True event True
+AUDIT split/reduced-independent/RK4-0.000025 failure None balance True event True
+AUDIT split/reduced-independent/DOP853 failure None balance True event True
+AUDIT split/reduced-independent/Radau failure None balance True event True
+REFERENCES True physical_failures {}

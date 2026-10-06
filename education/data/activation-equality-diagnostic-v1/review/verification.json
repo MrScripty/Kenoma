@@ -1,0 +1,306 @@
+{
+  "scope": "Independent raw maxima, primary SciPy dense replay and exact event restart verification",
+  "baseline_commit": "b1689d07e12dd6ea0c061f99f8804067e480901a",
+  "baseline_git_blobs_byte_identical": 1913,
+  "source_and_input_bindings_unchanged": true,
+  "comparison_records": 324,
+  "unique_new_cell_pairs": 276,
+  "old_controls_compared": 12,
+  "segment_tables": 672,
+  "numeric_maxima": 4704,
+  "all_signed_witnesses_and_exact_margins_verified": true,
+  "accepted_interval_count": 34062,
+  "dense_grid_samples": 2568,
+  "max_primary_implementation_dense_state_replay_error": 1.9761969838327786e-14,
+  "activation_event_polynomials_replayed": 24,
+  "continuous_11_coordinate_restarts": {
+    "split/full-source/RK4-0.0002": {
+      "saved_error": 0,
+      "restart_error": 0,
+      "all_11_coordinates_retained": true,
+      "state_reset": false
+    },
+    "split/full-source/RK4-0.0001": {
+      "saved_error": 0,
+      "restart_error": 0,
+      "all_11_coordinates_retained": true,
+      "state_reset": false
+    },
+    "split/full-source/RK4-0.00005": {
+      "saved_error": 0,
+      "restart_error": 0,
+      "all_11_coordinates_retained": true,
+      "state_reset": false
+    },
+    "split/full-source/RK4-0.000025": {
+      "saved_error": 0,
+      "restart_error": 0,
+      "all_11_coordinates_retained": true,
+      "state_reset": false
+    },
+    "split/full-source/DOP853": {
+      "saved_error": 0,
+      "restart_error": 0,
+      "all_11_coordinates_retained": true,
+      "state_reset": false
+    },
+    "split/full-source/Radau": {
+      "saved_error": 0,
+      "restart_error": 0,
+      "all_11_coordinates_retained": true,
+      "state_reset": false
+    },
+    "split/reduced-independent/RK4-0.0002": {
+      "saved_error": 0,
+      "restart_error": 0,
+      "all_11_coordinates_retained": true,
+      "state_reset": false
+    },
+    "split/reduced-independent/RK4-0.0001": {
+      "saved_error": 0,
+      "restart_error": 0,
+      "all_11_coordinates_retained": true,
+      "state_reset": false
+    },
+    "split/reduced-independent/RK4-0.00005": {
+      "saved_error": 0,
+      "restart_error": 0,
+      "all_11_coordinates_retained": true,
+      "state_reset": false
+    },
+    "split/reduced-independent/RK4-0.000025": {
+      "saved_error": 0,
+      "restart_error": 0,
+      "all_11_coordinates_retained": true,
+      "state_reset": false
+    },
+    "split/reduced-independent/DOP853": {
+      "saved_error": 0,
+      "restart_error": 0,
+      "all_11_coordinates_retained": true,
+      "state_reset": false
+    },
+    "split/reduced-independent/Radau": {
+      "saved_error": 0,
+      "restart_error": 0,
+      "all_11_coordinates_retained": true,
+      "state_reset": false
+    }
+  },
+  "literal_control_vs_original": {
+    "control/full-source/RK4-0.0002": {
+      "max_11_coordinate_difference_through_0_106": 0.0,
+      "at_0_107_signed_state_difference": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "adaptive_bound_endpoint_changes_final_interpolant": false
+    },
+    "control/full-source/RK4-0.0001": {
+      "max_11_coordinate_difference_through_0_106": 0.0,
+      "at_0_107_signed_state_difference": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "adaptive_bound_endpoint_changes_final_interpolant": false
+    },
+    "control/full-source/RK4-0.00005": {
+      "max_11_coordinate_difference_through_0_106": 0.0,
+      "at_0_107_signed_state_difference": [
+        1.186550857568136e-15,
+        2.886579864025407e-15,
+        1.4016565685892601e-15,
+        -1.1546319456101628e-14,
+        1.6479873021779667e-15,
+        4.08006961549745e-15,
+        -2.7408630920433552e-15,
+        1.0935696792557792e-14,
+        -3.840677775812651e-15,
+        -2.6107588313450947e-16,
+        2.886579864025407e-15
+      ],
+      "adaptive_bound_endpoint_changes_final_interpolant": false
+    },
+    "control/full-source/RK4-0.000025": {
+      "max_11_coordinate_difference_through_0_106": 0.0,
+      "at_0_107_signed_state_difference": [
+        2.0192181260370035e-15,
+        4.912736883966318e-15,
+        2.3800406090401793e-15,
+        -1.9539925233402755e-14,
+        2.806782584130474e-15,
+        6.966649479522857e-15,
+        -4.673345044281518e-15,
+        1.8623991238087e-14,
+        -6.54684639833647e-15,
+        -4.440892098500626e-16,
+        4.912736883966318e-15
+      ],
+      "adaptive_bound_endpoint_changes_final_interpolant": false
+    },
+    "control/full-source/DOP853": {
+      "max_11_coordinate_difference_through_0_106": 0.0,
+      "at_0_107_signed_state_difference": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -8.673617379884035e-19,
+        0.0
+      ],
+      "adaptive_bound_endpoint_changes_final_interpolant": true
+    },
+    "control/full-source/Radau": {
+      "max_11_coordinate_difference_through_0_106": 0.0,
+      "at_0_107_signed_state_difference": [
+        -8.192058142952874e-14,
+        -2.634892304342884e-12,
+        1.525377046895926e-13,
+        7.083222897108499e-13,
+        2.1079318845984574e-13,
+        1.7622014958362797e-13,
+        4.1320419308377154e-13,
+        -2.9387603461827894e-13,
+        5.0209836288672705e-14,
+        6.68822636162858e-15,
+        -2.634892304342884e-12
+      ],
+      "adaptive_bound_endpoint_changes_final_interpolant": true
+    },
+    "control/reduced-independent/RK4-0.0002": {
+      "max_11_coordinate_difference_through_0_106": 0.0,
+      "at_0_107_signed_state_difference": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "adaptive_bound_endpoint_changes_final_interpolant": false
+    },
+    "control/reduced-independent/RK4-0.0001": {
+      "max_11_coordinate_difference_through_0_106": 0.0,
+      "at_0_107_signed_state_difference": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "adaptive_bound_endpoint_changes_final_interpolant": false
+    },
+    "control/reduced-independent/RK4-0.00005": {
+      "max_11_coordinate_difference_through_0_106": 0.0,
+      "at_0_107_signed_state_difference": [
+        1.1830814106161824e-15,
+        2.886579864025407e-15,
+        1.394717674685353e-15,
+        -1.1546319456101628e-14,
+        1.6479873021779667e-15,
+        4.08006961549745e-15,
+        -2.7408630920433552e-15,
+        1.0935696792557792e-14,
+        -3.840677775812651e-15,
+        -2.6107588313450947e-16,
+        2.886579864025407e-15
+      ],
+      "adaptive_bound_endpoint_changes_final_interpolant": false
+    },
+    "control/reduced-independent/RK4-0.000025": {
+      "max_11_coordinate_difference_through_0_106": 0.0,
+      "at_0_107_signed_state_difference": [
+        2.022687572988957e-15,
+        4.912736883966318e-15,
+        2.3800406090401793e-15,
+        -1.9761969838327786e-14,
+        2.8102520310824275e-15,
+        6.966649479522857e-15,
+        -4.673345044281518e-15,
+        1.8596235662471372e-14,
+        -6.543376951384516e-15,
+        -4.440892098500626e-16,
+        4.912736883966318e-15
+      ],
+      "adaptive_bound_endpoint_changes_final_interpolant": false
+    },
+    "control/reduced-independent/DOP853": {
+      "max_11_coordinate_difference_through_0_106": 0.0,
+      "at_0_107_signed_state_difference": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "adaptive_bound_endpoint_changes_final_interpolant": true
+    },
+    "control/reduced-independent/Radau": {
+      "max_11_coordinate_difference_through_0_106": 0.0,
+      "at_0_107_signed_state_difference": [
+        -7.586292705141773e-14,
+        -2.4388269181940814e-12,
+        1.412064909445121e-13,
+        6.561418075534675e-13,
+        1.9510781879006345e-13,
+        1.6264767310758543e-13,
+        3.8298531013225556e-13,
+        -2.719491298819321e-13,
+        4.581057755359552e-14,
+        5.816527814950234e-15,
+        -2.4388269181940814e-12
+      ],
+      "adaptive_bound_endpoint_changes_final_interpolant": true
+    }
+  },
+  "all_eight_adaptive_reference_pairs_pass": true,
+  "ordinary_events_accepted": 0,
+  "sliding_states_accepted": 0,
+  "nine_corrected_preflight_tests_passed": true,
+  "rejected_unmatched_excitation_preflight_retained": true,
+  "book_lean_protected_files_changed": false,
+  "svg_parsed": true,
+  "png_visually_inspected": true,
+  "crossing_step_tables_recomputed_from_accepted_polynomials": 128,
+  "crossing_step_numeric_endpoints_and_margins_verified": true
+}
