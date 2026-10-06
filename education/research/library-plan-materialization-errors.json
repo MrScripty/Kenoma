@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "library_file_id": "libfile_7ea79b1aa3cc8191b436abdb7b066c46",
+  "consumer_local_destination": "/workspace/Kenoma/education/research/Kenoma-physics-research-and-labs-plan.txt",
+  "attempts": [
+    {"attempt": 1, "exit_code": 1, "error_verbatim": "library file transfer failed: download failed", "permission_denial_reported": false},
+    {"attempt": 2, "exit_code": 1, "error_verbatim": "library file transfer failed: download failed", "permission_denial_reported": false}
+  ],
+  "interpretation": "Generic helper download failures. Neither reported a permission denial or automatic approval-review rejection; the underlying cause is unresolved.",
+  "local_bytes_present": false,
+  "hash_verified": false,
+  "further_retries": "None authorized or attempted after the supported retry."
+}

@@ -24,7 +24,7 @@ Matthew Millard, Thomas Uchida, Ajay Seth, and Scott L. Delp. “Flexing Computa
 
 ## Formal toolchain {#source-lean}
 
-[Lean official installation documentation](https://lean-lang.org/install/) and the [official Lean 4.19.0 release](https://github.com/leanprover/lean4/releases/tag/v4.19.0). The project pins the version deliberately; it does not claim it is the newest release. Only the bundled standard library is imported. The successful kernel checks and their transitive-axiom reports are linked in each proof card and in the generated build evidence.
+[Lean official installation documentation](https://lean-lang.org/install/) and the [official Lean 4.19.0 release](https://github.com/leanprover/lean4/releases/tag/v4.19.0). The project pins the version deliberately; it does not claim it is the newest release. The original 25 declarations import the bundled standard library. The four additional real kinematic claims in `ContinuumProperties.lean` import [official mathlib v4.19.0](https://github.com/leanprover-community/mathlib4/tree/c44e0c8ee63ca166450922a373c7409c5d26b00b), with its exact commit and transitive dependency manifest pinned in `proofs/mathlib-lock.json`. The successful kernel checks and their transitive-axiom reports are linked in each proof card and in the generated build evidence.
 
 ## Human architecture {#source-architecture}
 

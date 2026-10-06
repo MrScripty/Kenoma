@@ -1,0 +1,51 @@
+{
+  "observedUtc": "2026-10-05T21:07:42.971974+00:00",
+  "scope": "Read-only running arm research status; no new replay verification or convergence qualification; excluded from the release build",
+  "runs": [
+    {
+      "file": "anatomical-dense-fine-trajectory.json",
+      "result": "RUNNING",
+      "retainedSnapshots": 21,
+      "lastRetainedSummary": {
+        "timeS": 0.29500000000000015
+      },
+      "lastAcceptedAttempt": {
+        "accepted": true
+      },
+      "inProgressStage": 21,
+      "inProgressResidualN": 0.009219994942893956,
+      "completedAllSteps": false,
+      "modifiedUtc": "2026-10-05T21:06:23.216418+00:00"
+    },
+    {
+      "file": "anatomical-dense-interpolated-trajectory.json",
+      "result": "RUNNING",
+      "retainedSnapshots": 20,
+      "lastRetainedSummary": {
+        "timeS": 0.28000000000000014
+      },
+      "lastAcceptedAttempt": {
+        "accepted": true
+      },
+      "inProgressStage": 20,
+      "inProgressResidualN": 0.1173966631327065,
+      "completedAllSteps": false,
+      "modifiedUtc": "2026-10-05T21:07:33.113034+00:00"
+    },
+    {
+      "file": "anatomical-dense-release-refinement.json",
+      "result": "RUNNING",
+      "retainedSnapshots": 31,
+      "lastRetainedSummary": {
+        "timeS": 0.39000000000000024
+      },
+      "lastAcceptedAttempt": {
+        "accepted": true
+      },
+      "inProgressStage": 31,
+      "inProgressResidualN": 0.02860507806089127,
+      "completedAllSteps": false,
+      "modifiedUtc": "2026-10-05T21:07:34.233043+00:00"
+    }
+  ]
+}

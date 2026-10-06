@@ -1,0 +1,22 @@
+{
+  "result": "PASS_REVIEWED_SELECTED_RELEASE_RENDERS",
+  "source_revision": "90dac1ddf062e9a3d7112442f1e38ccbff5bf28c",
+  "pdf_sha256": "6147c2b928f20aed78cad219e193fd963d060ed3a3bbcf04f0be8fd5149e04e5",
+  "reviewed_images": [
+    "render/pdf-page-31.png",
+    "render/pdf-page-32.png",
+    "render/pdf-page-33.png",
+    "render/pdf-page-34.png",
+    "render/pdf-page-35.png",
+    "render/pdf-page-88.png",
+    "render/pdf-page-89.png",
+    "render/mobile-volume-isochoric-sqrt.png"
+  ],
+  "observations": [
+    "PDF pages 32, 33 and 35 show one descriptive caption per property figure; SI labels and imposed-kinematics/reduced-law limits are readable.",
+    "PDF page 34 states positive real stretch for the square-root construction and distinguishes exact kinematics from mechanical equilibrium.",
+    "PDF pages 88 and 89 show unchanged four-real-claim Lean source, fresh compilation receipt and allowed transitive axioms.",
+    "The mobile square-root proof card has readable assumptions, limits, source hash and links; its long Lean statement uses its horizontal code scroller."
+  ],
+  "limits": "Selected-page and one mobile-card human/model visual inspection; not a new exhaustive page-by-page appearance review or real-phone accessibility certification."
+}

@@ -27,10 +27,16 @@ def render():
             revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
             page.evaluate('''revision => {
               const destinations={'proofs/Mechanics.lean':'#checked-source-appendix','proof-status.json':'#proof-check-receipt','lean-check.txt':'#kernel-dependency-report'};
+              Object.assign(destinations,{'proofs/AnatomicalTransfer.lean':'#transfer-source-appendix','transfer-proof-status.json':'#transfer-proof-receipt','transfer-lean-check.txt':'#transfer-kernel-report','proofs/CoupledMechanics.lean':'#coupled-source-appendix','coupled-proof-status.json':'#coupled-proof-receipt','coupled-lean-check.txt':'#coupled-kernel-report','proofs/AnatomicalArm.lean':'#arm-source-appendix','arm-proof-status.json':'#arm-proof-receipt','arm-lean-check.txt':'#arm-kernel-report','proofs/ContinuumProperties.lean':'#property-source-appendix','property-proof-status.json':'#property-proof-receipt','property-lean-check.txt':'#property-kernel-report'});
               for(const link of document.querySelectorAll('a[href]')){
                 const href=link.getAttribute('href'),target=destinations[href];
                 if(target)link.setAttribute('href',target);
                 else if(href.startsWith('data/'))link.setAttribute('href',`https://github.com/MrScripty/Kenoma/blob/${revision}/education/${href}`);
+                else if(href.startsWith('web/'))link.setAttribute('href',`https://github.com/MrScripty/Kenoma/blob/${revision}/education/${href}`);
+                else if(href.startsWith('coupled-fixture/')||href.startsWith('anatomy-inspection/')||href.startsWith('anatomical-arm/')){
+                  link.setAttribute('href',`https://github.com/MrScripty/Kenoma/blob/${revision}/education/data/anatomical-arm-v1/README.md`);
+                  link.textContent='Reproduce this research preview from the pinned repository instructions';
+                }
               }
             }''',revision)
             page.pdf(path=str(ROOT/'dist/kenoma-mechanics.pdf'),format='A4',print_background=True,

@@ -1,0 +1,222 @@
+
+> kenoma-education@0.1.0 test
+> node --test tests/*.test.mjs contributions/continuum_reference/tests/*.test.mjs
+
+✔ conforming tetrahedral volume, outward faces, exact total lumped mass (105.815113ms)
+✔ unit tetrahedron matches independently written tensor strain energy and gradients (3.730406ms)
+✔ six infinitesimal rigid modes vanish; a finite rotation is outside this model (19.950687ms)
+✔ affine patch: displacement, constant stress, signed support and half-ramp work (287.718708ms)
+✔ quadratic manufactured load is independent of FEM: divergence, surface resultants, refinement (4258.203001ms)
+✔ PCG implicit solve agrees with pivoted dense elimination; failed tolerance stays failed (5.747883ms)
+✔ six compliant strain modes reproduce full element energy, including shear (7.458066ms)
+✔ XPBD finite iteration error decreases to the matched implicit solution; reset is deterministic (90.88214ms)
+✔ finite sweeps depend on timestep; convergence matches target at each step size (175.052211ms)
+✔ implicit force signs and backward-Euler work/dissipation balance for nonzero initial state (33.872988ms)
+✔ zero forces and invalid domains are explicit (3.108941ms)
+✔ complete joint/tissue potential gradient and analytic Hessian match independent differences (178.13599ms)
+✔ accepted coupling lifts from actual tissue traction, release lowers activation, torque balances inertia (2082.151725ms)
+✔ mass changes preserve all dynamic/tissue state and alter only recorded external energy and future coupling (903.672057ms)
+✔ closest source triangle coordinates reconstruct projection at face, edge and vertex (1.205136ms)
+✔ closed tetrahedron query distinguishes containment and outside, with independent signed-distance gradient (7.941039ms)
+✔ Positive quadratic quadrature and shape reproduce partition, reference volume and polynomial moments (5.868879ms)
+✔ Quadratic element gradients match independent differences including displaced midside nodes (92.53676ms)
+✔ Isoparametric reference midside geometry has exactly zero passive rest stress (5.4318ms)
+✔ Finite rotation produces no passive force and rejected orientation is explicit (0.761907ms)
+✔ fixed-end actual P2 block carries active traction once, without passive storage (87.722546ms)
+✔ same actual P2 block shortens freely and retains greater length against dead load (3599.746332ms)
+✔ actual rotating tendon map matches independent energy gradient and power (6.213605ms)
+✔ slack tendon produces no attachment torque; fixed anchor has no joint work (0.235571ms)
+✔ original atlas SHA, triangle/barycentric picks, shared right-handed frame and bind pose (3.04418ms)
+✔ three distinct source bones and seven closed consistently glued positive P2 belly meshes (839.814796ms)
+✔ named attachment patches reconstruct actual original atlas triangles without per-part transforms (0.532136ms)
+✔ distributed patches have actual areas, normalized weights and connected source edges; candidate sides and broad origins stay explicit (8.557725ms)
+✔ Authored finite-strain passive/active stress is the independent central-difference potential derivative (20.646431ms)
+✔ Finite rigid rotations preserve energy and rotate first Piola stress objectively (0.460662ms)
+✔ Active axial traction, supported force-length interval and potential are separate from passive storage (0.271759ms)
+✔ Tensile tendon has consistent energy, slack and continuous toe stress/tangent (0.395541ms)
+✔ Invalid/inverted material states fail rather than yield plausible stresses (0.414416ms)
+✔ reference Cholesky preconditioner solves its exact assembled SPD operator (62.581627ms)
+✔ Newton preserves the same P2 objective and residual tolerance and reproduces loaded length (1066.106841ms)
+✔ step-aware damping reaches the independent exponential-potential minimum after steep rejected trials (0.628537ms)
+✔ every objective call is counted including rejected determinant/domain trials (1.366128ms)
+✔ analytic material tangent matches independent Piola differences and Hessian symmetry (7.612675ms)
+✔ P2 analytic tangent includes midside variations and matches full element gradient difference (37.56449ms)
+✔ actual source heads meet two mechanically shared free apparatuses with distributed source insertion faces (1.905779ms)
+✔ apparatus gradient, nonlinear attachment Hessian and B transpose tissue torque agree with independent differences (5995.163221ms)
+✔ actual anatomical point-mass event preserves mechanical state and uses upward-positive external energy (2.063073ms)
+✔ failed actual anatomical nonlinear step retains activation, effort, pose, velocity, tissue and time (14570.185905ms)
+✔ Exact P2 Bernstein coefficients certify affine orientation and detect reversal (30.256406ms)
+✔ Cubic Bernstein reconstruction agrees with an independent curved P2 Jacobian (5.13196ms)
+✔ An unresolved or inverted curved element cannot receive a positive certificate (2.455328ms)
+✔ Exact signs survive determinant underflow and signed zero in the stored coordinates (0.712173ms)
+✔ naive weighting uses identical source coordinates at bind and its gradient matches the independent full P2 interpolation (94.682657ms)
+✔ full fibre stretch gives an active mean stress while the isochoric matrix has zero trace (1.596299ms)
+✔ dilation energy derivative independently checks the mean Cauchy stress identity (28.373971ms)
+✔ nested positive diagnostic rules retain the existing 4/32 rules and reference measure (20.172584ms)
+✔ independent P2 integration reproduces affine material energy and nodal energy derivatives (124.474232ms)
+✔ half/double bulk diagnostic is exact at fixed geometry and retains the original force gate (567.427537ms)
+✔ actual compressed loading pose retains the independent original P2 energy, gradient and determinant (1299.508104ms)
+✔ symmetric actual-head contact has balanced action/reaction and nonnegative declared Gauss-Newton tangent (3001.368971ms)
+✔ source-bone pose derivative and actual-head contact gradient match independent energy differences (93047.584295ms)
+✔ active-feature contact Hessian includes deforming closest surfaces and rotating bone acceleration (17013.596623ms)
+✔ co-moving tendon guides and bone sum every repeated joint column in fallback torque (39.321534ms)
+✔ face, edge and vertex contact differentials include triangle motion and agree with independent second differences (16.609529ms)
+✔ simplex contact envelope is conservative, isolated-feature exact and permutation invariant (1.288652ms)
+✔ exact leg witnesses expose a narrow entry/exit interval missed by all five samples (39.792996ms)
+✔ interior and shared-edge material cuts conserve area with positive children (15.040541ms)
+✔ archived force-converged rest exposes its 135 micron humeral tendon interval to the new rule (17971.565252ms)
+✔ force-converged loaded muscle/muscle crossings missed by every sample become active witnesses (19664.746802ms)
+✔ loaded: saved sampled-clear muscle/bone and tendon/bone failures become active contact (36739.98613ms)
+✔ quarter: saved sampled-clear muscle/bone and tendon/bone failures become active contact (33448.39749ms)
+✔ frozen witness quadrature retains analytic gradient and Hessian including moving-bone/tendon contact (29857.650677ms)
+✔ saved loaded closest-face corner has conservative smooth energy derivatives at the original collision gates (81607.48112ms)
+✔ saved cold-load edge transition preserves continuous energy and its gradient (40589.289878ms)
+✖ dense replay rejects inconsistent held joint coordinates despite accepted flags (1311.277155ms)
+✖ dense replay rejects invalid accepted-state time advancement (1282.103966ms)
+✔ dense reduced body agrees with independent full P2 assembly at a compressed nonlinear pose (90.145885ms)
+✔ dense body energy gradient and Hessian pass directional differences at actual compression (94.582594ms)
+✔ zero enrichment exactly reproduces the original dense potential, positions and retained gradients (23379.892859ms)
+✔ new apparatus/contact force coefficients agree with independent energy directional differences (103232.435741ms)
+✔ enriched body force assembly agrees with independent full P2 nodal gradients (3131.038488ms)
+✔ enriched analytic body Hessian passes directional differences and symmetry (255.868675ms)
+✔ rotation search remainder rotates the extra nodal vector modes consistently (7.653536ms)
+✔ 2048-point subdivision has positive weights and exact polynomial moments (11.608929ms)
+✔ further positive rule preserves reference volume and affine energy/full nodal forces (152.069859ms)
+✔ closed material tensor matches independently implemented directional tangent in a nontrivial active state (3.192729ms)
+✔ restricted atlas P2 field retains the original element potential and gradient, including midside DOF (242.362504ms)
+✔ excluded nodal direction has unit norm and is orthogonal to every retained displacement column (8.003808ms)
+✔ nodal potential probe reproduces actual reduced displacement of body, sheets, apparatus and contact (19512.957316ms)
+✔ derived repair clears finite bone gates without changing source bones or reference tissue volume (371.292054ms)
+✔ exclusive triceps ownership retains all candidate faces and positive normalized source areas (2.664009ms)
+✔ radial apposition receipts expose the substantial candidate gap across every tested pose (8.426199ms)
+✔ held rest rejects scalar advancement even when its saved coordinates are unchanged (1.669938ms)
+✔ model matching requires all distinct heads, prescribed end rings and finite force targets (2.102237ms)
+✔ accepted dense, bulk and enriched comparison candidates retain the old finite mass (252.071241ms)
+✔ coarse completion and interrupted fine prefixes require nonempty matching coverage (2351.567911ms)
+✔ dense rejected attempts require the original schedule, finite residual and explicit rollback (16265.456012ms)
+✔ new continuation rejects stale source digests and corrupted accepted state lineage (2403.980141ms)
+✔ recorded-source transition preserves exact prior contact bytes and rejects unknown hashes (1.688485ms)
+✔ exact global rigid rotations remain in each repaired Galerkin space and preserve the unchanged material energy, J and fibre stretch (1202.722154ms)
+✔ Rodrigues correction has zero first derivative at zero and stable small-angle scaling (0.285621ms)
+✔ all actual reference tendon paths clear source cortex and origin shifts respect recorded uncertainty (963.996296ms)
+✔ segment audit detects interior crossing and containment without treating source endpoints as crossings (1.088546ms)
+✔ actual arm redraw disposes every owned dumbbell descendant once (15.958467ms)
+✔ oriented boundary measurement agrees with an independent affine prediction over translations and rotations (11.822272ms)
+✔ rigid deformation has zero Green strain; volume-preserving shear still has strain (0.31389ms)
+✔ determinant composition is checked numerically on nontrivial independent matrices (0.163327ms)
+✔ inversion is rejected by signed boundary volume and deformation orientation (4.794241ms)
+✔ isochoric construction preserves independently triangulated volume while area and length change (1.014858ms)
+✔ elbow current row matches release/change before stepping and preserves completed history (19.484173ms)
+✔ series current row matches release/change before stepping and preserves completed history (56.042471ms)
+✔ activation exact transient, bounds and continuing release (1.296978ms)
+✔ path derivative, force moment and virtual power agree independently (4.675288ms)
+✔ gravity counted once and inertia include explicit point masses (1.365817ms)
+✔ forward lift, delayed release, replay and refined work balance (46.47616ms)
+✔ prescribed hold reports external motor and domain stop invents no impulse (3.816173ms)
+✔ force worked example and work-energy consistency across signed forces (5.353733ms)
+✔ lever sign, zero moment arm and exact scaled worked example (0.373723ms)
+✔ potential gradient gives the negative gravitational torque (0.503927ms)
+✔ torque identities hold for a deterministic grid of integer inputs (1.274816ms)
+✔ step/replay/reset gives identical sequences (40.321381ms)
+✔ energy diagnostics distinguish unstable explicit from bounded symplectic and Verlet (19.026633ms)
+✔ Verlet convergence against independent analytic oscillator (0.874554ms)
+✔ invalid domains fail explicitly (4.843915ms)
+✔ series force equilibrium, length partition, slack and rigid limit (1.545295ms)
+✔ fixed ends permit fiber shortening and tendon storage under activation (18.563613ms)
+✔ active fiber power differs from skeletal power but obeys the full elastic balance (0.248037ms)
+✔ hyperelastic stress independently matches energy gradients (0.320102ms)
+✔ compression preserves most volume and satisfies free sides and ideal contact (6.48515ms)
+✔ coupled pulse/release work balance refines and tissue feedback is explicit (79.84384ms)
+✔ positive conforming authored mesh, closed separate membrane, correct SI reference volume (4.331993ms)
+✔ volume gradient independently matches finite differences and has zero resultant (9.859372ms)
+✔ complete edge/volume/membrane/tether/contact energy gradient matches central difference (172.57811ms)
+✔ passive reference is zero energy; activation shortens spatial fibres with separate skin (1636.172767ms)
+✔ same-pose compression comparison, sampled contact improvement and iteration defect remain measurable (3939.282572ms)
+✔ reported contact/support resultant equals the unresolved free gradient, not a hidden extra force (654.888998ms)
+✔ skin-off ablation removes membrane and fascia energies; shape-off removes spatial actuator only (643.131451ms)
+✔ deterministic reset, lift/release continuity and teaching domain halt (1073.741259ms)
+✔ linear taper midpoint integration converges to independently integrated log oracle (1.604526ms)
+✔ equal-length two-area fixed-end active fixture: narrow +1/300, wide -1/300 (1.338947ms)
+✔ large strain is exposed and invalid area or refinement rejected (0.592164ms)
+✔ small-strain warning uses true endpoint extrema independently of midpoint display resolution (0.748557ms)
+ℹ tests 137
+ℹ suites 0
+ℹ pass 135
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 273327.10218
+
+✖ failing tests:
+
+test at tests/anatomical_dense_lineage.test.mjs:20:1
+✖ dense replay rejects inconsistent held joint coordinates despite accepted flags (1311.277155ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /held joint coordinate/. Input:
+  
+  'file:///workspace/Kenoma-ci-repro/education/tools/anatomical-replay-contracts.mjs:5\n' +
+    "export function requestDomain(request){if(!(Number.isFinite(request?.hS)&&request.hS>0&&Number.isFinite(request.effort)&&request.effort>=0&&request.effort<=1))throw Error('Invalid finite step/effort request');}\n" +
+    '                                                                                                                                                                     ^\n' +
+    '\n' +
+    'Error: Invalid finite step/effort request\n' +
+    '    at requestDomain (file:///workspace/Kenoma-ci-repro/education/tools/anatomical-replay-contracts.mjs:5:166)\n' +
+    '    at denseCoverage (file:///workspace/Kenoma-ci-repro/education/tools/anatomical-replay-contracts.mjs:46:34)\n' +
+    '    at file:///workspace/Kenoma-ci-repro/education/tools/verify-anatomical-dense-trajectory.mjs:22:1\n' +
+    '    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n' +
+    '    at async node:internal/modules/esm/loader:643:26\n' +
+    '    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\n' +
+    '\n' +
+    'Node.js v24.19.0\n'
+  
+      at rejectMutation (file:///workspace/Kenoma-ci-repro/education/tests/anatomical_dense_lineage.test.mjs:17:71)
+      at TestContext.<anonymous> (file:///workspace/Kenoma-ci-repro/education/tests/anatomical_dense_lineage.test.mjs:20:92)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: "file:///workspace/Kenoma-ci-repro/education/tools/anatomical-replay-contracts.mjs:5\nexport function requestDomain(request){if(!(Number.isFinite(request?.hS)&&request.hS>0&&Number.isFinite(request.effort)&&request.effort>=0&&request.effort<=1))throw Error('Invalid finite step/effort request');}\n                                                                                                                                                                     ^\n\nError: Invalid finite step/effort request\n    at requestDomain (file:///workspace/Kenoma-ci-repro/education/tools/anatomical-replay-contracts.mjs:5:166)\n    at denseCoverage (file:///workspace/Kenoma-ci-repro/education/tools/anatomical-replay-contracts.mjs:46:34)\n    at file:///workspace/Kenoma-ci-repro/education/tools/verify-anatomical-dense-trajectory.mjs:22:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\n\nNode.js v24.19.0\n",
+    expected: /held joint coordinate/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/anatomical_dense_lineage.test.mjs:21:1
+✖ dense replay rejects invalid accepted-state time advancement (1282.103966ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /time lineage/. Input:
+  
+  'file:///workspace/Kenoma-ci-repro/education/tools/anatomical-replay-contracts.mjs:5\n' +
+    "export function requestDomain(request){if(!(Number.isFinite(request?.hS)&&request.hS>0&&Number.isFinite(request.effort)&&request.effort>=0&&request.effort<=1))throw Error('Invalid finite step/effort request');}\n" +
+    '                                                                                                                                                                     ^\n' +
+    '\n' +
+    'Error: Invalid finite step/effort request\n' +
+    '    at requestDomain (file:///workspace/Kenoma-ci-repro/education/tools/anatomical-replay-contracts.mjs:5:166)\n' +
+    '    at denseCoverage (file:///workspace/Kenoma-ci-repro/education/tools/anatomical-replay-contracts.mjs:46:34)\n' +
+    '    at file:///workspace/Kenoma-ci-repro/education/tools/verify-anatomical-dense-trajectory.mjs:22:1\n' +
+    '    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n' +
+    '    at async node:internal/modules/esm/loader:643:26\n' +
+    '    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\n' +
+    '\n' +
+    'Node.js v24.19.0\n'
+  
+      at rejectMutation (file:///workspace/Kenoma-ci-repro/education/tests/anatomical_dense_lineage.test.mjs:17:71)
+      at TestContext.<anonymous> (file:///workspace/Kenoma-ci-repro/education/tests/anatomical_dense_lineage.test.mjs:21:73)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: "file:///workspace/Kenoma-ci-repro/education/tools/anatomical-replay-contracts.mjs:5\nexport function requestDomain(request){if(!(Number.isFinite(request?.hS)&&request.hS>0&&Number.isFinite(request.effort)&&request.effort>=0&&request.effort<=1))throw Error('Invalid finite step/effort request');}\n                                                                                                                                                                     ^\n\nError: Invalid finite step/effort request\n    at requestDomain (file:///workspace/Kenoma-ci-repro/education/tools/anatomical-replay-contracts.mjs:5:166)\n    at denseCoverage (file:///workspace/Kenoma-ci-repro/education/tools/anatomical-replay-contracts.mjs:46:34)\n    at file:///workspace/Kenoma-ci-repro/education/tools/verify-anatomical-dense-trajectory.mjs:22:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\n\nNode.js v24.19.0\n",
+    expected: /time lineage/,
+    operator: 'match',
+    diff: 'simple'
+  }
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

@@ -1,0 +1,330 @@
+{
+  "schema": 1,
+  "result": "PASS_FROZEN_EXCLUDED_VIRTUAL_WORK_DECOMPOSITION",
+  "sourceHashes": {
+    "tools/anatomical-contact-experiment.mjs": "a258797940c1bb0e0db0882539d9a802e0fea4671dcec0b54188e2feea91fa75",
+    "web/anatomical-aponeurosis.mjs": "1dbebfd2ea67427ee0d962b7b234d2d40a2f2cd4616a4f1199e20b3aba7316a0",
+    "web/anatomical-apparatus.mjs": "be60e6a3ba4db34ee01a4cb531bcdd19f868645ef26e06e1e30daedbc360cb98",
+    "web/anatomical-arm-worker.mjs": "dfadf3136b8ecac0fd6275f059085636eb8953346d920ca69a4d4382fa7b39d5",
+    "web/anatomical-arm.mjs": "9ec37ec7b23bb67643fef715f4554fc8811e897a581691231e6669fdd66c7569",
+    "web/anatomical-audit.mjs": "4f45bf4ce4459096e9595cd7bb1e0bcdfb0fafe858ee5da25444940604589f14",
+    "web/anatomical-comparison.mjs": "d812405b86541f756759bede9750071117edbab81e69efcfadf96f4f195fd09f",
+    "web/anatomical-contact-differential.mjs": "76f107f5eb1c41fdf6622c428648babc5a489113a709fd337782b1b3de3cac0b",
+    "web/anatomical-contact-refinement.mjs": "29830d2f311ee74a50acfd65f0ca8c245d2b390ed66d6eafd6c9b79de7607e07",
+    "web/anatomical-contact.mjs": "ca3abc6a6c885651d6e43d0d0e2b08738b63a536d3850b854087a701695a1e67",
+    "web/anatomical-coupled-fixture.mjs": "620afbb2e801f00ec361f5f1b5d39f010acc386812dcaa7239c0ca781d0bf4b9",
+    "web/anatomical-coupled-worker.mjs": "1c54d08f5e36ca837343fc96399ac85de8e92f8fe1ebd1d73a50e5885b93c435",
+    "web/anatomical-distance.mjs": "e11826c97f160220fda68f72cbe5e73f35f9527edcf4a4d58100c467cb50940a",
+    "web/anatomical-element.mjs": "3f67a6bd31565c83d2cbea591c3cf1862a48e50cc4efa780880fda7e808d4b1f",
+    "web/anatomical-fixture.mjs": "d53b5dca829883b4e91c02e5b88f3ac745ce7510cf28aabfcbd6cb978353a30a",
+    "web/anatomical-intersections.mjs": "a083a9838ac3c7508b65b58329c741aef65a065288aff82fc886d1c2c90375df",
+    "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+    "web/anatomical-modal.mjs": "12cd671bc963aa04dd5c0e173a776049de191283d850b0b60d0fe8e63be4c9a1",
+    "web/anatomical-newton.mjs": "e0b2193bff56a3fdb9595fa0893c469b5897a31512a282ff7a9b5519b2fe93fe",
+    "web/anatomical-preconditioner.mjs": "d234cd800784a57171514139a17d0720bb1a9d4d1089afcd9e7c783cead1b0b4",
+    "web/anatomical-retraction.mjs": "f5c4ef1115bc2a385d86e232cb9a6a36f8f61cd56d823b3495284de8e9c71819",
+    "web/anatomical-routing-audit.mjs": "e6ef4473a272c985cd05012cf4cbf424c45522b535c280ad5de49222dd459d9b",
+    "web/anatomical-routing.mjs": "83e52df556739786c97e4cb8ef6a7854d0d9a5fb36ca197b6bdc0b7597d09a3e",
+    "web/anatomical-solver.mjs": "2e23ae4e594c0947d15b21cdcd0422ad27e2bc3c2ac3af40293703c208906bfb",
+    "web/anatomical-tangent.mjs": "9b35daecd9efd68908e393998271f63cbc5728a5a2c4821560010ff5786f285c",
+    "web/anatomical-transfer.mjs": "1e82dabebf5a6247af9216a70292216b194a52545abf8f3b73c93ee6e2f22431",
+    "data/anatomical-arm-v1/generated/arm-reference.json": "1b80c1d3d9f2eb4370cd298f58f5e9c582625574f27072f6d3a1ea898ce4c036",
+    "data/anatomical-arm-v1/config/attachments-apparatus.json": "070fee738e73e127e334ee5cbe680cb622f100396ad0728eb9df6723c2232389",
+    "data/anatomical-arm-v1/config/apparatus-routing.json": "b8580e8158e17730b65b64d0fdbe0f1cbbafc76235b9a5f0c2b01020818cd93f",
+    "data/anatomical-arm-v1/audit/modal-fixed-end-results.json": "b0eeecdade262b682279d9ebeb7a8147a4525a992976a85afc0ce5e63270d8b4",
+    "data/anatomical-arm-v1/audit/arm-rest-results.json": "8dc23d896adce4b428f39cb172d76f3c74c828f49c2007c66155e45e8ea359c7",
+    "data/anatomical-arm-v1/audit/arm-loaded-rejected-candidate.json": "713c4aee49e5d8856e154b728b6cc127aa3a2383e83aa5720013cdf4060650ca",
+    "data/anatomical-arm-v1/audit/activation-continuation-results.json": "0c1c452277eadd4bac40219d1f1c0234a3e40731262d443f445b6f879b1530c0",
+    "data/anatomical-arm-v1/audit/contact-feature-v2/interrupted-lift.json": "5c23df199339719c4a46244ba85fcad4bd61376774bdccd330b9cf53c1c24e3b",
+    "data/anatomical-arm-v1/audit/contact-missed-soft-v3/candidate.json": "2075d10be43de28b02305c0f3e8b990f18186bdb026e29d31cc88c52af1d70ee",
+    "data/anatomical-arm-v1/audit/contact-lift-release-results.json": "a74bd8fa9fd7bc3745ed42c32af75fc44692408d081b2070ceeefa63a0db35a9",
+    "data/anatomical-arm-v1/audit/contact-lift-release-recheck.json": "387c284d2dd235ec52e66526bec6f19abc2a4eac5a8e6526cae25b728e9a2c1f",
+    "tools/anatomical-compression-quadrature.mjs": "f12e0d80224bad5e0bfa0649e08cac2f31a0baf162e2547ae8767b7371f48dc2",
+    "tools/anatomical-dense-quadrature.mjs": "2a9279268cc9a3c206e400293add90a537d7222c62af5992e08bc6467a078210",
+    "tools/anatomical-dense-trajectory.mjs": "2fc880378fdf639741af5db355dce7ee3fec674c2f859df49f53845ce8cda31b",
+    "tools/anatomical-dense-loading-prefix.mjs": "a9cc5490d880bc9e36732c56f5e0c35e0c536815c03ecfd3e8a678ae93f2d000",
+    "data/anatomical-arm-v1/audit/anatomical-dense-loading-prefix.json": "31ef26d3584d5b937d9086b8df80fcd60624eb007cdfbf6f68ac11c07040b582",
+    "tools/anatomical-nodal-probe.mjs": "ffa819b6a288baa409df0032d221226730632e39780891d6d20429afc84a14e3",
+    "data/anatomical-arm-v1/audit/anatomical-nodal-probe.json": "381f7a003e189dd91aa4c7f88df38cc50c36e3c34d11b05f768399ee13188a0d",
+    "tools/anatomical-nodal-force-components.mjs": "8b7331bf68592aa1177ce33f3979df9b55ff21bd80bc7e8cd01a1886ed9487b3"
+  },
+  "timeS": 0.1,
+  "elementId": "FJ1512",
+  "rows": [
+    {
+      "node": 98,
+      "axis": 0,
+      "maximumModalDot": 2.914335439641036e-16,
+      "analyticBodyN": {
+        "matrix": 0.002296650021819733,
+        "volume": -0.33694547720987494,
+        "passiveFiber": 0.037047177197681636,
+        "active": -0.27675452630549446
+      },
+      "differences": [
+        {
+          "hM": 1e-7,
+          "totalDerivativeN": -0.493919056765435,
+          "componentsN": {
+            "passiveBody": -0.2976016466593734,
+            "activeBody": -0.27675451264030926,
+            "embeddedAxialSheets": -0.000004434230760352875,
+            "routedTendons": 0.0777405140262033,
+            "transverseSheetMatrix": -0.000041422697520318574,
+            "interfaces": 0.0018848937688442646,
+            "contact": 0.0008575507415720801
+          },
+          "sumDifferenceN": -9.259086830581964e-10,
+          "passiveBodyAnalyticDifferenceN": -3.331000197892564e-9,
+          "activeBodyAnalyticDifferenceN": -1.3665185205624653e-8
+        },
+        {
+          "hM": 5e-8,
+          "totalDerivativeN": -0.4939193232189609,
+          "componentsN": {
+            "passiveBody": -0.29760165498604607,
+            "activeBody": -0.27675472580313,
+            "embeddedAxialSheets": -0.0000044364512064021255,
+            "routedTendons": 0.07774048960129676,
+            "transverseSheetMatrix": -0.0000414226926414088,
+            "interfaces": 0.001884893734149795,
+            "contact": 0.0008575500162408267
+          },
+          "sumDifferenceN": 1.6637624444815202e-8,
+          "passiveBodyAnalyticDifferenceN": 4.99567248679611e-9,
+          "activeBodyAnalyticDifferenceN": 1.994976355224054e-7
+        }
+      ]
+    },
+    {
+      "node": 98,
+      "axis": 1,
+      "maximumModalDot": 2.914335439641036e-16,
+      "analyticBodyN": {
+        "matrix": 0.009265222402376828,
+        "volume": -1.9724463310500733,
+        "passiveFiber": 0.013838539442074284,
+        "active": -0.021543595530804836
+      },
+      "differences": [
+        {
+          "hM": 1e-7,
+          "totalDerivativeN": -1.9844004839342233,
+          "componentsN": {
+            "passiveBody": -1.9493423308869495,
+            "activeBody": -0.02154358469397266,
+            "embeddedAxialSheets": 2.5979218776228663e-7,
+            "routedTendons": -0.012175418451221276,
+            "transverseSheetMatrix": 0.00001641248009894014,
+            "interfaces": -0.0020123583355236008,
+            "contact": 0.0006565252437832833
+          },
+          "sumDifferenceN": -1.0917373671759378e-8,
+          "passiveBodyAnalyticDifferenceN": -2.3831867257406714e-7,
+          "activeBodyAnalyticDifferenceN": -1.083683217467657e-8
+        },
+        {
+          "hM": 5e-8,
+          "totalDerivativeN": -1.9844012655312326,
+          "componentsN": {
+            "passiveBody": -1.9493425007510723,
+            "activeBody": -0.021544188655298058,
+            "embeddedAxialSheets": 2.575717417130363e-7,
+            "routedTendons": -0.012175425112559424,
+            "transverseSheetMatrix": 0.000016412480641041227,
+            "interfaces": -0.0020123583702180703,
+            "contact": 0.0006565234922546737
+          },
+          "sumDifferenceN": -1.3813277854879402e-8,
+          "passiveBodyAnalyticDifferenceN": -6.845454980641819e-8,
+          "activeBodyAnalyticDifferenceN": 5.931244932214086e-7
+        }
+      ]
+    },
+    {
+      "node": 98,
+      "axis": 2,
+      "maximumModalDot": 2.914335439641036e-16,
+      "analyticBodyN": {
+        "matrix": -0.00975352913331739,
+        "volume": -0.419729405255048,
+        "passiveFiber": 0.09711116662241374,
+        "active": -1.3826563580108346
+      },
+      "differences": [
+        {
+          "hM": 1e-7,
+          "totalDerivativeN": -1.4452037344625523,
+          "componentsN": {
+            "passiveBody": -0.3323717781555935,
+            "activeBody": -1.382656336090804,
+            "embeddedAxialSheets": -0.00001588285059028749,
+            "routedTendons": 0.2704617418913813,
+            "transverseSheetMatrix": 0.000027370096477869615,
+            "interfaces": -0.0005912028852583795,
+            "contact": -0.000057670764865014323
+          },
+          "sumDifferenceN": -2.4296699541181965e-8,
+          "passiveBodyAnalyticDifferenceN": 1.0389641869057442e-8,
+          "activeBodyAnalyticDifferenceN": -2.1920030679467573e-8
+        },
+        {
+          "hM": 5e-8,
+          "totalDerivativeN": -1.445203174910148,
+          "componentsN": {
+            "passiveBody": -0.33237176455536144,
+            "activeBody": -1.3826556966023418,
+            "embeddedAxialSheets": -0.00001589839371263224,
+            "routedTendons": 0.2704617196869208,
+            "transverseSheetMatrix": 0.000027370065849158243,
+            "interfaces": -0.000591202919952849,
+            "contact": -0.00005766805002277442
+          },
+          "sumDifferenceN": 3.4141526272790657e-8,
+          "passiveBodyAnalyticDifferenceN": -3.2105901826007255e-9,
+          "activeBodyAnalyticDifferenceN": -6.614084928635577e-7
+        }
+      ]
+    },
+    {
+      "node": 96,
+      "axis": 0,
+      "maximumModalDot": 3.209238430557093e-16,
+      "analyticBodyN": {
+        "matrix": 0.0017947298812429574,
+        "volume": -0.0012310785360996012,
+        "passiveFiber": 0.0031399079194607007,
+        "active": -0.2253935388587062
+      },
+      "differences": [
+        {
+          "hM": 1e-7,
+          "totalDerivativeN": -0.14870312980974632,
+          "componentsN": {
+            "passiveBody": 0.0037035693956077864,
+            "activeBody": -0.2253933040208267,
+            "embeddedAxialSheets": -5.17363929475323e-7,
+            "routedTendons": 0.07223067921557913,
+            "transverseSheetMatrix": -0.00009814440520049608,
+            "interfaces": 0.000888377375135585,
+            "contact": -0.00003377294591992014
+          },
+          "sumDifferenceN": 1.7060192231133087e-8,
+          "passiveBodyAnalyticDifferenceN": -1.0131003729506316e-8,
+          "activeBodyAnalyticDifferenceN": -2.3483787950362434e-7
+        },
+        {
+          "hM": 5e-8,
+          "totalDerivativeN": -0.14870341402684062,
+          "componentsN": {
+            "passiveBody": 0.0037035446931454885,
+            "activeBody": -0.2253935349472158,
+            "embeddedAxialSheets": -5.195843755245733e-7,
+            "routedTendons": 0.07223066589290283,
+            "transverseSheetMatrix": -0.00009814441956617487,
+            "interfaces": 0.0008883772537049417,
+            "contact": -0.00003377181780755967
+          },
+          "sumDifferenceN": 3.109762880537659e-8,
+          "passiveBodyAnalyticDifferenceN": 1.4571458568403417e-8,
+          "activeBodyAnalyticDifferenceN": -3.911490381591776e-9
+        }
+      ]
+    },
+    {
+      "node": 96,
+      "axis": 1,
+      "maximumModalDot": 3.209238430557093e-16,
+      "analyticBodyN": {
+        "matrix": 0.020964003299663646,
+        "volume": -1.0694914109752327,
+        "passiveFiber": 0.003069440942696391,
+        "active": -0.012296514797411177
+      },
+      "differences": [
+        {
+          "hM": 1e-7,
+          "totalDerivativeN": -1.0803426331307264,
+          "componentsN": {
+            "passiveBody": -1.0454578017182747,
+            "activeBody": -0.012296474949380354,
+            "embeddedAxialSheets": -2.0872192862952943e-7,
+            "routedTendons": -0.022232253815701597,
+            "transverseSheetMatrix": 0.0000019765984096871414,
+            "interfaces": -0.0003184972598158087,
+            "contact": -0.00003937570538722901
+          },
+          "sumDifferenceN": -2.4413522314858938e-9,
+          "passiveBodyAnalyticDifferenceN": -1.650145979859019e-7,
+          "activeBodyAnalyticDifferenceN": -3.984803082293653e-8
+        },
+        {
+          "hM": 5e-8,
+          "totalDerivativeN": -1.0803427841210578,
+          "componentsN": {
+            "passiveBody": -1.0454579274510323,
+            "activeBody": -0.012296474949380354,
+            "embeddedAxialSheets": -2.0872192862952943e-7,
+            "routedTendons": -0.022232256036147646,
+            "transverseSheetMatrix": 0.0000019765986807376845,
+            "interfaces": -0.0003184972424685739,
+            "contact": -0.000039374870551556196
+          },
+          "sumDifferenceN": 2.1448229414744446e-8,
+          "passiveBodyAnalyticDifferenceN": -3.928184044710292e-8,
+          "activeBodyAnalyticDifferenceN": -3.984803082293653e-8
+        }
+      ]
+    },
+    {
+      "node": 96,
+      "axis": 2,
+      "maximumModalDot": 3.209238430557093e-16,
+      "analyticBodyN": {
+        "matrix": -0.011103267769632125,
+        "volume": 0.2964379740198233,
+        "passiveFiber": 0.015196053784024187,
+        "active": -1.072380931525707
+      },
+      "differences": [
+        {
+          "hM": 1e-7,
+          "totalDerivativeN": -0.39763254910951673,
+          "componentsN": {
+            "passiveBody": 0.300530762775697,
+            "activeBody": -1.0723809396040451,
+            "embeddedAxialSheets": -0.000006092903959142859,
+            "routedTendons": 0.37368613536870043,
+            "transverseSheetMatrix": 0.0000013022506792532973,
+            "interfaces": 0.0005532358599014131,
+            "contact": -0.000016949786843176162
+          },
+          "sumDifferenceN": 3.069647369624562e-9,
+          "passiveBodyAnalyticDifferenceN": -2.741481652801525e-9,
+          "activeBodyAnalyticDifferenceN": 8.078338220585124e-9
+        },
+        {
+          "hM": 5e-8,
+          "totalDerivativeN": -0.39763252246416414,
+          "componentsN": {
+            "passiveBody": 0.30053076249814126,
+            "activeBody": -1.0723809396040451,
+            "embeddedAxialSheets": -0.000006061817714453355,
+            "routedTendons": 0.37368614425048463,
+            "transverseSheetMatrix": 0.0000013022151716321484,
+            "interfaces": 0.0005532358252069436,
+            "contact": -0.000016948349191095446
+          },
+          "sumDifferenceN": 1.7482217951059198e-8,
+          "passiveBodyAnalyticDifferenceN": -2.463925896645236e-9,
+          "activeBodyAnalyticDifferenceN": 8.078338220585124e-9
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Directions are the same six unit nodal directions excluded from the original 63-coordinate short head. The accepted dense 0.10 s state and contact recipe are unchanged.",
+    "Body components use independently assembled full P2 virtual work. Sheet, interface, tendon and contact derivatives use two central-difference sizes, retaining reference areas and rest lengths.",
+    "These component balances diagnose missing stationarity in selected directions; they neither solve nor advance a full nodal state and do not identify a physiological material law."
+  ]
+}

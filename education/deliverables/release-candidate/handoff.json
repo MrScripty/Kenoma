@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "result": "LOCALLY_QUALIFIED_RELEASE_CANDIDATE_REMOTE_CI_PENDING",
+  "baseline_revision": "e19b9bf40226352e9e94bcae801ab97c208cd31a",
+  "source_revision": "90dac1ddf062e9a3d7112442f1e38ccbff5bf28c",
+  "source_tree": "86359524d9c945548f9de9e3b5c800ccf85b02c7",
+  "branch": "education/release-candidate",
+  "chapters": 21,
+  "property_lessons": 3,
+  "real_property_claims": 4,
+  "total_claims": 29,
+  "pdf_pages": 89,
+  "tests": {
+    "node": {
+      "pass": 128,
+      "fail": 0
+    },
+    "python": {
+      "pass": 16,
+      "fail": 0
+    },
+    "lean": {
+      "checked": 29,
+      "families": [
+        12,
+        2,
+        7,
+        4,
+        4
+      ]
+    },
+    "desktop_browser": "passed",
+    "mobile_startup_and_fault_recovery": "passed",
+    "property_interactions_and_print_captions": "PASS_INTEGRATED_PROPERTY_LABS",
+    "anatomical_rest_controls_inspection": "PASS",
+    "render_capture": "PASS_PROPERTY_BOOK_RENDER_CAPTURE",
+    "artifact_hash_glyph_bounds_and_links": "passed",
+    "portable_archive_crc_exact_resources_and_all_hashes": "passed"
+  },
+  "dependency_repair": {
+    "lean": "4.19.0",
+    "mathlib_commit": "c44e0c8ee63ca166450922a373c7409c5d26b00b",
+    "proofwidgets_commit": "c4919189477c3221e6a204008998b0d724f49904",
+    "cold_widget_assets_then_guarded_compat": "passed",
+    "upstream_source_and_npm_lock_unchanged": true,
+    "binary_release_cache_used": false,
+    "scope": "ProofWidgets cold-assets reproduction and repair with other pinned dependencies warm; not a completed entirely cold 1500-module rebuild."
+  },
+  "remote_ci": {
+    "observed_utc": "2026-10-05 21:07:43 UTC",
+    "workflow_runs": [
+      {
+        "id": 37373095246,
+        "status": "queued",
+        "conclusion": null,
+        "head_sha": "90dac1ddf062e9a3d7112442f1e38ccbff5bf28c",
+        "url": "https://github.com/MrScripty/Kenoma/actions/runs/37373095246",
+        "created_at": "2026-10-05T20:59:12Z",
+        "updated_at": "2026-10-05T20:59:12Z"
+      }
+    ]
+  },
+  "remaining_gates": [
+    "Corrected remote workflow must pass; queued at checkpoint, no remote pass claimed.",
+    "Parent integration review and merge decision.",
+    "Parent-approved hosted publication and Library delivery."
+  ],
+  "separate_research": {
+    "finite_bulk_branch": "education/bulk-compression-lab",
+    "finite_bulk_revision": "5f67d4991decac35e7648d08ad8219cd3ad6b34f",
+    "finite_bulk_tree": "c994729089baa58d45a735b665076a31360e95de",
+    "included_in_release": false,
+    "arm_runs_continue": true,
+    "arm_replay_and_matched_time_refinement_not_yet_qualified": true,
+    "checkpoint": "data/property-labs-v1/review/release-candidate/running-arm-research-checkpoint.json"
+  },
+  "qualification": "Educational release candidate with retained anatomical failures and explicit limits; no anatomical calibration, full nodal/quadrature/timestep convergence, whole-envelope credibility or skin qualification; no live deployment performed."
+}

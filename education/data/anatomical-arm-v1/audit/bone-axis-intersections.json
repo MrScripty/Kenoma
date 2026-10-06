@@ -1,0 +1,236 @@
+{
+  "schema": 1,
+  "frame": {
+    "origin_m": [
+      -0.211,
+      -0.0702352010774452,
+      1.0444103477692186
+    ],
+    "axis_unit": [
+      -0.9547432358233934,
+      0.10312281883629201,
+      0.27898214617558126
+    ],
+    "proximal_unit": [
+      0.2682770006482004,
+      -0.10642200707998935,
+      0.9574454591945549
+    ],
+    "posterior_unit": [
+      0.12842431456963882,
+      0.9889590692462069,
+      0.07394021086658094
+    ],
+    "atlas_bind_angle_rad": 0.2841100888248933,
+    "hand_grip_m": [
+      -0.25824388536562315,
+      -0.12286093123159579,
+      0.7718685991833019
+    ],
+    "axis_evidence": "Smallest eigenvector of area-weighted articular normal covariance; area-weighted nonlinear radial circle fit with fixed X gauge. No articular surface point is treated as the axis center.",
+    "grip_evidence": "Authored 40 mm distal extension beyond the mean distal bone landmarks; no hand mesh.",
+    "review_status": "Independent anatomical review pending",
+    "units": "m, rad",
+    "axis_fit_receipt": "audit/interior-axis-fit.json"
+  },
+  "poses": [
+    {
+      "angle_degrees": 16.278309006753318,
+      "pairs": [
+        {
+          "bones": [
+            "FJ3368",
+            "FJ3349"
+          ],
+          "broad_phase_candidates": 0,
+          "transverse_crossing_triangle_pairs": 0,
+          "first_examples_in_welded_oriented_mesh": []
+        },
+        {
+          "bones": [
+            "FJ3368",
+            "FJ3391"
+          ],
+          "broad_phase_candidates": 331,
+          "transverse_crossing_triangle_pairs": 0,
+          "first_examples_in_welded_oriented_mesh": []
+        },
+        {
+          "bones": [
+            "FJ3349",
+            "FJ3391"
+          ],
+          "broad_phase_candidates": 153,
+          "transverse_crossing_triangle_pairs": 0,
+          "first_examples_in_welded_oriented_mesh": []
+        }
+      ]
+    },
+    {
+      "angle_degrees": 0,
+      "pairs": [
+        {
+          "bones": [
+            "FJ3368",
+            "FJ3349"
+          ],
+          "broad_phase_candidates": 0,
+          "transverse_crossing_triangle_pairs": 0,
+          "first_examples_in_welded_oriented_mesh": []
+        },
+        {
+          "bones": [
+            "FJ3368",
+            "FJ3391"
+          ],
+          "broad_phase_candidates": 477,
+          "transverse_crossing_triangle_pairs": 0,
+          "first_examples_in_welded_oriented_mesh": []
+        },
+        {
+          "bones": [
+            "FJ3349",
+            "FJ3391"
+          ],
+          "broad_phase_candidates": 94,
+          "transverse_crossing_triangle_pairs": 0,
+          "first_examples_in_welded_oriented_mesh": []
+        }
+      ]
+    },
+    {
+      "angle_degrees": 30,
+      "pairs": [
+        {
+          "bones": [
+            "FJ3368",
+            "FJ3349"
+          ],
+          "broad_phase_candidates": 0,
+          "transverse_crossing_triangle_pairs": 0,
+          "first_examples_in_welded_oriented_mesh": []
+        },
+        {
+          "bones": [
+            "FJ3368",
+            "FJ3391"
+          ],
+          "broad_phase_candidates": 287,
+          "transverse_crossing_triangle_pairs": 0,
+          "first_examples_in_welded_oriented_mesh": []
+        },
+        {
+          "bones": [
+            "FJ3349",
+            "FJ3391"
+          ],
+          "broad_phase_candidates": 218,
+          "transverse_crossing_triangle_pairs": 0,
+          "first_examples_in_welded_oriented_mesh": []
+        }
+      ]
+    },
+    {
+      "angle_degrees": 60,
+      "pairs": [
+        {
+          "bones": [
+            "FJ3368",
+            "FJ3349"
+          ],
+          "broad_phase_candidates": 0,
+          "transverse_crossing_triangle_pairs": 0,
+          "first_examples_in_welded_oriented_mesh": []
+        },
+        {
+          "bones": [
+            "FJ3368",
+            "FJ3391"
+          ],
+          "broad_phase_candidates": 236,
+          "transverse_crossing_triangle_pairs": 0,
+          "first_examples_in_welded_oriented_mesh": []
+        },
+        {
+          "bones": [
+            "FJ3349",
+            "FJ3391"
+          ],
+          "broad_phase_candidates": 269,
+          "transverse_crossing_triangle_pairs": 0,
+          "first_examples_in_welded_oriented_mesh": []
+        }
+      ]
+    },
+    {
+      "angle_degrees": 90,
+      "pairs": [
+        {
+          "bones": [
+            "FJ3368",
+            "FJ3349"
+          ],
+          "broad_phase_candidates": 0,
+          "transverse_crossing_triangle_pairs": 0,
+          "first_examples_in_welded_oriented_mesh": []
+        },
+        {
+          "bones": [
+            "FJ3368",
+            "FJ3391"
+          ],
+          "broad_phase_candidates": 180,
+          "transverse_crossing_triangle_pairs": 0,
+          "first_examples_in_welded_oriented_mesh": []
+        },
+        {
+          "bones": [
+            "FJ3349",
+            "FJ3391"
+          ],
+          "broad_phase_candidates": 155,
+          "transverse_crossing_triangle_pairs": 0,
+          "first_examples_in_welded_oriented_mesh": []
+        }
+      ]
+    },
+    {
+      "angle_degrees": 120,
+      "pairs": [
+        {
+          "bones": [
+            "FJ3368",
+            "FJ3349"
+          ],
+          "broad_phase_candidates": 0,
+          "transverse_crossing_triangle_pairs": 0,
+          "first_examples_in_welded_oriented_mesh": []
+        },
+        {
+          "bones": [
+            "FJ3368",
+            "FJ3391"
+          ],
+          "broad_phase_candidates": 115,
+          "transverse_crossing_triangle_pairs": 0,
+          "first_examples_in_welded_oriented_mesh": []
+        },
+        {
+          "bones": [
+            "FJ3349",
+            "FJ3391"
+          ],
+          "broad_phase_candidates": 351,
+          "transverse_crossing_triangle_pairs": 0,
+          "first_examples_in_welded_oriented_mesh": []
+        }
+      ]
+    }
+  ],
+  "acceptance": "Candidate axis only. Positive crossings are anatomical rig failures that must be resolved before capstone acceptance.",
+  "limits": [
+    "Transverse triangle crossings only; coplanar overlaps, nested containment and grazing contact require additional checks.",
+    "No tissue surface intersections/contact mechanics are tested.",
+    "Radius-ulna retain fixed supination and one shared rigid motion."
+  ]
+}

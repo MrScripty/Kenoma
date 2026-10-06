@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "result": "PASS_INTEGRATED_PROPERTY_LABS",
+  "checks": [
+    "Four actual real proof cards retain positive-stretch assumptions and pinned mathlib metadata",
+    "Deformation controls, invalid input, inversion rejection and retained prior state; translation boundary-volume oracle",
+    "Actual isochoric toggle and independent stretches; boundary volume and area-times-length; cross-section versus exterior area",
+    "UI-valid endpoint warning regression: true 5.4545% strain exposed despite midpoint maximum below 5%",
+    "Taper fixed-end uneven extension/compression and genuine midpoint refinement",
+    "Desktop/mobile geometry and summaries; static print/PDF and zero-JavaScript alternatives"
+  ],
+  "javascript_errors": [],
+  "manifest": "build-manifest.json",
+  "manifest_sha256": "d0409d3fb8e5e136fa43dd135fc93433dd0da92cf803dc16510e248545d64357",
+  "html_sha256": "03edef5d53bd49525df89561ea80b60a8d7dd3af9262de143fa9e2f0e911f1d7",
+  "app_sha256": "db145c9b6e76a72baa1ea9350511af6d1d1f2a744710b27e9df77c60fc7e8694",
+  "source_revision": "3cd3c5fbf2b061058e1dc5d2305408951dd4b5ee",
+  "proof_cards": 29
+}

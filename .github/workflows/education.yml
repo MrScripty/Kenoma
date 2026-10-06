@@ -42,6 +42,53 @@ jobs:
           npm ci --no-audit --no-fund
           python3 tools/install_lean.py --directory .tools
           echo "$PWD/.tools/lean-4.19.0-linux/bin" >> "$GITHUB_PATH"
+      - name: Compile pinned real-proof dependencies from source
+        run: python3 tools/build_property_mathlib.py
+      - name: Preserve dependency diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: kenoma-proof-dependency-diagnostics
+          path: education/.tools/property-mathlib-source-logs/
+          include-hidden-files: true
+      - name: Check anatomical research foundation separately from the published capstone
+        run: |
+          npm run anatomy:geometry
+          node tools/repair-anatomical-reference.mjs
+          node tools/partition-anatomical-origins.mjs
+          node tools/anatomical-radial-apposition.mjs
+          npm run anatomy:proofs
+          # Retain the recorded routing bytes used by source-bound trajectories.
+          node tools/verify-anatomical-matches.mjs
+          node tools/verify-anatomical-arm-rest.mjs
+          node tools/replay-rejected-arm-v1.mjs
+          node tools/verify-anatomical-rejected-steps.mjs
+          node tools/verify-anatomical-cold-candidate.mjs
+          node tools/verify-anatomical-contact-trajectory.mjs
+          node tools/verify-anatomical-release-prefix.mjs
+          node tools/anatomical-compression-audit.mjs
+          node tools/verify-anatomical-dense-step.mjs
+          # Replays use preserved receipts; CI does not repeat nonlinear author solves.
+          node --max-old-space-size=8192 tools/verify-anatomical-dense-trajectory.mjs
+          node --max-old-space-size=8192 tools/anatomical-bulk-step.mjs --factor 0.5 --mode replay
+          node --max-old-space-size=8192 tools/anatomical-bulk-step.mjs --factor 2 --mode replay
+          node --max-old-space-size=8192 tools/anatomical-enriched-step.mjs --replay
+          node --max-old-space-size=8192 tools/anatomical-fixed-end-compression-audit.mjs
+          node --max-old-space-size=8192 tools/anatomical-trajectory-orientation-audit.mjs
+          python3 tools/package_anatomical_orientation.py
+          python3 tools/dense_qualification_figure.py --coarse-only
+          node --max-old-space-size=8192 tools/anatomical-dense-envelope-export.mjs
+          python3 tools/dense_envelope_figure.py
+          python3 tools/anatomical_calibration_geometry.py
+          node --max-old-space-size=8192 tools/anatomical-nodal-force-components.mjs
+          node tools/anatomical-fixture-experiment.mjs
+          node tools/anatomical-bone-collision-audit.mjs
+          node tools/anatomical-apposition-audit.mjs
+          node tools/anatomical-remesh-audit.mjs
+          npm run anatomy:coupling
+          npm run anatomy:inspect
+          python3 tests/anatomical_inspection.py
+          python3 tests/coupled_inspection.py
       - name: Check mechanics and build checked proofs and book
         run: |
           npm test
@@ -50,6 +97,11 @@ jobs:
           npm run pdf
           npm run test:browser
           npm run test:mobile
+          python3 tests/property_browser.py dist
+          python3 tools/inspect_property_integration.py
+          python3 tests/render_capture_rerun.py
+          python3 tests/anatomical_arm_inspection.py
+          python3 tests/worker_lifecycle.py
           python3 tests/artifacts.py
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:

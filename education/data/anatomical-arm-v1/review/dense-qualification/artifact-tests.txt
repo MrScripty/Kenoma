@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/Kenoma/education/tests/artifacts.py", line 78, in <module>
+    assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Build input changed: '+relative
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Build input changed: tools/verify-anatomical-dense-trajectory.mjs

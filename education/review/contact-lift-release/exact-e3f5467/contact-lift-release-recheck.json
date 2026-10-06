@@ -1,0 +1,648 @@
+{
+  "schema": 1,
+  "result": "PASS",
+  "executionReceiptSHA256": "a74bd8fa9fd7bc3745ed42c32af75fc44692408d081b2070ceeefa63a0db35a9",
+  "verifierSHA256": "35dca44d1cd40fc1f09d12d6356da328cd05f4d5c556aae3cf62abc8022b3474",
+  "executionSourceHashes": {
+    "tools/anatomical-contact-experiment.mjs": "a258797940c1bb0e0db0882539d9a802e0fea4671dcec0b54188e2feea91fa75",
+    "web/anatomical-aponeurosis.mjs": "1dbebfd2ea67427ee0d962b7b234d2d40a2f2cd4616a4f1199e20b3aba7316a0",
+    "web/anatomical-apparatus.mjs": "be60e6a3ba4db34ee01a4cb531bcdd19f868645ef26e06e1e30daedbc360cb98",
+    "web/anatomical-arm-worker.mjs": "dfadf3136b8ecac0fd6275f059085636eb8953346d920ca69a4d4382fa7b39d5",
+    "web/anatomical-arm.mjs": "9ec37ec7b23bb67643fef715f4554fc8811e897a581691231e6669fdd66c7569",
+    "web/anatomical-audit.mjs": "4f45bf4ce4459096e9595cd7bb1e0bcdfb0fafe858ee5da25444940604589f14",
+    "web/anatomical-comparison.mjs": "d812405b86541f756759bede9750071117edbab81e69efcfadf96f4f195fd09f",
+    "web/anatomical-contact-differential.mjs": "76f107f5eb1c41fdf6622c428648babc5a489113a709fd337782b1b3de3cac0b",
+    "web/anatomical-contact-refinement.mjs": "29830d2f311ee74a50acfd65f0ca8c245d2b390ed66d6eafd6c9b79de7607e07",
+    "web/anatomical-contact.mjs": "2e0ce22d3880b4d681cb24d700f694ea2b3bf8fc64fc66519e8ba998813aee1e",
+    "web/anatomical-coupled-fixture.mjs": "620afbb2e801f00ec361f5f1b5d39f010acc386812dcaa7239c0ca781d0bf4b9",
+    "web/anatomical-coupled-worker.mjs": "1c54d08f5e36ca837343fc96399ac85de8e92f8fe1ebd1d73a50e5885b93c435",
+    "web/anatomical-distance.mjs": "e11826c97f160220fda68f72cbe5e73f35f9527edcf4a4d58100c467cb50940a",
+    "web/anatomical-element.mjs": "3f67a6bd31565c83d2cbea591c3cf1862a48e50cc4efa780880fda7e808d4b1f",
+    "web/anatomical-fixture.mjs": "d53b5dca829883b4e91c02e5b88f3ac745ce7510cf28aabfcbd6cb978353a30a",
+    "web/anatomical-intersections.mjs": "a083a9838ac3c7508b65b58329c741aef65a065288aff82fc886d1c2c90375df",
+    "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+    "web/anatomical-modal.mjs": "12cd671bc963aa04dd5c0e173a776049de191283d850b0b60d0fe8e63be4c9a1",
+    "web/anatomical-newton.mjs": "e0b2193bff56a3fdb9595fa0893c469b5897a31512a282ff7a9b5519b2fe93fe",
+    "web/anatomical-preconditioner.mjs": "d234cd800784a57171514139a17d0720bb1a9d4d1089afcd9e7c783cead1b0b4",
+    "web/anatomical-retraction.mjs": "f5c4ef1115bc2a385d86e232cb9a6a36f8f61cd56d823b3495284de8e9c71819",
+    "web/anatomical-routing-audit.mjs": "e6ef4473a272c985cd05012cf4cbf424c45522b535c280ad5de49222dd459d9b",
+    "web/anatomical-routing.mjs": "83e52df556739786c97e4cb8ef6a7854d0d9a5fb36ca197b6bdc0b7597d09a3e",
+    "web/anatomical-solver.mjs": "2e23ae4e594c0947d15b21cdcd0422ad27e2bc3c2ac3af40293703c208906bfb",
+    "web/anatomical-tangent.mjs": "9b35daecd9efd68908e393998271f63cbc5728a5a2c4821560010ff5786f285c",
+    "web/anatomical-transfer.mjs": "1e82dabebf5a6247af9216a70292216b194a52545abf8f3b73c93ee6e2f22431",
+    "data/anatomical-arm-v1/generated/arm-reference.json": "1b80c1d3d9f2eb4370cd298f58f5e9c582625574f27072f6d3a1ea898ce4c036",
+    "data/anatomical-arm-v1/config/attachments-apparatus.json": "070fee738e73e127e334ee5cbe680cb622f100396ad0728eb9df6723c2232389",
+    "data/anatomical-arm-v1/config/apparatus-routing.json": "b8580e8158e17730b65b64d0fdbe0f1cbbafc76235b9a5f0c2b01020818cd93f",
+    "data/anatomical-arm-v1/audit/modal-fixed-end-results.json": "b0eeecdade262b682279d9ebeb7a8147a4525a992976a85afc0ce5e63270d8b4",
+    "data/anatomical-arm-v1/audit/arm-rest-results.json": "8dc23d896adce4b428f39cb172d76f3c74c828f49c2007c66155e45e8ea359c7",
+    "data/anatomical-arm-v1/audit/arm-loaded-rejected-candidate.json": "713c4aee49e5d8856e154b728b6cc127aa3a2383e83aa5720013cdf4060650ca",
+    "data/anatomical-arm-v1/audit/activation-continuation-results.json": "0c1c452277eadd4bac40219d1f1c0234a3e40731262d443f445b6f879b1530c0",
+    "data/anatomical-arm-v1/audit/contact-feature-v2/interrupted-lift.json": "5c23df199339719c4a46244ba85fcad4bd61376774bdccd330b9cf53c1c24e3b",
+    "data/anatomical-arm-v1/audit/contact-missed-soft-v3/candidate.json": "2075d10be43de28b02305c0f3e8b990f18186bdb026e29d31cc88c52af1d70ee"
+  },
+  "heldResidualN": 0.00007981689272124306,
+  "heldGeometry": {
+    "surfaceAudit": {
+      "qRad": 0.2841100888248933,
+      "boneTissue": [
+        {
+          "head": "FJ1486",
+          "bone": "FJ3368",
+          "broadPhasePairs": 1516,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1486",
+          "bone": "FJ3349",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1486",
+          "bone": "FJ3391",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1512",
+          "bone": "FJ3368",
+          "broadPhasePairs": 51,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1512",
+          "bone": "FJ3349",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1512",
+          "bone": "FJ3391",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1478",
+          "bone": "FJ3368",
+          "broadPhasePairs": 203,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1478",
+          "bone": "FJ3349",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1478",
+          "bone": "FJ3391",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1480",
+          "bone": "FJ3368",
+          "broadPhasePairs": 1259,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1480",
+          "bone": "FJ3349",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1480",
+          "bone": "FJ3391",
+          "broadPhasePairs": 307,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1477",
+          "bone": "FJ3368",
+          "broadPhasePairs": 869,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1477",
+          "bone": "FJ3349",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1477",
+          "bone": "FJ3391",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1479",
+          "bone": "FJ3368",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1479",
+          "bone": "FJ3349",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1479",
+          "bone": "FJ3391",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1487",
+          "bone": "FJ3368",
+          "broadPhasePairs": 409,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1487",
+          "bone": "FJ3349",
+          "broadPhasePairs": 59,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1487",
+          "bone": "FJ3391",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        }
+      ],
+      "tissueTissue": [
+        {
+          "headA": "FJ1486",
+          "headB": "FJ1512",
+          "broadPhasePairs": 421,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1486",
+          "headB": "FJ1478",
+          "broadPhasePairs": 618,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1486",
+          "headB": "FJ1480",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1486",
+          "headB": "FJ1477",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1486",
+          "headB": "FJ1479",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1486",
+          "headB": "FJ1487",
+          "broadPhasePairs": 383,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1512",
+          "headB": "FJ1478",
+          "broadPhasePairs": 1622,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1512",
+          "headB": "FJ1480",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1512",
+          "headB": "FJ1477",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1512",
+          "headB": "FJ1479",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1512",
+          "headB": "FJ1487",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1478",
+          "headB": "FJ1480",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1478",
+          "headB": "FJ1477",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1478",
+          "headB": "FJ1479",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1478",
+          "headB": "FJ1487",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1480",
+          "headB": "FJ1477",
+          "broadPhasePairs": 521,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1480",
+          "headB": "FJ1479",
+          "broadPhasePairs": 808,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1480",
+          "headB": "FJ1487",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1477",
+          "headB": "FJ1479",
+          "broadPhasePairs": 1046,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1477",
+          "headB": "FJ1487",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1479",
+          "headB": "FJ1487",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        }
+      ],
+      "boneBone": [
+        {
+          "boneA": "FJ3368",
+          "boneB": "FJ3349",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "boneA": "FJ3368",
+          "boneB": "FJ3391",
+          "broadPhasePairs": 331,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "boneA": "FJ3349",
+          "boneB": "FJ3391",
+          "broadPhasePairs": 153,
+          "crossingPairs": 0,
+          "examples": []
+        }
+      ],
+      "transverseCrossingPairs": 0,
+      "limits": [
+        "Every boundary triangle participates after AABB pruning.",
+        "Transverse edge/face crossings only; coplanar/grazing overlaps, containment and continuous motion are not certified.",
+        "No cartilage contact or medical apposition threshold is inferred."
+      ]
+    },
+    "routingAudit": {
+      "testedLegs": 765,
+      "violations": [],
+      "maximumSampledPenetrationM": 6.206335383118183e-17,
+      "accepted": true,
+      "limits": [
+        "Every axial path leg checked against all source bone triangles with AABB pruning.",
+        "Exact transverse segment hits plus five containment samples; finite radius, grazing/coplanar overlap and continuous motion are not certified.",
+        "Prescribed guides are authored frictionless support constraints, not measured anatomical tendon wrapping."
+      ]
+    }
+  },
+  "viewerCacheLoad": {
+    "executionReceiptSHA256": "f1b0bfc8ab97ec8daaee533488b3098fd38535802c28ec6c25bfbdc5ecb3d07f",
+    "rows": [
+      {
+        "step": 1,
+        "label": "viewer-cache-load",
+        "timeS": 0.01,
+        "qRad": 0.2844536476348751,
+        "activation": 0.008847968677143804,
+        "residualN": 0.00003932052265518906,
+        "transverseCrossingPairs": 0,
+        "tendonViolations": 0,
+        "minimumJ": 0.8635484592757582,
+        "referenceQuadratureUpdateJ": -1.3429504826711815e-10,
+        "activeMechanicalWorkJ": 3.462366076436004,
+        "nonlinearWorkDefectJ": -2.4341741593209623,
+        "impulseResidualNmS": -6.3350338308509895e-12
+      }
+    ]
+  },
+  "verifiedSteps": 15,
+  "behavior": {
+    "liftAngleIncreaseRad": 0.12746134559446665,
+    "peakAngleRad": 0.6863557897080043,
+    "finalAngleRad": 0.5851401385444494,
+    "releaseFallFromPeakRad": 0.10121565116355491,
+    "finalActivation": 0.0002590675376713519,
+    "finalVelocityRadPerS": -1.6610355910473626
+  },
+  "rows": [
+    {
+      "step": 1,
+      "label": "regression-load",
+      "timeS": 0.01,
+      "qRad": 0.28445506420357414,
+      "activation": 0.008847968677143804,
+      "residualN": 0.000033052519140454794,
+      "transverseCrossingPairs": 0,
+      "tendonViolations": 0,
+      "minimumJ": 0.8644369074044939,
+      "referenceQuadratureUpdateJ": 0,
+      "activeMechanicalWorkJ": 3.46164188455558,
+      "nonlinearWorkDefectJ": -2.4340123010132175,
+      "impulseResidualNmS": -5.910489875304847e-13
+    },
+    {
+      "step": 2,
+      "label": "lift",
+      "timeS": 0.04,
+      "qRad": 0.29630399475260727,
+      "activation": 0.025284822353142306,
+      "residualN": 0.0000416327390314955,
+      "transverseCrossingPairs": 0,
+      "tendonViolations": 0,
+      "minimumJ": 0.7843188509588092,
+      "referenceQuadratureUpdateJ": 0,
+      "activeMechanicalWorkJ": 2.5265681821018884,
+      "nonlinearWorkDefectJ": -1.0412819258505552,
+      "impulseResidualNmS": -5.934111868555192e-11
+    },
+    {
+      "step": 3,
+      "label": "lift",
+      "timeS": 0.07,
+      "qRad": 0.32091473380732377,
+      "activation": 0.033049042261982194,
+      "residualN": 0.00003621120372598874,
+      "transverseCrossingPairs": 0,
+      "tendonViolations": 0,
+      "minimumJ": 0.7413607803907811,
+      "referenceQuadratureUpdateJ": 0,
+      "activeMechanicalWorkJ": 0.5804107617762213,
+      "nonlinearWorkDefectJ": -0.07004494777372387,
+      "impulseResidualNmS": -9.357848895774623e-11
+    },
+    {
+      "step": 4,
+      "label": "lift",
+      "timeS": 0.1,
+      "qRad": 0.35874014618788,
+      "activation": 0.03671660005504405,
+      "residualN": 0.00008879588959320728,
+      "transverseCrossingPairs": 0,
+      "tendonViolations": 0,
+      "minimumJ": 0.7375402448791594,
+      "referenceQuadratureUpdateJ": 0.0003473457415346104,
+      "activeMechanicalWorkJ": 0.2679710782924758,
+      "nonlinearWorkDefectJ": -0.012081901927542995,
+      "impulseResidualNmS": 9.627332850925542e-10
+    },
+    {
+      "step": 5,
+      "label": "lift",
+      "timeS": 0.13,
+      "qRad": 0.41157143441935995,
+      "activation": 0.03844903168673112,
+      "residualN": 0.00007300666039956188,
+      "transverseCrossingPairs": 0,
+      "tendonViolations": 0,
+      "minimumJ": 0.8499133676465974,
+      "referenceQuadratureUpdateJ": -0.000018497653245574952,
+      "activeMechanicalWorkJ": 0.48313996843410933,
+      "nonlinearWorkDefectJ": -0.07170555771346368,
+      "impulseResidualNmS": 1.4047305292308466e-9
+    },
+    {
+      "step": 6,
+      "label": "release",
+      "timeS": 0.16,
+      "qRad": 0.4725577769299898,
+      "activation": 0.02332051655426497,
+      "residualN": 0.0000691143421599795,
+      "transverseCrossingPairs": 0,
+      "tendonViolations": 0,
+      "minimumJ": 0.8742986520100285,
+      "referenceQuadratureUpdateJ": 0.000042925472229171646,
+      "activeMechanicalWorkJ": -0.6735443909496368,
+      "nonlinearWorkDefectJ": -0.21208873328577715,
+      "impulseResidualNmS": 2.2995804727088399e-10
+    },
+    {
+      "step": 7,
+      "label": "release",
+      "timeS": 0.19,
+      "qRad": 0.5338824714827944,
+      "activation": 0.01414460829049772,
+      "residualN": 0.00002893912485517889,
+      "transverseCrossingPairs": 0,
+      "tendonViolations": 0,
+      "minimumJ": 0.8430946728475336,
+      "referenceQuadratureUpdateJ": 0,
+      "activeMechanicalWorkJ": -0.5542597115424783,
+      "nonlinearWorkDefectJ": -0.22133460784367942,
+      "impulseResidualNmS": -1.3459074494903688e-9
+    },
+    {
+      "step": 8,
+      "label": "release",
+      "timeS": 0.22,
+      "qRad": 0.5899705273987155,
+      "activation": 0.008579138597812367,
+      "residualN": 9.950190440442819e-7,
+      "transverseCrossingPairs": 0,
+      "tendonViolations": 0,
+      "minimumJ": 0.8833932855399802,
+      "referenceQuadratureUpdateJ": 0.001565387297912224,
+      "activeMechanicalWorkJ": -0.3678127288380497,
+      "nonlinearWorkDefectJ": -0.12581983077582193,
+      "impulseResidualNmS": 2.294340717412524e-12
+    },
+    {
+      "step": 9,
+      "label": "release",
+      "timeS": 0.25,
+      "qRad": 0.6361250981963691,
+      "activation": 0.005203510593497252,
+      "residualN": 0.0000022605382386012805,
+      "transverseCrossingPairs": 0,
+      "tendonViolations": 0,
+      "minimumJ": 0.9178287637184744,
+      "referenceQuadratureUpdateJ": 0,
+      "activeMechanicalWorkJ": -0.26340014921372235,
+      "nonlinearWorkDefectJ": -0.08923342341840435,
+      "impulseResidualNmS": -7.64410401643545e-12
+    },
+    {
+      "step": 10,
+      "label": "release",
+      "timeS": 0.28,
+      "qRad": 0.6690222349556207,
+      "activation": 0.003156088713095565,
+      "residualN": 0.00003777283526842012,
+      "transverseCrossingPairs": 0,
+      "tendonViolations": 0,
+      "minimumJ": 0.9465286736467314,
+      "referenceQuadratureUpdateJ": 0,
+      "activeMechanicalWorkJ": -0.15944316080676502,
+      "nonlinearWorkDefectJ": -0.056913260444929406,
+      "impulseResidualNmS": -1.967792861989892e-10
+    },
+    {
+      "step": 11,
+      "label": "release",
+      "timeS": 0.31000000000000005,
+      "qRad": 0.6862089804509087,
+      "activation": 0.0019142645692654492,
+      "residualN": 0.000010495411626270518,
+      "transverseCrossingPairs": 0,
+      "tendonViolations": 0,
+      "minimumJ": 0.9569083948529531,
+      "referenceQuadratureUpdateJ": 0,
+      "activeMechanicalWorkJ": -0.08230091676203755,
+      "nonlinearWorkDefectJ": -0.027636942482273413,
+      "impulseResidualNmS": 2.453985801231795e-10
+    },
+    {
+      "step": 12,
+      "label": "release",
+      "timeS": 0.3400000000000001,
+      "qRad": 0.6863557897080043,
+      "activation": 0.0011610601520610929,
+      "residualN": 0.00001886098017808897,
+      "transverseCrossingPairs": 0,
+      "tendonViolations": 0,
+      "minimumJ": 0.9667483062011222,
+      "referenceQuadratureUpdateJ": 0,
+      "activeMechanicalWorkJ": -0.046066190258146233,
+      "nonlinearWorkDefectJ": -0.014387536251648222,
+      "impulseResidualNmS": 1.0990317982351171e-9
+    },
+    {
+      "step": 13,
+      "label": "release",
+      "timeS": 0.3700000000000001,
+      "qRad": 0.6691133378886904,
+      "activation": 0.0007042185799956652,
+      "residualN": 5.174310148375449e-7,
+      "transverseCrossingPairs": 0,
+      "tendonViolations": 0,
+      "minimumJ": 0.9692041255203887,
+      "referenceQuadratureUpdateJ": 0,
+      "activeMechanicalWorkJ": -0.0258591863347874,
+      "nonlinearWorkDefectJ": -0.007642100142526188,
+      "impulseResidualNmS": 1.0840809583356759e-10
+    },
+    {
+      "step": 14,
+      "label": "release",
+      "timeS": 0.40000000000000013,
+      "qRad": 0.6349712062758702,
+      "activation": 0.0004271301599066647,
+      "residualN": 0.000007147199117641637,
+      "transverseCrossingPairs": 0,
+      "tendonViolations": 0,
+      "minimumJ": 0.9726387759385351,
+      "referenceQuadratureUpdateJ": 0,
+      "activeMechanicalWorkJ": -0.014610878846064573,
+      "nonlinearWorkDefectJ": -0.005490875773680293,
+      "impulseResidualNmS": 2.8368211665574796e-9
+    },
+    {
+      "step": 15,
+      "label": "release",
+      "timeS": 0.43000000000000016,
+      "qRad": 0.5851401385444494,
+      "activation": 0.0002590675376713519,
+      "residualN": 0.00000450054707034546,
+      "transverseCrossingPairs": 0,
+      "tendonViolations": 0,
+      "minimumJ": 0.9774425569616123,
+      "referenceQuadratureUpdateJ": 0,
+      "activeMechanicalWorkJ": -0.008516133891100792,
+      "nonlinearWorkDefectJ": -0.0062366750068136075,
+      "impulseResidualNmS": -2.886245960148637e-10
+    }
+  ],
+  "limits": [
+    "Fresh evaluation of reduced stationary coordinates and finite triangle/axial-line gates; no optimizer used.",
+    "This is not full nodal, clinical, finite-radius tendon, coplanar or continuous-motion validation.",
+    "The work defect is reported, not asserted to vanish. Quadrature updates are separate numerical model events."
+  ]
+}

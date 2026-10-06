@@ -1,0 +1,9 @@
+{
+  "status": "superseded boundary-classification diagnostic",
+  "reason": "Exact mode-support classification treated long-biceps cap node 519 as free because of a tiny binary64 leakage from ring 5. The final diagnostic uses the explicit source distal/proximal P2 node sets. No solve or state advancement occurred.",
+  "files": {
+    "source.mjs.txt": "503fe82af3370563ac26526f178326b54f482660b0eda64c45c3eae3db368c15",
+    "receipt.json": "547960bbb2d487ced0c6e73f178545493f50b3905d77d2b9a538a23e9fb2a383",
+    "execution.txt": "d0d1ff16958f436b412d7a5094d9c67dc4df7600f96051f0ba0e9363ee8b2e70"
+  }
+}

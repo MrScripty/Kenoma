@@ -1,0 +1,435 @@
+{
+  "schema": 1,
+  "result": "PASS_ACCEPTED_ENRICHED_COMPARISON",
+  "executionReceiptSHA256": "4c465823cd82e78814259791056d5b23efc094a3ed6b4892e829d682686d8b85",
+  "verifierSHA256": "eedd8ead9ce8ddef3988108fa234740be7c975a45dfacc31b35f17f75d79163e",
+  "residualN": 0.00008728703147364847,
+  "independentResidualN": 0.00008728703022398143,
+  "maximumGradientAssemblyDifferenceN": 5.0485726710292056e-12,
+  "surfaceAudit": {
+    "qRad": 0.35878294444979325,
+    "boneTissue": [
+      {
+        "head": "FJ1486",
+        "bone": "FJ3368",
+        "broadPhasePairs": 1210,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "head": "FJ1486",
+        "bone": "FJ3349",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "head": "FJ1486",
+        "bone": "FJ3391",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "head": "FJ1512",
+        "bone": "FJ3368",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "head": "FJ1512",
+        "bone": "FJ3349",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "head": "FJ1512",
+        "bone": "FJ3391",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "head": "FJ1478",
+        "bone": "FJ3368",
+        "broadPhasePairs": 117,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "head": "FJ1478",
+        "bone": "FJ3349",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "head": "FJ1478",
+        "bone": "FJ3391",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "head": "FJ1480",
+        "bone": "FJ3368",
+        "broadPhasePairs": 1266,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "head": "FJ1480",
+        "bone": "FJ3349",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "head": "FJ1480",
+        "bone": "FJ3391",
+        "broadPhasePairs": 209,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "head": "FJ1477",
+        "bone": "FJ3368",
+        "broadPhasePairs": 844,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "head": "FJ1477",
+        "bone": "FJ3349",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "head": "FJ1477",
+        "bone": "FJ3391",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "head": "FJ1479",
+        "bone": "FJ3368",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "head": "FJ1479",
+        "bone": "FJ3349",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "head": "FJ1479",
+        "bone": "FJ3391",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "head": "FJ1487",
+        "bone": "FJ3368",
+        "broadPhasePairs": 422,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "head": "FJ1487",
+        "bone": "FJ3349",
+        "broadPhasePairs": 464,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "head": "FJ1487",
+        "bone": "FJ3391",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      }
+    ],
+    "tissueTissue": [
+      {
+        "headA": "FJ1486",
+        "headB": "FJ1512",
+        "broadPhasePairs": 415,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "headA": "FJ1486",
+        "headB": "FJ1478",
+        "broadPhasePairs": 175,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "headA": "FJ1486",
+        "headB": "FJ1480",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "headA": "FJ1486",
+        "headB": "FJ1477",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "headA": "FJ1486",
+        "headB": "FJ1479",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "headA": "FJ1486",
+        "headB": "FJ1487",
+        "broadPhasePairs": 378,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "headA": "FJ1512",
+        "headB": "FJ1478",
+        "broadPhasePairs": 710,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "headA": "FJ1512",
+        "headB": "FJ1480",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "headA": "FJ1512",
+        "headB": "FJ1477",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "headA": "FJ1512",
+        "headB": "FJ1479",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "headA": "FJ1512",
+        "headB": "FJ1487",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "headA": "FJ1478",
+        "headB": "FJ1480",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "headA": "FJ1478",
+        "headB": "FJ1477",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "headA": "FJ1478",
+        "headB": "FJ1479",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "headA": "FJ1478",
+        "headB": "FJ1487",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "headA": "FJ1480",
+        "headB": "FJ1477",
+        "broadPhasePairs": 483,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "headA": "FJ1480",
+        "headB": "FJ1479",
+        "broadPhasePairs": 891,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "headA": "FJ1480",
+        "headB": "FJ1487",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "headA": "FJ1477",
+        "headB": "FJ1479",
+        "broadPhasePairs": 1106,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "headA": "FJ1477",
+        "headB": "FJ1487",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "headA": "FJ1479",
+        "headB": "FJ1487",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      }
+    ],
+    "boneBone": [
+      {
+        "boneA": "FJ3368",
+        "boneB": "FJ3349",
+        "broadPhasePairs": 0,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "boneA": "FJ3368",
+        "boneB": "FJ3391",
+        "broadPhasePairs": 296,
+        "crossingPairs": 0,
+        "examples": []
+      },
+      {
+        "boneA": "FJ3349",
+        "boneB": "FJ3391",
+        "broadPhasePairs": 181,
+        "crossingPairs": 0,
+        "examples": []
+      }
+    ],
+    "transverseCrossingPairs": 0,
+    "limits": [
+      "Every boundary triangle participates after AABB pruning.",
+      "Transverse edge/face crossings only; coplanar/grazing overlaps, containment and continuous motion are not certified.",
+      "No cartilage contact or medical apposition threshold is inferred."
+    ]
+  },
+  "routingAudit": {
+    "testedLegs": 765,
+    "violations": [],
+    "maximumSampledPenetrationM": 2.387624894196368e-16,
+    "accepted": true,
+    "limits": [
+      "Every axial path leg checked against all source bone triangles with AABB pruning.",
+      "Exact transverse segment hits plus five containment samples; finite radius, grazing/coplanar overlap and continuous motion are not certified.",
+      "Prescribed guides are authored frictionless support constraints, not measured anatomical tendon wrapping."
+    ]
+  },
+  "sampledPenetrationsM": {
+    "bone": 0,
+    "soft": 0,
+    "tendon": 0
+  },
+  "heads": [
+    {
+      "elementId": "FJ1486",
+      "coordinateCount": 63,
+      "minimumJ": 0.9061373663859071,
+      "minimumCornerJ": 0.9021175195538698,
+      "globalVolumeRatio": 0.9992654952239108,
+      "referenceVolumeFractionBelow09": 0
+    },
+    {
+      "elementId": "FJ1512",
+      "coordinateCount": 69,
+      "minimumJ": 0.5378559727392351,
+      "minimumCornerJ": 0.47046359551581723,
+      "globalVolumeRatio": 0.9988696910155815,
+      "referenceVolumeFractionBelow09": 0.017862560030649694
+    },
+    {
+      "elementId": "FJ1478",
+      "coordinateCount": 63,
+      "minimumJ": 0.9388928929407153,
+      "minimumCornerJ": 0.9349635888449719,
+      "globalVolumeRatio": 0.9981082740492965,
+      "referenceVolumeFractionBelow09": 0
+    },
+    {
+      "elementId": "FJ1480",
+      "coordinateCount": 63,
+      "minimumJ": 0.9998588323646358,
+      "minimumCornerJ": 0.9999717513467266,
+      "globalVolumeRatio": 0.9999934278060372,
+      "referenceVolumeFractionBelow09": 0
+    },
+    {
+      "elementId": "FJ1477",
+      "coordinateCount": 63,
+      "minimumJ": 0.9964316905598181,
+      "minimumCornerJ": 0.9961725646604762,
+      "globalVolumeRatio": 1.000000167071725,
+      "referenceVolumeFractionBelow09": 0
+    },
+    {
+      "elementId": "FJ1479",
+      "coordinateCount": 63,
+      "minimumJ": 0.9994032538177091,
+      "minimumCornerJ": 0.9993816586291148,
+      "globalVolumeRatio": 1.0000054132622125,
+      "referenceVolumeFractionBelow09": 0
+    },
+    {
+      "elementId": "FJ1487",
+      "coordinateCount": 63,
+      "minimumJ": 0.9993014738130197,
+      "minimumCornerJ": 0.99927923821602,
+      "globalVolumeRatio": 1.0000009414042215,
+      "referenceVolumeFractionBelow09": 0
+    }
+  ],
+  "additionalCoordinatesM": [
+    -0.0001320683899711625,
+    0.000018386727492492818,
+    0.0002727852738686453,
+    0.0000021120696293755354,
+    0.000018500085169008367,
+    0.00024946977585052835
+  ],
+  "additionalGradientN": [
+    1.6049092767321353e-8,
+    7.980174754163927e-7,
+    1.0745378350114279e-7,
+    2.198670897133768e-7,
+    1.586930225333497e-7,
+    4.0763850915428277e-7
+  ],
+  "angleDifferenceRad": 0.0000011653397586908198,
+  "limits": [
+    "One increment uses the identical accepted dense old physical state with zero extra coefficients. This is a controlled displacement-space comparison, not a self-consistent enriched trajectory.",
+    "Only six selected P2 nodal displacement coefficients are added to short biceps. Material parameters, stress scales, Newton algorithm, 240-iteration ceiling, contact law and 1e-4 N gate are unchanged.",
+    "The six new directions are normalized, mutually orthogonal and excluded from the original Galerkin space. Full nodal, mesh, quadrature, timestep and physiological convergence remain unqualified."
+  ]
+}

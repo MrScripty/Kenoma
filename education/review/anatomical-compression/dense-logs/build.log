@@ -1,0 +1,29 @@
+
+> kenoma-education@0.1.0 build
+> python3 tools/build.py
+
+{
+  "result": "PASS",
+  "checks": 1010,
+  "clinical_validation": false,
+  "note": "Structural/data/provenance checks only; figures separately visually inspected."
+}
+/workspace/Kenoma-next-compression/education/dist/assets/anatomical-contact-trajectory.png
+
+  dist/assets/app.js            544.6kb
+  dist/assets/app.js.LEGAL.txt    188b 
+
+⚡ Done in 94ms
+/workspace/Kenoma-next-compression/education/dist/anatomy-inspection/
+/workspace/Kenoma-next-compression/education/dist/coupled-fixture/
+/workspace/Kenoma-next-compression/education/dist/anatomical-arm/
+Checked 12 theorems with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+Checked 2 anatomical transfer identities with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+Checked 7 coupled mechanical properties with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+Checked 4 arm algebraic claims with Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)
+Built single-source Markdown and portable HTML in education/dist
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

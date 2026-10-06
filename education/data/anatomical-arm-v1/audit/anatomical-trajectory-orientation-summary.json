@@ -1,0 +1,1031 @@
+{
+  "schema": 1,
+  "result": "PASS_EXACT_STORED_P2_ORIENTATION",
+  "sourceHashes": {
+    "tools/anatomical-contact-experiment.mjs": "a258797940c1bb0e0db0882539d9a802e0fea4671dcec0b54188e2feea91fa75",
+    "web/anatomical-aponeurosis.mjs": "1dbebfd2ea67427ee0d962b7b234d2d40a2f2cd4616a4f1199e20b3aba7316a0",
+    "web/anatomical-apparatus.mjs": "be60e6a3ba4db34ee01a4cb531bcdd19f868645ef26e06e1e30daedbc360cb98",
+    "web/anatomical-arm-worker.mjs": "dfadf3136b8ecac0fd6275f059085636eb8953346d920ca69a4d4382fa7b39d5",
+    "web/anatomical-arm.mjs": "9ec37ec7b23bb67643fef715f4554fc8811e897a581691231e6669fdd66c7569",
+    "web/anatomical-audit.mjs": "4f45bf4ce4459096e9595cd7bb1e0bcdfb0fafe858ee5da25444940604589f14",
+    "web/anatomical-comparison.mjs": "d812405b86541f756759bede9750071117edbab81e69efcfadf96f4f195fd09f",
+    "web/anatomical-contact-differential.mjs": "76f107f5eb1c41fdf6622c428648babc5a489113a709fd337782b1b3de3cac0b",
+    "web/anatomical-contact-refinement.mjs": "29830d2f311ee74a50acfd65f0ca8c245d2b390ed66d6eafd6c9b79de7607e07",
+    "web/anatomical-contact.mjs": "ca3abc6a6c885651d6e43d0d0e2b08738b63a536d3850b854087a701695a1e67",
+    "web/anatomical-coupled-fixture.mjs": "620afbb2e801f00ec361f5f1b5d39f010acc386812dcaa7239c0ca781d0bf4b9",
+    "web/anatomical-coupled-worker.mjs": "1c54d08f5e36ca837343fc96399ac85de8e92f8fe1ebd1d73a50e5885b93c435",
+    "web/anatomical-distance.mjs": "e11826c97f160220fda68f72cbe5e73f35f9527edcf4a4d58100c467cb50940a",
+    "web/anatomical-element.mjs": "3f67a6bd31565c83d2cbea591c3cf1862a48e50cc4efa780880fda7e808d4b1f",
+    "web/anatomical-fixture.mjs": "d53b5dca829883b4e91c02e5b88f3ac745ce7510cf28aabfcbd6cb978353a30a",
+    "web/anatomical-intersections.mjs": "a083a9838ac3c7508b65b58329c741aef65a065288aff82fc886d1c2c90375df",
+    "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+    "web/anatomical-modal.mjs": "12cd671bc963aa04dd5c0e173a776049de191283d850b0b60d0fe8e63be4c9a1",
+    "web/anatomical-newton.mjs": "e0b2193bff56a3fdb9595fa0893c469b5897a31512a282ff7a9b5519b2fe93fe",
+    "web/anatomical-preconditioner.mjs": "d234cd800784a57171514139a17d0720bb1a9d4d1089afcd9e7c783cead1b0b4",
+    "web/anatomical-retraction.mjs": "f5c4ef1115bc2a385d86e232cb9a6a36f8f61cd56d823b3495284de8e9c71819",
+    "web/anatomical-routing-audit.mjs": "e6ef4473a272c985cd05012cf4cbf424c45522b535c280ad5de49222dd459d9b",
+    "web/anatomical-routing.mjs": "83e52df556739786c97e4cb8ef6a7854d0d9a5fb36ca197b6bdc0b7597d09a3e",
+    "web/anatomical-solver.mjs": "2e23ae4e594c0947d15b21cdcd0422ad27e2bc3c2ac3af40293703c208906bfb",
+    "web/anatomical-tangent.mjs": "9b35daecd9efd68908e393998271f63cbc5728a5a2c4821560010ff5786f285c",
+    "web/anatomical-transfer.mjs": "1e82dabebf5a6247af9216a70292216b194a52545abf8f3b73c93ee6e2f22431",
+    "data/anatomical-arm-v1/generated/arm-reference.json": "1b80c1d3d9f2eb4370cd298f58f5e9c582625574f27072f6d3a1ea898ce4c036",
+    "data/anatomical-arm-v1/config/attachments-apparatus.json": "070fee738e73e127e334ee5cbe680cb622f100396ad0728eb9df6723c2232389",
+    "data/anatomical-arm-v1/config/apparatus-routing.json": "b8580e8158e17730b65b64d0fdbe0f1cbbafc76235b9a5f0c2b01020818cd93f",
+    "data/anatomical-arm-v1/audit/modal-fixed-end-results.json": "b0eeecdade262b682279d9ebeb7a8147a4525a992976a85afc0ce5e63270d8b4",
+    "data/anatomical-arm-v1/audit/arm-rest-results.json": "8dc23d896adce4b428f39cb172d76f3c74c828f49c2007c66155e45e8ea359c7",
+    "data/anatomical-arm-v1/audit/arm-loaded-rejected-candidate.json": "713c4aee49e5d8856e154b728b6cc127aa3a2383e83aa5720013cdf4060650ca",
+    "data/anatomical-arm-v1/audit/activation-continuation-results.json": "0c1c452277eadd4bac40219d1f1c0234a3e40731262d443f445b6f879b1530c0",
+    "data/anatomical-arm-v1/audit/contact-feature-v2/interrupted-lift.json": "5c23df199339719c4a46244ba85fcad4bd61376774bdccd330b9cf53c1c24e3b",
+    "data/anatomical-arm-v1/audit/contact-missed-soft-v3/candidate.json": "2075d10be43de28b02305c0f3e8b990f18186bdb026e29d31cc88c52af1d70ee",
+    "data/anatomical-arm-v1/audit/contact-lift-release-results.json": "a74bd8fa9fd7bc3745ed42c32af75fc44692408d081b2070ceeefa63a0db35a9",
+    "data/anatomical-arm-v1/audit/contact-lift-release-recheck.json": "89615b61e75247105c67ce051478d69979b28144756a67b58b70116bffb9fec8",
+    "tools/anatomical-compression-quadrature.mjs": "f12e0d80224bad5e0bfa0649e08cac2f31a0baf162e2547ae8767b7371f48dc2",
+    "tools/anatomical-dense-quadrature.mjs": "2a9279268cc9a3c206e400293add90a537d7222c62af5992e08bc6467a078210",
+    "tools/anatomical-dense-trajectory.mjs": "2fc880378fdf639741af5db355dce7ee3fec674c2f859df49f53845ce8cda31b",
+    "tools/anatomical-dense-loading-prefix.mjs": "a9cc5490d880bc9e36732c56f5e0c35e0c536815c03ecfd3e8a678ae93f2d000",
+    "data/anatomical-arm-v1/audit/anatomical-dense-loading-prefix.json": "31ef26d3584d5b937d9086b8df80fcd60624eb007cdfbf6f68ac11c07040b582",
+    "tools/anatomical-enriched-step.mjs": "eedd8ead9ce8ddef3988108fa234740be7c975a45dfacc31b35f17f75d79163e",
+    "tools/build-enriched-operator.py": "48123088ffd42db362854737d1adf000ed5a1418dc7683b4cdd51dd7ef3d16bb",
+    "tools/enriched/source-manifest.json": "d86d99bce6fc530925c31ce3a0870081f6eb74d164752ff1d3dea00bda4918dc",
+    "tools/enriched-support.mjs": "cba5c6b23d83379f0518d3a6c529b3083da52d7cdc171561d54f560c5c37040f",
+    "tools/anatomical-nodal-probe.mjs": "ffa819b6a288baa409df0032d221226730632e39780891d6d20429afc84a14e3",
+    "tools/enriched/anatomical-aponeurosis.mjs": "edd317467c160f36f2253e31f43c3ac637a7530fb0e1279d914fd6aaae7ecfaa",
+    "tools/enriched/anatomical-apparatus.mjs": "f5f3a75ca4a5236553847fef6dbbb3c9e12f523a5e9de903bbf05b692e19c90a",
+    "tools/enriched/anatomical-arm.mjs": "a03ae162abb6e187f225b4a9d2c1ee9145537c47bb7911a612e5713369baeab5",
+    "tools/enriched/anatomical-contact-refinement.mjs": "253742ea3c05f66648390c80791a8f62ae77167a32509fd1aaaf253a343e2735",
+    "tools/enriched/anatomical-contact.mjs": "93a39356dac95b5214a6b6efbe1d4e3a0d64c3355fd3f1b03088c0347c053b37",
+    "tools/enriched/anatomical-modal.mjs": "fb74854f03615cd98556bc5236d6f0666289e0f1abaa3dead7a811297e288773",
+    "tools/enriched/anatomical-retraction.mjs": "84dfe7a1cc6864dec135b05c3740980d213fd66c2b9aa22da23d7c5596af4fad",
+    "tools/anatomical-bernstein-orientation.mjs": "5622685f19e7fabdd820fee11268950f0f97c58dc4818dbae8652e320cc5ca95",
+    "tools/anatomical-trajectory-orientation-audit.mjs": "9013d7ae7264948d1228fd642a52f4086f8b20222c65059f45bea92e4b496d57",
+    "data/anatomical-arm-v1/audit/anatomical-dense-trajectory.json": "695c2b682d5d97a4a3bd4876bb7352724e80a7f3cf050568d456d29ec1b7532b",
+    "data/anatomical-arm-v1/audit/anatomical-dense-trajectory-recheck.json": "3ee081f0cd458393163324619800d8ec2f56fa71e817dabca6d33e1497da1750",
+    "data/anatomical-arm-v1/audit/anatomical-enriched-step.json": "4c465823cd82e78814259791056d5b23efc094a3ed6b4892e829d682686d8b85",
+    "data/anatomical-arm-v1/audit/anatomical-enriched-step-recheck.json": "dcdf325e7710426f9417c31aad8bb16aa23c244dbe3a0f8e7cc85cbdb17ef42a",
+    "tools/package_anatomical_orientation.py": "787e2028c0294a3a344bd273309db44b844e18a05a8d7ddd66a9fa1188296d94"
+  },
+  "method": "All 20 degree-three tetrahedral Bernstein coefficients of each reference/current P2 Jacobian determinant are strictly positive by exact BigInt arithmetic. Binary64 nodal positions are treated as exact dyadic numbers.",
+  "rows": [
+    {
+      "kind": "dense-held",
+      "timeS": 0,
+      "allElementsCertified": true,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9999089621285028
+        },
+        {
+          "elementId": "FJ1512",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9994562553133371
+        },
+        {
+          "elementId": "FJ1478",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.999598076807859
+        },
+        {
+          "elementId": "FJ1480",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9999608011467177
+        },
+        {
+          "elementId": "FJ1477",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9996406362094395
+        },
+        {
+          "elementId": "FJ1479",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9995986551845034
+        },
+        {
+          "elementId": "FJ1487",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9998471874012503
+        }
+      ]
+    },
+    {
+      "kind": "dense",
+      "timeS": 0.01,
+      "allElementsCertified": true,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9602052610861895
+        },
+        {
+          "elementId": "FJ1512",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.8389390540988844
+        },
+        {
+          "elementId": "FJ1478",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9120530338603202
+        },
+        {
+          "elementId": "FJ1480",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9999634825788941
+        },
+        {
+          "elementId": "FJ1477",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9996345979366401
+        },
+        {
+          "elementId": "FJ1479",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9995963817928092
+        },
+        {
+          "elementId": "FJ1487",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9998460608532239
+        }
+      ]
+    },
+    {
+      "kind": "dense",
+      "timeS": 0.04,
+      "allElementsCertified": true,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9161969923221573
+        },
+        {
+          "elementId": "FJ1512",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.7400188246324999
+        },
+        {
+          "elementId": "FJ1478",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9269079482932236
+        },
+        {
+          "elementId": "FJ1480",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9999522220982828
+        },
+        {
+          "elementId": "FJ1477",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9993480379783837
+        },
+        {
+          "elementId": "FJ1479",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9995042553841159
+        },
+        {
+          "elementId": "FJ1487",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9999696875989021
+        }
+      ]
+    },
+    {
+      "kind": "dense",
+      "timeS": 0.07,
+      "allElementsCertified": true,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.904093465276115
+        },
+        {
+          "elementId": "FJ1512",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.7120247523021036
+        },
+        {
+          "elementId": "FJ1478",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.932375342609375
+        },
+        {
+          "elementId": "FJ1480",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9998861159926906
+        },
+        {
+          "elementId": "FJ1477",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9984422103350484
+        },
+        {
+          "elementId": "FJ1479",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.999374808116344
+        },
+        {
+          "elementId": "FJ1487",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9998319946489915
+        }
+      ]
+    },
+    {
+      "kind": "dense",
+      "timeS": 0.1,
+      "allElementsCertified": true,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9021147963302701
+        },
+        {
+          "elementId": "FJ1512",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.7126336433412271
+        },
+        {
+          "elementId": "FJ1478",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.934958594704081
+        },
+        {
+          "elementId": "FJ1480",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9997768885620365
+        },
+        {
+          "elementId": "FJ1477",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9961727624304137
+        },
+        {
+          "elementId": "FJ1479",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9991317103836386
+        },
+        {
+          "elementId": "FJ1487",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.999279245263909
+        }
+      ]
+    },
+    {
+      "kind": "dense",
+      "timeS": 0.13,
+      "allElementsCertified": true,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9039755231873918
+        },
+        {
+          "elementId": "FJ1512",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.8405300040858746
+        },
+        {
+          "elementId": "FJ1478",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9394092181615685
+        },
+        {
+          "elementId": "FJ1480",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9997607409590591
+        },
+        {
+          "elementId": "FJ1477",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9917839638283323
+        },
+        {
+          "elementId": "FJ1479",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9987912589871618
+        },
+        {
+          "elementId": "FJ1487",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9981308254308893
+        }
+      ]
+    },
+    {
+      "kind": "dense",
+      "timeS": 0.16,
+      "allElementsCertified": true,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9288317848750661
+        },
+        {
+          "elementId": "FJ1512",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.8661245639830084
+        },
+        {
+          "elementId": "FJ1478",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9309000305296575
+        },
+        {
+          "elementId": "FJ1480",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.999805592182846
+        },
+        {
+          "elementId": "FJ1477",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9862746204241112
+        },
+        {
+          "elementId": "FJ1479",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9979305597171091
+        },
+        {
+          "elementId": "FJ1487",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9963579939898615
+        }
+      ]
+    },
+    {
+      "kind": "dense",
+      "timeS": 0.19,
+      "allElementsCertified": true,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9313623130829081
+        },
+        {
+          "elementId": "FJ1512",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.8119760409428839
+        },
+        {
+          "elementId": "FJ1478",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9204843667577707
+        },
+        {
+          "elementId": "FJ1480",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9996380530339556
+        },
+        {
+          "elementId": "FJ1477",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9804792204326312
+        },
+        {
+          "elementId": "FJ1479",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9972514484675148
+        },
+        {
+          "elementId": "FJ1487",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.994852472928002
+        }
+      ]
+    },
+    {
+      "kind": "dense",
+      "timeS": 0.22,
+      "allElementsCertified": true,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.930521170232494
+        },
+        {
+          "elementId": "FJ1512",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.8626883547109084
+        },
+        {
+          "elementId": "FJ1478",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9169022569157209
+        },
+        {
+          "elementId": "FJ1480",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9997686923355563
+        },
+        {
+          "elementId": "FJ1477",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9737375644460989
+        },
+        {
+          "elementId": "FJ1479",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9969801718903547
+        },
+        {
+          "elementId": "FJ1487",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9934297305914243
+        }
+      ]
+    },
+    {
+      "kind": "dense",
+      "timeS": 0.25,
+      "allElementsCertified": true,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9310784152229601
+        },
+        {
+          "elementId": "FJ1512",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.8900977193991513
+        },
+        {
+          "elementId": "FJ1478",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9224470465144783
+        },
+        {
+          "elementId": "FJ1480",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9997560617747222
+        },
+        {
+          "elementId": "FJ1477",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9687880112602507
+        },
+        {
+          "elementId": "FJ1479",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9964844536353451
+        },
+        {
+          "elementId": "FJ1487",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9919649993163283
+        }
+      ]
+    },
+    {
+      "kind": "dense",
+      "timeS": 0.28,
+      "allElementsCertified": true,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9395244184474677
+        },
+        {
+          "elementId": "FJ1512",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9531011499715955
+        },
+        {
+          "elementId": "FJ1478",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9417974503310134
+        },
+        {
+          "elementId": "FJ1480",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9997442996476895
+        },
+        {
+          "elementId": "FJ1477",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9651018452935709
+        },
+        {
+          "elementId": "FJ1479",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9960467208192475
+        },
+        {
+          "elementId": "FJ1487",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9910318504929811
+        }
+      ]
+    },
+    {
+      "kind": "dense",
+      "timeS": 0.31000000000000005,
+      "allElementsCertified": true,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9570190919106677
+        },
+        {
+          "elementId": "FJ1512",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9690903450616347
+        },
+        {
+          "elementId": "FJ1478",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9511478203205378
+        },
+        {
+          "elementId": "FJ1480",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9997230840794507
+        },
+        {
+          "elementId": "FJ1477",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9631596799362235
+        },
+        {
+          "elementId": "FJ1479",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9957734131095106
+        },
+        {
+          "elementId": "FJ1487",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9907883720139775
+        }
+      ]
+    },
+    {
+      "kind": "dense",
+      "timeS": 0.3400000000000001,
+      "allElementsCertified": true,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9710079130093556
+        },
+        {
+          "elementId": "FJ1512",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9791822089305164
+        },
+        {
+          "elementId": "FJ1478",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9622854431643696
+        },
+        {
+          "elementId": "FJ1480",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9997225139320356
+        },
+        {
+          "elementId": "FJ1477",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9631448214935984
+        },
+        {
+          "elementId": "FJ1479",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9957748851802334
+        },
+        {
+          "elementId": "FJ1487",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9906404817273214
+        }
+      ]
+    },
+    {
+      "kind": "dense",
+      "timeS": 0.3700000000000001,
+      "allElementsCertified": true,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9811000996012803
+        },
+        {
+          "elementId": "FJ1512",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9859410242756496
+        },
+        {
+          "elementId": "FJ1478",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9725422726348524
+        },
+        {
+          "elementId": "FJ1480",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.999744355954102
+        },
+        {
+          "elementId": "FJ1477",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9650919479608481
+        },
+        {
+          "elementId": "FJ1479",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9960472186514929
+        },
+        {
+          "elementId": "FJ1487",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9910118166169806
+        }
+      ]
+    },
+    {
+      "kind": "dense",
+      "timeS": 0.40000000000000013,
+      "allElementsCertified": true,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9882465394117915
+        },
+        {
+          "elementId": "FJ1512",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9907306419231094
+        },
+        {
+          "elementId": "FJ1478",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9806338693993462
+        },
+        {
+          "elementId": "FJ1480",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9997641644152083
+        },
+        {
+          "elementId": "FJ1477",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9689010678397647
+        },
+        {
+          "elementId": "FJ1479",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9965011078052646
+        },
+        {
+          "elementId": "FJ1487",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9919292119887316
+        }
+      ]
+    },
+    {
+      "kind": "dense",
+      "timeS": 0.43000000000000016,
+      "allElementsCertified": true,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9928557350106364
+        },
+        {
+          "elementId": "FJ1512",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9939522470180722
+        },
+        {
+          "elementId": "FJ1478",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.986668462774492
+        },
+        {
+          "elementId": "FJ1480",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9997684172462147
+        },
+        {
+          "elementId": "FJ1477",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9742469759549711
+        },
+        {
+          "elementId": "FJ1479",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9970412846400428
+        },
+        {
+          "elementId": "FJ1487",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9934387493375928
+        }
+      ]
+    },
+    {
+      "kind": "enriched",
+      "timeS": 0.1,
+      "allElementsCertified": true,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9021175195540271
+        },
+        {
+          "elementId": "FJ1512",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.4704635955157847
+        },
+        {
+          "elementId": "FJ1478",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.934963588845017
+        },
+        {
+          "elementId": "FJ1480",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.999776869243056
+        },
+        {
+          "elementId": "FJ1477",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.99617256466052
+        },
+        {
+          "elementId": "FJ1479",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9991319510972066
+        },
+        {
+          "elementId": "FJ1487",
+          "elementCount": 252,
+          "certifiedCount": 252,
+          "allElementsCertified": true,
+          "minimumCertifiedLowerJApprox": 0.9992792382158959
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Exact signs certify positive orientation throughout each stored P2 element interpolant. Reported numeric lower-J approximations are not outward-rounded bounds.",
+    "This geometric certificate does not establish stationarity outside the retained coordinates, incompressibility, contact completeness or continuous-motion validity.",
+    "The exact nodal interpolant is the stored binary64 nodal geometry; floating quadrature evaluation and physiological calibration remain separate. No Lean proof claim or constitutive change is made."
+  ],
+  "certifiedElementCount": 29988,
+  "fullReceiptSHA256": "643e7197052fb303bc8824ce8fa4b96534eb3d1d0daef8be204df13bad7e5eec",
+  "archive": "anatomical-trajectory-orientation-full.json.gz",
+  "archiveSHA256": "62649af4c742949ca52d969908a4e0bcfd18c75e5c6cff3e2648cde0c8bc4c65"
+}

@@ -1,0 +1,15 @@
+/** Recorded geometric nonpenetration constraints for the interior axis fit.
+ * Small source-fit search, not patient calibration or changed bone geometry.
+ */
+import {fitInteriorAxis} from './anatomical-axis-fit.mjs';
+import {dot,sub,cross,unit} from './anatomical-surface.mjs';
+import {attachmentMap} from '../web/anatomical-transfer.mjs';
+import {triangleRecords,transverseCrossings} from '../web/anatomical-intersections.mjs';
+export function axisFrame(origin,axis,picks){const h=sub(picks.proximal_humerus.atlas_position_m,origin),e2=unit(h.map((v,i)=>v-dot(h,axis)*axis[i])),e3=cross(axis,e2),distal=picks.distal_radius.atlas_position_m.map((v,i)=>(v+picks.distal_ulna.atlas_position_m[i])/2),d=sub(distal,origin);return {origin_m:origin,axis_unit:axis,proximal_unit:e2,posterior_unit:e3,atlas_bind_angle_rad:Math.atan2(-dot(d,e3),-dot(d,e2)),hand_grip_m:distal.map((v,i)=>v+.04*unit(d)[i])};}
+export function constrainedAxisFit(bones,picks){
+ const fit=fitInteriorAxis(bones),hum=bones.find(b=>b.element_id==='FJ3368'),ulna=bones.find(b=>b.element_id==='FJ3391'),H=triangleRecords(hum.vertices_m,hum.triangles),candidates=[];
+ const offsets=[-.001,-.0005,0,.0005,.001];for(const dy of offsets)for(const dz of offsets){const frame=axisFrame(fit.origin_m.map((v,i)=>v+(i===1?dy:i===2?dz:0)),fit.axis_unit,picks);let error=0;for(const patch of fit.source_regions){const radius=patch.element_id==='FJ3368'?fit.fitted_radii_m.humerus:fit.fitted_radii_m.ulna;for(let i=0;i<patch.triangle_centroids_m.length;i++){const d=sub(patch.triangle_centroids_m[i],frame.origin_m),t=dot(d,frame.axis_unit),r=Math.hypot(...d.map((v,i)=>v-t*frame.axis_unit[i]));error+=patch.triangle_area_weights[i]*(r-radius)**2/2;}}candidates.push({dy,dz,fitEnergyM2:error,frame});}candidates.sort((a,b)=>a.fitEnergyM2-b.fitEnergyM2);
+ const search=[];let accepted=null;for(const candidate of candidates){const checks=[];for(const degrees of [0,30,60,90,120]){const q=degrees*Math.PI/180,U=triangleRecords(ulna.vertices_m,ulna.triangles,X=>attachmentMap(X,candidate.frame,q).position),r=transverseCrossings(H,U);checks.push({angle_degrees:degrees,crossing_pairs:r.crossingPairs});if(r.crossingPairs)break;}search.push({offset_y_m:candidate.dy,offset_z_m:candidate.dz,fit_energy_m2:candidate.fitEnergyM2,checks});if(checks.length===5&&checks.every(c=>!c.crossing_pairs)){accepted=candidate;break;}}
+ if(!accepted)throw new Error('No non-crossing axis candidate within the recorded ±1 mm source-fit search; geometry remains a coupling blocker');
+ return {...fit,unconstrained_origin_m:fit.origin_m,origin_m:accepted.frame.origin_m,frame:accepted.frame,constraint_search:{offsets_m:offsets,criterion:'Least area-weighted circular-fit energy among candidates with zero complete transverse humerus/ulna crossings at 0/30/60/90/120 degrees',tested_candidates:search,limits:'Finite source-fit lattice and sampled poses, not continuous collision certification. Coplanar, containment, apposition and denser poses are independently audited.'}};
+}

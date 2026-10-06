@@ -1,0 +1,16 @@
+✔ actual anatomical point-mass event preserves mechanical state and uses upward-positive external energy (2.059515ms)
+✔ failed actual anatomical nonlinear step retains activation, effort, pose, velocity, tissue and time (6796.643825ms)
+✔ nested positive diagnostic rules retain the existing 4/32 rules and reference measure (19.987893ms)
+✔ independent P2 integration reproduces affine material energy and nodal energy derivatives (83.218118ms)
+✔ half/double bulk diagnostic is exact at fixed geometry and retains the original force gate (230.70449ms)
+✔ actual compressed loading pose retains the independent original P2 energy, gradient and determinant (604.99961ms)
+✔ dense reduced body agrees with independent full P2 assembly at a compressed nonlinear pose (42.000695ms)
+✔ dense body energy gradient and Hessian pass directional differences at actual compression (35.39584ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8362.622632

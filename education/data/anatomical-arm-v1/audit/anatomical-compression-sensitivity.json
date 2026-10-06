@@ -1,0 +1,4624 @@
+{
+  "schema": 1,
+  "result": "COMPLETED_FROZEN_POSE_DIAGNOSTIC",
+  "baseImplementationCommit": "e3f546712bceee543993f798b13da97efc88d849",
+  "executionReceiptSHA256": "a74bd8fa9fd7bc3745ed42c32af75fc44692408d081b2070ceeefa63a0db35a9",
+  "acceptedReplaySHA256": "89615b61e75247105c67ce051478d69979b28144756a67b58b70116bffb9fec8",
+  "sourceHashes": {
+    "tools/anatomical-contact-experiment.mjs": "a258797940c1bb0e0db0882539d9a802e0fea4671dcec0b54188e2feea91fa75",
+    "web/anatomical-aponeurosis.mjs": "1dbebfd2ea67427ee0d962b7b234d2d40a2f2cd4616a4f1199e20b3aba7316a0",
+    "web/anatomical-apparatus.mjs": "be60e6a3ba4db34ee01a4cb531bcdd19f868645ef26e06e1e30daedbc360cb98",
+    "web/anatomical-arm-worker.mjs": "dfadf3136b8ecac0fd6275f059085636eb8953346d920ca69a4d4382fa7b39d5",
+    "web/anatomical-arm.mjs": "9ec37ec7b23bb67643fef715f4554fc8811e897a581691231e6669fdd66c7569",
+    "web/anatomical-audit.mjs": "4f45bf4ce4459096e9595cd7bb1e0bcdfb0fafe858ee5da25444940604589f14",
+    "web/anatomical-comparison.mjs": "d812405b86541f756759bede9750071117edbab81e69efcfadf96f4f195fd09f",
+    "web/anatomical-contact-differential.mjs": "76f107f5eb1c41fdf6622c428648babc5a489113a709fd337782b1b3de3cac0b",
+    "web/anatomical-contact-refinement.mjs": "29830d2f311ee74a50acfd65f0ca8c245d2b390ed66d6eafd6c9b79de7607e07",
+    "web/anatomical-contact.mjs": "ca3abc6a6c885651d6e43d0d0e2b08738b63a536d3850b854087a701695a1e67",
+    "web/anatomical-coupled-fixture.mjs": "620afbb2e801f00ec361f5f1b5d39f010acc386812dcaa7239c0ca781d0bf4b9",
+    "web/anatomical-coupled-worker.mjs": "1c54d08f5e36ca837343fc96399ac85de8e92f8fe1ebd1d73a50e5885b93c435",
+    "web/anatomical-distance.mjs": "e11826c97f160220fda68f72cbe5e73f35f9527edcf4a4d58100c467cb50940a",
+    "web/anatomical-element.mjs": "3f67a6bd31565c83d2cbea591c3cf1862a48e50cc4efa780880fda7e808d4b1f",
+    "web/anatomical-fixture.mjs": "d53b5dca829883b4e91c02e5b88f3ac745ce7510cf28aabfcbd6cb978353a30a",
+    "web/anatomical-intersections.mjs": "a083a9838ac3c7508b65b58329c741aef65a065288aff82fc886d1c2c90375df",
+    "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+    "web/anatomical-modal.mjs": "12cd671bc963aa04dd5c0e173a776049de191283d850b0b60d0fe8e63be4c9a1",
+    "web/anatomical-newton.mjs": "e0b2193bff56a3fdb9595fa0893c469b5897a31512a282ff7a9b5519b2fe93fe",
+    "web/anatomical-preconditioner.mjs": "d234cd800784a57171514139a17d0720bb1a9d4d1089afcd9e7c783cead1b0b4",
+    "web/anatomical-retraction.mjs": "f5c4ef1115bc2a385d86e232cb9a6a36f8f61cd56d823b3495284de8e9c71819",
+    "web/anatomical-routing-audit.mjs": "e6ef4473a272c985cd05012cf4cbf424c45522b535c280ad5de49222dd459d9b",
+    "web/anatomical-routing.mjs": "83e52df556739786c97e4cb8ef6a7854d0d9a5fb36ca197b6bdc0b7597d09a3e",
+    "web/anatomical-solver.mjs": "2e23ae4e594c0947d15b21cdcd0422ad27e2bc3c2ac3af40293703c208906bfb",
+    "web/anatomical-tangent.mjs": "9b35daecd9efd68908e393998271f63cbc5728a5a2c4821560010ff5786f285c",
+    "web/anatomical-transfer.mjs": "1e82dabebf5a6247af9216a70292216b194a52545abf8f3b73c93ee6e2f22431",
+    "data/anatomical-arm-v1/generated/arm-reference.json": "1b80c1d3d9f2eb4370cd298f58f5e9c582625574f27072f6d3a1ea898ce4c036",
+    "data/anatomical-arm-v1/config/attachments-apparatus.json": "070fee738e73e127e334ee5cbe680cb622f100396ad0728eb9df6723c2232389",
+    "data/anatomical-arm-v1/config/apparatus-routing.json": "b8580e8158e17730b65b64d0fdbe0f1cbbafc76235b9a5f0c2b01020818cd93f",
+    "data/anatomical-arm-v1/audit/modal-fixed-end-results.json": "b0eeecdade262b682279d9ebeb7a8147a4525a992976a85afc0ce5e63270d8b4",
+    "data/anatomical-arm-v1/audit/arm-rest-results.json": "8dc23d896adce4b428f39cb172d76f3c74c828f49c2007c66155e45e8ea359c7",
+    "data/anatomical-arm-v1/audit/arm-loaded-rejected-candidate.json": "713c4aee49e5d8856e154b728b6cc127aa3a2383e83aa5720013cdf4060650ca",
+    "data/anatomical-arm-v1/audit/activation-continuation-results.json": "0c1c452277eadd4bac40219d1f1c0234a3e40731262d443f445b6f879b1530c0",
+    "data/anatomical-arm-v1/audit/contact-feature-v2/interrupted-lift.json": "5c23df199339719c4a46244ba85fcad4bd61376774bdccd330b9cf53c1c24e3b",
+    "data/anatomical-arm-v1/audit/contact-missed-soft-v3/candidate.json": "2075d10be43de28b02305c0f3e8b990f18186bdb026e29d31cc88c52af1d70ee",
+    "tools/anatomical-compression-quadrature.mjs": "f12e0d80224bad5e0bfa0649e08cac2f31a0baf162e2547ae8767b7371f48dc2",
+    "tools/anatomical-compression-audit.mjs": "0b8a2285a846edf77ee053357d89501b09f47a8aa261e837196b72877b93a00e",
+    "tools/verify-anatomical-contact-trajectory.mjs": "f1c069c530f575e6d348a8569324c5c3144124b84135b35d3c193e109165a340"
+  },
+  "unchangedStationarityToleranceN": 0.0001,
+  "maximumModalProjectionDifferenceN": 1.299241270125151e-11,
+  "maximumModalEnergyDifferenceJ": 4.085620730620576e-14,
+  "states": [
+    {
+      "label": "held",
+      "index": -1,
+      "timeS": 0,
+      "qRad": 0.2841100888248933,
+      "activation": 0,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 3599330.7341830498,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.0000020432326170012107,
+              "volumeEnergyJ": 2.2472749168930075e-8,
+              "minimumJ": 0.9999342032171414,
+              "minimumCornerJ": 0.9999089621285175,
+              "globalVolumeRatio": 0.9999988782423282,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.00003854299928617499
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.0000020439338182700782,
+              "volumeEnergyJ": 2.2730627086489787e-8,
+              "minimumJ": 0.9999214605369718,
+              "minimumCornerJ": 0.9999089621285175,
+              "globalVolumeRatio": 0.9999988782423254,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": 0.0000020439380269669636,
+              "volumeEnergyJ": 2.2746628278903064e-8,
+              "minimumJ": 0.9999151462594721,
+              "minimumCornerJ": 0.9999089621285175,
+              "globalVolumeRatio": 0.9999988782423357,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0000030562527479154576
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1512",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 8708387.370104775,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.000009739904513152501,
+              "volumeEnergyJ": 1.3966354931242922e-7,
+              "minimumJ": 0.9996760950569635,
+              "minimumCornerJ": 0.999845904238295,
+              "globalVolumeRatio": 1.0000000018159,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.000563656980635225
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.000009775936159616575,
+              "volumeEnergyJ": 1.759347520209566e-7,
+              "minimumJ": 0.9996582104202422,
+              "minimumCornerJ": 0.999845904238295,
+              "globalVolumeRatio": 1.0000000018159025,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": 0.000009778169320866063,
+              "volumeEnergyJ": 1.7818163449731586e-7,
+              "minimumJ": 0.9996543736039151,
+              "minimumCornerJ": 0.999845904238295,
+              "globalVolumeRatio": 1.0000000018159008,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.00003509912402148256
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1478",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 20378123.522158194,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.000008666804114913186,
+              "volumeEnergyJ": 1.2658850093387834e-7,
+              "minimumJ": 0.9997766712204006,
+              "minimumCornerJ": 0.9998834046039761,
+              "globalVolumeRatio": 0.9999983512790026,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0005377322890991786
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.000008711987514750713,
+              "volumeEnergyJ": 1.7223440215222856e-7,
+              "minimumJ": 0.9997627630846034,
+              "minimumCornerJ": 0.9998834046039761,
+              "globalVolumeRatio": 0.9999983512790036,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": 0.000008714671589797758,
+              "volumeEnergyJ": 1.7505669588497236e-7,
+              "minimumJ": 0.9997547160156867,
+              "minimumCornerJ": 0.9998834046039761,
+              "globalVolumeRatio": 0.9999983512790053,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.00003340008649802169
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1480",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 5.842251749370837e-7,
+              "volumeEnergyJ": 1.9248351898286194e-9,
+              "minimumJ": 0.9999740314682898,
+              "minimumCornerJ": 0.9999809630620933,
+              "globalVolumeRatio": 0.9999981266003665,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.000022392963606843663
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 5.846197878781671e-7,
+              "volumeEnergyJ": 2.2523451383116233e-9,
+              "minimumJ": 0.9999731196497864,
+              "minimumCornerJ": 0.9999809630620933,
+              "globalVolumeRatio": 0.9999981266003635,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": 5.846392295245702e-7,
+              "volumeEnergyJ": 2.2724753169225736e-9,
+              "minimumJ": 0.9999726679366725,
+              "minimumCornerJ": 0.9999809630620933,
+              "globalVolumeRatio": 0.9999981266003606,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0000016713856099681828
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1477",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.000010156890080590986,
+              "volumeEnergyJ": 3.680651280016183e-7,
+              "minimumJ": 0.999756516274991,
+              "minimumCornerJ": 0.9996406362094457,
+              "globalVolumeRatio": 0.9999997354045035,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.000017544658484393294
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.000010157221547423036,
+              "volumeEnergyJ": 3.6843524217039146e-7,
+              "minimumJ": 0.9996980638682663,
+              "minimumCornerJ": 0.9996406362094457,
+              "globalVolumeRatio": 0.9999997354045056,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": 0.000010157242571556326,
+              "volumeEnergyJ": 3.6845803147199795e-7,
+              "minimumJ": 0.9996692219453363,
+              "minimumCornerJ": 0.9996406362094457,
+              "globalVolumeRatio": 0.99999973540451,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0000025156649136126932
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1479",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.000010075785535319854,
+              "volumeEnergyJ": 2.9693363837260324e-7,
+              "minimumJ": 0.999726217261626,
+              "minimumCornerJ": 0.9998365261833764,
+              "globalVolumeRatio": 1.0000016903964997,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.00047357709942055836
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.000010104981363909088,
+              "volumeEnergyJ": 3.2607618257704113e-7,
+              "minimumJ": 0.9997194626933561,
+              "minimumCornerJ": 0.9998365261833764,
+              "globalVolumeRatio": 1.0000016903964999,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": 0.000010106780785279915,
+              "volumeEnergyJ": 3.2787109929943324e-7,
+              "minimumJ": 0.9997145681297951,
+              "minimumCornerJ": 0.9998365261833764,
+              "globalVolumeRatio": 1.0000016903965077,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.000029536609969834336
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1487",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 6.661793208656546e-7,
+              "volumeEnergyJ": 1.0202461950330082e-8,
+              "minimumJ": 0.9999039068033624,
+              "minimumCornerJ": 0.9999467922639557,
+              "globalVolumeRatio": 0.999999819743447,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0000866929136962959
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 6.67145817831565e-7,
+              "volumeEnergyJ": 1.14694731185779e-8,
+              "minimumJ": 0.9998969068289916,
+              "minimumCornerJ": 0.9999467922639557,
+              "globalVolumeRatio": 0.9999998197434451,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": 6.672057514290305e-7,
+              "volumeEnergyJ": 1.1546339211269008e-8,
+              "minimumJ": 0.9998944792175803,
+              "minimumCornerJ": 0.9999467922639557,
+              "globalVolumeRatio": 0.9999998197434554,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.00000509695432801896
+            }
+          ]
+        }
+      ],
+      "selectedForDenseAudit": true
+    },
+    {
+      "label": "regression-load",
+      "index": 0,
+      "timeS": 0.01,
+      "qRad": 0.28445506420357414,
+      "activation": 0.008847968677143804,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 3599330.7341830498,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.02494420365627186,
+              "volumeEnergyJ": 0.002960371621155085,
+              "minimumJ": 0.9657203529658526,
+              "minimumCornerJ": 0.9602072011198273,
+              "globalVolumeRatio": 0.9994962641429299,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0033115573059246395
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.02494219076829762,
+              "volumeEnergyJ": 0.0029623216720184257,
+              "minimumJ": 0.9629835454912659,
+              "minimumCornerJ": 0.9602072011198273,
+              "globalVolumeRatio": 0.999496264142924,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": -0.02494206929879116,
+              "volumeEnergyJ": 0.0029624400929589615,
+              "minimumJ": 0.9616003154174578,
+              "minimumCornerJ": 0.9602072011198273,
+              "globalVolumeRatio": 0.9994962641429318,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.00020398177293476372
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1512",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 8708387.370104775,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.37288681363330894,
+              "volumeEnergyJ": 0.023606301136246757,
+              "minimumJ": 0.8880855538575427,
+              "minimumCornerJ": 0.8393365712403318,
+              "globalVolumeRatio": 0.99927876968441,
+              "referenceVolumeFractionBelow09": 0.003287714070719292,
+              "gradientDifferenceFrom32N": 0.3619260608891066
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.3710165397412163,
+              "volumeEnergyJ": 0.023784363326192343,
+              "minimumJ": 0.864436907404498,
+              "minimumCornerJ": 0.8393365712403318,
+              "globalVolumeRatio": 0.9992787696844095,
+              "referenceVolumeFractionBelow09": 0.0031813344719027695,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": -0.37085975158480483,
+              "volumeEnergyJ": 0.023796877338738233,
+              "minimumJ": 0.8520682005362186,
+              "minimumCornerJ": 0.8393365712403318,
+              "globalVolumeRatio": 0.9992787696844153,
+              "referenceVolumeFractionBelow09": 0.003205457027368898,
+              "gradientDifferenceFrom32N": 0.03288218588077796
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1478",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 20378123.522158194,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -2.8388518879194145,
+              "volumeEnergyJ": 0.02466688031374191,
+              "minimumJ": 0.9331302350260359,
+              "minimumCornerJ": 0.9120461770049838,
+              "globalVolumeRatio": 0.9991396623285231,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.020390805533271286
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -2.8388532942583744,
+              "volumeEnergyJ": 0.024677467807060045,
+              "minimumJ": 0.9225916262315582,
+              "minimumCornerJ": 0.9120461770049838,
+              "globalVolumeRatio": 0.9991396623285288,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": -2.838854311270981,
+              "volumeEnergyJ": 0.024678089720298012,
+              "minimumJ": 0.9173197566722777,
+              "minimumCornerJ": 0.9120461770049838,
+              "globalVolumeRatio": 0.9991396623285133,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.001355005659269326
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1480",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 5.870320021851387e-7,
+              "volumeEnergyJ": 1.7098528393697127e-9,
+              "minimumJ": 0.9999763981267147,
+              "minimumCornerJ": 0.999984425453761,
+              "globalVolumeRatio": 0.9999981134971417,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.000022342424603137383
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 5.874227407784435e-7,
+              "volumeEnergyJ": 2.035213913325468e-9,
+              "minimumJ": 0.999975642526879,
+              "minimumCornerJ": 0.999984425453761,
+              "globalVolumeRatio": 0.999998113497148,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": 5.87442178075088e-7,
+              "volumeEnergyJ": 2.0552110928501754e-9,
+              "minimumJ": 0.9999753211837804,
+              "minimumCornerJ": 0.999984425453761,
+              "globalVolumeRatio": 0.9999981134971464,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0000018555600761569358
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1477",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.000010214690242853607,
+              "volumeEnergyJ": 3.7462425699929933e-7,
+              "minimumJ": 0.9997536237168686,
+              "minimumCornerJ": 0.9996345948107604,
+              "globalVolumeRatio": 0.9999997325454048,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.00001759915499312259
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.000010215007368184606,
+              "volumeEnergyJ": 3.749800875997147e-7,
+              "minimumJ": 0.999693634664384,
+              "minimumCornerJ": 0.9996345948107604,
+              "globalVolumeRatio": 0.9999997325454049,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": 0.000010215027489039754,
+              "volumeEnergyJ": 3.750019967839139e-7,
+              "minimumJ": 0.999663996087714,
+              "minimumCornerJ": 0.9996345948107604,
+              "globalVolumeRatio": 0.9999997325454056,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0000024842987057013127
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1479",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.000010241702166969705,
+              "volumeEnergyJ": 3.007427845174732e-7,
+              "minimumJ": 0.9997245310067135,
+              "minimumCornerJ": 0.9998358614870001,
+              "globalVolumeRatio": 1.0000017045581475,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0004790653767108473
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.000010271574893756701,
+              "volumeEnergyJ": 3.305610029637891e-7,
+              "minimumJ": 0.9997176711108495,
+              "minimumCornerJ": 0.9998358614870001,
+              "globalVolumeRatio": 1.0000017045581502,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": 0.000010273416021025094,
+              "volumeEnergyJ": 3.323975214697339e-7,
+              "minimumJ": 0.9997126979938334,
+              "minimumCornerJ": 0.9998358614870001,
+              "globalVolumeRatio": 1.00000170455814,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.00002987813455564885
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1487",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 2.6296728954376846e-7,
+              "volumeEnergyJ": 6.0250543782969464e-9,
+              "minimumJ": 0.9999125968339927,
+              "minimumCornerJ": 0.9999614262022015,
+              "globalVolumeRatio": 0.999999882110004,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0001218288204478655
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 2.6584338085707763e-7,
+              "volumeEnergyJ": 9.186217740083581e-9,
+              "minimumJ": 0.9999090625770789,
+              "minimumCornerJ": 0.9999614262022015,
+              "globalVolumeRatio": 0.999999882110008,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": 2.6600866052702204e-7,
+              "volumeEnergyJ": 9.378393530971339e-9,
+              "minimumJ": 0.9999074643700016,
+              "minimumCornerJ": 0.9999614262022015,
+              "globalVolumeRatio": 0.9999998821100042,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.000007690495236926855
+            }
+          ]
+        }
+      ],
+      "selectedForDenseAudit": true
+    },
+    {
+      "label": "lift",
+      "index": 1,
+      "timeS": 0.04,
+      "qRad": 0.29630399475260727,
+      "activation": 0.025284822353142306,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 3599330.7341830498,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.12480450760807109,
+              "volumeEnergyJ": 0.01425997674270049,
+              "minimumJ": 0.9298870652448699,
+              "minimumCornerJ": 0.9161992582219546,
+              "globalVolumeRatio": 0.999325351070879,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.005039372264096897
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.12480226829608253,
+              "volumeEnergyJ": 0.014262268523302726,
+              "minimumJ": 0.9230444020262389,
+              "minimumCornerJ": 0.9161992582219546,
+              "globalVolumeRatio": 0.9993253510708798,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1512",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 8708387.370104775,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -1.7792602639918285,
+              "volumeEnergyJ": 0.04549797232786591,
+              "minimumJ": 0.8135176605508557,
+              "minimumCornerJ": 0.7392801464076593,
+              "globalVolumeRatio": 0.9989508321511454,
+              "referenceVolumeFractionBelow09": 0.01322497518670309,
+              "gradientDifferenceFrom32N": 1.452876396125733
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -1.7708308977023792,
+              "volumeEnergyJ": 0.04569310985424743,
+              "minimumJ": 0.7843188509587843,
+              "minimumCornerJ": 0.7392801464076593,
+              "globalVolumeRatio": 0.9989508321511429,
+              "referenceVolumeFractionBelow09": 0.012116898399066248,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1478",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 20378123.522158194,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -10.089814426553517,
+              "volumeEnergyJ": 0.015073303989900453,
+              "minimumJ": 0.9445879633060632,
+              "minimumCornerJ": 0.9269003076720161,
+              "globalVolumeRatio": 0.9983049522515988,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.019216064978881064
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -10.089848278170061,
+              "volumeEnergyJ": 0.015075254814446,
+              "minimumJ": 0.9357344927652674,
+              "minimumCornerJ": 0.9269003076720161,
+              "globalVolumeRatio": 0.9983049522516042,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1480",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 9.052354551251394e-7,
+              "volumeEnergyJ": 2.1029364122093098e-9,
+              "minimumJ": 0.9999707790100714,
+              "minimumCornerJ": 0.9999899200196357,
+              "globalVolumeRatio": 0.9999974898537912,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.000032877971231915805
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 9.059064085118643e-7,
+              "volumeEnergyJ": 2.705343971730429e-9,
+              "minimumJ": 0.9999703291470154,
+              "minimumCornerJ": 0.9999899200196357,
+              "globalVolumeRatio": 0.9999974898537951,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1477",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.000012637007541353482,
+              "volumeEnergyJ": 0.0000010336275471693007,
+              "minimumJ": 0.9995809489824647,
+              "minimumCornerJ": 0.9993480681802931,
+              "globalVolumeRatio": 0.999999677011763,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.000018000951896928255
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.000012637252206074987,
+              "volumeEnergyJ": 0.0000010339100053087619,
+              "minimumJ": 0.9994645451382864,
+              "minimumCornerJ": 0.9993480681802931,
+              "globalVolumeRatio": 0.9999996770117604,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1479",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.000017716004494500493,
+              "volumeEnergyJ": 4.6348370664071914e-7,
+              "minimumJ": 0.9996729456466198,
+              "minimumCornerJ": 0.9998000557280405,
+              "globalVolumeRatio": 1.0000023074320255,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0006212372569322487
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.00001776550412067501,
+              "volumeEnergyJ": 5.128962799387013e-7,
+              "minimumJ": 0.9996631280869235,
+              "minimumCornerJ": 0.9998000557280405,
+              "globalVolumeRatio": 1.0000023074320288,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1487",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 3.023058170565639e-8,
+              "volumeEnergyJ": 1.0982066648538682e-9,
+              "minimumJ": 0.9999760121341875,
+              "minimumCornerJ": 0.9999736401258329,
+              "globalVolumeRatio": 1.0000000376619544,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0000028787452684762133
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 3.0232270644842466e-8,
+              "volumeEnergyJ": 1.1000786386883063e-9,
+              "minimumJ": 0.9999735439666992,
+              "minimumCornerJ": 0.9999736401258329,
+              "globalVolumeRatio": 1.0000000376619602,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        }
+      ],
+      "selectedForDenseAudit": false
+    },
+    {
+      "label": "lift",
+      "index": 2,
+      "timeS": 0.07,
+      "qRad": 0.32091473380732377,
+      "activation": 0.033049042261982194,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 3599330.7341830498,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.19484937264279242,
+              "volumeEnergyJ": 0.019893093866837293,
+              "minimumJ": 0.920050458799202,
+              "minimumCornerJ": 0.9040923971899564,
+              "globalVolumeRatio": 0.9992778713751226,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.006367642768275061
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.19484666963183278,
+              "volumeEnergyJ": 0.019895694356474758,
+              "minimumJ": 0.9120714901386816,
+              "minimumCornerJ": 0.9040923971899564,
+              "globalVolumeRatio": 0.999277871375125,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1512",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 8708387.370104775,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -2.5731429366669203,
+              "volumeEnergyJ": 0.05521651848129064,
+              "minimumJ": 0.7676218216730751,
+              "minimumCornerJ": 0.7119909238354404,
+              "globalVolumeRatio": 0.9989194285005222,
+              "referenceVolumeFractionBelow09": 0.014831498740849587,
+              "gradientDifferenceFrom32N": 1.8059722385597787
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -2.562108500908709,
+              "volumeEnergyJ": 0.055419069151257605,
+              "minimumJ": 0.7413607803906908,
+              "minimumCornerJ": 0.7119909238354404,
+              "globalVolumeRatio": 0.9989194285005233,
+              "referenceVolumeFractionBelow09": 0.016830425096118946,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1478",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 20378123.522158194,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -13.55583312602483,
+              "volumeEnergyJ": 0.012622145230212774,
+              "minimumJ": 0.9487493264286461,
+              "minimumCornerJ": 0.9323623825806918,
+              "globalVolumeRatio": 0.9981287910939508,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.022582712079186607
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -13.555868995920283,
+              "volumeEnergyJ": 0.012623395326780565,
+              "minimumJ": 0.9405452582052853,
+              "minimumCornerJ": 0.9323623825806918,
+              "globalVolumeRatio": 0.9981287910939526,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1480",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.0000024408180405144296,
+              "volumeEnergyJ": 8.788465511358062e-9,
+              "minimumJ": 0.9999323402724138,
+              "minimumCornerJ": 0.9999845609225205,
+              "globalVolumeRatio": 0.9999961037514041,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.00008684359839781185
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.000002444172849690025,
+              "volumeEnergyJ": 1.2070820001502163e-8,
+              "minimumJ": 0.9999315098724921,
+              "minimumCornerJ": 0.9999845609225205,
+              "globalVolumeRatio": 0.9999961037514015,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1477",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.00002783289377682993,
+              "volumeEnergyJ": 0.000008021616094760105,
+              "minimumJ": 0.9989684176919441,
+              "minimumCornerJ": 0.9984427439673728,
+              "globalVolumeRatio": 0.999999733759926,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.000575022688768665
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.000027887768253530503,
+              "volumeEnergyJ": 0.000008075344191466239,
+              "minimumJ": 0.9987050048606306,
+              "minimumCornerJ": 0.9984427439673728,
+              "globalVolumeRatio": 0.9999997337599288,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1479",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.000043752478507473246,
+              "volumeEnergyJ": 9.939331222359425e-7,
+              "minimumJ": 0.9996042184797835,
+              "minimumCornerJ": 0.999707643526202,
+              "globalVolumeRatio": 1.0000036200984699,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0008214861216819611
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.00004383736348310112,
+              "volumeEnergyJ": 0.000001078607360269516,
+              "minimumJ": 0.9995911843050549,
+              "minimumCornerJ": 0.999707643526202,
+              "globalVolumeRatio": 1.000003620098468,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1487",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 2.3494592487141972e-7,
+              "volumeEnergyJ": 5.1718618781903934e-8,
+              "minimumJ": 0.9998536493789725,
+              "minimumCornerJ": 0.9998320882195155,
+              "globalVolumeRatio": 1.0000002597876188,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.00000433993036779779
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 2.34950911786919e-7,
+              "volumeEnergyJ": 5.17251001911963e-8,
+              "minimumJ": 0.9998428073224042,
+              "minimumCornerJ": 0.9998320882195155,
+              "globalVolumeRatio": 1.0000002597876243,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        }
+      ],
+      "selectedForDenseAudit": false
+    },
+    {
+      "label": "lift",
+      "index": 3,
+      "timeS": 0.1,
+      "qRad": 0.35874014618788,
+      "activation": 0.03671660005504405,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 3599330.7341830498,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.24848551799265786,
+              "volumeEnergyJ": 0.022001982447391776,
+              "minimumJ": 0.9182036342544506,
+              "minimumCornerJ": 0.9021133346973997,
+              "globalVolumeRatio": 0.9992647315047047,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.006153240530396786
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.24848184309578336,
+              "volumeEnergyJ": 0.02200517672624552,
+              "minimumJ": 0.9101552102762585,
+              "minimumCornerJ": 0.9021133346973997,
+              "globalVolumeRatio": 0.9992647315046995,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": -0.248481592884506,
+              "volumeEnergyJ": 0.022005392551068845,
+              "minimumJ": 0.9061334539368676,
+              "minimumCornerJ": 0.9021133346973997,
+              "globalVolumeRatio": 0.9992647315047044,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0005679672297205229
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1512",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 8708387.370104775,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -2.9944096648736798,
+              "volumeEnergyJ": 0.05735083138825011,
+              "minimumJ": 0.7600831155879106,
+              "minimumCornerJ": 0.7123449692748886,
+              "globalVolumeRatio": 0.9988655737996162,
+              "referenceVolumeFractionBelow09": 0.015469074164027203,
+              "gradientDifferenceFrom32N": 2.0773841905494383
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -2.986122848211606,
+              "volumeEnergyJ": 0.057516254484073576,
+              "minimumJ": 0.7375402448794172,
+              "minimumCornerJ": 0.7123449692748886,
+              "globalVolumeRatio": 0.998865573799619,
+              "referenceVolumeFractionBelow09": 0.01728310776210735,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": -2.9854436842707543,
+              "volumeEnergyJ": 0.057528282208525794,
+              "minimumJ": 0.7252741576892566,
+              "minimumCornerJ": 0.7123449692748886,
+              "globalVolumeRatio": 0.9988655737996088,
+              "referenceVolumeFractionBelow09": 0.01727808895136306,
+              "gradientDifferenceFrom32N": 0.14450404108043136
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1478",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 20378123.522158194,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -15.19823476702252,
+              "volumeEnergyJ": 0.011903626229545076,
+              "minimumJ": 0.9506796403954204,
+              "minimumCornerJ": 0.9349304424496444,
+              "globalVolumeRatio": 0.9981094743543105,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.02317797626049689
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -15.198269026485336,
+              "volumeEnergyJ": 0.0119046090378371,
+              "minimumJ": 0.9427960172466638,
+              "minimumCornerJ": 0.9349304424496444,
+              "globalVolumeRatio": 0.9981094743543109,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": -15.198271241069804,
+              "volumeEnergyJ": 0.011904670335695434,
+              "minimumJ": 0.9388609738041301,
+              "minimumCornerJ": 0.9349304424496444,
+              "globalVolumeRatio": 0.9981094743543082,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0016987664482126519
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1480",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.000006896996260581507,
+              "volumeEnergyJ": 2.8312944049004792e-8,
+              "minimumJ": 0.9998641388205297,
+              "minimumCornerJ": 0.9999717538774261,
+              "globalVolumeRatio": 0.9999934337088533,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.00014516766321841408
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.000006908113343077646,
+              "volumeEnergyJ": 3.912598478564433e-8,
+              "minimumJ": 0.9998606908780047,
+              "minimumCornerJ": 0.9999717538774261,
+              "globalVolumeRatio": 0.9999934337088557,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": 0.000006908789670653357,
+              "volumeEnergyJ": 3.978835007681677e-8,
+              "minimumJ": 0.9998586924575241,
+              "minimumCornerJ": 0.9999717538774261,
+              "globalVolumeRatio": 0.9999934337088572,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.000007380291693340896
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1477",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.00010346827119601781,
+              "volumeEnergyJ": 0.00005932973868330237,
+              "minimumJ": 0.9971484071515185,
+              "minimumCornerJ": 0.9961772219609512,
+              "globalVolumeRatio": 1.0000001668089074,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.001652545910746997
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.00010388676625535791,
+              "volumeEnergyJ": 0.00005975050777463034,
+              "minimumJ": 0.996694977754975,
+              "minimumCornerJ": 0.9961772219609512,
+              "globalVolumeRatio": 1.0000001668089087,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": 0.00010391268449236226,
+              "volumeEnergyJ": 0.00005977653758948047,
+              "minimumJ": 0.9964360145486763,
+              "minimumCornerJ": 0.9961772219609512,
+              "globalVolumeRatio": 1.0000001668089094,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.00010222392191458485
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1479",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.00011946957759784866,
+              "volumeEnergyJ": 0.0000026340822021472524,
+              "minimumJ": 0.9994706976193628,
+              "minimumCornerJ": 0.9993817991722302,
+              "globalVolumeRatio": 1.0000054087019246,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0013768880103367698
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.00011970959328461453,
+              "volumeEnergyJ": 0.000002873323846023904,
+              "minimumJ": 0.99942545917983,
+              "minimumCornerJ": 0.9993817991722302,
+              "globalVolumeRatio": 1.0000054087019317,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": 0.00011972437644553266,
+              "volumeEnergyJ": 0.0000028880489567600815,
+              "minimumJ": 0.9994034318720327,
+              "minimumCornerJ": 0.9993817991722302,
+              "globalVolumeRatio": 1.0000054087019286,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0000855076740519556
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1487",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.0000038537346019236,
+              "volumeEnergyJ": 9.663580669960602e-7,
+              "minimumJ": 0.9993692891803898,
+              "minimumCornerJ": 0.9992800589705377,
+              "globalVolumeRatio": 1.0000009402778334,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.00004396475928306618
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.00000385415436653187,
+              "volumeEnergyJ": 9.668411370261463e-7,
+              "minimumJ": 0.9993245401749743,
+              "minimumCornerJ": 0.9992800589705377,
+              "globalVolumeRatio": 1.0000009402778354,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": 0.000003854192487651055,
+              "volumeEnergyJ": 9.668704553697005e-7,
+              "minimumJ": 0.9993022660983036,
+              "minimumCornerJ": 0.9992800589705377,
+              "globalVolumeRatio": 1.0000009402778354,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.000003401030704467496
+            }
+          ]
+        }
+      ],
+      "selectedForDenseAudit": true
+    },
+    {
+      "label": "lift",
+      "index": 4,
+      "timeS": 0.13,
+      "qRad": 0.41157143441935995,
+      "activation": 0.03844903168673112,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 3599330.7341830498,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.3003611551847964,
+              "volumeEnergyJ": 0.022890827542338586,
+              "minimumJ": 0.9193468538211234,
+              "minimumCornerJ": 0.9039855801775728,
+              "globalVolumeRatio": 0.9992526698494664,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.007832716883934054
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.30035698450554793,
+              "volumeEnergyJ": 0.02289454867749531,
+              "minimumJ": 0.9116666286073812,
+              "minimumCornerJ": 0.9039855801775728,
+              "globalVolumeRatio": 0.9992526698494664,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1512",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 8708387.370104775,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -3.66162925346271,
+              "volumeEnergyJ": 0.04556395917544276,
+              "minimumJ": 0.8603279390424622,
+              "minimumCornerJ": 0.8410539286186687,
+              "globalVolumeRatio": 0.9984019975766609,
+              "referenceVolumeFractionBelow09": 0.003706273058167017,
+              "gradientDifferenceFrom32N": 0.9431125577044286
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -3.6585502046024123,
+              "volumeEnergyJ": 0.045717057397485925,
+              "minimumJ": 0.8499133676465431,
+              "minimumCornerJ": 0.8410539286186687,
+              "globalVolumeRatio": 0.9984019975766587,
+              "referenceVolumeFractionBelow09": 0.00805488159327178,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1478",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 20378123.522158194,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -15.939838566209652,
+              "volumeEnergyJ": 0.011764093325905469,
+              "minimumJ": 0.9544516851125272,
+              "minimumCornerJ": 0.9394163525185002,
+              "globalVolumeRatio": 0.9980564919883964,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.015585374340457037
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -15.939860770672476,
+              "volumeEnergyJ": 0.011764499146711157,
+              "minimumJ": 0.9469248993726064,
+              "minimumCornerJ": 0.9394163525185002,
+              "globalVolumeRatio": 0.9980564919883943,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1480",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.000015129332661205852,
+              "volumeEnergyJ": 3.358468798271549e-8,
+              "minimumJ": 0.9998465543471509,
+              "minimumCornerJ": 0.9999483553370527,
+              "globalVolumeRatio": 0.9999886934561621,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0001826786437172656
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.000015139543993563885,
+              "volumeEnergyJ": 4.3253088155282367e-8,
+              "minimumJ": 0.9998403618550549,
+              "minimumCornerJ": 0.9999483553370527,
+              "globalVolumeRatio": 0.9999886934561636,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1477",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.00039997719804150673,
+              "volumeEnergyJ": 0.00025498232728107416,
+              "minimumJ": 0.9937953673417071,
+              "minimumCornerJ": 0.9917998601364598,
+              "globalVolumeRatio": 1.0000018171782354,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.005886681854059512
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.00040412852743115194,
+              "volumeEnergyJ": 0.0002591401733018187,
+              "minimumJ": 0.992907645859649,
+              "minimumCornerJ": 0.9917998601364598,
+              "globalVolumeRatio": 1.0000018171782357,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1479",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.0003158907306578942,
+              "volumeEnergyJ": 0.000006894925181804966,
+              "minimumJ": 0.9989514949073215,
+              "minimumCornerJ": 0.9987910481219838,
+              "globalVolumeRatio": 1.000008322322293,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0015423899922525186
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.00031620160278394825,
+              "volumeEnergyJ": 0.000007204198163008862,
+              "minimumJ": 0.998870293767729,
+              "minimumCornerJ": 0.9987910481219838,
+              "globalVolumeRatio": 1.0000083223222933,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1487",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.000026010207464757047,
+              "volumeEnergyJ": 0.000006535128111859395,
+              "minimumJ": 0.9983712272136935,
+              "minimumCornerJ": 0.9981322114010633,
+              "globalVolumeRatio": 1.0000020399896035,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.00025880298626975253
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.00002602264274241073,
+              "volumeEnergyJ": 0.000006547154545474057,
+              "minimumJ": 0.9982512577387063,
+              "minimumCornerJ": 0.9981322114010633,
+              "globalVolumeRatio": 1.000002039989609,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        }
+      ],
+      "selectedForDenseAudit": false
+    },
+    {
+      "label": "release",
+      "index": 5,
+      "timeS": 0.16,
+      "qRad": 0.4725577769299898,
+      "activation": 0.02332051655426497,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 3599330.7341830498,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.1826234215874734,
+              "volumeEnergyJ": 0.012899443920233768,
+              "minimumJ": 0.9391968046551087,
+              "minimumCornerJ": 0.9288433421369748,
+              "globalVolumeRatio": 0.9994298773417228,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.005505717938133203
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.18261984208098636,
+              "volumeEnergyJ": 0.012902953430662207,
+              "minimumJ": 0.9340343186997393,
+              "minimumCornerJ": 0.9288433421369748,
+              "globalVolumeRatio": 0.9994298773417217,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1512",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 8708387.370104775,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -1.9197525690377386,
+              "volumeEnergyJ": 0.03608786475391825,
+              "minimumJ": 0.8820566535047889,
+              "minimumCornerJ": 0.8662291463910947,
+              "globalVolumeRatio": 0.9988443431045648,
+              "referenceVolumeFractionBelow09": 0.0017214083510274712,
+              "gradientDifferenceFrom32N": 0.5671877325827097
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -1.9179674071707769,
+              "volumeEnergyJ": 0.036151309258613394,
+              "minimumJ": 0.8742986520100706,
+              "minimumCornerJ": 0.8662291463910947,
+              "globalVolumeRatio": 0.998844343104565,
+              "referenceVolumeFractionBelow09": 0.002236241519864892,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1478",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 20378123.522158194,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -9.23846894540088,
+              "volumeEnergyJ": 0.01558600301477002,
+              "minimumJ": 0.9480895515239814,
+              "minimumCornerJ": 0.9309024766718133,
+              "globalVolumeRatio": 0.9985312489902685,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.010526250137222415
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -9.238488576854506,
+              "volumeEnergyJ": 0.015587251849513638,
+              "minimumJ": 0.9394839544927572,
+              "minimumCornerJ": 0.9309024766718133,
+              "globalVolumeRatio": 0.9985312489902678,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1480",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.000027385426060995986,
+              "volumeEnergyJ": 5.767119757975677e-8,
+              "minimumJ": 0.9998784688095516,
+              "minimumCornerJ": 0.9999070195264828,
+              "globalVolumeRatio": 0.9999812762347778,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.00028875370742718204
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.000027395106431644003,
+              "volumeEnergyJ": 6.735995050567531e-8,
+              "minimumJ": 0.9998732927934356,
+              "minimumCornerJ": 0.9999070195264828,
+              "globalVolumeRatio": 0.9999812762347797,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1477",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.0010942546481971685,
+              "volumeEnergyJ": 0.0006929941288718535,
+              "minimumJ": 0.9895143976400821,
+              "minimumCornerJ": 0.9863060225509627,
+              "globalVolumeRatio": 1.0000051687349447,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.018098992587336327
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.0011120242879343824,
+              "volumeEnergyJ": 0.0007107631136738517,
+              "minimumJ": 0.9880680562646001,
+              "minimumCornerJ": 0.9863060225509627,
+              "globalVolumeRatio": 1.0000051687349427,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1479",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.0006791675953142663,
+              "volumeEnergyJ": 0.000015486445572829972,
+              "minimumJ": 0.9982489335938551,
+              "minimumCornerJ": 0.9979325319965848,
+              "globalVolumeRatio": 1.0000123130647003,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.002000296741911544
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.000679695185749275,
+              "volumeEnergyJ": 0.000016011980891834753,
+              "minimumJ": 0.9980920668636933,
+              "minimumCornerJ": 0.9979325319965848,
+              "globalVolumeRatio": 1.0000123130647032,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1487",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.00010590333323869524,
+              "volumeEnergyJ": 0.00002719438597159098,
+              "minimumJ": 0.9968579007180404,
+              "minimumCornerJ": 0.9963590742463501,
+              "globalVolumeRatio": 1.000003167802567,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.001233020748591245
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.00010607483650843162,
+              "volumeEnergyJ": 0.000027365218146445708,
+              "minimumJ": 0.9966023274349476,
+              "minimumCornerJ": 0.9963590742463501,
+              "globalVolumeRatio": 1.0000031678025658,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        }
+      ],
+      "selectedForDenseAudit": false
+    },
+    {
+      "label": "release",
+      "index": 6,
+      "timeS": 0.19,
+      "qRad": 0.5338824714827944,
+      "activation": 0.01414460829049772,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 3599330.7341830498,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.11340448010287069,
+              "volumeEnergyJ": 0.008370924726106944,
+              "minimumJ": 0.9442708356470471,
+              "minimumCornerJ": 0.9313799225798917,
+              "globalVolumeRatio": 0.9996174239865635,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.007000006816795551
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.11339911450101603,
+              "volumeEnergyJ": 0.008376295827818842,
+              "minimumJ": 0.9378458020335716,
+              "minimumCornerJ": 0.9313799225798917,
+              "globalVolumeRatio": 0.999617423986567,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1512",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 8708387.370104775,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.8644558456085307,
+              "volumeEnergyJ": 0.03118099403838703,
+              "minimumJ": 0.8711960574457235,
+              "minimumCornerJ": 0.8121298931125075,
+              "globalVolumeRatio": 0.9991418970184534,
+              "referenceVolumeFractionBelow09": 0.009680951400116815,
+              "gradientDifferenceFrom32N": 0.6146239929208435
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.8610137140700815,
+              "volumeEnergyJ": 0.03133872606641891,
+              "minimumJ": 0.8430946728475259,
+              "minimumCornerJ": 0.8121298931125075,
+              "globalVolumeRatio": 0.9991418970184534,
+              "referenceVolumeFractionBelow09": 0.005966006197541269,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1478",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 20378123.522158194,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -5.254091320542539,
+              "volumeEnergyJ": 0.01842146871314994,
+              "minimumJ": 0.939383516133558,
+              "minimumCornerJ": 0.9204711778213995,
+              "globalVolumeRatio": 0.9989995759724212,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.015231654811394435
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -5.254122260400772,
+              "volumeEnergyJ": 0.01842633095928652,
+              "minimumJ": 0.9299268697407185,
+              "minimumCornerJ": 0.9204711778213995,
+              "globalVolumeRatio": 0.9989995759724193,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1480",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.00004690339336048413,
+              "volumeEnergyJ": 1.5959518449530972e-7,
+              "minimumJ": 0.9997723447837468,
+              "minimumCornerJ": 0.9997327095796543,
+              "globalVolumeRatio": 0.9999770416034975,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0003630737906200967
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.000046935335881477535,
+              "volumeEnergyJ": 1.9148020028370818e-7,
+              "minimumJ": 0.9997582102226847,
+              "minimumCornerJ": 0.9997327095796543,
+              "globalVolumeRatio": 0.9999770416034953,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1477",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.0022177079571867233,
+              "volumeEnergyJ": 0.0013781843623352932,
+              "minimumJ": 0.9850180868550349,
+              "minimumCornerJ": 0.980525752209304,
+              "globalVolumeRatio": 1.0000112267639087,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.03401632699627354
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.002258096380277693,
+              "volumeEnergyJ": 0.001418554322040661,
+              "minimumJ": 0.9829653637955464,
+              "minimumCornerJ": 0.980525752209304,
+              "globalVolumeRatio": 1.0000112267639087,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1479",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.0011562256001113988,
+              "volumeEnergyJ": 0.000026716935869389495,
+              "minimumJ": 0.9976019805765224,
+              "minimumCornerJ": 0.9972524047811133,
+              "globalVolumeRatio": 1.0000158935941326,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0022288299975614092
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.0011569111657753314,
+              "volumeEnergyJ": 0.000027398495344234507,
+              "minimumJ": 0.9974269063865562,
+              "minimumCornerJ": 0.9972524047811133,
+              "globalVolumeRatio": 1.0000158935941332,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1487",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.0002659630166274968,
+              "volumeEnergyJ": 0.000053105863224863966,
+              "minimumJ": 0.9954296314885035,
+              "minimumCornerJ": 0.9953597715851873,
+              "globalVolumeRatio": 1.0000035920694506,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0038197664403199446
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.0002675030775233854,
+              "volumeEnergyJ": 0.000054640217028396785,
+              "minimumJ": 0.9952897034105076,
+              "minimumCornerJ": 0.9953597715851873,
+              "globalVolumeRatio": 1.0000035920694519,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        }
+      ],
+      "selectedForDenseAudit": false
+    },
+    {
+      "label": "release",
+      "index": 7,
+      "timeS": 0.22,
+      "qRad": 0.5899705273987155,
+      "activation": 0.008579138597812367,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 3599330.7341830498,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.06818269371256674,
+              "volumeEnergyJ": 0.0072891918886344356,
+              "minimumJ": 0.9469043258797105,
+              "minimumCornerJ": 0.9305430155837865,
+              "globalVolumeRatio": 0.9997214115263484,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.011477293230941127
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.06817707426274452,
+              "volumeEnergyJ": 0.007294822973348128,
+              "minimumJ": 0.9387486560302928,
+              "minimumCornerJ": 0.9305430155837865,
+              "globalVolumeRatio": 0.9997214115263463,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1512",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 8708387.370104775,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.4395416095098664,
+              "volumeEnergyJ": 0.022447810205185267,
+              "minimumJ": 0.9024958511293858,
+              "minimumCornerJ": 0.8633445417731173,
+              "globalVolumeRatio": 0.9993215991084562,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.31177776788935807
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.4379987430316018,
+              "volumeEnergyJ": 0.022703706908198357,
+              "minimumJ": 0.8833932855400012,
+              "minimumCornerJ": 0.8633445417731173,
+              "globalVolumeRatio": 0.9993215991084571,
+              "referenceVolumeFractionBelow09": 0.001847323929334519,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1478",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 20378123.522158194,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -2.876104455139568,
+              "volumeEnergyJ": 0.020948702255251018,
+              "minimumJ": 0.9365888973331352,
+              "minimumCornerJ": 0.9168966276011028,
+              "globalVolumeRatio": 0.9993289694853269,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.020195630131273387
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -2.876119744667987,
+              "volumeEnergyJ": 0.020959210248632024,
+              "minimumJ": 0.9267449099586583,
+              "minimumCornerJ": 0.9168966276011028,
+              "globalVolumeRatio": 0.999328969485325,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1480",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.00003870147086537079,
+              "volumeEnergyJ": 8.988803731545585e-8,
+              "minimumJ": 0.9998465549714175,
+              "minimumCornerJ": 0.9997685005592882,
+              "globalVolumeRatio": 0.9999765324317624,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0004076444917475928
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.00003871663471155871,
+              "volumeEnergyJ": 1.0501543140157428e-7,
+              "minimumJ": 0.9998170775314168,
+              "minimumCornerJ": 0.9997685005592882,
+              "globalVolumeRatio": 0.9999765324317629,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1477",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.004029423821798176,
+              "volumeEnergyJ": 0.002463008368718577,
+              "minimumJ": 0.9798068599411183,
+              "minimumCornerJ": 0.9738731900222665,
+              "globalVolumeRatio": 1.0000243098857782,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.058395455027363374
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.004114725300547657,
+              "volumeEnergyJ": 0.002548215583356874,
+              "minimumJ": 0.9770476421553078,
+              "minimumCornerJ": 0.9738731900222665,
+              "globalVolumeRatio": 1.00002430988578,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1479",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.0017181488565944244,
+              "volumeEnergyJ": 0.00003735750720151061,
+              "minimumJ": 0.997467761834166,
+              "minimumCornerJ": 0.9970249638695349,
+              "globalVolumeRatio": 1.000023231395302,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0024198020043636704
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.0017189729815811458,
+              "volumeEnergyJ": 0.000038176974757639475,
+              "minimumJ": 0.9972482077222774,
+              "minimumCornerJ": 0.9970249638695349,
+              "globalVolumeRatio": 1.0000232313953064,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1487",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.00047686006504689675,
+              "volumeEnergyJ": 0.00007472313899507665,
+              "minimumJ": 0.9943179568897217,
+              "minimumCornerJ": 0.9953078820105458,
+              "globalVolumeRatio": 1.0000037545125304,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0063511370161167206
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.00048261268126387484,
+              "volumeEnergyJ": 0.00008044815162596646,
+              "minimumJ": 0.9941318173595168,
+              "minimumCornerJ": 0.9953078820105458,
+              "globalVolumeRatio": 1.00000375451253,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        }
+      ],
+      "selectedForDenseAudit": false
+    },
+    {
+      "label": "release",
+      "index": 8,
+      "timeS": 0.25,
+      "qRad": 0.6361250981963691,
+      "activation": 0.005203510593497252,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 3599330.7341830498,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.03830841733926692,
+              "volumeEnergyJ": 0.007238988193583818,
+              "minimumJ": 0.9491848831253764,
+              "minimumCornerJ": 0.9310997849305509,
+              "globalVolumeRatio": 0.9998317699755899,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.01739065748253818
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.03829850073430491,
+              "volumeEnergyJ": 0.007248906820507703,
+              "minimumJ": 0.9404415667445033,
+              "minimumCornerJ": 0.9310997849305509,
+              "globalVolumeRatio": 0.9998317699755858,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1512",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 8708387.370104775,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.22811056076663544,
+              "volumeEnergyJ": 0.015906597214395843,
+              "minimumJ": 0.9288911060056677,
+              "minimumCornerJ": 0.912348710145352,
+              "globalVolumeRatio": 0.9995408803864435,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.23692005027134244
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.22748163800027782,
+              "volumeEnergyJ": 0.016328266654631978,
+              "minimumJ": 0.9178287637184648,
+              "minimumCornerJ": 0.912348710145352,
+              "globalVolumeRatio": 0.9995408803864488,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1478",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 20378123.522158194,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -1.5235426956057674,
+              "volumeEnergyJ": 0.020459360852795094,
+              "minimumJ": 0.9402975836548814,
+              "minimumCornerJ": 0.9224445879208225,
+              "globalVolumeRatio": 0.9995391634807771,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.030892358410880033
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -1.523533751543502,
+              "volumeEnergyJ": 0.0204793415138412,
+              "minimumJ": 0.9313663763680575,
+              "minimumCornerJ": 0.9224445879208225,
+              "globalVolumeRatio": 0.9995391634807751,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1480",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.00004462992148053612,
+              "volumeEnergyJ": 9.429908250779208e-8,
+              "minimumJ": 0.9998424011749587,
+              "minimumCornerJ": 0.9997999398579973,
+              "globalVolumeRatio": 0.9999746930670792,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0006642755868562777
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.00004464931261250856,
+              "volumeEnergyJ": 1.1373573062696629e-7,
+              "minimumJ": 0.9998374970832778,
+              "minimumCornerJ": 0.9997999398579973,
+              "globalVolumeRatio": 0.9999746930670794,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1477",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.005745323629433777,
+              "volumeEnergyJ": 0.003435967954747711,
+              "minimumJ": 0.9758651276285388,
+              "minimumCornerJ": 0.9688561252594462,
+              "globalVolumeRatio": 1.000034021037515,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0735718247930765
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.005859965276134518,
+              "volumeEnergyJ": 0.0035504755128870887,
+              "minimumJ": 0.9725337194185009,
+              "minimumCornerJ": 0.9688561252594462,
+              "globalVolumeRatio": 1.0000340210375163,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1479",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.0022688735319130087,
+              "volumeEnergyJ": 0.000049239630087928746,
+              "minimumJ": 0.9970280713609494,
+              "minimumCornerJ": 0.9964902598321356,
+              "globalVolumeRatio": 1.0000262073245145,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0026719541012649108
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.002269925844411517,
+              "volumeEnergyJ": 0.00005028068317147944,
+              "minimumJ": 0.9967625286308873,
+              "minimumCornerJ": 0.9964902598321356,
+              "globalVolumeRatio": 1.0000262073245163,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1487",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.0006803414444986837,
+              "volumeEnergyJ": 0.00009999362231797095,
+              "minimumJ": 0.9933052036838025,
+              "minimumCornerJ": 0.9951243710149771,
+              "globalVolumeRatio": 1.000003603083654,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.008845749180214545
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.0006928090302940542,
+              "volumeEnergyJ": 0.0001123972422091725,
+              "minimumJ": 0.993020949536263,
+              "minimumCornerJ": 0.9951243710149771,
+              "globalVolumeRatio": 1.0000036030836563,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        }
+      ],
+      "selectedForDenseAudit": false
+    },
+    {
+      "label": "release",
+      "index": 9,
+      "timeS": 0.28,
+      "qRad": 0.6690222349556207,
+      "activation": 0.003156088713095565,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 3599330.7341830498,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.01960497556750046,
+              "volumeEnergyJ": 0.005992947064975442,
+              "minimumJ": 0.9532732471088702,
+              "minimumCornerJ": 0.9395329835938346,
+              "globalVolumeRatio": 0.9998681385961852,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.011895849827871514
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.019593640398327956,
+              "volumeEnergyJ": 0.00600427382096114,
+              "minimumJ": 0.9465286736467192,
+              "minimumCornerJ": 0.9395329835938346,
+              "globalVolumeRatio": 0.9998681385961811,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1512",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 8708387.370104775,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.13721637584549332,
+              "volumeEnergyJ": 0.010703349559228198,
+              "minimumJ": 0.9647491316985704,
+              "minimumCornerJ": 0.9531234724488712,
+              "globalVolumeRatio": 0.9998639911976258,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.05611727368277755
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.1370409487932075,
+              "volumeEnergyJ": 0.010878983040484598,
+              "minimumJ": 0.9589306282018994,
+              "minimumCornerJ": 0.9531234724488712,
+              "globalVolumeRatio": 0.9998639911976274,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1478",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 20378123.522158194,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.7799259637427666,
+              "volumeEnergyJ": 0.0172938193849044,
+              "minimumJ": 0.9547235789358983,
+              "minimumCornerJ": 0.9417932080837936,
+              "globalVolumeRatio": 0.9997135049203804,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.02009566977102989
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.7799057921645488,
+              "volumeEnergyJ": 0.017312112216609065,
+              "minimumJ": 0.9484332487269738,
+              "minimumCornerJ": 0.9417932080837936,
+              "globalVolumeRatio": 0.9997135049203807,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1480",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.00005181993900389698,
+              "volumeEnergyJ": 1.0665344283761207e-7,
+              "minimumJ": 0.999828767731267,
+              "minimumCornerJ": 0.9997796079145157,
+              "globalVolumeRatio": 0.9999740935112865,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0007620304404098305
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.000051855942624890995,
+              "volumeEnergyJ": 1.427171566456254e-7,
+              "minimumJ": 0.9998176312667107,
+              "minimumCornerJ": 0.9997796079145157,
+              "globalVolumeRatio": 0.9999740935112933,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1477",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.007155943199098741,
+              "volumeEnergyJ": 0.004193174589085129,
+              "minimumJ": 0.9730119774307494,
+              "minimumCornerJ": 0.9651824721278822,
+              "globalVolumeRatio": 1.0000407221469847,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.08386308240111655
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.007293520928093967,
+              "volumeEnergyJ": 0.004330572316698948,
+              "minimumJ": 0.9692133833428749,
+              "minimumCornerJ": 0.9651824721278822,
+              "globalVolumeRatio": 1.000040722146984,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1479",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.002703936865939796,
+              "volumeEnergyJ": 0.00005921681440892237,
+              "minimumJ": 0.996726092992234,
+              "minimumCornerJ": 0.9960619981371024,
+              "globalVolumeRatio": 1.0000292791451268,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0026894728255518934
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.002705049552413994,
+              "volumeEnergyJ": 0.00006031682031056278,
+              "minimumJ": 0.9964007716238714,
+              "minimumCornerJ": 0.9960619981371024,
+              "globalVolumeRatio": 1.0000292791451268,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1487",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.000830477870017108,
+              "volumeEnergyJ": 0.00012087904362516657,
+              "minimumJ": 0.9926445970915987,
+              "minimumCornerJ": 0.9943330162008893,
+              "globalVolumeRatio": 1.000003831495995,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.009763002777639217
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.0008460174834526467,
+              "volumeEnergyJ": 0.00013633711642061636,
+              "minimumJ": 0.992318242816665,
+              "minimumCornerJ": 0.9943330162008893,
+              "globalVolumeRatio": 1.000003831496001,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        }
+      ],
+      "selectedForDenseAudit": false
+    },
+    {
+      "label": "release",
+      "index": 10,
+      "timeS": 0.31000000000000005,
+      "qRad": 0.6862089804509087,
+      "activation": 0.0019142645692654492,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 3599330.7341830498,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.008755177125376112,
+              "volumeEnergyJ": 0.003115264906073319,
+              "minimumJ": 0.9668874532508532,
+              "minimumCornerJ": 0.9570184647011806,
+              "globalVolumeRatio": 0.9998901653988728,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0035602749019320312
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.008753028762476786,
+              "volumeEnergyJ": 0.0031174102820202445,
+              "minimumJ": 0.9621695253076726,
+              "minimumCornerJ": 0.9570184647011806,
+              "globalVolumeRatio": 0.9998901653988718,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1512",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 8708387.370104775,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.07728797220715708,
+              "volumeEnergyJ": 0.004839410560280684,
+              "minimumJ": 0.9767904385515431,
+              "minimumCornerJ": 0.9690774582292456,
+              "globalVolumeRatio": 0.999866073666307,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.039860862604940095
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.0772143142325568,
+              "volumeEnergyJ": 0.004912777858025021,
+              "minimumJ": 0.9729311767895807,
+              "minimumCornerJ": 0.9690774582292456,
+              "globalVolumeRatio": 0.9998660736663095,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1478",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 20378123.522158194,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.3999376776125455,
+              "volumeEnergyJ": 0.011982447477375148,
+              "minimumJ": 0.9626695803963868,
+              "minimumCornerJ": 0.9511464336534659,
+              "globalVolumeRatio": 0.9997834259914292,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.025801952206524655
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.39990441837614416,
+              "volumeEnergyJ": 0.01201429130933752,
+              "minimumJ": 0.9569083948529457,
+              "minimumCornerJ": 0.9511464336534659,
+              "globalVolumeRatio": 0.999783425991429,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1480",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.000054549664808568956,
+              "volumeEnergyJ": 1.1913885405661243e-7,
+              "minimumJ": 0.999815720280114,
+              "minimumCornerJ": 0.9997649486196786,
+              "globalVolumeRatio": 0.9999734195642298,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0008159851122093442
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.00005459410291882351,
+              "volumeEnergyJ": 1.6362869249420512e-7,
+              "minimumJ": 0.9998040411555049,
+              "minimumCornerJ": 0.9997649486196786,
+              "globalVolumeRatio": 0.9999734195642315,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1477",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.007945098411310521,
+              "volumeEnergyJ": 0.0046171981266458885,
+              "minimumJ": 0.9714922975996942,
+              "minimumCornerJ": 0.9632347978749778,
+              "globalVolumeRatio": 1.0000444973891869,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.08765663598063522
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.00809214594885201,
+              "volumeEnergyJ": 0.004764040200614681,
+              "minimumJ": 0.967445916896329,
+              "minimumCornerJ": 0.9632347978749778,
+              "globalVolumeRatio": 1.0000444973891824,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1479",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.0029564642595406717,
+              "volumeEnergyJ": 0.0000650101661170045,
+              "minimumJ": 0.996544977144076,
+              "minimumCornerJ": 0.9957923953151063,
+              "globalVolumeRatio": 1.0000308204176227,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0027799314968367404
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.00295768724911819,
+              "volumeEnergyJ": 0.00006622092408829068,
+              "minimumJ": 0.9961779169435807,
+              "minimumCornerJ": 0.9957923953151063,
+              "globalVolumeRatio": 1.0000308204176238,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1487",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.0008463234416837793,
+              "volumeEnergyJ": 0.00014206970280805563,
+              "minimumJ": 0.9921770949145117,
+              "minimumCornerJ": 0.9931698198250661,
+              "globalVolumeRatio": 1.000005038810414,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.008396078348292566
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.0008561870520332063,
+              "volumeEnergyJ": 0.00015189117796465706,
+              "minimumJ": 0.9918667070916773,
+              "minimumCornerJ": 0.9931698198250661,
+              "globalVolumeRatio": 1.0000050388104187,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        }
+      ],
+      "selectedForDenseAudit": false
+    },
+    {
+      "label": "release",
+      "index": 11,
+      "timeS": 0.3400000000000001,
+      "qRad": 0.6863557897080043,
+      "activation": 0.0011610601520610929,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 3599330.7341830498,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.003765349203934787,
+              "volumeEnergyJ": 0.0014252567912056758,
+              "minimumJ": 0.9773739175181753,
+              "minimumCornerJ": 0.9710104343727759,
+              "globalVolumeRatio": 0.9999152647982428,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.002129980936452336
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.0037642587784156595,
+              "volumeEnergyJ": 0.0014263444588302307,
+              "minimumJ": 0.9741956572171026,
+              "minimumCornerJ": 0.9710104343727759,
+              "globalVolumeRatio": 0.9999152647982387,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": -0.003764189970863639,
+              "volumeEnergyJ": 0.0014264130882830361,
+              "minimumJ": 0.9726039161128237,
+              "minimumCornerJ": 0.9710104343727759,
+              "globalVolumeRatio": 0.9999152647982444,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.00013442521672018745
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1512",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 8708387.370104775,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.043120281065856414,
+              "volumeEnergyJ": 0.002003252535266296,
+              "minimumJ": 0.9841773160064075,
+              "minimumCornerJ": 0.9791856119851955,
+              "globalVolumeRatio": 0.9998746892635224,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.021915990096875136
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.04306648372989595,
+              "volumeEnergyJ": 0.002057177128818672,
+              "minimumJ": 0.9816918269437169,
+              "minimumCornerJ": 0.9791856119851955,
+              "globalVolumeRatio": 0.9998746892635222,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": -0.043063279776276976,
+              "volumeEnergyJ": 0.0020603844794570858,
+              "minimumJ": 0.980441310201343,
+              "minimumCornerJ": 0.9791856119851955,
+              "globalVolumeRatio": 0.9998746892635176,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.00126529304030365
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1478",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 20378123.522158194,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.20287377263699774,
+              "volumeEnergyJ": 0.0071633868236898645,
+              "minimumJ": 0.9712110389414017,
+              "minimumCornerJ": 0.9622901326325265,
+              "globalVolumeRatio": 0.9998262669346311,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.03206507232361856
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.20283208580450277,
+              "volumeEnergyJ": 0.007204382056612789,
+              "minimumJ": 0.9667483062011204,
+              "minimumCornerJ": 0.9622901326325265,
+              "globalVolumeRatio": 0.9998262669346305,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": -0.20282958129415798,
+              "volumeEnergyJ": 0.007206854095612892,
+              "minimumJ": 0.9645186495204378,
+              "minimumCornerJ": 0.9622901326325265,
+              "globalVolumeRatio": 0.9998262669346317,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.001909222216022615
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1480",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.00005456240829413317,
+              "volumeEnergyJ": 1.1925712574633986e-7,
+              "minimumJ": 0.9998155787158595,
+              "minimumCornerJ": 0.9997648683263588,
+              "globalVolumeRatio": 0.9999734099183188,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.000816311411409143
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.00005460693658995643,
+              "volumeEnergyJ": 1.6383689558067198e-7,
+              "minimumJ": 0.9998038936984803,
+              "minimumCornerJ": 0.9997648683263588,
+              "globalVolumeRatio": 0.9999734099183202,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": 0.000054609706422263586,
+              "volumeEnergyJ": 1.6660227796470202e-7,
+              "minimumJ": 0.99979613915457,
+              "minimumCornerJ": 0.9997648683263588,
+              "globalVolumeRatio": 0.999973409918304,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.00005103599274244863
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1477",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.007951992777613172,
+              "volumeEnergyJ": 0.004620838505089701,
+              "minimumJ": 0.9714796690872795,
+              "minimumCornerJ": 0.9632188083542162,
+              "globalVolumeRatio": 1.000044530968708,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.08770582625209206
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.008099157212780048,
+              "volumeEnergyJ": 0.004767797178823654,
+              "minimumJ": 0.96743130545274,
+              "minimumCornerJ": 0.9632188083542162,
+              "globalVolumeRatio": 1.0000445309687085,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": 0.008107712108180346,
+              "volumeEnergyJ": 0.004776330892065725,
+              "minimumJ": 0.9653983438042173,
+              "minimumCornerJ": 0.9632188083542162,
+              "globalVolumeRatio": 1.0000445309687254,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0049162477870760835
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1479",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.002958691578342609,
+              "volumeEnergyJ": 0.00006505963426360256,
+              "minimumJ": 0.9965434411487571,
+              "minimumCornerJ": 0.9957901033222103,
+              "globalVolumeRatio": 1.000030834939255,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.002780325185322838
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.002959915385593388,
+              "volumeEnergyJ": 0.00006627121224004999,
+              "minimumJ": 0.9961760250032776,
+              "minimumCornerJ": 0.9957901033222103,
+              "globalVolumeRatio": 1.0000308349392564,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": 0.0029599905879276025,
+              "volumeEnergyJ": 0.00006634556083014071,
+              "minimumJ": 0.995985377354625,
+              "minimumCornerJ": 0.9957901033222103,
+              "globalVolumeRatio": 1.000030834939252,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.00017130307003342116
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1487",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.0008230944500945974,
+              "volumeEnergyJ": 0.00014635590688273368,
+              "minimumJ": 0.9921009386559062,
+              "minimumCornerJ": 0.9931278677648366,
+              "globalVolumeRatio": 1.0000057344961109,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.008415054077099991
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.0008329448094874845,
+              "volumeEnergyJ": 0.00015616812380679645,
+              "minimumJ": 0.9917969623418638,
+              "minimumCornerJ": 0.9931278677648366,
+              "globalVolumeRatio": 1.0000057344961137,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": 0.0008335433856987687,
+              "volumeEnergyJ": 0.00015676287707159047,
+              "minimumJ": 0.9916019016729117,
+              "minimumCornerJ": 0.9931278677648366,
+              "globalVolumeRatio": 1.0000057344961295,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0005098087958137947
+            }
+          ]
+        }
+      ],
+      "selectedForDenseAudit": true
+    },
+    {
+      "label": "release",
+      "index": 12,
+      "timeS": 0.3700000000000001,
+      "qRad": 0.6691133378886904,
+      "activation": 0.0007042185799956652,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 3599330.7341830498,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.001551031050772151,
+              "volumeEnergyJ": 0.0005873736405420348,
+              "minimumJ": 0.9851985345270519,
+              "minimumCornerJ": 0.9810972393048804,
+              "globalVolumeRatio": 0.999936537508587,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0021430621324007026
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.0015502946374801997,
+              "volumeEnergyJ": 0.0005881081939844196,
+              "minimumJ": 0.9831495863955594,
+              "minimumCornerJ": 0.9810972393048804,
+              "globalVolumeRatio": 0.9999365375085854,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1512",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 8708387.370104775,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.0232351971645474,
+              "volumeEnergyJ": 0.0008121615273839333,
+              "minimumJ": 0.9892333270013353,
+              "minimumCornerJ": 0.9859405110330676,
+              "globalVolumeRatio": 0.999893936250913,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.015736746755782877
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.02320787031076124,
+              "volumeEnergyJ": 0.00083955552561922,
+              "minimumJ": 0.9875966674193148,
+              "minimumCornerJ": 0.9859405110330676,
+              "globalVolumeRatio": 0.9998939362509122,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1478",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 20378123.522158194,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.101769128415823,
+              "volumeEnergyJ": 0.0038322466444087027,
+              "minimumJ": 0.9790389071626162,
+              "minimumCornerJ": 0.9725470089726802,
+              "globalVolumeRatio": 0.999858163390561,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.029621987723017135
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.10173339402407652,
+              "volumeEnergyJ": 0.0038676196813628473,
+              "minimumJ": 0.9757899166623115,
+              "minimumCornerJ": 0.9725470089726802,
+              "globalVolumeRatio": 0.9998581633905637,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1480",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.00005183745938565621,
+              "volumeEnergyJ": 1.0670118632728155e-7,
+              "minimumJ": 0.9998285903642498,
+              "minimumCornerJ": 0.9997795434025527,
+              "globalVolumeRatio": 0.9999740907546031,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0007623282877107368
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.00005187351750135615,
+              "volumeEnergyJ": 1.428193484180889e-7,
+              "minimumJ": 0.9998174434661752,
+              "minimumCornerJ": 0.9997795434025527,
+              "globalVolumeRatio": 0.9999740907546018,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1477",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.00716003831243834,
+              "volumeEnergyJ": 0.00419532455314526,
+              "minimumJ": 0.9730040844624938,
+              "minimumCornerJ": 0.9651722269277361,
+              "globalVolumeRatio": 1.0000407415199277,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.08389257863660508
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.00729768437344229,
+              "volumeEnergyJ": 0.0043327904495351335,
+              "minimumJ": 0.9692041255204358,
+              "minimumCornerJ": 0.9651722269277361,
+              "globalVolumeRatio": 1.000040741519928,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1479",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.0027052189889011594,
+              "volumeEnergyJ": 0.000059245660348134036,
+              "minimumJ": 0.9967252129311642,
+              "minimumCornerJ": 0.996060690688223,
+              "globalVolumeRatio": 1.000029287008517,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0026899865201051518
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.002706332222328743,
+              "volumeEnergyJ": 0.000060346211361401,
+              "minimumJ": 0.9963996899293344,
+              "minimumCornerJ": 0.996060690688223,
+              "globalVolumeRatio": 1.000029287008518,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1487",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.000727325885668003,
+              "volumeEnergyJ": 0.00013776189549511531,
+              "minimumJ": 0.9923992262116301,
+              "minimumCornerJ": 0.9934261655380151,
+              "globalVolumeRatio": 1.0000058607066047,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.00794227916284104
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.0007355615331048624,
+              "volumeEnergyJ": 0.00014596850282888179,
+              "minimumJ": 0.9921160994061241,
+              "minimumCornerJ": 0.9934261655380151,
+              "globalVolumeRatio": 1.0000058607066025,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        }
+      ],
+      "selectedForDenseAudit": false
+    },
+    {
+      "label": "release",
+      "index": 13,
+      "timeS": 0.40000000000000013,
+      "qRad": 0.6349712062758702,
+      "activation": 0.0004271301599066647,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 3599330.7341830498,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.0006290094801253228,
+              "volumeEnergyJ": 0.00022689793857602275,
+              "minimumJ": 0.9907595558102544,
+              "minimumCornerJ": 0.9882464410822851,
+              "globalVolumeRatio": 0.9999527839385319,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0010880653849483016
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.0006287826602204803,
+              "volumeEnergyJ": 0.0002271241063548889,
+              "minimumJ": 0.9895026353160604,
+              "minimumCornerJ": 0.9882464410822851,
+              "globalVolumeRatio": 0.9999527839385288,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1512",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 8708387.370104775,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.011984987199532306,
+              "volumeEnergyJ": 0.00032639950888147293,
+              "minimumJ": 0.992885505050781,
+              "minimumCornerJ": 0.9907342539934024,
+              "globalVolumeRatio": 0.9999151782658314,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.008377705748351501
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.011973602306319608,
+              "volumeEnergyJ": 0.0003378056593220502,
+              "minimumJ": 0.9918157502164512,
+              "minimumCornerJ": 0.9907342539934024,
+              "globalVolumeRatio": 0.999915178265831,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1478",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 20378123.522158194,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.05020219322006096,
+              "volumeEnergyJ": 0.0018757828243566924,
+              "minimumJ": 0.9854349675980425,
+              "minimumCornerJ": 0.980638543041962,
+              "globalVolumeRatio": 0.9998864953240161,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.02137317767246016
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.05017897662089144,
+              "volumeEnergyJ": 0.0018988086652800332,
+              "minimumJ": 0.9831878542183735,
+              "minimumCornerJ": 0.980638543041962,
+              "globalVolumeRatio": 0.9998864953240165,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1480",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.000046138712207038995,
+              "volumeEnergyJ": 9.254528296729429e-8,
+              "minimumJ": 0.9998496774421737,
+              "minimumCornerJ": 0.9998015517484604,
+              "globalVolumeRatio": 0.9999753577188836,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0006626106546579885
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.000046160174525005964,
+              "volumeEnergyJ": 1.1407237790622263e-7,
+              "minimumJ": 0.9998456118782144,
+              "minimumCornerJ": 0.9998015517484604,
+              "globalVolumeRatio": 0.9999753577188878,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1477",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.005702521042937713,
+              "volumeEnergyJ": 0.00341128461993105,
+              "minimumJ": 0.9759585891534063,
+              "minimumCornerJ": 0.968970541833745,
+              "globalVolumeRatio": 1.0000335696999763,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.07258682233522981
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.005815420795470363,
+              "volumeEnergyJ": 0.003524053040328791,
+              "minimumJ": 0.9726387759386127,
+              "minimumCornerJ": 0.968970541833745,
+              "globalVolumeRatio": 1.0000335696999763,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1479",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.0022448060767773616,
+              "volumeEnergyJ": 0.00004902874762723935,
+              "minimumJ": 0.9970415648457464,
+              "minimumCornerJ": 0.9965092241357065,
+              "globalVolumeRatio": 1.000026290159361,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.002497573347564748
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.00224573890908807,
+              "volumeEnergyJ": 0.00004995034251531696,
+              "minimumJ": 0.9967786369685827,
+              "minimumCornerJ": 0.9965092241357065,
+              "globalVolumeRatio": 1.0000262901593602,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1487",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.0005794567551525683,
+              "volumeEnergyJ": 0.0001116387293174876,
+              "minimumJ": 0.9931394236380098,
+              "minimumCornerJ": 0.9942044997570418,
+              "globalVolumeRatio": 1.000005714600739,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.007285187383065318
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.0005865446759741799,
+              "volumeEnergyJ": 0.00011870441391878646,
+              "minimumJ": 0.9928897540752688,
+              "minimumCornerJ": 0.9942044997570418,
+              "globalVolumeRatio": 1.000005714600742,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            }
+          ]
+        }
+      ],
+      "selectedForDenseAudit": false
+    },
+    {
+      "label": "release",
+      "index": 14,
+      "timeS": 0.43000000000000016,
+      "qRad": 0.5851401385444494,
+      "activation": 0.0002590675376713519,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 3599330.7341830498,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.00025277644510514054,
+              "volumeEnergyJ": 0.00008452085707826453,
+              "minimumJ": 0.9943699984865808,
+              "minimumCornerJ": 0.9928554655257102,
+              "globalVolumeRatio": 0.9999664839759214,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0007397650493144413
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.0002526788347605184,
+              "volumeEnergyJ": 0.0000846182084118187,
+              "minimumJ": 0.9936119289695257,
+              "minimumCornerJ": 0.9928554655257102,
+              "globalVolumeRatio": 0.9999664839759185,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": -0.00025267285230229006,
+              "volumeEnergyJ": 0.00008462417439752788,
+              "minimumJ": 0.9932334964884384,
+              "minimumCornerJ": 0.9928554655257102,
+              "globalVolumeRatio": 0.9999664839759087,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.00004613164359975816
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1512",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 8708387.370104775,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.005827276834150611,
+              "volumeEnergyJ": 0.00013062555809188715,
+              "minimumJ": 0.9953618861888947,
+              "minimumCornerJ": 0.9939560407659027,
+              "globalVolumeRatio": 0.9999342890012232,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.006180581508277655
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.005822105778397246,
+              "volumeEnergyJ": 0.00013580419222947648,
+              "minimumJ": 0.9946634247197402,
+              "minimumCornerJ": 0.9939560407659027,
+              "globalVolumeRatio": 0.99993428900122,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": -0.005821789416433352,
+              "volumeEnergyJ": 0.0001361211672839743,
+              "minimumJ": 0.9943108480534982,
+              "minimumCornerJ": 0.9939560407659027,
+              "globalVolumeRatio": 0.9999342890012229,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0003741420016335345
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1478",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 20378123.522158194,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": -0.023994088566303244,
+              "volumeEnergyJ": 0.0008461940152575178,
+              "minimumJ": 0.9903323049172927,
+              "minimumCornerJ": 0.9866730399368979,
+              "globalVolumeRatio": 0.9999121610497963,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.01200394399090904
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": -0.023982158658310066,
+              "volumeEnergyJ": 0.0008580557001475048,
+              "minimumJ": 0.9888391781542553,
+              "minimumCornerJ": 0.9866730399368979,
+              "globalVolumeRatio": 0.9999121610497911,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": -0.02398141078093645,
+              "volumeEnergyJ": 0.0008587839747346797,
+              "minimumJ": 0.9877551485720649,
+              "minimumCornerJ": 0.9866730399368979,
+              "globalVolumeRatio": 0.9999121610497937,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0007303851936851461
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1480",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.000040669209601217885,
+              "volumeEnergyJ": 8.098157219014783e-8,
+              "minimumJ": 0.9998534156121239,
+              "minimumCornerJ": 0.9997697407278627,
+              "globalVolumeRatio": 0.9999771867999951,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0003811050737099842
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.00004068212531047793,
+              "volumeEnergyJ": 9.383733850610265e-8,
+              "minimumJ": 0.9998175179342856,
+              "minimumCornerJ": 0.9997697407278627,
+              "globalVolumeRatio": 0.9999771867999959,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": 0.00004068292610802001,
+              "volumeEnergyJ": 9.463539719427255e-8,
+              "minimumJ": 0.9997942783440834,
+              "minimumCornerJ": 0.9997697407278627,
+              "globalVolumeRatio": 0.9999771867999951,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.000023822022619520277
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1477",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.0038876458181431833,
+              "volumeEnergyJ": 0.002383881841217899,
+              "minimumJ": 0.9801578713632573,
+              "minimumCornerJ": 0.974306382165323,
+              "globalVolumeRatio": 1.0000238393562224,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.05435565458011289
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.003966620294542426,
+              "volumeEnergyJ": 0.0024627812006937765,
+              "minimumJ": 0.9774425569616838,
+              "minimumCornerJ": 0.974306382165323,
+              "globalVolumeRatio": 1.0000238393562226,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": 0.003971291341798148,
+              "volumeEnergyJ": 0.002467443962524427,
+              "minimumJ": 0.9760286202085259,
+              "minimumCornerJ": 0.974306382165323,
+              "globalVolumeRatio": 1.0000238393562226,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0031371171885938368
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1479",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.0016359683096716809,
+              "volumeEnergyJ": 0.00003557862516001872,
+              "minimumJ": 0.9974825544116611,
+              "minimumCornerJ": 0.9970467150602123,
+              "globalVolumeRatio": 1.0000219124445069,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0023104391243585856
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.001636733700034268,
+              "volumeEnergyJ": 0.000036335755442529946,
+              "minimumJ": 0.9972664715252805,
+              "minimumCornerJ": 0.9970467150602123,
+              "globalVolumeRatio": 1.0000219124445116,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": 0.001636780836846941,
+              "volumeEnergyJ": 0.00003638231698062783,
+              "minimumJ": 0.9971570524900314,
+              "minimumCornerJ": 0.9970467150602123,
+              "globalVolumeRatio": 1.0000219124445056,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.00014275731259017366
+            }
+          ]
+        },
+        {
+          "elementId": "FJ1487",
+          "material": {
+            "mu": 1000,
+            "bulk": 1000000,
+            "kf": 20000,
+            "b": 6,
+            "sigma0": 0,
+            "optimumStretch": 1,
+            "activeWidth": 0.5
+          },
+          "quadrature": [
+            {
+              "pointsPerElement": 4,
+              "bodyEnergyJ": 0.00039367007588081535,
+              "volumeEnergyJ": 0.00008131579191360377,
+              "minimumJ": 0.9942777045573101,
+              "minimumCornerJ": 0.9948600229649112,
+              "globalVolumeRatio": 1.0000051228841809,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.005544993831261965
+            },
+            {
+              "pointsPerElement": 32,
+              "bodyEnergyJ": 0.0003970678762240281,
+              "volumeEnergyJ": 0.0000847017416188415,
+              "minimumJ": 0.9940712100866398,
+              "minimumCornerJ": 0.9948600229649112,
+              "globalVolumeRatio": 1.0000051228841875,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0
+            },
+            {
+              "pointsPerElement": 256,
+              "bodyEnergyJ": 0.0003972753425204678,
+              "volumeEnergyJ": 0.00008490823080190798,
+              "minimumJ": 0.9939651526659699,
+              "minimumCornerJ": 0.9948600229649112,
+              "globalVolumeRatio": 1.0000051228841762,
+              "referenceVolumeFractionBelow09": 0,
+              "gradientDifferenceFrom32N": 0.0003376848973428827
+            }
+          ]
+        }
+      ],
+      "selectedForDenseAudit": true
+    }
+  ],
+  "selectedResults": [
+    {
+      "label": "held",
+      "index": -1,
+      "timeS": 0,
+      "baselineResidualN": 0.00007981689272124306,
+      "quadrature": [
+        {
+          "pointsPerElement": 4,
+          "frozenTotalReducedResidualN": 0.0005634352829461114,
+          "passesOriginalForceGateAtFrozenPose": false
+        },
+        {
+          "pointsPerElement": 32,
+          "frozenTotalReducedResidualN": 0.00007981689272124306,
+          "passesOriginalForceGateAtFrozenPose": true
+        },
+        {
+          "pointsPerElement": 256,
+          "frozenTotalReducedResidualN": 0.00007890944911910315,
+          "passesOriginalForceGateAtFrozenPose": true
+        }
+      ],
+      "bulkSensitivity": [
+        {
+          "factor": 0.5,
+          "baselineBulkPa": 1000000,
+          "frozenEnergyChangeJ": -5.395665121319986e-7,
+          "frozenTotalReducedResidualN": 0.012906992288428199,
+          "passesOriginalForceGateAtFrozenPose": false,
+          "coordinatesChanged": false
+        },
+        {
+          "factor": 1,
+          "baselineBulkPa": 1000000,
+          "frozenEnergyChangeJ": 0,
+          "frozenTotalReducedResidualN": 0.00007981689272124306,
+          "passesOriginalForceGateAtFrozenPose": true,
+          "coordinatesChanged": false
+        },
+        {
+          "factor": 2,
+          "baselineBulkPa": 1000000,
+          "frozenEnergyChangeJ": 0.0000010791330242639972,
+          "frozenTotalReducedResidualN": 0.02581402256252502,
+          "passesOriginalForceGateAtFrozenPose": false,
+          "coordinatesChanged": false
+        }
+      ]
+    },
+    {
+      "label": "regression-load",
+      "index": 0,
+      "timeS": 0.01,
+      "baselineResidualN": 0.000033052519140454794,
+      "quadrature": [
+        {
+          "pointsPerElement": 4,
+          "frozenTotalReducedResidualN": 0.3619252091910625,
+          "passesOriginalForceGateAtFrozenPose": false
+        },
+        {
+          "pointsPerElement": 32,
+          "frozenTotalReducedResidualN": 0.000033052519140454794,
+          "passesOriginalForceGateAtFrozenPose": true
+        },
+        {
+          "pointsPerElement": 256,
+          "frozenTotalReducedResidualN": 0.03288303757882205,
+          "passesOriginalForceGateAtFrozenPose": false
+        }
+      ],
+      "bulkSensitivity": [
+        {
+          "factor": 0.5,
+          "baselineBulkPa": 1000000,
+          "frozenEnergyChangeJ": -0.025712434783896516,
+          "frozenTotalReducedResidualN": 4.300315151008743,
+          "passesOriginalForceGateAtFrozenPose": false,
+          "coordinatesChanged": false
+        },
+        {
+          "factor": 1,
+          "baselineBulkPa": 1000000,
+          "frozenEnergyChangeJ": 0,
+          "frozenTotalReducedResidualN": 0.000033052519140454794,
+          "passesOriginalForceGateAtFrozenPose": true,
+          "coordinatesChanged": false
+        },
+        {
+          "factor": 2,
+          "baselineBulkPa": 1000000,
+          "frozenEnergyChangeJ": 0.05142486956779303,
+          "frozenTotalReducedResidualN": 8.600629970980181,
+          "passesOriginalForceGateAtFrozenPose": false,
+          "coordinatesChanged": false
+        }
+      ]
+    },
+    {
+      "label": "lift",
+      "index": 3,
+      "timeS": 0.1,
+      "baselineResidualN": 0.00008879588959320728,
+      "quadrature": [
+        {
+          "pointsPerElement": 4,
+          "frozenTotalReducedResidualN": 2.0773799664957195,
+          "passesOriginalForceGateAtFrozenPose": false
+        },
+        {
+          "pointsPerElement": 32,
+          "frozenTotalReducedResidualN": 0.00008879588959320728,
+          "passesOriginalForceGateAtFrozenPose": true
+        },
+        {
+          "pointsPerElement": 256,
+          "frozenTotalReducedResidualN": 0.14450826513415022,
+          "passesOriginalForceGateAtFrozenPose": false
+        }
+      ],
+      "bulkSensitivity": [
+        {
+          "factor": 0.5,
+          "baselineBulkPa": 1000000,
+          "frozenEnergyChangeJ": -0.04574483502344933,
+          "frozenTotalReducedResidualN": 14.316230777812368,
+          "passesOriginalForceGateAtFrozenPose": false,
+          "coordinatesChanged": false
+        },
+        {
+          "factor": 1,
+          "baselineBulkPa": 1000000,
+          "frozenEnergyChangeJ": 0,
+          "frozenTotalReducedResidualN": 0.00008879588959320728,
+          "passesOriginalForceGateAtFrozenPose": true,
+          "coordinatesChanged": false
+        },
+        {
+          "factor": 2,
+          "baselineBulkPa": 1000000,
+          "frozenEnergyChangeJ": 0.09148967004689866,
+          "frozenTotalReducedResidualN": 28.63245858947727,
+          "passesOriginalForceGateAtFrozenPose": false,
+          "coordinatesChanged": false
+        }
+      ]
+    },
+    {
+      "label": "release",
+      "index": 11,
+      "timeS": 0.3400000000000001,
+      "baselineResidualN": 0.00001886098017808897,
+      "quadrature": [
+        {
+          "pointsPerElement": 4,
+          "frozenTotalReducedResidualN": 0.08770582625229248,
+          "passesOriginalForceGateAtFrozenPose": false
+        },
+        {
+          "pointsPerElement": 32,
+          "frozenTotalReducedResidualN": 0.00001886098017808897,
+          "passesOriginalForceGateAtFrozenPose": true
+        },
+        {
+          "pointsPerElement": 256,
+          "frozenTotalReducedResidualN": 0.004916247786875659,
+          "passesOriginalForceGateAtFrozenPose": false
+        }
+      ],
+      "bulkSensitivity": [
+        {
+          "factor": 0.5,
+          "baselineBulkPa": 1000000,
+          "frozenEnergyChangeJ": -0.007839151998013886,
+          "frozenTotalReducedResidualN": 2.3148563822319526,
+          "passesOriginalForceGateAtFrozenPose": false,
+          "coordinatesChanged": false
+        },
+        {
+          "factor": 1,
+          "baselineBulkPa": 1000000,
+          "frozenEnergyChangeJ": 0,
+          "frozenTotalReducedResidualN": 0.00001886098017808897,
+          "passesOriginalForceGateAtFrozenPose": true,
+          "coordinatesChanged": false
+        },
+        {
+          "factor": 2,
+          "baselineBulkPa": 1000000,
+          "frozenEnergyChangeJ": 0.015678303996027772,
+          "frozenTotalReducedResidualN": 4.629712764687345,
+          "passesOriginalForceGateAtFrozenPose": false,
+          "coordinatesChanged": false
+        }
+      ]
+    },
+    {
+      "label": "release",
+      "index": 14,
+      "timeS": 0.43000000000000016,
+      "baselineResidualN": 0.00000450054707034546,
+      "quadrature": [
+        {
+          "pointsPerElement": 4,
+          "frozenTotalReducedResidualN": 0.0543556545794849,
+          "passesOriginalForceGateAtFrozenPose": false
+        },
+        {
+          "pointsPerElement": 32,
+          "frozenTotalReducedResidualN": 0.00000450054707034546,
+          "passesOriginalForceGateAtFrozenPose": true
+        },
+        {
+          "pointsPerElement": 256,
+          "frozenTotalReducedResidualN": 0.003137117189221831,
+          "passesOriginalForceGateAtFrozenPose": false
+        }
+      ],
+      "bulkSensitivity": [
+        {
+          "factor": 0.5,
+          "baselineBulkPa": 1000000,
+          "frozenEnergyChangeJ": -0.001831195317941227,
+          "frozenTotalReducedResidualN": 1.7074805962612387,
+          "passesOriginalForceGateAtFrozenPose": false,
+          "coordinatesChanged": false
+        },
+        {
+          "factor": 1,
+          "baselineBulkPa": 1000000,
+          "frozenEnergyChangeJ": 0,
+          "frozenTotalReducedResidualN": 0.00000450054707034546,
+          "passesOriginalForceGateAtFrozenPose": true,
+          "coordinatesChanged": false
+        },
+        {
+          "factor": 2,
+          "baselineBulkPa": 1000000,
+          "frozenEnergyChangeJ": 0.003662390635882454,
+          "frozenTotalReducedResidualN": 3.4149611924603382,
+          "passesOriginalForceGateAtFrozenPose": false,
+          "coordinatesChanged": false
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Saved coordinates, activation, tendon/contact rules and fitted stress scales are held fixed. No new equilibrium or trajectory is accepted.",
+    "4/32/256 positive P2 integration and corner determinant queries are finite samples, not a global determinant or mesh convergence proof.",
+    "Half/double bulk changes are diagnostics at unchanged coordinates, not calibration or re-equilibrated sensitivity.",
+    "Nodal gradients used here contain the body potential only. Total reduced residual deltas retain the original tendon, contact and incremental joint terms. This is not full nodal force balance.",
+    "Compression, timestep sensitivity, source articulation, finite-radius tendon, coplanar and continuous-motion limitations remain open."
+  ]
+}

@@ -29,3 +29,11 @@ math[display="inline"]{display:inline-block;white-space:nowrap;break-inside:avoi
 @media print{.print-safe-inline{display:inline-block;white-space:nowrap;break-inside:avoid}.print-safe-inline>math{display:none}.print-inline-equation{display:inline;font-family:Georgia,serif;font-size:1.1em}.print-inline-equation sup{font-size:.71em;line-height:0}}
 /* Explicit lifecycle avoids whitespace-only Pandoc containers becoming viewports. */
 .scene-host[hidden]{display:none}.scene-toolbar{display:block}.scene-toolbar button{min-height:48px}.scene-notice{font-size:.85rem;line-height:1.45;margin:.5rem 0}.scene-host{min-height:0}.scene-error{padding:1rem;color:#fff}.scene-error p{margin:.25rem 0 1rem}.scene-error pre{white-space:pre-wrap;overflow-wrap:anywhere;color:var(--ink)}
+.property-scene svg{display:block;width:100%;max-height:440px}.property-lesson[data-enhanced=true]>.static-figure{display:none}.property-lesson .readout dd{overflow-wrap:anywhere}.property-lesson .preset{width:100%;min-height:180px}
+@media print{.property-scene{display:none}.property-lesson[data-enhanced=true]>.static-figure{display:block}}
+
+.property-lesson>h3,.property-lesson>.model-label,.property-lesson>p:not(.announce){margin-left:1.3rem;margin-right:1.3rem}.property-lesson .preset{width:90%}
+@media print{.property-lesson .static-figure{background:#fff;color:#162d3e}.property-lesson .static-figure img{max-height:75mm}}
+
+.property-lesson:not([data-enhanced=true])>.property-description{display:none}
+@media print{.property-lesson>.property-description{display:none}}

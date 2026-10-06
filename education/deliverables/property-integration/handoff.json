@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "time_utc": "2026-10-05T20:17:08.232575+00:00",
+  "source_revision": "3cd3c5fbf2b061058e1dc5d2305408951dd4b5ee",
+  "implemented": [
+    "Independent measured tetrahedral deformation with boundary-triangle volume, translation/rotation/shear controls and inversion rollback",
+    "Prescribed positive isochoric diagonal stretch with independent volume and area-times-length measurements; cross-section versus exterior area",
+    "Nonuniform small-strain bar with analytic log compliance, genuine midpoint refinement, active fixed-end two-area example and endpoint warning correction",
+    "Four freshly compiled real kinematic claims; main book now 21 chapters and 29 checked claims",
+    "Coherent 89-page PDF, single-source Markdown and portable site with all 593 local resource files"
+  ],
+  "still_planned": [
+    "Separate finite-bulk/shear and free/confined-compression laboratory",
+    "Measured fibre-to-muscle aggregation and uncertainty/convention mapping laboratory",
+    "Force-length/velocity and separate activation-time calibration laboratory",
+    "Elastic storage versus dissipative load/hold/release laboratory",
+    "Adequate full displacement/pressure calibration and qualified anatomical convergence"
+  ],
+  "Library_plan": {
+    "schema": 1,
+    "library_file_id": "libfile_7ea79b1aa3cc8191b436abdb7b066c46",
+    "consumer_local_destination": "/workspace/Kenoma/education/research/Kenoma-physics-research-and-labs-plan.txt",
+    "attempts": [
+      {
+        "attempt": 1,
+        "exit_code": 1,
+        "error_verbatim": "library file transfer failed: download failed",
+        "permission_denial_reported": false
+      },
+      {
+        "attempt": 2,
+        "exit_code": 1,
+        "error_verbatim": "library file transfer failed: download failed",
+        "permission_denial_reported": false
+      }
+    ],
+    "interpretation": "Generic helper download failures. Neither reported a permission denial or automatic approval-review rejection; the underlying cause is unresolved.",
+    "local_bytes_present": false,
+    "hash_verified": false,
+    "further_retries": "None authorized or attempted after the supported retry."
+  },
+  "preserved_live_research": [
+    {
+      "name": "anatomical-dense-fine-trajectory",
+      "pid": 969,
+      "alive": true,
+      "result": "RUNNING",
+      "accepted_snapshots": 16,
+      "last_accepted_time_s": 0.22000000000000008,
+      "qualification": "Running prefix; no convergence or whole-envelope qualification"
+    },
+    {
+      "name": "anatomical-dense-interpolated-trajectory",
+      "pid": 2099,
+      "alive": true,
+      "result": "RUNNING",
+      "accepted_snapshots": 16,
+      "last_accepted_time_s": 0.22000000000000008,
+      "qualification": "Running prefix; no convergence or whole-envelope qualification"
+    },
+    {
+      "name": "anatomical-dense-release-refinement",
+      "pid": 4223,
+      "alive": true,
+      "result": "RUNNING",
+      "accepted_snapshots": 29,
+      "last_accepted_time_s": 0.3700000000000002,
+      "qualification": "Running prefix; no convergence or whole-envelope qualification"
+    }
+  ]
+}

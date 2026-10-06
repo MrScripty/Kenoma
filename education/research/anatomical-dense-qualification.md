@@ -1,0 +1,164 @@
+# Dense trajectory and bulk-compression qualification
+
+Author lane starts at `08f5f3b7fd4b987d3f049c13fdf4338bfaa2928e`, tree `c8743d6b61236bcfeb2ef13a8172df9b1ae123b8`. Historical accepted and failed receipts are retained. The original browser operator, constitutive law, fitted stress scales and gates are unchanged.
+
+## Localize before changing a constitutive assumption
+
+`tools/anatomical-compression-localization.mjs` queries all 256 positive points and four corners of every original P2 element at the separately accepted dense same-old-state comparison. It records the twelve smallest sampled determinants per head, complete deformation gradients, reference/current positions, fibre stretches, stress decomposition and six longitudinal reference-volume bins. `audit/anatomical-compression-localization.json` binds its inputs and implementation by SHA-256.
+
+The smallest corner determinant, **0.71263118**, occurs in short biceps **FJ1512**, element 212, corner 3 (node 98), at the **proximal** belly plane (longitudinal fraction 1). The mesh's `proximal_nodes` contains node 98; fraction 0 is the distal cap. Its fibre stretch is **0.768758**. In this head, **1.60194%** of total reference volume has sampled J below 0.9 in the proximal sixth; **0.113398%** is in the distal sixth; none is sampled in the four middle bins. The proximal sixth's mean J is **1.013694**: compression and dilation coexist even within that bin. Neither global nor regional mean volume proves local incompressibility.
+
+For the unchanged law, let `s = tr(P Fᵀ/J)/3` denote mean Cauchy stress, positive in tension. Direct differentiation gives
+
+\[
+s_{\mathrm{matrix}}=0,\qquad
+s_{\mathrm{volume}}=K\log(J)/J,\qquad
+s_{\mathrm{active}}=a\sigma_0 f(\lambda)\lambda/(3J),\qquad
+s_{\mathrm{passive\ fibre}}=\frac{k_f}{b}\operatorname{expm1}(b\max(\lambda-1,0))\lambda/(3J).
+\]
+
+The diagnostic checks the split against the actual material's Cauchy tensor. A separate test checks `dW(exp(t)F)/dt = 3Js` by an energy directional difference. At the worst corner, the volume contribution is **−475.409 kPa**, active contribution **+71.051 kPa**, passive-fibre contribution zero, and total mean stress **−404.358 kPa**. The isochoric matrix's trace error is below **2.33 × 10⁻¹⁰ Pa** over the short head. These are constitutive diagnostics, not measured pressure or a local hydrostatic equilibrium assertion. The active trace cannot alone explain the worst compression; endpoint transfer, authored geometry and the restricted displacement space also need investigation.
+
+The present active potential uses **full stretch** `λ=|F f₀|`. It therefore contributes positive mean stress under isotropic dilation. This is a concrete modeling distinction to examine before a new constitutive law is selected. The [prior original-source audit](anatomical-capstone-gap-audit.md) identifies [Blemker, Pinsky and Delp (2005)](https://nmbl.stanford.edu/publications/pdf/Blemker2005.pdf) as an architecture-dependent continuum reference. Its model is not reproduced here. The public manuscript could not be reopened in this author lane, so its equation numbers and bulk parameter are not used as freshly verified quantitative evidence. [Ryan et al. (2020), discussion](https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2020.538522/full) use 1 MPa in a different formulation and explicitly identify uncertainty in volumetric constitutive behavior. Neither study licenses choosing a bulk value merely to hide local determinant loss.
+
+Original anatomy remains the retained licensed [BodyParts3D source meshes](../data/elbow-v1/sources/bodyparts3d/) and the separately documented [Arm26 parameters](../data/elbow-v1/sources/arm26.osim). Endpoint maps, remeshed bellies, fibres and stress matches are authored/model-derived; they are not measurements of the owner's arm.
+
+```sh
+cd education
+node tools/anatomical-compression-localization.mjs
+node --test tests/anatomical_compression_localization.test.mjs
+```
+
+No material equation or exact Lean statement is changed by this diagnostic. It does not establish full nodal equilibrium or give a determinant bound between samples. Skin remains absent.
+
+## Trajectory experiment contract
+
+`tools/anatomical-dense-trajectory.mjs` solves a dense held state and then the original 0.5 kg loading/release schedule with 256-point body integration. Each increment uses only this run's accepted old coordinates, velocity, activation and time. Original 32-point target poses are nonlinear starting guesses. Contact rules refine between solves; each Newton objective remains fixed. A rejected increment preserves the old state and restores its contact rule. The runner refuses to overwrite existing evidence.
+
+The half-step experiment splits **every** original loading and release interval, preserving matched event times. Both runs retain the original 240-iteration ceiling, 1e-4 N force gate, material parameters and finite geometry checks. `tools/verify-anatomical-dense-trajectory.mjs` uses no optimizer: it independently assembles full P2 body gradients at every accepted pose, projects them, checks the total implicit residual and all finite surface/path/sample gates, and replays temporal lineage, impulse and work bookkeeping. A preserved failed increment is also replayed and must fail a gate.
+
+```sh
+node --max-old-space-size=8192 tools/anatomical-dense-trajectory.mjs
+node --max-old-space-size=8192 tools/anatomical-dense-trajectory.mjs --time-factor 2 \
+  --output data/anatomical-arm-v1/audit/anatomical-dense-fine-trajectory.json
+node --max-old-space-size=8192 tools/verify-anatomical-dense-trajectory.mjs
+```
+
+Execution logs are under `data/anatomical-arm-v1/review/dense-qualification/`. Trajectory conclusions require completed execution and fresh replay; a running receipt is not an accepted trajectory.
+
+The original-interval dense run now completes **all 15 increments to 0.43 s** and passes fresh independent replay (`audit/anatomical-dense-trajectory-recheck.json`). The maximum independent total residual is **0.0000900055745 N**; independently projected full P2 body gradients agree with the reduced assembly within **1.06 × 10⁻¹¹ N**, and body energies within **4.45 × 10⁻¹⁴ J**. Every accepted state passes the unchanged finite surface, routing, contact-sample and corner determinant gates, as well as activation/velocity/time lineage, rule-energy events, active work, impulse and work-defect bookkeeping. The actual reversal is **39.335738 → 33.534951 degrees**, with final angular velocity **−1.661503 rad/s**. Minimum queried corner J over the accepted trajectory is **0.712025**. This is a self-consistent trajectory under the declared 256-point reduced potential, not a convergence or physiological validation result.
+
+The completed uncommitted execution JSON was compacted by changing whitespace only before fresh replay bound its byte hash. All numeric values, coordinates, contact rules, traces and original source hashes remain present. Committed frozen prefix bytes are unchanged; matched-time analysis checks their physical states against this completed run.
+
+The replayed nonlinear work defect has largest magnitude **2.4338570554 J** (signed value **−2.4338570554 J**, first increment at 0.01 s), and its signed sum is **−4.3957378196 J**. Ledger replay establishes arithmetic and source consistency, not energy conservation. Quasistatic tissue relaxation, nonlinear joint sampling and separately recorded contact-rule energy changes must remain explicit. The tiny independently assembled body-energy difference does not bound the nonlinear work defect.
+
+## Further integration and missing displacement directions
+
+The four accepted dense loading increments through 0.10 s are frozen in `audit/anatomical-dense-loading-prefix.json`. This prefix supplies identical old/target states for controlled bulk comparisons. It is not a completed lift/release.
+
+`tools/anatomical-further-integration-audit.mjs` queries the 0.10 s dense state with **2048** positive body points per element. The 256-point residual is **0.0000900056 N**; replacing its projected body forces by the independently assembled 2048-point forces gives **0.0173852 N**, which fails the original **0.0001 N** gate. The short biceps accounts for the dominant **0.0173810 N** body-gradient difference. Its sampled/corner J are **0.719138/0.712634** at this dense state. These coordinates are not accepted under the finer rule. Two tests check positive weights, reference measure, exact polynomial moments and affine full nodal forces.
+
+`tools/anatomical-nodal-probe.mjs` tests six selected P2 nodal displacement directions around short-biceps proximal nodes 98 and 96. Each direction is normalized in the Euclidean nodal norm and projected orthogonally to all 63 retained body displacement columns (maximum column dot below 3.3 × 10⁻¹⁶). The potential includes dense body energy, embedded sheets, routed apparatus, interfaces and the frozen contact potential. Reference areas and rest lengths are retained. It never accepts or advances a perturbed state.
+
+At node 98, excluded x/y/z directions give energy derivatives of approximately **−0.494/−1.984/−1.445 N**. At node 96 they give **−0.149/−1.080/−0.398 N**. Central differences at 0.1 and 0.05 micrometre agree within **8 × 10⁻⁷ N**. Both perturbed states retain positive sampled determinants. Tests independently compare each potential component against actual reduced-coordinate displacement, including active tendon contact, and check exact restoration. These nonzero excluded virtual-work derivatives show that the accepted reduced state is not stationary in these additional directions. They are not a complete full nodal force vector, a full nodal solve or a convergence certificate.
+
+The follow-up should therefore enrich the displacement field and retain conservative transfer/contact derivatives before treating the whole tissue envelope as mechanically credible. Denser quadrature alone does not eliminate the restricted-space issue. A constitutive alternative would separately require updated potential/stress/tangent equations, parameter matching and the relevant book/proof contracts; none is selected here.
+
+`tools/anatomical-nodal-force-components.mjs` subsequently decomposes those same excluded directions at the same frozen dense state. Full P2 body virtual work is assembled independently for matrix, bulk, passive fibre and active terms. Two central differences separate embedded axial sheets, routed tendons, transverse matrices, interfaces and frozen contact energy; reference areas and rest lengths stay fixed. Component sums agree with the original total derivatives within **3.42 × 10⁻⁸ N**, and body analytic/difference agreement is within **6.62 × 10⁻⁷ N**. Every probe restores the exact base energy; none advances a state.
+
+| Excluded nodal shape / global axis | Bulk (N) | Active body (N) | Routed tendons (N) | Contact (N) | Total derivative (N) |
+|---|---:|---:|---:|---:|---:|
+| 98 / x | −0.336945 | −0.276755 | +0.0777405 | +0.000857550 | −0.493919 |
+| 98 / y | −1.972446 | −0.0215436 | −0.0121754 | +0.000656523 | −1.984401 |
+| 98 / z | −0.419729 | −1.382656 | +0.270462 | −0.0000576681 | −1.445203 |
+| 96 / x | −0.00123108 | −0.225394 | +0.0722307 | −0.0000337718 | −0.148703 |
+| 96 / y | −1.069491 | −0.0122965 | −0.0222323 | −0.0000393749 | −1.080343 |
+| 96 / z | +0.296438 | −1.072381 | +0.373686 | −0.0000169483 | −0.397633 |
+
+Axes describe the projected unit nodal shapes in the global atlas frame; these are scalar virtual-work derivatives, not six isolated nodal traction vectors. The receipt retains all remaining terms. Bulk dominates the two y-direction deficits; active work dominates the z-direction body terms, with routed tendon forces partly opposing it. Embedded axial-sheet contributions are below **0.000016 N**, and contact below **0.000858 N** in these probes. This identifies bulk/active tissue stationarity outside the retained field as a concrete unresolved issue. It does not select a new constitutive law or prove full nodal equilibrium.
+
+## Re-equilibrated bulk sensitivity
+
+`tools/anatomical-bulk-step.mjs` changes only the seven muscle-body bulk moduli and re-solves the 0.07–0.10 s increment from the **same accepted dense old state**. The original 1 MPa dense target is a nonlinear guess. The 240-iteration ceiling, 1e-4 N gate, fitted stress scales, displacement space and attachment/contact parameters are unchanged. Separate fresh `--mode replay` processes independently assemble full P2 body forces and check temporal lineage and finite geometry.
+
+| Bulk modulus | Independent reduced residual (N) | Short-biceps minimum sampled J | Minimum corner J | Short-biceps global volume ratio | Reference-volume fraction with sampled J < 0.9 |
+|---|---:|---:|---:|---:|---:|
+| 0.5 MPa | 0.0000399061 | 0.627251 | 0.609408 | 0.998914 | 0.0371991 |
+| 1 MPa, dense trajectory at 0.10 s | 0.0000900055745 | 0.725478 | 0.712634 | 0.998864 | 0.0171365 |
+| 2 MPa | 0.0000906255 | 0.824307 | 0.816574 | 0.999119 | 0.00569833 |
+
+Both changed-material comparisons have zero transverse surface crossings, zero tendon-path violations and zero sampled bone/soft/tendon penetrations. Half/double bulk changes the joint angle by **−0.01198/+0.008947 degrees**, and maximum reduced-coordinate changes are **5.47372/3.61622 mm**. The corner-volume losses remain **39.1%/18.3%**. These are controlled one-increment sensitivities from one common dense old state, not bulk-dependent self-consistent trajectories, physiological calibration or permission to pick a modulus by visual appearance.
+
+```sh
+node --max-old-space-size=8192 tools/anatomical-bulk-step.mjs --factor 0.5
+node --max-old-space-size=8192 tools/anatomical-bulk-step.mjs --factor 2
+node --max-old-space-size=8192 tools/anatomical-bulk-step.mjs --factor 0.5 --mode replay
+node --max-old-space-size=8192 tools/anatomical-bulk-step.mjs --factor 2 --mode replay
+```
+
+## Controlled displacement enrichment
+
+`tools/anatomical-enriched-step.mjs` repeats the same dense 0.07–0.10 s increment with **six additional coordinates**, three components of each of two orthonormal nodal shapes at short-biceps proximal nodes 98 and 96. The shapes are projected off the original 21 scalar displacement columns and orthogonalized against each other. The short head has 69 coordinates; the other six bodies keep 63. The old state has zero additional coordinates. This is one controlled increment, not an enriched self-consistent trajectory.
+
+The isolated generated operator under `tools/enriched/` generalizes coordinate offsets and retains the original material law, dense 256-point rule, apparatus, sheet, transfer, contact derivatives, force gate and 240-iteration ceiling. Original source-bound operators are unchanged. `tools/enriched/source-manifest.json` records both original and generated source hashes. Five tests check zero-enrichment agreement, gradients and Hessian-vector products including active tendon contact, retraction rotation, reference routing, and contact-refinement rollback.
+
+The comparison passes fresh independent full P2 body-force projection at **0.0000872870302 N**. Queried transverse crossings, tendon-path violations and sampled bone/soft/tendon penetrations are zero. Short-biceps minimum sampled/corner J become **0.537856/0.470464**, while its global volume ratio remains **0.998870**. Its sampled reference-volume fraction below J = 0.9 is **0.0178626**. Thus selected enrichment makes local compression worse, despite almost unchanged global volume. Neither a near-unity global volume nor reduced-force stationarity qualifies the tissue envelope. Picking extra modes or a bulk modulus by appearance would hide this unresolved behavior.
+
+```sh
+python3 tools/build-enriched-operator.py
+node --test tests/anatomical_enrichment.test.mjs
+node --max-old-space-size=8192 tools/anatomical-enriched-step.mjs
+node --max-old-space-size=8192 tools/anatomical-enriched-step.mjs --replay
+```
+
+The accepted comparison, including this adverse compression result, is preserved in `audit/anatomical-enriched-step.json` and `audit/anatomical-enriched-step-recheck.json`. Further work needs a better resolved displacement field and integration, plus independently justified bulk/active-stress calibration. No constitutive change or physiological qualification is selected here.
+
+## Compression predates whole-arm contact
+
+`tools/anatomical-fixed-end-compression-audit.mjs` independently replays the three original fixed-end, full-activation calibration poses using the original 32-point muscle potential and embedded sheets. All original endpoint-force targets and free-coordinate residuals pass. Both end rings remain fixed; no whole-arm contact, attached apparatus or time stepping enters this fixture. The diagnostic also evaluates the same coordinates with 256 positive body points and element corners, without fitting or solving.
+
+| Head | Fitted active stress scale (MPa) | Original queried corner J | Original global volume ratio | Frozen 256-point free reduced residual (N) |
+|---|---:|---:|---:|---:|
+| Brachialis FJ1486 | 3.59933 | 0.559236 | 1.04781 | 0.132179 |
+| Short biceps FJ1512 | 8.70839 | 0.615812 | 1.02382 | 1.66242 |
+| Long biceps FJ1478 | 20.3781 | 0.609997 | 1.02796 | 0.674166 |
+
+All three frozen denser calibration residuals fail the unchanged **0.0001 N** gate. The local compression exists in isolated fixed-end poses before any whole-arm contact is applied. Global dilation and local volume loss coexist. The fitted stress scales are approximately **3.6–20.4 times** the authored 1 MPa bulk modulus; these ratios describe model parameters, not physiological tissue measurements. Matching an Arm26 actuator force in the restricted 32-point field does not qualify either the denser calibration or local tissue behavior. Any future constitutive/bulk change needs a newly resolved calibration and trajectory; none is silently retuned here.
+
+The next correction must begin with these isolated calibration fixtures. Before claiming credible muscle mechanics, the calibrating states themselves must be stationary in the declared resolved displacement field and integration rule, with qualified local compression response. Subsequent contact cleanup, endpoint-force matching and a selected bulk value do not establish that prerequisite. Historical fits are retained as numerical reference inputs to the present trajectory experiments, not upgraded to physical calibration by a passing arm residual.
+
+`tools/anatomical-calibration-nodal-audit.mjs` independently assembles all P2 body and embedded-sheet nodal forces at those same frozen states. Explicit distal/proximal P2 cap node sets retain both fixed caps: 90 nodes held and 495 free per head, with 1,755 total nodal components. Sheet reference points, areas and rest lengths are unchanged. Nodal sheet forces project to the original 63-coordinate sheet gradients within **8.53 × 10⁻¹³ N**; complete nodal force projection reproduces the prior frozen 256-point reduced residuals. Two central-difference sizes verify the largest free components within **2.44 × 10⁻⁶ N**. No optimizer, refit or time advancement is used.
+
+| Isolated head | Maximum free nodal component (N) | Distal nodal cap reaction at frozen pose (N) | Reduced boundary-coordinate reaction under 256 points (N) |
+|---|---:|---:|---:|
+| Brachialis FJ1486 | 64.067641 | 605.123049 | 987.274289 |
+| Short biceps FJ1512 | 52.058855 | 320.222145 | 436.705055 |
+| Long biceps FJ1478 | 54.223684 | 449.872973 | 625.009093 |
+
+All complete free nodal residuals fail the unchanged **0.0001 N** force gate. At a nonstationary pose, the nodal cap reaction and reaction conjugate to a reduced boundary-coordinate extension are distinct diagnostics; neither is a full nodal equilibrium force fit. This directly establishes the calibration's unresolved displacement-field stationarity, without attributing it to arm contact. `audit/anatomical-calibration-nodal.json` retains every nodal force and both derivative probes. A preliminary exact-mode-support boundary classifier differed from the explicit cap membership by one long-biceps cap node with a tiny binary64 coefficient; its source/output snapshot is retained under `review/dense-qualification/calibration-mode-support/`. The final audit holds both complete source cap sets and checks original cap trace leakage at roundoff scale.
+
+The audit binds the saved calibration, its original replay, Arm26 source, operators and diagnostic by SHA-256. The initial rejected schema read and corrected execution are retained separately in the raw review logs.
+
+The additional dimensional check in `audit/anatomical-calibration-geometry.json` reads the atlas names and original Arm26 `Thelen2003Muscle` entries directly, verifies each force target and source hash, and compares geometric mean area `V/L` with the recorded effective area `F/sigma0`.
+
+| Verified atlas head | V/L (mm²) | F/sigma0 (mm²) | F/(sigma0 V/L) |
+|---|---:|---:|---:|
+| Brachialis FJ1486, Arm26 BRA | 480.815 | 274.294 | 0.570477 |
+| Short biceps FJ1512, Arm26 BICshort | 444.656 | 50.0186 | 0.112488 |
+| Long biceps FJ1478, Arm26 BIClong | 556.660 | 30.6365 | 0.0550363 |
+
+These ratios describe the equilibrated numerical fixtures. They combine local strain, fibre orientation, embedded sheets, volume stresses and displacement restrictions. They identify another calibration question behind the high fitted stress scales. `V/L` is a geometric mean area, not measured physiological cross-sectional area; neither the ratio nor a matched endpoint force establishes physiological specific tension. The geometry and actuator parameters remain independent reference models. Each row is bound to the original atlas element ID and the verified Arm26 actuator name.
+
+## Whole-element orientation of stored P2 geometry
+
+`tools/anatomical-bernstein-orientation.mjs` treats each binary64 nodal coordinate reconstructed from the saved reduced state and source geometry as an exact dyadic rational. A P2 tetrahedron has an affine Jacobian matrix and a cubic determinant in reference barycentric coordinates. By determinant multilinearity, the helper computes all **20 degree-three Bernstein coefficients**, with a common denominator, using `BigInt` arithmetic. The Bernstein basis is nonnegative and sums to one on the tetrahedron; strictly positive coefficients therefore certify a strictly positive Jacobian throughout the element. Reference and current nodal geometries are checked separately.
+
+All **29,988 elements** across the held pose, the 15 accepted dense states and the accepted enriched comparison pass this exact sign test. This strengthens the previous finite point/corner orientation queries for those stored interpolants. It does not establish mechanical stationarity outside the displacement space, local incompressibility, surface-contact completeness or continuous-motion validity. Numeric lower-J ratios in the receipt are explicitly approximate; only the integer positivity predicate is exact.
+
+Four tests cover affine orientation/reversal, independent curved-P2 determinant reconstruction, unresolved/folded geometry and determinant underflow with signed zero. The 124,008,828-byte full coefficient receipt is retained losslessly as `audit/anatomical-trajectory-orientation-full.json.gz` (29,173,335 bytes). `audit/anatomical-trajectory-orientation-summary.json` binds the full decoded byte hash, archive byte hash, all inputs and packaging source. Packaging independently checks every coefficient sign and round-trips the original bytes. No Lean claim or constitutive assumption is changed.
+
+```sh
+node --test tests/anatomical_bernstein_orientation.test.mjs
+node --max-old-space-size=8192 tools/anatomical-trajectory-orientation-audit.mjs
+python3 tools/package_anatomical_orientation.py
+```

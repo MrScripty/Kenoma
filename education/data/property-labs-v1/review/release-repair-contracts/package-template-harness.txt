@@ -1,0 +1,24 @@
+E
+======================================================================
+ERROR: test_qualified_bundle_and_corruption_controls (__main__.PackageAcceptance.test_qualified_bundle_and_corruption_controls)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/Kenoma-ci-repro/education/tests/test_package_acceptance.py", line 19, in test_qualified_bundle_and_corruption_controls
+    with contextlib.redirect_stdout(io.StringIO()):module.package(temporary/'positive.zip')
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Kenoma-ci-repro/education/tools/package_education_bundle.py", line 73, in package
+    validate_build(out,manifest)
+  File "/workspace/Kenoma-ci-repro/education/tools/package_education_bundle.py", line 68, in validate_build
+    for value in parser.urls:linked(source,value)
+                             ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Kenoma-ci-repro/education/tools/package_education_bundle.py", line 65, in linked
+    require(target.is_relative_to(out.resolve()) and target.is_file(),'Missing linked resource in '+str(source.relative_to(out))+': '+value)
+  File "/workspace/Kenoma-ci-repro/education/tools/package_education_bundle.py", line 11, in require
+    if not condition:raise RuntimeError(message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Missing linked resource in web/template.html: assets/style.css
+
+----------------------------------------------------------------------
+Ran 1 test in 1.803s
+
+FAILED (errors=1)

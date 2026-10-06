@@ -1,0 +1,45 @@
+{
+  "result": "PASS",
+  "browserVersion": "151.0.7922.173",
+  "sourceHashes": {
+    "web/anatomical-coupled-fixture.mjs": "620afbb2e801f00ec361f5f1b5d39f010acc386812dcaa7239c0ca781d0bf4b9",
+    "web/anatomical-coupled-worker.mjs": "1c54d08f5e36ca837343fc96399ac85de8e92f8fe1ebd1d73a50e5885b93c435",
+    "tools/coupled-inspector.mjs": "a55c7d9e0b4e168819010d84cf59bbf30a442d46f61eac0eca54118776b51319"
+  },
+  "rows": [
+    {
+      "viewport": "desktop",
+      "loadedQ": 0.6709040432569651,
+      "releasedQ": 0.3859375023943049,
+      "loadedActivation": 0.24977202950861138,
+      "releasedActivation": 0.008910365719019932,
+      "resetExactInRuntime": true,
+      "massStatePreserved": true,
+      "massEventDuringPlayback": true,
+      "visibleCompiledClaims": 7,
+      "workerTraceRows": 3,
+      "browserErrors": [],
+      "limit": "Mobile emulation, not a real phone; authored fixture, not anatomical capstone."
+    },
+    {
+      "viewport": "mobile-emulation",
+      "loadedQ": 0.6709040432569651,
+      "releasedQ": 0.3859375023943049,
+      "loadedActivation": 0.24977202950861138,
+      "releasedActivation": 0.008910365719019932,
+      "resetExactInRuntime": true,
+      "massStatePreserved": true,
+      "massEventDuringPlayback": true,
+      "visibleCompiledClaims": 7,
+      "workerTraceRows": 3,
+      "browserErrors": [],
+      "limit": "Mobile emulation, not a real phone; authored fixture, not anatomical capstone."
+    },
+    {
+      "viewport": "mobile-no-WebGL-fault",
+      "numericalWorkerContinues": true,
+      "browserErrors": [],
+      "limit": "Injected unavailable context, not a GPU configuration override."
+    }
+  ]
+}

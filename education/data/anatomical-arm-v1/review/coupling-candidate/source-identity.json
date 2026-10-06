@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "sourceHashes": {
+    "data/elbow-v1/data/bodyparts3d_right_arm_m.json": "c3ca97df0d41302de5c3e553cb9974c4c0bd68a30866c26a18e1ba41ceab4257",
+    "data/anatomical-arm-v1/generated/arm-geometry.json": "4c46c12293b4ff1cc76c32e2b769470611774a7c81a27129d03be7394f26836e",
+    "data/anatomical-arm-v1/config/attachments.json": "a831db971c50bce70972b2995fa7f7d0cd92696460b99a244b3b16b2801baf61",
+    "data/anatomical-arm-v1/audit/interior-axis-fit.json": "26e4e215e51eea1a302c7f9197882672906dcbb2a7e08d4a4f2338dab73d5abf",
+    "data/anatomical-arm-v1/audit/apposition-results.json": "63e9dd81f53fe9c45a87214f1caa3c8e475f9b6a7ee1d1678d6024e7da6df397",
+    "web/anatomical-coupled-fixture.mjs": "620afbb2e801f00ec361f5f1b5d39f010acc386812dcaa7239c0ca781d0bf4b9",
+    "tools/anatomy-inspector.mjs": "1760366fe89eaf27f8caedc39031f88d2033bdab8d0718a49c3b4c8fb3dec112",
+    "tools/coupled-inspector.mjs": "25ccfdaa42fa8c2c7bf1b4df33794f328f6499afcf16086b86b37c86d303552a",
+    "tools/capture-anatomical-review.py": "5903e43c039bbfaef2562f225c7dfb8447153a3669a121d6bca1294305834832"
+  },
+  "images": {
+    "atlas-assembly-bind.png": "b12dc48f0c99cf80f2f07428a08777c2dc95872e176f405b747eb0b0dabf6e77",
+    "fixture-loaded.png": "c86a6f976afa77505d8198c7a8421cbe375c43e57f4579eadd4c5ec5833d3fd0",
+    "fixture-released.png": "c68019e34b75bf3e8ff6106915ef760635915089d2c16ca64ff2a2d974b3d4b5",
+    "fixture-rest.png": "b5385d3d2c39afb65c28efec843b19d029516ae8a31444cf319c9de2d455d2d1",
+    "interior-axis-0.png": "168ab41258d703b93f77ca4e9afa592be07f71dfde59ddc614c2f45bf2d604a2",
+    "interior-axis-120.png": "88980d290b6390d80a97d1a90f32c27f68270cee5ac3f2bffe7a11d3a7406239",
+    "interior-axis-90.png": "f1097fe7b0bf0e4d9d21ce5873fd809b9c419d14907cc30687c75d9df1050d09",
+    "patch-FJ1477_humerus_origin.png": "1d7efed934515a8600c821a8755d2ae6b6e9f09fedef3d56fd5d767f05cce6f4",
+    "patch-FJ1480_humerus_origin.png": "d8632da62f9dbe2cbe16117bc39c2131420b519a6a2e01ad34475718b05c26cf",
+    "patch-FJ1486_humerus_origin.png": "52f1fd52768c8a73d784d9f9ba5851da63124c694c1bfdcaee5c877b75f0b3d7",
+    "patch-FJ1487_humerus_origin.png": "9650909306aa3d1aaa7a76ab3974cf5dfa1a58bf81dfc8955b0537c6081ffb8b",
+    "patch-brachialis_ulna.png": "055f4c7ccbefcb18aa922a6ffae903dcc384dd8e54033927d7659fc8566cd2c0",
+    "patch-distal_radius_brachioradialis.png": "bf05daa79901b2da6234b6137e963d343fb7d9f9c12683532f5a3f305e58b473",
+    "patch-olecranon.png": "eb0147cbd495df6beabfa70ad5d52530f082e596b08f6a1395cc32bbbcb9f7a6",
+    "patch-radial_tuberosity.png": "74311826e1083c750f4abebefda00db80feae36d80c1bcfdf76d8933977f5e71"
+  },
+  "fixtureBrowserReceipt": {
+    "result": "PASS",
+    "browserVersion": "151.0.7922.173",
+    "sourceHashes": {
+      "web/anatomical-coupled-fixture.mjs": "620afbb2e801f00ec361f5f1b5d39f010acc386812dcaa7239c0ca781d0bf4b9",
+      "web/anatomical-coupled-worker.mjs": "1c54d08f5e36ca837343fc96399ac85de8e92f8fe1ebd1d73a50e5885b93c435",
+      "tools/coupled-inspector.mjs": "25ccfdaa42fa8c2c7bf1b4df33794f328f6499afcf16086b86b37c86d303552a"
+    },
+    "rows": [
+      {
+        "viewport": "desktop",
+        "loadedQ": 0.6709040432569651,
+        "releasedQ": 0.3859375023943049,
+        "loadedActivation": 0.24977202950861138,
+        "releasedActivation": 0.008910365719019932,
+        "resetExactInRuntime": true,
+        "massStatePreserved": true,
+        "massEventDuringPlayback": true,
+        "visibleCompiledClaims": 7,
+        "workerTraceRows": 3,
+        "browserErrors": [],
+        "limit": "Mobile emulation, not a real phone; authored fixture, not anatomical capstone."
+      },
+      {
+        "viewport": "mobile-emulation",
+        "loadedQ": 0.6709040432569651,
+        "releasedQ": 0.3859375023943049,
+        "loadedActivation": 0.24977202950861138,
+        "releasedActivation": 0.008910365719019932,
+        "resetExactInRuntime": true,
+        "massStatePreserved": true,
+        "massEventDuringPlayback": true,
+        "visibleCompiledClaims": 7,
+        "workerTraceRows": 3,
+        "browserErrors": [],
+        "limit": "Mobile emulation, not a real phone; authored fixture, not anatomical capstone."
+      },
+      {
+        "viewport": "mobile-no-WebGL-fault",
+        "numericalWorkerContinues": true,
+        "browserErrors": [],
+        "limit": "Injected unavailable context, not a GPU configuration override."
+      }
+    ]
+  },
+  "limits": [
+    "Native Chromium default rendering. No GPU flags.",
+    "Axis views pose bones only; atlas muscles stay at bind.",
+    "Fixture loaded/released images are the separate authored P2 engineering fixture, not the actual anatomical arm.",
+    "Patch selection and remeshing remain pending anatomical review."
+  ],
+  "attribution": "Atlas images: BodyParts3D, \u00a9 The Database Center for Life Science; current CC BY 4.0, original source notices retained. Original fixture images: Kenoma Apache-2.0."
+}

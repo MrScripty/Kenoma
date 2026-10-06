@@ -1,0 +1,14 @@
+{
+  "result": "PASS_FOCUSED_OUTPUT_AND_PRIMARY_CACHE_REGRESSIONS",
+  "frozen_source": "1dc0ed83b79a55cb4f02644009b9f7cf14b029e2",
+  "frozen_delivery": "bcbf3add28cbf6d8fabac3ee46a7cfe9268f8423",
+  "scope": "Three requested generated-output mutations reject; seven prior package controls remain rejected; valid fixture passes. Standalone prefix preflight rejects changed primary-verifier digest. 17 Python tests and one actual-script Node regression pass. Fresh positive 22-state prefix replay passes with unchanged physical values; generated-output browser rechecks are pending.",
+  "fixture_scope": "The immutable source-1dc outputs receive only the new binding metadata inside a temporary test fixture. The production validator has no legacy fallback; fresh source-bound build and browser checks are required for delivery.",
+  "raw_sha256": {
+    "before.txt": "177d19fa7058e252c1a0e8af8b3215f09b3a973c9a7fb7e6f4f05ba3674b4e2e",
+    "package-negative-controls.txt": "d1bea2e24f4f122fd3655d9a2b145fabdafc8b68d110d6e53e9e7d0f2fc434b0",
+    "prefix-cache.txt": "18464783d4393aaac9a482fd10c66a9f707a1d062ad6a0543e816d7fd4ffe52c",
+    "prefix-positive-replay.txt": "d2b8c649e112c630b264813be827ca13135e1e92ee8ec4ce20e6c9a3f7cdeb88",
+    "python.txt": "a9485de6b73406eb32c73758cd89341985720a33c037bacb2584efad46b1531b"
+  }
+}

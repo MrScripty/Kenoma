@@ -1,0 +1,49 @@
+/** Full P2 nodal forces at frozen original calibration poses; no optimizer. */
+import fs from 'node:fs';
+import {createHash} from 'node:crypto';
+import {fileURLToPath} from 'node:url';
+import {prepareModalBody,modalPositions,evaluateModalBody} from '../web/anatomical-modal.mjs';
+import {prepareIntramuscularAponeuroses,evaluateIntramuscularAponeuroses} from '../web/anatomical-aponeurosis.mjs';
+import {MUSCLE_FIXTURE,tendonSegment} from '../web/anatomical-material.mjs';
+import {prepareCompressionBody,evaluateCompressionBody} from './anatomical-compression-quadrature.mjs';
+
+const root=fileURLToPath(new URL('../',import.meta.url)),base=root+'data/anatomical-arm-v1/',read=p=>JSON.parse(fs.readFileSync(base+p)),hash=p=>createHash('sha256').update(fs.readFileSync(root+p)).digest('hex');
+const prior=read('audit/anatomical-fixed-end-compression.json'),fits=read('audit/modal-fixed-end-results.json'),geometry=read('generated/arm-reference.json');
+for(const [p,h] of Object.entries(prior.sourceHashes))if(hash(p)!==h)throw Error('Changed calibration diagnostic source '+p);
+const dot=(a,b)=>a.reduce((s,v,k)=>s+v*b[k],0),maximum=x=>Math.max(...x.map(Math.abs)),rows=[];
+// Retain the original embedded sheet reference points, areas and rest lengths.
+// Its authored ring weights become explicit full nodal derivative columns.
+function nodalSheets(source,sheets,positions){
+ const gradient=source.nodes_m.map(()=>[0,0,0]);let energy=0;
+ const weights=p=>Array.from({length:16},(_,k)=>({node:16*p.sourceRing+k,value:.3/16+(16*p.sourceRing+k===p.sourcePerimeterNode?.7:0)}));
+ const point=p=>p.referenceM.map((v,d)=>v+weights(p).reduce((s,m)=>s+m.value*(positions[m.node][d]-source.nodes_m[m.node][d]),0));
+ for(const [matrix,pairs] of [[false,sheets.branches],[true,sheets.matrix]])for(const p of pairs){
+  const A=point(p.a),B=point(p.b),delta=A.map((v,d)=>v-B[d]),length=Math.hypot(...delta);
+  if(!(length>1e-8))throw Error('Frozen sheet branch collapsed');
+  const r=matrix?{forceN:p.stiffnessNPerM*(length-p.L0M),storedEnergyJ:.5*p.stiffnessNPerM*(length-p.L0M)**2}:tendonSegment(length,p.L0M,p.A0M2);
+  energy+=r.storedEnergyJ;
+  for(const [endpoint,sign] of [[p.a,1],[p.b,-1]])for(const m of weights(endpoint))for(let d=0;d<3;d++)gradient[m.node][d]+=sign*m.value*r.forceN*delta[d]/length;
+ }
+ return {energy,gradient};
+}
+function project(body,nodal){const g=new Float64Array(63);for(const [n,modes] of body.nodeModes.entries())for(const m of modes)for(let d=0;d<3;d++)g[m.base+d]+=m.value*nodal[n][d];return g;}
+for(const fit of fits.records){
+ const source=geometry.muscles.find(m=>m.element_id===fit.elementId),body=prepareModalBody(source),x=Float64Array.from(fit.match.coordinatesM),positions=modalPositions(body,x),sheets=prepareIntramuscularAponeuroses(body),originalSheets=evaluateIntramuscularAponeuroses(body,sheets,x,{hessian:false}),sheet=nodalSheets(source,sheets,positions),material={...MUSCLE_FIXTURE,sigma0:fit.match.sigma0Pa};
+ const sheetProjection=project(body,sheet.gradient),sheetDifferenceN=maximum(sheetProjection.map((v,k)=>v-originalSheets.gradient[k]));
+ if(sheetDifferenceN>2e-6||Math.abs(sheet.energy-originalSheets.energy)>1e-9)throw Error('Independent nodal sheet projection '+fit.elementId);
+ const held=body.nodeModes.map(modes=>modes.length>0&&modes.every(m=>m.base<9||m.base>=54)),distal=body.nodeModes.map(modes=>modes.length>0&&modes.every(m=>m.base<9)),prepared=prepareCompressionBody(source,body.nodeModes,2),full=evaluateCompressionBody(prepared,positions,1,material),total=full.nodalGradientN.map((v,n)=>v.map((f,d)=>f+sheet.gradient[n][d])),projected=project(body,total),priorRow=prior.rows.find(r=>r.elementId===fit.elementId),priorDense=priorRow.rules.find(r=>r.pointsPerElement===256);
+ const projectedResidualN=maximum(projected.slice(9,54));if(Math.abs(projectedResidualN-priorDense.freeResidualN)>2e-6)throw Error('Changed frozen reduced residual '+fit.elementId);
+ const original=evaluateModalBody(body,x,1,{material,hessian:false});if(Math.abs(originalSheets.energy-sheet.energy)>1e-9)throw Error('Sheet energy changed');
+ let largest={node:-1,axis:-1,valueN:0};for(const [n,g] of total.entries())if(!held[n])for(let d=0;d<3;d++)if(Math.abs(g[d])>Math.abs(largest.valueN))largest={node:n,axis:d,valueN:g[d]};
+ const probes=[];for(const hM of [2e-7,1e-7]){
+  const energies=[-1,1].map(sign=>{const trial=positions.map(v=>v.slice());trial[largest.node][largest.axis]+=sign*hM;return evaluateCompressionBody(prepared,trial,1,material).energyJ+nodalSheets(source,sheets,trial).energy;});
+  const derivativeN=(energies[1]-energies[0])/(2*hM);probes.push({hM,derivativeN,analyticDifferenceN:derivativeN-largest.valueN});
+ }
+ if(probes.some(p=>Math.abs(p.analyticDifferenceN)>1e-4))throw Error('Frozen full nodal derivative crosscheck '+fit.elementId+' '+JSON.stringify(probes));
+ const distalNodalReactionN=-dot(total.reduce((s,g,n)=>distal[n]?s.map((v,d)=>v+g[d]):s,[0,0,0]),source.basis.axis),reducedBoundaryReactionN=-dot(Array.from(projected.slice(0,3)),source.basis.axis);
+ rows.push({elementId:fit.elementId,activation:1,material,fullNodalComponentCount:3*positions.length,heldNodeCount:held.filter(Boolean).length,freeNodeCount:held.filter(v=>!v).length,originalModelForceTargetN:fit.modelReference.value,originalFitForceN:fit.match.forceN,originalBodyEnergyJ:original.energy,independentDenseBodyEnergyJ:full.energyJ,sheetEnergyJ:sheet.energy,maximumSheetProjectionDifferenceN:sheetDifferenceN,projectedDenseFreeResidualN:projectedResidualN,maximumFreeNodalComponentN:Math.abs(largest.valueN),largestFreeComponent:largest,passesFullNodalForceGateAtFrozenPose:Math.abs(largest.valueN)<=1e-4,distalNodalReactionN,reducedBoundaryReactionN,minimumCornerJ:full.minimumCornerJ,globalVolumeRatio:full.globalVolumeRatio,probes,nodes:total.map((gradientN,n)=>({node:n,held:held[n],distal:distal[n],positionM:positions[n],bodyGradientN:full.nodalGradientN[n],sheetGradientN:sheet.gradient[n],totalGradientN:gradientN}))});
+ console.log('HEAD',JSON.stringify({...rows.at(-1),nodes:undefined}));
+}
+const files=[...Object.keys(prior.sourceHashes),'data/anatomical-arm-v1/audit/anatomical-fixed-end-compression.json','tools/anatomical-calibration-nodal-audit.mjs'];
+const result={schema:1,result:'PASS_FROZEN_CALIBRATION_NODAL_DIAGNOSTIC',sourceHashes:Object.fromEntries(files.map(p=>[p,hash(p)])),unchangedStationarityToleranceN:1e-4,rows,limits:['The original fully activated calibration coordinates, material parameters and embedded sheet reference areas/rest lengths are frozen. No optimizer, force fitting, contact or time advancement is invoked.','The full nodal free set excludes exactly the nodes whose original mode support is entirely in the fixed end-ring modes. It preserves the original zero cap-displacement trace.','Independent nodal sheet forces project to the original 63-coordinate assembly. Complete dense nodal forces project to the prior frozen 256-point reduced residual. Two perturbation sizes independently crosscheck the largest free component.','Nodal cap reactions and reduced boundary-coordinate reactions at a nonstationary pose are distinct diagnostics; neither is an equilibrated full nodal force match.','Failing full nodal stationarity and severe local compression block physical calibration. These frozen states are not accepted full nodal equilibria.']};
+fs.writeFileSync(base+'audit/anatomical-calibration-nodal.json',JSON.stringify(result,null,2)+'\n');console.log('RESULT',result.result);

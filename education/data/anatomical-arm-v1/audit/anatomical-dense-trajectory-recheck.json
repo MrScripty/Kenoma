@@ -1,0 +1,6772 @@
+{
+  "schema": 1,
+  "result": "PASS_DENSE_TRAJECTORY",
+  "executionReceiptSHA256": "695c2b682d5d97a4a3bd4876bb7352724e80a7f3cf050568d456d29ec1b7532b",
+  "verifierSHA256": "080a6b1ad60620249b02b7faa63ffd7ff127fbd75fb8588a0bf8e0c3dfe12d20",
+  "pointsPerElement": 256,
+  "unchangedStationarityToleranceN": 0.0001,
+  "verifiedSteps": 15,
+  "maximumGradientAssemblyDifferenceN": 1.0573403264046988e-11,
+  "maximumEnergyAssemblyDifferenceJ": 4.440892098500626e-14,
+  "held": {
+    "timeS": 0,
+    "qRad": 0.2841100888248933,
+    "activation": 0,
+    "residualN": 0.00007890944816327832,
+    "independentResidualN": 0.00007890944730610809,
+    "minimumJ": 0.9996543736039151,
+    "minimumCornerJ": 0.9996406362094457,
+    "heads": [
+      {
+        "elementId": "FJ1486",
+        "minimumJ": 0.9999151462594721,
+        "minimumCornerJ": 0.9999089621285175,
+        "globalVolumeRatio": 0.9999988782423357,
+        "referenceVolumeFractionBelow09": 0,
+        "volumeEnergyJ": 2.2746628278903064e-8
+      },
+      {
+        "elementId": "FJ1512",
+        "minimumJ": 0.9996543736039151,
+        "minimumCornerJ": 0.999845904238295,
+        "globalVolumeRatio": 1.0000000018159008,
+        "referenceVolumeFractionBelow09": 0,
+        "volumeEnergyJ": 1.7818163449731586e-7
+      },
+      {
+        "elementId": "FJ1478",
+        "minimumJ": 0.9997547160156867,
+        "minimumCornerJ": 0.9998834046039761,
+        "globalVolumeRatio": 0.9999983512790053,
+        "referenceVolumeFractionBelow09": 0,
+        "volumeEnergyJ": 1.7505669588497236e-7
+      },
+      {
+        "elementId": "FJ1480",
+        "minimumJ": 0.9999726679366725,
+        "minimumCornerJ": 0.9999809630620933,
+        "globalVolumeRatio": 0.9999981266003606,
+        "referenceVolumeFractionBelow09": 0,
+        "volumeEnergyJ": 2.2724753169225736e-9
+      },
+      {
+        "elementId": "FJ1477",
+        "minimumJ": 0.9996692219453363,
+        "minimumCornerJ": 0.9996406362094457,
+        "globalVolumeRatio": 0.99999973540451,
+        "referenceVolumeFractionBelow09": 0,
+        "volumeEnergyJ": 3.6845803147199795e-7
+      },
+      {
+        "elementId": "FJ1479",
+        "minimumJ": 0.9997145681297951,
+        "minimumCornerJ": 0.9998365261833764,
+        "globalVolumeRatio": 1.0000016903965077,
+        "referenceVolumeFractionBelow09": 0,
+        "volumeEnergyJ": 3.2787109929943324e-7
+      },
+      {
+        "elementId": "FJ1487",
+        "minimumJ": 0.9998944792175803,
+        "minimumCornerJ": 0.9999467922639557,
+        "globalVolumeRatio": 0.9999998197434554,
+        "referenceVolumeFractionBelow09": 0,
+        "volumeEnergyJ": 1.1546339211269008e-8
+      }
+    ],
+    "surfaceAudit": {
+      "qRad": 0.2841100888248933,
+      "boneTissue": [
+        {
+          "head": "FJ1486",
+          "bone": "FJ3368",
+          "broadPhasePairs": 1516,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1486",
+          "bone": "FJ3349",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1486",
+          "bone": "FJ3391",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1512",
+          "bone": "FJ3368",
+          "broadPhasePairs": 51,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1512",
+          "bone": "FJ3349",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1512",
+          "bone": "FJ3391",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1478",
+          "bone": "FJ3368",
+          "broadPhasePairs": 203,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1478",
+          "bone": "FJ3349",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1478",
+          "bone": "FJ3391",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1480",
+          "bone": "FJ3368",
+          "broadPhasePairs": 1259,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1480",
+          "bone": "FJ3349",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1480",
+          "bone": "FJ3391",
+          "broadPhasePairs": 307,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1477",
+          "bone": "FJ3368",
+          "broadPhasePairs": 869,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1477",
+          "bone": "FJ3349",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1477",
+          "bone": "FJ3391",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1479",
+          "bone": "FJ3368",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1479",
+          "bone": "FJ3349",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1479",
+          "bone": "FJ3391",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1487",
+          "bone": "FJ3368",
+          "broadPhasePairs": 409,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1487",
+          "bone": "FJ3349",
+          "broadPhasePairs": 59,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "head": "FJ1487",
+          "bone": "FJ3391",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        }
+      ],
+      "tissueTissue": [
+        {
+          "headA": "FJ1486",
+          "headB": "FJ1512",
+          "broadPhasePairs": 421,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1486",
+          "headB": "FJ1478",
+          "broadPhasePairs": 618,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1486",
+          "headB": "FJ1480",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1486",
+          "headB": "FJ1477",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1486",
+          "headB": "FJ1479",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1486",
+          "headB": "FJ1487",
+          "broadPhasePairs": 383,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1512",
+          "headB": "FJ1478",
+          "broadPhasePairs": 1622,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1512",
+          "headB": "FJ1480",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1512",
+          "headB": "FJ1477",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1512",
+          "headB": "FJ1479",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1512",
+          "headB": "FJ1487",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1478",
+          "headB": "FJ1480",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1478",
+          "headB": "FJ1477",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1478",
+          "headB": "FJ1479",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1478",
+          "headB": "FJ1487",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1480",
+          "headB": "FJ1477",
+          "broadPhasePairs": 521,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1480",
+          "headB": "FJ1479",
+          "broadPhasePairs": 808,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1480",
+          "headB": "FJ1487",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1477",
+          "headB": "FJ1479",
+          "broadPhasePairs": 1046,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1477",
+          "headB": "FJ1487",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "headA": "FJ1479",
+          "headB": "FJ1487",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        }
+      ],
+      "boneBone": [
+        {
+          "boneA": "FJ3368",
+          "boneB": "FJ3349",
+          "broadPhasePairs": 0,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "boneA": "FJ3368",
+          "boneB": "FJ3391",
+          "broadPhasePairs": 331,
+          "crossingPairs": 0,
+          "examples": []
+        },
+        {
+          "boneA": "FJ3349",
+          "boneB": "FJ3391",
+          "broadPhasePairs": 153,
+          "crossingPairs": 0,
+          "examples": []
+        }
+      ],
+      "transverseCrossingPairs": 0,
+      "limits": [
+        "Every boundary triangle participates after AABB pruning.",
+        "Transverse edge/face crossings only; coplanar/grazing overlaps, containment and continuous motion are not certified.",
+        "No cartilage contact or medical apposition threshold is inferred."
+      ]
+    },
+    "routingAudit": {
+      "testedLegs": 765,
+      "violations": [],
+      "maximumSampledPenetrationM": 6.206335383118183e-17,
+      "accepted": true,
+      "limits": [
+        "Every axial path leg checked against all source bone triangles with AABB pruning.",
+        "Exact transverse segment hits plus five containment samples; finite radius, grazing/coplanar overlap and continuous motion are not certified.",
+        "Prescribed guides are authored frictionless support constraints, not measured anatomical tendon wrapping."
+      ]
+    },
+    "sampledPenetrationsM": {
+      "bone": 0,
+      "soft": 0,
+      "tendon": 0
+    },
+    "curvatureFallbacks": 0
+  },
+  "rows": [
+    {
+      "timeS": 0.01,
+      "qRad": 0.2844551005431305,
+      "activation": 0.008847968677143804,
+      "residualN": 0.00004403872619466529,
+      "independentResidualN": 0.00004403872624770901,
+      "minimumJ": 0.8517363627852607,
+      "minimumCornerJ": 0.8389390540988432,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "minimumJ": 0.9615984911615744,
+          "minimumCornerJ": 0.9602052610861511,
+          "globalVolumeRatio": 0.9994962781249396,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.0029625735111711974
+        },
+        {
+          "elementId": "FJ1512",
+          "minimumJ": 0.8517363627852607,
+          "minimumCornerJ": 0.8389390540988432,
+          "globalVolumeRatio": 0.9992788781245394,
+          "referenceVolumeFractionBelow09": 0.003179660623507343,
+          "volumeEnergyJ": 0.023780014552505613
+        },
+        {
+          "elementId": "FJ1478",
+          "minimumJ": 0.9173262040331787,
+          "minimumCornerJ": 0.9120530338603746,
+          "globalVolumeRatio": 0.9991395438328164,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.02467584525497383
+        },
+        {
+          "elementId": "FJ1480",
+          "minimumJ": 0.9999753159237131,
+          "minimumCornerJ": 0.9999844101152547,
+          "globalVolumeRatio": 0.9999981132918443,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 2.0549703042292753e-9
+        },
+        {
+          "elementId": "FJ1477",
+          "minimumJ": 0.99966399896229,
+          "minimumCornerJ": 0.9996345979366678,
+          "globalVolumeRatio": 0.9999997325692079,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 3.749938037679245e-7
+        },
+        {
+          "elementId": "FJ1479",
+          "minimumJ": 0.9997131545140796,
+          "minimumCornerJ": 0.9998359067596744,
+          "globalVolumeRatio": 1.0000017046495024,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 3.3195218667245103e-7
+        },
+        {
+          "elementId": "FJ1487",
+          "minimumJ": 0.9999078835916999,
+          "minimumCornerJ": 0.9999612009459101,
+          "globalVolumeRatio": 0.9999998802939598,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 9.308995398562775e-9
+        }
+      ],
+      "surfaceAudit": {
+        "qRad": 0.2844551005431305,
+        "boneTissue": [
+          {
+            "head": "FJ1486",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1381,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3368",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3368",
+            "broadPhasePairs": 111,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1259,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3391",
+            "broadPhasePairs": 307,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3368",
+            "broadPhasePairs": 869,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3368",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3368",
+            "broadPhasePairs": 411,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3349",
+            "broadPhasePairs": 62,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "tissueTissue": [
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1512",
+            "broadPhasePairs": 443,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1478",
+            "broadPhasePairs": 206,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1487",
+            "broadPhasePairs": 424,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1478",
+            "broadPhasePairs": 1137,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1477",
+            "broadPhasePairs": 521,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1479",
+            "broadPhasePairs": 808,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1479",
+            "broadPhasePairs": 1046,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1479",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "boneBone": [
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 331,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3349",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 153,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "transverseCrossingPairs": 0,
+        "limits": [
+          "Every boundary triangle participates after AABB pruning.",
+          "Transverse edge/face crossings only; coplanar/grazing overlaps, containment and continuous motion are not certified.",
+          "No cartilage contact or medical apposition threshold is inferred."
+        ]
+      },
+      "routingAudit": {
+        "testedLegs": 765,
+        "violations": [],
+        "maximumSampledPenetrationM": 1.2719202621569003e-16,
+        "accepted": true,
+        "limits": [
+          "Every axial path leg checked against all source bone triangles with AABB pruning.",
+          "Exact transverse segment hits plus five containment samples; finite radius, grazing/coplanar overlap and continuous motion are not certified.",
+          "Prescribed guides are authored frictionless support constraints, not measured anatomical tendon wrapping."
+        ]
+      },
+      "sampledPenetrationsM": {
+        "bone": 0,
+        "soft": 0,
+        "tendon": 0
+      },
+      "curvatureFallbacks": 0,
+      "step": 1,
+      "label": "regression-load",
+      "referenceQuadratureUpdateJ": 0,
+      "activeMechanicalWorkJ": 3.461465864730402,
+      "nonlinearWorkDefectJ": -2.4338570554267225,
+      "impulseResidualNmS": -8.210498947391898e-14,
+      "angleDifferenceFrom32Rad": 3.6339556364062275e-8,
+      "matchedBaselineTime": true
+    },
+    {
+      "timeS": 0.04,
+      "qRad": 0.296304899522737,
+      "activation": 0.025284822353142306,
+      "residualN": 0.00005981979903142611,
+      "independentResidualN": 0.00005981979899478875,
+      "minimumJ": 0.7627942427479529,
+      "minimumCornerJ": 0.740018824632526,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "minimumJ": 0.9196200055099375,
+          "minimumCornerJ": 0.9161969923221746,
+          "globalVolumeRatio": 0.9993252556081007,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.01426245939171658
+        },
+        {
+          "elementId": "FJ1512",
+          "minimumJ": 0.7627942427479529,
+          "minimumCornerJ": 0.740018824632526,
+          "globalVolumeRatio": 0.9989469501954453,
+          "referenceVolumeFractionBelow09": 0.012694927257448798,
+          "volumeEnergyJ": 0.04561061429092437
+        },
+        {
+          "elementId": "FJ1478",
+          "minimumJ": 0.9313222432461963,
+          "minimumCornerJ": 0.9269079482932367,
+          "globalVolumeRatio": 0.9983044207287167,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.015075380330141474
+        },
+        {
+          "elementId": "FJ1480",
+          "minimumJ": 0.9999700747046272,
+          "minimumCornerJ": 0.9999899140766852,
+          "globalVolumeRatio": 0.9999974896953562,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 2.741260762344125e-9
+        },
+        {
+          "elementId": "FJ1477",
+          "minimumJ": 0.9994062881225312,
+          "minimumCornerJ": 0.9993480379784123,
+          "globalVolumeRatio": 0.9999996770272279,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.0000010340266032316159
+        },
+        {
+          "elementId": "FJ1479",
+          "minimumJ": 0.9996569538938325,
+          "minimumCornerJ": 0.9998001395505398,
+          "globalVolumeRatio": 1.0000023075481834,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 5.153168182493312e-7
+        },
+        {
+          "elementId": "FJ1487",
+          "minimumJ": 0.9999723744312213,
+          "minimumCornerJ": 0.9999736389399777,
+          "globalVolumeRatio": 1.0000000376661622,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 1.100336820594345e-9
+        }
+      ],
+      "surfaceAudit": {
+        "qRad": 0.296304899522737,
+        "boneTissue": [
+          {
+            "head": "FJ1486",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1230,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3368",
+            "broadPhasePairs": 5,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3368",
+            "broadPhasePairs": 110,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1259,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3391",
+            "broadPhasePairs": 285,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3368",
+            "broadPhasePairs": 856,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3368",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3368",
+            "broadPhasePairs": 416,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3349",
+            "broadPhasePairs": 108,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "tissueTissue": [
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1512",
+            "broadPhasePairs": 471,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1478",
+            "broadPhasePairs": 216,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1487",
+            "broadPhasePairs": 396,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1478",
+            "broadPhasePairs": 975,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1477",
+            "broadPhasePairs": 517,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1479",
+            "broadPhasePairs": 855,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1479",
+            "broadPhasePairs": 1038,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1479",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "boneBone": [
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 342,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3349",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 153,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "transverseCrossingPairs": 0,
+        "limits": [
+          "Every boundary triangle participates after AABB pruning.",
+          "Transverse edge/face crossings only; coplanar/grazing overlaps, containment and continuous motion are not certified.",
+          "No cartilage contact or medical apposition threshold is inferred."
+        ]
+      },
+      "routingAudit": {
+        "testedLegs": 765,
+        "violations": [],
+        "maximumSampledPenetrationM": 1.249000902703301e-16,
+        "accepted": true,
+        "limits": [
+          "Every axial path leg checked against all source bone triangles with AABB pruning.",
+          "Exact transverse segment hits plus five containment samples; finite radius, grazing/coplanar overlap and continuous motion are not certified.",
+          "Prescribed guides are authored frictionless support constraints, not measured anatomical tendon wrapping."
+        ]
+      },
+      "sampledPenetrationsM": {
+        "bone": 0,
+        "soft": 0,
+        "tendon": 0
+      },
+      "curvatureFallbacks": 0,
+      "step": 2,
+      "label": "lift",
+      "referenceQuadratureUpdateJ": 0,
+      "activeMechanicalWorkJ": 2.5259819448605523,
+      "nonlinearWorkDefectJ": -1.04112633360612,
+      "impulseResidualNmS": 2.041428146526414e-10,
+      "angleDifferenceFrom32Rad": 9.047701297060229e-7,
+      "matchedBaselineTime": true
+    },
+    {
+      "timeS": 0.07,
+      "qRad": 0.3209247728754681,
+      "activation": 0.033049042261982194,
+      "residualN": 0.00003938279471173579,
+      "independentResidualN": 0.00003938279472053257,
+      "minimumJ": 0.7270624665971651,
+      "minimumCornerJ": 0.7120247523019865,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "minimumJ": 0.9080823609088068,
+          "minimumCornerJ": 0.9040934652760667,
+          "globalVolumeRatio": 0.9992778798684034,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.019896167659602133
+        },
+        {
+          "elementId": "FJ1512",
+          "minimumJ": 0.7270624665971651,
+          "minimumCornerJ": 0.7120247523019865,
+          "globalVolumeRatio": 0.9989194592071166,
+          "referenceVolumeFractionBelow09": 0.016515080952988134,
+          "volumeEnergyJ": 0.05539643723468601
+        },
+        {
+          "elementId": "FJ1478",
+          "minimumJ": 0.9364637189808598,
+          "minimumCornerJ": 0.9323753426094328,
+          "globalVolumeRatio": 0.9981281074819581,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.012624648939415478
+        },
+        {
+          "elementId": "FJ1480",
+          "minimumJ": 0.9999311147129405,
+          "minimumCornerJ": 0.9999845512500288,
+          "globalVolumeRatio": 0.9999961026675215,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 1.2271694277852687e-8
+        },
+        {
+          "elementId": "FJ1477",
+          "minimumJ": 0.9985732247373093,
+          "minimumCornerJ": 0.9984422103350588,
+          "globalVolumeRatio": 0.9999997336484898,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.000008084956332475283
+        },
+        {
+          "elementId": "FJ1479",
+          "minimumJ": 0.9995849203085618,
+          "minimumCornerJ": 0.9997077316122303,
+          "globalVolumeRatio": 1.0000036213557073,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.0000010827605846406498
+        },
+        {
+          "elementId": "FJ1487",
+          "minimumJ": 0.9998373427798777,
+          "minimumCornerJ": 0.9998319946494666,
+          "globalVolumeRatio": 1.000000259967138,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 5.178946641761623e-8
+        }
+      ],
+      "surfaceAudit": {
+        "qRad": 0.3209247728754681,
+        "boneTissue": [
+          {
+            "head": "FJ1486",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1221,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3368",
+            "broadPhasePairs": 3,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3368",
+            "broadPhasePairs": 117,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1248,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3391",
+            "broadPhasePairs": 239,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3368",
+            "broadPhasePairs": 842,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3368",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3368",
+            "broadPhasePairs": 418,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3349",
+            "broadPhasePairs": 225,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "tissueTissue": [
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1512",
+            "broadPhasePairs": 461,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1478",
+            "broadPhasePairs": 174,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1487",
+            "broadPhasePairs": 353,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1478",
+            "broadPhasePairs": 825,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1477",
+            "broadPhasePairs": 508,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1479",
+            "broadPhasePairs": 861,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1479",
+            "broadPhasePairs": 1043,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1479",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "boneBone": [
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 295,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3349",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 177,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "transverseCrossingPairs": 0,
+        "limits": [
+          "Every boundary triangle participates after AABB pruning.",
+          "Transverse edge/face crossings only; coplanar/grazing overlaps, containment and continuous motion are not certified.",
+          "No cartilage contact or medical apposition threshold is inferred."
+        ]
+      },
+      "routingAudit": {
+        "testedLegs": 765,
+        "violations": [],
+        "maximumSampledPenetrationM": 8.777083671441753e-17,
+        "accepted": true,
+        "limits": [
+          "Every axial path leg checked against all source bone triangles with AABB pruning.",
+          "Exact transverse segment hits plus five containment samples; finite radius, grazing/coplanar overlap and continuous motion are not certified.",
+          "Prescribed guides are authored frictionless support constraints, not measured anatomical tendon wrapping."
+        ]
+      },
+      "sampledPenetrationsM": {
+        "bone": 0,
+        "soft": 0,
+        "tendon": 0
+      },
+      "curvatureFallbacks": 0,
+      "step": 3,
+      "label": "lift",
+      "referenceQuadratureUpdateJ": 0,
+      "activeMechanicalWorkJ": 0.581974078930017,
+      "nonlinearWorkDefectJ": -0.07012942155793812,
+      "impulseResidualNmS": -3.7531750507469043e-10,
+      "angleDifferenceFrom32Rad": 0.000010039068144340746,
+      "matchedBaselineTime": true
+    },
+    {
+      "timeS": 0.1,
+      "qRad": 0.35878177911003456,
+      "activation": 0.03671660005504405,
+      "residualN": 0.00009000557728744418,
+      "independentResidualN": 0.00009000557448879398,
+      "minimumJ": 0.7254781473798064,
+      "minimumCornerJ": 0.7126336433413014,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "minimumJ": 0.9061348694504046,
+          "minimumCornerJ": 0.9021147963303326,
+          "globalVolumeRatio": 0.9992649759895598,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.0220062533541626
+        },
+        {
+          "elementId": "FJ1512",
+          "minimumJ": 0.7254781473798064,
+          "minimumCornerJ": 0.7126336433413014,
+          "globalVolumeRatio": 0.9988640471615673,
+          "referenceVolumeFractionBelow09": 0.017136481584260538,
+          "volumeEnergyJ": 0.05741729187520302
+        },
+        {
+          "elementId": "FJ1478",
+          "minimumJ": 0.9388880715028275,
+          "minimumCornerJ": 0.9349585947041372,
+          "globalVolumeRatio": 0.9981085935565809,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.011908542311630292
+        },
+        {
+          "elementId": "FJ1480",
+          "minimumJ": 0.9998588435905357,
+          "minimumCornerJ": 0.999971764397565,
+          "globalVolumeRatio": 0.9999934280738932,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 3.9676480386811834e-8
+        },
+        {
+          "elementId": "FJ1477",
+          "minimumJ": 0.9964318724388125,
+          "minimumCornerJ": 0.9961727624303808,
+          "globalVolumeRatio": 1.000000166932793,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.000059890312245982546
+        },
+        {
+          "elementId": "FJ1479",
+          "minimumJ": 0.9994032132559946,
+          "minimumCornerJ": 0.999381603268351,
+          "globalVolumeRatio": 1.0000054134426923,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.00000288366031517321
+        },
+        {
+          "elementId": "FJ1487",
+          "minimumJ": 0.9993014837613107,
+          "minimumCornerJ": 0.9992792452639445,
+          "globalVolumeRatio": 1.0000009414501605,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 9.691853186853878e-7
+        }
+      ],
+      "surfaceAudit": {
+        "qRad": 0.35878177911003456,
+        "boneTissue": [
+          {
+            "head": "FJ1486",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1210,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3368",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3368",
+            "broadPhasePairs": 117,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1266,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3391",
+            "broadPhasePairs": 209,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3368",
+            "broadPhasePairs": 844,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3368",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3368",
+            "broadPhasePairs": 422,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3349",
+            "broadPhasePairs": 464,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "tissueTissue": [
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1512",
+            "broadPhasePairs": 415,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1478",
+            "broadPhasePairs": 175,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1487",
+            "broadPhasePairs": 378,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1478",
+            "broadPhasePairs": 710,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1477",
+            "broadPhasePairs": 483,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1479",
+            "broadPhasePairs": 891,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1479",
+            "broadPhasePairs": 1103,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1479",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "boneBone": [
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 296,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3349",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 181,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "transverseCrossingPairs": 0,
+        "limits": [
+          "Every boundary triangle participates after AABB pruning.",
+          "Transverse edge/face crossings only; coplanar/grazing overlaps, containment and continuous motion are not certified.",
+          "No cartilage contact or medical apposition threshold is inferred."
+        ]
+      },
+      "routingAudit": {
+        "testedLegs": 765,
+        "violations": [],
+        "maximumSampledPenetrationM": 5.551115123125783e-17,
+        "accepted": true,
+        "limits": [
+          "Every axial path leg checked against all source bone triangles with AABB pruning.",
+          "Exact transverse segment hits plus five containment samples; finite radius, grazing/coplanar overlap and continuous motion are not certified.",
+          "Prescribed guides are authored frictionless support constraints, not measured anatomical tendon wrapping."
+        ]
+      },
+      "sampledPenetrationsM": {
+        "bone": 0,
+        "soft": 0,
+        "tendon": 0
+      },
+      "curvatureFallbacks": 0,
+      "step": 4,
+      "label": "lift",
+      "referenceQuadratureUpdateJ": 0.0003461156240458507,
+      "activeMechanicalWorkJ": 0.270433167612552,
+      "nonlinearWorkDefectJ": -0.012164090062668617,
+      "impulseResidualNmS": 9.862180192499182e-10,
+      "angleDifferenceFrom32Rad": 0.00004163292215453307,
+      "matchedBaselineTime": true
+    },
+    {
+      "timeS": 0.13,
+      "qRad": 0.41164344625927063,
+      "activation": 0.03844903168673112,
+      "residualN": 0.00006944999726050081,
+      "independentResidualN": 0.00006944999805952833,
+      "minimumJ": 0.8449035573840801,
+      "minimumCornerJ": 0.8405300040858819,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "minimumJ": 0.9078162459884271,
+          "minimumCornerJ": 0.9039755231874067,
+          "globalVolumeRatio": 0.9992524905934467,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.022898099218609115
+        },
+        {
+          "elementId": "FJ1512",
+          "minimumJ": 0.8449035573840801,
+          "minimumCornerJ": 0.8405300040858819,
+          "globalVolumeRatio": 0.9984018897715123,
+          "referenceVolumeFractionBelow09": 0.009493459817280179,
+          "volumeEnergyJ": 0.04562736491769741
+        },
+        {
+          "elementId": "FJ1478",
+          "minimumJ": 0.9431609963986235,
+          "minimumCornerJ": 0.9394092181615814,
+          "globalVolumeRatio": 0.9980555975964376,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.011764165210204404
+        },
+        {
+          "elementId": "FJ1480",
+          "minimumJ": 0.9998363428504952,
+          "minimumCornerJ": 0.9999480940844657,
+          "globalVolumeRatio": 0.9999886780028066,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 4.3780647129287354e-8
+        },
+        {
+          "elementId": "FJ1477",
+          "minimumJ": 0.992338727314641,
+          "minimumCornerJ": 0.9917839638282757,
+          "globalVolumeRatio": 1.0000018235790975,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.0002600414223718418
+        },
+        {
+          "elementId": "FJ1479",
+          "minimumJ": 0.9988304611455816,
+          "minimumCornerJ": 0.9987912589871997,
+          "globalVolumeRatio": 1.0000083293993447,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.000007218259964135725
+        },
+        {
+          "elementId": "FJ1487",
+          "minimumJ": 0.9981902433417441,
+          "minimumCornerJ": 0.9981308254313573,
+          "globalVolumeRatio": 1.0000020412859747,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.000006559667625197135
+        }
+      ],
+      "surfaceAudit": {
+        "qRad": 0.41164344625927063,
+        "boneTissue": [
+          {
+            "head": "FJ1486",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1144,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3368",
+            "broadPhasePairs": 6,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3368",
+            "broadPhasePairs": 101,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1259,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3391",
+            "broadPhasePairs": 189,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3368",
+            "broadPhasePairs": 883,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3368",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3368",
+            "broadPhasePairs": 382,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3349",
+            "broadPhasePairs": 764,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "tissueTissue": [
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1512",
+            "broadPhasePairs": 451,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1478",
+            "broadPhasePairs": 171,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1487",
+            "broadPhasePairs": 419,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1478",
+            "broadPhasePairs": 686,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1477",
+            "broadPhasePairs": 470,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1479",
+            "broadPhasePairs": 897,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1479",
+            "broadPhasePairs": 1066,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1479",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "boneBone": [
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 300,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3349",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 209,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "transverseCrossingPairs": 0,
+        "limits": [
+          "Every boundary triangle participates after AABB pruning.",
+          "Transverse edge/face crossings only; coplanar/grazing overlaps, containment and continuous motion are not certified.",
+          "No cartilage contact or medical apposition threshold is inferred."
+        ]
+      },
+      "routingAudit": {
+        "testedLegs": 765,
+        "violations": [],
+        "maximumSampledPenetrationM": 1.1443916996305594e-16,
+        "accepted": true,
+        "limits": [
+          "Every axial path leg checked against all source bone triangles with AABB pruning.",
+          "Exact transverse segment hits plus five containment samples; finite radius, grazing/coplanar overlap and continuous motion are not certified.",
+          "Prescribed guides are authored frictionless support constraints, not measured anatomical tendon wrapping."
+        ]
+      },
+      "sampledPenetrationsM": {
+        "bone": 0,
+        "soft": 0,
+        "tendon": 0
+      },
+      "curvatureFallbacks": 0,
+      "step": 5,
+      "label": "lift",
+      "referenceQuadratureUpdateJ": -0.00001875839457987638,
+      "activeMechanicalWorkJ": 0.4799975232751237,
+      "nonlinearWorkDefectJ": -0.07194497148570828,
+      "impulseResidualNmS": 1.3366998494745986e-9,
+      "angleDifferenceFrom32Rad": 0.0000720118399106795,
+      "matchedBaselineTime": true
+    },
+    {
+      "timeS": 0.16,
+      "qRad": 0.4726577218113215,
+      "activation": 0.02332051655426497,
+      "residualN": 0.000023207512957392623,
+      "independentResidualN": 0.000023207512511957268,
+      "minimumJ": 0.8702035191490424,
+      "minimumCornerJ": 0.8661245639829888,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "minimumJ": 0.9314316105799076,
+          "minimumCornerJ": 0.9288317848750876,
+          "globalVolumeRatio": 0.9994300112888452,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.01290499878908047
+        },
+        {
+          "elementId": "FJ1512",
+          "minimumJ": 0.8702035191490424,
+          "minimumCornerJ": 0.8661245639829888,
+          "globalVolumeRatio": 0.9988446804513234,
+          "referenceVolumeFractionBelow09": 0.002046855904093065,
+          "volumeEnergyJ": 0.03613105559589174
+        },
+        {
+          "elementId": "FJ1478",
+          "minimumJ": 0.9351875933733395,
+          "minimumCornerJ": 0.9309000305296734,
+          "globalVolumeRatio": 0.9985307887204493,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.015584494085775568
+        },
+        {
+          "elementId": "FJ1480",
+          "minimumJ": 0.999871452737252,
+          "minimumCornerJ": 0.999906573157717,
+          "globalVolumeRatio": 0.9999812342764044,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 6.820480957240168e-8
+        },
+        {
+          "elementId": "FJ1477",
+          "minimumJ": 0.9871951682274883,
+          "minimumCornerJ": 0.9862746204241665,
+          "globalVolumeRatio": 1.0000051927231144,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.0007134842232540525
+        },
+        {
+          "elementId": "FJ1479",
+          "minimumJ": 0.9980107751438818,
+          "minimumCornerJ": 0.9979305597171477,
+          "globalVolumeRatio": 1.0000123241914172,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.000016043758538318497
+        },
+        {
+          "elementId": "FJ1487",
+          "minimumJ": 0.9964777193866141,
+          "minimumCornerJ": 0.9963579939898035,
+          "globalVolumeRatio": 1.0000031693316198,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.00002740396892129651
+        }
+      ],
+      "surfaceAudit": {
+        "qRad": 0.4726577218113215,
+        "boneTissue": [
+          {
+            "head": "FJ1486",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1085,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3368",
+            "broadPhasePairs": 3,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3368",
+            "broadPhasePairs": 110,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1267,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3391",
+            "broadPhasePairs": 120,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3368",
+            "broadPhasePairs": 926,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3368",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3368",
+            "broadPhasePairs": 292,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3349",
+            "broadPhasePairs": 1021,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "tissueTissue": [
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1512",
+            "broadPhasePairs": 462,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1478",
+            "broadPhasePairs": 147,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1487",
+            "broadPhasePairs": 471,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1478",
+            "broadPhasePairs": 687,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1477",
+            "broadPhasePairs": 426,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1479",
+            "broadPhasePairs": 877,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1479",
+            "broadPhasePairs": 1077,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1479",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "boneBone": [
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 298,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3349",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 213,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "transverseCrossingPairs": 0,
+        "limits": [
+          "Every boundary triangle participates after AABB pruning.",
+          "Transverse edge/face crossings only; coplanar/grazing overlaps, containment and continuous motion are not certified.",
+          "No cartilage contact or medical apposition threshold is inferred."
+        ]
+      },
+      "routingAudit": {
+        "testedLegs": 765,
+        "violations": [],
+        "maximumSampledPenetrationM": 2.3055512673781017e-16,
+        "accepted": true,
+        "limits": [
+          "Every axial path leg checked against all source bone triangles with AABB pruning.",
+          "Exact transverse segment hits plus five containment samples; finite radius, grazing/coplanar overlap and continuous motion are not certified.",
+          "Prescribed guides are authored frictionless support constraints, not measured anatomical tendon wrapping."
+        ]
+      },
+      "sampledPenetrationsM": {
+        "bone": 0,
+        "soft": 0,
+        "tendon": 0
+      },
+      "curvatureFallbacks": 0,
+      "step": 6,
+      "label": "release",
+      "referenceQuadratureUpdateJ": 0.00004295462604630984,
+      "activeMechanicalWorkJ": -0.6734410143627922,
+      "nonlinearWorkDefectJ": -0.21206793309463165,
+      "impulseResidualNmS": 5.509892275767925e-11,
+      "angleDifferenceFrom32Rad": 0.00009994488133169277,
+      "matchedBaselineTime": true
+    },
+    {
+      "timeS": 0.19,
+      "qRad": 0.5340066448929078,
+      "activation": 0.01414460829049772,
+      "residualN": 0.00005493273271797716,
+      "independentResidualN": 0.000054932733176166204,
+      "minimumJ": 0.8277380950601265,
+      "minimumCornerJ": 0.8119760409428974,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "minimumJ": 0.9346016632402829,
+          "minimumCornerJ": 0.9313623130828693,
+          "globalVolumeRatio": 0.9996179512607478,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.008379342826204726
+        },
+        {
+          "elementId": "FJ1512",
+          "minimumJ": 0.8277380950601265,
+          "minimumCornerJ": 0.8119760409428974,
+          "globalVolumeRatio": 0.9991416598008194,
+          "referenceVolumeFractionBelow09": 0.006125735937545443,
+          "volumeEnergyJ": 0.031327868839297744
+        },
+        {
+          "elementId": "FJ1478",
+          "minimumJ": 0.9252109116293754,
+          "minimumCornerJ": 0.9204843667577435,
+          "globalVolumeRatio": 0.9989995496957873,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.018422255985804187
+        },
+        {
+          "elementId": "FJ1480",
+          "minimumJ": 0.9997552065978648,
+          "minimumCornerJ": 0.9997321127511074,
+          "globalVolumeRatio": 0.999976996325336,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 1.9426169131911748e-7
+        },
+        {
+          "elementId": "FJ1477",
+          "minimumJ": 0.981786830572954,
+          "minimumCornerJ": 0.9804792204326321,
+          "globalVolumeRatio": 1.0000112785431936,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.001424004488177972
+        },
+        {
+          "elementId": "FJ1479",
+          "minimumJ": 0.9973385525429288,
+          "minimumCornerJ": 0.9972514484676205,
+          "globalVolumeRatio": 1.0000159159672575,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.000027446664340332167
+        },
+        {
+          "elementId": "FJ1487",
+          "minimumJ": 0.995202098477535,
+          "minimumCornerJ": 0.9953544386132064,
+          "globalVolumeRatio": 1.0000035942701584,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.000054769910561546306
+        }
+      ],
+      "surfaceAudit": {
+        "qRad": 0.5340066448929078,
+        "boneTissue": [
+          {
+            "head": "FJ1486",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1080,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3368",
+            "broadPhasePairs": 4,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3368",
+            "broadPhasePairs": 99,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1284,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3391",
+            "broadPhasePairs": 105,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3368",
+            "broadPhasePairs": 945,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3368",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3368",
+            "broadPhasePairs": 216,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3349",
+            "broadPhasePairs": 1048,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "tissueTissue": [
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1512",
+            "broadPhasePairs": 403,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1478",
+            "broadPhasePairs": 185,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1487",
+            "broadPhasePairs": 459,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1478",
+            "broadPhasePairs": 1095,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1477",
+            "broadPhasePairs": 399,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1479",
+            "broadPhasePairs": 910,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1479",
+            "broadPhasePairs": 1134,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1479",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "boneBone": [
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 288,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3349",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 220,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "transverseCrossingPairs": 0,
+        "limits": [
+          "Every boundary triangle participates after AABB pruning.",
+          "Transverse edge/face crossings only; coplanar/grazing overlaps, containment and continuous motion are not certified.",
+          "No cartilage contact or medical apposition threshold is inferred."
+        ]
+      },
+      "routingAudit": {
+        "testedLegs": 765,
+        "violations": [],
+        "maximumSampledPenetrationM": 1.594436429147036e-16,
+        "accepted": true,
+        "limits": [
+          "Every axial path leg checked against all source bone triangles with AABB pruning.",
+          "Exact transverse segment hits plus five containment samples; finite radius, grazing/coplanar overlap and continuous motion are not certified.",
+          "Prescribed guides are authored frictionless support constraints, not measured anatomical tendon wrapping."
+        ]
+      },
+      "sampledPenetrationsM": {
+        "bone": 0,
+        "soft": 0,
+        "tendon": 0
+      },
+      "curvatureFallbacks": 0,
+      "step": 7,
+      "label": "release",
+      "referenceQuadratureUpdateJ": 0,
+      "activeMechanicalWorkJ": -0.5543600972839604,
+      "nonlinearWorkDefectJ": -0.22109603065054947,
+      "impulseResidualNmS": 3.63053128893398e-10,
+      "angleDifferenceFrom32Rad": 0.0001241734101133929,
+      "matchedBaselineTime": true
+    },
+    {
+      "timeS": 0.22,
+      "qRad": 0.5901158847409518,
+      "activation": 0.008579138597812367,
+      "residualN": 0.00008411142049260037,
+      "independentResidualN": 0.00008411142027710608,
+      "minimumJ": 0.8729331378341513,
+      "minimumCornerJ": 0.8626883547108934,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "minimumJ": 0.9346314729504664,
+          "minimumCornerJ": 0.9305211702324251,
+          "globalVolumeRatio": 0.9997218394012121,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.007300146374993354
+        },
+        {
+          "elementId": "FJ1512",
+          "minimumJ": 0.8729331378341513,
+          "minimumCornerJ": 0.8626883547108934,
+          "globalVolumeRatio": 0.9993218611439305,
+          "referenceVolumeFractionBelow09": 0.0017334426832803786,
+          "volumeEnergyJ": 0.022708065420517152
+        },
+        {
+          "elementId": "FJ1478",
+          "minimumJ": 0.9218266406965764,
+          "minimumCornerJ": 0.9169022569157816,
+          "globalVolumeRatio": 0.9993287342675092,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.020956509878461014
+        },
+        {
+          "elementId": "FJ1480",
+          "minimumJ": 0.9997931659047562,
+          "minimumCornerJ": 0.9997686923355564,
+          "globalVolumeRatio": 0.9999766070612544,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 9.263754542077096e-8
+        },
+        {
+          "elementId": "FJ1477",
+          "minimumJ": 0.9754980905370898,
+          "minimumCornerJ": 0.973737564446125,
+          "globalVolumeRatio": 1.0000249405488837,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.0025678212021534312
+        },
+        {
+          "elementId": "FJ1479",
+          "minimumJ": 0.9970952869730418,
+          "minimumCornerJ": 0.9969801718903591,
+          "globalVolumeRatio": 1.000022230771619,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.00003765598760928707
+        },
+        {
+          "elementId": "FJ1487",
+          "minimumJ": 0.9940610108847749,
+          "minimumCornerJ": 0.9952737591338786,
+          "globalVolumeRatio": 1.000003762340124,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.0000805827156446518
+        }
+      ],
+      "surfaceAudit": {
+        "qRad": 0.5901158847409518,
+        "boneTissue": [
+          {
+            "head": "FJ1486",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1093,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3368",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3368",
+            "broadPhasePairs": 116,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1272,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3391",
+            "broadPhasePairs": 93,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3368",
+            "broadPhasePairs": 937,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3368",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3368",
+            "broadPhasePairs": 202,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3349",
+            "broadPhasePairs": 1067,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "tissueTissue": [
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1512",
+            "broadPhasePairs": 356,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1478",
+            "broadPhasePairs": 125,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1487",
+            "broadPhasePairs": 455,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1478",
+            "broadPhasePairs": 1146,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1477",
+            "broadPhasePairs": 365,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1479",
+            "broadPhasePairs": 945,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1479",
+            "broadPhasePairs": 1160,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1479",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "boneBone": [
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 264,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3349",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 238,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "transverseCrossingPairs": 0,
+        "limits": [
+          "Every boundary triangle participates after AABB pruning.",
+          "Transverse edge/face crossings only; coplanar/grazing overlaps, containment and continuous motion are not certified.",
+          "No cartilage contact or medical apposition threshold is inferred."
+        ]
+      },
+      "routingAudit": {
+        "testedLegs": 765,
+        "violations": [],
+        "maximumSampledPenetrationM": 1.2719202621569003e-16,
+        "accepted": true,
+        "limits": [
+          "Every axial path leg checked against all source bone triangles with AABB pruning.",
+          "Exact transverse segment hits plus five containment samples; finite radius, grazing/coplanar overlap and continuous motion are not certified.",
+          "Prescribed guides are authored frictionless support constraints, not measured anatomical tendon wrapping."
+        ]
+      },
+      "sampledPenetrationsM": {
+        "bone": 0,
+        "soft": 0,
+        "tendon": 0
+      },
+      "curvatureFallbacks": 0,
+      "step": 8,
+      "label": "release",
+      "referenceQuadratureUpdateJ": 0.001571490034603329,
+      "activeMechanicalWorkJ": -0.36775058542689454,
+      "nonlinearWorkDefectJ": -0.12580450358358872,
+      "impulseResidualNmS": 1.138997589578139e-10,
+      "angleDifferenceFrom32Rad": 0.00014535734223630747,
+      "matchedBaselineTime": true
+    },
+    {
+      "timeS": 0.25,
+      "qRad": 0.6362872363256337,
+      "activation": 0.005203510593497252,
+      "residualN": 0.00006723404189565893,
+      "independentResidualN": 0.00006723404198682905,
+      "minimumJ": 0.912052336900068,
+      "minimumCornerJ": 0.9114662058713621,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "minimumJ": 0.9357586814395717,
+          "minimumCornerJ": 0.9310784152229674,
+          "globalVolumeRatio": 0.9998320056403108,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.007255406138084252
+        },
+        {
+          "elementId": "FJ1512",
+          "minimumJ": 0.912052336900068,
+          "minimumCornerJ": 0.9114662058713621,
+          "globalVolumeRatio": 0.9995412646886876,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.016335035496284227
+        },
+        {
+          "elementId": "FJ1478",
+          "minimumJ": 0.9269068355023128,
+          "minimumCornerJ": 0.9224470465144978,
+          "globalVolumeRatio": 0.9995392672608814,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.020476832825790287
+        },
+        {
+          "elementId": "FJ1480",
+          "minimumJ": 0.9998320382293556,
+          "minimumCornerJ": 0.9998018264177413,
+          "globalVolumeRatio": 0.9999745586366624,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 1.1821468655868368e-7
+        },
+        {
+          "elementId": "FJ1477",
+          "minimumJ": 0.9708015241318485,
+          "minimumCornerJ": 0.9687880112602356,
+          "globalVolumeRatio": 1.0000341775802324,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.003562785147391235
+        },
+        {
+          "elementId": "FJ1479",
+          "minimumJ": 0.9966218185410926,
+          "minimumCornerJ": 0.9964844536353965,
+          "globalVolumeRatio": 1.0000262510051545,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.000050385521487863633
+        },
+        {
+          "elementId": "FJ1487",
+          "minimumJ": 0.9928935875068443,
+          "minimumCornerJ": 0.9951237686868999,
+          "globalVolumeRatio": 1.0000036401115793,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.00011290400515506972
+        }
+      ],
+      "surfaceAudit": {
+        "qRad": 0.6362872363256337,
+        "boneTissue": [
+          {
+            "head": "FJ1486",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1113,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3368",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3368",
+            "broadPhasePairs": 116,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1289,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3391",
+            "broadPhasePairs": 70,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3368",
+            "broadPhasePairs": 925,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3368",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3368",
+            "broadPhasePairs": 170,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3349",
+            "broadPhasePairs": 925,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "tissueTissue": [
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1512",
+            "broadPhasePairs": 399,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1478",
+            "broadPhasePairs": 175,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1487",
+            "broadPhasePairs": 460,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1478",
+            "broadPhasePairs": 1239,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1477",
+            "broadPhasePairs": 402,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1479",
+            "broadPhasePairs": 927,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1479",
+            "broadPhasePairs": 1086,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1479",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "boneBone": [
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3349",
+            "broadPhasePairs": 8,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 254,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3349",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 252,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "transverseCrossingPairs": 0,
+        "limits": [
+          "Every boundary triangle participates after AABB pruning.",
+          "Transverse edge/face crossings only; coplanar/grazing overlaps, containment and continuous motion are not certified.",
+          "No cartilage contact or medical apposition threshold is inferred."
+        ]
+      },
+      "routingAudit": {
+        "testedLegs": 765,
+        "violations": [],
+        "maximumSampledPenetrationM": 3.469446951953614e-17,
+        "accepted": true,
+        "limits": [
+          "Every axial path leg checked against all source bone triangles with AABB pruning.",
+          "Exact transverse segment hits plus five containment samples; finite radius, grazing/coplanar overlap and continuous motion are not certified.",
+          "Prescribed guides are authored frictionless support constraints, not measured anatomical tendon wrapping."
+        ]
+      },
+      "sampledPenetrationsM": {
+        "bone": 0,
+        "soft": 0,
+        "tendon": 0
+      },
+      "curvatureFallbacks": 0,
+      "step": 9,
+      "label": "release",
+      "referenceQuadratureUpdateJ": 0,
+      "activeMechanicalWorkJ": -0.2633424267836486,
+      "nonlinearWorkDefectJ": -0.08923787057821359,
+      "impulseResidualNmS": 1.6918840195501162e-10,
+      "angleDifferenceFrom32Rad": 0.00016213812926457738,
+      "matchedBaselineTime": true
+    },
+    {
+      "timeS": 0.28,
+      "qRad": 0.6691962534046256,
+      "activation": 0.003156088713095565,
+      "residualN": 0.00006660718699878039,
+      "independentResidualN": 0.00006660718717522258,
+      "minimumJ": 0.9431256725798685,
+      "minimumCornerJ": 0.9395244184474564,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "minimumJ": 0.9431256725798685,
+          "minimumCornerJ": 0.9395244184474564,
+          "globalVolumeRatio": 0.9998682702978563,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.006007023612134675
+        },
+        {
+          "elementId": "FJ1512",
+          "minimumJ": 0.9560047301725909,
+          "minimumCornerJ": 0.953101149971684,
+          "globalVolumeRatio": 0.9998647405117751,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.0108873611398115
+        },
+        {
+          "elementId": "FJ1478",
+          "minimumJ": 0.9451939321725393,
+          "minimumCornerJ": 0.9417974503309692,
+          "globalVolumeRatio": 0.9997135232494616,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.01730979465603941
+        },
+        {
+          "elementId": "FJ1480",
+          "minimumJ": 0.9998160508046947,
+          "minimumCornerJ": 0.9997788350787643,
+          "globalVolumeRatio": 0.999974044740714,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 1.4482668340854632e-7
+        },
+        {
+          "elementId": "FJ1477",
+          "minimumJ": 0.967229892617882,
+          "minimumCornerJ": 0.9651018452935602,
+          "globalVolumeRatio": 1.000040909641798,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.004346000573074006
+        },
+        {
+          "elementId": "FJ1479",
+          "minimumJ": 0.9962197147393591,
+          "minimumCornerJ": 0.996046720819272,
+          "globalVolumeRatio": 1.0000293124413802,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.00006046699524865214
+        },
+        {
+          "elementId": "FJ1487",
+          "minimumJ": 0.9921267488111776,
+          "minimumCornerJ": 0.9943255111236142,
+          "globalVolumeRatio": 1.0000038759146053,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.0001368645606522266
+        }
+      ],
+      "surfaceAudit": {
+        "qRad": 0.6691962534046256,
+        "boneTissue": [
+          {
+            "head": "FJ1486",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1312,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3368",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3368",
+            "broadPhasePairs": 100,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1288,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3391",
+            "broadPhasePairs": 46,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3368",
+            "broadPhasePairs": 941,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3368",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3368",
+            "broadPhasePairs": 135,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3349",
+            "broadPhasePairs": 943,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "tissueTissue": [
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1512",
+            "broadPhasePairs": 383,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1478",
+            "broadPhasePairs": 246,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1487",
+            "broadPhasePairs": 444,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1478",
+            "broadPhasePairs": 1039,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1477",
+            "broadPhasePairs": 421,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1479",
+            "broadPhasePairs": 960,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1479",
+            "broadPhasePairs": 1080,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1479",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "boneBone": [
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3349",
+            "broadPhasePairs": 5,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 256,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3349",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 260,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "transverseCrossingPairs": 0,
+        "limits": [
+          "Every boundary triangle participates after AABB pruning.",
+          "Transverse edge/face crossings only; coplanar/grazing overlaps, containment and continuous motion are not certified.",
+          "No cartilage contact or medical apposition threshold is inferred."
+        ]
+      },
+      "routingAudit": {
+        "testedLegs": 765,
+        "violations": [],
+        "maximumSampledPenetrationM": 3.469446951953614e-17,
+        "accepted": true,
+        "limits": [
+          "Every axial path leg checked against all source bone triangles with AABB pruning.",
+          "Exact transverse segment hits plus five containment samples; finite radius, grazing/coplanar overlap and continuous motion are not certified.",
+          "Prescribed guides are authored frictionless support constraints, not measured anatomical tendon wrapping."
+        ]
+      },
+      "sampledPenetrationsM": {
+        "bone": 0,
+        "soft": 0,
+        "tendon": 0
+      },
+      "curvatureFallbacks": 0,
+      "step": 10,
+      "label": "release",
+      "referenceQuadratureUpdateJ": 0,
+      "activeMechanicalWorkJ": -0.15936224669479815,
+      "nonlinearWorkDefectJ": -0.05691445158980296,
+      "impulseResidualNmS": -1.4895275413095987e-10,
+      "angleDifferenceFrom32Rad": 0.00017401844900488683,
+      "matchedBaselineTime": true
+    },
+    {
+      "timeS": 0.31000000000000005,
+      "qRad": 0.6863898529817992,
+      "activation": 0.0019142645692654492,
+      "residualN": 0.000035165438912127325,
+      "independentResidualN": 0.000035165438673928975,
+      "minimumJ": 0.9540285947566741,
+      "minimumCornerJ": 0.9511478203205326,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "minimumJ": 0.9598056376973723,
+          "minimumCornerJ": 0.957019091910688,
+          "globalVolumeRatio": 0.9998902839804598,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.0031180021370895827
+        },
+        {
+          "elementId": "FJ1512",
+          "minimumJ": 0.9710163082015574,
+          "minimumCornerJ": 0.9690903450616863,
+          "globalVolumeRatio": 0.9998663774489648,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.004912363915715172
+        },
+        {
+          "elementId": "FJ1478",
+          "minimumJ": 0.9540285947566741,
+          "minimumCornerJ": 0.9511478203205326,
+          "globalVolumeRatio": 0.9997835129468994,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.012014398323426772
+        },
+        {
+          "elementId": "FJ1480",
+          "minimumJ": 0.9998015714067517,
+          "minimumCornerJ": 0.999765083000419,
+          "globalVolumeRatio": 0.9999733520791194,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 1.6570826205825288e-7
+        },
+        {
+          "elementId": "FJ1477",
+          "minimumJ": 0.9653397594682444,
+          "minimumCornerJ": 0.9631596799362373,
+          "globalVolumeRatio": 1.0000447138329924,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.004780286208710008
+        },
+        {
+          "elementId": "FJ1479",
+          "minimumJ": 0.9959712055310619,
+          "minimumCornerJ": 0.9957734131095634,
+          "globalVolumeRatio": 1.0000308592524338,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.00006636284156901571
+        },
+        {
+          "elementId": "FJ1487",
+          "minimumJ": 0.9916977272844404,
+          "minimumCornerJ": 0.9931292348438758,
+          "globalVolumeRatio": 1.0000050554211104,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.00015244639274331154
+        }
+      ],
+      "surfaceAudit": {
+        "qRad": 0.6863898529817992,
+        "boneTissue": [
+          {
+            "head": "FJ1486",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1383,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3368",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3368",
+            "broadPhasePairs": 97,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1294,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3391",
+            "broadPhasePairs": 43,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3368",
+            "broadPhasePairs": 945,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3368",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3368",
+            "broadPhasePairs": 121,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3349",
+            "broadPhasePairs": 1272,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "tissueTissue": [
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1512",
+            "broadPhasePairs": 284,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1478",
+            "broadPhasePairs": 197,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1487",
+            "broadPhasePairs": 412,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1478",
+            "broadPhasePairs": 1090,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1477",
+            "broadPhasePairs": 440,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1479",
+            "broadPhasePairs": 970,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1479",
+            "broadPhasePairs": 1082,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1479",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "boneBone": [
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3349",
+            "broadPhasePairs": 6,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 246,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3349",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 265,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "transverseCrossingPairs": 0,
+        "limits": [
+          "Every boundary triangle participates after AABB pruning.",
+          "Transverse edge/face crossings only; coplanar/grazing overlaps, containment and continuous motion are not certified.",
+          "No cartilage contact or medical apposition threshold is inferred."
+        ]
+      },
+      "routingAudit": {
+        "testedLegs": 765,
+        "violations": [],
+        "maximumSampledPenetrationM": 5.928593550334434e-17,
+        "accepted": true,
+        "limits": [
+          "Every axial path leg checked against all source bone triangles with AABB pruning.",
+          "Exact transverse segment hits plus five containment samples; finite radius, grazing/coplanar overlap and continuous motion are not certified.",
+          "Prescribed guides are authored frictionless support constraints, not measured anatomical tendon wrapping."
+        ]
+      },
+      "sampledPenetrationsM": {
+        "bone": 0,
+        "soft": 0,
+        "tendon": 0
+      },
+      "curvatureFallbacks": 0,
+      "step": 11,
+      "label": "release",
+      "referenceQuadratureUpdateJ": 0,
+      "activeMechanicalWorkJ": -0.08229383519618394,
+      "nonlinearWorkDefectJ": -0.027638464448366727,
+      "impulseResidualNmS": 9.046423570246987e-10,
+      "angleDifferenceFrom32Rad": 0.00018087253089049682,
+      "matchedBaselineTime": true
+    },
+    {
+      "timeS": 0.3400000000000001,
+      "qRad": 0.6865381477371714,
+      "activation": 0.0011610601520610929,
+      "residualN": 0.00008127190592270475,
+      "independentResidualN": 0.00008127190594933709,
+      "minimumJ": 0.9645140631904742,
+      "minimumCornerJ": 0.962285443164351,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "minimumJ": 0.9726013621359014,
+          "minimumCornerJ": 0.9710079130094094,
+          "globalVolumeRatio": 0.9999154006310278,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.0014267919103678074
+        },
+        {
+          "elementId": "FJ1512",
+          "minimumJ": 0.9804379450932847,
+          "minimumCornerJ": 0.9791822089308265,
+          "globalVolumeRatio": 0.999874777503167,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.0020567761204543377
+        },
+        {
+          "elementId": "FJ1478",
+          "minimumJ": 0.9645140631904742,
+          "minimumCornerJ": 0.962285443164351,
+          "globalVolumeRatio": 0.9998263246945499,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.007206256420491754
+        },
+        {
+          "elementId": "FJ1480",
+          "minimumJ": 0.9998017054952891,
+          "minimumCornerJ": 0.9997645545314441,
+          "globalVolumeRatio": 0.9999733299300012,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 1.6608954859469956e-7
+        },
+        {
+          "elementId": "FJ1477",
+          "minimumJ": 0.9653251213770664,
+          "minimumCornerJ": 0.9631448214935968,
+          "globalVolumeRatio": 1.000044757046094,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.00478396908680375
+        },
+        {
+          "elementId": "FJ1479",
+          "minimumJ": 0.9959722431710037,
+          "minimumCornerJ": 0.9957748851802491,
+          "globalVolumeRatio": 1.0000308789129366,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.00006641469957540579
+        },
+        {
+          "elementId": "FJ1487",
+          "minimumJ": 0.991596514530398,
+          "minimumCornerJ": 0.9931257637074941,
+          "globalVolumeRatio": 1.0000057542195064,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.0001566695079043049
+        }
+      ],
+      "surfaceAudit": {
+        "qRad": 0.6865381477371714,
+        "boneTissue": [
+          {
+            "head": "FJ1486",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1359,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3368",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3368",
+            "broadPhasePairs": 106,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1294,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3391",
+            "broadPhasePairs": 43,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3368",
+            "broadPhasePairs": 945,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3368",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3368",
+            "broadPhasePairs": 114,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3349",
+            "broadPhasePairs": 1290,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "tissueTissue": [
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1512",
+            "broadPhasePairs": 226,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1478",
+            "broadPhasePairs": 199,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1487",
+            "broadPhasePairs": 374,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1478",
+            "broadPhasePairs": 1247,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1477",
+            "broadPhasePairs": 440,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1479",
+            "broadPhasePairs": 970,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1479",
+            "broadPhasePairs": 1082,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1479",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "boneBone": [
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3349",
+            "broadPhasePairs": 6,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 246,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3349",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 265,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "transverseCrossingPairs": 0,
+        "limits": [
+          "Every boundary triangle participates after AABB pruning.",
+          "Transverse edge/face crossings only; coplanar/grazing overlaps, containment and continuous motion are not certified.",
+          "No cartilage contact or medical apposition threshold is inferred."
+        ]
+      },
+      "routingAudit": {
+        "testedLegs": 765,
+        "violations": [],
+        "maximumSampledPenetrationM": 6.206335383118183e-17,
+        "accepted": true,
+        "limits": [
+          "Every axial path leg checked against all source bone triangles with AABB pruning.",
+          "Exact transverse segment hits plus five containment samples; finite radius, grazing/coplanar overlap and continuous motion are not certified.",
+          "Prescribed guides are authored frictionless support constraints, not measured anatomical tendon wrapping."
+        ]
+      },
+      "sampledPenetrationsM": {
+        "bone": 0,
+        "soft": 0,
+        "tendon": 0
+      },
+      "curvatureFallbacks": 0,
+      "step": 12,
+      "label": "release",
+      "referenceQuadratureUpdateJ": 0,
+      "activeMechanicalWorkJ": -0.04606194155013865,
+      "nonlinearWorkDefectJ": -0.014384122518398157,
+      "impulseResidualNmS": -1.5172459590706566e-8,
+      "angleDifferenceFrom32Rad": 0.00018235802916710675,
+      "matchedBaselineTime": true
+    },
+    {
+      "timeS": 0.3700000000000001,
+      "qRad": 0.6692917439354147,
+      "activation": 0.0007042185799956652,
+      "residualN": 0.00006445645199710588,
+      "independentResidualN": 0.00006445645197781922,
+      "minimumJ": 0.9672202739345361,
+      "minimumCornerJ": 0.9650919479608479,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "minimumJ": 0.9821264216851354,
+          "minimumCornerJ": 0.9811000996013224,
+          "globalVolumeRatio": 0.9999366150249702,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.0005881242133855839
+        },
+        {
+          "elementId": "FJ1512",
+          "minimumJ": 0.9867716382387595,
+          "minimumCornerJ": 0.9859410242752892,
+          "globalVolumeRatio": 0.9998939813502499,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.0008394721633415196
+        },
+        {
+          "elementId": "FJ1478",
+          "minimumJ": 0.9741625228380286,
+          "minimumCornerJ": 0.972542272634831,
+          "globalVolumeRatio": 0.9998582093439153,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.003868917832203438
+        },
+        {
+          "elementId": "FJ1480",
+          "minimumJ": 0.9998159205002122,
+          "minimumCornerJ": 0.9997786768721705,
+          "globalVolumeRatio": 0.9999740372979181,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 1.4497535676493593e-7
+        },
+        {
+          "elementId": "FJ1477",
+          "minimumJ": 0.9672202739345361,
+          "minimumCornerJ": 0.9650919479608479,
+          "globalVolumeRatio": 1.000040934176222,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.004348335946617666
+        },
+        {
+          "elementId": "FJ1479",
+          "minimumJ": 0.9962200129917205,
+          "minimumCornerJ": 0.9960472186515108,
+          "globalVolumeRatio": 1.0000293260782138,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.00006049746659436392
+        },
+        {
+          "elementId": "FJ1487",
+          "minimumJ": 0.9919174823063649,
+          "minimumCornerJ": 0.9934202801116081,
+          "globalVolumeRatio": 1.0000058734666217,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.00014639623134752916
+        }
+      ],
+      "surfaceAudit": {
+        "qRad": 0.6692917439354147,
+        "boneTissue": [
+          {
+            "head": "FJ1486",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1318,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3368",
+            "broadPhasePairs": 109,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1288,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3391",
+            "broadPhasePairs": 46,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3368",
+            "broadPhasePairs": 941,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3368",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3368",
+            "broadPhasePairs": 113,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3349",
+            "broadPhasePairs": 1293,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "tissueTissue": [
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1512",
+            "broadPhasePairs": 182,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1478",
+            "broadPhasePairs": 188,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1487",
+            "broadPhasePairs": 366,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1478",
+            "broadPhasePairs": 1452,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1477",
+            "broadPhasePairs": 421,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1479",
+            "broadPhasePairs": 964,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1479",
+            "broadPhasePairs": 1080,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1479",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "boneBone": [
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3349",
+            "broadPhasePairs": 5,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 256,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3349",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 260,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "transverseCrossingPairs": 0,
+        "limits": [
+          "Every boundary triangle participates after AABB pruning.",
+          "Transverse edge/face crossings only; coplanar/grazing overlaps, containment and continuous motion are not certified.",
+          "No cartilage contact or medical apposition threshold is inferred."
+        ]
+      },
+      "routingAudit": {
+        "testedLegs": 765,
+        "violations": [],
+        "maximumSampledPenetrationM": 5.551115123125783e-17,
+        "accepted": true,
+        "limits": [
+          "Every axial path leg checked against all source bone triangles with AABB pruning.",
+          "Exact transverse segment hits plus five containment samples; finite radius, grazing/coplanar overlap and continuous motion are not certified.",
+          "Prescribed guides are authored frictionless support constraints, not measured anatomical tendon wrapping."
+        ]
+      },
+      "sampledPenetrationsM": {
+        "bone": 0,
+        "soft": 0,
+        "tendon": 0
+      },
+      "curvatureFallbacks": 0,
+      "step": 13,
+      "label": "release",
+      "referenceQuadratureUpdateJ": 0,
+      "activeMechanicalWorkJ": -0.02585971193958797,
+      "nonlinearWorkDefectJ": -0.00764178001727811,
+      "impulseResidualNmS": -1.7172137834697842e-8,
+      "angleDifferenceFrom32Rad": 0.00017840604672425542,
+      "matchedBaselineTime": true
+    },
+    {
+      "timeS": 0.40000000000000013,
+      "qRad": 0.6351404096529758,
+      "activation": 0.0004271301599066647,
+      "residualN": 0.000054693020927875074,
+      "independentResidualN": 0.00005469302102568919,
+      "minimumJ": 0.9709113498345301,
+      "minimumCornerJ": 0.9689010678397687,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "minimumJ": 0.988874529179413,
+          "minimumCornerJ": 0.9882465394118143,
+          "globalVolumeRatio": 0.9999528378964615,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.0002271470954291233
+        },
+        {
+          "elementId": "FJ1512",
+          "minimumJ": 0.9912735036841722,
+          "minimumCornerJ": 0.9907306419230368,
+          "globalVolumeRatio": 0.9999151657647655,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.0003378198496202943
+        },
+        {
+          "elementId": "FJ1478",
+          "minimumJ": 0.9820641977082993,
+          "minimumCornerJ": 0.9806338693993276,
+          "globalVolumeRatio": 0.9998865430651511,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.001899422947714581
+        },
+        {
+          "elementId": "FJ1480",
+          "minimumJ": 0.9998343929492028,
+          "minimumCornerJ": 0.9998009273839394,
+          "globalVolumeRatio": 0.9999752720974663,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 1.1845739171637698e-7
+        },
+        {
+          "elementId": "FJ1477",
+          "minimumJ": 0.9709113498345301,
+          "minimumCornerJ": 0.9689010678397687,
+          "globalVolumeRatio": 1.0000337213810497,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.003536482935952871
+        },
+        {
+          "elementId": "FJ1479",
+          "minimumJ": 0.9966372564460897,
+          "minimumCornerJ": 0.9965011078053181,
+          "globalVolumeRatio": 1.000026332969727,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.00005006796065695703
+        },
+        {
+          "elementId": "FJ1487",
+          "minimumJ": 0.9927325521621877,
+          "minimumCornerJ": 0.9941986244553254,
+          "globalVolumeRatio": 1.0000057305847458,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.00011914103491991925
+        }
+      ],
+      "surfaceAudit": {
+        "qRad": 0.6351404096529758,
+        "boneTissue": [
+          {
+            "head": "FJ1486",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1320,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3368",
+            "broadPhasePairs": 109,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1293,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3391",
+            "broadPhasePairs": 71,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3368",
+            "broadPhasePairs": 925,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3368",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3368",
+            "broadPhasePairs": 124,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3349",
+            "broadPhasePairs": 1261,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "tissueTissue": [
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1512",
+            "broadPhasePairs": 198,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1478",
+            "broadPhasePairs": 200,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1487",
+            "broadPhasePairs": 360,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1478",
+            "broadPhasePairs": 1549,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1477",
+            "broadPhasePairs": 371,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1479",
+            "broadPhasePairs": 930,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1479",
+            "broadPhasePairs": 1094,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1479",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "boneBone": [
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3349",
+            "broadPhasePairs": 8,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 254,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3349",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 252,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "transverseCrossingPairs": 0,
+        "limits": [
+          "Every boundary triangle participates after AABB pruning.",
+          "Transverse edge/face crossings only; coplanar/grazing overlaps, containment and continuous motion are not certified.",
+          "No cartilage contact or medical apposition threshold is inferred."
+        ]
+      },
+      "routingAudit": {
+        "testedLegs": 765,
+        "violations": [],
+        "maximumSampledPenetrationM": 2.3055512673781017e-16,
+        "accepted": true,
+        "limits": [
+          "Every axial path leg checked against all source bone triangles with AABB pruning.",
+          "Exact transverse segment hits plus five containment samples; finite radius, grazing/coplanar overlap and continuous motion are not certified.",
+          "Prescribed guides are authored frictionless support constraints, not measured anatomical tendon wrapping."
+        ]
+      },
+      "sampledPenetrationsM": {
+        "bone": 0,
+        "soft": 0,
+        "tendon": 0
+      },
+      "curvatureFallbacks": 0,
+      "step": 14,
+      "label": "release",
+      "referenceQuadratureUpdateJ": 0,
+      "activeMechanicalWorkJ": -0.014612282334131518,
+      "nonlinearWorkDefectJ": -0.005491661163065747,
+      "impulseResidualNmS": 8.685390822382733e-10,
+      "angleDifferenceFrom32Rad": 0.00016920337710557565,
+      "matchedBaselineTime": true
+    },
+    {
+      "timeS": 0.43000000000000016,
+      "qRad": 0.5852953088289874,
+      "activation": 0.0002590675376713519,
+      "residualN": 0.0000424802298708009,
+      "independentResidualN": 0.00004248022990923023,
+      "minimumJ": 0.9759730618433611,
+      "minimumCornerJ": 0.9742469759549923,
+      "heads": [
+        {
+          "elementId": "FJ1486",
+          "minimumJ": 0.9932337436932676,
+          "minimumCornerJ": 0.992855735010626,
+          "globalVolumeRatio": 0.9999665105123996,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.00008462549486455286
+        },
+        {
+          "elementId": "FJ1512",
+          "minimumJ": 0.9943077002114279,
+          "minimumCornerJ": 0.9939522470170017,
+          "globalVolumeRatio": 0.9999342731589805,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.00013585413805574563
+        },
+        {
+          "elementId": "FJ1478",
+          "minimumJ": 0.9877509106078846,
+          "minimumCornerJ": 0.986668462774476,
+          "globalVolumeRatio": 0.9999121879243218,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.000858427658374388
+        },
+        {
+          "elementId": "FJ1480",
+          "minimumJ": 0.9997930993224922,
+          "minimumCornerJ": 0.999768417246209,
+          "globalVolumeRatio": 0.9999771053359732,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 9.498125004658107e-8
+        },
+        {
+          "elementId": "FJ1477",
+          "minimumJ": 0.9759730618433611,
+          "minimumCornerJ": 0.9742469759549923,
+          "globalVolumeRatio": 1.0000239557516595,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.0024718532491754637
+        },
+        {
+          "elementId": "FJ1479",
+          "minimumJ": 0.9971522182665191,
+          "minimumCornerJ": 0.9970412846400842,
+          "globalVolumeRatio": 1.0000219460409125,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.0000364044814188778
+        },
+        {
+          "elementId": "FJ1487",
+          "minimumJ": 0.9939612713990508,
+          "minimumCornerJ": 0.9948534700327121,
+          "globalVolumeRatio": 1.0000051294619574,
+          "referenceVolumeFractionBelow09": 0,
+          "volumeEnergyJ": 0.00008494719364346864
+        }
+      ],
+      "surfaceAudit": {
+        "qRad": 0.5852953088289874,
+        "boneTissue": [
+          {
+            "head": "FJ1486",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1379,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1486",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1512",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3368",
+            "broadPhasePairs": 128,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1478",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3368",
+            "broadPhasePairs": 1272,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1480",
+            "bone": "FJ3391",
+            "broadPhasePairs": 87,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3368",
+            "broadPhasePairs": 931,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1477",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3368",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1479",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3368",
+            "broadPhasePairs": 137,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3349",
+            "broadPhasePairs": 1212,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "head": "FJ1487",
+            "bone": "FJ3391",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "tissueTissue": [
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1512",
+            "broadPhasePairs": 245,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1478",
+            "broadPhasePairs": 270,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1486",
+            "headB": "FJ1487",
+            "broadPhasePairs": 365,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1478",
+            "broadPhasePairs": 1649,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1512",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1480",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1477",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1479",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1478",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1477",
+            "broadPhasePairs": 373,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1479",
+            "broadPhasePairs": 950,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1480",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1479",
+            "broadPhasePairs": 1185,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1477",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "headA": "FJ1479",
+            "headB": "FJ1487",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "boneBone": [
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3349",
+            "broadPhasePairs": 0,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3368",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 255,
+            "crossingPairs": 0,
+            "examples": []
+          },
+          {
+            "boneA": "FJ3349",
+            "boneB": "FJ3391",
+            "broadPhasePairs": 241,
+            "crossingPairs": 0,
+            "examples": []
+          }
+        ],
+        "transverseCrossingPairs": 0,
+        "limits": [
+          "Every boundary triangle participates after AABB pruning.",
+          "Transverse edge/face crossings only; coplanar/grazing overlaps, containment and continuous motion are not certified.",
+          "No cartilage contact or medical apposition threshold is inferred."
+        ]
+      },
+      "routingAudit": {
+        "testedLegs": 765,
+        "violations": [],
+        "maximumSampledPenetrationM": 6.206335383118183e-17,
+        "accepted": true,
+        "limits": [
+          "Every axial path leg checked against all source bone triangles with AABB pruning.",
+          "Exact transverse segment hits plus five containment samples; finite radius, grazing/coplanar overlap and continuous motion are not certified.",
+          "Prescribed guides are authored frictionless support constraints, not measured anatomical tendon wrapping."
+        ]
+      },
+      "sampledPenetrationsM": {
+        "bone": 0,
+        "soft": 0,
+        "tendon": 0
+      },
+      "curvatureFallbacks": 0,
+      "step": 15,
+      "label": "release",
+      "referenceQuadratureUpdateJ": 0,
+      "activeMechanicalWorkJ": -0.008516808215143862,
+      "nonlinearWorkDefectJ": -0.006239129848080394,
+      "impulseResidualNmS": 6.634980500852539e-10,
+      "angleDifferenceFrom32Rad": 0.00015517028453804205,
+      "matchedBaselineTime": true
+    }
+  ],
+  "rejected": null,
+  "behavior": {
+    "liftAngleIncreaseRad": 0.12753335743437733,
+    "peakAngleRad": 0.6865381477371714,
+    "finalAngleRad": 0.5852953088289874,
+    "releaseFallFromPeakRad": 0.10124283890818397,
+    "finalActivation": 0.0002590675376713519,
+    "finalVelocityRadPerS": -1.6615033607996137
+  },
+  "limits": [
+    "Self-consistent 256-point reduced trajectory: only accepted dense states advance coordinates, velocity, activation and time.",
+    "Archived 32-point target poses are nonlinear guesses only. The same unchanged material, 460 coordinates, Newton algorithm, contact law and 1e-4 N gate apply.",
+    "Finite geometry and determinant samples do not qualify full nodal, mesh, integration or timestep convergence.",
+    "Bulk compression, finite-radius tendon, coplanar geometry and continuous-motion contact gaps remain open."
+  ]
+}
