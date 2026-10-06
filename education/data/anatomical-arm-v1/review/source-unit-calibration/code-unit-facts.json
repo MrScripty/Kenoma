@@ -1,0 +1,303 @@
+{
+  "schema": "kenoma.pinned-source-unit-review.v1",
+  "dateUTC": "2026-10-06",
+  "result": "READ_ONLY_CODE_UNITS_AND_CONDITIONAL_TRANSFORMATIONS",
+  "repository": "timvanderzee/biophysical-muscle-model",
+  "commit": "8c766dfb308051309193e7290ddd0bac3b726d11",
+  "tree": "a802ec6f7299d0745dfab1d5b715a3d9b7aa6f20",
+  "commitTimeUTC": "2026-07-08T12:06:31Z",
+  "versionLimit": "Pinned code predates the final September 2026 article. Final Table3 export/force-unit parity is not established.",
+  "treeRead": {
+    "truncated": false,
+    "commitTreeAssociationIndependentlyRead": true,
+    "licenseOrCopyingNamedFiles": [],
+    "scope": "Absence in complete pinned tree, not a legal conclusion or license inference."
+  },
+  "authorCodeExecuted": false,
+  "authorCodeImported": false,
+  "authorCodeCopiesCommitted": false,
+  "sourceFiles": [
+    {
+      "path": "Common/fiber/get_PE.m",
+      "gitBlobSHA": "cb615867322c00c936638ca8f3934e26cd6955b0",
+      "bytesInPinnedTree": 261,
+      "immutableReadURL": "https://api.github.com/repos/timvanderzee/biophysical-muscle-model/git/blobs/cb615867322c00c936638ca8f3934e26cd6955b0",
+      "readMethod": "Authorized GitHub fetch; returned immutable-blob display identity matched the pinned complete tree; decoded source read only in tool memory."
+    },
+    {
+      "path": "Common/fiber/get_force_and_stiffness.m",
+      "gitBlobSHA": "4320a5510c6dfa27ab2a3822d4c1b4058f81ca64",
+      "bytesInPinnedTree": 923,
+      "immutableReadURL": "https://api.github.com/repos/timvanderzee/biophysical-muscle-model/git/blobs/4320a5510c6dfa27ab2a3822d4c1b4058f81ca64",
+      "readMethod": "Authorized GitHub fetch; returned immutable-blob display identity matched the pinned complete tree; decoded source read only in tool memory."
+    },
+    {
+      "path": "Reproduce/Parameters/complete_parms.m",
+      "gitBlobSHA": "f5656cc5dc7da581d29f68c74cc509c93ff6a155",
+      "bytesInPinnedTree": 972,
+      "immutableReadURL": "https://api.github.com/repos/timvanderzee/biophysical-muscle-model/git/blobs/f5656cc5dc7da581d29f68c74cc509c93ff6a155",
+      "readMethod": "Authorized GitHub fetch; returned immutable-blob display identity matched the pinned complete tree; decoded source read only in tool memory."
+    },
+    {
+      "path": "Common/fiber/biophysical/fiber_dynamics_explicit_discretized.m",
+      "gitBlobSHA": "37c94486239ff58f4830b3fb94715b0472d0fb1c",
+      "bytesInPinnedTree": 2566,
+      "immutableReadURL": "https://api.github.com/repos/timvanderzee/biophysical-muscle-model/git/blobs/37c94486239ff58f4830b3fb94715b0472d0fb1c",
+      "readMethod": "Authorized GitHub fetch; returned immutable-blob display identity matched the pinned complete tree; decoded source read only in tool memory."
+    },
+    {
+      "path": "Reproduce/reproduce_model_fitting.m",
+      "gitBlobSHA": "76ffc631d12bc6259d34f527863ba712ce65dee5",
+      "bytesInPinnedTree": 11107,
+      "immutableReadURL": "https://api.github.com/repos/timvanderzee/biophysical-muscle-model/git/blobs/76ffc631d12bc6259d34f527863ba712ce65dee5",
+      "readMethod": "Authorized GitHub fetch; returned immutable-blob display identity matched the pinned complete tree; decoded source read only in tool memory."
+    },
+    {
+      "path": "Fitting/fit_model_parameters_v2.m",
+      "gitBlobSHA": "fd56f3368c01f9f38640875382fecd74ca59dccc",
+      "bytesInPinnedTree": 11934,
+      "immutableReadURL": "https://api.github.com/repos/timvanderzee/biophysical-muscle-model/git/blobs/fd56f3368c01f9f38640875382fecd74ca59dccc",
+      "readMethod": "Authorized GitHub fetch; returned immutable-blob display identity matched the pinned complete tree; decoded source read only in tool memory."
+    },
+    {
+      "path": "Common/simulate/simulate_model.m",
+      "gitBlobSHA": "3fb14f1475d49b6af9e5e0541b7b54cae1200aa3",
+      "bytesInPinnedTree": 3887,
+      "immutableReadURL": "https://api.github.com/repos/timvanderzee/biophysical-muscle-model/git/blobs/3fb14f1475d49b6af9e5e0541b7b54cae1200aa3",
+      "readMethod": "Authorized GitHub fetch; returned immutable-blob display identity matched the pinned complete tree; decoded source read only in tool memory."
+    },
+    {
+      "path": "Common/simulate/get_steady_state.m",
+      "gitBlobSHA": "76406e95533069d113490fcca9fea26f14df9bb5",
+      "bytesInPinnedTree": 1525,
+      "immutableReadURL": "https://api.github.com/repos/timvanderzee/biophysical-muscle-model/git/blobs/76406e95533069d113490fcca9fea26f14df9bb5",
+      "readMethod": "Authorized GitHub fetch; returned immutable-blob display identity matched the pinned complete tree; decoded source read only in tool memory."
+    },
+    {
+      "path": "Common/simulate/get_Fpe.m",
+      "gitBlobSHA": "4eac9ee6a77c71d15e9c2746156a6f2cdd619af7",
+      "bytesInPinnedTree": 241,
+      "immutableReadURL": "https://api.github.com/repos/timvanderzee/biophysical-muscle-model/git/blobs/4eac9ee6a77c71d15e9c2746156a6f2cdd619af7",
+      "readMethod": "Authorized GitHub fetch; returned immutable-blob display identity matched the pinned complete tree; decoded source read only in tool memory."
+    },
+    {
+      "path": "Data/Processing/normalize_data.m",
+      "gitBlobSHA": "6e5179a726d1a4dfa929dec3d7a4d3e3d10ba436",
+      "bytesInPinnedTree": 7086,
+      "immutableReadURL": "https://api.github.com/repos/timvanderzee/biophysical-muscle-model/git/blobs/6e5179a726d1a4dfa929dec3d7a4d3e3d10ba436",
+      "readMethod": "Authorized GitHub fetch; returned immutable-blob display identity matched the pinned complete tree; decoded source read only in tool memory."
+    },
+    {
+      "path": "Data/Processing/calc_force_pCa.m",
+      "gitBlobSHA": "e2e4ed6427a094cb6e23c77439c0237d03c8cf1c",
+      "bytesInPinnedTree": 2951,
+      "immutableReadURL": "https://api.github.com/repos/timvanderzee/biophysical-muscle-model/git/blobs/e2e4ed6427a094cb6e23c77439c0237d03c8cf1c",
+      "readMethod": "Authorized GitHub fetch; returned immutable-blob display identity matched the pinned complete tree; decoded source read only in tool memory."
+    },
+    {
+      "path": "Data/Processing/determine_N_sarcomeres.m",
+      "gitBlobSHA": "ade7652c32dd5d17c93892d88c9eb133684a8c6b",
+      "bytesInPinnedTree": 512,
+      "immutableReadURL": "https://api.github.com/repos/timvanderzee/biophysical-muscle-model/git/blobs/ade7652c32dd5d17c93892d88c9eb133684a8c6b",
+      "readMethod": "Authorized GitHub fetch; returned immutable-blob display identity matched the pinned complete tree; decoded source read only in tool memory."
+    },
+    {
+      "path": "Reproduce/Parameters/compare_parameter_values.m",
+      "gitBlobSHA": "a0bf64584ee843d0aa96747e8f3a7f40c35c2a3d",
+      "bytesInPinnedTree": 1153,
+      "immutableReadURL": "https://api.github.com/repos/timvanderzee/biophysical-muscle-model/git/blobs/a0bf64584ee843d0aa96747e8f3a7f40c35c2a3d",
+      "readMethod": "Authorized GitHub fetch; returned immutable-blob display identity matched the pinned complete tree; decoded source read only in tool memory."
+    },
+    {
+      "path": "Reproduce/Parameters/compare_parms_versions.m",
+      "gitBlobSHA": "21dd969cadf9568406d37858e1b9a97f4a80ba2e",
+      "bytesInPinnedTree": 3679,
+      "immutableReadURL": "https://api.github.com/repos/timvanderzee/biophysical-muscle-model/git/blobs/21dd969cadf9568406d37858e1b9a97f4a80ba2e",
+      "readMethod": "Authorized GitHub fetch; returned immutable-blob display identity matched the pinned complete tree; decoded source read only in tool memory."
+    },
+    {
+      "path": "Reproduce/Parameters/evaluate_parameters.m",
+      "gitBlobSHA": "c0f7459218ea95ab1e95609735ac5ad913dfdd56",
+      "bytesInPinnedTree": 1301,
+      "immutableReadURL": "https://api.github.com/repos/timvanderzee/biophysical-muscle-model/git/blobs/c0f7459218ea95ab1e95609735ac5ad913dfdd56",
+      "readMethod": "Authorized GitHub fetch; returned immutable-blob display identity matched the pinned complete tree; decoded source read only in tool memory."
+    },
+    {
+      "path": "Reproduce/Parameters/investigate_parameters.m",
+      "gitBlobSHA": "79ad7ab7db107ed4452b75da673880182e1a0e2a",
+      "bytesInPinnedTree": 996,
+      "immutableReadURL": "https://api.github.com/repos/timvanderzee/biophysical-muscle-model/git/blobs/79ad7ab7db107ed4452b75da673880182e1a0e2a",
+      "readMethod": "Authorized GitHub fetch; returned immutable-blob display identity matched the pinned complete tree; decoded source read only in tool memory."
+    },
+    {
+      "path": "Reproduce/Process/rescale_kpe.m",
+      "gitBlobSHA": "6f4e0f0e932b0e73f55e1be4f410e2404b0f0eb7",
+      "bytesInPinnedTree": 3243,
+      "immutableReadURL": "https://api.github.com/repos/timvanderzee/biophysical-muscle-model/git/blobs/6f4e0f0e932b0e73f55e1be4f410e2404b0f0eb7",
+      "readMethod": "Authorized GitHub fetch; returned immutable-blob display identity matched the pinned complete tree; decoded source read only in tool memory."
+    },
+    {
+      "path": "Test/README.md",
+      "gitBlobSHA": "664bd1a4852242869d3d95ad35b594cd2fd62779",
+      "bytesInPinnedTree": 2878,
+      "immutableReadURL": "https://api.github.com/repos/timvanderzee/biophysical-muscle-model/git/blobs/664bd1a4852242869d3d95ad35b594cd2fd62779",
+      "readMethod": "Authorized GitHub fetch; returned immutable-blob display identity matched the pinned complete tree; decoded source read only in tool memory."
+    },
+    {
+      "path": "Reproduce/Parameters/create_reduced_parms.m",
+      "gitBlobSHA": "ffa627bfb2bc6b8e8345121a06f5a78fc36e0702",
+      "bytesInPinnedTree": 1112,
+      "immutableReadURL": "https://api.github.com/repos/timvanderzee/biophysical-muscle-model/git/blobs/ffa627bfb2bc6b8e8345121a06f5a78fc36e0702",
+      "readMethod": "Authorized GitHub fetch; returned immutable-blob display identity matched the pinned complete tree; decoded source read only in tool memory."
+    },
+    {
+      "path": "Reproduce/Parameters/get_parms.m",
+      "gitBlobSHA": "beb230d4cbe64a9d99f5f990d307e741efdd24aa",
+      "bytesInPinnedTree": 1535,
+      "immutableReadURL": "https://api.github.com/repos/timvanderzee/biophysical-muscle-model/git/blobs/beb230d4cbe64a9d99f5f990d307e741efdd24aa",
+      "readMethod": "Authorized GitHub fetch; returned immutable-blob display identity matched the pinned complete tree; decoded source read only in tool memory."
+    }
+  ],
+  "units": {
+    "inputTime": "s",
+    "inputLength": "L0 reference-length units; processing supplies epsilon=(L-Lbaseline)/Lbaseline",
+    "inputVelocity": "L0/s",
+    "inputCalcium": "micromolar",
+    "internalLengthCoordinate": "u=Gamma*epsilon, powerstroke-normalized link coordinate; absolute origin needs its own declaration",
+    "codeGamma": "Gamma=.5*s/h is dimensionless; reproduction script resets s=2.6e-6m,h=1e-8m ->Gamma130",
+    "physicalSerialScale": "ell_gamma=2*Ns*dps=Lref/Gamma ONLY when Lref=Ns*s and h=dps",
+    "internalPE": "kpe per internal u; K inverse internal u; kpe/K is the internal force prefactor",
+    "internalSE": "kse0 is internal force prefactor; kse inverse internal u; tangent kse*(Fse+kse0)",
+    "outputForce": "Fhat=Fscale*F_internal, dimensionless processed target. Physical Tref/area not identified."
+  },
+  "elasticLaws": {
+    "PE": {
+      "offset": "u=Lce-Lce0 (uppercase PE onset)",
+      "softBranch": "F_internal=(kpe/K)*log(1+exp(K*u)) when K*u<10",
+      "tangent": "dF_internal/du=kpe/(1+exp(-K*u))",
+      "linearBranch": "F_internal=kpe*u; derivative kpe when K*u>=10",
+      "offsetValue": "F_internal(0)=kpe*ln(2)/K, not zero slack",
+      "cutoffNote": "Soft and linear branches have a small value/tangent mismatch at K*u=10; not globally identical to smooth softplus."
+    },
+    "SE": {
+      "force": "F_internal=kse0*(exp(kse*v)-1)",
+      "inverse": "v=log(1+F_internal/kse0)/kse",
+      "tangent": "dF_internal/dv=kse*(F_internal+kse0)",
+      "domain": "v<0 gives negative exponential force; other approximate path explicitly clamps inverse extension/force."
+    }
+  },
+  "variants": {
+    "activeFitting": {
+      "path": "Fitting/fit_model_parameters_v2.m",
+      "lines": [
+        149,
+        150,
+        153,
+        156,
+        165,
+        168,
+        171,
+        225
+      ],
+      "K": 1,
+      "CE": "Q0+Q1",
+      "objectiveForce": "Fscale*(CE+PE)",
+      "PEtangent": "kpe sigmoid(Ku) before output scaling"
+    },
+    "passiveFitting": {
+      "lines": [
+        95,
+        96,
+        97,
+        98,
+        101,
+        104,
+        107
+      ],
+      "PE": "kpe*u linear, with CE=0 constraint",
+      "objectiveForce": "Fscale*PE"
+    },
+    "runtimeDiscretized": {
+      "K": "parms.K; historical measured MAT field K=100, not remeasured here",
+      "CE": "softplus(K*Q)/K",
+      "velocity": "(Gamma*v_input*kse-F0dot)/(B+kse+kpe)",
+      "derivativeCaveat": "For a differentiated softened CE force, sigmoid(KQ) belongs in both reaction derivative and held-population tangent; runtime uses raw terms."
+    },
+    "initialization": {
+      "path": "Common/simulate/get_steady_state.m",
+      "lines": [
+        34,
+        35,
+        36,
+        37
+      ],
+      "PE": "separate linear force-balance initializer"
+    },
+    "reporting": {
+      "path": "Common/simulate/simulate_model.m",
+      "lines": [
+        87,
+        88,
+        91,
+        93,
+        111,
+        112,
+        113
+      ],
+      "force": "Fscale*(rawXB+PE)",
+      "transportOriginDifference": "reported xi=xi0+L; runtime xi=xi0+(L-lce0); raw moment difference lce0*B when lce0!=0"
+    },
+    "oldComparisonPath": {
+      "path": "Reproduce/Parameters/compare_parms_versions.m",
+      "lines": [
+        62,
+        63,
+        64
+      ],
+      "operation": "scaled CE + Fpe_func output; function's own scaling must be verified before assigning its units"
+    },
+    "summaryExporter": {
+      "path": "Reproduce/Parameters/evaluate_parameters.m",
+      "lines": [
+        9,
+        23,
+        24,
+        25,
+        40,
+        41,
+        42
+      ],
+      "operation": "Loads raw fields including kpe,kse,kse0 and prints componentwise median; no Fscale/K conversion",
+      "publicationAssociation": "Not proven to generate final Table3. Final paper numbers cannot be assigned to transformed prefactors from this script alone."
+    }
+  },
+  "conditionalDimensionalTransform": {
+    "declarations": "Tref physical force in N corresponding to the processed output normalizer; S=Fscale; C=Tref*S; ell_gamma physical metres per u",
+    "PEforce": "T_PE=C*kpe/K*log(1+exp(K*(ell_CE-ell_PE0)/ell_gamma)) in the soft branch",
+    "PEwidthM": "ell_gamma/K",
+    "PEforcePrefactorN": "C*kpe/K",
+    "PEtangentNPerM": "C*kpe/ell_gamma*sigmoid(K*(ell_CE-ell_PE0)/ell_gamma)",
+    "SEforce": "T_SE=C*kse0*(exp(kse*(ell_SE-ell_SE0)/ell_gamma)-1)",
+    "SEforcePrefactorN": "C*kse0",
+    "SEexponentPerM": "kse/ell_gamma",
+    "SEtangentNPerM": "(kse/ell_gamma)*(T_SE+C*kse0)",
+    "outputNormalizedCoefficients": "PE prefactor S*kpe/K, slope per u S*kpe; SE prefactor S*kse0, exponent per u kse",
+    "sameElasticLawCoordinateChange": "If u_new=a*u_old, use kpe_new=kpe_old/a, K_new=K_old/a, PEoffset_new=a*PEoffset_old, kse_new=kse_old/a, kse0_new=kse0_old, SEoffset_new=a*SEoffset_old, with fixed force scale.",
+    "reproductionObservedUpdate": "Script changes Gamma and rescales only kpe by Gamma_old/Gamma_new. This preserves the linear PE slope per relative input, not by itself the entire softplus or exponential law.",
+    "scope": "These identities select no physiological coefficients, lengths, head counts, force or area, and do not convert temperatures/rate families."
+  },
+  "normalizationChain": {
+    "gain": "raw force/1000/fgain; gain metadata and explicit overrides in calc_force_pCa",
+    "activationReference": "Fi=mean(gain-corrected force over selected early interval); F0=median(Fi by pCa); Fmax=max(F0 by fiber)",
+    "target": "trace/mean(prestretch trace)*F0_at_pCa/Fmax",
+    "length": "(L-mean(prestretch L))/mean(prestretch L)",
+    "passiveSubtraction": "No pCa9 subtraction in inspected operations; upstream tare/passive convention remains unresolved",
+    "SIstatus": "Sensor/raw-channel calibration and specimen area/configuration were not recovered. Rat22C source kinetics are not mixed with human/15C or temperature-adjusted."
+  },
+  "publicationAmbiguity": {
+    "equations": "Parent re-inspected original Eq17-20 pixels: gamma_phys=2Ns*dps, PE prefactor times log(1+exp((L-L0)/gamma)), SE sigma*(exp(rho*(L-L0)/gamma)-1).",
+    "xps": "No distinct x_ps definition recovered in inspected prose/pinned source. HTML inline images prevent exhaustive symbol interpretation. Do not equate Table xps^-1 with physical10nm.",
+    "alternatives": "If xps labels a normalized coordinate, SI dimensional inconsistency need not follow; prefactor-vs-slope interpretation still needs K/width/output normalization. If it means a physical length, Eq19 requires a declared regularizing length factor to multiply a stiffness into a force prefactor.",
+    "notResolved": "Article/code elastic-law numerical mapping, final Table3 exporter, specimen Tref/area, offsets/initial force balance and exact force transform."
+  }
+}

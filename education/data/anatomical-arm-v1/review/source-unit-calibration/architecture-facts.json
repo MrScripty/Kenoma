@@ -1,0 +1,124 @@
+{
+  "schema": "source-unit-architecture-review-v1",
+  "date": "2026-10-06",
+  "frozen_base_label": "bc4f24a2",
+  "scope": "original-source research; no simulation or selected human force scale",
+  "review": "../../../../research/mechanical-closure/source-unit-architecture-review.md",
+  "sources": [
+    {
+      "id": "murray2000",
+      "title": "The isometric functional capacity of muscles that cross the elbow",
+      "doi": "10.1016/S0021-9290(00)00051-8",
+      "url": "https://nmbl.stanford.edu/publications/pdf/Murray2000.pdf",
+      "evidence": "original PDF extracted text",
+      "locators": ["printed944-945 Methods/Eq1", "printed946 moment-generating potential", "printed947 Table2"],
+      "classification": {"Lf_and_ls": "measured", "Lopt_and_PCSA": "derived", "optimal_ls_and_density": "assumed", "active_tendon_force": "absent"},
+      "units": {"Table2_lengths": "cm", "Table2_PCSA": "cm^2", "Table2_pennation": "degree", "sarcomere": "um", "density": "g/cm^3"},
+      "PCSA_contains_cosine": false
+    },
+    {
+      "id": "kawakami1994",
+      "title": "Specific tension of elbow flexor and extensor muscles based on magnetic resonance imaging",
+      "doi": "10.1007/BF00244027",
+      "url": "https://link.springer.com/article/10.1007/BF00244027",
+      "evidence": "original publisher abstract only",
+      "locators": ["Abstract; article139-147"],
+      "classification": {"MRI_ACSA_and_torque": "measured", "fibre_length": "literature-ratio estimate", "tendon_force": "inverse calculation"},
+      "PCSA_contains_cosine": null,
+      "full_method_units_verified": false
+    },
+    {
+      "id": "rockenfeller2024",
+      "title": "Rethinking the physiological cross-sectional area of skeletal muscle reveals the mechanical advantage of pennation",
+      "doi": "10.1098/rsos.240037",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11639153/",
+      "evidence": "original geometric analysis, readable equations",
+      "locators": ["Eq1.1", "Eq1.2", "section2", "Eq2.4"],
+      "PCSA_contains_cosine": false,
+      "FCSA_contains_cosine": true,
+      "new_human_arm_force_measurement": false
+    },
+    {
+      "id": "lieberward2011",
+      "title": "Skeletal muscle design to meet functional demands",
+      "doi": "10.1098/rstb.2010.0316",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3130443/",
+      "evidence": "original review text; Eq3.1 pixels unavailable",
+      "locators": ["section3 Eq3.1 image not inspected", "section5"],
+      "PCSA_contains_cosine": null,
+      "equation_transcribed": false
+    },
+    {
+      "id": "bindermarkey2023",
+      "title": "Direct intraoperative measurement of isometric contractile properties in living human muscle",
+      "doi": "10.1113/JP284092",
+      "url": "https://physoc.onlinelibrary.wiley.com/doi/full/10.1113/JP284092",
+      "evidence": "original open-access full text",
+      "locators": ["Methods Eq1", "Muscle volume calculation", "Patient-specific optimal fibre length calculation", "Results Fig6", "Supporting Information"],
+      "classification": {"tendon_force_and_volume": "paired measurement", "maximum_force": "activation-corrected", "optimal_fibre_length": "functional inference"},
+      "units": {"volume": "not transcribed from unavailable XLSX", "optimal_fibre_length": "cm", "PCSA": "cm^2", "specific_tension": "kPa"},
+      "selected_numeric_calibration": false,
+      "arm_transfer_authorized": false
+    }
+  ],
+  "access_receipts": [
+    {
+      "url": "https://link.springer.com/content/pdf/10.1007/BF00244027.pdf",
+      "action": "ordinary browser open",
+      "result": "redirect to subscription preview; no full PDF",
+      "stopped": true
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35074689/",
+      "source": "Lieber2022 Can we just forget about pennation angle? DOI10.1016/j.jbiomech.2022.110954",
+      "action": "ordinary browser open",
+      "result": "one-line unreadable response; DOI and ordinary ScienceDirect article opens returned internal errors",
+      "adopted_equation_or_numeric_fact": false,
+      "stopped": true
+    },
+    {
+      "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5d28/3130443/c3d88b668967/rstb20100316-e1.jpg",
+      "action": "browser open then ordinary urllib image request",
+      "result": "browser image reference without inspectable pixels; urllib proxy Tunnel connection failed: 403 Forbidden",
+      "origin_server_403_established": false,
+      "equation_pixels_inspected": false,
+      "stopped": true
+    },
+    {
+      "url": "https://physoc.onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1113%2FJP284092&file=tjp15497-sup-0001-StatisticalSummary.xlsx",
+      "action": "ordinary original supporting-material browser link",
+      "result": "Failed to fetch (403) Forbidden",
+      "individual_subject_rows_inspected": false,
+      "stopped": true
+    }
+  ],
+  "independent_contract": {
+    "projected_current_fibre_area": "Ac=(J/lambda)*A0",
+    "nominal_stress": "p=T/A0",
+    "cauchy_fibre_stress": "sigma_f=(lambda/J)*p",
+    "uniform_tendon_output": "Tt=sigma_f*AP*cos(alpha)=sigma_f*AF",
+    "parallel_head_product": "T_CB=H*k_CB*d_ps*Q",
+    "serial_count": "Ns=Lf0/ls0 conditional on uniform full fibre chain",
+    "head_product_identifiability": "If T=F0*Q/beta is dimensional, only H*k_CB*d_ps=F0/beta is identified",
+    "SI_conversions": {"cm2_to_m2": 0.0001, "cm3_to_m3": 0.000001, "g_per_cm3_to_kg_per_m3": 1000, "N_per_cm2_to_Pa": 10000, "kPa_to_Pa": 1000}
+  },
+  "worked_candidate": {
+    "fully_measured_upper_arm_numeric_case": null,
+    "bounded_comparison_source": "bindermarkey2023",
+    "subject_row_available": false,
+    "status": "conditional study-reproduction candidate; inferred optimal length and corrected maximum force; no arm coefficient selected",
+    "individual_Tref_identified_by_this_audit": false,
+    "individual_sigma_ref_identified_by_this_audit": false,
+    "reported_specific_tension_type": "inferred whole-muscle normalizer, not directly measured local Cauchy stress",
+    "compatible_human_scale_for_rat_22C_median_CE_identified": false
+  },
+  "missing_fields": [
+    "paired identified head/specimen geometry and calibrated active tendon force in N",
+    "force tare/passive correction, activation, posture, temperature and uncertainty",
+    "PCSA cosine convention and reference/current configuration",
+    "paired fibre/fascicle and sarcomere lengths; force-pose pennation",
+    "compliant tendon/aponeurosis relation for MTU-to-CE mapping",
+    "independent molecular evidence if head density and stiffness are to be separated"
+  ],
+  "constraints": {"human_head_density_selected": false, "human_head_stiffness_selected": false, "atlas_fascicle_calibration_claimed": false, "production_changed": false, "simulations_executed": false, "git_operations": false}
+}

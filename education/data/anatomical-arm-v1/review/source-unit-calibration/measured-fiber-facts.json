@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "inspection_date": "2026-10-06",
+  "scope": "primary acquisition/metrology evidence; no simulation, fitted calibration, parameter adoption or author code execution",
+  "frozen_context": "after parent frozen packet bc4f24a2; earlier source-bound files unchanged",
+  "selected_rat_acquisition": {
+    "doi": "10.1242/jeb.245456",
+    "url": "https://journals.biologists.com/jeb/article/226/18/jeb245456/329515/History-dependent-muscle-resistance-to-stretch",
+    "access": "original publisher HTML directly read",
+    "locations": [
+      "Materials and Methods: Ethical approval, Experimental apparatus, Muscle fiber activation, Muscle resistance outcome measures",
+      "Statistical analyses: text introducing Eq4"
+    ],
+    "measured_reported": {
+      "preparation": "permeabilized rat soleus",
+      "temperature_C": "22",
+      "fiber_count": 11,
+      "rat_count": 2,
+      "force_sensor": "Aurora 403",
+      "acquisition_Hz": "1000",
+      "reported_stress_unit": "kPa"
+    },
+    "content_evidence": {
+      "quote": "instantaneous stress at onset of test stress (in kPa as continuous variable)",
+      "locator": "Statistical analyses, Eq4 introduction"
+    },
+    "not_recovered_in_inspected_methods": [
+      "paired specimen force N and area m2",
+      "diameter/depth/area measurement procedure",
+      "sensor-to-N calibration",
+      "upstream tare/passive subtraction"
+    ],
+    "subtraction_status": "conditioning-transient removal is distinct from passive subtraction; no upstream passive conclusion",
+    "source_Fmax_mat_unit": "unresolved; publisher stress label does not bind stored MAT values to kPa or microN"
+  },
+  "campbell_2006": {
+    "doi": "10.1529/biophysj.105.067504",
+    "original_indexed_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1367280/",
+    "evidence_level": "original-source indexed snippets only; full article not verified in this lane",
+    "snippet_facts": {
+      "CSA_profile": "circular",
+      "CSA_mean_um2": "6550",
+      "geometry_solution_pCa": "9.0",
+      "P0_pCa": "4.5",
+      "P0_mean_kN_m_minus2": "79",
+      "CSA_reported_plusminus_um2": "3940",
+      "P0_reported_plusminus_kN_m_minus2": "29",
+      "spread_statistic_status": "not independently verified from full article"
+    },
+    "eligibility": "not an admitted numeric fixture; different cohort and unverified full metrology/protocol",
+    "access_limits": [
+      "prior PMC browser challenge; not retried",
+      "original Cell PDF ordinary read internal error",
+      "ordinary Europe PMC article read inaccessible"
+    ]
+  },
+  "campbell_moss_2002": {
+    "doi": "10.1016/S0006-3495(02)75454-4",
+    "original_indexed_url": "https://www.sciencedirect.com/science/article/pii/S0006349502754544",
+    "evidence_level": "original publisher indexed circular-profile sentence; original PubMed abstract; full methods not verified",
+    "CSA_profile_status": "circular profile appears in original indexed snippet; no current-rat specimen linkage",
+    "temperature_and_individual_area_force": "not verified here",
+    "access_limits": [
+      "PMC browser challenge; stopped",
+      "ordinary Europe PMC article read inaccessible"
+    ]
+  },
+  "bounded_human_example": {
+    "doi": "10.1113/expphysiol.2010.055269",
+    "url": "https://physoc.onlinelibrary.wiley.com/doi/full/10.1113/expphysiol.2010.055269",
+    "pdf_url": "https://physoc.onlinelibrary.wiley.com/doi/pdf/10.1113/expphysiol.2010.055269",
+    "access": "publisher HTML Methods/Table1 and original PDF text read; screenshot calls supplied no inspectable pixels",
+    "locations": [
+      "Experimental procedure, printed p541 (PDF page3)",
+      "Table1, printed p543 (PDF page5)"
+    ],
+    "preparation": "chemically skinned human vastus lateralis",
+    "temperature_C": "15",
+    "segment_length_mm": "approximately 1.5",
+    "sarcomere_length_um": [
+      "2.75",
+      "2.85"
+    ],
+    "activation_pCa": "4.5",
+    "measured": "width by image analysis; depth by microscope focus displacement; force sensor Aurora 400A",
+    "area_estimation": "elliptical profile in solution; not directly measured section area",
+    "content_evidence": {
+      "quote": "Fibre CSA was calculated from the width and depth, assuming an elliptical circumference.",
+      "locator": "Experimental procedure"
+    },
+    "force_convention": "peak minus resting tension",
+    "units": {
+      "force": "microN",
+      "area": "um2",
+      "specific_force": "N cm^-2"
+    },
+    "reported_model_correction": "20% skinning swelling correction, not an individually measured correction",
+    "table1_cohort_means": {
+      "type_I": {
+        "Po_microN": "532",
+        "CSA_um2": "5012",
+        "SF_N_cm_minus2": "15.5"
+      },
+      "type_IIa": {
+        "Po_microN": "549",
+        "CSA_um2": "4349",
+        "SF_N_cm_minus2": "17.9"
+      }
+    },
+    "pairing_status": "Table1 means are not paired specimen observations; individual numeric force/area rows not recovered",
+    "eligibility": "separate metrology example only; no current-human default or rat calibration"
+  },
+  "existing_plos_model_classification": {
+    "doi": "10.1371/journal.pcbi.1014748",
+    "evidence": "earlier inspected original Methods and frozen calibration/dimensional audit; no new PLOS download",
+    "model_assumptions": {
+      "stroke_nm": "10",
+      "head_stiffness_pN_per_nm": "0.5",
+      "paper_beta": "0.5"
+    },
+    "fitted": "kinetic rate functions and activation/PE/SE parameters retain their family-specific fixed/fitted classification",
+    "serial_count": "geometry-derived length ratio; not parallel head count",
+    "paper_beta_distinction": "model force-normalization constant; source code beta_attachment is a different variable",
+    "parallel_head_capacity_and_density": "not experimentally recovered in this lane"
+  },
+  "completion_gate": {
+    "rat": "same-specimen waveform + raw-unit/calibration + reference area metrology + passive denominator definition + length/sarcomere metadata",
+    "human": "individual paired force/width/depth rows, correction convention and full reference protocol; no cohort-mean substitution"
+  },
+  "adopted_numeric_SI_model_parameters": []
+}
