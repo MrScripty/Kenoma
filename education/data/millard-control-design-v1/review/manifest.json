@@ -1,0 +1,22 @@
+{
+  "frozen_benchmark": "0e89c60d03d3d6137e1ece686ecf942b83d05645",
+  "scope": "design only; no numerical gains, controller/continuum code, dynamics or new simulated/rendered trajectories",
+  "reference_lane_coordination": "interface requirements only; anatomical values and their provenance remain with the separate reference-manifest lane; parent coordinates handoff",
+  "files": [
+    {
+      "path": "education/research/mechanical-closure/tension-mass-control-design.md",
+      "bytes": 16549,
+      "sha256": "c0178139df5bc0c04c57acc9cfce4cef8e3ec0a185fd0d09ee32d534d06b6177"
+    },
+    {
+      "path": "education/data/millard-control-design-v1/review/design-check.json",
+      "bytes": 841,
+      "sha256": "88600c46d67889c8c018f72c4cbfbc05a5bb4e3b78bfb02081f5ff8eb11d3817"
+    },
+    {
+      "path": "education/data/millard-control-design-v1/review/design-check.log",
+      "bytes": 339,
+      "sha256": "f03903d3d05574339be191cd0a461a125c333f73bd6d68c362342d5363d9657c"
+    }
+  ]
+}

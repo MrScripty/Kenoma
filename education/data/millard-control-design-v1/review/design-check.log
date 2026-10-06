@@ -1,0 +1,7 @@
+PASS actuator passive-storage/powered-input identity
+PASS load power and combined energy identity
+PASS simple-hinge virtual work
+PASS rational initialization and load-only acceleration oracles
+PASS 51 frozen packet bindings
+PASS 1553 preexisting tracked files unchanged
+No dynamics/controller implementation or parameter tuning performed.

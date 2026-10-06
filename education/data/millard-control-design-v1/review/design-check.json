@@ -1,0 +1,22 @@
+{
+  "scope": "symbolic/rational design checks only; no controller code, gain selection, dynamics, continuum, or render",
+  "frozen_commit": "0e89c60d03d3d6137e1ece686ecf942b83d05645",
+  "frozen_tree": "1fe0842aaebbdd874ca25bd48bc95596f6587be9",
+  "actuator_power_identity_residual": "0",
+  "load_power_identity": "Ft*w",
+  "combined_power_identity_residual": "0",
+  "simple_hinge_virtual_work_residual": "0",
+  "educational_baseline_weight_N": 4.903325,
+  "educational_baseline_activation": 0.04903325,
+  "mass_only_initial_acceleration_m_per_s2": {
+    "0.25": 9.80665,
+    "0.5": 0.0,
+    "1.0": -4.903325
+  },
+  "baseline_tracking_budget_N": 0.04903325,
+  "step_command_margin_N": 0.980665,
+  "force_scale_only_tolerance_N": 1.0,
+  "frozen_packet_bindings_unchanged": 51,
+  "preexisting_tracked_files_unchanged": 1553,
+  "passed": true
+}
