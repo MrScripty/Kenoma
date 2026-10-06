@@ -1,0 +1,120 @@
+{
+  "result": "PASS_INDEPENDENT_ACTIVE_CONTROLS_INTERNAL_AUDIT",
+  "sourceCommit": "8789456acdbe019953db328f873b42bf0f26fe85",
+  "sourceHashes": {
+    "data/anatomical-arm-v1/review/active-stability-controls/case-coarse-1.01-a0.00.json": "3c6d2a35f1096fe6d5127249e4e93e2483f33c09ca4d01f9eeb61aa9f4395e09",
+    "data/anatomical-arm-v1/review/active-stability-controls/case-coarse-1.01-a0.01.json": "56fe70f033ee77ba13cefaf0f81782ef0e4c54d7a0799da3ec155531915cebb6",
+    "data/anatomical-arm-v1/review/active-stability-controls/case-coarse-1.25-a0.00.json": "abcd75b44a8a99efbf39cac7a6a5f189359a8222c279788f7b3a1ea18b06f216",
+    "data/anatomical-arm-v1/review/active-stability-controls/case-coarse-1.25-a0.01.json": "4072b937c06a58067284f6ac8b7f763e478114ed71de6d5bfe6524b94ff4b2b8",
+    "data/anatomical-arm-v1/review/active-stability-controls/case-fine-1.01-a0.00.json": "8bcb361a9b44ea958fad6da446ca7412a645316e6c7f0cf7abbfaa4dc4704aaa",
+    "data/anatomical-arm-v1/review/active-stability-controls/case-fine-1.01-a0.01.json": "b762de9b425f2dd71026f859016d313ca2c43313d94640b190dd252e0da31880",
+    "data/anatomical-arm-v1/review/active-stability-controls/case-fine-1.25-a0.00.json": "f2873ddd401a6ef0b085d7b73425b1540dfaf5f6b9563d3fd911b0c1898bee80",
+    "data/anatomical-arm-v1/review/active-stability-controls/case-fine-1.25-a0.01.json": "96139f069e7c2b7234e9d9b44c18d2574e918287f11edaa606c50b485f511e99",
+    "data/anatomical-arm-v1/review/active-stability-controls/memory-stability-symbolic.json": "199dd9e4315adb1623e390a161b1dca3983aa1480ad444acaecfb0b8ad6a8882",
+    "data/anatomical-arm-v1/review/active-stability-controls/summary.json": "681cbbffd4557e2a17d288963e24d2459aaedd8ea37055bb557cfda3d60945bb",
+    "data/anatomical-arm-v1/review/full-p2-p1/coarse-1.01.json": "2966921567df44badae58f49295698dcecc1b1bc79107868ae2784bf7b430eba",
+    "data/anatomical-arm-v1/review/full-p2-p1/coarse-1.25.json": "327b68f7658ef2aba0ee6515e63928f2a7b696041ff837f33ed820cec9dd1843",
+    "data/anatomical-arm-v1/review/full-p2-p1/coarse-mesh.json": "3d0bced59d98b9838f7d89f4940cbda682290340ff917cb5b4ab6c6cc257ce81",
+    "data/anatomical-arm-v1/review/full-p2-p1/fine-1.01.json": "f11868ba2beb4cba43be903783afd385d2706fb9d23c85045afb5a748219de62",
+    "data/anatomical-arm-v1/review/full-p2-p1/fine-1.25.json": "7dbb1e9456c43523d0d78a9aa37e72ea27c178f7a29f6a5045986e27bf1995ef",
+    "data/anatomical-arm-v1/review/full-p2-p1/fine-mesh.json": "368751eef3d9564a2ed59793048f75a1b2183fc4d3147fb634dbd89dc8217ef6",
+    "research/mechanical-closure/active-stability-controls-protocol.md": "16f2662914eb1ba5ecf3d4da6ca62d285ce9c88951d227819e960b59490d4781",
+    "research/mechanical-closure/full-p2-p1-protocol.md": "6c90b7626378a7dd2d8314ace1aee0696b866e551575890f028e1fc49f1e18f4",
+    "tests/test_full_p2_p1.py": "d7db4c83f223caa7e37a85f8c6f30683f3d7ddb0b35808eccdcf7a188732b33d",
+    "tools/active_memory_stability.py": "dcc505976f51c31edd8e0f2ebe96dabf114b3b8867e94be8b164c8a29fbdd25b",
+    "tools/active_stability_controls.py": "41dd5a0be9b81cb4a0bf4d703795b425e260012123a0a28492072ea678b054ab",
+    "tools/anatomical-compression-quadrature.mjs": "f12e0d80224bad5e0bfa0649e08cac2f31a0baf162e2547ae8767b7371f48dc2",
+    "tools/full-p2-p1-replay.mjs": "0b2db14ba4f7c25732280f64a9a85a95a7ff854bc96f4073c02d36aa0ba0fe61",
+    "tools/full_p2_p1.py": "c80a360fd897867e8cb2360766de8a9f5d548d61bf59b5e54dc8b8df2d5f6860",
+    "tools/independent_active_controls_audit.py": "441e70b2e9276a0f227e72e3d08cd2dc4dab1058d694d7f0a1439c248d6ddf4e",
+    "tools/run_full_p2_p1.py": "fe9e2df4a796451e2ff4cacab7b9d7b341f1e75a7b7254826c3677da07b3bdb8",
+    "web/anatomical-element.mjs": "3f67a6bd31565c83d2cbea591c3cf1862a48e50cc4efa780880fda7e808d4b1f",
+    "web/anatomical-intersections.mjs": "a083a9838ac3c7508b65b58329c741aef65a065288aff82fc886d1c2c90375df",
+    "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+    "web/anatomical-modal.mjs": "12cd671bc963aa04dd5c0e173a776049de191283d850b0b60d0fe8e63be4c9a1"
+  },
+  "auditedCaseCount": 8,
+  "gateMaxima": {
+    "forceResidualN": 2.719166194646784e-05,
+    "forceDifferenceN": 2.7896088217183035e-14,
+    "weakRMS": 3.07608047510692e-16,
+    "pointwisePressureRMS": 3.51406686815355e-08,
+    "reactionWorkMismatchN": 1.9322335618049413e-06,
+    "fullDerivativeError": 8.738791076221568e-05,
+    "localDerivativeError": 2.3025711939288604e-10,
+    "axialDerivativeError": 1.648157287725493e-08,
+    "weakConstraint": 4.718288047604849e-16
+  },
+  "sampledJRange": [
+    1.000009768289073,
+    1.0002540891102103
+  ],
+  "worstFullDerivative": {
+    "name": "fine-1.01",
+    "activation": 0.0,
+    "stepM": 5e-08,
+    "relativeError": 8.738791076221568e-05,
+    "passGate": true
+  },
+  "pressureDimensions": [
+    [
+      189,
+      20,
+      169
+    ],
+    [
+      1125,
+      81,
+      1044
+    ]
+  ],
+  "maximumCapWitnessEntry": 0.0,
+  "maximumRankOneDeterminantChange": 0.0,
+  "constantJLocalCurvature": {
+    "matrixPa": 999.8306437579882,
+    "passiveFiberPa": 31210.494331687572,
+    "activeFiberPa": -79749.22251772466,
+    "totalPa": -47538.8975422791,
+    "savedValuePa": -47538.89754227899
+  },
+  "independentAxialDerivatives": [
+    {
+      "stretch": "1.01",
+      "activation": "0.00",
+      "independentSlopeNPerM": "69.07688907674505510946776495977819916571",
+      "savedSlopeNPerM": 69.0768890767458,
+      "differenceNPerM": -7.389644451905042e-13
+    },
+    {
+      "stretch": "1.01",
+      "activation": "0.01",
+      "independentSlopeNPerM": "29.28304215031427526946776495977819916571",
+      "savedSlopeNPerM": 29.283042150314763,
+      "differenceNPerM": -4.867217739956686e-13
+    },
+    {
+      "stretch": "1.25",
+      "activation": "0.00",
+      "independentSlopeNPerM": "261.8760114165842511230259664028207112703",
+      "savedSlopeNPerM": 261.8760114165588,
+      "differenceNPerM": 2.546585164964199e-11
+    },
+    {
+      "stretch": "1.25",
+      "activation": "0.01",
+      "independentSlopeNPerM": "-484.5571917352536060198311764543221458725",
+      "savedSlopeNPerM": -484.5571917352792,
+      "differenceNPerM": 2.5636381906224415e-11
+    }
+  ],
+  "independentMaxwell": {
+    "characteristicPolynomial": "K*s*tau + K + M*s**3*tau + M*s**2 + c*s**2*tau + c*s + km*s*tau",
+    "routhHurwitzMargin": "K*c*tau**2 + M*c + M*km*tau + c**2*tau + c*km*tau**2",
+    "undampedFactorization": "(K + M*s**2)*(s*tau + 1)"
+  },
+  "limits": [
+    "No controls rerun, new optimizer or source-bound receipt modification.",
+    "Saved gradient checks audited; full FE spectra not independently recomputed.",
+    "Independent local, axial and scalar symbolic calculations; no anatomical or nonlinear qualification."
+  ]
+}
