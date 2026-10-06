@@ -1,0 +1,19 @@
+{
+  "capturedUTC": "2026-10-06T06:57:55.705120+00:00",
+  "expectedPublishedConfigVersion": "cecfgver_6ac49b02aa8481948c90ba6be3abaf74",
+  "configVersionRuntimeVerified": false,
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "networkEnvironmentVariableNamesOnly": [
+    "no_proxy",
+    "NETWORK",
+    "https_proxy",
+    "CODEX_ENVIRONMENT_ID",
+    "CODEX_PROXY_CERT",
+    "NO_PROXY",
+    "HTTPS_PROXY",
+    "HTTP_PROXY",
+    "http_proxy",
+    "CODEX_EXEC_SERVER_PROXY_PRIVATE_IPS_VIA_UPSTREAM"
+  ],
+  "note": "No proxy, credentials, or network configuration changed. Published config identity is not exposed by a runtime tool. Standard curl inherits existing environment."
+}

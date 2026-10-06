@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "specimen_id": "nlm-visible-human-male",
+  "observer": "Codex source-pixel review, 2026-10-06; no independent anatomical reviewer",
+  "pixel_bounds_convention": "zero-based columns and rows; half-open approximate rectangular review windows, not segmentation boundaries",
+  "native_png_encoding": {
+    "columns": 2048,
+    "rows": 1216,
+    "bit_depth_per_channel": 8,
+    "color_type": 2,
+    "decoded_mode": "RGB",
+    "pillow_decoding_verified": true,
+    "embedded_dpi_not_patient_sampling": true
+  },
+  "nominal_source_sampling_only": {
+    "xy_mm": 0.33,
+    "section_interval_mm": 1,
+    "source_receipt_id": "nlm-terms",
+    "patient_affine_verified": false
+  },
+  "scouts_are_contiguous_volume": false,
+  "anatomical_laterality": "unverified",
+  "named_tissue_annotations": false,
+  "assets": [
+    {
+      "id": "a_vm1450",
+      "raw_sha256": "f357fbbcc43c0195e2994d187e63094216e02a4894ad94b2adf0dce9af4ba444",
+      "review_windows_columns_rows": {
+        "display_left": [
+          [
+            145,
+            535
+          ],
+          [
+            200,
+            690
+          ]
+        ],
+        "display_right": [
+          [
+            1530,
+            1895
+          ],
+          [
+            175,
+            665
+          ]
+        ]
+      },
+      "pixel_observation": "Thoracic cross-section with lung and heart regions, two lateral arm cross-sections, one dominant bone cross-section per arm, broad red-brown muscle regions and pale peripheral adipose-like tissue. Thin outer boundary visible; separate skin layers, named muscles and fascia remain unassessed.",
+      "artifacts_and_limits": "Black round voids/defects occur within tissue; blue embedding material separates limbs and fills cavities. Photographed handwritten plate numbers differ from URL suffixes; no mapping between plate numbering and source slice coordinates is inferred. No pixel mask or boundary precision assigned."
+    },
+    {
+      "id": "a_vm1550",
+      "raw_sha256": "74546104c4c14b3b8a0a018f7c0284928d9d3e036ec2a46018e3e3c8553347ad",
+      "review_windows_columns_rows": {
+        "display_left": [
+          [
+            145,
+            520
+          ],
+          [
+            215,
+            630
+          ]
+        ],
+        "display_right": [
+          [
+            1550,
+            1895
+          ],
+          [
+            190,
+            570
+          ]
+        ]
+      },
+      "pixel_observation": "Upper-abdominal cross-section with two lateral arm cross-sections. Broad bone/muscle/peripheral fat-like boundaries are visible. A single displayed section does not establish named muscle identities, tissue continuity or elbow extent.",
+      "artifacts_and_limits": "Black round voids/defects occur within tissue; blue embedding material separates limbs and fills cavities. Photographed handwritten plate numbers differ from URL suffixes; no mapping between plate numbering and source slice coordinates is inferred. No pixel mask or boundary precision assigned."
+    },
+    {
+      "id": "a_vm1600",
+      "raw_sha256": "570cf80f01c6d9beaefcc4b0670cf8c561e6785321b22f469c4ef4bafda93ac4",
+      "review_windows_columns_rows": {
+        "display_left": [
+          [
+            150,
+            515
+          ],
+          [
+            230,
+            665
+          ]
+        ],
+        "display_right": [
+          [
+            1550,
+            1895
+          ],
+          [
+            200,
+            655
+          ]
+        ]
+      },
+      "pixel_observation": "Abdominal cross-section with bilateral arm sections. Display-right window shows several opposed curved bony profiles with pale intervening rims/interfaces; this is an elbow-level localization candidate. Display-left window has bony profiles and muscle compartments but the joint extent is less clear in this isolated plane. Pale rims are not yet accepted cartilage, capsule or tendon labels.",
+      "artifacts_and_limits": "Black round voids/defects occur within tissue; blue embedding material separates limbs and fills cavities. Photographed handwritten plate numbers differ from URL suffixes; no mapping between plate numbering and source slice coordinates is inferred. No pixel mask or boundary precision assigned."
+    }
+  ],
+  "next_bounded_requirement": {
+    "status": "proposal_only; acquisition not authorized by this checkpoint",
+    "anchor": "a_vm1600",
+    "proposed_localization_window": "a_vm1595 through a_vm1605, inclusive, same male original-color series; URLs, listed sizes, availability and local physical spacing must be checked before approval",
+    "max_images": 11,
+    "proposed_per_image_cap_bytes": 4194304,
+    "proposed_transfer_cap_bytes": 41943040,
+    "free_space_floor_bytes": 1610612736,
+    "rationale": "Inspect both image-side elbow candidates and trace the joint and bone continuity around the successful scout. Establish anatomical right side from official orientation evidence before selecting a right-arm crop. Eleven sections are a localization test, not a complete elbow/forearm segmentation volume.",
+    "raw_acquisition_executed": false,
+    "required_after_localization": "Explicit reviewed pixel bounds and slice identities; missing-section/cutting-artifact log; coordinate convention/laterality evidence; separate approved budget for any larger contiguous block; named fine-tissue decisions only from reviewed boundaries.",
+    "max_new_images": 10,
+    "reuse_existing_asset": "a_vm1600 with pinned acquired bytes"
+  }
+}

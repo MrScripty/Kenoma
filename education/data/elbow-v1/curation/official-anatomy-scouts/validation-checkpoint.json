@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "captured_utc": "2026-10-06T07:08:03.873978+00:00",
+  "offline_scout_audit": {
+    "verified": true,
+    "receipt_count": 32,
+    "scout_images": 3,
+    "scout_bytes": 10479462,
+    "native_dimensions_columns_rows": [
+      2048,
+      1216
+    ],
+    "png_crc_and_scanline_integrity": true,
+    "schema_stage": "source_image_review",
+    "anatomical_laterality": "unverified",
+    "unassessed_targets": 45,
+    "named_tissue_masks": 0,
+    "full_43_geometry_resolution_verified": false,
+    "mesh_archives_downloaded": 0
+  },
+  "existing_segmentation_schema_validation": "PASS Draft202012Validator",
+  "historical_nlm_feasibility_audit": "PASS metadata_only; originals unchanged",
+  "historical_nlm_feasibility_unittests": {
+    "tests": 16,
+    "failures": 0,
+    "errors": 0
+  },
+  "mutation_checks": [
+    {
+      "case": "fabricated mask",
+      "rejected": true,
+      "error": "Unsupported mask import"
+    },
+    {
+      "case": "unsupported right-side ROI",
+      "rejected": true,
+      "error": "Unsupported right ROI"
+    },
+    {
+      "case": "fabricated full 4.3 resolution",
+      "rejected": true,
+      "error": "Unsupported full 4.3 claim"
+    },
+    {
+      "case": "unsupported rights relabeling",
+      "rejected": true,
+      "error": "Exact asset rights relabeled"
+    },
+    {
+      "case": "fabricated runtime config attestation",
+      "rejected": true,
+      "error": "Runtime config identity falsely claimed"
+    },
+    {
+      "case": "corrupted PNG IHDR chunk",
+      "rejected": true,
+      "error": "PNG CRC mismatch"
+    }
+  ],
+  "historical_parent_commit": "327940f71c6c143fa91773dd75cbea6a33346304",
+  "historical_tracked_files_changed": [],
+  "new_evidence_sha256": {
+    "education/data/elbow-v1/curation/official-anatomy-scouts/bodyparts3d-options.json": "fd5f6957dd08bf95dd11ed38a27a8e922dd460f7e2b544a63a55232f139bb846",
+    "education/data/elbow-v1/curation/official-anatomy-scouts/README.md": "27f140cda55b2de55de46d08ab0016fcc26dc77cbd61a7e95916ac7d2a8b8085",
+    "education/data/elbow-v1/curation/official-anatomy-scouts/source-image-review.json": "18976c613efbb1e91a92d94e0f6ad33b761553f775e3e8d6f418fa96f37f9e37",
+    "education/data/elbow-v1/curation/official-anatomy-scouts/pixel-observations.json": "95a5abee314c92ca8a0f02104ab5195227dc0121103f93ee8862e2c1abde7889",
+    "education/data/elbow-v1/curation/official-anatomy-scouts/request-receipts.json": "050ca1ddb560435186ad9d83b26caa2b1edf601a2a9820e0e0a3758cc3d9b30c",
+    "education/data/elbow-v1/curation/official-anatomy-scouts/runtime-state.json": "b14af8aa57c06e7ae95e83f248a96a1d86111a94565858fe7b5ef704d9f384dc",
+    "education/data/elbow-v1/scripts/audit_official_anatomy_scouts.py": "874c9707102e3908615fe915c0a98619aaf5eebcaa7943e74c023c986e3225a7"
+  },
+  "network_requests_by_validation": 0,
+  "raw_files_in_git": false
+}

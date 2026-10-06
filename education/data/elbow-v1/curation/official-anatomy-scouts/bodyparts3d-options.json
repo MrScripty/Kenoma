@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "requested_geometry_version": "4.3",
+  "full_43_archive_url": null,
+  "full_43_archive_size_bytes": null,
+  "full_43_geometry_resolution_verified": false,
+  "full_mesh_archive_downloaded": false,
+  "live_versions": [
+    {
+      "cb_id": "9",
+      "ci_id": "1",
+      "md_id": 1,
+      "mr_id": 1,
+      "mv_id": 12,
+      "tg_id": 1,
+      "tgi_comment": null,
+      "tgi_id": 12,
+      "tgi_name": "4.3i",
+      "tgi_objects_set": "4.3",
+      "tgi_part_of_relation": "regional_part_of, branch_of, constitutional_part_of, tributary_of, member_of",
+      "tgi_renderer_version": "4.3.1601121842",
+      "tgi_tree_version": "FMA3.2.1-inference",
+      "tgi_version": "4.3i"
+    },
+    {
+      "cb_id": "5",
+      "ci_id": "1",
+      "md_id": 1,
+      "mr_id": 1,
+      "mv_id": 6,
+      "tg_id": 1,
+      "tgi_comment": "is beta release and is still under inspection",
+      "tgi_id": 6,
+      "tgi_name": "4.3",
+      "tgi_objects_set": "4.3",
+      "tgi_part_of_relation": "regional_part_of, branch_of, constitutional_part_of, part_of",
+      "tgi_renderer_version": "4.3.1403311232",
+      "tgi_tree_version": "FMA3.0",
+      "tgi_version": "4.3"
+    }
+  ],
+  "mapping": {
+    "receipt_id": "bp3d-43-concept-map",
+    "compressed_zip_bytes": 92926,
+    "member": "FMA2Obj.txt",
+    "uncompressed_bytes": 605737,
+    "crc32": "e2ccf5fb",
+    "sha256": "c3d16c891016da13447de2fc3241d05d92e8f9dc460e363233c03f420b935d4f",
+    "declared_header": [
+      "Data Version 4.3",
+      "Objects set 4.3",
+      "Tree version FMA3.0"
+    ],
+    "relation_rows": 5614,
+    "distinct_fma_ids_across_trees": 4528,
+    "relation_rows_by_tree": {
+      "is_a": 3899,
+      "part_of": 1715
+    },
+    "distinct_referenced_object_ids": 3210,
+    "count_scope": "Referenced IDs in the metadata map, not inspected OBJ files or verified mesh count. IDs include suffix variants; no claim of one original mesh per FMA concept.",
+    "right_humerus": [
+      [
+        "FMA23130",
+        "is_a",
+        "FJ3368+FJ6462"
+      ],
+      [
+        "FMA23130",
+        "part_of",
+        "FJ3368+FJ6462"
+      ]
+    ],
+    "humerus_object_referenced_by_fma_count": 15,
+    "get_contents_api_success_flag": false,
+    "api_limit": "HTTP 200 and populated images records coexist with success:false; raw response is preserved. Official downloadable mapping independently confirms the identity."
+  },
+  "archive_options": [
+    {
+      "receipt_id": "bp3d-archive4-head",
+      "url": "https://dbarchive.biosciencedbc.jp/data/bodyparts3d/LATEST/isa_BP3D_4.0_obj_99.zip",
+      "version": "4.0",
+      "polygon_reduction_rate_percent": 99,
+      "archive_size_bytes_from_head": 142903898,
+      "archive_body_acquired": false,
+      "archive_sha256": null,
+      "resolution_evidence": "Official filename/release metadata; representative vertices/triangles not acquired in this checkpoint"
+    },
+    {
+      "receipt_id": "bp3d-archive3-95-head",
+      "url": "https://dbarchive.biosciencedbc.jp/data/bodyparts3d/20110915/BodyParts3D_3.0_obj_95.zip",
+      "version": "3.0",
+      "polygon_reduction_rate_percent": 95,
+      "archive_size_bytes_from_head": 547270545,
+      "archive_body_acquired": false,
+      "archive_sha256": null,
+      "resolution_evidence": "Official filename/release metadata; representative vertices/triangles not acquired in this checkpoint"
+    },
+    {
+      "receipt_id": "bp3d-archive2-95-head",
+      "url": "https://dbarchive.biosciencedbc.jp/data/bodyparts3d/20100816/BodyParts3D_2.0_obj_95.zip",
+      "version": "2.0",
+      "polygon_reduction_rate_percent": 95,
+      "archive_size_bytes_from_head": 512266980,
+      "archive_body_acquired": false,
+      "archive_sha256": null,
+      "resolution_evidence": "Official filename/release metadata; representative vertices/triangles not acquired in this checkpoint"
+    }
+  ],
+  "blockers": [
+    {
+      "receipt_id": "bp3d-humerus43-export-list",
+      "status": 500,
+      "description": "Documented selective OBJ download-list endpoint returned 500 Internal Server Error (528 response bytes). Route stopped; no download.cgi or alternate proxy attempted."
+    },
+    {
+      "receipt_id": "bp3d-43-object-metadata",
+      "status": 200,
+      "advertised_metadata_html_bytes": 4528437,
+      "read_cap_bytes": 4194304,
+      "body_bytes_read": 0,
+      "description": "Complete object metadata table exceeds bounded 4 MiB cap. Closed response without reading body; this is not a mesh archive size."
+    }
+  ],
+  "license_state": {
+    "exact_43_asset_rights": "unresolved; no relabeling or geometry redistribution",
+    "live_license_receipt_id": "bp3d-live-license",
+    "live_claim": "CC BY-SA 2.1 Japan; live page also points to archive for details",
+    "archive_license_receipt_id": "bp3d-archive-license",
+    "archive_claim": "CC BY 4.0",
+    "scope_limit": "Different live/archive statements are preserved. Archive grant is not automatically applied to exact 4.3 live exports or metadata ZIP."
+  },
+  "official_site_concept_claim": {
+    "count": 3899,
+    "version_label": "4.3i",
+    "receipt_id": "bp3d-version",
+    "is_mesh_count": false
+  },
+  "resolution_limit": "Version 4.3 denotes changed object set, and i denotes inferred ontology. Neither suffix proves polygon density, geometric accuracy or full resolution. No exact 4.3 OBJ acquired; no source 4.3 vertex/triangle count measured. Existing 4.0 reduced surface diagnostics remain separate."
+}
