@@ -114,9 +114,14 @@ def check(page, out, case='all'):
         # Normal Play is paced by fixed h, then can pause and single-step at the same state.
         lab.locator('[data-action=reset]').click()
         lab.locator('select[data-param=dt]').select_option('0.005')
+        lab.locator('[data-action=summary]').click()
+        spoken = lab.locator('.announce').text_content()
+        lab.locator('.announce').evaluate('(el)=>{el.mutations=0;el.observer=new MutationObserver(rows=>el.mutations+=rows.length);el.observer.observe(el,{childList:true,characterData:true,subtree:true});}')
         lab.locator('[data-action=play]').click()
         page.wait_for_timeout(300)
         lab.locator('[data-action=play]').click()
+        assert lab.locator('.announce').text_content() == spoken
+        assert lab.locator('.announce').evaluate('(el)=>{el.observer.disconnect();return el.mutations;}') == 0
         paced = state(lab)
         assert 0 < paced['run']['timeS'] < 2
         page.wait_for_timeout(150)

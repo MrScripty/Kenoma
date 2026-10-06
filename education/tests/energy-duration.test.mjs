@@ -43,8 +43,8 @@ test('batch pause/resume and single steps retain current trajectory; edit/reset 
  lab.playEnergy(true);frame(0);lab.reset();assert.equal(frames.size,0);assert.equal(lab.running,false);assert.deepEqual(lab.params,DEFAULTS.energy);assert.equal(lab.index,0);assert.equal(lab.maxRelativeEnergyDeviation,0);
 });
 test('paced Play uses chosen fixed h and bounded catch-up, with one redraw per frame',()=>{
- const {lab,renders}=fixture(.005,'symplectic');lab.play();frame(0);assert.equal(lab.index,0);frame(16);assert.equal(lab.index,3);frame(1016);assert.equal(lab.index,53);
- assert.equal(renders(),2);assert.deepEqual(lab.history,springTrace(lab.params,53));lab.pause();assert.equal(frames.size,0);
+ const {lab,renders}=fixture(.005,'symplectic');const summary=lab.status.textContent;lab.play();frame(0);assert.equal(lab.index,0);frame(16);assert.equal(lab.index,3);frame(1016);assert.equal(lab.index,53);
+ assert.equal(renders(),2);assert.deepEqual(lab.history,springTrace(lab.params,53));lab.pause();assert.equal(frames.size,0);assert.equal(lab.status.textContent,summary);
 });
 test('duration bounds reject unsupported fractional, excessive or invalid step budgets',()=>{
  for(const dt of [0,-1,NaN,Infinity,.001,.07])assert.throws(()=>energyStepLimit(dt),RangeError);
