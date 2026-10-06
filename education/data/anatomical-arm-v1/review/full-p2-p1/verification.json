@@ -1,0 +1,295 @@
+{
+  "result": "PASS_FRESH_ORIGINAL_STRESS_GRADIENT_REPLAY",
+  "sourceHashes": {
+    "tools/full_p2_p1.py": "c80a360fd897867e8cb2360766de8a9f5d548d61bf59b5e54dc8b8df2d5f6860",
+    "tools/full-p2-p1-replay.mjs": "0b2db14ba4f7c25732280f64a9a85a95a7ff854bc96f4073c02d36aa0ba0fe61",
+    "tools/run_full_p2_p1.py": "fe9e2df4a796451e2ff4cacab7b9d7b341f1e75a7b7254826c3677da07b3bdb8",
+    "tests/test_full_p2_p1.py": "d7db4c83f223caa7e37a85f8c6f30683f3d7ddb0b35808eccdcf7a188732b33d",
+    "research/mechanical-closure/full-p2-p1-protocol.md": "6c90b7626378a7dd2d8314ace1aee0696b866e551575890f028e1fc49f1e18f4",
+    "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+    "web/anatomical-modal.mjs": "12cd671bc963aa04dd5c0e173a776049de191283d850b0b60d0fe8e63be4c9a1",
+    "web/anatomical-element.mjs": "3f67a6bd31565c83d2cbea591c3cf1862a48e50cc4efa780880fda7e808d4b1f",
+    "web/anatomical-intersections.mjs": "a083a9838ac3c7508b65b58329c741aef65a065288aff82fc886d1c2c90375df",
+    "tools/anatomical-compression-quadrature.mjs": "f12e0d80224bad5e0bfa0649e08cac2f31a0baf162e2547ae8767b7371f48dc2",
+    "tools/verify_full_p2_p1.py": "f53d44e20fba98dfc0f428e2003579612fee4a4c704bfce11cd1bea16224389c"
+  },
+  "inputSHA256": {
+    "data/anatomical-arm-v1/review/full-p2-p1/coarse-1.01.json": "2966921567df44badae58f49295698dcecc1b1bc79107868ae2784bf7b430eba",
+    "data/anatomical-arm-v1/review/full-p2-p1/fine-1.01.json": "f11868ba2beb4cba43be903783afd385d2706fb9d23c85045afb5a748219de62",
+    "data/anatomical-arm-v1/review/full-p2-p1/coarse-1.00.json": "f242f7358ae01d59f1d7944976b547c96a4d6e8eb4a89ffe52f8a1564bc32150",
+    "data/anatomical-arm-v1/review/full-p2-p1/fine-mesh.json": "368751eef3d9564a2ed59793048f75a1b2183fc4d3147fb634dbd89dc8217ef6",
+    "data/anatomical-arm-v1/review/full-p2-p1/coarse-mesh.json": "3d0bced59d98b9838f7d89f4940cbda682290340ff917cb5b4ab6c6cc257ce81",
+    "data/anatomical-arm-v1/review/full-p2-p1/fine-1.25.json": "7dbb1e9456c43523d0d78a9aa37e72ea27c178f7a29f6a5045986e27bf1995ef",
+    "data/anatomical-arm-v1/review/full-p2-p1/fine-1.00.json": "90ffcd4192b76102cb2ca4ff4678b09a51812c5ab516414be20465c3c813db68",
+    "data/anatomical-arm-v1/review/full-p2-p1/summary.json": "ffe972e97c62e6a83aec9ec62aaca0cccb77a93126d839d3b48c838ee24f2616",
+    "data/anatomical-arm-v1/review/full-p2-p1/coarse-1.25.json": "327b68f7658ef2aba0ee6515e63928f2a7b696041ff837f33ed820cec9dd1843"
+  },
+  "cases": [
+    {
+      "name": "coarse-1.00",
+      "stationaryAccepted": true,
+      "stabilityAssessed": false,
+      "stabilityClassification": "UNASSESSED_PASSIVE_CUTOFF",
+      "forceResidualN": 9.927901514080289e-14
+    },
+    {
+      "name": "coarse-1.01",
+      "stationaryAccepted": true,
+      "stabilityAssessed": true,
+      "stabilityClassification": "POSITIVE_SAMPLED_FULL_SPECTRUM",
+      "forceResidualN": 2.719166194670461e-05,
+      "gradientChecks": [
+        {
+          "stepM": 1e-07,
+          "independentNodeGradientRelativeError": 3.695481396909346e-07,
+          "probeChecks": [
+            {
+              "sign": 1,
+              "maximumIndependentForceDifferenceN": 2.2756102557863755e-14,
+              "weakPressureRMS": 6.950179387508703e-17,
+              "pointwisePressureRMS": 4.999891652229633e-08,
+              "Jmin": 1.0000096856261191,
+              "Jmax": 1.0000102569554865
+            },
+            {
+              "sign": -1,
+              "maximumIndependentForceDifferenceN": 2.485685268727167e-14,
+              "weakPressureRMS": 7.641118563643645e-17,
+              "pointwisePressureRMS": 5.007594836922609e-08,
+              "Jmin": 1.0000097133519363,
+              "Jmax": 1.0000102591772337
+            }
+          ]
+        },
+        {
+          "stepM": 5e-08,
+          "independentNodeGradientRelativeError": 9.681726791102966e-07,
+          "probeChecks": [
+            {
+              "sign": 1,
+              "maximumIndependentForceDifferenceN": 2.4711135915289617e-14,
+              "weakPressureRMS": 7.560528298490369e-17,
+              "pointwisePressureRMS": 3.229535388736686e-08,
+              "Jmin": 1.0000097635131975,
+              "Jmax": 1.0000101580559435
+            },
+            {
+              "sign": -1,
+              "maximumIndependentForceDifferenceN": 2.532869747273736e-14,
+              "weakPressureRMS": 6.088364891353736e-17,
+              "pointwisePressureRMS": 3.2354974170538516e-08,
+              "Jmin": 1.000009791928987,
+              "Jmax": 1.000010160277026
+            }
+          ]
+        }
+      ],
+      "rayleighComponents": {
+        "matrixNPerM": 1.7853702229483464,
+        "passiveFiberNPerM": 7.305540979515273,
+        "activeNPerM": -3.6691837273380496,
+        "pressureGeometricNPerM": -0.005757343246273753,
+        "weakVolumeConstraintNPerM": 0.017042136395431565,
+        "totalNPerM": 5.4330122682747275,
+        "interpretation": "Exact physical Rayleigh components at stationary candidate; no numerical Hessian shift"
+      }
+    },
+    {
+      "name": "coarse-1.25",
+      "stationaryAccepted": true,
+      "stabilityAssessed": true,
+      "stabilityClassification": "NEGATIVE_STATIONARY_DIRECTION",
+      "forceResidualN": 6.544742225951505e-11,
+      "gradientChecks": [
+        {
+          "stepM": 1e-07,
+          "independentNodeGradientRelativeError": 6.752755551304427e-10,
+          "probeChecks": [
+            {
+              "sign": 1,
+              "maximumIndependentForceDifferenceN": 1.1417949918879344e-14,
+              "weakPressureRMS": 7.136023064905678e-17,
+              "pointwisePressureRMS": 1.6852403103026873e-06,
+              "Jmin": 1.0002461613529783,
+              "Jmax": 1.0002620148926191
+            },
+            {
+              "sign": -1,
+              "maximumIndependentForceDifferenceN": 1.9628396130677572e-14,
+              "weakPressureRMS": 7.546441538936242e-17,
+              "pointwisePressureRMS": 1.6852403405202535e-06,
+              "Jmin": 1.0002461613970752,
+              "Jmax": 1.0002620149438317
+            }
+          ]
+        },
+        {
+          "stepM": 5e-08,
+          "independentNodeGradientRelativeError": 8.215270454696149e-10,
+          "probeChecks": [
+            {
+              "sign": 1,
+              "maximumIndependentForceDifferenceN": 1.030078800035028e-14,
+              "weakPressureRMS": 7.80246858113099e-17,
+              "pointwisePressureRMS": 8.426201476563142e-07,
+              "Jmin": 1.000250124720901,
+              "Jmax": 1.0002580515323147
+            },
+            {
+              "sign": -1,
+              "maximumIndependentForceDifferenceN": 1.802204219192305e-14,
+              "weakPressureRMS": 7.759034224952057e-17,
+              "pointwisePressureRMS": 8.42620177827503e-07,
+              "Jmin": 1.0002501247649973,
+              "Jmax": 1.0002580515835258
+            }
+          ]
+        }
+      ],
+      "rayleighComponents": {
+        "matrixNPerM": 62.50734940505845,
+        "passiveFiberNPerM": 2278.399289607192,
+        "activeNPerM": -6637.930127104707,
+        "pressureGeometricNPerM": -4.039108046255539,
+        "weakVolumeConstraintNPerM": 7.075099711352296,
+        "totalNPerM": -4293.98749642736,
+        "interpretation": "Exact physical Rayleigh components at stationary candidate; no numerical Hessian shift"
+      }
+    },
+    {
+      "name": "fine-1.00",
+      "stationaryAccepted": true,
+      "stabilityAssessed": false,
+      "stabilityClassification": "UNASSESSED_PASSIVE_CUTOFF",
+      "forceResidualN": 1.2373635645107593e-13
+    },
+    {
+      "name": "fine-1.01",
+      "stationaryAccepted": true,
+      "stabilityAssessed": true,
+      "stabilityClassification": "POSITIVE_SAMPLED_FULL_SPECTRUM",
+      "forceResidualN": 1.269308970354352e-05,
+      "gradientChecks": [
+        {
+          "stepM": 1e-07,
+          "independentNodeGradientRelativeError": 2.7731579559065176e-06,
+          "probeChecks": [
+            {
+              "sign": 1,
+              "maximumIndependentForceDifferenceN": 1.1228865059997872e-14,
+              "weakPressureRMS": 8.725403100340626e-17,
+              "pointwisePressureRMS": 4.0450976455642476e-08,
+              "Jmin": 1.0000097591304615,
+              "Jmax": 1.0000102149113763
+            },
+            {
+              "sign": -1,
+              "maximumIndependentForceDifferenceN": 1.163218826816248e-14,
+              "weakPressureRMS": 8.421775171463173e-17,
+              "pointwisePressureRMS": 4.083601405279518e-08,
+              "Jmin": 1.0000097282725784,
+              "Jmax": 1.0000102419233499
+            }
+          ]
+        },
+        {
+          "stepM": 5e-08,
+          "independentNodeGradientRelativeError": 4.684495230023457e-06,
+          "probeChecks": [
+            {
+              "sign": 1,
+              "maximumIndependentForceDifferenceN": 9.998512434661322e-15,
+              "weakPressureRMS": 7.204218643881043e-17,
+              "pointwisePressureRMS": 3.648709364347599e-08,
+              "Jmin": 1.000009763709762,
+              "Jmax": 1.0000101851887386
+            },
+            {
+              "sign": -1,
+              "maximumIndependentForceDifferenceN": 9.959914837320838e-15,
+              "weakPressureRMS": 7.694868120474919e-17,
+              "pointwisePressureRMS": 3.670091656124268e-08,
+              "Jmin": 1.000009756010282,
+              "Jmax": 1.0000102034467597
+            }
+          ]
+        }
+      ],
+      "rayleighComponents": {
+        "matrixNPerM": 0.276144895344027,
+        "passiveFiberNPerM": 1.5304939384808585,
+        "activeNPerM": -0.7835985258325692,
+        "pressureGeometricNPerM": -0.0011605105358478448,
+        "weakVolumeConstraintNPerM": 0.0031006080440458272,
+        "totalNPerM": 1.0249804055005143,
+        "interpretation": "Exact physical Rayleigh components at stationary candidate; no numerical Hessian shift"
+      }
+    },
+    {
+      "name": "fine-1.25",
+      "stationaryAccepted": true,
+      "stabilityAssessed": true,
+      "stabilityClassification": "NEGATIVE_STATIONARY_DIRECTION",
+      "forceResidualN": 5.481398433502148e-10,
+      "gradientChecks": [
+        {
+          "stepM": 1e-07,
+          "independentNodeGradientRelativeError": 1.292215285889937e-09,
+          "probeChecks": [
+            {
+              "sign": 1,
+              "maximumIndependentForceDifferenceN": 9.011021095961524e-15,
+              "weakPressureRMS": 8.713651400998533e-17,
+              "pointwisePressureRMS": 1.434482980100646e-06,
+              "Jmin": 1.0002411984550212,
+              "Jmax": 1.000266977884203
+            },
+            {
+              "sign": -1,
+              "maximumIndependentForceDifferenceN": 1.0178056314424921e-14,
+              "weakPressureRMS": 8.908978797828691e-17,
+              "pointwisePressureRMS": 1.4344827965434975e-06,
+              "Jmin": 1.0002411984194173,
+              "Jmax": 1.000266977947055
+            }
+          ]
+        },
+        {
+          "stepM": 5e-08,
+          "independentNodeGradientRelativeError": 1.8953253105093285e-09,
+          "probeChecks": [
+            {
+              "sign": 1,
+              "maximumIndependentForceDifferenceN": 6.731594448528e-15,
+              "weakPressureRMS": 8.385358292307159e-17,
+              "pointwisePressureRMS": 7.172415388501295e-07,
+              "Jmin": 1.000247643313027,
+              "Jmax": 1.000260533025219
+            },
+            {
+              "sign": -1,
+              "maximumIndependentForceDifferenceN": 7.449336286713404e-15,
+              "weakPressureRMS": 8.108400307863992e-17,
+              "pointwisePressureRMS": 7.172413552898522e-07,
+              "Jmin": 1.0002476432774234,
+              "Jmax": 1.000260533088067
+            }
+          ]
+        }
+      ],
+      "rayleighComponents": {
+        "matrixNPerM": 57.657383108227805,
+        "passiveFiberNPerM": 1614.3294137279308,
+        "activeNPerM": -4704.837322178162,
+        "pressureGeometricNPerM": -2.9278818111717557,
+        "weakVolumeConstraintNPerM": 1.8122474014582988,
+        "totalNPerM": -3033.9661597517174,
+        "interpretation": "Exact physical Rayleigh components at stationary candidate; no numerical Hessian shift"
+      }
+    }
+  ],
+  "rawLabelCorrection": "Original stretch-one receipts set stationaryStabilityDiagnosticPass=true by equilibrium shortcut; no spectrum was assessed. Treat that label as UNASSESSED_PASSIVE_CUTOFF. This fresh record corrects classification without rewriting source-bound raw evidence.",
+  "limits": [
+    "Gradient probes are derivative tests, not accepted physical state/history advancement."
+  ]
+}
