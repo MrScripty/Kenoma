@@ -6,6 +6,8 @@ from threading import Thread
 import hashlib,json,os,shutil,subprocess,sys
 from playwright.sync_api import sync_playwright,expect
 ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'tools'))
+from check_real_lesson_proofs import FAMILIES as REAL_FAMILIES
 def check(destination):
     out=Path(destination).resolve();qa=out/'qa';qa.mkdir(exist_ok=True)
     class Quiet(SimpleHTTPRequestHandler):
@@ -19,6 +21,7 @@ def check(destination):
         page=browser.new_page(viewport={'width':1200,'height':1000});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
         page.goto(f'http://127.0.0.1:{server.server_port}/index.html',wait_until='networkidle')
         assert page.locator('[data-property]').count()==3
+        assert page.locator('[data-material]').count()==(0 if preview_mode else 1)
         expected_proofs=0 if preview_mode else sum(len(json.loads((out/name).read_text())['claims']) for name in json.loads((out/manifest_name).read_text())['proof_families'])
         assert page.locator('.proof-card').count()==expected_proofs
         if not preview_mode:
@@ -29,6 +32,18 @@ def check(destination):
             expect(page.locator('#proof-volume-isochoric-sqrt pre').first).to_contain_text('0 < lambda')
             expect(page.locator('#proof-volume-isochoric-sqrt pre').first).to_contain_text('Real.sqrt')
             checks.append('Four actual real proof cards retain positive-stretch assumptions and pinned mathlib metadata')
+            real_card_count=0
+            for _,_,prefix,_ in REAL_FAMILIES:
+                name=prefix+'-proof-status.json'
+                receipt=json.loads((out/name).read_text())
+                real_card_count+=len(receipt['claims'])
+                for claim in receipt['claims']:
+                    card=page.locator('#proof-'+claim['id'])
+                    expect(card.locator('.proof-meta')).to_contain_text(receipt['source_sha256'])
+                    expect(card.locator('.proof-meta')).to_contain_text('pinned mathlib v4.19.0')
+                    expect(card.locator('pre').first).to_contain_text('ℝ')
+                    expect(card).to_contain_text(claim['limitations'])
+            checks.append(f'{real_card_count} additional actual Real cards bind compiled sources and retain explicit assumptions and limits')
         def state(lab):
             lab.locator('[data-action=copy]').click();return json.loads(lab.locator('.preset').input_value())
         deformation=page.locator('[data-property=deformation]');before=state(deformation)
@@ -70,8 +85,8 @@ def check(destination):
         browser.close()
         browser=p.chromium.launch(headless=True,executable_path=os.environ.get('CHROMIUM_EXECUTABLE') or shutil.which('chromium'))
         page=browser.new_page(java_script_enabled=False);page.goto(f'http://127.0.0.1:{server.server_port}/index.html')
-        assert page.locator('.property-lesson .static-figure img').count()==3
-        assert page.locator('.property-lesson .static-figure img').evaluate_all('(els)=>els.every(x=>x.complete&&x.naturalWidth>0)')
+        assert page.locator('.property-lesson[data-property] .static-figure img').count()==3
+        assert page.locator('.property-lesson[data-property] .static-figure img').evaluate_all('(els)=>els.every(x=>x.complete&&x.naturalWidth>0)')
         browser.close();checks.append('Desktop/mobile geometry and summaries; static print/PDF and zero-JavaScript alternatives')
     finally:server.shutdown()
     (qa/('browser-check.json' if preview_mode else 'property-browser-check.json')).write_text(json.dumps({'schema':1,'result':'PASS_PROPERTY_PREVIEW' if preview_mode else 'PASS_INTEGRATED_PROPERTY_LABS','checks':checks,'javascript_errors':errors,'manifest':manifest_name,'manifest_sha256':hashlib.sha256((out/manifest_name).read_bytes()).hexdigest(),'html_sha256':hashlib.sha256((out/'index.html').read_bytes()).hexdigest(),'app_sha256':hashlib.sha256((out/('web/property-labs.mjs' if preview_mode else 'assets/app.js')).read_bytes()).hexdigest(),'source_revision':revision,'proof_cards':expected_proofs},indent=2)+'\n');print('\n'.join(checks))

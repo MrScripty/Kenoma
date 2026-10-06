@@ -1,0 +1,12 @@
+'Kenoma.force_pair_cancels' depends on axioms: [propext, Quot.sound]
+'Kenoma.torque_linear' depends on axioms: [propext, Quot.sound]
+'Kenoma.torque_origin_shift' depends on axioms: [propext, Quot.sound]
+'Kenoma.central_pair_torque' depends on axioms: [propext, Quot.sound]
+'Kenoma.kinetic_numerator_nonnegative' depends on axioms: [propext]
+'Kenoma.torque_worked_example' does not depend on any axioms
+'Kenoma.activation_weighted_bound' depends on axioms: [propext, Quot.sound]
+'Kenoma.virtual_power_identity' depends on axioms: [propext]
+'Kenoma.element_gradient_resultant' depends on axioms: [propext, Quot.sound]
+'Kenoma.centroid_contact_power' depends on axioms: [propext]
+'Kenoma.compliant_denominator_positive' depends on axioms: [propext, Quot.sound]
+'Kenoma.accepted_energy_nonincrease' depends on axioms: [propext, Quot.sound]

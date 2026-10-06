@@ -30,6 +30,7 @@ math[display="inline"]{display:inline-block;white-space:nowrap;break-inside:avoi
 /* Explicit lifecycle avoids whitespace-only Pandoc containers becoming viewports. */
 .scene-host[hidden]{display:none}.scene-toolbar{display:block}.scene-toolbar button{min-height:48px}.scene-notice{font-size:.85rem;line-height:1.45;margin:.5rem 0}.scene-host{min-height:0}.scene-error{padding:1rem;color:#fff}.scene-error p{margin:.25rem 0 1rem}.scene-error pre{white-space:pre-wrap;overflow-wrap:anywhere;color:var(--ink)}
 .property-scene svg{display:block;width:100%;max-height:440px}.property-lesson[data-enhanced=true]>.static-figure{display:none}.property-lesson .readout dd{overflow-wrap:anywhere}.property-lesson .preset{width:100%;min-height:180px}
+.material-lesson .property-scene svg{max-height:none}.material-lesson .property-scene{padding:1rem}
 @media print{.property-scene{display:none}.property-lesson[data-enhanced=true]>.static-figure{display:block}}
 
 .property-lesson>h3,.property-lesson>.model-label,.property-lesson>p:not(.announce){margin-left:1.3rem;margin-right:1.3rem}.property-lesson .preset{width:90%}
@@ -37,3 +38,21 @@ math[display="inline"]{display:inline-block;white-space:nowrap;break-inside:avoi
 
 .property-lesson:not([data-enhanced=true])>.property-description{display:none}
 @media print{.property-lesson>.property-description{display:none}}
+
+/* Print text has an explicit size; nested code must not compound reductions. */
+.print-equation-rows{display:none}
+@media print{
+ body{font-size:10.5pt}
+ .layout{max-width:174mm}
+ p,table,pre,code,.proof-card,.proof-meta,.model-label,.static-figure figcaption,
+ .advanced-lesson .static-figure figcaption,figcaption{font-size:10.5pt}
+ pre code,pre code span,.proof-card pre code{font-size:inherit}
+ pre,pre code{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word}
+ .proof-card{break-inside:auto}
+ .proof-card h3{break-after:avoid}
+ .print-reflowed>math{display:none}
+ .print-reflowed>.print-equation-rows{display:block}
+ .print-equation-rows math{margin:1mm 0}
+ main img[src*="dense-qualification/"]{width:100%;max-height:155mm;object-fit:contain}
+ figure:has(img[src*="dense-qualification/"]){margin:4mm 0;break-inside:avoid}
+}

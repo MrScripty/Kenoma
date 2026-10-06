@@ -15,9 +15,15 @@ export function elbowGeometry(q,p=ELBOW){
   const momentArm=p.origin*p.insertion*Math.sin(q)/length;
   return {point,length,momentArm,fiber:length-p.tendonLength};
 }
+// The same illustrative force–length law is shared by rigid and series lessons.
+export function activeFiber(fiber,a,p=ELBOW){
+ const z=(fiber/p.optimalFiber-1)/p.width,forcePerActivation=p.maxForce*Math.exp(-z*z);
+ const force=a*forcePerActivation;
+ return {force,forcePerActivation,slope:-2*z/(p.width*p.optimalFiber)*force};
+}
 export function elbowResults(s,p=ELBOW){
   const geo=elbowGeometry(s.q,p),stretch=Math.max(0,geo.fiber-p.optimalFiber);
-  const active=p.maxForce*s.a*Math.exp(-(((geo.fiber/p.optimalFiber-1)/p.width)**2));
+  const active=activeFiber(geo.fiber,s.a,p).force;
   const passive=p.passiveK*stretch,tension=active+passive;
   const C=p.g*(p.load*p.length+p.forearmMass*p.com);
   const inertia=p.baseInertia+p.load*p.length**2+p.forearmMass*p.com**2;

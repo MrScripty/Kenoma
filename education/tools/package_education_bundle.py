@@ -5,8 +5,14 @@ from html.parser import HTMLParser
 from urllib.parse import unquote,urlsplit
 import fitz
 from executable_outputs import executable_outputs,executable_digest
+from check_real_lesson_proofs import FAMILIES as REAL_FAMILIES
+from check_real_lesson_artifact import check as check_real_lesson_artifact
+from check_print_readability import check as check_print_readability
 ROOT=Path(__file__).resolve().parents[1]
 FAMILIES=[('proof-status.json','Mechanics.lean','claims.json',12),('transfer-proof-status.json','AnatomicalTransfer.lean','anatomical-claims.json',2),('coupled-proof-status.json','CoupledMechanics.lean','coupled-claims.json',7),('arm-proof-status.json','AnatomicalArm.lean','arm-claims.json',4),('property-proof-status.json','ContinuumProperties.lean','property-claims.json',4)]
+FAMILIES += [('material-proof-status.json','MaterialResponse.lean','material-claims.json',5)]
+FAMILIES += [(prefix+'-proof-status.json',source,claims,count) for source,claims,prefix,count in REAL_FAMILIES]
+PROOF_COUNT=sum(count for *_,count in FAMILIES)
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def require(condition,message):
     if not condition:raise RuntimeError(message)
@@ -37,6 +43,12 @@ def validate_build(out,manifest):
             require(actual.get('status')=='checked' and isinstance(actual.get('axioms'),list) and set(actual['axioms'])<={'propext','Quot.sound','Classical.choice'},'Unqualified proof: '+name)
     lock=json.loads((ROOT/'proofs/mathlib-lock.json').read_text())
     require(read('property-proof-status.json').get('mathlib')==lock==manifest.get('property_mathlib'),'Wrong pinned mathlib identity')
+    real_receipts={prefix+'-proof-status.json' for _,_,prefix,_ in REAL_FAMILIES}
+    for name,*_ in FAMILIES:
+        if name in real_receipts:
+            require(read(name).get('mathlib')==lock,'Wrong pinned mathlib identity: '+name)
+    if any(name in real_receipts for name,*_ in FAMILIES):check_real_lesson_artifact(out)
+    check_print_readability(out)
     require(digest(local('proofs/mathlib-lake-manifest.json'))==lock['manifest_sha256'],'Wrong bundled dependency manifest')
     html=digest(local('index.html'));app=digest(local('assets/app.js'));manifest_hash=digest(local('build-manifest.json'))
     for name in ['browser-check.json','mobile-startup-check.json']:
@@ -47,19 +59,19 @@ def validate_build(out,manifest):
         receipt=read(name);scoped=executable_outputs(out,scope)
         require(receipt.get('result')=='PASS' and bool(scoped) and receipt.get('executable_outputs')==scoped,'Stale native subpage/worker browser binding: '+name)
     property_check=read('qa/property-browser-check.json')
-    require(property_check.get('result')=='PASS_INTEGRATED_PROPERTY_LABS' and property_check.get('proof_cards')==29,'Missing property/proof browser coverage')
+    require(property_check.get('result')=='PASS_INTEGRATED_PROPERTY_LABS' and property_check.get('proof_cards')==PROOF_COUNT,'Missing property/proof browser coverage')
     require(property_check.get('html_sha256')==html and property_check.get('app_sha256')==app and property_check.get('manifest_sha256')==manifest_hash,'Stale property browser outputs')
     render=read('property-book-review/render-receipt.json')
     require(render.get('result')=='PASS_PROPERTY_BOOK_RENDER_CAPTURE' and not render.get('page_errors'),'Missing successful render capture')
     require(render.get('html_sha256')==html and render.get('pdf_sha256')==digest(local('kenoma-mechanics.pdf')) and render.get('build_manifest_sha256')==manifest_hash,'Stale render outputs')
     require(render.get('inspector_sha256')==digest(ROOT/'tools/inspect_property_integration.py'),'Stale render inspector')
-    views=render.get('views',[]);require(len(views)==2 and {v.get('name') for v in views}=={'desktop','mobile'} and all(v.get('proofCards')==29 and v.get('horizontalOverflow') is False for v in views),'Missing desktop/mobile render coverage')
+    views=render.get('views',[]);require(len(views)==2 and {v.get('name') for v in views}=={'desktop','mobile'} and all(v.get('proofCards')==PROOF_COUNT and v.get('horizontalOverflow') is False for v in views),'Missing desktop/mobile render coverage')
     pages=render.get('pdf_pages',[]);require(bool(pages),'Empty rendered PDF coverage')
     for phrase in ['Property lab 1','Property lab 2','Property lab 3']:require(any(phrase in p.get('phrases',[]) for p in pages),'Missing rendered '+phrase)
     expected_images={v+'-'+claim+'.png' for v in ['desktop','mobile'] for claim in ['volume-edge-translation','volume-det-compose','volume-diagonal','volume-isochoric-sqrt']}|{p['image'] for p in pages}
     require(set(render.get('outputs',{}))==expected_images,'Unexpected/missing fresh render outputs')
     for name,value in render['outputs'].items():require(digest(local('property-book-review/'+name))==value,'Changed render image: '+name)
-    artifact=read('artifact-check.json');require(artifact.get('status')=='passed' and artifact.get('proof_cards')==29,'Missing successful artifact/proof check')
+    artifact=read('artifact-check.json');require(artifact.get('status')=='passed' and artifact.get('proof_cards')==PROOF_COUNT,'Missing successful artifact/proof check')
     with fitz.open(local('kenoma-mechanics.pdf')) as pdf:require(len(pdf)==artifact.get('pdf_pages') and len(pdf)>0,'Incomplete checked PDF')
     class Links(HTMLParser):
         def __init__(self):super().__init__();self.urls=[]

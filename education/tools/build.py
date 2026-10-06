@@ -7,6 +7,8 @@ from check_anatomical_proofs import check as check_transfer
 from check_coupled_proofs import check as check_coupled
 from check_arm_proofs import check as check_arm
 from check_property_proofs import check as check_properties
+from check_material_proofs import check as check_material
+from check_real_lesson_proofs import check as check_real_lessons, FAMILIES as REAL_FAMILIES
 from property_labs import block as property_block
 from figures import generate
 from evidence_figures import generate as evidence_figures
@@ -23,7 +25,7 @@ LABS={
   'description':'A rigid bar extends from a fixed pivot to a load. The yellow arrow points downward. The white projection marks the horizontal distance to the gravity line. This is a posed lever, not an active arm.',
   'caption':'Default: m = 5 kg, L = 0.30 m, θ = 0°. Torque about z is -14.715 N m. Original schematic geometry; no anatomical measurements.',
   'controls':[('mass','Point-load mass (kg)',1,10,0.5,5),('length','Lever length (m)',0.1,0.4,0.01,0.3),('angle','Angle from horizontal (°)',0,150,1,0)]},
- 'energy':{'title':'Laboratory 3 · Numerical energy','model':'Ideal undamped linear spring; fixed physics steps; 600-step playback limit.',
+ 'energy':{'title':'Laboratory 3 · Numerical energy','model':'Ideal undamped linear spring; fixed physics steps; 12 simulated seconds per trajectory; 120–2,400 fixed steps for the supported h.',
   'description':'A spring connects a wall to a mass marker. Extension is visually exaggerated and fitted to the view. The energy chart shows a solid numerical trace and a dashed initial-energy reference. Read numeric values when the chart rescales.',
   'caption':'Initial state: m = 1 kg, k = 40 N/m, x = 0.20 m, v = 0 m/s, E = 0.80 J. Default symplectic Euler step h = 0.02 s. Original schematic geometry.',
   'controls':[]},
@@ -52,11 +54,12 @@ def advanced_block(key,web):
     controls=''
     for param,label,low,high,step,value in lab['controls']:
         controls+=f'<div class="control"><label for="{key}-{param}-number">{label}</label><div class="input-pair"><input type="range" aria-label="{label} slider" data-param="{param}" min="{low}" max="{high}" step="{step}" value="{value}"><input id="{key}-{param}-number" type="number" data-param="{param}" min="{low}" max="{high}" step="{step}" value="{value}"></div></div>'
-    options=[('n','Mesh subdivisions',[(1,'1: 8 nodes'),(2,'2: 27 nodes'),(3,'3: 64 nodes'),(4,'4: 125 nodes')],3),('case','Manufactured load case',[('quadratic','Quadratic: refinement test'),('affine','Affine: patch test')],'quadratic'),('comparison','Comparison target',[('implicit','Matched implicit step'),('static','Static analytic reference')],'implicit'),('h','Common implicit h (s)',[(.0005,'0.0005'),(.001,'0.001'),(.002,'0.002')],.0005),('sweeps','Compliant strain sweeps',[(1,'1'),(5,'5'),(20,'20'),(100,'100')],5),('magnification','Displacement display magnification',[(1,'1×'),(20,'20×'),(50,'50×'),(100,'100×')],50)] if key=='continuum' else [('mode','Hinge motion mode',[('forward','Force-driven hinge'),('prescribed','Prescribed static hold')],'forward'),('dt','Physics step h (s)',[(.0025,'0.0025'),(.005,'0.005'),(.01,'0.01')],.005),('sweeps','Quasistatic iteration cap',[(80,'80'),(160,'160'),(320,'320'),(640,'640')],160),('boneContact','Sampled bone contact',[('on','On: compliant force'),('off','Off: show penetration')],'on'),('skin','Separate skin membrane / fascia',[('on','On'),('off','Off: ablation')],'on'),('activeShape','Spatial preferred shortening',[('on','On: shared activation'),('off','Off: shape ablation')],'on'),('volumeK','Volume stiffness (Pa)',[(25000,'25,000'),(2500,'2,500')],25000),('tendon','Line-actuator tendon',[('compliant','Compliant'),('rigid','Rigid')],'compliant')]
+    options=[('n','Mesh subdivisions',[(1,'1: 8 nodes'),(2,'2: 27 nodes'),(3,'3: 64 nodes'),(4,'4: 125 nodes')],3),('case','Manufactured load case',[('quadratic','Quadratic: refinement test'),('affine','Affine: patch test')],'quadratic'),('comparison','Comparison target',[('implicit','Matched implicit step'),('static','Static analytic reference')],'implicit'),('h','Common implicit h (s)',[(.0005,'0.0005'),(.001,'0.001'),(.002,'0.002')],.0005),('sweeps','Compliant strain sweeps',[(1,'1'),(5,'5'),(20,'20'),(100,'100')],5),('colorBy','Colour diagnostic',[('stress','Element von Mises stress (Pa)'),('error','Nodal displacement error (m)')],'stress'),('magnification','Displacement display magnification',[(1,'1×'),(20,'20×'),(50,'50×'),(100,'100×')],50)] if key=='continuum' else [('mode','Hinge motion mode',[('forward','Force-driven hinge'),('prescribed','Prescribed static hold')],'forward'),('dt','Physics step h (s)',[(.0025,'0.0025'),(.005,'0.005'),(.01,'0.01')],.005),('sweeps','Quasistatic iteration cap',[(80,'80'),(160,'160'),(320,'320'),(640,'640')],160),('boneContact','Sampled bone contact',[('on','On: compliant force'),('off','Off: show penetration')],'on'),('skin','Separate skin membrane / fascia',[('on','On'),('off','Off: ablation')],'on'),('activeShape','Spatial preferred shortening',[('on','On: shared activation'),('off','Off: shape ablation')],'on'),('volumeK','Volume stiffness (Pa)',[(25000,'25,000'),(2500,'2,500')],25000),('tendon','Line-actuator tendon',[('compliant','Compliant'),('rigid','Rigid')],'compliant')]
     for param,label,values,default in options:
         controls+=f'<div class="control"><label for="{key}-{param}">{label}</label><select id="{key}-{param}" data-param="{param}">'+''.join(f'<option value="{v}"'+(' selected' if v==default else '')+f'>{label}</option>' for v,label in values)+'</select></div>'
-    actions='<button data-action="play">Play</button><button data-action="step">Single step</button><button data-action="pulse">Lift / release pulse</button><button data-action="release">Release excitation</button><button data-action="compression">90° compression fixture</button><button data-action="export">Download trace</button>' if key=='spatial' else ''
-    return f'''\n<section class="laboratory advanced-lesson" data-advanced="{key}" id="lab-{key}" aria-labelledby="lab-{key}-heading"><div class="lab-heading"><h3 id="lab-{key}-heading">{lab['title']}</h3><p class="model-label">{lab['model']}</p></div><div class="actions scene-toolbar"><button type="button" data-action="start">Start interactive 3D</button><p class="scene-notice" role="status">3D is paused. Start the scene here; numerical controls are below.</p></div><figure class="static-figure"><img src="assets/{key}.svg" alt="{e(lab['description'])}"><figcaption>{lab['caption']}</figcaption></figure><p class="scene-legend">{e(lab['description'])}</p><div class="scene-host" hidden></div><div class="controls">{controls}</div><div class="actions">{actions}<button data-action="reset">Reset</button><button data-action="view">Front / oblique view</button><button data-action="summary">Read current results</button><button data-action="copy">Copy state</button></div><dl class="readout" aria-label="Current numerical results"></dl><p class="lab-description">{e(lab['description'])} Static figures, equations and tables below provide the text and print alternatives. Playback advances fixed physics steps; spatial optimization can slow wall-clock playback.</p><p class="announce" role="status" aria-live="polite"></p><textarea class="preset" aria-label="Reproducible state JSON" readonly hidden></textarea><noscript><p>Interactive controls require JavaScript; static illustrations and worked tables remain readable.</p></noscript></section>\n'''
+    notice='Static reference diagram. Step, Play or Pulse starts live 3D; if unavailable, the display is explicitly numerical-only.' if key=='spatial' else 'Static reference diagram. Start interactive 3D to view current results; numerical controls also work without 3D.'
+    actions='<button data-action="play">Play</button><button data-action="step">Single step</button><button data-action="pulse">Pulse current state / release</button><button data-action="release">Release excitation</button><button data-action="compression">90° compression fixture</button><button data-action="export">Download trace</button>' if key=='spatial' else ''
+    return f'''\n<section class="laboratory advanced-lesson" data-advanced="{key}" id="lab-{key}" aria-labelledby="lab-{key}-heading"><div class="lab-heading"><h3 id="lab-{key}-heading">{lab['title']}</h3><p class="model-label">{lab['model']}</p></div><div class="actions scene-toolbar"><button type="button" data-action="start">Start interactive 3D</button><p class="scene-notice" role="status">{notice}</p></div><figure class="static-figure"><img src="assets/{key}.svg" alt="{e(lab['description'])}"><figcaption>{lab['caption']}</figcaption></figure><p class="scene-legend">{e(lab['description'])}</p><div class="scene-host" hidden></div><div class="controls">{controls}</div><div class="actions">{actions}<button data-action="reset">Reset defaults</button><button data-action="view">Front / oblique view</button><button data-action="summary">Read current results</button><button data-action="copy">Copy state</button></div><dl class="readout" aria-label="Current numerical results"></dl><p class="lab-description">{e(lab['description'])} Static figures, equations and tables below provide the text and print alternatives. Playback advances fixed physics steps; spatial optimization can slow wall-clock playback.</p><p class="announce" role="status" aria-live="polite"></p><textarea class="preset" aria-label="Reproducible state JSON" readonly hidden></textarea><noscript><p>Interactive controls require JavaScript; static illustrations and worked tables remain readable.</p></noscript></section>\n'''
 
 def lab_block(key,web):
     if key in ['spatial','continuum']:return advanced_block(key,web)
@@ -74,16 +77,18 @@ def lab_block(key,web):
     if key=='series':
         for param,label,options in [('tendon','Tendon assumption',[('compliant','Compliant tensile tendon'),('rigid','Rigid tendon')]),('tendonK','Tendon stiffness (N/m)',[(15000,'15,000'),(30000,'30,000'),(60000,'60,000')]),('contact','Tissue/plate contact',[('on','Enabled; force feeds hinge'),('off','Disabled; show penetration')]),('bulk','Tissue bulk modulus (Pa)',[(50000,'50,000'),(5000,'5,000'),(0,'0; remove volume resistance')])]:
             controls+=f'<div class="control"><label for="series-{param}">{label}</label><select id="series-{param}" data-param="{param}">'+''.join(f'<option value="{value}"'+(' selected' if value in ['compliant',30000,'on',50000] else '')+f'>{text}</option>' for value,text in options)+'</select></div>'
+    notice='Static reference diagram. Step, Play or Pulse starts live 3D; if unavailable, the display is explicitly numerical-only.' if key!='torque' else 'Static reference diagram. Start interactive 3D to view current results; numerical controls also work without 3D.'
     temporal='<button data-action="play">Play</button><button data-action="step">Single step</button>' if key!='torque' else ''
-    if key in ['elbow','series']:temporal+='<button data-action="pulse">Lift / release pulse</button><button data-action="release">Release excitation</button><button data-action="export">Download trace</button>'
+    if key=='energy':temporal+='<button data-action="run">Run to 12 s</button><button data-action="export">Download trace</button>'
+    if key in ['elbow','series']:temporal+='<button data-action="pulse">Pulse current state / release</button><button data-action="release">Release excitation</button><button data-action="export">Download trace</button>'
     chart=''
     if key=='energy':
-        chart='<svg class="energy-chart" viewBox="0 0 580 205" role="img" aria-label="Energy versus step number"><title>Energy versus step number</title><text class="scale" x="40" y="20" font-size="13">Energy range 0 to 0.96 J</text><path d="M40 30V160H540" fill="none" stroke="#456171"/><line class="reference" x1="40" x2="540" y1="52" y2="52" stroke="#754d1f" stroke-dasharray="5 4"/><polyline class="trace" fill="none" stroke="#087567" stroke-width="2" points="40,52"/><text x="40" y="185" font-size="13">0</text><text x="435" y="185" font-size="13">600 steps</text><text x="195" y="201" font-size="12">Solid: numerical energy · Dashed: initial 0.80 J</text></svg>'
+        chart='<svg class="energy-chart" viewBox="0 0 580 205" role="img" aria-label="Energy versus simulated time"><title>Energy versus simulated time</title><text class="scale" x="40" y="20" font-size="13">Energy range 0 to 0.96 J</text><path d="M40 30V160H540" fill="none" stroke="#456171"/><line class="reference" x1="40" x2="540" y1="52" y2="52" stroke="#754d1f" stroke-dasharray="5 4"/><polyline class="trace" fill="none" stroke="#087567" stroke-width="2" points="40,52"/><text x="40" y="185" font-size="13">0</text><text x="435" y="185" font-size="13">12 s</text><text x="195" y="201" font-size="12">Solid: numerical energy · Dashed: initial 0.80 J</text></svg>'
     return f'''\n<section class="laboratory" data-demo="{key}" id="lab-{key}" aria-labelledby="lab-{key}-heading">
 <div class="lab-heading"><h3 id="lab-{key}-heading">{e(lab['title'])}</h3><p class="model-label">{e(lab['model'])}</p></div>
-<div class="actions scene-toolbar"><button type="button" data-action="start">Start interactive 3D</button><p class="scene-notice" role="status">3D is paused. Start the scene here; numerical controls are below.</p></div><figure class="static-figure"><img src="assets/{key}.svg" alt="{e(lab['description'])}"><figcaption>{e(lab['caption'])}</figcaption></figure>
+<div class="actions scene-toolbar"><button type="button" data-action="start">Start interactive 3D</button><p class="scene-notice" role="status">{notice}</p></div><figure class="static-figure"><img src="assets/{key}.svg" alt="{e(lab['description'])}"><figcaption>{e(lab['caption'])}</figcaption></figure>
 <p class="scene-legend">{e(lab['description']) if key=='series' else ''}</p><div class="scene-host" hidden></div><div class="controls">{controls}</div>
-<div class="actions">{temporal}<button data-action="reset">Reset</button><button data-action="view">Front / oblique view</button><button data-action="summary">Read current results</button><button data-action="copy">Copy state</button></div>
+<div class="actions">{temporal}<button data-action="reset">Reset defaults</button><button data-action="view">Front / oblique view</button><button data-action="summary">Read current results</button><button data-action="copy">Copy state</button></div>
 <dl class="readout" aria-label="Current numerical results"></dl>{chart}
 <p class="lab-description">{e(lab['description'])} Axes: x right, y up, z out of the plane.</p>
 <p class="announce" role="status" aria-live="polite"></p><textarea class="preset" aria-label="Reproducible state JSON" readonly hidden></textarea>
@@ -96,6 +101,8 @@ def build():
     coupled=check_coupled()
     arm=check_arm()
     properties=check_properties()
+    material=check_material()
+    real_lessons=check_real_lessons(properties)
     data=ROOT/'data/elbow-v1'
     subprocess.run(['python3',str(data/'scripts/validate_package.py')],check=True)
     continuum=ROOT/'contributions/continuum_reference'
@@ -109,11 +116,14 @@ def build():
       (transfer,(ROOT/'proofs/AnatomicalTransfer.lean').read_text(),'transfer-proof-status.json','transfer-lean-check.txt','transfer-source-appendix','transfer-proof-receipt','transfer-kernel-report'),
       (coupled,(ROOT/'proofs/CoupledMechanics.lean').read_text(),'coupled-proof-status.json','coupled-lean-check.txt','coupled-source-appendix','coupled-proof-receipt','coupled-kernel-report'),
       (arm,(ROOT/'proofs/AnatomicalArm.lean').read_text(),'arm-proof-status.json','arm-lean-check.txt','arm-source-appendix','arm-proof-receipt','arm-kernel-report'),
-      (properties,(ROOT/'proofs/ContinuumProperties.lean').read_text(),'property-proof-status.json','property-lean-check.txt','property-source-appendix','property-proof-receipt','property-kernel-report')]
+      (properties,(ROOT/'proofs/ContinuumProperties.lean').read_text(),'property-proof-status.json','property-lean-check.txt','property-source-appendix','property-proof-receipt','property-kernel-report'),
+      (material,(ROOT/'proofs/MaterialResponse.lean').read_text(),'material-proof-status.json','material-lean-check.txt','material-source-appendix','material-proof-receipt','material-kernel-report')]
+    for receipt,(source_name,_,prefix,_) in zip(real_lessons,REAL_FAMILIES):
+        bundles.append((receipt,(ROOT/'proofs'/source_name).read_text(),prefix+'-proof-status.json',prefix+'-lean-check.txt',prefix+'-source-appendix',prefix+'-proof-receipt',prefix+'-kernel-report'))
     claim_bundles={c['id']:b for b in bundles for c in b[0]['claims']}
     for receipt,checked_source,receipt_path,transcript_path,*_ in bundles[1:]:
         (OUT/receipt_path).write_text(json.dumps(receipt,indent=2)+'\n')
-        if receipt is properties:continue  # Fresh property checker already wrote its transcript here.
+        if receipt is properties or receipt is material or any(receipt is r for r in real_lessons):continue  # Fresh checkers already wrote their transcripts here.
         original={id(transfer):'lean-check.txt',id(coupled):'coupled-lean-check.txt',id(arm):'arm-lean-check.txt'}[id(receipt)]
         shutil.copy(ROOT/'data/anatomical-arm-v1/audit'/original,OUT/transcript_path)
     def dependency_description(receipt):
@@ -128,14 +138,18 @@ def build():
         stmt='theorem '+name+statement.group(1)
         meta=f"Lean 4.19.0; {dependency_description(receipt)}; transitive axioms: {', '.join(c['axioms']) or 'none'}; source SHA-256: {receipt['source_sha256']}"
         if not web:
-            return f"\n**Checked claim {id}:** {c['claim']}\n\n**Assumptions:** {c['assumptions']}\n\n```lean\n{stmt}\n```\n\n**Limits:** {c['limitations']}\n\nDeclaration: `{c['theorem']}`. {meta}. [Full checked source]({receipt['source']}); [receipt]({receipt_path}).\n"
+            claim_text=c['claim'].replace('*',r'\*');assumptions=c['assumptions'].replace('*',r'\*');limits=c['limitations'].replace('*',r'\*')
+            return f"\n**Checked claim {id}:** {claim_text}\n\n**Assumptions:** {assumptions}\n\n```lean\n{stmt}\n```\n\n**Limits:** {limits}\n\nDeclaration: `{c['theorem']}`. {meta}. [Full checked source]({receipt['source']}); [receipt]({receipt_path}).\n"
         e=html.escape
+        # Pandoc parses prose inside aside elements as Markdown. Claim-map
+        # multiplication signs are literal text, not emphasis delimiters.
+        def prose(value):return e(value).replace('*','&#42;')
         implementation=c.get('implementation','See the adjacent derivation and original mechanics claim map.')
         match=re.match(r'(web/[^: ]+)',implementation)
-        implementation_html=(f'<a href="{e(match[1])}">{e(implementation)}</a>' if match else e(implementation))
+        implementation_html=(f'<a href="{e(match[1])}">{prose(implementation)}</a>' if match else prose(implementation))
         return f'''\n<aside class="proof-card" id="proof-{id}" aria-label="Checked mathematical claim">
-<h3>Checked claim · {e(id)}</h3><p>{e(c['claim'])}</p><p><strong>Assumptions:</strong> {e(c['assumptions'])}</p>
-<pre><code>{e(stmt)}</code></pre><p><strong>Limits:</strong> {e(c['limitations'])}</p>
+<h3>Checked claim · {e(id)}</h3><p>{prose(c['claim'])}</p><p><strong>Assumptions:</strong> {prose(c['assumptions'])}</p>
+<pre><code>{e(stmt)}</code></pre><p><strong>Limits:</strong> {prose(c['limitations'])}</p>
 <p class="proof-meta">Declaration {e(c['theorem'])}. {e(meta)}.</p>
 <p><strong>Implementation link:</strong> {implementation_html}</p>
 <p><a href="{receipt['source']}">Full source</a> · <a href="{receipt_path}">Build receipt</a> · <a href="{transcript_path}">Kernel dependency report</a></p>
@@ -213,6 +227,7 @@ def build():
     staging.unlink()
     assets=OUT/'assets';generate(assets)
     subprocess.run(['node',str(ROOT/'tools/property-experiment.mjs'),str(assets),str(OUT/'property-experiment.json')],cwd=ROOT,check=True)
+    subprocess.run(['node',str(ROOT/'tools/material-experiment.mjs'),str(assets),str(OUT/'material-experiment.json')],cwd=ROOT,check=True)
     evidence_figures(assets)
     advanced_figures(assets,spatial)
     from coupled_figures import generate as coupled_figures
@@ -230,14 +245,16 @@ def build():
     shutil.copytree(ROOT/'web',OUT/'web',dirs_exist_ok=True)
     subprocess.run([str(ROOT/'node_modules/.bin/esbuild'),str(ROOT/'web/app.mjs'),'--bundle','--minify','--format=esm','--target=es2022',f'--outfile={assets/"app.js"}','--legal-comments=external'],check=True)
     proofs=OUT/'proofs';proofs.mkdir(exist_ok=True)
-    for file in ['Mechanics.lean','AnatomicalTransfer.lean','CoupledMechanics.lean','AnatomicalArm.lean','anatomical-claims.json','coupled-claims.json','arm-claims.json','ContinuumProperties.lean','property-claims.json','mathlib-lock.json','lean-toolchain','claims.json']:shutil.copy(ROOT/'proofs'/file,proofs/file)
+    for file in ['Mechanics.lean','AnatomicalTransfer.lean','CoupledMechanics.lean','AnatomicalArm.lean','anatomical-claims.json','coupled-claims.json','arm-claims.json','ContinuumProperties.lean','property-claims.json','MaterialResponse.lean','material-claims.json','mathlib-lock.json','lean-toolchain','claims.json']:shutil.copy(ROOT/'proofs'/file,proofs/file)
+    for source_name,map_name,_,_ in REAL_FAMILIES:
+        for file in [source_name,map_name]:shutil.copy(ROOT/'proofs'/file,proofs/file)
     subprocess.run(['node',str(ROOT/'tools/build-anatomy-inspector.mjs')],check=True)
     subprocess.run(['node',str(ROOT/'tools/build-coupled-inspector.mjs')],check=True)
     subprocess.run(['node',str(ROOT/'tools/build-anatomical-arm-inspector.mjs')],check=True)
     shutil.copy(ROOT/'.tools/mathlib4/LICENSE',proofs/'mathlib-LICENSE')
     shutil.copy(ROOT/'.tools/mathlib4/lake-manifest.json',proofs/'mathlib-lake-manifest.json')
     notices=OUT/'THIRD_PARTY_NOTICES.txt'
-    notices.write_text('Kenoma original book and simulator content: Apache-2.0. Third-party data retains its component licenses below.\n\n'+(data/'LICENSES_AND_ATTRIBUTION.txt').read_text()+'\n\nThree.js 0.180.0 (MIT)\n'+(ROOT/'node_modules/three/LICENSE').read_text()+'\n\nBuild tool esbuild 0.25.10 (MIT)\n'+(ROOT/'node_modules/esbuild/LICENSE.md').read_text()+'\n\nmathlib4 v4.19.0, commit '+properties['mathlib']['commit']+' (Apache-2.0); used for kernel-checked real kinematic identities. Locked transitive dependency metadata: proofs/mathlib-lock.json and upstream lake-manifest.json SHA-256 '+properties['mathlib']['manifest_sha256']+'\n'+(ROOT/'.tools/mathlib4/LICENSE').read_text())
+    notices.write_text('Kenoma original book and simulator content: Apache-2.0. Third-party data retains its component licenses below.\n\n'+(data/'LICENSES_AND_ATTRIBUTION.txt').read_text()+'\n\nThree.js 0.180.0 (MIT)\n'+(ROOT/'node_modules/three/LICENSE').read_text()+'\n\nBuild tool esbuild 0.25.10 (MIT)\n'+(ROOT/'node_modules/esbuild/LICENSE.md').read_text()+'\n\nmathlib4 v4.19.0, commit '+properties['mathlib']['commit']+' (Apache-2.0); used for kernel-checked real declarations. Locked transitive dependency metadata: proofs/mathlib-lock.json and upstream lake-manifest.json SHA-256 '+properties['mathlib']['manifest_sha256']+'\n'+(ROOT/'.tools/mathlib4/LICENSE').read_text())
     shutil.copytree(ROOT/'contributions/continuum_reference',OUT/'contributions/continuum_reference',dirs_exist_ok=True)
     shutil.copy(ROOT.parent/'LICENSE',OUT/'LICENSE')
     (OUT/'.nojekyll').touch()
@@ -251,6 +268,7 @@ def build():
       'executable_outputs':executable_outputs(OUT),
       'proof_families':[b[2] for b in bundles],'property_mathlib':properties['mathlib'],
       'property_experiment':'property-experiment.json',
+      'material_experiment':'material-experiment.json',
       'git_revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
       'original_plans_base':'9b0c67fd25e1b645833a68bb9b1c2aba1404bbce',
       'determinism':'State progression repeatable in the pinned implementation; cross-browser transcendental bit identity and PDF byte identity not asserted.'}

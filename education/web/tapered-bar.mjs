@@ -16,7 +16,8 @@ export function barState(p=BAR_DEFAULTS){
  const activeStrain=p.mode==='active-fixed'?stress/p.modulus:0;
  // With positive area, strain is monotone in this linear/step area law.
  // Midpoint samples alone can miss the endpoint that violates small strain.
- const endpointStrains=[p.area,p.area*p.ratio].map(A=>resultantN/(p.modulus*A)-activeStrain);
+ const endpointAreasM2=[p.area,p.area*p.ratio];
+ const endpointStrains=endpointAreasM2.map(A=>resultantN/(p.modulus*A)-activeStrain);
  const minimumStrain=Math.min(...endpointStrains),maximumStrain=Math.max(...endpointStrains);
  const maxAbsStrain=Math.max(Math.abs(minimumStrain),Math.abs(maximumStrain));
  const exactExtensionM=resultantN*compliance-activeStrain*p.length;
@@ -28,5 +29,5 @@ export function barState(p=BAR_DEFAULTS){
   elasticEnergyJ+=.5*p.modulus*strain*strain*A*dx;
   return {sM:s,areaM2:A,strain,resultantN,displacementStartM:u0,displacementEndM:displacement};
  });
- return {accepted:true,resultantN,exactComplianceMPerN:compliance,exactExtensionM,numericalExtensionM:displacement,extensionErrorM:displacement-exactExtensionM,activeStrain,elasticEnergyJ,endpointStrains,minimumStrain,maximumStrain,maxAbsStrain,smallStrainWarning:maxAbsStrain>.05,samples,scope:'Small-strain homogeneous axial bar; prescribed active-stress offset. No active muscle force-length, velocity, transverse equilibrium or calibration.'};
+ return {accepted:true,endpointAreasM2,narrowAreaM2:Math.min(...endpointAreasM2),wideAreaM2:Math.max(...endpointAreasM2),resultantN,exactComplianceMPerN:compliance,exactExtensionM,numericalExtensionM:displacement,extensionErrorM:displacement-exactExtensionM,activeStrain,elasticEnergyJ,endpointStrains,minimumStrain,maximumStrain,maxAbsStrain,smallStrainWarning:maxAbsStrain>.05,samples,scope:'Small-strain homogeneous axial bar; prescribed active-stress offset. No active muscle force-length, velocity, transverse equilibrium or calibration.'};
 }

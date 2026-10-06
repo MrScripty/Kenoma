@@ -38,12 +38,14 @@ def generate(out):
                 if node.text and node.text.startswith('OpenArm Multisensor 2.0  |'):
                     node.text='OpenArm 2.0 · participant 2 / trial 1b · 90° hold'
             svg.set('viewBox','0 0 720 430');svg.set('height','430pt')
-        # Tick labels and titles retain their original positions; all are at least 18px.
+        # The taller atlas is limited by the print figure's height. At its
+        # actual PDF scale 18px gave 9.21pt; 20px clears the existing 10pt gate.
+        minimum_font_px=20 if kind=='bodyparts3d_right_arm' else 18
         for node in figure.iter(tag('text')):
             style=node.attrib.get('style','')
-            node.set('style',re.sub(r'font-size:\s*([0-9.]+)px',lambda m:f'font-size: {max(18,float(m[1])):g}px',style))
+            node.set('style',re.sub(r'font-size:\s*([0-9.]+)px',lambda m:f'font-size: {max(minimum_font_px,float(m[1])):g}px',style))
         name='atlas-print.svg' if kind=='bodyparts3d_right_arm' else 'recording-print.svg'
         (out/name).write_bytes(ET.tostring(svg,encoding='utf-8',xml_declaration=True))
         provenance.append({'figure':name,'source':str(source.relative_to(ROOT)),'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),
-          'license':'CC BY 4.0','changes':'Larger labels, reflowed atlas legend, removed redundant in-image footer; source geometry/trace paths unchanged. Full attribution and caveats remain in adjacent book prose.','minimum_source_font_px':18})
+          'license':'CC BY 4.0','changes':'Larger labels, reflowed atlas legend, removed redundant in-image footer; source geometry/trace paths unchanged. Full attribution and caveats remain in adjacent book prose.','minimum_source_font_px':minimum_font_px})
     (out/'evidence-figure-provenance.json').write_text(json.dumps(provenance,indent=2)+'\n')

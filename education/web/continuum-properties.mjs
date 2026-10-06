@@ -46,7 +46,8 @@ export function deformationState(p=DEFORMATION_DEFAULTS){
  const angle=p.angle*Math.PI/180,c=Math.cos(angle),s=Math.sin(angle),R=[c,-s,0,s,c,0,0,0,1],U=[p.sx,p.shear,0,0,p.sy,0,0,0,p.sz];
  const imposedF=multiply3(R,U),reference=[[0,0,0],[PROPERTY_DIMENSIONS[0],0,0],[0,PROPERTY_DIMENSIONS[1],0],[0,0,PROPERTY_DIMENSIONS[2]]];
  const translationM=[p.tx,p.ty,p.tz].map(v=>v/1000),current=reference.map(x=>transform(imposedF,x,translationM));
- return {...measureTetrahedron(reference,current),imposedF,translationM,analyticJ:p.sx*p.sy*p.sz};
+ const materialLineStretches=[1,2,3].map(i=>norm(subtract(current[i],current[0]))/norm(subtract(reference[i],reference[0])));
+ return {...measureTetrahedron(reference,current),imposedF,translationM,materialLineStretches,analyticJ:p.sx*p.sy*p.sz};
 }
 export function isochoricState(p=ISOCHORIC_DEFAULTS){
  if(!['independent','isochoric'].includes(p.mode)||!Number.isFinite(p.axial)||!Number.isFinite(p.lateral)||p.axial<=0||p.lateral<=0)throw new RangeError('Positive prescribed stretches required');

@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "coarseOnly": true,
-  "rendererSHA256": "2b20c8aacb51d795c2f5f9d345803f625e1a235e2829b8c3b5a905721fb1b224",
+  "rendererSHA256": "a2be84095d19a639e5cdee32478b51131cbb0ef9ad0f5d969bd6643ff2b4590a",
   "pythonVersion": "3.12.14",
   "matplotlibVersion": "3.10.8",
   "inputs": {
@@ -15,8 +15,8 @@
     "audit/anatomical-enriched-step-recheck.json": "dcdf325e7710426f9417c31aad8bb16aa23c244dbe3a0f8e7cc85cbdb17ef42a"
   },
   "outputs": {
-    "dense-qualification.svg": "9d958c0e146f9259ac0863cd675ffa2ccc63dd5e0622bc1c4db94707c9da474b",
-    "dense-qualification.png": "2c45ce06b960f93b8763569a71bbc125b263f8d8870c816f03cd7417e6fa7913"
+    "dense-qualification.svg": "c6acdb6a755672800036a4421d7e25e206bb4fee2096c169d8c8fa9e8ed0ffc4",
+    "dense-qualification.png": "bf94b74a430249d8372dc48c72ae6c8945b4e364e7052950ed0a6e7b34f9fc0d"
   },
   "limits": [
     "Accepted prefixes are shown only through their verified times; rejection is not plotted as accepted.",

@@ -1,0 +1,119 @@
+{
+  "schema": 1,
+  "result": "PASS_REAL_PROOF_RENDER_CAPTURE",
+  "source_revision": "f110ad2d73f77feda18ccd273d9b8be119bdc77e",
+  "inspector_sha256": "6afe1a9f1e20e23dd48e7dd2321ee2c3b5908b0c6cdc1a3fa6dd77c40204a2cb",
+  "html_sha256": "c97f1d11d5d8192e3e9a957eb2770239404c53c5fd480868595bb0df7d0c7f77",
+  "app_sha256": "41a8ba9c98cdc4f93a34b3ba690e6a25158901305418118ce4340229fbe8d2f9",
+  "pdf_sha256": "8f8b26cd5ab8d0514d7c285b1455f0809b49c37a4c76e800769b7e996643aad2",
+  "manifest_sha256": "416682bb231e96d35128896bb160f1beb8bdaee1fe5df09d94d5ab9a12bc2393",
+  "browser": "151.0.7922.173",
+  "views": [
+    {
+      "name": "desktop",
+      "real_cards": 19,
+      "horizontal_overflow": false
+    },
+    {
+      "name": "mobile",
+      "real_cards": 19,
+      "horizontal_overflow": false
+    }
+  ],
+  "page_errors": [],
+  "real_claims": [
+    "material-real-confined-volume",
+    "material-real-bulk-sign",
+    "material-real-bulk-zero",
+    "material-real-separated-wall",
+    "material-real-lateral-work",
+    "force-real-pair",
+    "torque-real-linearity",
+    "virtual-real-power",
+    "actuator-real-activation-interval",
+    "actuator-real-activation-ode",
+    "actuator-real-active-force-bounds",
+    "actuator-real-active-force-derivative",
+    "actuator-real-gaussian-radius-bound",
+    "actuator-real-active-slope-bound",
+    "actuator-real-series-strict-monotone",
+    "actuator-real-series-unique-root",
+    "actuator-real-series-root-exists",
+    "actuator-real-series-lower-rejection",
+    "actuator-real-series-denominator"
+  ],
+  "pdf_pages": 79,
+  "source_pages": [
+    {
+      "page": 74,
+      "image": "pdf-source-page-74.png"
+    },
+    {
+      "page": 75,
+      "image": "pdf-source-page-75.png"
+    },
+    {
+      "page": 76,
+      "image": "pdf-source-page-76.png"
+    },
+    {
+      "page": 77,
+      "image": "pdf-source-page-77.png"
+    },
+    {
+      "page": 78,
+      "image": "pdf-source-page-78.png"
+    },
+    {
+      "page": 79,
+      "image": "pdf-source-page-79.png"
+    }
+  ],
+  "outputs": {
+    "desktop-material-real-confined-volume.png": "65f69106468184bc061452b4b66478b7bec0f24593262835a713ed0008e0cb3f",
+    "desktop-material-real-bulk-sign.png": "b7f7f3b96eeadaa7403f883d9484f9dded849671ccbdd834c81e43078c88b2fa",
+    "desktop-material-real-bulk-zero.png": "91e740b51bbbbe7a573cfa96d8858e782e18230fba11ea886f4c5d95f112b589",
+    "desktop-material-real-separated-wall.png": "4cadcbc11aae2555d19c3d5151d85ed34e08071b8536b69ef2b9bec6644e105f",
+    "desktop-material-real-lateral-work.png": "a571a15538864589036cb6654fa466347d0a505aec55b39f2bfff995ef81b359",
+    "desktop-force-real-pair.png": "b18322ac1a8ae92fb727a4fd54bbd368408160a2cf2d7c83e6bfc0516b148c50",
+    "desktop-torque-real-linearity.png": "a240feeb2c967eab0bd927edc5fe7b8b5c9ceaab5d4bb193c40a0c4942a41e05",
+    "desktop-virtual-real-power.png": "2f0376f7bfb306bea45e46b625333de953ed9322371dcca504c33513645113d4",
+    "desktop-actuator-real-activation-interval.png": "db632147b087640fa177db979b203c9fa9db8f9429ed5da46ee7601af4b8ae18",
+    "desktop-actuator-real-activation-ode.png": "248af5cfe29504db7690b592fc0df8d6833d3e46cea9330b143faf767c59a57e",
+    "desktop-actuator-real-active-force-bounds.png": "e0dc03bb1ec37d1bd795ff71b03d986fc3ae3e7653e1e79fc3ae5519c08ee7ca",
+    "desktop-actuator-real-active-force-derivative.png": "f10fd83ff3676c915c4cdb2958b9659b29144e723996d3090cb830799b5db2fb",
+    "desktop-actuator-real-gaussian-radius-bound.png": "a74d1f813e0b12657bc2de2d84b161da1fe18bd2bf515b66ca69d9928971c692",
+    "desktop-actuator-real-active-slope-bound.png": "ac8847c0fdff6ddd43b71218b56a040ce38f427fb65f97f52aeae55d6860cfb4",
+    "desktop-actuator-real-series-strict-monotone.png": "eb1aee9e683f839f9f28a75c112439ce47c999d718ae5f88dc17fe9091e3e08f",
+    "desktop-actuator-real-series-unique-root.png": "6580bd7d958a9f7786b525615a04e3d449cf0e7c5bbe8d3e583a49d1011d8f08",
+    "desktop-actuator-real-series-root-exists.png": "8b95dba8f89c3f3c9359785fa5e1d14395a28c79319a6c50557404a1ab5f1050",
+    "desktop-actuator-real-series-lower-rejection.png": "7878271a136cd490951689a76859f7fc56abf431a95416e84801abbb41e4d699",
+    "desktop-actuator-real-series-denominator.png": "2afb98589266934c6cab4f7614d5e7001f3e6a83d0b1b8e5854b0ffe86416ce7",
+    "mobile-material-real-confined-volume.png": "7f26052e58dd9db10da30a92e94c40fee06ce5b750cf0d4e7435eb81e95e887e",
+    "mobile-material-real-bulk-sign.png": "e789798dd06d2d6847b62606b738898fa37bddacd92d1ec2456e88582dc566e3",
+    "mobile-material-real-bulk-zero.png": "2614549617dd35c572675cda9218c4e2b321dd66ed39d9f6df24ae385961d9f1",
+    "mobile-material-real-separated-wall.png": "d73d60bfdb06088cf18aeafef6ac750ba9bbe6bc428c3191a6b5abcbdfa4d98f",
+    "mobile-material-real-lateral-work.png": "ab62c5d794fca26af53b91fd9780ec6c4aaaa013b26df773f08a0227ebcaa1b8",
+    "mobile-force-real-pair.png": "42f929ed0e44e35d2825aa27ba35cbdc95722c51d1904e84ddeceeca1f9d86d8",
+    "mobile-torque-real-linearity.png": "b79fe3e3d4eff6e4b0caa5e945654bbca8cec10b384d486161b4a92c909bbc71",
+    "mobile-virtual-real-power.png": "6662503f32a4d609bbdb31bfaed324eb797f3089541b9c137bae91dc50e9026c",
+    "mobile-actuator-real-activation-interval.png": "330a5063cce8d29e04eb5fd161579415b9d04f7be0c25bded548e914b06687fb",
+    "mobile-actuator-real-activation-ode.png": "97c2692bc916685877b30d36a1cf942c73dcfd18dd04cb1d8d472cb70a7347f0",
+    "mobile-actuator-real-active-force-bounds.png": "5df5f3d4163a735ee4f76bb788e83a5cd12cf841c5e96833d095fc4e14b4bc1e",
+    "mobile-actuator-real-active-force-derivative.png": "a6624c4b59f81d134c1456aebaf7c0c781389a8f503264eb50adb7b0a8c15724",
+    "mobile-actuator-real-gaussian-radius-bound.png": "93e46f5703b2040107067952c2ff55a81ad4a40a0e65d20b6c4110fa7c69e69a",
+    "mobile-actuator-real-active-slope-bound.png": "58d934bf684a896314b81a157aecca61684eabaf43061c22f80b8a550a54e382",
+    "mobile-actuator-real-series-strict-monotone.png": "20da5090e2a5a666ee5fb2feffbb57ffd6f94093c74cfeaf19d2c8591186b6a7",
+    "mobile-actuator-real-series-unique-root.png": "10eecbeba6c4725167f8eb4d3b9bea42e9df2e9f3adbe8f7ad8becd5fe658919",
+    "mobile-actuator-real-series-root-exists.png": "b9530b4656dcf1cab9807d832ed3c0d5b23c007719b4efd15eafe49ef1493c6b",
+    "mobile-actuator-real-series-lower-rejection.png": "a849d051d2d25180dfa1323b8cbfb61297dba22839d18fbdbad338dd1eea86c9",
+    "mobile-actuator-real-series-denominator.png": "9c861b68915e89ee47d3eba045033a7a3b967685939be9b58e1e35d3deab347b",
+    "pdf-source-page-74.png": "d15e42c8ad40dd7e0b5a048164cb11bdeaedba6670eca0170aed65a432fda9cc",
+    "pdf-source-page-75.png": "de0c4b937842efc20f3d981b6eedccde4b4978f2cfcdfcc76e212b6d31dd6129",
+    "pdf-source-page-76.png": "521109b25f2c3f64f845ea4bbcc56b62a7e609c7ddb8024f9cf9d5b26eb8260e",
+    "pdf-source-page-77.png": "04f7ae971d90928feedbe74f404d3478d236e27454c071a6d945e16e995a8dbe",
+    "pdf-source-page-78.png": "7666d741c020a272768fea81663cf3458c4e887e7aa263b8a4f214c19cfe4b3a",
+    "pdf-source-page-79.png": "d594f8890e09e64926ca925ab8c3b0d3815e12177e170dc988bdb0259fb70393"
+  },
+  "scope": "Actual generated desktop/mobile card captures, source-bound metadata and complete PDF theorem/hash text with durable links. Appearance review is separate; no numerical refinement or biological certificate."
+}

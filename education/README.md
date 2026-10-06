@@ -6,6 +6,8 @@ The published spatial teaching lab uses a one-way quasistatic line actuator and 
 
 ## Build and read
 
+The reading order is defined by `book/book.json`, rather than filename numbering. Force, torque and energy now lead into the three property lessons: prescribed deformation measurements, imposed volume preservation and nonuniform axial strain. Anatomy and actuation follow; material energy, contact and spatial solvers build on those measurements later. The property chapter's retained filename is `09a-properties.md`; its stable heading links continue to resolve. Its isochoric geometry is not a material solve, and its axial bar does not determine transverse muscle deformation.
+
 Prerequisites: Node 22 or later, Python 3.12, Pandoc (tested 3.1.11.1), and pinned Lean 4.19.0. The local milestone used Node 24.19.0; CI selects Node 22; the reviewed foundation passed remotely, and the articulated-elbow descendant passed its own exact-head workflow; each new apparatus revision requires its own workflow check. A Linux x86_64 installer downloads the official Lean archive and checks its recorded SHA-256. For another platform, use the official Lean release matching `proofs/lean-toolchain`.
 
 ```bash
@@ -45,10 +47,11 @@ A system Chromium can be used when installed; `CHROMIUM_EXECUTABLE=/absolute/pat
 
 ## Authoring and evidence
 
-- Edit canonical chapter Markdown in `book/chapters/`; order comes from `book/book.json`.
+- Edit canonical chapter Markdown in `book/chapters/`; order comes from `book/book.json`. The integrated spatial-continuum text is `10a-spatial-continuum.md`; the contributed chapter remains an exact provenance-bound archive.
 - `{{demo:force}}`, `{{demo:torque}}`, `{{demo:energy}}`, `{{demo:elbow}}`, `{{demo:series}}` expand into HTML laboratories or static Markdown descriptions. `{{demo:continuum}}` and `{{demo:spatial}}` add the advanced lessons. Original SVGs are generated from actual solved fixture coordinates as well as elementary diagrams.
 - `{{proof:ID}}` connects a claim to the declaration in `proofs/claims.json`. `tools/check_proofs.py` invokes Lean afresh, rejects unknown/custom axiom dependencies and admissions, and writes a source-bound receipt only on success. No manual checked flag is accepted.
 - `{{property:deformation}}`, `{{property:isochoric}}` and `{{property:tapered}}` add independent boundary-volume and axial-bar lessons with static print figures. `tools/check_property_proofs.py` freshly checks their four real kinematic declarations and pins each transitive Git dependency before emitting a receipt.
+- `tools/check_real_lesson_proofs.py` uses the same pinned dependency check, then compiles the separate real specimen, mechanics and actuator sources. All three family receipts are withheld if any declaration fails. Real cards state their assumptions and limits; integer contracts, numerical checks and remaining specimen derivative/equilibrium and numerical refinement obligations remain distinct.
 - `{{experiment}}` executes the browser's pure mechanics module to generate the table and JSON result. Tests independently compare reference values and convergence, without claiming implementation refinement proofs.
 - The PDF prints the same HTML manuscript with native MathML and static diagrams. Controls and canvases are omitted; all prose, worked examples and exact claims remain.
 

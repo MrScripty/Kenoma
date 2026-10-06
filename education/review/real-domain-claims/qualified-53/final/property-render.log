@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "result": "PASS_PROPERTY_BOOK_RENDER_CAPTURE",
+  "inspector_sha256": "da83ee75403e1219ea172f863f6eaf81db36b9035fc80b555f87caaf530e38c2",
+  "html_sha256": "c97f1d11d5d8192e3e9a957eb2770239404c53c5fd480868595bb0df7d0c7f77",
+  "pdf_sha256": "c2a5b0cfe8bc9260737a4b10bbc7d58c7137f8702199a09628fdc0aaf589f9ed",
+  "build_manifest_sha256": "5fc48b45e020561efb06810acb210074ec9088f87748f9807f197bd3ec5f4081",
+  "browser": "151.0.7922.173",
+  "views": [
+    {
+      "name": "desktop",
+      "horizontalOverflow": false,
+      "proofCards": 53
+    },
+    {
+      "name": "mobile",
+      "horizontalOverflow": false,
+      "proofCards": 53
+    }
+  ],
+  "page_errors": [],
+  "pdf_pages": [
+    {
+      "page": 9,
+      "phrases": [
+        "Measure deformation before choosing a muscle law"
+      ],
+      "image": "pdf-page-9.png"
+    },
+    {
+      "page": 11,
+      "phrases": [
+        "Property lab 1"
+      ],
+      "image": "pdf-page-11.png"
+    },
+    {
+      "page": 12,
+      "phrases": [
+        "Property lab 2",
+        "Positive real axial stretch",
+        "KenomaProperties.isochoric_sqrt_construction"
+      ],
+      "image": "pdf-page-12.png"
+    },
+    {
+      "page": 13,
+      "phrases": [
+        "Property lab 3"
+      ],
+      "image": "pdf-page-13.png"
+    },
+    {
+      "page": 73,
+      "phrases": [
+        "Checked source appendix: ContinuumProperties",
+        "KenomaProperties.isochoric_sqrt_construction"
+      ],
+      "image": "pdf-page-73.png"
+    },
+    {
+      "page": 74,
+      "phrases": [
+        "KenomaProperties.isochoric_sqrt_construction"
+      ],
+      "image": "pdf-page-74.png"
+    }
+  ],
+  "scope": "Capture and layout evidence; manual appearance review is recorded separately. No biological or browser-arithmetic refinement proof."
+}

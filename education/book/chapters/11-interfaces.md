@@ -21,7 +21,7 @@ $$\det\mathbf A=\cos^2(\theta/2).$$
 
 At θ = 90 degrees the transverse scale is about 0.707 and this affine patch has half its original volume. At 180 degrees the transverse plane collapses. This is an analytic property of this deliberately constructed blend, not a claimed percentage volume loss for a complete human elbow. Spatially varying weights contribute additional derivatives to the whole deformation, and ordinary elbow bending also involves different pivots and translations.
 
-**Reader exercise.** Show a weighted cylindrical patch with a wireframe cross-section. Freeze the weights and move only the bones. Then highlight the inner elbow crease in the full arm and display the measured local triangle distortion and any actual intersections. Do not infer intersections from a dark crease in the shading.
+**Reader implementation exercise — unfinished in this edition.** Show a weighted cylindrical patch with a wireframe cross-section. Freeze the weights and move only the bones. Then highlight the inner elbow crease in the full arm and display the measured local triangle distortion and any actual intersections. Do not infer intersections from a dark crease in the shading.
 
 [Ladislav Kavan and colleagues' dual-quaternion work](https://users.cs.utah.edu/~ladislav/kavan07skinning/kavan07skinning.html) is an important alternative baseline. Blending rigid transforms through dual quaternions avoids the simple linear-matrix collapse demonstrated above. It does not enforce tissue constitutive response, global volume conservation or self-collision. It can still produce unwanted bulging, pose-dependent geometry and contact failures.
 
@@ -43,7 +43,7 @@ Penalties, complementarity solvers, projection and barriers are alternative nume
 
 [Incremental Potential Contact](https://ipc-sim.github.io/) combines barrier-based contact with conservative collision handling in a variational implicit framework. Its intersection/inversion-free claims rely on its stated feasible-start and algorithmic conditions. Do not apply that guarantee to an arbitrary log penalty, an intersecting initial mesh or a few endpoint projection sweeps. It also does not establish that a tissue law or friction coefficient is biologically correct.
 
-**Reader exercise.** Push two soft pads together, then slide one. Plot normal force, tangential force, contact area and dissipated work. Repeat with contact disabled. This separates the material's deformation from the contact algorithm that prevents overlapping bodies.
+**Reader implementation exercise — unfinished in this edition.** Push two soft pads together, then slide one. Plot normal force, tangential force, contact area and dissipated work. Repeat with contact disabled. This separates the material's deformation from the contact algorithm that prevents overlapping bodies.
 
 ## 3 Skin and flesh are not necessarily glued together
 
@@ -68,7 +68,7 @@ For a nonlinear map **y** = Φ(**q**), the corresponding generalized force is **
 
 For a tissue attachment at point **p** on a rigid body, the body receives the opposite force to the tissue and the moment (**p**−**c**)×**f**. If the bone is prescribed, record the boundary reaction and its work even though the solver does not move the bone in response.
 
-**Reader exercise.** Couple a rigid paddle to a deformable block. Push on the block, then on the paddle. The same attachment must transmit reactions in both directions in a two-way simulation. Turning off the reaction path demonstrates the difference between coupled mechanics and one-way visual following.
+**Reader implementation exercise — unfinished in this edition.** Couple a rigid paddle to a deformable block. Push on the block, then on the paddle. The same attachment must transmit reactions in both directions in a two-way simulation. Turning off the reaction path demonstrates the difference between coupled mechanics and one-way visual following.
 
 ## 5 Avoid counting the pose twice
 

@@ -1,0 +1,31 @@
+{
+  "source_checkpoint": "4e81139d6c6bf4695de7d82b0ba771e187d34e76",
+  "frozen_hotfix_parent": "b941a43e5df06173365ddc4ff050d0542ab74fe2",
+  "scope": "Editorial/layout review only; unchanged historical proof and numerical evidence reused. Fresh release CI remains required.",
+  "source_binding": "All preview input hashes match the committed source checkpoint; no completed tests repeated.",
+  "files": {
+    "deliverables/measurement-first-editorial-review/editorial-preview-manifest.json": "808408b16f0685b87ae32743508ff4bc369239e72f4480b21cc710c0c34d7afa",
+    "deliverables/measurement-first-editorial-review/kenoma-mechanics.md": "cbebb9813e49397ff7acc83a62d070ea376f05c0331073daa51cd3704aed5e59",
+    "deliverables/measurement-first-editorial-review/kenoma-mechanics.pdf": "0d0b463185504fec846763007fa78e923aa46b134965b4657299cc3448e3e432",
+    "review/measurement-first/python-tests.txt": "43a939d105cea9887f2678482e5ee8b00acef8dc981de90bc61a275acbe9e7b8",
+    "review/measurement-first/render/desktop-deformation.png": "025574787bb1c0604fd50888176a1b1f0f433e66a384abb55aeeab7afbbb6965",
+    "review/measurement-first/render/desktop-isochoric.png": "1e308eff8047c2e3b5e45c295f4ff696752f390bd673e77e7269c00bf120fbc6",
+    "review/measurement-first/render/desktop-tapered.png": "04ee547174731d6e7fc4bb49f670e5272e09afbc8a5e6bcb00ac2c6ca19172fa",
+    "review/measurement-first/render/mobile-deformation.png": "6f9caf0bef69e913fd12c7d65033b7f0e9c5b7c5365716e48bab6ed0da3230f2",
+    "review/measurement-first/render/mobile-isochoric.png": "c3110fa37e8252efaf70d559fa6e7db341b86d12d09bec23e9fa676e61d6ba81",
+    "review/measurement-first/render/mobile-tapered.png": "fc0f6c6fc7ebc6f7a592cce983f0753feb09776a3417cd6334e0d5bd3bc23996",
+    "review/measurement-first/render/pdf-page-1.png": "5fe6b3df1b41a5c9dd005f8e044eb19dedf699f0618dfc0830995ae0d9a373a5",
+    "review/measurement-first/render/pdf-page-11.png": "e71a67efbbfda080ae46a1f761481c7e56c476d412c12754e5298afe35dfe440",
+    "review/measurement-first/render/pdf-page-12.png": "f7e7e0e412bc29d2bfa65205dd5e8b3f33837a7725de02080f07304a089d7d55",
+    "review/measurement-first/render/pdf-page-13.png": "27952ebd428f2e1b9c83fd5552835217ac95118d1f689254fa3e99be4e2c5ad2",
+    "review/measurement-first/render/pdf-page-14.png": "7069cf2ac921132afbac9ebd9b78d518da13bd3ad79167e0869974e71d095f33",
+    "review/measurement-first/render/pdf-page-15.png": "204e9fe6e5a5ebfd86bd27e156d4ad04fb042952c3949573dd258d2863250373",
+    "review/measurement-first/render/pdf-page-16.png": "f7ce399d4c4a044113eafeae7bafffa6c98ab518d30e35f04d1ef31063b53507",
+    "review/measurement-first/render/pdf-page-17.png": "61f45179cda6a4a6f503720704eba896861130e6e86941d49fe34c26adb82537",
+    "review/measurement-first/render/pdf-page-3.png": "7028f5ec8c2080b4a47148e2a7704ebc590693af86b7b397d09d1355ef9551a8",
+    "review/measurement-first/render/pdf-page-34.png": "2600ddd16c38eda336266364972762d238ee1e2fe55d1713f7695c599e560e7d",
+    "review/measurement-first/render/pdf-page-5.png": "68c68fea4e50d913891e3180ae786b9be3cec6011bf04bc809e34f43dd9b18a5",
+    "review/measurement-first/render/pdf-page-8.png": "d15cd9d31fcc6a890adc68afc2525267514d9add245500b7e94a31dbbf504dae",
+    "review/measurement-first/render/receipt.json": "c3cda1cae8aad72247fe5599e1b82dddfa9fd7fae69648a18648c307a9b23d9a"
+  }
+}

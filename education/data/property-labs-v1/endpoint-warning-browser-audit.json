@@ -2,16 +2,16 @@
   "schema": 1,
   "result": "PASS_CURRENT_ENDPOINT_RENDERER",
   "browserVersion": "151.0.7922.173",
-  "currentNumericalReceiptSHA256": "cff2ae149f1b8d37df250568b4f4ad408a81b477f118aee87b900fd692a48914",
+  "currentNumericalReceiptSHA256": "6e350cf2b5588372b38c85dc79eba777f322718e0af30506d2e5f66fb9212d94",
   "sourceHashes": {
-    "web/property-labs.mjs": "e0a03f83e1a2dfb6b8c47aa51544143144d07812f9d87bddd34d66f55c9b2611",
-    "web/tapered-bar.mjs": "2b7a3ec5dcea86d4c0ac95eab02b91868aa3e2343298405b11f66783b374b9cc",
-    "web/continuum-properties.mjs": "29bcfa030f0a1af6d0c17ed72e2801f580c69c5fa45af26459e1028ba5dc5753",
-    "tools/property_labs.py": "c1c265d11713eb9dfaa22d3af5272b93252cd6174e1c1a04757388d32df7460a",
+    "web/property-labs.mjs": "cf135d2dcd5ab359f6cf9a0d5f0062f01cbeaa487478188baa18ef5490c64eaa",
+    "web/tapered-bar.mjs": "9f68e29b3e708d8e53dd964d3d42fcfd9f530dd818ad33ed3641ad3a423feaec",
+    "web/continuum-properties.mjs": "dafe703db471ec9de460b316dde9b56b5c16cedca720b1c48b2fba29c24d8988",
+    "tools/property_labs.py": "7f384ed486743f90b3d3d1c621fa5bc1e5e14a2fadb23df80324ed7c3a42bc61",
     "tools/build_property_preview.py": "0ddc45275a028737fd3c6620606fa047a8b7e0404ccea15165f12121f52e1fa6",
     "tests/endpoint_warning_audit.py": "507c63336799d63b546ddcc426dea4c45da9c7b4519542a06f227a045f6eba79"
   },
-  "previewHTMLSHA256": "6f7405cd2fced9ef46850d3f79cbbfcdbe901e576fd2b70c9c77912931878e84",
+  "previewHTMLSHA256": "32851275dfc5d653954ed2ed6c8a8caa8af546ea57fec04897211e8e4e3f0ede",
   "counterexample": {
     "endpointMaximumStrain": 0.05454545454545454,
     "midpointMaximumStrain": 0.045933014354066985,
@@ -20,7 +20,7 @@
   "visibilityEvidence": {
     "assertion": "Playwright expect(specific Small-strain scope dd).to_be_visible after scroll_into_view_if_needed",
     "screenshot": "data/property-labs-v1/endpoint-warning-current-visible.png",
-    "sha256": "d0e3b8d4ec44d02e0b1c0d78b31a50137f51b3cc76b8fb6a0abfa8325eb87652"
+    "sha256": "560a56522fe13edbed384e159a78a08babfb83fe949ddc7d69b60aed50ba01ea"
   },
   "checks": [
     "Actual Chromium endpoint controls expose 5.4545% strain despite midpoint samples below 5%",

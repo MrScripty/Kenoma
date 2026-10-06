@@ -1,0 +1,23 @@
+{
+  "result": "PASS_IDENTICAL_RENDER_OUTPUTS",
+  "outputs": {
+    "data/anatomical-arm-v1/review/dense-qualification/force-components/render-receipt.json": "9eff730494993e7b35dd7a2e37ece6fba66be9e42d238ffb8b34c3d593a93f48",
+    "data/anatomical-arm-v1/review/dense-qualification/force-components/nodal-force-components.png": "e22db400f1a362a4ceb16f978ee105710d4b79dbe8cd9c1c59c82f07d08b49d4",
+    "data/anatomical-arm-v1/review/dense-qualification/force-components/render-execution.txt": "4819a203970b34d37f0d2f44f8c62a79d21fb091a1d69363cb90c43e4519127b",
+    "data/anatomical-arm-v1/review/dense-qualification/force-components/nodal-force-components.svg": "976426db3214fc95305fc6466a983625a3fb341a4cbfd85a1a6688b8e12d8802",
+    "data/anatomical-arm-v1/review/dense-qualification/coarse/dense-qualification.svg": "c6acdb6a755672800036a4421d7e25e206bb4fee2096c169d8c8fa9e8ed0ffc4",
+    "data/anatomical-arm-v1/review/dense-qualification/coarse/render-receipt.json": "014780d96eea2c6d1b7d7cc918d8237817306dd69d1dcf9d4a6a6fa5b648dd23",
+    "data/anatomical-arm-v1/review/dense-qualification/coarse/dense-qualification.png": "bf94b74a430249d8372dc48c72ae6c8945b4e364e7052950ed0a6e7b34f9fc0d",
+    "data/anatomical-arm-v1/review/dense-qualification/coarse/render-seed-legend-clean.txt": "d144de54404fc4514f946d4c6623ff6852fe57906f9f81a65fb333c2f585bc91",
+    "data/anatomical-arm-v1/review/dense-qualification/coarse/render-print-type.txt": "028291e0b4bb4c3bd14ddd4314f49be8b9f0e606216a688f9c138a91ca6c619a",
+    "data/anatomical-arm-v1/review/dense-qualification/coarse/render-execution.txt": "b8965ef92711c3ee2ff42a47c33483797253cec39364257985c9bc11e8b6f31b",
+    "data/anatomical-arm-v1/review/dense-qualification/coarse/render-font-cache.txt": "108fa8a36fc0164912c0e9f9e3f87b1df81e70b4c35d042ed193b04a29b5faf7",
+    "data/anatomical-arm-v1/review/dense-qualification/coarse/render-seed-legend.txt": "0451e1b7678c18a4c0b6f93b1c2478ccf3fbc7dfa811cbf44585ea78b7b650c1",
+    "data/anatomical-arm-v1/review/dense-qualification/envelope/render-receipt.json": "d60deed5d9106983b4943fe62358f3b55f1816a84cfea69e4992494e6041f3b0",
+    "data/anatomical-arm-v1/review/dense-qualification/envelope/export-execution.txt": "35a4f29b20caed695cf5f28aec66f998e14e7ac7d08723b092c7991d0396d61c",
+    "data/anatomical-arm-v1/review/dense-qualification/envelope/dense-envelope.svg": "681e5039627fa7d27bf6577e542b440d8f7046bc0e543a7fd8be21cc80bf0382",
+    "data/anatomical-arm-v1/review/dense-qualification/envelope/render-execution.txt": "08a58ad24caa9e99e35fe5880df91c286610dad4dbf6020874e751e958909c1b",
+    "data/anatomical-arm-v1/review/dense-qualification/envelope/dense-envelope.png": "bcb39b1235941e9802d64f93d994a3972f3cdcf41daa17de04e3a431d6ccb558"
+  },
+  "claim": "Same installed renderer and unchanged input bytes, not cross-environment byte identity."
+}

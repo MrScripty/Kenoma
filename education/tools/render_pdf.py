@@ -4,8 +4,24 @@ from functools import partial
 from http.server import SimpleHTTPRequestHandler,ThreadingHTTPServer
 from threading import Thread
 import json,os,shutil,subprocess
+import fitz
 from playwright.sync_api import sync_playwright
+from check_real_lesson_proofs import FAMILIES as REAL_FAMILIES
 ROOT=Path(__file__).resolve().parents[1]
+
+def repair_outline_titles(path,heading_titles):
+    """Restore spaces Chromium can omit at wrapped PDF heading boundaries.
+
+    Match only whitespace-equivalent labels from the actual HTML headings;
+    preserve each outline level/page/destination and every rendered page.
+    """
+    canonical={''.join(title.split()):' '.join(title.split()) for title in heading_titles}
+    with fitz.open(path) as doc:
+        outline=doc.get_toc();changed=False
+        for index,row in enumerate(outline):
+            title=canonical.get(''.join(row[1].split()))
+            if title is not None and title!=row[1]:doc.set_toc_item(index,title=title);changed=True
+        if changed:doc.saveIncr()
 
 def serve():
     class Quiet(SimpleHTTPRequestHandler):
@@ -15,6 +31,8 @@ def serve():
     return server,f'http://127.0.0.1:{server.server_port}'
 
 def render():
+    for name in ('kenoma-mechanics.pdf','pdf-render.json','print-readability-check.json'):
+        (ROOT/'dist'/name).unlink(missing_ok=True)
     server,url=serve()
     try:
         with sync_playwright() as p:
@@ -22,12 +40,22 @@ def render():
             page=browser.new_page()
             page.goto(url+'/index.html',wait_until='networkidle')
             page.emulate_media(media='print')
+            # Match A4's printable width before measuring MathML. Let long
+            # formulas wrap at semantic boundaries instead of shrinking all text.
+            page.set_viewport_size({'width':658,'height':1000})
             page.evaluate('document.fonts.ready')
+            print_layout=page.evaluate((ROOT/'tools/print_layout.js').read_text())
+            heading_titles=page.locator('h1,h2,h3,h4,h5,h6').all_text_contents()
             # PDF links must survive the print server's lifetime. Web downloads stay relative.
             revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
-            page.evaluate('''revision => {
+            real_destinations={}
+            for source_name,_,prefix,_ in REAL_FAMILIES:
+                real_destinations.update({'proofs/'+source_name:'#'+prefix+'-source-appendix',prefix+'-proof-status.json':'#'+prefix+'-proof-receipt',prefix+'-lean-check.txt':'#'+prefix+'-kernel-report'})
+            page.evaluate('''({revision,realDestinations}) => {
               const destinations={'proofs/Mechanics.lean':'#checked-source-appendix','proof-status.json':'#proof-check-receipt','lean-check.txt':'#kernel-dependency-report'};
               Object.assign(destinations,{'proofs/AnatomicalTransfer.lean':'#transfer-source-appendix','transfer-proof-status.json':'#transfer-proof-receipt','transfer-lean-check.txt':'#transfer-kernel-report','proofs/CoupledMechanics.lean':'#coupled-source-appendix','coupled-proof-status.json':'#coupled-proof-receipt','coupled-lean-check.txt':'#coupled-kernel-report','proofs/AnatomicalArm.lean':'#arm-source-appendix','arm-proof-status.json':'#arm-proof-receipt','arm-lean-check.txt':'#arm-kernel-report','proofs/ContinuumProperties.lean':'#property-source-appendix','property-proof-status.json':'#property-proof-receipt','property-lean-check.txt':'#property-kernel-report'});
+              Object.assign(destinations,{'proofs/MaterialResponse.lean':'#material-source-appendix','material-proof-status.json':'#material-proof-receipt','material-lean-check.txt':'#material-kernel-report'});
+              Object.assign(destinations,realDestinations);
               for(const link of document.querySelectorAll('a[href]')){
                 const href=link.getAttribute('href'),target=destinations[href];
                 if(target)link.setAttribute('href',target);
@@ -38,13 +66,14 @@ def render():
                   link.textContent='Reproduce this research preview from the pinned repository instructions';
                 }
               }
-            }''',revision)
+            }''',{'revision':revision,'realDestinations':real_destinations})
             page.pdf(path=str(ROOT/'dist/kenoma-mechanics.pdf'),format='A4',print_background=True,
               display_header_footer=True,header_template='<span></span>',
               footer_template='<div style="font-family:Arial;font-size:9px;width:100%;padding:0 18mm;color:#456171;display:flex;justify-content:space-between"><span>Kenoma · Mechanics of Moving Bodies · Spatial mechanics and evidence</span><span class="pageNumber"></span></div>',
               prefer_css_page_size=True,tagged=True,outline=True)
+            repair_outline_titles(ROOT/'dist/kenoma-mechanics.pdf',heading_titles)
             version=browser.version;browser.close()
-        (ROOT/'dist/pdf-render.json').write_text(json.dumps({'renderer':'Playwright Chromium','browser_version':version,'source':'index.html','static_diagrams':True,'tagged':True,'pdf_byte_identity_asserted':False},indent=2)+'\n')
+        (ROOT/'dist/pdf-render.json').write_text(json.dumps({'renderer':'Playwright Chromium','browser_version':version,'source':'index.html','static_diagrams':True,'tagged':True,'pdf_byte_identity_asserted':False,'print_layout':print_layout},indent=2)+'\n')
         print('Rendered illustrated PDF from the same HTML content')
     finally:server.shutdown();server.server_close()
 if __name__=='__main__':render()

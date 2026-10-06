@@ -1,0 +1,8 @@
+PASS_HISTORICAL_AND_CURRENT_ENDPOINT_ARTIFACT_GATE
+PASS_MATERIAL_SOURCE_PROOF_EXPERIMENT_BROWSER_BINDING
+PASS: current Real-card render evidence
+Traceback (most recent call last):
+  File "/tmp/kenoma-real-integration/education/tests/artifacts.py", line 190, in <module>
+    assert sizes and min(sizes)>=10,'Evidence figure label is missing or too small: '+label
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Evidence figure label is missing or too small: Humerus

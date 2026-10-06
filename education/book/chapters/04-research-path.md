@@ -1,6 +1,6 @@
 # From a lever to an arm {#from-a-lever-to-an-arm}
 
-The book now provides a complete bounded teaching progression: rigid motion and energy; anatomical/data evidence; active elbow and series tendon; homogeneous continuum compression; spatial continuum accuracy/cost; interfaces; and a spatial arm-under-skin comparison. These working examples keep their model boundaries visible. They do not require subject calibration and do not establish clinical accuracy. This closing chapter describes how to extend that educational result responsibly.
+The book provides a bounded teaching progression: rigid motion and energy; [prescribed deformation and volume measurements, then nonuniform axial strain](#measure-deformation-before-choosing-a-muscle-law); anatomical/data evidence; active elbow and series tendon; homogeneous continuum compression; spatial continuum accuracy/cost; interfaces; and a spatial arm-under-skin comparison. These working examples keep their model boundaries visible. They do not require subject calibration and do not establish clinical accuracy. A [bounded homogeneous material-response lesson](#compression-bulk-shear-confinement) adds bulk/shear stiffness and unilateral confinement. Measured fibre aggregation, force–length/velocity and dissipative property lessons remain pending, alongside the unfinished anatomical capstone. This closing chapter describes how to extend the implemented educational result responsibly.
 
 ## Add anatomy with provenance
 

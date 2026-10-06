@@ -39,7 +39,7 @@ $$
  v_{n+1}=v_n+\tfrac12 h(a_n+a_{n+1}).
 $$
 
-The methods are implemented separately from rendering. Playback advances fixed simulation steps and reports their index and elapsed time; it never inserts the browser's frame duration into the physics formula. A parameter change starts a new trajectory. Reset reproduces the same sequence for a given method and step size.
+The methods are implemented separately from rendering. Playback advances fixed simulation steps and reports their index and elapsed time; it never inserts the browser's frame duration into the physics formula. Play advances approximately one simulated second per wall-clock second. **Run to 12 s** finishes the current trajectory in bounded frame batches; either running mode can be paused and resumed. Each supported h reaches the same 12-second endpoint (120–2,400 steps), and every physics sample is retained even when the display redraws only once per frame. The readout reports completed/total steps, elapsed/target time, the maximum energy deviation over all samples and the current position error against the analytic reference. Download trace preserves all samples and these measurements. A parameter change starts a new trajectory. Reset reproduces the same sequence for a given method and step size.
 
 ## Why explicit Euler gains energy
 
@@ -61,7 +61,7 @@ Run each method with the same initial conditions over 12 simulated seconds. Comp
 
 The final position error can be small by phase coincidence; it should not be used alone to select a method. The energy maximum shows explicit Euler's growth even when a snapshot happens to cross the reference. Symplectic Euler has a larger oscillating energy deviation than Verlet for these settings. Both still require refinement studies for any intended application.
 
-**Try:** reset with explicit Euler and h = 0.05 s. Step or play to see the energy increase. Reset with Verlet at the same h. Compare numeric energy with the dashed 0.80 J reference, then halve h and compare again. The plotted vertical range adapts to the computed energy; read its numeric maximum so that rescaling cannot disguise instability.
+**Try:** reset with explicit Euler and h = 0.05 s. Step, play or run to 12 s to see the energy increase. Reset with Verlet at the same h. Compare numeric energy with the dashed 0.80 J reference, then halve h and compare again. The plotted vertical range adapts to the computed energy; read its numeric maximum so that rescaling cannot disguise instability.
 
 ## A modest formal claim
 
@@ -72,3 +72,5 @@ With a nonnegative exact integer mass, the numerator $m(v_x^2+v_y^2)$ is nonnega
 ## Approximation boundary
 
 The spring is linear at all extensions, including compression, and has no tensile-only constraint. It is therefore not a tendon model. An active muscle adds energy through a contraction law; a dissipative tissue removes energy; contact may exchange or dissipate energy. Before interpreting their energy residuals, include those terms and define the model's system boundary.
+
+Before adding those material mechanisms, continue to [the three property lessons](#measure-deformation-before-choosing-a-muscle-law). They measure an imposed shape, construct constant-volume kinematics, and calculate nonuniform strain with one declared axial law. This separates geometric observations from the force and energy models that will later produce them.

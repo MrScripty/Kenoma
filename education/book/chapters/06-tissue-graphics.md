@@ -4,6 +4,8 @@ Laboratory 4 moves a rigid skeleton. Its red ellipsoid cannot tell us where tiss
 
 ## Deformation needs a reference configuration
 
+The earlier [property measurements](#measure-a-prescribed-deformation) already defined reference/current positions, dimensionless strain and volume ratio. There, the controls chose the vertices. Here the new question is what material energy and boundary forces should determine those positions. Reuse the measurements as checks; positive volume or a convincing outline is not a constitutive law.
+
 Write a material point X in the reference shape and its current position x(X). The deformation gradient F = ∂x/∂X describes local changes; J = det F measures local volume ratio. A rigid rotation has F = R and J = 1, while stretch and shear change the local geometry. Volume preservation alone does not establish an appropriate tissue response or fiber architecture.
 
 For a tetrahedral finite element, construct F from current and reference edge matrices, assign a material energy density Ψ(F, fibers), integrate that energy over the reference volume, and differentiate to obtain nodal forces. A six-edge spring network on the same tetrahedron is a different model. It does not become FEM by sharing the topology. Fiber directions, large deformation, incompressibility, boundary conditions, and inversion behavior each need an explicit choice.

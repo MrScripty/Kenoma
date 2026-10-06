@@ -1,6 +1,8 @@
-# From a spring to a volume of tissue
+# From a spring to a volume of tissue {#from-a-spring-to-a-volume-of-tissue}
 
 A spring connects a few points. A continuum assigns a deformation and a material response throughout a volume. This distinction matters when the question is where a muscle expands, how a patch of tissue is compressed, or which region carries stress. A visually dense surface mesh does not create a volumetric material model.
+
+The [early property lessons](#measure-deformation-before-choosing-a-muscle-law) supplied geometric measurements and a reduced axial calculation. This chapter reuses $F$, $J$ and strain, then introduces a three-dimensional energy density, matching stress measures and equilibrium. The earlier bar's area profile was prescribed and its balance was axial only; a continuum model must also account for transverse response and boundary conditions. The homogeneous compression block in [Laboratory 5](#tendon-tissue-coupling) is one bounded example of that additional step.
 
 The notation and elementary derivations below are self-contained. [Sifakis and Barbič's FEM course](https://viterbi-web.usc.edu/~jbarbic/femdefo/) is a bibliography lead; its full notes were inaccessible in the audit, so no formula below is attributed to unread course content. The proposed exercises are educational tests, not claimed reproductions of published biological experiments.
 
@@ -18,7 +20,7 @@ $$\mathbf E_G=\tfrac12(\mathbf F^T\mathbf F-\mathbf I)$$
 
 vanishes for every rigid rotation. Small-strain elasticity uses ε = ½(∇**u**+∇**u**ᵀ), where **u** = **x**−**X**, and does not have that property for large rotations. Rotating a stiff element is therefore an excellent test of whether an implementation has confused a small-strain formula with a finite-deformation model.
 
-**Reader exercise.** Transform one tetrahedron with independent rotation, stretch and shear controls. Show **F**, its singular values, J and stored energy. Rotate an undeformed tetrahedron through 180 degrees; its constitutive energy should remain at the reference value.
+**Reader exercise and extension.** The implemented [deformation lab](#lab-property-deformation) measures **F**, J and Green strain under rotation, stretch and shear; it has no stored-energy law or singular-value readout. As a separate extension, compute the singular values of **F**, select an objective material energy, and rotate an undeformed tetrahedron through 180 degrees: its constitutive energy should remain at the reference value. That extension is not an implemented property-lab control.
 
 ## 2 Energy and stress must use matching configurations
 

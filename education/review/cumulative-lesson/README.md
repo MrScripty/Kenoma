@@ -1,0 +1,24 @@
+# Cumulative lesson and diagnostic repair: qualified checkpoint
+
+Exact source/tests: 3ae6fa1837e0223d1ebc904a2819dc2bd13345fd. Implementation 5565589 and actual-pixel regression 3ae6fa1. The branch starts from frozen control source 4b30b0b (which contains the preceding measurement/material work), then incorporates PR7 visibility correction 0f6ec6f. PR7 itself was pushed independently at f1f48bf7b4b3fca1605e58f61b5507d46af6e65f; frozen workflow branch is 50e19de951650b7776b2a0210d02b5a85ae9ff49. No research branch, material calibration, anatomical acceptance rule or unfinished anatomical-capstone label was changed.
+
+## Outcomes
+
+- Lab5 cumulatively retains Lab4's actual Gaussian force-length law through a shared helper. The rigid/contact-off fixture gives 670.6825658707231 N in both at q90/a.6; default compliant hold instead reaches active force 595.98 N and tendon energy 5.91991 J. The nonlinear equilibrium and its implicit velocity/work equations, not merely recorded expected values, were repaired. Lab7's shared line consumer receives that law, while its explicitly one-way edge/volume tissue model remains unchanged.
+- Property1 controls name diagonal/off-diagonal coefficients, specify column-vector F=Rz*U composition, and independently measure the material-axis line stretches. sy=.8 and k=.6 produce Y-line stretch 1. Property3 truthfully names A1/A2 endpoints; at ratio.5 A2 is the narrow end, with doubled passive strain there.
+- Lab6 implements its taught discontinuous owning-element von Mises stress and nodal displacement-error fields. Both views retain fixed common scales 0–4kPa /0–.5mm and disclose clipping. Actual discrete clamp force/reaction, local maxima, energy and balance are visible, with exact-field P1-interpolant and implicit/static target conventions explicit.
+- The current-setting pulse/live-vs-numerical-only repairs remain in this successor. Reset and compression fixture still deliberately initialize state; ordinary pulses do not. Active-shape/state-invariant regressions remain passing.
+
+## Evidence
+
+Full Node 161/161 and Python 27/27 passed. Nine focused nonlinear/geometry/display/shared-consumer tests passed. Final actual Chromium `--case all` passed against generated production templates, fresh static diagrams and bundled app, with no page JavaScript exceptions. The receipt's source hashes match the exact 3ae6fa1 sources. It checks matching rigid force-length traces, compliant root/work, truthful controls, stress/reactions, target/error refinement, unchanged assembly and magnification-independent diagnostics, pulse/settings/reset, failed WebGL fallback, active-shape ablation and actual force-marker pixels.
+
+Actual canvas qualification found six long stress colour bands. High-red pixel counts decreased 5829→277 after refinement on the same error scale; this screen filter includes load-arrow pixels and measures a paired visual change, not a pure field-area fraction. Default affine stress independently gives 1600Pa and clamp resultant-0.96N. Final stress/refined canvases, compliant-hold scene, material-line and reversed-taper screenshots were manually inspected. Coarse-error and quadratic-stress full scenes were inspected during the matching source implementation; no physical-phone claim is made.
+
+Numerical-receipt.json binds fresh series/spatial diagnostic outputs and source inputs. The historical endpoint-warning-audit.json stays byte-identical at SHA256 7995b4d3a33cd07994c43007a9e4208170e35f5e1d5d14ba93e0c675cf1acdc3. The prior corrected numerical module is archived byte-for-byte because new current geometric readouts change its source hash. Fresh current numerical/browser visibility receipts and strict delivered-history/current gates pass separately.
+
+## Release and formal limits
+
+The actual full-book build freshly compiled 25 existing Int declarations, then stopped at missing pinned .tools/mathlib4. A separate pinned Lean 4.19.0 command freshly compiled the five unchanged material Int contracts, totaling 30 fresh local Int checks. The four existing Real matrix/sqrt declarations were preserved byte-identically and were not freshly compiled locally. No full-book/PDF/release pass is claimed; supported CI must compile the pinned Real dependency and qualify final artifact.
+
+The material real energy/derivative/complementarity/virtual-work claims and new nonlinear real equilibrium derivation have explicit unfinished formal obligations. Integer contracts are separate arithmetic evidence and do not stand in for real stretches, stress or energy. The claim map also identifies chain/substep-budget/reduced-probe/sliding-pad/two-way-paddle exercises as unfinished implementations; wording alone does not complete them. Parent coordinates new draft PR/publication. PR.md is the prepared review description; no new PR, merge or deployment occurred.
