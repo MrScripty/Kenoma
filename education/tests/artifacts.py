@@ -6,6 +6,7 @@ import fitz
 import sys
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
 from recorded_inputs import recorded_input_matches
+from check_endpoint_warning_audit import check as check_endpoint_warning_audit
 ROOT=Path(__file__).resolve().parents[1];out=ROOT/'dist'
 proof=json.loads((out/'proof-status.json').read_text())
 assert proof['source_sha256']==hashlib.sha256((ROOT/'proofs/Mechanics.lean').read_bytes()).hexdigest()
@@ -44,13 +45,7 @@ assert property_browser['result']=='PASS_INTEGRATED_PROPERTY_LABS' and property_
 assert property_browser['html_sha256']==hashlib.sha256((out/'index.html').read_bytes()).hexdigest()
 assert property_browser['app_sha256']==hashlib.sha256((out/'assets/app.js').read_bytes()).hexdigest()
 assert property_browser['manifest_sha256']==hashlib.sha256((out/'build-manifest.json').read_bytes()).hexdigest()
-warning_audit=json.loads((out/'data/property-labs-v1/endpoint-warning-audit.json').read_text())
-assert warning_audit['result']=='PASS_PRESERVED_WARNING_FAILURE_AND_ENDPOINT_CORRECTION'
-assert not warning_audit['frozen']['smallStrainWarning'] and warning_audit['corrected']['smallStrainWarning']
-assert abs(warning_audit['oracleMaximumStrain']-3/55)<1e-15
-assert all(r['smallStrainWarning'] and abs(r['trueMaximumStrain']-3/55)<1e-15 for r in warning_audit['refinements'])
-for relative,digest in warning_audit['sourceHashes'].items():
- assert hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()==digest,'Endpoint audit source changed: '+relative
+check_endpoint_warning_audit(out)
 property_render=json.loads((out/'property-book-review/render-receipt.json').read_text())
 assert property_render['result']=='PASS_PROPERTY_BOOK_RENDER_CAPTURE'
 assert property_render['html_sha256']==hashlib.sha256((out/'index.html').read_bytes()).hexdigest()
