@@ -87,7 +87,7 @@ The illustrative 5% small-strain warning uses the true endpoint extrema of this 
 
 The executable oracle is [the tapered-bar module](web/tapered-bar.mjs). Tests check the logarithmic integral, refinement and the two-segment fixed-end case. Its scope is numerical evidence for this declared reduced law; the kinematic Lean claims above do not prove its mechanics.
 
-Continue with [anatomical evidence](#anatomy-is-evidence) before assigning these quantities to a named muscle. When you reach [tissue and rendered skin](#tissue-and-rendered-skin), reuse the measurements above while adding a material law and boundary forces. The [next material-response lesson](#compression-bulk-shear-confinement) adds bulk/shear and unilateral confinement controls. Measured fibre-to-muscle aggregation, force–length/velocity and dissipative load/hold/release lessons remain pending, as recorded in the [coverage chapter](#coverage-and-evidence).
+Continue with [anatomical evidence](#anatomy-is-evidence) before assigning these quantities to a named muscle. When you reach [tissue and rendered skin](#tissue-and-rendered-skin), reuse the measurements above while adding a material law and boundary forces. The [next material-response lesson](#compression-bulk-shear-confinement) adds bulk/shear and unilateral confinement controls. [Load/hold/release](#dissipative-load-hold-release) now adds a bounded passive axial SLS lesson. Measured fibre-to-muscle aggregation and force–length/velocity lessons remain pending, as recorded in the [coverage chapter](#coverage-and-evidence).
 
 ## What the exact claims cover
 

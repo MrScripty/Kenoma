@@ -1,0 +1,9 @@
+[data-dissipative] .dissipative-scene svg,[data-dissipative] .dissipative-history svg,[data-dissipative] .dissipative-energy svg{display:block;width:100%;height:auto;font:14px Arial,sans-serif;max-height:none}
+[data-dissipative] .dissipative-plots{padding:0 1rem;display:grid;gap:.5rem}
+[data-dissipative] .dissipative-scene{padding:.5rem 1rem;background:#f4f7fb}
+[data-dissipative] .dissipative-scale{padding:.6rem 1.3rem;font-size:.85rem;line-height:1.5;margin:0}
+[data-dissipative] .dissipative-strain-key{display:inline-block;width:90px;height:12px;background:linear-gradient(to right,rgb(190,65,35),rgb(236,240,243),rgb(20,108,184));vertical-align:middle;margin:0 .4rem}
+[data-dissipative] .readout{grid-template-columns:repeat(3,minmax(0,1fr))}
+[data-dissipative] button:disabled{opacity:.55;cursor:default}
+@media(max-width:600px){[data-dissipative] .readout{grid-template-columns:repeat(2,minmax(0,1fr))}[data-dissipative] .controls{grid-template-columns:1fr}}
+@media print{[data-dissipative] .dissipative-scene,[data-dissipative] .dissipative-plots,[data-dissipative] .dissipative-scale{display:none!important}[data-dissipative] .static-figure{display:block!important}}

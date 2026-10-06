@@ -10,6 +10,7 @@ from check_property_proofs import check as check_properties
 from check_material_proofs import check as check_material
 from check_real_lesson_proofs import check as check_real_lessons, FAMILIES as REAL_FAMILIES
 from property_labs import block as property_block
+from dissipative_lab import block as dissipative_block
 from figures import generate
 from evidence_figures import generate as evidence_figures
 from spatial_figures import generate as advanced_figures
@@ -181,6 +182,13 @@ def build():
     spatial_summary=f"At 640 iterations, minimum J is {r['minJ']:.6f} and total mean J is {r['meanJ']:.6f}. Tissue flattens and moves laterally while total volume changes by {100*(1-r['meanJ']):.3f}%. Maximum sampled penetration is {r['penetrationM']*1000:.6f} mm, versus {r['baselinePenetrationM']*1000:.6f} mm for skinning. Maximum free-force defect is {r['maxFreeForceN']:.6f} N. These values are generated in {spatial['runtime']['node']}; they are not cross-runtime bit-identity claims. A small sampled gap does not prove the material law correct, and a residual alone does not establish a contact-free surface."
     spatial_table='| Iteration cap | Min J | Mean J | Sampled penetration (mm) | Max free force (N) | Normal-force sum (N) | Elastic/contact energy (J) |\n|--:|--:|--:|--:|--:|--:|--:|\n'
     for r in spatial['rows']:spatial_table+=f"| {r['maxIterations']} | {r['minJ']:.6f} | {r['meanJ']:.6f} | {r['penetrationM']*1000:.6f} | {r['maxFreeForceN']:.6f} | {r['contactNormalSumN']:.6f} | {r['totalEnergyJ']:.6f} |\n"
+    subprocess.run(['node',str(ROOT/'tools/dissipative-experiment.mjs'),str(OUT/'assets')],check=True)
+    shutil.copy(OUT/'assets/dissipative-experiment.json',OUT/'dissipative-experiment.json')
+    dissipative=json.loads((OUT/'dissipative-experiment.json').read_text())
+    dissipative_table='| Hold | Time (s) | Force (N) | Extension (mm) | Stored U (mJ) | Signed W (mJ) | Loss D (mJ) |\n|:--|--:|--:|--:|--:|--:|--:|\n'
+    for name in ['creep','relaxation']:
+        for row in dissipative['cases'][name]['frames']:
+            dissipative_table+=f"| {name} | {row['time']:.1f} | {row['force']:.6f} | {1000*row['extensionM']:.6f} | {1000*row['storageJ']:.6f} | {1000*row['workJ']:.6f} | {1000*row['dissipationJ']:.6f} |\n"
     chapters='\n\n'.join(((ROOT/'book'/p).read_text()+'\n\n{{demo:continuum}}\n\n{{proof:compliance-denominator}}\n') if p.startswith('../contributions/') else (ROOT/'book/chapters'/p).read_text() for p in manifest['chapters'])
     coupling_receipt=json.loads((ROOT/'data/anatomical-arm-v1/audit/coupling-results.json').read_text())
     profile_table='| Mesh | Solver | Objective calls | HVP calls | Time (s) | Loaded length (mm) | Max nodal force (N) |\n|:--|:--|--:|--:|--:|--:|--:|\n'
@@ -193,6 +201,8 @@ def build():
     def expand(web):
         text=re.sub(r'\{\{demo:(\w+)\}\}',lambda m:lab_block(m[1],web),chapters)
         text=re.sub(r'\{\{property:(\w+)\}\}',lambda m:property_block(m[1],web),text)
+        text=re.sub(r'\{\{dissipative:(\w+)\}\}',lambda m:dissipative_block(m[1],web),text)
+        text=text.replace('{{dissipative-table}}',dissipative_table)
         text=re.sub(r'\{\{proof:([\w-]+)\}\}',lambda m:proof_block(m[1],web),text)
         text=text.replace('{{evidence}}',(ROOT/'web/evidence.html').read_text() if web else 'The web edition provides a resettable static atlas viewer and a recorded-bin slider. The figures, source tables and downloads above and below provide the reading alternative.')
         text=text.replace('{{experiment}}',table).replace('{{spatial-experiment}}',spatial_table).replace('{{spatial-summary}}',spatial_summary)
@@ -210,7 +220,7 @@ def build():
       '--template',str(ROOT/'web/template.html'),'-o',str(OUT/'index.html')],check=True,capture_output=True,text=True)
     if 'Could not convert TeX math' in pandoc_result.stderr:raise RuntimeError(pandoc_result.stderr)
     html_path=OUT/"index.html"
-    rendered=html_path.read_text()
+    rendered=html_path.read_text().replace('</head>','<link rel="stylesheet" href="assets/dissipative-lab.css">\n</head>')
     # MathML matrix fences can fail to stretch in Chromium's PDF font fallback.
     # Preserve the semantic operators; draw full-height fences around the table.
     rendered=re.sub(r'<mrow>(<mo[^>]*>\[</mo>)(<mtable>.*?</mtable>)(<mo[^>]*>\]</mo>)</mrow>',
@@ -242,6 +252,7 @@ def build():
     shutil.copytree(ROOT/'data/anatomical-arm-v1',OUT/'data/anatomical-arm-v1',dirs_exist_ok=True)
     shutil.copytree(ROOT/'data/property-labs-v1',OUT/'data/property-labs-v1',dirs_exist_ok=True)
     shutil.copy(ROOT/'web/style.css',assets/'style.css')
+    shutil.copy(ROOT/'web/dissipative-lab.css',assets/'dissipative-lab.css')
     shutil.copytree(ROOT/'web',OUT/'web',dirs_exist_ok=True)
     subprocess.run([str(ROOT/'node_modules/.bin/esbuild'),str(ROOT/'web/app.mjs'),'--bundle','--minify','--format=esm','--target=es2022',f'--outfile={assets/"app.js"}','--legal-comments=external'],check=True)
     proofs=OUT/'proofs';proofs.mkdir(exist_ok=True)
@@ -269,6 +280,7 @@ def build():
       'proof_families':[b[2] for b in bundles],'property_mathlib':properties['mathlib'],
       'property_experiment':'property-experiment.json',
       'material_experiment':'material-experiment.json',
+      'dissipative_outputs':{name:hashlib.sha256((OUT/name).read_bytes()).hexdigest() for name in ['assets/property-dissipative.svg','dissipative-experiment.json']},
       'git_revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
       'original_plans_base':'9b0c67fd25e1b645833a68bb9b1c2aba1404bbce',
       'determinism':'State progression repeatable in the pinned implementation; cross-browser transcendental bit identity and PDF byte identity not asserted.'}
