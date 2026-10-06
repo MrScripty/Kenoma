@@ -28,6 +28,21 @@ def marker_x(canvas, path):
     assert xs, 'No teal position marker found in actual canvas pixels'
     return (min(xs)+max(xs))/2-im.width/2
 
+def field_pixels(canvas, path):
+    im = Image.open(BytesIO(canvas.screenshot(path=str(path)))).convert('RGB')
+    # Long interior colour runs exclude antialiasing and thin reference edges.
+    colours, previous, length = set(), None, 0
+    for x in range(im.width):
+        r, g, b = im.getpixel((x, im.height//2))
+        value = (r//18, g//18, b//18) if b > r+20 and b > g+20 else None
+        if value == previous: length += 1
+        else:
+            if previous is not None and length >= 12: colours.add(previous)
+            previous, length = value, 1
+    if previous is not None and length >= 12: colours.add(previous)
+    red = sum(r > 180 and g < 160 and b < 160 for r, g, b in im.getdata())
+    return {'interiorColourBands': len(colours), 'highFieldPixels': red}
+
 def check(page, out, case='all'):
     observed = {}
     if case in ['all', 'alignment']:
@@ -98,12 +113,15 @@ def check(page, out, case='all'):
         lab.screenshot(path=str(out/'continuum-affine-stress-reaction.png'))
         lab.locator('select[data-param=case]').select_option('quadratic')
         lab.screenshot(path=str(out/'continuum-quadratic-stress.png'))
+        stress_pixels = field_pixels(lab.locator('canvas'), out/'continuum-stress-canvas.png')
+        assert stress_pixels['interiorColourBands'] >= 3, 'Stress must vary by element in actual canvas pixels'
         lab.locator('select[data-param=comparison]').select_option('implicit')
         lab.locator('select[data-param=colorBy]').select_option('error')
         lab.locator('select[data-param=h]').select_option('0.002')
         lab.locator('select[data-param=sweeps]').select_option('1')
         coarse = state(lab)
         lab.screenshot(path=str(out/'continuum-coarse-error.png'))
+        coarse_pixels = field_pixels(lab.locator('canvas'), out/'continuum-coarse-canvas.png')
         lab.locator('select[data-param=sweeps]').select_option('100')
         refined = state(lab)
         assert coarse['diagnostics']['colour']['max'] == refined['diagnostics']['colour']['max'] == .0005
@@ -111,9 +129,12 @@ def check(page, out, case='all'):
         assert coarse['diagnostics']['colour']['fields'][0] == [0]*len(coarse['diagnostics']['colour']['fields'][0])
         assert refined['diagnostics']['assemblyCount'] == coarse['diagnostics']['assemblyCount']
         lab.screenshot(path=str(out/'continuum-refined-error.png'))
+        refined_pixels = field_pixels(lab.locator('canvas'), out/'continuum-refined-canvas.png')
+        assert coarse_pixels['highFieldPixels'] > refined_pixels['highFieldPixels']+50
         lab.locator('select[data-param=magnification]').select_option('100')
         assert state(lab)['diagnostics']['colour'] == refined['diagnostics']['colour']
-        observed['continuum'] = {'affine': affine, 'coarse': coarse, 'refined': refined}
+        observed['continuum'] = {'affine': affine, 'coarse': coarse, 'refined': refined,
+                                'pixels': {'stress': stress_pixels, 'coarse': coarse_pixels, 'refined': refined_pixels}}
     if case in ['all', 'workflows']:
         for kind in ['elbow', 'series', 'spatial']:
             lab = page.locator('#lab-'+kind)
