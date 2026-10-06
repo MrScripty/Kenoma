@@ -1,0 +1,29 @@
+{
+  "result": "PASS_SYMBOLIC_DIMENSIONAL_AND_SERIES_BRIDGE",
+  "sourceSHA256": "fb91c046c84de75bf6d0f65d3b92794f1cd6657b3f4a0e70fed504bd47a4e232",
+  "derived": {
+    "gammaLength": "2*Ns*dps",
+    "lengthReference": "Ns*sarc",
+    "relativeMotionToLinkStrain": "sarc/(2*dps)",
+    "fastContractileTangent": "B*F0/(2*Ns*beta*dps)",
+    "cauchyFromNominal": "lam/J",
+    "contractileVelocity": "2*Ns*dps*(-F0*qkin + Ks*beta*vtotal)/(B*F0 + 2*Kp*Ns*beta*dps + 2*Ks*Ns*beta*dps)",
+    "seriesLimitedFastTangent": "Ks*(B*F0 + 2*Kp*Ns*beta*dps)/(B*F0 + 2*Kp*Ns*beta*dps + 2*Ks*Ns*beta*dps)"
+  },
+  "sourceAssumptionIllustration": {
+    "dpsM": 1e-08,
+    "sarcomereReferenceM": 2.6e-06,
+    "relativeMotionToLinkStrain": 130.0,
+    "NsReportedMean": 306,
+    "NsReportedSD": 78,
+    "gammaAtReportedMeanM": 6.12e-06,
+    "gammaSDPropagationM": 1.56e-06,
+    "meanPlusOrMinusSDIsNotRangeOrConfidenceInterval": true
+  },
+  "limitations": [
+    "Symbolic identities conditional on aligned uniform fascicle/serial kinematics and independent calibration.",
+    "No heads density, force scale, area, human overlap, tendon law or stabilizing parameter selected.",
+    "No anatomical solve, kinetic evolution or controlled loading/release experiment executed.",
+    "The required original table visual check remains a separate execution gate."
+  ]
+}
