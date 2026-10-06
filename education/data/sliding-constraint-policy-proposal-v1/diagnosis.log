@@ -1,0 +1,4 @@
+full-source/RK4-0.0002 H= 2.7785112041017745e-09 curvature remainder= 2.7785154133756865e-09 rollback exact
+full-source/DOP853 H= 2.603989826769487e-07 curvature remainder= 2.6039898596349887e-07 rollback exact
+full-source/Radau H= 2.6039869648226965e-07 curvature remainder= 2.6039869733541797e-07 rollback exact
+PASS: three archived predictors; zero new ODE steps; zero new accepted states
