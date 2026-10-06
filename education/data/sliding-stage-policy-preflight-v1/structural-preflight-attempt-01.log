@@ -1,0 +1,23 @@
+ENTRY CHECK full-source/RK4-0.0002 root 0.26203073810264343 I/raw 0.0 0.0 unaccepted
+ENTRY CHECK full-source/RK4-0.0001 root 0.2620307299442577 I/raw 0.0 0.0 unaccepted
+ENTRY CHECK full-source/RK4-0.00005 root 0.2620307361610221 I/raw 0.0 0.0 unaccepted
+ENTRY CHECK full-source/RK4-0.000025 root 0.26203073408082 I/raw 0.0 0.0 unaccepted
+ENTRY CHECK full-source/DOP853 root 0.26203073413288025 I/raw 0.0 0.0 unaccepted
+ENTRY CHECK full-source/Radau root 0.26203073463297993 I/raw 0.0 0.0 unaccepted
+ENTRY CHECK reduced-independent/RK4-0.0002 root 0.26203073810264343 I/raw -5.117434254131581e-15 -5.117434254131581e-15 unaccepted
+ENTRY CHECK reduced-independent/RK4-0.0001 root 0.262030729948728 I/raw -1.5171891520893155e-14 -1.5171891520893155e-14 unaccepted
+ENTRY CHECK reduced-independent/RK4-0.00005 root 0.2620307361565518 I/raw -4.777428452840127e-15 -4.777428452840127e-15 unaccepted
+ENTRY CHECK reduced-independent/RK4-0.000025 root 0.26203073408082 I/raw 1.0061396160665481e-16 1.0061396160665481e-16 unaccepted
+ENTRY CHECK reduced-independent/DOP853 root 0.2620307341331518 I/raw 7.032568971609976e-15 7.032568971609976e-15 unaccepted
+ENTRY CHECK reduced-independent/Radau root 0.2620307345634329 I/raw -1.1195905313954313e-14 -1.1195905313954313e-14 unaccepted
+Traceback (most recent call last):
+  File "/workspace/Kenoma-stage-policy/education/tools/preflight_sliding_stage_policy.py", line 214, in <module>
+    if __name__ == '__main__':main()
+                              ^^^^^^
+  File "/workspace/Kenoma-stage-policy/education/tools/preflight_sliding_stage_policy.py", line 184, in main
+    rollback = [transaction_failure('full-source/RK4-0.0002',engines['full-source/RK4-0.0002'],kind)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Kenoma-stage-policy/education/tools/preflight_sliding_stage_policy.py", line 121, in transaction_failure
+    if kind != 'physical-domain':assert engine.failure['code'] == codes[kind], engine.failure
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'code': 'quadrature-gate', 'message': 'Cumulative independent GL8 gate failed', 'acceptedTime': 0.26203073810264343, 'acceptedState': [-0.02635746768699612, 0.10353550690310367, 0.012756127560526211, 1.2579985619398713, -0.025690721295649074, -0.110213593404334, 0.062397848261623916, -0.25311865989730326, 0.07683336628946172, 0.003673851941716498, 0.10353550690310367], 'failedStageTime': 0.2623, 'failedStageState': [-0.02635746768699612, 0.10353550690310367, 0.012756127560526211, 1.2579985619398713, -0.025690721295649074, -0.110213593404334, 0.062397848261623916, -0.25311865989730326, 0.07683336628946172, 0.003673851941716498, 0.10353550690310367], 'rollback_exact': True, 'solver_cache_discarded': True}

@@ -1,0 +1,57 @@
+{
+  "baseline_commit": "a522899d089d4249bf20e27b2545723b41d3f2f2",
+  "independent_narrow_policy_ACK_received": true,
+  "implementation_and_structural_preflight_authorized": true,
+  "matrix_execution_authorized": false,
+  "book_adoption": false,
+  "source_sha256": {
+    "education/tools/sliding_stage_policy_engine.py": "8e68e948068e2c2e0f57b8198f5715e8dd595691927ad958bf9a9ed29b049ea6",
+    "education/tools/preflight_sliding_stage_policy.py": "32c24b81da02a9e5a93b08b7a7b74da5e6a0604c02458aba1cc41d90eeda4e03",
+    "education/research/mechanical-closure/sliding-stage-policy-source.md": "2a612cfa762032d240f9bc001db45b2f1440f92ddd667b31a5477d047fe97fb1"
+  },
+  "preserved_prior_branches": {
+    "education/sliding-constraint-policy-proposal": "a522899d089d4249bf20e27b2545723b41d3f2f2",
+    "education/first-sliding-segment-exploratory": "455641c0aa9b4a9ad4b68e50fc1b6f5746180226",
+    "education/euler-constraint-defect-proofs": "67491e95a43f8a4411c21ca6fa3a156345943015",
+    "education/filippov-convex-weight-proofs": "9547246e10269ea0c2613cc9cef848323f700ef6",
+    "origin/main": "9b0c67fd25e1b645833a68bb9b1c2aba1404bbce"
+  },
+  "required_cells": [
+    "full-source/RK4-0.0002",
+    "full-source/RK4-0.0001",
+    "full-source/RK4-0.00005",
+    "full-source/RK4-0.000025",
+    "full-source/DOP853",
+    "full-source/Radau",
+    "reduced-independent/RK4-0.0002",
+    "reduced-independent/RK4-0.0001",
+    "reduced-independent/RK4-0.00005",
+    "reduced-independent/RK4-0.000025",
+    "reduced-independent/DOP853",
+    "reduced-independent/Radau"
+  ],
+  "required_witnesses": [
+    0.26225,
+    0.2625,
+    0.26275,
+    0.263
+  ],
+  "endpoint_s": 0.263,
+  "original_source_bindings": {
+    "education/tools/first_sliding_segment_engine.py": "f8c44a99a4b905b5e5130cdf00009b468848156e0c58f98db9c08d9ff21184ce",
+    "education/tools/preflight_first_sliding_segment.py": "1c23fd50d638ed643ef11a2fa614ec1745fad28be066261a4587fa74a8f9beb4",
+    "education/tools/run_first_sliding_segment.py": "66f7560d15aaffedb99924a5f89e8957b52202edb29442b1617d8f14d927d6be",
+    "education/tools/audit_first_sliding_segment.py": "c53dbf1aa6065a5bdd184a46e61afc472594f5ae8fe2208f4330430b1d522ed2",
+    "education/tests/first_sliding_segment.py": "17234b34eeb4cc9d26839f7d29cdaa55d2f86fa9e054039ea75d43add50f3d50",
+    "education/research/mechanical-closure/first-sliding-segment-exploratory-source.md": "81c7ce64f3907b1c019140961e503d285d68ebe2c7dd7fe01d79cc294520c07c"
+  },
+  "norm_policy": "Exact existing full11/reduced10 SciPy error norms and all integrated components; full I and all ledgers retained.",
+  "exception": {
+    "representation": "full-source",
+    "mode": "sliding",
+    "role": "ODE-stage",
+    "uses_timestamp": false
+  },
+  "new_ODE_steps": 0,
+  "new_accepted_states": 0
+}

@@ -1,0 +1,28 @@
+{
+  "runs": [
+    {
+      "exit_code": 1,
+      "reason": "Constant synthetic witness negative control failed the unchanged quadrature gate before intended witness check. All failed harness sources/logs retained; no gate change.",
+      "files": {
+        "education/data/sliding-stage-policy-preflight-v1/structural-preflight-attempt-01.log": "36384910ba6a86920e34d73db3b31945bf7c3fed9d11b32aff4a645212bde37d",
+        "education/data/sliding-stage-policy-preflight-v1/attempts/preflight-attempt-01.py": "32c24b81da02a9e5a93b08b7a7b74da5e6a0604c02458aba1cc41d90eeda4e03",
+        "education/data/sliding-stage-policy-preflight-v1/attempts/engine-attempt-01.py": "8e68e948068e2c2e0f57b8198f5715e8dd595691927ad958bf9a9ed29b049ea6",
+        "education/data/sliding-stage-policy-preflight-v1/attempts/protocol-attempt-01.json": "6755158fe13e1361b1f9fdbb983c79b588d352bf6c3c7167e604683ee91b29ea"
+      },
+      "new_ODE_steps": 0,
+      "new_accepted_states": 0
+    },
+    {
+      "exit_code": 0,
+      "reason": "Preliminary structural preflight passed; negative controls inject into archived valid polynomials. Final source adds output-directory selection and fuller failed-probe diagnostics only.",
+      "files": {
+        "education/data/sliding-stage-policy-preflight-v1/structural-preflight-attempt-02.log": "dbfc1e71627e4a8acc5921c8168d36872af7a1b265632ed1661d9f82aaeff748",
+        "education/data/sliding-stage-policy-preflight-v1/attempts/preflight-attempt-02.py": "da22263514d551a148614c5421d3d993d72d420f9eae297b816579089526e1de",
+        "education/data/sliding-stage-policy-preflight-v1/attempts/engine-attempt-02.py": "8e68e948068e2c2e0f57b8198f5715e8dd595691927ad958bf9a9ed29b049ea6",
+        "education/data/sliding-stage-policy-preflight-v1/attempts/protocol-attempt-02.json": "161b71deb295183dbb91ec705b3710175dd623f8aff42c2eb1afab7254ac04ec"
+      },
+      "new_ODE_steps": 0,
+      "new_accepted_states": 0
+    }
+  ]
+}

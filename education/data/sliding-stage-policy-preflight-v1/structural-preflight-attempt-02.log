@@ -1,0 +1,16 @@
+ENTRY CHECK full-source/RK4-0.0002 root 0.26203073810264343 I/raw 0.0 0.0 unaccepted
+ENTRY CHECK full-source/RK4-0.0001 root 0.2620307299442577 I/raw 0.0 0.0 unaccepted
+ENTRY CHECK full-source/RK4-0.00005 root 0.2620307361610221 I/raw 0.0 0.0 unaccepted
+ENTRY CHECK full-source/RK4-0.000025 root 0.26203073408082 I/raw 0.0 0.0 unaccepted
+ENTRY CHECK full-source/DOP853 root 0.26203073413288025 I/raw 0.0 0.0 unaccepted
+ENTRY CHECK full-source/Radau root 0.26203073463297993 I/raw 0.0 0.0 unaccepted
+ENTRY CHECK reduced-independent/RK4-0.0002 root 0.26203073810264343 I/raw -5.117434254131581e-15 -5.117434254131581e-15 unaccepted
+ENTRY CHECK reduced-independent/RK4-0.0001 root 0.262030729948728 I/raw -1.5171891520893155e-14 -1.5171891520893155e-14 unaccepted
+ENTRY CHECK reduced-independent/RK4-0.00005 root 0.2620307361565518 I/raw -4.777428452840127e-15 -4.777428452840127e-15 unaccepted
+ENTRY CHECK reduced-independent/RK4-0.000025 root 0.26203073408082 I/raw 1.0061396160665481e-16 1.0061396160665481e-16 unaccepted
+ENTRY CHECK reduced-independent/DOP853 root 0.2620307341331518 I/raw 7.032568971609976e-15 7.032568971609976e-15 unaccepted
+ENTRY CHECK reduced-independent/Radau root 0.2620307345634329 I/raw -1.1195905313954313e-14 -1.1195905313954313e-14 unaccepted
+PASS: three archived predictors; identical-coordinate accepted-role and incoming-mode rejection
+PASS: eight later failures after valid auxiliary stages; exact rollback and cache release; no retries
+PASS: exact full11/reduced10 constructor/scaling/component norms; inherited decoder/Jacobian/accepted checks unchanged
+PASS: fresh 12 own roots and 66 incoming comparisons; zero accepted entries/ODE steps; new matrix held
