@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "source_commit": "791501cd914d3aae8a3fa3d316a6c1fae3a0be2c",
+  "source_tree": "696dcb29a8a109182c7a4e8c4bfed08eac972947",
+  "branch": "education/activation-equality-proofs",
+  "baseline_commit": "4aa1b9f874d08a5e6fb2f45b33ad1976ef85a851",
+  "python_version": "3.12.14",
+  "fresh_real_lean_compilation": true,
+  "kernel_checked_declarations": 15,
+  "audit_tests_passed": 6,
+  "combined_matrix_executed": false,
+  "new_numeric_trajectory_qualification": false,
+  "render_evidence": "Not applicable: proof source, exact statements and raw compiler transcript; no anatomical render or book deployment generated.",
+  "files": [
+    {
+      "path": "education/data/activation-equality-proofs-v1/attempts/01-missing-import.lean",
+      "bytes": 5469,
+      "sha256": "572c5b64a81537d3b7996edfda1536f88ff966ca762367e4be67a81d8d87ac7b"
+    },
+    {
+      "path": "education/data/activation-equality-proofs-v1/attempts/01-missing-import.log",
+      "bytes": 240,
+      "sha256": "49d4d4e3a09ec525af49c1ddde3591d93a69454c31e10b8660bb1a75596effb6"
+    },
+    {
+      "path": "education/data/activation-equality-proofs-v1/audit-tests.log",
+      "bytes": 614,
+      "sha256": "9a420ad2d18feb6f9da686d9e82dbdc0de871d12d38ba518ba1a082e77da6e39"
+    },
+    {
+      "path": "education/data/activation-equality-proofs-v1/baseline-preservation.json",
+      "bytes": 568,
+      "sha256": "252afa929445f6dd9798256893a19c56d81e2b2e19792ab84ba7d5e45f6e15e9"
+    },
+    {
+      "path": "education/data/activation-equality-proofs-v1/check-command.log",
+      "bytes": 128,
+      "sha256": "2154a780675e3e0b44cf952d91353f5b24b87fbe41c54cbc5c39c9a319d8dabc"
+    },
+    {
+      "path": "education/data/activation-equality-proofs-v1/kernel-check.json",
+      "bytes": 12358,
+      "sha256": "5530db0d0d74bf46e6af71c100045b2539e8a25ce17127555c6d66fa3d9c511d"
+    },
+    {
+      "path": "education/data/activation-equality-proofs-v1/lean-check.log",
+      "bytes": 1462,
+      "sha256": "81a515294daf6e99a2331f298801423c4bdcd63f8d09b02bfe9dd8e6748914c3"
+    },
+    {
+      "path": "education/proofs/ActivationEquality.lean",
+      "bytes": 5510,
+      "sha256": "b5cf02396b0d849373290736bee390cbe6d2a4d846851edf6c405701a7f673b3"
+    },
+    {
+      "path": "education/proofs/activation-equality-claims.json",
+      "bytes": 5386,
+      "sha256": "b7f9c29a3ddd93c2a7b399766d1d73c83bac6f58c091c5edb93dc2d39da52770"
+    },
+    {
+      "path": "education/research/mechanical-closure/activation-equality-proofs.md",
+      "bytes": 6188,
+      "sha256": "48f9446c11ece4b6e9b1440d20cd656635d9aeb9e9ad411f34d50f3af0d6be84"
+    },
+    {
+      "path": "education/tests/activation_equality_proof_audit.py",
+      "bytes": 1954,
+      "sha256": "9ec4d23eed02749d741ac6dfc404bd56de8e2582b8ba843ceff25b265cdf489f"
+    },
+    {
+      "path": "education/tools/check_activation_equality_proofs.py",
+      "bytes": 5996,
+      "sha256": "aef6af526db5596530413168ca2e182aa2ed95540d596e5aea3f49876d34eb74"
+    }
+  ],
+  "limits": [
+    "No ODE solution interval-invariance theorem.",
+    "Continuity proved in excitation for fixed activation and time parameters.",
+    "No joint-continuity, derivative, RK order, binary64 or anatomical qualification theorem.",
+    "Prior combined incoming protocol remains held; no transfer reroute."
+  ]
+}
