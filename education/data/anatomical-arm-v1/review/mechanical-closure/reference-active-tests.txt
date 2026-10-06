@@ -1,0 +1,11 @@
+✔ Baseline exactly reproduces original stress, potential and physical tangent (3.067637ms)
+✔ Reference/isochoric analytic derivatives and objectivity pass independent finite differences (7.18397ms)
+✔ Exactly admissible rank-one paths retain J and full/iso active laws agree at J=1 up to pressure (2.063531ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 90.346545
