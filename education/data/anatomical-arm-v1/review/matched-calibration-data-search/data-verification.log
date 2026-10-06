@@ -1,0 +1,40 @@
+PASS SRS_data.mat: byte size
+PASS SRS_data.mat: SHA256
+PASS SRS_data.mat: Git blob SHA1
+PASS SRS_data.mat: field/shape/class inventory
+PASS SRS_data.mat/F0: observational summary
+PASS SRS_data.mat/SRS_pre: observational summary
+PASS SRS_data.mat/SRS_post: observational summary
+PASS SRS_data.mat/th: observational summary
+PASS SRS_data.mat/SRSrel: observational summary
+PASS SRS_data.mat/F0s: observational summary
+PASS force_pCa.mat: byte size
+PASS force_pCa.mat: SHA256
+PASS force_pCa.mat: Git blob SHA1
+PASS force_pCa.mat: field/shape/class inventory
+PASS force_pCa.mat/pCas: observational summary
+PASS force_pCa.mat/F0: observational summary
+PASS force_pCa.mat/Fmax: observational summary
+PASS active_trials.mat: byte size
+PASS active_trials.mat: SHA256
+PASS active_trials.mat: Git blob SHA1
+PASS active_trials.mat: field/shape/class inventory
+PASS active_trials.mat/Aid: observational summary
+PASS active_trials.mat/Fm: observational summary
+PASS parms_biophysical_no_regular.mat: byte size
+PASS parms_biophysical_no_regular.mat: SHA256
+PASS parms_biophysical_no_regular.mat: Git blob SHA1
+PASS parms_biophysical_no_regular.mat: field/shape/class inventory
+PASS Fmax equals row nanmax F0 exactly
+PASS one pCa4.5 column
+PASS Fmax equals pCa4.5 F0 exactly
+PASS stored SRS thresholds preserved
+PASS stored/source threshold mismatch retained
+PASS source additional SRSrel2 absent from stored binary
+PASS negative SRS entries retained
+PASS observed missing F0 entries retained
+PASS animal-candidate-facts.json: valid JSON
+PASS human-fiber-facts.json: valid JSON
+PASS rat-source-facts.json: valid JSON
+PASS whole-muscle-facts.json: valid JSON
+RESULT PASS: 39 data-provenance checks; numerical calibration remains unqualified

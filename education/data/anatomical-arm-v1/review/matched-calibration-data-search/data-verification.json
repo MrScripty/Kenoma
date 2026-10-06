@@ -1,0 +1,365 @@
+{
+  "schema": "kenoma-matched-calibration-data-verification-v1",
+  "status": "PASS",
+  "command": [
+    "education/tools/verify_matched_calibration_data.py",
+    "--source-dir",
+    "/tmp/rat-source-data-inventory-20261006",
+    "--output",
+    "education/data/anatomical-arm-v1/review/matched-calibration-data-search/data-verification.json"
+  ],
+  "scope": "DATA_PROVENANCE_ONLY; NO_SI_CALIBRATION_OR_MODEL_RUN",
+  "preexecution_commit": "b620048e579a55f6bba9509f458ea32f234a78a6",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "facts_sha256": "85dc1f23baf566f0967b7868a28aebc71597b54234c277f2060b03c9f8b6264d",
+  "source_pin": {
+    "repository": "timvanderzee/biophysical-muscle-model",
+    "commit": "8c766dfb308051309193e7290ddd0bac3b726d11",
+    "tree": "a802ec6f7299d0745dfab1d5b715a3d9b7aa6f20",
+    "main_reread_same_commit": true,
+    "date": "2026-07-08T12:06:31Z",
+    "truncated": false,
+    "license_copying_named_files": []
+  },
+  "checks": [
+    {
+      "name": "SRS_data.mat: byte size",
+      "passed": true
+    },
+    {
+      "name": "SRS_data.mat: SHA256",
+      "passed": true
+    },
+    {
+      "name": "SRS_data.mat: Git blob SHA1",
+      "passed": true
+    },
+    {
+      "name": "SRS_data.mat: field/shape/class inventory",
+      "passed": true
+    },
+    {
+      "name": "SRS_data.mat/F0: observational summary",
+      "passed": true
+    },
+    {
+      "name": "SRS_data.mat/SRS_pre: observational summary",
+      "passed": true
+    },
+    {
+      "name": "SRS_data.mat/SRS_post: observational summary",
+      "passed": true
+    },
+    {
+      "name": "SRS_data.mat/th: observational summary",
+      "passed": true
+    },
+    {
+      "name": "SRS_data.mat/SRSrel: observational summary",
+      "passed": true
+    },
+    {
+      "name": "SRS_data.mat/F0s: observational summary",
+      "passed": true
+    },
+    {
+      "name": "force_pCa.mat: byte size",
+      "passed": true
+    },
+    {
+      "name": "force_pCa.mat: SHA256",
+      "passed": true
+    },
+    {
+      "name": "force_pCa.mat: Git blob SHA1",
+      "passed": true
+    },
+    {
+      "name": "force_pCa.mat: field/shape/class inventory",
+      "passed": true
+    },
+    {
+      "name": "force_pCa.mat/pCas: observational summary",
+      "passed": true
+    },
+    {
+      "name": "force_pCa.mat/F0: observational summary",
+      "passed": true
+    },
+    {
+      "name": "force_pCa.mat/Fmax: observational summary",
+      "passed": true
+    },
+    {
+      "name": "active_trials.mat: byte size",
+      "passed": true
+    },
+    {
+      "name": "active_trials.mat: SHA256",
+      "passed": true
+    },
+    {
+      "name": "active_trials.mat: Git blob SHA1",
+      "passed": true
+    },
+    {
+      "name": "active_trials.mat: field/shape/class inventory",
+      "passed": true
+    },
+    {
+      "name": "active_trials.mat/Aid: observational summary",
+      "passed": true
+    },
+    {
+      "name": "active_trials.mat/Fm: observational summary",
+      "passed": true
+    },
+    {
+      "name": "parms_biophysical_no_regular.mat: byte size",
+      "passed": true
+    },
+    {
+      "name": "parms_biophysical_no_regular.mat: SHA256",
+      "passed": true
+    },
+    {
+      "name": "parms_biophysical_no_regular.mat: Git blob SHA1",
+      "passed": true
+    },
+    {
+      "name": "parms_biophysical_no_regular.mat: field/shape/class inventory",
+      "passed": true
+    },
+    {
+      "name": "Fmax equals row nanmax F0 exactly",
+      "passed": true
+    },
+    {
+      "name": "one pCa4.5 column",
+      "passed": true
+    },
+    {
+      "name": "Fmax equals pCa4.5 F0 exactly",
+      "passed": true
+    },
+    {
+      "name": "stored SRS thresholds preserved",
+      "passed": true
+    },
+    {
+      "name": "stored/source threshold mismatch retained",
+      "passed": true
+    },
+    {
+      "name": "source additional SRSrel2 absent from stored binary",
+      "passed": true
+    },
+    {
+      "name": "negative SRS entries retained",
+      "passed": true
+    },
+    {
+      "name": "observed missing F0 entries retained",
+      "passed": true
+    },
+    {
+      "name": "animal-candidate-facts.json: valid JSON",
+      "passed": true
+    },
+    {
+      "name": "human-fiber-facts.json: valid JSON",
+      "passed": true
+    },
+    {
+      "name": "rat-source-facts.json: valid JSON",
+      "passed": true
+    },
+    {
+      "name": "whole-muscle-facts.json: valid JSON",
+      "passed": true
+    }
+  ],
+  "inventories": [
+    {
+      "source_path": "Data/SRS_data.mat",
+      "bytes": 31483,
+      "sha256": "a2d4edcbe9893b9d5671d7563a1dcbd808e6c51e41f42821303df6feee249024",
+      "mat_inventory": [
+        [
+          "F0",
+          [
+            7,
+            7,
+            8,
+            11
+          ],
+          "double"
+        ],
+        [
+          "SRS_pre",
+          [
+            7,
+            7,
+            8,
+            11
+          ],
+          "double"
+        ],
+        [
+          "SRS_post",
+          [
+            7,
+            7,
+            8,
+            11
+          ],
+          "double"
+        ],
+        [
+          "th",
+          [
+            1,
+            6
+          ],
+          "double"
+        ],
+        [
+          "SRSrel",
+          [
+            5,
+            7,
+            8,
+            11
+          ],
+          "double"
+        ],
+        [
+          "F0s",
+          [
+            5,
+            7,
+            8,
+            11
+          ],
+          "double"
+        ]
+      ]
+    },
+    {
+      "source_path": "Data/force_pCa.mat",
+      "bytes": 923,
+      "sha256": "957d0a359c4cdab6070c8c2a2957d63e566e8a2bf2d9d0de3175b6f3960814b9",
+      "mat_inventory": [
+        [
+          "pCas",
+          [
+            1,
+            7
+          ],
+          "double"
+        ],
+        [
+          "F0",
+          [
+            11,
+            7
+          ],
+          "double"
+        ],
+        [
+          "Fmax",
+          [
+            11,
+            1
+          ],
+          "double"
+        ]
+      ]
+    },
+    {
+      "source_path": "Data/active_trials.mat",
+      "bytes": 727,
+      "sha256": "5de9d75c6d7ddedb5d0b302ee0be821713d5ec5b6fb04a444b6f4ffc3e6a6116",
+      "mat_inventory": [
+        [
+          "Aid",
+          [
+            11,
+            7
+          ],
+          "logical"
+        ],
+        [
+          "Fm",
+          [
+            7,
+            11
+          ],
+          "double"
+        ]
+      ]
+    },
+    {
+      "source_path": "Reproduce/Parameters/13Dec2017a/parms_biophysical_no_regular.mat",
+      "bytes": 401236,
+      "sha256": "94304696731c2eb13e7e8a5e92a62f752447512ec79736090aa36dc88e228529",
+      "mat_inventory": [
+        [
+          "bnds",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "newparms",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "optparms",
+          [
+            1,
+            10
+          ],
+          "cell"
+        ],
+        [
+          "out",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "redparms",
+          [
+            1,
+            1
+          ],
+          "struct"
+        ],
+        [
+          "__function_workspace__",
+          [
+            1,
+            51008
+          ],
+          "uint8"
+        ]
+      ]
+    }
+  ],
+  "raw_array_payloads_exported": false,
+  "author_code_executed": false,
+  "fit_workspace_decoded": false
+}

@@ -1,0 +1,120 @@
+{
+  "schema": "kenoma-matched-calibration-search-manifest-v1",
+  "frozen_base": "306d0aba8e024086b9f4d04cc4d74f137b8b443a",
+  "frozen_base_tree": "f1e9f6d537ca10ca918518f0ce119e2b23c9edc7",
+  "data_verifier_preexecution_commit": "b620048e579a55f6bba9509f458ea32f234a78a6",
+  "files": [
+    {
+      "path": "education/data/anatomical-arm-v1/review/matched-calibration-data-search/animal-candidate-facts.json",
+      "bytes": 5145,
+      "sha256": "68b871e5da547892802047a3dd91b9bbdfb2302b762974224f813244a29ef4bd",
+      "role": "new_data_search_evidence"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/matched-calibration-data-search/human-fiber-facts.json",
+      "bytes": 6498,
+      "sha256": "da7fc116cbef23dc724e8e7bd02e193ad45aa849ed258c29a8be95813b4c3f9e",
+      "role": "new_data_search_evidence"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/matched-calibration-data-search/rat-source-facts.json",
+      "bytes": 35248,
+      "sha256": "85dc1f23baf566f0967b7868a28aebc71597b54234c277f2060b03c9f8b6264d",
+      "role": "new_data_search_evidence"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/matched-calibration-data-search/root-access-receipts.json",
+      "bytes": 2119,
+      "sha256": "a3e82198cf75fe9d2f0ed1d6a84d6d5165307bc7fd3c7df3302466651f48db45",
+      "role": "new_data_search_evidence"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/matched-calibration-data-search/whole-muscle-facts.json",
+      "bytes": 6480,
+      "sha256": "bd6b374d038cfac034164253b35aabb5500a629c1e79cb0c7b930ceed1fb247d",
+      "role": "new_data_search_evidence"
+    },
+    {
+      "path": "education/research/mechanical-closure/data-search-animal-candidates.md",
+      "bytes": 6503,
+      "sha256": "c4c03962b05a286153eeb5fa3e640057c0a0baa5f33ff2d12a8d6a38a1b2336f",
+      "role": "new_data_search_evidence"
+    },
+    {
+      "path": "education/research/mechanical-closure/data-search-human-fiber.md",
+      "bytes": 9218,
+      "sha256": "b5568672695f954a6d42bed737559fa3c236e4ff0753597df7bde14e4d6ddd3f",
+      "role": "new_data_search_evidence"
+    },
+    {
+      "path": "education/research/mechanical-closure/data-search-rat-source.md",
+      "bytes": 9955,
+      "sha256": "29c8e992f4ceb803e61d47a5161b988ff5270665f2174ef020d2d11d225a8b83",
+      "role": "new_data_search_evidence"
+    },
+    {
+      "path": "education/research/mechanical-closure/data-search-whole-muscle.md",
+      "bytes": 9050,
+      "sha256": "fa8618aa8345e1e9b4a39bdb4abcaed0d41db8f18ba693a8d26a15b6880f9b57",
+      "role": "new_data_search_evidence"
+    },
+    {
+      "path": "education/research/mechanical-closure/matched-calibration-data-decision.md",
+      "bytes": 7849,
+      "sha256": "fd29ad543db1ac619a3b11825e46374d4bc6ddd1f1f2723b9fab9e1016318152",
+      "role": "new_data_search_evidence"
+    },
+    {
+      "path": "education/tools/verify_matched_calibration_data.py",
+      "bytes": 5007,
+      "sha256": "013b58091cfc241d83172aae810b6b97fa1778ef8776741617a151c09a1753b7",
+      "role": "new_data_search_evidence"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/matched-calibration-data-search/data-verification.json",
+      "bytes": 7494,
+      "sha256": "ec5e953aab4079e51a0e593ab91a9ae985c322f4ed251ddc97d6828410553b7c",
+      "role": "new_data_search_evidence"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/matched-calibration-data-search/data-verification.log",
+      "bytes": 1724,
+      "sha256": "3125c7453375100a2f7f82525353d113660923642089fce0a8185f2f88ce4a2a",
+      "role": "new_data_search_evidence"
+    },
+    {
+      "path": "education/research/mechanical-closure/matched-calibration-data-results.md",
+      "bytes": 3246,
+      "sha256": "373e4713a4a1eb782d3c34bf0a72d561f08b709d05204bfa1493143c9d3e0d0b",
+      "role": "new_data_search_evidence"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/conditional-unit-contract-v2.png",
+      "bytes": 221326,
+      "sha256": "c53dfdbfeb7cbac59d7d3a905b803647083b3b150aa7f334249d1058ce3547c1",
+      "role": "preserved_prior_render"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/conditional-unit-contract-v2.pdf",
+      "bytes": 31560,
+      "sha256": "c543cb3431c9e26859b32a96f2f414b27c12f7401173bb271d7d2c1d89248093",
+      "role": "preserved_prior_render"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/conditional-unit-contract-v2.pdf-raster.png",
+      "bytes": 109535,
+      "sha256": "f3708345b4423fe01fdafbe428dcdd71285d92c7c90ac3a8461932a19b593670",
+      "role": "preserved_prior_render"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/render-visual-inspection-v2.json",
+      "bytes": 345,
+      "sha256": "120bd14d37122fd5031658fbdd6417794601afa8bd486b3450bcbafdeb6ae31c",
+      "role": "preserved_prior_render"
+    }
+  ],
+  "self_hash_excluded": true,
+  "final_static_log_excluded": "packet-check.log records verification of this manifest; no self-referential binding",
+  "numerical_calibration_selected": false,
+  "arm_convergence_qualified": false
+}

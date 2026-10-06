@@ -1,0 +1,9 @@
+PASS 18 hash bindings; four previous render files unchanged
+PASS all packet JSON parses
+PASS verifier syntax
+PASS local document links
+PASS requested and frozen bases are ancestors
+PASS all 15 staged changes additive; prior tracked evidence/protected files unchanged
+PASS staged whitespace check
+PASS 39 recorded provenance checks; no model/calibration execution or raw-array redistribution
+RESULT PASS: additive data-search packet; no physical-calibration or arm-convergence qualification
