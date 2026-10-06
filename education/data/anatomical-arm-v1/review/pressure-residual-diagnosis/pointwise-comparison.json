@@ -1,0 +1,21 @@
+{
+  "runnerSHA256": "662cf8d919a9e4531f461a347a14f860c3abdbe93b54238ce5d616363ce9befd",
+  "results": [
+    {
+      "level": "coarse",
+      "lowestHypotheticalPointwiseEigenvalueNPerM": 2.1719289853360846,
+      "negativeEigenvalueCount": 0,
+      "minimumProjectionComplementEigenvalueNPerM": -7.383993143344289e-11,
+      "label": "HYPOTHETICAL_ORIGINAL_POINTWISE_PENALTY_TANGENT_AT_EXACT_PATCH_ONLY",
+      "scope": "No source change, solve, acceptance, physiological preference or mesh convergence claim."
+    },
+    {
+      "level": "fine",
+      "lowestHypotheticalPointwiseEigenvalueNPerM": 0.36403335308830526,
+      "negativeEigenvalueCount": 0,
+      "minimumProjectionComplementEigenvalueNPerM": -3.8297035194464954e-11,
+      "label": "HYPOTHETICAL_ORIGINAL_POINTWISE_PENALTY_TANGENT_AT_EXACT_PATCH_ONLY",
+      "scope": "No source change, solve, acceptance, physiological preference or mesh convergence claim."
+    }
+  ]
+}

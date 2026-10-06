@@ -1,0 +1,20 @@
+START fine
+Traceback (most recent call last):
+  File "/workspace/kenoma-pressure-diagnosis/education/tools/diagnose_pressure_residual.py", line 137, in <module>
+    main()
+  File "/workspace/kenoma-pressure-diagnosis/education/tools/diagnose_pressure_residual.py", line 119, in main
+    sensitivity=sensitivity(body, x, analytic_x),
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/kenoma-pressure-diagnosis/education/tools/diagnose_pressure_residual.py", line 83, in sensitivity
+    proposalMetrics=metrics(body, proposal),
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/kenoma-pressure-diagnosis/education/tools/diagnose_pressure_residual.py", line 33, in metrics
+    r = body.evaluate(x)
+        ^^^^^^^^^^^^^^^^
+  File "/workspace/kenoma-pressure-diagnosis/education/tools/source_amplitude_p2_p1.py", line 48, in evaluate
+    result = super().evaluate(x, hessian)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/kenoma-pressure-diagnosis/education/tools/full_p2_p1.py", line 129, in evaluate
+    if np.any(J<=1e-6) or not np.isfinite(J).all(): raise ValueError('Positive finite geometry guard')
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Positive finite geometry guard

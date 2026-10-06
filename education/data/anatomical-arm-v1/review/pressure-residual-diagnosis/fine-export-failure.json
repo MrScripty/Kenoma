@@ -1,0 +1,16 @@
+{
+  "result": "DIAGNOSTIC_EXPORT_EXCEPTION_NO_ACCEPTANCE",
+  "solverReturnedBeforeException": true,
+  "terminalReceiptUnavailableFromFirstAttempt": true,
+  "exception": "ValueError: Positive finite geometry guard",
+  "site": "sensitivity -> metrics -> ExplicitBody.evaluate -> Body.evaluate",
+  "cause": "Unaccepted post-stop Newton proposal; first runner wrote terminal output only after optional diagnostics.",
+  "recovery": "One deterministic identical-budget fine execution, write terminal receipt immediately; skip optional unaccepted fine sensitivity proposal.",
+  "originalFineRequestSHA256": "6315a655a7dbe53b06621fc3a4d96ae1ed7bab80f063bbc53e0d574b04c1b11b",
+  "rawLogSHA256": "84609a95e994b5ae0bee2e5c08934d8715898d471389e4f29c473a7586381023",
+  "originalRunnerSHA256": "48f71d2b11b37edba7b87275d09e74ca8d0aa340ac7e9f28464dd74e6aa0d99a",
+  "originalMaxIterations": 80,
+  "originalBacktracking": 24,
+  "thresholdsChanged": false,
+  "originalCoarseRejectionChanged": false
+}
