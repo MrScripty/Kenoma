@@ -1,0 +1,15 @@
+CASE {"savedState":"prism-full","normalization":"current-authored","isochoric":false,"optimalStretch":1,"normalizedActiveStretch":1.0000000000002367,"fullPa":999.9999999995639,"constrainedPa":999.999999999612,"physicalAcceptance":"NONE: frozen diagnostic only"}
+CASE {"savedState":"prism-full","normalization":"current-authored","isochoric":true,"optimalStretch":1,"normalizedActiveStretch":1.000000000000111,"fullPa":-913863.8600302866,"constrainedPa":999.9999999996487,"physicalAcceptance":"NONE: frozen diagnostic only"}
+CASE {"savedState":"prism-full","normalization":"Blemker-reference-benchmark","isochoric":false,"optimalStretch":1.4,"normalizedActiveStretch":0.7142857142858834,"fullPa":999.9999999996004,"constrainedPa":999.9999999996062,"physicalAcceptance":"NONE: frozen diagnostic only"}
+CASE {"savedState":"prism-full","normalization":"Blemker-reference-benchmark","isochoric":true,"optimalStretch":1.4,"normalizedActiveStretch":0.7142857142857937,"fullPa":999.9999999996746,"constrainedPa":999.999999999691,"physicalAcceptance":"NONE: frozen diagnostic only"}
+file:///workspace/Kenoma-refinement-diagnosis/education/tools/reference-active-experiment.mjs:14
+  for(const h of [1e-6,5e-7]){const plus=activeReferenceDiagnostic(F.map((v,i)=>v+h*D[i]),f,a,p,{optimalStretch,isochoric}),minus=activeReferenceDiagnostic(F.map((v,i)=>v-h*D[i]),f,a,p,{optimalStretch,isochoric}),fd=[0,1,2].map(i=>dot(plus.P.slice(3*i,3*i+3).map((v,j)=>(v-minus.P[3*i+j])/(2*h)),m)),relativeError=norm(fd.map((v,i)=>v-Qu[i]))/Math.max(1,norm(Qu));if(relativeError>1e-4)throw Error('Frozen prototype derivative failure '+saved.name+' '+normalization+' '+relativeError);const determinantDifference=Math.max(Math.abs(plus.J-r.J),Math.abs(minus.J-r.J));if(determinantDifference>1e-12*Math.max(1,r.J))throw Error('Not exactly determinant-preserving rank-one path');probes.push({step:h,relativeVectorError:relativeError,rayleighPa:dot(u,fd),determinantDifference});}
+                                                                                                                                                                                                                                                                                                                                                                                                        ^
+
+Error: Frozen prototype derivative failure prism-full Arm26-centerline-proxy 0.0007008118213829305
+    at file:///workspace/Kenoma-refinement-diagnosis/education/tools/reference-active-experiment.mjs:14:393
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.19.0

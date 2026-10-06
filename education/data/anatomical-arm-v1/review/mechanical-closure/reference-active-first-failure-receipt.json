@@ -1,0 +1,11 @@
+{
+  "result": "PRESERVED_PRE_REPAIR_DERIVATIVE_GATE_REJECTION",
+  "sourceCommit": "9ca8388d105fe1f644ecf92fa163420b5c49a16e",
+  "sourceSHA256": {
+    "tools/reference-active-experiment.mjs": "46c7fed8e9c185277aa997c6e5805eebeae3a5a65f06144675965ba2f814d33a",
+    "tools/reference-active-diagnostic.mjs": "0f5d4bc598309dec2f9466f31dbb0a67e8141202ed865c8a7241681906d68270",
+    "research/mechanical-closure/protocol.md": "51f5f4c5ea50e08122b03c99d930cf23f0ade81dda44b6761d11869b254594b1"
+  },
+  "executionLogSHA256": "c3596e4657fbf49eb49d1a797ff2219826662b8cb44c90680c4d16892ea10460",
+  "failure": "Centered derivative crosses the passive tension cutoff at saved prism lambda within roundoff of 1; no state advanced. Gate not relaxed."
+}
