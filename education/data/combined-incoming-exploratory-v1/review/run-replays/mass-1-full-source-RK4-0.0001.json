@@ -1,0 +1,14 @@
+{
+  "result_sha256": "77398a2a1741134e054e8489803956b087b30a260dfe6cdcc5b92b9bfdfefc9f",
+  "verifier_sha256": "16d38305a6a4958e5c8da263ae1dd38a67a84b9d90e61b44d2e1bd68e0f52d1a",
+  "replay": {
+    "accepted_polynomials": 2623,
+    "independently_recomputed_RK_stage_rates": 10492,
+    "RK_coefficients_error": 1.3553572153188978e-14,
+    "chain_error": 2.220446049250313e-16,
+    "grid_error": 1.9567680809018384e-15,
+    "reproduced_grid_states": 262,
+    "endpoint_error": 0.0,
+    "frozen_I_polynomial_coefficients": 0.0
+  }
+}

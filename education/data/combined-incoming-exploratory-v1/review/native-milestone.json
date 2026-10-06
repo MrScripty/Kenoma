@@ -1,0 +1,518 @@
+{
+  "scope": "Six native-source incoming cells only; twelve-run matrix still incomplete at this milestone",
+  "source_freeze_commit": "44783cb668a3250076e086e862bd5af48811b34e",
+  "completed_native_cells": 6,
+  "required_total_cells": 12,
+  "full_matrix_complete": false,
+  "checks": {
+    "RK4-0.0002": {
+      "passed": true,
+      "issues": [],
+      "missing_grid_times": [],
+      "dense_grid_samples": 262,
+      "dense_grid_error": 1.9567680809018384e-15,
+      "event_polynomial_error": 0.0,
+      "exact_restart_error": 0.0,
+      "restarts": [
+        {
+          "kind": "activation-equality",
+          "time": 0.002427392541537244,
+          "all_eleven_coordinates_retained": true,
+          "restart_error": 0.0,
+          "saved_error": 0.0,
+          "incoming_activation_branch": "activation",
+          "incoming_controller_mode": "integrating",
+          "pending_remainder_end": null
+        },
+        {
+          "kind": "ordinary-outward",
+          "time": 0.10788313176584269,
+          "all_eleven_coordinates_retained": true,
+          "restart_error": 0.0,
+          "saved_error": 0.0,
+          "incoming_activation_branch": "deactivation",
+          "incoming_controller_mode": "integrating",
+          "pending_remainder_end": null
+        },
+        {
+          "kind": "ordinary-inward",
+          "time": 0.2498827265709646,
+          "all_eleven_coordinates_retained": true,
+          "restart_error": 0.0,
+          "saved_error": 0.0,
+          "incoming_activation_branch": "deactivation",
+          "incoming_controller_mode": "frozen",
+          "pending_remainder_end": null
+        }
+      ],
+      "frozen_I_change": 0.0,
+      "independent_force_replay_error_N": 1.1475265182525618e-12,
+      "balances": {
+        "passed": true,
+        "work_momentum_errors": {
+          "fiber_J": 3.545913562774672e-13,
+          "tendon_J": 3.5273225312826284e-12,
+          "load_J": 7.270978524126503e-13,
+          "combined_J": 2.9735866546864997e-12,
+          "momentum_N_s": 0.0,
+          "power_ledger_J": 1.6744765296561326e-13
+        },
+        "source_force_residual_N": 1.1475265182525618e-12,
+        "independent_normal_disagreement_per_s": 2.3771873358668927e-10,
+        "independent_tangent_residual_per_s": 0.0,
+        "max_sliding_constraint": 0.0,
+        "physical_and_strict_sign_bounds_passed": true,
+        "quadrature": {
+          "integrals": [
+            -0.11021534390217369,
+            0.06239513222871135,
+            -0.2531451967522846,
+            0.07685841944541338,
+            0.003676301175986473,
+            0.10358069374628845
+          ],
+          "errors": [
+            1.721618680949888e-11,
+            7.804590307358694e-12,
+            6.592171253316792e-12,
+            2.9655167210762556e-11,
+            1.1059108490085734e-11,
+            3.492109379443775e-11
+          ],
+          "passed": true,
+          "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+        },
+        "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+      },
+      "accepted_intervals": 1313,
+      "accepted_stage_records_retained": true,
+      "qualified": false
+    },
+    "RK4-0.0001": {
+      "passed": true,
+      "issues": [],
+      "missing_grid_times": [],
+      "dense_grid_samples": 262,
+      "dense_grid_error": 1.9567680809018384e-15,
+      "event_polynomial_error": 7.703719777548943e-34,
+      "exact_restart_error": 0.0,
+      "restarts": [
+        {
+          "kind": "activation-equality",
+          "time": 0.0024273925959008755,
+          "all_eleven_coordinates_retained": true,
+          "restart_error": 0.0,
+          "saved_error": 0.0,
+          "incoming_activation_branch": "activation",
+          "incoming_controller_mode": "integrating",
+          "pending_remainder_end": null
+        },
+        {
+          "kind": "ordinary-outward",
+          "time": 0.10788313180712547,
+          "all_eleven_coordinates_retained": true,
+          "restart_error": 0.0,
+          "saved_error": 0.0,
+          "incoming_activation_branch": "deactivation",
+          "incoming_controller_mode": "integrating",
+          "pending_remainder_end": null
+        },
+        {
+          "kind": "ordinary-inward",
+          "time": 0.24988272677237988,
+          "all_eleven_coordinates_retained": true,
+          "restart_error": 0.0,
+          "saved_error": 0.0,
+          "incoming_activation_branch": "deactivation",
+          "incoming_controller_mode": "frozen",
+          "pending_remainder_end": null
+        }
+      ],
+      "frozen_I_change": 0.0,
+      "independent_force_replay_error_N": 1.1883827255587676e-12,
+      "balances": {
+        "passed": true,
+        "work_momentum_errors": {
+          "fiber_J": 2.6645352591003757e-14,
+          "tendon_J": 2.017830347256222e-13,
+          "load_J": 1.1092776003307492e-13,
+          "combined_J": 8.31073520061199e-14,
+          "momentum_N_s": 0.0,
+          "power_ledger_J": 1.6737392721788424e-13
+        },
+        "source_force_residual_N": 1.1883827255587676e-12,
+        "independent_normal_disagreement_per_s": 2.382575664539033e-10,
+        "independent_tangent_residual_per_s": 0.0,
+        "max_sliding_constraint": 0.0,
+        "physical_and_strict_sign_bounds_passed": true,
+        "quadrature": {
+          "integrals": [
+            -0.11021534450710169,
+            0.062395131799035886,
+            -0.25314519701389,
+            0.07685841946670999,
+            0.0036763012410425747,
+            0.10358069244078366
+          ],
+          "errors": [
+            9.370976217226712e-13,
+            8.663902928418565e-14,
+            4.983791157542328e-13,
+            2.248562447348945e-12,
+            1.729114247617236e-12,
+            4.29850599559245e-12
+          ],
+          "passed": true,
+          "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+        },
+        "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+      },
+      "accepted_intervals": 2623,
+      "accepted_stage_records_retained": true,
+      "qualified": false
+    },
+    "RK4-0.00005": {
+      "passed": true,
+      "issues": [],
+      "missing_grid_times": [],
+      "dense_grid_samples": 262,
+      "dense_grid_error": 1.9567680809018384e-15,
+      "event_polynomial_error": 0.0,
+      "exact_restart_error": 0.0,
+      "restarts": [
+        {
+          "kind": "activation-equality",
+          "time": 0.0024273925907605316,
+          "all_eleven_coordinates_retained": true,
+          "restart_error": 0.0,
+          "saved_error": 0.0,
+          "incoming_activation_branch": "activation",
+          "incoming_controller_mode": "integrating",
+          "pending_remainder_end": null
+        },
+        {
+          "kind": "ordinary-outward",
+          "time": 0.10788313180486844,
+          "all_eleven_coordinates_retained": true,
+          "restart_error": 0.0,
+          "saved_error": 0.0,
+          "incoming_activation_branch": "deactivation",
+          "incoming_controller_mode": "integrating",
+          "pending_remainder_end": null
+        },
+        {
+          "kind": "ordinary-inward",
+          "time": 0.249882726629811,
+          "all_eleven_coordinates_retained": true,
+          "restart_error": 0.0,
+          "saved_error": 0.0,
+          "incoming_activation_branch": "deactivation",
+          "incoming_controller_mode": "frozen",
+          "pending_remainder_end": null
+        }
+      ],
+      "frozen_I_change": 0.0,
+      "independent_force_replay_error_N": 1.1439738045737613e-12,
+      "balances": {
+        "passed": true,
+        "work_momentum_errors": {
+          "fiber_J": 3.191891195797325e-15,
+          "tendon_J": 2.0022178359724307e-14,
+          "load_J": 1.3156142841808105e-14,
+          "combined_J": 1.6460444118848727e-13,
+          "momentum_N_s": 0.0,
+          "power_ledger_J": 1.6863073437622944e-13
+        },
+        "source_force_residual_N": 1.1439738045737613e-12,
+        "independent_normal_disagreement_per_s": 2.384513142494882e-10,
+        "independent_tangent_residual_per_s": 0.0,
+        "max_sliding_constraint": 0.0,
+        "physical_and_strict_sign_bounds_passed": true,
+        "quadrature": {
+          "integrals": [
+            -0.11021534409268659,
+            0.06239513210896578,
+            -0.2531451968288037,
+            0.07685841942709913,
+            0.0036763012000517814,
+            0.10358069334818237
+          ],
+          "errors": [
+            2.5462965069777965e-13,
+            4.406405795798207e-13,
+            4.157785227221211e-14,
+            4.1687486795893847e-13,
+            9.857158492221352e-13,
+            4.861111513321248e-13
+          ],
+          "passed": true,
+          "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+        },
+        "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+      },
+      "accepted_intervals": 5243,
+      "accepted_stage_records_retained": true,
+      "qualified": false
+    },
+    "RK4-0.000025": {
+      "passed": true,
+      "issues": [],
+      "missing_grid_times": [],
+      "dense_grid_samples": 262,
+      "dense_grid_error": 2.220446049250313e-16,
+      "event_polynomial_error": 0.0,
+      "exact_restart_error": 0.0,
+      "restarts": [
+        {
+          "kind": "activation-equality",
+          "time": 0.0024273925888116717,
+          "all_eleven_coordinates_retained": true,
+          "restart_error": 0.0,
+          "saved_error": 0.0,
+          "incoming_activation_branch": "activation",
+          "incoming_controller_mode": "integrating",
+          "pending_remainder_end": null
+        },
+        {
+          "kind": "ordinary-outward",
+          "time": 0.10788313180463499,
+          "all_eleven_coordinates_retained": true,
+          "restart_error": 0.0,
+          "saved_error": 0.0,
+          "incoming_activation_branch": "deactivation",
+          "incoming_controller_mode": "integrating",
+          "pending_remainder_end": null
+        },
+        {
+          "kind": "ordinary-inward",
+          "time": 0.24988272667469527,
+          "all_eleven_coordinates_retained": true,
+          "restart_error": 0.0,
+          "saved_error": 0.0,
+          "incoming_activation_branch": "deactivation",
+          "incoming_controller_mode": "frozen",
+          "pending_remainder_end": null
+        }
+      ],
+      "frozen_I_change": 0.0,
+      "independent_force_replay_error_N": 1.149302875091962e-12,
+      "balances": {
+        "passed": true,
+        "work_momentum_errors": {
+          "fiber_J": 5.023759186428833e-15,
+          "tendon_J": 6.7888403232352346e-15,
+          "load_J": 1.9984014443252818e-15,
+          "combined_J": 1.6644324807302269e-13,
+          "momentum_N_s": 0.0,
+          "power_ledger_J": 1.6716662776250502e-13
+        },
+        "source_force_residual_N": 1.149302875091962e-12,
+        "independent_normal_disagreement_per_s": 2.380535629731284e-10,
+        "independent_tangent_residual_per_s": 0.0,
+        "max_sliding_constraint": 0.0,
+        "physical_and_strict_sign_bounds_passed": true,
+        "quadrature": {
+          "integrals": [
+            -0.11021392045432815,
+            0.06239734117074993,
+            -0.2531236125111797,
+            0.07683804193152614,
+            0.003674308954576817,
+            0.10354394601324465
+          ],
+          "errors": [
+            3.071987109137808e-13,
+            3.1002284073267106e-13,
+            1.1102230246251565e-16,
+            9.592326932761353e-14,
+            5.447157482019183e-13,
+            6.5780714209040525e-15
+          ],
+          "passed": true,
+          "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+        },
+        "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+      },
+      "accepted_intervals": 10484,
+      "accepted_stage_records_retained": true,
+      "qualified": false
+    },
+    "DOP853": {
+      "passed": true,
+      "issues": [],
+      "missing_grid_times": [],
+      "dense_grid_samples": 261,
+      "dense_grid_error": 2.220446049250313e-16,
+      "event_polynomial_error": 0.0,
+      "exact_restart_error": 0.0,
+      "restarts": [
+        {
+          "kind": "activation-equality",
+          "time": 0.002427392588793021,
+          "all_eleven_coordinates_retained": true,
+          "restart_error": 0.0,
+          "saved_error": 0.0,
+          "incoming_activation_branch": "activation",
+          "incoming_controller_mode": "integrating",
+          "pending_remainder_end": null
+        },
+        {
+          "kind": "ordinary-outward",
+          "time": 0.10788313180375458,
+          "all_eleven_coordinates_retained": true,
+          "restart_error": 0.0,
+          "saved_error": 0.0,
+          "incoming_activation_branch": "deactivation",
+          "incoming_controller_mode": "integrating",
+          "pending_remainder_end": null
+        },
+        {
+          "kind": "ordinary-inward",
+          "time": 0.24988272667355135,
+          "all_eleven_coordinates_retained": true,
+          "restart_error": 0.0,
+          "saved_error": 0.0,
+          "incoming_activation_branch": "deactivation",
+          "incoming_controller_mode": "frozen",
+          "pending_remainder_end": null
+        }
+      ],
+      "frozen_I_change": 0.0,
+      "independent_force_replay_error_N": 9.166001291305292e-13,
+      "balances": {
+        "passed": true,
+        "work_momentum_errors": {
+          "fiber_J": 2.4980018054066022e-15,
+          "tendon_J": 1.2871648191747909e-15,
+          "load_J": 3.3306690738754696e-16,
+          "combined_J": 1.7277151931338608e-13,
+          "momentum_N_s": 5.551115123125783e-17,
+          "power_ledger_J": 1.7079046510382057e-13
+        },
+        "source_force_residual_N": 9.166001291305292e-13,
+        "independent_normal_disagreement_per_s": 2.3852926578360467e-10,
+        "independent_tangent_residual_per_s": 0.0,
+        "max_sliding_constraint": 0.0,
+        "physical_and_strict_sign_bounds_passed": true,
+        "quadrature": {
+          "integrals": [
+            -0.11022202726744595,
+            0.062384750961313594,
+            -0.2532466037558961,
+            0.07695415161526342,
+            0.003685673911873548,
+            0.10375255059478333
+          ],
+          "errors": [
+            3.495398415154227e-13,
+            3.7674724451264296e-13,
+            1.2212453270876722e-15,
+            1.0720591081536668e-13,
+            6.636219351818795e-13,
+            1.4904744105592727e-14
+          ],
+          "passed": true,
+          "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+        },
+        "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+      },
+      "accepted_intervals": 526,
+      "accepted_stage_records_retained": true,
+      "qualified": false
+    },
+    "Radau": {
+      "passed": true,
+      "issues": [],
+      "missing_grid_times": [],
+      "dense_grid_samples": 261,
+      "dense_grid_error": 2.220446049250313e-16,
+      "event_polynomial_error": 0.0,
+      "exact_restart_error": 0.0,
+      "restarts": [
+        {
+          "kind": "activation-equality",
+          "time": 0.0024273926057999952,
+          "all_eleven_coordinates_retained": true,
+          "restart_error": 0.0,
+          "saved_error": 0.0,
+          "incoming_activation_branch": "activation",
+          "incoming_controller_mode": "integrating",
+          "pending_remainder_end": null
+        },
+        {
+          "kind": "ordinary-outward",
+          "time": 0.10788313180418752,
+          "all_eleven_coordinates_retained": true,
+          "restart_error": 0.0,
+          "saved_error": 0.0,
+          "incoming_activation_branch": "deactivation",
+          "incoming_controller_mode": "integrating",
+          "pending_remainder_end": null
+        },
+        {
+          "kind": "ordinary-inward",
+          "time": 0.24988272665963474,
+          "all_eleven_coordinates_retained": true,
+          "restart_error": 0.0,
+          "saved_error": 0.0,
+          "incoming_activation_branch": "deactivation",
+          "incoming_controller_mode": "frozen",
+          "pending_remainder_end": null
+        }
+      ],
+      "frozen_I_change": 0.0,
+      "independent_force_replay_error_N": 1.3304912727107876e-12,
+      "balances": {
+        "passed": true,
+        "work_momentum_errors": {
+          "fiber_J": 3.0510732829114318e-12,
+          "tendon_J": 5.767177100463039e-13,
+          "load_J": 3.707478768433248e-12,
+          "combined_J": 1.8105647189847751e-12,
+          "momentum_N_s": 5.421010862427522e-20,
+          "power_ledger_J": 1.666735326144586e-13
+        },
+        "source_force_residual_N": 1.3304912727107876e-12,
+        "independent_normal_disagreement_per_s": 2.3840028562371884e-10,
+        "independent_tangent_residual_per_s": 0.0,
+        "max_sliding_constraint": 0.0,
+        "physical_and_strict_sign_bounds_passed": true,
+        "quadrature": {
+          "integrals": [
+            -0.11021754100893502,
+            0.06239172170696613,
+            -0.2531785141624914,
+            0.07688987314534575,
+            0.0036793783012439817,
+            0.1036372998710745
+          ],
+          "errors": [
+            3.7624070525765774e-13,
+            1.3877787807814457e-16,
+            1.4654943925052066e-14,
+            5.507400091531167e-13,
+            6.464880714096566e-15,
+            3.107084034503771e-12
+          ],
+          "passed": true,
+          "scope": "GL8 on actual method dense polynomials, accepted intervals only; independent BPoly/Brent powers"
+        },
+        "scope": "Only accepted history; algebraic/ledger validity of a stopped prefix does not imply completion"
+      },
+      "accepted_intervals": 600,
+      "accepted_stage_records_retained": true,
+      "qualified": false
+    }
+  },
+  "input_sha256": {
+    "education/data/combined-incoming-exploratory-v1/review/mass-1-full-source-RK4-0.0002.json": "1fee0dfa6d9d011a687fa3159794bb55d5ffde30226d399b49b3a0ba88aff0e2",
+    "education/data/combined-incoming-exploratory-v1/review/mass-1-full-source-RK4-0.0001.json": "77398a2a1741134e054e8489803956b087b30a260dfe6cdcc5b92b9bfdfefc9f",
+    "education/data/combined-incoming-exploratory-v1/review/mass-1-full-source-RK4-0.00005.json": "719080978d7ee5005bccfbaf53eb5eba1117d5c102b95f96cdca0139742acf9c",
+    "education/data/combined-incoming-exploratory-v1/review/mass-1-full-source-RK4-0.000025.json": "c903893cf07188339ec8515d4986884fe97242a3b8dc987df6936570b91da179",
+    "education/data/combined-incoming-exploratory-v1/review/mass-1-full-source-DOP853.json": "e4ec262d3120e4ee363c2ee1464e0bed521881dd33c8babd3bb59c5319707936",
+    "education/data/combined-incoming-exploratory-v1/review/mass-1-full-source-Radau.json": "88f60107d246c0acd3d14cdca187cfe64ad521007c2233890e2aea994fcda640"
+  },
+  "historical_review_limitation": "Full independent raw replay of activation-only evidence remains incomplete because owner download was canceled. Original source semantics and compact receipts have independent scoped acceptance. Owner removed only the extra prerequisite for exploratory execution, with every numerical/physical acceptance condition unchanged. No transfer retry/reroute; no full qualification.",
+  "independent_raw_replay_complete": false,
+  "qualified": false
+}
