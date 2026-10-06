@@ -1,0 +1,162 @@
+{
+  "schema": "kenoma.source-unit-calibration-packet.v1",
+  "frozenBase": "bc4f24a2ea72af3a0a4f1bf7b270ec9f3fe999bf",
+  "protocolCommit": "a1078e07b9bee1936d775a463dd4b659a8067d74",
+  "physicalCalibrationSelected": false,
+  "files": [
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/architecture-facts.json",
+      "bytes": 6807,
+      "sha256": "e80730ecbb896119268967371ddfed8ed58ab6be3fba4d6b7ea32a2981f1fa81"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/code-unit-facts.json",
+      "bytes": 17124,
+      "sha256": "b219435903612766aab1998c0fc2c7c72b33fa9f1248693680fae50f87c8726f"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/conditional-unit-contract-v2.pdf",
+      "bytes": 31560,
+      "sha256": "c543cb3431c9e26859b32a96f2f414b27c12f7401173bb271d7d2c1d89248093"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/conditional-unit-contract-v2.pdf-raster.png",
+      "bytes": 109535,
+      "sha256": "f3708345b4423fe01fdafbe428dcdd71285d92c7c90ac3a8461932a19b593670"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/conditional-unit-contract-v2.png",
+      "bytes": 221326,
+      "sha256": "c53dfdbfeb7cbac59d7d3a905b803647083b3b150aa7f334249d1058ce3547c1"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/conditional-unit-contract.pdf",
+      "bytes": 32272,
+      "sha256": "5492beb3456645943d5b6c1927db0dcbfad54ebc9b0ab7cb525e7f1672b88fad"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/conditional-unit-contract.pdf-raster.png",
+      "bytes": 108445,
+      "sha256": "4e07318e5deaeeae9043a14d0591525dd62cf01a1e6333ce5762e1c63ad252a0"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/conditional-unit-contract.png",
+      "bytes": 218749,
+      "sha256": "57c917a2a3791ba9a4416199e855f7b19679a681f9568da23bb060420544f982"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/measured-fiber-calibration-source-review.md",
+      "bytes": 9785,
+      "sha256": "d4a509fe8ed673d5a653b505ee4fa50d5ec0ae7e2070216a02a917ba9787b919"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/measured-fiber-facts.json",
+      "bytes": 6182,
+      "sha256": "a69d205568912515ebcfa7860d6fa3856cbb8273365f7589ab39e1aad6ca336f"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/original-publication-access-receipt.json",
+      "bytes": 2167,
+      "sha256": "c417a8f86b3ea365e98b0fe8475a1808a819acf7143b53c5631a1ca248ee86e6"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/pre-execution-static-review.json",
+      "bytes": 782,
+      "sha256": "b29009d1a25e957619503384be9f65d5c5fb7debe94bb1f3cf482b3b5e4a3ec4"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/render-execution.json",
+      "bytes": 575,
+      "sha256": "8d56d3e56f17a9210a0a969e452fb77080682a3c2e9951354b1a5cdb60677994"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/render-v2-execution.json",
+      "bytes": 691,
+      "sha256": "9c6835078b57e8ebbab1e55865854e527526cc80c687277780559e983db7d21c"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/render-v2.raw.log",
+      "bytes": 372,
+      "sha256": "96a1f9ddf74d81e07358bb4ed6194116a93af755a6793f76920b5af79ca1bdef"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/render-visual-inspection-v1.json",
+      "bytes": 377,
+      "sha256": "c5c9a7bacf19c998c9efa19a663fe9a43770f86db06c74a721f498adae981a00"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/render-visual-inspection-v2.json",
+      "bytes": 345,
+      "sha256": "120bd14d37122fd5031658fbdd6417794601afa8bd486b3450bcbafdeb6ae31c"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/render.raw.log",
+      "bytes": 356,
+      "sha256": "5aeb82fbc8b34c416a82ccd66eccf8811c626f0e233c682c1dace0b9db9ce0c5"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/symbolic-unit-audit.json",
+      "bytes": 3739,
+      "sha256": "65098b55bcb6fb432f271a681bb261432346bc3a4ee26f00763acc183f5c2cde"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/symbolic-unit-audit.raw.log",
+      "bytes": 3387,
+      "sha256": "5a3c1484926aff0c1db311fa0848ab3d2b7d0ea5a9e4362fc37b50e1adce9379"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/review/source-unit-calibration/symbolic-unit-execution.json",
+      "bytes": 673,
+      "sha256": "b9e6ded690ae7285c4b8744ffc96347b09d3417d89ac115592a506b08dbf9187"
+    },
+    {
+      "path": "education/research/mechanical-closure/pinned-source-unit-review.md",
+      "bytes": 10987,
+      "sha256": "1a495ad1632ceff7d2d351af12b80fdbb7cea2339573593a71ea7c68af2db07f"
+    },
+    {
+      "path": "education/research/mechanical-closure/source-unit-architecture-review.md",
+      "bytes": 12521,
+      "sha256": "5414bfa5b7e31d1aaea9575bbedc817f803727018fb9a87b8b2ae395664b8a8e"
+    },
+    {
+      "path": "education/research/mechanical-closure/source-unit-calibration-decision.md",
+      "bytes": 7809,
+      "sha256": "1aae813337468e98466f6c48defcbac1cd90406e21931bdefb71e2e14f5a7b00"
+    },
+    {
+      "path": "education/research/mechanical-closure/source-unit-calibration-protocol.md",
+      "bytes": 6679,
+      "sha256": "bcbffb9e6a00fd8c6ec126feb2029ca6ec094d39617c08363cd0df1f6954a29b"
+    },
+    {
+      "path": "education/research/mechanical-closure/source-unit-calibration-results.md",
+      "bytes": 4014,
+      "sha256": "d627e55913ba52f5730f75ede20a06049fd4eea6fcc99a45d83dec58e2c0af8c"
+    },
+    {
+      "path": "education/tools/audit_source_units_and_identifiability.py",
+      "bytes": 8968,
+      "sha256": "c58dae4d5f745299d795b9511cde15272dc4330541b53bb7badaa1ffa8355486"
+    },
+    {
+      "path": "education/tools/check_source_unit_calibration_packet.py",
+      "bytes": 3770,
+      "sha256": "8d02382928d9310787757dab1b12ecfbd41c8e44083071c74234e5d387610908"
+    },
+    {
+      "path": "education/tools/render_source_unit_contract.py",
+      "bytes": 3174,
+      "sha256": "a472285d214c4b29c35739dac35f6645246d2d765db0774438b796a1f84dc112"
+    },
+    {
+      "path": "education/tools/render_source_unit_contract_v2.py",
+      "bytes": 3185,
+      "sha256": "368b8d9a832ac868322d0b90f985fccd65d096deb66a7db7667bb618a8375cdf"
+    }
+  ],
+  "exclusions": [
+    "manifest itself",
+    "subsequent read-only checker raw output/execution receipt"
+  ]
+}

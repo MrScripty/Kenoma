@@ -1,0 +1,12 @@
+{
+  "command": [
+    "python",
+    "education/tools/check_source_unit_calibration_packet.py"
+  ],
+  "sourceSHA256": "8d02382928d9310787757dab1b12ecfbd41c8e44083071c74234e5d387610908",
+  "startedUTC": "2026-10-06T09:13:52.813582+00:00",
+  "wallTimeSeconds": 0.0500847689982038,
+  "exitCode": 0,
+  "symbolicAuditReplayed": false,
+  "kineticOrAnatomicalSolveExecuted": false
+}
