@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "kind": "independent-material-review-delivery",
+  "source_revision": "baf27f620effbdf9df16d5b5b32b8c401f1a3db8",
+  "proofSourceSHA256": "8ce7f4b5bf4b68f9eeb0d85b06925f417995f945b64498a4533347ead1864092",
+  "reviewScope": "Independent material-response review. This lesson and its five Std contracts are executed freshly; this is not a rebuilt or qualified full-book release.",
+  "frozenBranches": {
+    "education/teaching-control-repairs": "1ddebd8d4d8c3d4b723084e7fbe29b25b051e030",
+    "education/measurement-first-progression": "8e6dbf197789dd1d0ee48dca01243788b8b0ca22"
+  },
+  "tests": {
+    "node": 148,
+    "python": 24,
+    "newMaterialNode": 7,
+    "freshMaterialLean": 5,
+    "actualBrowser": "PASS_MATERIAL_PREVIEW_BROWSER",
+    "artifactBinding": "PASS_MATERIAL_SOURCE_PROOF_EXPERIMENT_BROWSER_BINDING"
+  },
+  "remainingQualification": "Complete book build stopped at absent .tools/mathlib4 after the existing 25 Std declarations compiled. Full fresh CI before merge/release. No global-optimality or biological claim.",
+  "sha256": {
+    "material-experiment.json": "1510ffe15a03b4cf7d76261f218de6e75eaaed527c3a2619a4bc6e2f5b36f66e",
+    "material-lean-check.txt": "8e5de7631cc083b321ed0722f0e5ac87f69b3911377b974a23ecefb32b017f0a",
+    "material-preview-manifest.json": "8cbd98e66683ad9f67c7050a9fab58dce41eb69123370b8e0237fee8784b540f",
+    "material-proof-status.json": "fcf12ffb8a482f610ba2ab0f0009b214a672ee82d7c302f570502a2ca0ebdfc8",
+    "material-response-portable.zip": "feb5f21a06e601ee4be845b79b987b5b1f2db09d0c1d2c027f4d677bf3feee0a",
+    "material-response.md": "2af42a852eca764e76354a801fcd906edb8eb80ffbb24969093c7bcaba75284c",
+    "material-response.pdf": "894ee4763558cc19978cf2418c763f3df5a037832022d48408c704922a65a223"
+  },
+  "review_sha256": {
+    "PR.md": "b0d3b4f902d4966c5c10e4c0751e837da1156042996685d460af9fcd3e03aa9c",
+    "README.md": "b390cf9a35c9d98aa0358868090c69aaba93de6b004d951b340a17333cd7edb4",
+    "artifact-gate.txt": "7fcfc59fcc039bb22d6c3e1b78c14eaa4f4baa5ca35aa0822b08af2cc4d4c08f",
+    "browser-tests.txt": "9a7ecdd3dc349aa97d0986f7f4b2becee1daba7d1fbfc35453126b4e35bde420",
+    "full-book-build-attempt.txt": "3b51fe9fd7a950abd7b4c90c75c4ed03fffc3240841d3965571b8024c5723750",
+    "node-tests.txt": "6a13981ec75621c2a43b46d7d8a618e9e2f63f949c360414e7fb6d9e2c62fb90",
+    "python-tests.txt": "632e192aad2f6c8592cb326f5966e349ed27fa9d8bb2a71be2a28fadd055962b",
+    "qualification/appearance-review.json": "d559b2d2152ae0fcc62e30d8734203a882af1893d0ca798707c5335e9b3ce30d",
+    "qualification/browser-check.json": "c83108300d4025f2abb910a1249a03a782aaed986703c7deef4e7ed8544fd029",
+    "qualification/coarse-desktop.png": "4229852284705b7a5cb12302b1ba007aa16355354f155a047b0e5de950942eae",
+    "qualification/controls-desktop.png": "4e81106b0e014a2a68b02a4017c589ef8451d01172953b5324f4c8a6048d6fc4",
+    "qualification/default-desktop.png": "4e05b6fdccd152ebd619f6e6cee5c55bc46d00c6a2d28564e2af9d6438170e7b",
+    "qualification/default-mobile.png": "ec630c7c5da986e93db5b510d3d4ffd0deebe00d346357c0c85e9334b5c4211a",
+    "qualification/high-bulk-desktop.png": "0c8f35fb9526a4244f475a51e0714415334a6cf082bdc434aee26269dbc2b3bd",
+    "qualification/observed.json": "36a7063112d58ea040dd44143d03ae2f3f2c26771db0d404cba3e812e65e5025",
+    "qualification/pdf-page-2.png": "8ae5bc8a7dfa9ba9175f67ff27b186deb41e6e266a9ac94cd2ecd12237ae2a1b",
+    "qualification/pdf-page-3.png": "10c72f928bdafc087ec8c64092418122f5da44318630fd8c697aec3aedf11dbb",
+    "qualification/pdf-page-7.png": "9632cc011a3b5e097da4a6698c33ddfbe6f493b6ba4dc4a061abec5c8afb2b60",
+    "qualification/readout-desktop.png": "fbd5af906cfbcf14eef23e60be0ad3d5fea7df5a04ff9b56dcc256bd7b0e955c",
+    "qualification/weak-bulk-desktop.png": "14422a176c7c5e7ce49a1721403769365c3ff378b1780ed3c590a21c6953ae01",
+    "qualification/zero-bulk-desktop.png": "c17bdc63ba2bfdf266a9548f9cb4562400d961f7df2ea1017150fd33fb2ce02a"
+  }
+}
