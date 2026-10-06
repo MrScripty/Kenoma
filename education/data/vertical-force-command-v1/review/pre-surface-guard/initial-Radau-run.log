@@ -1,0 +1,14 @@
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/integrate/_ivp/common.py:356: RuntimeWarning: overflow encountered in multiply
+  new_factor = NUM_JAC_FACTOR_INCREASE * factor[ind]
+baseline Radau 0.25768749999999874 nonfinite
+pulse Radau 0.3 completed
+lower Radau 0.3 completed
+release Radau 0.3 completed
+high Radau 0.10545806674578599 ODE-step
+mass-025 Radau 0.3 completed
+mass-05 Radau 0.3 completed
+mass-1 Radau 0.262030740600096 nonfinite
+desc-fixed-plus Radau 0.15 completed
+desc-fixed-minus Radau 0.15 completed
+desc-pi-plus Radau 0.15 completed
+desc-pi-minus Radau 0.15 completed

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tension and mass — scalar force-command lab</title>
+<style>
+:root{color-scheme:light dark;--bg:light-dark(#fafcfb,#142025);--ink:light-dark(#20343c,#e3eeef);--muted:light-dark(#5c7077,#abc0c7);--line:light-dark(#d6e1df,#385058);--surface:light-dark(#fff,#1b2c33);--force:light-dark(#007d83,#63d3cd);--command:light-dark(#7663ab,#b9a3f0);--act:light-dark(#b26e10,#e8b253);--warn:light-dark(#9a371f,#f5a98f);--blue:light-dark(#3d77a9,#84bceb)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,sans-serif}main{max-width:1150px;margin:auto;padding:24px}h1{font-size:30px;font-weight:600;margin:0}h2{font-size:17px;font-weight:600;margin:0 0 10px}.subtitle,.note{color:var(--muted);margin:6px 0 16px}.controls{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:end}.field{display:grid;grid-template-columns:1fr 125px;gap:5px 12px}.field label{grid-column:1/-1}input[type=range]{width:100%;accent-color:var(--force)}input[type=number],select,button{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:5px;padding:8px;min-height:42px}button{cursor:pointer}button.primary{background:var(--ink);color:var(--bg)}.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:16px 0}.toolbar label{display:flex;align-items:center;gap:8px;flex-wrap:wrap}select{max-width:100%}.status{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;border-block:1px solid var(--line);padding:14px 0;margin:15px 0}.status label{display:block;font-size:13px;color:var(--muted)}.status strong{font-weight:500}.error{color:var(--warn);min-height:23px}.scene-row{display:grid;grid-template-columns:290px 1fr;gap:24px;align-items:center}.scene{width:100%;height:305px}.values{display:grid;grid-template-columns:1fr 1fr;gap:9px 20px}.values div{border-bottom:1px solid var(--line);padding:4px 0}.values span{color:var(--muted)}.values strong{display:block;font-weight:500;font-variant-numeric:tabular-nums}.cursor{display:grid;grid-template-columns:1fr auto;gap:4px 14px;margin:14px 0}.cursor label{grid-column:1/-1}.plots{display:grid;grid-template-columns:1fr 1fr;gap:20px}.plot{width:100%;height:230px;display:block}.wide{grid-column:1/-1}.legend{font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:10px}.legend span::before{content:'━';padding-right:5px;color:var(--series)}svg text{fill:var(--ink);font-family:system-ui,sans-serif;font-size:12px}svg .grid{stroke:var(--line);stroke-width:1}svg .curve{fill:none;stroke-width:2}svg .cursorline{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 4}.scope{border-top:1px solid var(--line);margin-top:22px;padding-top:14px}details{margin-top:14px}summary{cursor:pointer}.small{font-size:13px;color:var(--muted)}a{color:var(--force)}@media(max-width:690px){main{padding:16px}.controls,.plots,.scene-row{grid-template-columns:1fr}.status{grid-template-columns:1fr;gap:7px}.scene{height:280px}.scene-row{gap:8px}.field{grid-template-columns:1fr 105px}.wide{grid-column:auto}.toolbar label{width:100%}.toolbar select{width:100%}h1{font-size:25px}}@media print{button,input,select{display:none}.plots{break-inside:avoid}.plot{height:210px}}
+</style></head><body><main id="lab">
+<h1>Tension and mass</h1><p class="subtitle">A scalar muscle–tendon fixture. Target tension is a command; motion follows actual force.</p>
+<div class="controls">
+<div class="field"><label for="mass">Lifted mass (kg)</label><input id="mass-slider" type="range" min="0.1" max="10" step="0.01" value="0.5" aria-label="Lifted mass slider"><input id="mass" type="number" min="0.1" max="10" step="any" value="0.5"></div>
+<div class="field"><label for="target">Target tension (N)</label><input id="target-slider" type="range" min="0" max="150" step="0.01" value="4.903325" aria-label="Target tension slider"><input id="target" type="number" min="0" max="150" step="any" value="4.903325"></div>
+</div>
+<div class="toolbar"><label for="case">Protocol <select id="case"><option value="baseline">Constant target / baseline</option><option value="pulse">Pulse → weight command → brake</option><option value="lower">Lower → brake</option><option value="release">Release drive</option><option value="high">High target</option><option value="mass">Mass-only: matched initial state</option><option value="descending_pi">Descending branch: PI + perturbation</option><option value="descending_fixed">Descending branch: fixed activation</option><option value="descending_pi_minus">Descending branch: PI − perturbation</option></select></label><button id="run" class="primary" type="button">Run / restart</button><button id="export" type="button">Download accepted history</button></div>
+<p id="script" class="note"></p><div id="error" class="error" role="alert"></div>
+<div class="status" aria-live="polite"><div><label>Integration</label><strong id="integration"></strong></div><div><label>Tracking window</label><strong id="tracking"></strong></div><div><label>Motion outcome</label><strong id="motion"></strong></div></div>
+<div class="scene-row"><svg id="scene" class="scene" role="img" aria-label="Scalar fiber, compliant tendon and lifted mass"><title>Accepted scalar fixture state</title></svg><div class="values" id="values"></div></div>
+<div class="cursor"><label for="time">Accepted history cursor — <output id="time-label"></output></label><input id="time" type="range" min="0" max="0.3" step="any" value="0"><button id="end" type="button">Last accepted state</button></div>
+<div class="plots">
+<section><h2>Tension and weight</h2><div class="legend"><span style="--series:var(--force)">Actual tendon force</span><span style="--series:var(--command)">Target</span><span style="--series:var(--muted)">Weight</span></div><svg id="force-plot" class="plot" role="img" aria-label="Actual and target tension with weight"></svg></section>
+<section><h2>Excitation and activation</h2><div class="legend"><span style="--series:var(--command)">Excitation</span><span style="--series:var(--act)">Activation</span></div><svg id="activation-plot" class="plot" role="img" aria-label="Excitation and activation history"></svg></section>
+<section><h2>Load displacement</h2><div class="legend"><span style="--series:var(--force)">Selected run</span><span id="comp-y" style="--series:var(--act)" hidden>Other descending controller</span></div><svg id="height-plot" class="plot" role="img" aria-label="Integrated upward displacement"></svg></section>
+<section><h2>Load velocity</h2><div class="legend"><span style="--series:var(--force)">Selected run</span><span id="comp-w" style="--series:var(--act)" hidden>Other descending controller</span></div><svg id="velocity-plot" class="plot" role="img" aria-label="Integrated signed velocity"></svg></section>
+<section><h2>Work and storage</h2><div class="legend"><span style="--series:var(--force)">Total energy change</span><span style="--series:var(--command)">Active input − dissipation</span><span style="--series:var(--act)">Tendon</span><span style="--series:var(--blue)">Load</span><span style="--series:var(--muted)">Passive fiber</span></div><svg id="energy-plot" class="plot" role="img" aria-label="Component and combined mechanical work"></svg></section>
+<section><h2>Source force–length curve</h2><div class="legend"><span style="--series:var(--force)">Active multiplier</span><span style="--series:var(--command)">Current fiber length</span></div><svg id="length-plot" class="plot" role="img" aria-label="Original active force length and current operating point"></svg></section>
+</div>
+<p id="limit" class="scope"></p><details><summary>Model and validation scope</summary><p>OpenSim 4.5.2 source curves; educational peak force 100 N, fiber optimum 0.1 m and tendon slack length 0.2 m. The added force controller uses the preregistered continuous-time gains 0.4 and 8/s with excitation limits and conditional integration. This is a separate scalar implementation, not the full OpenSim runtime or a human arm.</p><p>Force-only PI cannot stabilize a negative-static-stiffness free-mass equilibrium. Zero and growing modes are retained. Matching force to weight does not stop existing velocity. Excitation-floor release leaves activation and stored tendon force; it does not detach the load. Curves retain their source extrapolations.</p><p>Numerical completion, target tracking and motion are different outcomes. Browser consistency checks are not an independent replay of every custom input. Invalid stages and unqualified slack/lower-length events stop at the last accepted state. An opposing antiwindup switching surface also stops the trial: its continuation is unqualified. The default high-target and 1 kg mass-only presets stop there. Mass changes restart the experiment.</p></details>
+<noscript><p>This experiment needs JavaScript to solve its equations. No motion or result is asserted with scripting disabled.</p></noscript>
+</main><script type="module">
+const PROTOCOL={
+  "scope": "finite scalar force-command lab; no rest/height servo or anatomical calibration",
+  "frozen_benchmark": "0e89c60d03d3d6137e1ece686ecf942b83d05645",
+  "frozen_design": "41573e4581d2ab0b1054840ece57cd6239de69f3",
+  "kp": 0.4,
+  "ki_per_s": 8.0,
+  "gravity_m_per_s2": 9.80665,
+  "mass_range_kg": [
+    0.1,
+    10.0
+  ],
+  "target_range_N": [
+    0.0,
+    150.0
+  ],
+  "coarse_step_s": 0.0002,
+  "fine_step_s": 0.0001,
+  "ODE_rtol": 1e-09,
+  "ODE_atol": 1e-11,
+  "ODE_max_step_s": 0.0005,
+  "brake_arm_velocity_m_per_s": 1e-05,
+  "event_root_time_s": 1e-07,
+  "event_iterations": 32,
+  "velocity_bracket": [
+    -10.0,
+    10.0
+  ],
+  "velocity_iterations": 64,
+  "budgets": {
+    "curve_value": 2e-12,
+    "curve_derivative": 2e-08,
+    "force_N": 1e-07,
+    "y_m": 1e-06,
+    "w_m_per_s": 1e-05,
+    "activation_q": 2e-06,
+    "replay_force_N": 0.0001,
+    "event_time_s": 2e-06,
+    "momentum_N_s": 1e-07,
+    "component_combined_work_J": 1e-05,
+    "tracking_relative_to_weight": 0.01
+  },
+  "tracking_windows_s": {
+    "baseline": [
+      0.03,
+      0.05
+    ],
+    "pulse": [
+      0.13,
+      0.15
+    ],
+    "lower": [
+      0.25,
+      0.3
+    ],
+    "high": [
+      0.13,
+      0.15
+    ],
+    "mass": [
+      0.25,
+      0.3
+    ],
+    "descending_pi": [
+      0.1,
+      0.15
+    ]
+  },
+  "all_negative_eigenvalues_acceptance": false,
+  "gain_search_permitted": false,
+  "output_grid_s": 0.001
+}
+;
+const CONTROLS={"active":{"bounds":[0.44409999999999999,1.8123,0,0,0,0],"segments":[[[0.44409999999999999,0.46983099999999994,0.46983099999999994,0.48412599999999995,0.48412599999999995,0.58704999999999996],[0,-9.9920072216264091e-17,-9.9920072216264091e-17,0.040522399999999903,0.040522399999999903,0.40522400000000003]],[[0.58704999999999996,0.68170724874889221,0.68170724874889221,0.70700224874889228,0.70700224874889228,0.83999999999999997],[0.40522400000000003,0.74063313752204563,0.74063313752204563,0.79063313752204567,0.79063313752204567,0.90522400000000003]],[[0.83999999999999997,0.93899999999999995,0.93899999999999995,0.95499999999999996,0.95499999999999996,1],[0.90522400000000003,0.99052240000000003,0.99052240000000003,1,1,1]],[[1,1.0675000000000001,1.0675000000000001,1.1106150000000001,1.1106150000000001,1.4311500000000001],[1,1,1,0.94999999999999996,0.94999999999999996,0.5]],[[1.4311500000000001,1.7516850000000002,1.7516850000000002,1.7898000000000001,1.7898000000000001,1.8123],[0.5,0.049999999999999989,0.049999999999999989,0,0,0]]]},"velocity":{"bounds":[-1,1,0,1.3999999999999999,0,0],"segments":[[[-1,-0.97099999999999997,-0.97099999999999997,-0.92899999999999994,-0.92899999999999994,-0.90000000000000002],[0,8.0491169285323844e-18,8.0491169285323844e-18,0.0052500000000000073,0.0052500000000000073,0.012499999999999997]],[[-0.90000000000000002,-0.4711052631578948,-0.4711052631578948,-0.093105263157894746,-0.093105263157894746,0],[0.012499999999999997,0.1197236842105262,0.1197236842105262,0.53447368421052621,0.53447368421052621,1]],[[0,0.043536082474226787,0.043536082474226787,0.20553608247422672,0.20553608247422672,0.90000000000000002],[1,1.217680412371134,1.217680412371134,1.2883304123711339,1.2883304123711339,1.3924999999999998]],[[0.90000000000000002,0.94100000000000039,0.94100000000000039,0.95900000000000041,0.95900000000000041,1],[1.3924999999999998,1.3986499999999999,1.3986499999999999,1.3999999999999999,1.3999999999999999,1.3999999999999999]]]},"passive":{"bounds":[1,1.7,0,1,0,2.8571428571428572],"segments":[[[1,1.0122500000000001,1.0122500000000001,1.02275,1.02275,1.0349999999999999],[0,0,0,0.0010499999999999906,0.0010499999999999906,0.0034999999999999701]],[[1.0349999999999999,1.2730188172043011,1.2730188172043011,1.4725188172043011,1.4725188172043011,1.7],[0.0034999999999999701,0.05110376344086022,0.05110376344086022,0.35005376344086014,0.35005376344086014,1]]]},"tendon":{"bounds":[1,1.0371212121212121,0,0.66666666666666663,0,28.061224489795919],"segments":[[[1,1.0018560606060607,1.0018560606060607,1.0090946969696968,1.0090946969696968,1.0144772727272726],[0,0,0,0.083333333333333329,0.083333333333333329,0.16666666666666666]],[[1.0144772727272726,1.0198598484848485,1.0198598484848485,1.0311818181818184,1.0311818181818184,1.0371212121212121],[0.16666666666666666,0.25000000000000389,0.25000000000000389,0.50000000000000389,0.50000000000000389,0.66666666666666663]]]}}
+;
+/* Educational scalar fixture and continuous-time PI. No anatomical model.
+ * Source curve kernels: OpenSim 4.5.2, Apache-2.0, Stanford/Authors 2005-2017.
+ * This new numerical/controller implementation is separate from that runtime.
+ */
+export function createVerticalForceLab(P, controls) {
+  const F0=100, lf0=.1, lt0=.2, vmax=10, beta=.1, amin=.01, g=P.gravity_m_per_s2;
+  class TrialFailure extends Error { constructor(code,message){super(message);this.code=code;} }
+  const fail=(code,message)=>{throw new TrialFailure(code,message);};
+  const poly=(a,u)=>a.reduceRight((z,c)=>z*u+c,0);
+  const bern=(p,u)=>{const t=1-u;return p[0]*t**5+5*p[1]*u*t**4+10*p[2]*u*u*t**3+10*p[3]*u**3*t*t+5*p[4]*u**4*t+p[5]*u**5;};
+  const bd=(p,u)=>{const t=1-u;return 5*((p[1]-p[0])*t**4+4*(p[2]-p[1])*u*t**3+6*(p[3]-p[2])*u*u*t*t+4*(p[4]-p[3])*u**3*t+(p[5]-p[4])*u**4);};
+  const choose=(n,k)=>{let z=1;for(let j=1;j<=k;j++)z=z*(n-j+1)/j;return z;};
+  const power=(p)=>Array.from({length:6},(_,k)=>{let z=0;for(let j=0;j<=k;j++)z+=p[j]*choose(5,j)*choose(5-j,k-j)*(-1)**(k-j);return z;});
+  function curve(r){
+    const seg=r.segments.map(([x,y])=>{const xp=power(x),yp=power(y),dx=xp.slice(1).map((v,i)=>v*(i+1)),prod=Array(10).fill(0);for(let i=0;i<6;i++)for(let j=0;j<5;j++)prod[i+j]+=yp[i]*dx[j];return {x,y,primitive:[0,...prod.map((v,i)=>v/(i+1))]};});
+    const totals=seg.map(p=>poly(p.primitive,1));
+    function locate(x){const j=seg.findIndex(p=>x<=p.x[5]);const z=seg[Math.max(0,j)];let lo=0,hi=1,u=(x-z.x[0])/(z.x[5]-z.x[0]);for(let k=0;k<32;k++){const err=bern(z.x,u)-x;if(Math.abs(err)<=1e-15)return {j:Math.max(0,j),z,u};if(err<0)lo=u;else hi=u;const next=u-err/bd(z.x,u);u=next>lo&&next<hi?next:(lo+hi)/2;}fail('curve-root','Source curve inversion failed');}
+    function value(x,derivative=false){const [x0,x1,y0,y1,d0,d1]=r.bounds;if(x<=x0)return derivative?d0:y0+d0*(x-x0);if(x>=x1)return derivative?d1:y1+d1*(x-x1);const {z,u}=locate(x);return derivative?bd(z.y,u)/bd(z.x,u):bern(z.y,u);}
+    function primitive(x){const [x0,x1,y0,y1,d0,d1]=r.bounds;if(x<=x0)return y0*(x-x0)+d0*(x-x0)**2/2;if(x>=x1)return totals.reduce((a,b)=>a+b,0)+y1*(x-x1)+d1*(x-x1)**2/2;const {j,z,u}=locate(x);return totals.slice(0,j).reduce((a,b)=>a+b,0)+poly(z.primitive,u);}
+    return {value,integral:(a,b)=>primitive(b)-primitive(a)};
+  }
+  const C=Object.fromEntries(Object.entries(controls).map(([n,r])=>[n,curve(r)]));
+  function validate(m,target){if(!Number.isFinite(m)||m<=0)fail('input','Mass must be finite and greater than zero');if(!Number.isFinite(target)||target<0)fail('input','Target must be finite and nonnegative');if(m<P.mass_range_kg[0]||m>P.mass_range_kg[1]||target>P.target_range_N[1])fail('range','Request is outside the qualified UI range');}
+  function inverseT(force){let lo=1,hi=1.1;for(let i=0;i<64;i++){const s=(lo+hi)/2;if(C.tendon.value(s)<force)lo=s;else hi=s;}const s=(lo+hi)/2;if(Math.abs(F0*C.tendon.value(s)-F0*force)>P.budgets.force_N)fail('initial-root','Tendon preload inversion failed');return s;}
+  function init(caseName='baseline',m=.5,target=.5*g,perturb=0){
+    validate(m,target);const descending=caseName.startsWith('descending');const a=descending?.5:.5*g/F0,q0=descending?1.10:1,preload=F0*(a*C.active.value(q0)+C.passive.value(q0));const L0=lf0*q0+lt0*inverseT(preload/F0);
+    return {caseName,m,target,L0,ub:a,preload,q0,perturb,z:[0,0,a,q0+perturb,0,0,0,0,0,0,0]};
+  }
+  function phases(cfg){const W=cfg.m*g,T=cfg.target;switch(cfg.caseName){
+    case 'pulse':return [{end:.05,target:W},{end:.10,target:T},{end:.15,target:W},{end:.25,target:.8*W,brake:1},{end:.30,target:W}];
+    case 'lower':return [{end:.05,target:W},{end:.10,target:T},{end:.20,target:1.2*W,brake:-1},{end:.30,target:W}];
+    case 'release':return [{end:.05,target:W},{end:.30,target:0,mode:'release'}];
+    case 'high':return [{end:.05,target:W},{end:.15,target:T},{end:.30,target:W}];
+    case 'descending_fixed':return [{end:.15,target:T,mode:'fixed'}];
+    case 'descending_pi':return [{end:.15,target:T}];
+    default:return [{end:.30,target:T}];
+  }}
+  function output(z,cfg,phase){
+    if(!z.every(Number.isFinite))fail('nonfinite','Nonfinite intermediate state');const [y,w,a,q,I]=z;
+    if(a<amin-1e-12||a>1+1e-12)fail('activation-bound','Activation left source bounds');if(q<=.4441)fail('fiber-bound','Unqualified fiber lower-length event');
+    const s=(cfg.L0-y-lf0*q)/lt0;if(s<=1)fail('slack','Unqualified tendon slack event');
+    const FT=F0*C.tendon.value(s),fal=C.active.value(q),fpe=C.passive.value(q),e=(phase.target-FT)/F0;
+    const uraw=cfg.ub+P.kp*e+I,u=phase.mode==='fixed'?cfg.ub:phase.mode==='release'?amin:Math.max(amin,Math.min(1,uraw));
+    let lo=P.velocity_bracket[0],hi=P.velocity_bracket[1],v=0;
+    const balance=v=>F0*(a*fal*C.velocity.value(v)+fpe+beta*v)-FT;
+    if(balance(lo)>0||balance(hi)<0)fail('velocity-bracket','Fiber velocity root is unbracketed');let residual=Infinity;
+    for(let k=0;k<P.velocity_iterations;k++){residual=balance(v);if(Math.abs(residual)<=1e-10)break;if(residual<0)lo=v;else hi=v;const next=v-residual/(F0*(a*fal*C.velocity.value(v,true)+beta));v=next>lo&&next<hi?next:(lo+hi)/2;}
+    residual=balance(v);if(!Number.isFinite(v)||Math.abs(residual)>P.budgets.force_N)fail('force-residual','Fiber force residual failed');
+    const lfdot=lf0*vmax*v,FA=F0*a*fal*C.velocity.value(v),FP=F0*fpe,FD=F0*beta*v;
+    const frozen=phase.mode||((uraw>=1&&e>0)||(uraw<=amin&&e<0));const Idot=frozen?0:P.ki_per_s*e;
+    const tau=u>a?.01*(.5+1.5*a):.04/(.5+1.5*a),adot=phase.mode==='fixed'?0:(u-Math.max(amin,Math.min(1,a)))/tau;
+    return {FT,s,v,u,uraw,e,Idot,adot,lfdot,FA,FP,FD,residual,saturated:uraw>=1||uraw<=amin,Pactive:-FA*lfdot,D:FD*lfdot,loadPower:FT*w,fiberPower:FP*lfdot,tendonPower:FT*(-w-lfdot),acceleration:(FT-cfg.m*g)/cfg.m};
+  }
+  function rhs(t,z,cfg,phase){let o;try{o=output(z,cfg,phase);
+    if(!phase.mode&&Number.isFinite(phase.startRaw)){
+      const edot=-(F0/lt0*C.tendon.value(o.s,true)*(-z[1]-o.lfdot))/F0,df=P.kp*edot,di=df+P.ki_per_s*o.e;
+      const crossed=limit=>(phase.startRaw-limit)*(o.uraw-limit)<=0&&phase.startRaw!==o.uraw;
+      if((crossed(1)&&o.e>0&&df<0&&di>0)||(crossed(amin)&&o.e<0&&df>0&&di<0))fail('antiwindup-surface','Unqualified opposing anti-windup switching surface');
+    }
+  }catch(e){e.stageTime=t;e.stageState=z.slice();throw e;}return [z[1],o.acceleration,o.adot,vmax*o.v,o.Idot,o.Pactive,o.D,o.loadPower,o.fiberPower,o.tendonPower,o.FT-cfg.m*g];}
+  function trialStep(t,z,h,cfg,phase){phase={...phase,startRaw:output(z,cfg,phase).uraw};const add=(base,rate,k)=>base.map((v,i)=>v+k*rate[i]);const a=rhs(t,z,cfg,phase),b=rhs(t+h/2,add(z,a,h/2),cfg,phase),c=rhs(t+h/2,add(z,b,h/2),cfg,phase),d=rhs(t+h,add(z,c,h),cfg,phase);const next=z.map((v,i)=>v+h*(a[i]+2*b[i]+2*c[i]+d[i])/6);rhs(t+h,next,cfg,phase);return next;}
+  function storage(z,cfg){const o=output(z,cfg,{target:cfg.target});return {fiber:F0*lf0*C.passive.integral(cfg.z[3],z[3]),tendon:F0*lt0*C.tendon.integral((cfg.L0-lf0*cfg.z[3])/lt0,o.s),load:.5*cfg.m*z[1]**2+cfg.m*g*z[0]};}
+  function row(t,z,cfg,phase){const o=output(z,cfg,phase),E=storage(z,cfg);return {t,z:z.slice(),target:phase.target,mode:phase.mode||'PI',...o,...E,energyError:E.fiber+E.tendon+E.load-z[5]+z[6],momentumError:cfg.m*z[1]-z[10]};}
+  function run(cfg,dt=P.fine_step_s){
+    if(!Number.isFinite(dt)||dt<=0)fail('input','Integration step must be finite and positive');
+    let t=0,z=cfg.z.slice(),failure=null;const events=[],history=[],initial=cfg.z.slice();
+    function save(phase){const r=row(t,z,cfg,phase);if(history.length&&Math.abs(history.at(-1).t-t)<1e-12)history[history.length-1]=r;else history.push(r);}
+    const schedule=phases(cfg);for(let index=0;index<schedule.length&&!failure;index++){
+      const phase=schedule[index];if(phase.end<=t+1e-12)continue;let armed=false;save(phase);
+      while(t<phase.end-1e-12){
+        if(phase.brake&&z[1]*phase.brake>P.brake_arm_velocity_m_per_s)armed=true;
+        const nextGrid=(Math.floor((t+1e-10)/.001)+1)*.001;const h=Math.min(dt,phase.end-t,nextGrid-t);const previous=z.slice(),previousTime=t;
+        try{
+          let next=trialStep(t,z,h,cfg,phase),nextTime=t+h;
+          if(phase.brake&&armed&&z[1]*phase.brake>0&&next[1]*phase.brake<=0){let lo=0,hi=h;for(let k=0;k<P.event_iterations&&hi-lo>P.event_root_time_s;k++){const mid=(lo+hi)/2,probe=trialStep(t,z,mid,cfg,phase);if(probe[1]*phase.brake>0)lo=mid;else hi=mid;}nextTime=t+hi;next=trialStep(t,z,hi,cfg,phase);z=next;t=nextTime;save(phase);events.push({type:'brake-crossing',t,armed:true,direction:phase.brake,bracket:[previousTime+lo,previousTime+hi]});break;}
+          z=next;t=nextTime;if(Math.abs(t/.001-Math.round(t/.001))<1e-7||Math.abs(t-phase.end)<1e-10)save(phase);
+        }catch(e){z=previous;t=previousTime;failure={code:e.code||'exception',message:e.message,acceptedTime:t,acceptedState:z.slice(),failedStageTime:e.stageTime??t+h,failedStageState:e.stageState||null};save(phase);events.push({type:'rejected-trial',t,code:failure.code});break;}
+      }
+      if(!failure&&phase.brake&&t>=phase.end-1e-12)events.push({type:'brake-timeout',t,armed});
+      if(!failure)events.push({type:'phase-end',t,phase:index});
+    }
+    let tracking={status:'not-applicable'};const window=P.tracking_windows_s[cfg.caseName];if(window){const rows=history.filter(r=>r.t>=window[0]-1e-10&&r.t<=window[1]+1e-10),changed=rows.some(r=>Math.abs(r.target-rows[0].target)>1e-12||r.mode!==rows[0].mode);tracking=t<window[1]-1e-10?{status:'window-not-reached',window}:changed?{status:'window-invalid-command-change',window}:{status:rows.length&&Math.max(...rows.map(r=>Math.abs(r.FT-r.target)))<=.01*cfg.m*g?'met':'missed',window,maxError:Math.max(...rows.map(r=>Math.abs(r.FT-r.target))),budget:.01*cfg.m*g};}
+    return {cfg:{...cfg,z:initial},dt,history,events,failure,acceptedTime:t,tracking,initialZeroVelocityCapacity:F0*(C.active.value(initial[3])+C.passive.value(initial[3])),numericalStatus:failure?'stopped-at-unqualified-or-failed-trial':'completed',motion:history.length?{displacement:z[0],velocity:z[1],acceleration:history.at(-1).acceleration}:null};
+  }
+  function descendingMass(){return F0*(.5*C.active.value(1.1)+C.passive.value(1.1))/g;}
+  return {P,C,init,run,output,rhs,trialStep,storage,phases,validate,descendingMass,constants:{F0,lf0,lt0,vmax,beta,amin,g},TrialFailure};
+}
+if(typeof window!=='undefined')window.createVerticalForceLab=createVerticalForceLab;
+
+const lab=createVerticalForceLab(PROTOCOL,CONTROLS),G=PROTOCOL.gravity_m_per_s2,root=document.getElementById('lab');
+const $=id=>document.getElementById(id);let result=null,comparison=null,current=null;
+const presets={baseline:.5*G,pulse:1.2*.5*G,lower:.8*.5*G,release:0,high:120,mass:5};
+const descriptions={baseline:'Constant force target; only the default 0.5 kg baseline starts in external equilibrium.',pulse:'Weight → pulse target → weight command → below-weight brake → weight. A weight command is not a height hold.',lower:'Weight → lowering target → above-weight brake → weight. A brake requires prior actual downward motion.',release:'Weight until 0.05 s; then release drive to minimum excitation. Actual tension remains a response.',high:'Weight → target from 0.05–0.15 s → weight. The initial static capacity is a conditional reference, not a universal force cap.',mass:'Common baseline actuator preload and geometry. A changed mass starts out of equilibrium; no moving load is attached.',descending_pi:'Same perturbed descending state compared with fixed activation. Tracking does not certify stability.',descending_fixed:'Fixed activation at 0.5; compared with PI from the same perturbed descending state.'};
+function link(number,slider){$(number).addEventListener('input',()=>{$(slider).value=$(number).value;});$(slider).addEventListener('input',()=>{$(number).value=$(slider).value;});}
+link('mass','mass-slider');link('target','target-slider');
+$('case').addEventListener('change',()=>{const name=$('case').value.replace('_minus','');if(name.startsWith('descending')){$('mass').value=lab.descendingMass();$('target').value=lab.descendingMass()*G;}else{$('mass').value=.5;$('target').value=presets[name];} $('mass-slider').value=$('mass').value;$('target-slider').value=$('target').value;execute();});
+function execute(){try{const textM=$('mass').value,textF=$('target').value,m=textM===''?NaN:Number(textM),target=textF===''?NaN:Number(textF);lab.validate(m,target);const selection=$('case').value,name=selection.replace('_minus',''),perturb=name.startsWith('descending')?(selection.endsWith('_minus')?-1e-4:1e-4):0,cfg=lab.init(name,m,target,perturb);const candidate=lab.run(cfg);let other=null;if(name.startsWith('descending'))other=lab.run(lab.init(name==='descending_pi'?'descending_fixed':'descending_pi',m,target,perturb));result=candidate;comparison=other;window.verticalForceResult=result;window.verticalForceComparison=comparison;$('error').textContent='';$('script').textContent=descriptions[name];$('time').max=result.acceptedTime;$('time').value=result.acceptedTime;render();}catch(e){$('error').textContent=`Rejected request: ${e.message}. The previous accepted run is retained.`;window.verticalForceInputError=e.message;}}
+$('run').addEventListener('click',execute);$('time').addEventListener('input',render);$('end').addEventListener('click',()=>{$('time').value=result.acceptedTime;render();});
+$('export').addEventListener('click',()=>{if(!result)return;const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(result,null,2)],{type:'application/json'}));a.download='accepted-force-command-history.json';a.click();URL.revokeObjectURL(a.href);});
+function fmt(v,d=4){return Number.isFinite(v)?v.toFixed(d):'—';}
+function svgElement(tag,attrs={},text=''){const e=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const [k,v]of Object.entries(attrs))e.setAttribute(k,v);if(text)e.textContent=text;return e;}
+function plot(id,series,ylabel,cursor=true){const svg=$(id),W=Math.max(280,svg.clientWidth),H=230,L=67,R=14,T=12,B=43;svg.setAttribute('viewBox',`0 0 ${W} ${H}`);svg.replaceChildren();const points=series.flatMap(s=>s.points),xmin=Math.min(...points.map(p=>p[0])),xmax=Math.max(...points.map(p=>p[0])),low=Math.min(0,...points.map(p=>p[1])),high=Math.max(0,...points.map(p=>p[1])),pad=Math.max((high-low)*.08,1e-6),ymin=low-pad,ymax=high+pad,x=x=>L+(x-xmin)/(xmax-xmin||1)*(W-L-R),y=y=>H-B-(y-ymin)/(ymax-ymin)*(H-T-B);for(let i=0;i<4;i++){const xx=xmin+(xmax-xmin)*i/3,yy=ymin+(ymax-ymin)*i/3;svg.append(svgElement('line',{x1:L,y1:y(yy),x2:W-R,y2:y(yy),class:'grid'}));svg.append(svgElement('text',{x:L-7,y:y(yy)+4,'text-anchor':'end'},Math.abs(yy)<.01?yy.toExponential(1):fmt(yy,2)));svg.append(svgElement('text',{x:x(xx),y:H-B+20,'text-anchor':i===0?'start':i===3?'end':'middle'},fmt(xx,2)));}svg.append(svgElement('text',{x:L+(W-L-R)/2,y:H-5,'text-anchor':'middle'},cursor?'Time (s)':'Fiber length / optimum'));svg.append(svgElement('text',{x:15,y:T+(H-T-B)/2,transform:`rotate(-90 15 ${T+(H-T-B)/2})`,'text-anchor':'middle'},ylabel));for(const s of series){const d=s.points.map((p,i)=>`${i?'L':'M'}${x(p[0])},${y(p[1])}`).join(' ');svg.append(svgElement('path',{d,class:'curve',stroke:s.color,'stroke-dasharray':s.dash||''}));}if(cursor){const xx=x(current.t);svg.append(svgElement('line',{x1:xx,y1:T,x2:xx,y2:H-B,class:'cursorline'}));}}
+function scene(){const svg=$('scene');svg.replaceChildren();svg.setAttribute('viewBox','0 0 290 305');const all=result.history.map(r=>result.cfg.L0-r.z[0]),scale=205/Math.max(...all),x=105,top=35,fiberEnd=top+.1*current.z[3]*scale,loadY=top+(result.cfg.L0-current.z[0])*scale;svg.append(svgElement('line',{x1:70,y1:top,x2:140,y2:top,stroke:'var(--ink)','stroke-width':3}));svg.append(svgElement('rect',{x:x-10,y:top,width:20,height:fiberEnd-top,rx:8,fill:'var(--act)'}));const n=10;let d=`M${x},${fiberEnd}`;for(let i=1;i<n;i++)d+=` L${x+(i%2?8:-8)},${fiberEnd+(loadY-fiberEnd)*i/n}`;d+=` L${x},${loadY}`;svg.append(svgElement('path',{d,fill:'none',stroke:'var(--force)','stroke-width':2}));svg.append(svgElement('rect',{x:x-27,y:loadY,width:54,height:32,rx:3,fill:'var(--line)',stroke:'var(--ink)'}));svg.append(svgElement('text',{x:x,y:loadY+21,'text-anchor':'middle'},`${fmt(result.cfg.m,2)} kg`));svg.append(svgElement('text',{x:155,y:(top+fiberEnd)/2},'Fiber'));svg.append(svgElement('text',{x:155,y:(fiberEnd+loadY)/2},'Tendon'));svg.append(svgElement('text',{x:10,y:280},`y = ${fmt(current.z[0])} m ↑`));svg.append(svgElement('text',{x:10,y:299},'Lengths scaled from accepted state'));}
+function render(){if(!result)return;current=result.history.reduce((best,r)=>Math.abs(r.t-Number($('time').value))<Math.abs(best.t-Number($('time').value))?r:best,result.history[0]);window.verticalForceCurrent=current;$('time-label').textContent=`${fmt(current.t)} s`;const failure=result.failure,maxEnergy=Math.max(...result.history.map(r=>Math.abs(r.energyError)));$('integration').textContent=failure?`Stopped: ${failure.code} at ${fmt(result.acceptedTime)} s`:`Completed; work error ${maxEnergy.toExponential(2)} J`;$('tracking').textContent=result.tracking.status==='met'?`Met in declared window (not stability)` :result.tracking.status==='missed'?`Missed; max error ${fmt(result.tracking.maxError,3)} N`:result.tracking.status==='window-not-reached'?'Window not reached':result.tracking.status==='window-invalid-command-change'?'Invalid window: command transition':'Not applicable';const velocity=current.z[1];$('motion').textContent=`${velocity>1e-5?'Moving up':velocity< -1e-5?'Moving down':'Near zero speed'}; ${fmt(velocity)} m/s`;
+  const slope=100/.1*(current.z[2]*lab.C.active.value(current.z[3],true)+lab.C.passive.value(current.z[3],true));const values=[['Actual / target tension',`${fmt(current.FT,3)} / ${fmt(current.target,3)} N`],['Weight / acceleration',`${fmt(result.cfg.m*G,3)} N / ${fmt(current.acceleration,3)} m/s²`],['Excitation / activation',`${fmt(current.u)} / ${fmt(current.z[2])}${current.saturated?' · limit active':''}`],['Fiber q / tendon strain',`${fmt(current.z[3])} / ${fmt((current.s-1)*100,3)} %`],['Static fiber slope',`${fmt(slope,2)} N/m${slope<0?' · negative branch':''}`],['Active power / dissipation',`${fmt(current.Pactive,4)} / ${fmt(current.D,4)} W`],['Fiber / tendon storage change',`${fmt(current.fiber,5)} / ${fmt(current.tendon,5)} J`],['Load energy / ledger error',`${fmt(current.load,5)} J / ${current.energyError.toExponential(2)} J`]];$('values').replaceChildren(...values.map(([label,value])=>{const d=document.createElement('div'),s=document.createElement('span'),b=document.createElement('strong');s.textContent=label;b.textContent=value;d.append(s,b);return d;}));scene();
+  const H=result.history,points=key=>H.map(r=>[r.t,key(r)]),series=(key,color)=>({points:points(key),color});plot('force-plot',[series(r=>r.FT,'var(--force)'),series(r=>r.target,'var(--command)'),series(()=>result.cfg.m*G,'var(--muted)')],'Force (N)');plot('activation-plot',[series(r=>r.u,'var(--command)'),series(r=>r.z[2],'var(--act)')],'Dimensionless');
+  for(const [id,index,label,legend] of [['height-plot',0,'Upward displacement (m)','comp-y'],['velocity-plot',1,'Upward velocity (m/s)','comp-w']]){const S=[series(r=>r.z[index],'var(--force)')];$(legend).hidden=!comparison;if(comparison)S.push({points:comparison.history.map(r=>[r.t,r.z[index]]),color:'var(--act)',dash:'5 3'});plot(id,S,label);}
+  plot('energy-plot',[series(r=>r.fiber+r.tendon+r.load,'var(--force)'),series(r=>r.z[5]-r.z[6],'var(--command)'),series(r=>r.tendon,'var(--act)'),series(r=>r.load,'var(--blue)'),series(r=>r.fiber,'var(--muted)')],'Energy change (J)');const qmax=Math.max(1.85,...H.map(r=>r.z[3]))+.03,qs=Array.from({length:140},(_,i)=>.4+(qmax-.4)*i/139);plot('length-plot',[{points:qs.map(q=>[q,lab.C.active.value(q)]),color:'var(--force)'},{points:[[current.z[3],0],[current.z[3],1]],color:'var(--command)',dash:'3 3'}],'Active force multiplier',false);
+  const high=result.cfg.target>result.initialZeroVelocityCapacity?`Command above initial zero-velocity capacity (${fmt(result.initialZeroVelocityCapacity,2)} N). `:'';const event=result.events.find(e=>e.type==='brake-crossing'||e.type==='brake-timeout');$('limit').textContent=high+(failure?`Rejected ${failure.code} trial at ${fmt(failure.failedStageTime)} s; the display retains the accepted state. `:'')+(event?`${event.type==='brake-crossing'?'Armed brake crossing':'Brake timeout'} at ${fmt(event.t)} s. `:'')+'Force-only control does not promise rest or height. A weight command can preserve motion; growing and zero modes are not hidden.';
+}
+new ResizeObserver(()=>{if(result)render();}).observe(root);execute();
+</script></body></html>

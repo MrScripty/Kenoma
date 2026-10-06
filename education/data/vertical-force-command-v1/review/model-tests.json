@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "checks": [
+    "Reject finite/range violations and invalid integration steps",
+    "Invalid fiber stage returns no next state and retains initialization",
+    "Slack, activation-bound and nonfinite stages cannot return or advance a state",
+    "Stationary baseline is not an initial-zero brake",
+    "Brake requires prior signed motion and bounded directed-root localization",
+    "A command transition inside the closed declared window invalidates tracking classification",
+    "Opposing switching trials preserve accepted state and separately save rejected stage",
+    "JS source curves match native control values and derivatives"
+  ],
+  "curveValueError": 9.603429163007604e-15,
+  "curveDerivativeError": 6.625811010962934e-13
+}

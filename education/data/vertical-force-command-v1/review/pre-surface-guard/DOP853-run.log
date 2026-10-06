@@ -1,0 +1,57 @@
+baseline DOP853 0.3 completed
+pulse DOP853 0.3 completed
+lower DOP853 0.3 completed
+release DOP853 0.3 completed
+high DOP853 0.10591090052123298 ODE-stall
+mass-025 DOP853 0.3 completed
+mass-05 DOP853 0.3 completed
+Traceback (most recent call last):
+  File "/workspace/Kenoma-refinement-diagnosis/education/tools/vertical_force_reference.py", line 121, in <module>
+    events.append(dict(type='phase-end',t=t,phase=index))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Kenoma-refinement-diagnosis/education/tools/vertical_force_reference.py", line 95, in replay
+    kwargs=dict(jac=lambda t,z:jacobian(t,z,cfg,phase)) if method is Radau else {}
+            ^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/integrate/_ivp/base.py", line 201, in step
+    success, message = self._step_impl()
+                       ^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/integrate/_ivp/rk.py", line 144, in _step_impl
+    y_new, f_new = rk_step(self.fun, t, y, self.f, h, self.A,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/integrate/_ivp/rk.py", line 64, in rk_step
+    K[s] = fun(t + c * h, y + dy)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/integrate/_ivp/base.py", line 158, in fun
+    return self.fun_single(t, y)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/integrate/_ivp/base.py", line 24, in fun_wrapped
+    return np.asarray(fun(t, y), dtype=dtype)
+                      ^^^^^^^^^
+  File "/workspace/Kenoma-refinement-diagnosis/education/tools/vertical_force_reference.py", line 89, in <lambda>
+    r=row(t,z,cfg,phase)
+                         
+  File "/workspace/Kenoma-refinement-diagnosis/education/tools/vertical_force_reference.py", line 47, in rhs
+    try:
+         
+  File "/workspace/Kenoma-refinement-diagnosis/education/tools/vertical_force_reference.py", line 44, in output
+    return dict(FT=ft,s=s,v=v,u=u,uraw=raw,e=e,Idot=0 if frozen else 8*e,adot=0 if mode=='fixed' else activation_rhs(a,u),FA=fa,FP=fp,FD=fd,residual=residual(v),Pactive=-fa*lf_dot,D=fd*lf_dot,loadPower=ft*w,fiberPower=fp*lf_dot,tendonPower=ft*(-w-lf_dot),acceleration=(ft-cfg['m']*P['gravity_m_per_s2'])/cfg['m'])
+                                                                                                                                                     ^^^^^^^^^^^
+  File "/workspace/Kenoma-refinement-diagnosis/education/tools/vertical_force_reference.py", line 39, in <lambda>
+    residual=lambda v:100*(a*fal*C['velocity'].value(v)+.1*v)+fp-ft
+                                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Kenoma-refinement-diagnosis/education/tools/millard_reference_benchmark.py", line 50, in value
+    u=brentq(lambda u:float(b(u)[0])-x,0,1,xtol=5e-15,rtol=1e-15)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/optimize/_zeros_py.py", line 846, in brentq
+    r = _zeros._brentq(f, a, b, xtol, rtol, maxiter, args, full_output, disp)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/optimize/_zeros_py.py", line 94, in f_raise
+    fx = f(x, *args)
+         ^^^^^^^^^^^
+  File "/workspace/Kenoma-refinement-diagnosis/education/tools/millard_reference_benchmark.py", line 50, in <lambda>
+    u=brentq(lambda u:float(b(u)[0])-x,0,1,xtol=5e-15,rtol=1e-15)
+                            ^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/interpolate/_interpolate.py", line 822, in __call__
+    x = np.ascontiguousarray(x.ravel(), dtype=np.float64)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

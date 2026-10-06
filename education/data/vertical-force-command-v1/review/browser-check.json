@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "checks": [
+    "Baseline uses actual integrated stationary history",
+    "Invalid mass preserves previous accepted run and display",
+    "Browser pulse matches the tested model, not commanded animation",
+    "Weight-command stage retains actual nonzero velocity",
+    "Last-state button exposes the actual terminal accepted time without range-step rounding",
+    "High command exposes unqualified switching trial and accepted-state retention",
+    "Descending PI/fixed activation comparison is live and distinct from tracking quality",
+    "Mass control restarts common preload and changes actual inertial acceleration",
+    "360px controls/plots render without horizontal overflow",
+    "History cursor reads accepted values and redraws the scalar scene"
+  ],
+  "javascript_errors": [],
+  "html_sha256": "4a456f6dcfd8c6da8e94b60d4c1f7b97f8beee814f462c2d65ed758921cf6940"
+}

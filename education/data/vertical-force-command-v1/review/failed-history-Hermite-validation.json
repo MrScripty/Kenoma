@@ -1,0 +1,1973 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "name": "baseline",
+      "passed": true,
+      "full_trajectory": true,
+      "accepted_times": {
+        "coarse": 0.2999999999999945,
+        "fine": 0.2999999999999807,
+        "DOP853": 0.3,
+        "Radau": 0.3
+      },
+      "failure_codes": {
+        "coarse": null,
+        "fine": null,
+        "DOP853": null,
+        "Radau": null
+      },
+      "comparisons": {
+        "coarse": {
+          "passed": true,
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 1.1700270382192531e-17,
+            "w_m_s": 1.0260237104375391e-15,
+            "a": 9.71445146547012e-17,
+            "q": 0.0,
+            "force_N": 2.7000623958883807e-13
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        },
+        "DOP853": {
+          "passed": true,
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 5.488433278910686e-16,
+            "w_m_s": 7.483454742097575e-15,
+            "a": 6.938893903907228e-16,
+            "q": 5.551115123125783e-15,
+            "force_N": 6.519229600598919e-13
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        },
+        "Radau": {
+          "passed": true,
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 2.801434926218881e-16,
+            "w_m_s": 8.475872154020684e-15,
+            "a": 9.020562075079397e-16,
+            "q": 2.1094237467877974e-15,
+            "force_N": 6.519229600598919e-13
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        }
+      },
+      "balances": {
+        "coarse": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 1.8159994122601675e-16,
+            "load_J": 6.409494854920721e-31,
+            "combined_J": 1.815999412260169e-16,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 0.0
+          },
+          "source_force_residual_N": 2.2293278334473143e-13,
+          "min_q": 1,
+          "min_s": 1.0059961788466336
+        },
+        "fine": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 1.8849046565710457e-16,
+            "load_J": 4.190823558986625e-31,
+            "combined_J": 1.8849046565710447e-16,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 0.0
+          },
+          "source_force_residual_N": 2.2293278334473143e-13,
+          "min_q": 1,
+          "min_s": 1.0059961788466336
+        },
+        "DOP853": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 4.929968899978534e-16,
+            "load_J": 1.9721522630525295e-30,
+            "combined_J": 4.929968899978534e-16,
+            "momentum_N_s": 4.397899546607141e-29,
+            "power_ledger_J": 2.828805902315972e-30
+          },
+          "source_force_residual_N": 1.865174681370263e-14,
+          "min_q": 0.9999999999999944,
+          "min_s": 1.0059961788466332
+        },
+        "Radau": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 2.8237227074652144e-15,
+            "load_J": 6.902532920683853e-31,
+            "combined_J": 2.8237227074652163e-15,
+            "momentum_N_s": 2.7610131682735413e-30,
+            "power_ledger_J": 3.1554436208840472e-30
+          },
+          "source_force_residual_N": 1.865174681370263e-14,
+          "min_q": 0.9999999999999979,
+          "min_s": 1.0059961788466332
+        }
+      },
+      "independent_quadrature": {
+        "passed": true,
+        "max_errors": {
+          "active_J": 2.070245942735821e-16,
+          "dissipation_J": 8.974421582146243e-30,
+          "load_J": 1.1474045651465054e-19,
+          "fiber_J": 0.0,
+          "tendon_J": 2.0713933473008419e-16,
+          "momentum_N_s": 5.509778266170484e-14
+        },
+        "quadrature": "Gauss-Legendre 8 / cubic Hermite / accepted-history intervals"
+      },
+      "last_accepted_state_retained": true,
+      "tracking": {
+        "status": "met",
+        "window": [
+          0.03,
+          0.05
+        ],
+        "maxError": 9.14823772291129e-14,
+        "budget": 0.04903325
+      }
+    },
+    {
+      "name": "pulse",
+      "passed": true,
+      "full_trajectory": true,
+      "accepted_times": {
+        "coarse": 0.2999999999999945,
+        "fine": 0.29999999999999244,
+        "DOP853": 0.3,
+        "Radau": 0.3
+      },
+      "failure_codes": {
+        "coarse": null,
+        "fine": null,
+        "DOP853": null,
+        "Radau": null
+      },
+      "comparisons": {
+        "coarse": {
+          "passed": true,
+          "matched_count": 302,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 1.5197805271010583e-13,
+            "w_m_s": 4.703370071884594e-11,
+            "a": 1.246258651832477e-11,
+            "q": 7.821299163879303e-12,
+            "force_N": 4.177052481679766e-09
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 1.1657341758564144e-14
+        },
+        "DOP853": {
+          "passed": true,
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 2.4321127815689347e-10,
+            "w_m_s": 4.794567520782778e-09,
+            "a": 1.6077076822607062e-09,
+            "q": 2.439716428881411e-09,
+            "force_N": 9.842385928493513e-08
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 2.5305081641224803e-08
+        },
+        "Radau": {
+          "passed": true,
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 2.4325407898921625e-10,
+            "w_m_s": 4.7953798024483185e-09,
+            "a": 1.6079791803624843e-09,
+            "q": 2.440145085991219e-09,
+            "force_N": 9.857136351598683e-08
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 2.5309348172797286e-08
+        }
+      },
+      "balances": {
+        "coarse": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 3.9386036444798763e-13,
+            "load_J": 1.813136746387574e-14,
+            "combined_J": 3.8877028766398647e-13,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 4.209655492031991e-15
+          },
+          "source_force_residual_N": 5.151434834260726e-13,
+          "min_q": 0.9825216893237383,
+          "min_s": 1.005909417077514
+        },
+        "fine": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 2.3897498089013765e-14,
+            "load_J": 1.1112627575679112e-15,
+            "combined_J": 2.213286386796616e-14,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 4.197190555180197e-15
+          },
+          "source_force_residual_N": 4.0678571622265736e-13,
+          "min_q": 0.982521689323597,
+          "min_s": 1.00590941707752
+        },
+        "DOP853": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 5.874342895798024e-16,
+            "load_J": 1.0408340855860843e-17,
+            "combined_J": 5.893451959088081e-16,
+            "momentum_N_s": 1.734723475976807e-18,
+            "power_ledger_J": 1.2793585635328952e-17
+          },
+          "source_force_residual_N": 4.1744385725905886e-14,
+          "min_q": 0.9825216893166595,
+          "min_s": 1.0059094170777598
+        },
+        "Radau": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 5.5432248418155194e-14,
+            "load_J": 5.0684689735167043e-14,
+            "combined_J": 2.4000426991665266e-14,
+            "momentum_N_s": 2.168404344971009e-19,
+            "power_ledger_J": 1.9071793840377826e-17
+          },
+          "source_force_residual_N": 4.085620730620576e-14,
+          "min_q": 0.9825216893166404,
+          "min_s": 1.0059094170778295
+        }
+      },
+      "independent_quadrature": {
+        "passed": true,
+        "max_errors": {
+          "active_J": 1.1859668629099485e-11,
+          "dissipation_J": 1.4372143124045944e-11,
+          "load_J": 1.4214931141898202e-10,
+          "fiber_J": 0.0,
+          "tendon_J": 1.3259664871996437e-10,
+          "momentum_N_s": 5.154406652364829e-09
+        },
+        "quadrature": "Gauss-Legendre 8 / cubic Hermite / accepted-history intervals"
+      },
+      "last_accepted_state_retained": true,
+      "tracking": {
+        "status": "missed",
+        "window": [
+          0.13,
+          0.15
+        ],
+        "maxError": 0.9460048684604758,
+        "budget": 0.04903325
+      }
+    },
+    {
+      "name": "lower",
+      "passed": true,
+      "full_trajectory": true,
+      "accepted_times": {
+        "coarse": 0.2999999999999945,
+        "fine": 0.2999999999999813,
+        "DOP853": 0.3,
+        "Radau": 0.3
+      },
+      "failure_codes": {
+        "coarse": null,
+        "fine": null,
+        "DOP853": null,
+        "Radau": null
+      },
+      "comparisons": {
+        "coarse": {
+          "passed": true,
+          "matched_count": 302,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 4.641788797950241e-13,
+            "w_m_s": 5.1145437711397346e-11,
+            "a": 1.1857390069813789e-11,
+            "q": 8.171685550451002e-12,
+            "force_N": 4.4089478734576915e-09
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 4.440892098500626e-16
+        },
+        "DOP853": {
+          "passed": true,
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 1.130561170397705e-09,
+            "w_m_s": 8.440282971014859e-09,
+            "a": 3.4719088021217814e-09,
+            "q": 1.1299848612367214e-08,
+            "force_N": 2.215661680793346e-07
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 2.798831194583684e-08
+        },
+        "Radau": {
+          "passed": true,
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 1.1306455289161396e-09,
+            "w_m_s": 8.439213625014222e-09,
+            "a": 3.472066911758276e-09,
+            "q": 1.1300693270044349e-08,
+            "force_N": 2.2150966216827328e-07
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 2.799070794590186e-08
+        }
+      },
+      "balances": {
+        "coarse": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 1.3599369566977071e-17,
+            "tendon_J": 4.611918892572994e-13,
+            "load_J": 2.2291630347170965e-14,
+            "combined_J": 4.585547656784381e-13,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 3.923219442456688e-15
+          },
+          "source_force_residual_N": 4.3876013933186186e-13,
+          "min_q": 1,
+          "min_s": 1.0059173174152976
+        },
+        "fine": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 8.324948343983746e-19,
+            "tendon_J": 2.9544845472310056e-14,
+            "load_J": 1.3689136629801979e-15,
+            "combined_J": 2.729021910253919e-14,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 3.9405217844702516e-15
+          },
+          "source_force_residual_N": 4.591882429849647e-13,
+          "min_q": 1,
+          "min_s": 1.0059173174152927
+        },
+        "DOP853": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 2.484850560109295e-20,
+            "tendon_J": 5.802378976599298e-16,
+            "load_J": 1.734723475976807e-18,
+            "combined_J": 5.792299284526972e-16,
+            "momentum_N_s": 1.3010426069826053e-18,
+            "power_ledger_J": 1.1680584342636802e-18
+          },
+          "source_force_residual_N": 4.263256414560601e-14,
+          "min_q": 0.9999999999999994,
+          "min_s": 1.005917317415298
+        },
+        "Radau": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 9.123502406885421e-18,
+            "tendon_J": 5.853995131525902e-14,
+            "load_J": 4.280549439211745e-14,
+            "combined_J": 2.034518929196205e-14,
+            "momentum_N_s": 4.336808689942018e-19,
+            "power_ledger_J": 2.360680823997735e-18
+          },
+          "source_force_residual_N": 4.3520742565306136e-14,
+          "min_q": 0.9999999999999996,
+          "min_s": 1.0059173174152987
+        }
+      },
+      "independent_quadrature": {
+        "passed": true,
+        "max_errors": {
+          "active_J": 8.143262106297122e-12,
+          "dissipation_J": 1.4152860957836189e-11,
+          "load_J": 1.6637518316167665e-10,
+          "fiber_J": 7.164442895893288e-19,
+          "tendon_J": 1.2600905049334475e-10,
+          "momentum_N_s": 5.291966754129157e-09
+        },
+        "quadrature": "Gauss-Legendre 8 / cubic Hermite / accepted-history intervals"
+      },
+      "last_accepted_state_retained": true,
+      "tracking": {
+        "status": "met",
+        "window": [
+          0.25,
+          0.3
+        ],
+        "maxError": 0.011795174973374678,
+        "budget": 0.04903325
+      }
+    },
+    {
+      "name": "release",
+      "passed": true,
+      "full_trajectory": true,
+      "accepted_times": {
+        "coarse": 0.2999999999999945,
+        "fine": 0.2999999999999807,
+        "DOP853": 0.3,
+        "Radau": 0.3
+      },
+      "failure_codes": {
+        "coarse": null,
+        "fine": null,
+        "DOP853": null,
+        "Radau": null
+      },
+      "comparisons": {
+        "coarse": {
+          "passed": true,
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 1.4193978748398264e-13,
+            "w_m_s": 2.1435252444551578e-11,
+            "a": 6.755013215453687e-15,
+            "q": 3.668620962571367e-12,
+            "force_N": 1.5710819312175772e-09
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        },
+        "DOP853": {
+          "passed": true,
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 1.1965602120245222e-13,
+            "w_m_s": 2.432859469436721e-12,
+            "a": 1.0130785099704553e-15,
+            "q": 1.2310152897043736e-12,
+            "force_N": 1.142241856655346e-10
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        },
+        "Radau": {
+          "passed": true,
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 1.3731203674094417e-13,
+            "w_m_s": 7.706797006123978e-12,
+            "a": 7.973482984979796e-14,
+            "q": 1.6571188865555087e-12,
+            "force_N": 1.1822249845749866e-09
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        }
+      },
+      "balances": {
+        "coarse": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 9.516367728557018e-15,
+            "tendon_J": 2.844458067523259e-13,
+            "load_J": 4.3817058407178214e-14,
+            "combined_J": 2.5929538599806304e-13,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 1.7120809978066198e-13
+          },
+          "source_force_residual_N": 1.1928236176572682e-12,
+          "min_q": 1,
+          "min_s": 1.0052319732983688
+        },
+        "fine": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 8.777700788442644e-16,
+            "tendon_J": 1.8027842673545846e-14,
+            "load_J": 2.7090417582809057e-15,
+            "combined_J": 1.54751211844939e-13,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 1.7110125165656354e-13
+          },
+          "source_force_residual_N": 1.3287149158713873e-12,
+          "min_q": 1,
+          "min_s": 1.005231973298271
+        },
+        "DOP853": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 4.180683577104105e-15,
+            "tendon_J": 1.2102948851455686e-15,
+            "load_J": 5.551115123125783e-17,
+            "combined_J": 4.603956105242446e-15,
+            "momentum_N_s": 1.3877787807814457e-17,
+            "power_ledger_J": 9.226560487851643e-17
+          },
+          "source_force_residual_N": 2.7533531010703882e-14,
+          "min_q": 0.9999999999999994,
+          "min_s": 1.005231973298203
+        },
+        "Radau": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 3.5658281882788856e-13,
+            "tendon_J": 1.2785378224883237e-13,
+            "load_J": 1.6793782076779395e-13,
+            "combined_J": 2.8781838024016793e-13,
+            "momentum_N_s": 1.431146867680866e-17,
+            "power_ledger_J": 3.642919299551295e-17
+          },
+          "source_force_residual_N": 2.842170943040401e-14,
+          "min_q": 0.9999999999999996,
+          "min_s": 1.0052319732982018
+        }
+      },
+      "independent_quadrature": {
+        "passed": true,
+        "max_errors": {
+          "active_J": 6.002358332590774e-12,
+          "dissipation_J": 2.265923559896521e-12,
+          "load_J": 1.310699604406551e-10,
+          "fiber_J": 3.8163916471489756e-16,
+          "tendon_J": 1.30227728557461e-10,
+          "momentum_N_s": 2.201599097690146e-09
+        },
+        "quadrature": "Gauss-Legendre 8 / cubic Hermite / accepted-history intervals"
+      },
+      "last_accepted_state_retained": true,
+      "tracking": {
+        "status": "not-applicable"
+      }
+    },
+    {
+      "name": "high",
+      "passed": false,
+      "full_trajectory": false,
+      "accepted_times": {
+        "coarse": 0.10540000000000001,
+        "fine": 0.10540000000000001,
+        "DOP853": 0.10513065980604425,
+        "Radau": 0.10513925906910943
+      },
+      "failure_codes": {
+        "coarse": "antiwindup-surface",
+        "fine": "antiwindup-surface",
+        "DOP853": "antiwindup-surface",
+        "Radau": "antiwindup-surface"
+      },
+      "comparisons": {
+        "coarse": {
+          "passed": true,
+          "matched_count": 107,
+          "matched_end": 0.1054,
+          "max_errors": {
+            "y_m": 1.6312712257382511e-09,
+            "w_m_s": 1.0198148261975071e-07,
+            "a": 1.6768345267870188e-08,
+            "q": 1.601008425833328e-08,
+            "force_N": 9.402670783309475e-06
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        },
+        "DOP853": {
+          "passed": true,
+          "matched_count": 106,
+          "matched_end": 0.105,
+          "max_errors": {
+            "y_m": 1.1122112519162952e-10,
+            "w_m_s": 6.94266982792513e-09,
+            "a": 1.1269299104998964e-09,
+            "q": 1.0880846224026186e-09,
+            "force_N": 6.385476227777076e-07
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        },
+        "Radau": {
+          "passed": true,
+          "matched_count": 106,
+          "matched_end": 0.105,
+          "max_errors": {
+            "y_m": 1.1127513927650101e-10,
+            "w_m_s": 6.947844286009364e-09,
+            "a": 1.1253862564064576e-09,
+            "q": 1.088641843338678e-09,
+            "force_N": 6.388944804314178e-07
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        }
+      },
+      "balances": {
+        "coarse": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 2.442404976182866e-09,
+            "load_J": 4.911144092041488e-11,
+            "combined_J": 2.4569665468821e-09,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 6.40559924981049e-14
+          },
+          "source_force_residual_N": 7.140954494389007e-13,
+          "min_q": 0.7985435865062892,
+          "min_s": 1.0056660858729376
+        },
+        "fine": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 1.4742026002712016e-10,
+            "load_J": 2.9807757824518166e-12,
+            "combined_J": 1.4838520689952617e-10,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 6.548884698420743e-14
+          },
+          "source_force_residual_N": 6.359357485052897e-13,
+          "min_q": 0.7985435733694596,
+          "min_s": 1.0056660862843174
+        },
+        "DOP853": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 9.887067293351537e-14,
+            "load_J": 3.028827189055505e-15,
+            "combined_J": 9.880518712229724e-14,
+            "momentum_N_s": 2.7755575615628914e-17,
+            "power_ledger_J": 6.441787207822625e-16
+          },
+          "source_force_residual_N": 1.163513729807164e-13,
+          "min_q": 0.7999898774836721,
+          "min_s": 1.0056660863122773
+        },
+        "Radau": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 1.0669047026054534e-11,
+            "load_J": 2.41289627167518e-11,
+            "combined_J": 3.4798011694370246e-11,
+            "momentum_N_s": 1.3877787807814457e-17,
+            "power_ledger_J": 7.45931094670027e-17
+          },
+          "source_force_residual_N": 1.2878587085651816e-13,
+          "min_q": 0.799943704445372,
+          "min_s": 1.0056660863122087
+        }
+      },
+      "independent_quadrature": {
+        "passed": false,
+        "max_errors": {
+          "active_J": 1.3606491172657442e-07,
+          "dissipation_J": 8.887864054729633e-07,
+          "load_J": 1.6072863234795065e-08,
+          "fiber_J": 0.0,
+          "tendon_J": 1.4776022302248355e-08,
+          "momentum_N_s": 2.4278724815030017e-06
+        },
+        "quadrature": "Gauss-Legendre 8 / cubic Hermite / accepted-history intervals"
+      },
+      "last_accepted_state_retained": true,
+      "tracking": {
+        "status": "window-not-reached",
+        "window": [
+          0.13,
+          0.15
+        ]
+      }
+    },
+    {
+      "name": "mass-025",
+      "passed": true,
+      "full_trajectory": true,
+      "accepted_times": {
+        "coarse": 0.2999999999999945,
+        "fine": 0.2999999999999807,
+        "DOP853": 0.3,
+        "Radau": 0.3
+      },
+      "failure_codes": {
+        "coarse": null,
+        "fine": null,
+        "DOP853": null,
+        "Radau": null
+      },
+      "comparisons": {
+        "coarse": {
+          "passed": true,
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 1.8877121274549907e-12,
+            "w_m_s": 3.8399844415337725e-10,
+            "a": 8.845679744240442e-11,
+            "q": 3.0882851831393054e-11,
+            "force_N": 1.434287355550623e-08
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        },
+        "DOP853": {
+          "passed": true,
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 1.2426379912035268e-13,
+            "w_m_s": 2.5286175930894217e-11,
+            "a": 5.817311909961376e-12,
+            "q": 2.046030012081701e-12,
+            "force_N": 9.512626242269562e-10
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        },
+        "Radau": {
+          "passed": true,
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 1.3697506670573567e-13,
+            "w_m_s": 3.336211862325911e-11,
+            "a": 7.372144561479388e-12,
+            "q": 4.157230115708899e-12,
+            "force_N": 2.9112348087778628e-09
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        }
+      },
+      "balances": {
+        "coarse": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 9.458810904666715e-12,
+            "load_J": 2.157276310713052e-12,
+            "combined_J": 9.167396008979978e-12,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 2.0875011788601405e-14
+          },
+          "source_force_residual_N": 9.396927680427325e-13,
+          "min_q": 0.6002299647593612,
+          "min_s": 1.003565611691215
+        },
+        "fine": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 5.87180694691658e-13,
+            "load_J": 1.3312289638689467e-13,
+            "combined_J": 5.524439412873949e-13,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 2.027479746591343e-14
+          },
+          "source_force_residual_N": 7.056577544517495e-13,
+          "min_q": 0.6002299647628916,
+          "min_s": 1.0035656116913871
+        },
+        "DOP853": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 3.0921445959286586e-16,
+            "load_J": 1.249000902703301e-16,
+            "combined_J": 3.0254661623208e-16,
+            "momentum_N_s": 6.938893903907228e-18,
+            "power_ledger_J": 1.8951853975046618e-16
+          },
+          "source_force_residual_N": 2.886579864025407e-14,
+          "min_q": 0.6002299647630789,
+          "min_s": 1.003565611691399
+        },
+        "Radau": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 3.8800343146738747e-13,
+            "load_J": 9.022379197920483e-13,
+            "combined_J": 1.07997874423775e-12,
+            "momentum_N_s": 5.204170427930421e-18,
+            "power_ledger_J": 1.4181364416110398e-16
+          },
+          "source_force_residual_N": 2.930988785010413e-14,
+          "min_q": 0.6002299647630962,
+          "min_s": 1.0035656116913938
+        }
+      },
+      "independent_quadrature": {
+        "passed": true,
+        "max_errors": {
+          "active_J": 4.59016796794387e-10,
+          "dissipation_J": 2.566574938689392e-10,
+          "load_J": 7.932761530993204e-10,
+          "fiber_J": 0.0,
+          "tendon_J": 1.5306989792438636e-09,
+          "momentum_N_s": 1.2596155011396215e-08
+        },
+        "quadrature": "Gauss-Legendre 8 / cubic Hermite / accepted-history intervals"
+      },
+      "last_accepted_state_retained": true,
+      "tracking": {
+        "status": "missed",
+        "window": [
+          0.25,
+          0.3
+        ],
+        "maxError": 2.7965725019127805,
+        "budget": 0.024516625
+      }
+    },
+    {
+      "name": "mass-05",
+      "passed": true,
+      "full_trajectory": true,
+      "accepted_times": {
+        "coarse": 0.2999999999999945,
+        "fine": 0.2999999999999807,
+        "DOP853": 0.3,
+        "Radau": 0.3
+      },
+      "failure_codes": {
+        "coarse": null,
+        "fine": null,
+        "DOP853": null,
+        "Radau": null
+      },
+      "comparisons": {
+        "coarse": {
+          "passed": true,
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 1.6015576610128102e-14,
+            "w_m_s": 4.545849645060801e-12,
+            "a": 1.2734258092450546e-12,
+            "q": 8.435474541101939e-13,
+            "force_N": 4.4011194688664546e-10
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        },
+        "DOP853": {
+          "passed": true,
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 8.144158090972464e-14,
+            "w_m_s": 1.6971389571462936e-12,
+            "a": 1.4039464035775495e-13,
+            "q": 8.131273432354647e-13,
+            "force_N": 4.0743408646903845e-11
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        },
+        "Radau": {
+          "passed": true,
+          "matched_count": 301,
+          "matched_end": 0.3,
+          "max_errors": {
+            "y_m": 8.130648931903295e-14,
+            "w_m_s": 2.0351210565428045e-12,
+            "a": 2.6756166726649155e-12,
+            "q": 8.117950756059145e-13,
+            "force_N": 4.391074170939646e-10
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        }
+      },
+      "balances": {
+        "coarse": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 4.9406855830939206e-15,
+            "load_J": 1.8427042948839694e-16,
+            "combined_J": 1.0283474646908403e-14,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 1.4352602290793222e-14
+          },
+          "source_force_residual_N": 4.929390229335695e-13,
+          "min_q": 0.9896807875240906,
+          "min_s": 1.0059961788466336
+        },
+        "fine": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 8.48640615788189e-16,
+            "load_J": 1.1294416728027646e-17,
+            "combined_J": 1.522976081184957e-14,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 1.4381069374084544e-14
+          },
+          "source_force_residual_N": 4.760636329592671e-13,
+          "min_q": 0.9896807875240891,
+          "min_s": 1.0059961788466336
+        },
+        "DOP853": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 9.268793550601742e-16,
+            "load_J": 7.806255641895632e-18,
+            "combined_J": 9.30089609930268e-16,
+            "momentum_N_s": 4.336808689942018e-19,
+            "power_ledger_J": 6.4289800696601396e-18
+          },
+          "source_force_residual_N": 3.4638958368304884e-14,
+          "min_q": 0.9896807875232759,
+          "min_s": 1.0059961788466336
+        },
+        "Radau": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 0.0,
+            "tendon_J": 1.2148773333902144e-15,
+            "load_J": 1.2066348557804828e-15,
+            "combined_J": 1.038920360225551e-15,
+            "momentum_N_s": 5.421010862427522e-20,
+            "power_ledger_J": 9.093745721722168e-18
+          },
+          "source_force_residual_N": 3.375077994860476e-14,
+          "min_q": 0.9896807875232773,
+          "min_s": 1.0059961788466336
+        }
+      },
+      "independent_quadrature": {
+        "passed": true,
+        "max_errors": {
+          "active_J": 1.2368057966671842e-13,
+          "dissipation_J": 1.2533504507687698e-13,
+          "load_J": 1.551126761756283e-11,
+          "fiber_J": 0.0,
+          "tendon_J": 1.551080936257397e-11,
+          "momentum_N_s": 5.158288783092824e-10
+        },
+        "quadrature": "Gauss-Legendre 8 / cubic Hermite / accepted-history intervals"
+      },
+      "last_accepted_state_retained": true,
+      "tracking": {
+        "status": "missed",
+        "window": [
+          0.25,
+          0.3
+        ],
+        "maxError": 0.0871773237500646,
+        "budget": 0.04903325
+      }
+    },
+    {
+      "name": "mass-1",
+      "passed": true,
+      "full_trajectory": false,
+      "accepted_times": {
+        "coarse": 0.2619999999999987,
+        "fine": 0.2619999999999849,
+        "DOP853": 0.26197761378932727,
+        "Radau": 0.2619720264447538
+      },
+      "failure_codes": {
+        "coarse": "antiwindup-surface",
+        "fine": "antiwindup-surface",
+        "DOP853": "antiwindup-surface",
+        "Radau": "antiwindup-surface"
+      },
+      "comparisons": {
+        "coarse": {
+          "passed": true,
+          "matched_count": 263,
+          "matched_end": 0.262,
+          "max_errors": {
+            "y_m": 3.8237944477437225e-09,
+            "w_m_s": 7.862997347674039e-08,
+            "a": 1.9658028749952594e-08,
+            "q": 3.6022262284163276e-08,
+            "force_N": 2.057495384732988e-06
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        },
+        "DOP853": {
+          "passed": true,
+          "matched_count": 262,
+          "matched_end": 0.261,
+          "max_errors": {
+            "y_m": 5.14934046791371e-10,
+            "w_m_s": 1.0913081844449168e-08,
+            "a": 1.945433727654211e-08,
+            "q": 4.90537055419793e-09,
+            "force_N": 8.397244020130756e-07
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        },
+        "Radau": {
+          "passed": true,
+          "matched_count": 262,
+          "matched_end": 0.261,
+          "max_errors": {
+            "y_m": 5.769196752269945e-10,
+            "w_m_s": 1.2260647268280689e-08,
+            "a": 1.9583311210505383e-08,
+            "q": 5.495294885804469e-09,
+            "force_N": 8.624019898206825e-07
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        }
+      },
+      "balances": {
+        "coarse": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 2.316480340880389e-13,
+            "tendon_J": 3.769174208856363e-12,
+            "load_J": 2.2376371588972432e-13,
+            "combined_J": 3.5581954049845876e-12,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 1.6768877952877403e-13
+          },
+          "source_force_residual_N": 1.2594369991347776e-12,
+          "min_q": 1,
+          "min_s": 1.0059961788466336
+        },
+        "fine": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 1.5154544286133387e-14,
+            "tendon_J": 2.340575649961707e-13,
+            "load_J": 1.38595732113167e-14,
+            "combined_J": 1.963533502458148e-13,
+            "momentum_N_s": 0.0,
+            "power_ledger_J": 1.6697580818014757e-13
+          },
+          "source_force_residual_N": 9.059419880941277e-13,
+          "min_q": 1,
+          "min_s": 1.0059961788466336
+        },
+        "DOP853": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 2.373101715136272e-15,
+            "tendon_J": 2.2455995396519768e-15,
+            "load_J": 4.996003610813204e-16,
+            "combined_J": 1.7008963681952594e-15,
+            "momentum_N_s": 4.163336342344337e-17,
+            "power_ledger_J": 4.49293380277993e-16
+          },
+          "source_force_residual_N": 1.865174681370263e-14,
+          "min_q": 1.0,
+          "min_s": 1.0059961788466336
+        },
+        "Radau": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 3.6273206660553114e-12,
+            "tendon_J": 9.020006963567084e-13,
+            "load_J": 5.195788244094501e-12,
+            "combined_J": 2.5748153609228552e-12,
+            "momentum_N_s": 2.7755575615628914e-17,
+            "power_ledger_J": 2.1510571102112408e-16
+          },
+          "source_force_residual_N": 1.5987211554602254e-14,
+          "min_q": 1.0,
+          "min_s": 1.0059961788466336
+        }
+      },
+      "independent_quadrature": {
+        "passed": true,
+        "max_errors": {
+          "active_J": 1.272991864698092e-09,
+          "dissipation_J": 1.0780383530306636e-10,
+          "load_J": 2.681964650363966e-10,
+          "fiber_J": 2.248201624865942e-15,
+          "tendon_J": 1.760085497487518e-10,
+          "momentum_N_s": 7.658585723935296e-09
+        },
+        "quadrature": "Gauss-Legendre 8 / cubic Hermite / accepted-history intervals"
+      },
+      "last_accepted_state_retained": true,
+      "tracking": {
+        "status": "window-not-reached",
+        "window": [
+          0.25,
+          0.3
+        ]
+      }
+    },
+    {
+      "name": "desc-fixed-plus",
+      "passed": true,
+      "full_trajectory": true,
+      "accepted_times": {
+        "coarse": 0.15,
+        "fine": 0.14999999999999725,
+        "DOP853": 0.15,
+        "Radau": 0.15
+      },
+      "failure_codes": {
+        "coarse": null,
+        "fine": null,
+        "DOP853": null,
+        "Radau": null
+      },
+      "comparisons": {
+        "coarse": {
+          "passed": true,
+          "matched_count": 151,
+          "matched_end": 0.15,
+          "max_errors": {
+            "y_m": 5.339051954451196e-16,
+            "w_m_s": 2.4358065477819713e-14,
+            "a": 0.0,
+            "q": 5.773159728050814e-15,
+            "force_N": 8.37019342725398e-12
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        },
+        "DOP853": {
+          "passed": true,
+          "matched_count": 151,
+          "matched_end": 0.15,
+          "max_errors": {
+            "y_m": 2.9575849419278405e-16,
+            "w_m_s": 1.5940883934585127e-14,
+            "a": 0.0,
+            "q": 3.774758283725532e-15,
+            "force_N": 7.403855306620244e-12
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        },
+        "Radau": {
+          "passed": true,
+          "matched_count": 151,
+          "matched_end": 0.15,
+          "max_errors": {
+            "y_m": 7.728320140418764e-16,
+            "w_m_s": 7.476149622878507e-14,
+            "a": 0.0,
+            "q": 1.554312234475219e-14,
+            "force_N": 1.9880985746567603e-11
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        }
+      },
+      "balances": {
+        "coarse": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 3.71531520555312e-16,
+            "tendon_J": 1.1522954899284565e-14,
+            "load_J": 1.0722759485881639e-16,
+            "combined_J": 1.1082788980610062e-14,
+            "momentum_N_s": 8.673617379884035e-19,
+            "power_ledger_J": 4.9873299934333204e-18
+          },
+          "source_force_residual_N": 1.7550405573274475e-12,
+          "min_q": 1.1000470190608178,
+          "min_s": 1.0306322441542233
+        },
+        "fine": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 5.218675867152151e-16,
+            "tendon_J": 1.518528141772335e-14,
+            "load_J": 7.15573433840433e-18,
+            "combined_J": 1.469604084861338e-14,
+            "momentum_N_s": 2.6020852139652106e-18,
+            "power_ledger_J": 4.933119884809045e-18
+          },
+          "source_force_residual_N": 1.5063505998114124e-12,
+          "min_q": 1.1000470190608225,
+          "min_s": 1.0306322441542233
+        },
+        "DOP853": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 2.7020562775648994e-16,
+            "tendon_J": 9.929936647251614e-15,
+            "load_J": 8.673617379884035e-19,
+            "combined_J": 9.678794680495719e-15,
+            "momentum_N_s": 8.673617379884035e-19,
+            "power_ledger_J": 1.0842021724855044e-18
+          },
+          "source_force_residual_N": 3.552713678800501e-14,
+          "min_q": 1.100047019060821,
+          "min_s": 1.0306322441542233
+        },
+        "Radau": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 1.7612059610727128e-16,
+            "tendon_J": 6.7338712730902195e-15,
+            "load_J": 5.944680511738021e-16,
+            "combined_J": 6.5517635734877914e-15,
+            "momentum_N_s": 6.505213034913027e-19,
+            "power_ledger_J": 1.0842021724855044e-18
+          },
+          "source_force_residual_N": 4.263256414560601e-14,
+          "min_q": 1.100047019060821,
+          "min_s": 1.0306322441542233
+        }
+      },
+      "independent_quadrature": {
+        "passed": true,
+        "max_errors": {
+          "active_J": 2.320057123847419e-16,
+          "dissipation_J": 4.2169836041926067e-16,
+          "load_J": 3.262936795755955e-13,
+          "fiber_J": 3.683475237065831e-16,
+          "tendon_J": 3.3623500034565823e-13,
+          "momentum_N_s": 2.0211859285855158e-11
+        },
+        "quadrature": "Gauss-Legendre 8 / cubic Hermite / accepted-history intervals"
+      },
+      "last_accepted_state_retained": true,
+      "tracking": {
+        "status": "not-applicable"
+      }
+    },
+    {
+      "name": "desc-fixed-minus",
+      "passed": true,
+      "full_trajectory": true,
+      "accepted_times": {
+        "coarse": 0.15,
+        "fine": 0.14999999999999725,
+        "DOP853": 0.15,
+        "Radau": 0.15
+      },
+      "failure_codes": {
+        "coarse": null,
+        "fine": null,
+        "DOP853": null,
+        "Radau": null
+      },
+      "comparisons": {
+        "coarse": {
+          "passed": true,
+          "matched_count": 151,
+          "matched_end": 0.15,
+          "max_errors": {
+            "y_m": 6.217780874591752e-16,
+            "w_m_s": 2.7672120847467736e-14,
+            "a": 0.0,
+            "q": 5.10702591327572e-15,
+            "force_N": 9.919176591210999e-12
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        },
+        "DOP853": {
+          "passed": true,
+          "matched_count": 151,
+          "matched_end": 0.15,
+          "max_errors": {
+            "y_m": 8.231245952851005e-16,
+            "w_m_s": 2.931817522046007e-14,
+            "a": 0.0,
+            "q": 9.547918011776346e-15,
+            "force_N": 1.1681322575896047e-11
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        },
+        "Radau": {
+          "passed": true,
+          "matched_count": 151,
+          "matched_end": 0.15,
+          "max_errors": {
+            "y_m": 8.841719538596124e-16,
+            "w_m_s": 7.74689896108384e-14,
+            "a": 0.0,
+            "q": 1.5987211554602254e-14,
+            "force_N": 1.8452794847689802e-11
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        }
+      },
+      "balances": {
+        "coarse": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 2.1169555637547827e-16,
+            "tendon_J": 6.675107515341505e-15,
+            "load_J": 1.0690233420707074e-16,
+            "combined_J": 6.609281574072944e-15,
+            "momentum_N_s": 2.8189256484623115e-18,
+            "power_ledger_J": 8.61940727125976e-18
+          },
+          "source_force_residual_N": 1.6058265828178264e-12,
+          "min_q": 1.0998817726207006,
+          "min_s": 1.0306674437743684
+        },
+        "fine": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 2.909126187015422e-16,
+            "tendon_J": 1.035911807723e-14,
+            "load_J": 6.396792817664476e-18,
+            "combined_J": 1.0071869537769823e-14,
+            "momentum_N_s": 1.3010426069826053e-18,
+            "power_ledger_J": 8.131516293641283e-18
+          },
+          "source_force_residual_N": 1.5205614545266144e-12,
+          "min_q": 1.0998817726207029,
+          "min_s": 1.0306674437743713
+        },
+        "DOP853": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 2.0824982634604777e-16,
+            "tendon_J": 6.495021534491663e-15,
+            "load_J": 4.336808689942018e-19,
+            "combined_J": 6.354550490491516e-15,
+            "momentum_N_s": 1.5178830414797062e-18,
+            "power_ledger_J": 4.336808689942018e-19
+          },
+          "source_force_residual_N": 3.552713678800501e-14,
+          "min_q": 1.099881772620695,
+          "min_s": 1.0306674437743708
+        },
+        "Radau": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 1.4221259667926076e-16,
+            "tendon_J": 5.545585692046107e-15,
+            "load_J": 6.183442158910063e-16,
+            "combined_J": 5.469398145626294e-15,
+            "momentum_N_s": 5.421010862427522e-19,
+            "power_ledger_J": 1.3010426069826053e-18
+          },
+          "source_force_residual_N": 2.842170943040401e-14,
+          "min_q": 1.0998817726206958,
+          "min_s": 1.0306674437743713
+        }
+      },
+      "independent_quadrature": {
+        "passed": true,
+        "max_errors": {
+          "active_J": 1.0499820414164307e-14,
+          "dissipation_J": 4.1930753382501905e-16,
+          "load_J": 3.094894132638082e-13,
+          "fiber_J": 1.6534083130403943e-17,
+          "tendon_J": 3.106690252274724e-13,
+          "momentum_N_s": 2.0483132835810887e-11
+        },
+        "quadrature": "Gauss-Legendre 8 / cubic Hermite / accepted-history intervals"
+      },
+      "last_accepted_state_retained": true,
+      "tracking": {
+        "status": "not-applicable"
+      }
+    },
+    {
+      "name": "desc-pi-plus",
+      "passed": true,
+      "full_trajectory": true,
+      "accepted_times": {
+        "coarse": 0.15,
+        "fine": 0.14999999999999725,
+        "DOP853": 0.15,
+        "Radau": 0.15
+      },
+      "failure_codes": {
+        "coarse": null,
+        "fine": null,
+        "DOP853": null,
+        "Radau": null
+      },
+      "comparisons": {
+        "coarse": {
+          "passed": true,
+          "matched_count": 151,
+          "matched_end": 0.15,
+          "max_errors": {
+            "y_m": 1.3238560036960543e-11,
+            "w_m_s": 2.2787978440209195e-10,
+            "a": 1.186278630882498e-09,
+            "q": 1.341315947200883e-10,
+            "force_N": 4.165976008607686e-08
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        },
+        "DOP853": {
+          "passed": true,
+          "matched_count": 151,
+          "matched_end": 0.15,
+          "max_errors": {
+            "y_m": 7.2642295434797e-12,
+            "w_m_s": 1.326553338171514e-10,
+            "a": 6.904181670819298e-10,
+            "q": 7.096612186785478e-11,
+            "force_N": 2.4245998986316408e-08
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        },
+        "Radau": {
+          "passed": true,
+          "matched_count": 151,
+          "matched_end": 0.15,
+          "max_errors": {
+            "y_m": 6.790352194036855e-12,
+            "w_m_s": 1.2828965657740612e-10,
+            "a": 6.684641729037821e-10,
+            "q": 6.384381912027948e-11,
+            "force_N": 2.346371985595397e-08
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        }
+      },
+      "balances": {
+        "coarse": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 4.0074949855437546e-16,
+            "tendon_J": 1.2504645756361565e-14,
+            "load_J": 1.0511340062246965e-16,
+            "combined_J": 1.2205631267519536e-14,
+            "momentum_N_s": 8.673617379884035e-19,
+            "power_ledger_J": 3.65376132127615e-17
+          },
+          "source_force_residual_N": 1.6058265828178264e-12,
+          "min_q": 1.1000348567115368,
+          "min_s": 1.0306322441542233
+        },
+        "fine": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 3.9911768958149005e-16,
+            "tendon_J": 1.3063877236929589e-14,
+            "load_J": 8.348356728138384e-18,
+            "combined_J": 1.266494588797905e-14,
+            "momentum_N_s": 8.673617379884035e-19,
+            "power_ledger_J": 3.7838655819744105e-17
+          },
+          "source_force_residual_N": 1.5134560271690134e-12,
+          "min_q": 1.1000348566756806,
+          "min_s": 1.0306322441542233
+        },
+        "DOP853": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 1.3761447832509079e-16,
+            "tendon_J": 5.100141229480437e-15,
+            "load_J": 9.215718466126788e-19,
+            "combined_J": 4.961989451025379e-15,
+            "momentum_N_s": 1.0842021724855044e-18,
+            "power_ledger_J": 6.505213034913027e-19
+          },
+          "source_force_residual_N": 4.263256414560601e-14,
+          "min_q": 1.1000348566547988,
+          "min_s": 1.0306322441542233
+        },
+        "Radau": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 2.384550212451361e-16,
+            "tendon_J": 8.59176011586138e-15,
+            "load_J": 9.699018525171146e-16,
+            "combined_J": 8.365450822469654e-15,
+            "momentum_N_s": 4.336808689942018e-19,
+            "power_ledger_J": 3.2526065174565133e-19
+          },
+          "source_force_residual_N": 3.268496584496461e-13,
+          "min_q": 1.1000348566555196,
+          "min_s": 1.0306322441542233
+        }
+      },
+      "independent_quadrature": {
+        "passed": true,
+        "max_errors": {
+          "active_J": 1.8911521654230157e-13,
+          "dissipation_J": 1.5438575648876104e-15,
+          "load_J": 2.8235597995980577e-12,
+          "fiber_J": 3.664666870472049e-16,
+          "tendon_J": 2.8057738424291934e-12,
+          "momentum_N_s": 6.02669358916539e-11
+        },
+        "quadrature": "Gauss-Legendre 8 / cubic Hermite / accepted-history intervals"
+      },
+      "last_accepted_state_retained": true,
+      "tracking": {
+        "status": "met",
+        "window": [
+          0.1,
+          0.15
+        ],
+        "maxError": 0.007869220291794932,
+        "budget": 0.49573260123759266
+      }
+    },
+    {
+      "name": "desc-pi-minus",
+      "passed": true,
+      "full_trajectory": true,
+      "accepted_times": {
+        "coarse": 0.15,
+        "fine": 0.14999999999999725,
+        "DOP853": 0.15,
+        "Radau": 0.15
+      },
+      "failure_codes": {
+        "coarse": null,
+        "fine": null,
+        "DOP853": null,
+        "Radau": null
+      },
+      "comparisons": {
+        "coarse": {
+          "passed": true,
+          "matched_count": 151,
+          "matched_end": 0.15,
+          "max_errors": {
+            "y_m": 4.045805279472925e-12,
+            "w_m_s": 9.226393278126844e-11,
+            "a": 9.229050856873755e-10,
+            "q": 3.829647710063e-11,
+            "force_N": 2.207576699220226e-08
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        },
+        "DOP853": {
+          "passed": true,
+          "matched_count": 151,
+          "matched_end": 0.15,
+          "max_errors": {
+            "y_m": 8.616458363323344e-12,
+            "w_m_s": 1.9754018803748788e-10,
+            "a": 1.97915056565634e-09,
+            "q": 8.084000135966107e-11,
+            "force_N": 4.722381419242083e-08
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        },
+        "Radau": {
+          "passed": true,
+          "matched_count": 151,
+          "matched_end": 0.15,
+          "max_errors": {
+            "y_m": 7.024624410734387e-12,
+            "w_m_s": 1.7901030183458018e-10,
+            "a": 1.7773478799831821e-09,
+            "q": 4.0812242474430604e-11,
+            "force_N": 5.066745956128216e-08
+          },
+          "budgets": {
+            "y_m": 1e-06,
+            "w_m_s": 1e-05,
+            "a": 2e-06,
+            "q": 2e-06,
+            "force_N": 0.0001
+          },
+          "brake_time_error_s": 0
+        }
+      },
+      "balances": {
+        "coarse": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 4.966181698322749e-16,
+            "tendon_J": 1.5997511475240866e-14,
+            "load_J": 1.0809495659680479e-16,
+            "combined_J": 1.545246194671806e-14,
+            "momentum_N_s": 6.505213034913027e-19,
+            "power_ledger_J": 1.235990476633475e-17
+          },
+          "source_force_residual_N": 1.5347723092418164e-12,
+          "min_q": 1.0998887130937045,
+          "min_s": 1.0306673235953527
+        },
+        "fine": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 9.229002060322103e-16,
+            "tendon_J": 2.6457568774729268e-14,
+            "load_J": 7.26415455565288e-18,
+            "combined_J": 2.5535516796093116e-14,
+            "momentum_N_s": 4.363913744254155e-18,
+            "power_ledger_J": 1.0516761073109393e-17
+          },
+          "source_force_residual_N": 1.7621459846850485e-12,
+          "min_q": 1.099888713056649,
+          "min_s": 1.0306673236008184
+        },
+        "DOP853": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 3.067038539372041e-16,
+            "tendon_J": 1.0174261606821222e-14,
+            "load_J": 4.336808689942018e-19,
+            "combined_J": 9.885658138900238e-15,
+            "momentum_N_s": 4.336808689942018e-19,
+            "power_ledger_J": 5.421010862427522e-19
+          },
+          "source_force_residual_N": 3.552713678800501e-14,
+          "min_q": 1.0998887131343242,
+          "min_s": 1.0306673235891133
+        },
+        "Radau": {
+          "passed": true,
+          "max_errors": {
+            "fiber_J": 9.796274848174885e-17,
+            "tendon_J": 4.35383066405004e-15,
+            "load_J": 6.35227276595679e-16,
+            "combined_J": 4.193241058922832e-15,
+            "momentum_N_s": 1.2332799712022613e-18,
+            "power_ledger_J": 1.1926223897340549e-18
+          },
+          "source_force_residual_N": 2.842170943040401e-14,
+          "min_q": 1.0998887130422677,
+          "min_s": 1.0306673236113164
+        }
+      },
+      "independent_quadrature": {
+        "passed": true,
+        "max_errors": {
+          "active_J": 3.0880903574299207e-14,
+          "dissipation_J": 6.813221941628823e-16,
+          "load_J": 1.3212087673908357e-12,
+          "fiber_J": 6.589806215355314e-16,
+          "tendon_J": 1.3046670948452244e-12,
+          "momentum_N_s": 2.973491307236946e-11
+        },
+        "quadrature": "Gauss-Legendre 8 / cubic Hermite / accepted-history intervals"
+      },
+      "last_accepted_state_retained": true,
+      "tracking": {
+        "status": "met",
+        "window": [
+          0.1,
+          0.15
+        ],
+        "maxError": 0.005117718450371456,
+        "budget": 0.49573260123759266
+      }
+    },
+    {
+      "name": "descending-modes-activation",
+      "passed": true,
+      "eigenvalues": [
+        {
+          "real": -33.31894575711692,
+          "imag": 50.75171122934206
+        },
+        {
+          "real": -33.31894575711692,
+          "imag": -50.75171122934206
+        },
+        {
+          "real": -61.56202739914564,
+          "imag": 0.0
+        },
+        {
+          "real": 1.2364740356605455,
+          "imag": 0.0
+        },
+        {
+          "real": 1.3416092137928916e-13,
+          "imag": 0.0
+        }
+      ],
+      "static_stiffness_N_m": -366.0570327272148,
+      "tau_s": 0.0125
+    },
+    {
+      "name": "descending-modes-deactivation",
+      "passed": true,
+      "eigenvalues": [
+        {
+          "real": -25.372117783822315,
+          "imag": 49.33628588697835
+        },
+        {
+          "real": -25.372117783822315,
+          "imag": -49.33628588697835
+        },
+        {
+          "real": -28.709523861412396,
+          "imag": 0.0
+        },
+        {
+          "real": 1.2403145513384448,
+          "imag": 0.0
+        },
+        {
+          "real": 8.547693088520595e-14,
+          "imag": 0.0
+        }
+      ],
+      "static_stiffness_N_m": -366.0570327272148,
+      "tau_s": 0.032
+    },
+    {
+      "name": "weight-command-retains-motion",
+      "passed": true,
+      "time_s": 0.13999999999999835,
+      "force_N": 4.86105389333082,
+      "weight_N": 4.903325,
+      "velocity_m_s": 0.014728905773649527,
+      "acceleration_m_s2": -0.08454221333835932
+    }
+  ],
+  "source_sha256": {
+    "education/web/vertical-force-model.js": "0a3755d2163c9523da47ecaca25e56b95626d71db473b14ff9e67e65c21f7959",
+    "education/tools/vertical_force_reference.py": "815613762bb80f217a3d66a838bb11b0bfa2e69dd68c8c6bcd67178f88c716f4",
+    "education/tools/audit_vertical_force.py": "0b22244be76caaad6b2ad6793fad6853b4acb85d3a32e10810ab2f4f1b0081aa",
+    "education/data/vertical-force-command-v1/protocol.json": "2619577a9e7e73b33e8cf500e065869059fc053951deb246237234b652e8a153",
+    "education/data/millard-reference-v1/review/native-controls.json": "13c360473038d1d7ca86ea4aab7275cd991694cb8e8c195e6a239f3070e25eb3"
+  },
+  "full_presets": 10,
+  "prefix_only_presets": [
+    "high",
+    "mass-1"
+  ],
+  "gains": {
+    "kp": 0.4,
+    "ki_per_s": 8.0
+  },
+  "all_negative_eigenvalue_acceptance": false
+}

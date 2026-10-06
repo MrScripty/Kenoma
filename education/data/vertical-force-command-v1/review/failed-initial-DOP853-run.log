@@ -1,0 +1,65 @@
+baseline DOP853 0.3 completed
+pulse DOP853 0.3 completed
+lower DOP853 0.3 completed
+release DOP853 0.3 completed
+Traceback (most recent call last):
+  File "/workspace/Kenoma-refinement-diagnosis/education/tools/vertical_force_reference.py", line 95, in <module>
+    r,_=replay(entry['cfg'],method);(out/f"{entry['id']}-{args.method}.json").write_text(json.dumps(r)+'\n');print(entry['id'],args.method,r['acceptedTime'],r['failure']['code'] if r['failure'] else 'completed',flush=True)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Kenoma-refinement-diagnosis/education/tools/vertical_force_reference.py", line 71, in replay
+    solver.step()
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/integrate/_ivp/base.py", line 201, in step
+    success, message = self._step_impl()
+                       ^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/integrate/_ivp/rk.py", line 144, in _step_impl
+    y_new, f_new = rk_step(self.fun, t, y, self.f, h, self.A,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/integrate/_ivp/rk.py", line 64, in rk_step
+    K[s] = fun(t + c * h, y + dy)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/integrate/_ivp/base.py", line 158, in fun
+    return self.fun_single(t, y)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/integrate/_ivp/base.py", line 24, in fun_wrapped
+    return np.asarray(fun(t, y), dtype=dtype)
+                      ^^^^^^^^^
+  File "/workspace/Kenoma-refinement-diagnosis/education/tools/vertical_force_reference.py", line 65, in <lambda>
+    solver=method(lambda t,z:rhs(t,z,cfg,phase),t,z,phase['end'],rtol=1e-9,atol=1e-11,max_step=.0005)
+                             ^^^^^^^^^^^^^^^^^^
+  File "/workspace/Kenoma-refinement-diagnosis/education/tools/vertical_force_reference.py", line 47, in rhs
+    try:o=output(z,cfg,phase)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Kenoma-refinement-diagnosis/education/tools/vertical_force_reference.py", line 40, in output
+    v=brentq(residual,-10,10,xtol=5e-15,rtol=1e-15,maxiter=64)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/optimize/_zeros_py.py", line 846, in brentq
+    r = _zeros._brentq(f, a, b, xtol, rtol, maxiter, args, full_output, disp)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/optimize/_zeros_py.py", line 94, in f_raise
+    fx = f(x, *args)
+         ^^^^^^^^^^^
+  File "/workspace/Kenoma-refinement-diagnosis/education/tools/vertical_force_reference.py", line 39, in <lambda>
+    residual=lambda v:100*(a*fal*C['velocity'].value(v)+.1*v)+fp-ft
+                                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Kenoma-refinement-diagnosis/education/tools/millard_reference_benchmark.py", line 50, in value
+    u=brentq(lambda u:float(b(u)[0])-x,0,1,xtol=5e-15,rtol=1e-15)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/optimize/_zeros_py.py", line 846, in brentq
+    r = _zeros._brentq(f, a, b, xtol, rtol, maxiter, args, full_output, disp)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/optimize/_zeros_py.py", line 94, in f_raise
+    fx = f(x, *args)
+         ^^^^^^^^^^^
+  File "/workspace/Kenoma-refinement-diagnosis/education/tools/millard_reference_benchmark.py", line 50, in <lambda>
+    u=brentq(lambda u:float(b(u)[0])-x,0,1,xtol=5e-15,rtol=1e-15)
+                            ^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/interpolate/_interpolate.py", line 839, in __call__
+    return self._asarray(out)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/_lib/array_api_compat/numpy/_aliases.py", line 94, in asarray
+    return np.array(obj, copy=copy, dtype=dtype, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/enum.py", line 202, in __get__
+    def __get__(self, instance, ownerclass=None):
+
+KeyboardInterrupt

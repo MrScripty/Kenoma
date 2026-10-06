@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checks": [
+    "Reject invalid/out-of-range mass and target",
+    "Failed trial returns no next state and retains accepted initialization",
+    "Initial zero is not braking; directed crossing requires arming",
+    "Consistent baseline remains at rest",
+    "JavaScript curves match frozen native values and slopes"
+  ],
+  "curveValueError": 9.603429163007604e-15,
+  "curveDerivativeError": 6.625811010962934e-13
+}
