@@ -35,6 +35,9 @@ def seriesResidual (fiber a maxForce optimalFiber width compliance passiveK tota
     (activeForce fiber a maxForce optimalFiber width +
       passiveK * max 0 (fiber - optimalFiber)) - totalFiber
 
+def seriesDenominator (fiber a maxForce optimalFiber width compliance passiveBranchK : ℝ) : ℝ :=
+  1 + compliance * (activeSlope fiber a maxForce optimalFiber width + passiveBranchK)
+
 theorem activation_in_unit_interval (a u h tau : ℝ)
     (ha0 : 0 ≤ a) (ha1 : a ≤ 1) (hu0 : 0 ≤ u) (hu1 : u ≤ 1)
     (hh : 0 ≤ h) (htau : 0 < tau) :
@@ -156,6 +159,49 @@ theorem series_equilibrium_unique (a maxForce optimalFiber width compliance pass
   exact (series_residual_strictMono a maxForce optimalFiber width compliance passiveK totalFiber
     ha0 ha1 hF hl hw hc hk hbound).injective (hx.trans hy.symm)
 
+theorem series_equilibrium_exists (a maxForce optimalFiber width compliance passiveK totalFiber : ℝ)
+    (ha : 0 ≤ a) (hF : 0 ≤ maxForce) (hl : 0 < optimalFiber) (hw : 0 < width)
+    (hc : 0 ≤ compliance) (hk : 0 ≤ passiveK) (hL : 0 ≤ totalFiber)
+    (hzero : seriesResidual 0 a maxForce optimalFiber width compliance passiveK totalFiber ≤ 0) :
+    ∃ fiber, fiber ∈ Set.Icc 0 totalFiber ∧
+      seriesResidual fiber a maxForce optimalFiber width compliance passiveK totalFiber = 0 := by
+  have hactive : Continuous (fun f => activeForce f a maxForce optimalFiber width) :=
+    (show Differentiable ℝ (fun f => activeForce f a maxForce optimalFiber width) from
+      fun f => (active_force_hasDerivAt f a maxForce optimalFiber width hl.ne' hw.ne').differentiableAt).continuous
+  have hpassive : Continuous (fun f : ℝ => passiveK * max 0 (f - optimalFiber)) :=
+    (continuous_const.max (continuous_id.sub_const optimalFiber)).const_mul passiveK
+  have hcontinuous : Continuous
+      (fun f => seriesResidual f a maxForce optimalFiber width compliance passiveK totalFiber) :=
+    (continuous_id.add ((hactive.add hpassive).const_mul compliance)).sub_const totalFiber
+  have hupper : 0 ≤ seriesResidual totalFiber a maxForce optimalFiber width compliance passiveK totalFiber := by
+    have hforce := (active_force_bounds totalFiber a maxForce optimalFiber width ha hF).1
+    have hpassiveForce := mul_nonneg hk (le_max_left (0 : ℝ) (totalFiber - optimalFiber))
+    have hsum := mul_nonneg hc (add_nonneg hforce hpassiveForce)
+    dsimp [seriesResidual]
+    linarith
+  exact intermediate_value_Icc hL hcontinuous.continuousOn ⟨hzero, hupper⟩
+
+theorem series_positive_lower_endpoint (a maxForce optimalFiber width compliance passiveK totalFiber fiber : ℝ)
+    (ha0 : 0 ≤ a) (ha1 : a ≤ 1) (hF : 0 ≤ maxForce)
+    (hl : 0 < optimalFiber) (hw : 0 < width) (hc : 0 ≤ compliance) (hk : 0 ≤ passiveK)
+    (hbound : compliance * (maxForce * Real.sqrt (2 / Real.exp 1) / (width * optimalFiber)) < 1)
+    (hzero : 0 < seriesResidual 0 a maxForce optimalFiber width compliance passiveK totalFiber)
+    (hfiber : 0 ≤ fiber) :
+    0 < seriesResidual fiber a maxForce optimalFiber width compliance passiveK totalFiber := by
+  exact hzero.trans_le ((series_residual_strictMono a maxForce optimalFiber width compliance passiveK totalFiber
+    ha0 ha1 hF hl hw hc hk hbound).monotone hfiber)
+
+theorem series_denominator_positive (fiber a maxForce optimalFiber width compliance passiveBranchK : ℝ)
+    (ha0 : 0 ≤ a) (ha1 : a ≤ 1) (hF : 0 ≤ maxForce)
+    (hl : 0 < optimalFiber) (hw : 0 < width) (hc : 0 ≤ compliance) (hk : 0 ≤ passiveBranchK)
+    (hbound : compliance * (maxForce * Real.sqrt (2 / Real.exp 1) / (width * optimalFiber)) < 1) :
+    0 < seriesDenominator fiber a maxForce optimalFiber width compliance passiveBranchK := by
+  have hs := (abs_le.mp (active_slope_bound fiber a maxForce optimalFiber width ha0 ha1 hF hl hw)).1
+  have hcs := mul_le_mul_of_nonneg_left hs hc
+  have hpassive := mul_nonneg hc hk
+  dsimp [seriesDenominator]
+  nlinarith
+
 end Kenoma.ActuatorReal
 
 #print axioms Kenoma.ActuatorReal.activation_in_unit_interval
@@ -166,3 +212,6 @@ end Kenoma.ActuatorReal
 #print axioms Kenoma.ActuatorReal.active_slope_bound
 #print axioms Kenoma.ActuatorReal.series_residual_strictMono
 #print axioms Kenoma.ActuatorReal.series_equilibrium_unique
+#print axioms Kenoma.ActuatorReal.series_equilibrium_exists
+#print axioms Kenoma.ActuatorReal.series_positive_lower_endpoint
+#print axioms Kenoma.ActuatorReal.series_denominator_positive
