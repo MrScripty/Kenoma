@@ -2,11 +2,15 @@
 
 The accepted book already demonstrates uneven axial strain from variable
 reference area in `09a-properties.md`, including simultaneous extension and
-compression in a reduced active fixed-end bar. That mechanism is not missing.
+compression in a reduced active fixed-end bar. That reduced axial-strain
+mechanism is already present; connected 3D nonuniform deformation is not.
 Its executable chart deliberately predicts no lateral stretch or current area.
 The isochoric lesson prescribes uniform kinematics; the material lesson solves
 one homogeneous block. Neither shows force-driven, unequal local 3D shapes and
-their individual volume measurements for different reference areas.
+their individual volume measurements for different reference areas. The
+two-block lesson below is a prerequisite: the requested continuous specimen
+with varying cross section, coupled local axial/lateral deformation and volume
+remains unimplemented.
 
 The new lesson therefore uses **two separate homogeneous rectangular blocks**,
 not a continuous tapered solid. Ideal bilateral traction-distributing end

@@ -360,7 +360,7 @@
     "mechanics-real-proof-status.json": "90980e40cb70f08a3fe028a8cad1e2d45c96f05c516c88c28b368901a03f7780",
     "mobile-startup-check.json": "d3d6107c88ed42a0e7dc547c5df54cca6472a4355cd732e55fb5f3534a031ecc",
     "mobile.log": "d3d6107c88ed42a0e7dc547c5df54cca6472a4355cd732e55fb5f3534a031ecc",
-    "model-selection.md": "eeb2fb3bc90e8ef358d0d29c630453804319a7a75b8d73695152a93f0f66dac9",
+    "model-selection.md": "e88d794d66fbcd9d4c0bd0248cbb29d1adfeb9fac2ebbae904d74bc7632851d6",
     "package.log": "e0c0fb74a848e2efe4202301b45dff02bf838cc5ff41930e06874b94d384540e",
     "pdf-render.json": "f183be1945514f9dafe415874ee1e9cc9d492b7122501111850369d911fe7d2e",
     "pdf.log": "90df61c241056050175cc84be4b037a0ab457a22ef7a64761571c0154ce4e42a",
@@ -407,5 +407,9 @@
     "standalone/receipt.json": "99f08a01df773447fdfec65131c485d5e981a7544999676fceef547b7ce14986",
     "transfer-lean-check.txt": "df44db9b886aff1d1d1c90c05f23d0ee3b5efe2599331d8decd7b9ba359da4c9",
     "transfer-proof-status.json": "244789dca7fc31e86e199c8fe6f744889964c009b747f94729b75d567bcdc2f5"
+  },
+  "additive_scope_clarification": {
+    "path": "model-selection.md",
+    "note": "Successor-only wording correction distinguishes existing reduced axial strain and the separate-block prerequisite from the unimplemented continuous 3D specimen. Other historical evidence and its qualification source remain unchanged."
   }
 }

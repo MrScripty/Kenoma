@@ -361,6 +361,22 @@ def check(page, out, full=True):
     expect(lab).to_have_attribute('data-converged','false')
     expect(lab.locator('.serial-solve-status')).to_contain_text('Force residuals exceed 1e-10 N')
     expect(lab.locator('.serial-solve-status')).to_contain_text('not a qualified shared-force equilibrium')
+    # Rejection also retains a nonequilibrated preceding approximation and its warning.
+    coarse_warning = lab.locator('.serial-solve-status').inner_text()
+    lab.locator('[data-action=reject-volume]').click()
+    coarse_rejected = snapshot(lab)
+    assert coarse_rejected['parameters'] == coarse['parameters'] and coarse_rejected['state'] == coarse['state']
+    assert coarse_rejected['scene']['meshes'] == coarse['scene']['meshes']
+    assert coarse_rejected['scene']['camera'] == coarse['scene']['camera']
+    assert coarse_rejected['lastCandidate']['accepted'] is False
+    assert not coarse_rejected['state']['converged']
+    expect(lab).to_have_attribute('data-converged','false')
+    assert lab.locator('.serial-solve-status').inner_text() == coarse_warning
+    expect(lab.locator('.serial-candidate')).to_contain_text('preceding displayed approximation was retained')
+    assert 'valid solved' not in lab.locator('.serial-candidate').inner_text()
+    verify_state(coarse_rejected);verify_scene(coarse_rejected);verify_visible_readouts(lab,coarse_rejected)
+    cases['coarseRejectedGlobalVolume'] = coarse_rejected
+    captures.append(capture(lab,out,'desktop-coarse-rejected'))
     fine = edit(lab,'iterations',64)
     fine_oracle = verify_state(fine);verify_scene(fine)
     verify_visible_readouts(lab,fine)
@@ -375,6 +391,7 @@ def check(page, out, full=True):
     assert rejected['parameters'] == before['parameters'] and rejected['state'] == before['state']
     assert rejected['scene']['meshes'] == before['scene']['meshes'] and rejected['scene']['camera'] == before['scene']['camera']
     candidate = rejected['lastCandidate']
+    expect(lab.locator('.serial-candidate')).to_contain_text('preceding displayed approximation was retained')
     assert candidate['accepted'] is False
     close(candidate['totalVolumeRatio'],1.,'Rejected candidate global volume cancellation')
     assert all(abs(c['J']-1)>1e-3 and abs(c['lateralStressPa'])>1 for c in candidate['candidateCells'])
