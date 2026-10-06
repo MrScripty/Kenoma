@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "observed_date_utc": "2026-10-06",
+  "record_type": "Executed verification summary, not raw network receipt",
+  "base_checkpoint": "327940f71c6c143fa91773dd75cbea6a33346304",
+  "checks": [
+    {
+      "command": "python3 -m unittest discover -s education/tests -p test_arm_surface_quality.py -v",
+      "result": "PASS",
+      "tests": 11
+    },
+    {
+      "command": "python3 -m unittest discover -s education/tests -p test_arm_source_inventory.py -v",
+      "result": "PASS",
+      "tests": 18
+    },
+    {
+      "command": "python3 education/data/elbow-v1/scripts/audit_arm_surface_quality.py",
+      "result": "PASS",
+      "retained_evidence_reproduced": true
+    },
+    {
+      "command": "python3 education/data/elbow-v1/scripts/validate_package.py",
+      "result": "PASS",
+      "checks": 1010
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "matplotlib": "3.10.8"
+  },
+  "independent_review": {
+    "reviewer": "attachment_inventory",
+    "result": "No concrete defects found; 11 focused tests and complete offline audit pass. Original JavaScript strict predicate reproduces all 8 brachialis and 9 short-biceps pairs exactly. No edits/network requests."
+  },
+  "visual_inspection": {
+    "images": [
+      "individual-surfaces.png",
+      "atlas-and-landmarks.png"
+    ],
+    "performed": true,
+    "method": "Viewed generated PNGs in local view_image tool",
+    "result": "Faceted outer atlas surfaces, marked small components, and pending authored bone picks visible. Projection overlap and marker scale limitations preserved. No anatomical accuracy accepted."
+  },
+  "raw_source_changes": false,
+  "new_source_requests": 0,
+  "full_self_intersection_clearance": "not_assessed",
+  "simulation_ready": false,
+  "clinical_validation": false,
+  "remaining_source_blockers": [
+    "Recorded proxy CONNECT rejection; origin status and cause unknown. No NLM raster requests executed.",
+    "No localized authentic NLM arm sample, masks or tissue-observability evidence.",
+    "Exact 4.3 asset license clearance unresolved.",
+    "No separate verified arm tendon/ligament/cartilage/fat boundaries acquired."
+  ],
+  "deliverable_pins": [
+    {
+      "path": "education/data/elbow-v1/curation/surface-quality/README.md",
+      "bytes": 9055,
+      "sha256": "966a60bae8cd802cdfa12b5f775e5d86c3863e71652ffa661de54104c4f2cceb"
+    },
+    {
+      "path": "education/data/elbow-v1/curation/surface-quality/atlas-and-landmarks.png",
+      "bytes": 959524,
+      "sha256": "2701e193e1f21376f177ed3f6e3550df823650fe41e88e3bea451acb53636e0a"
+    },
+    {
+      "path": "education/data/elbow-v1/curation/surface-quality/individual-surfaces.png",
+      "bytes": 525283,
+      "sha256": "c669b0694c1d4d0410466f17d100ac3bf848a6ce8f24d464c9a3a5f7141b5ef5"
+    },
+    {
+      "path": "education/data/elbow-v1/curation/surface-quality/input-contract.json",
+      "bytes": 1782,
+      "sha256": "4501502e20928f0406b627333f1a2c90c6e682085249156f8b1d99440dd47c27"
+    },
+    {
+      "path": "education/data/elbow-v1/curation/surface-quality/quality.json",
+      "bytes": 110760,
+      "sha256": "69e3d39669548b16cab058995ac0f2dfb08633d5598dc64317b1a32f475d288a"
+    },
+    {
+      "path": "education/data/elbow-v1/curation/surface-quality/render-checkpoint.json",
+      "bytes": 1152,
+      "sha256": "5f68cca182998aab7516cb4ea618bbe390cb4b21aed94ba0285e0469ad4c08c0"
+    },
+    {
+      "path": "education/data/elbow-v1/scripts/audit_arm_surface_quality.py",
+      "bytes": 23213,
+      "sha256": "87355a3a03a4d86988c45d35f79832a3f3a5768e58942a4d383354e0983aa729"
+    },
+    {
+      "path": "education/data/elbow-v1/scripts/render_arm_surface_quality.py",
+      "bytes": 5562,
+      "sha256": "e8e8dd7b329c28632d297382bf18b5de98165c6ddd96cd4466de2fa97d34430d"
+    },
+    {
+      "path": "education/tests/test_arm_surface_quality.py",
+      "bytes": 4860,
+      "sha256": "47582ddf8f65c124a06c0c7c1079ba71fcd37a6b62ed143eb805b8908381a5c2"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "source_inventory_sha256": "d56aa7b8cac7f008f0831aa53f6df0868e14052afe2cf134fb7758ec52a9ebcb",
+  "quality_sha256": "69e3d39669548b16cab058995ac0f2dfb08633d5598dc64317b1a32f475d288a",
+  "renderer_sha256": "e8e8dd7b329c28632d297382bf18b5de98165c6ddd96cd4466de2fa97d34430d",
+  "matplotlib_version": "3.10.8",
+  "numpy_version": "2.3.5",
+  "projections": [
+    "X-Z individual",
+    "X-Z full atlas",
+    "Y-Z full atlas",
+    "X-Z elbow bones and authored landmarks"
+  ],
+  "source_geometry_modified": false,
+  "limits": "Orthographic triangle projections with transparency; occlusion and overlapping projections limit depth interpretation. No anatomy validation or calibrated joint pose.",
+  "images": [
+    {
+      "path": "education/data/elbow-v1/curation/surface-quality/individual-surfaces.png",
+      "bytes": 525283,
+      "sha256": "c669b0694c1d4d0410466f17d100ac3bf848a6ce8f24d464c9a3a5f7141b5ef5"
+    },
+    {
+      "path": "education/data/elbow-v1/curation/surface-quality/atlas-and-landmarks.png",
+      "bytes": 959524,
+      "sha256": "2701e193e1f21376f177ed3f6e3550df823650fe41e88e3bea451acb53636e0a"
+    }
+  ]
+}

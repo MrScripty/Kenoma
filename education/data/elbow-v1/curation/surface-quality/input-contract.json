@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "base_checkpoint": "327940f71c6c143fa91773dd75cbea6a33346304",
+  "source_inventory_checkpoint": "e7a4ffc19709c32296917a395b4dc1a9b43863fd",
+  "scope": "Offline original ten surfaces, existing authored landmarks and attachments only. No repairs.",
+  "pins": [
+    {
+      "path": "education/data/elbow-v1/curation/source-inventory.json",
+      "bytes": 50459,
+      "sha256": "d56aa7b8cac7f008f0831aa53f6df0868e14052afe2cf134fb7758ec52a9ebcb"
+    },
+    {
+      "path": "education/data/elbow-v1/scripts/audit_source_inventory.py",
+      "bytes": 15873,
+      "sha256": "d6bebc4f71e491b1f433e1ff9fa2affe356d3f58335d1765724f7cffb22fc89a"
+    },
+    {
+      "path": "education/data/elbow-v1/scripts/prepare_data.py",
+      "bytes": 12976,
+      "sha256": "e8a5c5cae1ac8e4752c7313844868e93f72968503f49f107506b6d4b11428a5c"
+    },
+    {
+      "path": "education/tools/build-anatomical-geometry.mjs",
+      "bytes": 13795,
+      "sha256": "26ac9454e11651619cc617941cf22dbdb7336a96dcebe21dac17b5ffe58f0dfc"
+    },
+    {
+      "path": "education/tools/anatomical-bone-collision-audit.mjs",
+      "bytes": 2748,
+      "sha256": "17ef428195835834ce09ef770325f002d6498aacd7301042932bc525d2e45118"
+    },
+    {
+      "path": "education/tools/anatomical-surface.mjs",
+      "bytes": 4623,
+      "sha256": "3ec6e654b267de4e9afddda4ebaf9a6dc10eb5ecf52a4f87b9f5cdf0f15b9401"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/config/landmarks.json",
+      "bytes": 14227,
+      "sha256": "f1b8120f4e7d8560ecf6e25c4e02083da3825a3548eb9ef75a09509baebbcaaf"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/audit/geometry-quality.json",
+      "bytes": 9059,
+      "sha256": "42611b8606783514b029909d2af3716592ff21883fec50e3647a2023afe6adf0"
+    }
+  ]
+}

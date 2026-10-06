@@ -1,0 +1,3265 @@
+{
+  "schema_version": 1,
+  "source_inventory_sha256": "d56aa7b8cac7f008f0831aa53f6df0868e14052afe2cf134fb7758ec52a9ebcb",
+  "input_contract_sha256": "4501502e20928f0406b627333f1a2c90c6e682085249156f8b1d99440dd47c27",
+  "coordinates": {
+    "source_unit": "mm",
+    "derived_unit": "m",
+    "transform": "position_m = position_mm / 1000; preserve original origin and axes",
+    "axes": {
+      "x_positive": "anatomical left",
+      "y_positive": "posterior",
+      "z_positive": "superior"
+    },
+    "reference_pose": "Static atlas coordinates; exact volunteer acquisition pose and calibrated joint angles not established. No pose normalization performed.",
+    "evidence": "education/data/elbow-v1/sources/bodyparts_coordinate_system.png"
+  },
+  "provenance": {
+    "specimen_id": "TARO-derived reconstructed adult male atlas",
+    "origin": "Male-volunteer MRI framework plus anatomical reconstruction; distinct from NLM cadavers",
+    "evidence_class": "constructed_anatomical_reference_atlas",
+    "per_part_observed_vs_reconstructed": "not supplied; each retained surface is classified reconstructed atlas, never direct observed tissue segmentation",
+    "primary_process_reference": "https://doi.org/10.1093/nar/gkn613",
+    "registered_to_other_people": false
+  },
+  "reference_pose": {
+    "applied_transform": "Uniform mm to m scaling only; no translation, rotation, centering or fitted joint pose.",
+    "calibrated_joint_angles": null,
+    "existing_fitted_frame": {
+      "origin_m": [
+        -0.211,
+        -0.0702352010774452,
+        1.0444103477692186
+      ],
+      "axis_unit": [
+        -0.9547432358233934,
+        0.10312281883629201,
+        0.27898214617558126
+      ],
+      "proximal_unit": [
+        0.2682770006482004,
+        -0.10642200707998935,
+        0.9574454591945549
+      ],
+      "posterior_unit": [
+        0.12842431456963882,
+        0.9889590692462069,
+        0.07394021086658094
+      ],
+      "atlas_bind_angle_rad": 0.2841100888248933,
+      "hand_grip_m": [
+        -0.25824388536562315,
+        -0.12286093123159579,
+        0.7718685991833019
+      ],
+      "axis_evidence": "Smallest eigenvector of area-weighted articular normal covariance; area-weighted nonlinear radial circle fit with fixed X gauge. No articular surface point is treated as the axis center.",
+      "grip_evidence": "Authored 40 mm distal extension beyond the mean distal bone landmarks; no hand mesh.",
+      "review_status": "Independent anatomical review pending",
+      "units": "m, rad",
+      "axis_fit_receipt": "audit/interior-axis-fit.json"
+    },
+    "frame_applied_in_this_audit": false,
+    "frame_is_observed_specimen_pose": false
+  },
+  "parts": [
+    {
+      "element_id": "FJ3368",
+      "concept_id": "FMA23130",
+      "name": "right humerus",
+      "source_obj": "education/data/elbow-v1/sources/bodyparts3d/FJ3368.obj",
+      "source_sha256": "85f5445a11ecb029b027db0b9b34933982836d442b19ff531d1ca35a3bc3a237",
+      "bounds_m": [
+        [
+          -0.240841,
+          -0.100219,
+          1.0292000000000001
+        ],
+        [
+          -0.14009000000000002,
+          -0.0510391,
+          1.33654
+        ]
+      ],
+      "extent_m": [
+        0.10075099999999998,
+        0.049179900000000006,
+        0.30733999999999995
+      ],
+      "original_index_topology": {
+        "vertex_count": 2233,
+        "face_count": 3784,
+        "edge_count": 5958,
+        "unused_vertex_count": 0,
+        "boundary_edges": 564,
+        "nonmanifold_edges": 0,
+        "nonmanifold_vertex_count": 0,
+        "same_direction_two_face_edges": 0,
+        "exact_zero_area_triangles": 0,
+        "duplicate_triangle_excess": 0,
+        "area_m2": 0.028181289369826206,
+        "triangle_area_range_m2": [
+          3.024625646379017e-08,
+          0.0002268817493912446
+        ],
+        "edge_length_range_m": [
+          0.00022203143921526827,
+          0.06420728489696502
+        ],
+        "closed_edge_manifold": false,
+        "face_connected_component_count": 79,
+        "face_connected_component_sizes": [
+          3624,
+          1,
+          1,
+          1,
+          3,
+          4,
+          2,
+          5,
+          1,
+          4,
+          1,
+          4,
+          1,
+          2,
+          4,
+          3,
+          1,
+          1,
+          1,
+          12,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          3,
+          1,
+          1,
+          1,
+          2,
+          5,
+          1,
+          3,
+          1,
+          1,
+          3,
+          2,
+          1,
+          1,
+          1,
+          3,
+          1,
+          2,
+          1,
+          1,
+          1,
+          3,
+          2,
+          7,
+          2,
+          4,
+          1,
+          2,
+          2,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          5,
+          1,
+          1,
+          2,
+          1,
+          6,
+          1,
+          3,
+          3,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1
+        ]
+      },
+      "exact_coordinate_topology_diagnostic": {
+        "vertex_count": 1894,
+        "face_count": 3784,
+        "edge_count": 5676,
+        "unused_vertex_count": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "nonmanifold_vertex_count": 0,
+        "same_direction_two_face_edges": 0,
+        "exact_zero_area_triangles": 0,
+        "duplicate_triangle_excess": 0,
+        "area_m2": 0.028181289369826206,
+        "triangle_area_range_m2": [
+          3.024625646379017e-08,
+          0.0002268817493912446
+        ],
+        "edge_length_range_m": [
+          0.00022203143921526827,
+          0.06420728489696502
+        ],
+        "face_connected_components": [
+          {
+            "first_source_face_zero_based": 0,
+            "face_count": 3784,
+            "source_faces_if_small_component_zero_based": null,
+            "vertex_count": 1894,
+            "edge_count": 5676,
+            "bounds_m": [
+              [
+                -0.240841,
+                -0.100219,
+                1.0292000000000001
+              ],
+              [
+                -0.14009000000000002,
+                -0.0510391,
+                1.33654
+              ]
+            ],
+            "area_m2": 0.028181289369826206,
+            "euler_characteristic": 2,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 0.0,
+            "original_signed_volume_m3": 0.00015562274705739542,
+            "component_relative_signed_volume_diagnostic_m3": 0.00015562274705739867,
+            "exact_zero_component_relative_volume": false,
+            "coincident_triangle_source_face_groups": [],
+            "consistent_positive_signed_volume_diagnostic_m3": 0.00015562274705739542,
+            "faces_requiring_orientation_change": 0,
+            "positive_volume_winding_sign_meaningful": true,
+            "orientation_change_source_face_indices_zero_based": [],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          }
+        ],
+        "closed_edge_manifold": true
+      },
+      "exact_coordinate_duplicate_vertex_count": 339,
+      "diagnostic_merge_tolerance_m": 0,
+      "geometry_written_or_repaired": false,
+      "watertightness": {
+        "original_indices_closed": false,
+        "exact_coordinate_closed_edges": true,
+        "embedded_solid_certificate": false,
+        "limits": "Topological closure only. Coincident/zero-volume components and transverse crossings are reported separately; robust embedding/nesting clearance remains unresolved."
+      },
+      "self_intersection": {
+        "aabb_candidate_pairs_tested": 1351,
+        "incident_candidate_pairs_excluded": 24287,
+        "transverse_crossing_triangle_pairs": 0,
+        "first_source_face_pairs_zero_based": [],
+        "full_self_intersection_clearance": "not_assessed",
+        "limits": "Strict transverse crossings only, fixed SI thresholds. Coplanar overlaps, touching, nesting and incident-face foldovers excluded. Zero is not a clearance."
+      },
+      "existing_geometry_owner_agreement": true,
+      "visual_reference": "available_reduced_reconstructed_atlas",
+      "volumetric_simulation_input_ready": false,
+      "required_work": [
+        "Document an explicit derived index weld at exactly identical coordinates; original OBJ remains unchanged.",
+        "Resolve complete self-intersection/nesting/assembly clearance with a qualified method.",
+        "Review reduced reconstructed boundaries and missing tissue interfaces; surface closure does not establish anatomical accuracy.",
+        "Specify cortical/internal or muscle/tendon compartments, material fields, reference state and attachments before any volume meshing."
+      ]
+    },
+    {
+      "element_id": "FJ3349",
+      "concept_id": "FMA23464",
+      "name": "right radius",
+      "source_obj": "education/data/elbow-v1/sources/bodyparts3d/FJ3349.obj",
+      "source_sha256": "0f824e639b13ea02959734a0d9bd8d7ca67d0b51f531a138d769e1d3b22e0c98",
+      "bounds_m": [
+        [
+          -0.27953500000000003,
+          -0.126908,
+          0.8058350000000001
+        ],
+        [
+          -0.219833,
+          -0.06110260000000001,
+          1.03505
+        ]
+      ],
+      "extent_m": [
+        0.05970200000000003,
+        0.06580539999999999,
+        0.22921499999999995
+      ],
+      "original_index_topology": {
+        "vertex_count": 388,
+        "face_count": 672,
+        "edge_count": 1074,
+        "unused_vertex_count": 0,
+        "boundary_edges": 132,
+        "nonmanifold_edges": 0,
+        "nonmanifold_vertex_count": 0,
+        "same_direction_two_face_edges": 0,
+        "exact_zero_area_triangles": 0,
+        "duplicate_triangle_excess": 0,
+        "area_m2": 0.011965613904090028,
+        "triangle_area_range_m2": [
+          3.3952995042631666e-07,
+          0.00025149481573514686
+        ],
+        "edge_length_range_m": [
+          0.0006556657990165094,
+          0.07394613238493272
+        ],
+        "closed_edge_manifold": false,
+        "face_connected_component_count": 2,
+        "face_connected_component_sizes": [
+          670,
+          2
+        ]
+      },
+      "exact_coordinate_topology_diagnostic": {
+        "vertex_count": 338,
+        "face_count": 672,
+        "edge_count": 1008,
+        "unused_vertex_count": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "nonmanifold_vertex_count": 0,
+        "same_direction_two_face_edges": 0,
+        "exact_zero_area_triangles": 0,
+        "duplicate_triangle_excess": 0,
+        "area_m2": 0.011965613904090028,
+        "triangle_area_range_m2": [
+          3.3952995042631666e-07,
+          0.00025149481573514686
+        ],
+        "edge_length_range_m": [
+          0.0006556657990165094,
+          0.07394613238493272
+        ],
+        "face_connected_components": [
+          {
+            "first_source_face_zero_based": 0,
+            "face_count": 672,
+            "source_faces_if_small_component_zero_based": null,
+            "vertex_count": 338,
+            "edge_count": 1008,
+            "bounds_m": [
+              [
+                -0.27953500000000003,
+                -0.126908,
+                0.8058350000000001
+              ],
+              [
+                -0.219833,
+                -0.06110260000000001,
+                1.03505
+              ]
+            ],
+            "area_m2": 0.011965613904090028,
+            "euler_characteristic": 2,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 0.0,
+            "original_signed_volume_m3": 3.939231414562765e-05,
+            "component_relative_signed_volume_diagnostic_m3": 3.939231414561546e-05,
+            "exact_zero_component_relative_volume": false,
+            "coincident_triangle_source_face_groups": [],
+            "consistent_positive_signed_volume_diagnostic_m3": 3.939231414562765e-05,
+            "faces_requiring_orientation_change": 0,
+            "positive_volume_winding_sign_meaningful": true,
+            "orientation_change_source_face_indices_zero_based": [],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          }
+        ],
+        "closed_edge_manifold": true
+      },
+      "exact_coordinate_duplicate_vertex_count": 50,
+      "diagnostic_merge_tolerance_m": 0,
+      "geometry_written_or_repaired": false,
+      "watertightness": {
+        "original_indices_closed": false,
+        "exact_coordinate_closed_edges": true,
+        "embedded_solid_certificate": false,
+        "limits": "Topological closure only. Coincident/zero-volume components and transverse crossings are reported separately; robust embedding/nesting clearance remains unresolved."
+      },
+      "self_intersection": {
+        "aabb_candidate_pairs_tested": 562,
+        "incident_candidate_pairs_excluded": 4248,
+        "transverse_crossing_triangle_pairs": 0,
+        "first_source_face_pairs_zero_based": [],
+        "full_self_intersection_clearance": "not_assessed",
+        "limits": "Strict transverse crossings only, fixed SI thresholds. Coplanar overlaps, touching, nesting and incident-face foldovers excluded. Zero is not a clearance."
+      },
+      "existing_geometry_owner_agreement": true,
+      "visual_reference": "available_reduced_reconstructed_atlas",
+      "volumetric_simulation_input_ready": false,
+      "required_work": [
+        "Document an explicit derived index weld at exactly identical coordinates; original OBJ remains unchanged.",
+        "Resolve complete self-intersection/nesting/assembly clearance with a qualified method.",
+        "Review reduced reconstructed boundaries and missing tissue interfaces; surface closure does not establish anatomical accuracy.",
+        "Specify cortical/internal or muscle/tendon compartments, material fields, reference state and attachments before any volume meshing."
+      ]
+    },
+    {
+      "element_id": "FJ3391",
+      "concept_id": "FMA23467",
+      "name": "right ulna",
+      "source_obj": "education/data/elbow-v1/sources/bodyparts3d/FJ3391.obj",
+      "source_sha256": "0aad73148e036c980ab24dfa675fcc1f109e5c60d82c12f3696420cf93cb4a98",
+      "bounds_m": [
+        [
+          -0.247179,
+          -0.123494,
+          0.805173
+        ],
+        [
+          -0.196881,
+          -0.0447992,
+          1.05245
+        ]
+      ],
+      "extent_m": [
+        0.05029800000000001,
+        0.07869480000000001,
+        0.24727700000000008
+      ],
+      "original_index_topology": {
+        "vertex_count": 500,
+        "face_count": 834,
+        "edge_count": 1350,
+        "unused_vertex_count": 0,
+        "boundary_edges": 198,
+        "nonmanifold_edges": 0,
+        "nonmanifold_vertex_count": 0,
+        "same_direction_two_face_edges": 0,
+        "exact_zero_area_triangles": 0,
+        "duplicate_triangle_excess": 0,
+        "area_m2": 0.01201764509096002,
+        "triangle_area_range_m2": [
+          2.527178117114136e-07,
+          0.0001783345867406824
+        ],
+        "edge_length_range_m": [
+          0.000605181790869463,
+          0.0703986726145457
+        ],
+        "closed_edge_manifold": false,
+        "face_connected_component_count": 3,
+        "face_connected_component_sizes": [
+          830,
+          2,
+          2
+        ]
+      },
+      "exact_coordinate_topology_diagnostic": {
+        "vertex_count": 419,
+        "face_count": 834,
+        "edge_count": 1251,
+        "unused_vertex_count": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "nonmanifold_vertex_count": 0,
+        "same_direction_two_face_edges": 0,
+        "exact_zero_area_triangles": 0,
+        "duplicate_triangle_excess": 0,
+        "area_m2": 0.01201764509096002,
+        "triangle_area_range_m2": [
+          2.527178117114136e-07,
+          0.0001783345867406824
+        ],
+        "edge_length_range_m": [
+          0.000605181790869463,
+          0.0703986726145457
+        ],
+        "face_connected_components": [
+          {
+            "first_source_face_zero_based": 0,
+            "face_count": 834,
+            "source_faces_if_small_component_zero_based": null,
+            "vertex_count": 419,
+            "edge_count": 1251,
+            "bounds_m": [
+              [
+                -0.247179,
+                -0.123494,
+                0.805173
+              ],
+              [
+                -0.196881,
+                -0.0447992,
+                1.05245
+              ]
+            ],
+            "area_m2": 0.01201764509096002,
+            "euler_characteristic": 2,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 0.0,
+            "original_signed_volume_m3": 3.825498078593185e-05,
+            "component_relative_signed_volume_diagnostic_m3": 3.825498078592095e-05,
+            "exact_zero_component_relative_volume": false,
+            "coincident_triangle_source_face_groups": [],
+            "consistent_positive_signed_volume_diagnostic_m3": 3.825498078593185e-05,
+            "faces_requiring_orientation_change": 0,
+            "positive_volume_winding_sign_meaningful": true,
+            "orientation_change_source_face_indices_zero_based": [],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          }
+        ],
+        "closed_edge_manifold": true
+      },
+      "exact_coordinate_duplicate_vertex_count": 81,
+      "diagnostic_merge_tolerance_m": 0,
+      "geometry_written_or_repaired": false,
+      "watertightness": {
+        "original_indices_closed": false,
+        "exact_coordinate_closed_edges": true,
+        "embedded_solid_certificate": false,
+        "limits": "Topological closure only. Coincident/zero-volume components and transverse crossings are reported separately; robust embedding/nesting clearance remains unresolved."
+      },
+      "self_intersection": {
+        "aabb_candidate_pairs_tested": 841,
+        "incident_candidate_pairs_excluded": 5316,
+        "transverse_crossing_triangle_pairs": 0,
+        "first_source_face_pairs_zero_based": [],
+        "full_self_intersection_clearance": "not_assessed",
+        "limits": "Strict transverse crossings only, fixed SI thresholds. Coplanar overlaps, touching, nesting and incident-face foldovers excluded. Zero is not a clearance."
+      },
+      "existing_geometry_owner_agreement": true,
+      "visual_reference": "available_reduced_reconstructed_atlas",
+      "volumetric_simulation_input_ready": false,
+      "required_work": [
+        "Document an explicit derived index weld at exactly identical coordinates; original OBJ remains unchanged.",
+        "Resolve complete self-intersection/nesting/assembly clearance with a qualified method.",
+        "Review reduced reconstructed boundaries and missing tissue interfaces; surface closure does not establish anatomical accuracy.",
+        "Specify cortical/internal or muscle/tendon compartments, material fields, reference state and attachments before any volume meshing."
+      ]
+    },
+    {
+      "element_id": "FJ1486",
+      "concept_id": "FMA37668",
+      "name": "right brachialis",
+      "source_obj": "education/data/elbow-v1/sources/bodyparts3d/FJ1486.obj",
+      "source_sha256": "be5f40b153fd6ce0c8c274eb4c26be8d1a29b4bbe75dd0e4a0dfe5c4d251fa03",
+      "bounds_m": [
+        [
+          -0.23512100000000002,
+          -0.086396,
+          0.995361
+        ],
+        [
+          -0.176385,
+          -0.0605697,
+          1.2202000000000002
+        ]
+      ],
+      "extent_m": [
+        0.05873600000000004,
+        0.025826300000000003,
+        0.22483900000000012
+      ],
+      "original_index_topology": {
+        "vertex_count": 1266,
+        "face_count": 1746,
+        "edge_count": 2990,
+        "unused_vertex_count": 0,
+        "boundary_edges": 742,
+        "nonmanifold_edges": 0,
+        "nonmanifold_vertex_count": 0,
+        "same_direction_two_face_edges": 0,
+        "exact_zero_area_triangles": 0,
+        "duplicate_triangle_excess": 0,
+        "area_m2": 0.02093357430941095,
+        "triangle_area_range_m2": [
+          4.304861655433314e-09,
+          0.00026839245179394416
+        ],
+        "edge_length_range_m": [
+          3.0119926958743007e-05,
+          0.10584199344607971
+        ],
+        "closed_edge_manifold": false,
+        "face_connected_component_count": 59,
+        "face_connected_component_sizes": [
+          1632,
+          8,
+          2,
+          1,
+          1,
+          4,
+          1,
+          2,
+          1,
+          5,
+          4,
+          2,
+          1,
+          1,
+          1,
+          3,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          1,
+          5,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          3,
+          2,
+          2,
+          1,
+          2,
+          2,
+          1,
+          9,
+          1,
+          4,
+          1,
+          1,
+          4,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          3,
+          2
+        ]
+      },
+      "exact_coordinate_topology_diagnostic": {
+        "vertex_count": 877,
+        "face_count": 1746,
+        "edge_count": 2619,
+        "unused_vertex_count": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "nonmanifold_vertex_count": 0,
+        "same_direction_two_face_edges": 0,
+        "exact_zero_area_triangles": 0,
+        "duplicate_triangle_excess": 4,
+        "area_m2": 0.02093357430941095,
+        "triangle_area_range_m2": [
+          4.304861655433314e-09,
+          0.00026839245179394416
+        ],
+        "edge_length_range_m": [
+          3.0119926958743007e-05,
+          0.10584199344607971
+        ],
+        "face_connected_components": [
+          {
+            "first_source_face_zero_based": 0,
+            "face_count": 1738,
+            "source_faces_if_small_component_zero_based": null,
+            "vertex_count": 865,
+            "edge_count": 2607,
+            "bounds_m": [
+              [
+                -0.23512100000000002,
+                -0.086396,
+                0.995361
+              ],
+              [
+                -0.176385,
+                -0.0605697,
+                1.2202000000000002
+              ]
+            ],
+            "area_m2": 0.02093342318421251,
+            "euler_characteristic": -4,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 3.0,
+            "original_signed_volume_m3": 7.671120729688608e-05,
+            "component_relative_signed_volume_diagnostic_m3": 7.671120729689829e-05,
+            "exact_zero_component_relative_volume": false,
+            "coincident_triangle_source_face_groups": [],
+            "consistent_positive_signed_volume_diagnostic_m3": 7.671120729688608e-05,
+            "faces_requiring_orientation_change": 0,
+            "positive_volume_winding_sign_meaningful": true,
+            "orientation_change_source_face_indices_zero_based": [],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          },
+          {
+            "first_source_face_zero_based": 681,
+            "face_count": 2,
+            "source_faces_if_small_component_zero_based": [
+              681,
+              682
+            ],
+            "vertex_count": 3,
+            "edge_count": 3,
+            "bounds_m": [
+              [
+                -0.209676,
+                -0.0788111,
+                1.04227
+              ],
+              [
+                -0.209648,
+                -0.0787709,
+                1.04257
+              ]
+            ],
+            "area_m2": 9.086736092238127e-09,
+            "euler_characteristic": 2,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 0.0,
+            "original_signed_volume_m3": 0.0,
+            "component_relative_signed_volume_diagnostic_m3": 0.0,
+            "exact_zero_component_relative_volume": true,
+            "coincident_triangle_source_face_groups": [
+              [
+                681,
+                682
+              ]
+            ],
+            "consistent_positive_signed_volume_diagnostic_m3": 0.0,
+            "faces_requiring_orientation_change": 0,
+            "positive_volume_winding_sign_meaningful": false,
+            "orientation_change_source_face_indices_zero_based": [],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          },
+          {
+            "first_source_face_zero_based": 798,
+            "face_count": 2,
+            "source_faces_if_small_component_zero_based": [
+              798,
+              800
+            ],
+            "vertex_count": 3,
+            "edge_count": 3,
+            "bounds_m": [
+              [
+                -0.207013,
+                -0.0722415,
+                1.01047
+              ],
+              [
+                -0.206852,
+                -0.0721353,
+                1.01077
+              ]
+            ],
+            "area_m2": 5.16873823148329e-08,
+            "euler_characteristic": 2,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 0.0,
+            "original_signed_volume_m3": 2.7538538312146025e-19,
+            "component_relative_signed_volume_diagnostic_m3": 0.0,
+            "exact_zero_component_relative_volume": true,
+            "coincident_triangle_source_face_groups": [
+              [
+                798,
+                800
+              ]
+            ],
+            "consistent_positive_signed_volume_diagnostic_m3": 2.7538538312146025e-19,
+            "faces_requiring_orientation_change": 0,
+            "positive_volume_winding_sign_meaningful": false,
+            "orientation_change_source_face_indices_zero_based": [],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          },
+          {
+            "first_source_face_zero_based": 799,
+            "face_count": 2,
+            "source_faces_if_small_component_zero_based": [
+              799,
+              802
+            ],
+            "vertex_count": 3,
+            "edge_count": 3,
+            "bounds_m": [
+              [
+                -0.20706100000000002,
+                -0.0719047,
+                1.0099
+              ],
+              [
+                -0.20695,
+                -0.07177710000000001,
+                1.0102
+              ]
+            ],
+            "area_m2": 3.647381940858596e-08,
+            "euler_characteristic": 2,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 0.0,
+            "original_signed_volume_m3": 7.196254194300546e-20,
+            "component_relative_signed_volume_diagnostic_m3": 0.0,
+            "exact_zero_component_relative_volume": true,
+            "coincident_triangle_source_face_groups": [
+              [
+                799,
+                802
+              ]
+            ],
+            "consistent_positive_signed_volume_diagnostic_m3": 7.196254194300546e-20,
+            "faces_requiring_orientation_change": 0,
+            "positive_volume_winding_sign_meaningful": false,
+            "orientation_change_source_face_indices_zero_based": [],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          },
+          {
+            "first_source_face_zero_based": 804,
+            "face_count": 2,
+            "source_faces_if_small_component_zero_based": [
+              804,
+              805
+            ],
+            "vertex_count": 3,
+            "edge_count": 3,
+            "bounds_m": [
+              [
+                -0.206986,
+                -0.0725356,
+                1.01111
+              ],
+              [
+                -0.206774,
+                -0.0724269,
+                1.0113400000000001
+              ]
+            ],
+            "area_m2": 5.387726062276527e-08,
+            "euler_characteristic": 2,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 0.0,
+            "original_signed_volume_m3": 0.0,
+            "component_relative_signed_volume_diagnostic_m3": 0.0,
+            "exact_zero_component_relative_volume": true,
+            "coincident_triangle_source_face_groups": [
+              [
+                804,
+                805
+              ]
+            ],
+            "consistent_positive_signed_volume_diagnostic_m3": 0.0,
+            "faces_requiring_orientation_change": 0,
+            "positive_volume_winding_sign_meaningful": false,
+            "orientation_change_source_face_indices_zero_based": [],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          }
+        ],
+        "closed_edge_manifold": true
+      },
+      "exact_coordinate_duplicate_vertex_count": 389,
+      "diagnostic_merge_tolerance_m": 0,
+      "geometry_written_or_repaired": false,
+      "watertightness": {
+        "original_indices_closed": false,
+        "exact_coordinate_closed_edges": true,
+        "embedded_solid_certificate": false,
+        "limits": "Topological closure only. Coincident/zero-volume components and transverse crossings are reported separately; robust embedding/nesting clearance remains unresolved."
+      },
+      "self_intersection": {
+        "aabb_candidate_pairs_tested": 4086,
+        "incident_candidate_pairs_excluded": 12154,
+        "transverse_crossing_triangle_pairs": 8,
+        "first_source_face_pairs_zero_based": [
+          [
+            553,
+            556
+          ],
+          [
+            555,
+            557
+          ],
+          [
+            1480,
+            1488
+          ],
+          [
+            1481,
+            1485
+          ],
+          [
+            1482,
+            1484
+          ],
+          [
+            1482,
+            1488
+          ],
+          [
+            1508,
+            1517
+          ],
+          [
+            1509,
+            1516
+          ]
+        ],
+        "full_self_intersection_clearance": "not_assessed",
+        "limits": "Strict transverse crossings only, fixed SI thresholds. Coplanar overlaps, touching, nesting and incident-face foldovers excluded. Zero is not a clearance."
+      },
+      "existing_geometry_owner_agreement": true,
+      "visual_reference": "available_reduced_reconstructed_atlas",
+      "volumetric_simulation_input_ready": false,
+      "required_work": [
+        "Document an explicit derived index weld at exactly identical coordinates; original OBJ remains unchanged.",
+        "Review disconnected components individually; establish anatomical identity before retaining, removing or joining any fragment.",
+        "Resolve coincident triangles and zero-volume shell components through source review; edge closure alone is insufficient. Preserve every source face until a documented derivative decision.",
+        "Investigate positive transverse crossings at reported source faces; no automated anatomical repair.",
+        "Resolve complete self-intersection/nesting/assembly clearance with a qualified method.",
+        "Review reduced reconstructed boundaries and missing tissue interfaces; surface closure does not establish anatomical accuracy.",
+        "Specify cortical/internal or muscle/tendon compartments, material fields, reference state and attachments before any volume meshing."
+      ]
+    },
+    {
+      "element_id": "FJ1512",
+      "concept_id": "FMA37684",
+      "name": "short head of right biceps brachii",
+      "source_obj": "education/data/elbow-v1/sources/bodyparts3d/FJ1512.obj",
+      "source_sha256": "2173b7cce29f11036907b80e068e9bd6c16f22359d6e7994af9684454b99b4d5",
+      "bounds_m": [
+        [
+          -0.21239,
+          -0.109101,
+          1.06522
+        ],
+        [
+          -0.135237,
+          -0.0759581,
+          1.32776
+        ]
+      ],
+      "extent_m": [
+        0.077153,
+        0.0331429,
+        0.26254
+      ],
+      "original_index_topology": {
+        "vertex_count": 1739,
+        "face_count": 1856,
+        "edge_count": 3431,
+        "unused_vertex_count": 0,
+        "boundary_edges": 1294,
+        "nonmanifold_edges": 0,
+        "nonmanifold_vertex_count": 0,
+        "same_direction_two_face_edges": 0,
+        "exact_zero_area_triangles": 0,
+        "duplicate_triangle_excess": 0,
+        "area_m2": 0.016621046292213327,
+        "triangle_area_range_m2": [
+          1.900657780885512e-10,
+          0.00030711796894344575
+        ],
+        "edge_length_range_m": [
+          1.7000000000003124e-05,
+          0.057572534447946425
+        ],
+        "closed_edge_manifold": false,
+        "face_connected_component_count": 186,
+        "face_connected_component_sizes": [
+          2,
+          2,
+          4,
+          3,
+          1,
+          1490,
+          1,
+          1,
+          7,
+          1,
+          1,
+          1,
+          1,
+          6,
+          2,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          5,
+          2,
+          1,
+          1,
+          1,
+          4,
+          1,
+          2,
+          1,
+          1,
+          4,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          5,
+          4,
+          1,
+          1,
+          4,
+          5,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          4,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          4,
+          4,
+          1,
+          3,
+          1,
+          1,
+          3,
+          1,
+          3,
+          2,
+          1,
+          2,
+          2,
+          8,
+          2,
+          1,
+          4,
+          1,
+          5,
+          4,
+          1,
+          11,
+          2,
+          2,
+          1,
+          2,
+          7,
+          1,
+          1,
+          1,
+          1,
+          1,
+          7,
+          1,
+          2,
+          1,
+          2,
+          2,
+          2,
+          1,
+          1,
+          2,
+          1,
+          2,
+          2,
+          4,
+          1,
+          2,
+          1,
+          1,
+          9,
+          2,
+          5,
+          2,
+          6,
+          1,
+          2,
+          1,
+          1,
+          3,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          4,
+          9,
+          1,
+          2,
+          16,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          4,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          1
+        ]
+      },
+      "exact_coordinate_topology_diagnostic": {
+        "vertex_count": 932,
+        "face_count": 1856,
+        "edge_count": 2784,
+        "unused_vertex_count": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "nonmanifold_vertex_count": 0,
+        "same_direction_two_face_edges": 0,
+        "exact_zero_area_triangles": 0,
+        "duplicate_triangle_excess": 7,
+        "area_m2": 0.016621046292213327,
+        "triangle_area_range_m2": [
+          1.900657780885512e-10,
+          0.00030711796894344575
+        ],
+        "edge_length_range_m": [
+          1.7000000000003124e-05,
+          0.057572534447946425
+        ],
+        "face_connected_components": [
+          {
+            "first_source_face_zero_based": 0,
+            "face_count": 1842,
+            "source_faces_if_small_component_zero_based": null,
+            "vertex_count": 911,
+            "edge_count": 2763,
+            "bounds_m": [
+              [
+                -0.21239,
+                -0.109101,
+                1.06522
+              ],
+              [
+                -0.135986,
+                -0.0759581,
+                1.32763
+              ]
+            ],
+            "area_m2": 0.016620973984425944,
+            "euler_characteristic": -10,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 6.0,
+            "original_signed_volume_m3": 7.400561763934476e-05,
+            "component_relative_signed_volume_diagnostic_m3": 7.400561763935814e-05,
+            "exact_zero_component_relative_volume": false,
+            "coincident_triangle_source_face_groups": [],
+            "consistent_positive_signed_volume_diagnostic_m3": 7.400561763934476e-05,
+            "faces_requiring_orientation_change": 0,
+            "positive_volume_winding_sign_meaningful": true,
+            "orientation_change_source_face_indices_zero_based": [],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          },
+          {
+            "first_source_face_zero_based": 1813,
+            "face_count": 2,
+            "source_faces_if_small_component_zero_based": [
+              1813,
+              1814
+            ],
+            "vertex_count": 3,
+            "edge_count": 3,
+            "bounds_m": [
+              [
+                -0.135247,
+                -0.10440200000000001,
+                1.3260399999999999
+              ],
+              [
+                -0.135237,
+                -0.104385,
+                1.32606
+              ]
+            ],
+            "area_m2": 3.801315561771024e-10,
+            "euler_characteristic": 2,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 0.0,
+            "original_signed_volume_m3": -3.378438912448699e-19,
+            "component_relative_signed_volume_diagnostic_m3": 0.0,
+            "exact_zero_component_relative_volume": true,
+            "coincident_triangle_source_face_groups": [
+              [
+                1813,
+                1814
+              ]
+            ],
+            "consistent_positive_signed_volume_diagnostic_m3": 3.378438912448699e-19,
+            "faces_requiring_orientation_change": 2,
+            "positive_volume_winding_sign_meaningful": false,
+            "orientation_change_source_face_indices_zero_based": [
+              1813,
+              1814
+            ],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          },
+          {
+            "first_source_face_zero_based": 1815,
+            "face_count": 2,
+            "source_faces_if_small_component_zero_based": [
+              1815,
+              1818
+            ],
+            "vertex_count": 3,
+            "edge_count": 3,
+            "bounds_m": [
+              [
+                -0.135744,
+                -0.104445,
+                1.32572
+              ],
+              [
+                -0.13571,
+                -0.104357,
+                1.32581
+              ]
+            ],
+            "area_m2": 8.437536133248922e-09,
+            "euler_characteristic": 2,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 0.0,
+            "original_signed_volume_m3": -1.0371351820409309e-18,
+            "component_relative_signed_volume_diagnostic_m3": 0.0,
+            "exact_zero_component_relative_volume": true,
+            "coincident_triangle_source_face_groups": [
+              [
+                1815,
+                1818
+              ]
+            ],
+            "consistent_positive_signed_volume_diagnostic_m3": 1.0371351820409309e-18,
+            "faces_requiring_orientation_change": 2,
+            "positive_volume_winding_sign_meaningful": false,
+            "orientation_change_source_face_indices_zero_based": [
+              1815,
+              1818
+            ],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          },
+          {
+            "first_source_face_zero_based": 1817,
+            "face_count": 2,
+            "source_faces_if_small_component_zero_based": [
+              1817,
+              1819
+            ],
+            "vertex_count": 3,
+            "edge_count": 3,
+            "bounds_m": [
+              [
+                -0.135883,
+                -0.104201,
+                1.3260999999999998
+              ],
+              [
+                -0.135852,
+                -0.104184,
+                1.32613
+              ]
+            ],
+            "area_m2": 9.694761472105005e-10,
+            "euler_characteristic": 2,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 0.0,
+            "original_signed_volume_m3": 5.221112715387338e-19,
+            "component_relative_signed_volume_diagnostic_m3": 0.0,
+            "exact_zero_component_relative_volume": true,
+            "coincident_triangle_source_face_groups": [
+              [
+                1817,
+                1819
+              ]
+            ],
+            "consistent_positive_signed_volume_diagnostic_m3": 5.221112715387338e-19,
+            "faces_requiring_orientation_change": 0,
+            "positive_volume_winding_sign_meaningful": false,
+            "orientation_change_source_face_indices_zero_based": [],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          },
+          {
+            "first_source_face_zero_based": 1820,
+            "face_count": 2,
+            "source_faces_if_small_component_zero_based": [
+              1820,
+              1836
+            ],
+            "vertex_count": 3,
+            "edge_count": 3,
+            "bounds_m": [
+              [
+                -0.13613999999999998,
+                -0.10401300000000001,
+                1.3263699999999998
+              ],
+              [
+                -0.136052,
+                -0.103869,
+                1.32646
+              ]
+            ],
+            "area_m2": 1.4613131936755053e-08,
+            "euler_characteristic": 2,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 0.0,
+            "original_signed_volume_m3": 3.1205864237415187e-19,
+            "component_relative_signed_volume_diagnostic_m3": 0.0,
+            "exact_zero_component_relative_volume": true,
+            "coincident_triangle_source_face_groups": [
+              [
+                1820,
+                1836
+              ]
+            ],
+            "consistent_positive_signed_volume_diagnostic_m3": 3.1205864237415187e-19,
+            "faces_requiring_orientation_change": 0,
+            "positive_volume_winding_sign_meaningful": false,
+            "orientation_change_source_face_indices_zero_based": [],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          },
+          {
+            "first_source_face_zero_based": 1823,
+            "face_count": 2,
+            "source_faces_if_small_component_zero_based": [
+              1823,
+              1824
+            ],
+            "vertex_count": 3,
+            "edge_count": 3,
+            "bounds_m": [
+              [
+                -0.136018,
+                -0.10359,
+                1.32697
+              ],
+              [
+                -0.135971,
+                -0.103488,
+                1.32704
+              ]
+            ],
+            "area_m2": 8.330447526995689e-09,
+            "euler_characteristic": 2,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 0.0,
+            "original_signed_volume_m3": -7.109100377010427e-21,
+            "component_relative_signed_volume_diagnostic_m3": 0.0,
+            "exact_zero_component_relative_volume": true,
+            "coincident_triangle_source_face_groups": [
+              [
+                1823,
+                1824
+              ]
+            ],
+            "consistent_positive_signed_volume_diagnostic_m3": 7.109100377010427e-21,
+            "faces_requiring_orientation_change": 2,
+            "positive_volume_winding_sign_meaningful": false,
+            "orientation_change_source_face_indices_zero_based": [
+              1823,
+              1824
+            ],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          },
+          {
+            "first_source_face_zero_based": 1827,
+            "face_count": 2,
+            "source_faces_if_small_component_zero_based": [
+              1827,
+              1830
+            ],
+            "vertex_count": 3,
+            "edge_count": 3,
+            "bounds_m": [
+              [
+                -0.13614400000000002,
+                -0.10332899999999999,
+                1.32734
+              ],
+              [
+                -0.13612200000000002,
+                -0.10331699999999999,
+                1.3273599999999999
+              ]
+            ],
+            "area_m2": 4.999559980619762e-10,
+            "euler_characteristic": 2,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 0.0,
+            "original_signed_volume_m3": 0.0,
+            "component_relative_signed_volume_diagnostic_m3": 0.0,
+            "exact_zero_component_relative_volume": true,
+            "coincident_triangle_source_face_groups": [
+              [
+                1827,
+                1830
+              ]
+            ],
+            "consistent_positive_signed_volume_diagnostic_m3": 0.0,
+            "faces_requiring_orientation_change": 0,
+            "positive_volume_winding_sign_meaningful": false,
+            "orientation_change_source_face_indices_zero_based": [],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          },
+          {
+            "first_source_face_zero_based": 1831,
+            "face_count": 2,
+            "source_faces_if_small_component_zero_based": [
+              1831,
+              1832
+            ],
+            "vertex_count": 3,
+            "edge_count": 3,
+            "bounds_m": [
+              [
+                -0.137154,
+                -0.102521,
+                1.3276500000000002
+              ],
+              [
+                -0.136952,
+                -0.102255,
+                1.32776
+              ]
+            ],
+            "area_m2": 3.90771080812853e-08,
+            "euler_characteristic": 2,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 0.0,
+            "original_signed_volume_m3": -3.0019625200468204e-20,
+            "component_relative_signed_volume_diagnostic_m3": 0.0,
+            "exact_zero_component_relative_volume": true,
+            "coincident_triangle_source_face_groups": [
+              [
+                1831,
+                1832
+              ]
+            ],
+            "consistent_positive_signed_volume_diagnostic_m3": 3.0019625200468204e-20,
+            "faces_requiring_orientation_change": 2,
+            "positive_volume_winding_sign_meaningful": false,
+            "orientation_change_source_face_indices_zero_based": [
+              1831,
+              1832
+            ],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          }
+        ],
+        "closed_edge_manifold": true
+      },
+      "exact_coordinate_duplicate_vertex_count": 807,
+      "diagnostic_merge_tolerance_m": 0,
+      "geometry_written_or_repaired": false,
+      "watertightness": {
+        "original_indices_closed": false,
+        "exact_coordinate_closed_edges": true,
+        "embedded_solid_certificate": false,
+        "limits": "Topological closure only. Coincident/zero-volume components and transverse crossings are reported separately; robust embedding/nesting clearance remains unresolved."
+      },
+      "self_intersection": {
+        "aabb_candidate_pairs_tested": 5458,
+        "incident_candidate_pairs_excluded": 13082,
+        "transverse_crossing_triangle_pairs": 9,
+        "first_source_face_pairs_zero_based": [
+          [
+            80,
+            92
+          ],
+          [
+            80,
+            97
+          ],
+          [
+            80,
+            102
+          ],
+          [
+            92,
+            96
+          ],
+          [
+            175,
+            182
+          ],
+          [
+            175,
+            184
+          ],
+          [
+            215,
+            222
+          ],
+          [
+            1820,
+            1821
+          ],
+          [
+            1821,
+            1836
+          ]
+        ],
+        "full_self_intersection_clearance": "not_assessed",
+        "limits": "Strict transverse crossings only, fixed SI thresholds. Coplanar overlaps, touching, nesting and incident-face foldovers excluded. Zero is not a clearance."
+      },
+      "existing_geometry_owner_agreement": true,
+      "visual_reference": "available_reduced_reconstructed_atlas",
+      "volumetric_simulation_input_ready": false,
+      "required_work": [
+        "Document an explicit derived index weld at exactly identical coordinates; original OBJ remains unchanged.",
+        "Review disconnected components individually; establish anatomical identity before retaining, removing or joining any fragment.",
+        "Review reported source-face winding changes in a separately versioned derivative.",
+        "Resolve coincident triangles and zero-volume shell components through source review; edge closure alone is insufficient. Preserve every source face until a documented derivative decision.",
+        "Investigate positive transverse crossings at reported source faces; no automated anatomical repair.",
+        "Resolve complete self-intersection/nesting/assembly clearance with a qualified method.",
+        "Review reduced reconstructed boundaries and missing tissue interfaces; surface closure does not establish anatomical accuracy.",
+        "Specify cortical/internal or muscle/tendon compartments, material fields, reference state and attachments before any volume meshing."
+      ]
+    },
+    {
+      "element_id": "FJ1478",
+      "concept_id": "FMA37686",
+      "name": "long head of right biceps brachii",
+      "source_obj": "education/data/elbow-v1/sources/bodyparts3d/FJ1478.obj",
+      "source_sha256": "2442d2b5ac30c5da42e72eeff83d143df51c7617001cbc6552096a504f29bc07",
+      "bounds_m": [
+        [
+          -0.22986,
+          -0.109292,
+          0.9940720000000001
+        ],
+        [
+          -0.135268,
+          -0.06780889999999999,
+          1.33942
+        ]
+      ],
+      "extent_m": [
+        0.09459200000000001,
+        0.04148310000000001,
+        0.345348
+      ],
+      "original_index_topology": {
+        "vertex_count": 1053,
+        "face_count": 1426,
+        "edge_count": 2458,
+        "unused_vertex_count": 0,
+        "boundary_edges": 638,
+        "nonmanifold_edges": 0,
+        "nonmanifold_vertex_count": 0,
+        "same_direction_two_face_edges": 0,
+        "exact_zero_area_triangles": 0,
+        "duplicate_triangle_excess": 0,
+        "area_m2": 0.01883796625827436,
+        "triangle_area_range_m2": [
+          2.4999999999675306e-12,
+          0.00019972697857984073
+        ],
+        "edge_length_range_m": [
+          1.972308292312325e-06,
+          0.048913352641277844
+        ],
+        "closed_edge_manifold": false,
+        "face_connected_component_count": 47,
+        "face_connected_component_sizes": [
+          1,
+          1,
+          46,
+          1313,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          3,
+          4,
+          2,
+          3,
+          3,
+          2,
+          3,
+          1,
+          3,
+          1,
+          2,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1
+        ]
+      },
+      "exact_coordinate_topology_diagnostic": {
+        "vertex_count": 717,
+        "face_count": 1426,
+        "edge_count": 2139,
+        "unused_vertex_count": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "nonmanifold_vertex_count": 0,
+        "same_direction_two_face_edges": 0,
+        "exact_zero_area_triangles": 0,
+        "duplicate_triangle_excess": 1,
+        "area_m2": 0.01883796625827436,
+        "triangle_area_range_m2": [
+          2.4999999999675306e-12,
+          0.00019972697857984073
+        ],
+        "edge_length_range_m": [
+          1.972308292312325e-06,
+          0.048913352641277844
+        ],
+        "face_connected_components": [
+          {
+            "first_source_face_zero_based": 0,
+            "face_count": 1416,
+            "source_faces_if_small_component_zero_based": null,
+            "vertex_count": 708,
+            "edge_count": 2124,
+            "bounds_m": [
+              [
+                -0.22986,
+                -0.109292,
+                0.9940720000000001
+              ],
+              [
+                -0.135268,
+                -0.06780889999999999,
+                1.33942
+              ]
+            ],
+            "area_m2": 0.01883790825730822,
+            "euler_characteristic": 0,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 1.0,
+            "original_signed_volume_m3": 9.545632436770308e-05,
+            "component_relative_signed_volume_diagnostic_m3": 9.545632436768826e-05,
+            "exact_zero_component_relative_volume": false,
+            "coincident_triangle_source_face_groups": [],
+            "consistent_positive_signed_volume_diagnostic_m3": 9.545632436770308e-05,
+            "faces_requiring_orientation_change": 0,
+            "positive_volume_winding_sign_meaningful": true,
+            "orientation_change_source_face_indices_zero_based": [],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          },
+          {
+            "first_source_face_zero_based": 38,
+            "face_count": 8,
+            "source_faces_if_small_component_zero_based": [
+              38,
+              39,
+              41,
+              42,
+              44,
+              46,
+              48,
+              49
+            ],
+            "vertex_count": 6,
+            "edge_count": 12,
+            "bounds_m": [
+              [
+                -0.22428399999999998,
+                -0.0817387,
+                1.0001
+              ],
+              [
+                -0.224279,
+                -0.08173380000000001,
+                1.0001
+              ]
+            ],
+            "area_m2": 3.359999999971194e-11,
+            "euler_characteristic": 2,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 0.0,
+            "original_signed_volume_m3": 1.3349620882720541e-19,
+            "component_relative_signed_volume_diagnostic_m3": 0.0,
+            "exact_zero_component_relative_volume": true,
+            "coincident_triangle_source_face_groups": [],
+            "consistent_positive_signed_volume_diagnostic_m3": 1.3349620882720541e-19,
+            "faces_requiring_orientation_change": 0,
+            "positive_volume_winding_sign_meaningful": false,
+            "orientation_change_source_face_indices_zero_based": [],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          },
+          {
+            "first_source_face_zero_based": 378,
+            "face_count": 2,
+            "source_faces_if_small_component_zero_based": [
+              378,
+              379
+            ],
+            "vertex_count": 3,
+            "edge_count": 3,
+            "bounds_m": [
+              [
+                -0.20411,
+                -0.0850602,
+                1.0752300000000001
+              ],
+              [
+                -0.20408600000000002,
+                -0.084873,
+                1.07554
+              ]
+            ],
+            "area_m2": 5.7967366137826776e-08,
+            "euler_characteristic": 2,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 0.0,
+            "original_signed_volume_m3": 0.0,
+            "component_relative_signed_volume_diagnostic_m3": 0.0,
+            "exact_zero_component_relative_volume": true,
+            "coincident_triangle_source_face_groups": [
+              [
+                378,
+                379
+              ]
+            ],
+            "consistent_positive_signed_volume_diagnostic_m3": 0.0,
+            "faces_requiring_orientation_change": 0,
+            "positive_volume_winding_sign_meaningful": false,
+            "orientation_change_source_face_indices_zero_based": [],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          }
+        ],
+        "closed_edge_manifold": true
+      },
+      "exact_coordinate_duplicate_vertex_count": 336,
+      "diagnostic_merge_tolerance_m": 0,
+      "geometry_written_or_repaired": false,
+      "watertightness": {
+        "original_indices_closed": false,
+        "exact_coordinate_closed_edges": true,
+        "embedded_solid_certificate": false,
+        "limits": "Topological closure only. Coincident/zero-volume components and transverse crossings are reported separately; robust embedding/nesting clearance remains unresolved."
+      },
+      "self_intersection": {
+        "aabb_candidate_pairs_tested": 2580,
+        "incident_candidate_pairs_excluded": 9981,
+        "transverse_crossing_triangle_pairs": 0,
+        "first_source_face_pairs_zero_based": [],
+        "full_self_intersection_clearance": "not_assessed",
+        "limits": "Strict transverse crossings only, fixed SI thresholds. Coplanar overlaps, touching, nesting and incident-face foldovers excluded. Zero is not a clearance."
+      },
+      "existing_geometry_owner_agreement": true,
+      "visual_reference": "available_reduced_reconstructed_atlas",
+      "volumetric_simulation_input_ready": false,
+      "required_work": [
+        "Document an explicit derived index weld at exactly identical coordinates; original OBJ remains unchanged.",
+        "Review disconnected components individually; establish anatomical identity before retaining, removing or joining any fragment.",
+        "Resolve coincident triangles and zero-volume shell components through source review; edge closure alone is insufficient. Preserve every source face until a documented derivative decision.",
+        "Resolve complete self-intersection/nesting/assembly clearance with a qualified method.",
+        "Review reduced reconstructed boundaries and missing tissue interfaces; surface closure does not establish anatomical accuracy.",
+        "Specify cortical/internal or muscle/tendon compartments, material fields, reference state and attachments before any volume meshing."
+      ]
+    },
+    {
+      "element_id": "FJ1480",
+      "concept_id": "FMA37695",
+      "name": "medial head of right triceps brachii",
+      "source_obj": "education/data/elbow-v1/sources/bodyparts3d/FJ1480.obj",
+      "source_sha256": "1ea653667afa5ff0bf0e01d71ac648819655241c130e8dd1778ed2f9561c34c5",
+      "bounds_m": [
+        [
+          -0.226963,
+          -0.07187990000000001,
+          1.02935
+        ],
+        [
+          -0.167373,
+          -0.0463172,
+          1.25604
+        ]
+      ],
+      "extent_m": [
+        0.059590000000000004,
+        0.025562700000000008,
+        0.22669000000000006
+      ],
+      "original_index_topology": {
+        "vertex_count": 620,
+        "face_count": 832,
+        "edge_count": 1437,
+        "unused_vertex_count": 0,
+        "boundary_edges": 378,
+        "nonmanifold_edges": 0,
+        "nonmanifold_vertex_count": 0,
+        "same_direction_two_face_edges": 0,
+        "exact_zero_area_triangles": 0,
+        "duplicate_triangle_excess": 0,
+        "area_m2": 0.01661670967701537,
+        "triangle_area_range_m2": [
+          1.3924354823491418e-09,
+          0.0003702026059971324
+        ],
+        "edge_length_range_m": [
+          5.098127107089447e-05,
+          0.09261707233550405
+        ],
+        "closed_edge_manifold": false,
+        "face_connected_component_count": 26,
+        "face_connected_component_sizes": [
+          1,
+          783,
+          3,
+          2,
+          1,
+          2,
+          1,
+          4,
+          6,
+          4,
+          1,
+          1,
+          1,
+          2,
+          1,
+          3,
+          3,
+          2,
+          1,
+          1,
+          2,
+          1,
+          1,
+          2,
+          1,
+          2
+        ]
+      },
+      "exact_coordinate_topology_diagnostic": {
+        "vertex_count": 420,
+        "face_count": 832,
+        "edge_count": 1248,
+        "unused_vertex_count": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "nonmanifold_vertex_count": 0,
+        "same_direction_two_face_edges": 0,
+        "exact_zero_area_triangles": 0,
+        "duplicate_triangle_excess": 1,
+        "area_m2": 0.01661670967701537,
+        "triangle_area_range_m2": [
+          1.3924354823491418e-09,
+          0.0003702026059971324
+        ],
+        "edge_length_range_m": [
+          5.098127107089447e-05,
+          0.09261707233550405
+        ],
+        "face_connected_components": [
+          {
+            "first_source_face_zero_based": 0,
+            "face_count": 830,
+            "source_faces_if_small_component_zero_based": null,
+            "vertex_count": 417,
+            "edge_count": 1245,
+            "bounds_m": [
+              [
+                -0.226963,
+                -0.07187990000000001,
+                1.02935
+              ],
+              [
+                -0.167373,
+                -0.0463172,
+                1.25604
+              ]
+            ],
+            "area_m2": 0.016616706892144405,
+            "euler_characteristic": 2,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 0.0,
+            "original_signed_volume_m3": 6.414653284967516e-05,
+            "component_relative_signed_volume_diagnostic_m3": 6.414653284968382e-05,
+            "exact_zero_component_relative_volume": false,
+            "coincident_triangle_source_face_groups": [],
+            "consistent_positive_signed_volume_diagnostic_m3": 6.414653284967516e-05,
+            "faces_requiring_orientation_change": 0,
+            "positive_volume_winding_sign_meaningful": true,
+            "orientation_change_source_face_indices_zero_based": [],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          },
+          {
+            "first_source_face_zero_based": 728,
+            "face_count": 2,
+            "source_faces_if_small_component_zero_based": [
+              728,
+              729
+            ],
+            "vertex_count": 3,
+            "edge_count": 3,
+            "bounds_m": [
+              [
+                -0.17954900000000001,
+                -0.0658503,
+                1.25038
+              ],
+              [
+                -0.179507,
+                -0.0658061,
+                1.2504300000000002
+              ]
+            ],
+            "area_m2": 2.7848709646982836e-09,
+            "euler_characteristic": 2,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 0.0,
+            "original_signed_volume_m3": 2.160449452417663e-19,
+            "component_relative_signed_volume_diagnostic_m3": 0.0,
+            "exact_zero_component_relative_volume": true,
+            "coincident_triangle_source_face_groups": [
+              [
+                728,
+                729
+              ]
+            ],
+            "consistent_positive_signed_volume_diagnostic_m3": 2.160449452417663e-19,
+            "faces_requiring_orientation_change": 0,
+            "positive_volume_winding_sign_meaningful": false,
+            "orientation_change_source_face_indices_zero_based": [],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          }
+        ],
+        "closed_edge_manifold": true
+      },
+      "exact_coordinate_duplicate_vertex_count": 200,
+      "diagnostic_merge_tolerance_m": 0,
+      "geometry_written_or_repaired": false,
+      "watertightness": {
+        "original_indices_closed": false,
+        "exact_coordinate_closed_edges": true,
+        "embedded_solid_certificate": false,
+        "limits": "Topological closure only. Coincident/zero-volume components and transverse crossings are reported separately; robust embedding/nesting clearance remains unresolved."
+      },
+      "self_intersection": {
+        "aabb_candidate_pairs_tested": 1372,
+        "incident_candidate_pairs_excluded": 5708,
+        "transverse_crossing_triangle_pairs": 0,
+        "first_source_face_pairs_zero_based": [],
+        "full_self_intersection_clearance": "not_assessed",
+        "limits": "Strict transverse crossings only, fixed SI thresholds. Coplanar overlaps, touching, nesting and incident-face foldovers excluded. Zero is not a clearance."
+      },
+      "existing_geometry_owner_agreement": true,
+      "visual_reference": "available_reduced_reconstructed_atlas",
+      "volumetric_simulation_input_ready": false,
+      "required_work": [
+        "Document an explicit derived index weld at exactly identical coordinates; original OBJ remains unchanged.",
+        "Review disconnected components individually; establish anatomical identity before retaining, removing or joining any fragment.",
+        "Resolve coincident triangles and zero-volume shell components through source review; edge closure alone is insufficient. Preserve every source face until a documented derivative decision.",
+        "Resolve complete self-intersection/nesting/assembly clearance with a qualified method.",
+        "Review reduced reconstructed boundaries and missing tissue interfaces; surface closure does not establish anatomical accuracy.",
+        "Specify cortical/internal or muscle/tendon compartments, material fields, reference state and attachments before any volume meshing."
+      ]
+    },
+    {
+      "element_id": "FJ1477",
+      "concept_id": "FMA37697",
+      "name": "lateral head of right triceps brachii",
+      "source_obj": "education/data/elbow-v1/sources/bodyparts3d/FJ1477.obj",
+      "source_sha256": "1d1c3b42eec0dffe696bd25cffa81784c87c15f16c9605050fdf1cb2f47698dd",
+      "bounds_m": [
+        [
+          -0.228005,
+          -0.0687968,
+          1.03597
+        ],
+        [
+          -0.174456,
+          -0.0200842,
+          1.2921300000000002
+        ]
+      ],
+      "extent_m": [
+        0.05354900000000001,
+        0.04871260000000001,
+        0.25616000000000017
+      ],
+      "original_index_topology": {
+        "vertex_count": 1678,
+        "face_count": 2606,
+        "edge_count": 4322,
+        "unused_vertex_count": 0,
+        "boundary_edges": 826,
+        "nonmanifold_edges": 0,
+        "nonmanifold_vertex_count": 0,
+        "same_direction_two_face_edges": 0,
+        "exact_zero_area_triangles": 0,
+        "duplicate_triangle_excess": 0,
+        "area_m2": 0.021575477859877654,
+        "triangle_area_range_m2": [
+          7.138364238407324e-10,
+          0.0002616486609581296
+        ],
+        "edge_length_range_m": [
+          3.389232951571608e-05,
+          0.05906020681482571
+        ],
+        "closed_edge_manifold": false,
+        "face_connected_component_count": 23,
+        "face_connected_component_sizes": [
+          2551,
+          2,
+          2,
+          2,
+          1,
+          1,
+          2,
+          2,
+          1,
+          1,
+          1,
+          5,
+          2,
+          1,
+          1,
+          4,
+          4,
+          2,
+          4,
+          1,
+          3,
+          12,
+          1
+        ]
+      },
+      "exact_coordinate_topology_diagnostic": {
+        "vertex_count": 1309,
+        "face_count": 2606,
+        "edge_count": 3909,
+        "unused_vertex_count": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "nonmanifold_vertex_count": 0,
+        "same_direction_two_face_edges": 0,
+        "exact_zero_area_triangles": 0,
+        "duplicate_triangle_excess": 2,
+        "area_m2": 0.021575477859877654,
+        "triangle_area_range_m2": [
+          7.138364238407324e-10,
+          0.0002616486609581296
+        ],
+        "edge_length_range_m": [
+          3.389232951571608e-05,
+          0.05906020681482571
+        ],
+        "face_connected_components": [
+          {
+            "first_source_face_zero_based": 0,
+            "face_count": 2602,
+            "source_faces_if_small_component_zero_based": null,
+            "vertex_count": 1303,
+            "edge_count": 3903,
+            "bounds_m": [
+              [
+                -0.228005,
+                -0.0687968,
+                1.03597
+              ],
+              [
+                -0.174456,
+                -0.0200842,
+                1.2921300000000002
+              ]
+            ],
+            "area_m2": 0.021575474786579247,
+            "euler_characteristic": 2,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 0.0,
+            "original_signed_volume_m3": 0.00012989254963005932,
+            "component_relative_signed_volume_diagnostic_m3": 0.00012989254963005972,
+            "exact_zero_component_relative_volume": false,
+            "coincident_triangle_source_face_groups": [],
+            "consistent_positive_signed_volume_diagnostic_m3": 0.00012989254963005932,
+            "faces_requiring_orientation_change": 0,
+            "positive_volume_winding_sign_meaningful": true,
+            "orientation_change_source_face_indices_zero_based": [],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          },
+          {
+            "first_source_face_zero_based": 846,
+            "face_count": 2,
+            "source_faces_if_small_component_zero_based": [
+              846,
+              849
+            ],
+            "vertex_count": 3,
+            "edge_count": 3,
+            "bounds_m": [
+              [
+                -0.21833600000000003,
+                -0.036499899999999995,
+                1.09744
+              ],
+              [
+                -0.218305,
+                -0.0364806,
+                1.09748
+              ]
+            ],
+            "area_m2": 1.4276728476814648e-09,
+            "euler_characteristic": 2,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 0.0,
+            "original_signed_volume_m3": 0.0,
+            "component_relative_signed_volume_diagnostic_m3": 0.0,
+            "exact_zero_component_relative_volume": true,
+            "coincident_triangle_source_face_groups": [
+              [
+                846,
+                849
+              ]
+            ],
+            "consistent_positive_signed_volume_diagnostic_m3": 0.0,
+            "faces_requiring_orientation_change": 0,
+            "positive_volume_winding_sign_meaningful": false,
+            "orientation_change_source_face_indices_zero_based": [],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          },
+          {
+            "first_source_face_zero_based": 1637,
+            "face_count": 2,
+            "source_faces_if_small_component_zero_based": [
+              1637,
+              1639
+            ],
+            "vertex_count": 3,
+            "edge_count": 3,
+            "bounds_m": [
+              [
+                -0.201834,
+                -0.030425300000000002,
+                1.1114000000000002
+              ],
+              [
+                -0.201799,
+                -0.030376200000000003,
+                1.11142
+              ]
+            ],
+            "area_m2": 1.64562556190369e-09,
+            "euler_characteristic": 2,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 0.0,
+            "original_signed_volume_m3": -1.0849094119092373e-19,
+            "component_relative_signed_volume_diagnostic_m3": 0.0,
+            "exact_zero_component_relative_volume": true,
+            "coincident_triangle_source_face_groups": [
+              [
+                1637,
+                1639
+              ]
+            ],
+            "consistent_positive_signed_volume_diagnostic_m3": 1.0849094119092373e-19,
+            "faces_requiring_orientation_change": 2,
+            "positive_volume_winding_sign_meaningful": false,
+            "orientation_change_source_face_indices_zero_based": [
+              1637,
+              1639
+            ],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          }
+        ],
+        "closed_edge_manifold": true
+      },
+      "exact_coordinate_duplicate_vertex_count": 369,
+      "diagnostic_merge_tolerance_m": 0,
+      "geometry_written_or_repaired": false,
+      "watertightness": {
+        "original_indices_closed": false,
+        "exact_coordinate_closed_edges": true,
+        "embedded_solid_certificate": false,
+        "limits": "Topological closure only. Coincident/zero-volume components and transverse crossings are reported separately; robust embedding/nesting clearance remains unresolved."
+      },
+      "self_intersection": {
+        "aabb_candidate_pairs_tested": 6124,
+        "incident_candidate_pairs_excluded": 17830,
+        "transverse_crossing_triangle_pairs": 0,
+        "first_source_face_pairs_zero_based": [],
+        "full_self_intersection_clearance": "not_assessed",
+        "limits": "Strict transverse crossings only, fixed SI thresholds. Coplanar overlaps, touching, nesting and incident-face foldovers excluded. Zero is not a clearance."
+      },
+      "existing_geometry_owner_agreement": true,
+      "visual_reference": "available_reduced_reconstructed_atlas",
+      "volumetric_simulation_input_ready": false,
+      "required_work": [
+        "Document an explicit derived index weld at exactly identical coordinates; original OBJ remains unchanged.",
+        "Review disconnected components individually; establish anatomical identity before retaining, removing or joining any fragment.",
+        "Review reported source-face winding changes in a separately versioned derivative.",
+        "Resolve coincident triangles and zero-volume shell components through source review; edge closure alone is insufficient. Preserve every source face until a documented derivative decision.",
+        "Resolve complete self-intersection/nesting/assembly clearance with a qualified method.",
+        "Review reduced reconstructed boundaries and missing tissue interfaces; surface closure does not establish anatomical accuracy.",
+        "Specify cortical/internal or muscle/tendon compartments, material fields, reference state and attachments before any volume meshing."
+      ]
+    },
+    {
+      "element_id": "FJ1479",
+      "concept_id": "FMA37699",
+      "name": "long head of right triceps brachii",
+      "source_obj": "education/data/elbow-v1/sources/bodyparts3d/FJ1479.obj",
+      "source_sha256": "acc48f746bd07a117357a9c49a1a9850c96b85d7c63cf90a662a45717875a315",
+      "bounds_m": [
+        [
+          -0.216462,
+          -0.0641021,
+          1.03524
+        ],
+        [
+          -0.134691,
+          -0.0187595,
+          1.30075
+        ]
+      ],
+      "extent_m": [
+        0.08177099999999998,
+        0.0453426,
+        0.26551000000000013
+      ],
+      "original_index_topology": {
+        "vertex_count": 1105,
+        "face_count": 1588,
+        "edge_count": 2670,
+        "unused_vertex_count": 0,
+        "boundary_edges": 576,
+        "nonmanifold_edges": 0,
+        "nonmanifold_vertex_count": 0,
+        "same_direction_two_face_edges": 0,
+        "exact_zero_area_triangles": 0,
+        "duplicate_triangle_excess": 0,
+        "area_m2": 0.022089973182444187,
+        "triangle_area_range_m2": [
+          3.3932689254040583e-10,
+          0.00020186465745080704
+        ],
+        "edge_length_range_m": [
+          2.337199178515575e-05,
+          0.06616119332841566
+        ],
+        "closed_edge_manifold": false,
+        "face_connected_component_count": 54,
+        "face_connected_component_sizes": [
+          14,
+          2,
+          1,
+          1,
+          1489,
+          2,
+          2,
+          4,
+          1,
+          3,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          3,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          4,
+          4,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          11,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          3,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "exact_coordinate_topology_diagnostic": {
+        "vertex_count": 798,
+        "face_count": 1588,
+        "edge_count": 2382,
+        "unused_vertex_count": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "nonmanifold_vertex_count": 0,
+        "same_direction_two_face_edges": 0,
+        "exact_zero_area_triangles": 0,
+        "duplicate_triangle_excess": 1,
+        "area_m2": 0.022089973182444187,
+        "triangle_area_range_m2": [
+          3.3932689254040583e-10,
+          0.00020186465745080704
+        ],
+        "edge_length_range_m": [
+          2.337199178515575e-05,
+          0.06616119332841566
+        ],
+        "face_connected_components": [
+          {
+            "first_source_face_zero_based": 0,
+            "face_count": 1586,
+            "source_faces_if_small_component_zero_based": null,
+            "vertex_count": 795,
+            "edge_count": 2379,
+            "bounds_m": [
+              [
+                -0.216462,
+                -0.0641021,
+                1.03524
+              ],
+              [
+                -0.134691,
+                -0.0187595,
+                1.30075
+              ]
+            ],
+            "area_m2": 0.0220899725037904,
+            "euler_characteristic": 2,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 0.0,
+            "original_signed_volume_m3": 0.00013324533287087232,
+            "component_relative_signed_volume_diagnostic_m3": 0.000133245332870876,
+            "exact_zero_component_relative_volume": false,
+            "coincident_triangle_source_face_groups": [],
+            "consistent_positive_signed_volume_diagnostic_m3": 0.00013324533287087232,
+            "faces_requiring_orientation_change": 0,
+            "positive_volume_winding_sign_meaningful": true,
+            "orientation_change_source_face_indices_zero_based": [],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          },
+          {
+            "first_source_face_zero_based": 1544,
+            "face_count": 2,
+            "source_faces_if_small_component_zero_based": [
+              1544,
+              1545
+            ],
+            "vertex_count": 3,
+            "edge_count": 3,
+            "bounds_m": [
+              [
+                -0.13671,
+                -0.055919500000000004,
+                1.2782
+              ],
+              [
+                -0.136684,
+                -0.0558964,
+                1.2782200000000001
+              ]
+            ],
+            "area_m2": 6.786537850808117e-10,
+            "euler_characteristic": 2,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 0.0,
+            "original_signed_volume_m3": 0.0,
+            "component_relative_signed_volume_diagnostic_m3": 0.0,
+            "exact_zero_component_relative_volume": true,
+            "coincident_triangle_source_face_groups": [
+              [
+                1544,
+                1545
+              ]
+            ],
+            "consistent_positive_signed_volume_diagnostic_m3": 0.0,
+            "faces_requiring_orientation_change": 0,
+            "positive_volume_winding_sign_meaningful": false,
+            "orientation_change_source_face_indices_zero_based": [],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          }
+        ],
+        "closed_edge_manifold": true
+      },
+      "exact_coordinate_duplicate_vertex_count": 307,
+      "diagnostic_merge_tolerance_m": 0,
+      "geometry_written_or_repaired": false,
+      "watertightness": {
+        "original_indices_closed": false,
+        "exact_coordinate_closed_edges": true,
+        "embedded_solid_certificate": false,
+        "limits": "Topological closure only. Coincident/zero-volume components and transverse crossings are reported separately; robust embedding/nesting clearance remains unresolved."
+      },
+      "self_intersection": {
+        "aabb_candidate_pairs_tested": 4632,
+        "incident_candidate_pairs_excluded": 11354,
+        "transverse_crossing_triangle_pairs": 0,
+        "first_source_face_pairs_zero_based": [],
+        "full_self_intersection_clearance": "not_assessed",
+        "limits": "Strict transverse crossings only, fixed SI thresholds. Coplanar overlaps, touching, nesting and incident-face foldovers excluded. Zero is not a clearance."
+      },
+      "existing_geometry_owner_agreement": true,
+      "visual_reference": "available_reduced_reconstructed_atlas",
+      "volumetric_simulation_input_ready": false,
+      "required_work": [
+        "Document an explicit derived index weld at exactly identical coordinates; original OBJ remains unchanged.",
+        "Review disconnected components individually; establish anatomical identity before retaining, removing or joining any fragment.",
+        "Resolve coincident triangles and zero-volume shell components through source review; edge closure alone is insufficient. Preserve every source face until a documented derivative decision.",
+        "Resolve complete self-intersection/nesting/assembly clearance with a qualified method.",
+        "Review reduced reconstructed boundaries and missing tissue interfaces; surface closure does not establish anatomical accuracy.",
+        "Specify cortical/internal or muscle/tendon compartments, material fields, reference state and attachments before any volume meshing."
+      ]
+    },
+    {
+      "element_id": "FJ1487",
+      "concept_id": "FMA38486",
+      "name": "right brachioradialis",
+      "source_obj": "education/data/elbow-v1/sources/bodyparts3d/FJ1487.obj",
+      "source_sha256": "0ff651a5417f240c6a5205bef5218336a61fe3474752cca1b483d02aae0b92ad",
+      "bounds_m": [
+        [
+          -0.280586,
+          -0.122878,
+          0.809712
+        ],
+        [
+          -0.20815899999999998,
+          -0.055824399999999996,
+          1.14761
+        ]
+      ],
+      "extent_m": [
+        0.07242700000000002,
+        0.0670536,
+        0.33789800000000003
+      ],
+      "original_index_topology": {
+        "vertex_count": 3270,
+        "face_count": 4874,
+        "edge_count": 8199,
+        "unused_vertex_count": 0,
+        "boundary_edges": 1776,
+        "nonmanifold_edges": 0,
+        "nonmanifold_vertex_count": 0,
+        "same_direction_two_face_edges": 0,
+        "exact_zero_area_triangles": 0,
+        "duplicate_triangle_excess": 0,
+        "area_m2": 0.019383884492334844,
+        "triangle_area_range_m2": [
+          2.5099800795548318e-11,
+          7.541340096345992e-05
+        ],
+        "edge_length_range_m": [
+          2.236067977452375e-06,
+          0.03406057069633439
+        ],
+        "closed_edge_manifold": false,
+        "face_connected_component_count": 77,
+        "face_connected_component_sizes": [
+          6,
+          21,
+          4668,
+          5,
+          2,
+          11,
+          6,
+          2,
+          1,
+          1,
+          4,
+          1,
+          1,
+          3,
+          1,
+          24,
+          2,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          2,
+          3,
+          1,
+          3,
+          1,
+          1,
+          1,
+          1,
+          9,
+          2,
+          2,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          4,
+          2,
+          1,
+          3,
+          1,
+          2,
+          1,
+          4,
+          2,
+          2,
+          2,
+          7,
+          1,
+          7,
+          2,
+          2,
+          2,
+          1,
+          1,
+          3,
+          2,
+          1,
+          2,
+          1,
+          3,
+          2
+        ]
+      },
+      "exact_coordinate_topology_diagnostic": {
+        "vertex_count": 2439,
+        "face_count": 4874,
+        "edge_count": 7311,
+        "unused_vertex_count": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "nonmanifold_vertex_count": 0,
+        "same_direction_two_face_edges": 0,
+        "exact_zero_area_triangles": 0,
+        "duplicate_triangle_excess": 0,
+        "area_m2": 0.019383884492334844,
+        "triangle_area_range_m2": [
+          2.5099800795548318e-11,
+          7.541340096345992e-05
+        ],
+        "edge_length_range_m": [
+          2.236067977452375e-06,
+          0.03406057069633439
+        ],
+        "face_connected_components": [
+          {
+            "first_source_face_zero_based": 0,
+            "face_count": 4874,
+            "source_faces_if_small_component_zero_based": null,
+            "vertex_count": 2439,
+            "edge_count": 7311,
+            "bounds_m": [
+              [
+                -0.280586,
+                -0.122878,
+                0.809712
+              ],
+              [
+                -0.20815899999999998,
+                -0.055824399999999996,
+                1.14761
+              ]
+            ],
+            "area_m2": 0.019383884492334844,
+            "euler_characteristic": 2,
+            "closed_vertex_manifold": true,
+            "orientation_contradictions": 0,
+            "genus_if_closed_orientable_manifold": 0.0,
+            "original_signed_volume_m3": 7.909510205830823e-05,
+            "component_relative_signed_volume_diagnostic_m3": 7.909510205831995e-05,
+            "exact_zero_component_relative_volume": false,
+            "coincident_triangle_source_face_groups": [],
+            "consistent_positive_signed_volume_diagnostic_m3": 7.909510205830823e-05,
+            "faces_requiring_orientation_change": 0,
+            "positive_volume_winding_sign_meaningful": true,
+            "orientation_change_source_face_indices_zero_based": [],
+            "volume_caveat": "Signed enclosed-volume diagnostic only; self-intersection and nesting not cleared."
+          }
+        ],
+        "closed_edge_manifold": true
+      },
+      "exact_coordinate_duplicate_vertex_count": 831,
+      "diagnostic_merge_tolerance_m": 0,
+      "geometry_written_or_repaired": false,
+      "watertightness": {
+        "original_indices_closed": false,
+        "exact_coordinate_closed_edges": true,
+        "embedded_solid_certificate": false,
+        "limits": "Topological closure only. Coincident/zero-volume components and transverse crossings are reported separately; robust embedding/nesting clearance remains unresolved."
+      },
+      "self_intersection": {
+        "aabb_candidate_pairs_tested": 16621,
+        "incident_candidate_pairs_excluded": 33508,
+        "transverse_crossing_triangle_pairs": 0,
+        "first_source_face_pairs_zero_based": [],
+        "full_self_intersection_clearance": "not_assessed",
+        "limits": "Strict transverse crossings only, fixed SI thresholds. Coplanar overlaps, touching, nesting and incident-face foldovers excluded. Zero is not a clearance."
+      },
+      "existing_geometry_owner_agreement": true,
+      "visual_reference": "available_reduced_reconstructed_atlas",
+      "volumetric_simulation_input_ready": false,
+      "required_work": [
+        "Document an explicit derived index weld at exactly identical coordinates; original OBJ remains unchanged.",
+        "Resolve complete self-intersection/nesting/assembly clearance with a qualified method.",
+        "Review reduced reconstructed boundaries and missing tissue interfaces; surface closure does not establish anatomical accuracy.",
+        "Specify cortical/internal or muscle/tendon compartments, material fields, reference state and attachments before any volume meshing."
+      ]
+    }
+  ],
+  "bone_pair_intersections_in_original_atlas_pose": [
+    {
+      "elements": [
+        "FJ3368",
+        "FJ3349"
+      ],
+      "transverse": {
+        "aabb_candidate_pairs_tested": 0,
+        "incident_candidate_pairs_excluded": 0,
+        "transverse_crossing_triangle_pairs": 0,
+        "first_source_face_pairs_zero_based": [],
+        "full_self_intersection_clearance": "not_assessed",
+        "limits": "Strict transverse crossings only, fixed SI thresholds. Coplanar overlaps, touching, nesting and incident-face foldovers excluded. Zero is not a clearance."
+      }
+    },
+    {
+      "elements": [
+        "FJ3368",
+        "FJ3391"
+      ],
+      "transverse": {
+        "aabb_candidate_pairs_tested": 331,
+        "incident_candidate_pairs_excluded": 0,
+        "transverse_crossing_triangle_pairs": 0,
+        "first_source_face_pairs_zero_based": [],
+        "full_self_intersection_clearance": "not_assessed",
+        "limits": "Strict transverse crossings only, fixed SI thresholds. Coplanar overlaps, touching, nesting and incident-face foldovers excluded. Zero is not a clearance."
+      }
+    },
+    {
+      "elements": [
+        "FJ3349",
+        "FJ3391"
+      ],
+      "transverse": {
+        "aabb_candidate_pairs_tested": 153,
+        "incident_candidate_pairs_excluded": 0,
+        "transverse_crossing_triangle_pairs": 0,
+        "first_source_face_pairs_zero_based": [],
+        "full_self_intersection_clearance": "not_assessed",
+        "limits": "Strict transverse crossings only, fixed SI thresholds. Coplanar overlaps, touching, nesting and incident-face foldovers excluded. Zero is not a clearance."
+      }
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "trochlea",
+      "element_id": "FJ3368",
+      "triangle_zero_based": 952,
+      "position_m": [
+        -0.20431111121346568,
+        -0.08136409208572733,
+        1.0411666780176243
+      ],
+      "source_coordinate_reconstruction_error_m": 0.0,
+      "evidence_class": "atlas_derived_authored_selection",
+      "review_status": "Mesh-inspected candidate; independent anatomical review pending",
+      "authored_uncertainty_radius_m": 0.003,
+      "uncertainty_is_measured": false
+    },
+    {
+      "id": "capitellum",
+      "element_id": "FJ3368",
+      "triangle_zero_based": 237,
+      "position_m": [
+        -0.2280777772043905,
+        -0.07566348508822636,
+        1.0442333386222493
+      ],
+      "source_coordinate_reconstruction_error_m": 0.0,
+      "evidence_class": "atlas_derived_authored_selection",
+      "review_status": "Mesh-inspected candidate; independent anatomical review pending",
+      "authored_uncertainty_radius_m": 0.003,
+      "uncertainty_is_measured": false
+    },
+    {
+      "id": "radial_head",
+      "element_id": "FJ3349",
+      "triangle_zero_based": 643,
+      "position_m": [
+        -0.23088888938666288,
+        -0.08151516630192131,
+        1.0283889009451388
+      ],
+      "source_coordinate_reconstruction_error_m": 0.0,
+      "evidence_class": "atlas_derived_authored_selection",
+      "review_status": "Mesh-inspected candidate; independent anatomical review pending",
+      "authored_uncertainty_radius_m": 0.003,
+      "uncertainty_is_measured": false
+    },
+    {
+      "id": "radial_tuberosity_candidate",
+      "element_id": "FJ3349",
+      "triangle_zero_based": 501,
+      "position_m": [
+        -0.24036329281444463,
+        -0.07766666691000092,
+        1.0028333332379475
+      ],
+      "source_coordinate_reconstruction_error_m": 0.0,
+      "evidence_class": "atlas_derived_authored_selection",
+      "review_status": "Mesh-inspected candidate; independent anatomical review pending",
+      "authored_uncertainty_radius_m": 0.005,
+      "uncertainty_is_measured": false
+    },
+    {
+      "id": "ulna_notch",
+      "element_id": "FJ3391",
+      "triangle_zero_based": 539,
+      "position_m": [
+        -0.21514224258979797,
+        -0.06616667124253515,
+        1.029666688387608
+      ],
+      "source_coordinate_reconstruction_error_m": 0.0,
+      "evidence_class": "atlas_derived_authored_selection",
+      "review_status": "Mesh-inspected candidate; independent anatomical review pending",
+      "authored_uncertainty_radius_m": 0.003,
+      "uncertainty_is_measured": false
+    },
+    {
+      "id": "olecranon",
+      "element_id": "FJ3391",
+      "triangle_zero_based": 298,
+      "position_m": [
+        -0.216259397255613,
+        -0.05517777838988176,
+        1.0480666665735938
+      ],
+      "source_coordinate_reconstruction_error_m": 0.0,
+      "evidence_class": "atlas_derived_authored_selection",
+      "review_status": "Mesh-inspected candidate; independent anatomical review pending",
+      "authored_uncertainty_radius_m": 0.003,
+      "uncertainty_is_measured": false
+    },
+    {
+      "id": "coronoid",
+      "element_id": "FJ3391",
+      "triangle_zero_based": 823,
+      "position_m": [
+        -0.21888460266151014,
+        -0.07689999972931982,
+        1.0289000004681625
+      ],
+      "source_coordinate_reconstruction_error_m": 0.0,
+      "evidence_class": "atlas_derived_authored_selection",
+      "review_status": "Mesh-inspected candidate; independent anatomical review pending",
+      "authored_uncertainty_radius_m": 0.003,
+      "uncertainty_is_measured": false
+    },
+    {
+      "id": "proximal_humerus",
+      "element_id": "FJ3368",
+      "triangle_zero_based": 2609,
+      "position_m": [
+        -0.16583333272309408,
+        -0.09558362470900804,
+        1.305000017845559
+      ],
+      "source_coordinate_reconstruction_error_m": 0.0,
+      "evidence_class": "atlas_derived_authored_selection",
+      "review_status": "Mesh-inspected candidate; independent anatomical review pending",
+      "authored_uncertainty_radius_m": 0.003,
+      "uncertainty_is_measured": false
+    },
+    {
+      "id": "distal_radius",
+      "element_id": "FJ3349",
+      "triangle_zero_based": 121,
+      "position_m": [
+        -0.2653626787485135,
+        -0.11622432470572377,
+        0.8108123259488602
+      ],
+      "source_coordinate_reconstruction_error_m": 0.0,
+      "evidence_class": "atlas_derived_authored_selection",
+      "review_status": "Mesh-inspected candidate; independent anatomical review pending",
+      "authored_uncertainty_radius_m": 0.003,
+      "uncertainty_is_measured": false
+    },
+    {
+      "id": "distal_ulna",
+      "element_id": "FJ3391",
+      "triangle_zero_based": 571,
+      "position_m": [
+        -0.2377020013714886,
+        -0.11454533941740361,
+        0.8103603449302923
+      ],
+      "source_coordinate_reconstruction_error_m": 0.0,
+      "evidence_class": "atlas_derived_authored_selection",
+      "review_status": "Mesh-inspected candidate; independent anatomical review pending",
+      "authored_uncertainty_radius_m": 0.003,
+      "uncertainty_is_measured": false
+    },
+    {
+      "id": "brachialis_origin_center",
+      "element_id": "FJ3368",
+      "triangle_zero_based": 1718,
+      "position_m": [
+        -0.19749999715901384,
+        -0.06674037952774416,
+        1.1058333193514442
+      ],
+      "source_coordinate_reconstruction_error_m": 0.0,
+      "evidence_class": "atlas_derived_authored_selection",
+      "review_status": "Mesh-inspected candidate; independent anatomical review pending",
+      "authored_uncertainty_radius_m": 0.003,
+      "uncertainty_is_measured": false
+    }
+  ],
+  "attachment_patches": [
+    {
+      "id": "radial_tuberosity",
+      "element_id": "FJ3349",
+      "source_face_count": 6,
+      "area_m2": 0.00015821812553137813,
+      "original_index_face_connected_components": 1,
+      "exact_coordinate_face_connected_components": 1,
+      "sample_count": 6,
+      "source_sample_coordinates_verified": true,
+      "evidence_class": "atlas_derived_authored_connected_surface_selection",
+      "review_status": "Independent anatomical review pending",
+      "measured_enthesis": false,
+      "limits": "Original source face ordering preserved after coordinate welding/orientation. Selection bounds and filtering are authored, not measured attachment extent."
+    },
+    {
+      "id": "brachialis_ulna",
+      "element_id": "FJ3391",
+      "source_face_count": 70,
+      "area_m2": 0.0003992142983281108,
+      "original_index_face_connected_components": 2,
+      "exact_coordinate_face_connected_components": 1,
+      "sample_count": 70,
+      "source_sample_coordinates_verified": true,
+      "evidence_class": "atlas_derived_authored_connected_surface_selection",
+      "review_status": "Independent anatomical review pending",
+      "measured_enthesis": false,
+      "limits": "Original source face ordering preserved after coordinate welding/orientation. Selection bounds and filtering are authored, not measured attachment extent."
+    },
+    {
+      "id": "olecranon",
+      "element_id": "FJ3391",
+      "source_face_count": 19,
+      "area_m2": 0.00020930576857596583,
+      "original_index_face_connected_components": 1,
+      "exact_coordinate_face_connected_components": 1,
+      "sample_count": 19,
+      "source_sample_coordinates_verified": true,
+      "evidence_class": "atlas_derived_authored_connected_surface_selection",
+      "review_status": "Independent anatomical review pending",
+      "measured_enthesis": false,
+      "limits": "Original source face ordering preserved after coordinate welding/orientation. Selection bounds and filtering are authored, not measured attachment extent."
+    },
+    {
+      "id": "distal_radius_brachioradialis",
+      "element_id": "FJ3349",
+      "source_face_count": 53,
+      "area_m2": 0.0004397992219090244,
+      "original_index_face_connected_components": 1,
+      "exact_coordinate_face_connected_components": 1,
+      "sample_count": 53,
+      "source_sample_coordinates_verified": true,
+      "evidence_class": "atlas_derived_authored_connected_surface_selection",
+      "review_status": "Independent anatomical review pending",
+      "measured_enthesis": false,
+      "limits": "Original source face ordering preserved after coordinate welding/orientation. Selection bounds and filtering are authored, not measured attachment extent."
+    },
+    {
+      "id": "FJ1486_humerus_origin",
+      "element_id": "FJ3368",
+      "source_face_count": 112,
+      "area_m2": 0.003962868411598327,
+      "original_index_face_connected_components": 1,
+      "exact_coordinate_face_connected_components": 1,
+      "sample_count": 112,
+      "source_sample_coordinates_verified": true,
+      "evidence_class": "atlas_derived_authored_connected_surface_selection",
+      "review_status": "Independent anatomical review pending",
+      "measured_enthesis": false,
+      "limits": "Original source face ordering preserved after coordinate welding/orientation. Selection bounds and filtering are authored, not measured attachment extent."
+    },
+    {
+      "id": "FJ1480_humerus_origin",
+      "element_id": "FJ3368",
+      "source_face_count": 91,
+      "area_m2": 0.003745272642086668,
+      "original_index_face_connected_components": 1,
+      "exact_coordinate_face_connected_components": 1,
+      "sample_count": 91,
+      "source_sample_coordinates_verified": true,
+      "evidence_class": "atlas_derived_authored_connected_surface_selection",
+      "review_status": "Independent anatomical review pending",
+      "measured_enthesis": false,
+      "limits": "Original source face ordering preserved after coordinate welding/orientation. Selection bounds and filtering are authored, not measured attachment extent."
+    },
+    {
+      "id": "FJ1477_humerus_origin",
+      "element_id": "FJ3368",
+      "source_face_count": 70,
+      "area_m2": 0.0021798589456828894,
+      "original_index_face_connected_components": 1,
+      "exact_coordinate_face_connected_components": 1,
+      "sample_count": 70,
+      "source_sample_coordinates_verified": true,
+      "evidence_class": "atlas_derived_authored_connected_surface_selection",
+      "review_status": "Independent anatomical review pending",
+      "measured_enthesis": false,
+      "limits": "Original source face ordering preserved after coordinate welding/orientation. Selection bounds and filtering are authored, not measured attachment extent."
+    },
+    {
+      "id": "FJ1487_humerus_origin",
+      "element_id": "FJ3368",
+      "source_face_count": 91,
+      "area_m2": 0.0020439550601464634,
+      "original_index_face_connected_components": 1,
+      "exact_coordinate_face_connected_components": 1,
+      "sample_count": 91,
+      "source_sample_coordinates_verified": true,
+      "evidence_class": "atlas_derived_authored_connected_surface_selection",
+      "review_status": "Independent anatomical review pending",
+      "measured_enthesis": false,
+      "limits": "Original source face ordering preserved after coordinate welding/orientation. Selection bounds and filtering are authored, not measured attachment extent."
+    }
+  ],
+  "muscle_attachment_coverage": [
+    {
+      "element_id": "FJ1486",
+      "name": "right brachialis",
+      "independent_enthesis_measurement": false,
+      "separate_tendon_mesh": null,
+      "proximal": {
+        "kind": "distributed_bone_patch",
+        "patch_id": "FJ1486_humerus_origin",
+        "bone_element_id": "FJ3368",
+        "source_face_count": 112,
+        "evidence_class": "atlas_derived_authored_connected_surface_selection",
+        "review_status": "Independent anatomical review pending"
+      },
+      "distal": {
+        "kind": "distributed_bone_patch",
+        "patch_id": "brachialis_ulna",
+        "bone_element_id": "FJ3391",
+        "source_face_count": 70,
+        "evidence_class": "atlas_derived_authored_connected_surface_selection",
+        "review_status": "Independent anatomical review pending"
+      }
+    },
+    {
+      "element_id": "FJ1512",
+      "name": "short head of right biceps brachii",
+      "independent_enthesis_measurement": false,
+      "separate_tendon_mesh": null,
+      "proximal": {
+        "kind": "fixed_estimated_origin",
+        "evidence_class": "authored_origin_estimate_from_atlas_tip",
+        "uncertainty_radius_m": 0.015,
+        "measured_scapular_landmark": false
+      },
+      "distal": {
+        "kind": "distributed_bone_patch",
+        "patch_id": "radial_tuberosity",
+        "bone_element_id": "FJ3349",
+        "source_face_count": 6,
+        "evidence_class": "atlas_derived_authored_connected_surface_selection",
+        "review_status": "Independent anatomical review pending"
+      }
+    },
+    {
+      "element_id": "FJ1478",
+      "name": "long head of right biceps brachii",
+      "independent_enthesis_measurement": false,
+      "separate_tendon_mesh": null,
+      "proximal": {
+        "kind": "fixed_estimated_origin",
+        "evidence_class": "authored_origin_estimate_from_atlas_tip",
+        "uncertainty_radius_m": 0.015,
+        "measured_scapular_landmark": false
+      },
+      "distal": {
+        "kind": "distributed_bone_patch",
+        "patch_id": "radial_tuberosity",
+        "bone_element_id": "FJ3349",
+        "source_face_count": 6,
+        "evidence_class": "atlas_derived_authored_connected_surface_selection",
+        "review_status": "Independent anatomical review pending"
+      }
+    },
+    {
+      "element_id": "FJ1480",
+      "name": "medial head of right triceps brachii",
+      "independent_enthesis_measurement": false,
+      "separate_tendon_mesh": null,
+      "proximal": {
+        "kind": "distributed_bone_patch",
+        "patch_id": "FJ1480_humerus_origin",
+        "bone_element_id": "FJ3368",
+        "source_face_count": 91,
+        "evidence_class": "atlas_derived_authored_connected_surface_selection",
+        "review_status": "Independent anatomical review pending"
+      },
+      "distal": {
+        "kind": "distributed_bone_patch",
+        "patch_id": "olecranon",
+        "bone_element_id": "FJ3391",
+        "source_face_count": 19,
+        "evidence_class": "atlas_derived_authored_connected_surface_selection",
+        "review_status": "Independent anatomical review pending"
+      }
+    },
+    {
+      "element_id": "FJ1477",
+      "name": "lateral head of right triceps brachii",
+      "independent_enthesis_measurement": false,
+      "separate_tendon_mesh": null,
+      "proximal": {
+        "kind": "distributed_bone_patch",
+        "patch_id": "FJ1477_humerus_origin",
+        "bone_element_id": "FJ3368",
+        "source_face_count": 70,
+        "evidence_class": "atlas_derived_authored_connected_surface_selection",
+        "review_status": "Independent anatomical review pending"
+      },
+      "distal": {
+        "kind": "distributed_bone_patch",
+        "patch_id": "olecranon",
+        "bone_element_id": "FJ3391",
+        "source_face_count": 19,
+        "evidence_class": "atlas_derived_authored_connected_surface_selection",
+        "review_status": "Independent anatomical review pending"
+      }
+    },
+    {
+      "element_id": "FJ1479",
+      "name": "long head of right triceps brachii",
+      "independent_enthesis_measurement": false,
+      "separate_tendon_mesh": null,
+      "proximal": {
+        "kind": "fixed_estimated_origin",
+        "evidence_class": "authored_origin_estimate_from_atlas_tip",
+        "uncertainty_radius_m": 0.015,
+        "measured_scapular_landmark": false
+      },
+      "distal": {
+        "kind": "distributed_bone_patch",
+        "patch_id": "olecranon",
+        "bone_element_id": "FJ3391",
+        "source_face_count": 19,
+        "evidence_class": "atlas_derived_authored_connected_surface_selection",
+        "review_status": "Independent anatomical review pending"
+      }
+    },
+    {
+      "element_id": "FJ1487",
+      "name": "right brachioradialis",
+      "independent_enthesis_measurement": false,
+      "separate_tendon_mesh": null,
+      "proximal": {
+        "kind": "distributed_bone_patch",
+        "patch_id": "FJ1487_humerus_origin",
+        "bone_element_id": "FJ3368",
+        "source_face_count": 91,
+        "evidence_class": "atlas_derived_authored_connected_surface_selection",
+        "review_status": "Independent anatomical review pending"
+      },
+      "distal": {
+        "kind": "distributed_bone_patch",
+        "patch_id": "distal_radius_brachioradialis",
+        "bone_element_id": "FJ3349",
+        "source_face_count": 53,
+        "evidence_class": "atlas_derived_authored_connected_surface_selection",
+        "review_status": "Independent anatomical review pending"
+      }
+    }
+  ],
+  "missing_tissues": [
+    "clavicle",
+    "scapula",
+    "anconeus",
+    "coracobrachialis",
+    "interosseous_membrane",
+    "whole_body_skin",
+    "biceps_long_proximal_tendon",
+    "biceps_short_proximal_tendon",
+    "biceps_distal_tendon",
+    "brachialis_tendon",
+    "triceps_distal_tendon",
+    "brachioradialis_tendon",
+    "bicipital_aponeurosis",
+    "internal_aponeuroses",
+    "ulnar_collateral_anterior",
+    "ulnar_collateral_posterior",
+    "ulnar_collateral_transverse",
+    "radial_collateral",
+    "lateral_ulnar_collateral",
+    "annular_ligament",
+    "quadrate_ligament",
+    "elbow_capsule",
+    "humeral_cartilage",
+    "radial_head_cartilage",
+    "ulnar_cartilage",
+    "subcutaneous_fat",
+    "intermuscular_fat",
+    "elbow_fat_pads",
+    "brachial_fascia",
+    "antebrachial_fascia",
+    "coracoid_enthesis",
+    "supraglenoid_enthesis",
+    "infraglenoid_enthesis",
+    "measured_entheses",
+    "muscle_fibres"
+  ],
+  "full_self_intersection_clearance": "not_assessed",
+  "simulation_ready": false,
+  "clinical_validation": false,
+  "all_tissue_interface_and_assembly_clearance": "not_assessed",
+  "raw_surfaces_modified": false,
+  "intersection_predicate": {
+    "owner": "education/tools/anatomical-bone-collision-audit.mjs",
+    "implementation": "Read-only NumPy port of strict crossing, original atlas pose; self-pairs exclude incident faces.",
+    "determinant_threshold_m3": 1e-15,
+    "strict_barycentric_and_segment_margin": 1e-08,
+    "full_robust_self_intersection_tool_qualified": false
+  }
+}
