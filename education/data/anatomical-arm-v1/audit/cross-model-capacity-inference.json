@@ -1,0 +1,68 @@
+{
+  "result": "PASS_SOURCE_BOUND_CROSS_MODEL_CAPACITY_INFERENCE",
+  "appliedToModel": false,
+  "rows": [
+    {
+      "elementId": "FJ1486",
+      "arm26Muscle": "BRA",
+      "referenceVolumeM3": 6.507269150414719e-05,
+      "arm26OptimalFiberLengthM": 0.0858,
+      "arm26MaximumIsometricForceN": 987.26,
+      "arm26PennationRad": 0.0,
+      "pennationCosine": 1.0,
+      "inferredAreaM2": 0.0007584229779038134,
+      "inferredAreaMm2": 758.4229779038134,
+      "targetOverInferredAreaPa": 1301727.4380698006,
+      "targetOverInferredAreaMPa": 1.3017274380698005,
+      "parentForwardedRestoredSourceVolumeStressMPa": 1.104,
+      "approximateReductionFromRoundedForwardedValuePercent": 15.18961898529161
+    },
+    {
+      "elementId": "FJ1512",
+      "arm26Muscle": "BICshort",
+      "referenceVolumeM3": 6.358895849884147e-05,
+      "arm26OptimalFiberLengthM": 0.1321,
+      "arm26MaximumIsometricForceN": 435.56,
+      "arm26PennationRad": 0.0,
+      "pennationCosine": 1.0,
+      "inferredAreaM2": 0.00048136985994580976,
+      "inferredAreaMm2": 481.36985994580976,
+      "targetOverInferredAreaPa": 904834.3825453327,
+      "targetOverInferredAreaMPa": 0.9048343825453327,
+      "parentForwardedRestoredSourceVolumeStressMPa": 0.777,
+      "approximateReductionFromRoundedForwardedValuePercent": 14.127931587406062
+    },
+    {
+      "elementId": "FJ1478",
+      "arm26Muscle": "BIClong",
+      "referenceVolumeM3": 8.093851163041635e-05,
+      "arm26OptimalFiberLengthM": 0.1157,
+      "arm26MaximumIsometricForceN": 624.3,
+      "arm26PennationRad": 0.0,
+      "pennationCosine": 1.0,
+      "inferredAreaM2": 0.0006995549838411094,
+      "inferredAreaMm2": 699.5549838411094,
+      "targetOverInferredAreaPa": 892424.490455489,
+      "targetOverInferredAreaMPa": 0.892424490455489,
+      "parentForwardedRestoredSourceVolumeStressMPa": 0.757,
+      "approximateReductionFromRoundedForwardedValuePercent": 15.174896240954682
+    }
+  ],
+  "sourceHashes": {
+    "data/anatomical-arm-v1/audit/anatomical-calibration-geometry.json": "d786c4947d00bc151caf0716556ce451e4a5c670a544dbbb6882fc98f0533563",
+    "data/elbow-v1/sources/arm26.osim": "e2224d0044eb393b05d64926c3fa1682c451a9adc7f510e5517ef9958d3d41b9",
+    "tools/anatomical_cross_model_capacity.py": "dd9d972d0915beb4d72e73722e02a40d9066af4582010ddc4f5e3c457b4a6eed"
+  },
+  "definitions": {
+    "inferredArea": "Atlas remeshed reference volume / Arm26 optimal fiber length",
+    "inferredNominalStress": "Arm26 maximum isometric force / inferred area, before continuum deformation"
+  },
+  "forwardedRestorationStatus": "Rounded preliminary independent reviewer values supplied by parent; source-volume restoration was not recomputed here.",
+  "limits": [
+    "Cross-model inference, not measured human PCSA or measured specific tension.",
+    "Arm26 fiber lengths and pennation parameters are not measured architecture of the atlas subject.",
+    "Zero Arm26 pennation leaves this model-target inference unchanged; it does not establish zero atlas pennation.",
+    "The deformed continuum coefficient, spatial Cauchy stress, boundary force and inferred nominal stress remain different quantities.",
+    "No constitutive, calibration, numerical gate, material default, release, or skin change."
+  ]
+}

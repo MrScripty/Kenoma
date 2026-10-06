@@ -1,0 +1,165 @@
+{
+  "schema": 1,
+  "result": "PASS_SOURCE_BOUND_PREDICTOR_COMPARISON",
+  "samePhysicalOldState": {
+    "timeS": 0.42000000000000026,
+    "angleDeg": 39.23034852102279,
+    "massKg": 0.5,
+    "requestHS": 0.01
+  },
+  "sameMechanicsAndGates": true,
+  "predictorBound": {
+    "strategy": "bounded-accepted-state-secant",
+    "reason": "at most one previous accepted increment",
+    "historyS": 0.010000000000000009,
+    "extrapolationFraction": 0.9999999999999991,
+    "maximumCorrectionM": 0.0014984008010367617
+  },
+  "previousSecantGuessExactlyReproduced": true,
+  "previousSecantEndpointReproduced": true,
+  "acceptedSeedEndpointComparison": {
+    "copyMinusBoundedAngleDeg": -1.5439048534760204e-10,
+    "maximumNodalDifferenceM": 2.266979588012361e-7,
+    "maximumCoordinateDifferenceM": 1.0493089608668016e-7
+  },
+  "originalFailure": {
+    "result": "REJECTED_INCREMENT",
+    "accepted": false,
+    "iterationsAcrossFrozenContactRules": 120,
+    "minimumRecordedIterationResidualN": 0.005885159257290358,
+    "recordedResidualN": 0.06832677997711656,
+    "independentResidualN": 0.06832677997711717,
+    "acceptedTimeS": 0.42000000000000026,
+    "rejectedTargetTimeS": 0.43000000000000027,
+    "originalReplayRetainedOldTimeS": 0.42000000000000026,
+    "rollback": {
+      "sameStateObject": true,
+      "stateUnchanged": true,
+      "oldContactRestored": true
+    }
+  },
+  "rows": [
+    {
+      "key": "bounded",
+      "result": "ACCEPTED_ISOLATED_INCREMENT",
+      "accepted": true,
+      "startAngleDeg": 38.3718281018385,
+      "maximumStartCorrectionM": 0.0014984008010367617,
+      "iterationsAcrossFrozenContactRules": 34,
+      "contactWitnessesAdded": 0,
+      "minimumRecordedIterationResidualN": 7.281127751082323e-7,
+      "recordedResidualN": 7.281127751082323e-7,
+      "independentResidualN": 7.281126307931169e-7,
+      "minimumCornerJ": 0.9652340566967442,
+      "crossings": 0,
+      "routingAccepted": true,
+      "sampledPenetrationsM": {
+        "bone": 0,
+        "soft": 0,
+        "tendon": 0
+      },
+      "finalAcceptedAngleDeg": 38.25633035900602,
+      "acceptedTimeS": 0.43000000000000027,
+      "rollback": null
+    },
+    {
+      "key": "copy",
+      "result": "ACCEPTED_ISOLATED_INCREMENT",
+      "accepted": true,
+      "startAngleDeg": 39.23034852102279,
+      "maximumStartCorrectionM": 0,
+      "iterationsAcrossFrozenContactRules": 41,
+      "contactWitnessesAdded": 0,
+      "minimumRecordedIterationResidualN": 0.00002381251597932438,
+      "recordedResidualN": 0.00002381251597932438,
+      "independentResidualN": 0.00002381251583145655,
+      "minimumCornerJ": 0.9652340566932821,
+      "crossings": 0,
+      "routingAccepted": true,
+      "sampledPenetrationsM": {
+        "bone": 0,
+        "soft": 0,
+        "tendon": 0
+      },
+      "finalAcceptedAngleDeg": 38.256330358851635,
+      "acceptedTimeS": 0.43000000000000027,
+      "rollback": null
+    },
+    {
+      "key": "prior",
+      "result": "ACCEPTED_ISOLATED_INCREMENT",
+      "accepted": true,
+      "startAngleDeg": 38.3718281018385,
+      "maximumStartCorrectionM": 0.0014984008010367617,
+      "iterationsAcrossFrozenContactRules": 34,
+      "contactWitnessesAdded": 0,
+      "minimumRecordedIterationResidualN": 7.281127751082323e-7,
+      "recordedResidualN": 7.281127751082323e-7,
+      "independentResidualN": 7.281126307931169e-7,
+      "minimumCornerJ": 0.9652340566967442,
+      "crossings": 0,
+      "routingAccepted": true,
+      "sampledPenetrationsM": {
+        "bone": 0,
+        "soft": 0,
+        "tendon": 0
+      },
+      "finalAcceptedAngleDeg": 38.25633035900602,
+      "acceptedTimeS": 0.43000000000000027,
+      "rollback": null
+    }
+  ],
+  "commonStateControl": {
+    "differentPhysicalOldState": true,
+    "oldTimeS": 0.40000000000000013,
+    "localMatchedEndpoint": {
+      "timeS": 0.43000000000000016,
+      "angleDifferenceDeg": 0.2737069941238718,
+      "maximumNodalDifferenceM": 0.0005957758504728777,
+      "activation": 0.0002590675376713519
+    },
+    "cases": [
+      {
+        "factor": 1,
+        "acceptedSteps": 1,
+        "maximumAcceptedIndependentResidualN": 0.00004248022990923023,
+        "traceIterations": 7,
+        "addedWitnesses": 0
+      },
+      {
+        "factor": 3,
+        "acceptedSteps": 3,
+        "maximumAcceptedIndependentResidualN": 0.000029325310196382653,
+        "traceIterations": 161,
+        "addedWitnesses": 6
+      }
+    ]
+  },
+  "fullReleaseLimits": {
+    "maximumAngleDifferenceDeg": 4.721379394298936,
+    "maximumNodalDifferenceM": 0.0074036776038493915,
+    "minimumCornerJ": 0.7120247523019865
+  },
+  "sourceHashes": {
+    "data/anatomical-arm-v1/audit/anatomical-dense-release-refinement.json": "7a2d9aabf693d402b5e4275c9563742236ce06e64f48356a7f2cd2cd106869dd",
+    "data/anatomical-arm-v1/audit/anatomical-dense-release-refinement-recheck.json": "a08bee573c84ddb569636cbc91f686f24f77e69a1f2361297b3bc228cab0011b",
+    "data/anatomical-arm-v1/audit/dense-release-secant-retry.json": "7e2efc6188afcfd899d923938de71c0595c1953bd055fbdf370c6b9d1fbfc9b0",
+    "data/anatomical-arm-v1/audit/dense-release-secant-retry-recheck.json": "36e06e8f6e02b62160c3033ddc1370d1a6f55899081dcc2bb618f6df463b6ac4",
+    "data/anatomical-arm-v1/audit/dense-predictor-bounded-secant.json": "4ce6ba38f416e30a39dfeb6c0a99daec86052bc03a926a0457fd17b8b37a0582",
+    "data/anatomical-arm-v1/audit/dense-predictor-bounded-secant-recheck.json": "f8e86d0ccf262ba9b3634ed5735f2057941ef2584df4457f15e32d4900c0689e",
+    "data/anatomical-arm-v1/audit/dense-predictor-accepted-copy.json": "da48734a27b967680bfde6097174634f40b7bf8cccc961e4148aefb8a3a6351d",
+    "data/anatomical-arm-v1/audit/dense-predictor-accepted-copy-recheck.json": "4aff3710720235e225a580d6e0c05da3df7bec847d53733e4a9f54165419d0f5",
+    "data/anatomical-arm-v1/audit/dense-controlled-release-interval-summary.json": "c0956f5f5e4a3e147b5aa24b1047dade6497cf5341dbd4c33353875502525bcb",
+    "data/anatomical-arm-v1/audit/dense-controlled-release-interval.json": "d88b444442e176a0de5b1abfa52cb16ca890f9aa88b1a0d8b046d81a767c6f8a",
+    "data/anatomical-arm-v1/audit/dense-controlled-release-interval-recheck.json": "f6d6df435b2749226b34c13ef8db286ac1c81e5e33e13c38182a0c5ec4c49e27",
+    "data/anatomical-arm-v1/audit/dense-release-secant-matched-times.json": "2b4b4573d66e14c107faf4acde335c44882cf723478f3751dfa4df9e87a606b1",
+    "tools/compare-dense-predictor-experiments.mjs": "9d15ce6245fa8bea3339ac2f1bb090b4704749bbe3f71d77a4e151801fe241b9"
+  },
+  "limits": [
+    "Initialization comparison from one identical physical state; not a new complete trajectory.",
+    "Common-state interval controls start from another old state; do not attribute their differences or costs solely to initialization.",
+    "Repeated secant success is reproducibility of the same deterministic case, not statistical evidence of general solver reliability.",
+    "Wall time is not a controlled performance benchmark; other research processes are active.",
+    "No full-nodal, mesh/quadrature/timestep convergence, calibrated anatomy or whole-envelope acceptance."
+  ]
+}

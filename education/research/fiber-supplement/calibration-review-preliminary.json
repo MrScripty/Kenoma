@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "status": "PRELIMINARY_PARENT_FORWARDED_REVIEW",
+  "origin": "Independent read-only reviewer results forwarded by parent on 2026-10-06; final numerical receipt pending.",
+  "sourceGitBlobAt8bb4217d": "cc8e4ec12dbcaaf4eb53062af1e76fd520904d6e",
+  "sourceSHA256": "b0eeecdade262b682279d9ebeb7a8147a4525a992976a85afc0ce5e63270d8b4",
+  "sourcePath": "data/anatomical-arm-v1/audit/modal-fixed-end-results.json",
+  "quadrature": "subdivided32",
+  "appliedToModel": false,
+  "locallyRecomputedReviewerMetrics": false,
+  "sourceIdentityLocallyVerified": true,
+  "locallyReadStoredCalibrationMinima": [
+    {
+      "elementId": "FJ1486",
+      "minimumJ": 0.594897909990442
+    },
+    {
+      "elementId": "FJ1512",
+      "minimumJ": 0.6383249153843201
+    },
+    {
+      "elementId": "FJ1478",
+      "minimumJ": 0.6345959024989207
+    }
+  ],
+  "reviewerReportedRoundedMetrics": [
+    {
+      "elementId": "FJ1512",
+      "medianFiberStretch": 0.5903,
+      "meanActiveForceLengthMultiplier": 0.0851,
+      "referenceVolumePercentAtLambdaAtLeast1_5": 20.16,
+      "referenceVolumeWeightedActiveCauchyMeanMPa": 0.473
+    },
+    {
+      "elementId": "FJ1478",
+      "medianFiberStretch": 0.563,
+      "meanActiveForceLengthMultiplier": 0.04235,
+      "referenceVolumePercentAtLambdaAtLeast1_5": 20.99,
+      "referenceVolumeWeightedActiveCauchyMeanMPa": 0.535
+    }
+  ],
+  "limits": [
+    "Reviewer metric definitions/weighting and complete raw calculation are pending its final receipt.",
+    "Fixed-end conditions do not imply uniform fiber stretch; sigma0 is not a uniform operating Cauchy stress.",
+    "These stored minima and reported metrics concern frozen subdivided32 calibration fixtures, not dense rechecks or the loaded trajectory.",
+    "No measured human calibration, PCSA inference, new coefficient, fit, default, or release change."
+  ]
+}

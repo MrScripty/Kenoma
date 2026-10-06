@@ -1,0 +1,12 @@
+{
+  "result": "PASS_SOURCE_BOUND_CALIBRATION_CONTEXT_SUPPLEMENT",
+  "sha256": {
+    "education/tools/anatomical_cross_model_capacity.py": "dd9d972d0915beb4d72e73722e02a40d9066af4582010ddc4f5e3c457b4a6eed",
+    "education/data/anatomical-arm-v1/audit/cross-model-capacity-inference.json": "6cb5e28a5e6f5780eb902242996227af17183d1c946fc6aeaaa46b51edaa7e21",
+    "education/research/fiber-supplement/calibration-review-followup.json": "5c7d2578b22140401ad06bac1edfc54f9790bcebd344a07eea534bc8a44adc66",
+    "education/research/fiber-supplement/cross-model-capacity-checkpoint.md": "a5b8bed07cb4d935ebb6373e1b58013238ac0d4d929767289dfd90c5a84798a2",
+    "education/data/anatomical-arm-v1/review/dense-predictor-experiment/cross-model-capacity-execution.txt": "6cb5e28a5e6f5780eb902242996227af17183d1c946fc6aeaaa46b51edaa7e21",
+    "education/data/anatomical-arm-v1/review/dense-predictor-experiment/calibration-supplement-checks.txt": "dd6661669b888bb46b3077c76fd2735a48f41986e6f122096da693f0bc7fc2ac"
+  },
+  "scope": "Locally computed cross-model volume/length/force inferences; other calibration reviewer metrics remain attributed preliminary findings. No fit, defaults or human calibration."
+}

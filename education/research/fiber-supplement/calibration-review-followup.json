@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "status": "PRELIMINARY_PARENT_FORWARDED_REVIEW",
+  "origin": "Independent read-only review followups supplied by parent on 2026-10-06; final source-bound review report pending.",
+  "appliedToModel": false,
+  "locallyRecomputedReviewerMetrics": false,
+  "sourceHashes": {
+    "data/anatomical-arm-v1/audit/modal-fixed-end-results.json": "b0eeecdade262b682279d9ebeb7a8147a4525a992976a85afc0ce5e63270d8b4",
+    "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+    "data/elbow-v1/sources/arm26.osim": "e2224d0044eb393b05d64926c3fa1682c451a9adc7f510e5517ef9958d3d41b9"
+  },
+  "crossModelInferenceScope": "Atlas volume / Arm26 optimal fiber length and target force, not measured human PCSA. The separate local cross-model-capacity-inference.json independently computes the uncorrected version from retained sources.",
+  "reportedRestoredSourceVolumeNominalStressMPa": {
+    "FJ1486": 1.104,
+    "FJ1512": 0.777,
+    "FJ1478": 0.757
+  },
+  "reportedFrozen256Metrics": [
+    {
+      "elementId": "FJ1512",
+      "meanActiveForceLengthMultiplier": 0.085072,
+      "referenceVolumeWeightedActiveCauchyMeanMPa": 0.47304,
+      "freeResidualN": 1.6624
+    },
+    {
+      "elementId": "FJ1478",
+      "meanActiveForceLengthMultiplier": 0.042353,
+      "referenceVolumeWeightedActiveCauchyMeanMPa": 0.5347,
+      "freeResidualN": 0.6742
+    }
+  ],
+  "reportedAccepted32ForceTransfer": [
+    {
+      "elementId": "FJ1512",
+      "directActiveDistalEndGeneralizedReactionN": 0,
+      "activeWholeBodyAxialVirtualWorkForceFractionPercent": 74.6
+    },
+    {
+      "elementId": "FJ1478",
+      "directActiveDistalEndGeneralizedReactionN": 0,
+      "activeWholeBodyAxialVirtualWorkForceFractionPercent": 75.5
+    }
+  ],
+  "interpretation": "Active interior stress transfers through passive fibers, authored sheets and bulk response to end load. A zero direct active distal-end contribution does not establish absence of active muscle force.",
+  "limits": [
+    "Frozen256 arithmetic retains failed equilibrium residuals; it is not a re-solved or qualified dense calibration.",
+    "Restored source-volume stress and virtual-work partitions are forwarded reviewer calculations, not independently verified here.",
+    "Weights, sign conventions and complete numerical transformations await the final reviewer receipt.",
+    "No human calibration, material/default retuning, relaxed tolerance, extra solve budget, or release change."
+  ]
+}

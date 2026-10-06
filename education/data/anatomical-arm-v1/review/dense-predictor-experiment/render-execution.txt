@@ -1,0 +1,14 @@
+{
+  "result": "PASS_DENSE_PREDICTOR_FIGURE_RENDER",
+  "sourceComparisonSHA256": "af36f9f51acf684d2642b32334285278fe219d05dd3a92704f7885033bf39534",
+  "rendererSHA256": "0d3bacb5184cae2faaedb629773adb81752631794767ab63a09e14a77d8345dd",
+  "renderedSHA256": {
+    "data/anatomical-arm-v1/review/dense-predictor-experiment/accepted-predictor-controls.png": "e7ec865b4f064af653d1873cd6130582ff76c5a91f7f6b954753053944e0cad4",
+    "data/anatomical-arm-v1/review/dense-predictor-experiment/accepted-predictor-controls.pdf": "ffca7afd491154d683056c1d6b4415f2d741ae4cdd25c8d64496b41f148c33c9"
+  },
+  "limits": [
+    "Iteration curves are solver traces, not accepted physical trajectories.",
+    "The 120-iteration ceiling applies per frozen contact rule; all rule changes remain in raw receipts.",
+    "The predictor cap is inactive on this equal-increment case; repeated success is not general reliability or physical validation."
+  ]
+}

@@ -1,0 +1,14 @@
+PASS_CURRENT_SOURCE_BINDINGS dense-predictor-bounded-secant 51
+PASS_CURRENT_SOURCE_BINDINGS dense-predictor-bounded-secant-recheck 51
+PASS_CURRENT_SOURCE_BINDINGS dense-predictor-accepted-copy 51
+PASS_CURRENT_SOURCE_BINDINGS dense-predictor-accepted-copy-recheck 51
+PASS_CURRENT_SOURCE_BINDINGS dense-predictor-comparison 13
+PASS_CURRENT_RENDER_BINDINGS
+PASS_PRESERVED_EVIDENCE education/data/anatomical-arm-v1/review/dense-release-rejection/secant-evidence-manifest.json 9
+PASS_PRESERVED_EVIDENCE education/data/anatomical-arm-v1/review/dense-release-rejection/evidence-manifest.json 25
+PASS_PRESERVED_EVIDENCE education/data/anatomical-arm-v1/review/dense-release-completed/evidence-manifest.json 11
+PASS_PRESERVED_EVIDENCE education/data/anatomical-arm-v1/review/dense-controlled-release-interval/evidence-manifest.json 16
+PASS_CURRENT_CALIBRATION_OUTLINE_BINDINGS 8
+PASS_EXACT_34_ITERATION_REPRODUCTION
+PASS_NEW_PREDICTOR_EVIDENCE_AND_ALL_61_PRIOR_EVIDENCE_FILES
+PASS_PRELIMINARY_REVIEW_SOURCE_IDENTITY_AND_ATTRIBUTION
