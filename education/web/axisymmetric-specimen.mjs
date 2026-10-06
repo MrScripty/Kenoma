@@ -181,15 +181,17 @@ export function solveAxisymmetricPath(mesh,epsilon,{increment=.02,maxIterations=
  return {...state,requestedEpsilon:epsilon,reachedRequestedPose:state.epsilon===epsilon,continuation:{increment,stages},converged:state.converged&&state.epsilon===epsilon};
 }
 
-export function materialPoint(mesh,state,R,Z){
+function pointWithDisplacement(mesh,u,R,Z){
  const {length,radius,ratio}=mesh.parameters,a=radius*(1+(ratio-1)*Z/length);
  if(![R,Z].every(Number.isFinite)||Z<0||Z>length||R<0||R>a*(1+1e-12))throw new RangeError('Material point inside reference frustum');
  const iz=Math.min(mesh.axialCells-1,Math.floor(Z/length*mesh.axialCells)),ir=Math.min(mesh.radialCells-1,Math.floor(R/a*mesh.radialCells));
- const cell=mesh.cells[iz*mesh.radialCells+ir],eta=2*(Z/length*mesh.axialCells-iz)-1,xi=2*(R/a*mesh.radialCells-ir)-1,p=pointFor(mesh,cell,xi,eta),u=fullDisplacement(mesh,state.q,state.epsilon),v=deformation(p,u);
+ const cell=mesh.cells[iz*mesh.radialCells+ir],eta=2*(Z/length*mesh.axialCells-iz)-1,xi=2*(R/a*mesh.radialCells-ir)-1,p=pointFor(mesh,cell,xi,eta),v=deformation(p,u);
  if(R===0){v[4]=v[0];} // regular axis r/R -> r_R; no volume assignment.
  const m=axisymmetricMaterial(v,mesh.parameters),r=R+dot(p.N,cell.nodes.map(n=>u[2*n])),z=Z+dot(p.N,cell.nodes.map(n=>u[2*n+1]));
  return {R,Z,r,z,v,...m,axialLineStretch:Math.hypot(v[1],v[3]),radialLineStretch:Math.hypot(v[0],v[2]),hoopStretch:v[4]};
 }
+export function materialPoint(mesh,state,R,Z){return pointWithDisplacement(mesh,fullDisplacement(mesh,state.q,state.epsilon),R,Z);}
+export function createMaterialSampler(mesh,state){const u=fullDisplacement(mesh,state.q,state.epsilon);return (R,Z)=>pointWithDisplacement(mesh,u,R,Z);}
 
 export function cutForce(mesh,state,Z,order=9){
  const {length,radius,ratio}=mesh.parameters,a=radius*(1+(ratio-1)*Z/length),rule=gaussLegendre(order);let N=0;
