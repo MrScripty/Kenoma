@@ -82,3 +82,15 @@ wrong-reaction worker; the unchanged native oracles must reject both.
 
 This milestone is for review only. No published book entry, full-book PDF,
 release, draft PR, deployment or merge is authorized by this prototype workflow.
+
+The end-face repair successor assigns imposed axial DOFs from explicit mesh
+membership and constructs the closed reference/render endpoint exactly. This
+repairs additional accepted axial counts 3, 6, 12 and 24 and permitted alternate
+render subdivisions without relaxing the strict material-point domain guard.
+`tests/axisymmetric_end_faces.test.mjs` covers all accepted axial counts,
+independent three-cell uniform compression/tension reactions and endpoint
+sampling/rendering. The additional `axisymmetric_end_faces_browser.py` qualifies
+accepted extra meshes through the actual worker/render API; the native user
+menu remains 4/8/16 and is qualified separately. The original frozen review
+remains historical evidence and should be verified from its frozen checkout;
+its original source bindings are intentionally not rewritten to this successor.

@@ -53,12 +53,13 @@ function pointFor(mesh,cell,xi,eta){
 export function prepareAxisymmetric({axialCells=8,radialCells=4,order=5,ratio=1.5}={}){
  if(!Number.isInteger(axialCells)||axialCells<2||axialCells>32||!Number.isInteger(radialCells)||radialCells<1||radialCells>16||![1,1.5].includes(ratio))throw new RangeError('Bounded connected mesh and uniform/fixed-taper geometry');
  const parameters={...SPECIMEN,ratio},{length,radius}=parameters,nr=2*radialCells+1,nz=2*axialCells+1,nodes=[];
- for(let j=0;j<nz;j++){const Z=j*length/(nz-1),a=radius*(1+(ratio-1)*Z/length);for(let i=0;i<nr;i++)nodes.push([a*i/(nr-1),Z]);}
- const rows=Array.from({length:2*nodes.length},()=>[]),fixedEnd=Array(2*nodes.length).fill(false),freeMetadata=[];
+ // The declared end plane is exact; repeated multiplication/division can overshoot it.
+ for(let j=0;j<nz;j++){const Z=j===nz-1?length:j*length/(nz-1),a=radius*(1+(ratio-1)*Z/length);for(let i=0;i<nr;i++)nodes.push([a*i/(nr-1),Z]);}
+ const rows=Array.from({length:2*nodes.length},()=>[]),fixedEnd=Array(2*nodes.length).fill(false),upperAxialDofs=[],freeMetadata=[];
  for(let j=0;j<nz;j++)for(let i=0;i<nr;i++)for(let component=0;component<2;component++){
   const node=j*nr+i,id=2*node+component;
   if(component===0&&i===0)continue;
-  if(component===1&&(j===0||j===nz-1)){fixedEnd[id]=true;continue;}
+  if(component===1&&(j===0||j===nz-1)){fixedEnd[id]=true;if(j===nz-1)upperAxialDofs.push(id);continue;}
   if(component===1&&i===0)continue;
   rows[id]=[[freeMetadata.length,1]];freeMetadata.push({node,component});
  }
@@ -66,7 +67,7 @@ export function prepareAxisymmetric({axialCells=8,radialCells=4,order=5,ratio=1.
  for(let j=1;j<nz-1;j++)rows[2*j*nr+1]=[[rows[2*(j*nr+1)+1][0][0],4/3],[rows[2*(j*nr+2)+1][0][0],-1/3]];
  const cells=[];
  for(let j=0;j<axialCells;j++)for(let i=0;i<radialCells;i++)cells.push({radial:i,axial:j,nodes:Array.from({length:9},(_,k)=>(2*j+Math.floor(k/3))*nr+2*i+k%3)});
- const mesh={parameters,axialCells,radialCells,order,nr,nz,nodes,rows,fixedEnd,freeMetadata,freeCount:freeMetadata.length,cells};
+ const mesh={parameters,axialCells,radialCells,order,nr,nz,nodes,rows,fixedEnd,upperAxialDofs,freeMetadata,freeCount:freeMetadata.length,cells};
  const rule=gaussLegendre(order);mesh.points=[];mesh.bandwidth=0;
  for(const cell of cells)for(const z of rule)for(const r of rule){
   const p=pointFor(mesh,cell,r.x,z.x);p.weightM3=2*Math.PI*p.R*p.det*r.weight*z.weight;mesh.points.push(p);
@@ -83,8 +84,9 @@ export function fullDisplacement(mesh,q,epsilon){
  const u=new Float64Array(2*mesh.nodes.length);
  for(let id=0;id<u.length;id++){
   for(const [k,w] of mesh.rows[id])u[id]+=w*q[k];
-  if(mesh.fixedEnd[id]&&mesh.nodes[Math.floor(id/2)][1]===mesh.parameters.length)u[id]=epsilon*mesh.parameters.length;
  }
+ // Boundary membership comes from mesh topology, never coordinate equality.
+ for(const id of mesh.upperAxialDofs)u[id]=epsilon*mesh.parameters.length;
  return u;
 }
 function deformation(point,u){
@@ -210,7 +212,7 @@ export function revolvedBoundary(mesh,state,{azimuth=128,axialSubdivisions=4}={}
  if(!Number.isInteger(azimuth)||azimuth<8||azimuth>512||!Number.isInteger(axialSubdivisions)||axialSubdivisions<1||axialSubdivisions>16)throw new RangeError('Declared rendering tessellation');
  const rings=mesh.axialCells*axialSubdivisions+1,vertices=[],indices=[],reference=[];
  for(let j=0;j<rings;j++){
-  const Z=mesh.parameters.length*j/(rings-1),R=mesh.parameters.radius*(1+(mesh.parameters.ratio-1)*Z/mesh.parameters.length),m=materialPoint(mesh,state,R,Z);
+  const Z=j===rings-1?mesh.parameters.length:mesh.parameters.length*j/(rings-1),R=mesh.parameters.radius*(1+(mesh.parameters.ratio-1)*Z/mesh.parameters.length),m=materialPoint(mesh,state,R,Z);
   for(let i=0;i<azimuth;i++){const angle=2*Math.PI*i/azimuth;vertices.push([m.r*Math.cos(angle),m.r*Math.sin(angle),m.z]);reference.push([R*Math.cos(angle),R*Math.sin(angle),Z]);}
  }
  for(let j=0;j<rings-1;j++)for(let i=0;i<azimuth;i++){
