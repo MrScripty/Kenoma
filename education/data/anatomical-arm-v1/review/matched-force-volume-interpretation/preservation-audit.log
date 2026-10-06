@@ -1,0 +1,22 @@
+{
+  "result": "PASS_ADDITIVE_CORRECTION_AND_FROZEN_PACKET_PRESERVATION",
+  "frozenCommit": "f2504e871b9ee4b536e94405612efa2436d39b45",
+  "oldManifestBindingsVerified": 20,
+  "oldRenderHashesVerified": {
+    "matched-force-contractile-state.png": "32362cc2a0ee4b884d44a26fe1d06a109ba41f60b7ae48d84b32741631b67158",
+    "matched-force-contractile-state.pdf": "e4e601dbb0f430803b7fe43d1421a224753e48b58125cb12e8603d39141f6a05",
+    "matched-force-contractile-state.pdf-raster.png": "8d907150e9bf5a954cf46172155e787ba2d9846f783015d0af6c23d7b3b8101c"
+  },
+  "allExistingTrackedFilesUnchanged": true,
+  "protectedFilesUnchanged": true,
+  "newConstitutiveChanges": false,
+  "newPressureComparison": false,
+  "newHessianOrSpectrum": false,
+  "stagedAdditions": [
+    "A\teducation/data/anatomical-arm-v1/review/matched-force-volume-interpretation/execution.json",
+    "A\teducation/data/anatomical-arm-v1/review/matched-force-volume-interpretation/execution.log",
+    "A\teducation/data/anatomical-arm-v1/review/matched-force-volume-interpretation/volume-complement-diagnostic.json",
+    "A\teducation/research/mechanical-closure/matched-force-volume-interpretation-correction.md",
+    "A\teducation/tools/check_matched_force_volume_interpretation.py"
+  ]
+}

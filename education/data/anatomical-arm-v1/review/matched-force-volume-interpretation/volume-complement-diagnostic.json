@@ -1,0 +1,41 @@
+{
+  "result": "PASS_READ_ONLY_VOLUME_COMPLEMENT_DIAGNOSTIC",
+  "frozenCommit": "f2504e871b9ee4b536e94405612efa2436d39b45",
+  "sourceHashes": {
+    "data/anatomical-arm-v1/review/matched-force-contractile-state/summary.json": "a7a092710c2b5a4747c27194fcc1588c86bc9b180d18d41c700c6a16b5bc46c5",
+    "data/anatomical-arm-v1/review/matched-force-contractile-state/frozen-mode-inspection.json": "b400853b417dc371c400ddd5951244014fdd6afeaf2ef1a3eb1a4cad14015ae3",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1-v2/coarse-1.25-reclassification.json": "7a75a83ad9e2f85b115e5a6849329b0e3818a69284a6d544a2295bd58283b560",
+    "data/anatomical-arm-v1/review/source-amplitude-p2-p1/coarse-mesh.json": "b8d7739144d4d940ef075db81fd04173ee296dd5a3d333c283faf8ad30e25ee9",
+    "tools/full_p2_p1.py": "c80a360fd897867e8cb2360766de8a9f5d548d61bf59b5e54dc8b8df2d5f6860",
+    "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+    "research/mechanical-closure/full-p2-p1-protocol.md": "6c90b7626378a7dd2d8314ace1aee0696b866e551575890f028e1fc49f1e18f4"
+  },
+  "checkerSHA256": "459f84d367b8aee791465702623e5807862a35dcbe6013a7dc600169eec7e4f3",
+  "quadraturePointsPerTet": 256,
+  "bulkPa": 1000000.0,
+  "referenceVolumeM3": 5.599999999999999e-05,
+  "archivedWitnessRayleighNPerM": -9477.446195040056,
+  "reconstructedDirectionalLogJRMSPerM": 16.859294142625853,
+  "pointwiseVolumeGramNPerM": 15917.204743304388,
+  "P1RepresentedVolumeGramNPerM": 22.70469677101395,
+  "positiveVolumeComplementNPerM": 15894.500046533374,
+  "algebraicWitnessPlusComplementNPerM": 6417.053851493318,
+  "initialPointwiseLogJProjectionMismatchRMS": 6.479288980667979e-08,
+  "checks": {
+    "sourceHashesMatchFrozen": true,
+    "RMSAbsoluteDifferencePerM": 0.0,
+    "fullGramVersusArchivedRMSDifferenceNPerM": 0.0,
+    "representedGramVersusArchivedDifferenceNPerM": 7.105427357601002e-14,
+    "representedGramVersusMassInverseDifferenceNPerM": 7.105427357601002e-14,
+    "projectionPythagorasDifferenceNPerM": 0.0,
+    "maximumProjectionOrthogonalityResidual": 6.352747104407253e-22
+  },
+  "interpretation": "Negative witness belongs to the finite-P1 weak discrete model; it alone does not establish a continuum or physical-law defect.",
+  "limits": "The positive algebraic diagnostic is not a full recomputed Hessian, stationary point, spectrum, stability proof or human muscle validation.",
+  "newHessianAssembled": false,
+  "newSpectrumComputed": false,
+  "physicalHistoryAdvanced": false,
+  "newNonlinearSolve": false,
+  "constitutiveChanges": false,
+  "pressureSpaceComparison": false
+}
