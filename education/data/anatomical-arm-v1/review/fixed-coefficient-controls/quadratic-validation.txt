@@ -1,0 +1,5 @@
+PASS terminal 80-iteration enlarged rejection freshly replayed; accepted activation remains zero.
+PASS exact execution/verifier/operator/linear/surface input bindings and both binary operator hashes.
+PASS frozen paired linear solve distinguishes original-reference truncation from one-iteration current-Hessian solve.
+PASS two fresh finite-difference operator probes under the unchanged 1e-4 derivative gate.
+No optimizer, tolerance, coefficient or state advancement added by this validation.

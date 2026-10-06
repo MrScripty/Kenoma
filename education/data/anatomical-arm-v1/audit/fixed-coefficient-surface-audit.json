@@ -1,0 +1,179 @@
+{
+  "schema": 1,
+  "result": "PASS_FINITE_TRANSVERSE_SELF_AUDIT",
+  "sourceHashes": {
+    "data/anatomical-arm-v1/audit/fixed-coefficient-prism.json": "32a54bd287ec264bf33a009e0714f7bd2a6ba6e5d8409d98687d866c24f8578d",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-taper.json": "690daa5b265d408137fc3d5aed93898c8e011907dc84d0e09c08f6bd78290066",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-attachment.json": "0a8e7e58e9f46c872e82f292b899f5fd3064d35e6ec6ec22b9fa1f0987289402",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-sheet.json": "5a808779425349a80e1e327a920974719232fa93e099b2fd411ace9737211d32",
+    "tools/fixed-coefficient-surface-audit.mjs": "93e95ef1707b9ea83901e75e6f1d684912cb9cdad807cf26a01973b5530092f9",
+    "web/anatomical-intersections.mjs": "a083a9838ac3c7508b65b58329c741aef65a065288aff82fc886d1c2c90375df"
+  },
+  "rows": [
+    {
+      "case": "prism",
+      "activation": 0,
+      "reducedAccepted": true,
+      "result": "PASS_FINITE_TRANSVERSE_SELF_CHECK",
+      "surfaceTriangleCount": 880,
+      "broadPhasePairsIncludingDiagonalAndSymmetry": 12984,
+      "transverseCrossingsIncludingSymmetry": 0,
+      "uniqueExamplePairs": []
+    },
+    {
+      "case": "prism",
+      "activation": 0.01,
+      "reducedAccepted": true,
+      "result": "PASS_FINITE_TRANSVERSE_SELF_CHECK",
+      "surfaceTriangleCount": 880,
+      "broadPhasePairsIncludingDiagonalAndSymmetry": 12984,
+      "transverseCrossingsIncludingSymmetry": 0,
+      "uniqueExamplePairs": []
+    },
+    {
+      "case": "prism",
+      "activation": 0.03,
+      "reducedAccepted": true,
+      "result": "PASS_FINITE_TRANSVERSE_SELF_CHECK",
+      "surfaceTriangleCount": 880,
+      "broadPhasePairsIncludingDiagonalAndSymmetry": 12984,
+      "transverseCrossingsIncludingSymmetry": 0,
+      "uniqueExamplePairs": []
+    },
+    {
+      "case": "prism",
+      "activation": 0.1,
+      "reducedAccepted": true,
+      "result": "PASS_FINITE_TRANSVERSE_SELF_CHECK",
+      "surfaceTriangleCount": 880,
+      "broadPhasePairsIncludingDiagonalAndSymmetry": 12984,
+      "transverseCrossingsIncludingSymmetry": 0,
+      "uniqueExamplePairs": []
+    },
+    {
+      "case": "prism",
+      "activation": 0.3,
+      "reducedAccepted": true,
+      "result": "PASS_FINITE_TRANSVERSE_SELF_CHECK",
+      "surfaceTriangleCount": 880,
+      "broadPhasePairsIncludingDiagonalAndSymmetry": 12984,
+      "transverseCrossingsIncludingSymmetry": 0,
+      "uniqueExamplePairs": []
+    },
+    {
+      "case": "prism",
+      "activation": 1,
+      "reducedAccepted": true,
+      "result": "PASS_FINITE_TRANSVERSE_SELF_CHECK",
+      "surfaceTriangleCount": 880,
+      "broadPhasePairsIncludingDiagonalAndSymmetry": 12984,
+      "transverseCrossingsIncludingSymmetry": 0,
+      "uniqueExamplePairs": []
+    },
+    {
+      "case": "taper",
+      "activation": 0,
+      "reducedAccepted": true,
+      "result": "PASS_FINITE_TRANSVERSE_SELF_CHECK",
+      "surfaceTriangleCount": 880,
+      "broadPhasePairsIncludingDiagonalAndSymmetry": 13474,
+      "transverseCrossingsIncludingSymmetry": 0,
+      "uniqueExamplePairs": []
+    },
+    {
+      "case": "taper",
+      "activation": 0.01,
+      "reducedAccepted": true,
+      "result": "PASS_FINITE_TRANSVERSE_SELF_CHECK",
+      "surfaceTriangleCount": 880,
+      "broadPhasePairsIncludingDiagonalAndSymmetry": 14880,
+      "transverseCrossingsIncludingSymmetry": 0,
+      "uniqueExamplePairs": []
+    },
+    {
+      "case": "taper",
+      "activation": 0.03,
+      "reducedAccepted": true,
+      "result": "PASS_FINITE_TRANSVERSE_SELF_CHECK",
+      "surfaceTriangleCount": 880,
+      "broadPhasePairsIncludingDiagonalAndSymmetry": 15028,
+      "transverseCrossingsIncludingSymmetry": 0,
+      "uniqueExamplePairs": []
+    },
+    {
+      "case": "taper",
+      "activation": 0.1,
+      "reducedAccepted": true,
+      "result": "PASS_FINITE_TRANSVERSE_SELF_CHECK",
+      "surfaceTriangleCount": 880,
+      "broadPhasePairsIncludingDiagonalAndSymmetry": 14804,
+      "transverseCrossingsIncludingSymmetry": 0,
+      "uniqueExamplePairs": []
+    },
+    {
+      "case": "taper",
+      "activation": 0.3,
+      "reducedAccepted": true,
+      "result": "PASS_FINITE_TRANSVERSE_SELF_CHECK",
+      "surfaceTriangleCount": 880,
+      "broadPhasePairsIncludingDiagonalAndSymmetry": 14422,
+      "transverseCrossingsIncludingSymmetry": 0,
+      "uniqueExamplePairs": []
+    },
+    {
+      "case": "taper",
+      "activation": 1,
+      "reducedAccepted": true,
+      "result": "PASS_FINITE_TRANSVERSE_SELF_CHECK",
+      "surfaceTriangleCount": 880,
+      "broadPhasePairsIncludingDiagonalAndSymmetry": 14074,
+      "transverseCrossingsIncludingSymmetry": 0,
+      "uniqueExamplePairs": []
+    },
+    {
+      "case": "attachment",
+      "activation": 0,
+      "reducedAccepted": true,
+      "result": "PASS_FINITE_TRANSVERSE_SELF_CHECK",
+      "surfaceTriangleCount": 880,
+      "broadPhasePairsIncludingDiagonalAndSymmetry": 13474,
+      "transverseCrossingsIncludingSymmetry": 0,
+      "uniqueExamplePairs": []
+    },
+    {
+      "case": "attachment",
+      "activation": 0.01,
+      "reducedAccepted": false,
+      "result": "PASS_FINITE_TRANSVERSE_SELF_CHECK",
+      "surfaceTriangleCount": 880,
+      "broadPhasePairsIncludingDiagonalAndSymmetry": 14048,
+      "transverseCrossingsIncludingSymmetry": 0,
+      "uniqueExamplePairs": []
+    },
+    {
+      "case": "sheet",
+      "activation": 0,
+      "reducedAccepted": true,
+      "result": "PASS_FINITE_TRANSVERSE_SELF_CHECK",
+      "surfaceTriangleCount": 880,
+      "broadPhasePairsIncludingDiagonalAndSymmetry": 13474,
+      "transverseCrossingsIncludingSymmetry": 0,
+      "uniqueExamplePairs": []
+    },
+    {
+      "case": "sheet",
+      "activation": 0.01,
+      "reducedAccepted": false,
+      "result": "PASS_FINITE_TRANSVERSE_SELF_CHECK",
+      "surfaceTriangleCount": 880,
+      "broadPhasePairsIncludingDiagonalAndSymmetry": 14088,
+      "transverseCrossingsIncludingSymmetry": 0,
+      "uniqueExamplePairs": []
+    }
+  ],
+  "limits": [
+    "Finite piecewise triangular surface check using the existing complete transverse edge/face crossing implementation.",
+    "Coplanar overlaps, containment and the exact curved P2 surface are not qualified by this check.",
+    "No optimizer, changed geometry, state advancement or acceptance relabeling. Rejected candidates remain rejected."
+  ]
+}

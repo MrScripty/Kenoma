@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "result": "PASS_FINITE_TRANSVERSE_SELF_AUDIT",
+  "sourceHashes": {
+    "data/anatomical-arm-v1/audit/fixed-coefficient-taper-quadratic.json": "720b23d5dff2ad396c8988f6384cb8921149fc86c8fd7e17bc5ecf102113abaf",
+    "tools/fixed-coefficient-surface-audit.mjs": "93e95ef1707b9ea83901e75e6f1d684912cb9cdad807cf26a01973b5530092f9",
+    "web/anatomical-intersections.mjs": "a083a9838ac3c7508b65b58329c741aef65a065288aff82fc886d1c2c90375df"
+  },
+  "rows": [
+    {
+      "case": "taper-quadratic",
+      "activation": 0.01,
+      "reducedAccepted": false,
+      "result": "PASS_FINITE_TRANSVERSE_SELF_CHECK",
+      "surfaceTriangleCount": 880,
+      "broadPhasePairsIncludingDiagonalAndSymmetry": 13890,
+      "transverseCrossingsIncludingSymmetry": 0,
+      "uniqueExamplePairs": []
+    }
+  ],
+  "limits": [
+    "Finite piecewise triangular surface check using the existing complete transverse edge/face crossing implementation.",
+    "Coplanar overlaps, containment and the exact curved P2 surface are not qualified by this check.",
+    "No optimizer, changed geometry, state advancement or acceptance relabeling. Rejected candidates remain rejected."
+  ]
+}

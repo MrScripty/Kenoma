@@ -1,0 +1,33 @@
+{
+  "result": "PASS_SOURCE_BOUND_ENLARGED_REJECTION_DIAGNOSIS",
+  "scope": "Original enlarged rejection remains rejected; frozen extra forces, operators, paired linear/derivative diagnostics and finite self-surface audits. No nonlinear preconditioner retry yet.",
+  "sha256": {
+    "data/anatomical-arm-v1/audit/fixed-coefficient-quadratic-linear-control.json": "e6a9b285734fd410b8339b3fbad25dd95cf574ac1aef502aaee150d3cab53af2",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-quadratic-operator.json": "314086c78c1cee30d91702bac854237076183adac53467dfeeb2a6b9341a8499",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-quadratic-spectrum.json": "d3a1903302fc69ba85d39fa2c519b95fa537a141175f78c43db0025fc993cd0e",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-quadratic-surface-audit.json": "dddae0e35eba7bf998c05fb91c88fc5dfe3abf549d35bae159df553774fb2a0c",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-surface-audit.json": "e3502bb748fb4324792386980cc9bc277d25461c394007c74ab715bb29eb6d9c",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-taper-quadratic-recheck.json": "fe1145f5444b504e84553ced7da5b8d702ca7273bdddf0e3fda6ca872af904a7",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-taper-quadratic.json": "720b23d5dff2ad396c8988f6384cb8921149fc86c8fd7e17bc5ecf102113abaf",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/quadratic-candidate-hessian.f64": "b3d3fc8dee4f3261002359f77451bc4c13aeff5ff9717f9bd858d35c3206c600",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/quadratic-execution.txt": "f488ed0d9a0647381ed165802821fa342cb3a311a19f7b1de599ddcf46399feb",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/quadratic-fresh-replay.txt": "bcbf62b3a0ab59632d27dc3d182d5a64bdeaea275d12d5d092ee6c6b9db6a868",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/quadratic-linear-control-execution.txt": "76274c1cd29e26275ac4a83b87d21613bbee119875e3500111fc6bcdab7be203",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/quadratic-operator-execution.txt": "45743a53a3e4198e39a73b144ed16938f8a14b968a0990104a3ef673aaa2dfbd",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/quadratic-reference-hessian.f64": "e64c5e28e1a7d687e9d38557c18a795bcf71b4fa25ee04eef7746c45e8f403ec",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/quadratic-space-tests.txt": "71fe9fbe784d055ae826369bc365712c0365e98250d2345226f76578f3872d9d",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/quadratic-spectrum-execution.txt": "d3a1903302fc69ba85d39fa2c519b95fa537a141175f78c43db0025fc993cd0e",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/quadratic-surface-audit-execution.txt": "35a904c05101360f590fb1254b00459307686e2391ab298ad9cb4acea7f6cddd",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/quadratic-validation.txt": "2679e878a8b6887acbfa15fcefc9f9ec8935aba2498de88f35a0808f3a896554",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/surface-audit-execution.txt": "ba7d1dba569da3228202989d4a7a7ceb1543e813ca698e21b42cfd730d325609",
+    "research/fixed-coefficient-quadratic-protocol.md": "799e2788c7a1b871df683f73d968cf600db27ee5f53a23af547a4a1fffbbe73d",
+    "research/fixed-coefficient-quadratic-result.md": "ebee43be33d36051975c89349744fc3404113b9d32665b5616420653652f7a50",
+    "tests/fixed-coefficient-quadratic.test.mjs": "2ae260ba4e66af94c09e3cce4de3d67dc473b79516e81cdbd54364f1c0011d8a",
+    "tools/fixed-coefficient-linear-control.mjs": "8bd0142f6541b059af656ebf89e8c7229799e8028a055c8bcb4a7fb7d955fa96",
+    "tools/fixed-coefficient-quadratic-experiment.mjs": "b4457bfb951aec3c0b3d26290d5d43fde1680982762e0d74407d2680513cf154",
+    "tools/fixed-coefficient-quadratic-operator.mjs": "6109ccb1864fc65fbeb526dccef77369a16f5e8252a57ca95b65c9623becd3f3",
+    "tools/fixed-coefficient-quadratic-space.mjs": "65a57e2297d7a4f3c1a7992f7ad77fd546afab68d01e72c832a6157c0767f96f",
+    "tools/fixed-coefficient-surface-audit.mjs": "93e95ef1707b9ea83901e75e6f1d684912cb9cdad807cf26a01973b5530092f9",
+    "tools/verify-fixed-coefficient-quadratic.mjs": "c743520d5c318f565205592e414f14fff245c2ead65bc89737f71e6cb1ec7b6b"
+  }
+}
