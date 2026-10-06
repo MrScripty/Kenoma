@@ -1,0 +1,17 @@
+{
+  "baseline_commit": "998b65d554524f6233bc64790dcf55876fa39106",
+  "baseline_files_unchanged": 1848,
+  "tests_exit": 0,
+  "scipy_version": "1.17.0",
+  "local_scipy_implementation_sha256": {
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/integrate/_ivp/rk.py": "fa5d6300917f4f949e699b116f59ae147159d5c6147d55d940dc9d3303891056",
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/integrate/_ivp/radau.py": "d0aa4593431ef39ee07825db6ef0324e4a9bacef0e23fda42d377318ba6a6256"
+  },
+  "actual_dense_classes": {
+    "Dop853DenseOutput": "class Dop853DenseOutput(DenseOutput):\n    def __init__(self, t_old, t, y_old, F):\n        super().__init__(t_old, t)\n        self.h = t - t_old\n        self.F = F\n        self.y_old = y_old\n\n    def _call_impl(self, t):\n        x = (t - self.t_old) / self.h\n\n        if t.ndim == 0:\n            y = np.zeros_like(self.y_old)\n        else:\n            x = x[:, None]\n            y = np.zeros((len(x), len(self.y_old)), dtype=self.y_old.dtype)\n\n        for i, f in enumerate(reversed(self.F)):\n            y += f\n            if i % 2 == 0:\n                y *= x\n            else:\n                y *= 1 - x\n        y += self.y_old\n\n        return y.T\n",
+    "RadauDenseOutput": "class RadauDenseOutput(DenseOutput):\n    def __init__(self, t_old, t, y_old, Q):\n        super().__init__(t_old, t)\n        self.h = t - t_old\n        self.Q = Q\n        self.order = Q.shape[1] - 1\n        self.y_old = y_old\n\n    def _call_impl(self, t):\n        x = (t - self.t_old) / self.h\n        if t.ndim == 0:\n            p = np.tile(x, self.order + 1)\n            p = np.cumprod(p)\n        else:\n            p = np.tile(x, (self.order + 1, 1))\n            p = np.cumprod(p, axis=0)\n        # Here we don't multiply by h, not a mistake.\n        y = np.dot(self.Q, p)\n        if y.ndim == 2:\n            y += self.y_old[:, None]\n        else:\n            y += self.y_old\n\n        return y\n"
+  },
+  "protocol_sha256": "375fdacfa448af3823eff989c4b07b3dab9286374698184982a41a70b1e14182",
+  "real_case_simulations_before_freeze": 0,
+  "all_acceptance_gates_unchanged": true
+}

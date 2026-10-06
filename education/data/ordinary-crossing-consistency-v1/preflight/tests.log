@@ -1,0 +1,13 @@
+test_actual_adaptive_coefficients_replay (__main__.Checks.test_actual_adaptive_coefficients_replay) ... ok
+test_actual_rk_dense_replay (__main__.Checks.test_actual_rk_dense_replay) ... ok
+test_attracting_target_unchanged (__main__.Checks.test_attracting_target_unchanged) ... ok
+test_input_change_rejected (__main__.Checks.test_input_change_rejected) ... ok
+test_iteration_limit_failure_no_retry (__main__.Checks.test_iteration_limit_failure_no_retry) ... ok
+test_ordinary_target_changes_returned_event_state (__main__.Checks.test_ordinary_target_changes_returned_event_state) ... ok
+test_physical_failure_retains_state_and_ledgers (__main__.Checks.test_physical_failure_retains_state_and_ledgers) ... ok
+test_sliding_prohibited (__main__.Checks.test_sliding_prohibited) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.011s
+
+OK
