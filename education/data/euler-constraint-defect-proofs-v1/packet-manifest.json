@@ -1,0 +1,94 @@
+{
+  "baseline_commit": "9547246e10269ea0c2613cc9cef848323f700ef6",
+  "excludes": [
+    "education/data/euler-constraint-defect-proofs-v1/packet-manifest.json"
+  ],
+  "files": {
+    "education/data/euler-constraint-defect-proofs-v1/attempts/EulerConstraintDefect-attempt-01.lean": {
+      "sha256": "93ea428d9f4de373a7fbe44fca163d6a9655de90a670942f4b00bbf3cd92d9ca",
+      "bytes": 5290
+    },
+    "education/data/euler-constraint-defect-proofs-v1/attempts/EulerConstraintDefect-attempt-02.lean": {
+      "sha256": "6eac275a9b1f1e83b42138bfc18c1e4fc771add68f47294a53e3a22dd5e77883",
+      "bytes": 5308
+    },
+    "education/data/euler-constraint-defect-proofs-v1/attempts/audit-preliminary.log": {
+      "sha256": "b45d237c7846c668fd886e8643c5361383109ca9c0c1b6315f223c619c7d2786",
+      "bytes": 945
+    },
+    "education/data/euler-constraint-defect-proofs-v1/attempts/lean-attempt-01.log": {
+      "sha256": "08f34b9e45bdfc433585b1061a369ebccfa5781e2eeea79d39ae5ed079defbf2",
+      "bytes": 209
+    },
+    "education/data/euler-constraint-defect-proofs-v1/attempts/lean-attempt-02.log": {
+      "sha256": "332f8cabc3ed7d74bd22d7f3667633ed6ff530f5c3a26c39eceb50fa74d048b9",
+      "bytes": 1028
+    },
+    "education/data/euler-constraint-defect-proofs-v1/attempts/manifest.json": {
+      "sha256": "1448c40e8aa182cfd73834277713d77a6b4188e43c8a045086da8aebdaff218c",
+      "bytes": 1253
+    },
+    "education/data/euler-constraint-defect-proofs-v1/audit-tests.log": {
+      "sha256": "b45d237c7846c668fd886e8643c5361383109ca9c0c1b6315f223c619c7d2786",
+      "bytes": 945
+    },
+    "education/data/euler-constraint-defect-proofs-v1/fresh-check-command.log": {
+      "sha256": "0f4c5e60d7fa39d2272f8093fa183ac58bceb6ddebdf121cf0b4bf6cadc49ad4",
+      "bytes": 128
+    },
+    "education/data/euler-constraint-defect-proofs-v1/protocol-source.json": {
+      "sha256": "eebd12bba76ae7a477f02d3a4cb844c2edd71eeb4c493484b294132cb16ed148",
+      "bytes": 2888
+    },
+    "education/data/euler-constraint-defect-proofs-v1/review/kernel-check.json": {
+      "sha256": "46e96a5e42da795b780014d3668f3cf42ed92f317d07e5f99227a17dda4afdf9",
+      "bytes": 11460
+    },
+    "education/data/euler-constraint-defect-proofs-v1/review/lean-check.log": {
+      "sha256": "332f8cabc3ed7d74bd22d7f3667633ed6ff530f5c3a26c39eceb50fa74d048b9",
+      "bytes": 1028
+    },
+    "education/data/euler-constraint-defect-proofs-v1/source-freeze.json": {
+      "sha256": "b4c952d51c328b814309dd1f80835b50cac5891047f3b3cb9efb40cc51e7c935",
+      "bytes": 113
+    },
+    "education/data/euler-constraint-defect-proofs-v1/verification.json": {
+      "sha256": "2424fbde1752d0c1165ac83a0a4be34d69cd53a76e720f07d6ba2b6b1d88e220",
+      "bytes": 1250
+    },
+    "education/data/euler-constraint-defect-proofs-v1/verification.log": {
+      "sha256": "e7877d0d82f1c8ef3fea44883734106c16fc568ffaae268ff38636679f60237a",
+      "bytes": 387
+    },
+    "education/proofs/EulerConstraintDefect.lean": {
+      "sha256": "6eac275a9b1f1e83b42138bfc18c1e4fc771add68f47294a53e3a22dd5e77883",
+      "bytes": 5308
+    },
+    "education/proofs/euler-constraint-defect-claims.json": {
+      "sha256": "639007c3face58256d375c1bc9cb2b78a3864730c53a2a2067af848a9a4e0ef6",
+      "bytes": 3544
+    },
+    "education/research/mechanical-closure/euler-constraint-defect-proof-receipt.md": {
+      "sha256": "ac755e6d8f4ddd27da68a03411ac80fd8067c87e7d92e75aaea2edb26aaafa68",
+      "bytes": 2622
+    },
+    "education/research/mechanical-closure/euler-constraint-defect-proofs.md": {
+      "sha256": "8a1b9ac21fd12a718af37839fe8087053a31ca7b10dd4e33c92ee9bdd3d950b0",
+      "bytes": 5167
+    },
+    "education/tests/euler_constraint_defect_proof_audit.py": {
+      "sha256": "8a9ea86f8442040fc31fe031378536646aa482f0c91825640d3716e37a203b1e",
+      "bytes": 3010
+    },
+    "education/tools/check_euler_constraint_defect_proofs.py": {
+      "sha256": "73e70525ca4622ad3a0c26bdbf82862f22bb2978c31f3a5a216bffab109dc658",
+      "bytes": 7130
+    },
+    "education/tools/verify_euler_constraint_defect_packet.py": {
+      "sha256": "72636dfe81baa16512b0a1066b4b7fc6d0c3917b89c2cc12e64b54065cb58528",
+      "bytes": 5271
+    }
+  },
+  "file_count": 21,
+  "total_bytes": 64284
+}

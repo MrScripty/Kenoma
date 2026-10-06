@@ -1,0 +1,12 @@
+test_admissions_and_custom_axioms_rejected (__main__.ProofAudit.test_admissions_and_custom_axioms_rejected) ... ok
+test_declared_claim_and_axiom_inventory_match (__main__.ProofAudit.test_declared_claim_and_axiom_inventory_match) ... ok
+test_missing_duplicate_and_extra_declarations_rejected (__main__.ProofAudit.test_missing_duplicate_and_extra_declarations_rejected) ... ok
+test_nested_comments_do_not_hide_admission (__main__.ProofAudit.test_nested_comments_do_not_hide_admission) ... ok
+test_no_axiom_statement_supported (__main__.ProofAudit.test_no_axiom_statement_supported) ... ok
+test_transcript_missing_duplicate_or_wrong_name_rejected (__main__.ProofAudit.test_transcript_missing_duplicate_or_wrong_name_rejected) ... ok
+test_transcript_unknown_dependency_rejected (__main__.ProofAudit.test_transcript_unknown_dependency_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.024s
+
+OK

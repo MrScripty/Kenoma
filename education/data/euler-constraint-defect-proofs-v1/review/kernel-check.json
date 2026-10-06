@@ -1,0 +1,223 @@
+{
+  "schema": 1,
+  "source_freeze_commit": "07a200674a1ee4911d4e7fdb4651eb221e79b5f2",
+  "source_freeze_tree": "2d92d03826b4c142d35894f41613f45c091c5269",
+  "compiler_exit_code": 0,
+  "lean_version": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)",
+  "mathlib": {
+    "repository": "https://github.com/leanprover-community/mathlib4",
+    "tag": "v4.19.0",
+    "commit": "c44e0c8ee63ca166450922a373c7409c5d26b00b",
+    "manifest_sha256": "5c6421b650bc87a2427a892a39e5522dc44543ca4ac1bd6e9f08d536c044a752",
+    "toolchain": "leanprover/lean4:v4.19.0",
+    "license": "Apache-2.0",
+    "qualification": "Fresh compilation required; this lock alone is not proof evidence."
+  },
+  "dependencies": [
+    {
+      "name": "plausible",
+      "commit": "77e08eddc486491d7b9e470926b3dbe50319451a"
+    },
+    {
+      "name": "LeanSearchClient",
+      "commit": "25078369972d295301f5a1e53c3e5850cf6d9d4c"
+    },
+    {
+      "name": "importGraph",
+      "commit": "e6a9f0f5ee3ccf7443a0070f92b62f8db12ae82b"
+    },
+    {
+      "name": "proofwidgets",
+      "commit": "c4919189477c3221e6a204008998b0d724f49904"
+    },
+    {
+      "name": "aesop",
+      "commit": "5d50b08dedd7d69b3d9b3176e0d58a23af228884"
+    },
+    {
+      "name": "Qq",
+      "commit": "fa4f7f15d97591a9cf3aa7724ba371c7fc6dda02"
+    },
+    {
+      "name": "batteries",
+      "commit": "f5d04a9c4973d401c8c92500711518f7c656f034"
+    },
+    {
+      "name": "Cli",
+      "commit": "02dbd02bc00ec4916e99b04b2245b30200e200d0"
+    }
+  ],
+  "compiler_binary_sha256": "92c3d35b5bfaa5e0fea413a775d504cf46cd95e1345df61c2274f76779e7e023",
+  "lake_binary_sha256": "5111aee5c9434ab05d4265606475ef22e8bda69aaf3a0657b61a7eec6e550bed",
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-DwarningAsError=true",
+    "/workspace/Kenoma-euler-proofs/education/proofs/EulerConstraintDefect.lean"
+  ],
+  "working_directory": "/workspace/Kenoma/education/.tools/mathlib4",
+  "source": "proofs/EulerConstraintDefect.lean",
+  "source_sha256": "6eac275a9b1f1e83b42138bfc18c1e4fc771add68f47294a53e3a22dd5e77883",
+  "claims_sha256": "639007c3face58256d375c1bc9cb2b78a3864730c53a2a2067af848a9a4e0ef6",
+  "checker_sha256": "73e70525ca4622ad3a0c26bdbf82862f22bb2978c31f3a5a216bffab109dc658",
+  "transcript_sha256": "332f8cabc3ed7d74bd22d7f3667633ed6ff530f5c3a26c39eceb50fa74d048b9",
+  "equation_sources": [
+    {
+      "path": "tools/run_filippov_bounded_experiment.py",
+      "sha256": "1f32681d69c5e9bf0d1b1f4ab468c95d2ad41421d509553869bfdfbd444ee7e8"
+    },
+    {
+      "path": "tools/filippov_source_worker.mjs",
+      "sha256": "0d6b83efd7b63d7dbac21b857ba6c0af357139b6476675de4f4d46a47dfe8fcd"
+    },
+    {
+      "path": "web/vertical-force-model.js",
+      "sha256": "58ca8de8ae7d9e65083f6460bfb25dc32eccd1953853da78d8325274c0ddcf80"
+    },
+    {
+      "path": "research/mechanical-closure/antiwindup-continuation-analysis.md",
+      "sha256": "aaae20b7a9b6e28e2a8d89b3806b1c4b8c50ac19d41f4ccc4050cdaaa95ca300"
+    },
+    {
+      "path": "tools/vertical_force_reference.py",
+      "sha256": "18fb8a6d533010afc5211fb7a286bfc53e2d7a1b0c1544a350e1896e3ea63fed"
+    },
+    {
+      "path": "data/millard-reference-v1/upstream/manifest.json",
+      "sha256": "0d9448dd2fc3e0dacf58722c80263708fe2df9addc83019ac24496134906573c"
+    },
+    {
+      "path": "research/mechanical-closure/filippov-bounded-experiment-results.md",
+      "sha256": "8c1a70a5732e26bf762f25b8e0d1309164fb0ffe59e40a9d097b6992727f083e"
+    }
+  ],
+  "exact_statements": [
+    "theorem normalized_error (f : \u211d \u2192 \u211d) (r s : \u211d) :\n    error f r s = r / 100 - f s",
+    "theorem source_tendon_euler_increment (L0 y q w v \u03c4 : \u211d) :\n    tendonLength L0 (y + \u03c4 * w) (q + \u03c4 * (10 * v)) =\n      tendonLength L0 y q + \u03c4 * (-5 * (w + v))",
+    "theorem tangent_normal_cancellation (slope sdot : \u211d) :\n    normalRate slope sdot ((2 / 5) * slope * sdot) = 0",
+    "theorem euler_constraint_defect_identity (f : \u211d \u2192 \u211d) (r ub s I slope sdot \u03c4 : \u211d) :\n    surface f r ub (s + \u03c4 * sdot) (I + \u03c4 * ((2 / 5) * slope * sdot)) -\n      surface f r ub s I =\n    (2 / 5) * (f (s + \u03c4 * sdot) - f s - slope * (\u03c4 * sdot))",
+    "theorem source_euler_constraint_defect (f : \u211d \u2192 \u211d) (r ub L0 y q I slope w v \u03c4 : \u211d) :\n    surface f r ub (tendonLength L0 (y + \u03c4 * w) (q + \u03c4 * (10 * v)))\n      (I - \u03c4 * (2 * slope * (w + v))) -\n      surface f r ub (tendonLength L0 y q) I =\n    (2 / 5) * (f (tendonLength L0 y q + \u03c4 * (-5 * (w + v))) -\n      f (tendonLength L0 y q) - slope * (\u03c4 * (-5 * (w + v))))",
+    "theorem on_surface_euler_defect (f : \u211d \u2192 \u211d) (r ub s I slope sdot \u03c4 : \u211d)\n    (hentry : surface f r ub s I = 0) :\n    surface f r ub (s + \u03c4 * sdot) (I + \u03c4 * ((2 / 5) * slope * sdot)) =\n      (2 / 5) * (f (s + \u03c4 * sdot) - f s - slope * (\u03c4 * sdot))",
+    "theorem defect_bound_from_remainder (f : \u211d \u2192 \u211d) (r ub s I slope sdot \u03c4 M : \u211d)\n    (hremainder : |f (s + \u03c4 * sdot) - f s - slope * (\u03c4 * sdot)| \u2264\n      (M / 2) * (\u03c4 * sdot) ^ 2) :\n    |surface f r ub (s + \u03c4 * sdot) (I + \u03c4 * ((2 / 5) * slope * sdot)) -\n      surface f r ub s I| \u2264 (M / 5) * \u03c4 ^ 2 * sdot ^ 2",
+    "theorem quadratic_tendon_remainder (A D E s \u03b4 : \u211d) :\n    quadraticTendon A D E (s + \u03b4) - quadraticTendon A D E s -\n      (2 * A * s + D) * \u03b4 = A * \u03b4 ^ 2",
+    "theorem quadratic_euler_constraint_defect (A D E r ub s I sdot \u03c4 : \u211d) :\n    surface (quadraticTendon A D E) r ub (s + \u03c4 * sdot)\n      (I + \u03c4 * ((2 / 5) * (2 * A * s + D) * sdot)) -\n      surface (quadraticTendon A D E) r ub s I =\n      (2 / 5) * A * \u03c4 ^ 2 * sdot ^ 2",
+    "theorem tangent_quadratic_predictor_can_leave_surface (A D E r ub s I sdot \u03c4 : \u211d)\n    (hA : 0 < A) (h\u03c4 : \u03c4 \u2260 0) (hsdot : sdot \u2260 0)\n    (hentry : surface (quadraticTendon A D E) r ub s I = 0) :\n    normalRate (2 * A * s + D) sdot ((2 / 5) * (2 * A * s + D) * sdot) = 0 \u2227\n      0 < surface (quadraticTendon A D E) r ub (s + \u03c4 * sdot)\n        (I + \u03c4 * ((2 / 5) * (2 * A * s + D) * sdot))"
+  ],
+  "claims": [
+    {
+      "theorem": "KenomaEuler.normalized_error",
+      "description": "Normalize the actual FT=100*f(s) error expression exactly.",
+      "scope": "Exact real local scalar algebra; slope is supplied. No derivative-kernel, C2/Taylor, floating-point, numerical convergence, accepted motion or anatomy proof.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaEuler.source_tendon_euler_increment",
+      "description": "Actual y/q Euler coordinates change normalized tendon length by tau*(-5*(w+v)).",
+      "scope": "Exact real local scalar algebra; slope is supplied. No derivative-kernel, C2/Taylor, floating-point, numerical convergence, accepted motion or anatomy proof.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaEuler.tangent_normal_cancellation",
+      "description": "The supplied-slope symbolic lower-surface normal rate cancels with its tangent I rate.",
+      "scope": "Exact real local scalar algebra; slope is supplied. No derivative-kernel, C2/Taylor, floating-point, numerical convergence, accepted motion or anatomy proof.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaEuler.euler_constraint_defect_identity",
+      "description": "For an arbitrary real tendon function, the exact Euler constraint increment is .4 times its first-order remainder.",
+      "scope": "Exact real local scalar algebra; slope is supplied. No derivative-kernel, C2/Taylor, floating-point, numerical convergence, accepted motion or anatomy proof.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaEuler.source_euler_constraint_defect",
+      "description": "The same exact defect identity in actual source y/q/I coordinates.",
+      "scope": "Exact real local scalar algebra; slope is supplied. No derivative-kernel, C2/Taylor, floating-point, numerical convergence, accepted motion or anatomy proof.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaEuler.on_surface_euler_defect",
+      "description": "An exactly on-surface entry leaves only the scaled tendon remainder at its Euler predictor.",
+      "scope": "Exact real local scalar algebra; slope is supplied. No derivative-kernel, C2/Taylor, floating-point, numerical convergence, accepted motion or anatomy proof.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaEuler.defect_bound_from_remainder",
+      "description": "A supplied pointwise quadratic remainder bound implies the scaled local constraint-defect bound.",
+      "scope": "Exact real local scalar algebra; slope is supplied. No derivative-kernel, C2/Taylor, floating-point, numerical convergence, accepted motion or anatomy proof.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaEuler.quadratic_tendon_remainder",
+      "description": "An explicit quadratic tendon has exactly A*delta^2 first-order remainder.",
+      "scope": "Exact real local scalar algebra; slope is supplied. No derivative-kernel, C2/Taylor, floating-point, numerical convergence, accepted motion or anatomy proof.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaEuler.quadratic_euler_constraint_defect",
+      "description": "An explicit quadratic tendon has exact .4*A*tau^2*sdot^2 Euler constraint defect.",
+      "scope": "Exact real local scalar algebra; slope is supplied. No derivative-kernel, C2/Taylor, floating-point, numerical convergence, accepted motion or anatomy proof.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "KenomaEuler.tangent_quadratic_predictor_can_leave_surface",
+      "description": "Under positive quadratic curvature, nonzero step/direction and zero entry H, symbolic tangent normal cancellation coexists with positive predictor H.",
+      "scope": "Exact real local scalar algebra; slope is supplied. No derivative-kernel, C2/Taylor, floating-point, numerical convergence, accepted motion or anatomy proof.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "scope": "Exact local real scalar Euler defect algebra and conditional remainder scaling; supplied slope, no derivative-kernel/C2 proof, floating-point, integration, convergence, accepted-state or anatomy theorem.",
+  "sliding_steps_executed": 0,
+  "trajectory_states_added": 0,
+  "book_receipts_written": false
+}

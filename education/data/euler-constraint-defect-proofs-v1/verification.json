@@ -1,0 +1,33 @@
+{
+  "source_freeze": {
+    "commit": "07a200674a1ee4911d4e7fdb4651eb221e79b5f2",
+    "tree": "2d92d03826b4c142d35894f41613f45c091c5269"
+  },
+  "baseline_commit": "9547246e10269ea0c2613cc9cef848323f700ef6",
+  "preserved_baseline_blobs": 2090,
+  "real_Lean_declarations": 10,
+  "compiler_exit_code": 0,
+  "axiom_dependencies": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "kernel_receipt_sha256": "46e96a5e42da795b780014d3668f3cf42ed92f317d07e5f99227a17dda4afdf9",
+  "audit_tests": 7,
+  "preserved_prior_branches": {
+    "education/sliding-constraint-policy-proposal": "a522899d089d4249bf20e27b2545723b41d3f2f2",
+    "education/first-sliding-segment-exploratory": "455641c0aa9b4a9ad4b68e50fc1b6f5746180226",
+    "education/filippov-convex-weight-proofs": "9547246e10269ea0c2613cc9cef848323f700ef6",
+    "education/first-sliding-segment-protocol": "b692d372bfcec354dfef377dc2245c3176c3e5cb",
+    "origin/main": "9b0c67fd25e1b645833a68bb9b1c2aba1404bbce"
+  },
+  "archived_attempt_exit_codes": [
+    1,
+    0
+  ],
+  "new_ODE_steps": 0,
+  "new_accepted_states": 0,
+  "revised_policy_executed": false,
+  "book_receipts_written": false,
+  "verification_source_sha256": "72636dfe81baa16512b0a1066b4b7fc6d0c3917b89c2cc12e64b54065cb58528"
+}
