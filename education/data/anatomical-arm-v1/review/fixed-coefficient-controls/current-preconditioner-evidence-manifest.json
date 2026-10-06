@@ -1,0 +1,22 @@
+{
+  "result": "PASS_SOURCE_BOUND_SAME_BUDGET_PRECONDITIONER_CONTROL",
+  "verifiedPriorManifestBindings": 69,
+  "sha256": {
+    "data/anatomical-arm-v1/audit/fixed-coefficient-taper-quadratic-current-preconditioner-recheck.json": "3bd6cf28a57e2d1c5c2bd2521821ed8cf3c1c4ee7c25297d2b02a439a1294e76",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-taper-quadratic-current-preconditioner.json": "9c5818990e73e0e3496b48b89ee5a852e31e5d978930ffc531e458e9e828425f",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/current-preconditioner-comparison.pdf": "5d496c0043daaab004eb1b65f6647aed64620c74603eeefd052870fa8c79ef1f",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/current-preconditioner-comparison.png": "06dc3011e54aa06176ed80f9cdec70ebab4c93ddb19b50b4630b4542e9b690b9",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/current-preconditioner-execution.txt": "33dc1b4566c89dd816012116261842bac0ab7f4669378c6648b726c64a29000c",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/current-preconditioner-fresh-replay.txt": "95dcb477d4c8bea6e17115c304224245bf29d19fc009d8b2cf9037b7875ab447",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/current-preconditioner-render-execution.txt": "95cc2c2847b666e00615f3ab86624ff88454f1e6222afa519755a024e1bf33f5",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/current-preconditioner-render-receipt.json": "fbc9ecd4a6102310eb703a11adf8c3ebea1d434b4c4909f225825ee71007f005",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/current-preconditioner-tests.txt": "e6ab911500840261d31a83f0070e9025785b2cfc7ff5fe445373a150c8f3d1e2",
+    "research/fixed-coefficient-current-preconditioner-result.md": "c1f0ad2a1ecad34ad17cb9028e36edca6facf190a39e965a19b24af836e61c79",
+    "research/fixed-coefficient-preconditioner-protocol.md": "b82548306a590cb3ddd23de6df39aa110b7613adaa39b5be73340c05212c7bf7",
+    "tests/current-newton-preconditioner.test.mjs": "efaf155c3bc89d3311faa33e7376a26514edca33d72034d9241c1df3b8909e88",
+    "tools/current-newton-preconditioner.mjs": "efa43824526ddd478ed8aec32290381958d8a2963fae6f04d45be0b01e0659ad",
+    "tools/current_preconditioner_figure.py": "34c8776658098e4417b8ae3b161f6120a6e83cdbf460859954b8576a5ef20d9a",
+    "tools/fixed-coefficient-quadratic-current-preconditioner.mjs": "910981f52b354696b9642e0e862924c8e87eb34bd0816d49a0e941d606be8555",
+    "tools/verify-fixed-coefficient-quadratic-current-preconditioner.mjs": "9ee8e8bc5762d2f7c2ebc4a0971788d2ce8d0257b8474b732ef61aafc94ffd08"
+  }
+}

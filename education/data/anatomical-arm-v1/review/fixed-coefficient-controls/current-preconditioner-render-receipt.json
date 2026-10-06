@@ -1,0 +1,13 @@
+{
+  "result": "PASS_SOURCE_BOUND_CONTROL_RENDER",
+  "inputs": {
+    "data/anatomical-arm-v1/audit/fixed-coefficient-taper-quadratic.json": "720b23d5dff2ad396c8988f6384cb8921149fc86c8fd7e17bc5ecf102113abaf",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-taper-quadratic-current-preconditioner.json": "9c5818990e73e0e3496b48b89ee5a852e31e5d978930ffc531e458e9e828425f",
+    "data/anatomical-arm-v1/audit/fixed-coefficient-taper-quadratic-current-preconditioner-recheck.json": "3bd6cf28a57e2d1c5c2bd2521821ed8cf3c1c4ee7c25297d2b02a439a1294e76"
+  },
+  "rendererSHA256": "34c8776658098e4417b8ae3b161f6120a6e83cdbf460859954b8576a5ef20d9a",
+  "outputs": {
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/current-preconditioner-comparison.png": "06dc3011e54aa06176ed80f9cdec70ebab4c93ddb19b50b4630b4542e9b690b9",
+    "data/anatomical-arm-v1/review/fixed-coefficient-controls/current-preconditioner-comparison.pdf": "5d496c0043daaab004eb1b65f6647aed64620c74603eeefd052870fa8c79ef1f"
+  }
+}
