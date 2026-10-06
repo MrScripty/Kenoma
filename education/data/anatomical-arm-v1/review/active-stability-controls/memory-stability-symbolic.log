@@ -1,0 +1,30 @@
+{
+  "result": "PASS_PARAMETER_FREE_LINEAR_MEMORY_STABILITY_IDENTITY",
+  "sourceSHA256": "dcc505976f51c31edd8e0f2ebe96dabf114b3b8867e94be8b164c8a29fbdd25b",
+  "equations": [
+    "M xdd + c xd + (k_relaxed+k_series)x + q = 0",
+    "tau qd + q = tau k_memory xd"
+  ],
+  "parameterDomain": {
+    "M": "positive mass, kg",
+    "tau": "positive time, s",
+    "c": "nonnegative viscous coefficient, N s/m",
+    "k_memory": "nonnegative Maxwell stiffness, N/m",
+    "k_relaxed": "signed relaxed tangent, N/m",
+    "k_series": "external end-separation stiffness, N/m"
+  },
+  "characteristicPolynomial": "M*s**3*tau + M*s**2 + c*s**2*tau + c*s + k_memory*s*tau + k_relaxed*s*tau + k_relaxed + k_series*s*tau + k_series",
+  "routhHurwitzMargin": "M*c + M*k_memory*tau + c**2*tau + c*k_memory*tau**2 + c*k_relaxed*tau**2 + c*k_series*tau**2",
+  "positiveTotalStiffnessMargin": "K_total*c*tau**2 + M*c + M*k_memory*tau + c**2*tau + c*k_memory*tau**2",
+  "conclusions": [
+    "If k_relaxed+k_series<0, P(0)<0 and P(s) tends to positive infinity: at least one positive real root for every permitted M,c,tau,k_memory. Positive fast stiffness does not cure this long-time scalar instability.",
+    "If k_relaxed+k_series>0 and c>0 or k_memory>0, all cubic coefficients and the Routh-Hurwitz margin are positive: this declared scalar system is asymptotically stable.",
+    "If total relaxed stiffness is zero, a zero root remains. With positive total stiffness but c=k_memory=0, oscillatory roots are neutral, not asymptotically stable."
+  ],
+  "limits": [
+    "No numerical physical coefficient selected; no simulated human response.",
+    "Single scalar linearized mode only; no multiaxial/internal-variable or nonlinear stability theorem.",
+    "Passive Maxwell memory is a thought experiment, not a validated contractile muscle law.",
+    "An end-separation spring has zero action on the existing zero-cap interior witnesses."
+  ]
+}

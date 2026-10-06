@@ -1,0 +1,22 @@
+{
+  "result": "PASS_SOURCE_BOUND_ACTIVE_CONTROL_RENDER",
+  "rendererSHA256": "76aec501f885d4b33399623ad181302be83a93dbcc3b107fbae84ab78923c728",
+  "inputs": {
+    "data/anatomical-arm-v1/review/active-stability-controls/summary.json": "681cbbffd4557e2a17d288963e24d2459aaedd8ea37055bb557cfda3d60945bb",
+    "data/anatomical-arm-v1/review/active-stability-controls/case-coarse-1.01-a0.01.json": "56fe70f033ee77ba13cefaf0f81782ef0e4c54d7a0799da3ec155531915cebb6",
+    "data/anatomical-arm-v1/review/active-stability-controls/case-coarse-1.01-a0.00.json": "3c6d2a35f1096fe6d5127249e4e93e2483f33c09ca4d01f9eeb61aa9f4395e09",
+    "data/anatomical-arm-v1/review/active-stability-controls/case-coarse-1.25-a0.01.json": "4072b937c06a58067284f6ac8b7f763e478114ed71de6d5bfe6524b94ff4b2b8",
+    "data/anatomical-arm-v1/review/active-stability-controls/case-coarse-1.25-a0.00.json": "abcd75b44a8a99efbf39cac7a6a5f189359a8222c279788f7b3a1ea18b06f216",
+    "data/anatomical-arm-v1/review/active-stability-controls/case-fine-1.01-a0.01.json": "b762de9b425f2dd71026f859016d313ca2c43313d94640b190dd252e0da31880",
+    "data/anatomical-arm-v1/review/active-stability-controls/case-fine-1.01-a0.00.json": "8bcb361a9b44ea958fad6da446ca7412a645316e6c7f0cf7abbfaa4dc4704aaa",
+    "data/anatomical-arm-v1/review/active-stability-controls/case-fine-1.25-a0.01.json": "96139f069e7c2b7234e9d9b44c18d2574e918287f11edaa606c50b485f511e99",
+    "data/anatomical-arm-v1/review/active-stability-controls/case-fine-1.25-a0.00.json": "f2873ddd401a6ef0b085d7b73425b1540dfaf5f6b9563d3fd911b0c1898bee80"
+  },
+  "outputs": {
+    "data/anatomical-arm-v1/review/active-stability-controls/active-controls.png": "cf845aa401baace911bf623d06621745b419f4653a5002550cdb71054120ae6f",
+    "data/anatomical-arm-v1/review/active-stability-controls/active-controls.pdf": "5efc4e432178c40af6601abffdea9f889e36de7d709e7a1c72d36db678e788b6"
+  },
+  "limits": [
+    "No human incremental stiffness, dynamic stability, anatomy or selected replacement law is claimed."
+  ]
+}
