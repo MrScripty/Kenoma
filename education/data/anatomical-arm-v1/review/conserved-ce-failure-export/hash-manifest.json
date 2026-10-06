@@ -1,0 +1,78 @@
+{
+  "result": "HASH_BOUND_FAILURE_EXPORT_PACKET",
+  "protocolCommit": "09c1af7af095b163803d568b8203155efce40aa6",
+  "originalExecutedCommit": "b21ee8c252d4160a367fa7b21a9adf8c57a1dcaf",
+  "manifestSelfExcluded": true,
+  "files": [
+    {
+      "path": "tools/conserved_ce_trajectory.py",
+      "bytes": 10672,
+      "sha256": "58e29815607245d40168209cf7a009ed2630946614abaf900c64669450643920"
+    },
+    {
+      "path": "tools/conserved_ce_trajectory_v2.py",
+      "bytes": 14319,
+      "sha256": "b3b4ed2a0a58a003b698d86aae2786365dffa3b15d903e0e08268d18d517d0ed"
+    },
+    {
+      "path": "research/mechanical-closure/conserved-ce-failure-export-protocol.md",
+      "bytes": 5554,
+      "sha256": "31a9191bade7824fd09a19fbbff04950ad3ef7a98c952cfb5cb3ac3e94ebe9fe"
+    },
+    {
+      "path": "tools/failureexporttest.py",
+      "bytes": 14730,
+      "sha256": "5f4a6faa074ef9e3b2852d0d05b90e053a3fc0403165a20dfa2adf49f499640b"
+    },
+    {
+      "path": "tools/source_two_state_operator.py",
+      "bytes": 3933,
+      "sha256": "21d42a4af37d25f984843dc32db8ec2f9e6608b7c157e177feaaff951e520824"
+    },
+    {
+      "path": "research/mechanical-closure/conserved-ce-failure-export-results.md",
+      "bytes": 5061,
+      "sha256": "d0ef4af8cd1f784d01be12a053d24232e1fddb8443f8fd0d83a99baf0c083f0c"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/conserved-ce-failure-export/execution-receipt.json",
+      "bytes": 458,
+      "sha256": "b9b5abb2b13c4e14e6283eec3921e8a864ceb776c322eb2eef2c4287d3f0de1e"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/conserved-ce-failure-export/original-to-v2.diff",
+      "bytes": 11173,
+      "sha256": "e4a8021df878a85c1f0f7f3903ce45130905fae9428f0dabf697f278f234df36"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/conserved-ce-failure-export/reversal-rejection.json",
+      "bytes": 4959,
+      "sha256": "d252880ea097c92eb2d3d5756e179b0b6fa7258eedcebda3fc87f52c77165d76"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/conserved-ce-failure-export/reversal-rejection.npz",
+      "bytes": 18087,
+      "sha256": "70e8c430dd8fcf2b9b7071e9ce05e934544db8a3d90369606b5ba1d2bc653f00"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/conserved-ce-failure-export/terminal-rejection.json",
+      "bytes": 4905,
+      "sha256": "aea1ca7f7fe9f6a98f8207f0875151f3524af9baa5dafe78e1fb36188f088b23"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/conserved-ce-failure-export/terminal-rejection.npz",
+      "bytes": 22006,
+      "sha256": "6061c9ca7f058f18dc92e53edebe16860d17c347bc3e2d72da4a33c9171d6ffc"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/conserved-ce-failure-export/test-execution.log",
+      "bytes": 1758,
+      "sha256": "7331720b5d04610553cb32d89697e9b90916e4a26ea49dc23e29d0efe051b8fe"
+    },
+    {
+      "path": "data/anatomical-arm-v1/review/conserved-ce-failure-export/test-summary.json",
+      "bytes": 3708,
+      "sha256": "dd05751e5f9b8cefc0876f957994008c88ad6bf5f1fbba0df05fb3fc5eb16a44"
+    }
+  ]
+}

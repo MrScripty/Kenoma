@@ -1,0 +1,105 @@
+{
+  "result": "PASS_INTENTIONAL_FAILURE_EXPORT_TESTS",
+  "scope": "Intentional diagnostic failures only, not physical model failures",
+  "originalExecutedCommit": "b21ee8c252d4160a367fa7b21a9adf8c57a1dcaf",
+  "protocolCommit": "09c1af7af095b163803d568b8203155efce40aa6",
+  "fixture": {
+    "R": 2.4,
+    "dx": 0.04,
+    "pCa": 4.5,
+    "delta": 0.001,
+    "h": 0.004
+  },
+  "sourceHashes": {
+    "tools/conserved_ce_trajectory.py": "58e29815607245d40168209cf7a009ed2630946614abaf900c64669450643920",
+    "tools/conserved_ce_trajectory_v2.py": "b3b4ed2a0a58a003b698d86aae2786365dffa3b15d903e0e08268d18d517d0ed",
+    "research/mechanical-closure/conserved-ce-failure-export-protocol.md": "31a9191bade7824fd09a19fbbff04950ad3ef7a98c952cfb5cb3ac3e94ebe9fe",
+    "tools/failureexporttest.py": "5f4a6faa074ef9e3b2852d0d05b90e053a3fc0403165a20dfa2adf49f499640b",
+    "tools/source_two_state_operator.py": "21d42a4af37d25f984843dc32db8ec2f9e6608b7c157e177feaaff951e520824"
+  },
+  "noRetries": true,
+  "noFullPacketRerun": true,
+  "tests": [
+    {
+      "name": "terminal",
+      "passed": true,
+      "expectedRejection": {
+        "type": "ValueError",
+        "message": "fixed-horizon terminal kinetic residual failed"
+      },
+      "counts": {
+        "operatorCalls": 250,
+        "injections": 1
+      },
+      "acceptedSteps": 249,
+      "lastAdmittedTimeSeconds": 0.996,
+      "matchedPrefixCount": 10,
+      "admittedLedgerChecks": {
+        "loading": {
+          "massError": 0.0,
+          "forceError": 1.0343288725511712e-16,
+          "energyError": 1.1297386637298956e-16
+        },
+        "reversal": {
+          "massError": 0.0,
+          "forceError": 1.3595895242968226e-16,
+          "energyError": 6.158268339717665e-17
+        }
+      },
+      "exportedAcceptedDiagnostics": {
+        "minimumPopulation": 3.2278935758890346e-17,
+        "maximumB": 0.4993451283063988,
+        "normalizedBEResidualMax": 4.542264385981256e-18
+      },
+      "jsonSHA256": "aea1ca7f7fe9f6a98f8207f0875151f3524af9baa5dafe78e1fb36188f088b23",
+      "npzSHA256": "6061c9ca7f058f18dc92e53edebe16860d17c347bc3e2d72da4a33c9171d6ffc"
+    },
+    {
+      "name": "reversal",
+      "passed": true,
+      "expectedRejection": {
+        "type": "ValueError",
+        "message": "transport moment/work/accounting gate failed"
+      },
+      "counts": {
+        "operatorCalls": 50,
+        "injections": 2
+      },
+      "acceptedSteps": 50,
+      "lastAdmittedTimeSeconds": 0.2,
+      "matchedPrefixCount": 7,
+      "admittedLedgerChecks": {
+        "loading": {
+          "massError": 0.0,
+          "forceError": 1.0343288725511712e-16,
+          "energyError": 1.1297386637298956e-16
+        }
+      },
+      "exportedAcceptedDiagnostics": {
+        "minimumPopulation": 3.2278935758890346e-17,
+        "maximumB": 0.49933662402187,
+        "normalizedBEResidualMax": 4.3070659777171805e-18
+      },
+      "jsonSHA256": "d252880ea097c92eb2d3d5756e179b0b6fa7258eedcebda3fc87f52c77165d76",
+      "npzSHA256": "70e8c430dd8fcf2b9b7071e9ce05e934544db8a3d90369606b5ba1d2bc653f00"
+    }
+  ],
+  "unexpectedFailures": [],
+  "staticEquationAndGateParity": {
+    "unchangedHelperASTs": [
+      "capacity",
+      "attachment",
+      "detachment",
+      "grid",
+      "validate",
+      "force",
+      "energy"
+    ],
+    "projectedShiftEquationAndGateASTIdentical": true,
+    "kineticStepAndRHSCallASTsIdentical": true,
+    "residualThresholdsIdentical": true,
+    "parametersAndEventTimesIdentical": true,
+    "changeScope": "Progress snapshots, export helper, phases, equivalent scalar terminal diagnostic and new output identity"
+  },
+  "sourceDiffSHA256": "e4a8021df878a85c1f0f7f3903ce45130905fae9428f0dabf697f278f234df36"
+}

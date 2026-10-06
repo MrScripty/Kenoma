@@ -1,0 +1,117 @@
+{
+  "result": "EXPECTED_INJECTED_DIAGNOSTIC_REJECTION",
+  "injectedFailure": true,
+  "physicalModelFailure": false,
+  "fixture": {
+    "R": 2.4,
+    "dx": 0.04,
+    "pCa": 4.5,
+    "delta": 0.001,
+    "h": 0.004
+  },
+  "N": 0.9999874357482508,
+  "sourceHashes": {
+    "tools/conserved_ce_trajectory.py": "58e29815607245d40168209cf7a009ed2630946614abaf900c64669450643920",
+    "tools/conserved_ce_trajectory_v2.py": "b3b4ed2a0a58a003b698d86aae2786365dffa3b15d903e0e08268d18d517d0ed",
+    "research/mechanical-closure/conserved-ce-failure-export-protocol.md": "31a9191bade7824fd09a19fbbff04950ad3ef7a98c952cfb5cb3ac3e94ebe9fe",
+    "tools/failureexporttest.py": "5f4a6faa074ef9e3b2852d0d05b90e053a3fc0403165a20dfa2adf49f499640b",
+    "tools/source_two_state_operator.py": "21d42a4af37d25f984843dc32db8ec2f9e6608b7c157e177feaaff951e520824"
+  },
+  "protocolCommit": "09c1af7af095b163803d568b8203155efce40aa6",
+  "cases": [],
+  "failures": [
+    {
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/Kenoma-refinement-diagnosis/education/tools/failureexporttest.py\", line 139, in test\n    runner.run_case(p0,N,x,F,g,FIXTURE['dx'],FIXTURE['delta'],FIXTURE['h'],progress)\n  File \"/workspace/Kenoma-refinement-diagnosis/education/tools/conserved_ce_trajectory_v2.py\", line 153, in run_case\n    raise ValueError('fixed-horizon terminal kinetic residual failed')\nValueError: fixed-horizon terminal kinetic residual failed\n",
+      "acceptedCompletedCases": 0,
+      "case": {
+        "R": 2.4,
+        "dx": 0.04,
+        "pCa": 4.5,
+        "delta": 0.001,
+        "h": 0.004
+      },
+      "lastAdmittedTimeSeconds": 0.996,
+      "phase": "terminal-candidate-residual",
+      "stateClockAdvancedOnRejection": false,
+      "progressDiagnostics": {
+        "acceptedTimeSeconds": 0.996,
+        "acceptedSteps": 249,
+        "phase": "terminal-candidate-residual",
+        "matchedTimesSeconds": [
+          0.0,
+          0.0,
+          0.008,
+          0.02,
+          0.04,
+          0.1,
+          0.2,
+          0.2,
+          0.3,
+          0.5
+        ],
+        "loading": {
+          "delta": 0.001,
+          "escapedMass": 4.438255812880464e-18,
+          "escapedDestinationCenter": 2.42,
+          "escapedNormalizedMoment": 3.035766976010237e-17,
+          "escapedNormalizedElasticEnergy": 5.1911615289775057e-17,
+          "fastHeldPopulationSlope": 0.99867324804374,
+          "forceIncrement": 0.0009986732480438132,
+          "discreteForcePrediction": 0.0009986732480437098,
+          "forceIdentityError": 1.0343288725511712e-16,
+          "energyChange": 0.001008286892521304,
+          "rigidTranslationWork": 0.00098881276418439,
+          "interpolationWork": 1.947412833685293e-05,
+          "discreteEnergyPrediction": 0.001008286892521191,
+          "energyIdentityError": 1.1297386637298956e-16,
+          "headAccountingError": 0.0
+        },
+        "reversal": {
+          "delta": -0.001,
+          "escapedMass": 8.276656213991924e-19,
+          "escapedDestinationCenter": -2.42,
+          "escapedNormalizedMoment": -2.350570364773706e-18,
+          "escapedNormalizedElasticEnergy": 1.6689049589893314e-18,
+          "fastHeldPopulationSlope": 0.9986729053997052,
+          "forceIncrement": -0.0009986729053995669,
+          "discreteForcePrediction": -0.0009986729053997028,
+          "forceIdentityError": 1.3595895242968226e-16,
+          "energyChange": -0.0009683448562085584,
+          "rigidTranslationWork": -0.0009878189778639126,
+          "interpolationWork": 1.947412165529425e-05,
+          "discreteEnergyPrediction": -0.00096834485620862,
+          "energyIdentityError": 6.158268339717665e-17,
+          "headAccountingError": 0.0
+        },
+        "candidateJumpLedger": null,
+        "allStepMinimumPopulation": 3.2278935758890346e-17,
+        "allStepMaximumB": 0.4993451283063988,
+        "allStepNormalizedBEResidualMax": 4.542264385981256e-18,
+        "initialKineticResidualL1PerSecond": 5.344131354920023e-15,
+        "candidateJumpEvent": null,
+        "attemptedStepIndex": 250,
+        "candidateTimeSeconds": 1.0,
+        "candidateNormalizedBEResidual": 3.0281762573102533e-18,
+        "terminalCandidateKineticResidualL1PerSecond": 1.0000875312993814e-06
+      },
+      "archivedArrays": {
+        "lastAdmittedState": "failedLastAdmittedState",
+        "matchedStates": "failedMatchedStates",
+        "candidateState": "failedCandidateState",
+        "operatorInputState": "failedOperatorInputState",
+        "loadingBeforeState": "loadingBeforeState",
+        "loadingAfterState": "loadingAfterState",
+        "reversalBeforeState": "reversalBeforeState",
+        "reversalAfterState": "reversalAfterState"
+      }
+    }
+  ],
+  "observedException": {
+    "type": "ValueError",
+    "message": "fixed-horizon terminal kinetic residual failed"
+  },
+  "counts": {
+    "operatorCalls": 250,
+    "injections": 1
+  }
+}

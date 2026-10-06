@@ -1,0 +1,20 @@
+{
+  "scope": "Root read-only metadata/whitespace verification; not numerical test execution",
+  "initialMetadataErrors": [
+    {
+      "type": "KeyError",
+      "message": "sha256",
+      "reason": "Reader assumed top-level hash mapping; manifest actually stores files list."
+    },
+    {
+      "type": "AttributeError",
+      "message": "'list' object has no attribute 'items'",
+      "reason": "Reader assumed files was a mapping; inspected actual schema before correction."
+    }
+  ],
+  "correctedReader": "education/tools/check_failure_export_evidence.py",
+  "correctedReaderResult": "PASS_FAILURE_EXPORT_EVIDENCE_CLOSURE",
+  "rawDiffWhitespaceCheck": "Complete unified diff retains required context prefixes including blank context lines. Source/document whitespace check excludes this exact raw diff artifact; diff bytes remain unchanged and hash-bound.",
+  "numericalTestsRerun": false,
+  "physicalGateOrBudgetChanged": false
+}

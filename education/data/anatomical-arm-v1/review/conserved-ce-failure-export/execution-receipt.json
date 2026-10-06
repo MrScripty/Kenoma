@@ -1,0 +1,15 @@
+{
+  "command": [
+    "python",
+    "education/tools/failureexporttest.py",
+    "--protocol-commit",
+    "09c1af7af095b163803d568b8203155efce40aa6"
+  ],
+  "environmentOverride": {
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "exitCode": 0,
+  "result": "PASS_INTENTIONAL_FAILURE_EXPORT_TESTS",
+  "provenance": "Exit code returned by the single exec_command call; no rerun",
+  "testSummarySHA256": "dd05751e5f9b8cefc0876f957994008c88ad6bf5f1fbba0df05fb3fc5eb16a44"
+}
