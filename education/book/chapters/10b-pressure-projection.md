@@ -6,25 +6,25 @@ A spatial solve uses finite samples and a finite representation. Before changing
 
 <div class="projection-interactive"><iframe title="Fixed-field weighted pressure projection controls" src="standalone/pressure-projection-lab.html" loading="lazy" style="width:100%;height:1900px;border:1px solid #bdc9cb"></iframe></div>
 
-The authored reference is g=(-3/4,1/4,-1/4,3/4), weights w=(1,3,2,2), and K=8. These are normalized numbers, not measured pressures, reference volumes or joules. Q1 uses one shared value; Q2 uses a separate value for each pair; Q4 represents every sample independently. With groups G, the weighted mean is
+The authored reference is g=(-3/4, 1/4, -1/4, 3/4), weights w=(1,3,2,2), and K=8. These are normalized numbers, not measured pressures, reference volumes or joules. Q1 uses one shared value; Q2 uses a separate value for each pair; Q4 represents every sample independently. With groups G, the weighted mean is
 
-\[
+$$
 (Pg)_i=\frac{\sum_{j\in G}w_jg_j}{\sum_{j\in G}w_j},\qquad r=g-Pg.
-\]
+$$
 
 ![Three prescribed sample vectors on a shared signed scale: g, Pg and g minus Pg. This is a discrete representation diagram, without body geometry.](assets/pressure-projection.svg)
 
 | Space | Pg | Residual r | Full energy | Condensed energy | Unresolved gap |
 |:--|:--|:--|--:|--:|--:|
-| One shared value | (1/8,1/8,1/8,1/8) | (-7/8,1/8,-3/8,5/8) | 8 | 1/2 | 15/2 |
-| Two group values | (0,0,1/4,1/4) | (-3/4,1/4,-1/2,1/2) | 8 | 1 | 7 |
-| Four sample values | g | (0,0,0,0) | 8 | 8 | 0 |
+| One shared value | (1/8, 1/8, 1/8, 1/8) | (-7/8, 1/8, -3/8, 5/8) | 8 | 1/2 | 15/2 |
+| Two group values | (0, 0, 1/4, 1/4) | (-3/4, 1/4, -1/2, 1/2) | 8 | 1 | 7 |
+| Four sample values | g | (0, 0, 0, 0) | 8 | 8 | 0 |
 
 The full, condensed and residual energies are respectively K/2 times the weighted squared norms of g, Pg and r. Every group has zero weighted residual sum, so r is orthogonal to every group-constant vector. Square completion of the objective
 
-\[
+$$
 L(p;g)=\langle p,g\rangle_W-\frac{\|p\|_W^2}{2K}
-\]
+$$
 
 shows that the unique maximizing sampled pressure vector is p*=KPg. Its attained value is the condensed energy. Weighted Pythagoras gives full minus condensed energy equal to residual energy. A larger nested space increases condensed energy at the **same g, weights and K**. It does not compare bodies re-equilibrated in different spaces.
 

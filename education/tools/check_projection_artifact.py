@@ -17,6 +17,8 @@ def check(out=None):
         generate(directory)
         assert digest(Path(directory)/'pressure-projection.svg') == digest(out/'assets/pressure-projection.svg'), 'Static projection vectors differ from the source-bound figure'
     read = lambda name: json.loads((out/name).read_text())
+    chapter = (out/'index.html').read_text().split('<h1 id="fixed-field-pressure-projection">', 1)[1].split('<h2 id="checked-finite-vector-statements">', 1)[0]
+    assert chapter.count('<math display="block"') == 2 and chapter.count('<mfrac>') >= 2, 'Projection equations must render as complete MathML fractions'
     r = read('projection-qa/integration.json')
     assert r['result'] == 'PASS_INTEGRATED_FIXED_FIELD_PROJECTION' and not r['errors']
     for field, path in [('manifest_sha256','build-manifest.json'), ('html_sha256','index.html'), ('lab_sha256','standalone/pressure-projection-lab.html'), ('standalone_receipt_sha256','projection-qa/receipt.json'), ('book_capture_sha256','projection-qa/book-controls.png')]:
