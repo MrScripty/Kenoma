@@ -6,6 +6,7 @@ from threading import Thread
 import json,os,shutil,subprocess
 import fitz
 from playwright.sync_api import sync_playwright
+from check_real_lesson_proofs import FAMILIES as REAL_FAMILIES
 ROOT=Path(__file__).resolve().parents[1]
 
 def repair_outline_titles(path,heading_titles):
@@ -41,10 +42,14 @@ def render():
             heading_titles=page.locator('h1,h2,h3,h4,h5,h6').all_text_contents()
             # PDF links must survive the print server's lifetime. Web downloads stay relative.
             revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
-            page.evaluate('''revision => {
+            real_destinations={}
+            for source_name,_,prefix,_ in REAL_FAMILIES:
+                real_destinations.update({'proofs/'+source_name:'#'+prefix+'-source-appendix',prefix+'-proof-status.json':'#'+prefix+'-proof-receipt',prefix+'-lean-check.txt':'#'+prefix+'-kernel-report'})
+            page.evaluate('''({revision,realDestinations}) => {
               const destinations={'proofs/Mechanics.lean':'#checked-source-appendix','proof-status.json':'#proof-check-receipt','lean-check.txt':'#kernel-dependency-report'};
               Object.assign(destinations,{'proofs/AnatomicalTransfer.lean':'#transfer-source-appendix','transfer-proof-status.json':'#transfer-proof-receipt','transfer-lean-check.txt':'#transfer-kernel-report','proofs/CoupledMechanics.lean':'#coupled-source-appendix','coupled-proof-status.json':'#coupled-proof-receipt','coupled-lean-check.txt':'#coupled-kernel-report','proofs/AnatomicalArm.lean':'#arm-source-appendix','arm-proof-status.json':'#arm-proof-receipt','arm-lean-check.txt':'#arm-kernel-report','proofs/ContinuumProperties.lean':'#property-source-appendix','property-proof-status.json':'#property-proof-receipt','property-lean-check.txt':'#property-kernel-report'});
               Object.assign(destinations,{'proofs/MaterialResponse.lean':'#material-source-appendix','material-proof-status.json':'#material-proof-receipt','material-lean-check.txt':'#material-kernel-report'});
+              Object.assign(destinations,realDestinations);
               for(const link of document.querySelectorAll('a[href]')){
                 const href=link.getAttribute('href'),target=destinations[href];
                 if(target)link.setAttribute('href',target);
@@ -55,7 +60,7 @@ def render():
                   link.textContent='Reproduce this research preview from the pinned repository instructions';
                 }
               }
-            }''',revision)
+            }''',{'revision':revision,'realDestinations':real_destinations})
             page.pdf(path=str(ROOT/'dist/kenoma-mechanics.pdf'),format='A4',print_background=True,
               display_header_footer=True,header_template='<span></span>',
               footer_template='<div style="font-family:Arial;font-size:9px;width:100%;padding:0 18mm;color:#456171;display:flex;justify-content:space-between"><span>Kenoma · Mechanics of Moving Bodies · Spatial mechanics and evidence</span><span class="pageNumber"></span></div>',

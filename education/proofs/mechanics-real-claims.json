@@ -1,0 +1,26 @@
+[
+  {
+    "id": "force-real-pair",
+    "theorem": "Kenoma.MechanicsReal.force_pair_cancels",
+    "claim": "An assumed real equal-and-opposite force pair cancels",
+    "assumptions": "One real force component and its assumed equal-and-opposite partner.",
+    "limitations": "Does not prove an interface follows an action-reaction or constitutive law.",
+    "implementation": "web/mechanics.mjs: force bookkeeping."
+  },
+  {
+    "id": "torque-real-linearity",
+    "theorem": "Kenoma.MechanicsReal.torque_linear",
+    "claim": "Real planar torque is additive in applied force at a fixed point",
+    "assumptions": "Real planar point coordinates; two real applied forces share that application point and torque origin.",
+    "limitations": "No geometric differentiation or floating-point equivalence.",
+    "implementation": "web/mechanics.mjs: planar torque."
+  },
+  {
+    "id": "virtual-real-power",
+    "theorem": "Kenoma.MechanicsReal.virtual_power_identity",
+    "claim": "Real signed power products associate under an assumed path-rate/moment relation",
+    "assumptions": "Real force, path derivative and angular velocity; signed force/moment and path-rate associations assumed.",
+    "limitations": "Does not derive the path derivative, continuous work balance or numerical work.",
+    "implementation": "web/elbow.mjs: active signed power."
+  }
+]

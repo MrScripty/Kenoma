@@ -32,6 +32,10 @@ For one scalar component, a pair $f$ and $-f$ sums to zero. That identity is eno
 
 {{proof:force-pair}}
 
+The same assumed cancellation also holds for real force components, without introducing an integer SI scale:
+
+{{proof:force-real-pair}}
+
 ## Work offers a second calculation
 
 A constant horizontal force does work $W=F_x\Delta x$. Starting from rest, the kinetic energy is $K=\tfrac12 m v_x^2$. Substituting the analytic solution gives $W=K$ in this ideal isolated horizontal model. For 4 N over 4 m, both are 16 J.

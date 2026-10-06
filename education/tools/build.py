@@ -8,6 +8,7 @@ from check_coupled_proofs import check as check_coupled
 from check_arm_proofs import check as check_arm
 from check_property_proofs import check as check_properties
 from check_material_proofs import check as check_material
+from check_real_lesson_proofs import check as check_real_lessons, FAMILIES as REAL_FAMILIES
 from property_labs import block as property_block
 from figures import generate
 from evidence_figures import generate as evidence_figures
@@ -100,6 +101,7 @@ def build():
     arm=check_arm()
     properties=check_properties()
     material=check_material()
+    real_lessons=check_real_lessons(properties)
     data=ROOT/'data/elbow-v1'
     subprocess.run(['python3',str(data/'scripts/validate_package.py')],check=True)
     continuum=ROOT/'contributions/continuum_reference'
@@ -115,10 +117,12 @@ def build():
       (arm,(ROOT/'proofs/AnatomicalArm.lean').read_text(),'arm-proof-status.json','arm-lean-check.txt','arm-source-appendix','arm-proof-receipt','arm-kernel-report'),
       (properties,(ROOT/'proofs/ContinuumProperties.lean').read_text(),'property-proof-status.json','property-lean-check.txt','property-source-appendix','property-proof-receipt','property-kernel-report'),
       (material,(ROOT/'proofs/MaterialResponse.lean').read_text(),'material-proof-status.json','material-lean-check.txt','material-source-appendix','material-proof-receipt','material-kernel-report')]
+    for receipt,(source_name,_,prefix,_) in zip(real_lessons,REAL_FAMILIES):
+        bundles.append((receipt,(ROOT/'proofs'/source_name).read_text(),prefix+'-proof-status.json',prefix+'-lean-check.txt',prefix+'-source-appendix',prefix+'-proof-receipt',prefix+'-kernel-report'))
     claim_bundles={c['id']:b for b in bundles for c in b[0]['claims']}
     for receipt,checked_source,receipt_path,transcript_path,*_ in bundles[1:]:
         (OUT/receipt_path).write_text(json.dumps(receipt,indent=2)+'\n')
-        if receipt is properties or receipt is material:continue  # Fresh checkers already wrote their transcripts here.
+        if receipt is properties or receipt is material or any(receipt is r for r in real_lessons):continue  # Fresh checkers already wrote their transcripts here.
         original={id(transfer):'lean-check.txt',id(coupled):'coupled-lean-check.txt',id(arm):'arm-lean-check.txt'}[id(receipt)]
         shutil.copy(ROOT/'data/anatomical-arm-v1/audit'/original,OUT/transcript_path)
     def dependency_description(receipt):
@@ -237,6 +241,8 @@ def build():
     subprocess.run([str(ROOT/'node_modules/.bin/esbuild'),str(ROOT/'web/app.mjs'),'--bundle','--minify','--format=esm','--target=es2022',f'--outfile={assets/"app.js"}','--legal-comments=external'],check=True)
     proofs=OUT/'proofs';proofs.mkdir(exist_ok=True)
     for file in ['Mechanics.lean','AnatomicalTransfer.lean','CoupledMechanics.lean','AnatomicalArm.lean','anatomical-claims.json','coupled-claims.json','arm-claims.json','ContinuumProperties.lean','property-claims.json','MaterialResponse.lean','material-claims.json','mathlib-lock.json','lean-toolchain','claims.json']:shutil.copy(ROOT/'proofs'/file,proofs/file)
+    for source_name,map_name,_,_ in REAL_FAMILIES:
+        for file in [source_name,map_name]:shutil.copy(ROOT/'proofs'/file,proofs/file)
     subprocess.run(['node',str(ROOT/'tools/build-anatomy-inspector.mjs')],check=True)
     subprocess.run(['node',str(ROOT/'tools/build-coupled-inspector.mjs')],check=True)
     subprocess.run(['node',str(ROOT/'tools/build-anatomical-arm-inspector.mjs')],check=True)

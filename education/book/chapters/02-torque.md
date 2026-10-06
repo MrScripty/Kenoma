@@ -40,6 +40,10 @@ Two forces at the same point contribute torques that add. We can either add thei
 
 {{proof:torque-linearity}}
 
+For the real quantities in the stated cross product, the corresponding identity is checked separately:
+
+{{proof:torque-real-linearity}}
+
 It is unsafe to add torques computed around different origins without transforming them. If the new origin is at $\mathbf o$ relative to the old one, the position becomes $\mathbf r-\mathbf o$, and:
 
 $$

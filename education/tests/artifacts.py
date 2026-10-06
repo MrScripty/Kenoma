@@ -8,6 +8,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
 from recorded_inputs import recorded_input_matches
 from check_endpoint_warning_audit import check as check_endpoint_warning_audit
 from check_material_artifact import check as check_material_artifact
+from check_real_lesson_proofs import FAMILIES as REAL_FAMILIES
 ROOT=Path(__file__).resolve().parents[1];out=ROOT/'dist'
 proof=json.loads((out/'proof-status.json').read_text())
 assert proof['source_sha256']==hashlib.sha256((ROOT/'proofs/Mechanics.lean').read_bytes()).hexdigest()
@@ -20,6 +21,14 @@ for receipt_name,source_name,claims_name,prefix,count in [('transfer-proof-statu
  assert receipt['source_sha256']==hashlib.sha256((ROOT/'proofs'/source_name).read_bytes()).hexdigest()
  assert receipt['claims_sha256']==hashlib.sha256((ROOT/'proofs'/claims_name).read_bytes()).hexdigest()
  assert len(receipt['claims'])==count and all(c['status']=='checked' for c in receipt['claims'])
+ assert all(set(c['axioms'])<={'propext','Quot.sound','Classical.choice'} for c in receipt['claims'])
+ families.append((receipt,prefix+'-source-appendix',prefix+'-proof-receipt',prefix+'-kernel-report'))
+for source_name,map_name,prefix,count in REAL_FAMILIES:
+ receipt=json.loads((out/(prefix+'-proof-status.json')).read_text())
+ assert receipt['source_sha256']==hashlib.sha256((ROOT/'proofs'/source_name).read_bytes()).hexdigest()
+ assert receipt['claims_sha256']==hashlib.sha256((ROOT/'proofs'/map_name).read_bytes()).hexdigest()
+ assert len(receipt['claims'])==count and all(c['status']=='checked' for c in receipt['claims'])
+ assert receipt['mathlib']==json.loads((ROOT/'proofs/mathlib-lock.json').read_text())
  assert all(set(c['axioms'])<={'propext','Quot.sound','Classical.choice'} for c in receipt['claims'])
  families.append((receipt,prefix+'-source-appendix',prefix+'-proof-receipt',prefix+'-kernel-report'))
 total_claims=sum(len(r['claims']) for r,*_ in families)

@@ -18,7 +18,7 @@ def check(destination):
         browser=p.chromium.launch(headless=True,executable_path=os.environ.get('CHROMIUM_EXECUTABLE') or shutil.which('chromium'))
         page=browser.new_page(viewport={'width':1200,'height':1000});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
         page.goto(f'http://127.0.0.1:{server.server_port}/index.html',wait_until='networkidle')
-        assert page.locator('[data-property]').count()==3
+        assert page.locator('[data-property]').count()==(3 if preview_mode else 4)
         expected_proofs=0 if preview_mode else sum(len(json.loads((out/name).read_text())['claims']) for name in json.loads((out/manifest_name).read_text())['proof_families'])
         assert page.locator('.proof-card').count()==expected_proofs
         if not preview_mode:
@@ -29,6 +29,15 @@ def check(destination):
             expect(page.locator('#proof-volume-isochoric-sqrt pre').first).to_contain_text('0 < lambda')
             expect(page.locator('#proof-volume-isochoric-sqrt pre').first).to_contain_text('Real.sqrt')
             checks.append('Four actual real proof cards retain positive-stretch assumptions and pinned mathlib metadata')
+            for name in ['material-real-proof-status.json','mechanics-real-proof-status.json']:
+                receipt=json.loads((out/name).read_text())
+                for claim in receipt['claims']:
+                    card=page.locator('#proof-'+claim['id'])
+                    expect(card.locator('.proof-meta')).to_contain_text(receipt['source_sha256'])
+                    expect(card.locator('.proof-meta')).to_contain_text('pinned mathlib v4.19.0')
+                    expect(card.locator('pre').first).to_contain_text('ℝ')
+                    expect(card).to_contain_text(claim['limitations'])
+            checks.append('Eight additional actual Real cards bind compiled sources and retain explicit assumptions and limits')
         def state(lab):
             lab.locator('[data-action=copy]').click();return json.loads(lab.locator('.preset').input_value())
         deformation=page.locator('[data-property=deformation]');before=state(deformation)

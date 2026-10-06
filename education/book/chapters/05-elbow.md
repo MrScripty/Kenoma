@@ -28,7 +28,9 @@ The path transmits tension toward its origin. Taking the cross product of insert
 
 {{proof:virtual-power}}
 
-This exact-integer proof checks the multiplication and sign contract once the derivative and rate relations are supplied. It does not prove the trigonometric derivative or its JavaScript implementation. That limitation is why the separate geometric checks remain necessary.
+This exact-integer proof checks the multiplication and sign contract once the derivative and rate relations are supplied. It does not prove the trigonometric derivative or its JavaScript implementation. The corresponding real product identity below retains those supplied geometric assumptions. The separate geometric checks remain necessary.
+
+{{proof:virtual-real-power}}
 
 ## Excitation, activation, and force are different states
 

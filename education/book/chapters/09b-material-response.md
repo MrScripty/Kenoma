@@ -73,23 +73,33 @@ Restore $K=50000$ Pa and raise only $\mu$ to 5000 Pa. Read the force, lateral ex
 
 Finally restore $h=1$: $b=1$, $J=1$, energy and force return to zero. This model has no history or irreversible state, so it cannot demonstrate plastic deformation or dissipative load/hold/release. Reset deliberately restores all authored defaults.
 
-## Real properties: derivations and unfinished formal obligations
+## Real properties: checked algebra and unfinished formal obligations
 
-The specimen uses **real** stretches, stresses and energies. Its real-domain formal verification is **unfinished**. The integer contracts below do not discharge any of these real obligations, even when their algebra resembles a real formula. The derivations and numerical evidence remain independently useful.
+The specimen uses **real** stretches, stresses and energies. Five real-domain algebra claims below are compiled against the pinned mathlib dependencies before this book is built. Constitutive derivatives and equilibrium existence, uniqueness and optimality remain **unfinished**. The separate integer contracts do not substitute for these real claims or their remaining obligations.
 
 | Real claim and assumptions | Derivation in this lesson | Real formal status |
 |:--|:--|:--|
-| $b=1$, $0<h<1$ imply $0<J=h<1$ | Substitute into $J=b^2h$ | Unfinished for this constrained specimen |
-| $V_0>0$, $K\geq0$ imply $V_0K(J-1)^2/2\geq0$; for $K>0$ it vanishes exactly at $J=1$ | A real square is nonnegative; a product with positive factors vanishes only when the square does | Unfinished |
-| $g>0$ and $Rg=0$ imply $R=0$ | Divide the assumed complementarity equation by nonzero real $g$ | Unfinished; complementarity is an assumption, not a solver certificate |
+| $b=1$, $0<h<1$ imply $0<J=h<1$ | Substitute into $J=b^2h$ | Checked real substitution |
+| $V_0>0$, $K\geq0$ imply $V_0K(J-1)^2/2\geq0$; for $K>0$ it vanishes exactly at $J=1$ | A real square is nonnegative; a product with positive factors vanishes only when the square does | Checked real bulk algebra |
+| $g>0$ and $Rg=0$ imply $R=0$ | Divide the assumed complementarity equation by nonzero real $g$ | Checked real implication; complementarity is assumed, not certified |
 | $dU/db=2V_0P_x$, $dU/dh=V_0P_y$ for positive stretches | Differentiate the stated energy with $dJ/db=2bh$ and $dJ/dh=b^2$ | Unfinished; real powers and derivatives need formal support |
-| Lateral virtual work factors as $2V_0(P_x+R)\delta b$ | Add the two equal lateral stress and wall contributions | Unfinished; does not establish equilibrium |
+| Lateral virtual work factors as $2V_0(P_x+R)\delta b$ | Add the two equal lateral stress and wall contributions | Checked real factorization; does not establish equilibrium |
+
+{{proof:material-real-confined-volume}}
+
+{{proof:material-real-bulk-sign}}
+
+{{proof:material-real-bulk-zero}}
+
+{{proof:material-real-separated-wall}}
+
+{{proof:material-real-lateral-work}}
 
 The earlier real determinant and square-root identities support the kinematic volume formula. They do not prove this constitutive law, wall solution, equilibrium existence/uniqueness or global optimality. A release build must compile any future real-domain claim with its supported pinned dependencies before presenting it as checked.
 
 ## Discrete arithmetic contracts and separate numerical evidence
 
-The five declarations below are freshly compiled with pinned Lean 4.19.0 and bundled Std. They concern **exact scaled integers**, with positive external SI scaling factors. These are separate implementation arithmetic checks; real stretches, stresses and energies are not their quantified domain. The real obligations above remain unfinished.
+The five declarations below are freshly compiled with pinned Lean 4.19.0 and bundled Std. They concern **exact scaled integers**, with positive external SI scaling factors. These are separate implementation arithmetic checks; real stretches, stresses and energies are not their quantified domain. The unfinished derivative and equilibrium obligations above remain separate.
 
 {{proof:material-confined-volume}}
 
