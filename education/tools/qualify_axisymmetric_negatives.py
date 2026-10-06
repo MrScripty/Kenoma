@@ -7,10 +7,11 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def qualify(out,proof,oracle,experiment):
     out.mkdir(parents=True,exist_ok=False);records=[]
     changes=[('renderer-radius','web/axisymmetric-lab.mjs','[v[2],v[0],v[1]]','[v[2],1.05*v[0],1.05*v[1]]','Actual displayed vertex from independent Q2 map'),('worker-reaction','web/axisymmetric-worker.mjs','self.postMessage({sequence,configuration:c,state,boundary,surfaceJ,trace});','state.diagnostics.rightReactionN+=.01;self.postMessage({sequence,configuration:c,state,boundary,surfaceJ,trace});','Actual browser/offline rightReactionN')]
-    inputs={n:sha(ROOT/n) for n in INPUTS+['tests/axisymmetric_browser.py','tools/qualify_axisymmetric_negatives.py']}
+    copied=INPUTS+['tests/axisymmetric_browser.py','tools/qualify_axisymmetric_material.py','tools/axisymmetric-experiment.mjs']
+    inputs={n:sha(ROOT/n) for n in copied+['tools/qualify_axisymmetric_negatives.py']}
     for name,source,needle,replacement,expected in changes:
         case=out/name;root=case/'copy';root.mkdir(parents=True)
-        for n in INPUTS+['tests/axisymmetric_browser.py']:
+        for n in copied:
             target=root/n;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(ROOT/n,target)
         (root/'node_modules').symlink_to(ROOT/'node_modules',target_is_directory=True)
         # Builder records the actual focused branch head using the original read-only .git pointer.
