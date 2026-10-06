@@ -46,7 +46,7 @@ Every RK/ODE stage checks finite state, a within source bounds (roundoff allowan
 
 ## Numerical and work acceptance
 
-Primary RK4 uses fixed .0002/.0001 s step pairs, split at scheduled/detected events. Independent DOP853 and Radau use rtol=1e−9, atol=1e−11, maximum step .0005 s, and preserve their own last accepted states on failed intermediate trials. Compare common accepted time histories only; terminal failure locations are bounded by retained/failed times and not claimed as exact event solutions.
+Primary RK4 uses fixed .0002/.0001 s step pairs, split at scheduled/detected events and the declared .001 s output grid. Independent DOP853 and Radau use rtol=1e−9, atol=1e−11, maximum step .0005 s, and preserve their own last accepted states on failed intermediate trials. Compare common accepted time histories only; terminal failure locations are bounded by retained/failed times and not claimed as exact event solutions.
 
 Predeclared gates: curve values <=2e−12 and derivatives <=2e−8 against frozen native kernels; algebraic force residual <=1e−7 N; matched-time RK refinement/independent replay errors <=1e−6 m y, <=1e−5 m/s w, <=2e−6 a/q, <=1e−4 N FT. Located brake event differences <=2e−6 s. Independent momentum impulse error <=1e−7 N*s. Component passive-storage, load kinetic+potential work, and combined ledger errors each <=1e−5 J. Do not relax gates after results; preserve all failed checks. The source reconstruction and event logic must be tested in the browser, not merely screenshot-tested.
 
