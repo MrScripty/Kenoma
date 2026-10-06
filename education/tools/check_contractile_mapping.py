@@ -20,7 +20,7 @@ by={f['path']:f for f in tree['files']}
 assert by[facts['path']]['gitBlobSHA']==facts['git_blob_sha']
 assert by[facts['path']]['bytes']==facts['bytes']==460311
 for f in pin['files']:
-    if f['bytes'] is not None:
+    if f.get('bytes') is not None:
         assert by[f['path']]['gitBlobSHA']==f['gitBlobSHA']
 assert facts['redparms']['lce0']==0 and facts['redparms']['Fscale']==2
 assert facts['redparms']['gamma']==130 and facts['additional_newparms']['h']==1.2e-8
@@ -34,6 +34,10 @@ assert not v['verifiedPixelFiles'] and v['localOriginalPDFPath'] is None
 bridge=json.loads((OUT/'symbolic-bridge.json').read_text())
 assert bridge['result']=='PASS_SYMBOLIC_DIMENSIONAL_AND_SERIES_BRIDGE'
 assert sha(ROOT/'tools/contractile_dimensional_bridge.py')==bridge['sourceSHA256']
+failure=json.loads((OUT/'checker-first-failure-receipt.json').read_text())
+original=subprocess.check_output(['git','show',failure['sourceCommit']+':'+failure['sourceFile']],cwd=ROOT)
+assert hashlib.sha256(original).hexdigest()==failure['sourceSHA256']
+assert sha(OUT/'closeout-first-checker-failure.log')==failure['failureLogSHA256']
 for name in ['source-code-initialization-audit.md','dimensional-contractile-mapping.md']:
     b=(ROOT/'research/mechanical-closure'/name).read_bytes()
     assert b'\r' not in b,name
