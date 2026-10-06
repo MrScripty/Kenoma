@@ -6,6 +6,8 @@ from threading import Thread
 import hashlib,json,os,shutil,subprocess,sys
 from playwright.sync_api import sync_playwright,expect
 ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'tools'))
+from check_real_lesson_proofs import FAMILIES as REAL_FAMILIES
 def check(destination):
     out=Path(destination).resolve();qa=out/'qa';qa.mkdir(exist_ok=True)
     class Quiet(SimpleHTTPRequestHandler):
@@ -29,15 +31,18 @@ def check(destination):
             expect(page.locator('#proof-volume-isochoric-sqrt pre').first).to_contain_text('0 < lambda')
             expect(page.locator('#proof-volume-isochoric-sqrt pre').first).to_contain_text('Real.sqrt')
             checks.append('Four actual real proof cards retain positive-stretch assumptions and pinned mathlib metadata')
-            for name in ['material-real-proof-status.json','mechanics-real-proof-status.json']:
+            real_card_count=0
+            for _,_,prefix,_ in REAL_FAMILIES:
+                name=prefix+'-proof-status.json'
                 receipt=json.loads((out/name).read_text())
+                real_card_count+=len(receipt['claims'])
                 for claim in receipt['claims']:
                     card=page.locator('#proof-'+claim['id'])
                     expect(card.locator('.proof-meta')).to_contain_text(receipt['source_sha256'])
                     expect(card.locator('.proof-meta')).to_contain_text('pinned mathlib v4.19.0')
                     expect(card.locator('pre').first).to_contain_text('ℝ')
                     expect(card).to_contain_text(claim['limitations'])
-            checks.append('Eight additional actual Real cards bind compiled sources and retain explicit assumptions and limits')
+            checks.append(f'{real_card_count} additional actual Real cards bind compiled sources and retain explicit assumptions and limits')
         def state(lab):
             lab.locator('[data-action=copy]').click();return json.loads(lab.locator('.preset').input_value())
         deformation=page.locator('[data-property=deformation]');before=state(deformation)
