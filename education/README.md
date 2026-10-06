@@ -6,6 +6,8 @@ The published spatial teaching lab uses a one-way quasistatic line actuator and 
 
 ## Build and read
 
+The reading order is defined by `book/book.json`, rather than filename numbering. Force, torque and energy now lead into the three property lessons: prescribed deformation measurements, imposed volume preservation and nonuniform axial strain. Anatomy and actuation follow; material energy, contact and spatial solvers build on those measurements later. The property chapter's retained filename is `09a-properties.md`; its stable heading links continue to resolve. Its isochoric geometry is not a material solve, and its axial bar does not determine transverse muscle deformation.
+
 Prerequisites: Node 22 or later, Python 3.12, Pandoc (tested 3.1.11.1), and pinned Lean 4.19.0. The local milestone used Node 24.19.0; CI selects Node 22; the reviewed foundation passed remotely, and the articulated-elbow descendant passed its own exact-head workflow; each new apparatus revision requires its own workflow check. A Linux x86_64 installer downloads the official Lean archive and checks its recorded SHA-256. For another platform, use the official Lean release matching `proofs/lean-toolchain`.
 
 ```bash

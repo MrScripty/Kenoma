@@ -7,6 +7,8 @@ The original requested subjects appear below with their working example, evidenc
 | Force, coordinates and units | Force; Lab 1 | Analytic motion; exact pair cancellation | Constant planar net force |
 | Skeleton, torque and rigid dynamics | Torque; Labs 2, 4 | Exact torque example; moment-arm derivative, energy/timestep tests | One fixed upper segment and hinge |
 | Energy and numerical accuracy | Energy; Lab 3 | Three integrators against analytic oscillator | Ideal linear spring |
+| Deformation, volume and area measurements | Early property labs 1–2 | Independent boundary volume and area × length; real kinematic identities | Prescribed geometry; no material equilibrium |
+| Nonuniform axial strain | Early property lab 3 | Logarithmic compliance oracle, midpoint refinement and fixed-end compatibility | Input area profile; no transverse equilibrium or full muscle law |
 | Active contraction and release | Elbow; Labs 4, 5, 7 | Continuous activation, lift/release traces; line fibre and spatial spans | Authored activation and force laws; no measured velocity law |
 | Passive stretching and tendon | Tendon/tissue; Labs 5, 7 | Series equilibrium, storage/work and spatial span diagnostics | Scalar tension-only tendon and separately labeled bilateral spatial span |
 | Anatomical/medical data | Anatomy and actual-data viewer | Primary architecture/indentation sources; 992 licensed-data checks | Static atlas, normalized trial and model parameters stay independent |

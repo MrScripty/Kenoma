@@ -50,6 +50,8 @@ The moment arm r = −dl/dq therefore still transmits τ_MT = r F_T, once. There
 
 ## A small continuum ansatz with an explicit material law
 
+Compare this step with [prescribed isochoric kinematics](#exact-isochoric-kinematics): that lesson sets a transverse stretch to make $J=1$. Here the plate gap supplies one deformation constraint, while the material energy and free-side condition determine lateral expansion. Near-volume preservation is a result to measure, not a square-root motion rule imposed on the block. This homogeneous ansatz still cannot describe nonuniform three-dimensional muscle or layer motion.
+
 The tissue proxy is one homogeneous block, reference width W = 0.08 m, height H = 0.06 m and depth D = 0.05 m. It deforms affinely with F = R(q/2) diag(t,h,t), where t is free lateral stretch and h is compression stretch. This is a **reduced continuum ansatz**, not a six-edge spring network, a tetrahedral FEM mesh, or a full arm tissue solve. Its homogeneous strain cannot describe folds, heterogeneous stress or local sliding. The rigid rotation R changes neither the following invariants nor energy.
 
 Define J = t²h, I₁ = 2t² + h² and V₀ = WHD. The chosen hyperelastic energy is

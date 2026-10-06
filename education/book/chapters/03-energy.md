@@ -72,3 +72,5 @@ With a nonnegative exact integer mass, the numerator $m(v_x^2+v_y^2)$ is nonnega
 ## Approximation boundary
 
 The spring is linear at all extensions, including compression, and has no tensile-only constraint. It is therefore not a tendon model. An active muscle adds energy through a contraction law; a dissipative tissue removes energy; contact may exchange or dissipate energy. Before interpreting their energy residuals, include those terms and define the model's system boundary.
+
+Before adding those material mechanisms, continue to [the three property lessons](#measure-deformation-before-choosing-a-muscle-law). They measure an imposed shape, construct constant-volume kinematics, and calculate nonuniform strain with one declared axial law. This separates geometric observations from the force and energy models that will later produce them.
