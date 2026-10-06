@@ -1,0 +1,127 @@
+{
+  "status": "PASS_SERIAL_UI_BROWSER_AND_ARTIFACT_LANE",
+  "source_revision": "6be928ef034c8e31217cb1ff28f859f328f3dc43",
+  "build_manifest_sha256": "ab3853318e6914419e9819baa49e54d48d45df95a9b403ffff988891e2f21a6b",
+  "current_input_hashes_verified": 887,
+  "receipts": [
+    {
+      "directory": "/workspace/kenoma-serial-specimen/education/dist/serial-qa",
+      "status": "PASS",
+      "receipt_sha256": "9c8467e29ee692912ca4ebf6856b49701a32bc7e4f4e0f771839661e54e1b936",
+      "positive_outputs": 14,
+      "negative_controls": [],
+      "all_source_and_output_hashes_match": true
+    },
+    {
+      "directory": "/workspace/kenoma-serial-standalone-6be",
+      "status": "PASS",
+      "receipt_sha256": "99f08a01df773447fdfec65131c485d5e981a7544999676fceef547b7ce14986",
+      "positive_outputs": 14,
+      "negative_controls": [
+        {
+          "case": "nominal-current-area",
+          "detected": true,
+          "reason": "('Independent cubic Newton root', 1.0873803730028906, 1.0798303899015298)",
+          "module": "web/serial-specimen.mjs",
+          "original_module_sha256": "56391812f3d79a11f2840e13ca8dfaf6462459dae9826bcca1deb9208265b3ab",
+          "module_sha256": "b4c81ea8747196cdb53fca88be66887166ed9a42d8859db792d6e20e80c34d6c",
+          "delivered_input_sha256": {
+            "assets/serial-app.js": "4c577864edc616e28ab078b6f78be9aa271417dcf5ad80a4f472ad60f58e833a",
+            "assets/serial-lab.css": "689f5f797e22a216fdedcf4f99a4380bda44ac0f5ddfd453b45abe2b676dd4bf",
+            "assets/style.css": "21121cbc61dc1256527f94f8fd66867f74d93c878394e5e5d2c986f4366b7844",
+            "index.html": "1ff878c1f224eb0b40e7a16c96f9e35e9077cb984bffd0b79a0a0474110ec07b",
+            "web/continuum-properties.mjs": "dafe703db471ec9de460b316dde9b56b5c16cedca720b1c48b2fba29c24d8988",
+            "web/scene-status.mjs": "1719e9dba0573423ba6be04f609950efa3303d2a75800be7ec9c38df8606b8cb",
+            "web/serial-lab.mjs": "d5fc8d8aa3ed1ec392b94d1dfeb1ff4f212241245463b8a638a9f2d0e689a411",
+            "web/serial-specimen.mjs": "b4c81ea8747196cdb53fca88be66887166ed9a42d8859db792d6e20e80c34d6c"
+          },
+          "output_sha256": {
+            "negative-controls/nominal-current-area/delivered-serial-app.js": "4c577864edc616e28ab078b6f78be9aa271417dcf5ad80a4f472ad60f58e833a",
+            "negative-controls/nominal-current-area/serial-specimen.mjs": "b4c81ea8747196cdb53fca88be66887166ed9a42d8859db792d6e20e80c34d6c"
+          }
+        },
+        {
+          "case": "display-lateral-volume",
+          "detected": true,
+          "reason": "('Actual rendered vertex block 0 0/1', -0.009167386218905449, -0.008333987770364865)",
+          "module": "web/serial-lab.mjs",
+          "original_module_sha256": "d5fc8d8aa3ed1ec392b94d1dfeb1ff4f212241245463b8a638a9f2d0e689a411",
+          "module_sha256": "026afeebb802e71207ecabc6d19026958dd0e09abdcdc0c27c9169924435676a",
+          "delivered_input_sha256": {
+            "assets/serial-app.js": "87e7cfc3819befad07c14074afde46af498d6dee6e546e9481b1b1b020bde422",
+            "assets/serial-lab.css": "689f5f797e22a216fdedcf4f99a4380bda44ac0f5ddfd453b45abe2b676dd4bf",
+            "assets/style.css": "21121cbc61dc1256527f94f8fd66867f74d93c878394e5e5d2c986f4366b7844",
+            "index.html": "1ff878c1f224eb0b40e7a16c96f9e35e9077cb984bffd0b79a0a0474110ec07b",
+            "web/continuum-properties.mjs": "dafe703db471ec9de460b316dde9b56b5c16cedca720b1c48b2fba29c24d8988",
+            "web/scene-status.mjs": "1719e9dba0573423ba6be04f609950efa3303d2a75800be7ec9c38df8606b8cb",
+            "web/serial-lab.mjs": "026afeebb802e71207ecabc6d19026958dd0e09abdcdc0c27c9169924435676a",
+            "web/serial-specimen.mjs": "56391812f3d79a11f2840e13ca8dfaf6462459dae9826bcca1deb9208265b3ab"
+          },
+          "output_sha256": {
+            "negative-controls/display-lateral-volume/delivered-serial-app.js": "87e7cfc3819befad07c14074afde46af498d6dee6e546e9481b1b1b020bde422",
+            "negative-controls/display-lateral-volume/serial-lab.mjs": "026afeebb802e71207ecabc6d19026958dd0e09abdcdc0c27c9169924435676a"
+          }
+        }
+      ],
+      "all_source_and_output_hashes_match": true
+    }
+  ],
+  "checker_sha256": {
+    "tests/serial_browser.py": "1d9bc8735d32c58b1c5ba4d3b85d67fb139c7bb39bf4dc87455ae045aa3e50c5",
+    "tools/check_serial_artifact.py": "9e1aa5458b086363a6b35551405af79c3d73d5ce7d48e71c8a193ad5bcae39bc",
+    "tools/qualify_serial_negatives.py": "6cc21e05113cf32d79f8d539416b28a3b834daea075caee89b787ac67b2d0f66"
+  },
+  "checkers_match_committed_source": true,
+  "artifact_controls": {
+    "result": "PASS_SIX_DAMAGED_SERIAL_ARTIFACT_CONTROLS",
+    "source_manifest_sha256": "ab3853318e6914419e9819baa49e54d48d45df95a9b403ffff988891e2f21a6b",
+    "checker_sha256": "9e1aa5458b086363a6b35551405af79c3d73d5ce7d48e71c8a193ad5bcae39bc",
+    "qualifier_sha256": "6cc21e05113cf32d79f8d539416b28a3b834daea075caee89b787ac67b2d0f66",
+    "original_unchanged": true,
+    "cases": [
+      {
+        "case": "missing-browser-receipt",
+        "detected": true,
+        "reason": "[Errno 2] No such file or directory: '/workspace/kenoma-serial-specimen/education/.artifact-tmp/tmpq7coup3i/serial-qa/receipt.json'"
+      },
+      {
+        "case": "stale-manifest-binding",
+        "detected": true,
+        "reason": "Stale serial manifest binding"
+      },
+      {
+        "case": "forged-rendered-local-volume",
+        "detected": true,
+        "reason": "('Actual rendered vertex block 0 0/1', -0.009167386312037708, -0.008333987770364865)"
+      },
+      {
+        "case": "forged-local-constraint-rejection",
+        "detected": true,
+        "reason": "('Counterexample local determinant', 1.0, 1.1)"
+      },
+      {
+        "case": "rehashed-false-static-geometry",
+        "detected": true,
+        "reason": "Serial generated physics/projection differs: property-serial.svg"
+      },
+      {
+        "case": "missing-real-claim",
+        "detected": true,
+        "reason": "Required proof/receipt coverage rejected"
+      }
+    ]
+  },
+  "camera_envelope": "fixed-camera-envelope.json",
+  "manual_inspection": [
+    "Integrated desktop-length-long.png",
+    "Integrated desktop-compression.png",
+    "Integrated mobile-default.png"
+  ],
+  "limits": [
+    "Parent owns full original browser/PDF/property/material/SLS/worker/subpage/package qualification.",
+    "Real local Chromium/mobile emulation; only specified captures manually inspected.",
+    "Two homogeneous constrained scalar roots and physical geometry; no continuous interface, unrestricted stability,3D mesh solver or anatomy claim."
+  ],
+  "source_files_frozen": true,
+  "no_commit_or_push_by_this_worker": true
+}

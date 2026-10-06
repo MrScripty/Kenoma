@@ -1,0 +1,13 @@
+
+  .browser-tmp/tmpehabvoyi/site/assets/serial-app.js            527.3kb
+  .browser-tmp/tmpehabvoyi/site/assets/serial-app.js.LEGAL.txt    188b 
+
+⚡ Done in 93ms
+Built serial specimen preview at /workspace/kenoma-serial-specimen/education/.browser-tmp/tmpehabvoyi/site
+Traceback (most recent call last):
+  File "/workspace/kenoma-serial-specimen/education/tests/serial_browser.py", line 546, in <module>
+    main()
+  File "/workspace/kenoma-serial-specimen/education/tests/serial_browser.py", line 515, in main
+    assert all(digest(ROOT/name)==value for name,value in source_hashes.items()), 'Source changed during qualification'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Source changed during qualification

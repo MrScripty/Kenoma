@@ -1,0 +1,12 @@
+{
+  "status": "RUN_STARTED",
+  "source_revision": "6be928ef034c8e31217cb1ff28f859f328f3dc43",
+  "build_manifest_sha256": "ab3853318e6914419e9819baa49e54d48d45df95a9b403ffff988891e2f21a6b",
+  "input_count": 887,
+  "test_sha256": "1d9bc8735d32c58b1c5ba4d3b85d67fb139c7bb39bf4dc87455ae045aa3e50c5",
+  "html_sha256": "bc3824b8eb852b054fe81532c9d3bc903750ed1ad31b9c3a70881c6337bbed23",
+  "app_sha256": "b97555957f8cf2b2fb4142cfbec2038cb91e5c792356f2784b3ed582a3930a57",
+  "proof_cards": 76,
+  "command": "python3 tests/serial_browser.py dist --output dist/serial-qa",
+  "scope": "Exact-source integrated serial controls; parent owns other browser/PDF/artifact lanes"
+}

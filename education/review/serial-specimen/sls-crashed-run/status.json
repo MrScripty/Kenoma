@@ -1,0 +1,16 @@
+{
+  "status": "FAIL_NO_PASS_RECEIPT",
+  "source_revision": "6be928ef034c8e31217cb1ff28f859f328f3dc43",
+  "stage": "Final mobile locator screenshot: Chromium target crashed",
+  "concurrent_activity": "Final full Node test command was running; no resource cause established",
+  "source_or_assertions_changed": false,
+  "files_sha256": {
+    "crash.log": "ac668feb50d6931296ad5f994810d50b870436f0a102a002eaf7e21eeaacf772",
+    "partial-output/actual-downloaded-trace.json": "f7cade0c954341e9a7754d318c257ee808d5ef43493b4e0b5c410d1bed6e576e",
+    "partial-output/extension-hold-trace.json": "de1655572b34d8b0b896d2200ffdb3fe5facb3198ccc02643181c1c3b89acae7",
+    "partial-output/force-hold-loaded.png": "54aa7ae6ea99a5a44903d18a3289546567c752c216757e00aafa1455495a3ab7",
+    "partial-output/force-hold-trace.json": "33ce898ef0405dd3994677332b9ed07417446b1ddcb47f0b1fa716591d5814f9",
+    "partial-output/force-hold-completed.png": "6dbc90a718231455490c39588222be0b762b9fed58ef92022c6f50ab51b1df9c",
+    "partial-output/extension-hold-completed.png": "f96f67f5fe407006101cd54eb8c801646fb3628e983664f7e516b6c17a78625b"
+  }
+}
