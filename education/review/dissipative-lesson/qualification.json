@@ -1,0 +1,93 @@
+{
+  "result": "PASS_SEPARATE_DISSIPATIVE_LESSON",
+  "source_revision": "569e6686aaa08c7a2005ed25441c59db7afee4f8",
+  "source_tree": "554225885862549c0fca0388003521328da024bf",
+  "base_accepted_revision": "f0973f46e55faa881ab3b34c6a848dfee313142e",
+  "frozen_current_main_53_revision": "e8fa239e3c01468cee86615e1f306dd6659999fa",
+  "node_tests_passed": 198,
+  "node_test_source_revision": "c603d5081e7865d423fac4f452a1bcc7840735b1",
+  "unchanged_node_inputs": 94,
+  "python_tests_passed": 34,
+  "new_sls_numerical_tests": 19,
+  "new_sls_real_declarations": 11,
+  "fresh_lean_declarations": 64,
+  "integer_declarations": 30,
+  "real_declarations": 34,
+  "proof_source_files": 10,
+  "source_inputs": 876,
+  "actual_existing_browser_lanes_passed": 6,
+  "actual_sls_browser_passed": true,
+  "sls_positive_outputs": 7,
+  "sls_delivered_negative_controls_detected": 2,
+  "damaged_sls_artifact_controls_detected": 6,
+  "property_material_controls_passed": true,
+  "desktop_mobile_new_real_cards": 30,
+  "pdf_pages": 86,
+  "artifact_status": "passed",
+  "build_manifest_sha256": "e70cfec353d6db6a9b5b3bdd45a72020c82b8c5b63980bcaf5764d6da3ab32a0",
+  "archive_sha256": "7cc84f72cfff169155196eb9068b28998e6a81702d66c4ee7ec2976c86ffa7c0",
+  "archive_bytes": 76864847,
+  "archive_file_count": 1070,
+  "archive_crc_and_per_file_checks": "PASS",
+  "manual_appearance_review": [
+    {
+      "path": "standalone-569e/force-hold-loaded.png",
+      "sha256": "63ea05aa539f67bfcf5b6002a2d0916ab9ab05c390debb414f593d90a5cf49f7"
+    },
+    {
+      "path": "standalone-569e/extension-hold-completed.png",
+      "sha256": "2aa4efd4642582fa8fac5be682273871f6e92832159c1c30f3c4b48207c6323d"
+    },
+    {
+      "path": "standalone-569e/mobile-default.png",
+      "sha256": "b920fbe41480c794e9cac3043d739c8f77e3dbfdec96ded7c8502db49e01ee86"
+    },
+    {
+      "path": "dissipative-qa/force-hold-loaded.png",
+      "sha256": "a1bfa292468284fa9018488cd66f1621dcfec560cebea2fe157e6ac6044316d8"
+    },
+    {
+      "path": "dissipative-qa/extension-hold-completed.png",
+      "sha256": "d27cb82d4539a3748d38102d5981dc30ef49cb73eca7968d0c512a8124d49eac"
+    },
+    {
+      "path": "dissipative-qa/mobile-default.png",
+      "sha256": "5f6db5f4b4994de2d85394401b1565f8a644d3e2aeb3404378e51e41fcf89e80"
+    },
+    {
+      "path": "real-proof-review/mobile-dissipative-real-storage-sign.png",
+      "sha256": "6057046be1cdee85ac620b86dcab8d9ba76fff2966d480f6a47baac89fc69c80"
+    },
+    {
+      "path": "real-proof-review/desktop-dissipative-real-power-balance.png",
+      "sha256": "fc5e36e11e97a3a44e1a69391b96fb51c22ae34fa8ad6affcdd99cfb45e33ba3"
+    },
+    {
+      "path": "manual-review-569e/pdf-page-19.png",
+      "sha256": "87cc27c7dc6e13fd5d19dd32b5445c6281b2faeaa6c0cec2f67e40a774bc5839"
+    },
+    {
+      "path": "manual-review-569e/pdf-page-20.png",
+      "sha256": "65063bf7196b4c13375e33f3416ff6be5dfb07c2f9d7b750f70b508f7cfdad28"
+    },
+    {
+      "path": "manual-review-569e/pdf-page-21.png",
+      "sha256": "0b5e4d158755a3ab09017df8d5008f680b77345dbf480ee3bd2cb6ecc7f63f61"
+    },
+    {
+      "path": "manual-review-569e/pdf-page-85.png",
+      "sha256": "060e1a2976e09a4f27c4c90a52a677165a676f90eeb1c97908f73d4934d77704"
+    },
+    {
+      "path": "manual-review-569e/pdf-page-86.png",
+      "sha256": "fb9e171fb13922adff7de47a8c7c63c6aa8a31cdfc84e7561ba366eb58601e2a"
+    }
+  ],
+  "limitations": [
+    "Authored one-dimensional small-strain quasistatic standard linear solid; no muscle calibration, transverse solve, force\u2013velocity implementation or anatomical claim.",
+    "Formal local real-number contracts do not certify the bar reduction, quadrature, floating-point arithmetic or complete discrete ledger.",
+    "Local Chromium and mobile emulation; only listed captures manually inspected.",
+    "Initial concurrent screenshot timeouts retained; sequential retries use identical source and timeout limits.",
+    "Draft PR text prepared; creation awaits parent coordination. No merge or deployment."
+  ]
+}

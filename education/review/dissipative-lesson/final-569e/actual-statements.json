@@ -1,0 +1,112 @@
+{
+  "status": "PASS",
+  "scope": "Read-only actual rendered SLS cards: exactly one theorem and literal source header ending before either proof-kind assignment; no Lean rerun claim.",
+  "source_commit": "569e6686aaa08c7a2005ed25441c59db7afee4f8",
+  "browser_version": "151.0.7922.173",
+  "index_sha256": "9a6ce26bdab8d7e9b0ce54fbaec862303794c78f39a6cda08104b1574f44579d",
+  "build_manifest_sha256": "e70cfec353d6db6a9b5b3bdd45a72020c82b8c5b63980bcaf5764d6da3ab32a0",
+  "proof_receipt_sha256": "fbd24d79357c93a4134baa447d29d5f9d49ce5d23a8b8aba852345f651496322",
+  "proof_source_sha256": "7368497bd84dcb8ab8e020270a4823d233424601b0225e546393114b7141c972",
+  "rows": [
+    {
+      "id": "dissipative-real-storage-sign",
+      "theorem": "Kenoma.DissipativeBarReal.storage_nonnegative",
+      "displayed_statement": "theorem storage_nonnegative (E0 E1 eps v : \u211d) (h0 : 0 \u2264 E0) (h1 : 0 \u2264 E1) :\n    0 \u2264 storage E0 E1 eps v",
+      "statement_sha256": "50042c48549b7f38c2d8bdb27ab36cf1035de2822a8be70ab3dc92a14659cffa",
+      "exact_source_statement": true,
+      "theorem_count": 1,
+      "proof_assignment_displayed": false
+    },
+    {
+      "id": "dissipative-real-dissipation-sign",
+      "theorem": "Kenoma.DissipativeBarReal.dissipation_nonnegative",
+      "displayed_statement": "theorem dissipation_nonnegative (eta vdot : \u211d) (heta : 0 \u2264 eta) :\n    0 \u2264 dissipationRate eta vdot",
+      "statement_sha256": "10c2e44450bf2ee8d6eaae77c75c6fb3ef41e60f21237d65188581c1ed7d8195",
+      "exact_source_statement": true,
+      "theorem_count": 1,
+      "proof_assignment_displayed": false
+    },
+    {
+      "id": "dissipative-real-storage-derivative",
+      "theorem": "Kenoma.DissipativeBarReal.storage_hasDerivAt",
+      "displayed_statement": "theorem storage_hasDerivAt (E0 E1 t epsdot vdot : \u211d) (eps v : \u211d \u2192 \u211d)\n    (heps : HasDerivAt eps epsdot t) (hv : HasDerivAt v vdot t) :\n    HasDerivAt (fun s => storage E0 E1 (eps s) (v s))\n      (storageRate E0 E1 (eps t) (v t) epsdot vdot) t",
+      "statement_sha256": "ca4b4e67d96f0f340e9462731dc831190fb1eec4a3e36aaf6c34e86375240024",
+      "exact_source_statement": true,
+      "theorem_count": 1,
+      "proof_assignment_displayed": false
+    },
+    {
+      "id": "dissipative-real-power-balance",
+      "theorem": "Kenoma.DissipativeBarReal.local_power_balance",
+      "displayed_statement": "theorem local_power_balance (E0 E1 eps v eta epsdot vdot : \u211d)\n    (hMaxwell : eta * vdot = E1 * (eps - v)) :\n    stress E0 E1 eps v * epsdot =\n      storageRate E0 E1 eps v epsdot vdot + dissipationRate eta vdot",
+      "statement_sha256": "004b519feafa7809991f7dafba3f75c6a4f05f971fcac74a4de64e62039bd80a",
+      "exact_source_statement": true,
+      "theorem_count": 1,
+      "proof_assignment_displayed": false
+    },
+    {
+      "id": "dissipative-real-elastic-recovery",
+      "theorem": "Kenoma.DissipativeBarReal.zero_branch_recovers_elastic",
+      "displayed_statement": "theorem zero_branch_recovers_elastic (E0 eps v : \u211d) :\n    stress E0 0 eps v = E0 * eps \u2227 storage E0 0 eps v = E0 / 2 * eps ^ 2",
+      "statement_sha256": "c009e30f477f8fa89865cc0869738123a7fb9df559daabe8a9347e52904ec208",
+      "exact_source_statement": true,
+      "theorem_count": 1,
+      "proof_assignment_displayed": false
+    },
+    {
+      "id": "dissipative-real-viscous-derivative",
+      "theorem": "Kenoma.DissipativeBarReal.viscous_strain_hasDerivAt",
+      "displayed_statement": "theorem viscous_strain_hasDerivAt (eps v0 E1 eta t : \u211d) (heta : eta \u2260 0) :\n    HasDerivAt (fun s => viscousStrain eps v0 E1 eta s)\n      (E1 * (eps - viscousStrain eps v0 E1 eta t) / eta) t",
+      "statement_sha256": "3e0955240825a3c9725250b09833418e770aae0ae0c6ca44a3c9517fe4bdc9a6",
+      "exact_source_statement": true,
+      "theorem_count": 1,
+      "proof_assignment_displayed": false
+    },
+    {
+      "id": "dissipative-real-viscous-bounds",
+      "theorem": "Kenoma.DissipativeBarReal.viscous_strain_bounded",
+      "displayed_statement": "theorem viscous_strain_bounded (eps v0 E1 eta t : \u211d)\n    (hE : 0 \u2264 E1) (heta : 0 < eta) (ht : 0 \u2264 t) :\n    min v0 eps \u2264 viscousStrain eps v0 E1 eta t \u2227\n      viscousStrain eps v0 E1 eta t \u2264 max v0 eps",
+      "statement_sha256": "bbd49ed38f86feda14cfed4422441aa46e13e6938e66a3dbbc50f657d35abcc6",
+      "exact_source_statement": true,
+      "theorem_count": 1,
+      "proof_assignment_displayed": false
+    },
+    {
+      "id": "dissipative-real-viscous-monotone",
+      "theorem": "Kenoma.DissipativeBarReal.viscous_strain_monotone",
+      "displayed_statement": "theorem viscous_strain_monotone (eps v0 E1 eta : \u211d)\n    (hE : 0 \u2264 E1) (heta : 0 < eta) (hstart : v0 \u2264 eps) :\n    Monotone (fun t => viscousStrain eps v0 E1 eta t)",
+      "statement_sha256": "75a98efc25d0613d653a35634602ba4e10f44738dbc89f92facbde71b6c64d5e",
+      "exact_source_statement": true,
+      "theorem_count": 1,
+      "proof_assignment_displayed": false
+    },
+    {
+      "id": "dissipative-real-viscous-antitone",
+      "theorem": "Kenoma.DissipativeBarReal.viscous_strain_antitone",
+      "displayed_statement": "theorem viscous_strain_antitone (eps v0 E1 eta : \u211d)\n    (hE : 0 \u2264 E1) (heta : 0 < eta) (hstart : eps \u2264 v0) :\n    Antitone (fun t => viscousStrain eps v0 E1 eta t)",
+      "statement_sha256": "0df3eed54332df9434cb5a9a6360119796ada7bad9c9811c4556b086e5c93e40",
+      "exact_source_statement": true,
+      "theorem_count": 1,
+      "proof_assignment_displayed": false
+    },
+    {
+      "id": "dissipative-real-held-stress-bounds",
+      "theorem": "Kenoma.DissipativeBarReal.held_stress_bounded",
+      "displayed_statement": "theorem held_stress_bounded (E0 E1 eps v0 eta t : \u211d)\n    (hE : 0 \u2264 E1) (heta : 0 < eta) (ht : 0 \u2264 t) (hstart : v0 \u2264 eps) :\n    E0 * eps \u2264 stress E0 E1 eps (viscousStrain eps v0 E1 eta t) \u2227\n      stress E0 E1 eps (viscousStrain eps v0 E1 eta t) \u2264 stress E0 E1 eps v0",
+      "statement_sha256": "9422e5061b7905a6aa0b7f7160918720c3b70c9ef8633da666db7fd11b5ad65f",
+      "exact_source_statement": true,
+      "theorem_count": 1,
+      "proof_assignment_displayed": false
+    },
+    {
+      "id": "dissipative-real-held-stress-decay",
+      "theorem": "Kenoma.DissipativeBarReal.held_stress_antitone",
+      "displayed_statement": "theorem held_stress_antitone (E0 E1 eps v0 eta : \u211d)\n    (hE : 0 \u2264 E1) (heta : 0 < eta) (hstart : v0 \u2264 eps) :\n    Antitone (fun t => stress E0 E1 eps (viscousStrain eps v0 E1 eta t))",
+      "statement_sha256": "057184dc3b7eda48592192472bb17964861902060acc1f9d45b53ac91c78d6f5",
+      "exact_source_statement": true,
+      "theorem_count": 1,
+      "proof_assignment_displayed": false
+    }
+  ],
+  "capture_sha256": "dd7b3442d78f417b81515530c85f95bebbf1ec100627dd9d816cf59672abaa5f"
+}

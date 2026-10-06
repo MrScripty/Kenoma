@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "result": "PASS_INTEGRATED_MATERIAL_BROWSER",
+  "browserVersion": "151.0.7922.173",
+  "checks": [
+    "Positive-J isochoric wall penetration rejected through actual button; solved state retained",
+    "Bulk and shear controls change the named material parameter at shared height; forces, volume and actual SVG widths respond",
+    "Actual zero-bulk counterexample and weak-bulk pull-away; geometry shrinks at the fixed reference scale",
+    "Finite approximation visibly fails residual criterion, then improves with actual bisection control",
+    "Invalid/blank/out-of-domain controls retain prior state; reset clears errors; height restoration is elastic and history-free",
+    "Mobile stacks panels without changing physical scale; print uses solved static figure",
+    "Zero-JavaScript default diagram and derivation remain available"
+  ],
+  "javascriptErrors": [],
+  "manifest": "build-manifest.json",
+  "manifestSHA256": "e70cfec353d6db6a9b5b3bdd45a72020c82b8c5b63980bcaf5764d6da3ab32a0",
+  "HTMLSHA256": "9a6ce26bdab8d7e9b0ce54fbaec862303794c78f39a6cda08104b1574f44579d",
+  "sourceHashes": {
+    "web/material-lab.mjs": "e884134063616720211036496f5f0bff0347137b27027b97718de00c78226f8b",
+    "web/material-response.mjs": "513dc004fe16dba2fa781f8534cb248b609fb20c59ffff9a759960b41a1d52e8",
+    "web/tissue.mjs": "72d88e8afa18af7acf3f5ab45d6b1676a0beff523a124023f19cce99347b1b30",
+    "tools/material_lab.py": "1883011aa821a91cb7d35f25217a297b46552743448adad5394754bc8a818b69",
+    "tests/material_browser.py": "30e2e618acbe337276f299becd07cfb754cc9b3ff2630c1513ddfb0e945bb94e"
+  },
+  "outputs": {
+    "coarse-desktop.png": "f752865a93f097692bfbb34fa0ef3e06981e469cec2d8a6c94ffa3c27c9002be",
+    "controls-desktop.png": "b3753227d40887f0ba9e913f5533027953e4064c3c0221ffa93cc583d8473531",
+    "default-desktop.png": "85b0ca14f617692236d123cbe993c3882c99a36feee09f29e2280f502103d1e9",
+    "default-mobile.png": "ec630c7c5da986e93db5b510d3d4ffd0deebe00d346357c0c85e9334b5c4211a",
+    "high-bulk-desktop.png": "f5cf02d46fe6c7abdd9924e37536aec5937bb1c621edcc493bd1184f280d0e5d",
+    "observed.json": "36a7063112d58ea040dd44143d03ae2f3f2c26771db0d404cba3e812e65e5025",
+    "readout-desktop.png": "d1de70ac10b68f84653e54cefd23a7a0c20834b54a77580c96509885546776a9",
+    "weak-bulk-desktop.png": "91eb57aac35b50c20d453bb483da2703db891f6d2512afccd7f72c63703f52a3",
+    "zero-bulk-desktop.png": "24253068bc36df2fb175743d66fb06c76ad84944bb7ecc2c73dc28e0abf6a551"
+  },
+  "appSHA256": "96e227afbe48f45158760e8ea7e28526e061f9136e3f465a966d71574d8c78f0"
+}
