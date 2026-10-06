@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "capturedUTC": "2026-10-06T07:50:09.728153+00:00",
+  "offline_proposal_audit": {
+    "verified": true,
+    "metadata_body_bytes": 82328,
+    "new_raw_images_acquired": 0,
+    "proposed_new_images": 10,
+    "reused_images": 1,
+    "listed_new_image_bytes": 34472328,
+    "proposed_raw_transfer_cap_bytes": 41943040,
+    "anatomical_laterality": "unverified",
+    "stage": "proposal_only"
+  },
+  "mutation_checks": [
+    {
+      "case": "new image falsely marked acquired",
+      "rejected": true,
+      "reason": "New raw payload fabricated"
+    },
+    {
+      "case": "unverified laterality promoted to right",
+      "rejected": true,
+      "reason": "Unsupported physical ROI geometry"
+    },
+    {
+      "case": "extra transfer budget",
+      "rejected": true,
+      "reason": "Proposed budget or acquisition scope changed"
+    },
+    {
+      "case": "unresolved BodyParts findings erased",
+      "rejected": true,
+      "reason": "Unexecuted proposal promoted to annotation or qualification"
+    }
+  ],
+  "previous_commit": "b7ea8aed393aaf147992c3fade6b586457a17ad2",
+  "existing_tracked_data_and_receipt_files_changed": [],
+  "new_evidence_sha256": {
+    "education/data/elbow-v1/curation/nlm-elbow-localization-plan/README.md": "2c025942534eed18c3d3233576263350d08ab87673613b8e9ae075410792ef14",
+    "education/data/elbow-v1/curation/nlm-elbow-localization-plan/plan.json": "f98fe188fd8d489278a7dfe158f3fcccfa54c4f078ef591405d5ce7b936e2180",
+    "education/data/elbow-v1/curation/nlm-elbow-localization-plan/metadata-request-receipt.json": "023f1a0bc1f1b3e1b763f7aa3140848742ae0a9e4c36662a78cb05af4a1ccea3",
+    "education/data/elbow-v1/scripts/audit_nlm_elbow_localization_plan.py": "705dd935812eaa0a852c737e8e4e599679e1af6632fcbae06583db0605c17abe"
+  },
+  "raw_source_files_published": false,
+  "validation_network_requests": 0
+}

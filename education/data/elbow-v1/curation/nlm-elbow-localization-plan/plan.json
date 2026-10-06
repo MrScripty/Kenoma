@@ -1,0 +1,320 @@
+{
+  "schema_version": 1,
+  "plan_status": "proposal_only; metadata listing verified, no new image acquisition authorized or executed",
+  "checkpoint_parent": "b7ea8aed393aaf147992c3fade6b586457a17ad2",
+  "specimen_id": "nlm-visible-human-male",
+  "contract_file": "../nlm-arm-feasibility/segmentation-contract.json",
+  "contract_sha256": "86e7bb34f5118dbc29583601c240ac8995cdb8d1f3128266566eae0471317cf5",
+  "input_source_checkpoint": "../official-anatomy-scouts/source-image-review.json",
+  "goal": "Localize candidate elbow joint levels in both image-side arms near a_vm1600, then establish anatomical right side and precise source-index ROI for a separately budgeted later block.",
+  "source_pixel_basis": {
+    "anchor_asset": "a_vm1600",
+    "anchor_sha256": "570cf80f01c6d9beaefcc4b0670cf8c561e6785321b22f469c4ef4bafda93ac4",
+    "observed_native_columns_rows": [
+      2048,
+      1216
+    ],
+    "display_review_windows_columns_rows": {
+      "display_left": [
+        [
+          150,
+          515
+        ],
+        [
+          230,
+          665
+        ]
+      ],
+      "display_right": [
+        [
+          1550,
+          1895
+        ],
+        [
+          200,
+          655
+        ]
+      ]
+    },
+    "bounds_convention": "zero-based half-open columns and rows; approximate unreviewed windows, not segmentation boundaries",
+    "observation": "Display-right arm has several opposed curved bony profiles and pale intervening interfaces. Both image-side arm sections must be reviewed; anatomical right/left remains unverified.",
+    "other_existing_context_assets": [
+      {
+        "id": "a_vm1450",
+        "sha256": "f357fbbcc43c0195e2994d187e63094216e02a4894ad94b2adf0dce9af4ba444",
+        "purpose": "Previously inspected thoracic/upper-abdominal arm context; not adjacent slices and not registration anchors."
+      },
+      {
+        "id": "a_vm1550",
+        "sha256": "74546104c4c14b3b8a0a018f7c0284928d9d3e036ec2a46018e3e3c8553347ad",
+        "purpose": "Previously inspected thoracic/upper-abdominal arm context; not adjacent slices and not registration anchors."
+      }
+    ]
+  },
+  "assets": [
+    {
+      "id": "a_vm1595",
+      "specimen_id": "nlm-visible-human-male",
+      "source_url": "https://data.lhncbc.nlm.nih.gov/public/Visible-Human/Male-Images/PNG_format/abdomen/a_vm1595.png",
+      "listed_bytes": 3436372,
+      "listed_modified_time": "2024-08-28 19:50:18 +0000 UTC",
+      "listing_byte_receipt": "metadata-request-receipt.json",
+      "series_id": "male-original-color-PNG",
+      "acquisition_state": "cryosection",
+      "raw_path_http_status": null,
+      "raw_path_current_access_verified": false,
+      "raw_payload_acquired": false,
+      "raw_sha256": null,
+      "action": "proposed_download_only_after_parent_approval",
+      "fetch_order": 9,
+      "max_body_bytes": 4194304
+    },
+    {
+      "id": "a_vm1596",
+      "specimen_id": "nlm-visible-human-male",
+      "source_url": "https://data.lhncbc.nlm.nih.gov/public/Visible-Human/Male-Images/PNG_format/abdomen/a_vm1596.png",
+      "listed_bytes": 3432348,
+      "listed_modified_time": "2024-08-28 19:50:18 +0000 UTC",
+      "listing_byte_receipt": "metadata-request-receipt.json",
+      "series_id": "male-original-color-PNG",
+      "acquisition_state": "cryosection",
+      "raw_path_http_status": null,
+      "raw_path_current_access_verified": false,
+      "raw_payload_acquired": false,
+      "raw_sha256": null,
+      "action": "proposed_download_only_after_parent_approval",
+      "fetch_order": 7,
+      "max_body_bytes": 4194304
+    },
+    {
+      "id": "a_vm1597",
+      "specimen_id": "nlm-visible-human-male",
+      "source_url": "https://data.lhncbc.nlm.nih.gov/public/Visible-Human/Male-Images/PNG_format/abdomen/a_vm1597.png",
+      "listed_bytes": 3448091,
+      "listed_modified_time": "2024-08-28 19:50:18 +0000 UTC",
+      "listing_byte_receipt": "metadata-request-receipt.json",
+      "series_id": "male-original-color-PNG",
+      "acquisition_state": "cryosection",
+      "raw_path_http_status": null,
+      "raw_path_current_access_verified": false,
+      "raw_payload_acquired": false,
+      "raw_sha256": null,
+      "action": "proposed_download_only_after_parent_approval",
+      "fetch_order": 5,
+      "max_body_bytes": 4194304
+    },
+    {
+      "id": "a_vm1598",
+      "specimen_id": "nlm-visible-human-male",
+      "source_url": "https://data.lhncbc.nlm.nih.gov/public/Visible-Human/Male-Images/PNG_format/abdomen/a_vm1598.png",
+      "listed_bytes": 3453036,
+      "listed_modified_time": "2024-08-28 19:48:48 +0000 UTC",
+      "listing_byte_receipt": "metadata-request-receipt.json",
+      "series_id": "male-original-color-PNG",
+      "acquisition_state": "cryosection",
+      "raw_path_http_status": null,
+      "raw_path_current_access_verified": false,
+      "raw_payload_acquired": false,
+      "raw_sha256": null,
+      "action": "proposed_download_only_after_parent_approval",
+      "fetch_order": 3,
+      "max_body_bytes": 4194304
+    },
+    {
+      "id": "a_vm1599",
+      "specimen_id": "nlm-visible-human-male",
+      "source_url": "https://data.lhncbc.nlm.nih.gov/public/Visible-Human/Male-Images/PNG_format/abdomen/a_vm1599.png",
+      "listed_bytes": 3454785,
+      "listed_modified_time": "2024-08-28 19:48:47 +0000 UTC",
+      "listing_byte_receipt": "metadata-request-receipt.json",
+      "series_id": "male-original-color-PNG",
+      "acquisition_state": "cryosection",
+      "raw_path_http_status": null,
+      "raw_path_current_access_verified": false,
+      "raw_payload_acquired": false,
+      "raw_sha256": null,
+      "action": "proposed_download_only_after_parent_approval",
+      "fetch_order": 1,
+      "max_body_bytes": 4194304
+    },
+    {
+      "id": "a_vm1600",
+      "specimen_id": "nlm-visible-human-male",
+      "source_url": "https://data.lhncbc.nlm.nih.gov/public/Visible-Human/Male-Images/PNG_format/abdomen/a_vm1600.png",
+      "listed_bytes": 3450446,
+      "listed_modified_time": "2024-08-28 19:50:18 +0000 UTC",
+      "listing_byte_receipt": "metadata-request-receipt.json",
+      "series_id": "male-original-color-PNG",
+      "acquisition_state": "cryosection",
+      "raw_path_http_status": 200,
+      "raw_path_current_access_verified": false,
+      "raw_payload_acquired": true,
+      "raw_sha256": "570cf80f01c6d9beaefcc4b0670cf8c561e6785321b22f469c4ef4bafda93ac4",
+      "action": "reuse_pinned_existing",
+      "fetch_order": null,
+      "max_body_bytes": 4194304,
+      "existing_local_path": "/workspace/scratch/anatomy-network-20261006/a_vm1600.png",
+      "raw_path_http_status_evidence": "Historical successful receipt at ../official-anatomy-scouts/request-receipts.json; no fresh raw request made."
+    },
+    {
+      "id": "a_vm1601",
+      "specimen_id": "nlm-visible-human-male",
+      "source_url": "https://data.lhncbc.nlm.nih.gov/public/Visible-Human/Male-Images/PNG_format/abdomen/a_vm1601.png",
+      "listed_bytes": 3455850,
+      "listed_modified_time": "2024-08-28 19:50:18 +0000 UTC",
+      "listing_byte_receipt": "metadata-request-receipt.json",
+      "series_id": "male-original-color-PNG",
+      "acquisition_state": "cryosection",
+      "raw_path_http_status": null,
+      "raw_path_current_access_verified": false,
+      "raw_payload_acquired": false,
+      "raw_sha256": null,
+      "action": "proposed_download_only_after_parent_approval",
+      "fetch_order": 2,
+      "max_body_bytes": 4194304
+    },
+    {
+      "id": "a_vm1602",
+      "specimen_id": "nlm-visible-human-male",
+      "source_url": "https://data.lhncbc.nlm.nih.gov/public/Visible-Human/Male-Images/PNG_format/abdomen/a_vm1602.png",
+      "listed_bytes": 3453148,
+      "listed_modified_time": "2024-08-28 19:50:19 +0000 UTC",
+      "listing_byte_receipt": "metadata-request-receipt.json",
+      "series_id": "male-original-color-PNG",
+      "acquisition_state": "cryosection",
+      "raw_path_http_status": null,
+      "raw_path_current_access_verified": false,
+      "raw_payload_acquired": false,
+      "raw_sha256": null,
+      "action": "proposed_download_only_after_parent_approval",
+      "fetch_order": 4,
+      "max_body_bytes": 4194304
+    },
+    {
+      "id": "a_vm1603",
+      "specimen_id": "nlm-visible-human-male",
+      "source_url": "https://data.lhncbc.nlm.nih.gov/public/Visible-Human/Male-Images/PNG_format/abdomen/a_vm1603.png",
+      "listed_bytes": 3449730,
+      "listed_modified_time": "2024-08-28 19:50:19 +0000 UTC",
+      "listing_byte_receipt": "metadata-request-receipt.json",
+      "series_id": "male-original-color-PNG",
+      "acquisition_state": "cryosection",
+      "raw_path_http_status": null,
+      "raw_path_current_access_verified": false,
+      "raw_payload_acquired": false,
+      "raw_sha256": null,
+      "action": "proposed_download_only_after_parent_approval",
+      "fetch_order": 6,
+      "max_body_bytes": 4194304
+    },
+    {
+      "id": "a_vm1604",
+      "specimen_id": "nlm-visible-human-male",
+      "source_url": "https://data.lhncbc.nlm.nih.gov/public/Visible-Human/Male-Images/PNG_format/abdomen/a_vm1604.png",
+      "listed_bytes": 3442804,
+      "listed_modified_time": "2024-08-28 19:50:19 +0000 UTC",
+      "listing_byte_receipt": "metadata-request-receipt.json",
+      "series_id": "male-original-color-PNG",
+      "acquisition_state": "cryosection",
+      "raw_path_http_status": null,
+      "raw_path_current_access_verified": false,
+      "raw_payload_acquired": false,
+      "raw_sha256": null,
+      "action": "proposed_download_only_after_parent_approval",
+      "fetch_order": 8,
+      "max_body_bytes": 4194304
+    },
+    {
+      "id": "a_vm1605",
+      "specimen_id": "nlm-visible-human-male",
+      "source_url": "https://data.lhncbc.nlm.nih.gov/public/Visible-Human/Male-Images/PNG_format/abdomen/a_vm1605.png",
+      "listed_bytes": 3446164,
+      "listed_modified_time": "2024-08-28 19:50:20 +0000 UTC",
+      "listing_byte_receipt": "metadata-request-receipt.json",
+      "series_id": "male-original-color-PNG",
+      "acquisition_state": "cryosection",
+      "raw_path_http_status": null,
+      "raw_path_current_access_verified": false,
+      "raw_payload_acquired": false,
+      "raw_sha256": null,
+      "action": "proposed_download_only_after_parent_approval",
+      "fetch_order": 10,
+      "max_body_bytes": 4194304
+    }
+  ],
+  "budget": {
+    "new_image_count": 10,
+    "reuse_count": 1,
+    "maximum_series_asset_count": 11,
+    "listed_new_image_bytes": 34472328,
+    "listed_series_bytes_including_reuse": 37922774,
+    "raw_transfer_cap_bytes": 41943040,
+    "per_image_cap_bytes": 4194304,
+    "metadata_transferred_now_bytes": 82328,
+    "metadata_cap_bytes": 262144,
+    "free_space_floor_bytes": 1610612736,
+    "future_request_timeout_seconds": 30,
+    "stream_chunk_limit_bytes": 65536,
+    "automatic_retries": 0,
+    "raw_downloads_this_checkpoint": 0
+  },
+  "geometry_state": {
+    "anatomical_laterality": "unverified",
+    "patient_affine_mm": null,
+    "pixel_center_convention": null,
+    "verified_physical_slice_positions_mm": null,
+    "filename_numeric_adjacency_verified_from_listing": true,
+    "physical_section_adjacency_verified": false,
+    "nominal_xy_sampling_mm": 0.33,
+    "nominal_series_section_interval_mm": 1,
+    "nominal_sampling_owner": "../official-anatomy-scouts/request-receipts.json: nlm-terms",
+    "sampling_limit": "A filename increment and nominal series spacing do not establish per-image physical positions, orientation, absence of missing sections or a registered affine. Photographed plate numbers and PNG display DPI are not patient coordinates.",
+    "other_source_coordinates_applied": false
+  },
+  "execution_gates": [
+    {
+      "gate": "parent_coordinate_and_approve",
+      "required": "Parent explicitly coordinates the ten exact listed candidate URLs, same-specimen scope, 40 MiB ceiling and external storage destination. This proposal itself does not authorize downloading."
+    },
+    {
+      "gate": "bounded_official_acquisition",
+      "required": "Reuse a_vm1600 by its exact hash. Acquire only new candidates in paired outward order. Use ordinary official HTTPS requests, fixed per-image/total byte caps and free-space floor, stream at most 64 KiB per read; no retries, mirror, source substitution, proxy or credential changes."
+    },
+    {
+      "gate": "verify_and_preserve_source_bytes",
+      "required": "Keep untouched full-field PNGs outside Git, capture URL/final URL/status/actual bytes/SHA-256/headers and verify listed size, CRC and expected native PNG shape/encoding. New hashes are source-byte observations requiring review, not silently accepted historical pins."
+    },
+    {
+      "gate": "source_localization_review",
+      "required": "Inspect both image-side arms using the anchor windows as review seeds; record separate per-image pixel bounds and any clipping/cutting/missing-section defects. Trace gross bony profiles across adjacent source images and report whether the candidate window actually includes the joint."
+    },
+    {
+      "gate": "laterality_and_geometry_before_right_roi",
+      "required": "Retain official orientation/series evidence and source-linked anatomical review for patient right side, image axes and section spacing. Until those are established, use display-left/display-right and source indices only; no right-arm ROI or millimetre transform."
+    },
+    {
+      "gate": "next_region_import_decision",
+      "required": "Deliver the observed extent, limitations, laterality/orientation evidence and precise ROI proposal. Parent must separately approve any wider source block or raw publication. No named tissue masks or material/clinical claims arise from this localization milestone."
+    }
+  ],
+  "stop_conditions": [
+    "Any request returns 403/security denial: preserve exact failure and stop that route; no alternate host or proxy.",
+    "Any request is unavailable, non-200, redirects outside the approved NLM source host, exceeds byte/time/free-space bounds, or returns non-PNG bytes: retain receipt and stop; no silent replacement/retry.",
+    "Actual byte length differs from the pinned listing or PNG dimensions/encoding differ from the expected source series: quarantine the candidate and stop adoption pending source review.",
+    "A proposed level is missing or anatomical continuity contradicts filename ordering: record the gap/uncertainty and do not interpolate it into a volume.",
+    "The paired outward scout window does not include/resolve the desired elbow anatomy: stop at the finite set; return a revised bounded proposal instead of downloading farther.",
+    "Laterality/orientation remains unresolved: source-index observations may be retained, but no reviewed right-side ROI, affine or named right tissue claim is made."
+  ],
+  "deliverables_after_future_execution": [
+    "External unmodified source PNGs, acquisition receipts and a source identity manifest for at most ten new files plus reused a_vm1600.",
+    "Per-image display-side review bounds and gross bone/joint observations with source hashes, reviewer identity, artifacts and uncertainties.",
+    "An explicit laterality/orientation/section-spacing evidence log; unknowns stay unknown.",
+    "A decision stating localized/not localized and proposed exact source-index bounds/slice span for a separately authorized next ROI step; no masks or registration inferred."
+  ],
+  "tissue_masks_created": false,
+  "source_fusion_performed": false,
+  "clinical_validation": false,
+  "simulation_ready": false,
+  "bodyparts43_state_owner": "../bodyparts43-resolution/representative-arm-comparison.json",
+  "bodyparts43_full_archive_resolution_license_still_unresolved": true
+}
