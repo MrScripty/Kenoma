@@ -1,0 +1,193 @@
+{
+  "schema": 1,
+  "result": "PASS_FRESH_REAL_ACTUATOR_KERNEL",
+  "source_commit": "06ee82fb0e8970c63fa99fcebe74f48fd0d30819",
+  "source": "proofs/ActuatorConstitutiveReal.lean",
+  "source_sha256": "abe172753acde3dafa097f8942dd0663651459dd54e721e65ac16ef4f8f36a8a",
+  "claims_sha256": "22d3306e302271de019f590caeffd43f732b9017647d91c55ade273c57b3b799",
+  "lean_version": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)",
+  "mathlib": {
+    "repository": "https://github.com/leanprover-community/mathlib4",
+    "tag": "v4.19.0",
+    "commit": "c44e0c8ee63ca166450922a373c7409c5d26b00b",
+    "manifest_sha256": "5c6421b650bc87a2427a892a39e5522dc44543ca4ac1bd6e9f08d536c044a752",
+    "toolchain": "leanprover/lean4:v4.19.0",
+    "license": "Apache-2.0",
+    "qualification": "Fresh compilation required; this lock alone is not proof evidence."
+  },
+  "verified_packages": [
+    {
+      "name": "plausible",
+      "expected_commit": "77e08eddc486491d7b9e470926b3dbe50319451a",
+      "actual_commit": "77e08eddc486491d7b9e470926b3dbe50319451a",
+      "source_pristine": true
+    },
+    {
+      "name": "LeanSearchClient",
+      "expected_commit": "25078369972d295301f5a1e53c3e5850cf6d9d4c",
+      "actual_commit": "25078369972d295301f5a1e53c3e5850cf6d9d4c",
+      "source_pristine": true
+    },
+    {
+      "name": "importGraph",
+      "expected_commit": "e6a9f0f5ee3ccf7443a0070f92b62f8db12ae82b",
+      "actual_commit": "e6a9f0f5ee3ccf7443a0070f92b62f8db12ae82b",
+      "source_pristine": true
+    },
+    {
+      "name": "proofwidgets",
+      "expected_commit": "c4919189477c3221e6a204008998b0d724f49904",
+      "actual_commit": "c4919189477c3221e6a204008998b0d724f49904",
+      "source_pristine": true
+    },
+    {
+      "name": "aesop",
+      "expected_commit": "5d50b08dedd7d69b3d9b3176e0d58a23af228884",
+      "actual_commit": "5d50b08dedd7d69b3d9b3176e0d58a23af228884",
+      "source_pristine": true
+    },
+    {
+      "name": "Qq",
+      "expected_commit": "fa4f7f15d97591a9cf3aa7724ba371c7fc6dda02",
+      "actual_commit": "fa4f7f15d97591a9cf3aa7724ba371c7fc6dda02",
+      "source_pristine": true
+    },
+    {
+      "name": "batteries",
+      "expected_commit": "f5d04a9c4973d401c8c92500711518f7c656f034",
+      "actual_commit": "f5d04a9c4973d401c8c92500711518f7c656f034",
+      "source_pristine": true
+    },
+    {
+      "name": "Cli",
+      "expected_commit": "02dbd02bc00ec4916e99b04b2245b30200e200d0",
+      "actual_commit": "02dbd02bc00ec4916e99b04b2245b30200e200d0",
+      "source_pristine": true
+    }
+  ],
+  "command": [
+    "lake",
+    "--no-cache",
+    "env",
+    "lean",
+    "-DwarningAsError=true",
+    "/tmp/kenoma-real-constitutive/education/proofs/ActuatorConstitutiveReal.lean"
+  ],
+  "cwd": "/tmp/kenoma-real-constitutive/education/.tools/mathlib4",
+  "claims": [
+    {
+      "id": "actuator-real-activation-interval",
+      "theorem": "Kenoma.ActuatorReal.activation_in_unit_interval",
+      "claim": "The exact real constant-input activation update stays in [0,1].",
+      "assumptions": "Real a,u in [0,1], h>=0 and tau>0.",
+      "limitations": "Real mathematical law only; no JavaScript refinement, finite-precision residual, solver termination, or biological validation.",
+      "implementation": "web/elbow.mjs: activation; web/series.mjs: stage activation.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "actuator-real-activation-ode",
+      "theorem": "Kenoma.ActuatorReal.activation_hasDerivAt",
+      "claim": "The exact real update has derivative (u-a(t))/tau with respect to elapsed time.",
+      "assumptions": "Real a,u,h; fixed real tau!=0 and constant input u.",
+      "limitations": "Real mathematical law only; no JavaScript refinement, finite-precision residual, solver termination, or biological validation.",
+      "implementation": "web/elbow.mjs: exact activation function.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "actuator-real-active-force-bounds",
+      "theorem": "Kenoma.ActuatorReal.active_force_bounds",
+      "claim": "Real Gaussian active force is nonnegative and at most a*F0.",
+      "assumptions": "Real activation a>=0 and maximum force F0>=0; any real fiber/optimal length/width.",
+      "limitations": "Real mathematical law only; no JavaScript refinement, finite-precision residual, solver termination, or biological validation.",
+      "implementation": "web/elbow.mjs: activeFiber force shared by the series lesson.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "actuator-real-active-force-derivative",
+      "theorem": "Kenoma.ActuatorReal.active_force_hasDerivAt",
+      "claim": "The real Gaussian derivative equals -2*z*FA/(w*l0).",
+      "assumptions": "Real fixed activation and maximum force; optimal length l0!=0 and width w!=0; z=(f/l0-1)/w.",
+      "limitations": "Real mathematical law only; no JavaScript refinement, finite-precision residual, solver termination, or biological validation.",
+      "implementation": "web/elbow.mjs: activeFiber slope; web/series.mjs: implicit derivative denominator.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "actuator-real-gaussian-radius-bound",
+      "theorem": "Kenoma.ActuatorReal.gaussian_weighted_radius_bound",
+      "claim": "The real Gaussian factor obeys 2*abs(z)*exp(-z^2)<=sqrt(2/exp(1)).",
+      "assumptions": "Any real normalized coordinate z.",
+      "limitations": "Real mathematical law only; no JavaScript refinement, finite-precision residual, solver termination, or biological validation.",
+      "implementation": "web/elbow.mjs: Gaussian force-length law; exact series slope estimate.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "actuator-real-active-slope-bound",
+      "theorem": "Kenoma.ActuatorReal.active_slope_bound",
+      "claim": "The real Gaussian slope magnitude is at most F0*sqrt(2/exp(1))/(w*l0).",
+      "assumptions": "Real a in [0,1], F0>=0, l0>0 and w>0.",
+      "limitations": "Real mathematical law only; no JavaScript refinement, finite-precision residual, solver termination, or biological validation.",
+      "implementation": "web/series.mjs: the exact monotonicity bound used by the runtime guard.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "actuator-real-series-strict-monotone",
+      "theorem": "Kenoma.ActuatorReal.series_residual_strictMono",
+      "claim": "The real compliant-series residual including tension-only passive force is strictly increasing.",
+      "assumptions": "Real a in [0,1], F0>=0, l0>0, w>0, compliance c>=0, passive stiffness k>=0; guard c*F0*sqrt(2/exp(1))/(w*l0)<1.",
+      "limitations": "Real mathematical law only; no JavaScript refinement, finite-precision residual, solver termination, or biological validation.",
+      "implementation": "web/series.mjs: H(f)=f+c*(FA+FP)-totalFiber.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "id": "actuator-real-series-unique-root",
+      "theorem": "Kenoma.ActuatorReal.series_equilibrium_unique",
+      "claim": "Two real roots of the compliant-series residual are equal under the sufficient guard.",
+      "assumptions": "Same physical signs and guard as strict monotonicity; both real residuals equal zero. Root existence is not assumed without an explicit root.",
+      "limitations": "Real mathematical law only; no JavaScript refinement, finite-precision residual, solver termination, or biological validation.",
+      "implementation": "web/series.mjs: bracketed series equilibrium.",
+      "status": "checked",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "existing_real_property_receipt_sha256": "85d886cc422f4be2023558c4c10315574de1d697b11d22155e1a90133e7ec876",
+  "scope": "Real mathematical constitutive laws; no floating-point refinement or biological validation."
+}
