@@ -20,7 +20,8 @@ def check(destination):
         browser=p.chromium.launch(headless=True,executable_path=os.environ.get('CHROMIUM_EXECUTABLE') or shutil.which('chromium'))
         page=browser.new_page(viewport={'width':1200,'height':1000});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
         page.goto(f'http://127.0.0.1:{server.server_port}/index.html',wait_until='networkidle')
-        assert page.locator('[data-property]').count()==(3 if preview_mode else 4)
+        assert page.locator('[data-property]').count()==3
+        assert page.locator('[data-material]').count()==(0 if preview_mode else 1)
         expected_proofs=0 if preview_mode else sum(len(json.loads((out/name).read_text())['claims']) for name in json.loads((out/manifest_name).read_text())['proof_families'])
         assert page.locator('.proof-card').count()==expected_proofs
         if not preview_mode:
