@@ -1,0 +1,16 @@
+{
+  "result": "PASS_INTEGRATED_FIXED_FIELD_PROJECTION",
+  "browser": "151.0.7922.173",
+  "manifest_sha256": "afb844b80298c98ec9e0a64b777945b8c5ff809427da76fe224de4e6d04a2903",
+  "html_sha256": "b199fb0f3a06ff3b96b586872a334646a826dcaf554d49298c20e005f1e1e158",
+  "lab_sha256": "3c3bd14dc774c809074af208c9574127c9824a04b69c1a5a25209c95e1f461b4",
+  "standalone_receipt_sha256": "e5b618a52c4e562e35d5de7e1f232503c0ae0523055e1bd32726656352c6289b",
+  "book_capture_sha256": "25963617fa9e807aa10be19dc7368acc08f9c6d21c13d735e180a3783f14c099",
+  "checks": [
+    "Shipped source equals accepted standalone bytes",
+    "5625 independent rational browser cases and real desktop/mobile controls",
+    "Actual in-book iframe refinement and Reset",
+    "Executable outputs and build manifest unchanged"
+  ],
+  "errors": []
+}
