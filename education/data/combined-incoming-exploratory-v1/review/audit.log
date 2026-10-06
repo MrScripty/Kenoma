@@ -1,0 +1,13 @@
+AUDIT full-source/RK4-0.0002 True []
+AUDIT full-source/RK4-0.0001 True []
+AUDIT full-source/RK4-0.00005 True []
+AUDIT full-source/RK4-0.000025 True []
+AUDIT full-source/DOP853 True []
+AUDIT full-source/Radau True []
+AUDIT reduced-independent/RK4-0.0002 True []
+AUDIT reduced-independent/RK4-0.0001 True []
+AUDIT reduced-independent/RK4-0.00005 True []
+AUDIT reduced-independent/RK4-0.000025 True []
+AUDIT reduced-independent/DOP853 True []
+AUDIT reduced-independent/Radau True []
+PAIRS 66 /66 worst {'y_m': 8.71653235701153e-11, 'w_m_per_s': 1.8852011202108443e-09, 'a': 8.255667226231278e-10, 'q': 7.9705841926625e-10, 'FT_N': 6.657789164421501e-08, 'I': 5.658864349333825e-11, 'raw': 2.7812755223899366e-10} full qualification false

@@ -1,0 +1,77 @@
+{
+  "scope": "Completed authorized exploratory incoming matrix; authored checks pending independent review",
+  "historical_review_limitation": "Full independent raw replay of activation-only evidence remains incomplete because owner download was canceled. Original source semantics and compact receipts have independent scoped acceptance. Owner removed only the extra prerequisite for exploratory execution, with every numerical/physical acceptance condition unchanged. No transfer retry/reroute; no full qualification.",
+  "independent_raw_replay_complete": false,
+  "source_commit": "44783cb668a3250076e086e862bd5af48811b34e",
+  "source_tree": "b0b152711dafc8f27bde4ea17154dde81eece8f9",
+  "raw_commit": "ce6159242fa7d9a0498e2046c9ae7b709903da93",
+  "raw_tree": "610c5a7cbac9859d7114cb3d4d4d5d1ffc210d8e",
+  "baseline_commit": "4aa1b9f874d08a5e6fb2f45b33ad1976ef85a851",
+  "lean_branch_preserved_commit": "4da4eccc9af3b10f05be1bbd8966084f098dc6dc",
+  "completed_cells": 12,
+  "authored_run_checks_passed": 12,
+  "authored_pair_checks_passed": 66,
+  "total_candidate_pairs": 66,
+  "expected_accepted_event_order": [
+    "activation-equality",
+    "ordinary-outward",
+    "ordinary-inward"
+  ],
+  "held_attracting_candidates": 12,
+  "accepted_attracting_candidates": 0,
+  "accepted_sliding_states": 0,
+  "all_required_0_through_261_ms_grids_present": true,
+  "continuous_eleven_coordinate_restarts": 36,
+  "max_exact_restart_error": 0.0,
+  "frozen_integral_memory_change": 0.0,
+  "worst_pairwise_maxima": {
+    "y_m": 8.71653235701153e-11,
+    "w_m_per_s": 1.8852011202108443e-09,
+    "a": 8.255667226231278e-10,
+    "q": 7.9705841926625e-10,
+    "FT_N": 6.657789164421501e-08,
+    "I": 5.658864349333825e-11,
+    "raw": 2.7812755223899366e-10
+  },
+  "original_state_gates": {
+    "y_m": 1e-06,
+    "w_m_per_s": 1e-05,
+    "a": 2e-06,
+    "q": 2e-06,
+    "FT_N": 0.0001,
+    "I": 1e-09,
+    "raw": 1e-08
+  },
+  "event_time_spans_s": {
+    "activation-equality": 6.480516080362153e-11,
+    "ordinary-outward": 4.128278274784236e-11,
+    "ordinary-inward": 2.0168861025737783e-10,
+    "attracting": 7.154173575774081e-08
+  },
+  "event_gate_s": 2e-06,
+  "accepted_polynomials_replayed": 41578,
+  "RK_stage_rates_independently_recomputed": 157304,
+  "comparison_window_tables_reproduced": 570,
+  "scalar_maxima_reproduced": 3990,
+  "signed_witnesses_reproduced": 1710,
+  "max_independent_RK_coefficient_error": 1.8847818000333055e-14,
+  "max_second_replay_grid_error": 1.9567680809018384e-15,
+  "original_work_momentum_quadrature_checks_passed": 12,
+  "activation_only_control_prefix_comparisons_passed": 12,
+  "ordinary_only_control_comparisons_passed": 10,
+  "old_ordinary_coarse_200us_control_differences_exceed_I_gate": true,
+  "qualified_trajectories": 0,
+  "fourth_order_qualified": false,
+  "anatomical_qualification": false,
+  "python_version": "3.12.14",
+  "figures": [
+    "combined-refinement.png",
+    "combined-refinement.svg"
+  ],
+  "runtime_versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8",
+    "node": "v24.19.0"
+  }
+}

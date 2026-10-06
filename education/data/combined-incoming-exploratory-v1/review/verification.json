@@ -1,0 +1,134 @@
+{
+  "scope": "Local authored second implementation replay; historical independent raw review still incomplete",
+  "independent_raw_replay_complete": false,
+  "original_gates_changed": false,
+  "verifier_sha256": "16d38305a6a4958e5c8da263ae1dd38a67a84b9d90e61b44d2e1bd68e0f52d1a",
+  "analysis_sha256": "391a783852c2666fc23cf16f9d5e27461b25c69ed5609f499059532367c381da",
+  "runs": {
+    "full-source/RK4-0.0002": {
+      "accepted_polynomials": 1313,
+      "independently_recomputed_RK_stage_rates": 5252,
+      "RK_coefficients_error": 1.8847818000333055e-14,
+      "chain_error": 2.7755575615628914e-17,
+      "grid_error": 1.9567680809018384e-15,
+      "reproduced_grid_states": 262,
+      "endpoint_error": 0.0,
+      "frozen_I_polynomial_coefficients": 0.0
+    },
+    "full-source/RK4-0.0001": {
+      "accepted_polynomials": 2623,
+      "independently_recomputed_RK_stage_rates": 10492,
+      "RK_coefficients_error": 1.3553572153188978e-14,
+      "chain_error": 2.220446049250313e-16,
+      "grid_error": 1.9567680809018384e-15,
+      "reproduced_grid_states": 262,
+      "endpoint_error": 0.0,
+      "frozen_I_polynomial_coefficients": 0.0
+    },
+    "full-source/RK4-0.00005": {
+      "accepted_polynomials": 5243,
+      "independently_recomputed_RK_stage_rates": 20972,
+      "RK_coefficients_error": 9.521586990068044e-15,
+      "chain_error": 2.220446049250313e-16,
+      "grid_error": 1.9567680809018384e-15,
+      "reproduced_grid_states": 262,
+      "endpoint_error": 0.0,
+      "frozen_I_polynomial_coefficients": 0.0
+    },
+    "full-source/RK4-0.000025": {
+      "accepted_polynomials": 10484,
+      "independently_recomputed_RK_stage_rates": 41936,
+      "RK_coefficients_error": 3.556823585644565e-15,
+      "chain_error": 2.7755575615628914e-17,
+      "grid_error": 2.220446049250313e-16,
+      "reproduced_grid_states": 262,
+      "endpoint_error": 0.0,
+      "frozen_I_polynomial_coefficients": 0.0
+    },
+    "full-source/DOP853": {
+      "accepted_polynomials": 526,
+      "independently_recomputed_RK_stage_rates": 0,
+      "RK_coefficients_error": 0.0,
+      "chain_error": 0.0,
+      "grid_error": 2.220446049250313e-16,
+      "reproduced_grid_states": 261,
+      "endpoint_error": 0.0,
+      "frozen_I_polynomial_coefficients": 0.0
+    },
+    "full-source/Radau": {
+      "accepted_polynomials": 600,
+      "independently_recomputed_RK_stage_rates": 0,
+      "RK_coefficients_error": 0.0,
+      "chain_error": 2.220446049250313e-16,
+      "grid_error": 2.220446049250313e-16,
+      "reproduced_grid_states": 261,
+      "endpoint_error": 0.0,
+      "frozen_I_polynomial_coefficients": 0.0
+    },
+    "reduced-independent/RK4-0.0002": {
+      "accepted_polynomials": 1313,
+      "independently_recomputed_RK_stage_rates": 5252,
+      "RK_coefficients_error": 0.0,
+      "chain_error": 2.7755575615628914e-17,
+      "grid_error": 1.9567680809018384e-15,
+      "reproduced_grid_states": 262,
+      "endpoint_error": 0.0,
+      "frozen_I_polynomial_coefficients": 0.0
+    },
+    "reduced-independent/RK4-0.0001": {
+      "accepted_polynomials": 2623,
+      "independently_recomputed_RK_stage_rates": 10492,
+      "RK_coefficients_error": 0.0,
+      "chain_error": 5.551115123125783e-17,
+      "grid_error": 1.9567680809018384e-15,
+      "reproduced_grid_states": 262,
+      "endpoint_error": 0.0,
+      "frozen_I_polynomial_coefficients": 0.0
+    },
+    "reduced-independent/RK4-0.00005": {
+      "accepted_polynomials": 5243,
+      "independently_recomputed_RK_stage_rates": 20972,
+      "RK_coefficients_error": 0.0,
+      "chain_error": 2.220446049250313e-16,
+      "grid_error": 1.9567680809018384e-15,
+      "reproduced_grid_states": 262,
+      "endpoint_error": 0.0,
+      "frozen_I_polynomial_coefficients": 0.0
+    },
+    "reduced-independent/RK4-0.000025": {
+      "accepted_polynomials": 10484,
+      "independently_recomputed_RK_stage_rates": 41936,
+      "RK_coefficients_error": 0.0,
+      "chain_error": 2.7755575615628914e-17,
+      "grid_error": 2.220446049250313e-16,
+      "reproduced_grid_states": 262,
+      "endpoint_error": 0.0,
+      "frozen_I_polynomial_coefficients": 0.0
+    },
+    "reduced-independent/DOP853": {
+      "accepted_polynomials": 526,
+      "independently_recomputed_RK_stage_rates": 0,
+      "RK_coefficients_error": 0.0,
+      "chain_error": 0.0,
+      "grid_error": 2.220446049250313e-16,
+      "reproduced_grid_states": 261,
+      "endpoint_error": 0.0,
+      "frozen_I_polynomial_coefficients": 0.0
+    },
+    "reduced-independent/Radau": {
+      "accepted_polynomials": 600,
+      "independently_recomputed_RK_stage_rates": 0,
+      "RK_coefficients_error": 0.0,
+      "chain_error": 2.220446049250313e-16,
+      "grid_error": 2.220446049250313e-16,
+      "reproduced_grid_states": 261,
+      "endpoint_error": 0.0,
+      "frozen_I_polynomial_coefficients": 0.0
+    }
+  },
+  "comparison_window_tables_reproduced": 570,
+  "scalar_maxima_reproduced": 3990,
+  "signed_witnesses_reproduced": 1710,
+  "candidate_pairs_reproduced": 66,
+  "full_qualification": false
+}
