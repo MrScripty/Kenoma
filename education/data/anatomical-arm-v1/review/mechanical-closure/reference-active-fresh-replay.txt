@@ -1,0 +1,11 @@
+{
+  "result": "PASS_INDEPENDENT_FROZEN_REFERENCE_CONSTRAINT_REPLAY",
+  "executionReceiptSHA256": "0b7614fba83be88379deff2a8b633088320e66e056fc813ae9433d57b4e4b68f",
+  "verifierSHA256": "b23da4248d4e7fc0a1a8c67f4e83927985c672cc1ec15f5015a951e32462459e",
+  "rowCount": 84,
+  "maximumStressDifferenceRelative": 6.333707567382324e-06,
+  "limits": [
+    "Saved selected points only; no new full-quadrature search, physical equilibrium or state advancement.",
+    "Explicit one-sided derivatives at passive cutoff establish no two-sided physical tangent."
+  ]
+}

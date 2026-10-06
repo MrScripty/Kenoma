@@ -1,0 +1,30 @@
+{
+  "result": "PASS_SOURCE_BOUND_MINIMAL_MECHANICAL_CLOSURE_DIAGNOSTIC",
+  "entryCommit": "0075a8df7da0efb828ba2e7b6eaebb24243d738f",
+  "scope": "Source-backed recommendation and 84 frozen reference/constraint sensitivities, with four focused tests and independent replay. No selected physical parameter, new equilibrium, trajectory or production-model change. Initial derivative-cutoff failure preserved.",
+  "sha256": {
+    "data/anatomical-arm-v1/audit/mechanical-closure-reference-active-recheck.json": "91ba18c14c6ca1fda68a64d343ede7f064db49428132ae8baa1ab22ab19827d0",
+    "data/anatomical-arm-v1/audit/mechanical-closure-reference-active.json": "0b7614fba83be88379deff2a8b633088320e66e056fc813ae9433d57b4e4b68f",
+    "data/anatomical-arm-v1/review/mechanical-closure/closeout-validation.txt": "783853dd048248b8ad5f1b723cf8482f06170588a168eaca2b5ae429ecf575ab",
+    "data/anatomical-arm-v1/review/mechanical-closure/reference-active-comparison.pdf": "651dccc7ccd91573d52ee37efbb7c157da8e05efa81cfc50450794ea6e90c69f",
+    "data/anatomical-arm-v1/review/mechanical-closure/reference-active-comparison.png": "b8bc88e09f7899ae4d933544a9c61566da14510cd808dae7b2129f6e4831025b",
+    "data/anatomical-arm-v1/review/mechanical-closure/reference-active-cutoff-tests.txt": "a4b0c0f16fdb51e997e8fca3b3162ee7dc2b403fd37cdedbadacda7bebe70e2a",
+    "data/anatomical-arm-v1/review/mechanical-closure/reference-active-execution.txt": "76ca95392f31a951f2f348ceaa3b00ad6ab0133eb2f4216139f37753c82e57a4",
+    "data/anatomical-arm-v1/review/mechanical-closure/reference-active-first-failure-receipt.json": "9aac156cd8e27940ce41c32e03a77b03f06fed0a269e517654cbf18b65e73cdc",
+    "data/anatomical-arm-v1/review/mechanical-closure/reference-active-first-failure.txt": "c3596e4657fbf49eb49d1a797ff2219826662b8cb44c90680c4d16892ea10460",
+    "data/anatomical-arm-v1/review/mechanical-closure/reference-active-fresh-replay.txt": "b2d60990ad6a4c5a0aaa7ee51afdc2e1e2b3c12ad59ad3d2fbfe6f10b5ed2288",
+    "data/anatomical-arm-v1/review/mechanical-closure/reference-active-render-execution.txt": "f1beb6571f57b47064bac71c98bdc5c77c1b5ddcb85eb3fc765c40358e72a8d4",
+    "data/anatomical-arm-v1/review/mechanical-closure/reference-active-render-receipt.json": "5b005b7017d52e27412b8b787f90dec9f50d031d1274eed39e99b79557e9579d",
+    "data/anatomical-arm-v1/review/mechanical-closure/reference-active-tests.txt": "4c376574b67c961c6ab08da51a91d8ccabcf9b8204f13c3b7303e1445b48a813",
+    "research/mechanical-closure/protocol.md": "62943e685013797cc1236e3d82f7ac813d958e8ef2b3d54e8e940771f38a8a8f",
+    "research/mechanical-closure/rate-source-addendum.md": "9daa892a59f4bb39968e808b17504c4e0a2017c88df13aee4f61c611f019a70c",
+    "research/mechanical-closure/recommendation.md": "598041623d5f8d662bb6ae87d7c9cff49eef17ddda2bcb1245f58f178e58588a",
+    "research/mechanical-closure/results.md": "4c1cfcb06aa19d75de7a0bdcfaec80120245a8fb8c84b8f7bcfa50e2ef27c54c",
+    "tests/reference-active-cutoff.test.mjs": "98be7c975e97a0c32ad3dae1bd4a930fa1532f67d5260f285e4c9ccef25980f5",
+    "tests/reference-active-diagnostic.test.mjs": "edd15875c17dde9ac9ea2a5a7d2cb359f29d68fc05598e574ebadf650fd290e9",
+    "tools/reference-active-diagnostic.mjs": "0f5d4bc598309dec2f9466f31dbb0a67e8141202ed865c8a7241681906d68270",
+    "tools/reference-active-experiment.mjs": "4d0727496561263d6f7baf8182812dab31b4c5748c5bfd2048d2f4dfd92d9eb1",
+    "tools/reference_active_figure.py": "e15d9dff72c503b690c11c1ab67ecdf7cf00610b7df428c41eb52e64c8836ba3",
+    "tools/verify_reference_active.py": "b23da4248d4e7fc0a1a8c67f4e83927985c672cc1ec15f5015a951e32462459e"
+  }
+}

@@ -1,0 +1,43 @@
+mkdir -p failed for path /home/agent/.config/matplotlib: [Errno 30] Read-only file system: '/home/agent/.config/matplotlib'
+Matplotlib created a temporary cache directory at /tmp/matplotlib-7ylw9m07 because there was an issue with the default path (/home/agent/.config/matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+Fontconfig error: No writable cache directories
+{
+  "result": "PASS_SOURCE_BOUND_REFERENCE_ACTIVE_RENDER",
+  "inputs": {
+    "data/anatomical-arm-v1/audit/mechanical-closure-reference-active.json": "0b7614fba83be88379deff2a8b633088320e66e056fc813ae9433d57b4e4b68f",
+    "data/anatomical-arm-v1/audit/mechanical-closure-reference-active-recheck.json": "91ba18c14c6ca1fda68a64d343ede7f064db49428132ae8baa1ab22ab19827d0"
+  },
+  "rendererSHA256": "e15d9dff72c503b690c11c1ab67ecdf7cf00610b7df428c41eb52e64c8836ba3",
+  "outputs": {
+    "data/anatomical-arm-v1/review/mechanical-closure/reference-active-comparison.png": "b8bc88e09f7899ae4d933544a9c61566da14510cd808dae7b2129f6e4831025b",
+    "data/anatomical-arm-v1/review/mechanical-closure/reference-active-comparison.pdf": "651dccc7ccd91573d52ee37efbb7c157da8e05efa81cfc50450794ea6e90c69f"
+  }
+}
