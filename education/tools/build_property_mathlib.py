@@ -51,6 +51,9 @@ for name in ['Mathlib.LinearAlgebra.Matrix.Determinant.Basic','Mathlib.Data.Real
              'Mathlib.Analysis.SpecialFunctions.ExpDeriv',
              'Mathlib.Analysis.Calculus.Deriv.MeanValue',
              'Mathlib.Analysis.Calculus.Deriv.Inv',
+             'Mathlib.Analysis.SpecialFunctions.Log.Deriv',
+             'Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic',
+             'Mathlib.Tactic.FinCases',
              'Mathlib.Tactic.Linarith','Mathlib.Tactic.FieldSimp','Mathlib.Tactic.Ring']:visit(name)
 print('SOURCE_MODULE_COUNT',len(graph),flush=True)
 # Preserve the workspace cache and no-download settings established above.
