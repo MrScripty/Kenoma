@@ -1,0 +1,15 @@
+{
+  "invocations": 1,
+  "command": [
+    "node",
+    "--max-old-space-size=6144",
+    "education/tools/run-fixed-field-integration.mjs",
+    "--execute"
+  ],
+  "startedUTC": "2026-10-07T01:19:40.961247+00:00",
+  "completedUTC": "2026-10-07T01:23:50.323919+00:00",
+  "elapsedSeconds": 249.36308417499822,
+  "exitCode": 0,
+  "logSha256": "2a71e8ce2c703134e5918795b57b69951f8dc5b16c4ca6709f275402c73d233f",
+  "executedHead": "ef39f8335486b5cd7c9954361da181f46ea21c80"
+}

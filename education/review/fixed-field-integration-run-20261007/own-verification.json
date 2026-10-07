@@ -1,0 +1,131 @@
+{
+  "schema": 1,
+  "result": "PASS_OWN_HASH_VECTOR_DIRECTION_SCATTER_ACCOUNTING_VERIFICATION",
+  "independentReview": false,
+  "constitutiveCalls": 0,
+  "reservedActualCompletedCalls": 8847360,
+  "outputHashesChecked": 966,
+  "sourceHashesChecked": 100,
+  "runtime": {
+    "reservedCalls": 8847360,
+    "actualConstitutiveCallbacks": 8847360,
+    "completedConstitutiveCallbacks": 8847360,
+    "plannedCalls": 8847360,
+    "maximumCalls": 9000000,
+    "elapsedMs": 249229.112808,
+    "maximumWallMs": 900000,
+    "peakObservedRssBytes": 385560576,
+    "maximumRssBytes": 8589934592,
+    "lastPhase": "before-completion-record",
+    "activeBatch": null
+  },
+  "diagnosticResult": "UNRESOLVED_FIXED_PATCH_INTEGRATION",
+  "comparisonSummary": [
+    {
+      "state": "control45",
+      "a": "U3",
+      "b": "U4",
+      "required": false,
+      "allNodalTotalDifferenceN": 0.0005229948887759406,
+      "freeTotalDifferenceN": 0.0005229948887759406,
+      "totalDirectionalDifferenceJ": 1.827024781464459e-08,
+      "failedTerms": [
+        "volume",
+        "total"
+      ]
+    },
+    {
+      "state": "control45",
+      "a": "U4",
+      "b": "U5",
+      "required": true,
+      "allNodalTotalDifferenceN": 4.265416846038761e-05,
+      "freeTotalDifferenceN": 4.265416846038761e-05,
+      "totalDirectionalDifferenceJ": 1.3219318417689863e-09,
+      "failedTerms": [
+        "volume",
+        "total"
+      ]
+    },
+    {
+      "state": "control45",
+      "a": "D4",
+      "b": "D5",
+      "required": true,
+      "allNodalTotalDifferenceN": 4.523190533234356e-08,
+      "freeTotalDifferenceN": 4.523190533234356e-08,
+      "totalDirectionalDifferenceJ": 1.5876744363652051e-12,
+      "failedTerms": []
+    },
+    {
+      "state": "control45",
+      "a": "U5",
+      "b": "D5",
+      "required": true,
+      "allNodalTotalDifferenceN": 4.10529387373515e-06,
+      "freeTotalDifferenceN": 4.10529387373515e-06,
+      "totalDirectionalDifferenceJ": 1.0392631200062397e-10,
+      "failedTerms": []
+    },
+    {
+      "state": "terminal46",
+      "a": "U3",
+      "b": "U4",
+      "required": false,
+      "allNodalTotalDifferenceN": 0.47296994502330847,
+      "freeTotalDifferenceN": 0.47296994502330847,
+      "totalDirectionalDifferenceJ": 3.629174947261671e-05,
+      "failedTerms": [
+        "matrix",
+        "volume",
+        "total"
+      ]
+    },
+    {
+      "state": "terminal46",
+      "a": "U4",
+      "b": "U5",
+      "required": true,
+      "allNodalTotalDifferenceN": 0.14283916472766123,
+      "freeTotalDifferenceN": 0.14283916472766123,
+      "totalDirectionalDifferenceJ": 1.065601907063174e-05,
+      "failedTerms": [
+        "matrix",
+        "volume",
+        "total"
+      ]
+    },
+    {
+      "state": "terminal46",
+      "a": "D4",
+      "b": "D5",
+      "required": true,
+      "allNodalTotalDifferenceN": 0.08432832196002948,
+      "freeTotalDifferenceN": 0.08432832196002948,
+      "totalDirectionalDifferenceJ": 6.207604186403426e-06,
+      "failedTerms": [
+        "matrix",
+        "volume",
+        "total"
+      ]
+    },
+    {
+      "state": "terminal46",
+      "a": "U5",
+      "b": "D5",
+      "required": true,
+      "allNodalTotalDifferenceN": 0.02392390377469411,
+      "freeTotalDifferenceN": 0.02392390377469411,
+      "totalDirectionalDifferenceJ": 1.7201906600816663e-06,
+      "failedTerms": [
+        "matrix",
+        "volume",
+        "total"
+      ]
+    }
+  ],
+  "limits": "Finite patch agreement only; no global integration, equilibrium or displacement qualification",
+  "verificationScriptSha256": "3b35b6b190ad71a34e588795e2fbc61af3160cbc349746a9cbe1937ea6ed3415",
+  "repositoryVerifierSha256": "0a742fd6c1fd92f70a54d00434c10069a1b1a609ac826497a3d8a8b2655f6048",
+  "repositoryVerifierDifference": "Uses repository-relative root and prints its receipt without overwriting evidence; arithmetic/hash/scatter logic unchanged."
+}
