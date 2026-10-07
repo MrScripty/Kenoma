@@ -17,6 +17,13 @@ export class ShellEvidenceStore extends EvidenceStore{
  }
 }
 export const shellLimits=()=>new RuntimeLimits({plannedCalls:SHELL_BUDGET.plannedMaterialCalls,maximumCalls:SHELL_BUDGET.maximumMaterialCalls,wallMs:1000*SHELL_BUDGET.maximumWallSeconds,rssBytes:SHELL_BUDGET.maximumRssBytes,now:()=>process.uptime()*1000,startedMs:0});
+function retainCompletedShellWeights(store,weightName,fallbackName,physicalWeights,context){
+ const expected=hashBytes(physicalWeights);context.partialWeightSha256=expected;context.physicalWeightEvidenceComplete=false;
+ // A filename alone is insufficient: a failed write may have created only
+ // a prefix, or a later refusal may expose same-length damaged bytes.
+ try{const file=path.join(store.directory,weightName),stat=fs.lstatSync(file);context.normalWeightBytes=stat.size;context.normalWeightIsRegular=stat.isFile();if(stat.isFile()&&stat.size===physicalWeights.length){context.normalWeightSha256=hashBytes(fs.readFileSync(file));if(context.normalWeightSha256===expected){context.retainedWeightFile=weightName;context.physicalWeightEvidenceComplete=true;return;}}}catch(error){context.normalWeightReadError=error.message;}
+ try{assert.ok(physicalWeights.length<=65536);store.bytes=treeBytes(store.runRoot);store.write(fallbackName,physicalWeights,{emergency:true});const retained=fs.readFileSync(path.join(store.directory,fallbackName));assert.equal(retained.length,physicalWeights.length);assert.equal(hashBytes(retained),expected);context.retainedWeightFile=fallbackName;context.physicalWeightEvidenceComplete=true;}catch(error){context.partialWeightWriteError=error.message;}
+}
 export function assembleShellStage({source,element,positions,direction,recipe,points,limits,store,materialCallback,context,onCheckpoint=()=>{}}){
  const assembly=emptyAssembly(source.nodes_m.length),original=[],localNames=[],physical=[];
  for(const s of shells(recipe.depth)){
@@ -25,11 +32,18 @@ export function assembleShellStage({source,element,positions,direction,recipe,po
    if(error.partialElement){context.partialShell=error.partialElement;context.partialWeightSha256=hashBytes(error.partialPhysicalWeights);try{assert.ok(error.partialPhysicalWeights.length<=65536);store.write(`${recipe.id}-${context.state}-${s.id}-partial-weights.f64le`,error.partialPhysicalWeights,{emergency:true});}catch(w){context.partialWeightWriteError=w.message;}}
    throw error;
   }
-  const {physicalWeights,...local}=e,ids=source.elements_ten_node[element],work=Object.fromEntries(ALL_TERMS.map(t=>[t,local.localGradientsN[t].reduce((v,X,i)=>v+X.reduce((a,x,d)=>a+x*direction[ids[i]][d],0),0)])),row={...local,shell:s.id,lo:s.lo,hi:s.hi,comparisonShell:s.hi<=2**(-COMPARISON_DEPTH)?'core':s.id,terminalDirectionalDerivativesJ:work};
-  const localAssembly=emptyAssembly(source.nodes_m.length);scatter(source,e,localAssembly);row.reconstruction=componentSumCheck(localAssembly);
+  const {physicalWeights,...local}=e;
+  // Snapshot a completed shell before any derivative, scatter, reconstruction
+  // or output operation can throw. These operations all share one catch.
+  context.partialShell={...local,shell:s.id,lo:s.lo,hi:s.hi,comparisonShell:s.hi<=2**(-COMPARISON_DEPTH)?'core':s.id,completedPoints:e.pointCount,physicalWeightsComplete:true};
   const name=`${recipe.id}-${context.state}-${s.id}-shell.json`,weightName=`${recipe.id}-${context.state}-${s.id}-weights.f64le`;
-  try{store.write(weightName,physicalWeights);store.json(name,row);}catch(error){context.partialShell={...row,completedPoints:e.pointCount,physicalWeightsComplete:true};context.partialWeightSha256=hashBytes(physicalWeights);if(!fs.existsSync(path.join(store.directory,weightName)))try{assert.ok(physicalWeights.length<=65536);store.write(`${recipe.id}-${context.state}-${s.id}-partial-weights.f64le`,physicalWeights,{emergency:true});}catch(w){context.partialWeightWriteError=w.message;}throw error;}
-  localNames.push(name);physical.push(physicalWeights);original.push(row);scatter(source,e,assembly);context.completedShells.push(s.id);context.partialShell=null;context.partialNodal=assembly.nodal;context.partialEnergiesJ=assembly.energiesJ;onCheckpoint('after-shell-output');
+  try{
+   const ids=source.elements_ten_node[element],work=Object.fromEntries(ALL_TERMS.map(t=>[t,local.localGradientsN[t].reduce((v,X,i)=>v+X.reduce((a,x,d)=>a+x*direction[ids[i]][d],0),0)])),row={...local,shell:s.id,lo:s.lo,hi:s.hi,comparisonShell:context.partialShell.comparisonShell,terminalDirectionalDerivativesJ:work};context.partialShell={...row,completedPoints:e.pointCount,physicalWeightsComplete:true};
+   const localAssembly=emptyAssembly(source.nodes_m.length);scatter(source,e,localAssembly);row.reconstruction=componentSumCheck(localAssembly);
+   store.write(weightName,physicalWeights);store.json(name,row);
+   localNames.push(name);physical.push(physicalWeights);original.push(row);scatter(source,e,assembly);context.completedShells.push(s.id);context.partialNodal=assembly.nodal;context.partialEnergiesJ=assembly.energiesJ;onCheckpoint('after-shell-output');
+  }catch(error){retainCompletedShellWeights(store,weightName,`${recipe.id}-${context.state}-${s.id}-partial-weights.f64le`,physicalWeights,context);throw error;}
+  context.partialShell=null;
  }
  const grouped=shells(COMPARISON_DEPTH).map(s=>({shell:s.id,localGradientsN:Object.fromEntries(ALL_TERMS.map(t=>[t,Array.from({length:10},()=>[0,0,0])])),energiesJ:Object.fromEntries(ALL_TERMS.map(t=>[t,0])),originalShells:[]}));
  for(const row of original){const bin=grouped.find(g=>g.shell===row.comparisonShell);assert.ok(bin);bin.originalShells.push(row.shell);for(const t of ALL_TERMS){bin.energiesJ[t]+=row.energiesJ[t];for(let i=0;i<10;i++)for(let d=0;d<3;d++)bin.localGradientsN[t][i][d]+=row.localGradientsN[t][i][d];}}

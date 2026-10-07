@@ -11,17 +11,27 @@ def finite(x):return isinstance(x,(int,float)) and not isinstance(x,bool) and ma
 def vector(v,n):need(isinstance(v,list) and len(v)==n and all(isinstance(x,list) and len(x)==3 and all(finite(a) for a in x) for x in v),'COMPLETE_FINITE_VECTOR')
 def close(a,b,tol=1e-12):need(finite(a) and finite(b) and abs(a-b)<=tol,'ARITHMETIC_MISMATCH')
 def zero(n):return [[0.,0.,0.] for _ in range(n)]
-def dot(v,u):return sum(v[i][d]*u[i][d] for i in range(len(v)) for d in range(3))
+def sequential_sum(values):
+ total=0.
+ for value in values:total+=value
+ return total
+def dot(v,u):
+ # Stored shell/stage work uses JS nested reduce: three coordinates first,
+ # then nodes. Python3.12's compensated builtin sum is deliberately avoided.
+ return sequential_sum(sequential_sum(v[i][d]*u[i][d] for d in range(3)) for i in range(len(v)))
+def comparison_dot(v,u):
+ # compareShellVectors uses flat, node-major/component-major sequential +=.
+ return sequential_sum(v[i][d]*u[i][d] for i in range(len(v)) for d in range(3))
 def max_abs(v):return max(abs(x) for row in v for x in row)
 def sum_check(vectors,energies,n):
  for t in TERMS:vector(vectors[t],n);need(finite(energies[t]),'FINITE_ENERGY')
- need(max(abs(sum(vectors[t][i][d] for t in TERMS[:-1])-vectors['total'][i][d]) for i in range(n) for d in range(3))<=RECON_FORCE,'INDEPENDENT_TOTAL_RECONSTRUCTION_FORCE')
- need(abs(sum(energies[t] for t in TERMS[:-1])-energies['total'])<=RECON_ENERGY,'INDEPENDENT_TOTAL_RECONSTRUCTION_ENERGY')
+ need(max(abs(sequential_sum(vectors[t][i][d] for t in TERMS[:-1])-vectors['total'][i][d]) for i in range(n) for d in range(3))<=RECON_FORCE,'INDEPENDENT_TOTAL_RECONSTRUCTION_FORCE')
+ need(abs(sequential_sum(energies[t] for t in TERMS[:-1])-energies['total'])<=RECON_ENERGY,'INDEPENDENT_TOTAL_RECONSTRUCTION_ENERGY')
 def verify(root,directory):
  root=pathlib.Path(root);run=pathlib.Path(directory);d=run/'material';terminal=require_terminal_evidence(run);r=terminal['completion']
  need(r.get('patchQualification') is False and r.get('priorPatchResult')=='UNRESOLVED_FIXED_PATCH_INTEGRATION','OLD_UNRESOLVED_PATCH_REQUIRED');need(r.get('unchangedStates') is True and all(r.get(k)==0 for k in ['newNodalFields','nonlinearSolves','optimizerTrials','refits']),'FROZEN_STATE_SCOPE')
  for p,h in r['sourceHashes'].items():need(not pathlib.Path(p).is_absolute() and '..' not in pathlib.Path(p).parts,'SOURCE_PATH');need(digest(root/p)==h,'SOURCE_HASH:'+p)
- manifest=read(root/'research/element247-shell-runner-20261007-inputs.json');preflight=read(root/'review/element247-shell-runtime-20261007/runtime-preflight.json');expected_sources=set(manifest['inputs'])|set(manifest['newSources'])|{'review/element247-shell-runtime-20261007/runtime-preflight.json','review/element247-shell-runtime-20261007/js-tests.log','review/element247-shell-runtime-20261007/python-tests.log','research/element247-shell-execution-authorization-20261007.json'}
+ manifest=read(root/'research/element247-shell-retention-20261007-inputs.json');preflight=read(root/'review/element247-shell-retention-20261007/runtime-preflight.json');expected_sources=set(manifest['inputs'])|set(manifest['newSources'])|{'review/element247-shell-retention-20261007/runtime-preflight.json','review/element247-shell-retention-20261007/js-tests.log','review/element247-shell-retention-20261007/python-tests.log','research/element247-shell-execution-authorization-20261007.json'}
  need(set(r['sourceHashes'])==expected_sources,'COMPLETE_SOURCE_INVENTORY');need(set(preflight['sourceHashes'])==set(manifest['inputs'])|set(manifest['newSources']),'COMPLETE_PREFLIGHT_SOURCE_INVENTORY');need(preflight['sourceCommit']==r['runnerSourceCommit'] and preflight['result']=='PASS_ELEMENT247_SHELL_RUNTIME_PREFLIGHT_NO_MATERIAL_ASSEMBLY' and preflight['specimenConstitutiveCalls']==0 and preflight['tests']['fail']==0,'PINNED_RUNTIME_PREFLIGHT')
  for p,h in preflight['sourceHashes'].items():need(r['sourceHashes'][p]==h,'CHANGED_PREFLIGHT_SOURCE:'+p)
  for name,x in r['outputInventory'].items():need(pathlib.Path(name).name==name,'OUTPUT_PATH');need((d/name).stat().st_size==x['bytes'] and digest(d/name)==x['sha256'],'OUTPUT_HASH:'+name)
@@ -35,9 +45,9 @@ def verify(root,directory):
  start=read(d/'material-start.json');need(start['sourceCommit']==r['sourceCommit'] and start['runId']==r['runId'] and start['budget']==BUDGET and start['activation']==1,'MATERIAL_START_IDENTITY')
  need(start['sourceHashes']==r['sourceHashes'],'SOURCE_INVENTORY_IDENTITY')
  auth=read(root/'research/element247-shell-execution-authorization-20261007.json');need(auth['authorized'] is True and auth['budget']==BUDGET and auth['runnerSourceCommit']==r['runnerSourceCommit'],'AUTHORIZATION_SCOPE');need(digest(root/'research/element247-shell-execution-authorization-20261007.json')==start['authorizationSha256'],'AUTHORIZATION_HASH')
- need(auth.get('parentThread')=='01a103c3-a2e6-7606-8c1e-06987ac710f1' and auth.get('invocations')==1 and auth.get('runtimePreflightSha256')==digest(root/'review/element247-shell-runtime-20261007/runtime-preflight.json'),'PINNED_ONE_SHOT_AUTHORIZATION')
+ need(auth.get('parentThread')=='01a103c3-a2e6-7606-8c1e-06987ac710f1' and auth.get('invocations')==1 and auth.get('runtimePreflightSha256')==digest(root/'review/element247-shell-retention-20261007/runtime-preflight.json'),'PINNED_ONE_SHOT_AUTHORIZATION')
  prior_protocol=read(root/'research/fixed-field-integration-protocol-20261007-inputs.json');need(start['material']==prior_protocol['material'],'UNCHANGED_MATERIAL')
- arrays=read(d/'saved-arrays.json');need(arrays==read(root/'review/fixed-field-integration-run-20261007/saved-arrays.json'),'UNCHANGED_ARRAYS');direction=arrays['terminalDirectionM'];vector(direction,585);need(all(all(x==0 for x in direction[n]) for n in arrays['heldNodeOrder']),'HELD_DIRECTION_PRESERVATION');close(sum(abs(x) for row in direction for x in row)*FORCE,WORK,1e-20)
+ arrays=read(d/'saved-arrays.json');need(arrays==read(root/'review/fixed-field-integration-run-20261007/saved-arrays.json'),'UNCHANGED_ARRAYS');direction=arrays['terminalDirectionM'];vector(direction,585);need(all(all(x==0 for x in direction[n]) for n in arrays['heldNodeOrder']),'HELD_DIRECTION_PRESERVATION');close(sequential_sum(abs(x) for row in direction for x in row)*FORCE,WORK,1e-20)
  mesh=next(s for s in read(root/'data/anatomical-arm-v1/generated/arm-reference.json')['muscles'] if s['element_id']=='FJ1486');ids=mesh['elements_ten_node'][247];local_direction=[direction[n] for n in ids];stages={};original_receipt=read(root/'review/element247-shell-protocol-20261007/confirmation-preflight.json')
  for recipe,depth,count in RECIPES:
   points=d/(recipe+'-normalized-points.f64le');need(points.stat().st_size==48*count and digest(points)==digest(root/f'review/element247-shell-protocol-20261007/{recipe}-normalized-points.f64le'),'NORMALIZED_RULE_IDENTITY');normative=next(i for i in original_receipt['ruleInventories'] if i['recipe']['id']==recipe);shell_order=[f's{i}' for i in range(1,depth+1)]+['core']
@@ -67,7 +77,7 @@ def verify(root,directory):
   for t in TERMS:
    entry=c['terms'][t];signed=zero(10);absolute=zero(10);work=0.;work_bound=0.;diffs=[]
    for a,b in zip(A['comparisonShells'],B['comparisonShells']):
-    delta=[[a['localGradientsN'][t][i][k]-b['localGradientsN'][t][i][k] for k in range(3)] for i in range(10)];w=dot(delta,local_direction);work+=w;work_bound+=abs(w);diffs.append({'shell':a['shell'],'localDifferenceN':delta,'directionalDifferenceJ':w})
+    delta=[[a['localGradientsN'][t][i][k]-b['localGradientsN'][t][i][k] for k in range(3)] for i in range(10)];w=comparison_dot(delta,local_direction);work+=w;work_bound+=abs(w);diffs.append({'shell':a['shell'],'localDifferenceN':delta,'directionalDifferenceJ':w})
     for i in range(10):
      for k in range(3):signed[i][k]+=delta[i][k];absolute[i][k]+=abs(delta[i][k])
    need(entry['differences']==diffs and entry['aggregateDifferenceN']==signed and entry['absoluteShellDifferenceN']==absolute,'RETAINED_SIGNED_ABSOLUTE_DIFFERENCES');scattered=zero(585)
