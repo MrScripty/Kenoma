@@ -1,0 +1,157 @@
+{
+  "schema": 1,
+  "verdict": "PASS",
+  "independentReview": true,
+  "sourceCommit": "7580cfccbe028329ff774971ea06a6cdbda6431b",
+  "evidenceCommit": "10a49d0f51aac6c6be08059b7a8265d5768f0255",
+  "predecessorResultCommit": "4b83ec5dfebae73b08c3f964aa910f65e02458e0",
+  "preflightSha256": "ea6ad4d6b9838aaa02475da79263152103e04812b63ede288d5bb95ab74f95f8",
+  "zeroSpecimenCalls": true,
+  "specimenCalls": 0,
+  "materialAssemblyInvocations": 0,
+  "authorizationCreated": false,
+  "materialRunnerInvoked": false,
+  "repositoryMutation": false,
+  "publicationAttempted": false,
+  "sourceHashesVerifiedAgainstSourceCommit": 1591,
+  "predecessorInputsVerifiedAgainstBaseCommit": 1581,
+  "budget": {
+    "plannedMaterialCalls": 4000,
+    "maximumMaterialCalls": 4000,
+    "maximumWallSeconds": 180,
+    "nodeHeapMiB": 1024,
+    "maximumRssBytes": 2147483648,
+    "maximumOutputBytes": 67108864,
+    "invocations": 1
+  },
+  "recipe": {
+    "id": "T24",
+    "state": "terminal46",
+    "element": 247,
+    "depth": 20,
+    "radialOrder": 5,
+    "angularOrder": 5,
+    "radialParts": 1,
+    "angularParts": 4,
+    "faceOrder": [
+      1,
+      2,
+      3
+    ],
+    "changedShells": [
+      "s1",
+      "s2"
+    ],
+    "evaluatedPoints": 4000,
+    "constructedPoints": 13500,
+    "reusedRecipe": "A55",
+    "reusedPoints": 9500
+  },
+  "reconstructionGates": {
+    "forceN": 1e-08,
+    "energyJ": 1e-09
+  },
+  "integrationForceGateN": 1e-05,
+  "integrationDerivativeGateJ": 5.492029235357012e-07,
+  "reuse": {
+    "regions": 19,
+    "points": 9500,
+    "sourceRecipe": "A55",
+    "state": "terminal46",
+    "regionOrder": [
+      "s3",
+      "s4",
+      "s5",
+      "s6",
+      "s7",
+      "s8",
+      "s9",
+      "s10",
+      "s11",
+      "s12",
+      "s13",
+      "s14",
+      "s15",
+      "s16",
+      "s17",
+      "s18",
+      "s19",
+      "s20",
+      "core"
+    ],
+    "byteExactShellJsonAndPhysicalWeights": true,
+    "normalizedPointBlocksUnchanged": true,
+    "newCallbacks": 0
+  },
+  "geometry": {
+    "normalizedMoments": 252,
+    "physicalReferenceMoments": 30,
+    "independentlyRecomputedRationalNormalizedMoments": 252,
+    "minimumSampleJ": 0.2500689754933679,
+    "minimumPhysicalWeightM3": 2.8923173432323234e-15,
+    "wholeMeshTerminalCertificateReplayed": true
+  },
+  "reviewedProductionPaths": [
+    "tools/element247-two-shell-protocol.mjs",
+    "tools/element247-two-shell-runtime.mjs",
+    "tools/run-element247-two-shell.mjs",
+    "tools/launch-element247-two-shell.py",
+    "tools/verify-element247-two-shell.py",
+    "tools/preflight-element247-two-shell.mjs",
+    "tools/element247_shell_execution.py",
+    "tools/element247-shell-runtime.mjs",
+    "tools/fixed-field-integration-assembly.mjs",
+    "tools/fixed-field-integration-runtime.mjs",
+    "tools/isolated-collapse-components.mjs"
+  ],
+  "findings": [
+    "Only changed terminal s1/s2 evaluate laws: 2 batches of 2000 callbacks; maximum/planned/reserved/entered/completed gate is4000.",
+    "Existing Gauss5 nodes/weights, radialParts1, chart123, depth20, unchanged terminal46 positions/direction, material and activation1 are preserved.",
+    "All19tail shellJSON and physicalweightfiles are copied verbatim; normalizedblocks are reused exactly; 13500 constructed points comprise4000 new and9500 reused.",
+    "Changed-only and constructed-whole comparisons are separately retained with unchanged force/work gates and every physical component plus independent total.",
+    "The previously accepted supervisor is unchanged, shared wall starts before authorization/source checks, and all refusal paths clean process group. Failed/missing exit and terminal chain cannot qualify.",
+    "Completed-shell reconstruction/output failure retains verifiable weights or declares retention incomplete; SIGKILL guarantee is only already durable files.",
+    "Original C55/A55 total triangle8.611662232570753e-5N and global unresolved result remain immutable; changedShellAssessment never qualifies element247 or patch."
+  ],
+  "reruns": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 node --max-old-space-size=1024 education/tools/preflight-element247-two-shell.mjs --output /tmp/kenoma-two-shell-independent-replay-10a49d0f",
+      "workdir": "/workspace/Kenoma-two-shell",
+      "exitCode": 0,
+      "tests": {
+        "pass": 22,
+        "fail": 0,
+        "javaScript": 6,
+        "pythonNumericalDamage": 7,
+        "pythonSupervisor": 9
+      },
+      "realSeparatePipeDevnullChildSubcases": 8,
+      "specimenCalls": 0
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python /tmp/kenoma_two_shell_independent_checks.py > /tmp/kenoma-two-shell-independent-replay-10a49d0f/independent-checks.log 2>&1",
+      "workdir": "/workspace/Kenoma-two-shell",
+      "exitCode": 0,
+      "tests": {
+        "pass": 3,
+        "fail": 0
+      },
+      "specimenCalls": 0
+    }
+  ],
+  "tests": {
+    "pass": 25,
+    "fail": 0
+  },
+  "blockers": [],
+  "limitations": [
+    "PASS authorizes only parent-prescribed conditional one-shot4000-callback diagnostic after separately committed pinned authorization; this review ran no specimen law.",
+    "A55/T24 agreement concerns changed outer shells at terminal46 only; control45 and additional rules are not evaluated.",
+    "Reused-tail difference is zero by construction and provides no new accuracy evidence.",
+    "Region triangle permits within-region cancellation; work bounds are algebraically implied by force bounds.",
+    "Physical-reference moments are barycentric degree2, not every Cartesian quadratic.",
+    "This review replayed numerical/comparison damage controls and accepted supervisor controls; no selective material completion exists yet.",
+    "Public-entry tool result must be retained verbatim if available; it is executor-return evidence, not an independent cryptographic process observer.",
+    "Fullpatch and secondary197/200/203/206/246/248 remain unresolved regardless of selective result."
+  ]
+}

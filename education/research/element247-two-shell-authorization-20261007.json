@@ -1,0 +1,102 @@
+{
+  "schema": 1,
+  "authorized": true,
+  "parentThread": "01a103c3-a2e6-7606-8c1e-06987ac710f1",
+  "invocations": 1,
+  "authorizedUTC": "2026-10-07T03:38:53.404635+00:00",
+  "runnerSourceCommit": "7580cfccbe028329ff774971ea06a6cdbda6431b",
+  "runnerEvidenceCommit": "10a49d0f51aac6c6be08059b7a8265d5768f0255",
+  "baseResultCommit": "4b83ec5dfebae73b08c3f964aa910f65e02458e0",
+  "preflightSha256": "ea6ad4d6b9838aaa02475da79263152103e04812b63ede288d5bb95ab74f95f8",
+  "independentReviewSha256": "20667ea66ec8ef619198b1e1d306524b063b7490b5d9ffd80cde04269c2ff5ac",
+  "independentVerdict": "PASS",
+  "budget": {
+    "plannedMaterialCalls": 4000,
+    "maximumMaterialCalls": 4000,
+    "maximumWallSeconds": 180,
+    "nodeHeapMiB": 1024,
+    "maximumRssBytes": 2147483648,
+    "maximumOutputBytes": 67108864,
+    "invocations": 1
+  },
+  "recipe": {
+    "id": "T24",
+    "state": "terminal46",
+    "element": 247,
+    "depth": 20,
+    "radialOrder": 5,
+    "angularOrder": 5,
+    "radialParts": 1,
+    "angularParts": 4,
+    "faceOrder": [
+      1,
+      2,
+      3
+    ],
+    "changedShells": [
+      "s1",
+      "s2"
+    ],
+    "evaluatedPoints": 4000,
+    "constructedPoints": 13500,
+    "reusedRecipe": "A55",
+    "reusedPoints": 9500
+  },
+  "material": {
+    "mu": 1000,
+    "bulk": 1000000,
+    "kf": 20000,
+    "b": 6,
+    "sigma0": 3599330.7341830498,
+    "optimumStretch": 1,
+    "activeWidth": 0.5
+  },
+  "activation": 1,
+  "terminalPositionsSha256": "655eb058007d2432689257b0bbe84f9b054500587672b087b03dbecf0bdfc410",
+  "terminalDirectionSha256": "bb8bc986540e2e3e098969db2b34b3682f55602d868c9972e35b42464972cdab",
+  "reconstructionGates": {
+    "forceN": 1e-08,
+    "energyJ": 1e-09
+  },
+  "integrationForceGateN": 1e-05,
+  "integrationDerivativeGateJ": 5.492029235357012e-07,
+  "parentConditionalAuthorization": "Parent thread 01a103c3-a2e6-7606-8c1e-06987ac710f1 authorizes exactly one 4000-callback run only after an independent local reviewer accepts this frozen preflight. Otherwise stop. No retries, optimizer/refit, additional rules or public writes.",
+  "conditionSatisfied": "Independent local reviewer accepted exact frozen source/preflight and resource/mathematical/reuse gates.",
+  "entryCommand": [
+    "python",
+    "education/tools/launch-element247-two-shell.py",
+    "--execute"
+  ],
+  "childCommand": [
+    "node",
+    "--max-old-space-size=1024",
+    "tools/run-element247-two-shell.mjs",
+    "--execute"
+  ],
+  "scope": {
+    "localOnly": true,
+    "retries": 0,
+    "optimizerTrials": 0,
+    "refits": 0,
+    "newNodalFields": 0,
+    "extraRules": 0,
+    "changedShells": [
+      "s1",
+      "s2"
+    ],
+    "reusedRegions": 19,
+    "reusedPoints": 9500,
+    "constructedPoints": 13500,
+    "element247Qualification": false,
+    "patchQualification": false,
+    "originalFailureN": 8.611662232570753e-05,
+    "secondaryElementsUnresolved": [
+      197,
+      200,
+      203,
+      206,
+      246,
+      248
+    ]
+  }
+}
