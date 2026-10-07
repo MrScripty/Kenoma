@@ -1,0 +1,396 @@
+{
+  "schema": 1,
+  "status": "FROZEN_PROPOSAL_NOT_AUTHORIZED",
+  "baseReviewCommit": "6759c66d2269bd0b2159ddce564014590b4a8320",
+  "frozenResultCommit": "38ae8a2e2af57cf33254af987b724824b9d84357",
+  "criterionSha256": "a0232d758b368a1967aada47c87b508e93041740d3e845dc5a28fa5ad4df262b",
+  "newMaterialCallsDuringDesign": 0,
+  "quadratureGenerated": false,
+  "runnerImplementationAdded": false,
+  "executionAuthorized": false,
+  "states": [
+    {
+      "id": "control45",
+      "positionsSha256": "07e50e29f34c3f6880f3895bb63c3a53dd18afee90217b6816099681e2c8132e"
+    },
+    {
+      "id": "terminal46",
+      "positionsSha256": "655eb058007d2432689257b0bbe84f9b054500587672b087b03dbecf0bdfc410"
+    }
+  ],
+  "directionSha256": "bb8bc986540e2e3e098969db2b34b3682f55602d868c9972e35b42464972cdab",
+  "material": {
+    "mu": 1000,
+    "bulk": 1000000,
+    "kf": 20000,
+    "b": 6,
+    "sigma0": 3599330.7341830498,
+    "optimumStretch": 1,
+    "activeWidth": 0.5
+  },
+  "activation": 1,
+  "patch": [
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    202,
+    203,
+    206,
+    237,
+    240,
+    243,
+    244,
+    246,
+    247,
+    248
+  ],
+  "quiet": [
+    195,
+    196,
+    198,
+    199,
+    202,
+    237,
+    240,
+    243,
+    244
+  ],
+  "secondary": [
+    197,
+    200,
+    203,
+    206,
+    246,
+    248
+  ],
+  "focus": [
+    197,
+    200,
+    203,
+    206,
+    246,
+    248,
+    247
+  ],
+  "corners": {
+    "197": 3,
+    "200": 3,
+    "203": 2,
+    "206": 1,
+    "246": 0,
+    "247": 0,
+    "248": 0
+  },
+  "components": [
+    "matrix",
+    "volume",
+    "passiveFiber",
+    "activePotential",
+    "total"
+  ],
+  "recipes": [
+    {
+      "recipe": "P4",
+      "elements": [
+        197,
+        200,
+        203,
+        206,
+        246,
+        248
+      ],
+      "fields": [
+        "control45",
+        "terminal46"
+      ],
+      "pointsPerElementPerField": 42000,
+      "newCalls": 504000,
+      "originalPhysicalRegionsPerElement": 21,
+      "newNormalizedCornerCharts": 3,
+      "normalizedBytes": 6048000,
+      "physicalWeightBytes": 2016000,
+      "regionRecords": 252,
+      "normalizedFiles": 63,
+      "physicalWeightFiles": 126,
+      "stageRecords": 12,
+      "role": "primary"
+    },
+    {
+      "recipe": "P8",
+      "elements": [
+        197,
+        200,
+        203,
+        206,
+        246,
+        248,
+        247
+      ],
+      "fields": [
+        "control45",
+        "terminal46"
+      ],
+      "pointsPerElementPerField": 168000,
+      "newCalls": 2352000,
+      "originalPhysicalRegionsPerElement": 21,
+      "newNormalizedCornerCharts": 4,
+      "normalizedBytes": 32256000,
+      "physicalWeightBytes": 9408000,
+      "regionRecords": 294,
+      "normalizedFiles": 84,
+      "physicalWeightFiles": 147,
+      "stageRecords": 14,
+      "role": "primary"
+    },
+    {
+      "recipe": "I0",
+      "elements": [
+        197,
+        200,
+        203,
+        206,
+        246,
+        248,
+        247
+      ],
+      "fields": [
+        "control45",
+        "terminal46"
+      ],
+      "pointsPerElementPerField": 122000,
+      "newCalls": 1708000,
+      "originalPhysicalRegionsPerElement": 21,
+      "newNormalizedCornerCharts": 4,
+      "normalizedBytes": 23424000,
+      "physicalWeightBytes": 6832000,
+      "regionRecords": 294,
+      "normalizedFiles": 84,
+      "physicalWeightFiles": 147,
+      "stageRecords": 14,
+      "role": "independent"
+    },
+    {
+      "recipe": "I1",
+      "elements": [
+        197,
+        200,
+        203,
+        206,
+        246,
+        248,
+        247
+      ],
+      "fields": [
+        "control45",
+        "terminal46"
+      ],
+      "pointsPerElementPerField": 968000,
+      "newCalls": 13552000,
+      "originalPhysicalRegionsPerElement": 21,
+      "newNormalizedCornerCharts": 4,
+      "normalizedBytes": 185856000,
+      "physicalWeightBytes": 54208000,
+      "regionRecords": 294,
+      "normalizedFiles": 84,
+      "physicalWeightFiles": 147,
+      "stageRecords": 14,
+      "role": "independent"
+    },
+    {
+      "recipe": "R4",
+      "elements": [
+        197,
+        200,
+        203,
+        206,
+        246,
+        248
+      ],
+      "fields": [
+        "control45",
+        "terminal46"
+      ],
+      "pointsPerElementPerField": 84000,
+      "newCalls": 1008000,
+      "originalPhysicalRegionsPerElement": 21,
+      "newNormalizedCornerCharts": 3,
+      "normalizedBytes": 12096000,
+      "physicalWeightBytes": 4032000,
+      "regionRecords": 252,
+      "normalizedFiles": 63,
+      "physicalWeightFiles": 126,
+      "stageRecords": 12,
+      "role": "radial"
+    },
+    {
+      "recipe": "H4",
+      "elements": [
+        197,
+        200,
+        203,
+        206,
+        246,
+        248,
+        247
+      ],
+      "fields": [
+        "control45",
+        "terminal46"
+      ],
+      "pointsPerElementPerField": 46000,
+      "newCalls": 644000,
+      "originalPhysicalRegionsPerElement": 23,
+      "newNormalizedCornerCharts": 4,
+      "normalizedBytes": 8832000,
+      "physicalWeightBytes": 2576000,
+      "regionRecords": 322,
+      "normalizedFiles": 92,
+      "physicalWeightFiles": 161,
+      "stageRecords": 14,
+      "role": "depth"
+    },
+    {
+      "recipe": "C4",
+      "elements": [
+        197,
+        200,
+        203,
+        206,
+        246,
+        248,
+        247
+      ],
+      "fields": [
+        "control45",
+        "terminal46"
+      ],
+      "pointsPerElementPerField": 42000,
+      "newCalls": 588000,
+      "originalPhysicalRegionsPerElement": 21,
+      "newNormalizedCornerCharts": 4,
+      "normalizedBytes": 8064000,
+      "physicalWeightBytes": 2352000,
+      "regionRecords": 294,
+      "normalizedFiles": 84,
+      "physicalWeightFiles": 147,
+      "stageRecords": 14,
+      "role": "chart"
+    }
+  ],
+  "primaryLevels": {
+    "S0": {
+      "quiet": "retained D5",
+      "secondary": "retained A55 angular2",
+      "247": "retained A55 angular2"
+    },
+    "S1": {
+      "quiet": "retained D5",
+      "secondary": "new P4 angular4",
+      "247": "retained F44 angular4"
+    },
+    "S2": {
+      "quiet": "retained D5",
+      "focus": "new P8 angular8"
+    }
+  },
+  "independentLevels": {
+    "I0": {
+      "quiet": "retained U4",
+      "focus": "new graded tetra face4 radial1 Gauss5"
+    },
+    "I1": {
+      "quiet": "retained U5",
+      "focus": "new graded tetra face8 radial2 Gauss5"
+    }
+  },
+  "requiredComparisons": [
+    "S0/S1",
+    "S1/S2",
+    "I0/I1",
+    "S2/I1",
+    "S1/radial2",
+    "S1/depth22-only",
+    "S1/cyclic-chart-only"
+  ],
+  "requiredUnitsPerComparison": 156,
+  "fieldsPerComparison": 2,
+  "quietWitnesses": [
+    "D4/D5",
+    "U4/U5",
+    "D5/U5"
+  ],
+  "gateN": 1e-05,
+  "workGateJ": 5.492029235357012e-07,
+  "reconstructionN": 1e-08,
+  "reconstructionJ": 1e-09,
+  "stationarityN": 0.0001,
+  "subsetAllocations": {
+    "I0/I1": {
+      "quietForceN": 8.5e-06,
+      "focusForceN": 1.5e-06,
+      "quietWorkJ": 4.66822485005346e-07,
+      "focusWorkJ": 8.238043853035518e-08
+    },
+    "otherRequiredComparisons": {
+      "quietForceN": 2e-06,
+      "focusForceN": 8e-06,
+      "quietWorkJ": 1.0984058470714025e-07,
+      "focusWorkJ": 4.39362338828561e-07
+    }
+  },
+  "budget": {
+    "plannedAndMaximumNewCalls": 20356000,
+    "maximumWallSeconds": 7200,
+    "maximumOutputBytes": 536870912,
+    "nodeHeapMiB": 1024,
+    "maximumRssBytes": 2147483648,
+    "eventualInvocations": 1,
+    "retries": 0,
+    "replacementCalls": 0,
+    "automaticRefinements": 0
+  },
+  "storagePlan": {
+    "normalizedBytes": 276576000,
+    "physicalWeightBytes": 81424000,
+    "caps": {
+      "binaryPayload": 358000000,
+      "regionJson": 16400384,
+      "stageJson": 12320768,
+      "fullHybridJson": 16777216,
+      "comparisonJson": 50331648,
+      "startAndCompletionJson": 2097152,
+      "savedArrays": 131072,
+      "terminal": 16384,
+      "provenanceInventory": 2097152,
+      "externalRecordsAndLogs": 655360,
+      "emergencyReserve": 4194304
+    },
+    "plannedUpperEnvelopeBytes": 463021440,
+    "enforced": false,
+    "structuralProofRequiredBeforeExecution": true,
+    "normalizedNewFileCount": 554,
+    "physicalWeightNewFileCount": 1001,
+    "newRegionRecords": 2002,
+    "newStageRecords": 94
+  },
+  "timeEstimates": {
+    "observedSelectiveSeconds": 1761.411210000172,
+    "historicSlowBatchSeconds": 5524.557025125629,
+    "planningRangeSeconds": [
+      1800,
+      6000
+    ],
+    "includesNoNewBenchmark": true,
+    "notAGuarantee": true,
+    "futureClock": "public-entry checks through last acceptance"
+  },
+  "limits": [
+    "236 outside U3 elements remain unqualified",
+    "finite agreement only, not analytic convergence or whole-body acceptance",
+    "old coarse Q0/Q1 and all historical failures unchanged",
+    "no implementation, quadrature generation or specimen execution authorized"
+  ]
+}
