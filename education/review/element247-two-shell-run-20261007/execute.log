@@ -1,0 +1,48 @@
+{"kind":"CHANGED_SHELLS_COMPLETED","shells":["s1","s2"],"actual":4000}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
+  [
++   undefined,
++   undefined,
+-   's1',
+-   's2',
+    's3',
+    's4',
+    's5',
+    's6',
+    's7',
+
+    at buildConstructedStage (file:///workspace/Kenoma-two-shell/education/tools/element247-two-shell-protocol.mjs:22:9)
+    at file:///workspace/Kenoma-two-shell/education/tools/run-element247-two-shell.mjs:34:20
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [
+    undefined, undefined, 's3',
+    's4',      's5',      's6',
+    's7',      's8',      's9',
+    's10',     's11',     's12',
+    's13',     's14',     's15',
+    's16',     's17',     's18',
+    's19',     's20',     'core'
+  ],
+  expected: [
+    's1',   's2',  's3',  's4',
+    's5',   's6',  's7',  's8',
+    's9',   's10', 's11', 's12',
+    's13',  's14', 's15', 's16',
+    's17',  's18', 's19', 's20',
+    'core'
+  ],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

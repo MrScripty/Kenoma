@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "kind": "EXECUTOR_PUBLIC_ENTRY_TOOL_EXIT",
+  "sourceCommit": "97da4bdea7d0be11fc18222221b8b551b53a8e3b",
+  "entryCommand": "PYTHONDONTWRITEBYTECODE=1 python education/tools/launch-element247-two-shell.py --execute",
+  "workdir": "/workspace/Kenoma-two-shell",
+  "invocations": 1,
+  "initialToolName": "exec_command",
+  "initialToolResult": {
+    "chunk_id": "3c7a8c",
+    "wall_time_seconds": 1.001838835,
+    "session_id": 96839,
+    "original_token_count": 0,
+    "output": ""
+  },
+  "finalToolName": "write_stdin",
+  "finalToolResult": {
+    "chunk_id": "c57920",
+    "wall_time_seconds": 0.000019349,
+    "exit_code": 1,
+    "original_token_count": 0,
+    "output": ""
+  },
+  "authority": "Verbatim executor tool returns retained by producing agent; not a cryptographically independent process-observer receipt."
+}
