@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "verdict": "PASS_INDEPENDENT_COMPLETED_RUN_EXIT_RESOURCE_COUNT_PROVENANCE",
+  "reviewedResultCommit": "5f7612f6c7f6609d8946b3394d7363609d7a30b1",
+  "executionSourceCommit": "fe513113cbc336948ae20b0209a5be4b9552b524",
+  "runnerSourceCommit": "9611a4865e9591041fa5253c9df6c0f91da84089",
+  "acceptedPreflightEvidenceCommit": "b2724db9687fefae09bcf0ae72b5dea8c47f0a35",
+  "acceptedReviewedHead": "257b9a255d2a3b9a980ee4716eba064accab15dd",
+  "runId": "87379b67f49b4625a64b303999bdd0aa",
+  "result": "UNRESOLVED_FIXED_PATCH_INTEGRATION",
+  "assertions": 95000,
+  "budget": {
+    "plannedMaterialCalls": 19716000,
+    "maximumMaterialCalls": 19716000,
+    "maximumWallSeconds": 7200,
+    "nodeHeapMiB": 1024,
+    "maximumRssBytes": 2147483648,
+    "maximumOutputBytes": 536870912,
+    "invocations": 1
+  },
+  "bindings": {
+    "authorizationSha256": "eefb24e1994824ced443b5740826c3c020712ef893c74683ba63d0d1b1d8ae7f",
+    "preflightSha256": "61e25922d9f1d6474d6b1030c1af5491c42cf7468550923d24f79c74bf7388a8",
+    "reviewSha256": "64a5ef902aa58fc2e25e84741f233d3e984f33a16ce88f3d97140ead43f89e82",
+    "rawInventorySha256": "6ae3961c2fc734cb098b71464a6d9b584d0590eed8f263c2ca1b741b31c573a4",
+    "completionSha256": "4d252d1483a2f7bc3a27b840a28d495cbf210a897f9461eb0db220bb3382c103",
+    "terminalSha256": "444bb23f747acbdaba22736cb4fa45e7f29eee4a483a090f280e6bae3599e6f9",
+    "publicReceiptSha256": "11214cf9f8f8f8056bab64caa99b1ccf8741991d320e37561238342a27852afc"
+  },
+  "exitCodes": {
+    "public": 0,
+    "worker": 0,
+    "child": 0
+  },
+  "runtime": {
+    "reservedCalls": 19716000,
+    "enteredCallbacks": 19716000,
+    "completedCallbacks": 19716000,
+    "publicElapsedMs": 661325.2693940012,
+    "externalElapsedMs": 661103.4844010065,
+    "externalPeakObservedRssBytes": 403156992,
+    "publicRusageMaximumRssBytes": 402923520,
+    "childPeakObservedRssBytes": 402792448,
+    "heapMiBCommandLimit": 1024,
+    "combinedRawOutputBytes": 378160307,
+    "rawFiles": 3124
+  },
+  "newAndReusePointAttribution": {
+    "new": 19716000,
+    "sameInvocationP4": 480000,
+    "historicalF44": 80000,
+    "historicalX44": 80000
+  },
+  "regionAttribution": {
+    "new": 1682,
+    "sameInvocationP4": 240,
+    "historicalF44": 40,
+    "historicalX44": 40
+  },
+  "failedSourceReuse": {
+    "terminal46F44Shells": [
+      "s1",
+      "s2"
+    ],
+    "measurements": 4000,
+    "sourceExit": 1,
+    "includedInsideHistoricalF44": true,
+    "newCallbacks": 0
+  },
+  "checkedSourceFiles": 1630,
+  "checkedPreflightArtifacts": 1303,
+  "checkedRetainedProvenanceFiles": 1424,
+  "minimumJRecordsChecked": 2002,
+  "specimenCalls": 0,
+  "materialLawInvocations": 0,
+  "quadratureGenerations": 0,
+  "repoImports": 0,
+  "repositoryEdits": 0,
+  "authorizationConsumed": true,
+  "outside236Qualified": false,
+  "anatomicalQualification": false,
+  "limits": [
+    "Configured 1GiB Node old-space cap is bound by exact child command; no independent actual heap-usage measurement exists.",
+    "Peak RSS receipts are observed watchdog samples plus process-tree rusage; this review verifies retained receipts, not an external rerun.",
+    "Scientific comparison arithmetic is independently reviewed by the separate arithmetic reviewer; this report verifies counts, resources, hashes and provenance."
+  ]
+}

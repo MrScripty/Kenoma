@@ -1,0 +1,3229 @@
+{
+  "verdict": "PASS_INDEPENDENT_RETAINED_ARITHMETIC_AND_PROVENANCE",
+  "frozenResultCommit": "5f7612f6c7f6609d8946b3394d7363609d7a30b1",
+  "runnerSourceCommit": "9611a4865e9591041fa5253c9df6c0f91da84089",
+  "preflightSha256": "61e25922d9f1d6474d6b1030c1af5491c42cf7468550923d24f79c74bf7388a8",
+  "independentPreparationReviewSha256": "64a5ef902aa58fc2e25e84741f233d3e984f33a16ce88f3d97140ead43f89e82",
+  "consumedAuthorizationSha256": "eefb24e1994824ced443b5740826c3c020712ef893c74683ba63d0d1b1d8ae7f",
+  "completionSha256": "4d252d1483a2f7bc3a27b840a28d495cbf210a897f9461eb0db220bb3382c103",
+  "specimenCalls": 0,
+  "materialLawInvocations": 0,
+  "quadratureGenerationCalls": 0,
+  "method": "Standalone scalar loops using math.fsum; no repository imports, no execution or point generation. All global arrays include 585 nodes and all 90 held nodes.",
+  "counts": {
+    "logicalRegions": 2002,
+    "newRegions": 1682,
+    "newCallbacks": 19716000,
+    "sharedRegions": 320,
+    "sharedLogicalMeasurements": 640000
+  },
+  "reusedPointAttribution": {
+    "P4": 480000,
+    "F44": 80000,
+    "X44": 80000
+  },
+  "stageCount": 94,
+  "hybridCount": 16,
+  "comparisonCount": 24,
+  "requiredComparisons": 20,
+  "requiredPassed": 19,
+  "requiredFailed": 1,
+  "informationalPassed": 2,
+  "informationalFailed": 2,
+  "result": "UNRESOLVED_FIXED_PATCH_INTEGRATION",
+  "outside236Qualified": false,
+  "anatomicalQualified": false,
+  "assertions": {
+    "frozen_head_start": 1,
+    "clean_worktree_start": 1,
+    "runner_source": 1,
+    "accepted_preflight": 1,
+    "accepted_review": 1,
+    "closed_material_inventory": 1,
+    "bounded_file": 3116,
+    "complete_output_inventory": 1,
+    "output_sha256": 3114,
+    "output_bytes": 3114,
+    "complete_source_inventory": 1,
+    "source_sha256": 2936,
+    "preflight_source_binding": 1630,
+    "preflight_artifact_sha256": 1303,
+    "actual_binary_sha256": 1295,
+    "original_failure_and_authorization_unchanged": 1,
+    "historical_failure_retained": 1,
+    "frozen_nodal_arrays": 1,
+    "patch16": 1,
+    "free_and_held_partition": 1,
+    "frozen_direction585": 1,
+    "252_elements_ten_nodes": 1,
+    "stage_identity": 94,
+    "stage_complete_original_regions": 94,
+    "original_region_order": 2002,
+    "new_row_identity": 1682,
+    "new_row_hash_size": 1682,
+    "new_state_material_law_identity": 1682,
+    "new_exact_quadrature_provenance": 1682,
+    "row_identity": 2002,
+    "row_point_count": 2002,
+    "exact_region_bounds": 2002,
+    "physical_bin_mapping": 2002,
+    "exact_accepted_minimum_J": 2002,
+    "row_element": 4830,
+    "row_terms": 4830,
+    "ten_by_three": 24150,
+    "finite_local_force": 724500,
+    "finite_local_energy": 24150,
+    "finite:local_component_force": 144900,
+    "local_component_force": 144900,
+    "finite:local_component_energy": 4830,
+    "local_component_energy": 4830,
+    "finite:row_directional_derivative": 10010,
+    "row_directional_derivative": 10010,
+    "stage_new_reuse_count": 94,
+    "stage_minimum_J": 94,
+    "global_terms:region_stage_force": 94,
+    "585_nodes:region_stage_force": 470,
+    "three_axes:region_stage_force": 274950,
+    "finite:region_stage_force": 824850,
+    "region_stage_force": 824850,
+    "finite:global_component_force:stage": 164970,
+    "global_component_force:stage": 164970,
+    "finite:global_component_energy:stage": 94,
+    "global_component_energy:stage": 94,
+    "finite:region_stage_energy": 470,
+    "region_stage_energy": 470,
+    "complete_21_physical_bins": 94,
+    "preserved_original_region_inventory": 1974,
+    "global_terms:original_physical_bin_force": 1974,
+    "585_nodes:original_physical_bin_force": 9870,
+    "three_axes:original_physical_bin_force": 5773950,
+    "finite:original_physical_bin_force": 17321850,
+    "original_physical_bin_force": 17321850,
+    "finite:original_physical_bin_energy": 9870,
+    "original_physical_bin_energy": 9870,
+    "exact_reuse_name": 320,
+    "reuse_kind": 320,
+    "explicit_reuse_no_refinement_credit": 320,
+    "reuse_row_stage_hash": 320,
+    "reuse_quadrature_identity": 320,
+    "same_invocation_frozen_law_state": 240,
+    "durable_P4_before_H4": 240,
+    "historical_certified_hash": 80,
+    "exact_patch_candidate_inventory": 16,
+    "candidate_immutable_composition": 768,
+    "global_terms:patch_assembly": 16,
+    "585_nodes:patch_assembly": 80,
+    "three_axes:patch_assembly": 46800,
+    "finite:patch_assembly": 140400,
+    "patch_assembly": 140400,
+    "global_terms:unchanged_baseline": 16,
+    "585_nodes:unchanged_baseline": 80,
+    "three_axes:unchanged_baseline": 46800,
+    "finite:unchanged_baseline": 140400,
+    "unchanged_baseline": 140400,
+    "global_terms:hybrid_once_only_replacement": 16,
+    "585_nodes:hybrid_once_only_replacement": 80,
+    "three_axes:hybrid_once_only_replacement": 46800,
+    "finite:hybrid_once_only_replacement": 140400,
+    "hybrid_once_only_replacement": 140400,
+    "finite:global_component_force:hybrid": 28080,
+    "global_component_force:hybrid": 28080,
+    "finite:global_component_energy:hybrid": 16,
+    "global_component_energy:hybrid": 16,
+    "finite:patch_energy": 80,
+    "patch_energy": 80,
+    "finite:hybrid_energy": 80,
+    "hybrid_energy": 80,
+    "outside236_unqualified": 16,
+    "matched_physical_regions": 2646,
+    "exact_156_comparison_units": 18,
+    "comparison_identity": 18,
+    "comparison_unit_count": 24,
+    "comparison_scope": 24,
+    "global_gates_exact": 120,
+    "saved_unit_count": 120,
+    "saved_unit_identity": 14310,
+    "saved_unit_shape": 14310,
+    "finite:local_difference": 429300,
+    "local_difference": 429300,
+    "finite:local_work": 14310,
+    "local_work": 14310,
+    "comparison_includes_held": 240,
+    "comparison_three_axes": 140400,
+    "finite:comparison_aggregateDifferenceN": 210600,
+    "comparison_aggregateDifferenceN": 210600,
+    "finite:comparison_absoluteUnitDifferenceN": 210600,
+    "comparison_absoluteUnitDifferenceN": 210600,
+    "finite:comparison_metric": 480,
+    "comparison_metric": 480,
+    "term_pass": 120,
+    "global_pass": 18,
+    "finite:frozen_allocated_force": 36,
+    "frozen_allocated_force": 36,
+    "finite:frozen_allocated_work": 36,
+    "frozen_allocated_work": 36,
+    "finite:allocated_metric": 720,
+    "allocated_metric": 720,
+    "allocated_term_pass": 180,
+    "allocated_group_pass": 36,
+    "finite:supplementary_common16": 360,
+    "supplementary_common16": 360,
+    "quiet_reuse_does_not_earn_credit": 18,
+    "comparison_pass": 18,
+    "quiet_comparison_identity": 6,
+    "finite:quiet_force_allocation": 6,
+    "quiet_force_allocation": 6,
+    "finite:quiet_work_allocation": 6,
+    "quiet_work_allocation": 6,
+    "quiet_term_allocated_pass": 30,
+    "quiet_witness_pass": 6,
+    "exact_new_and_retained_totals": 1,
+    "separate_retained_attribution": 1,
+    "completion_schedule_binding": 5,
+    "completion_all_comparison_bindings": 1,
+    "24_comparisons_20_required": 1,
+    "sole_required_failure": 1,
+    "unresolved_result_required": 1,
+    "unqualified_scope": 1,
+    "unchanged_physical_scope": 1,
+    "4000_failed_two_shell_measurements_preserved": 10,
+    "frozen_head_and_clean_worktree_end": 1
+  },
+  "totalAssertions": 46793317,
+  "maximumReplayErrors": {
+    "local_component_force": 1.9326762412674725e-12,
+    "local_component_energy": 1.6892043319671757e-13,
+    "row_directional_derivative": 1.0842021724855044e-18,
+    "region_stage_force": 2.1316282072803006e-14,
+    "global_component_force:stage": 1.2292389328649733e-12,
+    "global_component_energy:stage": 3.95516952522712e-15,
+    "region_stage_energy": 2.7755575615628914e-17,
+    "original_physical_bin_force": 4.1359030627651384e-25,
+    "original_physical_bin_energy": 4.81482486096809e-35,
+    "patch_assembly": 1.4210854715202004e-14,
+    "unchanged_baseline": 2.1316282072803006e-14,
+    "hybrid_once_only_replacement": 2.1316282072803006e-14,
+    "global_component_force:hybrid": 2.808482613136931e-12,
+    "global_component_energy:hybrid": 4.618527782440651e-13,
+    "patch_energy": 8.326672684688674e-17,
+    "hybrid_energy": 2.842170943040401e-14,
+    "local_difference": 0.0,
+    "local_work": 8.271806125530277e-25,
+    "comparison_aggregateDifferenceN": 1.3552527156068805e-20,
+    "comparison_absoluteUnitDifferenceN": 6.776263578034403e-21,
+    "comparison_metric": 6.776263578034403e-21,
+    "frozen_allocated_force": 1.6940658945086007e-21,
+    "frozen_allocated_work": 0.0,
+    "allocated_metric": 6.776263578034403e-21,
+    "supplementary_common16": 1.6543612251060553e-24,
+    "quiet_force_allocation": 0.0,
+    "quiet_work_allocation": 0.0
+  },
+  "verifiedSourceInventoryEntries": 2936,
+  "verifiedOutputInventoryEntries": 3114,
+  "uniqueHashedFiles": 6051,
+  "elapsedSeconds": 48.960343238999485,
+  "comparisons": [
+    {
+      "state": "control45",
+      "a": "S0",
+      "b": "S1",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "terms": {
+        "matrix": {
+          "signedN": 4.947799720666595e-11,
+          "triangleN": 6.041411499388755e-11,
+          "signedWorkJ": 1.9252657873091503e-15,
+          "triangleWorkJ": 1.9253264362359264e-15,
+          "globalPass": true
+        },
+        "volume": {
+          "signedN": 4.5229549050243566e-08,
+          "triangleN": 5.3991021163186397e-08,
+          "signedWorkJ": 1.7171257889249105e-12,
+          "triangleWorkJ": 1.717157217219904e-12,
+          "globalPass": true
+        },
+        "passiveFiber": {
+          "signedN": 6.350093859134552e-13,
+          "triangleN": 6.360334056971852e-13,
+          "signedWorkJ": 1.2991986742342729e-17,
+          "triangleWorkJ": 3.0858985896339236e-17,
+          "globalPass": true
+        },
+        "activePotential": {
+          "signedN": 6.003443106329889e-13,
+          "triangleN": 6.844476914888998e-13,
+          "signedWorkJ": 5.188373625545001e-17,
+          "triangleWorkJ": 6.337541850671316e-17,
+          "globalPass": true
+        },
+        "total": {
+          "signedN": 4.5279213461579464e-08,
+          "triangleN": 5.4051172859385924e-08,
+          "signedWorkJ": 1.7190842827322913e-12,
+          "triangleWorkJ": 1.7191150432808535e-12,
+          "globalPass": true
+        }
+      },
+      "allocations": {
+        "quiet": {
+          "forceN": 2.0000000000000003e-06,
+          "workJ": 1.0984058470714025e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        },
+        "focus": {
+          "forceN": 8.000000000000001e-06,
+          "workJ": 4.39362338828561e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                4.947799720666595e-11,
+                6.041411499388755e-11,
+                1.9252657873091503e-15,
+                1.9253264362359264e-15
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                4.5229549050243566e-08,
+                5.3991021163186397e-08,
+                1.7171257889249105e-12,
+                1.717157217219904e-12
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                6.350093859134552e-13,
+                6.360334056971852e-13,
+                1.2991986742342729e-17,
+                3.0858985896339236e-17
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                6.003443106329889e-13,
+                6.844476914888998e-13,
+                5.188373625545001e-17,
+                6.337541850671316e-17
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                4.5279213461579464e-08,
+                5.4051172859385924e-08,
+                1.7190842827322913e-12,
+                1.7191150432808535e-12
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "a": "S1",
+      "b": "S2",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "terms": {
+        "matrix": {
+          "signedN": 7.194804452726713e-14,
+          "triangleN": 8.858683471651459e-14,
+          "signedWorkJ": 3.0947579910973434e-18,
+          "triangleWorkJ": 3.209353461285864e-18,
+          "globalPass": true
+        },
+        "volume": {
+          "signedN": 6.437570908236904e-11,
+          "triangleN": 7.466458271763118e-11,
+          "signedWorkJ": 2.4472404796058845e-15,
+          "triangleWorkJ": 2.5497457372990287e-15,
+          "globalPass": true
+        },
+        "passiveFiber": {
+          "signedN": 3.5803299326097036e-13,
+          "triangleN": 3.8107034945846237e-13,
+          "signedWorkJ": 1.1176437636707208e-18,
+          "triangleWorkJ": 1.4627826748057073e-17,
+          "globalPass": true
+        },
+        "activePotential": {
+          "signedN": 5.332256450806553e-13,
+          "triangleN": 5.752210227051441e-13,
+          "signedWorkJ": 1.621806695229186e-17,
+          "triangleWorkJ": 4.17781569253197e-17,
+          "globalPass": true
+        },
+        "total": {
+          "signedN": 6.432819628504756e-11,
+          "triangleN": 7.482611951195716e-11,
+          "signedWorkJ": 2.445852653277689e-15,
+          "triangleWorkJ": 2.5081224145850795e-15,
+          "globalPass": true
+        }
+      },
+      "allocations": {
+        "quiet": {
+          "forceN": 2.0000000000000003e-06,
+          "workJ": 1.0984058470714025e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        },
+        "focus": {
+          "forceN": 8.000000000000001e-06,
+          "workJ": 4.39362338828561e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                7.194804452726713e-14,
+                8.858683471651459e-14,
+                3.0947579910973434e-18,
+                3.209353461285864e-18
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                6.437570908236904e-11,
+                7.466458271763118e-11,
+                2.4472404796058845e-15,
+                2.5497457372990287e-15
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                3.5803299326097036e-13,
+                3.8107034945846237e-13,
+                1.1176437636707208e-18,
+                1.4627826748057073e-17
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                5.332256450806553e-13,
+                5.752210227051441e-13,
+                1.621806695229186e-17,
+                4.17781569253197e-17
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                6.432819628504756e-11,
+                7.482611951195716e-11,
+                2.445852653277689e-15,
+                2.5081224145850795e-15
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "a": "I0",
+      "b": "I1",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "terms": {
+        "matrix": {
+          "signedN": 2.0319197938795108e-08,
+          "triangleN": 2.0319197938795108e-08,
+          "signedWorkJ": 2.3474828367276274e-12,
+          "triangleWorkJ": 2.384916610454916e-12,
+          "globalPass": true
+        },
+        "volume": {
+          "signedN": 8.384019970893626e-06,
+          "triangleN": 8.384019971091404e-06,
+          "signedWorkJ": 1.1353026822798303e-09,
+          "triangleWorkJ": 1.1795619862074732e-09,
+          "globalPass": true
+        },
+        "passiveFiber": {
+          "signedN": 2.083746321894727e-08,
+          "triangleN": 2.0837805015574377e-08,
+          "signedWorkJ": 5.450604568026999e-14,
+          "triangleWorkJ": 2.337225630295795e-13,
+          "globalPass": true
+        },
+        "activePotential": {
+          "signedN": 1.0853332765847767e-07,
+          "triangleN": 1.0853332765847767e-07,
+          "signedWorkJ": 6.137350673236654e-12,
+          "triangleWorkJ": 6.612108543400064e-12,
+          "globalPass": true
+        },
+        "total": {
+          "signedN": 8.380528009031023e-06,
+          "triangleN": 8.38052800985027e-06,
+          "signedWorkJ": 1.1314582523767565e-09,
+          "triangleWorkJ": 1.1752803615315678e-09,
+          "globalPass": true
+        }
+      },
+      "allocations": {
+        "quiet": {
+          "forceN": 8.5e-06,
+          "workJ": 4.66822485005346e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                2.0319197938795108e-08,
+                2.0319197938795108e-08,
+                2.3489306127123008e-12,
+                2.3834688325946173e-12
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                8.378508899342663e-06,
+                8.378508899342663e-06,
+                1.1366194115727177e-09,
+                1.1782452187351998e-09
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                2.0837257252992458e-08,
+                2.0837257252992458e-08,
+                5.449593139883062e-14,
+                2.337035670105028e-13
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                1.0853332765847767e-07,
+                1.0853332765847767e-07,
+                6.137317063257435e-12,
+                6.612035445643594e-12
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                8.37501138850616e-06,
+                8.37501138850616e-06,
+                1.1327764710287665e-09,
+                1.173962140194207e-09
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        },
+        "focus": {
+          "forceN": 1.5e-06,
+          "workJ": 8.238043853035518e-08,
+          "terms": {
+            "matrix": {
+              "values": [
+                2.8317562104274547e-11,
+                4.645250895193306e-11,
+                1.4477759846735662e-15,
+                1.447777860298467e-15
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                2.753089146566352e-08,
+                4.5398702846121056e-08,
+                1.3167292928873284e-12,
+                1.3167674722733906e-12
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                3.7061742040014683e-13,
+                5.477625819194699e-13,
+                1.0114281439370449e-17,
+                1.8996019076766247e-17
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                9.971450555986236e-13,
+                1.0059897521849104e-12,
+                3.360997921885973e-17,
+                7.30977564699575e-17
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                2.7559265594531324e-08,
+                4.54448491817167e-08,
+                1.3182186520100742e-12,
+                1.3182213373606835e-12
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "a": "S2",
+      "b": "I1",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "terms": {
+        "matrix": {
+          "signedN": 2.0720191916401287e-09,
+          "triangleN": 2.0720191916401287e-09,
+          "signedWorkJ": 2.608123378038485e-13,
+          "triangleWorkJ": 2.6447688841713284e-13,
+          "globalPass": true
+        },
+        "volume": {
+          "signedN": 1.193541101158577e-06,
+          "triangleN": 1.1936741643986304e-06,
+          "signedWorkJ": 1.410947830022923e-10,
+          "triangleWorkJ": 1.4567423573991233e-10,
+          "globalPass": true
+        },
+        "passiveFiber": {
+          "signedN": 1.4778307209828072e-09,
+          "triangleN": 1.478269156760167e-09,
+          "signedWorkJ": 2.469039584753889e-15,
+          "triangleWorkJ": 1.2877174699227923e-14,
+          "globalPass": true
+        },
+        "activePotential": {
+          "signedN": 1.0688994578345046e-08,
+          "triangleN": 1.0688994578345046e-08,
+          "signedWorkJ": 4.0341388706806633e-13,
+          "triangleWorkJ": 4.652352093889296e-13,
+          "globalPass": true
+        },
+        "total": {
+          "signedN": 1.1935929459829714e-06,
+          "triangleN": 1.1937264558355453e-06,
+          "signedWorkJ": 1.4094976822860745e-10,
+          "triangleWorkJ": 1.4547097955405218e-10,
+          "globalPass": true
+        }
+      },
+      "allocations": {
+        "quiet": {
+          "forceN": 2.0000000000000003e-06,
+          "workJ": 1.0984058470714025e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                2.0720191916401287e-09,
+                2.0720191916401287e-09,
+                2.6076944640663553e-13,
+                2.644316542465746e-13
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                1.193607632732352e-06,
+                1.193607632732352e-06,
+                1.410689611982267e-10,
+                1.4564599278510956e-10
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                1.4779857337998692e-09,
+                1.4779857337998692e-09,
+                2.482457149478232e-15,
+                1.2863137230078768e-14
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                1.0688994578345046e-08,
+                1.0688994578345046e-08,
+                4.0343460289038586e-13,
+                4.651674338551854e-13
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                1.193659700748917e-06,
+                1.193659700748917e-06,
+                1.409238205667539e-10,
+                1.4544280119014607e-10
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        },
+        "focus": {
+          "forceN": 8.000000000000001e-06,
+          "workJ": 4.39362338828561e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                8.13114935315156e-13,
+                8.92860553000934e-13,
+                4.2891397212959506e-17,
+                4.523417055828821e-17
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                5.373110916756582e-10,
+                8.324806139552995e-10,
+                2.5821804065617587e-14,
+                2.824295480276551e-14
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                1.7214965908491758e-13,
+                2.8342296029787286e-13,
+                1.3417564724342823e-17,
+                1.403746914915606e-17
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                1.6909340580197532e-12,
+                1.836413781836106e-12,
+                2.0715822319520514e-17,
+                6.777553374426152e-17
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                5.37950546369333e-10,
+                8.334275107233395e-10,
+                2.594766185355657e-14,
+                2.8178363906094715e-14
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "a": "S1",
+      "b": "AR",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "terms": {
+        "matrix": {
+          "signedN": 8.355242865187918e-13,
+          "triangleN": 1.139484304281949e-12,
+          "signedWorkJ": 5.0566238266023635e-17,
+          "triangleWorkJ": 5.2847878804281345e-17,
+          "globalPass": true
+        },
+        "volume": {
+          "signedN": 6.792623658540174e-10,
+          "triangleN": 1.0734303805673432e-09,
+          "signedWorkJ": 3.298432119326042e-14,
+          "triangleWorkJ": 3.5120205177659586e-14,
+          "globalPass": true
+        },
+        "passiveFiber": {
+          "signedN": 4.045865927299261e-13,
+          "triangleN": 4.625995265868304e-13,
+          "signedWorkJ": 4.547393950071561e-19,
+          "triangleWorkJ": 1.4513303294962773e-17,
+          "globalPass": true
+        },
+        "activePotential": {
+          "signedN": 1.5012418116677719e-12,
+          "triangleN": 1.5108888341909065e-12,
+          "signedWorkJ": 2.764542203621523e-17,
+          "triangleWorkJ": 5.384878036091746e-17,
+          "globalPass": true
+        },
+        "total": {
+          "signedN": 6.798758433786229e-10,
+          "triangleN": 1.074362049912472e-09,
+          "signedWorkJ": 3.305548319103083e-14,
+          "triangleWorkJ": 3.52002226303698e-14,
+          "globalPass": true
+        }
+      },
+      "allocations": {
+        "quiet": {
+          "forceN": 2.0000000000000003e-06,
+          "workJ": 1.0984058470714025e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        },
+        "focus": {
+          "forceN": 8.000000000000001e-06,
+          "workJ": 4.39362338828561e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                8.355242865187918e-13,
+                1.139484304281949e-12,
+                5.0566238266023635e-17,
+                5.2847878804281345e-17
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                6.792623658540174e-10,
+                1.0734303805673432e-09,
+                3.298432119326042e-14,
+                3.5120205177659586e-14
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                4.045865927299261e-13,
+                4.625995265868304e-13,
+                4.547393950071561e-19,
+                1.4513303294962773e-17
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                1.5012418116677719e-12,
+                1.5108888341909065e-12,
+                2.764542203621523e-17,
+                5.384878036091746e-17
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                6.798758433786229e-10,
+                1.074362049912472e-09,
+                3.305548319103083e-14,
+                3.52002226303698e-14
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "a": "S1",
+      "b": "AH",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "terms": {
+        "matrix": {
+          "signedN": 4.171263332988942e-31,
+          "triangleN": 4.372643382798933e-31,
+          "signedWorkJ": 7.604780679592465e-36,
+          "triangleWorkJ": 9.03357778269999e-36,
+          "globalPass": true
+        },
+        "volume": {
+          "signedN": 1.3139464452587478e-29,
+          "triangleN": 2.328090598312026e-29,
+          "signedWorkJ": 9.249502078863863e-35,
+          "triangleWorkJ": 7.848196531643946e-34,
+          "globalPass": true
+        },
+        "passiveFiber": {
+          "signedN": 4.7855507258134036e-30,
+          "triangleN": 8.68055144534215e-30,
+          "signedWorkJ": 3.8407850755492845e-35,
+          "triangleWorkJ": 1.3635422188957136e-34,
+          "globalPass": true
+        },
+        "activePotential": {
+          "signedN": 2.0005019518339096e-29,
+          "triangleN": 2.0005019518339096e-29,
+          "signedWorkJ": 5.987868578915616e-34,
+          "triangleWorkJ": 7.1660204761452205e-34,
+          "globalPass": true
+        },
+        "total": {
+          "signedN": 1.276044143953207e-29,
+          "triangleN": 2.6300499320552093e-29,
+          "signedWorkJ": 3.5144275351526745e-34,
+          "triangleWorkJ": 1.4509347344128036e-33,
+          "globalPass": true
+        }
+      },
+      "allocations": {
+        "quiet": {
+          "forceN": 2.0000000000000003e-06,
+          "workJ": 1.0984058470714025e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        },
+        "focus": {
+          "forceN": 8.000000000000001e-06,
+          "workJ": 4.39362338828561e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                4.171263332988942e-31,
+                4.372643382798933e-31,
+                7.604780679592465e-36,
+                9.03357778269999e-36
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                1.3139464452587478e-29,
+                2.328090598312026e-29,
+                9.249502078863863e-35,
+                7.848196531643946e-34
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                4.7855507258134036e-30,
+                8.68055144534215e-30,
+                3.8407850755492845e-35,
+                1.3635422188957136e-34
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                2.0005019518339096e-29,
+                2.0005019518339096e-29,
+                5.987868578915616e-34,
+                7.1660204761452205e-34
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                1.276044143953207e-29,
+                2.6300499320552093e-29,
+                3.5144275351526745e-34,
+                1.4509347344128036e-33
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "a": "S1",
+      "b": "AC",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "terms": {
+        "matrix": {
+          "signedN": 7.240141136153843e-14,
+          "triangleN": 8.0676534984668e-14,
+          "signedWorkJ": 2.507078452832221e-18,
+          "triangleWorkJ": 2.6753313688110883e-18,
+          "globalPass": true
+        },
+        "volume": {
+          "signedN": 6.485354423248052e-11,
+          "triangleN": 7.100934879161817e-11,
+          "signedWorkJ": 2.139826009413807e-15,
+          "triangleWorkJ": 2.1597112237613644e-15,
+          "globalPass": true
+        },
+        "passiveFiber": {
+          "signedN": 5.530926602623342e-13,
+          "triangleN": 5.946522297941251e-13,
+          "signedWorkJ": 6.117535221643487e-18,
+          "triangleWorkJ": 8.645276185148868e-18,
+          "globalPass": true
+        },
+        "activePotential": {
+          "signedN": 6.802766432928524e-13,
+          "triangleN": 7.410274033857352e-13,
+          "signedWorkJ": 3.591899175462813e-17,
+          "triangleWorkJ": 3.921982743031487e-17,
+          "globalPass": true
+        },
+        "total": {
+          "signedN": 6.469670631131745e-11,
+          "triangleN": 7.111784043731696e-11,
+          "signedWorkJ": 2.1003676564316527e-15,
+          "triangleWorkJ": 2.1692518523348145e-15,
+          "globalPass": true
+        }
+      },
+      "allocations": {
+        "quiet": {
+          "forceN": 2.0000000000000003e-06,
+          "workJ": 1.0984058470714025e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        },
+        "focus": {
+          "forceN": 8.000000000000001e-06,
+          "workJ": 4.39362338828561e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                7.240141136153843e-14,
+                8.0676534984668e-14,
+                2.507078452832221e-18,
+                2.6753313688110883e-18
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                6.485354423248052e-11,
+                7.100934879161817e-11,
+                2.139826009413807e-15,
+                2.1597112237613644e-15
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                5.530926602623342e-13,
+                5.946522297941251e-13,
+                6.117535221643487e-18,
+                8.645276185148868e-18
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                6.802766432928524e-13,
+                7.410274033857352e-13,
+                3.591899175462813e-17,
+                3.921982743031487e-17
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                6.469670631131745e-11,
+                7.111784043731696e-11,
+                2.1003676564316527e-15,
+                2.1692518523348145e-15
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "a": "S0",
+      "b": "I0",
+      "required": false,
+      "pass": false,
+      "globalPass": true,
+      "terms": {
+        "matrix": {
+          "signedN": 2.2391217130435237e-08,
+          "triangleN": 2.2391217130435237e-08,
+          "signedWorkJ": 2.610223535076776e-12,
+          "triangleWorkJ": 2.6491664460124814e-12,
+          "globalPass": true
+        },
+        "volume": {
+          "signedN": 9.558968449750074e-06,
+          "triangleN": 9.585270512268333e-06,
+          "signedWorkJ": 1.278117038311527e-09,
+          "triangleWorkJ": 1.3249209320562041e-09,
+          "globalPass": true
+        },
+        "passiveFiber": {
+          "signedN": 2.23160149970832e-08,
+          "triangleN": 2.231604338661229e-08,
+          "signedWorkJ": 5.69609756345179e-14,
+          "triangleWorkJ": 2.4661040926054916e-13,
+          "globalPass": true
+        },
+        "activePotential": {
+          "signedN": 1.1922232223682272e-07,
+          "triangleN": 1.1922232223682272e-07,
+          "signedWorkJ": 6.540728894635419e-12,
+          "triangleWorkJ": 7.077280980664743e-12,
+          "globalPass": true
+        },
+        "total": {
+          "signedN": 9.555507726420129e-06,
+          "triangleN": 9.581840361872485e-06,
+          "signedWorkJ": 1.2741295507407494e-09,
+          "triangleWorkJ": 1.3204359881765965e-09,
+          "globalPass": true
+        }
+      },
+      "allocations": {
+        "quiet": {
+          "forceN": 2.0000000000000003e-06,
+          "workJ": 1.0984058470714025e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                2.2391217130435237e-08,
+                2.2391217130435237e-08,
+                2.6097000591189365e-12,
+                2.6479004868411918e-12
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                9.572116532075015e-06,
+                9.572116532075015e-06,
+                1.2776883727709444e-09,
+                1.3238912115203092e-09
+              ],
+              "pass": false
+            },
+            "passiveFiber": {
+              "values": [
+                2.2315242986792327e-08,
+                2.2315242986792327e-08,
+                5.697838854830888e-14,
+                2.4656670424058144e-13
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                1.1922232223682272e-07,
+                1.1922232223682272e-07,
+                6.540751666147822e-12,
+                7.07720287949878e-12
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                9.568671089255076e-06,
+                9.568671089255076e-06,
+                1.2737002915955205e-09,
+                1.319404941384353e-09
+              ],
+              "pass": false
+            }
+          },
+          "pass": false
+        },
+        "focus": {
+          "forceN": 8.000000000000001e-06,
+          "workJ": 4.39362338828561e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                6.36560492150472e-11,
+                6.365608447534007e-11,
+                5.234759578396419e-16,
+                1.2659591712894556e-15
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                5.929781318307359e-08,
+                5.9297885508281866e-08,
+                4.2866554058280554e-13,
+                1.029720535894746e-12
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                8.914197160447431e-13,
+                8.923326363149875e-13,
+                1.7412913790985824e-17,
+                4.3705019967707716e-17
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                8.451326776606185e-13,
+                9.4718483558198e-13,
+                2.2771512403818936e-17,
+                7.810116596294927e-17
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                5.936082096494884e-08,
+                5.9360890928393085e-08,
+                4.2925914522905224e-13,
+                1.0310467922433197e-12
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "a": "S1",
+      "b": "I1",
+      "required": false,
+      "pass": true,
+      "globalPass": true,
+      "terms": {
+        "matrix": {
+          "signedN": 2.0720191916401287e-09,
+          "triangleN": 2.0720191916401287e-09,
+          "signedWorkJ": 2.6081543256183957e-13,
+          "triangleWorkJ": 2.644784225017011e-13,
+          "globalPass": true
+        },
+        "volume": {
+          "signedN": 1.1935151347569126e-06,
+          "triangleN": 1.193700130846965e-06,
+          "signedWorkJ": 1.4109723024277193e-10,
+          "triangleWorkJ": 1.456752139488021e-10,
+          "globalPass": true
+        },
+        "passiveFiber": {
+          "signedN": 1.4780327060258277e-09,
+          "triangleN": 1.478495272327788e-09,
+          "signedWorkJ": 2.467921940990218e-15,
+          "triangleWorkJ": 1.2884392949709267e-14,
+          "globalPass": true
+        },
+        "activePotential": {
+          "signedN": 1.0688994578345046e-08,
+          "triangleN": 1.0688994578345046e-08,
+          "signedWorkJ": 4.0343010513501863e-13,
+          "triangleWorkJ": 4.652382062697562e-13,
+          "globalPass": true
+        },
+        "total": {
+          "signedN": 1.1935670268663435e-06,
+          "triangleN": 1.193752374992097e-06,
+          "signedWorkJ": 1.4095221408126074e-10,
+          "triangleWorkJ": 1.4547204464600682e-10,
+          "globalPass": true
+        }
+      },
+      "allocations": {
+        "quiet": {
+          "forceN": 2.0000000000000003e-06,
+          "workJ": 1.0984058470714025e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                2.0720191916401287e-09,
+                2.0720191916401287e-09,
+                2.6076944640663553e-13,
+                2.644316542465746e-13
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                1.193607632732352e-06,
+                1.193607632732352e-06,
+                1.410689611982267e-10,
+                1.4564599278510956e-10
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                1.4779857337998692e-09,
+                1.4779857337998692e-09,
+                2.482457149478232e-15,
+                1.2863137230078768e-14
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                1.0688994578345046e-08,
+                1.0688994578345046e-08,
+                4.0343460289038586e-13,
+                4.651674338551854e-13
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                1.193659700748917e-06,
+                1.193659700748917e-06,
+                1.409238205667539e-10,
+                1.4544280119014607e-10
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        },
+        "focus": {
+          "forceN": 8.000000000000001e-06,
+          "workJ": 4.39362338828561e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                8.133428608760055e-13,
+                8.706363556803527e-13,
+                4.5986155204056855e-17,
+                4.6768255126529425e-17
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                5.038819134918595e-10,
+                8.135457582883774e-10,
+                2.8269044545223475e-14,
+                2.922116369253029e-14
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                5.023314960732911e-13,
+                5.564882856309182e-13,
+                1.453520848801354e-17,
+                2.1255719630500125e-17
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                1.9786308298738024e-12,
+                1.984911943499134e-12,
+                4.497755367228645e-18,
+                7.077241457085774e-17
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                5.044512081888814e-10,
+                8.14271437164027e-10,
+                2.8393514506834263e-14,
+                2.924345586073143e-14
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "a": "D4",
+      "b": "D5",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "terms": {
+        "matrix": {
+          "signedN": 1.1062123439486982e-11,
+          "triangleN": 1.1062123439486982e-11,
+          "signedWorkJ": 1.1983233442273779e-15,
+          "triangleWorkJ": 1.245774503998065e-15,
+          "globalPass": true
+        },
+        "volume": {
+          "signedN": 1.1849462744351058e-08,
+          "triangleN": 1.1849462744351058e-08,
+          "signedWorkJ": 9.615561618639163e-13,
+          "triangleWorkJ": 1.0165912246848439e-12,
+          "globalPass": true
+        },
+        "passiveFiber": {
+          "signedN": 5.963007865261716e-13,
+          "triangleN": 6.116218642659987e-13,
+          "signedWorkJ": 4.065270188126953e-17,
+          "triangleWorkJ": 8.341754758732087e-17,
+          "globalPass": true
+        },
+        "activePotential": {
+          "signedN": 4.759970195777896e-12,
+          "triangleN": 4.759970195777896e-12,
+          "signedWorkJ": 1.7989384689832055e-17,
+          "triangleWorkJ": 9.743922859613271e-17,
+          "globalPass": true
+        },
+        "total": {
+          "signedN": 1.186293108190739e-08,
+          "triangleN": 1.186293108190739e-08,
+          "signedWorkJ": 9.623552332051997e-13,
+          "triangleWorkJ": 1.0174479928583626e-12,
+          "globalPass": true
+        }
+      },
+      "allocatedForceN": 2.0000000000000003e-06,
+      "allocatedWorkJ": 1.0984058470714025e-07
+    },
+    {
+      "state": "control45",
+      "a": "U4",
+      "b": "U5",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "terms": {
+        "matrix": {
+          "signedN": 2.0319197938795108e-08,
+          "triangleN": 2.0319197938795108e-08,
+          "signedWorkJ": 2.3489306127123008e-12,
+          "triangleWorkJ": 2.3834688325946173e-12,
+          "globalPass": true
+        },
+        "volume": {
+          "signedN": 8.378508899342663e-06,
+          "triangleN": 8.378508899342663e-06,
+          "signedWorkJ": 1.1366194115727177e-09,
+          "triangleWorkJ": 1.1782452187351998e-09,
+          "globalPass": true
+        },
+        "passiveFiber": {
+          "signedN": 2.0837257252992458e-08,
+          "triangleN": 2.0837257252992458e-08,
+          "signedWorkJ": 5.449593139883062e-14,
+          "triangleWorkJ": 2.337035670105028e-13,
+          "globalPass": true
+        },
+        "activePotential": {
+          "signedN": 1.0853332765847767e-07,
+          "triangleN": 1.0853332765847767e-07,
+          "signedWorkJ": 6.137317063257435e-12,
+          "triangleWorkJ": 6.612035445643594e-12,
+          "globalPass": true
+        },
+        "total": {
+          "signedN": 8.37501138850616e-06,
+          "triangleN": 8.37501138850616e-06,
+          "signedWorkJ": 1.1327764710287665e-09,
+          "triangleWorkJ": 1.173962140194207e-09,
+          "globalPass": true
+        }
+      },
+      "allocatedForceN": 8.5e-06,
+      "allocatedWorkJ": 4.66822485005346e-07
+    },
+    {
+      "state": "control45",
+      "a": "D5",
+      "b": "U5",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "terms": {
+        "matrix": {
+          "signedN": 2.0720191916401287e-09,
+          "triangleN": 2.0720191916401287e-09,
+          "signedWorkJ": 2.6076944640663553e-13,
+          "triangleWorkJ": 2.644316542465746e-13,
+          "globalPass": true
+        },
+        "volume": {
+          "signedN": 1.193607632732352e-06,
+          "triangleN": 1.193607632732352e-06,
+          "signedWorkJ": 1.410689611982267e-10,
+          "triangleWorkJ": 1.4564599278510956e-10,
+          "globalPass": true
+        },
+        "passiveFiber": {
+          "signedN": 1.4779857337998692e-09,
+          "triangleN": 1.4779857337998692e-09,
+          "signedWorkJ": 2.482457149478232e-15,
+          "triangleWorkJ": 1.2863137230078768e-14,
+          "globalPass": true
+        },
+        "activePotential": {
+          "signedN": 1.0688994578345046e-08,
+          "triangleN": 1.0688994578345046e-08,
+          "signedWorkJ": 4.0343460289038586e-13,
+          "triangleWorkJ": 4.651674338551854e-13,
+          "globalPass": true
+        },
+        "total": {
+          "signedN": 1.193659700748917e-06,
+          "triangleN": 1.193659700748917e-06,
+          "signedWorkJ": 1.409238205667539e-10,
+          "triangleWorkJ": 1.4544280119014607e-10,
+          "globalPass": true
+        }
+      },
+      "allocatedForceN": 2.0000000000000003e-06,
+      "allocatedWorkJ": 1.0984058470714025e-07
+    },
+    {
+      "state": "terminal46",
+      "a": "S0",
+      "b": "S1",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "terms": {
+        "matrix": {
+          "signedN": 1.3229116629177885e-09,
+          "triangleN": 1.3229116771226119e-09,
+          "signedWorkJ": 1.1403919303129468e-13,
+          "triangleWorkJ": 1.1403933076747863e-13,
+          "globalPass": true
+        },
+        "volume": {
+          "signedN": 5.13514369775082e-07,
+          "triangleN": 5.135143717141174e-07,
+          "signedWorkJ": 3.705719805097549e-11,
+          "triangleWorkJ": 3.705721146202335e-11,
+          "globalPass": true
+        },
+        "passiveFiber": {
+          "signedN": 6.955391912182591e-13,
+          "triangleN": 1.194237708401802e-12,
+          "signedWorkJ": 1.72341332723088e-18,
+          "triangleWorkJ": 3.41465468420138e-17,
+          "globalPass": true
+        },
+        "activePotential": {
+          "signedN": 7.459300050503366e-13,
+          "triangleN": 7.461035288966392e-13,
+          "signedWorkJ": 5.699865675005293e-18,
+          "triangleWorkJ": 5.168430469302193e-17,
+          "globalPass": true
+        },
+        "total": {
+          "signedN": 5.141852531974566e-07,
+          "triangleN": 5.141852548841729e-07,
+          "signedWorkJ": 3.717132498020337e-11,
+          "triangleWorkJ": 3.717133498749543e-11,
+          "globalPass": true
+        }
+      },
+      "allocations": {
+        "quiet": {
+          "forceN": 2.0000000000000003e-06,
+          "workJ": 1.0984058470714025e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        },
+        "focus": {
+          "forceN": 8.000000000000001e-06,
+          "workJ": 4.39362338828561e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                1.3229116629177885e-09,
+                1.3229116771226119e-09,
+                1.1403919303129468e-13,
+                1.1403933076747863e-13
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                5.13514369775082e-07,
+                5.135143717141174e-07,
+                3.705719805097549e-11,
+                3.705721146202335e-11
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                6.955391912182591e-13,
+                1.194237708401802e-12,
+                1.72341332723088e-18,
+                3.41465468420138e-17
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                7.459300050503366e-13,
+                7.461035288966392e-13,
+                5.699865675005293e-18,
+                5.168430469302193e-17
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                5.141852531974566e-07,
+                5.141852548841729e-07,
+                3.717132498020337e-11,
+                3.717133498749543e-11
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "a": "S1",
+      "b": "S2",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "terms": {
+        "matrix": {
+          "signedN": 2.637247966072599e-12,
+          "triangleN": 2.637249278294065e-12,
+          "signedWorkJ": 2.235113575627471e-16,
+          "triangleWorkJ": 2.242238639855637e-16,
+          "globalPass": true
+        },
+        "volume": {
+          "signedN": 9.655036254253445e-10,
+          "triangleN": 9.656469419219578e-10,
+          "signedWorkJ": 6.934954563309806e-14,
+          "triangleWorkJ": 6.939319789372855e-14,
+          "globalPass": true
+        },
+        "passiveFiber": {
+          "signedN": 2.504772019449967e-13,
+          "triangleN": 2.951842420539638e-13,
+          "signedWorkJ": 1.1018793337305707e-17,
+          "triangleWorkJ": 1.4363419806294516e-17,
+          "globalPass": true
+        },
+        "activePotential": {
+          "signedN": 7.013738926691386e-13,
+          "triangleN": 8.909671312016398e-13,
+          "signedWorkJ": 2.4453456268239295e-17,
+          "triangleWorkJ": 4.798497420434223e-17,
+          "globalPass": true
+        },
+        "total": {
+          "signedN": 9.67294961134758e-10,
+          "triangleN": 9.6746354618606e-10,
+          "signedWorkJ": 6.94764859000466e-14,
+          "triangleWorkJ": 6.953593512622364e-14,
+          "globalPass": true
+        }
+      },
+      "allocations": {
+        "quiet": {
+          "forceN": 2.0000000000000003e-06,
+          "workJ": 1.0984058470714025e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        },
+        "focus": {
+          "forceN": 8.000000000000001e-06,
+          "workJ": 4.39362338828561e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                2.637247966072599e-12,
+                2.637249278294065e-12,
+                2.235113575627471e-16,
+                2.242238639855637e-16
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                9.655036254253445e-10,
+                9.656469419219578e-10,
+                6.934954563309806e-14,
+                6.939319789372855e-14
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                2.504772019449967e-13,
+                2.951842420539638e-13,
+                1.1018793337305707e-17,
+                1.4363419806294516e-17
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                7.013738926691386e-13,
+                8.909671312016398e-13,
+                2.4453456268239295e-17,
+                4.798497420434223e-17
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                9.67294961134758e-10,
+                9.6746354618606e-10,
+                6.94764859000466e-14,
+                6.953593512622364e-14
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "a": "I0",
+      "b": "I1",
+      "required": true,
+      "pass": false,
+      "globalPass": false,
+      "terms": {
+        "matrix": {
+          "signedN": 1.4292536974052187e-07,
+          "triangleN": 1.4292536974469965e-07,
+          "signedWorkJ": 1.0181186993952167e-11,
+          "triangleWorkJ": 1.1261535340121235e-11,
+          "globalPass": true
+        },
+        "volume": {
+          "signedN": 4.460081948072867e-05,
+          "triangleN": 4.4600819482843576e-05,
+          "signedWorkJ": 2.9116534716612123e-09,
+          "triangleWorkJ": 3.745909898848058e-09,
+          "globalPass": false
+        },
+        "passiveFiber": {
+          "signedN": 1.9231196000311505e-08,
+          "triangleN": 1.923127027813501e-08,
+          "signedWorkJ": 5.222233070529438e-13,
+          "triangleWorkJ": 1.2860246787995502e-12,
+          "globalPass": true
+        },
+        "activePotential": {
+          "signedN": 1.4462498649111382e-07,
+          "triangleN": 1.4462498652745077e-07,
+          "signedWorkJ": 4.622157551905463e-12,
+          "triangleWorkJ": 6.3058367632132525e-12,
+          "globalPass": true
+        },
+        "total": {
+          "signedN": 4.474374534905057e-05,
+          "triangleN": 4.474374535162453e-05,
+          "signedWorkJ": 2.9259343867249438e-09,
+          "triangleWorkJ": 3.752018506759591e-09,
+          "globalPass": false
+        }
+      },
+      "allocations": {
+        "quiet": {
+          "forceN": 8.5e-06,
+          "workJ": 4.66822485005346e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                1.2222351134655307e-08,
+                1.2222351134655307e-08,
+                3.556108048423437e-13,
+                7.247375401649455e-13
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                5.2032966912918255e-06,
+                5.2032966912918255e-06,
+                3.364672459526225e-10,
+                4.977891805586643e-10
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                1.923119441471499e-08,
+                1.923119441471499e-08,
+                5.22213033765233e-13,
+                1.2859986471345743e-12
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                1.4462465092179855e-07,
+                1.4462465092179855e-07,
+                4.622123728765667e-12,
+                6.305784563306029e-12
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                5.2004761172952385e-06,
+                5.2004761172952385e-06,
+                3.327229074255782e-10,
+                4.933612120226283e-10
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        },
+        "focus": {
+          "forceN": 1.5e-06,
+          "workJ": 8.238043853035518e-08,
+          "terms": {
+            "matrix": {
+              "values": [
+                1.4292536974052187e-07,
+                1.4292536974469965e-07,
+                1.053679779879451e-11,
+                1.053679779995629e-11
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                4.460081948072867e-05,
+                4.4600819482843576e-05,
+                3.2481207176138346e-09,
+                3.2481207182893934e-09
+              ],
+              "pass": false
+            },
+            "passiveFiber": {
+              "values": [
+                1.603787506725724e-13,
+                6.885598212855511e-13,
+                1.0273287710868284e-17,
+                2.6031664976090822e-17
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                8.750587399248712e-13,
+                1.2459075766785848e-12,
+                3.382313979634154e-17,
+                5.219990722306495e-17
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                4.474374534905057e-05,
+                4.474374535162453e-05,
+                3.258657294150522e-09,
+                3.2586572947369636e-09
+              ],
+              "pass": false
+            }
+          },
+          "pass": false
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "a": "S2",
+      "b": "I1",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "terms": {
+        "matrix": {
+          "signedN": 2.2680310590576277e-09,
+          "triangleN": 2.3012367818365605e-09,
+          "signedWorkJ": 9.563931058733871e-14,
+          "triangleWorkJ": 2.3037530496467e-13,
+          "globalPass": true
+        },
+        "volume": {
+          "signedN": 7.609759577281857e-07,
+          "triangleN": 9.550014961883504e-07,
+          "signedWorkJ": 5.494777702283903e-12,
+          "triangleWorkJ": 1.1027718562102981e-10,
+          "globalPass": true
+        },
+        "passiveFiber": {
+          "signedN": 1.3228133199342683e-09,
+          "triangleN": 1.322825887873115e-09,
+          "signedWorkJ": 1.3687966923594045e-14,
+          "triangleWorkJ": 6.854614732024933e-14,
+          "globalPass": true
+        },
+        "activePotential": {
+          "signedN": 1.11058431340183e-08,
+          "triangleN": 1.11058431340183e-08,
+          "signedWorkJ": 1.564313593803302e-13,
+          "triangleWorkJ": 3.290105765867336e-13,
+          "globalPass": true
+        },
+        "total": {
+          "signedN": 7.545365222961367e-07,
+          "triangleN": 9.564050446831282e-07,
+          "signedWorkJ": 5.256253322999859e-12,
+          "triangleWorkJ": 1.1023765079626219e-10,
+          "globalPass": true
+        }
+      },
+      "allocations": {
+        "quiet": {
+          "forceN": 2.0000000000000003e-06,
+          "workJ": 1.0984058470714025e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                1.1971435127933194e-09,
+                1.1971435127933194e-09,
+                4.5060855714851285e-14,
+                8.416515492579746e-14
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                7.623363540432138e-07,
+                7.623363540432138e-07,
+                4.812345544512863e-11,
+                6.531379683998868e-11
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                1.3227467454690611e-09,
+                1.3227467454690611e-09,
+                1.3702796831325184e-14,
+                6.852631404582278e-14
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                1.11058431340183e-08,
+                1.11058431340183e-08,
+                1.564864102943554e-13,
+                3.289392963737866e-13
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                7.558982249022961e-07,
+                7.558982249022961e-07,
+                4.802582318805808e-11,
+                6.512826777155043e-11
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        },
+        "focus": {
+          "forceN": 8.000000000000001e-06,
+          "workJ": 4.39362338828561e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                1.786915942357526e-09,
+                1.92212695192116e-09,
+                1.4070016630219e-13,
+                1.4621015003887257e-13
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                5.419497837418314e-07,
+                6.099687607947946e-07,
+                4.262867774284473e-11,
+                4.496338878104113e-11
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                1.553623247147969e-13,
+                3.117244595825386e-13,
+                1.482990773113955e-17,
+                1.9833274426551372e-17
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                1.6117685534206032e-12,
+                1.6121523367596539e-12,
+                5.5050914025201e-17,
+                7.128021294699615e-17
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                5.437358881193145e-07,
+                6.118907592622646e-07,
+                4.276956986505822e-11,
+                4.510938302471176e-11
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "a": "S1",
+      "b": "AR",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "terms": {
+        "matrix": {
+          "signedN": 1.8470418768083547e-10,
+          "triangleN": 3.388147174668142e-10,
+          "signedWorkJ": 1.5058299205579652e-14,
+          "triangleWorkJ": 2.1136227396750874e-14,
+          "globalPass": true
+        },
+        "volume": {
+          "signedN": 8.880326927918229e-08,
+          "triangleN": 1.718999346691319e-07,
+          "signedWorkJ": 7.43415544895843e-12,
+          "triangleWorkJ": 1.014739027785366e-11,
+          "globalPass": true
+        },
+        "passiveFiber": {
+          "signedN": 4.3635486541985526e-13,
+          "triangleN": 4.4153897292877344e-13,
+          "signedWorkJ": 3.2466359622786374e-18,
+          "triangleWorkJ": 1.2926536678753946e-17,
+          "globalPass": true
+        },
+        "activePotential": {
+          "signedN": 1.202803431323579e-12,
+          "triangleN": 1.2170352441143829e-12,
+          "signedWorkJ": 7.319223929875282e-17,
+          "triangleWorkJ": 7.522056901999546e-17,
+          "globalPass": true
+        },
+        "total": {
+          "signedN": 8.89877598055006e-08,
+          "triangleN": 1.7223856315219317e-07,
+          "signedWorkJ": 7.449297724245787e-12,
+          "triangleWorkJ": 1.0168517465196002e-11,
+          "globalPass": true
+        }
+      },
+      "allocations": {
+        "quiet": {
+          "forceN": 2.0000000000000003e-06,
+          "workJ": 1.0984058470714025e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        },
+        "focus": {
+          "forceN": 8.000000000000001e-06,
+          "workJ": 4.39362338828561e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                1.8470418768083547e-10,
+                3.388147174668142e-10,
+                1.5058299205579652e-14,
+                2.1136227396750874e-14
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                8.880326927918229e-08,
+                1.718999346691319e-07,
+                7.43415544895843e-12,
+                1.014739027785366e-11
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                4.3635486541985526e-13,
+                4.4153897292877344e-13,
+                3.2466359622786374e-18,
+                1.2926536678753946e-17
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                1.202803431323579e-12,
+                1.2170352441143829e-12,
+                7.319223929875282e-17,
+                7.522056901999546e-17
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                8.89877598055006e-08,
+                1.7223856315219317e-07,
+                7.449297724245787e-12,
+                1.0168517465196002e-11
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "a": "S1",
+      "b": "AH",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "terms": {
+        "matrix": {
+          "signedN": 3.073244642656684e-15,
+          "triangleN": 3.073244642656684e-15,
+          "signedWorkJ": 2.2212309377277325e-19,
+          "triangleWorkJ": 2.2212309377277325e-19,
+          "globalPass": true
+        },
+        "volume": {
+          "signedN": 9.506648653317486e-16,
+          "triangleN": 9.50664865331795e-16,
+          "signedWorkJ": 6.871064327079952e-20,
+          "triangleWorkJ": 6.871064327080174e-20,
+          "globalPass": true
+        },
+        "passiveFiber": {
+          "signedN": 3.842615425041413e-30,
+          "triangleN": 6.770028940510011e-30,
+          "signedWorkJ": 1.9161600297969447e-35,
+          "triangleWorkJ": 1.2716576591175344e-34,
+          "globalPass": true
+        },
+        "activePotential": {
+          "signedN": 2.122528873110285e-29,
+          "triangleN": 2.122528873110285e-29,
+          "signedWorkJ": 6.6871642199378215e-34,
+          "triangleWorkJ": 7.478646643308208e-34,
+          "globalPass": true
+        },
+        "total": {
+          "signedN": 4.023909532390266e-15,
+          "triangleN": 4.023909532390312e-15,
+          "signedWorkJ": 2.908337347903018e-19,
+          "triangleWorkJ": 2.9083373479030406e-19,
+          "globalPass": true
+        }
+      },
+      "allocations": {
+        "quiet": {
+          "forceN": 2.0000000000000003e-06,
+          "workJ": 1.0984058470714025e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        },
+        "focus": {
+          "forceN": 8.000000000000001e-06,
+          "workJ": 4.39362338828561e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                3.073244642656684e-15,
+                3.073244642656684e-15,
+                2.2212309377277325e-19,
+                2.2212309377277325e-19
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                9.506648653317486e-16,
+                9.50664865331795e-16,
+                6.871064327079952e-20,
+                6.871064327080174e-20
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                3.842615425041413e-30,
+                6.770028940510011e-30,
+                1.9161600297969447e-35,
+                1.2716576591175344e-34
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                2.122528873110285e-29,
+                2.122528873110285e-29,
+                6.6871642199378215e-34,
+                7.478646643308208e-34
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                4.023909532390266e-15,
+                4.023909532390312e-15,
+                2.908337347903018e-19,
+                2.9083373479030406e-19
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "a": "S1",
+      "b": "AC",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "terms": {
+        "matrix": {
+          "signedN": 1.8320236541816806e-11,
+          "triangleN": 1.8320260193150905e-11,
+          "signedWorkJ": 1.2504035363083561e-15,
+          "triangleWorkJ": 1.2507522312583432e-15,
+          "globalPass": true
+        },
+        "volume": {
+          "signedN": 4.863913461621251e-09,
+          "triangleN": 4.863913466081236e-09,
+          "signedWorkJ": 3.054586044430202e-13,
+          "triangleWorkJ": 3.054955834122846e-13,
+          "globalPass": true
+        },
+        "passiveFiber": {
+          "signedN": 3.7670104919717214e-13,
+          "triangleN": 5.866563479076381e-13,
+          "signedWorkJ": 4.555494247934781e-18,
+          "triangleWorkJ": 2.8973311424337725e-17,
+          "globalPass": true
+        },
+        "activePotential": {
+          "signedN": 7.569862512157858e-13,
+          "triangleN": 7.779541498822578e-13,
+          "signedWorkJ": 3.0835691949559704e-17,
+          "triangleWorkJ": 5.282209347643767e-17,
+          "globalPass": true
+        },
+        "total": {
+          "signedN": 4.882308152396861e-09,
+          "triangleN": 4.882308156698145e-09,
+          "signedWorkJ": 3.066006968896596e-13,
+          "triangleWorkJ": 3.066329987220977e-13,
+          "globalPass": true
+        }
+      },
+      "allocations": {
+        "quiet": {
+          "forceN": 2.0000000000000003e-06,
+          "workJ": 1.0984058470714025e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        },
+        "focus": {
+          "forceN": 8.000000000000001e-06,
+          "workJ": 4.39362338828561e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                1.8320236541816806e-11,
+                1.8320260193150905e-11,
+                1.2504035363083561e-15,
+                1.2507522312583432e-15
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                4.863913461621251e-09,
+                4.863913466081236e-09,
+                3.054586044430202e-13,
+                3.054955834122846e-13
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                3.7670104919717214e-13,
+                5.866563479076381e-13,
+                4.555494247934781e-18,
+                2.8973311424337725e-17
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                7.569862512157858e-13,
+                7.779541498822578e-13,
+                3.0835691949559704e-17,
+                5.282209347643767e-17
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                4.882308152396861e-09,
+                4.882308156698145e-09,
+                3.066006968896596e-13,
+                3.066329987220977e-13
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "a": "S0",
+      "b": "I0",
+      "required": false,
+      "pass": false,
+      "globalPass": false,
+      "terms": {
+        "matrix": {
+          "signedN": 1.456900606403064e-07,
+          "triangleN": 1.456900608972058e-07,
+          "signedWorkJ": 1.0162563600150647e-11,
+          "triangleWorkJ": 1.1388157622043205e-11,
+          "globalPass": true
+        },
+        "volume": {
+          "signedN": 4.5473134524296904e-05,
+          "triangleN": 4.547313454788329e-05,
+          "signedWorkJ": 2.8690321463623196e-09,
+          "triangleWorkJ": 3.8293780997653e-09,
+          "globalPass": false
+        },
+        "passiveFiber": {
+          "signedN": 2.055403354380396e-08,
+          "triangleN": 2.05540674983081e-08,
+          "signedWorkJ": 5.359205693565479e-13,
+          "triangleWorkJ": 1.354549968729839e-12,
+          "globalPass": true
+        },
+        "activePotential": {
+          "signedN": 1.5391708636191583e-07,
+          "triangleN": 1.5391709672354112e-07,
+          "signedWorkJ": 4.778570157695201e-12,
+          "triangleWorkJ": 6.634815167292591e-12,
+          "globalPass": true
+        },
+        "total": {
+          "signedN": 4.561882425749193e-05,
+          "triangleN": 4.561882428207289e-05,
+          "signedWorkJ": 2.883437331935841e-09,
+          "triangleWorkJ": 3.8353439365715554e-09,
+          "globalPass": false
+        }
+      },
+      "allocations": {
+        "quiet": {
+          "forceN": 2.0000000000000003e-06,
+          "workJ": 1.0984058470714025e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                1.3419494647448627e-08,
+                1.3419494647448627e-08,
+                4.0067166055719493e-13,
+                8.089026950907429e-13
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                5.951578372354049e-06,
+                5.951578372354049e-06,
+                3.8459070139775117e-10,
+                5.631029773986529e-10
+              ],
+              "pass": false
+            },
+            "passiveFiber": {
+              "values": [
+                2.0553941160184053e-08,
+                2.0553941160184053e-08,
+                5.359158305965581e-13,
+                1.354524961180397e-12
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                1.5391678154230704e-07,
+                1.5391678154230704e-07,
+                4.7786101390600235e-12,
+                6.6347238596798166e-12
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                5.887491329570338e-06,
+                5.887491329570338e-06,
+                3.8074873061363627e-10,
+                5.584894797941786e-10
+              ],
+              "pass": false
+            }
+          },
+          "pass": false
+        },
+        "focus": {
+          "forceN": 8.000000000000001e-06,
+          "workJ": 4.39362338828561e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                1.456900606403064e-07,
+                1.456900608972058e-07,
+                1.0563235260707844e-11,
+                1.0579254926952462e-11
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                4.5473134524296904e-05,
+                4.547313454788329e-05,
+                3.253622847760071e-09,
+                3.2662751223666475e-09
+              ],
+              "pass": false
+            },
+            "passiveFiber": {
+              "values": [
+                6.792333450582715e-13,
+                1.0469668589954794e-12,
+                4.738759989803556e-18,
+                2.5007549442202265e-17
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                9.870861475477825e-13,
+                1.0472830421383081e-12,
+                3.9981364822093456e-17,
+                9.130761277416628e-17
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                4.561882425749193e-05,
+                4.561882428207289e-05,
+                3.264186062549477e-09,
+                3.2768544567773766e-09
+              ],
+              "pass": false
+            }
+          },
+          "pass": false
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "a": "S1",
+      "b": "I1",
+      "required": false,
+      "pass": true,
+      "globalPass": true,
+      "terms": {
+        "matrix": {
+          "signedN": 2.2674998133707193e-09,
+          "triangleN": 2.3007061305264177e-09,
+          "signedWorkJ": 9.541579922977595e-14,
+          "triangleWorkJ": 2.302206800225422e-13,
+          "globalPass": true
+        },
+        "volume": {
+          "signedN": 7.606153186845432e-07,
+          "triangleN": 9.54770541256122e-07,
+          "signedWorkJ": 5.564127247917001e-12,
+          "triangleWorkJ": 1.1025779735036977e-10,
+          "globalPass": true
+        },
+        "passiveFiber": {
+          "signedN": 1.3227593960229765e-09,
+          "triangleN": 1.3228253003895527e-09,
+          "signedWorkJ": 1.369898571693135e-14,
+          "triangleWorkJ": 6.854625987747941e-14,
+          "globalPass": true
+        },
+        "activePotential": {
+          "signedN": 1.11058431340183e-08,
+          "triangleN": 1.11058431340183e-08,
+          "signedWorkJ": 1.5640690592406195e-13,
+          "triangleWorkJ": 3.290333202819684e-13,
+          "globalPass": true
+        },
+        "total": {
+          "signedN": 7.541753237793421e-07,
+          "triangleN": 9.561736387110176e-07,
+          "signedWorkJ": 5.325729808899916e-12,
+          "triangleWorkJ": 1.102182211855265e-10,
+          "globalPass": true
+        }
+      },
+      "allocations": {
+        "quiet": {
+          "forceN": 2.0000000000000003e-06,
+          "workJ": 1.0984058470714025e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                1.1971435127933194e-09,
+                1.1971435127933194e-09,
+                4.5060855714851285e-14,
+                8.416515492579746e-14
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                7.623363540432138e-07,
+                7.623363540432138e-07,
+                4.812345544512863e-11,
+                6.531379683998868e-11
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                1.3227467454690611e-09,
+                1.3227467454690611e-09,
+                1.3702796831325184e-14,
+                6.852631404582278e-14
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                1.11058431340183e-08,
+                1.11058431340183e-08,
+                1.564864102943554e-13,
+                3.289392963737866e-13
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                7.558982249022961e-07,
+                7.558982249022961e-07,
+                4.802582318805808e-11,
+                6.512826777155043e-11
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        },
+        "focus": {
+          "forceN": 8.000000000000001e-06,
+          "workJ": 4.39362338828561e-07,
+          "terms": {
+            "matrix": {
+              "values": [
+                1.7888648438426607e-09,
+                1.923916449616349e-09,
+                1.4047665494462724e-13,
+                1.4605552509674474e-13
+              ],
+              "pass": true
+            },
+            "volume": {
+              "values": [
+                5.425792519701499e-07,
+                6.10471820581234e-07,
+                4.255932819721163e-11,
+                4.494400051038109e-11
+              ],
+              "pass": true
+            },
+            "passiveFiber": {
+              "values": [
+                2.7868630463966477e-13,
+                5.42730984870117e-13,
+                3.8111143938338424e-18,
+                1.994583165663227e-17
+              ],
+              "pass": true
+            },
+            "activePotential": {
+              "values": [
+                1.1603642413819335e-12,
+                1.161432131622871e-12,
+                7.950437029344028e-17,
+                9.402390818180141e-17
+              ],
+              "pass": true
+            },
+            "total": {
+              "values": [
+                5.443673549524476e-07,
+                6.123955899494522e-07,
+                4.2700093379158164e-11,
+                4.508995341397608e-11
+              ],
+              "pass": true
+            }
+          },
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "a": "D4",
+      "b": "D5",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "terms": {
+        "matrix": {
+          "signedN": 5.198112990392745e-12,
+          "triangleN": 5.198112990392745e-12,
+          "signedWorkJ": 3.2557584611598936e-16,
+          "triangleWorkJ": 4.304690080943161e-16,
+          "globalPass": true
+        },
+        "volume": {
+          "signedN": 5.578428385888401e-09,
+          "triangleN": 5.578428385888401e-09,
+          "signedWorkJ": 3.4885662094413864e-13,
+          "triangleWorkJ": 4.3501412894325474e-13,
+          "globalPass": true
+        },
+        "passiveFiber": {
+          "signedN": 8.619771563189715e-13,
+          "triangleN": 8.859579736508749e-13,
+          "signedWorkJ": 2.5673723449634642e-17,
+          "triangleWorkJ": 5.477788281658774e-17,
+          "globalPass": true
+        },
+        "activePotential": {
+          "signedN": 5.1432191838785e-12,
+          "triangleN": 5.1432191838785e-12,
+          "signedWorkJ": 2.5876567724615046e-17,
+          "triangleWorkJ": 1.6576661668745113e-16,
+          "globalPass": true
+        },
+        "total": {
+          "signedN": 5.5884052940768925e-09,
+          "triangleN": 5.5884052940768925e-09,
+          "signedWorkJ": 3.491677380536123e-13,
+          "triangleWorkJ": 4.3552120405267824e-13,
+          "globalPass": true
+        }
+      },
+      "allocatedForceN": 2.0000000000000003e-06,
+      "allocatedWorkJ": 1.0984058470714025e-07
+    },
+    {
+      "state": "terminal46",
+      "a": "U4",
+      "b": "U5",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "terms": {
+        "matrix": {
+          "signedN": 1.2222351134655307e-08,
+          "triangleN": 1.2222351134655307e-08,
+          "signedWorkJ": 3.556108048423437e-13,
+          "triangleWorkJ": 7.247375401649455e-13,
+          "globalPass": true
+        },
+        "volume": {
+          "signedN": 5.2032966912918255e-06,
+          "triangleN": 5.2032966912918255e-06,
+          "signedWorkJ": 3.364672459526225e-10,
+          "triangleWorkJ": 4.977891805586643e-10,
+          "globalPass": true
+        },
+        "passiveFiber": {
+          "signedN": 1.923119441471499e-08,
+          "triangleN": 1.923119441471499e-08,
+          "signedWorkJ": 5.22213033765233e-13,
+          "triangleWorkJ": 1.2859986471345743e-12,
+          "globalPass": true
+        },
+        "activePotential": {
+          "signedN": 1.4462465092179855e-07,
+          "triangleN": 1.4462465092179855e-07,
+          "signedWorkJ": 4.622123728765667e-12,
+          "triangleWorkJ": 6.305784563306029e-12,
+          "globalPass": true
+        },
+        "total": {
+          "signedN": 5.2004761172952385e-06,
+          "triangleN": 5.2004761172952385e-06,
+          "signedWorkJ": 3.327229074255782e-10,
+          "triangleWorkJ": 4.933612120226283e-10,
+          "globalPass": true
+        }
+      },
+      "allocatedForceN": 8.5e-06,
+      "allocatedWorkJ": 4.66822485005346e-07
+    },
+    {
+      "state": "terminal46",
+      "a": "D5",
+      "b": "U5",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "terms": {
+        "matrix": {
+          "signedN": 1.1971435127933194e-09,
+          "triangleN": 1.1971435127933194e-09,
+          "signedWorkJ": 4.5060855714851285e-14,
+          "triangleWorkJ": 8.416515492579746e-14,
+          "globalPass": true
+        },
+        "volume": {
+          "signedN": 7.623363540432138e-07,
+          "triangleN": 7.623363540432138e-07,
+          "signedWorkJ": 4.812345544512863e-11,
+          "triangleWorkJ": 6.531379683998868e-11,
+          "globalPass": true
+        },
+        "passiveFiber": {
+          "signedN": 1.3227467454690611e-09,
+          "triangleN": 1.3227467454690611e-09,
+          "signedWorkJ": 1.3702796831325184e-14,
+          "triangleWorkJ": 6.852631404582278e-14,
+          "globalPass": true
+        },
+        "activePotential": {
+          "signedN": 1.11058431340183e-08,
+          "triangleN": 1.11058431340183e-08,
+          "signedWorkJ": 1.564864102943554e-13,
+          "triangleWorkJ": 3.289392963737866e-13,
+          "globalPass": true
+        },
+        "total": {
+          "signedN": 7.558982249022961e-07,
+          "triangleN": 7.558982249022961e-07,
+          "signedWorkJ": 4.802582318805808e-11,
+          "triangleWorkJ": 6.512826777155043e-11,
+          "globalPass": true
+        }
+      },
+      "allocatedForceN": 2.0000000000000003e-06,
+      "allocatedWorkJ": 1.0984058470714025e-07
+    }
+  ],
+  "qualificationInterpretation": "S2/I1 finite agreement is verified. The failed terminal I0/I1 witness remains failed; it cannot be replaced by the passing cross-family comparison and no convergence or finite-patch qualification follows."
+}

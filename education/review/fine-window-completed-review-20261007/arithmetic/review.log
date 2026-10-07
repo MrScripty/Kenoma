@@ -1,0 +1,52 @@
+replayed stages and regions control45
+replayed stages and regions terminal46
+replayed hybrids and all comparisons control45
+replayed hybrids and all comparisons terminal46
+{
+  "verdict": "PASS_INDEPENDENT_RETAINED_ARITHMETIC_AND_PROVENANCE",
+  "totalAssertions": 46793317,
+  "requiredPassed": 19,
+  "requiredFailed": 1,
+  "elapsedSeconds": 48.960343238999485,
+  "counts": {
+    "logicalRegions": 2002,
+    "newRegions": 1682,
+    "newCallbacks": 19716000,
+    "sharedRegions": 320,
+    "sharedLogicalMeasurements": 640000
+  },
+  "reusedPointAttribution": {
+    "P4": 480000,
+    "F44": 80000,
+    "X44": 80000
+  },
+  "maximumReplayErrors": {
+    "local_component_force": 1.9326762412674725e-12,
+    "local_component_energy": 1.6892043319671757e-13,
+    "row_directional_derivative": 1.0842021724855044e-18,
+    "region_stage_force": 2.1316282072803006e-14,
+    "global_component_force:stage": 1.2292389328649733e-12,
+    "global_component_energy:stage": 3.95516952522712e-15,
+    "region_stage_energy": 2.7755575615628914e-17,
+    "original_physical_bin_force": 4.1359030627651384e-25,
+    "original_physical_bin_energy": 4.81482486096809e-35,
+    "patch_assembly": 1.4210854715202004e-14,
+    "unchanged_baseline": 2.1316282072803006e-14,
+    "hybrid_once_only_replacement": 2.1316282072803006e-14,
+    "global_component_force:hybrid": 2.808482613136931e-12,
+    "global_component_energy:hybrid": 4.618527782440651e-13,
+    "patch_energy": 8.326672684688674e-17,
+    "hybrid_energy": 2.842170943040401e-14,
+    "local_difference": 0.0,
+    "local_work": 8.271806125530277e-25,
+    "comparison_aggregateDifferenceN": 1.3552527156068805e-20,
+    "comparison_absoluteUnitDifferenceN": 6.776263578034403e-21,
+    "comparison_metric": 6.776263578034403e-21,
+    "frozen_allocated_force": 1.6940658945086007e-21,
+    "frozen_allocated_work": 0.0,
+    "allocated_metric": 6.776263578034403e-21,
+    "supplementary_common16": 1.6543612251060553e-24,
+    "quiet_force_allocation": 0.0,
+    "quiet_work_allocation": 0.0
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "verdict": "PASS_10_IN_MEMORY_DAMAGE_REFUSALS",
+  "specimenCalls": 0,
+  "quadratureGenerationCalls": 0,
+  "storedInputWrites": 0,
+  "cases": [
+    {
+      "case": "gate",
+      "verdict": "REFUSED",
+      "reason": "global_gates_exact"
+    },
+    {
+      "case": "workgate",
+      "verdict": "REFUSED",
+      "reason": "global_gates_exact"
+    },
+    {
+      "case": "falsepass",
+      "verdict": "REFUSED",
+      "reason": "term_pass"
+    },
+    {
+      "case": "unitomission",
+      "verdict": "REFUSED",
+      "reason": "saved_unit_count"
+    },
+    {
+      "case": "local",
+      "verdict": "REFUSED",
+      "reason": "local_difference"
+    },
+    {
+      "case": "work",
+      "verdict": "REFUSED",
+      "reason": "local_work"
+    },
+    {
+      "case": "triangle",
+      "verdict": "REFUSED",
+      "reason": "comparison_absoluteUnitDifferenceN"
+    },
+    {
+      "case": "held",
+      "verdict": "REFUSED",
+      "reason": "comparison_aggregateDifferenceN"
+    },
+    {
+      "case": "nonfinite",
+      "verdict": "REFUSED",
+      "reason": "finite:comparison_aggregateDifferenceN"
+    },
+    {
+      "case": "scalar",
+      "verdict": "REFUSED",
+      "reason": "comparison_metric"
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "verdict": "PASS_RETAINED_LOCALIZATION_AND_SYMBOLIC_COST",
+  "frozenCompletedHead": "5f7612f6c7f6609d8946b3394d7363609d7a30b1",
+  "checkedRawRegionHashes": 882,
+  "specimenCalls": 0,
+  "quadratureGenerated": false,
+  "minimumRegionalCountForOldComplementToFitFocusForce": 4,
+  "threeRegionComplementLowerBoundN": 2.9071825775021348e-06,
+  "options": {
+    "four": {
+      "regions": [
+        [
+          247,
+          "s1"
+        ],
+        [
+          247,
+          "s2"
+        ],
+        [
+          247,
+          "s3"
+        ],
+        [
+          206,
+          "s1"
+        ]
+      ],
+      "retainedComplement": {
+        "control45": {
+          "matrix": {
+            "signedN": 3.0274017677982855e-11,
+            "triangleN": 3.046709969370718e-11,
+            "signedWorkJ": 7.971075313537441e-16,
+            "triangleWorkJ": 7.971094069786449e-16
+          },
+          "volume": {
+            "signedN": 2.9905294266469435e-08,
+            "triangleN": 3.0020905033211124e-08,
+            "signedWorkJ": 7.118912315267738e-13,
+            "triangleWorkJ": 7.119292034747222e-13
+          },
+          "passiveFiber": {
+            "signedN": 3.742202541917473e-13,
+            "triangleN": 3.795082825375274e-13,
+            "signedWorkJ": 4.540793012769034e-20,
+            "triangleWorkJ": 8.22872205680367e-18
+          },
+          "activePotential": {
+            "signedN": 5.850775794118807e-13,
+            "triangleN": 9.062949549833784e-13,
+            "signedWorkJ": 1.462839388960281e-17,
+            "triangleWorkJ": 5.411617114070057e-17
+          },
+          "total": {
+            "signedN": 2.993533269984145e-08,
+            "triangleN": 3.0051132213923575e-08,
+            "signedWorkJ": 7.127633358181863e-13,
+            "triangleWorkJ": 7.127660211687957e-13
+          }
+        },
+        "terminal46": {
+          "matrix": {
+            "signedN": 9.864943675945068e-09,
+            "triangleN": 9.864943680122853e-09,
+            "signedWorkJ": 7.103471390166798e-13,
+            "triangleWorkJ": 7.103471401784594e-13
+          },
+          "volume": {
+            "signedN": 1.4785537802604965e-06,
+            "triangleN": 1.4785537823753978e-06,
+            "signedWorkJ": 1.0576968218521765e-10,
+            "triangleWorkJ": 1.0576968286077615e-10
+          },
+          "passiveFiber": {
+            "signedN": 3.6616054999444177e-13,
+            "triangleN": 4.751035937800168e-13,
+            "signedWorkJ": 1.5551570211024217e-17,
+            "triangleWorkJ": 1.992335711756247e-17
+          },
+          "activePotential": {
+            "signedN": 8.750587399248712e-13,
+            "triangleN": 1.2459075766785848e-12,
+            "signedWorkJ": 2.7596641288605215e-17,
+            "triangleWorkJ": 4.597340871532862e-17
+          },
+          "total": {
+            "signedN": 1.4884189172602624e-06,
+            "triangleN": 1.4884189198342249e-06,
+            "signedWorkJ": 1.0648001679583255e-10,
+            "triangleWorkJ": 1.0648001738227385e-10
+          }
+        }
+      },
+      "retainedComplementMaximumForceN": 1.4884189198342249e-06,
+      "retainedComplementMaximumWorkJ": 1.0648001738227385e-10,
+      "availableFocusForceForNewIncrementN": 1.158108016577515e-08,
+      "availableFocusWorkForNewIncrementJ": 8.22739585129729e-08,
+      "face16radial2PointsPerRegionPerField": 192000,
+      "newCallsBothFields": 1536000,
+      "face16radial4BothFields": 3072000,
+      "normalizedPointsAcrossDistinctCornerRegionCharts": 768000,
+      "normalizedBinaryBytes": 36864000,
+      "physicalBinaryBytes": 6144000
+    },
+    "five": {
+      "regions": [
+        [
+          247,
+          "s1"
+        ],
+        [
+          247,
+          "s2"
+        ],
+        [
+          247,
+          "s3"
+        ],
+        [
+          247,
+          "s4"
+        ],
+        [
+          206,
+          "s1"
+        ]
+      ],
+      "retainedComplement": {
+        "control45": {
+          "matrix": {
+            "signedN": 3.0274022014791545e-11,
+            "triangleN": 3.046709535689849e-11,
+            "signedWorkJ": 7.971070186859692e-16,
+            "triangleWorkJ": 7.971088943108701e-16
+          },
+          "volume": {
+            "signedN": 2.9905296126093e-08,
+            "triangleN": 3.002090317358756e-08,
+            "signedWorkJ": 7.118910722277385e-13,
+            "triangleWorkJ": 7.11929044175687e-13
+          },
+          "passiveFiber": {
+            "signedN": 3.7411096661276074e-13,
+            "triangleN": 3.7939899495854087e-13,
+            "signedWorkJ": 5.0558678482626947e-20,
+            "triangleWorkJ": 8.223571308448734e-18
+          },
+          "activePotential": {
+            "signedN": 5.850775794118807e-13,
+            "triangleN": 9.062949549833784e-13,
+            "signedWorkJ": 1.462839388960281e-17,
+            "triangleWorkJ": 5.411617114070057e-17
+          },
+          "total": {
+            "signedN": 2.9935332838619326e-08,
+            "triangleN": 3.00511320751457e-08,
+            "signedWorkJ": 7.127631596724274e-13,
+            "triangleWorkJ": 7.127658450230366e-13
+          }
+        },
+        "terminal46": {
+          "matrix": {
+            "signedN": 4.234147658991803e-09,
+            "triangleN": 4.234147663169586e-09,
+            "signedWorkJ": 3.015599368407106e-13,
+            "triangleWorkJ": 3.0155993800249005e-13
+          },
+          "volume": {
+            "signedN": 5.606768218210179e-07,
+            "triangleN": 5.606768239359193e-07,
+            "signedWorkJ": 3.913985484459277e-11,
+            "triangleWorkJ": 3.9139855520151274e-11
+          },
+          "passiveFiber": {
+            "signedN": 3.6617052465442863e-13,
+            "triangleN": 4.747271587857299e-13,
+            "signedWorkJ": 1.5556472057405575e-17,
+            "triangleWorkJ": 1.991845527118111e-17
+          },
+          "activePotential": {
+            "signedN": 8.750587399248712e-13,
+            "triangleN": 1.2459075766785848e-12,
+            "signedWorkJ": 2.7596641288605215e-17,
+            "triangleWorkJ": 4.597340871532862e-17
+          },
+          "total": {
+            "signedN": 5.649111359017389e-07,
+            "triangleN": 5.649111384757014e-07,
+            "signedWorkJ": 3.9441401235562455e-11,
+            "triangleWorkJ": 3.944140182200375e-11
+          }
+        }
+      },
+      "retainedComplementMaximumForceN": 5.649111384757014e-07,
+      "retainedComplementMaximumWorkJ": 3.944140182200375e-11,
+      "availableFocusForceForNewIncrementN": 9.350888615242987e-07,
+      "availableFocusWorkForNewIncrementJ": 8.234099712853317e-08,
+      "face16radial2PointsPerRegionPerField": 192000,
+      "newCallsBothFields": 1920000,
+      "face16radial4BothFields": 3840000,
+      "normalizedPointsAcrossDistinctCornerRegionCharts": 960000,
+      "normalizedBinaryBytes": 46080000,
+      "physicalBinaryBytes": 7680000
+    }
+  },
+  "noAbsoluteGlobalCostMinimalityClaim": true,
+  "outside236Qualified": false,
+  "anatomicalCapstoneQualified": false
+}

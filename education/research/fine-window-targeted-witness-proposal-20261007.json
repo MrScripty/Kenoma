@@ -1,0 +1,237 @@
+{
+  "schema": 1,
+  "status": "SYMBOLIC_PROPOSAL_ONLY_NOT_PREPARATION_OR_EXECUTION_AUTHORIZATION",
+  "frozenCompletedResultCommit": "5f7612f6c7f6609d8946b3394d7363609d7a30b1",
+  "consumedAuthorizationSha256": "eefb24e1994824ced443b5740826c3c020712ef893c74683ba63d0d1b1d8ae7f",
+  "resultPreserved": "UNRESOLVED_FIXED_PATCH_INTEGRATION",
+  "newMaterialCallsDuringReview": 0,
+  "newQuadratureGenerated": false,
+  "newRunnerImplemented": false,
+  "newExecutionAuthorized": false,
+  "scope": "Prospective complete fixed16 composite independent-window diagnostic; no retrofit of originalfailedI0/I1",
+  "states": [
+    "control45",
+    "terminal46"
+  ],
+  "terms": [
+    "matrix",
+    "volume",
+    "passiveFiber",
+    "activePotential",
+    "total"
+  ],
+  "patch": [
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    202,
+    203,
+    206,
+    237,
+    240,
+    243,
+    244,
+    246,
+    247,
+    248
+  ],
+  "focus": [
+    197,
+    200,
+    203,
+    206,
+    246,
+    247,
+    248
+  ],
+  "quiet": [
+    195,
+    196,
+    198,
+    199,
+    202,
+    237,
+    240,
+    243,
+    244
+  ],
+  "selectedRegions": [
+    [
+      247,
+      "s1"
+    ],
+    [
+      247,
+      "s2"
+    ],
+    [
+      247,
+      "s3"
+    ],
+    [
+      206,
+      "s1"
+    ]
+  ],
+  "proposedNewRule": {
+    "family": "sameindependentgradedaffinetetrahedra",
+    "gaussOrder": 5,
+    "depth": 20,
+    "faceParts": 16,
+    "radialParts": 2,
+    "corners": {
+      "247": 0,
+      "206": 1
+    },
+    "faceOrder": "sameascendingnoncornerindicesasI1",
+    "refinement": "face8to16 only; radial2 unchanged; no new radial/depth/chart resolutionclaim",
+    "shells": {
+      "s1": [
+        0.5,
+        1
+      ],
+      "s2": [
+        0.25,
+        0.5
+      ],
+      "s3": [
+        0.125,
+        0.25
+      ]
+    },
+    "tetrahedraPerSelectedShell": 1536,
+    "pointsPerSelectedShellPerField": 192000
+  },
+  "newPlannedAndMaximumCallbacks": 1536000,
+  "pointCostFormula": "4selectedshells * 3tetrahedra * 2radialparts * 16^2facetriangles * 5^3Gaussnodes * 2fields",
+  "newNormalizedBinaryBytes": 36864000,
+  "newPhysicalWeightBinaryBytes": 6144000,
+  "newBinaryBytes": 43008000,
+  "allNewPointEvaluationsRequired": "Retained regionalaggregatescannot supply stresses at finer points; no pointwise stressreuse isclaimed",
+  "endpoints": {
+    "T0": {
+      "quiet": "immutable U4",
+      "selectedFocusRegions": "completed I1",
+      "unselectedFocusRegions": "completed I0"
+    },
+    "T1": {
+      "quiet": "immutable U5",
+      "selectedFocusRegions": "prospective new I2",
+      "unselectedFocusRegions": "completed I1"
+    }
+  },
+  "requiredFutureComparisons": [
+    {
+      "a": "T0",
+      "b": "T1",
+      "partition": 156,
+      "allocation": "unchanged85percentquiet15percentfocus"
+    },
+    {
+      "a": "S2",
+      "b": "T1",
+      "partition": 156,
+      "allocation": "unchanged20percentquiet80percentfocus"
+    }
+  ],
+  "informationalFutureComparisons": [
+    {
+      "a": "I1",
+      "b": "T1",
+      "partition": 156,
+      "allocation": "85percentquiet15percentfocus; repeatedquietU5earnsnonewevidence"
+    }
+  ],
+  "all585IncludingHeld": true,
+  "retainedOldRequiredComparisons": "All20requiredand4informationaloldcomparisons remain their original immutable verdicts. New comparisonscannotretroactivelyqualifyfailedrun.",
+  "retainedDataReferences": {
+    "I0I1P8": "review/fine-window-run-20261007/material; exactcommit5f7612f6c7f6609d8946b3394d7363609d7a30b1",
+    "rawInventory": "review/fine-window-outcome-20261007/raw-inventory.json",
+    "rawInventorySha256": "6ae3961c2fc734cb098b71464a6d9b584d0590eed8f263c2ca1b741b31c573a4",
+    "quietU4U5D5": "exactoriginalfrozenfixedfieldsourceprovenancefromcompletedsourceclosure",
+    "referenceStatesDirectionMaterialActivation": "identicaltofrozencompletedrun/prefsource",
+    "resolutionCredit": "Only genuinelydifferentnewselectedregions plus explicitretainedI0/I1outsideandquietU4/U5 witnesses; identicalrepeatsearnnone"
+  },
+  "gates": {
+    "globalForceN": 1e-05,
+    "globalWorkJ": 5.492029235357012e-07,
+    "independentQuietForceN": 8.5e-06,
+    "independentFocusForceN": 1.5e-06,
+    "independentQuietWorkJ": 4.66822485005346e-07,
+    "independentFocusWorkJ": 8.238043853035518e-08,
+    "crossFamilyQuietForceN": 2e-06,
+    "crossFamilyFocusForceN": 8e-06,
+    "crossFamilyQuietWorkJ": 1.0984058470714025e-07,
+    "crossFamilyFocusWorkJ": 4.39362338828561e-07,
+    "reconstructionForceN": 1e-08,
+    "reconstructionEnergyJ": 1e-09,
+    "physicalStationarityN": 0.0001,
+    "sampleJStrictlyGreaterThan": 1e-06
+  },
+  "retainedComplementMaximumForceN": 1.4884189198342249e-06,
+  "conservativeAvailableFocusForceForSelectedIncrementN": 1.158108016577515e-08,
+  "retainedComplementMaximumWorkJ": 1.0648001738227385e-10,
+  "conservativeAvailableFocusWorkForSelectedIncrementJ": 8.22739585129729e-08,
+  "acceptanceUsesActualCombinedVectors": "Conservative headroom is explanatory, not an addedacceptancegate. Require actual complete156unit signed and triangle force/work plus one frozenfocusallocation. No freshfullbudgetforeachsubset.",
+  "minimumClaim": "Fourphysicalregionsisminimalwithinthisfixedcommonm16/r2recipeandretainedcomplementclass; atnode505y any3omissionsleaveatleast2.9071825775021348e-6 N. No absoluteglobalminimumclaim.",
+  "expectedPassClaim": false,
+  "moreHeadroomOption": {
+    "addRegion": [
+      247,
+      "s4"
+    ],
+    "newPlannedAndMaximumCallbacks": 1920000,
+    "newBinaryBytes": 53760000,
+    "retainedComplementMaximumForceN": 5.649111384757014e-07,
+    "conservativeFocusHeadroomN": 9.350888615242987e-07,
+    "requiresProspectiveChoice": true,
+    "automaticExtensionOrRetryAuthorized": false
+  },
+  "futureStructuralRequirements": [
+    "No points generated now. Future independentlyreviewedpositiveweights/referencecoverage/moments/cap/J/hashchecks onallnewactualarrays required.",
+    "Different face grids acrossshellinterfaces need perregion coverage plus exact shellsupportpartition; no conformingphysicalmeshchange isclaimed.",
+    "192000pointregions must stream4chunks of<=48000points; each physicalchunk<=384000B, currentpartialchunkfits512KiB; durable completedchunkinventory and regionalreductions stillmustbeimplementedanddamage-tested.",
+    "Full logical compositestagepointcount canexceedold968000 representation bound; future stage/rule schema must support exactsymboliccounts withoutchangingphysicalgates.",
+    "Closedproductionmetadata/sourceclosure/encodedbytecaps/terminalfailure/publicexitandresources requirefreshsourceboundstructuralpreflight.",
+    "No implementation, preflight, materialrun, retry or publication authorized bythisproposal."
+  ],
+  "paperStorageSlotPlan": {
+    "status": "UNVERIFIED_ARITHMETIC_ONLY_FUTURE_STRUCTURAL_REVIEW_REQUIRED",
+    "newBinaryChunks": 32,
+    "newRegionJson": 8,
+    "compositeStages": 4,
+    "new16ElementHybrids": 4,
+    "newComparisonsBothStates": 6,
+    "startAndCompletionSlotsBytes": 2097152,
+    "provenanceSlotBytes": 2097152,
+    "savedArraysSlotBytes": 131072,
+    "terminalSlotBytes": 16384,
+    "externalSlotsBytes": 655360,
+    "emergencyBytes": 4194304,
+    "fourRegionTotalEnvelopeBytes": 69566464,
+    "fiveRegionTotalEnvelopeBytes": 80334848,
+    "reusePolicy": "Priorbinary/rows referencedwithimmutablehashes, not recopiedintonewoutput. Allnewbytecapsandcompleteproductionshapesneedfuturevalidation."
+  },
+  "outside236Qualified": false,
+  "anatomicalCapstoneQualified": false,
+  "noConvergenceProof": true,
+  "proposedFutureBudget": {
+    "status": "NOT_AUTHORIZED",
+    "plannedMaterialCalls": 1536000,
+    "maximumMaterialCalls": 1536000,
+    "maximumWallSeconds": 7200,
+    "nodeHeapMiB": 1024,
+    "maximumRssBytes": 2147483648,
+    "maximumOutputBytes": 536870912,
+    "invocations": 1,
+    "retries": 0,
+    "note": "Sameexistingresourcecaps canbe proposed,butnewcount/scope/source/preflight/authorization stillrequired; consumed19716000scope is not reusable."
+  },
+  "retainedRatePlanningEstimateOnly": {
+    "newCallbackSeconds": 51.52138434718938,
+    "basis": "Actualoldpublicelapsedscaledbycallbackcount; includesno newbenchmark andisnotguarantee, doesnotboundfutureoverhead/resources."
+  }
+}

@@ -1,0 +1,495 @@
+{
+  "analyticalOnly": true,
+  "specimenCalls": 0,
+  "quadratureGenerated": false,
+  "sets": [
+    {
+      "newDiagnosticSupport": [
+        [
+          247,
+          "s1"
+        ]
+      ],
+      "oldDiscrepancyOnUnchangedSupport": {
+        "matrix": {
+          "signedN": 5.995806982480138e-08,
+          "triangleN": 5.995806982897915e-08,
+          "signedWorkJ": 4.306818268912023e-12,
+          "triangleWorkJ": 4.306818270073802e-12,
+          "signedMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": -5.995806982480138e-08
+          },
+          "triangleMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": 5.995806982897915e-08
+          }
+        },
+        "volume": {
+          "signedN": 1.5762117001345203e-05,
+          "triangleN": 1.5762117003460102e-05,
+          "signedWorkJ": 1.0791348042475251e-09,
+          "triangleWorkJ": 1.0791348049230836e-09,
+          "signedMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": -1.5762117001345203e-05
+          },
+          "triangleMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": 1.5762117003460102e-05
+          }
+        },
+        "passiveFiber": {
+          "signedN": 3.6141261184069324e-13,
+          "triangleN": 4.986958330533014e-13,
+          "signedWorkJ": 1.5966582890210425e-17,
+          "triangleWorkJ": 2.0338369796748677e-17,
+          "signedMaximum": {
+            "node": 575,
+            "axis": "z",
+            "valueN": -3.6141261184069324e-13
+          },
+          "triangleMaximum": {
+            "node": 573,
+            "axis": "z",
+            "valueN": 4.986958330533014e-13
+          }
+        },
+        "activePotential": {
+          "signedN": 8.750587399248712e-13,
+          "triangleN": 1.2459075766785848e-12,
+          "signedWorkJ": 3.382313979634154e-17,
+          "triangleWorkJ": 5.219990722306495e-17,
+          "signedMaximum": {
+            "node": 451,
+            "axis": "z",
+            "valueN": 8.750587399248712e-13
+          },
+          "triangleMaximum": {
+            "node": 498,
+            "axis": "z",
+            "valueN": 1.2459075766785848e-12
+          }
+        },
+        "total": {
+          "signedN": 1.5822075577075382e-05,
+          "triangleN": 1.5822075579649346e-05,
+          "signedWorkJ": 1.0834413945495696e-09,
+          "triangleWorkJ": 1.0834413951360109e-09,
+          "signedMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": -1.5822075577075382e-05
+          },
+          "triangleMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": 1.5822075579649346e-05
+          }
+        }
+      }
+    },
+    {
+      "newDiagnosticSupport": [
+        [
+          247,
+          "s1"
+        ],
+        [
+          247,
+          "s2"
+        ]
+      ],
+      "oldDiscrepancyOnUnchangedSupport": {
+        "matrix": {
+          "signedN": 2.5420325354870074e-08,
+          "triangleN": 2.542032535904786e-08,
+          "signedWorkJ": 1.7643980060770646e-12,
+          "triangleWorkJ": 1.764398007238844e-12,
+          "signedMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": -2.5420325354870074e-08
+          },
+          "triangleMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": 2.542032535904786e-08
+          }
+        },
+        "volume": {
+          "signedN": 5.964494327288164e-06,
+          "triangleN": 5.964494329403065e-06,
+          "signedWorkJ": 3.5778249916681116e-10,
+          "triangleWorkJ": 3.577824998423696e-10,
+          "signedMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": -5.964494327288164e-06
+          },
+          "triangleMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": 5.964494329403065e-06
+          }
+        },
+        "passiveFiber": {
+          "signedN": 3.663808598758908e-13,
+          "triangleN": 4.786007963075861e-13,
+          "signedWorkJ": 1.5678921869055307e-17,
+          "triangleWorkJ": 2.005070877559356e-17,
+          "signedMaximum": {
+            "node": 575,
+            "axis": "z",
+            "valueN": -3.663808598758908e-13
+          },
+          "triangleMaximum": {
+            "node": 573,
+            "axis": "z",
+            "valueN": 4.786007963075861e-13
+          }
+        },
+        "activePotential": {
+          "signedN": 8.750587399248712e-13,
+          "triangleN": 1.2459075766785848e-12,
+          "signedWorkJ": 3.382313979634154e-17,
+          "triangleWorkJ": 5.219990722306495e-17,
+          "signedMaximum": {
+            "node": 451,
+            "axis": "z",
+            "valueN": 8.750587399248712e-13
+          },
+          "triangleMaximum": {
+            "node": 498,
+            "axis": "z",
+            "valueN": 1.2459075766785848e-12
+          }
+        },
+        "total": {
+          "signedN": 5.9899148790220105e-06,
+          "triangleN": 5.9899148815959725e-06,
+          "signedWorkJ": 3.595467096991879e-10,
+          "triangleWorkJ": 3.595467102856292e-10,
+          "signedMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": -5.9899148790220105e-06
+          },
+          "triangleMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": 5.9899148815959725e-06
+          }
+        }
+      }
+    },
+    {
+      "newDiagnosticSupport": [
+        [
+          247,
+          "s1"
+        ],
+        [
+          247,
+          "s2"
+        ],
+        [
+          247,
+          "s3"
+        ]
+      ],
+      "oldDiscrepancyOnUnchangedSupport": {
+        "matrix": {
+          "signedN": 1.1392456307952523e-08,
+          "triangleN": 1.1392456312130308e-08,
+          "signedWorkJ": 7.413688865572223e-13,
+          "triangleWorkJ": 7.413688877190018e-13,
+          "signedMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": -1.1392456307952523e-08
+          },
+          "triangleMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": 1.1392456312130308e-08
+          }
+        },
+        "volume": {
+          "signedN": 2.895789916707783e-06,
+          "triangleN": 2.895789918822684e-06,
+          "signedWorkJ": 1.340059107900038e-10,
+          "triangleWorkJ": 1.340059114655623e-10,
+          "signedMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": -2.895789916707783e-06
+          },
+          "triangleMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": 2.895789918822684e-06
+          }
+        },
+        "passiveFiber": {
+          "signedN": 3.6616054999444177e-13,
+          "triangleN": 4.751035937800168e-13,
+          "signedWorkJ": 1.5551570211024217e-17,
+          "triangleWorkJ": 1.992335711756247e-17,
+          "signedMaximum": {
+            "node": 575,
+            "axis": "z",
+            "valueN": -3.6616054999444177e-13
+          },
+          "triangleMaximum": {
+            "node": 573,
+            "axis": "z",
+            "valueN": 4.751035937800168e-13
+          }
+        },
+        "activePotential": {
+          "signedN": 8.750587399248712e-13,
+          "triangleN": 1.2459075766785848e-12,
+          "signedWorkJ": 3.382313979634154e-17,
+          "triangleWorkJ": 5.219990722306495e-17,
+          "signedMaximum": {
+            "node": 451,
+            "axis": "z",
+            "valueN": 8.750587399248712e-13
+          },
+          "triangleMaximum": {
+            "node": 498,
+            "axis": "z",
+            "valueN": 1.2459075766785848e-12
+          }
+        },
+        "total": {
+          "signedN": 2.907182574928172e-06,
+          "triangleN": 2.9071825775021348e-06,
+          "signedWorkJ": 1.3474711418678307e-10,
+          "triangleWorkJ": 1.3474711477322437e-10,
+          "signedMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": -2.907182574928172e-06
+          },
+          "triangleMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": 2.9071825775021348e-06
+          }
+        }
+      }
+    },
+    {
+      "newDiagnosticSupport": [
+        [
+          247,
+          "s1"
+        ],
+        [
+          247,
+          "s2"
+        ],
+        [
+          247,
+          "s3"
+        ],
+        [
+          206,
+          "s1"
+        ]
+      ],
+      "oldDiscrepancyOnUnchangedSupport": {
+        "matrix": {
+          "signedN": 9.864943675945068e-09,
+          "triangleN": 9.864943680122853e-09,
+          "signedWorkJ": 7.103471390166798e-13,
+          "triangleWorkJ": 7.103471401784594e-13,
+          "signedMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": -9.864943675945068e-09
+          },
+          "triangleMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": 9.864943680122853e-09
+          }
+        },
+        "volume": {
+          "signedN": 1.4785537802604965e-06,
+          "triangleN": 1.4785537823753978e-06,
+          "signedWorkJ": 1.0576968218521765e-10,
+          "triangleWorkJ": 1.0576968286077615e-10,
+          "signedMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": -1.4785537802604965e-06
+          },
+          "triangleMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": 1.4785537823753978e-06
+          }
+        },
+        "passiveFiber": {
+          "signedN": 3.6616054999444177e-13,
+          "triangleN": 4.751035937800168e-13,
+          "signedWorkJ": 1.5551570211024217e-17,
+          "triangleWorkJ": 1.992335711756247e-17,
+          "signedMaximum": {
+            "node": 575,
+            "axis": "z",
+            "valueN": -3.6616054999444177e-13
+          },
+          "triangleMaximum": {
+            "node": 573,
+            "axis": "z",
+            "valueN": 4.751035937800168e-13
+          }
+        },
+        "activePotential": {
+          "signedN": 8.750587399248712e-13,
+          "triangleN": 1.2459075766785848e-12,
+          "signedWorkJ": 2.7596641288605215e-17,
+          "triangleWorkJ": 4.597340871532862e-17,
+          "signedMaximum": {
+            "node": 451,
+            "axis": "z",
+            "valueN": 8.750587399248712e-13
+          },
+          "triangleMaximum": {
+            "node": 498,
+            "axis": "z",
+            "valueN": 1.2459075766785848e-12
+          }
+        },
+        "total": {
+          "signedN": 1.4884189172602624e-06,
+          "triangleN": 1.4884189198342249e-06,
+          "signedWorkJ": 1.0648001679583255e-10,
+          "triangleWorkJ": 1.0648001738227385e-10,
+          "signedMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": -1.4884189172602624e-06
+          },
+          "triangleMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": 1.4884189198342249e-06
+          }
+        }
+      }
+    },
+    {
+      "newDiagnosticSupport": [
+        [
+          247,
+          "s1"
+        ],
+        [
+          247,
+          "s2"
+        ],
+        [
+          247,
+          "s3"
+        ],
+        [
+          247,
+          "s4"
+        ]
+      ],
+      "oldDiscrepancyOnUnchangedSupport": {
+        "matrix": {
+          "signedN": 5.761660290999258e-09,
+          "triangleN": 5.761660295177041e-09,
+          "signedWorkJ": 3.3258168438125297e-13,
+          "triangleWorkJ": 3.325816855430325e-13,
+          "signedMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": -5.761660290999258e-09
+          },
+          "triangleMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": 5.761660295177041e-09
+          }
+        },
+        "volume": {
+          "signedN": 1.9779129582683044e-06,
+          "triangleN": 1.9779129603832055e-06,
+          "signedWorkJ": 6.737608344937893e-11,
+          "triangleWorkJ": 6.737608412493743e-11,
+          "signedMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": -1.9779129582683044e-06
+          },
+          "triangleMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": 1.9779129603832055e-06
+          }
+        },
+        "passiveFiber": {
+          "signedN": 3.6617052465442863e-13,
+          "triangleN": 4.747271587857299e-13,
+          "signedWorkJ": 1.5556472057405575e-17,
+          "triangleWorkJ": 1.991845527118111e-17,
+          "signedMaximum": {
+            "node": 575,
+            "axis": "z",
+            "valueN": -3.6617052465442863e-13
+          },
+          "triangleMaximum": {
+            "node": 573,
+            "axis": "z",
+            "valueN": 4.747271587857299e-13
+          }
+        },
+        "activePotential": {
+          "signedN": 8.750587399248712e-13,
+          "triangleN": 1.2459075766785848e-12,
+          "signedWorkJ": 3.382313979634154e-17,
+          "triangleWorkJ": 5.219990722306495e-17,
+          "signedMaximum": {
+            "node": 451,
+            "axis": "z",
+            "valueN": 8.750587399248712e-13
+          },
+          "triangleMaximum": {
+            "node": 498,
+            "axis": "z",
+            "valueN": 1.2459075766785848e-12
+          }
+        },
+        "total": {
+          "signedN": 1.9836747935696484e-06,
+          "triangleN": 1.9836747961436113e-06,
+          "signedWorkJ": 6.770849862651298e-11,
+          "triangleWorkJ": 6.770849921295427e-11,
+          "signedMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": -1.9836747935696484e-06
+          },
+          "triangleMaximum": {
+            "node": 505,
+            "axis": "y",
+            "valueN": 1.9836747961436113e-06
+          }
+        }
+      }
+    }
+  ],
+  "threeRegionRemovalLowerBoundAtNode505y": 2.9071825775021348e-06,
+  "fourRegionCountAtFace16Radial4Gauss5BothFields": 3072000
+}
