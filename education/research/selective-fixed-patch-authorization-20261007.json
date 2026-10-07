@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "authorized": true,
+  "parentAcceptance": true,
+  "scope": "selective-fixed-patch-497500",
+  "parentThread": "01a103c3-a2e6-7606-8c1e-06987ac710f1",
+  "invocations": 1,
+  "runnerSourceCommit": "0582de9d86d75ccbb7cc61c74d2c88e320f675af",
+  "acceptedPreflightEvidenceCommit": "6d3851e7f625baae2e94ebea4261eb852691420d",
+  "acceptedReviewedHead": "084e830b82f1f53a10ebc39ad23194177e06c42a",
+  "preflightSha256": "2c6a8c69765f57408860f433379b68595b2a4a55aabb2238205ddcb6b86912bb",
+  "independentReviewSha256": "d617e3c1fd2e8185a234a6a19c0a323c358322f9ce1e274bbf6ec4ce31c3d013",
+  "budget": {
+    "plannedMaterialCalls": 497500,
+    "maximumMaterialCalls": 497500,
+    "maximumWallSeconds": 300,
+    "nodeHeapMiB": 1024,
+    "maximumRssBytes": 2147483648,
+    "maximumOutputBytes": 67108864,
+    "invocations": 1
+  },
+  "authorizationUTC": "2026-10-07T04:51:52.623710+00:00",
+  "instruction": "Parent accepts independently reviewed structural preflight and authorizes one specimen execution of this frozen selective whole-patch schedule. Exactly497500new callbacks maximum, bothfields/all16elements, unchangedlaws/force/work/reconstructiongates,300seconds/64MiB output and reviewed memory/processcontrols. Keep4000historical measurements separately attributed to their failedrun. No retry,optimizer/refit,additional quadrature/rescue. Preserve exits/resources/failure evidence and priorresults. Localoutputs only; no publicwrite,book/mainchanges or anatomicalacceptance.",
+  "historicalReusedMeasurements": 4000,
+  "historicalFailedExecutionExit": 1,
+  "newFields": 0,
+  "optimizerTrials": 0,
+  "refits": 0,
+  "additionalQuadrature": false,
+  "retryAuthorized": false,
+  "anatomicalAcceptance": false,
+  "outsidePatchElementsUnqualified": 236
+}
