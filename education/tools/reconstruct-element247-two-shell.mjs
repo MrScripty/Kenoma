@@ -17,6 +17,12 @@ const OUTCOME='review/element247-two-shell-outcome-20261007/';
 const PREF='review/element247-two-shell-preflight-20261007/';
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const regions=[...Array.from({length:20},(_,i)=>`s${i+1}`),'core'];
+function snapshotBlob(root,name) {
+ const ref=`${FAILED_EVIDENCE_COMMIT}:education/${name}`;
+ const size=Number(execFileSync('git',['cat-file','-s',ref],{cwd:root,encoding:'utf8'}).trim());
+ assert.ok(Number.isSafeInteger(size)&&size>=0,'IMMUTABLE_BLOB_SIZE');
+ return execFileSync('git',['cat-file','blob',ref],{cwd:root,maxBuffer:size+65536});
+}
 
 // Every read is bound to an immutable Git blob; test injection only changes
 // the bytes presented for verification, never the expected immutable bytes.
@@ -25,7 +31,7 @@ export function immutableSnapshotReader(root,readFile=fs.readFileSync) {
  const read=name=>{
   assert.ok(!path.isAbsolute(name)&&!name.split('/').includes('..'),'PORTABLE_INPUT_PATH');
   const disk=readFile(path.join(root,name));
-  const frozen=execFileSync('git',['cat-file','blob',`${FAILED_EVIDENCE_COMMIT}:education/${name}`],{cwd:root,maxBuffer:16*1024**2});
+  const frozen=snapshotBlob(root,name);
   assert.ok(disk.equals(frozen),`IMMUTABLE_INPUT_MISMATCH:${name}`);
   inventory[name]={bytes:disk.length,sha256:sha(disk)};
   return disk;
@@ -52,7 +58,7 @@ export function reconstructRetainedDiagnostic(root) {
  const allowedSourceRepairs=new Set(['tools/element247-two-shell-runtime.mjs','tests/element247_two_shell.test.mjs']);
  const sourceChanges={};
  for(const [name,expected] of Object.entries(originalSourceHashes)){
-  const frozen=execFileSync('git',['cat-file','blob',`${FAILED_EVIDENCE_COMMIT}:education/${name}`],{cwd:root,maxBuffer:16*1024**2});
+  const frozen=snapshotBlob(root,name);
   assert.equal(sha(frozen),expected,`ORIGINAL_SOURCE_HASH:${name}`);
   const current=fs.readFileSync(path.join(root,name));
   if(sha(current)!==expected){assert.ok(allowedSourceRepairs.has(name),`UNEXPECTED_SOURCE_CHANGE:${name}`);sourceChanges[name]={originalSha256:expected,repairedSha256:sha(current)};}
