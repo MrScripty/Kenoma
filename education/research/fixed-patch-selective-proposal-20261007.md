@@ -1,6 +1,6 @@
 # Selective whole-patch finite-integration proposal
 
-**Proposal only: no runner implementation or material execution is authorized.**
+**Accepted schedule for runner implementation and structural preflight only. Material execution remains unauthorized.**
 Retain both frozen fields, terminal virtual direction, material/activation,
 all 585 nodes and every patch element:
 `195,196,197,198,199,200,202,203,206,237,240,243,244,246,247,248`.
@@ -36,7 +36,7 @@ worst total cross-family triangles are1.193659700748917e-6N (control) and
 7.558982249022961e-7N (terminal), leaving substantial room within the unchanged
 patch gate. Reuse those independent results; do not reevaluate all 16 uniformly.
 
-## Smallest defensible first schedule
+## Proposed first schedule
 
 Use the accepted positive Gauss 5 dyadic-shell family, without changing the law
 or reference-weight convention `normalizedWeight*det(referenceJacobian)/6`.
@@ -116,14 +116,14 @@ This is94.4% fewer than the original8847360-call uniform schedule.
 No236-element baseline recomputation is needed. Historical rates extrapolate
 to 14.02 s (large full-patch run),75.25s (whole-shell run), or135.02s (small
 changed-shell batch including its overhead). Plan20–180s including preparation
-and writes, with a proposed300s external wall ceiling; these are estimates,
+and writes, with a new proposed300s external wall ceiling; these are estimates,
 not guarantees or a new benchmark. One eventual invocation, no retries or
 automatic refinement; an exhausted budget remains incomplete/unresolved.
 
 Retaining physical weights once per element/rule costs2006000 bytes. Actual
 normalized `(L0,L1,L2,L3,weight,r)` arrays, including the four distinct secondary
 corner permutations, cost10776000 bytes. With634 logical shell records,
-scatters/comparisons/provenance, plan20–32MiB of **new** artifacts, a64MiB output
+scatters/comparisons/provenance, plan20–32MiB of **new** artifacts, a new64MiB output
 ceiling,1GiB Node heap and2GiB RSS. Existing immutable payloads are referenced,
 not copied into the new budget. Stream one element/region at a time. Freeze
 storage schemas and count their worst-case size during structural preflight.

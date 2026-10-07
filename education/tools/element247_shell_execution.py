@@ -146,7 +146,7 @@ def check_runtime(r,budget):
  need(r.get('maximumCalls')==budget['maximumMaterialCalls'] and r.get('activeBatch') is None,'COUNT_BUDGET_OR_ACTIVE_BATCH')
  need(r.get('maximumWallMs')==1000*budget['maximumWallSeconds'] and 0<=r.get('elapsedMs',math.inf)<1000*budget['maximumWallSeconds'],'CHILD_WALL_EVIDENCE')
  need(r.get('maximumRssBytes')==budget['maximumRssBytes'] and 0<=r.get('peakObservedRssBytes',math.inf)<=budget['maximumRssBytes'],'CHILD_RSS_EVIDENCE')
-def require_terminal_evidence(directory,budget=BUDGET,command=COMMAND):
+def require_terminal_evidence(directory,budget=BUDGET,command=COMMAND,results=RESULTS):
  root=pathlib.Path(directory);material=root/'material'
  # Deliberately first: failure records cannot be bypassed by valid-looking
  # hashes, earlier completion records or a later zero process exit.
@@ -168,7 +168,7 @@ def require_terminal_evidence(directory,budget=BUDGET,command=COMMAND):
  need(0<=exit_record.get('peakObservedChildRssBytes',math.inf)<=budget['maximumRssBytes'],'EXTERNAL_RSS_EVIDENCE');need(tree_bytes(root)<=budget['maximumOutputBytes'],'COMBINED_OUTPUT_BUDGET')
  need(final.get('externalExitSha256')==digest(root/'external-exit.json'),'EXTERNAL_EXIT_HASH');log_sha=digest(root/'execute.log');need(final.get('logSha256')==log_sha==exit_record.get('logSha256'),'EXTERNAL_LOG_HASH')
  for item in [exit_record,final,completion,terminal]:need(item.get('sourceCommit')==start.get('sourceCommit') and item.get('runId')==start.get('runId'),'SOURCE_OR_INVOCATION_MISMATCH')
- need(completion.get('result') in RESULTS and terminal.get('result')==completion.get('result'),'NUMERICAL_RESULT_KIND');need(terminal.get('kind')=='TERMINAL_COMPLETION','TERMINAL_KIND');need(terminal.get('completionSha256')==digest(material/'completion-receipt.json'),'TERMINAL_COMPLETION_HASH')
+ need(completion.get('result') in results and terminal.get('result')==completion.get('result'),'NUMERICAL_RESULT_KIND');need(terminal.get('kind')=='TERMINAL_COMPLETION','TERMINAL_KIND');need(terminal.get('completionSha256')==digest(material/'completion-receipt.json'),'TERMINAL_COMPLETION_HASH')
  lines=(root/'execute.log').read_text().splitlines();markers=[]
  for i,line in enumerate(lines):
   try:value=json.loads(line)
