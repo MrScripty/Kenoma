@@ -1,0 +1,164 @@
+{
+  "schema": 1,
+  "scope": "Cited research proposal only; no numerical experiment, solver/model change, refit, proof compilation, book rebuild or publication",
+  "retrievedUTC": "2026-10-07",
+  "baseCommit": "19009142398ba6c0b7665fedb35e5398207eadb6",
+  "mainObserved": "596df78f5cb652b4ac70917a82d8aa908b617056",
+  "branch": "research/volume-preservation-research-20261007",
+  "bookMatchesObservedMain": true,
+  "author": "MrScripty <TheEnvironmentGuy@protonmail.com>",
+  "proposalSha256": "ff63e56085a84ba9a0eb98cd5167131078b53a7fd72bc280f6a8c850afd05dce",
+  "sources": [
+    {
+      "name": "blemker2005.pdf",
+      "url": "https://nmbl.stanford.edu/publications/pdf/Blemker2005.pdf",
+      "download_error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "onlineVerification": "Read full text using the web tool on 2026-10-07",
+      "downloadStatus": "Shell download blocked; no local PDF snapshot claimed"
+    },
+    {
+      "name": "pappas2002.pdf",
+      "url": "https://nmbl.stanford.edu/publications/pdf/Pappas2002.pdf",
+      "download_error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "onlineVerification": "Read full text using the web tool on 2026-10-07",
+      "downloadStatus": "Shell download blocked; no local PDF snapshot claimed"
+    },
+    {
+      "name": "wakeling2020v1.pdf",
+      "url": "https://arxiv.org/pdf/2001.01139v1",
+      "download_error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "onlineVerification": "Read full text using the web tool on 2026-10-07",
+      "downloadStatus": "Shell download blocked; no local PDF snapshot claimed"
+    },
+    {
+      "name": "dealii-step44-intro.dox",
+      "url": "https://raw.githubusercontent.com/dealii/dealii/6890ca740b6e51530ebb7ae7e4932977010ef2be/examples/step-44/doc/intro.dox",
+      "bytes": 37270,
+      "sha256": "89cc227e0d57ff5849ebc6595e4a4031784986b61a47553f9baeac8cf767421c",
+      "onlineVerification": "Read full text using the web tool on 2026-10-07"
+    },
+    {
+      "name": "dealii-step44.cc",
+      "url": "https://raw.githubusercontent.com/dealii/dealii/6890ca740b6e51530ebb7ae7e4932977010ef2be/examples/step-44/step-44.cc",
+      "bytes": 132376,
+      "sha256": "9c2146c6a84dd93caf1ae47ad3f2e8f8b55903e6c115c226d2afeb69188d5b35",
+      "onlineVerification": "Read full text using the web tool on 2026-10-07"
+    }
+  ],
+  "bibliography": [
+    {
+      "name": "Blemker, Pinsky, Delp 2005",
+      "doi": "10.1016/j.jbiomech.2004.04.009",
+      "locations": "2.1 Eq9/Table2 p660; 2.2\u20132.4"
+    },
+    {
+      "name": "Pappas et al. 2002",
+      "doi": "10.1152/japplphysiol.00843.2001",
+      "locations": "Methods/Results pp2382\u20132386"
+    },
+    {
+      "name": "Wakeling et al. 2020",
+      "doi": "10.3389/fphys.2020.00813",
+      "inspectedVersion": "arXiv:2001.01139v1",
+      "locations": "3.1.1\u20133.1.2, 3.2, AppendixA; published title differs from preprint subtitle"
+    },
+    {
+      "name": "Official deal.II step44 v9.6.2",
+      "tagObject": "33fafc2fdedbe04d0e72952b9bb236923ab04106",
+      "commit": "6890ca740b6e51530ebb7ae7e4932977010ef2be",
+      "locations": "intro Neo-Hookean/three-field/discretization; code Finite Element system"
+    }
+  ],
+  "frozenReferences": [
+    {
+      "path": "education/book/book.json",
+      "sha256": "a42e4d3280cf95f2db27a260b5817c90b6f21843d1cca7ae9e39201527b8e2b0",
+      "gitBlob": "f32878813abcf359fc26431501f6e51a9a01d5ef"
+    },
+    {
+      "path": "education/book/chapters/09a-properties.md",
+      "sha256": "458d9147b5e7a329a7261dfc14469c8aa29bfec7c333e5ef5a239066f48f6f15",
+      "gitBlob": "837d54132bbdce3bf588e9d3e666ce564835a3ff"
+    },
+    {
+      "path": "education/book/chapters/09b-material-response.md",
+      "sha256": "e4c5bf436e07bc58cbb4eea693f507110a87f29161e55cbd12b4956377a9f4d6",
+      "gitBlob": "1e3a0592ce68a5fcabc43d1d00a96d95c7c74241"
+    },
+    {
+      "path": "education/book/chapters/09d-serial-specimen.md",
+      "sha256": "b53ddf5917e22daced7e97a8090c382fe807492dd06aa20269f8ace8c3d1ae52",
+      "gitBlob": "a45225602477ef24c1ca9417c3787b6852cc33fc"
+    },
+    {
+      "path": "education/book/chapters/10a-spatial-continuum.md",
+      "sha256": "60b2b028717f717f0a3426529a3788f2644c871fca1e0ecbd5e5bb30a461693a",
+      "gitBlob": "37af63e0fca4805a0cdd151592e714f52e879b8b"
+    },
+    {
+      "path": "education/book/chapters/10b-pressure-projection.md",
+      "sha256": "d6ccf9014b0aa07c4e3cab1eb6c9dbdffe0cacb59e8790ad67e7c91b7f12b3a1",
+      "gitBlob": "f67563696c34c2bb7ade10f207249277bdfa3401"
+    },
+    {
+      "path": "education/book/chapters/13-coverage.md",
+      "sha256": "74ef42798e209e5d15fb98e425bc4fc194e5093c0363f08ac765cde1fa90fd9b",
+      "gitBlob": "24eff0689bf3a2215becabcc404291e065335f0f"
+    },
+    {
+      "path": "education/proofs/MixedLogVolume.lean",
+      "sha256": "d1411e4068ea99b9f7a85fd0a573e9ecd976b260617d0f209b6baebb3ae7e15e",
+      "gitBlob": "084be64719644ed901eb116124995dde31a5a6c1"
+    },
+    {
+      "path": "education/proofs/ContinuumProperties.lean",
+      "sha256": "33945605131f1a0fc3568467cbc1026463867a8fa241fb25e2174c23a229f12e",
+      "gitBlob": "a054f5ef71d76e359cf5161ae71f1148b643eea4"
+    },
+    {
+      "path": "education/web/anatomical-material.mjs",
+      "sha256": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+      "gitBlob": "8ff35ca2be9c27932b07faeb500a9129ea58b525"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/config/materials.json",
+      "sha256": "623c081e339f5abb5e3432a0ea6cb43834b9c511f87fc073b0bf26ba51d6a377",
+      "gitBlob": "28b954430fe99125b6901d545b2b6007eca439e4"
+    },
+    {
+      "path": "education/data/anatomical-arm-v1/audit/modal-fixed-end-results.json",
+      "sha256": "b0eeecdade262b682279d9ebeb7a8147a4525a992976a85afc0ce5e63270d8b4",
+      "gitBlob": "cc8e4ec12dbcaaf4eb53062af1e76fd520904d6e"
+    },
+    {
+      "path": "education/review/isolated-collapse-diagnostic-20261007/diagnostic-summary.json",
+      "sha256": "769bf5aa1d65751dc1e0fb3758e42ab7b495af78adb47a3ee4270565dbb886da",
+      "gitBlob": "ab3189d1089ff121dd16d8d282744074793e884b"
+    },
+    {
+      "path": "education/research/isolated-collapse-diagnostic-outcome-20261007.md",
+      "sha256": "8bf3c46b6fee0a668b7b61245bd252cb76b50e7d9ce1bed226967cbcbae807c2",
+      "gitBlob": "db32786acf309d6275c5a5097d1bcc1c45a62dde"
+    }
+  ],
+  "checks": {
+    "localMarkdownLinks": {
+      "passed": true,
+      "count": 10
+    },
+    "frozenReferencesMatchBase": {
+      "passed": true,
+      "count": 14
+    },
+    "currentBookMatchesObservedMain": true,
+    "newNumericalCalls": 0,
+    "newLeanClaimsCompiled": 0,
+    "bookPdfBrowserQualification": "Not applicable: proposal only; no claim of requalification"
+  },
+  "limitations": [
+    "No empirical volumetric stress-volume curve for this brachialis fixture verified by these sources",
+    "No new integration tolerance, call budget, solver or model adoption authorized",
+    "Diagnostic remains under separate independent review",
+    "Primary PDFs read online; shell snapshots unavailable due network 403. Official pinned code/doc snapshots fetched and hashed."
+  ]
+}
