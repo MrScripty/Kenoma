@@ -1,11 +1,13 @@
 """Exercise output boundaries without running proofs or numerical experiments."""
 from pathlib import Path
-import json, sys, tempfile, unittest
+import json, sys, tempfile, unittest, subprocess
+from contextlib import redirect_stdout
+from io import StringIO
 from PIL import Image
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'tools'))
 from publication_data import publication_sources,copy_publication_data
-from check_generated_outputs import violations
+from check_generated_outputs import violations, check as check_tracked_outputs
 from ordinary_images import jpeg85
 
 class OutputRouting(unittest.TestCase):
@@ -41,6 +43,22 @@ class OutputRouting(unittest.TestCase):
   bad=['education/review/a.png','education/deliverables/book.zip','education/book.pdf','education/proofs/a.olean','education/.artifacts/run.json','education/dist/index.html']
   self.assertEqual(violations(bad),bad)
   self.assertEqual(violations(['education/data/elbow-v1/sources/bodyparts3d/coordsystem.png','education/web/app.mjs','education/book/chapters/example.md']),[])
+ def test_real_git_index_rejects_new_or_changed_large_execution_collection(self):
+  with tempfile.TemporaryDirectory() as temporary:
+   root=Path(temporary)
+   subprocess.run(['git','init','--quiet',str(root)],check=True)
+   tools=root/'education/tools';tools.mkdir(parents=True)
+   policy=tools/'preserved-generated-inputs.json';policy.write_text('{"files":{}}')
+   name='education/data/anatomical-arm-v1/audit/new-run.json'
+   path=root/name;path.parent.mkdir(parents=True);path.write_bytes(b'0'*1000001)
+   subprocess.run(['git','add',name],cwd=root,check=True)
+   with self.assertRaisesRegex(RuntimeError,'new-run.json'):check_tracked_outputs(root)
+   blob=subprocess.check_output(['git','rev-parse',':'+name],cwd=root,text=True).strip()
+   policy.write_text(json.dumps({'files':{name:{'gitBlob':blob,'bytes':1000001}}}))
+   with redirect_stdout(StringIO()):check_tracked_outputs(root)
+   path.write_bytes(b'1'*1000001);subprocess.run(['git','add',name],cwd=root,check=True)
+   with self.assertRaisesRegex(RuntimeError,'new-run.json'):check_tracked_outputs(root)
+
  def test_jpeg85_has_correct_format_and_dimensions(self):
   with tempfile.TemporaryDirectory() as temp:
    root=Path(temp);source=root/'source.png';target=root/'ordinary.jpg'
