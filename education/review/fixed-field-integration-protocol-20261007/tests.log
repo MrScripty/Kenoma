@@ -1,0 +1,16 @@
+✔ two independent positive rule families have correct counts and degree2 moments; original baseline is bit-identical (492.729973ms)
+✔ schedule covers every patch element at each level and stays under frozen ceiling (0.554169ms)
+✔ saved field and whole-element determinant guard precede callback (3.674971ms)
+✔ held trace and immutable callback reject damage without changing input (0.848211ms)
+✔ replacement subtracts old patch once and preserves outside vectors, caps and all components (2.665823ms)
+✔ finite patch contamination outside incident support is refused (0.873244ms)
+✔ equal scalar maxima and directional cancellation cannot conceal vector damage (0.39188ms)
+✔ call and wall ceilings refuse the next batch and never relax (1.467859ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 587.74316
