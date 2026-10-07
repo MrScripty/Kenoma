@@ -1,0 +1,36 @@
+{
+  "verdict": "PASS_SYMBOLIC_PROPOSAL_ONLY_CONDITIONAL_ON_FUTURE_STRUCTURAL_REVIEW",
+  "proposalCommit": "0c87557f783cc08c1d5c75640e4a9bf1eb7f521d",
+  "proposalSha256": "939ce954145302b0b941826d65763530cbbae8fd72cdc2ad2f3a2eaef79977c2",
+  "completedResultPreserved": "5f7612f6c7f6609d8946b3394d7363609d7a30b1",
+  "assertionsPassed": 96,
+  "specimenCalls": 0,
+  "quadratureGenerated": false,
+  "sourceMutations": false,
+  "rejectedProseIssues": [],
+  "exactCost": {
+    "newCalls": 1536000,
+    "newBinaryBytes": 43008000,
+    "paperOutputEnvelopeBytes": 69566464,
+    "paperEnvelopeEnforcedOrVerified": false
+  },
+  "optionalFiveRegionCost": {
+    "newCalls": 1920000,
+    "newBinaryBytes": 53760000,
+    "paperOutputEnvelopeBytes": 80334848
+  },
+  "compositeStagePointCounts": {
+    "T0-247": 248000,
+    "T1-247": 1400000,
+    "T0-206": 164000,
+    "T1-206": 1112000
+  },
+  "limits": [
+    "Minimum physical-region count only within specified common m16/r2 and retained-complement class.",
+    "Only1.158108016577515e-8 N conservative new-increment headroom; no expected pass or new acceptance gate.",
+    "Four stage slots are paper assumptions: future production closure must prove complete serialized T0/T1 provenance/reductions fit, including larger composite point counts.",
+    "32/40binarychunk plan needs genuine streamed source-bound generation, positivity/coverage/moments, chunk-hash and reduction checks, durable completed/current-partial evidence and damage tests.",
+    "Original failed run remains unresolved; proposal is not preparation/execution authorization.",
+    "Outside236 and anatomical capstone remain unqualified."
+  ]
+}
