@@ -1,7 +1,7 @@
 # Selective patch structural preflight — no specimen execution
 
-Frozen source: `a36f676c74374c2b4a757748b13e06b34345ea1e`.
-Ancestry: corrected source → initial runner8a3bee2 → conditional design review9890575
+Frozen source: `0582de9d86d75ccbb7cc61c74d2c88e320f675af`.
+Ancestry: verifier anchor correction → prior preflight1780f16 → corrected sourcea36f676 → initial runner8a3bee2 → conditional design review9890575
 → accepted proposal788bbd7 → accepted offline recoveryf7cc2c0.
 
 [Preflight](preflight.json): **PASS**, zero specimen/material-law calls;
@@ -10,7 +10,7 @@ Ancestry: corrected source → initial runner8a3bee2 → conditional design revi
 504 retained U3 local-vector baseline records replayed. The exact12782000B
 point/weight payload covers233 normalized and317 physical regions.
 
-47 tests passed:8 JavaScript,8 independent Python arithmetic/log-cap damage,
+50 tests passed:8 JavaScript,11 independent Python arithmetic/log-cap damage,
 30 accepted supervisor lifetime tests,1 new public-launcher missing-authorization
 refusal. The old pre-authorization-only absence test is inapplicable because
 accepted historical authorization and output are deliberately retained.
