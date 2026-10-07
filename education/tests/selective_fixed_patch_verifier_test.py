@@ -32,5 +32,13 @@ class SelectiveTests(unittest.TestCase):
   with tempfile.TemporaryDirectory() as tmp:
    root=pathlib.Path(tmp)/'run';out=supervise_session(['node','-e',"process.stdout.write('x'.repeat(65537));setInterval(()=>{},1000)"],root,TOOLS,'a'*40,'b'*64,v.launcher.BUDGET,execute_log_cap_bytes=65536)
    self.assertEqual(out['exitCode'],1);self.assertNotEqual(out['launcherExitCode'],0);self.assertLessEqual((root/'execute.log').stat().st_size,65536);self.assertIn('EXECUTE_LOG_LIMIT',read(root/'external-incomplete.json')['reason']);self.assertFalse((root/'external-final.json').exists());self.assertFalse((root/'launcher-exit.json').exists())
+ def inventories(self):return {'outputInventory':{'row.json':{'sha256':'a'*64,'bytes':1}},'sourceHashes':{'tools/frozen.mjs':'b'*64}},{'sourceHashes':{'tools/frozen.mjs':'b'*64}},{'files':{'row.json':8192,'completion-receipt.json':524288,'terminal-completion.json':16384}}
+ def test_complete_output_and_frozen_source_inventories(self):v.check_frozen_inventories(*self.inventories())
+ def test_output_hash_subset_refuses(self):
+  c,p,s=self.inventories();c['outputInventory']={}
+  with self.assertRaises(Exception):v.check_frozen_inventories(c,p,s)
+ def test_current_disk_hash_cannot_replace_frozen_source_anchor(self):
+  c,p,s=self.inventories();c['sourceHashes']['tools/frozen.mjs']='c'*64
+  with self.assertRaises(Exception):v.check_frozen_inventories(c,p,s)
  def test_closed_new_result_names(self):self.assertEqual(v.RESULTS,{'PASS_BOUNDED_SELECTIVE_FIXED_PATCH_AGREEMENT','UNRESOLVED_FIXED_PATCH_INTEGRATION'})
 if __name__=='__main__':unittest.main()
