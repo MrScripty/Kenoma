@@ -1,0 +1,822 @@
+{
+  "schema": 1,
+  "result": "UNRESOLVED_FIXED_PATCH_INTEGRATION",
+  "acceptedStructuralHead": "084e830b82f1f53a10ebc39ad23194177e06c42a",
+  "frozenRunnerSourceCommit": "0582de9d86d75ccbb7cc61c74d2c88e320f675af",
+  "frozenPreflightEvidenceCommit": "6d3851e7f625baae2e94ebea4261eb852691420d",
+  "executedSourceCommit": "5119dad8c882088dee5c73e5d8213acffdc04458",
+  "runId": "8e5dac6192dc4a009e589d2122d4c0ee",
+  "authorizationSha256": "55eb67a7db02c9142c8d721ceef387c3e8d25a5f2e40f5ac9403990da7c9d528",
+  "preflightSha256": "2c6a8c69765f57408860f433379b68595b2a4a55aabb2238205ddcb6b86912bb",
+  "independentStructuralReviewSha256": "d617e3c1fd2e8185a234a6a19c0a323c358322f9ce1e274bbf6ec4ce31c3d013",
+  "operationalCompletion": {
+    "accepted": true,
+    "invocations": 1,
+    "actualNewReservedCallbacks": 497500,
+    "actualNewEnteredCallbacks": 497500,
+    "actualNewCompletedCallbacks": 497500,
+    "reusedHistoricalMeasurements": 4000,
+    "historicalFailedRunExit": 1,
+    "actualChildExit": 0,
+    "actualWorkerExit": 0,
+    "observedPublicEntryExit": 0,
+    "externalLastAcceptanceElapsedSeconds": 43.0488345929989,
+    "observedPublicEntryElapsedSeconds": 43.115445383002225,
+    "maximumObservedChildRssBytes": 254705664,
+    "childRuntimePeakRssBytes": 252669952,
+    "executionOutputBytes": 22302283,
+    "executionOutputFiles": 1239,
+    "budget": {
+      "plannedMaterialCalls": 497500,
+      "maximumMaterialCalls": 497500,
+      "maximumWallSeconds": 300,
+      "nodeHeapMiB": 1024,
+      "maximumRssBytes": 2147483648,
+      "maximumOutputBytes": 67108864,
+      "invocations": 1
+    },
+    "incompleteOverrideAbsent": true,
+    "retryAttempted": false
+  },
+  "readOnlyFrozenVerifier": {
+    "verdict": "PASS_OPERATIONAL_EVIDENCE_AND_REPLAY",
+    "result": "UNRESOLVED_FIXED_PATCH_INTEGRATION",
+    "specimenCalls": 0,
+    "replayedRegions": 634,
+    "requiredComparisons": 6,
+    "anatomicalQualification": false
+  },
+  "numericalAssessment": {
+    "requiredComparisons": 6,
+    "requiredPassed": 4,
+    "requiredFailed": 2,
+    "allWorkGatesPassed": true,
+    "failingRequiredComparisons": "Q0/Q1 at both fields; volume and total fail signed and unit-triangle force gates",
+    "informationOnly": "Q0/Q2 also fails volume/total force gates at both fields",
+    "forceGateN": 1e-05,
+    "workGateJ": 5.492029235357012e-07,
+    "reconstructionForceGateN": 1e-08,
+    "reconstructionEnergyGateJ": 1e-09,
+    "physicalStationarityGateN": 0.0001,
+    "physicalStationarityEstablished": false,
+    "maximumStressComponentReconstructionErrorPa": 0
+  },
+  "comparisons": [
+    {
+      "state": "control45",
+      "a": "Q0",
+      "b": "Q1",
+      "required": true,
+      "units": 156,
+      "pass": false,
+      "failedTerms": [
+        "volume",
+        "total"
+      ],
+      "terms": {
+        "matrix": {
+          "aggregateInfinityN": 1.92595072437041e-08,
+          "unitTriangleInfinityN": 2.3661968347016958e-08,
+          "aggregateDirectionalDifferenceJ": 7.463754920628248e-13,
+          "unitTriangleDirectionalDifferenceJ": 7.488196591634854e-13,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "volume": {
+          "aggregateInfinityN": 1.8445768566636254e-05,
+          "unitTriangleInfinityN": 2.2107712899811314e-05,
+          "aggregateDirectionalDifferenceJ": 6.95025141041483e-10,
+          "unitTriangleDirectionalDifferenceJ": 6.970033270114864e-10,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": false
+        },
+        "passiveFiber": {
+          "aggregateInfinityN": 7.850294258014739e-13,
+          "unitTriangleInfinityN": 1.1779642241568115e-12,
+          "aggregateDirectionalDifferenceJ": 4.3035483630831817e-17,
+          "unitTriangleDirectionalDifferenceJ": 1.1187241981203872e-16,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "activePotential": {
+          "aggregateInfinityN": 6.597836686696615e-12,
+          "unitTriangleInfinityN": 7.0258187762283904e-12,
+          "aggregateDirectionalDifferenceJ": 2.436892137875194e-16,
+          "unitTriangleDirectionalDifferenceJ": 3.8230341023491257e-16,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "total": {
+          "aggregateInfinityN": 1.8465028211924865e-05,
+          "unitTriangleInfinityN": 2.2131373165864036e-05,
+          "aggregateDirectionalDifferenceJ": 6.957721519023638e-10,
+          "unitTriangleDirectionalDifferenceJ": 6.977520118259657e-10,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": false
+        }
+      },
+      "largestVolumeComparisonUnits": [
+        {
+          "id": "206-s1",
+          "maximumLocalVolumeDifferenceN": 1.8428895039335202e-05
+        },
+        {
+          "id": "203-s1",
+          "maximumLocalVolumeDifferenceN": 1.8394080314010353e-05
+        },
+        {
+          "id": "200-s1",
+          "maximumLocalVolumeDifferenceN": 7.669716996616671e-06
+        },
+        {
+          "id": "197-s1",
+          "maximumLocalVolumeDifferenceN": 7.558984172817418e-06
+        },
+        {
+          "id": "246-s1",
+          "maximumLocalVolumeDifferenceN": 2.299642698488924e-08
+        },
+        {
+          "id": "206-s2",
+          "maximumLocalVolumeDifferenceN": 1.6864629692747712e-08
+        },
+        {
+          "id": "203-s2",
+          "maximumLocalVolumeDifferenceN": 1.6839413863323216e-08
+        },
+        {
+          "id": "202-whole",
+          "maximumLocalVolumeDifferenceN": 8.485422142712196e-09
+        }
+      ],
+      "source": "material/control45-Q0-Q1-comparison.json",
+      "sourceSha256": "51636477688a733feaf6b2ce9b61cd47358acc7b40a9182c2169e047d02d8043"
+    },
+    {
+      "state": "control45",
+      "a": "Q1",
+      "b": "Q2",
+      "required": true,
+      "units": 36,
+      "pass": true,
+      "failedTerms": [],
+      "terms": {
+        "matrix": {
+          "aggregateInfinityN": 2.0720191916401287e-09,
+          "unitTriangleInfinityN": 2.0720191916401287e-09,
+          "aggregateDirectionalDifferenceJ": 2.627336123327255e-13,
+          "unitTriangleDirectionalDifferenceJ": 2.6639582018344596e-13,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "volume": {
+          "aggregateInfinityN": 1.1749377333281075e-06,
+          "unitTriangleInfinityN": 1.2198439485189283e-06,
+          "aggregateDirectionalDifferenceJ": 1.4281411523471586e-10,
+          "unitTriangleDirectionalDifferenceJ": 1.4739114740023927e-10,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "passiveFiber": {
+          "aggregateInfinityN": 1.4781626462672127e-09,
+          "unitTriangleInfinityN": 1.4782557189299687e-09,
+          "aggregateDirectionalDifferenceJ": 2.4818137086545556e-15,
+          "unitTriangleDirectionalDifferenceJ": 1.2887725534308145e-14,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "activePotential": {
+          "aggregateInfinityN": 1.0688994578345046e-08,
+          "unitTriangleInfinityN": 1.0688994578345046e-08,
+          "aggregateDirectionalDifferenceJ": 4.0327875579164916e-13,
+          "unitTriangleDirectionalDifferenceJ": 4.654218999951052e-13,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "total": {
+          "aggregateInfinityN": 1.1749691831708375e-06,
+          "unitTriangleInfinityN": 1.2183294137990686e-06,
+          "aggregateDirectionalDifferenceJ": 1.4267125991273908e-10,
+          "unitTriangleDirectionalDifferenceJ": 1.4719026081459478e-10,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        }
+      },
+      "largestVolumeComparisonUnits": [
+        {
+          "id": "202-whole",
+          "maximumLocalVolumeDifferenceN": 8.804014086649659e-07
+        },
+        {
+          "id": "243-whole",
+          "maximumLocalVolumeDifferenceN": 5.945499310655578e-07
+        },
+        {
+          "id": "195-whole",
+          "maximumLocalVolumeDifferenceN": 3.8028153515057284e-07
+        },
+        {
+          "id": "196-whole",
+          "maximumLocalVolumeDifferenceN": 3.699282213887045e-07
+        },
+        {
+          "id": "198-whole",
+          "maximumLocalVolumeDifferenceN": 3.485008184256344e-07
+        },
+        {
+          "id": "237-whole",
+          "maximumLocalVolumeDifferenceN": 2.529600813261368e-07
+        },
+        {
+          "id": "240-whole",
+          "maximumLocalVolumeDifferenceN": 2.451305824990868e-07
+        },
+        {
+          "id": "199-whole",
+          "maximumLocalVolumeDifferenceN": 2.0955599699945537e-07
+        }
+      ],
+      "source": "material/control45-Q1-Q2-comparison.json",
+      "sourceSha256": "799f25e5c1878ea70ef2cc736d23923f06d1fa147ba3780d726fbd76e2e27dd5"
+    },
+    {
+      "state": "control45",
+      "a": "Q0",
+      "b": "Q2",
+      "required": false,
+      "units": 36,
+      "pass": false,
+      "failedTerms": [
+        "volume",
+        "total"
+      ],
+      "terms": {
+        "matrix": {
+          "aggregateInfinityN": 1.9309227132263858e-08,
+          "unitTriangleInfinityN": 2.4381833937784682e-08,
+          "aggregateDirectionalDifferenceJ": 1.0091091042547196e-12,
+          "unitTriangleDirectionalDifferenceJ": 1.0127238609963373e-12,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "volume": {
+          "aggregateInfinityN": 1.8491251360330807e-05,
+          "unitTriangleInfinityN": 2.246303735317645e-05,
+          "aggregateDirectionalDifferenceJ": 8.378392559731327e-10,
+          "unitTriangleDirectionalDifferenceJ": 8.423612641540838e-10,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": false
+        },
+        "passiveFiber": {
+          "aggregateInfinityN": 1.478245942237985e-09,
+          "unitTriangleInfinityN": 1.478403289376702e-09,
+          "aggregateDirectionalDifferenceJ": 2.4388268843886218e-15,
+          "unitTriangleDirectionalDifferenceJ": 1.2943203595257697e-14,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "activePotential": {
+          "aggregateInfinityN": 1.0693754548540824e-08,
+          "unitTriangleInfinityN": 1.0693754548540824e-08,
+          "aggregateDirectionalDifferenceJ": 4.0303515845665377e-13,
+          "unitTriangleDirectionalDifferenceJ": 4.656012187252768e-13,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "total": {
+          "aggregateInfinityN": 1.851056079615887e-05,
+          "unitTriangleInfinityN": 2.2486118675502098e-05,
+          "aggregateDirectionalDifferenceJ": 8.384434121607178e-10,
+          "unitTriangleDirectionalDifferenceJ": 8.429073172743875e-10,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": false
+        }
+      },
+      "largestVolumeComparisonUnits": [
+        {
+          "id": "206-whole",
+          "maximumLocalVolumeDifferenceN": 1.8491251360330807e-05
+        },
+        {
+          "id": "203-whole",
+          "maximumLocalVolumeDifferenceN": 1.8456336441374788e-05
+        },
+        {
+          "id": "200-whole",
+          "maximumLocalVolumeDifferenceN": 7.695659713036207e-06
+        },
+        {
+          "id": "197-whole",
+          "maximumLocalVolumeDifferenceN": 7.584575758556866e-06
+        },
+        {
+          "id": "202-whole",
+          "maximumLocalVolumeDifferenceN": 8.719159865222537e-07
+        },
+        {
+          "id": "243-whole",
+          "maximumLocalVolumeDifferenceN": 5.934311175792573e-07
+        },
+        {
+          "id": "195-whole",
+          "maximumLocalVolumeDifferenceN": 3.7725585677605977e-07
+        },
+        {
+          "id": "196-whole",
+          "maximumLocalVolumeDifferenceN": 3.6616408394252176e-07
+        }
+      ],
+      "source": "material/control45-Q0-Q2-comparison.json",
+      "sourceSha256": "28b061d4fdcd29655e7dd238ba92954285cc45ef34875525f389dcc788e30ff5"
+    },
+    {
+      "state": "control45",
+      "a": "F44",
+      "b": "R44",
+      "required": true,
+      "units": 21,
+      "pass": true,
+      "failedTerms": [],
+      "terms": {
+        "matrix": {
+          "aggregateInfinityN": 1.541977772988217e-13,
+          "unitTriangleInfinityN": 1.5420506054256438e-13,
+          "aggregateDirectionalDifferenceJ": 9.947999746112692e-18,
+          "unitTriangleDirectionalDifferenceJ": 9.952244274565335e-18,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "volume": {
+          "aggregateInfinityN": 5.652941916428515e-11,
+          "unitTriangleInfinityN": 5.656748365946982e-11,
+          "aggregateDirectionalDifferenceJ": 3.636310947973796e-15,
+          "unitTriangleDirectionalDifferenceJ": 3.6417666244795875e-15,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "passiveFiber": {
+          "aggregateInfinityN": 4.620160002061064e-14,
+          "unitTriangleInfinityN": 9.024002605588419e-14,
+          "aggregateDirectionalDifferenceJ": 2.0304521250820545e-19,
+          "unitTriangleDirectionalDifferenceJ": 2.7113639011276717e-19,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "activePotential": {
+          "aggregateInfinityN": 0,
+          "unitTriangleInfinityN": 0,
+          "aggregateDirectionalDifferenceJ": 0,
+          "unitTriangleDirectionalDifferenceJ": 0,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "total": {
+          "aggregateInfinityN": 5.6631744688239254e-11,
+          "unitTriangleInfinityN": 5.6681967860277437e-11,
+          "aggregateDirectionalDifferenceJ": 3.672870391067247e-15,
+          "unitTriangleDirectionalDifferenceJ": 3.6769327535486536e-15,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        }
+      },
+      "largestVolumeComparisonUnits": [
+        {
+          "id": "247-s1",
+          "maximumLocalVolumeDifferenceN": 5.645084399930056e-11
+        },
+        {
+          "id": "247-s2",
+          "maximumLocalVolumeDifferenceN": 9.681144774731365e-14
+        },
+        {
+          "id": "247-s3",
+          "maximumLocalVolumeDifferenceN": 1.7541523789077473e-14
+        },
+        {
+          "id": "247-s4",
+          "maximumLocalVolumeDifferenceN": 2.1371793224034263e-15
+        },
+        {
+          "id": "247-s5",
+          "maximumLocalVolumeDifferenceN": 6.938893903907228e-16
+        },
+        {
+          "id": "247-s6",
+          "maximumLocalVolumeDifferenceN": 1.0061396160665481e-16
+        },
+        {
+          "id": "247-s7",
+          "maximumLocalVolumeDifferenceN": 1.9678269430611905e-17
+        },
+        {
+          "id": "247-s8",
+          "maximumLocalVolumeDifferenceN": 1.429791614965259e-18
+        }
+      ],
+      "source": "material/control45-F44-R44-comparison.json",
+      "sourceSha256": "c6bafcdc84f0e6bc5892818b045afc21aab4d0eedd2ec2a617f2ba3f301f272f"
+    },
+    {
+      "state": "terminal46",
+      "a": "Q0",
+      "b": "Q1",
+      "required": true,
+      "units": 156,
+      "pass": false,
+      "failedTerms": [
+        "volume",
+        "total"
+      ],
+      "terms": {
+        "matrix": {
+          "aggregateInfinityN": 1.6475890103475782e-07,
+          "unitTriangleInfinityN": 1.647589010350589e-07,
+          "aggregateDirectionalDifferenceJ": 5.0614279209754135e-12,
+          "unitTriangleDirectionalDifferenceJ": 5.0621841118222096e-12,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "volume": {
+          "aggregateInfinityN": 0.00013164054068454624,
+          "unitTriangleInfinityN": 0.0001316405406847942,
+          "aggregateDirectionalDifferenceJ": 3.914890779578703e-09,
+          "unitTriangleDirectionalDifferenceJ": 3.915674691067402e-09,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": false
+        },
+        "passiveFiber": {
+          "aggregateInfinityN": 1.9012159922336242e-12,
+          "unitTriangleInfinityN": 1.9768222068668335e-12,
+          "aggregateDirectionalDifferenceJ": 3.6374314365281726e-17,
+          "unitTriangleDirectionalDifferenceJ": 7.19383236136772e-17,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "activePotential": {
+          "aggregateInfinityN": 9.396689493699979e-12,
+          "unitTriangleInfinityN": 9.850604620480687e-12,
+          "aggregateDirectionalDifferenceJ": 7.401794248669227e-16,
+          "unitTriangleDirectionalDifferenceJ": 1.2611075491500755e-15,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "total": {
+          "aggregateInfinityN": 0.00013180529954800316,
+          "unitTriangleInfinityN": 0.00013180529954825144,
+          "aggregateDirectionalDifferenceJ": 3.919953036869212e-09,
+          "unitTriangleDirectionalDifferenceJ": 3.9207377745228354e-09,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": false
+        }
+      },
+      "largestVolumeComparisonUnits": [
+        {
+          "id": "206-s1",
+          "maximumLocalVolumeDifferenceN": 0.0001259785560137061
+        },
+        {
+          "id": "197-s1",
+          "maximumLocalVolumeDifferenceN": 5.041903042268814e-05
+        },
+        {
+          "id": "203-s1",
+          "maximumLocalVolumeDifferenceN": 3.4457263705434116e-05
+        },
+        {
+          "id": "200-s1",
+          "maximumLocalVolumeDifferenceN": 1.437416960925475e-05
+        },
+        {
+          "id": "246-s1",
+          "maximumLocalVolumeDifferenceN": 5.362583692658518e-06
+        },
+        {
+          "id": "247-s1",
+          "maximumLocalVolumeDifferenceN": 3.075617378556217e-07
+        },
+        {
+          "id": "206-s2",
+          "maximumLocalVolumeDifferenceN": 2.895369113353752e-07
+        },
+        {
+          "id": "247-s2",
+          "maximumLocalVolumeDifferenceN": 5.182826079419556e-08
+        }
+      ],
+      "source": "material/terminal46-Q0-Q1-comparison.json",
+      "sourceSha256": "3966f3ac3b71345bb9bd57aff4ab9aadbfbbcbc5775742d6ba40318a7bd73f8b"
+    },
+    {
+      "state": "terminal46",
+      "a": "Q1",
+      "b": "Q2",
+      "required": true,
+      "units": 36,
+      "pass": true,
+      "failedTerms": [],
+      "terms": {
+        "matrix": {
+          "aggregateInfinityN": 1.1971435127933194e-09,
+          "unitTriangleInfinityN": 1.1971435127933194e-09,
+          "aggregateDirectionalDifferenceJ": 6.819198426694257e-14,
+          "unitTriangleDirectionalDifferenceJ": 1.0729637721665485e-13,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "volume": {
+          "aggregateInfinityN": 6.355130182100766e-07,
+          "unitTriangleInfinityN": 9.622178733792452e-07,
+          "aggregateDirectionalDifferenceJ": 6.403321315826684e-11,
+          "unitTriangleDirectionalDifferenceJ": 8.122355612476718e-11,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "passiveFiber": {
+          "aggregateInfinityN": 1.3227622885914059e-09,
+          "unitTriangleInfinityN": 1.3227622885914059e-09,
+          "aggregateDirectionalDifferenceJ": 1.367760155785151e-14,
+          "unitTriangleDirectionalDifferenceJ": 6.855298974411748e-14,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "activePotential": {
+          "aggregateInfinityN": 1.11058431340183e-08,
+          "unitTriangleInfinityN": 1.11058431340183e-08,
+          "aggregateDirectionalDifferenceJ": 1.5642896588070113e-13,
+          "unitTriangleDirectionalDifferenceJ": 3.2902730685538627e-13,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "total": {
+          "aggregateInfinityN": 6.354663835139718e-07,
+          "unitTriangleInfinityN": 9.560233484862124e-07,
+          "aggregateDirectionalDifferenceJ": 6.395892092389801e-11,
+          "unitTriangleDirectionalDifferenceJ": 8.106136636159715e-11,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        }
+      },
+      "largestVolumeComparisonUnits": [
+        {
+          "id": "202-whole",
+          "maximumLocalVolumeDifferenceN": 6.805845238488928e-07
+        },
+        {
+          "id": "206-whole",
+          "maximumLocalVolumeDifferenceN": 4.979107615099565e-07
+        },
+        {
+          "id": "199-whole",
+          "maximumLocalVolumeDifferenceN": 2.656798980815722e-07
+        },
+        {
+          "id": "195-whole",
+          "maximumLocalVolumeDifferenceN": 2.3500560919487157e-07
+        },
+        {
+          "id": "244-whole",
+          "maximumLocalVolumeDifferenceN": 2.2916411879236875e-07
+        },
+        {
+          "id": "198-whole",
+          "maximumLocalVolumeDifferenceN": 2.2282373279836065e-07
+        },
+        {
+          "id": "243-whole",
+          "maximumLocalVolumeDifferenceN": 1.927263184597905e-07
+        },
+        {
+          "id": "197-whole",
+          "maximumLocalVolumeDifferenceN": 1.8885051389361251e-07
+        }
+      ],
+      "source": "material/terminal46-Q1-Q2-comparison.json",
+      "sourceSha256": "75756292373908ccc333052055413f805de4ad78bbcd2c2a0974c742ac1aab27"
+    },
+    {
+      "state": "terminal46",
+      "a": "Q0",
+      "b": "Q2",
+      "required": false,
+      "units": 36,
+      "pass": false,
+      "failedTerms": [
+        "volume",
+        "total"
+      ],
+      "terms": {
+        "matrix": {
+          "aggregateInfinityN": 1.6542695072466196e-07,
+          "unitTriangleInfinityN": 1.6542695072466196e-07,
+          "aggregateDirectionalDifferenceJ": 5.129619904280578e-12,
+          "unitTriangleDirectionalDifferenceJ": 5.168619591390939e-12,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "volume": {
+          "aggregateInfinityN": 0.00013215278080025428,
+          "unitTriangleInfinityN": 0.00013215278080025428,
+          "aggregateDirectionalDifferenceJ": 3.978923992341928e-09,
+          "unitTriangleDirectionalDifferenceJ": 3.996028176932468e-09,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": false
+        },
+        "passiveFiber": {
+          "aggregateInfinityN": 1.3227973161278328e-09,
+          "unitTriangleInfinityN": 1.3227973161278328e-09,
+          "aggregateDirectionalDifferenceJ": 1.3714106515420336e-14,
+          "unitTriangleDirectionalDifferenceJ": 6.861596447577935e-14,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "activePotential": {
+          "aggregateInfinityN": 1.1110986353202179e-08,
+          "unitTriangleInfinityN": 1.1110986353202179e-08,
+          "aggregateDirectionalDifferenceJ": 1.556887350631305e-13,
+          "unitTriangleDirectionalDifferenceJ": 3.300544772844023e-13,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "total": {
+          "aggregateInfinityN": 0.00013231820734205257,
+          "unitTriangleInfinityN": 0.00013231820734205257,
+          "aggregateDirectionalDifferenceJ": 3.983911958619186e-09,
+          "unitTriangleDirectionalDifferenceJ": 4.000928050097795e-09,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": false
+        }
+      },
+      "largestVolumeComparisonUnits": [
+        {
+          "id": "206-whole",
+          "maximumLocalVolumeDifferenceN": 0.00012676629069829914
+        },
+        {
+          "id": "197-whole",
+          "maximumLocalVolumeDifferenceN": 5.0629941476643125e-05
+        },
+        {
+          "id": "203-whole",
+          "maximumLocalVolumeDifferenceN": 3.459733160227074e-05
+        },
+        {
+          "id": "200-whole",
+          "maximumLocalVolumeDifferenceN": 1.4425675914253588e-05
+        },
+        {
+          "id": "246-whole",
+          "maximumLocalVolumeDifferenceN": 5.3864901019551326e-06
+        },
+        {
+          "id": "202-whole",
+          "maximumLocalVolumeDifferenceN": 6.753802992420788e-07
+        },
+        {
+          "id": "247-s1",
+          "maximumLocalVolumeDifferenceN": 3.1140330492007706e-07
+        },
+        {
+          "id": "199-whole",
+          "maximumLocalVolumeDifferenceN": 2.628286859263085e-07
+        }
+      ],
+      "source": "material/terminal46-Q0-Q2-comparison.json",
+      "sourceSha256": "578ba2d68138998b8ae63ab937ab1e7d6024260e985261bc6671788de772635a"
+    },
+    {
+      "state": "terminal46",
+      "a": "F44",
+      "b": "R44",
+      "required": true,
+      "units": 21,
+      "pass": true,
+      "failedTerms": [],
+      "terms": {
+        "matrix": {
+          "aggregateInfinityN": 2.617555886824898e-10,
+          "unitTriangleInfinityN": 2.617631742045208e-10,
+          "aggregateDirectionalDifferenceJ": 1.8096457894967957e-14,
+          "unitTriangleDirectionalDifferenceJ": 1.809700615068503e-14,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "volume": {
+          "aggregateInfinityN": 1.303515795208785e-07,
+          "unitTriangleInfinityN": 1.3035158575429772e-07,
+          "aggregateDirectionalDifferenceJ": 8.790094618246463e-12,
+          "unitTriangleDirectionalDifferenceJ": 8.790095068777802e-12,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "passiveFiber": {
+          "aggregateInfinityN": 3.0248760871852024e-13,
+          "unitTriangleInfinityN": 3.05304004279877e-13,
+          "aggregateDirectionalDifferenceJ": 6.930658928180398e-18,
+          "unitTriangleDirectionalDifferenceJ": 7.463096281985707e-18,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "activePotential": {
+          "aggregateInfinityN": 0,
+          "unitTriangleInfinityN": 0,
+          "aggregateDirectionalDifferenceJ": 0,
+          "unitTriangleDirectionalDifferenceJ": 0,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        },
+        "total": {
+          "aggregateInfinityN": 1.3061313544508005e-07,
+          "unitTriangleInfinityN": 1.3061314926401823e-07,
+          "aggregateDirectionalDifferenceJ": 8.80820525517392e-12,
+          "unitTriangleDirectionalDifferenceJ": 8.808206253960153e-12,
+          "forceGateN": 1e-05,
+          "workGateJ": 5.492029235357012e-07,
+          "pass": true
+        }
+      },
+      "largestVolumeComparisonUnits": [
+        {
+          "id": "247-s1",
+          "maximumLocalVolumeDifferenceN": 1.0059860588995662e-07
+        },
+        {
+          "id": "247-s2",
+          "maximumLocalVolumeDifferenceN": 2.266792975547105e-08
+        },
+        {
+          "id": "247-s3",
+          "maximumLocalVolumeDifferenceN": 5.3580340164671725e-09
+        },
+        {
+          "id": "247-s4",
+          "maximumLocalVolumeDifferenceN": 1.3004521903781097e-09
+        },
+        {
+          "id": "247-s5",
+          "maximumLocalVolumeDifferenceN": 3.2106317604529977e-10
+        },
+        {
+          "id": "247-s6",
+          "maximumLocalVolumeDifferenceN": 7.902067888920783e-11
+        },
+        {
+          "id": "247-s7",
+          "maximumLocalVolumeDifferenceN": 1.994424070339562e-11
+        },
+        {
+          "id": "247-s8",
+          "maximumLocalVolumeDifferenceN": 4.867606318015305e-12
+        }
+      ],
+      "source": "material/terminal46-F44-R44-comparison.json",
+      "sourceSha256": "a8446ce8107fe7ddf227f89313bc2092cbeee34258361936aa6624548d65a9aa"
+    }
+  ],
+  "limitations": [
+    "All16patch elements and585nodes includingheld are represented at both fixedfields.",
+    "236outsideelements keep exact retainedU3 contributions and remain unqualified.",
+    "Q1/Q2 and isolated247radial passes do not supersede failing requiredQ0/Q1 or any historical failure.",
+    "No analytic quadrature-error,continuum,equilibrium,tangent,displacement or anatomical acceptance.",
+    "No new fields,optimizer/refit,additionalquadrature,rescue or retry; no publication/book/main/deployment changes.",
+    "Frozen verifier specimenCalls0 describes read-only verification only; actual one-shot execution completed497500new specimen callbacks."
+  ]
+}
