@@ -1,0 +1,23 @@
+{
+  "sourceCommit": "0582de9d86d75ccbb7cc61c74d2c88e320f675af",
+  "specimenCalls": 0,
+  "checks": {
+    "frozenSourceAndArtifactHashes": 1213,
+    "newCalls": 497500,
+    "logicalRows": 634,
+    "normalizedMoments": 29358,
+    "physicalMoments": 4755,
+    "geometrySamples": 501500,
+    "maxNormalizedRelativeError": 2.664665948120675e-15,
+    "maxPhysicalMomentRelativeError": 1.5680366813875634e-13,
+    "maxPhysicalWeightRelativeError": 4.718357000076439e-15,
+    "minimumSampleJ": 1.3115103883415995e-06,
+    "minimumReferenceJacobian": 1.3860150188955874e-07,
+    "binaryBytes": 12782000,
+    "planFiles": 1232,
+    "planDeclaredBytes": 48925104,
+    "authorizationAbsent": true,
+    "executionDirectoryAbsent": true
+  },
+  "verdict": "GEOMETRY_AND_IDENTITIES_PASS_RESOURCE_REVIEW_PENDING"
+}

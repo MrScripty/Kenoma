@@ -32,4 +32,25 @@ exit1 evidence and are accounted separately. Existing failures, consumed
 old authorization and236 outside unqualified elements remain unchanged.
 No numerical operation, finite agreement, anatomical completion, publication,
 PR, merge or deployment is claimed. New authorization and run paths are absent.
-Independent structural/resource review will be retained separately here.
+[Independent structural/resource review](independent-review.json): **PASS**.
+Source0582de9d86d75ccbb7cc61c74d2c88e320f675af, preflightSHA256
+2c6a8c69765f57408860f433379b68595b2a4a55aabb2238205ddcb6b86912bb,
+reviewSHA256d617e3c1fd2e8185a234a6a19c0a323c358322f9ce1e274bbf6ec4ce31c3d013.
+All three identified gaps (child-log bound, complete output hash inventory,
+frozen source hash anchor) were corrected before this PASS.
+
+Independent Fraction/NumPy checks reproduced all moments, reference weights
+and sampled Js. A full497500-constant-callback fixture exercised all634
+serialized rows,30 stages,6 full16hybrids and8 comparisons at both fields;
+independent scalar/scatter replay differed by at most6.938893903907228e-18.
+These are **synthetic callbacks**, with zero specimen/material-law calls.
+Maximum25-byte numeric-token stress payloads fit every declared JSON envelope.
+The old actual4000 measurements remain separately attributed to failed exit1.
+
+[Portable artifact mapping](independent-artifact-locations.json) preserves exact
+review-script/log/receipt identities and their original scratch locations.
+The [complete synthetic fixture archive](independent-artifacts/synthetic-constant-fixture-not-specimen.tar.gz)
+preserves1229 raw files/22993986B and their per-file hash inventory. It is
+structural fixture evidence, not a specimen operation or terminal acceptance.
+No remaining structural blockers. Actual specimen execution still requires
+separate parent acceptance and a new scope-specific authorization.

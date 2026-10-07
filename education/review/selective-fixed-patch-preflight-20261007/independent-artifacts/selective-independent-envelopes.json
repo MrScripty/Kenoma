@@ -1,0 +1,15 @@
+{
+  "verdict": "PASS_MAXIMUM_NUMERIC_JSON_TOKEN_ENVELOPES",
+  "specimenCalls": 0,
+  "numericTokenBytes": 25,
+  "serializedFiles": 679,
+  "maximumEncodedBytesByType": {
+    "region": 4862,
+    "stage": 96849,
+    "comparison": 1191439,
+    "hybrid": 774008,
+    "saved": 112539
+  },
+  "declaredWorstCaseCombinedBytes": 48925104,
+  "outputBudget": 67108864
+}

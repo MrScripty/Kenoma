@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspace/Kenoma-patch-runner/education/tools/launch-selective-fixed-patch.py", line 19, in <module>
+    if __name__=='__main__':os._exit(main())
+                                     ^^^^^^
+  File "/workspace/Kenoma-patch-runner/education/tools/launch-selective-fixed-patch.py", line 9, in main
+    auth_path=ROOT/'research/selective-fixed-patch-authorization-20261007.json';need(auth_path.is_file(),'NO_SELECTIVE_FIXED_PATCH_AUTHORIZATION');auth=read(auth_path)
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Kenoma-patch-runner/education/tools/element247_shell_execution.py", line 11, in need
+    if not condition:raise EvidenceFailure(message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+element247_shell_execution.EvidenceFailure: NO_SELECTIVE_FIXED_PATCH_AUTHORIZATION

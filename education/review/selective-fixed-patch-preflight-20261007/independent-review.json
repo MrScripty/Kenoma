@@ -1,0 +1,208 @@
+{
+  "schema": 1,
+  "verdict": "PASS",
+  "scope": "Independent structural preflight and resource-accounting review only; execution not authorized",
+  "sourceCommit": "0582de9d86d75ccbb7cc61c74d2c88e320f675af",
+  "preflightEvidenceCommit": "6d3851e7f625baae2e94ebea4261eb852691420d",
+  "baseCommit": "98905757dd9cac78cb9c1168e7039aa091e6eb33",
+  "preflightSha256": "2c6a8c69765f57408860f433379b68595b2a4a55aabb2238205ddcb6b86912bb",
+  "storagePlanSha256": "03c424618f494c06fdc187d5bbd8f4ad13ed3bb95180f7f98f2f006c3fc9f9c3",
+  "specimenCalls": 0,
+  "materialLawInvocations": 0,
+  "executionAuthorized": false,
+  "newOperationalExecution": false,
+  "newNumericalAgreementClaim": false,
+  "anatomicalQualification": false,
+  "blockingFindings": [],
+  "geometryIndependentReplay": {
+    "frozenSourceAndArtifactHashes": 1213,
+    "newCalls": 497500,
+    "logicalRows": 634,
+    "normalizedMoments": 29358,
+    "physicalMoments": 4755,
+    "geometrySamples": 501500,
+    "maxNormalizedRelativeError": 2.664665948120675e-15,
+    "maxPhysicalMomentRelativeError": 1.5680366813875634e-13,
+    "maxPhysicalWeightRelativeError": 4.718357000076439e-15,
+    "minimumSampleJ": 1.3115103883415995e-06,
+    "minimumReferenceJacobian": 1.3860150188955874e-07,
+    "binaryBytes": 12782000,
+    "planFiles": 1232,
+    "planDeclaredBytes": 48925104,
+    "authorizationAbsent": true,
+    "executionDirectoryAbsent": true
+  },
+  "syntheticNonzeroProducerBoundary": {
+    "verdict": "PASS_SYNTHETIC_NONZERO_FULL_OUTPUT_SHAPES",
+    "specimenCalls": 0,
+    "syntheticCallbacks": 497500,
+    "reusedMeasurements": 4000,
+    "serializedRegions": 634,
+    "allCornerMappings": true,
+    "allFiveRules": true,
+    "bothFields": true,
+    "full16Hybrids": 6,
+    "comparisons": 8,
+    "outputDirectory": "/tmp/selective-independent-full-nonzero-PgFHbY",
+    "maximumEncodedBytesByType": {
+      "binary": 192000,
+      "saved": 112539,
+      "region": 4333,
+      "stage": 85515,
+      "hybrid": 402834,
+      "comparison": 698255
+    },
+    "outputBytes": 22993986,
+    "counts": {
+      "reservedCalls": 497500,
+      "actualConstitutiveCallbacks": 497500,
+      "completedConstitutiveCallbacks": 497500,
+      "plannedCalls": 497500,
+      "maximumCalls": 497500,
+      "elapsedMs": 18594.919573,
+      "maximumWallMs": 300000,
+      "peakObservedRssBytes": 180797440,
+      "maximumRssBytes": 2147483648,
+      "lastPhase": "after-final-batch-and-output",
+      "activeBatch": null
+    }
+  },
+  "independentNonzeroRegionAndComparisonReplay": {
+    "verdict": "PASS_INDEPENDENT_NONZERO_REGION_GROUP_AND_SCATTER_REPLAY",
+    "specimenCalls": 0,
+    "stages": 30,
+    "regions": 634,
+    "comparisons": 8,
+    "all585IncludingHeld": true,
+    "maximumAbsoluteReplayDifference": 6.938893903907228e-18
+  },
+  "worstNumericTokenEnvelopes": {
+    "verdict": "PASS_MAXIMUM_NUMERIC_JSON_TOKEN_ENVELOPES",
+    "specimenCalls": 0,
+    "numericTokenBytes": 25,
+    "serializedFiles": 679,
+    "maximumEncodedBytesByType": {
+      "region": 4862,
+      "stage": 96849,
+      "comparison": 1191439,
+      "hybrid": 774008,
+      "saved": 112539
+    },
+    "declaredWorstCaseCombinedBytes": 48925104,
+    "outputBudget": 67108864
+  },
+  "tests": {
+    "independentlyRerunJS": 8,
+    "acceptedLifetime": 30,
+    "newVerifierAndDamage": 11,
+    "missingNewAuthorizationRefusal": 1,
+    "total": 50,
+    "fail": 0
+  },
+  "correctedFindings": [
+    {
+      "finding": "execute.log64KiB envelope originally unenforced",
+      "resolution": "Optional scope-specific execute_log_cap_bytes propagated supervisor/private-worker/child, new launcher65536; defaults preserve historical behavior; synthetic65537-byte output refuses/cleans up."
+    },
+    {
+      "finding": "output hash inventory could omit expected entries",
+      "resolution": "Exact plan-file set excluding self completion/terminal now required, positive and subset damage tests pass."
+    },
+    {
+      "finding": "current source hash could replace frozen preflight source anchor",
+      "resolution": "Every preflight source hash must equal completion source hash, independently of current disk verification; anchor damage test passes."
+    }
+  ],
+  "reviewedProperties": [
+    "497500 new callbacks maximum/planned;4000 accepted reused measurements separate;634logicalregions; no retry",
+    "All16patch elements and585nodes includingheld;252oldU3rows replayed;236outside unchanged/unqualified",
+    "All4secondarycorner mappings and X44face231; dyadic disjoint coverage; no current-J physical-weight multiplier",
+    "RequiredQ0/Q1=156units,Q1/Q2=36,F44/R44=21;Q0/Q2informational; oldD5secondary contributes wholeelement only",
+    "Every5-term comparison uses signed+unittriangle force1e-5N andwork5.492029235357012e-7J; reconstruction1e-8N/1e-9J",
+    "Finite JSON/closed paths/actual perfile encoding caps; exact12782000Bbinary, maximumcombined48925104B<67108864B",
+    "Callback entered/completed/reserved failure counters preserved; partial weights durable/bounded; refusal/cleanup/pending/final/laterfailure precedence retained",
+    "Newscope/parentthread/source/preflight/review/budget one-shot authorization required; missingauth refuses before Node/run; oldexit1 and consumed authorization unchanged"
+  ],
+  "limitations": [
+    "Structural success gives no result of actual specimen integration. Synthetic callback counts are explicitly distinct from zero material-law invocations.",
+    "300s is a proposed authorized future cap, not a timing guarantee for actual material execution.",
+    "Finite comparisons do not give analytic integration error/continuum/equilibrium/tangent/displacement/anatomical qualification.",
+    "Within-unit cancellation remains possible; saved-direction work follows the force bound algebraically.",
+    "No new authorization, run, publication, branch changes, deployment, protection or credential writes by this reviewer.",
+    "Full synthetic raw1229files retained only in temporary outputDirectory; independent inventory binds their exact bytes."
+  ],
+  "artifacts": {
+    "/tmp/review_selective_structural.py": {
+      "bytes": 6711,
+      "sha256": "7288c84e62b704fe7ca209560d1742af1ca08d67bb03c95091a7159f1912bcc8"
+    },
+    "/tmp/review_selective_nonzero.mjs": {
+      "bytes": 3324,
+      "sha256": "1c8060841fa7d1e2b037a6160d19326a2d6a40fc678e798d67867905b428c1f7"
+    },
+    "/tmp/review_selective_nonzero_replay.py": {
+      "bytes": 3950,
+      "sha256": "f1987539ecded1f869ebb53d88eba98b64948711d876c719091de9a6b79134db"
+    },
+    "/tmp/review_selective_envelopes.mjs": {
+      "bytes": 1474,
+      "sha256": "5fd76c28ac44a47d2ce394483397dabc704605c2854d1fddf85893cc38b6d272"
+    },
+    "/tmp/assemble_selective_independent_report.py": {
+      "bytes": 6815,
+      "sha256": "6852f942b904511d396c3127b8a189dd89f36c107b4536c895f0a416de9db506"
+    },
+    "/tmp/selective-independent-structural.json": {
+      "bytes": 797,
+      "sha256": "d737f37cc252331e5f61f0faf470c63b6d1513e0755141930f0f630352043f34"
+    },
+    "/tmp/selective-independent-final-structural.log": {
+      "bytes": 797,
+      "sha256": "d737f37cc252331e5f61f0faf470c63b6d1513e0755141930f0f630352043f34"
+    },
+    "/tmp/selective-independent-js.log": {
+      "bytes": 834,
+      "sha256": "1f3f5234b734556ad35b08a728de33f3eb399f4c5262c044a4852f8b8e665517"
+    },
+    "/tmp/selective-independent-final-lifetime.log": {
+      "bytes": 5845,
+      "sha256": "20132beef38ace71166299fed730f25ae9a00369d9422fe2fed444b8ed63aa9c"
+    },
+    "/tmp/selective-independent-final-verifier.log": {
+      "bytes": 110,
+      "sha256": "c86951a7f822abdb8c2f7cd8badfb662adaf9c24db9ee6c8f723d92e90c7135b"
+    },
+    "/tmp/selective-independent-authorization-refusal.log": {
+      "bytes": 945,
+      "sha256": "82f2231b071702acf95c45a96adb8ae8414cf554feff05420f998996d892852e"
+    },
+    "/tmp/selective-independent-nonzero.json": {
+      "bytes": 956,
+      "sha256": "ade3697e1db2674f70fc9b3b4a8f887daf20728754e2bc380971a51b5218884c"
+    },
+    "/tmp/selective-independent-nonzero.log": {
+      "bytes": 956,
+      "sha256": "ade3697e1db2674f70fc9b3b4a8f887daf20728754e2bc380971a51b5218884c"
+    },
+    "/tmp/selective-independent-nonzero-replay.json": {
+      "bytes": 243,
+      "sha256": "4ac13b6a9c3f26de690ffcd282d2e42f05322160554b0f68366a55e760f7d9ee"
+    },
+    "/tmp/selective-independent-nonzero-replay.log": {
+      "bytes": 243,
+      "sha256": "4ac13b6a9c3f26de690ffcd282d2e42f05322160554b0f68366a55e760f7d9ee"
+    },
+    "/tmp/selective-independent-envelopes.json": {
+      "bytes": 357,
+      "sha256": "d6094ce2d90a78aa40edeed6e53f7b59199bc3f25f4e09877f71572e38af1b57"
+    },
+    "/tmp/selective-independent-envelopes.log": {
+      "bytes": 357,
+      "sha256": "d6094ce2d90a78aa40edeed6e53f7b59199bc3f25f4e09877f71572e38af1b57"
+    },
+    "/tmp/selective-independent-synthetic-inventory.json": {
+      "bytes": 184578,
+      "sha256": "2fbf511113653c9cd6d301827eea757b46847e0230c912e8d29cbccaae094874"
+    }
+  }
+}

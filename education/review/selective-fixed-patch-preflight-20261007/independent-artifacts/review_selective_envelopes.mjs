@@ -1,0 +1,7 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';
+import {boundedJson,outputPlan} from '/workspace/Kenoma-patch-runner/education/tools/selective-fixed-patch-storage.mjs';
+const nonzero=JSON.parse(fs.readFileSync('/tmp/selective-independent-nonzero.json')),plan=outputPlan(),material=nonzero.outputDirectory+'/material/',maxima={};let files=0;
+const worst=-0.0000010000000000000002;assert.equal(JSON.stringify(worst).length,25);
+function inflate(v){return typeof v==='number'?worst:Array.isArray(v)?v.map(inflate):v&&typeof v==='object'?Object.fromEntries(Object.entries(v).map(([k,x])=>[k,inflate(x)])):v;}
+for(const name of fs.readdirSync(material).filter(n=>n.endsWith('.json'))){const value=JSON.parse(fs.readFileSync(material+name)),bytes=boundedJson(name==='saved-arrays.json'?value:inflate(value),plan.files[name]);const kind=name.endsWith('-region.json')?'region':name.endsWith('-stage.json')?'stage':name.endsWith('-hybrid.json')?'hybrid':name.endsWith('-comparison.json')?'comparison':'saved';maxima[kind]=Math.max(maxima[kind]??0,bytes.length);files++;}
+const report={verdict:'PASS_MAXIMUM_NUMERIC_JSON_TOKEN_ENVELOPES',specimenCalls:0,numericTokenBytes:25,serializedFiles:files,maximumEncodedBytesByType:maxima,declaredWorstCaseCombinedBytes:plan.maximumCombinedBytes,outputBudget:plan.maximumOutputBytes};fs.writeFileSync('/tmp/selective-independent-envelopes.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));

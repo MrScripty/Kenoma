@@ -1,0 +1,35 @@
+{
+  "verdict": "PASS_SYNTHETIC_NONZERO_FULL_OUTPUT_SHAPES",
+  "specimenCalls": 0,
+  "syntheticCallbacks": 497500,
+  "reusedMeasurements": 4000,
+  "serializedRegions": 634,
+  "allCornerMappings": true,
+  "allFiveRules": true,
+  "bothFields": true,
+  "full16Hybrids": 6,
+  "comparisons": 8,
+  "outputDirectory": "/tmp/selective-independent-full-nonzero-PgFHbY",
+  "maximumEncodedBytesByType": {
+    "binary": 192000,
+    "saved": 112539,
+    "region": 4333,
+    "stage": 85515,
+    "hybrid": 402834,
+    "comparison": 698255
+  },
+  "outputBytes": 22993986,
+  "counts": {
+    "reservedCalls": 497500,
+    "actualConstitutiveCallbacks": 497500,
+    "completedConstitutiveCallbacks": 497500,
+    "plannedCalls": 497500,
+    "maximumCalls": 497500,
+    "elapsedMs": 18594.919573,
+    "maximumWallMs": 300000,
+    "peakObservedRssBytes": 180797440,
+    "maximumRssBytes": 2147483648,
+    "lastPhase": "after-final-batch-and-output",
+    "activeBatch": null
+  }
+}
