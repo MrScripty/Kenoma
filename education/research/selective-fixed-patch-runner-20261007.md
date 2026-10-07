@@ -77,8 +77,11 @@ This is an enforced envelope, not a prediction of typical output size.
 The accepted RuntimeLimits reserves each new region, counts entered callbacks
 before invocation, records completed calls separately, and refuses exhausted
 wall/RSS/storage/count budgets. The existing process supervisor and cleanup
-are preserved. Its verifier gains only a result-whitelist parameter with the
-old whitelist as default; the new verifier passes the two new patch result
+are preserved. Its verifier gains a result-whitelist parameter with the
+old whitelist as default. Optional child-log cap arguments default to the
+old behavior; the new public launcher explicitly enforces65536B in the private
+worker before each execute.log write. An oversized synthetic child stdout
+test verifies refusal and process cleanup. The new verifier passes the two new patch result
 names explicitly. A failed callback or post-assembly metadata/storage/refusal
 remains incomplete; no retries occur. Durable failure records override any
 provisional completion. SIGKILL can retain only already-durable evidence.

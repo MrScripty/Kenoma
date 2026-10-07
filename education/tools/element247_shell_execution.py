@@ -30,12 +30,12 @@ def process_rss(pid):
  for line in text.splitlines():
   if line.startswith('VmRSS:'):return int(line.split()[1])*1024
  raise EvidenceFailure('LIVE_CHILD_RSS_FIELD_MISSING')
-def launch_session(command,directory,cwd,source_commit,authorization_sha256,budget=BUDGET,started_at=None,isolate_child=True):
+def launch_session(command,directory,cwd,source_commit,authorization_sha256,budget=BUDGET,started_at=None,isolate_child=True,execute_log_cap_bytes=None):
  """Single fresh invocation. A nonzero child exit or any watchdog/postwrite
  failure dominates all provisional numerical receipts. Small fixtures may
  supply tighter budgets; the public launcher freezes BUDGET and COMMAND.
  """
- root=pathlib.Path(directory);need(not root.exists(),'PRESERVE_EXISTING_INVOCATION');started=time.monotonic() if started_at is None else started_at;root.mkdir(parents=True);run_id=uuid.uuid4().hex;child=None;failure=None;peak_rss=0;code=None
+ need(execute_log_cap_bytes is None or (isinstance(execute_log_cap_bytes,int) and 0<execute_log_cap_bytes<=65536),'EXECUTE_LOG_CAP');root=pathlib.Path(directory);need(not root.exists(),'PRESERVE_EXISTING_INVOCATION');started=time.monotonic() if started_at is None else started_at;root.mkdir(parents=True);run_id=uuid.uuid4().hex;child=None;failure=None;peak_rss=0;code=None
  normal_limit=budget['maximumOutputBytes']-2*1024**2
  def wall_ms():return (time.monotonic()-started)*1000
  def check():
@@ -53,7 +53,7 @@ def launch_session(command,directory,cwd,source_commit,authorization_sha256,budg
     for key,_ in selector.select(.02):
      chunk=os.read(key.fileobj.fileno(),16384)
      if not chunk:selector.unregister(key.fileobj);continue
-     available=max(0,normal_limit-tree_bytes(root));need(len(chunk)<=available,'EXTERNAL_STORAGE_LIMIT');log.write(chunk);log.flush();check()
+     available=max(0,normal_limit-tree_bytes(root));need(len(chunk)<=available,'EXTERNAL_STORAGE_LIMIT');need(execute_log_cap_bytes is None or log.tell()+len(chunk)<=execute_log_cap_bytes,'EXECUTE_LOG_LIMIT');log.write(chunk);log.flush();check()
    log.flush();os.fsync(log.fileno())
   child.wait();code=child.returncode;check();need(code==0,'NONZERO_CHILD_EXIT')
  except BaseException as error:
@@ -77,14 +77,14 @@ def launch_session(command,directory,cwd,source_commit,authorization_sha256,budg
   except BaseException:pass  # Exit remains nonzero; missing final evidence also refuses verification.
  return {'exitCode':0 if failure is None else 1,'childExitCode':code,'failure':failure,'runId':run_id,'elapsedMs':wall_ms(),'directory':str(root)}
 
-def supervise_session(command,directory,cwd,source_commit,authorization_sha256,budget=BUDGET,started_at=None,fixture_worker=None):
+def supervise_session(command,directory,cwd,source_commit,authorization_sha256,budget=BUDGET,started_at=None,fixture_worker=None,execute_log_cap_bytes=None):
  """Observe the launcher's actual process exit. Acceptance files are staged,
  fsynced and checked, then atomically published as the last operations. A
  nonzero/missing launcher outcome refuses even if failure-record writes fail.
  A forced process kill preserves only already durable files, not RAM state.
  """
  root=pathlib.Path(directory);need(not root.exists(),'PRESERVE_EXISTING_INVOCATION');started=time.monotonic() if started_at is None else started_at
- config={'command':command,'directory':str(root),'cwd':str(cwd),'sourceCommit':source_commit,'authorizationSha256':authorization_sha256,'budget':budget,'startedAt':started}
+ config={'command':command,'directory':str(root),'cwd':str(cwd),'sourceCommit':source_commit,'authorizationSha256':authorization_sha256,'budget':budget,'startedAt':started,'executeLogCapBytes':execute_log_cap_bytes}
  worker_command=fixture_worker if fixture_worker is not None else [sys.executable,str(pathlib.Path(__file__).resolve()),'--worker',json.dumps(config,separators=(',',':'))]
  need((time.monotonic()-started)*1000<1000*budget['maximumWallSeconds'],'SUPERVISOR_PRELAUNCH_WALL_LIMIT');worker=subprocess.Popen(worker_command,cwd=cwd,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,start_new_session=True);log=bytearray();failure=None
  def check():
@@ -183,4 +183,4 @@ def require_terminal_evidence(directory,budget=BUDGET,command=COMMAND,results=RE
  return {'completion':completion,'terminal':terminal,'marker':marker,'externalExit':exit_record,'externalFinal':final,'launcherExit':launcher,'sourceCommit':start['sourceCommit'],'runId':start['runId']}
 
 if __name__=='__main__':
- need(len(sys.argv)==3 and sys.argv[1]=='--worker','Private supervised worker only');config=json.loads(sys.argv[2]);result=launch_session(config['command'],config['directory'],config['cwd'],config['sourceCommit'],config['authorizationSha256'],config['budget'],started_at=config['startedAt'],isolate_child=False);os._exit(result['exitCode'])
+ need(len(sys.argv)==3 and sys.argv[1]=='--worker','Private supervised worker only');config=json.loads(sys.argv[2]);result=launch_session(config['command'],config['directory'],config['cwd'],config['sourceCommit'],config['authorizationSha256'],config['budget'],started_at=config['startedAt'],isolate_child=False,execute_log_cap_bytes=config.get('executeLogCapBytes'));os._exit(result['exitCode'])

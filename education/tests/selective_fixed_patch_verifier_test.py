@@ -1,5 +1,5 @@
 """Independent arithmetic damage tests; zero specimen calls."""
-import copy,importlib.util,pathlib,sys,unittest
+import copy,importlib.util,pathlib,sys,unittest,tempfile
 TOOLS=pathlib.Path(__file__).resolve().parents[1]/'tools';sys.path.insert(0,str(TOOLS))
 spec=importlib.util.spec_from_file_location('selective_verify',TOOLS/'verify-selective-fixed-patch.py');v=importlib.util.module_from_spec(spec);spec.loader.exec_module(v)
 class SelectiveTests(unittest.TestCase):
@@ -27,5 +27,10 @@ class SelectiveTests(unittest.TestCase):
  def test_nonfinite_vector(self):
   x,u,i,d=self.fixture();x['terms']['total']['aggregateDifferenceN'][0][0]=float('nan')
   with self.assertRaises(Exception):v.check_comparison(x,u,i,d)
+ def test_new_scope_child_log_limit_refuses_and_cleans_up(self):
+  from element247_shell_execution import supervise_session,read
+  with tempfile.TemporaryDirectory() as tmp:
+   root=pathlib.Path(tmp)/'run';out=supervise_session(['node','-e',"process.stdout.write('x'.repeat(65537));setInterval(()=>{},1000)"],root,TOOLS,'a'*40,'b'*64,v.launcher.BUDGET,execute_log_cap_bytes=65536)
+   self.assertEqual(out['exitCode'],1);self.assertNotEqual(out['launcherExitCode'],0);self.assertLessEqual((root/'execute.log').stat().st_size,65536);self.assertIn('EXECUTE_LOG_LIMIT',read(root/'external-incomplete.json')['reason']);self.assertFalse((root/'external-final.json').exists());self.assertFalse((root/'launcher-exit.json').exists())
  def test_closed_new_result_names(self):self.assertEqual(v.RESULTS,{'PASS_BOUNDED_SELECTIVE_FIXED_PATCH_AGREEMENT','UNRESOLVED_FIXED_PATCH_INTEGRATION'})
 if __name__=='__main__':unittest.main()

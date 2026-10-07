@@ -15,5 +15,5 @@ def main():
  for p,h in pref['sourceHashes'].items():need(digest(ROOT/p)==h,'CHANGED_SOURCE:'+p)
  for p,h in pref['artifactHashes'].items():need(digest(pref_dir/p)==h,'CHANGED_PREFLIGHT_ARTIFACT:'+p)
  subprocess.run(['git','merge-base','--is-ancestor',pref['sourceCommit'],'HEAD'],cwd=ROOT,check=True);head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
- return supervise_session(COMMAND,ROOT/'review/selective-fixed-patch-run-20261007',ROOT,head,digest(auth_path),BUDGET,started_at=started)['exitCode']
+ return supervise_session(COMMAND,ROOT/'review/selective-fixed-patch-run-20261007',ROOT,head,digest(auth_path),BUDGET,started_at=started,execute_log_cap_bytes=65536)['exitCode']
 if __name__=='__main__':os._exit(main())
