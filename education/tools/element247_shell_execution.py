@@ -86,28 +86,33 @@ def supervise_session(command,directory,cwd,source_commit,authorization_sha256,b
  root=pathlib.Path(directory);need(not root.exists(),'PRESERVE_EXISTING_INVOCATION');started=time.monotonic() if started_at is None else started_at
  config={'command':command,'directory':str(root),'cwd':str(cwd),'sourceCommit':source_commit,'authorizationSha256':authorization_sha256,'budget':budget,'startedAt':started}
  worker_command=fixture_worker if fixture_worker is not None else [sys.executable,str(pathlib.Path(__file__).resolve()),'--worker',json.dumps(config,separators=(',',':'))]
- need((time.monotonic()-started)*1000<1000*budget['maximumWallSeconds'],'SUPERVISOR_PRELAUNCH_WALL_LIMIT');worker=subprocess.Popen(worker_command,cwd=cwd,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,start_new_session=True);selector=selectors.DefaultSelector();selector.register(worker.stdout,selectors.EVENT_READ);log=bytearray();failure=None
+ need((time.monotonic()-started)*1000<1000*budget['maximumWallSeconds'],'SUPERVISOR_PRELAUNCH_WALL_LIMIT');worker=subprocess.Popen(worker_command,cwd=cwd,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,start_new_session=True);log=bytearray();failure=None
  def check():
   need((time.monotonic()-started)*1000<1000*budget['maximumWallSeconds'],'SUPERVISOR_WALL_LIMIT')
   if root.exists():need(tree_bytes(root)<=budget['maximumOutputBytes'],'SUPERVISOR_STORAGE_LIMIT')
- try:
-  while selector.get_map() or worker.poll() is None:
-   check()
-   for key,_ in selector.select(.02):
-    chunk=os.read(key.fileobj.fileno(),16384)
-    if not chunk:selector.unregister(key.fileobj);continue
-    need(len(log)+len(chunk)<=65536,'LAUNCHER_LOG_RESERVE');log.extend(chunk)
-  worker.wait();check()
- except BaseException as error:
-  failure=str(error)
-  # A launcher may have exited while its child still owns the output pipe.
-  # Stop the inherited group even when the launcher's own process is gone.
+ def stop_group():
+  # Node has a separate stdout pipe. Its launcher can exit and close the
+  # supervisor pipe while Node remains live in the inherited process group.
   try:os.killpg(worker.pid,signal.SIGKILL)
   except ProcessLookupError:pass
   worker.wait()
- finally:worker.stdout.close()
- root.mkdir(parents=True,exist_ok=True);outcome=None
  try:
+  selector=selectors.DefaultSelector()
+  try:
+   selector.register(worker.stdout,selectors.EVENT_READ)
+   while selector.get_map() or worker.poll() is None:
+    check()
+    for key,_ in selector.select(.02):
+     chunk=os.read(key.fileobj.fileno(),16384)
+     if not chunk:selector.unregister(key.fileobj);continue
+     need(len(log)+len(chunk)<=65536,'LAUNCHER_LOG_RESERVE');log.extend(chunk)
+   worker.wait()
+   if worker.returncode!=0:stop_group()
+   check()
+  except BaseException as error:
+   failure=str(error);stop_group()
+  finally:selector.close();worker.stdout.close()
+  root.mkdir(parents=True,exist_ok=True);outcome=None
   with (root/'launcher.log').open('xb') as stream:stream.write(log);stream.flush();os.fsync(stream.fileno())
   start=read(root/'execution-start.json') if (root/'execution-start.json').is_file() else {}
   outcome={'schema':1,'kind':'OBSERVED_LAUNCHER_EXIT','sourceCommit':source_commit,'runId':start.get('runId'),'launcherExitCode':worker.returncode,'supervisorFailure':failure,'elapsedMs':(time.monotonic()-started)*1000,'clockScope':'pre-authorization-and-source-checks','budget':budget,'launcherLogSha256':digest(root/'launcher.log')}
@@ -125,10 +130,16 @@ def supervise_session(command,directory,cwd,source_commit,authorization_sha256,b
   os.rename(root/'launcher-acceptance.pending.json',root/'launcher-exit.json')
   return success  # No checks, writes, logging, or other fallible work follows publication.
  except BaseException as error:
-  failure=str(error)
-  try:exclusive_json(root/'supervisor-incomplete.json',{'schema':1,'result':'INCOMPLETE_ELEMENT247_SHELL_SUPERVISION','reason':failure,'launcherExitCode':worker.returncode,'sourceCommit':source_commit,'elapsedMs':(time.monotonic()-started)*1000})
+  failure=str(error);cleanup_failure=None
+  # Every refusal after spawn cleans up, including ordinary polling completion
+  # followed by a failed launcher exit, candidate check or evidence write.
+  try:stop_group()
+  except BaseException as cleanup_error:cleanup_failure=str(cleanup_error)
+  try:worker.stdout.close()
   except BaseException:pass
-  return {'exitCode':1,'launcherExitCode':worker.returncode,'failure':failure,'directory':str(root)}
+  try:exclusive_json(root/'supervisor-incomplete.json',{'schema':1,'result':'INCOMPLETE_ELEMENT247_SHELL_SUPERVISION','reason':failure,'groupCleanupFailure':cleanup_failure,'launcherExitCode':worker.returncode,'sourceCommit':source_commit,'elapsedMs':(time.monotonic()-started)*1000})
+  except BaseException:pass
+  return {'exitCode':1,'launcherExitCode':worker.returncode,'failure':failure,'groupCleanupFailure':cleanup_failure,'directory':str(root)}
 
 def check_runtime(r,budget):
  need(all(r.get(k)==budget['plannedMaterialCalls'] for k in ['plannedCalls','reservedCalls','actualConstitutiveCallbacks','completedConstitutiveCallbacks']),'INCOMPLETE_CALLBACK_COUNTS')

@@ -137,6 +137,42 @@ class SuccessorProcessTests(unittest.TestCase):
  def test_wall_scope_includes_time_spent_before_launcher_and_source_checks(self):
   import time
   r=self.root();self.assertRaisesRegex(EvidenceFailure,'PRELAUNCH_WALL_LIMIT',supervise_session,COMMAND,r,ROOT,SOURCE,'d'*64,started_at=time.monotonic()-181);self.assertFalse(r.exists())
+ def test_every_refusal_stops_separate_pipe_or_devnull_node_child(self):
+  import os,signal,time
+  from contextlib import ExitStack
+  cases=[('PIPE',7,None),('PIPE',-9,None),('DEVNULL',7,None),('DEVNULL',-9,None),('PIPE',0,None),('PIPE',0,'observed-write'),('PIPE',7,'failure-write'),('PIPE',0,'publish')]
+  for output,exit_code,damage in cases:
+   with self.subTest(output=output,exit_code=exit_code,damage=damage):
+    r=self.root();pid=None;ready=r/'node-ready';node='require("node:fs").writeFileSync('+json.dumps(str(ready))+',"ready");setTimeout(()=>{},10000)'
+    prefix=perfect_chain_worker(r)[2].removesuffix('os._exit(0)') if damage=='publish' else 'import pathlib,os;pathlib.Path('+repr(str(r))+').mkdir();'
+    script=prefix+'import subprocess,sys,time,signal,json;child=subprocess.Popen(["node","-e",'+repr(node)+'],stdout=subprocess.'+output+',stderr=subprocess.STDOUT);p=pathlib.Path('+repr(str(r))+');(p/"child-process.json").write_text(json.dumps({"pid":child.pid,"group":os.getpgid(child.pid),"worker":os.getpid()}));deadline=time.monotonic()+3\nwhile not (p/"node-ready").exists():\n if time.monotonic()>deadline:os._exit(8)\n time.sleep(.005)\n'+('os.kill(os.getpid(),signal.SIGKILL)' if exit_code==-9 else f'os._exit({exit_code})')
+    actual_write=exclusive_json;actual_rename=os.rename
+    def refuse_write(p,v):
+     if (damage=='observed-write' and pathlib.Path(p).name=='launcher-exit.pending.json') or (damage=='failure-write' and pathlib.Path(p).name=='supervisor-incomplete.json'):raise OSError('synthetic unavailable evidence write')
+     return actual_write(p,v)
+    def refuse_publish(src,dst):
+     if pathlib.Path(dst).name=='launcher-exit.json':raise OSError('synthetic acceptance publication failure')
+     return actual_rename(src,dst)
+    try:
+     with ExitStack() as stack:
+      if damage in ['observed-write','failure-write']:stack.enter_context(patch('element247_shell_execution.exclusive_json',side_effect=refuse_write))
+      if damage=='publish':stack.enter_context(patch('element247_shell_execution.os.rename',side_effect=refuse_publish))
+      out=supervise_session(COMMAND,r,ROOT,SOURCE,'d'*64,{**BUDGET,'maximumWallSeconds':5},fixture_worker=[sys.executable,'-c',script])
+     child=read(r/'child-process.json');pid=child['pid'];self.assertEqual(child['group'],child['worker']);self.assertTrue(ready.exists());self.assertEqual(out['exitCode'],1);self.assertEqual(out['launcherExitCode'],exit_code);self.assertIsNone(out['groupCleanupFailure']);self.assertFalse((r/'launcher-exit.json').exists());self.assertNotIn('WALL',out['failure'])
+     if (r/'launcher-exit.pending.json').exists():self.assertIsNone(read(r/'launcher-exit.pending.json')['supervisorFailure'])
+     self.assertRaises(EvidenceFailure,require_terminal_evidence,r)
+     deadline=time.monotonic()+1
+     while time.monotonic()<deadline:
+      try:status=pathlib.Path(f'/proc/{pid}/status').read_text()
+      except FileNotFoundError:break
+      if any(line.startswith('State:') and line.split()[1] in ['Z','X'] for line in status.splitlines()):break
+      time.sleep(.01)
+     else:self.fail('separate-pipe Node child survived supervisor refusal')
+    finally:
+     if pid is None and (r/'child-process.json').exists():pid=read(r/'child-process.json')['pid']
+     if pid is not None:
+      try:os.kill(pid,signal.SIGKILL)
+      except ProcessLookupError:pass
 def full_retained_fixture():
  """Invented zero-force records with real accepted reference weights/arrays.
  All fixture counters are synthetic evidence, not evaluated material calls.
@@ -146,11 +182,11 @@ def full_retained_fixture():
  inputs=['data/anatomical-arm-v1/generated/arm-reference.json','research/fixed-field-integration-protocol-20261007-inputs.json','review/fixed-field-integration-run-20261007/saved-arrays.json','review/element247-shell-protocol-20261007/confirmation-preflight.json']
  for recipe,_,_ in VERIFIER.RECIPES:inputs.extend([f'review/element247-shell-protocol-20261007/{recipe}-normalized-points.f64le',f'review/element247-shell-protocol-20261007/{recipe}-reference-weights.f64le'])
  for p in inputs:(root/p).parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/p,root/p)
- manifest_path='research/element247-shell-retention-20261007-inputs.json';manifest={'inputs':{p:digest(root/p) for p in inputs},'newSources':[manifest_path],'fixtureOnly':True};write(root/manifest_path,manifest)
- pref_dir=root/'review/element247-shell-retention-20261007';pref_dir.mkdir(parents=True);(pref_dir/'js-tests.log').write_text('synthetic fixture');(pref_dir/'python-tests.log').write_text('synthetic fixture')
+ manifest_path='research/element247-shell-lifetime-20261007-inputs.json';manifest={'inputs':{p:digest(root/p) for p in inputs},'newSources':[manifest_path],'fixtureOnly':True};write(root/manifest_path,manifest)
+ pref_dir=root/'review/element247-shell-lifetime-20261007';pref_dir.mkdir(parents=True);(pref_dir/'js-tests.log').write_text('synthetic fixture');(pref_dir/'python-tests.log').write_text('synthetic fixture')
  source_hashes={p:digest(root/p) for p in inputs+[manifest_path]};pref={'sourceCommit':SOURCE,'sourceHashes':source_hashes,'result':'PASS_ELEMENT247_SHELL_RUNTIME_PREFLIGHT_NO_MATERIAL_ASSEMBLY','specimenConstitutiveCalls':0,'tests':{'fail':0},'fixtureOnly':True};write(pref_dir/'runtime-preflight.json',pref)
  auth_path='research/element247-shell-execution-authorization-20261007.json';auth={'authorized':True,'invocations':1,'parentThread':'01a103c3-a2e6-7606-8c1e-06987ac710f1','budget':BUDGET,'runnerSourceCommit':SOURCE,'runtimePreflightSha256':digest(pref_dir/'runtime-preflight.json'),'fixtureOnly':True};write(root/auth_path,auth)
- hashes={**source_hashes,**{p:digest(root/p) for p in ['review/element247-shell-retention-20261007/runtime-preflight.json','review/element247-shell-retention-20261007/js-tests.log','review/element247-shell-retention-20261007/python-tests.log',auth_path]}}
+ hashes={**source_hashes,**{p:digest(root/p) for p in ['review/element247-shell-lifetime-20261007/runtime-preflight.json','review/element247-shell-lifetime-20261007/js-tests.log','review/element247-shell-lifetime-20261007/python-tests.log',auth_path]}}
  mesh=next(s for s in read(root/inputs[0])['muscles'] if s['element_id']=='FJ1486');arrays=read(root/inputs[2]);geo=read(root/inputs[3]);zero=lambda n:[[0.,0.,0.] for _ in range(n)];vectors=lambda n:{t:zero(n) for t in VERIFIER.TERMS};energy=lambda:{t:0. for t in VERIFIER.TERMS}
  write(d/'material-start.json',{'schema':1,'sourceCommit':SOURCE,'runnerSourceCommit':SOURCE,'sourceHashes':hashes,'runId':RUN_ID,'budget':BUDGET,'authorizationSha256':digest(root/auth_path),'activation':1,'material':read(root/inputs[1])['material'],'fixtureOnly':True});write(d/'saved-arrays.json',arrays);stages={}
  for recipe,depth,count in VERIFIER.RECIPES:
