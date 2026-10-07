@@ -1,0 +1,32 @@
+{
+  "verdict": "PASS_SCIENTIFIC_PROTOCOL_WORDING",
+  "reviewedSourceSha256": {
+    "education/research/selective-fixed-patch-fine-window-criterion-20261007.md": "a0232d758b368a1967aada47c87b508e93041740d3e845dc5a28fa5ad4df262b",
+    "education/review/selective-fixed-patch-arithmetic-review-20261007/README.md": "20df633d066a6ab92a300e757626793b99faf676f4b2a4b2ce90978f3fb3531e"
+  },
+  "frozenResultCommit": "38ae8a2e2af57cf33254af987b724824b9d84357",
+  "specimenCallsDuringReview": 0,
+  "materialLawInvocationsDuringReview": 0,
+  "newQuadratureGenerated": false,
+  "frozenSourcesOrGatesEdited": false,
+  "independentlyRecomputedHistoricalNumbers": {
+    "control45_247_C55_A55": 1.2825659369687512e-08,
+    "control45_247_A55_F44": 1.7481814376142503e-11,
+    "control45_secondary_D4_D5": 6.419509190891404e-08,
+    "control45_secondary_U5_D5": 6.666315371717246e-06,
+    "terminal46_247_C55_A55": 8.611662232570753e-05,
+    "terminal46_247_A55_F44": 3.528012330541583e-07,
+    "terminal46_secondary_D4_D5": 2.8679999530822897e-07,
+    "terminal46_secondary_U5_D5": 1.6174927040424336e-05
+  },
+  "findings": [
+    "Diagnosis correctly distinguishes quadrature candidates from displacement states and Q2 mixed-family comparison from a universal refinement step.",
+    "Actual247angular1\u21922\u21924 sequence shares radial/depth/chart; declining finite increments are supported, without extending convergence or anatomical claims.",
+    "Historical secondary U5/D5 triangle failure remains visible and prevents treating D4/D5 same-grid order agreement as absolute error certification.",
+    "New prospectively frozen fine-window protocol legitimately archives immutable coarse-pair failure while demanding primary fine increments, resolved independent-family witness, finest cross-family comparison and separate axis checks.",
+    "Stable partitions, shared global force/work budgets, complete16support/all585held-node coverage and unchanged laws/gates/reconstruction limits are preserved.",
+    "Criterion supports bounded finite agreement only; outside236elements remain unqualified."
+  ],
+  "minorClarification": null,
+  "remainingScientificBlockers": []
+}

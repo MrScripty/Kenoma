@@ -1,0 +1,2114 @@
+[
+  {
+    "state": "control45",
+    "a": "Q0",
+    "b": "Q1",
+    "terms": {
+      "matrix": {
+        "common16WholeElementTriangleInfinityN": 2.3661968360047005e-08,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 2.7658379059269933e-12
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 3.6116318269385772e-12
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 7.999683618276857e-09
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 2.550959443681222e-12
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 1.920682363154569e-12
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 7.981305242832506e-09
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 8.125063555991519e-12
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 1.9196739232694234e-08
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 1.9259507243792745e-08
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 1.3053169656274122e-12
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 1.2706918850469151e-12
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 3.0662972161366042e-12
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 1.189472131901681e-12
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 6.556125347473296e-11
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 4.9310883609883505e-14
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 1.842276331487369e-15
+          }
+        ]
+      },
+      "volume": {
+        "common16WholeElementTriangleInfinityN": 2.2107712822710957e-05,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 3.0256783745130633e-09
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 3.764137446182758e-09
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 7.565905859152622e-06
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 2.775481178218797e-09
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 2.0487709306848956e-09
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 7.676735624073672e-06
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 8.485422142712196e-09
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 1.8410928618095568e-05
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 1.8445768567687537e-05
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 4.786713247995067e-10
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 4.5656634029001e-10
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 1.1188134863004962e-09
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 4.325109159708518e-10
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 2.300762569351633e-08
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 1.7378829278436037e-11
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 7.833733661755105e-13
+          }
+        ]
+      },
+      "passiveFiber": {
+        "common16WholeElementTriangleInfinityN": 1.1755041384731157e-12,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 1.6964207816272392e-13
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 1.7319479184152442e-13
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 6.039613253960852e-13
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 4.263256414560601e-13
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 7.776002064474596e-13
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 3.979039320256561e-13
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 7.851497230149107e-13
+          }
+        ]
+      },
+      "activePotential": {
+        "common16WholeElementTriangleInfinityN": 7.0207173408221024e-12,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 4.779510121011299e-13
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 1.110556091532544e-12
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 6.600275881396556e-12
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 2.361888462587558e-12
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 7.153166947659884e-13
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 6.23945339839338e-13
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 2.398081733190338e-12
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 4.341416115494212e-12
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 1.1048939541069558e-12
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 0
+          }
+        ]
+      },
+      "total": {
+        "common16WholeElementTriangleInfinityN": 2.213137311457558e-05,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 3.028276296390686e-09
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 3.76854458750131e-09
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 7.57389947203535e-06
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 2.7803515045832228e-09
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 2.0513321041804033e-09
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 7.684716775813172e-06
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 8.494644987422362e-09
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 1.8430122217694134e-05
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 1.8465028212233392e-05
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 4.798508257408685e-10
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 4.5696424422203563e-10
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 1.1214922324143117e-09
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 4.3375081304475316e-10
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 2.3073196908640625e-08
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 1.745702193911569e-11
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 8.135714324453147e-13
+          }
+        ]
+      }
+    }
+  },
+  {
+    "state": "control45",
+    "a": "Q1",
+    "b": "Q2",
+    "terms": {
+      "matrix": {
+        "common16WholeElementTriangleInfinityN": 2.0720191916401287e-09,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 3.2544395477118737e-10
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 3.2838571705634534e-10
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 2.0702025000946672e-11
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 2.990997458388045e-10
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 1.8410048615788432e-10
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 2.0621754876767396e-11
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 7.796088488318254e-10
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 4.962333541584825e-11
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 4.9719888471112805e-11
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 7.188350678588584e-10
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 7.136781166039441e-10
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 1.7003479874100336e-09
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 3.7167120423009514e-10
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 1.1331907634470895e-13
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 5.0584536559483695e-15
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 6.956102360788918e-13
+          }
+        ]
+      },
+      "volume": {
+        "common16WholeElementTriangleInfinityN": 1.2198439485189283e-06,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 3.8028153515057284e-07
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 3.699282213887045e-07
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 1.866989940424446e-08
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 3.485008184256344e-07
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 2.0955599699945537e-07
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 1.892408896253528e-08
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 8.804014086649659e-07
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 4.540782327921988e-08
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 4.548279264326993e-08
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 2.529600813261368e-07
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 2.451305824990868e-07
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 5.945499310655578e-07
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 1.3452764235921677e-07
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 4.04156708100345e-11
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 3.090860900556436e-13
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 2.567617229942698e-10
+          }
+        ]
+      },
+      "passiveFiber": {
+        "common16WholeElementTriangleInfinityN": 1.4782362001142246e-09,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 1.305009433849591e-10
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 1.623714496190587e-10
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 1.3387193575908896e-09
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 1.3926637620897964e-10
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 1.0338396805309458e-12
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 4.529709940470639e-14
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 3.739231146937527e-13
+          }
+        ]
+      },
+      "activePotential": {
+        "common16WholeElementTriangleInfinityN": 1.0688994578345046e-08,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 1.8225696507556677e-09
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 2.4626332084665137e-09
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 3.3151259515307174e-13
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 4.608094350544434e-09
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 2.41489939156736e-09
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 3.090860900556436e-13
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 6.080900227800612e-09
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 8.881784197001252e-13
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 9.9298347322474e-13
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 0
+          }
+        ]
+      },
+      "total": {
+        "common16WholeElementTriangleInfinityN": 1.2183294137990686e-06,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 3.8107447553059615e-07
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 3.685928460228638e-07
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 1.869051757807938e-08
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 3.4566456008633395e-07
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 2.0887570073568895e-07
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 1.8944390944852785e-08
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 8.796072172856384e-07
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 4.545750087459055e-08
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 4.553258392547832e-08
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 2.536788485940633e-07
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 2.45898043260695e-07
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 5.964598415175715e-07
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 1.3490221562051374e-07
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 4.0969894143927377e-11
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 1.9184653865522705e-13
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 2.573585788923083e-10
+          }
+        ]
+      }
+    }
+  },
+  {
+    "state": "control45",
+    "a": "Q0",
+    "b": "Q2",
+    "terms": {
+      "matrix": {
+        "common16WholeElementTriangleInfinityN": 2.4381833937784682e-08,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 3.226781168652604e-10
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 3.2477408522940676e-10
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 8.020385643277804e-09
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 2.965487863951233e-10
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 1.8229010618694974e-10
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 8.001926997709273e-09
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 7.714837852758338e-10
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 1.9246362568110082e-08
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 1.9309227132263858e-08
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 7.17529750893231e-10
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 7.124074247188972e-10
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 1.697281690193897e-09
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 3.7048173209819346e-10
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 6.566023506154872e-11
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 5.009821767501532e-14
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 6.952632913836965e-13
+          }
+        ]
+      },
+      "volume": {
+        "common16WholeElementTriangleInfinityN": 2.246303735317645e-05,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 3.7725585677605977e-07
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 3.6616408394252176e-07
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 7.584575758556866e-06
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 3.457253372474156e-07
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 2.0766477870637345e-07
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 7.695659713036207e-06
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 8.719159865222537e-07
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 1.8456336441374788e-05
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 1.8491251360330807e-05
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 2.524814100013373e-07
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 2.446740161587968e-07
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 5.934311175792573e-07
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 1.3409513144324592e-07
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 2.3042197372369344e-08
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 1.7445605723920288e-11
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 2.5652013846411137e-10
+          }
+        ]
+      },
+      "passiveFiber": {
+        "common16WholeElementTriangleInfinityN": 1.478404065835548e-09,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 1.3038814472565718e-10
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 1.6254464441090022e-10
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 1.338623434321562e-09
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 1.390745296703244e-10
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 6.590283874174929e-13
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 3.8191672047105385e-13
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 6.279421427279885e-13
+          }
+        ]
+      },
+      "activePotential": {
+        "common16WholeElementTriangleInfinityN": 1.0693754548540824e-08,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 1.8230476017677688e-09
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 2.4637437645580462e-09
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 6.59605703390298e-12
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 4.610456239007021e-09
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 2.4150912381060152e-09
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 3.6859404417555197e-13
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 6.083298309533802e-09
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 4.614975068761851e-12
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 1.1883827255587676e-12
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 0
+          }
+        ]
+      },
+      "total": {
+        "common16WholeElementTriangleInfinityN": 2.2486118675502098e-05,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 3.7804619923420546e-07
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 3.648243014353625e-07
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 7.59258998961343e-06
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 3.4288420858175073e-07
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 2.0698221403492312e-07
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 7.703661166758025e-06
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 8.71112572298216e-07
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 1.8475579718568724e-05
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 1.851056079615887e-05
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 2.5319899776832244e-07
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 2.4544107901647294e-07
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 5.953383492851572e-07
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 1.34468464807469e-07
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 2.3107816216061394e-08
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 1.744971875328183e-11
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 2.5705304551593144e-10
+          }
+        ]
+      }
+    }
+  },
+  {
+    "state": "terminal46",
+    "a": "Q0",
+    "b": "Q1",
+    "terms": {
+      "matrix": {
+        "common16WholeElementTriangleInfinityN": 1.6475890103964663e-07,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 1.2663897708264926e-12
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 9.094920996877143e-13
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 5.737758895438261e-08
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 1.2377755070902552e-12
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 3.06497102003922e-12
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 1.5648286088784658e-08
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 5.035081292875665e-12
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 3.807507912038585e-08
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 1.4829401587604374e-07
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 2.926131559277678e-14
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 3.226585665316861e-15
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 4.446304435745674e-13
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 6.095887683521539e-13
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 1.6464885163602894e-08
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 1.2982265787560288e-09
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 4.045375145977914e-15
+          }
+        ]
+      },
+      "volume": {
+        "common16WholeElementTriangleInfinityN": 0.0001316405406939225,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 1.3973666668221085e-09
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 9.365033193375893e-10
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 5.044109096274951e-05
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 1.34855149269697e-09
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 3.209575938356579e-09
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 1.4383758067282315e-05
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 5.204224606814023e-09
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 3.449735501703799e-05
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 0.0001262683799367892
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 1.0514256132410083e-11
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 4.654054919228656e-13
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 1.6409984482379514e-10
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 2.2609114580518508e-10
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 5.372160757133315e-06
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 3.515030844170042e-07
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 7.762679388179095e-13
+          }
+        ]
+      },
+      "passiveFiber": {
+        "common16WholeElementTriangleInfinityN": 1.9042545318370685e-12,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 1.438849039914203e-13
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 5.3290705182007514e-14
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 8.739675649849232e-13
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 3.659295089164516e-13
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 1.9042545318370685e-12
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 4.756195437494171e-13
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 6.785683126508957e-13
+          }
+        ]
+      },
+      "activePotential": {
+        "common16WholeElementTriangleInfinityN": 9.844569603956188e-12,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 6.24389429049188e-13
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 1.4097611966690238e-12
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 6.417977260753105e-12
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 2.8881341762598822e-12
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 3.9468428525424315e-13
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 6.252776074688882e-13
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 2.2923885012460232e-12
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 9.620748642191757e-12
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 5.577760475716786e-13
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 0
+          }
+        ]
+      },
+      "total": {
+        "common16WholeElementTriangleInfinityN": 0.0001318052995600283,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 1.398461346724389e-09
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 9.385874299994157e-10
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 5.0498471045656856e-05
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 1.3526797459917361e-09
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 3.2129066039610077e-09
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 1.4399406481402366e-05
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 5.209709996734091e-09
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 3.4535436885363424e-05
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 0.00012641667392898626
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 1.0977885267493548e-11
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 8.348877145181177e-13
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 1.6328982610502862e-10
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 2.270432730711036e-10
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 5.388625631042032e-06
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 3.5280123356074e-07
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 7.65609797781508e-13
+          }
+        ]
+      }
+    }
+  },
+  {
+    "state": "terminal46",
+    "a": "Q1",
+    "b": "Q2",
+    "terms": {
+      "matrix": {
+        "common16WholeElementTriangleInfinityN": 1.1971435127933194e-09,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 2.0000698666700067e-10
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 1.4071704825674436e-10
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 2.2852309107534996e-10
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 1.932172824514744e-10
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 2.3962092639967514e-10
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 4.7986806368804924e-11
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 6.124747319556645e-10
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 1.2290046237650731e-10
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 6.221886894586248e-10
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 4.3893805257155805e-11
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 1.2742230881546135e-11
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 5.50027703938305e-10
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 6.471158088550144e-10
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 5.630576560555767e-11
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 1.8177372801408964e-11
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 5.21640369788301e-11
+          }
+        ]
+      },
+      "volume": {
+        "common16WholeElementTriangleInfinityN": 9.622178733792452e-07,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 2.3500560919487157e-07
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 1.5768366212753904e-07
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 1.8885051389361251e-07
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 2.2282373279836065e-07
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 2.656798980815722e-07
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 4.191784697127332e-08
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 6.805845238488928e-07
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 1.0064496080985919e-07
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 4.979107615099565e-07
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 1.5376036444081365e-08
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 4.789068697164112e-09
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 1.927263184597905e-07
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 2.2916411879236875e-07
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 2.101827689671154e-08
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 4.81806949892416e-09
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 1.9469496237434214e-08
+          }
+        ]
+      },
+      "passiveFiber": {
+        "common16WholeElementTriangleInfinityN": 1.3227622885914059e-09,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 2.532019038881117e-10
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 3.315971941475482e-10
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 5.386480428359874e-10
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 9.619560703555408e-10
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 7.238654120556021e-13
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 1.1457501614131615e-13
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 2.3714363805993344e-13
+          }
+        ]
+      },
+      "activePotential": {
+        "common16WholeElementTriangleInfinityN": 1.11058431340183e-08,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 2.2921899933692202e-09
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 2.778963170690929e-09
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 2.4868995751603507e-13
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 5.56421397845952e-09
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 3.61358232225939e-09
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 2.1316282072803006e-13
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 5.663518098941722e-09
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 1.4210854715202004e-12
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 4.902744876744691e-13
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 0
+          }
+        ]
+      },
+      "total": {
+        "common16WholeElementTriangleInfinityN": 9.560233484862124e-07,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 2.356552664117828e-07
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 1.563334981469211e-07
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 1.8907891963237944e-07
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 2.18940323204464e-07
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 2.657609137202144e-07
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 4.196574643344775e-08
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 6.805904639861637e-07
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 1.0076770706746174e-07
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 4.98533388793021e-07
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 1.542634464613002e-08
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 4.8047432699149795e-09
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 1.934815898607667e-07
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 2.298125814093055e-07
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 2.107473129342452e-08
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 4.836332223590034e-09
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 1.9522310878983262e-08
+          }
+        ]
+      }
+    }
+  },
+  {
+    "state": "terminal46",
+    "a": "Q0",
+    "b": "Q2",
+    "terms": {
+      "matrix": {
+        "common16WholeElementTriangleInfinityN": 1.6542695072466196e-07,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 1.9874059689617418e-10
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 1.3980755615705664e-10
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 5.760611204545796e-08
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 1.9197950694438415e-10
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 2.368440335347166e-10
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 1.5696272895153462e-08
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 6.074396506627888e-10
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 3.819154855170745e-08
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 1.4891620456550236e-07
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 4.3883219974505394e-11
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 1.2745457467211452e-11
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 5.495830734947305e-10
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 6.465062200866623e-10
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 1.6510746159159595e-08
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 1.3164039515574377e-09
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 5.216337084501532e-11
+          }
+        ]
+      },
+      "volume": {
+        "common16WholeElementTriangleInfinityN": 0.00013215278080025428,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 2.3360824252804946e-07
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 1.5674715880820145e-07
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 5.0629941476643125e-05
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 2.2147518130566368e-07
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 2.628286859263085e-07
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 1.4425675914253588e-05
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 6.753802992420788e-07
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 3.459733160227074e-05
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 0.00012676629069829914
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 1.537235227999645e-08
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 4.788851981629705e-09
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 1.925622186149667e-07
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 2.2893802764656357e-07
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 5.3864901019551326e-06
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 3.5632115391592833e-07
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 1.946891359239089e-08
+          }
+        ]
+      },
+      "passiveFiber": {
+        "common16WholeElementTriangleInfinityN": 1.3227973161278328e-09,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 2.532578591285528e-10
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 3.316011354392856e-10
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 5.38643740721767e-10
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 9.6197316779012e-10
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 1.1901590823981678e-12
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 5.138112157965224e-13
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 4.574118861455645e-13
+          }
+        ]
+      },
+      "activePotential": {
+        "common16WholeElementTriangleInfinityN": 1.1110986353202179e-08,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 2.2928143827982694e-09
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 2.780372931887598e-09
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 6.3931082650015014e-12
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 5.564582572503696e-09
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 3.6138558812126576e-09
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 5.346834086594754e-13
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 5.665810487442968e-09
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 9.549694368615746e-12
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 9.023892744153272e-13
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 0
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 0
+          }
+        ]
+      },
+      "total": {
+        "common16WholeElementTriangleInfinityN": 0.00013231820734205257,
+        "perElement": [
+          {
+            "element": 195,
+            "wholeElementInfinityN": 2.3425680506505842e-07
+          },
+          {
+            "element": 196,
+            "wholeElementInfinityN": 1.5539491071692169e-07
+          },
+          {
+            "element": 197,
+            "wholeElementInfinityN": 5.0687549965289236e-05
+          },
+          {
+            "element": 198,
+            "wholeElementInfinityN": 2.1758764345847226e-07
+          },
+          {
+            "element": 199,
+            "wholeElementInfinityN": 2.629066893078402e-07
+          },
+          {
+            "element": 200,
+            "wholeElementInfinityN": 1.4441372227835814e-05
+          },
+          {
+            "element": 202,
+            "wholeElementInfinityN": 6.753807539894296e-07
+          },
+          {
+            "element": 203,
+            "wholeElementInfinityN": 3.4635529789994735e-05
+          },
+          {
+            "element": 206,
+            "wholeElementInfinityN": 0.00012691520731777928
+          },
+          {
+            "element": 237,
+            "wholeElementInfinityN": 1.5422473964576966e-08
+          },
+          {
+            "element": 240,
+            "wholeElementInfinityN": 4.804817876902234e-09
+          },
+          {
+            "element": 243,
+            "wholeElementInfinityN": 1.9331830003466166e-07
+          },
+          {
+            "element": 244,
+            "wholeElementInfinityN": 2.295855381362344e-07
+          },
+          {
+            "element": 246,
+            "wholeElementInfinityN": 5.403000024273297e-06
+          },
+          {
+            "element": 247,
+            "wholeElementInfinityN": 3.5763756578433004e-07
+          },
+          {
+            "element": 248,
+            "wholeElementInfinityN": 1.952166428509372e-08
+          }
+        ]
+      }
+    }
+  }
+]

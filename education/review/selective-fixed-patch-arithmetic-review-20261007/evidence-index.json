@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "frozenResultCommit": "38ae8a2e2af57cf33254af987b724824b9d84357",
+  "originalNumericalStatus": "UNRESOLVED_FIXED_PATCH_INTEGRATION",
+  "reviewNewMaterialLawInvocations": 0,
+  "reviewNewSpecimenCalls": 0,
+  "quadratureGenerated": false,
+  "gateChanges": false,
+  "proposal": {
+    "path": "../../research/selective-fixed-patch-fine-window-criterion-20261007.md",
+    "sha256": "a0232d758b368a1967aada47c87b508e93041740d3e845dc5a28fa5ad4df262b",
+    "authorizedForExecution": false
+  },
+  "diagnosis": {
+    "path": "README.md",
+    "sha256": "20df633d066a6ab92a300e757626793b99faf676f4b2a4b2ce90978f3fb3531e"
+  },
+  "independentArithmeticResourceReport": {
+    "path": "independent-artifacts/selective-material-independent-review.json",
+    "sha256": "85ca1f7e19559ea66d5dfe3afbee2a7246b14fcd24bad032d9dcb4a75357fcba"
+  },
+  "independentDiagnosisProposalReview": {
+    "selective-diagnosis-proposal-independent-review.json": {
+      "path": "independent-artifacts/selective-diagnosis-proposal-independent-review.json",
+      "bytes": 2161,
+      "sha256": "ee1518856bb35609b526400f48d9bdab709896d302252d7ac6f87dce59a087a3"
+    },
+    "review_selective_diagnosis_proposal.py": {
+      "path": "independent-artifacts/review_selective_diagnosis_proposal.py",
+      "bytes": 4157,
+      "sha256": "7fa8015855420b4dc78e6df8c693e54650b557ec2435499e4e87a3b3edb0cef5"
+    },
+    "selective-diagnosis-proposal-independent-review.log": {
+      "path": "independent-artifacts/selective-diagnosis-proposal-independent-review.log",
+      "bytes": 2161,
+      "sha256": "ee1518856bb35609b526400f48d9bdab709896d302252d7ac6f87dce59a087a3"
+    }
+  },
+  "files": {
+    "README.md": {
+      "bytes": 10437,
+      "sha256": "20df633d066a6ab92a300e757626793b99faf676f4b2a4b2ce90978f3fb3531e"
+    },
+    "element-component-metrics.csv": {
+      "bytes": 19117,
+      "sha256": "bf7975fbe050ce8892f7c4a19167250bcc6c43071020c21eefb14eca87adee44"
+    },
+    "independent-artifact-locations.json": {
+      "bytes": 1885,
+      "sha256": "24501cf4a966279b5836f35032c76c1063bd97b3bdce414bc8c9031a21ac712d"
+    },
+    "independent-artifact-manifest.json": {
+      "bytes": 1103,
+      "sha256": "00fba3540ee3d37a0ae6305cf1021de6208217d8a4928f2698a6c4ea21484bfc"
+    },
+    "independent-artifacts/review_selective_common_partition.py": {
+      "bytes": 1527,
+      "sha256": "7255dcafa0b11e79b9464934020603ed8d4c7144e8cd0f2f74dbbb2f57748cbb"
+    },
+    "independent-artifacts/review_selective_diagnosis_proposal.py": {
+      "bytes": 4157,
+      "sha256": "7fa8015855420b4dc78e6df8c693e54650b557ec2435499e4e87a3b3edb0cef5"
+    },
+    "independent-artifacts/review_selective_material_independent.py": {
+      "bytes": 19555,
+      "sha256": "3cc1e1140106ce539d01ad036c100f1ce4a163d15b04f505eba6532e6434b0ed"
+    },
+    "independent-artifacts/selective-diagnosis-proposal-independent-review.json": {
+      "bytes": 2161,
+      "sha256": "ee1518856bb35609b526400f48d9bdab709896d302252d7ac6f87dce59a087a3"
+    },
+    "independent-artifacts/selective-diagnosis-proposal-independent-review.log": {
+      "bytes": 2161,
+      "sha256": "ee1518856bb35609b526400f48d9bdab709896d302252d7ac6f87dce59a087a3"
+    },
+    "independent-artifacts/selective-material-independent-assessment.md": {
+      "bytes": 5893,
+      "sha256": "be40c7470566836b3f57afd5cb229e85aad9f0115ba3a6a722d092dbc7d468ed"
+    },
+    "independent-artifacts/selective-material-independent-common-partition.json": {
+      "bytes": 56554,
+      "sha256": "493c34ff98e42aedc9630c2f946d54af544e7e3902fab69a2a87578160b6e93e"
+    },
+    "independent-artifacts/selective-material-independent-common-partition.log": {
+      "bytes": 234,
+      "sha256": "09d85c9bd2e524b5a74f672d6a2fb2f8b32fa260c84e4dda8a123966fc7ad480"
+    },
+    "independent-artifacts/selective-material-independent-review.json": {
+      "bytes": 409868,
+      "sha256": "85ca1f7e19559ea66d5dfe3afbee2a7246b14fcd24bad032d9dcb4a75357fcba"
+    },
+    "independent-artifacts/selective-material-independent-review.log": {
+      "bytes": 2153,
+      "sha256": "db525462706802dece3ba5ec6e0479345e9d09693bdbde1ca4873305b500c375"
+    },
+    "localization.json": {
+      "bytes": 943008,
+      "sha256": "7d28a347c461951f74e8e4062894594b7087ecdb3ef04eb9ad2e0a77218ede9b"
+    },
+    "localization.log": {
+      "bytes": 236,
+      "sha256": "cb3acc948e9fff9482e8c74720e1f61f8246bd26f38fa757655a3a7232e1e5b5"
+    },
+    "localize-retained.py": {
+      "bytes": 9883,
+      "sha256": "6463212db0c6b766b329d60a08ba01ff1cb6977e7c4639521bce0a74713c1132"
+    },
+    "shell-component-metrics.csv": {
+      "bytes": 203331,
+      "sha256": "bd6086ad741cf06611c2489327e5f9c142a702c507ffeb48b27c02d50ce81c7d"
+    }
+  }
+}
