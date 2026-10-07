@@ -1,0 +1,21 @@
+{
+  "verdict": "PASS_READ_ONLY_PUBLIC_EXIT_AND_POINT_GUARD_IDENTITY",
+  "specimenCallsByAudit": 0,
+  "materialLawInvocationsByAudit": 0,
+  "actualAuthorizedRunCallbacks": 19716000,
+  "matchedLogicalRegionMinimumJ": 2002,
+  "minimumSampleJ": 1.3116745755806583e-06,
+  "publicEntryExit": 0,
+  "publicElapsedMs": 661325.2693940012,
+  "externalObservedPeakChildRssBytes": 403156992,
+  "sourceCommit": "fe513113cbc336948ae20b0209a5be4b9552b524",
+  "authorizationSha256": "eefb24e1994824ced443b5740826c3c020712ef893c74683ba63d0d1b1d8ae7f",
+  "completionSha256": "4d252d1483a2f7bc3a27b840a28d495cbf210a897f9461eb0db220bb3382c103",
+  "terminalSha256": "444bb23f747acbdaba22736cb4fa45e7f29eee4a483a090f280e6bae3599e6f9",
+  "publicExitSha256": "11214cf9f8f8f8056bab64caa99b1ccf8741991d320e37561238342a27852afc",
+  "rawInventorySha256": "6ae3961c2fc734cb098b71464a6d9b584d0590eed8f263c2ca1b741b31c573a4",
+  "authorizationConsumed": true,
+  "retryPerformed": false,
+  "outside236Qualified": false,
+  "anatomicalQualification": false
+}

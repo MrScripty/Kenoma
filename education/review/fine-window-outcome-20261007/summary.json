@@ -1,0 +1,3649 @@
+{
+  "schema": 1,
+  "result": "UNRESOLVED_FIXED_PATCH_INTEGRATION",
+  "runId": "87379b67f49b4625a64b303999bdd0aa",
+  "executionSourceCommit": "fe513113cbc336948ae20b0209a5be4b9552b524",
+  "runnerSourceCommit": "9611a4865e9591041fa5253c9df6c0f91da84089",
+  "authorizationSha256": "eefb24e1994824ced443b5740826c3c020712ef893c74683ba63d0d1b1d8ae7f",
+  "newCallbacks": 19716000,
+  "sharedLogicalMeasurements": 640000,
+  "retainedAttribution": {
+    "sameInvocationP4": 480000,
+    "historicalF44": 80000,
+    "historicalX44": 80000,
+    "historicalFailedTwoShellSubsetThroughF44": 4000
+  },
+  "logicalRegions": 2002,
+  "newRegions": 1682,
+  "sharedRegions": 320,
+  "comparisons": [
+    {
+      "state": "control45",
+      "comparison": "S0/S1",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "forceSignedN": 4.5279213461579464e-08,
+      "forceTriangleN": 5.405117285938592e-08,
+      "workSignedJ": 1.719084282732292e-12,
+      "workTriangleJ": 1.7191150432808553e-12,
+      "failedTerms": [],
+      "allocationPasses": {
+        "quiet": true,
+        "focus": true
+      },
+      "artifact": "control45-S0-S1-comparison.json",
+      "sha256": "c1aa9b58fdf43a6de363db56cabe63a7df8143af26dd3c13b3317cf534ec2a9b"
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/S2",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "forceSignedN": 6.437570908236903e-11,
+      "forceTriangleN": 7.482611951195713e-11,
+      "workSignedJ": 2.4472404796058853e-15,
+      "workTriangleJ": 2.549745737299028e-15,
+      "failedTerms": [],
+      "allocationPasses": {
+        "quiet": true,
+        "focus": true
+      },
+      "artifact": "control45-S1-S2-comparison.json",
+      "sha256": "c9bcd9ececbc15c887680b688afd6ab90614beebeb3c0d99f2f058b44829e742"
+    },
+    {
+      "state": "control45",
+      "comparison": "I0/I1",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "forceSignedN": 8.384019970893628e-06,
+      "forceTriangleN": 8.384019971091404e-06,
+      "workSignedJ": 1.1353026822798309e-09,
+      "workTriangleJ": 1.1795619862074724e-09,
+      "failedTerms": [],
+      "allocationPasses": {
+        "quiet": true,
+        "focus": true
+      },
+      "artifact": "control45-I0-I1-comparison.json",
+      "sha256": "d6bc9554dc5553c1e9056e43c486dd4dd36549139a4ffd0300f5db96cc8d668f"
+    },
+    {
+      "state": "control45",
+      "comparison": "S2/I1",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "forceSignedN": 1.1935929459829714e-06,
+      "forceTriangleN": 1.1937264558355453e-06,
+      "workSignedJ": 1.4109478300229228e-10,
+      "workTriangleJ": 1.456742357399123e-10,
+      "failedTerms": [],
+      "allocationPasses": {
+        "quiet": true,
+        "focus": true
+      },
+      "artifact": "control45-S2-I1-comparison.json",
+      "sha256": "b38bb30d537704b16590a41827c36d1f050927cdeda9fd4027bda68d76c09598"
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/AR",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "forceSignedN": 6.798758433786229e-10,
+      "forceTriangleN": 1.0743620499124721e-09,
+      "workSignedJ": 3.305548319103082e-14,
+      "workTriangleJ": 3.520022263036981e-14,
+      "failedTerms": [],
+      "allocationPasses": {
+        "quiet": true,
+        "focus": true
+      },
+      "artifact": "control45-S1-AR-comparison.json",
+      "sha256": "6535a331316b901dd97d21bff242f97440ea08854d3b345927b6989c749182d2"
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/AH",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "forceSignedN": 2.0005019518339096e-29,
+      "forceTriangleN": 2.6300499320552093e-29,
+      "workSignedJ": 5.9878685789156145e-34,
+      "workTriangleJ": 1.4509347344128038e-33,
+      "failedTerms": [],
+      "allocationPasses": {
+        "quiet": true,
+        "focus": true
+      },
+      "artifact": "control45-S1-AH-comparison.json",
+      "sha256": "87abe29b2fbf8fcede99b9d1d56d2ca4ceab5582c4e8a496860308bea575faf3"
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/AC",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "forceSignedN": 6.485354423248052e-11,
+      "forceTriangleN": 7.111784043731696e-11,
+      "workSignedJ": 2.13982600941381e-15,
+      "workTriangleJ": 2.1692518523348152e-15,
+      "failedTerms": [],
+      "allocationPasses": {
+        "quiet": true,
+        "focus": true
+      },
+      "artifact": "control45-S1-AC-comparison.json",
+      "sha256": "6fb316e90ab113052d90c6b655a987033b71b6cce290995c8987b3943d2614ac"
+    },
+    {
+      "state": "control45",
+      "comparison": "S0/I0",
+      "required": false,
+      "pass": false,
+      "globalPass": true,
+      "forceSignedN": 9.558968449750074e-06,
+      "forceTriangleN": 9.585270512268334e-06,
+      "workSignedJ": 1.2781170383115266e-09,
+      "workTriangleJ": 1.3249209320562048e-09,
+      "failedTerms": [],
+      "allocationPasses": {
+        "quiet": false,
+        "focus": true
+      },
+      "artifact": "control45-S0-I0-comparison.json",
+      "sha256": "47d3096882ef85c643191931fc1d4d041a8e6a7d5121b7bdbc4922c035d76419"
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/I1",
+      "required": false,
+      "pass": true,
+      "globalPass": true,
+      "forceSignedN": 1.1935670268663435e-06,
+      "forceTriangleN": 1.1937523749920968e-06,
+      "workSignedJ": 1.410972302427719e-10,
+      "workTriangleJ": 1.4567521394880202e-10,
+      "failedTerms": [],
+      "allocationPasses": {
+        "quiet": true,
+        "focus": true
+      },
+      "artifact": "control45-S1-I1-comparison.json",
+      "sha256": "9f2a05e74a140090c95896461345d4700e38c810f3ffec4fb10551845816bdcc"
+    },
+    {
+      "state": "control45",
+      "comparison": "D4/D5",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "forceSignedN": 1.186293108190739e-08,
+      "forceTriangleN": 1.186293108190739e-08,
+      "workSignedJ": 9.623552332051997e-13,
+      "workTriangleJ": 1.0174479928583626e-12,
+      "failedTerms": [],
+      "allocationPasses": {},
+      "artifact": "control45-quiet-D4-D5-comparison.json",
+      "sha256": "7195a84c163e77d271b9872180f8b037c355829b4d7442ff4d0be22ffa0162f7"
+    },
+    {
+      "state": "control45",
+      "comparison": "U4/U5",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "forceSignedN": 8.378508899342663e-06,
+      "forceTriangleN": 8.378508899342663e-06,
+      "workSignedJ": 1.1366194115727177e-09,
+      "workTriangleJ": 1.1782452187351998e-09,
+      "failedTerms": [],
+      "allocationPasses": {},
+      "artifact": "control45-quiet-U4-U5-comparison.json",
+      "sha256": "a6a6c9e5ef8d51ffc1ffbc80cf2ecc205f84833f823594a86a87a5053d288d25"
+    },
+    {
+      "state": "control45",
+      "comparison": "D5/U5",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "forceSignedN": 1.193659700748917e-06,
+      "forceTriangleN": 1.193659700748917e-06,
+      "workSignedJ": 1.410689611982267e-10,
+      "workTriangleJ": 1.4564599278510956e-10,
+      "failedTerms": [],
+      "allocationPasses": {},
+      "artifact": "control45-quiet-D5-U5-comparison.json",
+      "sha256": "4d5877a7d3af7deb3c4ae315ffea4d1a75a62b34574f044af920ac839c122472"
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S0/S1",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "forceSignedN": 5.141852531974567e-07,
+      "forceTriangleN": 5.141852548841729e-07,
+      "workSignedJ": 3.717132498020337e-11,
+      "workTriangleJ": 3.7171334987495434e-11,
+      "failedTerms": [],
+      "allocationPasses": {
+        "quiet": true,
+        "focus": true
+      },
+      "artifact": "terminal46-S0-S1-comparison.json",
+      "sha256": "34c39b189f02afec2e519102da531bfb78f194196919eef360f7402647124ad1"
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/S2",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "forceSignedN": 9.67294961134758e-10,
+      "forceTriangleN": 9.6746354618606e-10,
+      "workSignedJ": 6.947648590004659e-14,
+      "workTriangleJ": 6.953593512622363e-14,
+      "failedTerms": [],
+      "allocationPasses": {
+        "quiet": true,
+        "focus": true
+      },
+      "artifact": "terminal46-S1-S2-comparison.json",
+      "sha256": "a7e3fd0fdfed1afe09784dc2e0fc65a5e8867e434a3a0224dfbc889dd4fbe351"
+    },
+    {
+      "state": "terminal46",
+      "comparison": "I0/I1",
+      "required": true,
+      "pass": false,
+      "globalPass": false,
+      "forceSignedN": 4.474374534905057e-05,
+      "forceTriangleN": 4.474374535162453e-05,
+      "workSignedJ": 2.925934386724944e-09,
+      "workTriangleJ": 3.752018506759592e-09,
+      "failedTerms": [
+        "volume",
+        "total"
+      ],
+      "allocationPasses": {
+        "quiet": true,
+        "focus": false
+      },
+      "artifact": "terminal46-I0-I1-comparison.json",
+      "sha256": "9ecb68f57e7143648c97fca8e44cff6b89c4ac78699bab2ed716bdbd9f7ab151"
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S2/I1",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "forceSignedN": 7.609759577281857e-07,
+      "forceTriangleN": 9.564050446831282e-07,
+      "workSignedJ": 5.49477770228388e-12,
+      "workTriangleJ": 1.1027718562102975e-10,
+      "failedTerms": [],
+      "allocationPasses": {
+        "quiet": true,
+        "focus": true
+      },
+      "artifact": "terminal46-S2-I1-comparison.json",
+      "sha256": "019c9cd65576c56c1e493a553a7e2062c80d897f9ad45431c759df32124043bc"
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/AR",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "forceSignedN": 8.898775980550061e-08,
+      "forceTriangleN": 1.7223856315219323e-07,
+      "workSignedJ": 7.449297724245786e-12,
+      "workTriangleJ": 1.0168517465196003e-11,
+      "failedTerms": [],
+      "allocationPasses": {
+        "quiet": true,
+        "focus": true
+      },
+      "artifact": "terminal46-S1-AR-comparison.json",
+      "sha256": "bd4052fa83d0cb6c0c44203463fd6c3412c8ac9593771b8fa245126b363858c1"
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/AH",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "forceSignedN": 4.023909532390266e-15,
+      "forceTriangleN": 4.023909532390312e-15,
+      "workSignedJ": 2.908337347903017e-19,
+      "workTriangleJ": 2.9083373479030406e-19,
+      "failedTerms": [],
+      "allocationPasses": {
+        "quiet": true,
+        "focus": true
+      },
+      "artifact": "terminal46-S1-AH-comparison.json",
+      "sha256": "0b8d22174cda70f2aec09d4f72ee017ae400fb018cc60858d3f313f4881fd418"
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/AC",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "forceSignedN": 4.882308152396861e-09,
+      "forceTriangleN": 4.882308156698145e-09,
+      "workSignedJ": 3.066006968896596e-13,
+      "workTriangleJ": 3.066329987220976e-13,
+      "failedTerms": [],
+      "allocationPasses": {
+        "quiet": true,
+        "focus": true
+      },
+      "artifact": "terminal46-S1-AC-comparison.json",
+      "sha256": "22fdd2e9d7e6bb638239576aa232f45654d9f0e31d5f9cf83bcdb7e8bf533df7"
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S0/I0",
+      "required": false,
+      "pass": false,
+      "globalPass": false,
+      "forceSignedN": 4.561882425749193e-05,
+      "forceTriangleN": 4.56188242820729e-05,
+      "workSignedJ": 2.88343733193584e-09,
+      "workTriangleJ": 3.835343936571559e-09,
+      "failedTerms": [
+        "volume",
+        "total"
+      ],
+      "allocationPasses": {
+        "quiet": false,
+        "focus": false
+      },
+      "artifact": "terminal46-S0-I0-comparison.json",
+      "sha256": "4b3782b42e62ad54a5f5d88bd1e328079c98cf64e75978ae72cc89d977261ac7"
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/I1",
+      "required": false,
+      "pass": true,
+      "globalPass": true,
+      "forceSignedN": 7.606153186845432e-07,
+      "forceTriangleN": 9.561736387110176e-07,
+      "workSignedJ": 5.5641272479170074e-12,
+      "workTriangleJ": 1.1025779735036974e-10,
+      "failedTerms": [],
+      "allocationPasses": {
+        "quiet": true,
+        "focus": true
+      },
+      "artifact": "terminal46-S1-I1-comparison.json",
+      "sha256": "5e03ce5feb14770b27d9131aed0614220cca1093862322047bef9985c6ea5e87"
+    },
+    {
+      "state": "terminal46",
+      "comparison": "D4/D5",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "forceSignedN": 5.5884052940768925e-09,
+      "forceTriangleN": 5.5884052940768925e-09,
+      "workSignedJ": 3.491677380536122e-13,
+      "workTriangleJ": 4.355212040526782e-13,
+      "failedTerms": [],
+      "allocationPasses": {},
+      "artifact": "terminal46-quiet-D4-D5-comparison.json",
+      "sha256": "56aac22ae0b21e173f56d1ca6e4120a107d7952e6ad9322b11a78a608ce5c256"
+    },
+    {
+      "state": "terminal46",
+      "comparison": "U4/U5",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "forceSignedN": 5.2032966912918255e-06,
+      "forceTriangleN": 5.2032966912918255e-06,
+      "workSignedJ": 3.3646724595262256e-10,
+      "workTriangleJ": 4.977891805586642e-10,
+      "failedTerms": [],
+      "allocationPasses": {},
+      "artifact": "terminal46-quiet-U4-U5-comparison.json",
+      "sha256": "ea9500a3fd39a07b8c9fbcb42d156cbb1eb37fce35d0098203823f8220a9dd3c"
+    },
+    {
+      "state": "terminal46",
+      "comparison": "D5/U5",
+      "required": true,
+      "pass": true,
+      "globalPass": true,
+      "forceSignedN": 7.623363540432138e-07,
+      "forceTriangleN": 7.623363540432138e-07,
+      "workSignedJ": 4.812345544512863e-11,
+      "workTriangleJ": 6.531379683998866e-11,
+      "failedTerms": [],
+      "allocationPasses": {},
+      "artifact": "terminal46-quiet-D5-U5-comparison.json",
+      "sha256": "004abd58b04e4f5d111e6e3d33f41bb78eb4f8c72392f888134bec680c002cc7"
+    }
+  ],
+  "termMetrics": [
+    {
+      "state": "control45",
+      "comparison": "S0/S1",
+      "required": true,
+      "term": "matrix",
+      "globalPass": true,
+      "signedN": 4.947799720666595e-11,
+      "triangleN": 6.041411499388755e-11,
+      "signedWorkJ": 1.925265787309151e-15,
+      "triangleWorkJ": 1.9253264362359292e-15,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 4.947799720666595e-11,
+          "triangleN": 6.041411499388755e-11,
+          "signedWorkJ": 1.925265787309151e-15,
+          "triangleWorkJ": 1.9253264362359292e-15,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S0/S1",
+      "required": true,
+      "term": "volume",
+      "globalPass": true,
+      "signedN": 4.522954905024357e-08,
+      "triangleN": 5.399102116318639e-08,
+      "signedWorkJ": 1.7171257889249109e-12,
+      "triangleWorkJ": 1.7171572172199044e-12,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 4.522954905024357e-08,
+          "triangleN": 5.399102116318639e-08,
+          "signedWorkJ": 1.7171257889249109e-12,
+          "triangleWorkJ": 1.7171572172199044e-12,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S0/S1",
+      "required": true,
+      "term": "passiveFiber",
+      "globalPass": true,
+      "signedN": 6.350093859134552e-13,
+      "triangleN": 6.360334056971852e-13,
+      "signedWorkJ": 1.2991986742342721e-17,
+      "triangleWorkJ": 3.0858985896339236e-17,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 6.350093859134552e-13,
+          "triangleN": 6.360334056971852e-13,
+          "signedWorkJ": 1.2991986742342721e-17,
+          "triangleWorkJ": 3.0858985896339236e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S0/S1",
+      "required": true,
+      "term": "activePotential",
+      "globalPass": true,
+      "signedN": 6.003443106329889e-13,
+      "triangleN": 6.844476914888998e-13,
+      "signedWorkJ": 5.1883736255450003e-17,
+      "triangleWorkJ": 6.337541850671315e-17,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 6.003443106329889e-13,
+          "triangleN": 6.844476914888998e-13,
+          "signedWorkJ": 5.1883736255450003e-17,
+          "triangleWorkJ": 6.337541850671315e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S0/S1",
+      "required": true,
+      "term": "total",
+      "globalPass": true,
+      "signedN": 4.5279213461579464e-08,
+      "triangleN": 5.405117285938592e-08,
+      "signedWorkJ": 1.719084282732292e-12,
+      "triangleWorkJ": 1.7191150432808553e-12,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 4.5279213461579464e-08,
+          "triangleN": 5.405117285938592e-08,
+          "signedWorkJ": 1.719084282732292e-12,
+          "triangleWorkJ": 1.7191150432808553e-12,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/S2",
+      "required": true,
+      "term": "matrix",
+      "globalPass": true,
+      "signedN": 7.194804452726712e-14,
+      "triangleN": 8.858683471651459e-14,
+      "signedWorkJ": 3.0947579910973445e-18,
+      "triangleWorkJ": 3.2093534612858645e-18,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 7.194804452726712e-14,
+          "triangleN": 8.858683471651459e-14,
+          "signedWorkJ": 3.0947579910973445e-18,
+          "triangleWorkJ": 3.2093534612858645e-18,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/S2",
+      "required": true,
+      "term": "volume",
+      "globalPass": true,
+      "signedN": 6.437570908236903e-11,
+      "triangleN": 7.466458271763118e-11,
+      "signedWorkJ": 2.4472404796058853e-15,
+      "triangleWorkJ": 2.549745737299028e-15,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 6.437570908236903e-11,
+          "triangleN": 7.466458271763118e-11,
+          "signedWorkJ": 2.4472404796058853e-15,
+          "triangleWorkJ": 2.549745737299028e-15,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/S2",
+      "required": true,
+      "term": "passiveFiber",
+      "globalPass": true,
+      "signedN": 3.580329932609704e-13,
+      "triangleN": 3.8107034945846237e-13,
+      "signedWorkJ": 1.1176437636707166e-18,
+      "triangleWorkJ": 1.4627826748057067e-17,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 3.580329932609704e-13,
+          "triangleN": 3.8107034945846237e-13,
+          "signedWorkJ": 1.1176437636707166e-18,
+          "triangleWorkJ": 1.4627826748057067e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/S2",
+      "required": true,
+      "term": "activePotential",
+      "globalPass": true,
+      "signedN": 5.332256450806553e-13,
+      "triangleN": 5.75221022705144e-13,
+      "signedWorkJ": 1.621806695229185e-17,
+      "triangleWorkJ": 4.177815692531973e-17,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 5.332256450806553e-13,
+          "triangleN": 5.75221022705144e-13,
+          "signedWorkJ": 1.621806695229185e-17,
+          "triangleWorkJ": 4.177815692531973e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/S2",
+      "required": true,
+      "term": "total",
+      "globalPass": true,
+      "signedN": 6.432819628504756e-11,
+      "triangleN": 7.482611951195713e-11,
+      "signedWorkJ": 2.445852653277689e-15,
+      "triangleWorkJ": 2.5081224145850802e-15,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 6.432819628504756e-11,
+          "triangleN": 7.482611951195713e-11,
+          "signedWorkJ": 2.445852653277689e-15,
+          "triangleWorkJ": 2.5081224145850802e-15,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "I0/I1",
+      "required": true,
+      "term": "matrix",
+      "globalPass": true,
+      "signedN": 2.0319197938795108e-08,
+      "triangleN": 2.0319197938795108e-08,
+      "signedWorkJ": 2.347482836727628e-12,
+      "triangleWorkJ": 2.3849166104549155e-12,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 2.0319197938795108e-08,
+          "triangleN": 2.0319197938795108e-08,
+          "signedWorkJ": 2.3489306127123004e-12,
+          "triangleWorkJ": 2.383468832594617e-12,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 2.8317562104274547e-11,
+          "triangleN": 4.6452508951933044e-11,
+          "signedWorkJ": 1.4477759846735662e-15,
+          "triangleWorkJ": 1.4477778602984671e-15,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "I0/I1",
+      "required": true,
+      "term": "volume",
+      "globalPass": true,
+      "signedN": 8.384019970893628e-06,
+      "triangleN": 8.384019971091404e-06,
+      "signedWorkJ": 1.1353026822798309e-09,
+      "triangleWorkJ": 1.1795619862074724e-09,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 8.378508899342663e-06,
+          "triangleN": 8.378508899342663e-06,
+          "signedWorkJ": 1.1366194115727177e-09,
+          "triangleWorkJ": 1.1782452187351998e-09,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 2.753089146566352e-08,
+          "triangleN": 4.5398702846121056e-08,
+          "signedWorkJ": 1.316729292887329e-12,
+          "triangleWorkJ": 1.3167674722733906e-12,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "I0/I1",
+      "required": true,
+      "term": "passiveFiber",
+      "globalPass": true,
+      "signedN": 2.0837463218947265e-08,
+      "triangleN": 2.083780501557438e-08,
+      "signedWorkJ": 5.4506045680269946e-14,
+      "triangleWorkJ": 2.3372256302957967e-13,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 2.0837257252992458e-08,
+          "triangleN": 2.0837257252992458e-08,
+          "signedWorkJ": 5.449593139883057e-14,
+          "triangleWorkJ": 2.3370356701050293e-13,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 3.706174204001468e-13,
+          "triangleN": 5.4776258191947e-13,
+          "signedWorkJ": 1.0114281439370443e-17,
+          "triangleWorkJ": 1.8996019076766244e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "I0/I1",
+      "required": true,
+      "term": "activePotential",
+      "globalPass": true,
+      "signedN": 1.0853332765847767e-07,
+      "triangleN": 1.0853332765847767e-07,
+      "signedWorkJ": 6.137350673236657e-12,
+      "triangleWorkJ": 6.612108543400064e-12,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 1.0853332765847767e-07,
+          "triangleN": 1.0853332765847767e-07,
+          "signedWorkJ": 6.1373170632574384e-12,
+          "triangleWorkJ": 6.612035445643596e-12,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 9.971450555986238e-13,
+          "triangleN": 1.0059897521849104e-12,
+          "signedWorkJ": 3.3609979218859765e-17,
+          "triangleWorkJ": 7.309775646995754e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "I0/I1",
+      "required": true,
+      "term": "total",
+      "globalPass": true,
+      "signedN": 8.380528009031023e-06,
+      "triangleN": 8.38052800985027e-06,
+      "signedWorkJ": 1.1314582523767565e-09,
+      "triangleWorkJ": 1.175280361531568e-09,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 8.37501138850616e-06,
+          "triangleN": 8.37501138850616e-06,
+          "signedWorkJ": 1.1327764710287665e-09,
+          "triangleWorkJ": 1.173962140194207e-09,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 2.7559265594531328e-08,
+          "triangleN": 4.5444849181716694e-08,
+          "signedWorkJ": 1.3182186520100744e-12,
+          "triangleWorkJ": 1.3182213373606835e-12,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S2/I1",
+      "required": true,
+      "term": "matrix",
+      "globalPass": true,
+      "signedN": 2.0720191916401287e-09,
+      "triangleN": 2.0720191916401287e-09,
+      "signedWorkJ": 2.608123378038485e-13,
+      "triangleWorkJ": 2.644768884171328e-13,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 2.0720191916401287e-09,
+          "triangleN": 2.0720191916401287e-09,
+          "signedWorkJ": 2.6076944640663553e-13,
+          "triangleWorkJ": 2.644316542465746e-13,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 8.13114935315156e-13,
+          "triangleN": 8.928605530009341e-13,
+          "signedWorkJ": 4.2891397212959537e-17,
+          "triangleWorkJ": 4.523417055828821e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S2/I1",
+      "required": true,
+      "term": "volume",
+      "globalPass": true,
+      "signedN": 1.1935411011585773e-06,
+      "triangleN": 1.1936741643986304e-06,
+      "signedWorkJ": 1.4109478300229228e-10,
+      "triangleWorkJ": 1.456742357399123e-10,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 1.193607632732352e-06,
+          "triangleN": 1.193607632732352e-06,
+          "signedWorkJ": 1.410689611982267e-10,
+          "triangleWorkJ": 1.4564599278510956e-10,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 5.373110916756581e-10,
+          "triangleN": 8.324806139552992e-10,
+          "signedWorkJ": 2.5821804065617577e-14,
+          "triangleWorkJ": 2.8242954802765503e-14,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S2/I1",
+      "required": true,
+      "term": "passiveFiber",
+      "globalPass": true,
+      "signedN": 1.477830720982807e-09,
+      "triangleN": 1.478269156760167e-09,
+      "signedWorkJ": 2.469039584753894e-15,
+      "triangleWorkJ": 1.2877174699227918e-14,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 1.4779857337998692e-09,
+          "triangleN": 1.4779857337998692e-09,
+          "signedWorkJ": 2.4824571494782366e-15,
+          "triangleWorkJ": 1.286313723007876e-14,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 1.721496590849176e-13,
+          "triangleN": 2.8342296029787286e-13,
+          "signedWorkJ": 1.3417564724342818e-17,
+          "triangleWorkJ": 1.403746914915606e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S2/I1",
+      "required": true,
+      "term": "activePotential",
+      "globalPass": true,
+      "signedN": 1.0688994578345046e-08,
+      "triangleN": 1.0688994578345046e-08,
+      "signedWorkJ": 4.0341388706806613e-13,
+      "triangleWorkJ": 4.652352093889288e-13,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 1.0688994578345046e-08,
+          "triangleN": 1.0688994578345046e-08,
+          "signedWorkJ": 4.034346028903857e-13,
+          "triangleWorkJ": 4.651674338551852e-13,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 1.6909340580197532e-12,
+          "triangleN": 1.8364137818361065e-12,
+          "signedWorkJ": 2.0715822319520527e-17,
+          "triangleWorkJ": 6.777553374426153e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S2/I1",
+      "required": true,
+      "term": "total",
+      "globalPass": true,
+      "signedN": 1.1935929459829714e-06,
+      "triangleN": 1.1937264558355453e-06,
+      "signedWorkJ": 1.4094976822860748e-10,
+      "triangleWorkJ": 1.4547097955405216e-10,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 1.193659700748917e-06,
+          "triangleN": 1.193659700748917e-06,
+          "signedWorkJ": 1.4092382056675388e-10,
+          "triangleWorkJ": 1.4544280119014607e-10,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 5.37950546369333e-10,
+          "triangleN": 8.334275107233396e-10,
+          "signedWorkJ": 2.5947661853556547e-14,
+          "triangleWorkJ": 2.8178363906094696e-14,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/AR",
+      "required": true,
+      "term": "matrix",
+      "globalPass": true,
+      "signedN": 8.355242865187917e-13,
+      "triangleN": 1.1394843042819495e-12,
+      "signedWorkJ": 5.056623826602364e-17,
+      "triangleWorkJ": 5.284787880428133e-17,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 8.355242865187917e-13,
+          "triangleN": 1.1394843042819495e-12,
+          "signedWorkJ": 5.056623826602364e-17,
+          "triangleWorkJ": 5.284787880428133e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/AR",
+      "required": true,
+      "term": "volume",
+      "globalPass": true,
+      "signedN": 6.792623658540175e-10,
+      "triangleN": 1.0734303805673435e-09,
+      "signedWorkJ": 3.2984321193260433e-14,
+      "triangleWorkJ": 3.5120205177659573e-14,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 6.792623658540175e-10,
+          "triangleN": 1.0734303805673435e-09,
+          "signedWorkJ": 3.2984321193260433e-14,
+          "triangleWorkJ": 3.5120205177659573e-14,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/AR",
+      "required": true,
+      "term": "passiveFiber",
+      "globalPass": true,
+      "signedN": 4.045865927299261e-13,
+      "triangleN": 4.625995265868304e-13,
+      "signedWorkJ": 4.547393950071572e-19,
+      "triangleWorkJ": 1.4513303294962776e-17,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 4.045865927299261e-13,
+          "triangleN": 4.625995265868304e-13,
+          "signedWorkJ": 4.547393950071572e-19,
+          "triangleWorkJ": 1.4513303294962776e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/AR",
+      "required": true,
+      "term": "activePotential",
+      "globalPass": true,
+      "signedN": 1.501241811667772e-12,
+      "triangleN": 1.5108888341909065e-12,
+      "signedWorkJ": 2.7645422036215237e-17,
+      "triangleWorkJ": 5.3848780360917454e-17,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 1.501241811667772e-12,
+          "triangleN": 1.5108888341909065e-12,
+          "signedWorkJ": 2.7645422036215237e-17,
+          "triangleWorkJ": 5.3848780360917454e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/AR",
+      "required": true,
+      "term": "total",
+      "globalPass": true,
+      "signedN": 6.798758433786229e-10,
+      "triangleN": 1.0743620499124721e-09,
+      "signedWorkJ": 3.305548319103082e-14,
+      "triangleWorkJ": 3.520022263036981e-14,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 6.798758433786229e-10,
+          "triangleN": 1.0743620499124721e-09,
+          "signedWorkJ": 3.305548319103082e-14,
+          "triangleWorkJ": 3.520022263036981e-14,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/AH",
+      "required": true,
+      "term": "matrix",
+      "globalPass": true,
+      "signedN": 4.171263332988942e-31,
+      "triangleN": 4.372643382798933e-31,
+      "signedWorkJ": 7.604780679592461e-36,
+      "triangleWorkJ": 9.033577782699986e-36,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 4.171263332988942e-31,
+          "triangleN": 4.372643382798933e-31,
+          "signedWorkJ": 7.604780679592461e-36,
+          "triangleWorkJ": 9.033577782699986e-36,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/AH",
+      "required": true,
+      "term": "volume",
+      "globalPass": true,
+      "signedN": 1.3139464452587478e-29,
+      "triangleN": 2.328090598312026e-29,
+      "signedWorkJ": 9.249502078863929e-35,
+      "triangleWorkJ": 7.848196531643944e-34,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 1.3139464452587478e-29,
+          "triangleN": 2.328090598312026e-29,
+          "signedWorkJ": 9.249502078863929e-35,
+          "triangleWorkJ": 7.848196531643944e-34,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/AH",
+      "required": true,
+      "term": "passiveFiber",
+      "globalPass": true,
+      "signedN": 4.7855507258134036e-30,
+      "triangleN": 8.68055144534215e-30,
+      "signedWorkJ": 3.8407850755492813e-35,
+      "triangleWorkJ": 1.363542218895713e-34,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 4.7855507258134036e-30,
+          "triangleN": 8.68055144534215e-30,
+          "signedWorkJ": 3.8407850755492813e-35,
+          "triangleWorkJ": 1.363542218895713e-34,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/AH",
+      "required": true,
+      "term": "activePotential",
+      "globalPass": true,
+      "signedN": 2.0005019518339096e-29,
+      "triangleN": 2.0005019518339096e-29,
+      "signedWorkJ": 5.9878685789156145e-34,
+      "triangleWorkJ": 7.166020476145218e-34,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 2.0005019518339096e-29,
+          "triangleN": 2.0005019518339096e-29,
+          "signedWorkJ": 5.9878685789156145e-34,
+          "triangleWorkJ": 7.166020476145218e-34,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/AH",
+      "required": true,
+      "term": "total",
+      "globalPass": true,
+      "signedN": 1.276044143953207e-29,
+      "triangleN": 2.6300499320552093e-29,
+      "signedWorkJ": 3.514427535152673e-34,
+      "triangleWorkJ": 1.4509347344128038e-33,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 1.276044143953207e-29,
+          "triangleN": 2.6300499320552093e-29,
+          "signedWorkJ": 3.514427535152673e-34,
+          "triangleWorkJ": 1.4509347344128038e-33,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/AC",
+      "required": true,
+      "term": "matrix",
+      "globalPass": true,
+      "signedN": 7.240141136153842e-14,
+      "triangleN": 8.067653498466802e-14,
+      "signedWorkJ": 2.5070784528322208e-18,
+      "triangleWorkJ": 2.675331368811088e-18,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 7.240141136153842e-14,
+          "triangleN": 8.067653498466802e-14,
+          "signedWorkJ": 2.5070784528322208e-18,
+          "triangleWorkJ": 2.675331368811088e-18,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/AC",
+      "required": true,
+      "term": "volume",
+      "globalPass": true,
+      "signedN": 6.485354423248052e-11,
+      "triangleN": 7.100934879161817e-11,
+      "signedWorkJ": 2.13982600941381e-15,
+      "triangleWorkJ": 2.1597112237613656e-15,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 6.485354423248052e-11,
+          "triangleN": 7.100934879161817e-11,
+          "signedWorkJ": 2.13982600941381e-15,
+          "triangleWorkJ": 2.1597112237613656e-15,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/AC",
+      "required": true,
+      "term": "passiveFiber",
+      "globalPass": true,
+      "signedN": 5.530926602623342e-13,
+      "triangleN": 5.946522297941251e-13,
+      "signedWorkJ": 6.117535221643489e-18,
+      "triangleWorkJ": 8.645276185148868e-18,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 5.530926602623342e-13,
+          "triangleN": 5.946522297941251e-13,
+          "signedWorkJ": 6.117535221643489e-18,
+          "triangleWorkJ": 8.645276185148868e-18,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/AC",
+      "required": true,
+      "term": "activePotential",
+      "globalPass": true,
+      "signedN": 6.802766432928523e-13,
+      "triangleN": 7.410274033857351e-13,
+      "signedWorkJ": 3.5918991754628105e-17,
+      "triangleWorkJ": 3.9219827430314856e-17,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 6.802766432928523e-13,
+          "triangleN": 7.410274033857351e-13,
+          "signedWorkJ": 3.5918991754628105e-17,
+          "triangleWorkJ": 3.9219827430314856e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/AC",
+      "required": true,
+      "term": "total",
+      "globalPass": true,
+      "signedN": 6.469670631131744e-11,
+      "triangleN": 7.111784043731696e-11,
+      "signedWorkJ": 2.1003676564316507e-15,
+      "triangleWorkJ": 2.1692518523348152e-15,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 6.469670631131744e-11,
+          "triangleN": 7.111784043731696e-11,
+          "signedWorkJ": 2.1003676564316507e-15,
+          "triangleWorkJ": 2.1692518523348152e-15,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S0/I0",
+      "required": false,
+      "term": "matrix",
+      "globalPass": true,
+      "signedN": 2.2391217130435237e-08,
+      "triangleN": 2.2391217130435237e-08,
+      "signedWorkJ": 2.6102235350767766e-12,
+      "triangleWorkJ": 2.64916644601248e-12,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 2.2391217130435237e-08,
+          "triangleN": 2.2391217130435237e-08,
+          "signedWorkJ": 2.6097000591189365e-12,
+          "triangleWorkJ": 2.6479004868411918e-12,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 6.36560492150472e-11,
+          "triangleN": 6.365608447534005e-11,
+          "signedWorkJ": 5.234759578396432e-16,
+          "triangleWorkJ": 1.2659591712894546e-15,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S0/I0",
+      "required": false,
+      "term": "volume",
+      "globalPass": true,
+      "signedN": 9.558968449750074e-06,
+      "triangleN": 9.585270512268334e-06,
+      "signedWorkJ": 1.2781170383115266e-09,
+      "triangleWorkJ": 1.3249209320562048e-09,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 9.572116532075015e-06,
+          "triangleN": 9.572116532075015e-06,
+          "signedWorkJ": 1.2776883727709444e-09,
+          "triangleWorkJ": 1.3238912115203092e-09,
+          "pass": false
+        },
+        "focus": {
+          "signedN": 5.929781318307359e-08,
+          "triangleN": 5.9297885508281866e-08,
+          "signedWorkJ": 4.2866554058280483e-13,
+          "triangleWorkJ": 1.0297205358947462e-12,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S0/I0",
+      "required": false,
+      "term": "passiveFiber",
+      "globalPass": true,
+      "signedN": 2.23160149970832e-08,
+      "triangleN": 2.231604338661228e-08,
+      "signedWorkJ": 5.696097563451803e-14,
+      "triangleWorkJ": 2.466104092605491e-13,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 2.2315242986792327e-08,
+          "triangleN": 2.2315242986792327e-08,
+          "signedWorkJ": 5.697838854830899e-14,
+          "triangleWorkJ": 2.465667042405814e-13,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 8.914197160447431e-13,
+          "triangleN": 8.923326363149875e-13,
+          "signedWorkJ": 1.7412913790985812e-17,
+          "triangleWorkJ": 4.370501996770772e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S0/I0",
+      "required": false,
+      "term": "activePotential",
+      "globalPass": true,
+      "signedN": 1.1922232223682272e-07,
+      "triangleN": 1.1922232223682272e-07,
+      "signedWorkJ": 6.540728894635419e-12,
+      "triangleWorkJ": 7.077280980664745e-12,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 1.1922232223682272e-07,
+          "triangleN": 1.1922232223682272e-07,
+          "signedWorkJ": 6.540751666147823e-12,
+          "triangleWorkJ": 7.07720287949878e-12,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 8.451326776606183e-13,
+          "triangleN": 9.4718483558198e-13,
+          "signedWorkJ": 2.2771512403818957e-17,
+          "triangleWorkJ": 7.81011659629493e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S0/I0",
+      "required": false,
+      "term": "total",
+      "globalPass": true,
+      "signedN": 9.555507726420127e-06,
+      "triangleN": 9.581840361872485e-06,
+      "signedWorkJ": 1.2741295507407494e-09,
+      "triangleWorkJ": 1.3204359881765967e-09,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 9.568671089255076e-06,
+          "triangleN": 9.568671089255076e-06,
+          "signedWorkJ": 1.2737002915955203e-09,
+          "triangleWorkJ": 1.3194049413843532e-09,
+          "pass": false
+        },
+        "focus": {
+          "signedN": 5.936082096494884e-08,
+          "triangleN": 5.9360890928393085e-08,
+          "signedWorkJ": 4.292591452290527e-13,
+          "triangleWorkJ": 1.0310467922433195e-12,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/I1",
+      "required": false,
+      "term": "matrix",
+      "globalPass": true,
+      "signedN": 2.0720191916401287e-09,
+      "triangleN": 2.0720191916401287e-09,
+      "signedWorkJ": 2.608154325618396e-13,
+      "triangleWorkJ": 2.644784225017011e-13,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 2.0720191916401287e-09,
+          "triangleN": 2.0720191916401287e-09,
+          "signedWorkJ": 2.6076944640663553e-13,
+          "triangleWorkJ": 2.644316542465746e-13,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 8.133428608760054e-13,
+          "triangleN": 8.706363556803527e-13,
+          "signedWorkJ": 4.5986155204056886e-17,
+          "triangleWorkJ": 4.676825512652945e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/I1",
+      "required": false,
+      "term": "volume",
+      "globalPass": true,
+      "signedN": 1.1935151347569126e-06,
+      "triangleN": 1.1937001308469651e-06,
+      "signedWorkJ": 1.410972302427719e-10,
+      "triangleWorkJ": 1.4567521394880202e-10,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 1.193607632732352e-06,
+          "triangleN": 1.193607632732352e-06,
+          "signedWorkJ": 1.410689611982267e-10,
+          "triangleWorkJ": 1.4564599278510956e-10,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 5.038819134918594e-10,
+          "triangleN": 8.135457582883773e-10,
+          "signedWorkJ": 2.826904454522348e-14,
+          "triangleWorkJ": 2.9221163692530285e-14,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/I1",
+      "required": false,
+      "term": "passiveFiber",
+      "globalPass": true,
+      "signedN": 1.4780327060258277e-09,
+      "triangleN": 1.478495272327788e-09,
+      "signedWorkJ": 2.4679219409902233e-15,
+      "triangleWorkJ": 1.2884392949709266e-14,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 1.4779857337998692e-09,
+          "triangleN": 1.4779857337998692e-09,
+          "signedWorkJ": 2.4824571494782366e-15,
+          "triangleWorkJ": 1.286313723007876e-14,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 5.023314960732912e-13,
+          "triangleN": 5.564882856309182e-13,
+          "signedWorkJ": 1.4535208488013544e-17,
+          "triangleWorkJ": 2.1255719630500118e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/I1",
+      "required": false,
+      "term": "activePotential",
+      "globalPass": true,
+      "signedN": 1.0688994578345046e-08,
+      "triangleN": 1.0688994578345046e-08,
+      "signedWorkJ": 4.0343010513501863e-13,
+      "triangleWorkJ": 4.652382062697562e-13,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 1.0688994578345046e-08,
+          "triangleN": 1.0688994578345046e-08,
+          "signedWorkJ": 4.034346028903857e-13,
+          "triangleWorkJ": 4.651674338551852e-13,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 1.978630829873802e-12,
+          "triangleN": 1.9849119434991344e-12,
+          "signedWorkJ": 4.497755367228661e-18,
+          "triangleWorkJ": 7.07724145708577e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "S1/I1",
+      "required": false,
+      "term": "total",
+      "globalPass": true,
+      "signedN": 1.1935670268663435e-06,
+      "triangleN": 1.1937523749920968e-06,
+      "signedWorkJ": 1.4095221408126074e-10,
+      "triangleWorkJ": 1.4547204464600671e-10,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 1.193659700748917e-06,
+          "triangleN": 1.193659700748917e-06,
+          "signedWorkJ": 1.4092382056675388e-10,
+          "triangleWorkJ": 1.4544280119014607e-10,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 5.044512081888812e-10,
+          "triangleN": 8.142714371640268e-10,
+          "signedWorkJ": 2.8393514506834282e-14,
+          "triangleWorkJ": 2.924345586073143e-14,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "control45",
+      "comparison": "D4/D5",
+      "required": true,
+      "term": "matrix",
+      "globalPass": true,
+      "signedN": 1.1062123439486982e-11,
+      "triangleN": 1.1062123439486982e-11,
+      "signedWorkJ": 1.198323344227378e-15,
+      "triangleWorkJ": 1.2457745039980651e-15,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 2.0000000000000003e-06,
+      "allocatedWorkJ": 1.0984058470714025e-07
+    },
+    {
+      "state": "control45",
+      "comparison": "D4/D5",
+      "required": true,
+      "term": "volume",
+      "globalPass": true,
+      "signedN": 1.1849462744351058e-08,
+      "triangleN": 1.1849462744351058e-08,
+      "signedWorkJ": 9.615561618639165e-13,
+      "triangleWorkJ": 1.016591224684844e-12,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 2.0000000000000003e-06,
+      "allocatedWorkJ": 1.0984058470714025e-07
+    },
+    {
+      "state": "control45",
+      "comparison": "D4/D5",
+      "required": true,
+      "term": "passiveFiber",
+      "globalPass": true,
+      "signedN": 5.963007865261716e-13,
+      "triangleN": 6.116218642659987e-13,
+      "signedWorkJ": 4.0652701881269527e-17,
+      "triangleWorkJ": 8.341754758732087e-17,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 2.0000000000000003e-06,
+      "allocatedWorkJ": 1.0984058470714025e-07
+    },
+    {
+      "state": "control45",
+      "comparison": "D4/D5",
+      "required": true,
+      "term": "activePotential",
+      "globalPass": true,
+      "signedN": 4.759970195777896e-12,
+      "triangleN": 4.759970195777896e-12,
+      "signedWorkJ": 1.7989384689832074e-17,
+      "triangleWorkJ": 9.743922859613271e-17,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 2.0000000000000003e-06,
+      "allocatedWorkJ": 1.0984058470714025e-07
+    },
+    {
+      "state": "control45",
+      "comparison": "D4/D5",
+      "required": true,
+      "term": "total",
+      "globalPass": true,
+      "signedN": 1.186293108190739e-08,
+      "triangleN": 1.186293108190739e-08,
+      "signedWorkJ": 9.623552332051997e-13,
+      "triangleWorkJ": 1.0174479928583626e-12,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 2.0000000000000003e-06,
+      "allocatedWorkJ": 1.0984058470714025e-07
+    },
+    {
+      "state": "control45",
+      "comparison": "U4/U5",
+      "required": true,
+      "term": "matrix",
+      "globalPass": true,
+      "signedN": 2.0319197938795108e-08,
+      "triangleN": 2.0319197938795108e-08,
+      "signedWorkJ": 2.3489306127123004e-12,
+      "triangleWorkJ": 2.383468832594617e-12,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 8.5e-06,
+      "allocatedWorkJ": 4.66822485005346e-07
+    },
+    {
+      "state": "control45",
+      "comparison": "U4/U5",
+      "required": true,
+      "term": "volume",
+      "globalPass": true,
+      "signedN": 8.378508899342663e-06,
+      "triangleN": 8.378508899342663e-06,
+      "signedWorkJ": 1.1366194115727177e-09,
+      "triangleWorkJ": 1.1782452187351998e-09,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 8.5e-06,
+      "allocatedWorkJ": 4.66822485005346e-07
+    },
+    {
+      "state": "control45",
+      "comparison": "U4/U5",
+      "required": true,
+      "term": "passiveFiber",
+      "globalPass": true,
+      "signedN": 2.0837257252992458e-08,
+      "triangleN": 2.0837257252992458e-08,
+      "signedWorkJ": 5.449593139883057e-14,
+      "triangleWorkJ": 2.3370356701050293e-13,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 8.5e-06,
+      "allocatedWorkJ": 4.66822485005346e-07
+    },
+    {
+      "state": "control45",
+      "comparison": "U4/U5",
+      "required": true,
+      "term": "activePotential",
+      "globalPass": true,
+      "signedN": 1.0853332765847767e-07,
+      "triangleN": 1.0853332765847767e-07,
+      "signedWorkJ": 6.1373170632574384e-12,
+      "triangleWorkJ": 6.612035445643596e-12,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 8.5e-06,
+      "allocatedWorkJ": 4.66822485005346e-07
+    },
+    {
+      "state": "control45",
+      "comparison": "U4/U5",
+      "required": true,
+      "term": "total",
+      "globalPass": true,
+      "signedN": 8.37501138850616e-06,
+      "triangleN": 8.37501138850616e-06,
+      "signedWorkJ": 1.1327764710287665e-09,
+      "triangleWorkJ": 1.173962140194207e-09,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 8.5e-06,
+      "allocatedWorkJ": 4.66822485005346e-07
+    },
+    {
+      "state": "control45",
+      "comparison": "D5/U5",
+      "required": true,
+      "term": "matrix",
+      "globalPass": true,
+      "signedN": 2.0720191916401287e-09,
+      "triangleN": 2.0720191916401287e-09,
+      "signedWorkJ": 2.6076944640663553e-13,
+      "triangleWorkJ": 2.644316542465746e-13,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 2.0000000000000003e-06,
+      "allocatedWorkJ": 1.0984058470714025e-07
+    },
+    {
+      "state": "control45",
+      "comparison": "D5/U5",
+      "required": true,
+      "term": "volume",
+      "globalPass": true,
+      "signedN": 1.193607632732352e-06,
+      "triangleN": 1.193607632732352e-06,
+      "signedWorkJ": 1.410689611982267e-10,
+      "triangleWorkJ": 1.4564599278510956e-10,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 2.0000000000000003e-06,
+      "allocatedWorkJ": 1.0984058470714025e-07
+    },
+    {
+      "state": "control45",
+      "comparison": "D5/U5",
+      "required": true,
+      "term": "passiveFiber",
+      "globalPass": true,
+      "signedN": 1.4779857337998692e-09,
+      "triangleN": 1.4779857337998692e-09,
+      "signedWorkJ": 2.4824571494782366e-15,
+      "triangleWorkJ": 1.286313723007876e-14,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 2.0000000000000003e-06,
+      "allocatedWorkJ": 1.0984058470714025e-07
+    },
+    {
+      "state": "control45",
+      "comparison": "D5/U5",
+      "required": true,
+      "term": "activePotential",
+      "globalPass": true,
+      "signedN": 1.0688994578345046e-08,
+      "triangleN": 1.0688994578345046e-08,
+      "signedWorkJ": 4.034346028903857e-13,
+      "triangleWorkJ": 4.651674338551852e-13,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 2.0000000000000003e-06,
+      "allocatedWorkJ": 1.0984058470714025e-07
+    },
+    {
+      "state": "control45",
+      "comparison": "D5/U5",
+      "required": true,
+      "term": "total",
+      "globalPass": true,
+      "signedN": 1.193659700748917e-06,
+      "triangleN": 1.193659700748917e-06,
+      "signedWorkJ": 1.4092382056675388e-10,
+      "triangleWorkJ": 1.4544280119014607e-10,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 2.0000000000000003e-06,
+      "allocatedWorkJ": 1.0984058470714025e-07
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S0/S1",
+      "required": true,
+      "term": "matrix",
+      "globalPass": true,
+      "signedN": 1.3229116629177887e-09,
+      "triangleN": 1.322911677122612e-09,
+      "signedWorkJ": 1.1403919303129468e-13,
+      "triangleWorkJ": 1.140393307674786e-13,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 1.3229116629177887e-09,
+          "triangleN": 1.322911677122612e-09,
+          "signedWorkJ": 1.1403919303129468e-13,
+          "triangleWorkJ": 1.140393307674786e-13,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S0/S1",
+      "required": true,
+      "term": "volume",
+      "globalPass": true,
+      "signedN": 5.135143697750821e-07,
+      "triangleN": 5.135143717141174e-07,
+      "signedWorkJ": 3.705719805097547e-11,
+      "triangleWorkJ": 3.7057211462023345e-11,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 5.135143697750821e-07,
+          "triangleN": 5.135143717141174e-07,
+          "signedWorkJ": 3.705719805097547e-11,
+          "triangleWorkJ": 3.7057211462023345e-11,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S0/S1",
+      "required": true,
+      "term": "passiveFiber",
+      "globalPass": true,
+      "signedN": 6.955391912182591e-13,
+      "triangleN": 1.194237708401802e-12,
+      "signedWorkJ": 1.7234133272308834e-18,
+      "triangleWorkJ": 3.4146546842013797e-17,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 6.955391912182591e-13,
+          "triangleN": 1.194237708401802e-12,
+          "signedWorkJ": 1.7234133272308834e-18,
+          "triangleWorkJ": 3.4146546842013797e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S0/S1",
+      "required": true,
+      "term": "activePotential",
+      "globalPass": true,
+      "signedN": 7.459300050503366e-13,
+      "triangleN": 7.461035288966392e-13,
+      "signedWorkJ": 5.699865675005265e-18,
+      "triangleWorkJ": 5.168430469302194e-17,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 7.459300050503366e-13,
+          "triangleN": 7.461035288966392e-13,
+          "signedWorkJ": 5.699865675005265e-18,
+          "triangleWorkJ": 5.168430469302194e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S0/S1",
+      "required": true,
+      "term": "total",
+      "globalPass": true,
+      "signedN": 5.141852531974567e-07,
+      "triangleN": 5.141852548841729e-07,
+      "signedWorkJ": 3.717132498020337e-11,
+      "triangleWorkJ": 3.7171334987495434e-11,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 5.141852531974567e-07,
+          "triangleN": 5.141852548841729e-07,
+          "signedWorkJ": 3.717132498020337e-11,
+          "triangleWorkJ": 3.7171334987495434e-11,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/S2",
+      "required": true,
+      "term": "matrix",
+      "globalPass": true,
+      "signedN": 2.6372479660725987e-12,
+      "triangleN": 2.6372492782940645e-12,
+      "signedWorkJ": 2.235113575627471e-16,
+      "triangleWorkJ": 2.242238639855637e-16,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 2.6372479660725987e-12,
+          "triangleN": 2.6372492782940645e-12,
+          "signedWorkJ": 2.235113575627471e-16,
+          "triangleWorkJ": 2.242238639855637e-16,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/S2",
+      "required": true,
+      "term": "volume",
+      "globalPass": true,
+      "signedN": 9.655036254253447e-10,
+      "triangleN": 9.656469419219576e-10,
+      "signedWorkJ": 6.93495456330981e-14,
+      "triangleWorkJ": 6.939319789372857e-14,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 9.655036254253447e-10,
+          "triangleN": 9.656469419219576e-10,
+          "signedWorkJ": 6.93495456330981e-14,
+          "triangleWorkJ": 6.939319789372857e-14,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/S2",
+      "required": true,
+      "term": "passiveFiber",
+      "globalPass": true,
+      "signedN": 2.504772019449967e-13,
+      "triangleN": 2.951842420539637e-13,
+      "signedWorkJ": 1.1018793337305707e-17,
+      "triangleWorkJ": 1.436341980629452e-17,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 2.504772019449967e-13,
+          "triangleN": 2.951842420539637e-13,
+          "signedWorkJ": 1.1018793337305707e-17,
+          "triangleWorkJ": 1.436341980629452e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/S2",
+      "required": true,
+      "term": "activePotential",
+      "globalPass": true,
+      "signedN": 7.013738926691386e-13,
+      "triangleN": 8.909671312016397e-13,
+      "signedWorkJ": 2.4453456268239292e-17,
+      "triangleWorkJ": 4.798497420434222e-17,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 7.013738926691386e-13,
+          "triangleN": 8.909671312016397e-13,
+          "signedWorkJ": 2.4453456268239292e-17,
+          "triangleWorkJ": 4.798497420434222e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/S2",
+      "required": true,
+      "term": "total",
+      "globalPass": true,
+      "signedN": 9.67294961134758e-10,
+      "triangleN": 9.6746354618606e-10,
+      "signedWorkJ": 6.947648590004659e-14,
+      "triangleWorkJ": 6.953593512622363e-14,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 9.67294961134758e-10,
+          "triangleN": 9.6746354618606e-10,
+          "signedWorkJ": 6.947648590004659e-14,
+          "triangleWorkJ": 6.953593512622363e-14,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "I0/I1",
+      "required": true,
+      "term": "matrix",
+      "globalPass": true,
+      "signedN": 1.4292536974052187e-07,
+      "triangleN": 1.4292536974469965e-07,
+      "signedWorkJ": 1.0181186993952168e-11,
+      "triangleWorkJ": 1.126153534012124e-11,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 1.2222351134655307e-08,
+          "triangleN": 1.2222351134655307e-08,
+          "signedWorkJ": 3.5561080484234377e-13,
+          "triangleWorkJ": 7.247375401649455e-13,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 1.4292536974052187e-07,
+          "triangleN": 1.4292536974469965e-07,
+          "signedWorkJ": 1.0536797798794513e-11,
+          "triangleWorkJ": 1.0536797799956293e-11,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "I0/I1",
+      "required": true,
+      "term": "volume",
+      "globalPass": false,
+      "signedN": 4.460081948072867e-05,
+      "triangleN": 4.4600819482843576e-05,
+      "signedWorkJ": 2.9116534716612114e-09,
+      "triangleWorkJ": 3.745909898848055e-09,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 5.2032966912918255e-06,
+          "triangleN": 5.2032966912918255e-06,
+          "signedWorkJ": 3.3646724595262256e-10,
+          "triangleWorkJ": 4.977891805586642e-10,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 4.460081948072867e-05,
+          "triangleN": 4.4600819482843576e-05,
+          "signedWorkJ": 3.248120717613834e-09,
+          "triangleWorkJ": 3.248120718289392e-09,
+          "pass": false
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "I0/I1",
+      "required": true,
+      "term": "passiveFiber",
+      "globalPass": true,
+      "signedN": 1.9231196000311505e-08,
+      "triangleN": 1.9231270278135013e-08,
+      "signedWorkJ": 5.222233070529437e-13,
+      "triangleWorkJ": 1.2860246787995492e-12,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 1.923119441471499e-08,
+          "triangleN": 1.923119441471499e-08,
+          "signedWorkJ": 5.222130337652329e-13,
+          "triangleWorkJ": 1.285998647134574e-12,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 1.6037875067257244e-13,
+          "triangleN": 6.88559821285551e-13,
+          "signedWorkJ": 1.0273287710868285e-17,
+          "triangleWorkJ": 2.6031664976090825e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "I0/I1",
+      "required": true,
+      "term": "activePotential",
+      "globalPass": true,
+      "signedN": 1.446249864911138e-07,
+      "triangleN": 1.4462498652745077e-07,
+      "signedWorkJ": 4.62215755190546e-12,
+      "triangleWorkJ": 6.30583676321325e-12,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 1.4462465092179855e-07,
+          "triangleN": 1.4462465092179855e-07,
+          "signedWorkJ": 4.622123728765665e-12,
+          "triangleWorkJ": 6.305784563306027e-12,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 8.750587399248712e-13,
+          "triangleN": 1.2459075766785846e-12,
+          "signedWorkJ": 3.3823139796341545e-17,
+          "triangleWorkJ": 5.219990722306496e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "I0/I1",
+      "required": true,
+      "term": "total",
+      "globalPass": false,
+      "signedN": 4.474374534905057e-05,
+      "triangleN": 4.474374535162453e-05,
+      "signedWorkJ": 2.925934386724944e-09,
+      "triangleWorkJ": 3.752018506759592e-09,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 5.2004761172952385e-06,
+          "triangleN": 5.2004761172952385e-06,
+          "signedWorkJ": 3.327229074255782e-10,
+          "triangleWorkJ": 4.933612120226282e-10,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 4.474374534905057e-05,
+          "triangleN": 4.474374535162453e-05,
+          "signedWorkJ": 3.2586572941505228e-09,
+          "triangleWorkJ": 3.258657294736964e-09,
+          "pass": false
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S2/I1",
+      "required": true,
+      "term": "matrix",
+      "globalPass": true,
+      "signedN": 2.2680310590576277e-09,
+      "triangleN": 2.30123678183656e-09,
+      "signedWorkJ": 9.563931058733873e-14,
+      "triangleWorkJ": 2.303753049646699e-13,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 1.1971435127933194e-09,
+          "triangleN": 1.1971435127933194e-09,
+          "signedWorkJ": 4.506085571485129e-14,
+          "triangleWorkJ": 8.416515492579746e-14,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 1.786915942357526e-09,
+          "triangleN": 1.9221269519211606e-09,
+          "signedWorkJ": 1.4070016630219002e-13,
+          "triangleWorkJ": 1.462101500388726e-13,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S2/I1",
+      "required": true,
+      "term": "volume",
+      "globalPass": true,
+      "signedN": 7.609759577281857e-07,
+      "triangleN": 9.550014961883502e-07,
+      "signedWorkJ": 5.49477770228388e-12,
+      "triangleWorkJ": 1.1027718562102975e-10,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 7.623363540432138e-07,
+          "triangleN": 7.623363540432138e-07,
+          "signedWorkJ": 4.812345544512863e-11,
+          "triangleWorkJ": 6.531379683998866e-11,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 5.419497837418314e-07,
+          "triangleN": 6.099687607947947e-07,
+          "signedWorkJ": 4.262867774284474e-11,
+          "triangleWorkJ": 4.496338878104115e-11,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S2/I1",
+      "required": true,
+      "term": "passiveFiber",
+      "globalPass": true,
+      "signedN": 1.322813319934268e-09,
+      "triangleN": 1.3228258878731147e-09,
+      "signedWorkJ": 1.3687966923594056e-14,
+      "triangleWorkJ": 6.854614732024931e-14,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 1.3227467454690611e-09,
+          "triangleN": 1.3227467454690611e-09,
+          "signedWorkJ": 1.3702796831325196e-14,
+          "triangleWorkJ": 6.852631404582278e-14,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 1.5536232471479688e-13,
+          "triangleN": 3.117244595825386e-13,
+          "signedWorkJ": 1.482990773113955e-17,
+          "triangleWorkJ": 1.983327442655137e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S2/I1",
+      "required": true,
+      "term": "activePotential",
+      "globalPass": true,
+      "signedN": 1.11058431340183e-08,
+      "triangleN": 1.11058431340183e-08,
+      "signedWorkJ": 1.564313593803303e-13,
+      "triangleWorkJ": 3.290105765867334e-13,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 1.11058431340183e-08,
+          "triangleN": 1.11058431340183e-08,
+          "signedWorkJ": 1.5648641029435556e-13,
+          "triangleWorkJ": 3.289392963737867e-13,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 1.6117685534206034e-12,
+          "triangleN": 1.6121523367596536e-12,
+          "signedWorkJ": 5.505091402520099e-17,
+          "triangleWorkJ": 7.128021294699617e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S2/I1",
+      "required": true,
+      "term": "total",
+      "globalPass": true,
+      "signedN": 7.545365222961367e-07,
+      "triangleN": 9.564050446831282e-07,
+      "signedWorkJ": 5.256253322999845e-12,
+      "triangleWorkJ": 1.1023765079626218e-10,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 7.558982249022961e-07,
+          "triangleN": 7.558982249022961e-07,
+          "signedWorkJ": 4.802582318805805e-11,
+          "triangleWorkJ": 6.512826777155042e-11,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 5.437358881193145e-07,
+          "triangleN": 6.118907592622646e-07,
+          "signedWorkJ": 4.2769569865058235e-11,
+          "triangleWorkJ": 4.5109383024711755e-11,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/AR",
+      "required": true,
+      "term": "matrix",
+      "globalPass": true,
+      "signedN": 1.8470418768083547e-10,
+      "triangleN": 3.388147174668142e-10,
+      "signedWorkJ": 1.505829920557965e-14,
+      "triangleWorkJ": 2.1136227396750874e-14,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 1.8470418768083547e-10,
+          "triangleN": 3.388147174668142e-10,
+          "signedWorkJ": 1.505829920557965e-14,
+          "triangleWorkJ": 2.1136227396750874e-14,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/AR",
+      "required": true,
+      "term": "volume",
+      "globalPass": true,
+      "signedN": 8.880326927918227e-08,
+      "triangleN": 1.7189993466913194e-07,
+      "signedWorkJ": 7.434155448958433e-12,
+      "triangleWorkJ": 1.014739027785366e-11,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 8.880326927918227e-08,
+          "triangleN": 1.7189993466913194e-07,
+          "signedWorkJ": 7.434155448958433e-12,
+          "triangleWorkJ": 1.014739027785366e-11,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/AR",
+      "required": true,
+      "term": "passiveFiber",
+      "globalPass": true,
+      "signedN": 4.363548654198552e-13,
+      "triangleN": 4.4153897292877344e-13,
+      "signedWorkJ": 3.2466359622786366e-18,
+      "triangleWorkJ": 1.2926536678753955e-17,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 4.363548654198552e-13,
+          "triangleN": 4.4153897292877344e-13,
+          "signedWorkJ": 3.2466359622786366e-18,
+          "triangleWorkJ": 1.2926536678753955e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/AR",
+      "required": true,
+      "term": "activePotential",
+      "globalPass": true,
+      "signedN": 1.202803431323579e-12,
+      "triangleN": 1.2170352441143827e-12,
+      "signedWorkJ": 7.31922392987529e-17,
+      "triangleWorkJ": 7.522056901999549e-17,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 1.202803431323579e-12,
+          "triangleN": 1.2170352441143827e-12,
+          "signedWorkJ": 7.31922392987529e-17,
+          "triangleWorkJ": 7.522056901999549e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/AR",
+      "required": true,
+      "term": "total",
+      "globalPass": true,
+      "signedN": 8.898775980550061e-08,
+      "triangleN": 1.7223856315219323e-07,
+      "signedWorkJ": 7.449297724245786e-12,
+      "triangleWorkJ": 1.0168517465196003e-11,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 8.898775980550061e-08,
+          "triangleN": 1.7223856315219323e-07,
+          "signedWorkJ": 7.449297724245786e-12,
+          "triangleWorkJ": 1.0168517465196003e-11,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/AH",
+      "required": true,
+      "term": "matrix",
+      "globalPass": true,
+      "signedN": 3.073244642656684e-15,
+      "triangleN": 3.073244642656684e-15,
+      "signedWorkJ": 2.221230937727733e-19,
+      "triangleWorkJ": 2.221230937727733e-19,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 3.073244642656684e-15,
+          "triangleN": 3.073244642656684e-15,
+          "signedWorkJ": 2.221230937727733e-19,
+          "triangleWorkJ": 2.221230937727733e-19,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/AH",
+      "required": true,
+      "term": "volume",
+      "globalPass": true,
+      "signedN": 9.506648653317486e-16,
+      "triangleN": 9.50664865331795e-16,
+      "signedWorkJ": 6.871064327079951e-20,
+      "triangleWorkJ": 6.871064327080173e-20,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 9.506648653317486e-16,
+          "triangleN": 9.50664865331795e-16,
+          "signedWorkJ": 6.871064327079951e-20,
+          "triangleWorkJ": 6.871064327080173e-20,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/AH",
+      "required": true,
+      "term": "passiveFiber",
+      "globalPass": true,
+      "signedN": 3.842615425041413e-30,
+      "triangleN": 6.770028940510011e-30,
+      "signedWorkJ": 1.916160029796949e-35,
+      "triangleWorkJ": 1.2716576591175344e-34,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 3.842615425041413e-30,
+          "triangleN": 6.770028940510011e-30,
+          "signedWorkJ": 1.916160029796949e-35,
+          "triangleWorkJ": 1.2716576591175344e-34,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/AH",
+      "required": true,
+      "term": "activePotential",
+      "globalPass": true,
+      "signedN": 2.122528873110285e-29,
+      "triangleN": 2.122528873110285e-29,
+      "signedWorkJ": 6.687164219937822e-34,
+      "triangleWorkJ": 7.478646643308208e-34,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 2.122528873110285e-29,
+          "triangleN": 2.122528873110285e-29,
+          "signedWorkJ": 6.687164219937822e-34,
+          "triangleWorkJ": 7.478646643308208e-34,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/AH",
+      "required": true,
+      "term": "total",
+      "globalPass": true,
+      "signedN": 4.023909532390266e-15,
+      "triangleN": 4.023909532390312e-15,
+      "signedWorkJ": 2.908337347903017e-19,
+      "triangleWorkJ": 2.9083373479030406e-19,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 4.023909532390266e-15,
+          "triangleN": 4.023909532390312e-15,
+          "signedWorkJ": 2.908337347903017e-19,
+          "triangleWorkJ": 2.9083373479030406e-19,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/AC",
+      "required": true,
+      "term": "matrix",
+      "globalPass": true,
+      "signedN": 1.8320236541816806e-11,
+      "triangleN": 1.83202601931509e-11,
+      "signedWorkJ": 1.2504035363083553e-15,
+      "triangleWorkJ": 1.2507522312583423e-15,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 1.8320236541816806e-11,
+          "triangleN": 1.83202601931509e-11,
+          "signedWorkJ": 1.2504035363083553e-15,
+          "triangleWorkJ": 1.2507522312583423e-15,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/AC",
+      "required": true,
+      "term": "volume",
+      "globalPass": true,
+      "signedN": 4.863913461621252e-09,
+      "triangleN": 4.863913466081237e-09,
+      "signedWorkJ": 3.054586044430201e-13,
+      "triangleWorkJ": 3.054955834122846e-13,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 4.863913461621252e-09,
+          "triangleN": 4.863913466081237e-09,
+          "signedWorkJ": 3.054586044430201e-13,
+          "triangleWorkJ": 3.054955834122846e-13,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/AC",
+      "required": true,
+      "term": "passiveFiber",
+      "globalPass": true,
+      "signedN": 3.767010491971721e-13,
+      "triangleN": 5.866563479076381e-13,
+      "signedWorkJ": 4.5554942479347924e-18,
+      "triangleWorkJ": 2.8973311424337725e-17,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 3.767010491971721e-13,
+          "triangleN": 5.866563479076381e-13,
+          "signedWorkJ": 4.5554942479347924e-18,
+          "triangleWorkJ": 2.8973311424337725e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/AC",
+      "required": true,
+      "term": "activePotential",
+      "globalPass": true,
+      "signedN": 7.569862512157858e-13,
+      "triangleN": 7.779541498822578e-13,
+      "signedWorkJ": 3.083569194955973e-17,
+      "triangleWorkJ": 5.2822093476437706e-17,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 7.569862512157858e-13,
+          "triangleN": 7.779541498822578e-13,
+          "signedWorkJ": 3.083569194955973e-17,
+          "triangleWorkJ": 5.2822093476437706e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/AC",
+      "required": true,
+      "term": "total",
+      "globalPass": true,
+      "signedN": 4.882308152396861e-09,
+      "triangleN": 4.882308156698145e-09,
+      "signedWorkJ": 3.066006968896596e-13,
+      "triangleWorkJ": 3.066329987220976e-13,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 0,
+          "triangleN": 0,
+          "signedWorkJ": 0,
+          "triangleWorkJ": 0,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 4.882308152396861e-09,
+          "triangleN": 4.882308156698145e-09,
+          "signedWorkJ": 3.066006968896596e-13,
+          "triangleWorkJ": 3.066329987220976e-13,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S0/I0",
+      "required": false,
+      "term": "matrix",
+      "globalPass": true,
+      "signedN": 1.4569006064030644e-07,
+      "triangleN": 1.4569006089720576e-07,
+      "signedWorkJ": 1.016256360015064e-11,
+      "triangleWorkJ": 1.1388157622043202e-11,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 1.3419494647448627e-08,
+          "triangleN": 1.3419494647448627e-08,
+          "signedWorkJ": 4.00671660557195e-13,
+          "triangleWorkJ": 8.089026950907429e-13,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 1.4569006064030644e-07,
+          "triangleN": 1.4569006089720576e-07,
+          "signedWorkJ": 1.0563235260707835e-11,
+          "triangleWorkJ": 1.0579254926952459e-11,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S0/I0",
+      "required": false,
+      "term": "volume",
+      "globalPass": false,
+      "signedN": 4.5473134524296904e-05,
+      "triangleN": 4.547313454788329e-05,
+      "signedWorkJ": 2.869032146362319e-09,
+      "triangleWorkJ": 3.8293780997652996e-09,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 5.951578372354049e-06,
+          "triangleN": 5.951578372354049e-06,
+          "signedWorkJ": 3.8459070139775127e-10,
+          "triangleWorkJ": 5.63102977398653e-10,
+          "pass": false
+        },
+        "focus": {
+          "signedN": 4.5473134524296904e-05,
+          "triangleN": 4.547313454788329e-05,
+          "signedWorkJ": 3.25362284776007e-09,
+          "triangleWorkJ": 3.2662751223666475e-09,
+          "pass": false
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S0/I0",
+      "required": false,
+      "term": "passiveFiber",
+      "globalPass": true,
+      "signedN": 2.0554033543803957e-08,
+      "triangleN": 2.05540674983081e-08,
+      "signedWorkJ": 5.359205693565477e-13,
+      "triangleWorkJ": 1.3545499687298388e-12,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 2.0553941160184053e-08,
+          "triangleN": 2.0553941160184053e-08,
+          "signedWorkJ": 5.35915830596558e-13,
+          "triangleWorkJ": 1.354524961180397e-12,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 6.792333450582714e-13,
+          "triangleN": 1.0469668589954792e-12,
+          "signedWorkJ": 4.738759989803557e-18,
+          "triangleWorkJ": 2.5007549442202262e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S0/I0",
+      "required": false,
+      "term": "activePotential",
+      "globalPass": true,
+      "signedN": 1.5391708636191583e-07,
+      "triangleN": 1.5391709672354112e-07,
+      "signedWorkJ": 4.7785701576952e-12,
+      "triangleWorkJ": 6.6348151672925886e-12,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 1.5391678154230704e-07,
+          "triangleN": 1.5391678154230704e-07,
+          "signedWorkJ": 4.7786101390600235e-12,
+          "triangleWorkJ": 6.634723859679818e-12,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 9.870861475477825e-13,
+          "triangleN": 1.0472830421383083e-12,
+          "signedWorkJ": 3.9981364822093444e-17,
+          "triangleWorkJ": 9.130761277416628e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S0/I0",
+      "required": false,
+      "term": "total",
+      "globalPass": false,
+      "signedN": 4.561882425749193e-05,
+      "triangleN": 4.56188242820729e-05,
+      "signedWorkJ": 2.88343733193584e-09,
+      "triangleWorkJ": 3.835343936571559e-09,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 5.887491329570338e-06,
+          "triangleN": 5.887491329570338e-06,
+          "signedWorkJ": 3.807487306136362e-10,
+          "triangleWorkJ": 5.584894797941785e-10,
+          "pass": false
+        },
+        "focus": {
+          "signedN": 4.561882425749193e-05,
+          "triangleN": 4.56188242820729e-05,
+          "signedWorkJ": 3.2641860625494764e-09,
+          "triangleWorkJ": 3.2768544567773762e-09,
+          "pass": false
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/I1",
+      "required": false,
+      "term": "matrix",
+      "globalPass": true,
+      "signedN": 2.2674998133707193e-09,
+      "triangleN": 2.300706130526418e-09,
+      "signedWorkJ": 9.541579922977594e-14,
+      "triangleWorkJ": 2.3022068002254227e-13,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 1.1971435127933194e-09,
+          "triangleN": 1.1971435127933194e-09,
+          "signedWorkJ": 4.506085571485129e-14,
+          "triangleWorkJ": 8.416515492579746e-14,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 1.7888648438426607e-09,
+          "triangleN": 1.923916449616349e-09,
+          "signedWorkJ": 1.4047665494462727e-13,
+          "triangleWorkJ": 1.4605552509674477e-13,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/I1",
+      "required": false,
+      "term": "volume",
+      "globalPass": true,
+      "signedN": 7.606153186845432e-07,
+      "triangleN": 9.547705412561217e-07,
+      "signedWorkJ": 5.5641272479170074e-12,
+      "triangleWorkJ": 1.1025779735036974e-10,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 7.623363540432138e-07,
+          "triangleN": 7.623363540432138e-07,
+          "signedWorkJ": 4.812345544512863e-11,
+          "triangleWorkJ": 6.531379683998866e-11,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 5.425792519701499e-07,
+          "triangleN": 6.10471820581234e-07,
+          "signedWorkJ": 4.255932819721164e-11,
+          "triangleWorkJ": 4.494400051038111e-11,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/I1",
+      "required": false,
+      "term": "passiveFiber",
+      "globalPass": true,
+      "signedN": 1.3227593960229763e-09,
+      "triangleN": 1.3228253003895527e-09,
+      "signedWorkJ": 1.3698985716931363e-14,
+      "triangleWorkJ": 6.854625987747936e-14,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 1.3227467454690611e-09,
+          "triangleN": 1.3227467454690611e-09,
+          "signedWorkJ": 1.3702796831325196e-14,
+          "triangleWorkJ": 6.852631404582278e-14,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 2.786863046396648e-13,
+          "triangleN": 5.42730984870117e-13,
+          "signedWorkJ": 3.811114393833841e-18,
+          "triangleWorkJ": 1.9945831656632265e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/I1",
+      "required": false,
+      "term": "activePotential",
+      "globalPass": true,
+      "signedN": 1.11058431340183e-08,
+      "triangleN": 1.11058431340183e-08,
+      "signedWorkJ": 1.5640690592406205e-13,
+      "triangleWorkJ": 3.2903332028196854e-13,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 1.11058431340183e-08,
+          "triangleN": 1.11058431340183e-08,
+          "signedWorkJ": 1.5648641029435556e-13,
+          "triangleWorkJ": 3.289392963737867e-13,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 1.1603642413819333e-12,
+          "triangleN": 1.161432131622871e-12,
+          "signedWorkJ": 7.950437029344033e-17,
+          "triangleWorkJ": 9.402390818180145e-17,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "S1/I1",
+      "required": false,
+      "term": "total",
+      "globalPass": true,
+      "signedN": 7.54175323779342e-07,
+      "triangleN": 9.561736387110176e-07,
+      "signedWorkJ": 5.325729808899879e-12,
+      "triangleWorkJ": 1.102182211855265e-10,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocations": {
+        "quiet": {
+          "signedN": 7.558982249022961e-07,
+          "triangleN": 7.558982249022961e-07,
+          "signedWorkJ": 4.802582318805805e-11,
+          "triangleWorkJ": 6.512826777155042e-11,
+          "pass": true
+        },
+        "focus": {
+          "signedN": 5.443673549524476e-07,
+          "triangleN": 6.123955899494521e-07,
+          "signedWorkJ": 4.270009337915816e-11,
+          "triangleWorkJ": 4.508995341397608e-11,
+          "pass": true
+        }
+      }
+    },
+    {
+      "state": "terminal46",
+      "comparison": "D4/D5",
+      "required": true,
+      "term": "matrix",
+      "globalPass": true,
+      "signedN": 5.198112990392745e-12,
+      "triangleN": 5.198112990392745e-12,
+      "signedWorkJ": 3.255758461159894e-16,
+      "triangleWorkJ": 4.304690080943161e-16,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 2.0000000000000003e-06,
+      "allocatedWorkJ": 1.0984058470714025e-07
+    },
+    {
+      "state": "terminal46",
+      "comparison": "D4/D5",
+      "required": true,
+      "term": "volume",
+      "globalPass": true,
+      "signedN": 5.578428385888401e-09,
+      "triangleN": 5.578428385888401e-09,
+      "signedWorkJ": 3.4885662094413874e-13,
+      "triangleWorkJ": 4.3501412894325474e-13,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 2.0000000000000003e-06,
+      "allocatedWorkJ": 1.0984058470714025e-07
+    },
+    {
+      "state": "terminal46",
+      "comparison": "D4/D5",
+      "required": true,
+      "term": "passiveFiber",
+      "globalPass": true,
+      "signedN": 8.619771563189715e-13,
+      "triangleN": 8.859579736508749e-13,
+      "signedWorkJ": 2.5673723449634642e-17,
+      "triangleWorkJ": 5.477788281658774e-17,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 2.0000000000000003e-06,
+      "allocatedWorkJ": 1.0984058470714025e-07
+    },
+    {
+      "state": "terminal46",
+      "comparison": "D4/D5",
+      "required": true,
+      "term": "activePotential",
+      "globalPass": true,
+      "signedN": 5.1432191838785e-12,
+      "triangleN": 5.1432191838785e-12,
+      "signedWorkJ": 2.587656772461503e-17,
+      "triangleWorkJ": 1.6576661668745118e-16,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 2.0000000000000003e-06,
+      "allocatedWorkJ": 1.0984058470714025e-07
+    },
+    {
+      "state": "terminal46",
+      "comparison": "D4/D5",
+      "required": true,
+      "term": "total",
+      "globalPass": true,
+      "signedN": 5.5884052940768925e-09,
+      "triangleN": 5.5884052940768925e-09,
+      "signedWorkJ": 3.491677380536122e-13,
+      "triangleWorkJ": 4.355212040526782e-13,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 2.0000000000000003e-06,
+      "allocatedWorkJ": 1.0984058470714025e-07
+    },
+    {
+      "state": "terminal46",
+      "comparison": "U4/U5",
+      "required": true,
+      "term": "matrix",
+      "globalPass": true,
+      "signedN": 1.2222351134655307e-08,
+      "triangleN": 1.2222351134655307e-08,
+      "signedWorkJ": 3.5561080484234377e-13,
+      "triangleWorkJ": 7.247375401649455e-13,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 8.5e-06,
+      "allocatedWorkJ": 4.66822485005346e-07
+    },
+    {
+      "state": "terminal46",
+      "comparison": "U4/U5",
+      "required": true,
+      "term": "volume",
+      "globalPass": true,
+      "signedN": 5.2032966912918255e-06,
+      "triangleN": 5.2032966912918255e-06,
+      "signedWorkJ": 3.3646724595262256e-10,
+      "triangleWorkJ": 4.977891805586642e-10,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 8.5e-06,
+      "allocatedWorkJ": 4.66822485005346e-07
+    },
+    {
+      "state": "terminal46",
+      "comparison": "U4/U5",
+      "required": true,
+      "term": "passiveFiber",
+      "globalPass": true,
+      "signedN": 1.923119441471499e-08,
+      "triangleN": 1.923119441471499e-08,
+      "signedWorkJ": 5.222130337652329e-13,
+      "triangleWorkJ": 1.285998647134574e-12,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 8.5e-06,
+      "allocatedWorkJ": 4.66822485005346e-07
+    },
+    {
+      "state": "terminal46",
+      "comparison": "U4/U5",
+      "required": true,
+      "term": "activePotential",
+      "globalPass": true,
+      "signedN": 1.4462465092179855e-07,
+      "triangleN": 1.4462465092179855e-07,
+      "signedWorkJ": 4.622123728765665e-12,
+      "triangleWorkJ": 6.305784563306027e-12,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 8.5e-06,
+      "allocatedWorkJ": 4.66822485005346e-07
+    },
+    {
+      "state": "terminal46",
+      "comparison": "U4/U5",
+      "required": true,
+      "term": "total",
+      "globalPass": true,
+      "signedN": 5.2004761172952385e-06,
+      "triangleN": 5.2004761172952385e-06,
+      "signedWorkJ": 3.327229074255782e-10,
+      "triangleWorkJ": 4.933612120226282e-10,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 8.5e-06,
+      "allocatedWorkJ": 4.66822485005346e-07
+    },
+    {
+      "state": "terminal46",
+      "comparison": "D5/U5",
+      "required": true,
+      "term": "matrix",
+      "globalPass": true,
+      "signedN": 1.1971435127933194e-09,
+      "triangleN": 1.1971435127933194e-09,
+      "signedWorkJ": 4.506085571485129e-14,
+      "triangleWorkJ": 8.416515492579746e-14,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 2.0000000000000003e-06,
+      "allocatedWorkJ": 1.0984058470714025e-07
+    },
+    {
+      "state": "terminal46",
+      "comparison": "D5/U5",
+      "required": true,
+      "term": "volume",
+      "globalPass": true,
+      "signedN": 7.623363540432138e-07,
+      "triangleN": 7.623363540432138e-07,
+      "signedWorkJ": 4.812345544512863e-11,
+      "triangleWorkJ": 6.531379683998866e-11,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 2.0000000000000003e-06,
+      "allocatedWorkJ": 1.0984058470714025e-07
+    },
+    {
+      "state": "terminal46",
+      "comparison": "D5/U5",
+      "required": true,
+      "term": "passiveFiber",
+      "globalPass": true,
+      "signedN": 1.3227467454690611e-09,
+      "triangleN": 1.3227467454690611e-09,
+      "signedWorkJ": 1.3702796831325196e-14,
+      "triangleWorkJ": 6.852631404582278e-14,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 2.0000000000000003e-06,
+      "allocatedWorkJ": 1.0984058470714025e-07
+    },
+    {
+      "state": "terminal46",
+      "comparison": "D5/U5",
+      "required": true,
+      "term": "activePotential",
+      "globalPass": true,
+      "signedN": 1.11058431340183e-08,
+      "triangleN": 1.11058431340183e-08,
+      "signedWorkJ": 1.5648641029435556e-13,
+      "triangleWorkJ": 3.289392963737867e-13,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 2.0000000000000003e-06,
+      "allocatedWorkJ": 1.0984058470714025e-07
+    },
+    {
+      "state": "terminal46",
+      "comparison": "D5/U5",
+      "required": true,
+      "term": "total",
+      "globalPass": true,
+      "signedN": 7.558982249022961e-07,
+      "triangleN": 7.558982249022961e-07,
+      "signedWorkJ": 4.802582318805805e-11,
+      "triangleWorkJ": 6.512826777155042e-11,
+      "forceGateN": 1e-05,
+      "workGateJ": 5.492029235357012e-07,
+      "allocatedPass": true,
+      "allocatedForceN": 2.0000000000000003e-06,
+      "allocatedWorkJ": 1.0984058470714025e-07
+    }
+  ],
+  "requiredPass": 19,
+  "requiredFail": 1,
+  "informationalPass": 2,
+  "informationalFail": 2,
+  "runtime": {
+    "reservedCalls": 19716000,
+    "actualConstitutiveCallbacks": 19716000,
+    "completedConstitutiveCallbacks": 19716000,
+    "plannedCalls": 19716000,
+    "maximumCalls": 19716000,
+    "elapsedMs": 659922.323917,
+    "maximumWallMs": 7200000,
+    "peakObservedRssBytes": 401088512,
+    "maximumRssBytes": 2147483648,
+    "lastPhase": "before-provisional-completion",
+    "activeBatch": null
+  },
+  "externalExit": {
+    "schema": 1,
+    "sourceCommit": "fe513113cbc336948ae20b0209a5be4b9552b524",
+    "runId": "87379b67f49b4625a64b303999bdd0aa",
+    "invocations": 1,
+    "command": [
+      "node",
+      "--max-old-space-size=1024",
+      "tools/run-fine-window.mjs",
+      "--execute"
+    ],
+    "childExitCode": 0,
+    "watchdogFailure": null,
+    "elapsedMs": 661103.4844010065,
+    "peakObservedChildRssBytes": 403156992,
+    "budget": {
+      "plannedMaterialCalls": 19716000,
+      "maximumMaterialCalls": 19716000,
+      "maximumWallSeconds": 7200,
+      "nodeHeapMiB": 1024,
+      "maximumRssBytes": 2147483648,
+      "maximumOutputBytes": 536870912,
+      "invocations": 1
+    },
+    "logSha256": "59c8b2b0d56ccba14a9f7b51b4af4fe8c5e26a5e430c1f34093b5ed17500a688",
+    "authority": "Failure/incomplete takes precedence over any material completion receipt."
+  },
+  "launcherExit": {
+    "schema": 1,
+    "kind": "OBSERVED_LAUNCHER_EXIT",
+    "sourceCommit": "fe513113cbc336948ae20b0209a5be4b9552b524",
+    "runId": "87379b67f49b4625a64b303999bdd0aa",
+    "launcherExitCode": 0,
+    "supervisorFailure": null,
+    "elapsedMs": 661223.8728100056,
+    "clockScope": "pre-authorization-and-source-checks",
+    "budget": {
+      "plannedMaterialCalls": 19716000,
+      "maximumMaterialCalls": 19716000,
+      "maximumWallSeconds": 7200,
+      "nodeHeapMiB": 1024,
+      "maximumRssBytes": 2147483648,
+      "maximumOutputBytes": 536870912,
+      "invocations": 1
+    },
+    "launcherLogSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "externalFinalSha256": "dc23cffd6d06a5383c62c074226f2174269db33fca7a355c97dcb05141f8fda5"
+  },
+  "publicEntryExit": {
+    "schema": 1,
+    "kind": "OBSERVED_PUBLIC_ENTRY_EXIT",
+    "sourceCommit": "fe513113cbc336948ae20b0209a5be4b9552b524",
+    "runId": "87379b67f49b4625a64b303999bdd0aa",
+    "authorizationSha256": "eefb24e1994824ced443b5740826c3c020712ef893c74683ba63d0d1b1d8ae7f",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "tools/launch-fine-window.py",
+      "--execute"
+    ],
+    "publicEntryExitCode": 0,
+    "startedUTC": "2026-10-07T06:22:34.496331+00:00",
+    "finishedUTC": "2026-10-07T06:33:35.825144+00:00",
+    "elapsedMs": 661325.2693940012,
+    "budget": {
+      "plannedMaterialCalls": 19716000,
+      "maximumMaterialCalls": 19716000,
+      "maximumWallSeconds": 7200,
+      "nodeHeapMiB": 1024,
+      "maximumRssBytes": 2147483648,
+      "maximumOutputBytes": 536870912,
+      "invocations": 1
+    },
+    "observedSubprocessTreeRusageMaximumRssBytes": 402923520,
+    "combinedBytesBeforePublicReceipt": 378159342,
+    "invocations": 1,
+    "retryPerformed": false,
+    "authority": "Actual public-entry process exit observation; failures dominate provisional numerical receipts."
+  },
+  "verification": {
+    "verdict": "PASS_OPERATIONAL_EVIDENCE_AND_REPLAY",
+    "result": "UNRESOLVED_FIXED_PATCH_INTEGRATION",
+    "requiredComparisonsIncludingQuiet": 20,
+    "replayedLogicalRegions": 2002,
+    "newRegions": 1682,
+    "sharedRegions": 320,
+    "materialLawInvocations": 0,
+    "specimenCalls": 0,
+    "outside236Qualified": false
+  },
+  "combinedRawBytes": 378160307,
+  "rawFileCount": 3124,
+  "rawInventorySha256": "6ae3961c2fc734cb098b71464a6d9b584d0590eed8f263c2ca1b741b31c573a4",
+  "outsidePatchElements": 236,
+  "outsidePatchQualified": false,
+  "anatomicalQualification": false,
+  "originalResultCommit": "38ae8a2e2af57cf33254af987b724824b9d84357",
+  "originalResult": "UNRESOLVED_FIXED_PATCH_INTEGRATION",
+  "originalTwoShellExecutionExit": 1,
+  "retryPerformed": false
+}
