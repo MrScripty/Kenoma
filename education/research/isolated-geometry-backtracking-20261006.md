@@ -1,0 +1,47 @@
+# Frozen geometry-aware paired-response protocol
+
+This separate implementation starts from accepted archived-segment proposal/evidence `71f48f0e41021c2a39b335d68bcc1800f8fb3f48`, whose parent response evidence is `cfe6d18b742b2f85cb1bb849adf3b6f9dc52e1cf`. Only implementation and structural/negative/admissibility preflight are authorized now. **No nonlinear solving or constitutive evaluation is performed in this preflight.** A subsequent independently reviewed and authorized experiment may execute the complete paired rerun described below. All older source, refusals, reports, books and branch references stay unchanged.
+
+## Complete rerun and fixed physical inputs
+
+The rerun starts the 45-coordinate solve from the exact original frozen initialization, the old fitted coordinates9–53 of FJ1486. It does not restart at the last valid46 iterate or at a shortened archived step. The generated geometry, reference fibres, complete source cap sets, existing P2 interpolant, 2048 points per element, fixed activation1, fitted sigma0 `3599330.7341830498 Pa` and all other material/potential parameters remain hash-bound and unchanged. The existing sheet fixture has zero branches/strips. Only FJ1486 is solved. There are 90 exactly held nodes, 495 free nodes and the original45 free-mode columns.
+
+The complete45 rerun must produce **exactly the archived control coordinates and nodal field** before proceeding. If it differs, stop and retain that refusal; do not silently substitute a new control. Then use the exact archived once-selected normalized negative omitted-gradient direction, with its original free-node order and zero cap rows. Recheck normalization, orthogonality, rank46, and agreement with the recomputed same-rule control's omitted-gradient direction; do not reselect it. Start46 with that identical control field and new coefficient zero. Retain the existing two directional derivative probes and direct/relaxed curvature checks, with the new whole-path geometry gate before every probe's material call. The existing numerical operator preflight remains bound and unchanged; it is not rerun during structural preflight.
+
+Reference target **987.26 N** and old achieved fit **987.2744117188512 N** are labels, not constraints enforcing a new match. No force fitting, new modes, constitutive law changes, spatial/quadrature refinement, coupled loading or physical time advance is allowed.
+
+## Candidate generation and gate order
+
+Both45 and46 use the same symmetric analytic projected Newton operator. At each current field, certify the field against the unchanged domain before material evaluation. Require finite energy/gradient/tangent and a positive Cholesky tangent, including a projected stopping state. Use the unregularized Newton direction and retain the original maximum60 iterations and projected stopping gate `1e-4 N`.
+
+1. Compute and retain the **raw Newton coordinate vector** and its full nodal increment. Require finite dimensions, exactly zero held rows and nonzero physical increment. Set `scale=min(1,0.0002/rawMaximumNodalIncrement)` and retain the factor and scaled coordinate/nodal vectors. Require a finite negative projected slope. The initial0.2 mm bound applies to this computed nodal step; report the actual rounded candidate increment separately rather than pretending they are identical.
+2. Examine exactly the bounded fractions `1,1/2,…,2^-20` (at most21). Compute each coordinate endpoint with the existing binary64 additions, then reconstruct that endpoint's actual newly rounded nodal positions using the unchanged response-position function. Retain the coordinate vector, rounded nodal positions/differences and maximum/Euclidean physical increments. Never reuse the archived cutoff or an earlier direction's certificate.
+3. Require finite coordinates/positions and exact reference cap traces. Compile fresh exact dyadic determinant polynomials for the straight nodal path **from the current stored field to this candidate's newly rounded nodal endpoint**. Certify positive reference coefficients and all20,160 guarded space×time Bernstein controls for `det(current)−binary64(1e-6)*det(reference)`. Strict positivity certifies `J>binary64(1e-6)` over all252 P2 elements throughout the path and implies the old exact endpoint orientation gate. The unchanged binary64 guard is `4722366482869645/4722366482869645213696`. No sampled-J or endpoint-only substitute is permitted.
+4. If that sufficient whole-path certificate is unsupported, retain its witness/hashes, record `UNSUPPORTED_WHOLE_PATH_GEOMETRY` with material unevaluated, reduce the fraction and recompute the next rounded candidate and certificate from scratch. An unsupported certificate does not itself prove inversion. Exceptions such as nonfinite geometry, cap changes or invalid reference geometry are unexpected failures, not bounded geometry rejections.
+5. Only after certification evaluate the unchanged fixed-activation potential and apply the unchanged Armijo inequality `E_trial ≤ E_current + 1e-4*alpha*slope`. A finite trial failing sufficient decrease is logged and halved. A material/domain/numerical exception after successful certification is logged as a failure and stops; no catch-and-halve retry converts it into an admissible refusal. Nonfinite material results and mismatch between evaluated and certified nodal positions also stop. Advance the optimizer coordinate state only after geometry and sufficient decrease pass.
+
+The polynomial certificate treats newly rounded endpoint positions as exact dyadic data and the mathematical intervening nodal path as exact interpolation. It does not assert arbitrary floating intermediate reconstruction equivalence or energy decrease along that path. Raw Bernstein numerators from different element denominators are sign witnesses, not comparable physical margins.
+
+## Stopping, evidence and qualification
+
+Stop on an invalid current/reference field, nonfinite/nondescent direction, nonpositive tangent, no representable nodal change, an unexpected numerical/domain error after certification, exhaustion of21 fractions, or the unchanged60-iteration ceiling. Preserve all rejected candidates, their undefined/evaluated material status and reasons. The unchanged law can still refuse a certified geometric candidate for another domain or numerical reason; that remains an explicit failure.
+
+Each current-state trace retains projected45/added/46 gradients as applicable, independent full1485-free-component gradients, full/projected maxima and L2 norms, source/rule/direction identities, total and component energy in J, queried sampled/corner J, exact domain evidence, cap reactions in N and coordinates in m. Every Newton direction retains raw/scaled vectors and scaling. Every trial retains actual rounded increments, fraction, fresh certificate hashes/witness, rejection/acceptance reason, and material quantities only if evaluated. Audits call the existing full nodal assembly after certification. Preserve the last evaluated valid state even when the next trial fails.
+
+Projected success remains distinct from the mandatory full-nodal `1e-4 N` gate. A completed projected pair with failing full-free residual is recorded as **failed full physical qualification**. Active potential is not passive stored energy. This is neither an equilibrium, anatomical completion, stability, continuum nor quadrature-convergence assertion.
+
+## Source freeze and structural preflight
+
+The manifest binds the old experiment's complete source inventory and old numerical/response evidence, plus the independently accepted archived-path source/evidence. The new runner refuses changed/uncommitted source, missing/unfrozen structural preflight, changed old numerical preflight or evidence overwrite. New output resides only in `review/isolated-geometry-backtracking-20261006/`.
+
+After committing the source, run only:
+
+```sh
+node education/tools/preflight-isolated-geometry-backtracking.mjs
+```
+
+This preflight checks unchanged initialization/control/direction, cap topology, rank46, source hashes and actual newly rounded geometry. It certifies the archived initial→control45 and control45→last-valid46 paths, rejects the archived full refused step, and checks the newly reconstructed archived quarter-coordinate path. The quarter step establishes **geometric room only**; it evaluates no material energy/force and establishes neither future Armijo acceptance nor equilibrium.
+
+Eleven combined pure-geometry/controller tests use prescribed fixture directions and synthetic callback energies, never the constitutive model or a Newton solver. They cover inverted/zero candidates rejected before callbacks, positive endpoints with inverted path interior, the unchanged guard, exact caps, scaling and raw/rounded logs, unexpected failures after certification, unchanged Armijo and21-fraction exhaustion, non-descent/no representable change, and nonfinite or mismatched results. A separate small-matrix negative Cholesky check preserves the tangent failure requirement.
+
+Freeze preflight evidence for independent review. Only a later explicit authorization may run `node --max-old-space-size=6144 education/tools/run-isolated-geometry-response.mjs --execute`. That command is documented for future reproducibility and is **not executed here**. No PR, merge, external publication, deployment, environment-protection or credential change is included.
