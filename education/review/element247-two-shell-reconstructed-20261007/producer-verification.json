@@ -1,0 +1,15 @@
+{
+  "result": "PASS_PRODUCER_RECONSTRUCTED_ARITHMETIC_WITH_ORIGINAL_COMPLETION_REFUSED",
+  "candidateSha256": "3efbc3f28b648cf7d5b0f152b865f13aae7ccc89fd752af58d0e35d92da103a6",
+  "reconstructionSourceCommit": "1671433376014ad148799e1ad7ff3f10219643f7",
+  "newMaterialCalls": 0,
+  "newSpecimenCalls": 0,
+  "changedArithmeticPass": true,
+  "constructedWholeArithmeticPass": true,
+  "nodesVerified": 585,
+  "regionsVerified": 21,
+  "immutableInputsVerified": 108,
+  "operationalCompletion": false,
+  "terminalRefusal": "EXTERNAL_INCOMPLETE_TAKES_PRECEDENCE",
+  "qualification": false
+}

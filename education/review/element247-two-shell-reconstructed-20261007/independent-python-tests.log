@@ -1,0 +1,12 @@
+test_changed_callback_and_reused_count_confusion_is_rejected (__main__.RetainedControls.test_changed_callback_and_reused_count_confusion_is_rejected) ... ok
+test_forged_changed_pass_flag_is_rejected (__main__.RetainedControls.test_forged_changed_pass_flag_is_rejected) ... ok
+test_held_node_damage_is_rejected (__main__.RetainedControls.test_held_node_damage_is_rejected) ... ok
+test_missing_tail_region_is_rejected (__main__.RetainedControls.test_missing_tail_region_is_rejected) ... ok
+test_nonzero_js_changed_and_whole_comparisons_verify (__main__.RetainedControls.test_nonzero_js_changed_and_whole_comparisons_verify) ... ok
+test_nonzero_retained_components_reconstruct_without_law_calls (__main__.RetainedControls.test_nonzero_retained_components_reconstruct_without_law_calls) ... ok
+test_nonzero_reused_tail_cannot_be_hidden (__main__.RetainedControls.test_nonzero_reused_tail_cannot_be_hidden) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.349s
+
+OK

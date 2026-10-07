@@ -1,0 +1,269 @@
+{
+  "schema": 1,
+  "verdict": "PASS",
+  "sourceCommit": "1671433376014ad148799e1ad7ff3f10219643f7",
+  "candidatePath": "/tmp/kenoma-two-shell-reconstruction-final-candidate.json",
+  "candidateSha256": "3efbc3f28b648cf7d5b0f152b865f13aae7ccc89fd752af58d0e35d92da103a6",
+  "candidateBytes": 1182515,
+  "failedEvidenceCommit": "9c9edbc9f3dd9729f2becc5215054897d139735e",
+  "originalExecutedCommit": "97da4bdea7d0be11fc18222221b8b551b53a8e3b",
+  "newSpecimenCalls": 0,
+  "newMaterialCalls": 0,
+  "newQuadratureEvaluations": 0,
+  "tests": {
+    "pass": 6,
+    "fail": 0
+  },
+  "originalSourceHashesVerified": 1598,
+  "immutableReadInventoryVerified": 108,
+  "reconstructionModuleHashesVerified": 17,
+  "rawFileHashes": {
+    "supervisor-incomplete.json": "6f4886bc9602c783fd23822c94375f1c9589e03a81fcb3146028a91ec0d49b1f",
+    "external-incomplete.json": "acbf5236a1b1be4fdc0e971e254d5cd9c4867c4e7e7db4f8786c4b88caccdaa3",
+    "execution-start.json": "95ef2af83f2251de11ae3f4453b3e1a34363f2e6c4484653b1120ba41eb85484",
+    "launcher-exit.pending.json": "f62fd725dd10eb7ade80e9b1565595b55e1b4fdc1526133c42561518ebeea933",
+    "external-exit.json": "59fed0ff2d20d6b176edcd96d46915589caf04e6c194bfb48d436a8b4ffc2e00",
+    "execute.log": "0eac5d609cdd5934638441a4055211adef73d938a35ae85e3bccdbfc949e54e0",
+    "launcher.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "material/A55-terminal46-s15-shell.json": "c27e24963e4a9a5f5df9cb1e0d85b9f6da64a8ee6f6640dc36567ad1d6921cdb",
+    "material/A55-terminal46-s16-weights.f64le": "8d9b69992213709b08c67571d6c58290cee0c63da4b85ff5dfec5286af492c71",
+    "material/A55-terminal46-s3-shell.json": "5479cf594fb88f8ab1d23165da36a40fdd625752112766f0ef78b5f8f7e61fa7",
+    "material/A55-terminal46-s5-shell.json": "524133adb496c84fa325f6118421b6d2620d1f57ebb4032f3bed768b5a869787",
+    "material/A55-terminal46-s19-weights.f64le": "d513702e23b78d1d430bd68caf747b104737ce194806f9ac88e45acf3279f906",
+    "material/A55-terminal46-s12-weights.f64le": "5be964c0cfc53ac1bd4a82b3cfb8034b7256dfbd4be0166bb94e436cb442d4fa",
+    "material/A55-terminal46-s8-shell.json": "9f94f406b3ffa80a8815662190891ee21d1238ac306393f678209888b75dbec9",
+    "material/material-start.json": "9b91e847b0abef133c7087fcda1de7866a69bdb03191d2537fb7c854ebe32211",
+    "material/A55-terminal46-s15-weights.f64le": "62b8da7f56f5cd40151631f100d693129ce757959d3d8ed25cfd9fc213fd23c3",
+    "material/T24-terminal46-s1-shell.json": "1a3c66816ea555f0f2ed1286e4188f9f85de552d4b211d080a04a5fde69635ba",
+    "material/A55-terminal46-s8-weights.f64le": "cc3456f137523a73e0e3601fc8054877dcc8d0225790c5585d027e53c9e6723b",
+    "material/A55-terminal46-s14-shell.json": "e0a47067399127bbcb13095dad09553985b2249309b5b05be1153cee2527b089",
+    "material/A55-terminal46-s13-shell.json": "0d6a666b60b8debd9a67bfe5545d74e03c8d545d5e68ceba992e61f8b1e91f4c",
+    "material/A55-terminal46-s11-shell.json": "76f4c29f5a9e1cff5498947bfa0c6cfa9f19f0aa5462716d0c03ecb04892b537",
+    "material/A55-terminal46-s5-weights.f64le": "1f51888fb53d0984aa06fe6fc1f9ada4edb7d26e474e7f679cd1207e4afd90f6",
+    "material/changed-reference-weights.f64le": "28824422acb8dc1bf6801022bab75a44b79b0477dceb2845281924056b53f313",
+    "material/incomplete-receipt.json": "eff772aaf6db606461f7b7e4c8dffbd354f401c8b6c4c09dd3f86ef7556f1b49",
+    "material/A55-terminal46-core-weights.f64le": "35c1bfa26d3ca1f9ca7ca14d4ee0d465669c0e2fe9244f3e83a6cee44af45b1e",
+    "material/A55-terminal46-s18-shell.json": "a278056978a308ffdfad5f5928cbda01575eabe4f36e21064db3ea1e512e3fd9",
+    "material/A55-terminal46-s10-shell.json": "ab7b9514cfa4dbdfa79fbee8bf327da7932630c22e63453e4b2aec042c62940d",
+    "material/A55-terminal46-s11-weights.f64le": "3da93aaf0d586b257e56b619a8f53fe365dd2c9d65c83c06fc216c63b0f16cf6",
+    "material/A55-terminal46-s6-weights.f64le": "81186b4fc8d5d50b97be8ac62c080d232676adf8f1c403078fb5f5522e5e0b77",
+    "material/A55-terminal46-s4-weights.f64le": "487a367d5dc5f956c26dca2d0d6f43ab58c5b0426022f1e651f5cd283047e0fc",
+    "material/A55-terminal46-s9-weights.f64le": "4d59dce2172cf83bb5a7ca0bfe88e3990ae83b18ebb1660dbc39f6453d0e8e0d",
+    "material/constructed-normalized-points.f64le": "bd93a8528086d007e2903db0fd3bb56930af3e8fc25c995f8d5746b485055103",
+    "material/A55-terminal46-s17-shell.json": "18f41f12212a55b7a545801f2b46b39f611e444358b2ae409797416b410d4eab",
+    "material/A55-terminal46-s13-weights.f64le": "1ca3d9cf10ff321667dd021d5cc4cf8599e932f262f187e6904c705ea5f4321a",
+    "material/A55-terminal46-s9-shell.json": "6eccedac37d43c88f7640c228ba688d678d226b39f7f639eede77dcd4ccf8fda",
+    "material/A55-terminal46-s12-shell.json": "349f4caf33cc5e0475dd9c7a9d60c0872c015935fb7e2ce6c60d95bd03229e38",
+    "material/constructed-reference-weights.f64le": "35890ff053bb61cc8bdc661b3e9a2aecf1b8474df4fed6eab31cd16be8f76fb2",
+    "material/A55-terminal46-s20-shell.json": "6e8f4b1b962ea74d6e3a7719de4f4fb646c43c074af7244e52987a2894e725f3",
+    "material/A55-terminal46-s16-shell.json": "d0fb9ff383a66f25ae0fa7de5f492f53480cb2aba34293b15f843ea0e8fe4411",
+    "material/A55-terminal46-s18-weights.f64le": "8ef42af140c834eb634f872db02ac76bf9cd1c81cc1253c7c2141fb015550f41",
+    "material/A55-terminal46-s6-shell.json": "5282b4e4f2729c87e3c52302f1fb017c49b4047c756dbc0cfafb4f6bbdcabd8c",
+    "material/saved-arrays.json": "a9c8c180f6b3d4c9193817e7cfffd407384448fb3b17c6d4dd6f3ccbf19cb4b8",
+    "material/A55-terminal46-s3-weights.f64le": "529303c9a142b3fd6db05b972c5b56b3281a4d0ddbe50e6dc6e48f11ca38e6ba",
+    "material/changed-normalized-points.f64le": "41849e88e79d9ba947af1ec7aecbe5adf1f2157519cab154a1b7b8d63416f478",
+    "material/A55-terminal46-s10-weights.f64le": "ec3f6b696a41a0e13a51e49202611a9a7e064ae368aca87132409c5756b11918",
+    "material/reuse-manifest.json": "2ce8829beb8082f1f81d94130f0e06bcefe573afb42bf4bc908bb0ee91bbb666",
+    "material/A55-terminal46-s7-weights.f64le": "f730273aaa641582bbbd187d5971b76d0cd180f92f4d0f0695ed0edf036bd131",
+    "material/T24-terminal46-s2-weights.f64le": "ba20a89dcbf278a91e5a4153dffe13daab28b6cae7f29aa43a35efb1c3669085",
+    "material/A55-terminal46-s19-shell.json": "c976516b503c2cdb28cabf785c5c7011cbef3683e31c3d62fde78ab298d0301e",
+    "material/A55-terminal46-s20-weights.f64le": "922cbed4e18ccd9a6241a54ef9eac312f311caf4a770ef984e73508fa84b8c3e",
+    "material/A55-terminal46-s14-weights.f64le": "a839fa1569eff2a1afbe9cbcefe7b06345787fa411230c0007f247978a356f76",
+    "material/T24-terminal46-s1-weights.f64le": "b5dc3e9e70c86db24d3235f845dce7f936a4f1a31e0371c81a4ce54b610d766a",
+    "material/A55-terminal46-s7-shell.json": "3b9cff64b2a24193e000795ac1fa6db777892127688c70690758785f61ce2be8",
+    "material/A55-terminal46-core-shell.json": "bcedb303eb11483f5de605b4a044a4a65ba23ba93310262600725c2225ce1221",
+    "material/A55-terminal46-s17-weights.f64le": "60f5ffe6e78c79389b8d996989f9528fba073d44e4e912348717743170c1c203",
+    "material/A55-terminal46-s4-shell.json": "0f383300fcab9f7fb8dce8ef262170c9fd185e80097d286059b5a3bfebcf75e9",
+    "material/T24-terminal46-s2-shell.json": "22965ba49322c915198d945be1e14e9da205f99bf31412e387d814bded6b5078"
+  },
+  "retainedNumericalFilesVerified": 49,
+  "reusedRegions": 19,
+  "reusedPoints": 9500,
+  "arithmeticCoverage": "Complete changed-only and constructed21-region arithmetic for allfive terms, all585held/free nodes, energy/force sums and signed/absolute work; tail agreement is by byte-exact reuse",
+  "independentlyComputedEnergyWork": {
+    "changedShellComparison": {
+      "matrix": {
+        "aEnergyJ": 2.619701570922119e-05,
+        "bEnergyJ": 2.6197015716678908e-05,
+        "aDirectionalDerivativeJ": 1.6413331648261385e-05,
+        "bDirectionalDerivativeJ": 1.641333172687858e-05,
+        "aggregateForceN": 1.2510401233294284e-09,
+        "triangleForceN": 1.2510401233294284e-09,
+        "aggregateWorkJ": 7.861719520368571e-14,
+        "triangleWorkJ": 7.861719520368571e-14
+      },
+      "volume": {
+        "aEnergyJ": 0.001909114557450088,
+        "bEnergyJ": 0.0019091145595284203,
+        "aDirectionalDerivativeJ": 0.000596551299030439,
+        "bDirectionalDerivativeJ": 0.0005965513194928706,
+        "aggregateForceN": 3.4381602409538914e-07,
+        "triangleForceN": 3.4381602409538914e-07,
+        "aggregateWorkJ": 2.0462431405183263e-11,
+        "triangleWorkJ": 2.0462431405183263e-11
+      },
+      "passiveFiber": {
+        "aEnergyJ": 0.012205141766579027,
+        "bEnergyJ": 0.012205141766580035,
+        "aDirectionalDerivativeJ": 0.0001388942018262073,
+        "bDirectionalDerivativeJ": 0.00013889420182622094,
+        "aggregateForceN": 4.731770530952417e-13,
+        "triangleForceN": 4.731770530952417e-13,
+        "aggregateWorkJ": 1.3622016199208268e-17,
+        "triangleWorkJ": 1.3784035354247793e-17
+      },
+      "activePotential": {
+        "aEnergyJ": 0.021825678243045186,
+        "bEnergyJ": 0.021825678243045283,
+        "aDirectionalDerivativeJ": 0.0,
+        "bDirectionalDerivativeJ": 0.0,
+        "aggregateForceN": 0.0,
+        "triangleForceN": 0.0,
+        "aggregateWorkJ": 0.0,
+        "triangleWorkJ": 0.0
+      },
+      "total": {
+        "aEnergyJ": 0.03596613158278349,
+        "bEnergyJ": 0.035966131584870366,
+        "aDirectionalDerivativeJ": 0.0007518588325049105,
+        "bDirectionalDerivativeJ": 0.0007518588530459735,
+        "aggregateForceN": 3.4506699020386833e-07,
+        "triangleForceN": 3.4506699020386833e-07,
+        "aggregateWorkJ": 2.0541062897544185e-11,
+        "triangleWorkJ": 2.0541062897544185e-11
+      }
+    },
+    "constructedWholeComparison": {
+      "matrix": {
+        "aEnergyJ": 2.7955930587257842e-05,
+        "bEnergyJ": 2.795593059471556e-05,
+        "aDirectionalDerivativeJ": 2.272619101166259e-05,
+        "bDirectionalDerivativeJ": 2.272619109027979e-05,
+        "aggregateForceN": 1.2510401233294284e-09,
+        "triangleForceN": 1.2510401233294284e-09,
+        "aggregateWorkJ": 7.861719520368571e-14,
+        "triangleWorkJ": 7.861719520368571e-14
+      },
+      "volume": {
+        "aEnergyJ": 0.0021815319953233576,
+        "bEnergyJ": 0.00218153199740169,
+        "aDirectionalDerivativeJ": 0.002312427004503772,
+        "bDirectionalDerivativeJ": 0.0023124270249662037,
+        "aggregateForceN": 3.4381602409538914e-07,
+        "triangleForceN": 3.4381602409538914e-07,
+        "aggregateWorkJ": 2.0462431405183263e-11,
+        "triangleWorkJ": 2.0462431405183263e-11
+      },
+      "passiveFiber": {
+        "aEnergyJ": 0.012388819786535455,
+        "bEnergyJ": 0.012388819786536463,
+        "aDirectionalDerivativeJ": 0.000136505814318087,
+        "bDirectionalDerivativeJ": 0.00013650581431810064,
+        "aggregateForceN": 4.731770530952417e-13,
+        "triangleForceN": 4.731770530952417e-13,
+        "aggregateWorkJ": 1.3622016199208268e-17,
+        "triangleWorkJ": 1.3784035354247793e-17
+      },
+      "activePotential": {
+        "aEnergyJ": 0.022172117580236368,
+        "bEnergyJ": 0.022172117580236465,
+        "aDirectionalDerivativeJ": 0.0,
+        "bDirectionalDerivativeJ": 0.0,
+        "aggregateForceN": 0.0,
+        "triangleForceN": 0.0,
+        "aggregateWorkJ": 0.0,
+        "triangleWorkJ": 0.0
+      },
+      "total": {
+        "aEnergyJ": 0.0367704252926824,
+        "bEnergyJ": 0.03677042529476928,
+        "aDirectionalDerivativeJ": 0.0024716590098335213,
+        "bDirectionalDerivativeJ": 0.002471659030374584,
+        "aggregateForceN": 3.4506699020386833e-07,
+        "triangleForceN": 3.4506699020386833e-07,
+        "aggregateWorkJ": 2.0541062897544185e-11,
+        "triangleWorkJ": 2.0541062897544185e-11
+      }
+    }
+  },
+  "componentReconstruction": {
+    "gates": {
+      "forceN": 1e-08,
+      "energyJ": 1e-09
+    },
+    "component": {
+      "maximumForceDifferenceN": 8.08242361927114e-14,
+      "energyDifferenceJ": 4.85722573273506e-17
+    },
+    "elementToGlobal": {
+      "maximumForceDifferenceN": 0,
+      "maximumEnergyDifferenceJ": 0,
+      "all585Nodes": true
+    }
+  },
+  "operationalCompletion": false,
+  "element247Qualification": false,
+  "patchQualification": false,
+  "sourceReview": [
+    "Metadata helper adds shell=id, rejects conflicts and preserves numerical fields.",
+    "Runtime change applies only metadata helper around existing producer record; original arithmetic/callbacks/resource handling unchanged.",
+    "Actual serialized nonzero producer records now cross constructor boundary in synthetic test; deleting shell reproduces original rejection.",
+    "Offline reconstruction never invokes changedRule, assembly, RuntimeLimits.invoke or a constitutive evaluator; only retained-vector arithmetic.",
+    "Every immutable read equals failed-evidence Git blob and source modifications are separately hash-bound.",
+    "Original incomplete receipts/refusal chain and consumed one-shot authorization remain immutable."
+  ],
+  "limits": [
+    "PASS accepts offline candidate arithmetic only; original run remains incomplete with exits1.",
+    "No independent T24 tail evaluation, radial/chart/depth sensitivity, extra state/element, element/fullpatch or anatomical qualification.",
+    "The19-tail differences are zero by construction and give no independent refinement evidence.",
+    "Region triangles permit within-region cancellation; work bounds are implied algebraically by force bounds.",
+    "Public entry exit remains producer-retained executor tool evidence, not independently authenticated process observation.",
+    "Original8.611662232570753e-5N failure, fullpatch and secondary unresolved status persist.",
+    "Source/candidate emitted offline only; no retry/new authorization/source/raw mutation/publication by reviewer."
+  ],
+  "qualifiedVerdict": "PASS_OFFLINE_RECONSTRUCTION_ONLY_ORIGINAL_EXECUTION_INCOMPLETE",
+  "independentReview": true,
+  "focusedSyntheticAndDamageTests": {
+    "javaScriptPass": 11,
+    "pythonPass": 7,
+    "fail": 0,
+    "syntheticCallbacksOnly": true,
+    "specimenCalls": 0
+  },
+  "totalTests": {
+    "pass": 24,
+    "fail": 0
+  },
+  "offlineCommandReplay": {
+    "exitCode": 0,
+    "byteIdentical": true,
+    "sha256": "3efbc3f28b648cf7d5b0f152b865f13aae7ccc89fd752af58d0e35d92da103a6",
+    "specimenCalls": 0,
+    "newQuadratureEvaluations": 0
+  },
+  "exactRerunCommands": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 node --test education/tests/element247_two_shell.test.mjs education/tests/element247_two_shell_reconstruction.test.mjs > /tmp/kenoma-two-shell-reconstruction-final-independent-js.log 2>&1",
+      "testsPass": 11
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python education/tests/element247_two_shell_verifier_test.py > /tmp/kenoma-two-shell-reconstruction-final-independent-python.log 2>&1",
+      "testsPass": 7
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python /tmp/kenoma_two_shell_reconstruction_independent.py > /tmp/kenoma-two-shell-reconstruction-final-independent-arithmetic.log 2>&1",
+      "testsPass": 6
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 node education/tools/reconstruct-element247-two-shell.mjs > /tmp/kenoma-two-shell-reconstruction-final-independent-replay.json",
+      "specimenCalls": 0
+    }
+  ],
+  "supportingArtifactHashes": {
+    "/tmp/kenoma_two_shell_reconstruction_independent.py": "72189ef390f71dc987a2c7bc25c4bce4a718538fbe94e3ee33a54fc61d689242",
+    "/tmp/kenoma-two-shell-reconstruction-final-independent-js.log": "4a9d5f9c504ffabc392478f8bb4e3309159e369d5c8ede8c2094d56594aea6b9",
+    "/tmp/kenoma-two-shell-reconstruction-final-independent-python.log": "c372a57078e7ed6168f66270244e38022b88e13615cced3b2f992411bae97f6a",
+    "/tmp/kenoma-two-shell-reconstruction-final-independent-arithmetic.log": "848d026a564785157e89e70aeb3310fdc04934b09b7f255d834f7069de3ec3cc",
+    "/tmp/kenoma-two-shell-reconstruction-final-independent-replay.json": "3efbc3f28b648cf7d5b0f152b865f13aae7ccc89fd752af58d0e35d92da103a6"
+  }
+}

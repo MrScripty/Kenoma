@@ -1,0 +1,19 @@
+✔ exactly two fixed 2000-point rules and an exact 4000 budget (20.316431ms)
+✔ 4000 synthetic callbacks complete once, with no callback on reused records (211.578584ms)
+✔ nonzero synthetic producer records serialize and cross the actual constructor boundary (148.661148ms)
+✔ complete synthetic reconstruction failure retains full current-shell weights (46.534304ms)
+✔ truncated normal weight bytes are preserved alongside verified full emergency bytes (47.311982ms)
+✔ retained-data constructed values preserve all585 nodes and independent total (8.913519ms)
+✔ changed-only comparison retains nonzero signed vectors without invented tail evidence (1.983172ms)
+✔ immutable complete changed-shell record is readable without mutation (10.116786ms)
+✔ one-byte numerical or schema corruption refuses immutable input (7.031782ms)
+✔ truncated physical-weight evidence refuses immutable input (8.062174ms)
+✔ missing and nonportable inputs refuse without an alternate evidence source (0.327343ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 597.596139
