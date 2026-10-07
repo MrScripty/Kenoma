@@ -1,0 +1,34 @@
+{
+  "verdict": "PASS_INDEPENDENT_RUNTIME_RESOURCE_ARITHMETIC_REVIEW",
+  "sourceCommit": "9611a4865e9591041fa5253c9df6c0f91da84089",
+  "preflightSha256": "61e25922d9f1d6474d6b1030c1af5491c42cf7468550923d24f79c74bf7388a8",
+  "assertions": 477682,
+  "phaseNewCallbackCounts": {
+    "P4": 504000,
+    "P8": 2352000,
+    "I0": 1708000,
+    "I1": 13552000,
+    "R4": 1008000,
+    "H4": 84000,
+    "C4": 508000
+  },
+  "newPlannedCallbacks": 19716000,
+  "sharedLogicalMeasurements": 640000,
+  "logicalRegions": 2002,
+  "reuseFilesVerified": 1424,
+  "sourceFilesVerified": 1630,
+  "artifactFilesVerified": 1303,
+  "closedProductionFileCount": 3116,
+  "worstCaseCombinedOutputBytes": 448240000,
+  "specimenCalls": 0,
+  "materialLawInvocations": 0,
+  "quadratureGeneratedByReviewer": false,
+  "implementationEditsByReviewer": false,
+  "outside236Qualified": false,
+  "preflightResourceEvidence": {
+    "elapsedSeconds": 304.35932441799997,
+    "peakObservedRssBytes": 340967424,
+    "streamedMaximumRegionPoints": 48000,
+    "noFullPointInventoryHeld": true
+  }
+}

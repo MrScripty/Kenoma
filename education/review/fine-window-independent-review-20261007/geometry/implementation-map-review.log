@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "status": "PASS_FROZEN_IMPLEMENTATION_MAPS_PREFLIGHT_PENDING",
+  "sourceCommit": "ce5df8ae5266e481496d2fb05b386a2d52f7a949",
+  "sourceHashes": {
+    "education/tools/fine-window-maps.mjs": "793ea75164374f5b8f84cbb869ac342561639ab8cd820788d958087e9c4c9b48",
+    "education/tools/fine-window-protocol.mjs": "7296a22d759a0677554d1a5f7bccaa218ed93234ad42ab0f21a518728565a68a",
+    "education/tools/fine-window-moments.mjs": "779891e1a9773159b72ae7d652e5a0e223cbab7aa7eabd1593deac090ae43f37",
+    "education/tools/preflight-fine-window.mjs": "153cea6491d68c30713151ae491ac4bf226e7bb97bec7d95feac0c9eb6115c1e"
+  },
+  "specimenCalls": 0,
+  "materialLawInvocations": 0,
+  "sourceEdits": 0,
+  "tetrahedraExactMetadataChecks": 34880,
+  "pointChecks": 4360000,
+  "normalizedDegree5Checks": 21168,
+  "maximumIndependentCoordinateDifference": 0,
+  "maximumIndependentRelativeWeightDifference": 3.589740337150793e-16,
+  "maximumActualNormalizedMomentRelativeError": 4.258112182653692e-16,
+  "preflightDirectory": "/tmp/kenoma-fine-preflight-initial-20261007",
+  "preflightCompleted": false,
+  "seconds": 7.249753778000013,
+  "assertions": 196580
+}

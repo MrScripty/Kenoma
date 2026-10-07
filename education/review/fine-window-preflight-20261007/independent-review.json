@@ -1,0 +1,220 @@
+{
+  "schema": 1,
+  "verdict": "PASS",
+  "reviewKind": "INDEPENDENT_STRUCTURAL_PREPARATION_ONLY",
+  "sourceCommit": "9611a4865e9591041fa5253c9df6c0f91da84089",
+  "preflightSha256": "61e25922d9f1d6474d6b1030c1af5491c42cf7468550923d24f79c74bf7388a8",
+  "budget": {
+    "plannedMaterialCalls": 19716000,
+    "maximumMaterialCalls": 19716000,
+    "maximumWallSeconds": 7200,
+    "nodeHeapMiB": 1024,
+    "maximumRssBytes": 2147483648,
+    "maximumOutputBytes": 536870912,
+    "invocations": 1
+  },
+  "specimenCalls": 0,
+  "materialLawInvocations": 0,
+  "executionAuthorized": false,
+  "geometryReport": "review/fine-window-independent-review-20261007/geometry/implementation-final-review.json",
+  "runtimeReport": "review/fine-window-independent-review-20261007/runtime/independent-runtime-review.json",
+  "geometryClosureAssertions": 21632,
+  "independentRuntimeScalarHashAssertions": 477682,
+  "tests": {
+    "jsPass": 11,
+    "pythonPass": 20,
+    "acceptedSupervisorPass": 30,
+    "authorizationRefusalPass": 1,
+    "fail": 0,
+    "pass": 62
+  },
+  "supportingArtifacts": {
+    "review/fine-window-independent-review-20261007/geometry/PHYSICAL.md": {
+      "bytes": 1927,
+      "sha256": "aa0f7da2343a92f8b56faf73d0d7219fdae1e08171478e0ed0e7041e88fc5730"
+    },
+    "review/fine-window-independent-review-20261007/geometry/README.md": {
+      "bytes": 5000,
+      "sha256": "593cb61eb5bb1b068e34e60da8a888a96d0f4b0a425a1309a063df1529e261c3"
+    },
+    "review/fine-window-independent-review-20261007/geometry/check_geometry.py": {
+      "bytes": 6048,
+      "sha256": "097e3f047b8532982f64f3b6013954511f5bd8e57969e5a33e31cf909b6c95da"
+    },
+    "review/fine-window-independent-review-20261007/geometry/check_physical_geometry.py": {
+      "bytes": 4663,
+      "sha256": "f660212b52b180ea5d84f657f8130e508c7deddd9e3daba5d6e56bbdd3fd3738"
+    },
+    "review/fine-window-independent-review-20261007/geometry/geometry-design-review.json": {
+      "bytes": 6828,
+      "sha256": "b25e642620d81ec5693e8732c6324898754c77cccefcd1ed1f52b637a542d07d"
+    },
+    "review/fine-window-independent-review-20261007/geometry/implementation-assessment-initial.md": {
+      "bytes": 2510,
+      "sha256": "ffce904fed7e62b8f64799f36253bd385723a88ccff252f7cbf55a81e5f278bf"
+    },
+    "review/fine-window-independent-review-20261007/geometry/implementation-export-tets.mjs": {
+      "bytes": 939,
+      "sha256": "79a1c2a37fca8e597c406b9007d644d19e7a6042613310a2aca84406b19600d2"
+    },
+    "review/fine-window-independent-review-20261007/geometry/implementation-final-artifact-inventory.json": {
+      "bytes": 3378,
+      "sha256": "cb8b8ccbf254ab02eb670d8f85b3bd8ed3d3ea58cf9fbd9289ae128505d37493"
+    },
+    "review/fine-window-independent-review-20261007/geometry/implementation-final-assessment.md": {
+      "bytes": 3550,
+      "sha256": "37f0b0e6ce71f7c22766d6528532cf504b491c312c8060b51625929ca6909c17"
+    },
+    "review/fine-window-independent-review-20261007/geometry/implementation-final-rebind.py": {
+      "bytes": 7990,
+      "sha256": "cadfeaf16c1e3b05ae3494126bf994d6b14d31601fa8ee3e4b17bb6c998e731c"
+    },
+    "review/fine-window-independent-review-20261007/geometry/implementation-final-review.json": {
+      "bytes": 3047,
+      "sha256": "e2c90b5017778f4cb024badd208d70619ae4070183ae6439c53e5ff055810323"
+    },
+    "review/fine-window-independent-review-20261007/geometry/implementation-final-review.log": {
+      "bytes": 3047,
+      "sha256": "e2c90b5017778f4cb024badd208d70619ae4070183ae6439c53e5ff055810323"
+    },
+    "review/fine-window-independent-review-20261007/geometry/implementation-map-review.json": {
+      "bytes": 50151,
+      "sha256": "50b70f78d12b4038d81c994ca80770dcd3926500bbab605f7f4530ac78433bdf"
+    },
+    "review/fine-window-independent-review-20261007/geometry/implementation-map-review.log": {
+      "bytes": 1153,
+      "sha256": "80bce6112f4ae3d546d2270fbc441c041044575dd3f22b7c519ff95b71bd0206"
+    },
+    "review/fine-window-independent-review-20261007/geometry/implementation-physical-review.json": {
+      "bytes": 132106,
+      "sha256": "d9dc2f1de549b616cf365c5daba7b1502bf5b6d48d44aae98345b5edb94d7eac"
+    },
+    "review/fine-window-independent-review-20261007/geometry/implementation-physical-review.log": {
+      "bytes": 814,
+      "sha256": "e34926eb2f21788f19e0530b087d40b1fbaa6e891418bf7d9299699f0fc0f292"
+    },
+    "review/fine-window-independent-review-20261007/geometry/implementation-physical-review.py": {
+      "bytes": 4849,
+      "sha256": "02289449bf1f389caa0fc4d1c9c554bec855cd35b06518e7172331c72225ff37"
+    },
+    "review/fine-window-independent-review-20261007/geometry/implementation-review.py": {
+      "bytes": 6483,
+      "sha256": "59bda5d5047d55f7ec96652ee34cef0665c6b44c93b1f4932f1c4a3ddfa9fd3b"
+    },
+    "review/fine-window-independent-review-20261007/geometry/implementation-tets.jsonl": {
+      "bytes": 6784748,
+      "sha256": "3e3af338fefd32b45d1789d3e4aafe92745212df11058db2ff34ff65d73da9e2"
+    },
+    "review/fine-window-independent-review-20261007/geometry/implementation-topology.json": {
+      "bytes": 23383,
+      "sha256": "349e7356445f461aa481556570df28f6f40be998f6c2ba28ba5c962bd015ec0f"
+    },
+    "review/fine-window-independent-review-20261007/geometry/physical-geometry-design-review.json": {
+      "bytes": 100137,
+      "sha256": "7fd1fdfeccefc7f469259c286dd147d65cbfcb4502928af4b2bc137c15ab9c2e"
+    },
+    "review/fine-window-independent-review-20261007/geometry/physical-geometry-design-review.log": {
+      "bytes": 553,
+      "sha256": "d4901989ae0d28e6b60c9f2e4891efebd5a998d942ec71cd92ab5a7facf435ef"
+    },
+    "review/fine-window-independent-review-20261007/initial/geometry-implementation-assessment-initial.md": {
+      "bytes": 2510,
+      "sha256": "ffce904fed7e62b8f64799f36253bd385723a88ccff252f7cbf55a81e5f278bf"
+    },
+    "review/fine-window-independent-review-20261007/initial/geometry-implementation-export-tets.mjs": {
+      "bytes": 939,
+      "sha256": "79a1c2a37fca8e597c406b9007d644d19e7a6042613310a2aca84406b19600d2"
+    },
+    "review/fine-window-independent-review-20261007/initial/geometry-implementation-map-review.json": {
+      "bytes": 50151,
+      "sha256": "50b70f78d12b4038d81c994ca80770dcd3926500bbab605f7f4530ac78433bdf"
+    },
+    "review/fine-window-independent-review-20261007/initial/geometry-implementation-map-review.log": {
+      "bytes": 1153,
+      "sha256": "80bce6112f4ae3d546d2270fbc441c041044575dd3f22b7c519ff95b71bd0206"
+    },
+    "review/fine-window-independent-review-20261007/initial/geometry-implementation-physical-review.json": {
+      "bytes": 132106,
+      "sha256": "d9dc2f1de549b616cf365c5daba7b1502bf5b6d48d44aae98345b5edb94d7eac"
+    },
+    "review/fine-window-independent-review-20261007/initial/geometry-implementation-physical-review.log": {
+      "bytes": 814,
+      "sha256": "e34926eb2f21788f19e0530b087d40b1fbaa6e891418bf7d9299699f0fc0f292"
+    },
+    "review/fine-window-independent-review-20261007/initial/geometry-implementation-physical-review.py": {
+      "bytes": 4849,
+      "sha256": "02289449bf1f389caa0fc4d1c9c554bec855cd35b06518e7172331c72225ff37"
+    },
+    "review/fine-window-independent-review-20261007/initial/geometry-implementation-review.py": {
+      "bytes": 6483,
+      "sha256": "59bda5d5047d55f7ec96652ee34cef0665c6b44c93b1f4932f1c4a3ddfa9fd3b"
+    },
+    "review/fine-window-independent-review-20261007/initial/geometry-implementation-topology.json": {
+      "bytes": 23383,
+      "sha256": "349e7356445f461aa481556570df28f6f40be998f6c2ba28ba5c962bd015ec0f"
+    },
+    "review/fine-window-independent-review-20261007/initial/runtime-audit_initial_fixture.py": {
+      "bytes": 1216,
+      "sha256": "603cab18c44c1a3938a0aeff45ed9287323188d5274d9bbb3f4983e31ac437f1"
+    },
+    "review/fine-window-independent-review-20261007/initial/runtime-initial-synthetic-audit.json": {
+      "bytes": 341,
+      "sha256": "4d5ae170f8643b97343892ac89264d4ec03ce2e8ffe0700e079084fec0eda1c0"
+    },
+    "review/fine-window-independent-review-20261007/initial/runtime-preliminary-findings.md": {
+      "bytes": 2725,
+      "sha256": "11c4e63e90134bdccb01c3d9c245703007046bbbaa3a2e3eac9f258302ab9312"
+    },
+    "review/fine-window-independent-review-20261007/runtime/audit_damage.py": {
+      "bytes": 4013,
+      "sha256": "b0d966926dd50b7caf34ed42e4af5422c3b5fcf4516e81cc9b1a198c56fb6262"
+    },
+    "review/fine-window-independent-review-20261007/runtime/audit_initial_fixture.py": {
+      "bytes": 1216,
+      "sha256": "603cab18c44c1a3938a0aeff45ed9287323188d5274d9bbb3f4983e31ac437f1"
+    },
+    "review/fine-window-independent-review-20261007/runtime/audit_runtime.py": {
+      "bytes": 11840,
+      "sha256": "184af9a8b819b4fc93035d423f86827cb3ad51378875935d9a692a8be08815f8"
+    },
+    "review/fine-window-independent-review-20261007/runtime/correction-damage-review.json": {
+      "bytes": 1880,
+      "sha256": "0ad13734159e82f229adfe409dd55ebacffe43975543d9021e44a3711a2753c4"
+    },
+    "review/fine-window-independent-review-20261007/runtime/external-cap-isolation.json": {
+      "bytes": 255,
+      "sha256": "65b40c6bd4ab635bb0ffde9e97dbd0cd64d9a52c7836d10c5300775dc640ca53"
+    },
+    "review/fine-window-independent-review-20261007/runtime/final-assessment.md": {
+      "bytes": 5008,
+      "sha256": "0d8bbf041d5ba637bda42f542248a233c484e61953e9f72a3dcfabbf2a716687"
+    },
+    "review/fine-window-independent-review-20261007/runtime/final-runtime-audit.json": {
+      "bytes": 1053,
+      "sha256": "922d8e88505a57f3a5725e87248933f1d763f15ae3c16f00676be7860a862676"
+    },
+    "review/fine-window-independent-review-20261007/runtime/historical-4000-attribution.json": {
+      "bytes": 1230,
+      "sha256": "aac1785c917262f0af18cb66c6e9d48dbe8bec2009cc5ec02fc04621886a55af"
+    },
+    "review/fine-window-independent-review-20261007/runtime/independent-runtime-review.json": {
+      "bytes": 1857,
+      "sha256": "9279c0ec795b3d696afe48464c399a84dc9570a5c26c297bec02173a2f4b3ba7"
+    },
+    "review/fine-window-independent-review-20261007/runtime/initial-synthetic-audit.json": {
+      "bytes": 341,
+      "sha256": "4d5ae170f8643b97343892ac89264d4ec03ce2e8ffe0700e079084fec0eda1c0"
+    },
+    "review/fine-window-independent-review-20261007/runtime/preliminary-findings.md": {
+      "bytes": 2725,
+      "sha256": "11c4e63e90134bdccb01c3d9c245703007046bbbaa3a2e3eac9f258302ab9312"
+    }
+  },
+  "remainingPreparationBlockers": [],
+  "outsidePatchQualified": false,
+  "anatomicalQualification": false,
+  "originalResultCommit": "38ae8a2e2af57cf33254af987b724824b9d84357",
+  "originalResult": "UNRESOLVED_FIXED_PATCH_INTEGRATION",
+  "futureExecutionRequiresSeparateParentAcceptance": true,
+  "futurePublicEntryExitObservationRequired": true
+}

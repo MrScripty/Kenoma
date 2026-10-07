@@ -1,0 +1,9 @@
+{
+  "verdict": "PASS_ISOLATED_EXTERNAL_LOG_CAP",
+  "permittedBytes": 65536,
+  "refusedBytes": 65537,
+  "reason": "EXTERNAL_FILE_ENVELOPE",
+  "sourceCommit": "9611a4865e9591041fa5253c9df6c0f91da84089",
+  "specimenCalls": 0,
+  "materialLawInvocations": 0
+}

@@ -1,0 +1,22 @@
+{
+  "verdict": "PASS_EXACT_HISTORICAL_4000_ATTRIBUTION",
+  "frozenResultCommit": "38ae8a2e2af57cf33254af987b724824b9d84357",
+  "sourceCommit": "9611a4865e9591041fa5253c9df6c0f91da84089",
+  "historicalCompletedMeasurements": 4000,
+  "historicalChildExitCode": 1,
+  "historicalWorkerExitCode": 1,
+  "oldFailureFilesByteIdenticalToFrozenResult": true,
+  "mathematicalValuesExact": true,
+  "metadataWrappersMayDiffer": true,
+  "filesSha256": {
+    "external-exit.json": "59fed0ff2d20d6b176edcd96d46915589caf04e6c194bfb48d436a8b4ffc2e00",
+    "launcher-exit.pending.json": "f62fd725dd10eb7ade80e9b1565595b55e1b4fdc1526133c42561518ebeea933",
+    "external-incomplete.json": "acbf5236a1b1be4fdc0e971e254d5cd9c4867c4e7e7db4f8786c4b88caccdaa3",
+    "supervisor-incomplete.json": "6f4886bc9602c783fd23822c94375f1c9589e03a81fcb3146028a91ec0d49b1f",
+    "material/incomplete-receipt.json": "eff772aaf6db606461f7b7e4c8dffbd354f401c8b6c4c09dd3f86ef7556f1b49",
+    "material/T24-terminal46-s1-shell.json": "1a3c66816ea555f0f2ed1286e4188f9f85de552d4b211d080a04a5fde69635ba",
+    "material/T24-terminal46-s2-shell.json": "22965ba49322c915198d945be1e14e9da205f99bf31412e387d814bded6b5078"
+  },
+  "specimenCalls": 0,
+  "materialLawInvocations": 0
+}

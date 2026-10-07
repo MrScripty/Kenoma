@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "status": "PASS_INDEPENDENT_FROZEN_GEOMETRY_PHYSICAL_WEIGHTS_AND_REUSE_CLOSURE",
+  "sourceCommit": "9611a4865e9591041fa5253c9df6c0f91da84089",
+  "preflightSha256": "61e25922d9f1d6474d6b1030c1af5491c42cf7468550923d24f79c74bf7388a8",
+  "preflightDirectory": "/tmp/kenoma-fine-preflight-final-20261007",
+  "specimenCalls": 0,
+  "materialLawInvocations": 0,
+  "newQuadratureGeneratedDuringRebind": false,
+  "sourceEdits": 0,
+  "assertions": 21632,
+  "seconds": 2.12425178400008,
+  "geometrySourceUnchangedFromIndependentInitialReview": true,
+  "exactFinalArraysRebound": 462,
+  "exactImmutableReuseFiles": 1424,
+  "actualNormalizedPhysicalOriginHashChecks": 2002,
+  "allPreflightArtifactsVerified": 1303,
+  "independentChecks": {
+    "tetrahedraExactMetadataChecks": 34880,
+    "pointChecks": 4360000,
+    "normalizedDegree5Checks": 21168,
+    "maximumIndependentCoordinateDifference": 0,
+    "maximumIndependentRelativeWeightDifference": 3.589740337150793e-16,
+    "maximumActualNormalizedMomentRelativeError": 4.258112182653692e-16
+  },
+  "independentPhysicalChecks": {
+    "physicalMomentChecks": 4410,
+    "geometricStatePointChecks": 15260000,
+    "maximumPhysicalMomentRelativeError": 7.011741362406868e-14,
+    "maximumIndependentRelativeWeightDifference": 4.906890625819781e-15,
+    "minimumReferenceJacobian": 1.3860150188955186e-07,
+    "minimumPhysicalWeightM3": 1.6117946584952456e-34,
+    "minimumSampleJ": {
+      "control45": 0.5607113786709221,
+      "terminal46": 1.3430852676931198e-06
+    }
+  },
+  "completePreflightCounts": {
+    "normalizedMomentChecks": 75096,
+    "physicalMomentChecks": 15015,
+    "geometryPointChecks": 20356000,
+    "newPlannedCallbacks": 19716000,
+    "newBinaryBytes": 345840000,
+    "worstCaseCombinedOutputBytes": 448240000
+  },
+  "serializationCorrection": "26 byte universal finite-number bound valid; actual production + emergency constructor shapes certified without changing any cap or physical gate",
+  "streamedMaximumRegionPoints": 48000,
+  "preflightResourceEvidence": {
+    "elapsedSeconds": 304.35932441799997,
+    "peakObservedRssBytes": 340967424,
+    "streamedMaximumRegionPoints": 48000,
+    "noFullPointInventoryHeld": true
+  },
+  "tests": {
+    "jsPass": 11,
+    "pythonPass": 20,
+    "acceptedSupervisorPass": 30,
+    "authorizationRefusalPass": 1,
+    "fail": 0,
+    "pass": 62
+  },
+  "independentArtifactHashes": {
+    "implementation-map-review.json": "50b70f78d12b4038d81c994ca80770dcd3926500bbab605f7f4530ac78433bdf",
+    "implementation-physical-review.json": "d9dc2f1de549b616cf365c5daba7b1502bf5b6d48d44aae98345b5edb94d7eac",
+    "implementation-assessment-initial.md": "ffce904fed7e62b8f64799f36253bd385723a88ccff252f7cbf55a81e5f278bf"
+  },
+  "qualification": false,
+  "outside236Qualified": false,
+  "limits": [
+    "Geometry/structural evidence only, not nonlinear stress integration agreement",
+    "All frozen failed comparisons/result unchanged",
+    "No execution authorization or material calls",
+    "Outside236 U3 elements remain unqualified"
+  ]
+}

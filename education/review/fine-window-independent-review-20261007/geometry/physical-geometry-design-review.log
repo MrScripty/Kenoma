@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "status": "PASS_INDEPENDENT_PHYSICAL_GEOMETRY_DESIGN",
+  "specimenCalls": 0,
+  "materialLawInvocations": 0,
+  "geometricStatePointChecks": 15260000,
+  "physicalMomentChecks": 4410,
+  "maximumPhysicalMomentRelativeError": 6.663555575575021e-14,
+  "minimumReferenceJacobian": 1.3860150188955186e-07,
+  "minimumPhysicalWeightM3": 1.611794658495245e-34,
+  "minimumSampleJ": {
+    "control45": 0.5607113786709221,
+    "terminal46": 1.3430852676931198e-06
+  },
+  "seconds": 20.16231235500163,
+  "productionPhysicalWeightsReviewed": false
+}

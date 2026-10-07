@@ -1,0 +1,3841 @@
+{
+  "schema": 1,
+  "status": "PASS_INDEPENDENT_PHYSICAL_GEOMETRY_DESIGN",
+  "specimenCalls": 0,
+  "materialLawInvocations": 0,
+  "geometricStatePointChecks": 15260000,
+  "physicalMomentChecks": 4410,
+  "maximumPhysicalMomentRelativeError": 6.663555575575021e-14,
+  "minimumReferenceJacobian": 1.3860150188955186e-07,
+  "minimumPhysicalWeightM3": 1.611794658495245e-34,
+  "minimumSampleJ": {
+    "control45": 0.5607113786709221,
+    "terminal46": 1.3430852676931198e-06
+  },
+  "seconds": 20.16231235500163,
+  "rows": [
+    {
+      "recipe": "I0",
+      "element": 197,
+      "corner": 3,
+      "region": "s1",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 7.942614376943831e-15,
+      "minimumSampleJ": {
+        "control45": 0.5608742379387109,
+        "terminal46": 0.47178503357151275
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 197,
+      "corner": 3,
+      "region": "s2",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.6118835059091557e-14,
+      "minimumSampleJ": {
+        "control45": 0.5614695052704232,
+        "terminal46": 0.5335180802943648
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 197,
+      "corner": 3,
+      "region": "s3",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.6235638211693486e-14,
+      "minimumSampleJ": {
+        "control45": 0.5617670411767516,
+        "terminal46": 0.5643455597108227
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 197,
+      "corner": 3,
+      "region": "s4",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.0395480581587866e-14,
+      "minimumSampleJ": {
+        "control45": 0.5619157846901216,
+        "terminal46": 0.5797477296073335
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 197,
+      "corner": 3,
+      "region": "s5",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.6819653974703926e-14,
+      "minimumSampleJ": {
+        "control45": 0.5619901503366455,
+        "terminal46": 0.5874456959991978
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 197,
+      "corner": 3,
+      "region": "s6",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 6.307370240513963e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620273316324279,
+        "terminal46": 0.591293871293214
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 197,
+      "corner": 3,
+      "region": "s7",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 3.165365435517191e-14,
+      "minimumSampleJ": {
+        "control45": 0.56204592189847,
+        "terminal46": 0.5932177534319938
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 197,
+      "corner": 3,
+      "region": "s8",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.436678777005957e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620552169360518,
+        "terminal46": 0.5941796426826284
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 197,
+      "corner": 3,
+      "region": "s9",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.7053260279908108e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620598644309371,
+        "terminal46": 0.5946605742980324
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 197,
+      "corner": 3,
+      "region": "s10",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.4529160426150845e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620621881724788,
+        "terminal46": 0.5949010368463399
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 197,
+      "corner": 3,
+      "region": "s11",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.5112677809453716e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620633500418106,
+        "terminal46": 0.5950212673050014
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 197,
+      "corner": 3,
+      "region": "s12",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.4879071504249496e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620639309760549,
+        "terminal46": 0.5950813823301895
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 197,
+      "corner": 3,
+      "region": "s13",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.3315559396640574e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620642214430048,
+        "terminal46": 0.595111439791681
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 197,
+      "corner": 3,
+      "region": "s14",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.92725201793482e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620643666765696,
+        "terminal46": 0.5951264685097353
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 197,
+      "corner": 3,
+      "region": "s15",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 4.777248941426311e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620644392931308,
+        "terminal46": 0.5951339828654822
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 197,
+      "corner": 3,
+      "region": "s16",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.2614740481027912e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620644756015941,
+        "terminal46": 0.5951377400425423
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 197,
+      "corner": 3,
+      "region": "s17",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.47171972278659e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620644937558462,
+        "terminal46": 0.5951396186309347
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 197,
+      "corner": 3,
+      "region": "s18",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 6.307370240513956e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645028330412,
+        "terminal46": 0.5951405579251577
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 197,
+      "corner": 3,
+      "region": "s19",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.47171972278659e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645073714606,
+        "terminal46": 0.5951410275722612
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 197,
+      "corner": 3,
+      "region": "s20",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.2030724718017361e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645096406859,
+        "terminal46": 0.5951412623955707
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 197,
+      "corner": 3,
+      "region": "core",
+      "points": 2000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 6.031057782639589e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645108093508,
+        "terminal46": 0.5951413826639276
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 200,
+      "corner": 3,
+      "region": "s1",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 6.8286271683156546e-15,
+      "minimumSampleJ": {
+        "control45": 0.5624429283106738,
+        "terminal46": 0.5372454453757115
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 200,
+      "corner": 3,
+      "region": "s2",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.5986720057200448e-14,
+      "minimumSampleJ": {
+        "control45": 0.5622537191246114,
+        "terminal46": 0.5608054404652892
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 200,
+      "corner": 3,
+      "region": "s3",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.1813670121007507e-14,
+      "minimumSampleJ": {
+        "control45": 0.5621591152708852,
+        "terminal46": 0.571066883000397
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 200,
+      "corner": 3,
+      "region": "s4",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.7261252008797142e-14,
+      "minimumSampleJ": {
+        "control45": 0.5621118135288384,
+        "terminal46": 0.5758154569852776
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 200,
+      "corner": 3,
+      "region": "s5",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 7.587363520350365e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620881627040296,
+        "terminal46": 0.5780938935907375
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 200,
+      "corner": 3,
+      "region": "s6",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.674545640923501e-14,
+      "minimumSampleJ": {
+        "control45": 0.562076337303166,
+        "terminal46": 0.579209110101085
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 200,
+      "corner": 3,
+      "region": "s7",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.574377930472698e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620704246057867,
+        "terminal46": 0.5797607130085095
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 200,
+      "corner": 3,
+      "region": "s8",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 5.500838552254003e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620674682576048,
+        "terminal46": 0.5800350125128534
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 200,
+      "corner": 3,
+      "region": "s9",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.0242940752472968e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620659900838504,
+        "terminal46": 0.5801717867012082
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 200,
+      "corner": 3,
+      "region": "s10",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 3.224629496148897e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620652509969509,
+        "terminal46": 0.5802400798948242
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 200,
+      "corner": 3,
+      "region": "s11",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 3.0349454081401385e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620648814534369,
+        "terminal46": 0.5802742030154059
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 200,
+      "corner": 3,
+      "region": "s12",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 5.880206728271518e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620646966817634,
+        "terminal46": 0.5802912587061242
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 200,
+      "corner": 3,
+      "region": "s13",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.1434301944989727e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620646042958496,
+        "terminal46": 0.5802997850844653
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 200,
+      "corner": 3,
+      "region": "s14",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 4.742102200218966e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645581030762,
+        "terminal46": 0.5803040479068465
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 200,
+      "corner": 3,
+      "region": "s15",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.5607351881182415e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645350065616,
+        "terminal46": 0.5803061792261619
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 200,
+      "corner": 3,
+      "region": "s16",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.3900195089103588e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645234582936,
+        "terminal46": 0.580307244862947
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 200,
+      "corner": 3,
+      "region": "s17",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 4.3627340242014486e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645176840778,
+        "terminal46": 0.58030777767554
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 200,
+      "corner": 3,
+      "region": "s18",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 4.742102200218966e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645147969421,
+        "terminal46": 0.5803080440805088
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 200,
+      "corner": 3,
+      "region": "s19",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 9.484204400437933e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645133534908,
+        "terminal46": 0.5803081772826623
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 200,
+      "corner": 3,
+      "region": "s20",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 8.53578396039414e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645126318837,
+        "terminal46": 0.580308243883484
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 200,
+      "corner": 3,
+      "region": "core",
+      "points": 2000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 3.4913727449112138e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645119551299,
+        "terminal46": 0.5803082777975458
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 203,
+      "corner": 2,
+      "region": "s1",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 5.530110946030184e-15,
+      "minimumSampleJ": {
+        "control45": 0.5633143085249824,
+        "terminal46": 0.5580696238993545
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 203,
+      "corner": 2,
+      "region": "s2",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 8.824645126643828e-15,
+      "minimumSampleJ": {
+        "control45": 0.5626894044359809,
+        "terminal46": 0.557790763316096
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 203,
+      "corner": 2,
+      "region": "s3",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 4.941801270920431e-15,
+      "minimumSampleJ": {
+        "control45": 0.5623769567276214,
+        "terminal46": 0.5577160320479144
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 203,
+      "corner": 2,
+      "region": "s4",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.7766952188309096e-14,
+      "minimumSampleJ": {
+        "control45": 0.5622207339573966,
+        "terminal46": 0.5576947795399693
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 203,
+      "corner": 2,
+      "region": "s5",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 8.118673516512094e-15,
+      "minimumSampleJ": {
+        "control45": 0.5621426228434299,
+        "terminal46": 0.5576881738638513
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 203,
+      "corner": 2,
+      "region": "s6",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.0002528953725443e-15,
+      "minimumSampleJ": {
+        "control45": 0.5621035673540927,
+        "terminal46": 0.5576858752071419
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 203,
+      "corner": 2,
+      "region": "s7",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 3.153339858587303e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620840396264813,
+        "terminal46": 0.557684976803933
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 203,
+      "corner": 2,
+      "region": "s8",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 4.824139335898486e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620742757667871,
+        "terminal46": 0.5576845903185208
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 203,
+      "corner": 2,
+      "region": "s9",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.2355767654163714e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620693938380926,
+        "terminal46": 0.5576844127528644
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 203,
+      "corner": 2,
+      "region": "s10",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 9.883602541840798e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620669528739586,
+        "terminal46": 0.5576843278892188
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 203,
+      "corner": 2,
+      "region": "s11",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.153213410901031e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620657323919107,
+        "terminal46": 0.5576842864371041
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 203,
+      "corner": 2,
+      "region": "s12",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.5531375422892683e-14,
+      "minimumSampleJ": {
+        "control45": 0.562065122150991,
+        "terminal46": 0.5576842659559351
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 203,
+      "corner": 2,
+      "region": "s13",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 5.883096751095713e-15,
+      "minimumSampleJ": {
+        "control45": 0.56206481703053,
+        "terminal46": 0.5576842557766308
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 203,
+      "corner": 2,
+      "region": "s14",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 7.765687711446342e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620646644702957,
+        "terminal46": 0.5576842507023229
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 203,
+      "corner": 2,
+      "region": "s15",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.3650048939404766e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645881901472,
+        "terminal46": 0.557684248168974
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 203,
+      "corner": 2,
+      "region": "s16",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 4.2828944347976794e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645500500209,
+        "terminal46": 0.557684246903149
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 203,
+      "corner": 2,
+      "region": "s17",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 8.706983191621655e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645309799887,
+        "terminal46": 0.5576842462706154
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 203,
+      "corner": 2,
+      "region": "s18",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.376644639756397e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645214449762,
+        "terminal46": 0.5576842459543329
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 203,
+      "corner": 2,
+      "region": "s19",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 8.942307061665485e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645166774736,
+        "terminal46": 0.5576842457961959
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 203,
+      "corner": 2,
+      "region": "s20",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.317940119931711e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645142938075,
+        "terminal46": 0.5576842457171979
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 203,
+      "corner": 2,
+      "region": "core",
+      "points": 2000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 7.636994970016122e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645120329681,
+        "terminal46": 0.5576842456781446
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 206,
+      "corner": 1,
+      "region": "s1",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.0468085617034766e-14,
+      "minimumSampleJ": {
+        "control45": 0.5629894747746662,
+        "terminal46": 0.43648714840853653
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 206,
+      "corner": 1,
+      "region": "s2",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 6.428884904199147e-15,
+      "minimumSampleJ": {
+        "control45": 0.562526916377414,
+        "terminal46": 0.41042929935819633
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 206,
+      "corner": 1,
+      "region": "s3",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.7614734817697887e-14,
+      "minimumSampleJ": {
+        "control45": 0.5622956949024965,
+        "terminal46": 0.3980193381015416
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 206,
+      "corner": 1,
+      "region": "s4",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.957044250123826e-14,
+      "minimumSampleJ": {
+        "control45": 0.5621800985964912,
+        "terminal46": 0.39196887451104867
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 206,
+      "corner": 1,
+      "region": "s5",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 6.663555575575021e-14,
+      "minimumSampleJ": {
+        "control45": 0.5621223040509635,
+        "terminal46": 0.3889822440013552
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 206,
+      "corner": 1,
+      "region": "s6",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.4973325400353297e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620934076799196,
+        "terminal46": 0.38749857557176387
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 206,
+      "corner": 1,
+      "region": "s7",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.905550359079574e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620789597202923,
+        "terminal46": 0.38675915262727595
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 206,
+      "corner": 1,
+      "region": "s8",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.1165957991504139e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620717357965638,
+        "terminal46": 0.3863900439166499
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 206,
+      "corner": 1,
+      "region": "s9",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.137140346761008e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620681238485721,
+        "terminal46": 0.38620564024560344
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 206,
+      "corner": 1,
+      "region": "s10",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 3.7459988100530037e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620663178780589,
+        "terminal46": 0.3861134760804555
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 206,
+      "corner": 1,
+      "region": "s11",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.341249256283127e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620654148939815,
+        "terminal46": 0.3860674034145883
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 206,
+      "corner": 1,
+      "region": "s12",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.6808969019468604e-14,
+      "minimumSampleJ": {
+        "control45": 0.562064963402026,
+        "terminal46": 0.38604436943609477
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 206,
+      "corner": 1,
+      "region": "s13",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 4.658485699681299e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620647376560931,
+        "terminal46": 0.38603285303603313
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 206,
+      "corner": 1,
+      "region": "s14",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.6328712761769503e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620646247833317,
+        "terminal46": 0.3860270949823913
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 206,
+      "corner": 1,
+      "region": "s15",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 4.442370383716703e-14,
+      "minimumSampleJ": {
+        "control45": 0.562064568346593,
+        "terminal46": 0.38602421599311976
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 206,
+      "corner": 1,
+      "region": "s16",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.5128072117521744e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645401286417,
+        "terminal46": 0.38602277650689243
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 206,
+      "corner": 1,
+      "region": "s17",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.8815375461946177e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645260192394,
+        "terminal46": 0.3860220567665778
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 206,
+      "corner": 1,
+      "region": "s18",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.42529410138047e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645189651767,
+        "terminal46": 0.38602169689659566
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 206,
+      "corner": 1,
+      "region": "s19",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.7374606688848872e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645154375499,
+        "terminal46": 0.386021516962102
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 206,
+      "corner": 1,
+      "region": "s20",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.3892748820530373e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645136739891,
+        "terminal46": 0.3860214269950204
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 206,
+      "corner": 1,
+      "region": "core",
+      "points": 2000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 4.152340628090604e-14,
+      "minimumSampleJ": {
+        "control45": 0.562064512007088,
+        "terminal46": 0.38602134124679516
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 246,
+      "corner": 0,
+      "region": "s1",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.1526150184778135e-14,
+      "minimumSampleJ": {
+        "control45": 1.518842666260439,
+        "terminal46": 1.1629224582504207
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 246,
+      "corner": 0,
+      "region": "s2",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.044557360495579e-14,
+      "minimumSampleJ": {
+        "control45": 1.5158003226855568,
+        "terminal46": 1.063030553888764
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 246,
+      "corner": 0,
+      "region": "s3",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.2451980047433577e-14,
+      "minimumSampleJ": {
+        "control45": 1.5142797569285371,
+        "terminal46": 1.0120311115003253
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 246,
+      "corner": 0,
+      "region": "s4",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.3327111151150515e-14,
+      "minimumSampleJ": {
+        "control45": 1.5135196255574925,
+        "terminal46": 0.9862681612336034
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 246,
+      "corner": 0,
+      "region": "s5",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.3086983022301047e-14,
+      "minimumSampleJ": {
+        "control45": 1.513139597748418,
+        "terminal46": 0.9733208967668501
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 246,
+      "corner": 0,
+      "region": "s6",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.497332540035427e-14,
+      "minimumSampleJ": {
+        "control45": 1.5129495933133938,
+        "terminal46": 0.966830819442164
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 246,
+      "corner": 0,
+      "region": "s7",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.3687303344424949e-14,
+      "minimumSampleJ": {
+        "control45": 1.5128545934631539,
+        "terminal46": 0.9635816697867033
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 246,
+      "corner": 0,
+      "region": "s8",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 6.003203221239016e-15,
+      "minimumSampleJ": {
+        "control45": 1.512807094130549,
+        "terminal46": 0.9619560672464383
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 246,
+      "corner": 0,
+      "region": "s9",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 5.522946963539898e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127833446111592,
+        "terminal46": 0.9611430090523354
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 246,
+      "corner": 0,
+      "region": "s10",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 6.8436516722124815e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127714698891275,
+        "terminal46": 0.9607364157243898
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 246,
+      "corner": 0,
+      "region": "s11",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.0445573604955892e-14,
+      "minimumSampleJ": {
+        "control45": 1.5127655325365355,
+        "terminal46": 0.9605331030033488
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 246,
+      "corner": 0,
+      "region": "s12",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.245198004743393e-14,
+      "minimumSampleJ": {
+        "control45": 1.5127625638633184,
+        "terminal46": 0.96043144262833
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 246,
+      "corner": 0,
+      "region": "s13",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.0290826887787885e-14,
+      "minimumSampleJ": {
+        "control45": 1.5127610795267368,
+        "terminal46": 0.9603806114372746
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 246,
+      "corner": 0,
+      "region": "s14",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.8369801856991397e-14,
+      "minimumSampleJ": {
+        "control45": 1.5127603373590677,
+        "terminal46": 0.9603551955908198
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 246,
+      "corner": 0,
+      "region": "s15",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.881537546194729e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127599662749354,
+        "terminal46": 0.9603424876048734
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 246,
+      "corner": 0,
+      "region": "s16",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.4527751795398426e-14,
+      "minimumSampleJ": {
+        "control45": 1.512759780732983,
+        "terminal46": 0.9603361335961023
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 246,
+      "corner": 0,
+      "region": "s17",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.536820024637189e-14,
+      "minimumSampleJ": {
+        "control45": 1.5127596879620084,
+        "terminal46": 0.9603329565877645
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 246,
+      "corner": 0,
+      "region": "s18",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.0445573604955893e-14,
+      "minimumSampleJ": {
+        "control45": 1.5127596415767195,
+        "terminal46": 0.9603313680826555
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 246,
+      "corner": 0,
+      "region": "s19",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 9.725189218407211e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596183837624,
+        "terminal46": 0.9603305738300867
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 246,
+      "corner": 0,
+      "region": "s20",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.0290826887787885e-14,
+      "minimumSampleJ": {
+        "control45": 1.5127596067877032,
+        "terminal46": 0.9603301767034149
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 246,
+      "corner": 0,
+      "region": "core",
+      "points": 2000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.2448228045420656e-14,
+      "minimumSampleJ": {
+        "control45": 1.5127595957272248,
+        "terminal46": 0.960329798153375
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 247,
+      "corner": 0,
+      "region": "s1",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 9.425667724457037e-15,
+      "minimumSampleJ": {
+        "control45": 1.5191259926347724,
+        "terminal46": 0.4785067606114307
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 247,
+      "corner": 0,
+      "region": "s2",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 3.1418892414856933e-15,
+      "minimumSampleJ": {
+        "control45": 1.5159419327418462,
+        "terminal46": 0.2393910850941516
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 247,
+      "corner": 0,
+      "region": "s3",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.3471760804040314e-14,
+      "minimumSampleJ": {
+        "control45": 1.5143505486732558,
+        "terminal46": 0.11973040711764868
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 247,
+      "corner": 0,
+      "region": "s4",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.5894263221633754e-14,
+      "minimumSampleJ": {
+        "control45": 1.513555018109515,
+        "terminal46": 0.059874401382766076
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 247,
+      "corner": 0,
+      "region": "s5",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.6263897250043834e-14,
+      "minimumSampleJ": {
+        "control45": 1.5131572931944115,
+        "terminal46": 0.02993998724258645
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 247,
+      "corner": 0,
+      "region": "s6",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.531993094609103e-14,
+      "minimumSampleJ": {
+        "control45": 1.5129584408295504,
+        "terminal46": 0.01497117803089551
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 247,
+      "corner": 0,
+      "region": "s7",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.4395845875065816e-14,
+      "minimumSampleJ": {
+        "control45": 1.5128590171691456,
+        "terminal46": 0.007486372973756168
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 247,
+      "corner": 0,
+      "region": "s8",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.5504747960296084e-14,
+      "minimumSampleJ": {
+        "control45": 1.5128093059703824,
+        "terminal46": 0.003743870343427933
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 247,
+      "corner": 0,
+      "region": "s9",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 7.947131610816898e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127844505278762,
+        "terminal46": 0.001872594004176116
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 247,
+      "corner": 0,
+      "region": "s10",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.5709446207428752e-14,
+      "minimumSampleJ": {
+        "control45": 1.5127720228467756,
+        "terminal46": 0.0009369495782113247
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 247,
+      "corner": 0,
+      "region": "s11",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.8481701420504417e-14,
+      "minimumSampleJ": {
+        "control45": 1.5127658090155724,
+        "terminal46": 0.00046912580135690074
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 247,
+      "corner": 0,
+      "region": "s12",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 3.289742852849786e-14,
+      "minimumSampleJ": {
+        "control45": 1.5127627021025354,
+        "terminal46": 0.00023521352247937607
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 247,
+      "corner": 0,
+      "region": "s13",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.7003165306864063e-14,
+      "minimumSampleJ": {
+        "control45": 1.5127611486467638,
+        "terminal46": 0.00011825728498291792
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 247,
+      "corner": 0,
+      "region": "s14",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.4600544122198488e-14,
+      "minimumSampleJ": {
+        "control45": 1.5127603719191483,
+        "terminal46": 5.977914145890784e-05
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 247,
+      "corner": 0,
+      "region": "s15",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.6079080235838842e-14,
+      "minimumSampleJ": {
+        "control45": 1.512759983554802,
+        "terminal46": 3.054006382452682e-05
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 247,
+      "corner": 0,
+      "region": "s16",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.0329871562554857e-14,
+      "minimumSampleJ": {
+        "control45": 1.5127597893740705,
+        "terminal46": 1.5920523835460045e-05
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 247,
+      "corner": 0,
+      "region": "s17",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 9.240850710252208e-15,
+      "minimumSampleJ": {
+        "control45": 1.512759692282388,
+        "terminal46": 8.610753070412113e-06
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 247,
+      "corner": 0,
+      "region": "s18",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 7.023046539791678e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596437366404,
+        "terminal46": 4.955867343451864e-06
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 247,
+      "corner": 0,
+      "region": "s19",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.5874381988706182e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596194642752,
+        "terminal46": 3.128424938577249e-06
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 247,
+      "corner": 0,
+      "region": "s20",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 8.686399667637075e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596073279597,
+        "terminal46": 2.2147036086803933e-06
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 247,
+      "corner": 0,
+      "region": "core",
+      "points": 2000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.6113733426002285e-14,
+      "minimumSampleJ": {
+        "control45": 1.512759596044508,
+        "terminal46": 1.3437292342888716e-06
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 248,
+      "corner": 0,
+      "region": "s1",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 8.427593538889701e-15,
+      "minimumSampleJ": {
+        "control45": 1.8364491801664342,
+        "terminal46": 1.5561794315363082
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 248,
+      "corner": 0,
+      "region": "s2",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 6.612419545897992e-15,
+      "minimumSampleJ": {
+        "control45": 1.6747628178299057,
+        "terminal46": 1.24890302262983
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 248,
+      "corner": 0,
+      "region": "s3",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 9.0758699649578e-15,
+      "minimumSampleJ": {
+        "control45": 1.5938008140482125,
+        "terminal46": 1.0944148067679014
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 248,
+      "corner": 0,
+      "region": "s4",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 5.186211408547283e-15,
+      "minimumSampleJ": {
+        "control45": 1.55329010650431,
+        "terminal46": 1.0169585106368118
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 248,
+      "corner": 0,
+      "region": "s5",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.140966509880399e-14,
+      "minimumSampleJ": {
+        "control45": 1.5330273263191057,
+        "terminal46": 0.9781773548527333
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 248,
+      "corner": 0,
+      "region": "s6",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 7.131040686752481e-15,
+      "minimumSampleJ": {
+        "control45": 1.5228940796231143,
+        "terminal46": 0.9587735299469563
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 248,
+      "corner": 0,
+      "region": "s7",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.5688289510855457e-14,
+      "minimumSampleJ": {
+        "control45": 1.5178269921242509,
+        "terminal46": 0.9490683063560711
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 248,
+      "corner": 0,
+      "region": "s8",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.542897894042808e-14,
+      "minimumSampleJ": {
+        "control45": 1.5152933323368476,
+        "terminal46": 0.9442148668524474
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 248,
+      "corner": 0,
+      "region": "s9",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 6.093798405043022e-15,
+      "minimumSampleJ": {
+        "control45": 1.5140264734337898,
+        "terminal46": 0.9417879401829853
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 248,
+      "corner": 0,
+      "region": "s10",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 6.353108975470385e-15,
+      "minimumSampleJ": {
+        "control45": 1.5133930367300619,
+        "terminal46": 0.9405744251206261
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 248,
+      "corner": 0,
+      "region": "s11",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 7.520006542393516e-15,
+      "minimumSampleJ": {
+        "control45": 1.5130763165653196,
+        "terminal46": 0.9399676546572764
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 248,
+      "corner": 0,
+      "region": "s12",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.1150354528376592e-14,
+      "minimumSampleJ": {
+        "control45": 1.5129179560289288,
+        "terminal46": 0.9396642661925948
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 248,
+      "corner": 0,
+      "region": "s13",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.5558634225641755e-14,
+      "minimumSampleJ": {
+        "control45": 1.5128387756481247,
+        "terminal46": 0.9395125711526287
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 248,
+      "corner": 0,
+      "region": "s14",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 8.557248824102967e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127991854291551,
+        "terminal46": 0.9394367234300046
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 248,
+      "corner": 0,
+      "region": "s15",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.296552852136813e-14,
+      "minimumSampleJ": {
+        "control45": 1.5127793903123954,
+        "terminal46": 0.939398799518475
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 248,
+      "corner": 0,
+      "region": "s16",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.2187596810086043e-14,
+      "minimumSampleJ": {
+        "control45": 1.512769492752646,
+        "terminal46": 0.9393798375496245
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 248,
+      "corner": 0,
+      "region": "s17",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.1928286239658679e-14,
+      "minimumSampleJ": {
+        "control45": 1.5127645439717845,
+        "terminal46": 0.9393703565624654
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 248,
+      "corner": 0,
+      "region": "s18",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.2317252095299724e-14,
+      "minimumSampleJ": {
+        "control45": 1.5127620695817328,
+        "terminal46": 0.9393656160678049
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 248,
+      "corner": 0,
+      "region": "s19",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 8.427593538889285e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127608323864312,
+        "terminal46": 0.939363245820384
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 248,
+      "corner": 0,
+      "region": "s20",
+      "points": 6000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.2835873236154448e-14,
+      "minimumSampleJ": {
+        "control45": 1.5127602137888438,
+        "terminal46": 0.9393620606965728
+      }
+    },
+    {
+      "recipe": "I0",
+      "element": 248,
+      "corner": 0,
+      "region": "core",
+      "points": 2000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.4821219790988944e-14,
+      "minimumSampleJ": {
+        "control45": 1.5127596241266625,
+        "terminal46": 0.9393609310615963
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 197,
+      "corner": 3,
+      "region": "s1",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.7520472890317238e-15,
+      "minimumSampleJ": {
+        "control45": 0.5607113786709221,
+        "terminal46": 0.46948625020222595
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 197,
+      "corner": 3,
+      "region": "s2",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 9.461055360771112e-15,
+      "minimumSampleJ": {
+        "control45": 0.5613880120412436,
+        "terminal46": 0.5323695861775132
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 197,
+      "corner": 3,
+      "region": "s3",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 7.145238188513162e-15,
+      "minimumSampleJ": {
+        "control45": 0.5617262786633158,
+        "terminal46": 0.5637716638215732
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 197,
+      "corner": 3,
+      "region": "s4",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.4058249013585919e-14,
+      "minimumSampleJ": {
+        "control45": 0.5618953994585294,
+        "terminal46": 0.57946088530208
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 197,
+      "corner": 3,
+      "region": "s5",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.7105400878785006e-14,
+      "minimumSampleJ": {
+        "control45": 0.561979956727289,
+        "terminal46": 0.587302301737502
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 197,
+      "corner": 3,
+      "region": "s6",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.2264331023221598e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620222345794293,
+        "terminal46": 0.5912221813826946
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 197,
+      "corner": 3,
+      "region": "s7",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 5.3729450196970766e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620433733099495,
+        "terminal46": 0.5931819103126874
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 197,
+      "corner": 3,
+      "region": "s8",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 8.059417529545613e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620539426261854,
+        "terminal46": 0.594161721585776
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 197,
+      "corner": 3,
+      "region": "s9",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.2848346786232136e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620592272722539,
+        "terminal46": 0.5946516138659386
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 197,
+      "corner": 3,
+      "region": "s10",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.121310264980259e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620618695921131,
+        "terminal46": 0.5948965566594068
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 197,
+      "corner": 3,
+      "region": "s11",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 6.307370240513957e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620631907512604,
+        "terminal46": 0.5950190272186319
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 197,
+      "corner": 3,
+      "region": "s12",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 8.28283621230389e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620638513308052,
+        "terminal46": 0.595080262288734
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 197,
+      "corner": 3,
+      "region": "s13",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 8.993842750362493e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620641816204708,
+        "terminal46": 0.5951108797715483
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 197,
+      "corner": 3,
+      "region": "s14",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 4.9057324092886326e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620643467650793,
+        "terminal46": 0.5951261884995965
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 197,
+      "corner": 3,
+      "region": "s15",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 4.438519798880192e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620644293377532,
+        "terminal46": 0.5951338428605648
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 197,
+      "corner": 3,
+      "region": "s16",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 9.84909029892627e-15,
+      "minimumSampleJ": {
+        "control45": 0.562064470623947,
+        "terminal46": 0.5951376700402926
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 197,
+      "corner": 3,
+      "region": "s17",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 8.409826987351941e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620644912668992,
+        "terminal46": 0.5951395836296761
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 197,
+      "corner": 3,
+      "region": "s18",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.8805307568939757e-14,
+      "minimumSampleJ": {
+        "control45": 0.562064501588409,
+        "terminal46": 0.5951405404243821
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 197,
+      "corner": 3,
+      "region": "s19",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 9.344252208168824e-15,
+      "minimumSampleJ": {
+        "control45": 0.562064506749165,
+        "terminal46": 0.5951410188219547
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 197,
+      "corner": 3,
+      "region": "s20",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.553481929608067e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645093297217,
+        "terminal46": 0.5951412580205712
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 197,
+      "corner": 3,
+      "region": "core",
+      "points": 8000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.2517457762575576e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645106707113,
+        "terminal46": 0.5951413819044851
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 200,
+      "corner": 3,
+      "region": "s1",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 3.3076162846528485e-15,
+      "minimumSampleJ": {
+        "control45": 0.5624302660793009,
+        "terminal46": 0.5329888454003958
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 200,
+      "corner": 3,
+      "region": "s2",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 3.0349454081402073e-15,
+      "minimumSampleJ": {
+        "control45": 0.5622473886341346,
+        "terminal46": 0.5587215726394519
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 200,
+      "corner": 3,
+      "region": "s3",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 5.12147037623655e-15,
+      "minimumSampleJ": {
+        "control45": 0.5621559501819021,
+        "terminal46": 0.5700362580608397
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 200,
+      "corner": 3,
+      "region": "s4",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 4.56601741260518e-15,
+      "minimumSampleJ": {
+        "control45": 0.5621102310235475,
+        "terminal46": 0.575302996875538
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 200,
+      "corner": 3,
+      "region": "s5",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 7.018311256324091e-15,
+      "minimumSampleJ": {
+        "control45": 0.562087371461048,
+        "terminal46": 0.5778383797655204
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 200,
+      "corner": 3,
+      "region": "s6",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 7.587363520350356e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620759416841815,
+        "terminal46": 0.5790815326382515
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 200,
+      "corner": 3,
+      "region": "s7",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.707156792078829e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620702267968124,
+        "terminal46": 0.5796969691884999
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 200,
+      "corner": 3,
+      "region": "s8",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 7.018311256324072e-15,
+      "minimumSampleJ": {
+        "control45": 0.562067369353396,
+        "terminal46": 0.5800031518369759
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 200,
+      "corner": 3,
+      "region": "s9",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.005325666446421e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620659406316444,
+        "terminal46": 0.5801558591725535
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 200,
+      "corner": 3,
+      "region": "s10",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 3.0349454081401383e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620652262708519,
+        "terminal46": 0.5802321168328292
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 200,
+      "corner": 3,
+      "region": "s11",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.4985042952691933e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620648690904757,
+        "terminal46": 0.5802702216599893
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 200,
+      "corner": 3,
+      "region": "s12",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.84526132013138e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620646905002484,
+        "terminal46": 0.580289268072552
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 200,
+      "corner": 3,
+      "region": "s13",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 6.272220510156286e-15,
+      "minimumSampleJ": {
+        "control45": 0.562064601205218,
+        "terminal46": 0.5802987897786004
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 200,
+      "corner": 3,
+      "region": "s14",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 4.17304993619269e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645565575199,
+        "terminal46": 0.5803035502565758
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 200,
+      "corner": 3,
+      "region": "s15",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.270883389658683e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645342338577,
+        "terminal46": 0.5803059304018596
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 200,
+      "corner": 3,
+      "region": "s16",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 3.224629496148897e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645230720032,
+        "terminal46": 0.580307120450933
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 200,
+      "corner": 3,
+      "region": "s17",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.119136119251676e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645174909811,
+        "terminal46": 0.5803077154697555
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 200,
+      "corner": 3,
+      "region": "s18",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.270883389658683e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645147005299,
+        "terminal46": 0.5803080129774751
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 200,
+      "corner": 3,
+      "region": "s19",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 7.397679432341587e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645133053628,
+        "terminal46": 0.580308161731132
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 200,
+      "corner": 3,
+      "region": "s20",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.3277886160613105e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645126077038,
+        "terminal46": 0.5803082361077221
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 200,
+      "corner": 3,
+      "region": "core",
+      "points": 8000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 3.6751292051696985e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645119484354,
+        "terminal46": 0.5803082744819726
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 203,
+      "corner": 2,
+      "region": "s1",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.8496249888120664e-15,
+      "minimumSampleJ": {
+        "control45": 0.5631919291475344,
+        "terminal46": 0.5580282720244555
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 203,
+      "corner": 2,
+      "region": "s2",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.529605155284915e-15,
+      "minimumSampleJ": {
+        "control45": 0.5626282186313777,
+        "terminal46": 0.5577738732979065
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 203,
+      "corner": 2,
+      "region": "s3",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 5.530110946030015e-15,
+      "minimumSampleJ": {
+        "control45": 0.5623463647963155,
+        "terminal46": 0.5577085291087154
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 203,
+      "corner": 2,
+      "region": "s4",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 8.236335451534038e-15,
+      "minimumSampleJ": {
+        "control45": 0.5622054382346383,
+        "terminal46": 0.5576912630367171
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 203,
+      "corner": 2,
+      "region": "s5",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.1413207697125697e-14,
+      "minimumSampleJ": {
+        "control45": 0.562134975042616,
+        "terminal46": 0.5576864742847855
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 203,
+      "corner": 2,
+      "region": "s6",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 3.5298580506574312e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620997434688239,
+        "terminal46": 0.55768504007723
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 203,
+      "corner": 2,
+      "region": "s7",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 8.589321256599743e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620821276876762,
+        "terminal46": 0.5576845629027923
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 203,
+      "corner": 2,
+      "region": "s8",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.611968509800226e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620733197983333,
+        "terminal46": 0.5576843842837547
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 203,
+      "corner": 2,
+      "region": "s9",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 3.8828438557231716e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620689158540533,
+        "terminal46": 0.5576843099645162
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 203,
+      "corner": 2,
+      "region": "s10",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.682565670813374e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620667138820122,
+        "terminal46": 0.5576842765522503
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 203,
+      "corner": 2,
+      "region": "s11",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.2001517372235255e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620656128960331,
+        "terminal46": 0.5576842607829439
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 203,
+      "corner": 2,
+      "region": "s12",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.4709006354601996e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620650624030684,
+        "terminal46": 0.5576842531325514
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 203,
+      "corner": 2,
+      "region": "s13",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.047191221695037e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620647871565332,
+        "terminal46": 0.5576842493658263
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 203,
+      "corner": 2,
+      "region": "s14",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 7.765687711446342e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620646495332327,
+        "terminal46": 0.5576842474970483
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 203,
+      "corner": 2,
+      "region": "s15",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.1177883827081855e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645807216855,
+        "terminal46": 0.5576842465663154
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 203,
+      "corner": 2,
+      "region": "s16",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 4.706477400876571e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645463158233,
+        "terminal46": 0.5576842461018756
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 203,
+      "corner": 2,
+      "region": "s17",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 9.412954801753142e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645291128938,
+        "terminal46": 0.5576842458699655
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 203,
+      "corner": 2,
+      "region": "s18",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.0001264476862712e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645205114089,
+        "terminal46": 0.5576842457540241
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 203,
+      "corner": 2,
+      "region": "s19",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 5.647772881051885e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645162107538,
+        "terminal46": 0.5576842456961131
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 203,
+      "corner": 2,
+      "region": "s20",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 3.2945341806135996e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645140603794,
+        "terminal46": 0.5576842456670812
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 203,
+      "corner": 2,
+      "region": "core",
+      "points": 8000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 9.118806486477014e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645120165371,
+        "terminal46": 0.5576842456580077
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 206,
+      "corner": 1,
+      "region": "s1",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 8.589198455003161e-15,
+      "minimumSampleJ": {
+        "control45": 0.5628018253375414,
+        "terminal46": 0.4357035746559292
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 206,
+      "corner": 1,
+      "region": "s2",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 8.044292316459665e-15,
+      "minimumSampleJ": {
+        "control45": 0.5624331409230523,
+        "terminal46": 0.4100362801608983
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 206,
+      "corner": 1,
+      "region": "s3",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 6.7235876077873064e-15,
+      "minimumSampleJ": {
+        "control45": 0.5622488194913352,
+        "terminal46": 0.39782252376171967
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 206,
+      "corner": 1,
+      "region": "s4",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.3947070205001453e-14,
+      "minimumSampleJ": {
+        "control45": 0.5621566639697061,
+        "terminal46": 0.39187039157253284
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 206,
+      "corner": 1,
+      "region": "s5",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.656884089061897e-14,
+      "minimumSampleJ": {
+        "control45": 0.5621105875068063,
+        "terminal46": 0.38893298364262946
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 206,
+      "corner": 1,
+      "region": "s6",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.989595204176909e-14,
+      "minimumSampleJ": {
+        "control45": 0.562087549600936,
+        "terminal46": 0.3874739406765899
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 206,
+      "corner": 1,
+      "region": "s7",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 9.364997025132497e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620760307284554,
+        "terminal46": 0.38674683400103566
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 206,
+      "corner": 1,
+      "region": "s8",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.9810570630087986e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620702713125293,
+        "terminal46": 0.38638388430933773
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 206,
+      "corner": 1,
+      "region": "s9",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 5.402882899114909e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620673916094739,
+        "terminal46": 0.38620256036837525
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 206,
+      "corner": 1,
+      "region": "s10",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.5968520568495175e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620659517597901,
+        "terminal46": 0.3861119361227664
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 206,
+      "corner": 1,
+      "region": "s11",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.7409289341592483e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620652318353041,
+        "terminal46": 0.38606663343131753
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 206,
+      "corner": 1,
+      "region": "s12",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.2606726764601454e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620648718724011,
+        "terminal46": 0.3860439844432977
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 206,
+      "corner": 1,
+      "region": "s13",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 3.7219859971680485e-14,
+      "minimumSampleJ": {
+        "control45": 0.562064691891604,
+        "terminal46": 0.386032660539462
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 206,
+      "corner": 1,
+      "region": "s14",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.2246534571327127e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620646019011188,
+        "terminal46": 0.3860269987341812
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 206,
+      "corner": 1,
+      "region": "s15",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 9.244932960707733e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645569057572,
+        "terminal46": 0.3860241678684648
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 206,
+      "corner": 1,
+      "region": "s16",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.1766278313628023e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645344083419,
+        "terminal46": 0.38602275244530737
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 206,
+      "corner": 1,
+      "region": "s17",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.0085381411681163e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645231589582,
+        "terminal46": 0.38602204473562
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 206,
+      "corner": 1,
+      "region": "s18",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.0205445476105939e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645175349798,
+        "terminal46": 0.38602169088136984
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 206,
+      "corner": 1,
+      "region": "s19",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 9.845253282831611e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645147223985,
+        "terminal46": 0.38602151395434997
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 206,
+      "corner": 1,
+      "region": "s20",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 9.485061089557284e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645133162786,
+        "terminal46": 0.3860214254908437
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 206,
+      "corner": 1,
+      "region": "core",
+      "points": 8000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 3.896454090785301e-14,
+      "minimumSampleJ": {
+        "control45": 0.5620645119865334,
+        "terminal46": 0.3860213411769499
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 246,
+      "corner": 0,
+      "region": "s1",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 3.481857868318395e-15,
+      "minimumSampleJ": {
+        "control45": 1.5168536632234186,
+        "terminal46": 1.1564859793725568
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 246,
+      "corner": 0,
+      "region": "s2",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 6.2433313500883755e-15,
+      "minimumSampleJ": {
+        "control45": 1.5148062344274427,
+        "terminal46": 1.0598271906382981
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 246,
+      "corner": 0,
+      "region": "s3",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 7.203843865486874e-15,
+      "minimumSampleJ": {
+        "control45": 1.5137828161144364,
+        "terminal46": 1.010433147629497
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 246,
+      "corner": 0,
+      "region": "s4",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.2846854893451473e-14,
+      "minimumSampleJ": {
+        "control45": 1.5132711809787962,
+        "terminal46": 0.9854701085748189
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 246,
+      "corner": 0,
+      "region": "s5",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 5.7630750923894335e-15,
+      "minimumSampleJ": {
+        "control45": 1.5130153819171408,
+        "terminal46": 0.9729221027363214
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 246,
+      "corner": 0,
+      "region": "s6",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.0805765798230227e-14,
+      "minimumSampleJ": {
+        "control45": 1.512887487011611,
+        "terminal46": 0.9666314804990043
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 246,
+      "corner": 0,
+      "region": "s7",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 8.764676703008958e-15,
+      "minimumSampleJ": {
+        "control45": 1.5128235407163815,
+        "terminal46": 0.9634820148327908
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 246,
+      "corner": 0,
+      "region": "s8",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 6.003203221239018e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127915678574706,
+        "terminal46": 0.9619062433989419
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 246,
+      "corner": 0,
+      "region": "s9",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.5805769580366123e-15,
+      "minimumSampleJ": {
+        "control45": 1.512775581500411,
+        "terminal46": 0.9611180980361135
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 246,
+      "corner": 0,
+      "region": "s10",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 6.48345947893814e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127675883397385,
+        "terminal46": 0.9607239604431266
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 246,
+      "corner": 0,
+      "region": "s11",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 3.2417297394690698e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127635917637159,
+        "terminal46": 0.9605268754195051
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 246,
+      "corner": 0,
+      "region": "s12",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 5.282818834690336e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127615934773304,
+        "terminal46": 0.9604283288505093
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 246,
+      "corner": 0,
+      "region": "s13",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.4012812884956076e-15,
+      "minimumSampleJ": {
+        "control45": 1.512760594334247,
+        "terminal46": 0.9603790545516806
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 246,
+      "corner": 0,
+      "region": "s14",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 7.083779801062042e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127600947628927,
+        "terminal46": 0.9603544171489136
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 246,
+      "corner": 0,
+      "region": "s15",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 8.164356380885066e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127598449768003,
+        "terminal46": 0.9603420983840584
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 246,
+      "corner": 0,
+      "region": "s16",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 6.123267285663799e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127597200840681,
+        "terminal46": 0.9603359389855947
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 246,
+      "corner": 0,
+      "region": "s17",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 6.0032032212390185e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596576379367,
+        "terminal46": 0.9603328592828158
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 246,
+      "corner": 0,
+      "region": "s18",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.3807367408849744e-14,
+      "minimumSampleJ": {
+        "control45": 1.5127596264144059,
+        "terminal46": 0.960331319429833
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 246,
+      "corner": 0,
+      "region": "s19",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 5.402882899115117e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596108026422,
+        "terminal46": 0.9603305495038378
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 246,
+      "corner": 0,
+      "region": "s20",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 5.282818834690336e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596029969363,
+        "terminal46": 0.9603301645402552
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 246,
+      "corner": 0,
+      "region": "core",
+      "points": 8000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.8845413485357474e-14,
+      "minimumSampleJ": {
+        "control45": 1.5127595955540483,
+        "terminal46": 0.9603297976133097
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 247,
+      "corner": 0,
+      "region": "s1",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 8.131948625021758e-15,
+      "minimumSampleJ": {
+        "control45": 1.5169530498765698,
+        "terminal46": 0.47057874315181586
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 247,
+      "corner": 0,
+      "region": "s2",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 8.131948625021739e-15,
+      "minimumSampleJ": {
+        "control45": 1.514855905806606,
+        "terminal46": 0.23542824114632413
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 247,
+      "corner": 0,
+      "region": "s3",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.5874381988705855e-15,
+      "minimumSampleJ": {
+        "control45": 1.5138076463171974,
+        "terminal46": 0.11774928435280217
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 247,
+      "corner": 0,
+      "region": "s4",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.2567556965942923e-14,
+      "minimumSampleJ": {
+        "control45": 1.5132835947090548,
+        "terminal46": 0.058883915804660666
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 247,
+      "corner": 0,
+      "region": "s5",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 7.577497582406793e-15,
+      "minimumSampleJ": {
+        "control45": 1.5130215884392102,
+        "terminal46": 0.029444763529201355
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 247,
+      "corner": 0,
+      "region": "s6",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.0349752795482465e-14,
+      "minimumSampleJ": {
+        "control45": 1.5128905901872196,
+        "terminal46": 0.014723570958883513
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 247,
+      "corner": 0,
+      "region": "s7",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.2937190994353082e-14,
+      "minimumSampleJ": {
+        "control45": 1.5128250922822641,
+        "terminal46": 0.007362570636322559
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 247,
+      "corner": 0,
+      "region": "s8",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.1828288909122824e-14,
+      "minimumSampleJ": {
+        "control45": 1.5127923436349642,
+        "terminal46": 0.0036819694741887466
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 247,
+      "corner": 0,
+      "region": "s9",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 7.762314596611855e-15,
+      "minimumSampleJ": {
+        "control45": 1.512775969387766,
+        "terminal46": 0.0018416436442174457
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 247,
+      "corner": 0,
+      "region": "s10",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 5.9141444545614125e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127677822833971,
+        "terminal46": 0.0009214744172898686
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 247,
+      "corner": 0,
+      "region": "s11",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 5.9141444545614125e-15,
+      "minimumSampleJ": {
+        "control45": 1.512763688736275,
+        "terminal46": 0.00046138822606052227
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 247,
+      "corner": 0,
+      "region": "s12",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 8.316765639226987e-15,
+      "minimumSampleJ": {
+        "control45": 1.512761641962829,
+        "terminal46": 0.00023134473562498524
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 247,
+      "corner": 0,
+      "region": "s13",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 6.6534125113815894e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127606185770073,
+        "terminal46": 0.00011632289139619036
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 247,
+      "corner": 0,
+      "region": "s14",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 7.762314596611855e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127601068842742,
+        "terminal46": 5.8811945285710015e-05
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 247,
+      "corner": 0,
+      "region": "s15",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 9.240850710252208e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127598510373155,
+        "terminal46": 3.005646583262963e-05
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 247,
+      "corner": 0,
+      "region": "s16",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 7.9471316108169e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127597231145966,
+        "terminal46": 1.5678724660902595e-05
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 247,
+      "corner": 0,
+      "region": "s17",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 4.43560834092106e-15,
+      "minimumSampleJ": {
+        "control45": 1.512759659153322,
+        "terminal46": 8.489853663583878e-06
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 247,
+      "corner": 0,
+      "region": "s18",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 6.098961468766457e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596271723496,
+        "terminal46": 4.8954180515899535e-06
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 247,
+      "corner": 0,
+      "region": "s19",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 7.762314596611855e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596111816097,
+        "terminal46": 3.0981998467486627e-06
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 247,
+      "corner": 0,
+      "region": "s20",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.402621184665574e-15,
+      "minimumSampleJ": {
+        "control45": 1.512759603186741,
+        "terminal46": 2.199591282540669e-06
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 247,
+      "corner": 0,
+      "region": "core",
+      "points": 8000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.7393346824203888e-14,
+      "minimumSampleJ": {
+        "control45": 1.5127595957126465,
+        "terminal46": 1.3430852676931198e-06
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 248,
+      "corner": 0,
+      "region": "s1",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 3.241382130342231e-15,
+      "minimumSampleJ": {
+        "control45": 1.8359256474179138,
+        "terminal46": 1.555481244321642
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 248,
+      "corner": 0,
+      "region": "s2",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.583966045960286e-15,
+      "minimumSampleJ": {
+        "control45": 1.6745069829992083,
+        "terminal46": 1.2485728699674281
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 248,
+      "corner": 0,
+      "region": "s3",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.982071559914708e-15,
+      "minimumSampleJ": {
+        "control45": 1.5936743795188517,
+        "terminal46": 1.094254465728751
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 248,
+      "corner": 0,
+      "region": "s4",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 3.241382130342063e-15,
+      "minimumSampleJ": {
+        "control45": 1.5532272599614387,
+        "terminal46": 1.016879523947151
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 248,
+      "corner": 0,
+      "region": "s5",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 6.482764260684084e-15,
+      "minimumSampleJ": {
+        "control45": 1.532995995727971,
+        "terminal46": 0.9781381574657728
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 248,
+      "corner": 0,
+      "region": "s6",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.0113112246667158e-14,
+      "minimumSampleJ": {
+        "control45": 1.522878437497501,
+        "terminal46": 0.9587540052435862
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 248,
+      "corner": 0,
+      "region": "s7",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 3.889658556410442e-15,
+      "minimumSampleJ": {
+        "control45": 1.5178191768538283,
+        "terminal46": 0.9490585625014145
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 248,
+      "corner": 0,
+      "region": "s8",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 6.353108975470387e-15,
+      "minimumSampleJ": {
+        "control45": 1.5152894261500003,
+        "terminal46": 0.9442099995494668
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 248,
+      "corner": 0,
+      "region": "s9",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 8.81655939453033e-15,
+      "minimumSampleJ": {
+        "control45": 1.5140245207021479,
+        "terminal46": 0.9417855076879562
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 248,
+      "corner": 0,
+      "region": "s10",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 4.408279697265165e-15,
+      "minimumSampleJ": {
+        "control45": 1.5133920604553979,
+        "terminal46": 0.9405732091620006
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 248,
+      "corner": 0,
+      "region": "s11",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.685518707777857e-15,
+      "minimumSampleJ": {
+        "control45": 1.5130758284503922,
+        "terminal46": 0.939967046750055
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 248,
+      "corner": 0,
+      "region": "s12",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 7.520006542393516e-15,
+      "minimumSampleJ": {
+        "control45": 1.5129177119774573,
+        "terminal46": 0.9396639622574016
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 248,
+      "corner": 0,
+      "region": "s13",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 4.667590267692527e-15,
+      "minimumSampleJ": {
+        "control45": 1.512838653624027,
+        "terminal46": 0.9395124191888824
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 248,
+      "corner": 0,
+      "region": "s14",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 5.186211408547252e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127991244175718,
+        "terminal46": 0.9394366474492152
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 248,
+      "corner": 0,
+      "region": "s15",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 1.1668975669231317e-14,
+      "minimumSampleJ": {
+        "control45": 1.5127793598063521,
+        "terminal46": 0.9393987615285344
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 248,
+      "corner": 0,
+      "region": "s16",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 4.667590267692527e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127694774996043,
+        "terminal46": 0.9393798185548522
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 248,
+      "corner": 0,
+      "region": "s17",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 5.7048325494019775e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127645363455613,
+        "terminal46": 0.9393703470648338
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 248,
+      "corner": 0,
+      "region": "s18",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 2.7227609894873074e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127620657686907,
+        "terminal46": 0.9393656113186859
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 248,
+      "corner": 0,
+      "region": "s19",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 4.408279697265164e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127608304798148,
+        "terminal46": 0.9393632434456844
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 248,
+      "corner": 0,
+      "region": "s20",
+      "points": 48000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 7.520006542393516e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127602128352582,
+        "terminal46": 0.9393620595094107
+      }
+    },
+    {
+      "recipe": "I1",
+      "element": 248,
+      "corner": 0,
+      "region": "core",
+      "points": 8000,
+      "physicalMomentChecks": 15,
+      "maximumPhysicalMomentRelativeError": 6.0289707624361805e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596241233627,
+        "terminal46": 0.9393609310585028
+      }
+    }
+  ],
+  "productionPhysicalWeightsReviewed": false
+}

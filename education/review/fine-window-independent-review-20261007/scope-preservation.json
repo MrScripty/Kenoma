@@ -1,0 +1,27 @@
+{
+  "result": "PASS_LOCAL_SCOPE_PRESERVATION",
+  "checkedHeadBeforeFinalReviewCommit": "b2724db9687fefae09bcf0ae72b5dea8c47f0a35",
+  "preservedKnownBranchHeads": {
+    "work": "041de5deed0d288f644017704d675b7f8c1b97a4",
+    "research/selective-fine-window-schedule-20261007": "a20edf84cb3800b30d83dda3f419e3696a69da8d",
+    "research/selective-fixed-patch-arithmetic-review-20261007": "6759c66d2269bd0b2159ddce564014590b4a8320",
+    "research/selective-fixed-patch-material-run-20261007": "38ae8a2e2af57cf33254af987b724824b9d84357",
+    "research/fixed-patch-selective-runner-20261007": "084e830b82f1f53a10ebc39ad23194177e06c42a",
+    "research/fixed-patch-selective-proposal-20261007": "788bbd7c86b23a5bdec18e67a2c70ba1f82cc711",
+    "research/fixed-patch-selective-review-20261007": "98905757dd9cac78cb9c1168e7039aa091e6eb33",
+    "research/element247-two-shell-offline-repair-20261007": "f7cc2c0f10b536e94557ce978aa1691d6c92246f",
+    "research/fixed-field-integration-run-20261007": "74054f5c611c57c0b9ddb1fd77a9aaba20ee9c8b",
+    "research/element247-shell-material-run-20261007": "4b83ec5dfebae73b08c3f964aa910f65e02458e0",
+    "research/element247-two-shell-diagnostic-20261007": "9c9edbc9f3dd9729f2becc5215054897d139735e",
+    "education/accepted-book-integration-20261006": "9c4ab8b23adf56c84bcabdcab28cfe8ea59ff99f",
+    "education/accepted-208-release-prep-20261006": "98b384dcb8f5bf0431c61d5ecf5b9b4ac6163a30"
+  },
+  "preexistingRemoteTrackingMainUnchanged": "9b0c67fd25e1b645833a68bb9b1c2aba1404bbce",
+  "immutablePR8Commit": "2ece72fd802e979ed8b0f1f999a39c0e072673f0",
+  "allChangesRelativeToScheduleAddNewFiles": true,
+  "existingTrackedFileModifications": 0,
+  "newExecutionAuthorizationAbsent": true,
+  "newSpecimenRunAbsent": true,
+  "publicationOrDeploymentActions": 0,
+  "author": "MrScripty <TheEnvironmentGuy@protonmail.com>"
+}

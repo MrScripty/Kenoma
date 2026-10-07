@@ -1,0 +1,162 @@
+{
+  "schema": 1,
+  "status": "PASS_INDEPENDENT_GEOMETRY_DESIGN",
+  "specimenCalls": 0,
+  "materialLawInvocations": 0,
+  "sourceEdits": 0,
+  "degreeProof": {
+    "polynomialTotalDegree": 5,
+    "weightedDuffyMaxDegrees": [
+      7,
+      6,
+      5
+    ],
+    "gauss5ExactThroughDegreePerAxis": 9
+  },
+  "recipes": {
+    "I0": {
+      "topology": [
+        {
+          "corner": 0,
+          "microtetrahedra": 976,
+          "faces": 2206,
+          "boundaryTriangles": 508,
+          "exactNormalizedMass": "1",
+          "positiveOrientation": true,
+          "internalFaceOrientationAndMultiplicity": true
+        },
+        {
+          "corner": 1,
+          "microtetrahedra": 976,
+          "faces": 2206,
+          "boundaryTriangles": 508,
+          "exactNormalizedMass": "1",
+          "positiveOrientation": true,
+          "internalFaceOrientationAndMultiplicity": true
+        },
+        {
+          "corner": 2,
+          "microtetrahedra": 976,
+          "faces": 2206,
+          "boundaryTriangles": 508,
+          "exactNormalizedMass": "1",
+          "positiveOrientation": true,
+          "internalFaceOrientationAndMultiplicity": true
+        },
+        {
+          "corner": 3,
+          "microtetrahedra": 976,
+          "faces": 2206,
+          "boundaryTriangles": 508,
+          "exactNormalizedMass": "1",
+          "positiveOrientation": true,
+          "internalFaceOrientationAndMultiplicity": true
+        }
+      ],
+      "numerical": {
+        "corner": 0,
+        "normalizedDegree5Checks": 2646,
+        "maximumRelativeError": 4.2979707038921267e-16,
+        "minimumNormalizedWeight": 5.58191235686611e-26,
+        "regionPointWeightFingerprints": [
+          "b360d617bf5d69db82df9a22720b94d8f3ab4041177289083964b6431511a4e6",
+          "f1ae0fbe5656fcc9e807552b278d71a5951681a4f32efd7f864e43e1b0a4ada9",
+          "01aacec9de5b161bf0201ed93f5cd82c8fe645ec27cde748cd101e2fdaa4eac8",
+          "7ea027084f1aa1e23fb006f88784cc0dee4dbe4ce2af392d5165fe02e00b519b",
+          "0988b7d591b6b422fbaa1fee56d4facad72615f9d3dad0b23dd0d17e7150d50a",
+          "2354fbe2d73c16b2049a02683237fa523fc86b8315ef5b256b62b1d488850b79",
+          "9772d92a4d28a0b34ffa69816541ff608bdcc5e29894c02a04b67b14c414e335",
+          "6996b13f853b89d64feede3417d334a077588d8311e445fa2cedacd8d6f85878",
+          "ef19a044a0a3fea89a163ccc11b46f60045caead1d5ffb549e21317649befc19",
+          "486f650ee3fd43c0a5fc9807294a6ee1422a5c2d8d8a20b54c8c173374ce1f17",
+          "43b826e17198f1526eaa143f43714a2a16491c513af79dfa5d048de432963277",
+          "d5758335f260fc5f0665ce32aad8fa747cc60e0838700b886be717368edf519c",
+          "11701cd4287c9f715450473c2b89d1c69d6ce632d21860fbc7071d563f051e76",
+          "9e3e6eb796eb02814e4fc7c08339e32edb5d7377c11bee89bb1f985fd61e2b5a",
+          "d09be42780c2b0d69365c62c3eff36d5b0b3793c364b9be5aeb293ef1f03d19b",
+          "3a18b7115d2117ee487b3d84ffabd1daeda2ccf5de17be464ff2d66156230eb5",
+          "8fb1095c0d130319aa73acd16932158570bb3c41b394b8cdd0cd9371a639f683",
+          "9340d79effe3241c44ae8c056972da2dd841e6b526f080a241fbe3f81153161f",
+          "00c2c1159b60f64434cdf99e79da57729cf9494783f97e97c83c810e52b4d3a6",
+          "3885eb7b5fbb71198dd871a3860adc90264e8ed5159f757af6a91ac0e45de27d",
+          "8a6c1eb105f44c9a548cdc4c5dab7821d0e81b01ab4b13e5fd99c761918cc62f"
+        ],
+        "peakPointsHeld": 6000,
+        "otherCorners": "Exact coordinate permutations; all topology charts checked separately. Actual source serialization/hash review still required."
+      }
+    },
+    "I1": {
+      "topology": [
+        {
+          "corner": 0,
+          "microtetrahedra": 7744,
+          "faces": 16492,
+          "boundaryTriangles": 2008,
+          "exactNormalizedMass": "1",
+          "positiveOrientation": true,
+          "internalFaceOrientationAndMultiplicity": true
+        },
+        {
+          "corner": 1,
+          "microtetrahedra": 7744,
+          "faces": 16492,
+          "boundaryTriangles": 2008,
+          "exactNormalizedMass": "1",
+          "positiveOrientation": true,
+          "internalFaceOrientationAndMultiplicity": true
+        },
+        {
+          "corner": 2,
+          "microtetrahedra": 7744,
+          "faces": 16492,
+          "boundaryTriangles": 2008,
+          "exactNormalizedMass": "1",
+          "positiveOrientation": true,
+          "internalFaceOrientationAndMultiplicity": true
+        },
+        {
+          "corner": 3,
+          "microtetrahedra": 7744,
+          "faces": 16492,
+          "boundaryTriangles": 2008,
+          "exactNormalizedMass": "1",
+          "positiveOrientation": true,
+          "internalFaceOrientationAndMultiplicity": true
+        }
+      ],
+      "numerical": {
+        "corner": 0,
+        "normalizedDegree5Checks": 2646,
+        "maximumRelativeError": 4.440905651052985e-16,
+        "minimumNormalizedWeight": 6.977390446082637e-27,
+        "regionPointWeightFingerprints": [
+          "980ffddfb636c429d933043de96ccfbdacfa6eb5c3cd257ab11fa69ac80eea82",
+          "e72a88e8c8ab5cfb1348c4633baf49500ee504fc73545cdecb34f4762bfb5724",
+          "9a53cfe1b7624074e40c35748034c7ca6a5ba4a0ac772db483a1d73a0986b14b",
+          "16c533eb66cfc796a06b5db1cf8fe0f19950a1d4fd16e36634281438f286b479",
+          "aa880a05a6ce47f07c230a550ba41dfc85567b12a672eb70ef14ad57ab32d096",
+          "e84feb890d1ef287eebf6c6d0ebf5078e742454f8ab6f37080d087e02184c62c",
+          "1609f0d3a6d2ac296c5bda0ab77e1ec4aebf60b55acb6825f8e4cfbc3bae8d00",
+          "2ed01de69caecfdf3dadd56f444f890de40a5cbbb07ed8caea13b33ed5930183",
+          "b29b25a8d19e6eb4222ffa182f43958d9e8b1634981c2f2a0ff573b71da22952",
+          "b07f63206924b5f9e70962feb6a552911a27938f3b62ca8af1af3eb6a30b240d",
+          "d2bde9983fe6ff6b513edae771cdd05c9cc52beed8d9488c2a7a1d0294ed6f3c",
+          "9d67ac0585f2eee80d65b204db86c26bec2d8bdac4d72d2a3ec9a0b3f29f441a",
+          "a19df431bb466f9ada67f02e96203f212153954ff17d4875c620336dd213974d",
+          "bd441250a6dbd553f96e1edc74bebf90ed2996292a2241935dc097ff091e9fc3",
+          "d061fe7cc63731b9a2ad7c6bccc7ae39528c700966a88b1566733063d6bc9509",
+          "583b87c8e7dea34836d49eff26b42fab2a8213b7798fb41e16d3c0351fc25102",
+          "e34cb1ec0bde849c1a20cc5baca65769acef212e29813af8a84ebf6d6e73ed2c",
+          "99af54c3424f03f39f6ea42a9150cdf050c9ad0c068b59deb5b1563560e97d86",
+          "23bc9dc6ab35d10bc72cf5918ffd7ba162325c759df18a86be1310e9ed93db7b",
+          "b746a4017a7200119b0ce6f33640773bdeae78bf35230422848a29d4d3c25731",
+          "2304d91f2335ce68e5aac0f13fb54122e14f1be820f56958a2f28a84fe73ef50"
+        ],
+        "peakPointsHeld": 48000,
+        "otherCorners": "Exact coordinate permutations; all topology charts checked separately. Actual source serialization/hash review still required."
+      }
+    }
+  },
+  "assertions": 287778,
+  "seconds": 6.185434659993916
+}

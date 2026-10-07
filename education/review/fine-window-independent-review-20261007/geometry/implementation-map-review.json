@@ -1,0 +1,1370 @@
+{
+  "schema": 1,
+  "status": "PASS_FROZEN_IMPLEMENTATION_MAPS_PREFLIGHT_PENDING",
+  "sourceCommit": "ce5df8ae5266e481496d2fb05b386a2d52f7a949",
+  "sourceHashes": {
+    "education/tools/fine-window-maps.mjs": "793ea75164374f5b8f84cbb869ac342561639ab8cd820788d958087e9c4c9b48",
+    "education/tools/fine-window-protocol.mjs": "7296a22d759a0677554d1a5f7bccaa218ed93234ad42ab0f21a518728565a68a",
+    "education/tools/fine-window-moments.mjs": "779891e1a9773159b72ae7d652e5a0e223cbab7aa7eabd1593deac090ae43f37",
+    "education/tools/preflight-fine-window.mjs": "153cea6491d68c30713151ae491ac4bf226e7bb97bec7d95feac0c9eb6115c1e"
+  },
+  "specimenCalls": 0,
+  "materialLawInvocations": 0,
+  "sourceEdits": 0,
+  "tetrahedraExactMetadataChecks": 34880,
+  "pointChecks": 4360000,
+  "normalizedDegree5Checks": 21168,
+  "maximumIndependentCoordinateDifference": 0,
+  "maximumIndependentRelativeWeightDifference": 3.589740337150793e-16,
+  "maximumActualNormalizedMomentRelativeError": 4.258112182653692e-16,
+  "preflightDirectory": "/tmp/kenoma-fine-preflight-initial-20261007",
+  "preflightCompleted": false,
+  "arrays": [
+    {
+      "filename": "I0-c0-s1-points.f64le",
+      "sha256": "a503da57d0cf8a45df5f13f41be2e6e6ee3b089a9642d2b56007fb98e3b5554b",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c0-s2-points.f64le",
+      "sha256": "5860186e0a04e181b9cfa1b41eb2213ecdaf8393857d33ff28a8dd38db35aa01",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c0-s3-points.f64le",
+      "sha256": "4527ad89dabee8ef522abf7569dae651b61d6e9196cdbc6ba3c50cae3890004d",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c0-s4-points.f64le",
+      "sha256": "284072fbfbf92ad9184c7435cd3e1b004cb47a31f13b256a1a33c5770842e444",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c0-s5-points.f64le",
+      "sha256": "e6faa5c97ccd9cf1cb4f5e13f441913c61e48b183f33892c4f6cc8e07966ce93",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c0-s6-points.f64le",
+      "sha256": "688de1c53cfca2892123df3b90b2670d58b61e821f2bc6f8368f4124f1ff6210",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c0-s7-points.f64le",
+      "sha256": "1dae3f87832959abf3dbe6b5664632ab5aa0cf58c142b32ff462f2c27cf70afe",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c0-s8-points.f64le",
+      "sha256": "2d6aee6b7c6764c99a7355691b153a8eaa802fe3be3409a8e6f7ae41d39b586d",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c0-s9-points.f64le",
+      "sha256": "163cd46b0955b18dba1c6d4da475f078482a7879b17cd29d95f85800922198ad",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c0-s10-points.f64le",
+      "sha256": "93f9193d6197870bf1de63978a998b143db1eb3e2e26365cfe8c3d9fe9311d6d",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c0-s11-points.f64le",
+      "sha256": "428f5d61a5553deba6c976739950b1bbba6eefd36f8d14b6f636ed1b108f6f47",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c0-s12-points.f64le",
+      "sha256": "f73f5cb59dbdc322b16fb8abfc0bfdf5215a46bfd8afd1df3f12b65dd4f073ae",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c0-s13-points.f64le",
+      "sha256": "b82f70de721a2c7a6698b292e1b907871e70f4601ef7b41c7efdd9c8ba681abe",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c0-s14-points.f64le",
+      "sha256": "d799a7036913cc1d86db74078ab16f4b22de528c8e93af7274f2c82662ecfd05",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c0-s15-points.f64le",
+      "sha256": "127b7d48770f7e79c9e09242a4544ec086127e2a0f72bd194980594f3def0267",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c0-s16-points.f64le",
+      "sha256": "c8b283a06f7fe845656620c594191032e3b66c0e419c9656655c008018169aba",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c0-s17-points.f64le",
+      "sha256": "56af160c33b08a8489e876c40255b4d4e86bc0675482a88dc900dd7761f35542",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c0-s18-points.f64le",
+      "sha256": "61fbc01c46d4b9e6061acacb96d851915c63440991660f903e056911ab18343f",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c0-s19-points.f64le",
+      "sha256": "d8585c17b0aad740b35b0b22a4bddde6286afff06e4d519624d889213480174b",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c0-s20-points.f64le",
+      "sha256": "6832e4724d74726847c7b3a59b529625f59c168ffb9f89dbcc4a5d3a157e998b",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c0-core-points.f64le",
+      "sha256": "4d7bfeb83e998e2a49367635544149947df062d05a4c14b9457fea936505fe4d",
+      "bytes": 96000,
+      "points": 2000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c1-s1-points.f64le",
+      "sha256": "b4eeed6fc0ed615e86564d7f87d8b6458d86f03044054b6664a3f73c5f4008e3",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c1-s2-points.f64le",
+      "sha256": "37c3fe6e9d1a53bad30c24697ea75c16579e9c120c9456be43166b959adabb84",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c1-s3-points.f64le",
+      "sha256": "0313ff914508c3e9365cfdd1e338a3417ed601cd48d062a9b7cf9bd1c50e338f",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c1-s4-points.f64le",
+      "sha256": "08de519f9547e8b3d363fdc097b78d6b375bd779d7118958347c73dd6d868ac1",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c1-s5-points.f64le",
+      "sha256": "dc2725d25851d12451c9b09a4843003f25d245a8a03690adf3c7a9353b09baf0",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c1-s6-points.f64le",
+      "sha256": "2e61d7f317ff377cf4dd7f46300460d375cdbb08d85adfe5bff3e3408c991ef9",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c1-s7-points.f64le",
+      "sha256": "0611ff183085ca391dfe39ff8b7b6e9b4368f9c2fa7d144a62a2bb748ad78a90",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c1-s8-points.f64le",
+      "sha256": "06e24554fc72f3026ed033d05dcfb7a8fb56e992f19c0e6a2cba6e00166ad891",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c1-s9-points.f64le",
+      "sha256": "1ab2feb92a81578cfed6aee18fa8eb9e1b06dbe2e11029bc5ced876fb6eb3c5b",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c1-s10-points.f64le",
+      "sha256": "f77dfecaa8b6a252f74046d84b492aacfd4bd04d726b87981b8293e898aa8c12",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c1-s11-points.f64le",
+      "sha256": "8d9be7029d85e24d2d4976ec8fdeccd04d4dd6dd260275a8a00821815bb9247e",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c1-s12-points.f64le",
+      "sha256": "b048065b96357c216df559e91b964955b1d4ad89193d4e578091fb8612527d53",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c1-s13-points.f64le",
+      "sha256": "5f297edbe7de95b4f81a631bc39f857fbd33fe697f5b53dda7bc99d5dff6750c",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c1-s14-points.f64le",
+      "sha256": "fd3e8485f4606724385e82775e71d5525ad17aa3d069cc2d8776d7d932e639df",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c1-s15-points.f64le",
+      "sha256": "7792fa2b8892605cbaf7aee6dbbc475b6f74d2e8ca34b97a844b9942c6d8ecb8",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c1-s16-points.f64le",
+      "sha256": "ff9e6bcfcb95e8bd0901828b47a5931ef925b43a727b9a874d9683354542eef5",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c1-s17-points.f64le",
+      "sha256": "0c2563847c09345c71490c7fc3e423370e49ae157acb9f528ee36d04ad6c9655",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c1-s18-points.f64le",
+      "sha256": "79ba5d0705538ed3ba5bb6e6f05269fe2150e4136b66f672d58e72b28cf722b6",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c1-s19-points.f64le",
+      "sha256": "2dc7c619581893b5e6ceb928c7ba451432b605b3fab6d5a2a1b45a86657bbd5a",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c1-s20-points.f64le",
+      "sha256": "a200bfde24a416ac3726891bbde58bef5bfd0ca2a7d400f1ed7acbbcca084835",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c1-core-points.f64le",
+      "sha256": "c050fbb81c1165f5a0d3a90704484ee9c5ffe0d5a62d4875d92b7cb9f4da44ad",
+      "bytes": 96000,
+      "points": 2000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c2-s1-points.f64le",
+      "sha256": "d030749e315084cf2bfc18d70384d6c0c19fce03f44db3f2a8a08253402f9605",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c2-s2-points.f64le",
+      "sha256": "26ed34feb3b89f6200cb7006ac09cc9f3fca66dfdbc123bd85445911c02abc06",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c2-s3-points.f64le",
+      "sha256": "fa0f81b7c6c12a5b0f9032aab313d750cbb9180f9e67ee662a3f932ed1122ad3",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c2-s4-points.f64le",
+      "sha256": "0223b72424afa118dae43c397edffab2626583da76b0724a2c73a89a8be0cfc2",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c2-s5-points.f64le",
+      "sha256": "34e0cfe6984ea8488f6ac15504f5c28abd8de623e9cbf1069775c223915fd78c",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c2-s6-points.f64le",
+      "sha256": "bc981a07e36ea9ce4a557ed0d2e296f310a3084c9f64fc89bcefb0451b455ffc",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c2-s7-points.f64le",
+      "sha256": "b2e78c66ccd7a32fca7a065951cf353c984d4dbb0cf157ce533b2098089af1f2",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c2-s8-points.f64le",
+      "sha256": "72650a3c2931d6457f0360717e1fe485a0aed842eb17c162288d10a236ea1227",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c2-s9-points.f64le",
+      "sha256": "6906e090eab5a27e8c8a4db985a86437347a348bea73c5338bb0da84201c0bbb",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c2-s10-points.f64le",
+      "sha256": "e86dad28adcc308b43dfc5e2a587646eb6ccd5489ce54619d032832e318068e8",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c2-s11-points.f64le",
+      "sha256": "6c8f14e907352d58301dc3f767846bad45a35b71ab8f60598ce4df3bfc87d110",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c2-s12-points.f64le",
+      "sha256": "d83a062986715427bea673384d910bce236e40b1e16f1455f3cfbdc503ac4876",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c2-s13-points.f64le",
+      "sha256": "5b4c4177212a8cefb88c2a12c7446cc81115c894b6b21f497cccc0248f077184",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c2-s14-points.f64le",
+      "sha256": "42575769558bdcde14b6ee90ce7e1c07b37fc8e75f8f3ca04786d14f5076533c",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c2-s15-points.f64le",
+      "sha256": "a02255b192fcb004f8740211a2c3e38a2532553fdf9a9f3d183c9795fa47770d",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c2-s16-points.f64le",
+      "sha256": "33af20ff90267111fbc89d366875b06450e366bfdd03aa5c691c1979ae781a76",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c2-s17-points.f64le",
+      "sha256": "c086784418229c6f11c49f4af94d69af4bd1da4dfcc091c665f626dfe00ec17b",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c2-s18-points.f64le",
+      "sha256": "853f3d895955cba50339de0f8e80a91da31d7a05db7cdb43fe167345515a14a4",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c2-s19-points.f64le",
+      "sha256": "f7f15559c5e59b42ff886e65c5562a32b5a0b2553b4f31724f110e20376275f9",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c2-s20-points.f64le",
+      "sha256": "a314ace9f8a998b9445f2c1a850e1e9c66858604f8c3bae8056f4ad3c1b1a3e7",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c2-core-points.f64le",
+      "sha256": "c97deb6780f4267f87b4e738e45a2830d7f5307dd8a1e40ff91ea8876e2b86f1",
+      "bytes": 96000,
+      "points": 2000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c3-s1-points.f64le",
+      "sha256": "fb14aa9f19f4e8429bcd3dd241db69c2552dbe92f474e04bf3143e83a6f8bb7a",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c3-s2-points.f64le",
+      "sha256": "ff6e65197607adec5bf350a657dc92a912bd37748678c161b10e516ae25987ee",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c3-s3-points.f64le",
+      "sha256": "3705fec4e02b96daa902677d789a692662aef5ca996677007f409b73256df0bd",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c3-s4-points.f64le",
+      "sha256": "d2011ccf34ba0d143bf54700fbfcfcffbac6e3770dd91b9bdcadbc5b6990d218",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c3-s5-points.f64le",
+      "sha256": "8ede67ff24673e8a25c9b907d70ee5059b24bb977846dabedf5fa831531d46ff",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c3-s6-points.f64le",
+      "sha256": "2279d968a48b53178ec14f051c8a8772de7b1fb3884511e426f9a70d242f8133",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c3-s7-points.f64le",
+      "sha256": "dfc63ed4049f7be0c363c38a435d030313a457fe5d37b80612c290295e25917b",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c3-s8-points.f64le",
+      "sha256": "ddf51ce19a0c832c9c3cc4a839dcc4984ea0a53769ea086202909730c57fe69e",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c3-s9-points.f64le",
+      "sha256": "8e5b20d90dc3a00198db11eecdd28f414d56b3b0b9130de4fabbc16b3ad164b3",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c3-s10-points.f64le",
+      "sha256": "f05a1774c9f07a38f2dc53898e485291ba22297c4ce971138097c477410a7e03",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c3-s11-points.f64le",
+      "sha256": "143a3af74b6da36ded3c6de6b74f3e6c351ab84796f432e148c8f88a35d0c355",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c3-s12-points.f64le",
+      "sha256": "bb9d1635c7a40018bd954a36f6838cdd0567c72faac7f6a9a7601b38a8c06f15",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c3-s13-points.f64le",
+      "sha256": "9bddf3229378bbc9b910a0266e06c7091f50e0de505af036d45330c4873c6610",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c3-s14-points.f64le",
+      "sha256": "b7b7d90ad852800042b155f2f8f78abe7af7d3c235ecf02e6479707494f13e62",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c3-s15-points.f64le",
+      "sha256": "136ae34b1d2f2bbba9a4bc2278ccd8f824f3aae2329889adc772f55c836d7a7d",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c3-s16-points.f64le",
+      "sha256": "5d85db68daeb290ac0474c3e39ce5d9febd559917a1d29b7cfb9b617b16b2620",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c3-s17-points.f64le",
+      "sha256": "78b08a46dee9477be5c76f54ac8971c1ee7adf9f328aa914db8ef7a21d8084d0",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c3-s18-points.f64le",
+      "sha256": "4391da9375a2d148696a802d80365dab292eba5631cf2e4e2f0a94b4383c26e9",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c3-s19-points.f64le",
+      "sha256": "8ea0e6d4a89b725bc809416652a12aa18650ea18d91e11af35596164590eba5e",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c3-s20-points.f64le",
+      "sha256": "0996c96b9f02ba1431de54ce04cff4899e0bd5a2b9ac4932df8f6862bc4910d6",
+      "bytes": 288000,
+      "points": 6000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I0-c3-core-points.f64le",
+      "sha256": "56080512bc4d83bc0af4317df65d01e7b1e6aa7f1c1e7976e756df93cdab7415",
+      "bytes": 96000,
+      "points": 2000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I1-c0-s1-points.f64le",
+      "sha256": "a8ff781708e01c80ef5d786633d1bad159e79d7736e336b5269596d761ed8a7c",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c0-s2-points.f64le",
+      "sha256": "cb57afc39423ec0210d4f17fe057e5ab49995e5c7b840b9f405598e665d11a7f",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c0-s3-points.f64le",
+      "sha256": "0313aaba1bc7ca9998e1a9d134445343279017abca7b00ce2837403961b5f457",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c0-s4-points.f64le",
+      "sha256": "ee15ce4ea8714f831755388e58f35e536b2839053d0c85f262b92c0dc1e6e17a",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c0-s5-points.f64le",
+      "sha256": "3ec679a1d4ce0f2b02e112f792b4a0bcaf058547d5453e8d4484598d4e7db7d0",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c0-s6-points.f64le",
+      "sha256": "9159774ae48fc1f097b1ec06397cd3fd8f3f0224203aaf0b18ccd1d85124c765",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c0-s7-points.f64le",
+      "sha256": "d87f5af3c7c407aecbc3752dc4d0c04634ffd2ccc00877351dce586a1fc4a9fe",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c0-s8-points.f64le",
+      "sha256": "763d07f970ae08648393cca78aac9b28d6e3cfcacb231310d7677b54a7bc552d",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c0-s9-points.f64le",
+      "sha256": "c83d660add85dbe4d2c26e48b7751883d58272b77c1fb29772c017473976204d",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c0-s10-points.f64le",
+      "sha256": "f4794b745da41a29fb17385b9ed99bd6f196113c741f99478789773bb7a7f0f4",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c0-s11-points.f64le",
+      "sha256": "fb2490572d33922b033b4df663fd8b902a8f1db24d640a34dd966e3c52d30d21",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c0-s12-points.f64le",
+      "sha256": "d46379debdedbccdefa2fb7d2c6eb9024259fb0f8b4432806bc5e877ffbae88f",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c0-s13-points.f64le",
+      "sha256": "4ddb742f1c65403acea99e06e7228606b8f04ce747905d0989bc0925b30c18e1",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c0-s14-points.f64le",
+      "sha256": "15969ca37dfedd8943154157b1fcd0516bfe0ae0a2ce5f3b9ecc4ddfbd8f8b0d",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c0-s15-points.f64le",
+      "sha256": "1f30c10bc81a5e9f4c10187bb0b86fd6279539be4b583d202e3f509859d04580",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c0-s16-points.f64le",
+      "sha256": "1df7e48611ccfccdb819fb02de540551b52aade83662f2deeebe1dfd6392fdaf",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c0-s17-points.f64le",
+      "sha256": "b9187145e01e1886e285d682eb2ac4b487b5be9d06e5fdce7070118977390361",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c0-s18-points.f64le",
+      "sha256": "e7eda279b2a387685732619ecc9f73b809b88cefb08921ce0ccc36caa83696f6",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c0-s19-points.f64le",
+      "sha256": "8f3c65e0dda43057d47bba548aa72e10b89767534bb5f3d9425138af090e5a1a",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c0-s20-points.f64le",
+      "sha256": "a492cd78972659c0dec462880c138587c0866b8d9f9719cf3563182ec538e7ff",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c0-core-points.f64le",
+      "sha256": "d56d28b2e109e02588a31dcd6d8f8730a85e22581af5036ed806435992aefcb5",
+      "bytes": 384000,
+      "points": 8000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I1-c1-s1-points.f64le",
+      "sha256": "7f1bd9a9308f7317161ab8a252761be28a6238aa6e778184fa3cca357d9616ee",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c1-s2-points.f64le",
+      "sha256": "00e504e3b8a24bd759e327423abf5a90d3fa1fa64a7cb5a52f5d4031c38af0ac",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c1-s3-points.f64le",
+      "sha256": "2bbc68adedc9c80f04cc2a86046029f3914d20348d952d987c3f794429f68ccd",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c1-s4-points.f64le",
+      "sha256": "c5b87f6f218cbd6275a67f7b2699ce4780fa803558b1b5a82e0f9c91024ee3dd",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c1-s5-points.f64le",
+      "sha256": "f191b59fe35b06d20d7094e13a712533d235e94bc9a9fba8bb42df5aa626c57e",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c1-s6-points.f64le",
+      "sha256": "444b642df32519f5c57dd5e72da36f1db522035e23f111e87292bc733ccbbd76",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c1-s7-points.f64le",
+      "sha256": "eca32e3dc37604308deab28f9491dc81211c37b1c7a2ce6dfcddb738a47de637",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c1-s8-points.f64le",
+      "sha256": "3e1d3a991b7e40d4ed06eb2317502d7613836b19ff7144631850cde65f2771e3",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c1-s9-points.f64le",
+      "sha256": "d8f38df6592df50efd2ae3ba7b77501dde088d944048043e490302374a34cc51",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c1-s10-points.f64le",
+      "sha256": "d4858813475c527e9d6b760a5d8c16ddf6fa789231dffe64446230d9799d8f99",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c1-s11-points.f64le",
+      "sha256": "a092aec95696f66a15dd71722111496f6b24cb7c606359385366a7702f3dbbba",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c1-s12-points.f64le",
+      "sha256": "41ceeacc8f697e2bf1c5af0cb1bef03b54eeb5f4101850132932d16c6ea3d8cf",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c1-s13-points.f64le",
+      "sha256": "325b491cc618ff512abdbdabc8df5c72c28fa38a0b97ab62911f08920caf641b",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c1-s14-points.f64le",
+      "sha256": "a215367d0e6317d492616519b4d9515020e573c8da7d6ee46e2d4b673a27fdf6",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c1-s15-points.f64le",
+      "sha256": "b9e14b1e495bdd2807c4bdd572081b96cfa6c9a3c885bcad5e396af78f10ed74",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c1-s16-points.f64le",
+      "sha256": "8342f5de6cdd55f31253b64d0ab462762b3d7e6d45424a53117dc170aaaa842b",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c1-s17-points.f64le",
+      "sha256": "82dfadc4f5b981ae92f1f54ab5664beed17af791afb00356893e94e8cd9f59cf",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c1-s18-points.f64le",
+      "sha256": "feac4c280e275d55002e065c66f09768658733a8196e1817a16f9aea9ea6f57f",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c1-s19-points.f64le",
+      "sha256": "0a26e4fd51d7ab00737ba696739a6c1f25fd951df1e7211d9addae81a3ad00de",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c1-s20-points.f64le",
+      "sha256": "c3f9ea5752ca50a49683d388baae674496cfbb60f7922e77d0e6af842c8b1600",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c1-core-points.f64le",
+      "sha256": "c16e545eba701eade5fa1abcb9a9ad594106223780408c63b1d7c5e99a5468eb",
+      "bytes": 384000,
+      "points": 8000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I1-c2-s1-points.f64le",
+      "sha256": "e824209e2e8704a7c4dd65a129af1856a5d6de4b98b0eb214b504b7c36ea1d6e",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c2-s2-points.f64le",
+      "sha256": "648afccf58bfe5305e4e5e30536aa22aac88d8b65244d7119e8db950c4b8721b",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c2-s3-points.f64le",
+      "sha256": "2107dbabab2cea6cb703595ee64f73c96e6211f8215b4d6b89e5b4ec4f6db875",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c2-s4-points.f64le",
+      "sha256": "b14a799dcb072a835f2b47684ee366079a1ed3ba0c8d5c0171f58a6dd1dba3f1",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c2-s5-points.f64le",
+      "sha256": "bc601f9d683bbab1a17120dd2f1259baa70c9fa47980013b5f77ff0a6ac12499",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c2-s6-points.f64le",
+      "sha256": "3e93b978ce14788e37a1b015d636f0067a281386d1d26d18b25cb60782e11b06",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c2-s7-points.f64le",
+      "sha256": "75018abe0b332de7ac86b27647ae06abafd0c2baa3eeaf0cf5bfee5cad1457d8",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c2-s8-points.f64le",
+      "sha256": "e88ca461f7c077f1e5e1cfb55b59813fed63ddbc938b4046e808bde908883010",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c2-s9-points.f64le",
+      "sha256": "4598e8719bba723a17ba99d37b1b2bed255729748bbe5f14f525551cdf915c2b",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c2-s10-points.f64le",
+      "sha256": "97dc67af918cf32c8cb5e9e12fc1ba6573a81f33e89b0ede0e017df2695e9756",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c2-s11-points.f64le",
+      "sha256": "afbd85449cc6fc3d6dcede1635082e1523f1e61d653fa370b83247f40d11dd47",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c2-s12-points.f64le",
+      "sha256": "a3bfdbf605d519d3186a1a0691cc08e44337d22b98c7d14934e90d3b548756db",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c2-s13-points.f64le",
+      "sha256": "06d1910ed2a4384f5552681e69f98b76b7e214e332ede2c61c44800b6ad11485",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c2-s14-points.f64le",
+      "sha256": "dddd11ceaa675f4f7bc8fb6ac037aa1af728bd7a94a78ff061d9f023d4c283f6",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c2-s15-points.f64le",
+      "sha256": "49159b58a67b7e80dffe6a9d9d88864af6c148fa1db9d30a85adca667620f9df",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c2-s16-points.f64le",
+      "sha256": "885c78f9218368f772d092549a44de36a69ccf549bf443b0d17ccbb15cce3fa9",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c2-s17-points.f64le",
+      "sha256": "d99f2e54e77b24ff8aa26c69edee1ba57b2642f942d527a17d68703220658d9f",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c2-s18-points.f64le",
+      "sha256": "f8cebbfd94c5252b5cd01b68de87a7f6b396bc5cc5aa4b7031e5d3bba1c72dec",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c2-s19-points.f64le",
+      "sha256": "9e823803bf41d308e4784cb6daa999e5e2682de30629c493798734ce0c40d449",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c2-s20-points.f64le",
+      "sha256": "d9c69c0e3a20508e1c145606ab47f54cb8872d32245f6fb1c770ee1f4b2e6206",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c2-core-points.f64le",
+      "sha256": "7d6a7755c0780a3700e5b4074f32150aa29e7497ed0658998576b69955534a99",
+      "bytes": 384000,
+      "points": 8000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    },
+    {
+      "filename": "I1-c3-s1-points.f64le",
+      "sha256": "267e8f0083cec3a780175e7fe0cced7bf2a03cc128652ee1925de5999b571595",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c3-s2-points.f64le",
+      "sha256": "b19a95ac0e201f3ba72acf4be9ae753f9cf5470915292d830506fc1648ee3647",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c3-s3-points.f64le",
+      "sha256": "256f6f3f1181b9dd1190ada94dafcd7d359dddd1ee0b0b7aab400ec9e859f316",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c3-s4-points.f64le",
+      "sha256": "8c3766949592ec7b35d4554804cfd3cad4e26e3464d8174c696defea4de36084",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c3-s5-points.f64le",
+      "sha256": "d9a6df7124820c7f26c753d71b43db3de65f4a2a951e0146d48e792119a8b465",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c3-s6-points.f64le",
+      "sha256": "2c4ef34b2da54a4fcbe8a9f69449fdf21a0305cf710ce53088a1cc860af4ecca",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c3-s7-points.f64le",
+      "sha256": "dd19b85d20e2bce03f2f278bce2378d0bb7300bd67cf6644520f08ece06bee97",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c3-s8-points.f64le",
+      "sha256": "ae98ac761415be10a3239211f1c62c9f6e50be1b667271370c13103d6d998966",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c3-s9-points.f64le",
+      "sha256": "f2f5394d225b9c518cb0926e3070b26de18f1f31faae1e3c80b4fb9b58fc806d",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c3-s10-points.f64le",
+      "sha256": "0ff9176c3ff9b611207f762a9c5722095a50eef41abb18377df2e8ef462908de",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c3-s11-points.f64le",
+      "sha256": "7859ef26f3685346204899b70479dc541ccd0a9feb18c4e95e19efed87cf9231",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c3-s12-points.f64le",
+      "sha256": "b450fff87f1e60ecb8752380a0d43e0a3dbccf15fbc99b1d8a7f78dcf2b4f143",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c3-s13-points.f64le",
+      "sha256": "03d5174b9b2de5596ecb5f9b00ee93df3d3fa969712216d5ec6d777e8ef1371e",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c3-s14-points.f64le",
+      "sha256": "6dd1d929d4d87df16f00967118be61d1921e0cbd7ee51755439cac8c2e572d0c",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c3-s15-points.f64le",
+      "sha256": "42ad7da9ab17931f51785d7eda48488abad8e801cf552c841879ef4d7b10cf59",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c3-s16-points.f64le",
+      "sha256": "521045ec82f3c258413c08fc6a6a857f1c4c0610a6802f5ca8b0ff3f30fe7d97",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c3-s17-points.f64le",
+      "sha256": "20aab7d0feec13b362877815167750db4a2e7a8e96105c2715272365598cc067",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c3-s18-points.f64le",
+      "sha256": "96c42087849b29c294e56b49555c7ecb083d5dee8dc775b6c6187f43e7a84d56",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c3-s19-points.f64le",
+      "sha256": "cd46dd7f9a6883c634c8259fcee9006caf66ae6afc396929755e3d4bfc846953",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c3-s20-points.f64le",
+      "sha256": "a6b31a40a3985a17cefa79ab73932d9d7af7ea571322d1adbfbf99936e90f0ce",
+      "bytes": 2304000,
+      "points": 48000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 3.589740337150793e-16
+    },
+    {
+      "filename": "I1-c3-core-points.f64le",
+      "sha256": "54d20d3a0038b569e67527fd98ec92c0407ae01187c71c0f2f6417c1d9e369a9",
+      "bytes": 384000,
+      "points": 8000,
+      "maximumCoordinateDifference": 0.0,
+      "maximumRelativeWeightDifference": 2.166277580108548e-16
+    }
+  ],
+  "seconds": 7.249753778000013,
+  "assertions": 196580
+}

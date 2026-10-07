@@ -1,0 +1,75 @@
+{
+  "verdict": "PASS_INDEPENDENT_DAMAGE_REFUSALS",
+  "reviewedSourceCommit": "9611a4865e9591041fa5253c9df6c0f91da84089",
+  "fixtureSourceCommit": "ce5df8ae5266e481496d2fb05b386a2d52f7a949",
+  "cases": [
+    {
+      "case": "recorded force gate",
+      "refusal": "UNCHANGED_RECORDED_GLOBAL_GATES"
+    },
+    {
+      "case": "recorded work gate",
+      "refusal": "UNCHANGED_RECORDED_GLOBAL_GATES"
+    },
+    {
+      "case": "qualification scope",
+      "refusal": "COMPARISON_SCOPE"
+    },
+    {
+      "case": "quiet identity credit",
+      "refusal": "QUIET_REUSE_CREDIT"
+    },
+    {
+      "case": "required finest cross-family",
+      "refusal": "COMPARISON_IDENTITY"
+    },
+    {
+      "case": "common16 supplementary arithmetic",
+      "refusal": "FINITE_REPLAY_DIFFERENCE"
+    },
+    {
+      "case": "all16 coverage",
+      "refusal": "COMPLETE_16_CANDIDATE"
+    },
+    {
+      "case": "region exact bounds after hash refresh",
+      "refusal": "EXACT_REGION_BOUNDS"
+    },
+    {
+      "case": "scope originalResult",
+      "refusal": "HISTORICAL_FAILURE_SCOPE"
+    },
+    {
+      "case": "scope originalTwoShellExecutionExit",
+      "refusal": "HISTORICAL_FAILURE_SCOPE"
+    },
+    {
+      "case": "scope outsidePatchQualified",
+      "refusal": "BOUNDED_SCOPE"
+    },
+    {
+      "case": "scope anatomicalQualification",
+      "refusal": "BOUNDED_SCOPE"
+    },
+    {
+      "case": "scope newNodalFields",
+      "refusal": "NO_ADDED_PHYSICAL_ACTIONS"
+    },
+    {
+      "case": "scope refits",
+      "refusal": "NO_ADDED_PHYSICAL_ACTIONS"
+    },
+    {
+      "case": "external log byte cap",
+      "refusal": "EXTERNAL_FILE_ENVELOPE"
+    },
+    {
+      "case": "external unexpected filename",
+      "refusal": "EXTERNAL_FILE_ENVELOPE"
+    }
+  ],
+  "specimenCalls": 0,
+  "materialLawInvocations": 0,
+  "quadratureGeneratedByReviewer": false,
+  "repoEditsByReviewer": false
+}
