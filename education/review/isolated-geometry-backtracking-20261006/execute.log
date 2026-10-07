@@ -1,0 +1,41 @@
+PREPARE --execute 2026-10-07T00:07:12.529Z
+EVALUATE 45-mode-control 0 2026-10-07T00:07:17.486Z
+ITERATION {"label":"45-mode-control","iteration":0,"energyJ":-33.480831164009885,"projectedMaximumN":0.14351006868046046,"fullFreeMaximumN":64.06754336283436,"minimumSampledJ":0.5681329154878911,"minimumCornerJ":0.5592355363202942}
+EVALUATE 45-mode-control 1 2026-10-07T00:07:36.903Z
+ITERATION {"label":"45-mode-control","iteration":1,"energyJ":-33.48083147770711,"projectedMaximumN":0.00005820077786236932,"fullFreeMaximumN":64.06683747708074,"minimumSampledJ":0.5683147059934479,"minimumCornerJ":0.5594239031350546}
+PRODUCTION_DIRECTION_TANGENT 2026-10-07T00:08:00.813Z
+EVALUATE 46-mode-response 0 2026-10-07T00:08:23.861Z
+ITERATION {"label":"46-mode-response","iteration":0,"energyJ":-33.48083147770711,"projectedMaximumN":379.5319801935699,"fullFreeMaximumN":64.06683747708074,"minimumSampledJ":0.5683147059934479,"minimumCornerJ":0.5594239031350546}
+EVALUATE 46-mode-response 1 2026-10-07T00:08:44.234Z
+ITERATION {"label":"46-mode-response","iteration":1,"energyJ":-33.7499971355736,"projectedMaximumN":343.38593717301023,"fullFreeMaximumN":53.595914611257406,"minimumSampledJ":0.45199014817808636,"minimumCornerJ":0.42739168218037515}
+EVALUATE 46-mode-response 2 2026-10-07T00:09:05.260Z
+ITERATION {"label":"46-mode-response","iteration":2,"energyJ":-33.823263175594214,"projectedMaximumN":329.5247365695156,"fullFreeMaximumN":51.78750043856188,"minimumSampledJ":0.19769839073331358,"minimumCornerJ":0.11133990968284165}
+EVALUATE 46-mode-response 3 2026-10-07T00:09:26.757Z
+ITERATION {"label":"46-mode-response","iteration":3,"energyJ":-33.842415730367605,"projectedMaximumN":324.74320645121674,"fullFreeMaximumN":53.06840798910858,"minimumSampledJ":0.11737083844156672,"minimumCornerJ":0.027206904459921}
+EVALUATE 46-mode-response 4 2026-10-07T00:09:48.529Z
+ITERATION {"label":"46-mode-response","iteration":4,"energyJ":-33.846837787206525,"projectedMaximumN":323.46717504030033,"fullFreeMaximumN":55.43014453561172,"minimumSampledJ":0.09881067292740367,"minimumCornerJ":0.007770143630792058}
+EVALUATE 46-mode-response 5 2026-10-07T00:10:10.614Z
+ITERATION {"label":"46-mode-response","iteration":5,"energyJ":-33.84788128632472,"projectedMaximumN":323.151395963022,"fullFreeMaximumN":56.013915555209614,"minimumSampledJ":0.09443608496650925,"minimumCornerJ":0.0031892065285883476}
+EVALUATE 46-mode-response 6 2026-10-07T00:10:33.805Z
+ITERATION {"label":"46-mode-response","iteration":6,"energyJ":-33.84839074691641,"projectedMaximumN":322.99485002994925,"fullFreeMaximumN":56.41475375807898,"minimumSampledJ":0.0923010132178925,"minimumCornerJ":0.0009534612589950841}
+EVALUATE 46-mode-response 7 2026-10-07T00:10:57.599Z
+ITERATION {"label":"46-mode-response","iteration":7,"energyJ":-33.8485165078229,"projectedMaximumN":322.9559567567896,"fullFreeMaximumN":56.53893942089362,"minimumSampledJ":0.0917740984994029,"minimumCornerJ":0.0004017060520614471}
+EVALUATE 46-mode-response 8 2026-10-07T00:11:23.124Z
+ITERATION {"label":"46-mode-response","iteration":8,"energyJ":-33.84857918495789,"projectedMaximumN":322.9365350925652,"fullFreeMaximumN":56.60112436983241,"minimumSampledJ":0.0915115061356408,"minimumCornerJ":0.00012673483574504683}
+EVALUATE 46-mode-response 9 2026-10-07T00:11:50.350Z
+ITERATION {"label":"46-mode-response","iteration":9,"energyJ":-33.848594828862545,"projectedMaximumN":322.9316836106929,"fullFreeMaximumN":56.61667582999045,"minimumSampledJ":0.09144596650792239,"minimumCornerJ":0.00005810568362892097}
+EVALUATE 46-mode-response 10 2026-10-07T00:12:19.019Z
+ITERATION {"label":"46-mode-response","iteration":10,"energyJ":-33.848602647623025,"projectedMaximumN":322.92925826544075,"fullFreeMaximumN":56.6244529846703,"minimumSampledJ":0.0914132102704026,"minimumCornerJ":0.000023805333001369975}
+EVALUATE 46-mode-response 11 2026-10-07T00:12:53.228Z
+ITERATION {"label":"46-mode-response","iteration":11,"energyJ":-33.848606556208956,"projectedMaximumN":322.9280456919143,"fullFreeMaximumN":56.62834191777146,"minimumSampledJ":0.09139683554737478,"minimumCornerJ":0.00000665871646990477}
+EVALUATE 46-mode-response 12 2026-10-07T00:13:26.362Z
+ITERATION {"label":"46-mode-response","iteration":12,"energyJ":-33.848607533253976,"projectedMaximumN":322.9277425639428,"fullFreeMaximumN":56.6293141713186,"minimumSampledJ":0.09139274229069701,"minimumCornerJ":0.0000023725067505213707}
+EVALUATE 46-mode-response 13 2026-10-07T00:14:03.102Z
+ITERATION {"label":"46-mode-response","iteration":13,"energyJ":-33.848607777509955,"projectedMaximumN":322.9276667828954,"fullFreeMaximumN":56.62955723590102,"minimumSampledJ":0.0913917190032232,"minimumCornerJ":0.0000013009819920047246}
+REFUSAL Error: Exhausted21 fractions through2^-20 without admissible sufficient decrease
+    at geometryBacktracking (file:///workspace/Kenoma-geometry-backtracking/education/tools/isolated-geometry-backtracking.mjs:52:8)
+    at solve (file:///workspace/Kenoma-geometry-backtracking/education/tools/run-isolated-geometry-response.mjs:82:18)
+    at file:///workspace/Kenoma-geometry-backtracking/education/tools/run-isolated-geometry-response.mjs:105:82
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
