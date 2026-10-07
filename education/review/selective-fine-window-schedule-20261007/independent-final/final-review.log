@@ -1,0 +1,79 @@
+{
+  "verdict": "PASS_SCIENTIFIC_COST_DESIGN_CONDITIONAL_ON_FUTURE_STRUCTURAL_REVIEW",
+  "sourceCommit": "3f2f7b96dade17bacf5909dbd602e74b34f6b863",
+  "assertions": 5032,
+  "reusedFilesVerified": 1424,
+  "reusedBytesVerified": 19688558,
+  "quietMaximumReplayDifference": 0,
+  "correctQuietD5U5MaximumN": 1.193659700748917e-06,
+  "quotedQuietD5U5MaximumWrong": false,
+  "newCallsPlanned": 19716000,
+  "storagePlannedUpperEnvelopeBytes": 448240000,
+  "outputHeadroomBytes": 88630912,
+  "observedTimeExtrapolationSeconds": 1706.0318046946056,
+  "slowTimeExtrapolationSeconds": 5350.86295477387,
+  "recipeCallArithmetic": [
+    {
+      "recipe": "P4",
+      "newCalls": 504000,
+      "fullRecipePointsPerElementPerField": 42000,
+      "newRegionRows": 252
+    },
+    {
+      "recipe": "P8",
+      "newCalls": 2352000,
+      "fullRecipePointsPerElementPerField": 168000,
+      "newRegionRows": 294
+    },
+    {
+      "recipe": "I0",
+      "newCalls": 1708000,
+      "fullRecipePointsPerElementPerField": 122000,
+      "newRegionRows": 294
+    },
+    {
+      "recipe": "I1",
+      "newCalls": 13552000,
+      "fullRecipePointsPerElementPerField": 968000,
+      "newRegionRows": 294
+    },
+    {
+      "recipe": "R4",
+      "newCalls": 1008000,
+      "fullRecipePointsPerElementPerField": 84000,
+      "newRegionRows": 252
+    },
+    {
+      "recipe": "H4",
+      "newCalls": 84000,
+      "fullRecipePointsPerElementPerField": 46000,
+      "newRegionRows": 42
+    },
+    {
+      "recipe": "C4",
+      "newCalls": 508000,
+      "fullRecipePointsPerElementPerField": 42000,
+      "newRegionRows": 254
+    }
+  ],
+  "historicalFailed4000ValuesRemainIncompleteOperation": true,
+  "noScientificProtocolBlockerBeyondQuotedNumber": true,
+  "conditionalLimitations": [
+    "Only bounded finite integration agreement may be reported; no convergence/analytic error claim.",
+    "All new primary and independent increments/axes remain unmeasured and must pass without sliding the window.",
+    "Shared156unit triangle allows within-shell cancellation; moment reproduction does not certify nonlinear material integration.",
+    "Independent graded-tetra decomposition and distinct sampling need structural proof/moments before material calls.",
+    "Output/heap/RSS/time numbers are proposed envelopes, not implementation proofs.",
+    "Independent work is77.40% of19,716,000calls; no minimal-cost claim justified.",
+    "Quiet U4/U5force margin is only1.21491100657e-7N; any identity mismatch refuses reuse.",
+    "Outside236U3elements remain unqualified."
+  ],
+  "forbiddenActions": {
+    "newMaterialCalls": 0,
+    "specimenCalls": 0,
+    "quadratureGeneration": 0,
+    "geometryGeneration": 0,
+    "runnerLaunches": 0,
+    "sourceEdits": 0
+  }
+}

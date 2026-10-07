@@ -1,0 +1,284 @@
+{
+  "verdict": "PASS_SCIENTIFIC_COST_DESIGN_CONDITIONAL_ON_FUTURE_STRUCTURAL_REVIEW",
+  "sourceCommit": "3f2f7b96dade17bacf5909dbd602e74b34f6b863",
+  "sourceSha256": {
+    "education/research/selective-fine-window-schedule-20261007.md": "eaf24611948b40529c97b0be49a3dffb62e88befb4a300f4aef53a5ac5928cc3",
+    "education/research/selective-fine-window-schedule-20261007.json": "aea6be97eac221ced6364dc234243d0c8042878c51b07fa9d4de123cb5aa7b71",
+    "education/research/selective-fixed-patch-fine-window-criterion-20261007.md": "a0232d758b368a1967aada47c87b508e93041740d3e845dc5a28fa5ad4df262b",
+    "education/review/selective-fine-window-schedule-20261007/reuse-index.json": "44d9b4aea84305974242c34a82501654a71ab534ef63ee056506b129b260ce88",
+    "education/review/selective-fine-window-schedule-20261007/retained-quiet-witnesses.json": "bbc9777a31518b21402d706519b08eeecc5f99d49a100f9b3a9c7c171a3d2b23"
+  },
+  "assertions": 5032,
+  "reusedFilesVerified": 1424,
+  "reusedBytesVerified": 19688558,
+  "quietMaximumReplayDifference": 0,
+  "correctQuietD5U5MaximumN": 1.193659700748917e-06,
+  "quotedQuietD5U5MaximumWrong": false,
+  "computedQuietWitnesses": {
+    "control45": {
+      "D4/D5": {
+        "matrix": {
+          "signedN": 1.1062123439486982e-11,
+          "triangleN": 1.1062123439486982e-11,
+          "signedWorkJ": 1.1983233442273779e-15,
+          "triangleWorkJ": 1.245774503998065e-15
+        },
+        "volume": {
+          "signedN": 1.1849462744351058e-08,
+          "triangleN": 1.1849462744351058e-08,
+          "signedWorkJ": 9.615561618639163e-13,
+          "triangleWorkJ": 1.0165912246848439e-12
+        },
+        "passiveFiber": {
+          "signedN": 5.963007865261716e-13,
+          "triangleN": 6.116218642659987e-13,
+          "signedWorkJ": 4.065270188126953e-17,
+          "triangleWorkJ": 8.341754758732087e-17
+        },
+        "activePotential": {
+          "signedN": 4.759970195777896e-12,
+          "triangleN": 4.759970195777896e-12,
+          "signedWorkJ": 1.7989384689832055e-17,
+          "triangleWorkJ": 9.743922859613271e-17
+        },
+        "total": {
+          "signedN": 1.186293108190739e-08,
+          "triangleN": 1.186293108190739e-08,
+          "signedWorkJ": 9.623552332051997e-13,
+          "triangleWorkJ": 1.0174479928583626e-12
+        }
+      },
+      "U4/U5": {
+        "matrix": {
+          "signedN": 2.0319197938795108e-08,
+          "triangleN": 2.0319197938795108e-08,
+          "signedWorkJ": 2.3489306127123008e-12,
+          "triangleWorkJ": 2.3834688325946173e-12
+        },
+        "volume": {
+          "signedN": 8.378508899342663e-06,
+          "triangleN": 8.378508899342663e-06,
+          "signedWorkJ": 1.1366194115727177e-09,
+          "triangleWorkJ": 1.1782452187351998e-09
+        },
+        "passiveFiber": {
+          "signedN": 2.0837257252992458e-08,
+          "triangleN": 2.0837257252992458e-08,
+          "signedWorkJ": 5.449593139883062e-14,
+          "triangleWorkJ": 2.337035670105028e-13
+        },
+        "activePotential": {
+          "signedN": 1.0853332765847767e-07,
+          "triangleN": 1.0853332765847767e-07,
+          "signedWorkJ": 6.137317063257435e-12,
+          "triangleWorkJ": 6.612035445643594e-12
+        },
+        "total": {
+          "signedN": 8.37501138850616e-06,
+          "triangleN": 8.37501138850616e-06,
+          "signedWorkJ": 1.1327764710287665e-09,
+          "triangleWorkJ": 1.173962140194207e-09
+        }
+      },
+      "D5/U5": {
+        "matrix": {
+          "signedN": 2.0720191916401287e-09,
+          "triangleN": 2.0720191916401287e-09,
+          "signedWorkJ": 2.6076944640663553e-13,
+          "triangleWorkJ": 2.644316542465746e-13
+        },
+        "volume": {
+          "signedN": 1.193607632732352e-06,
+          "triangleN": 1.193607632732352e-06,
+          "signedWorkJ": 1.410689611982267e-10,
+          "triangleWorkJ": 1.4564599278510956e-10
+        },
+        "passiveFiber": {
+          "signedN": 1.4779857337998692e-09,
+          "triangleN": 1.4779857337998692e-09,
+          "signedWorkJ": 2.482457149478232e-15,
+          "triangleWorkJ": 1.2863137230078768e-14
+        },
+        "activePotential": {
+          "signedN": 1.0688994578345046e-08,
+          "triangleN": 1.0688994578345046e-08,
+          "signedWorkJ": 4.0343460289038586e-13,
+          "triangleWorkJ": 4.651674338551854e-13
+        },
+        "total": {
+          "signedN": 1.193659700748917e-06,
+          "triangleN": 1.193659700748917e-06,
+          "signedWorkJ": 1.409238205667539e-10,
+          "triangleWorkJ": 1.4544280119014607e-10
+        }
+      }
+    },
+    "terminal46": {
+      "D4/D5": {
+        "matrix": {
+          "signedN": 5.198112990392745e-12,
+          "triangleN": 5.198112990392745e-12,
+          "signedWorkJ": 3.2557584611598936e-16,
+          "triangleWorkJ": 4.304690080943161e-16
+        },
+        "volume": {
+          "signedN": 5.578428385888401e-09,
+          "triangleN": 5.578428385888401e-09,
+          "signedWorkJ": 3.4885662094413864e-13,
+          "triangleWorkJ": 4.3501412894325474e-13
+        },
+        "passiveFiber": {
+          "signedN": 8.619771563189715e-13,
+          "triangleN": 8.859579736508749e-13,
+          "signedWorkJ": 2.5673723449634642e-17,
+          "triangleWorkJ": 5.477788281658774e-17
+        },
+        "activePotential": {
+          "signedN": 5.1432191838785e-12,
+          "triangleN": 5.1432191838785e-12,
+          "signedWorkJ": 2.5876567724615046e-17,
+          "triangleWorkJ": 1.6576661668745113e-16
+        },
+        "total": {
+          "signedN": 5.5884052940768925e-09,
+          "triangleN": 5.5884052940768925e-09,
+          "signedWorkJ": 3.491677380536123e-13,
+          "triangleWorkJ": 4.3552120405267824e-13
+        }
+      },
+      "U4/U5": {
+        "matrix": {
+          "signedN": 1.2222351134655307e-08,
+          "triangleN": 1.2222351134655307e-08,
+          "signedWorkJ": 3.556108048423437e-13,
+          "triangleWorkJ": 7.247375401649455e-13
+        },
+        "volume": {
+          "signedN": 5.2032966912918255e-06,
+          "triangleN": 5.2032966912918255e-06,
+          "signedWorkJ": 3.364672459526225e-10,
+          "triangleWorkJ": 4.977891805586643e-10
+        },
+        "passiveFiber": {
+          "signedN": 1.923119441471499e-08,
+          "triangleN": 1.923119441471499e-08,
+          "signedWorkJ": 5.22213033765233e-13,
+          "triangleWorkJ": 1.2859986471345743e-12
+        },
+        "activePotential": {
+          "signedN": 1.4462465092179855e-07,
+          "triangleN": 1.4462465092179855e-07,
+          "signedWorkJ": 4.622123728765667e-12,
+          "triangleWorkJ": 6.305784563306029e-12
+        },
+        "total": {
+          "signedN": 5.2004761172952385e-06,
+          "triangleN": 5.2004761172952385e-06,
+          "signedWorkJ": 3.327229074255782e-10,
+          "triangleWorkJ": 4.933612120226283e-10
+        }
+      },
+      "D5/U5": {
+        "matrix": {
+          "signedN": 1.1971435127933194e-09,
+          "triangleN": 1.1971435127933194e-09,
+          "signedWorkJ": 4.5060855714851285e-14,
+          "triangleWorkJ": 8.416515492579746e-14
+        },
+        "volume": {
+          "signedN": 7.623363540432138e-07,
+          "triangleN": 7.623363540432138e-07,
+          "signedWorkJ": 4.812345544512863e-11,
+          "triangleWorkJ": 6.531379683998868e-11
+        },
+        "passiveFiber": {
+          "signedN": 1.3227467454690611e-09,
+          "triangleN": 1.3227467454690611e-09,
+          "signedWorkJ": 1.3702796831325184e-14,
+          "triangleWorkJ": 6.852631404582278e-14
+        },
+        "activePotential": {
+          "signedN": 1.11058431340183e-08,
+          "triangleN": 1.11058431340183e-08,
+          "signedWorkJ": 1.564864102943554e-13,
+          "triangleWorkJ": 3.289392963737866e-13
+        },
+        "total": {
+          "signedN": 7.558982249022961e-07,
+          "triangleN": 7.558982249022961e-07,
+          "signedWorkJ": 4.802582318805808e-11,
+          "triangleWorkJ": 6.512826777155043e-11
+        }
+      }
+    }
+  },
+  "newCallsPlanned": 19716000,
+  "storagePlannedUpperEnvelopeBytes": 448240000,
+  "outputHeadroomBytes": 88630912,
+  "observedTimeExtrapolationSeconds": 1706.0318046946056,
+  "slowTimeExtrapolationSeconds": 5350.86295477387,
+  "recipeCallArithmetic": [
+    {
+      "recipe": "P4",
+      "newCalls": 504000,
+      "fullRecipePointsPerElementPerField": 42000,
+      "newRegionRows": 252
+    },
+    {
+      "recipe": "P8",
+      "newCalls": 2352000,
+      "fullRecipePointsPerElementPerField": 168000,
+      "newRegionRows": 294
+    },
+    {
+      "recipe": "I0",
+      "newCalls": 1708000,
+      "fullRecipePointsPerElementPerField": 122000,
+      "newRegionRows": 294
+    },
+    {
+      "recipe": "I1",
+      "newCalls": 13552000,
+      "fullRecipePointsPerElementPerField": 968000,
+      "newRegionRows": 294
+    },
+    {
+      "recipe": "R4",
+      "newCalls": 1008000,
+      "fullRecipePointsPerElementPerField": 84000,
+      "newRegionRows": 252
+    },
+    {
+      "recipe": "H4",
+      "newCalls": 84000,
+      "fullRecipePointsPerElementPerField": 46000,
+      "newRegionRows": 42
+    },
+    {
+      "recipe": "C4",
+      "newCalls": 508000,
+      "fullRecipePointsPerElementPerField": 42000,
+      "newRegionRows": 254
+    }
+  ],
+  "historicalFailed4000ValuesRemainIncompleteOperation": true,
+  "noScientificProtocolBlockerBeyondQuotedNumber": true,
+  "conditionalLimitations": [
+    "Only bounded finite integration agreement may be reported; no convergence/analytic error claim.",
+    "All new primary and independent increments/axes remain unmeasured and must pass without sliding the window.",
+    "Shared156unit triangle allows within-shell cancellation; moment reproduction does not certify nonlinear material integration.",
+    "Independent graded-tetra decomposition and distinct sampling need structural proof/moments before material calls.",
+    "Output/heap/RSS/time numbers are proposed envelopes, not implementation proofs.",
+    "Independent work is77.40% of19,716,000calls; no minimal-cost claim justified.",
+    "Quiet U4/U5force margin is only1.21491100657e-7N; any identity mismatch refuses reuse.",
+    "Outside236U3elements remain unqualified."
+  ],
+  "forbiddenActions": {
+    "newMaterialCalls": 0,
+    "specimenCalls": 0,
+    "quadratureGeneration": 0,
+    "geometryGeneration": 0,
+    "runnerLaunches": 0,
+    "sourceEdits": 0
+  }
+}

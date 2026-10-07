@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "frozenResultCommit": "38ae8a2e2af57cf33254af987b724824b9d84357",
+  "acceptedCriterionReviewCommit": "6759c66d2269bd0b2159ddce564014590b4a8320",
+  "initialFreezeCommit": "a5d0243b36f99379a61f52a0845a3e01fc6470a0",
+  "reviewedRevisedFreezeCommit": "3f2f7b96dade17bacf5909dbd602e74b34f6b863",
+  "verdict": "PASS_SCIENTIFIC_COST_DESIGN_CONDITIONAL_ON_FUTURE_STRUCTURAL_REVIEW",
+  "newMaterialCallsDuringDesignAndReview": 0,
+  "quadratureGenerated": false,
+  "geometryGenerated": false,
+  "runnerImplementationAdded": false,
+  "runnerLaunched": false,
+  "executionAuthorized": false,
+  "frozenGatesChanged": false,
+  "plannedNewCalls": 19716000,
+  "plannedEnvelopeBytes": 448240000,
+  "reviewedSourceSha256": {
+    "education/research/selective-fine-window-schedule-20261007.md": "eaf24611948b40529c97b0be49a3dffb62e88befb4a300f4aef53a5ac5928cc3",
+    "education/research/selective-fine-window-schedule-20261007.json": "aea6be97eac221ced6364dc234243d0c8042878c51b07fa9d4de123cb5aa7b71",
+    "education/research/selective-fixed-patch-fine-window-criterion-20261007.md": "a0232d758b368a1967aada47c87b508e93041740d3e845dc5a28fa5ad4df262b",
+    "education/review/selective-fine-window-schedule-20261007/reuse-index.json": "44d9b4aea84305974242c34a82501654a71ab534ef63ee056506b129b260ce88",
+    "education/review/selective-fine-window-schedule-20261007/retained-quiet-witnesses.json": "bbc9777a31518b21402d706519b08eeecc5f99d49a100f9b3a9c7c171a3d2b23"
+  },
+  "files": {
+    "README.md": {
+      "bytes": 4068,
+      "sha256": "755e30e862ff276434db49b1f105dadda4280555bf8969ce849d89c01214d94d"
+    },
+    "independent-final/final-assessment.md": {
+      "bytes": 5168,
+      "sha256": "68c6cf8895b5f0f9c1b6a1eb989da988ad16885c7f635897653cbbb44c9a0a57"
+    },
+    "independent-final/final-review.json": {
+      "bytes": 10394,
+      "sha256": "48eaaae8361e3400bd723f7135f8bc6ee6f4f10b8b335949e67963bc94b97202"
+    },
+    "independent-final/final-review.log": {
+      "bytes": 2729,
+      "sha256": "167e16a6ab648ce43d1c52f42ac554320a63aaef4b038527e66050b0cefc2869"
+    },
+    "independent-final/final-review.py": {
+      "bytes": 12685,
+      "sha256": "7b7c87cd316643359cb40b5f35e7318ecfec805782ccca91cfb4452edda7d891"
+    },
+    "independent-initial/initial-assessment.md": {
+      "bytes": 5425,
+      "sha256": "42c7e517b9df74c3913bed15f28dabb457c581985c0417803dfab1d6f27f47d9"
+    },
+    "independent-initial/initial-review.json": {
+      "bytes": 10083,
+      "sha256": "93b7ac8829b2c899280d01fcd96a78532228cd600c414c464219272bf05e91f5"
+    },
+    "independent-initial/initial-review.log": {
+      "bytes": 2418,
+      "sha256": "2acd5c81a403174c0e19ce2772e1416c42bcbb311ac597eb37a3da840349e51f"
+    },
+    "independent-initial/review.py": {
+      "bytes": 9876,
+      "sha256": "8e8c487729d3192bcf8cda380b630725d280d5ba0f3933b7a5d6ec765464ffee"
+    },
+    "retained-quiet-witnesses.json": {
+      "bytes": 6986,
+      "sha256": "bbc9777a31518b21402d706519b08eeecc5f99d49a100f9b3a9c7c171a3d2b23"
+    },
+    "reuse-index.json": {
+      "bytes": 460594,
+      "sha256": "44d9b4aea84305974242c34a82501654a71ab534ef63ee056506b129b260ce88"
+    }
+  }
+}
