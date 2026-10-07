@@ -9,6 +9,13 @@ unchanged. This is a proposed new finite protocol, governed by the
 [accepted prospective criterion](selective-fixed-patch-fine-window-criterion-20261007.md),
 not a reinterpretation of the old protocol.
 
+The first cost freeze was `a5d0243b36f99379a61f52a0845a3e01fc6470a0`.
+Independent initial review found a prose-only quiet-metric error and accepted
+two exact-reuse cost improvements. That initial proposal and its
+[review](../review/selective-fine-window-schedule-20261007/independent-initial/initial-review.json)
+remain retained. This revision fixes the quote and saves640000 calls without
+dropping any region, comparison or evidence requirement.
+
 The [frozen cost/scope manifest](selective-fine-window-schedule-20261007.json)
 and [exact reuse index](../review/selective-fine-window-schedule-20261007/reuse-index.json)
 are the review inputs. Freeze them before independent scientific review.
@@ -65,9 +72,12 @@ all7 sensitive elements, covering every physical shell and the core.
 
 Use the same corner and physical radial regions r=1−Lcorner:20 dyadic shells
 and core[0,2^-20]. Triangulate the opposite face on the equal barycentric grid
-of side resolution m, yielding exactly m² face triangles. Give every grid
-vertex a stable integer index and sort each triangle's three vertices by that
-index. For each triangle and radial interval[lo,hi], let its lower vertices be
+of side resolution m, yielding exactly m² face triangles. Explicitly use face
+barycentrics `(i/m,j/m,1-(i+j)/m)` for integer i,j≥0 and i+j≤m, mapped to the
+ascending opposite-face indices. Grid vertex index is its lexicographic rank
+of(i,j). Up triangles are `[(i,j),(i+1,j),(i,j+1)]` for i+j≤m−1; down triangles
+are `[(i+1,j),(i+1,j+1),(i,j+1)]` for i+j≤m−2. Sort each triangle by grid index.
+For each triangle and radial interval[lo,hi], its lower vertices are
 A0/A1/A2 and upper vertices B0/B1/B2, where
 `A_i=C+lo*(V_i-C)` and `B_i=C+hi*(V_i-C)`; C is the corner and V_i a face
 vertex. Decompose this homothetic triangular frustum into exactly:
@@ -80,7 +90,9 @@ The consistent vertex ordering defines shared-face diagonals. Each core face
 triangle forms one tetrahedron with C; it does not use degenerate frustum
 tetrahedra at lo=0. Evaluate each affine reference subtetrahedron using a
 positive tensor Duffy Gauss5 rule (125 points). Orient each tetrahedron
-consistently and certify positive reference volume. These oblique affine
+in reference coordinates(L1,L2,L3): swap the final two vertices if the
+determinant is negative, refusing zero. Use fixed Duffy barycentrics
+`(1-u,u*(1-v),u*v*(1-w),u*v*w)` and certify positive reference volume. These oblique affine
 tetrahedral charts and nodes differ from the primary r/a/b tensor-shell
 sampling; sharing physical shell boundaries is not sampling identity.
 
@@ -120,7 +132,22 @@ one axis and can reuse247's exact accepted radial witness:
 |H4 depth|all7|Gauss5,angular4,radial1,ascending chart|depth20→22|
 |C4 chart|all7|Gauss5,angular4,radial1,depth20|ascending opposite face→cyclic left rotation|
 
-H4 has46000 points and23 original regions. C4 has42000 points and21 regions.
+H4 has46000 points and23 original regions, but only new s21/s22/core
+(6000points/element/field) require evaluation. Its s1..s20 exactly match S1
+on the same element/field/law/reference/chart: secondary rows come from P4
+completed earlier in the same eventual invocation;247 rows are retained F44.
+Reference their immutable completed rows, points, weights and provenance.
+Future structural preflight must certify identity; the runner must require
+accepted prior P4 receipts and refuse mismatch without replacement calls.
+Shared rows earn no depth evidence. The difference is between S1's original
+depth20 core and H4's genuinely newly split core.
+
+C4 has42000 points and21 regions. On247, s1..s20 match retained X44 at face231,
+although X44's core depth is22. Reuse those40000points/field and actual
+rows/weights; evaluate only its new depth20 core (2000points/field). Complete
+C4 differs from S1's ascending chart on all regions, so this is a genuine
+isolated depth20 chart check. Identical C4/X44 outer rows add no depth evidence.
+Every secondary C4 point remains new.
 Old X44 changes depth and chart together and is **not** either isolated check;
 its close agreement is historical diagnostic evidence only. S1/R4, S1/H4 and
 S1/C4 each form complete16-element comparisons, with quiet9 unchanged and
@@ -166,7 +193,7 @@ requirements within the unchanged global gates, not relaxed replacement gates:
 Quiet I0/I1's retained U4/U5 maximum across both fields/all terms is
 8.378508899342663e-6N (volume, control); total is8.37501138850616e-6N.
 It fits8.5e-6N and remains a finite witness with little allocated margin.
-Quiet D5/U5's maximum is1.2198439485189283e-6N (volume, control), fitting2e-6N.
+Quiet D5/U5's maximum is1.193659700748917e-6N (total, control), fitting2e-6N.
 Quiet D4/D5 also fits. The
 [retained-only scalar arithmetic](../review/selective-fine-window-schedule-20261007/retained-quiet-witnesses.json)
 reports every component/field, all four metrics, and actual whole-element
@@ -194,21 +221,22 @@ U5/D5, visible; neither must magically change after the new experiment.
 |I0 sensitive7: independent lower|1708000|
 |I1 sensitive7: independent refined|13552000|
 |R4 secondary6: radial2 at angular4|1008000|
-|H4 sensitive7: isolated depth22|644000|
-|C4 sensitive7: isolated cyclic chart|588000|
-|**Planned complete and maximum new calls**|**20356000**|
+|H4 sensitive7: isolated depth22; shared20shells reused|84000|
+|C4 sensitive7: isolated cyclic chart;247shared20shells reused|508000|
+|**Planned complete and maximum new calls**|**19716000**|
 
-This is40.9166 times the completed497500-call run. Independent-family work is
-15260000 calls (74.97% of the new schedule). Quiet9 and outside236 get zero
+This is39.6302 times the completed497500-call run. Independent-family work is
+15260000 calls (77.40% of the new schedule). Quiet9 and outside236 get zero
 new calls. The expense is intentional independent-resolution evidence, not
 uniform refinement of every patch element. Primary full-region rules avoid
 claiming unmeasured angular8 tails were resolved from identical reuse. No
 success or minimal-cost claim is made. A cheaper partial experiment may reveal
 the missing angular4 behavior, but cannot pass this predeclared full window.
 
-Reuse exactly the1342 byte-hashed files in the reuse index: complete U3 baseline
+Reuse exactly the1424 byte-hashed files in the reuse index: complete U3 baseline
 and frozen arrays; quiet D4/D5/U4/U5 locals; secondary A55;247 A55/F44/R44;
-their actual normalized/physical weights and source/receipt closure. Each file
+247 X44 first20shells and their actual normalized/physical weights and
+source/receipt closure. Each file
 is checked against its exact immutable commit blob. Recipes, fields, direction,
 material and law/helper module hashes are explicit. Existing normalized F44/R44
 corner0 arrays can serve new geometry at the same chart; new element physical
@@ -221,28 +249,36 @@ values. Retained A55/R44 provenance stays exact. The old failed operation is
 never relabeled complete; its incomplete receipt stays pinned. Hash/schema/
 law/field/point/weight mismatch stops reuse with no replacement-call allowance.
 
-Proposed new output:276576000B normalized binary arrays (six binary64 values
-per point, including r),81424000B physical weights retained once per element/
-recipe with both-field identity checks; total358000000B binary payload.
-There are554 new normalized files,1001 physical-weight files,2002 logical
-region rows and94 stages. The manifest enumerates bounded slots for16 full
+H4 reuses480000 new P4 values already counted at the first step plus80000
+historical F44 values. C4 reuses80000 historical X44 values. These640000
+avoided calls are not new measurements. Count unique new reserved/entered/
+completed callbacks separately from stage logical points and references.
+The P4 dependency is a planned receipt linkage, not an existing material
+receipt or invented future hash; it must be certified and accepted before reuse.
+
+Proposed new output:266976000B normalized binary arrays (six binary64 values
+per point, including r),78864000B physical weights retained once per element/
+recipe with both-field identity checks; total345840000B binary payload.
+There are454 new normalized files,841 physical-weight files,1682 new evaluated
+region rows and94 stages. Preserve2002 logical region records, referencing
+the320 shared rows without copying/re-evaluating them. The manifest enumerates bounded slots for16 full
 hybrids and24 comparison records:14 required,6 quiet witnesses and4
 informational cross-checks. Comparison slots include156-unit data plus
 common16 diagnostics within their cap. Byte envelopes are8192B/region,
 131072B/stage,1048576B/hybrid and2097152B/comparison. Receipts/provenance,
 two64KiB logs, external records and4MiB emergency reserve are included.
-**Planned upper envelope463021440B**, below the proposed512MiB ceiling
-(536870912B) by73849472B. Emergency partial weights get512KiB, enough for
+**Planned upper envelope448240000B**, below the proposed512MiB ceiling
+(536870912B) by88630912B. Emergency partial weights get512KiB, enough for
 I1's largest48000-point shell (384000B). These are design envelopes, **not
 implemented/enforced or structurally qualified yet**. Future preflight must
 freeze closed filenames, actual encodings and refusal paths before execution.
 
-The observed43.048835s/497500-call rate extrapolates to1761.41s; the prior slow
-135.02s batch extrapolates to5524.56s. Plan1800–6000s (30–100min), with a
+The observed43.048835s/497500-call rate extrapolates to1706.03s; the prior slow
+135.02s batch extrapolates to5350.86s. Plan1800–6000s (30–100min), with a
 proposed7200s public-entry-to-final-acceptance wall ceiling, one eventual
 invocation,1GiB Node heap and2GiB RSS. Estimates include no new benchmark and
 are not guarantees; new geometry/metadata overhead may change them. Streaming
-one element/region at a time is required; do not hold the full358MB binary
+one element/region at a time is required; do not hold the full345.84MB binary
 payload or all points as JavaScript objects at once. Only future implementation
 and structural resource review can validate those limits. The old300s/64MiB
 authorization is consumed and does not authorize these new budgets.

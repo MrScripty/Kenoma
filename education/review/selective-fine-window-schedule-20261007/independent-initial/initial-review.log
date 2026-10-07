@@ -1,0 +1,72 @@
+{
+  "verdict": "FAIL_PROSE_QUOTE_ONLY",
+  "sourceCommit": "a5d0243b36f99379a61f52a0845a3e01fc6470a0",
+  "assertions": 4653,
+  "reusedFilesVerified": 1342,
+  "reusedBytesVerified": 17169763,
+  "quietMaximumReplayDifference": 0,
+  "correctQuietD5U5MaximumN": 1.193659700748917e-06,
+  "quotedQuietD5U5MaximumWrong": true,
+  "newCallsPlanned": 20356000,
+  "storagePlannedUpperEnvelopeBytes": 463021440,
+  "outputHeadroomBytes": 73849472,
+  "observedTimeExtrapolationSeconds": 1761.411210000172,
+  "slowTimeExtrapolationSeconds": 5524.557025125629,
+  "recipeCallArithmetic": [
+    {
+      "recipe": "P4",
+      "newCalls": 504000,
+      "pointsPerElementPerField": 42000
+    },
+    {
+      "recipe": "P8",
+      "newCalls": 2352000,
+      "pointsPerElementPerField": 168000
+    },
+    {
+      "recipe": "I0",
+      "newCalls": 1708000,
+      "pointsPerElementPerField": 122000
+    },
+    {
+      "recipe": "I1",
+      "newCalls": 13552000,
+      "pointsPerElementPerField": 968000
+    },
+    {
+      "recipe": "R4",
+      "newCalls": 1008000,
+      "pointsPerElementPerField": 84000
+    },
+    {
+      "recipe": "H4",
+      "newCalls": 644000,
+      "pointsPerElementPerField": 46000
+    },
+    {
+      "recipe": "C4",
+      "newCalls": 588000,
+      "pointsPerElementPerField": 42000
+    }
+  ],
+  "historicalFailed4000ValuesRemainIncompleteOperation": true,
+  "noScientificProtocolBlockerBeyondQuotedNumber": true,
+  "conditionalLimitations": [
+    "Only bounded finite integration agreement may be reported; no convergence/analytic error claim.",
+    "All new primary and independent increments/axes remain unmeasured and must pass without sliding the window.",
+    "Shared156unit triangle allows within-shell cancellation; moment reproduction does not certify nonlinear material integration.",
+    "Independent graded-tetra decomposition and distinct sampling need structural proof/moments before material calls.",
+    "Output/heap/RSS/time numbers are proposed envelopes, not implementation proofs.",
+    "Independent work is74.97% of20,356,000calls; no minimal-cost claim justified.",
+    "Quiet U4/U5force margin is only1.21491100657e-7N; any identity mismatch refuses reuse.",
+    "Outside236U3elements remain unqualified."
+  ],
+  "forbiddenActions": {
+    "newMaterialCalls": 0,
+    "specimenCalls": 0,
+    "quadratureGeneration": 0,
+    "geometryGeneration": 0,
+    "runnerLaunches": 0,
+    "sourceEdits": 0
+  }
+}
