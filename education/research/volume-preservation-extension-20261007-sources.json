@@ -7,7 +7,7 @@
   "branch": "research/volume-preservation-research-20261007",
   "bookMatchesObservedMain": true,
   "author": "MrScripty <TheEnvironmentGuy@protonmail.com>",
-  "proposalSha256": "ff63e56085a84ba9a0eb98cd5167131078b53a7fd72bc280f6a8c850afd05dce",
+  "proposalSha256": "cc6a77c764904c61e5527644c4e60a7e30a180124cf9d90b7d70b0ba3c7ea2bc",
   "sources": [
     {
       "name": "blemker2005.pdf",
@@ -144,7 +144,7 @@
   "checks": {
     "localMarkdownLinks": {
       "passed": true,
-      "count": 10
+      "count": 11
     },
     "frozenReferencesMatchBase": {
       "passed": true,
@@ -158,7 +158,14 @@
   "limitations": [
     "No empirical volumetric stress-volume curve for this brachialis fixture verified by these sources",
     "No new integration tolerance, call budget, solver or model adoption authorized",
-    "Diagnostic remains under separate independent review",
+    "Diagnostic received a limited owner-relayed independent ACK; force integration remains unqualified and old raw review limits persist.",
     "Primary PDFs read online; shell snapshots unavailable due network 403. Official pinned code/doc snapshots fetched and hashed."
-  ]
+  ],
+  "reviewSteering": {
+    "receivedUTC": "2026-10-07",
+    "scope": "Owner-relayed independent diagnostic ACK of source/hash/arithmetic/parameter provenance; integration unqualified; preserve old full-raw review limits",
+    "successiveRefinedFullForceMaximaDifferenceN": 0.142799743826,
+    "requiredNextProtocol": "Bounded fixed-field whole cap-adjacent-patch integration, all remaining coarse regions, full vectors retained, force and directional-derivative criteria; only thereafter displacement/stationarity/tangent",
+    "notEstablished": "Converged equilibrium error, constitutive cause, justified arbitrary bulk increase, selected pressure formulation or stress refit"
+  }
 }
