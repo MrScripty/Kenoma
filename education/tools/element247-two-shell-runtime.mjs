@@ -3,6 +3,7 @@ import fs from 'node:fs';import path from 'node:path';import assert from 'node:a
 import {assembleElement,emptyAssembly,scatter,ALL_TERMS,componentSumCheck} from './fixed-field-integration-assembly.mjs';
 import {hashBytes,treeBytes} from './element247-shell-runtime.mjs';
 import {CHANGED_SHELLS} from './element247-two-shell-protocol.mjs';
+import {withChangedShellIdentity} from './element247-two-shell-schema.mjs';
 export function assembleChangedShells({source,positions,direction,points,limits,store,materialCallback,context,onCheckpoint=()=>{}}){
  const rows=[],weights=[];
  for(const s of CHANGED_SHELLS){
@@ -14,7 +15,7 @@ export function assembleChangedShells({source,positions,direction,points,limits,
   const {physicalWeights,...local}=e;context.partialShell={...local,...s,completedPoints:e.pointCount,physicalWeightsComplete:true};
   const weightName=`T24-terminal46-${s.id}-weights.f64le`;
   try{
-   const ids=source.elements_ten_node[247],row={...local,...s,comparisonShell:s.id,terminalDirectionalDerivativesJ:Object.fromEntries(ALL_TERMS.map(t=>[t,local.localGradientsN[t].reduce((v,X,i)=>v+X.reduce((a,x,d)=>a+x*direction[ids[i]][d],0),0)]))};context.partialShell={...row,completedPoints:e.pointCount,physicalWeightsComplete:true};
+   const ids=source.elements_ten_node[247],row=withChangedShellIdentity({...local,...s,comparisonShell:s.id,terminalDirectionalDerivativesJ:Object.fromEntries(ALL_TERMS.map(t=>[t,local.localGradientsN[t].reduce((v,X,i)=>v+X.reduce((a,x,d)=>a+x*direction[ids[i]][d],0),0)]))});context.partialShell={...row,completedPoints:e.pointCount,physicalWeightsComplete:true};
    const check=emptyAssembly(585);scatter(source,e,check);row.reconstruction=componentSumCheck(check);store.write(weightName,physicalWeights);store.json(`T24-terminal46-${s.id}-shell.json`,row);rows.push(row);weights.push(physicalWeights);context.completedShells.push(s.id);onCheckpoint('after-changed-shell-output');
   }catch(error){
    const expected=hashBytes(physicalWeights);context.partialWeightSha256=expected;context.physicalWeightEvidenceComplete=false;
