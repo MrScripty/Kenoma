@@ -15,8 +15,9 @@ separate review and authorization.
 ## Why this method and what stays frozen
 
 The parent's independent retained-data localization reports that247 supplies
-about99.97% of the terminal U4→U5 peak discrepancy and about99.17% of the volume
-contribution to that total peak. Removing247 diagnostically still leaves
+about99.97% of the terminal U4→U5 peak discrepancy; the whole-patch volume
+term supplies about99.17% of that total peak. These percentages have different
+numerators. Removing247 diagnostically still leaves
 about7.66e-5N. Secondary elements197/200/203/206/246/248 cannot be omitted from
 qualification. The preflight separately reconstructs every component's local
 differences for **all16 incident elements** from the retained vectors and
@@ -217,7 +218,7 @@ node education/tools/preflight-element247-shell.mjs
 
 For a review replay, use `--output /tmp/kenoma-shell-review-FRESH` to preserve
 the earlier evidence. The committed
-[structural receipt](../review/element247-shell-protocol-20261007/structural-preflight.json)
+[structural receipt](../review/element247-shell-protocol-20261007/confirmation-preflight.json)
 will bind source, rule ranges, per-shell normalized and physical moments,
 positive weights, sample geometry and test evidence. The
 [retained-data localization](../review/element247-shell-protocol-20261007/retained-patch-localization.json)
