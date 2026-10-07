@@ -33,7 +33,12 @@
         "focus": true
       },
       "artifact": "control45-S0-S1-comparison.json",
-      "sha256": "c1aa9b58fdf43a6de363db56cabe63a7df8143af26dd3c13b3317cf534ec2a9b"
+      "sha256": "c1aa9b58fdf43a6de363db56cabe63a7df8143af26dd3c13b3317cf534ec2a9b",
+      "failedGlobalTerms": [],
+      "failedAllocatedTerms": {
+        "quiet": [],
+        "focus": []
+      }
     },
     {
       "state": "control45",
@@ -51,7 +56,12 @@
         "focus": true
       },
       "artifact": "control45-S1-S2-comparison.json",
-      "sha256": "c9bcd9ececbc15c887680b688afd6ab90614beebeb3c0d99f2f058b44829e742"
+      "sha256": "c9bcd9ececbc15c887680b688afd6ab90614beebeb3c0d99f2f058b44829e742",
+      "failedGlobalTerms": [],
+      "failedAllocatedTerms": {
+        "quiet": [],
+        "focus": []
+      }
     },
     {
       "state": "control45",
@@ -69,7 +79,12 @@
         "focus": true
       },
       "artifact": "control45-I0-I1-comparison.json",
-      "sha256": "d6bc9554dc5553c1e9056e43c486dd4dd36549139a4ffd0300f5db96cc8d668f"
+      "sha256": "d6bc9554dc5553c1e9056e43c486dd4dd36549139a4ffd0300f5db96cc8d668f",
+      "failedGlobalTerms": [],
+      "failedAllocatedTerms": {
+        "quiet": [],
+        "focus": []
+      }
     },
     {
       "state": "control45",
@@ -87,7 +102,12 @@
         "focus": true
       },
       "artifact": "control45-S2-I1-comparison.json",
-      "sha256": "b38bb30d537704b16590a41827c36d1f050927cdeda9fd4027bda68d76c09598"
+      "sha256": "b38bb30d537704b16590a41827c36d1f050927cdeda9fd4027bda68d76c09598",
+      "failedGlobalTerms": [],
+      "failedAllocatedTerms": {
+        "quiet": [],
+        "focus": []
+      }
     },
     {
       "state": "control45",
@@ -105,7 +125,12 @@
         "focus": true
       },
       "artifact": "control45-S1-AR-comparison.json",
-      "sha256": "6535a331316b901dd97d21bff242f97440ea08854d3b345927b6989c749182d2"
+      "sha256": "6535a331316b901dd97d21bff242f97440ea08854d3b345927b6989c749182d2",
+      "failedGlobalTerms": [],
+      "failedAllocatedTerms": {
+        "quiet": [],
+        "focus": []
+      }
     },
     {
       "state": "control45",
@@ -123,7 +148,12 @@
         "focus": true
       },
       "artifact": "control45-S1-AH-comparison.json",
-      "sha256": "87abe29b2fbf8fcede99b9d1d56d2ca4ceab5582c4e8a496860308bea575faf3"
+      "sha256": "87abe29b2fbf8fcede99b9d1d56d2ca4ceab5582c4e8a496860308bea575faf3",
+      "failedGlobalTerms": [],
+      "failedAllocatedTerms": {
+        "quiet": [],
+        "focus": []
+      }
     },
     {
       "state": "control45",
@@ -141,7 +171,12 @@
         "focus": true
       },
       "artifact": "control45-S1-AC-comparison.json",
-      "sha256": "6fb316e90ab113052d90c6b655a987033b71b6cce290995c8987b3943d2614ac"
+      "sha256": "6fb316e90ab113052d90c6b655a987033b71b6cce290995c8987b3943d2614ac",
+      "failedGlobalTerms": [],
+      "failedAllocatedTerms": {
+        "quiet": [],
+        "focus": []
+      }
     },
     {
       "state": "control45",
@@ -153,13 +188,24 @@
       "forceTriangleN": 9.585270512268334e-06,
       "workSignedJ": 1.2781170383115266e-09,
       "workTriangleJ": 1.3249209320562048e-09,
-      "failedTerms": [],
+      "failedTerms": [
+        "volume",
+        "total"
+      ],
       "allocationPasses": {
         "quiet": false,
         "focus": true
       },
       "artifact": "control45-S0-I0-comparison.json",
-      "sha256": "47d3096882ef85c643191931fc1d4d041a8e6a7d5121b7bdbc4922c035d76419"
+      "sha256": "47d3096882ef85c643191931fc1d4d041a8e6a7d5121b7bdbc4922c035d76419",
+      "failedGlobalTerms": [],
+      "failedAllocatedTerms": {
+        "quiet": [
+          "volume",
+          "total"
+        ],
+        "focus": []
+      }
     },
     {
       "state": "control45",
@@ -177,7 +223,12 @@
         "focus": true
       },
       "artifact": "control45-S1-I1-comparison.json",
-      "sha256": "9f2a05e74a140090c95896461345d4700e38c810f3ffec4fb10551845816bdcc"
+      "sha256": "9f2a05e74a140090c95896461345d4700e38c810f3ffec4fb10551845816bdcc",
+      "failedGlobalTerms": [],
+      "failedAllocatedTerms": {
+        "quiet": [],
+        "focus": []
+      }
     },
     {
       "state": "control45",
@@ -192,7 +243,11 @@
       "failedTerms": [],
       "allocationPasses": {},
       "artifact": "control45-quiet-D4-D5-comparison.json",
-      "sha256": "7195a84c163e77d271b9872180f8b037c355829b4d7442ff4d0be22ffa0162f7"
+      "sha256": "7195a84c163e77d271b9872180f8b037c355829b4d7442ff4d0be22ffa0162f7",
+      "failedGlobalTerms": [],
+      "failedAllocatedTerms": {
+        "quiet": []
+      }
     },
     {
       "state": "control45",
@@ -207,7 +262,11 @@
       "failedTerms": [],
       "allocationPasses": {},
       "artifact": "control45-quiet-U4-U5-comparison.json",
-      "sha256": "a6a6c9e5ef8d51ffc1ffbc80cf2ecc205f84833f823594a86a87a5053d288d25"
+      "sha256": "a6a6c9e5ef8d51ffc1ffbc80cf2ecc205f84833f823594a86a87a5053d288d25",
+      "failedGlobalTerms": [],
+      "failedAllocatedTerms": {
+        "quiet": []
+      }
     },
     {
       "state": "control45",
@@ -222,7 +281,11 @@
       "failedTerms": [],
       "allocationPasses": {},
       "artifact": "control45-quiet-D5-U5-comparison.json",
-      "sha256": "4d5877a7d3af7deb3c4ae315ffea4d1a75a62b34574f044af920ac839c122472"
+      "sha256": "4d5877a7d3af7deb3c4ae315ffea4d1a75a62b34574f044af920ac839c122472",
+      "failedGlobalTerms": [],
+      "failedAllocatedTerms": {
+        "quiet": []
+      }
     },
     {
       "state": "terminal46",
@@ -240,7 +303,12 @@
         "focus": true
       },
       "artifact": "terminal46-S0-S1-comparison.json",
-      "sha256": "34c39b189f02afec2e519102da531bfb78f194196919eef360f7402647124ad1"
+      "sha256": "34c39b189f02afec2e519102da531bfb78f194196919eef360f7402647124ad1",
+      "failedGlobalTerms": [],
+      "failedAllocatedTerms": {
+        "quiet": [],
+        "focus": []
+      }
     },
     {
       "state": "terminal46",
@@ -258,7 +326,12 @@
         "focus": true
       },
       "artifact": "terminal46-S1-S2-comparison.json",
-      "sha256": "a7e3fd0fdfed1afe09784dc2e0fc65a5e8867e434a3a0224dfbc889dd4fbe351"
+      "sha256": "a7e3fd0fdfed1afe09784dc2e0fc65a5e8867e434a3a0224dfbc889dd4fbe351",
+      "failedGlobalTerms": [],
+      "failedAllocatedTerms": {
+        "quiet": [],
+        "focus": []
+      }
     },
     {
       "state": "terminal46",
@@ -279,7 +352,18 @@
         "focus": false
       },
       "artifact": "terminal46-I0-I1-comparison.json",
-      "sha256": "9ecb68f57e7143648c97fca8e44cff6b89c4ac78699bab2ed716bdbd9f7ab151"
+      "sha256": "9ecb68f57e7143648c97fca8e44cff6b89c4ac78699bab2ed716bdbd9f7ab151",
+      "failedGlobalTerms": [
+        "volume",
+        "total"
+      ],
+      "failedAllocatedTerms": {
+        "quiet": [],
+        "focus": [
+          "volume",
+          "total"
+        ]
+      }
     },
     {
       "state": "terminal46",
@@ -297,7 +381,12 @@
         "focus": true
       },
       "artifact": "terminal46-S2-I1-comparison.json",
-      "sha256": "019c9cd65576c56c1e493a553a7e2062c80d897f9ad45431c759df32124043bc"
+      "sha256": "019c9cd65576c56c1e493a553a7e2062c80d897f9ad45431c759df32124043bc",
+      "failedGlobalTerms": [],
+      "failedAllocatedTerms": {
+        "quiet": [],
+        "focus": []
+      }
     },
     {
       "state": "terminal46",
@@ -315,7 +404,12 @@
         "focus": true
       },
       "artifact": "terminal46-S1-AR-comparison.json",
-      "sha256": "bd4052fa83d0cb6c0c44203463fd6c3412c8ac9593771b8fa245126b363858c1"
+      "sha256": "bd4052fa83d0cb6c0c44203463fd6c3412c8ac9593771b8fa245126b363858c1",
+      "failedGlobalTerms": [],
+      "failedAllocatedTerms": {
+        "quiet": [],
+        "focus": []
+      }
     },
     {
       "state": "terminal46",
@@ -333,7 +427,12 @@
         "focus": true
       },
       "artifact": "terminal46-S1-AH-comparison.json",
-      "sha256": "0b8d22174cda70f2aec09d4f72ee017ae400fb018cc60858d3f313f4881fd418"
+      "sha256": "0b8d22174cda70f2aec09d4f72ee017ae400fb018cc60858d3f313f4881fd418",
+      "failedGlobalTerms": [],
+      "failedAllocatedTerms": {
+        "quiet": [],
+        "focus": []
+      }
     },
     {
       "state": "terminal46",
@@ -351,7 +450,12 @@
         "focus": true
       },
       "artifact": "terminal46-S1-AC-comparison.json",
-      "sha256": "22fdd2e9d7e6bb638239576aa232f45654d9f0e31d5f9cf83bcdb7e8bf533df7"
+      "sha256": "22fdd2e9d7e6bb638239576aa232f45654d9f0e31d5f9cf83bcdb7e8bf533df7",
+      "failedGlobalTerms": [],
+      "failedAllocatedTerms": {
+        "quiet": [],
+        "focus": []
+      }
     },
     {
       "state": "terminal46",
@@ -372,7 +476,21 @@
         "focus": false
       },
       "artifact": "terminal46-S0-I0-comparison.json",
-      "sha256": "4b3782b42e62ad54a5f5d88bd1e328079c98cf64e75978ae72cc89d977261ac7"
+      "sha256": "4b3782b42e62ad54a5f5d88bd1e328079c98cf64e75978ae72cc89d977261ac7",
+      "failedGlobalTerms": [
+        "volume",
+        "total"
+      ],
+      "failedAllocatedTerms": {
+        "quiet": [
+          "volume",
+          "total"
+        ],
+        "focus": [
+          "volume",
+          "total"
+        ]
+      }
     },
     {
       "state": "terminal46",
@@ -390,7 +508,12 @@
         "focus": true
       },
       "artifact": "terminal46-S1-I1-comparison.json",
-      "sha256": "5e03ce5feb14770b27d9131aed0614220cca1093862322047bef9985c6ea5e87"
+      "sha256": "5e03ce5feb14770b27d9131aed0614220cca1093862322047bef9985c6ea5e87",
+      "failedGlobalTerms": [],
+      "failedAllocatedTerms": {
+        "quiet": [],
+        "focus": []
+      }
     },
     {
       "state": "terminal46",
@@ -405,7 +528,11 @@
       "failedTerms": [],
       "allocationPasses": {},
       "artifact": "terminal46-quiet-D4-D5-comparison.json",
-      "sha256": "56aac22ae0b21e173f56d1ca6e4120a107d7952e6ad9322b11a78a608ce5c256"
+      "sha256": "56aac22ae0b21e173f56d1ca6e4120a107d7952e6ad9322b11a78a608ce5c256",
+      "failedGlobalTerms": [],
+      "failedAllocatedTerms": {
+        "quiet": []
+      }
     },
     {
       "state": "terminal46",
@@ -420,7 +547,11 @@
       "failedTerms": [],
       "allocationPasses": {},
       "artifact": "terminal46-quiet-U4-U5-comparison.json",
-      "sha256": "ea9500a3fd39a07b8c9fbcb42d156cbb1eb37fce35d0098203823f8220a9dd3c"
+      "sha256": "ea9500a3fd39a07b8c9fbcb42d156cbb1eb37fce35d0098203823f8220a9dd3c",
+      "failedGlobalTerms": [],
+      "failedAllocatedTerms": {
+        "quiet": []
+      }
     },
     {
       "state": "terminal46",
@@ -435,7 +566,11 @@
       "failedTerms": [],
       "allocationPasses": {},
       "artifact": "terminal46-quiet-D5-U5-comparison.json",
-      "sha256": "004abd58b04e4f5d111e6e3d33f41bb78eb4f8c72392f888134bec680c002cc7"
+      "sha256": "004abd58b04e4f5d111e6e3d33f41bb78eb4f8c72392f888134bec680c002cc7",
+      "failedGlobalTerms": [],
+      "failedAllocatedTerms": {
+        "quiet": []
+      }
     }
   ],
   "termMetrics": [
