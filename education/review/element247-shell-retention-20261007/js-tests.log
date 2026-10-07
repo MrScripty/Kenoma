@@ -1,0 +1,36 @@
+✔ whole-element geometric coverage includes every outer shell and the corner core (2.877395ms)
+✔ radial-face chart Jacobian matches an independent derivative determinant (1.387346ms)
+✔ analytic dyadic shell moments agree with known whole-tetrahedron moments (0.572749ms)
+✔ registered point counts, positive weights and per-shell degree-five moments hold (598.250181ms)
+✔ wrong radial Jacobian and damaged positive weight fail relative core moments (3.063036ms)
+✔ depth22 shells regroup without losing the depth20 core (26.724043ms)
+✔ shell force and work cancellation cannot create a passing comparison (1.349877ms)
+✔ missing shell, reordered shell and malformed vector refuse comparisons (1.92485ms)
+✔ complete synthetic actual shell path retains originals, independent total and all585 reactions (170.296721ms)
+✔ shell-to-element and global comparison checks reject a damaged nonincident node and missing original (120.113868ms)
+✔ component total reconstruction refuses damage before a completed stage can be retained (17.668122ms)
+✔ combined output includes external log growth and preserves incomplete shell evidence (13.622806ms)
+✔ throwing shell callback retains partial vectors and physical weights, counted once with no retry (6.770918ms)
+✔ post-assembly output refusal retains complete shell weights and vector in reserved evidence (14.317744ms)
+✔ truncated and same-length damaged normal weight files cannot suppress verified emergency retention (24.473908ms)
+✔ failed emergency weight write is explicit and never reported as complete persisted evidence (8.54876ms)
+✔ shell wall and RSS refusals preserve partial evidence at actual callback entry boundaries (29.666695ms)
+✔ frozen call/time/memory/output and reconstruction bounds precede all results (0.473967ms)
+✔ material CLI refuses missing authorization before invocation/output/material callbacks (61.12883ms)
+✔ reservations are distinct from actual and completed callbacks; no spare calls (7.694421ms)
+✔ throwing callback counts as actual but not completed, with no retry (0.518257ms)
+✔ time refuses before, during, after callback and after the final batch/output (0.574522ms)
+✔ RSS limits are checked before and during batches and after final callback (0.820841ms)
+✔ storage refuses a write before exceeding bounds and preserves earlier files plus partial receipt (3.947958ms)
+✔ storage growth outside wrapper is detected during batch checkpoints (0.632776ms)
+✔ wall/RSS/callback failures preserve small fixture partial evidence and never retry (2.043076ms)
+✔ actual assembly/scatter path agrees with independent affine P2 constant-stress oracle (2.781695ms)
+✔ actual assembly failures carry partial vectors/weights through resource and callback paths (45.775341ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 722.224026
