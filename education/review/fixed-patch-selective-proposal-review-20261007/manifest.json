@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "reviewedProposalCommit": "788bbd7c86b23a5bdec18e67a2c70ba1f82cc711",
+  "verdict": "CONDITIONAL_PASS_SCIENTIFIC_PROTOCOL_DESIGN_ONLY",
+  "newMaterialCalls": 0,
+  "quadratureGenerated": false,
+  "implementationAcceptance": false,
+  "executionAuthorization": false,
+  "files": {
+    "README.md": {
+      "bytes": 4537,
+      "sha256": "5a38de21d812e8ba0b9b405fcf3b543a256a9fa2a2b1cef7157cbef57c5db28e"
+    },
+    "independent-checks-original.py": {
+      "bytes": 34447,
+      "sha256": "58d4f3146637cdb746dabd66c3df770bfaae21bb08bb2e1db8544cc59299c496"
+    },
+    "independent-checks.log": {
+      "bytes": 1313,
+      "sha256": "ef3b08c6b7558eb91323501048fcac6e13fae004e96dcd10c2287f8d902c6240"
+    },
+    "independent-review.json": {
+      "bytes": 843434,
+      "sha256": "ff85546de480e26ea568d05cf3e919b70221b0fcbbaebd50e4ec15c459f82f49"
+    },
+    "replayed-vectors.json": {
+      "bytes": 2556875,
+      "sha256": "78019c84399069f24e3b28dbd7e3c06a0eeae3cb340f1edb2a08efeeb3b9bf80"
+    }
+  },
+  "originalScratchPaths": {
+    "/tmp/independent_selective_patch_review.json": "independent-review.json",
+    "/tmp/independent_selective_patch_review.py": "independent-checks-original.py",
+    "/tmp/independent_selective_patch_review.log": "independent-checks.log",
+    "/tmp/independent_selective_patch_replayed_vectors.json": "replayed-vectors.json"
+  }
+}

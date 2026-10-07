@@ -1,0 +1,36 @@
+{
+  "verdict": "CONDITIONAL",
+  "report": "/tmp/independent_selective_patch_review.json",
+  "reportSha256": "ff85546de480e26ea568d05cf3e919b70221b0fcbbaebd50e4ec15c459f82f49",
+  "producerEntries": 151,
+  "localRecords": 632,
+  "all585ReplayPassed": true,
+  "newCalls": 497500,
+  "physicalBytes": 2006000,
+  "normalizedBytes": 10776000,
+  "logicalShellRecords": 634,
+  "timing": {
+    "largeFullPatchSeconds": 14.022051140347134,
+    "wholeShellSeconds": 75.24825045944654,
+    "smallChangedBatchSeconds": 135.020249285
+  },
+  "terminalAll15U5D5Total": {
+    "aggregateInfinityN": 7.622816703189983e-06,
+    "elementTriangleInfinityN": 1.6338786164471486e-05,
+    "freeInfinityN": 7.622816703189983e-06,
+    "heldReactionInfinityN": 1.0873539402211918e-06,
+    "freeTriangleInfinityN": 1.6338786164471486e-05,
+    "heldTriangleInfinityN": 1.0873539402211918e-06,
+    "aggregateWorkJ": 5.361001592200989e-10,
+    "entryWorkAbsoluteBoundJ": 8.95478874501532e-09,
+    "elementWorkTriangleJ": 6.492542501797074e-10,
+    "signedEnergyDifferenceJ": -1.3805328998028887e-09,
+    "elementEnergyTriangleJ": 1.380873141526573e-09,
+    "signedForcePass": true,
+    "triangleForcePass": false,
+    "signedWorkPass": true,
+    "triangleWorkPass": true
+  },
+  "maxLocalReconstructionN": 2.1529444893531036e-12,
+  "reads": 883
+}
