@@ -1,0 +1,18 @@
+{
+  "result": "PASS_COMPLETE_ELEMENT247_SHELL_EVIDENCE_ARITHMETIC",
+  "numericalResult": "UNRESOLVED_ELEMENT247_SHELL_INTEGRATION",
+  "independentReview": false,
+  "materialCalls": 0,
+  "sourceCommit": "07aafe8b1c1ef27d212434232f4546feb27449ac",
+  "outputHashes": 446,
+  "sourceHashes": 1123,
+  "patchQualification": false,
+  "limits": [
+    "Finite element247 method agreement only.",
+    "21-region checks do not exclude within-region/within-shell cancellation.",
+    "A55/X55 changes chart and core depth together.",
+    "Work consistency bounds are algebraically implied by force triangles.",
+    "Moment gate is barycentric degree2, not every quadratic Cartesian function.",
+    "Old16-element patch remains unresolved."
+  ]
+}

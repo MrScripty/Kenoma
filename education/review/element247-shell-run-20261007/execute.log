@@ -1,0 +1,11 @@
+{"kind":"STAGE_COMPLETED","recipe":"C44","state":"control45","actual":1344}
+{"kind":"STAGE_COMPLETED","recipe":"C44","state":"terminal46","actual":2688}
+{"kind":"STAGE_COMPLETED","recipe":"C55","state":"control45","actual":5313}
+{"kind":"STAGE_COMPLETED","recipe":"C55","state":"terminal46","actual":7938}
+{"kind":"STAGE_COMPLETED","recipe":"R55","state":"control45","actual":13188}
+{"kind":"STAGE_COMPLETED","recipe":"R55","state":"terminal46","actual":18438}
+{"kind":"STAGE_COMPLETED","recipe":"A55","state":"control45","actual":28938}
+{"kind":"STAGE_COMPLETED","recipe":"A55","state":"terminal46","actual":39438}
+{"kind":"STAGE_COMPLETED","recipe":"X55","state":"control45","actual":50938}
+{"kind":"STAGE_COMPLETED","recipe":"X55","state":"terminal46","actual":62438}
+{"kind":"TERMINAL_COMPLETION","result":"UNRESOLVED_ELEMENT247_SHELL_INTEGRATION","sourceCommit":"07aafe8b1c1ef27d212434232f4546feb27449ac","runId":"8845e700070c42838c6bf68ea008d30c","completionSha256":"5635833fb99144e0c2c071c48138edb168986df1013f386e2e3b20b49dd9d88e","terminalSha256":"fe3dac3181cbd7d7a6f89c5e7f0d0548a082b8891450d10a51c42a30c8f08d4e","runtime":{"reservedCalls":62438,"actualConstitutiveCallbacks":62438,"completedConstitutiveCallbacks":62438,"plannedCalls":62438,"maximumCalls":62500,"elapsedMs":9075.459208,"maximumWallMs":180000,"peakObservedRssBytes":325574656,"maximumRssBytes":2147483648,"lastPhase":"after-terminal-completion-write","activeBatch":null}}
