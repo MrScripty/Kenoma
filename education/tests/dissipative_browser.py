@@ -186,7 +186,7 @@ def qualify(site,out,full=True):
     finally:server.shutdown();server.server_close()
 
 def main():
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('site',nargs='?',type=Path);parser.add_argument('--output',type=Path,default=ROOT/'review/dissipative-browser');parser.add_argument('--negative-controls',action='store_true');args=parser.parse_args()
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('site',nargs='?',type=Path);parser.add_argument('--output',type=Path,default=ROOT/'.artifacts/dissipative-browser');parser.add_argument('--negative-controls',action='store_true');args=parser.parse_args()
     out=args.output.resolve();out.mkdir(parents=True,exist_ok=True)
     (out/'receipt.json').unlink(missing_ok=True)
     temporary=ROOT/'.browser-tmp';temporary.mkdir(exist_ok=True)

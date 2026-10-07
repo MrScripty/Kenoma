@@ -119,4 +119,4 @@ def package(destination):
     validate_build(out,manifest)
     receipt={'schema':2,'result':'PASS_CHECKED_BOOK_BUNDLE','source_revision':manifest['git_revision'],'build_manifest_sha256':digest(out/'build-manifest.json'),'archive':target.name,'archive_bytes':target.stat().st_size,'archive_sha256':digest(target),'file_count':len(files),'file_sha256':file_hashes,'qualification':'Local coherent book, source-bound proofs, numerical and browser evidence; no hosted publication or biological validation'}
     target.with_suffix('.json').write_text(json.dumps(receipt,indent=2)+'\n');print(json.dumps({k:v for k,v in receipt.items() if k!='file_sha256'},indent=2))
-if __name__=='__main__':package(sys.argv[1] if len(sys.argv)>1 else ROOT/'dist/kenoma-portable.zip')
+if __name__=='__main__':package(sys.argv[1] if len(sys.argv)>1 else ROOT/'.artifacts/downloads/kenoma-portable.zip')

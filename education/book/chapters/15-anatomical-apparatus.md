@@ -74,7 +74,7 @@ The reference rig also has a persistent source articulation limitation: the rest
 
 [Open the anatomical apparatus viewer](anatomical-arm/index.html). It loads the accepted resting coordinates, recomputes the reduced force residual and audits the full boundary and routed axial paths. Three-dimensional rendering begins only when requested. Effort, mass, release, reset and trace export remain accessible through native controls and text readouts.
 
-![Two copies of the same repaired reference anatomy at the same held elbow angle. Left: the equilibrated mechanical candidate, with gold axial tendon paths and teal shared guide scaffolds. Right: authored naive bone weights. Violet dumbbell glyphs are schematic point loads. No external skin is modelled.](assets/anatomical-arm-rest.png)
+![Two copies of the same repaired reference anatomy at the same held elbow angle. Left: the equilibrated mechanical candidate, with gold axial tendon paths and teal shared guide scaffolds. Right: authored naive bone weights. Violet dumbbell glyphs are schematic point loads. No external skin is modelled.](assets/anatomical-arm-rest.jpg)
 
 The original held rest has maximum free modal gradient **7.04 × 10⁻⁵ N**, zero audited transverse boundary crossings, zero routed axial-path violations and zero sampled body–bone or body–body penetration. Its minimum sampled body $J$ is approximately **0.99966**. The joint is held by an external support during this initialization; this is not a free loaded equilibrium. [Read the fresh rest recheck](data/anatomical-arm-v1/audit/arm-rest-recheck.json).
 

@@ -8,7 +8,7 @@ The preceding strip experiment separates spatial deformation from the line actua
 
 The separate [source inspection](anatomy-inspection/index.html) retains the actual shared-coordinate BodyParts3D humerus, radius, ulna and seven individual muscle surfaces. Derived belly cuts, fibre guides and mechanical patches remain authored estimates. Each patch records original triangle identifiers, outward normals, area weights and an edge-connected region. Broad humeral origins are surface bands rather than small terminal picks. The radial-tuberosity patch is on the medial side; the brachioradialis patch is on the lateral distal radius. These selections still require anatomical review. Original dataset notices remain with the data, alongside the current [official BodyParts3D licence](https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html).
 
-![Actual three-bone and seven-muscle BodyParts3D source assembly in its shared atlas bind coordinates; cyan marks the authored interior axis. Muscles have distinct source surfaces; there is no skin.](assets/atlas-assembly-bind.png)
+![Actual three-bone and seven-muscle BodyParts3D source assembly in its shared atlas bind coordinates; cyan marks the authored interior axis. Muscles have distinct source surfaces; there is no skin.](assets/atlas-assembly-bind.jpg)
 
 BodyParts3D, © The Database Center for Life Science, current CC BY 4.0; original OBJ notices retained. This source view is not a deformed mechanical solution or an accepted anatomical rig.
 
@@ -82,9 +82,9 @@ The stopping target is maximum normalized-coordinate gradient $10^{-6}$ J; tissu
 
 The first reproducible pulse starts at $q=0$, $a=0$, 0.5 kg and $h=0.04$ s. Effort is 0.25 for seven steps, then zero for five steps. Tissue-generated tendon torque raises the lever; after release activation decays and the lever lowers. The authored route changes its moment-arm sign at some larger angles. That behaviour is part of this synthetic fixture, not an accepted human attachment path. [Full pulse, state coordinates and step refinement](data/anatomical-arm-v1/audit/coupling-results.json)
 
-![Native rendering after seven loaded steps: coral is the actual P2 tissue boundary, gold shows nine distributed tendons, blue is the hinged rigid lever and violet is the point mass.](assets/fixture-loaded.png)
+![Native rendering after seven loaded steps: coral is the actual P2 tissue boundary, gold shows nine distributed tendons, blue is the hinged rigid lever and violet is the point mass.](assets/fixture-loaded.jpg)
 
-![The same coupled engineering fixture after five released-effort steps; activation and angle fall while the tissue coordinates remain part of the joint solve.](assets/fixture-released.png)
+![The same coupled engineering fixture after five released-effort steps; activation and angle fall while the tissue coordinates remain part of the joint solve.](assets/fixture-released.jpg)
 
 Original schematic fixture geometry, rendered at the actual solved coordinates. No skin, anatomical attachments or contact are represented in these two images.
 

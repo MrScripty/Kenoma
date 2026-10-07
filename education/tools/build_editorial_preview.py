@@ -11,7 +11,7 @@ from build import lab_block
 from property_labs import block as property_block
 
 ROOT = Path(__file__).resolve().parents[1]
-ARCHIVE = ROOT/'deliverables/release-output-bound/kenoma-release-output-bound-portable.zip'
+ARCHIVE = ROOT/'.artifacts/inputs/kenoma-release-output-bound-portable.zip'
 NOTE = ('Editorial review preview: chapter order and prose are regenerated from current source. '
         'Proof receipts and numerical evidence are reused unchanged from the archived edition; '
         'no fresh kernel, solver or release qualification is claimed. Not for publication.')
@@ -30,7 +30,7 @@ def chapter_source(name, revision=None):
 
 def build(out):
     if out.exists(): raise FileExistsError(f'Choose a new output directory: {out}')
-    delivery = json.loads((ARCHIVE.parent/'delivery-manifest.json').read_text())
+    delivery = json.loads((ROOT/'deliverables/release-output-bound/delivery-manifest.json').read_text())
     assert digest(ARCHIVE) == delivery['sha256'][ARCHIVE.name], 'Archive is not bound by the historical delivery manifest'
     with ZipFile(ARCHIVE) as archive:
         old_manifest = json.loads(archive.read('build-manifest.json'))
@@ -117,4 +117,7 @@ def build(out):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('out',type=Path)
-    build(parser.parse_args().out.resolve())
+    parser.add_argument('--archive',type=Path,default=ARCHIVE,help='Preserved immutable historical input ZIP outside Git')
+    args = parser.parse_args()
+    ARCHIVE = args.archive.resolve()
+    build(args.out.resolve())

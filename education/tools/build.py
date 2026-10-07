@@ -1,5 +1,7 @@
 """Assemble chapters and checked evidence, then build a portable Pages artifact."""
 from pathlib import Path
+from publication_data import copy_publication_data
+from ordinary_images import jpeg85
 from executable_outputs import executable_outputs
 import hashlib,html,json,re,shutil,subprocess
 from check_proofs import check
@@ -268,11 +270,11 @@ def build():
     subprocess.run(['python3',str(ROOT/'tools/contact_trajectory_figure.py')],check=True)
     review=ROOT/'data/anatomical-arm-v1/review/coupling-candidate'
     for name in ['atlas-assembly-bind','fixture-loaded','fixture-released']:
-        shutil.copy(review/(name+'.png'),assets/(name+'.png'))
-    shutil.copy(ROOT/'data/anatomical-arm-v1/review/apparatus-candidate/desktop-rest.png',assets/'anatomical-arm-rest.png')
+        jpeg85(review/(name+'.png'),assets/(name+'.jpg'))
+    jpeg85(ROOT/'data/anatomical-arm-v1/review/apparatus-candidate/desktop-rest.png',assets/'anatomical-arm-rest.jpg')
     shutil.rmtree(OUT/'data/elbow-v1',ignore_errors=True)
     shutil.copytree(data,OUT/'data/elbow-v1',dirs_exist_ok=True,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
-    shutil.copytree(ROOT/'data/anatomical-arm-v1',OUT/'data/anatomical-arm-v1',dirs_exist_ok=True)
+    copy_publication_data(ROOT, OUT)
     shutil.copytree(ROOT/'data/property-labs-v1',OUT/'data/property-labs-v1',dirs_exist_ok=True)
     shutil.copy(ROOT/'web/style.css',assets/'style.css')
     shutil.copy(ROOT/'web/dissipative-lab.css',assets/'dissipative-lab.css')

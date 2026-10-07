@@ -18,7 +18,8 @@
     "anatomy:coupling": "node tools/anatomical-coupling-experiment.mjs && node tools/build-coupled-inspector.mjs",
     "anatomy:apparatus": "node tools/verify-anatomical-matches.mjs && node tools/build-anatomical-routes.mjs",
     "anatomy:arm": "node tools/anatomical-arm-experiment.mjs",
-    "anatomy:contact": "node tools/anatomical-contact-experiment.mjs && node tools/verify-anatomical-contact-trajectory.mjs"
+    "anatomy:contact": "node tools/anatomical-contact-experiment.mjs && node tools/verify-anatomical-contact-trajectory.mjs",
+    "check:outputs": "python3 tools/check_generated_outputs.py"
   },
   "dependencies": {
     "three": "0.180.0"

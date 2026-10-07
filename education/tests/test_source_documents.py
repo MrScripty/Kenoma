@@ -1,6 +1,7 @@
 """Document pins, current receipt scope and bounded non-destructive acquisition."""
 import io
 import json
+import shutil
 from pathlib import Path
 import sys
 import tempfile
@@ -25,6 +26,12 @@ class Response(io.BytesIO):
 
 class SourceDocuments(unittest.TestCase):
     def setUp(self):
+        # HTTP fixtures must not depend on the host's current free space.
+        # The production 1.5 GiB floor remains unchanged and is tested below.
+        capacity = shutil._ntuple_diskusage(10 * 1024**3, 0, 10 * 1024**3)
+        self.disk = patch.object(shutil, 'disk_usage', return_value=capacity)
+        self.disk.start()
+        self.addCleanup(self.disk.stop)
         self.temporary = tempfile.TemporaryDirectory()
         self.addCleanup(self.temporary.cleanup)
         self.directory = Path(self.temporary.name)
@@ -94,3 +101,9 @@ class SourceDocuments(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, 'budget exceeded'):
                 acquisition.fetch('https://example.invalid', 5)
         acquisition.transferred = 0
+
+    def test_actual_low_space_floor_still_rejects_before_network(self):
+        with patch.object(shutil, 'disk_usage', return_value=shutil._ntuple_diskusage(10, 10, 0)), patch.object(acquisition.urllib.request, 'urlopen') as network:
+            with self.assertRaisesRegex(RuntimeError, 'Preserve 1.5 GiB free-space floor'):
+                acquisition.fetch('https://example.invalid', 5)
+            network.assert_not_called()
