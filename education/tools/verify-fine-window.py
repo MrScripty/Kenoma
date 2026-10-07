@@ -32,6 +32,8 @@ def allocations(c,units,ids,direction,a,b):
  return all(out)
 def global_comparison(c,units,ids,direction):
  # Existing independently written scalar reducer uses unchanged global gates.
+ need(c['differenceSign']=='a-minus-b' and c['qualification'] is False,'COMPARISON_SCOPE');
+ for t in TERMS:need(c['terms'][t]['forceGateN']==1e-5 and c['terms'][t]['workGateJ']==5.492029235357012e-7,'UNCHANGED_RECORDED_GLOBAL_GATES')
  value=dict(c);value['pass']=c['globalPass'];return _old.check_comparison(value,units,ids,direction)
 def verify_vectors(directory,pref,plan):
  mat=pathlib.Path(directory)/'material';need(set(p.name for p in mat.iterdir())==set(plan['files']),'CLOSED_OUTPUT_FILE_INVENTORY')
@@ -51,7 +53,7 @@ def verify_vectors(directory,pref,plan):
      shared_regions+=1;reused_points+=rcount(r,s)
     else:
      need(ref['kind']=='new' and ref['name']==f'{state}-{key}-{s}-region.json','NEW_ROW_IDENTITY');row=read(mat/ref['name']);need(digest(mat/ref['name'])==ref['sha256'] and (mat/ref['name']).stat().st_size==ref['bytes'],'NEW_ROW_HASH');need(row['evaluationIdentity']==identity and row['state']==state and row['recipeId']==r['id'],'NEW_ROW_EVALUATION_IDENTITY');new_regions+=1;callback_points+=rcount(r,s)
-    need(row['element']==e and row['shell']==row['id']==s and row['pointCount']==rcount(r,s),'REGION_IDENTITY_COUNT');need(row['comparisonShell']==('core' if i>=20 else s),'PHYSICAL_COMPARISON_REGION');need(math.isfinite(row['minimumSampleJ']) and row['minimumSampleJ']>1e-6,'J_GUARD');rows.append(row)
+    need(row['element']==e and row['shell']==row['id']==s and row['pointCount']==rcount(r,s),'REGION_IDENTITY_COUNT');need(row['lo']==(0 if s=='core' else 2**(-i-1)) and row['hi']==(2**(-r['depth']) if s=='core' else 2**(-i)),'EXACT_REGION_BOUNDS');need(row['comparisonShell']==('core' if i>=20 else s),'PHYSICAL_COMPARISON_REGION');need(math.isfinite(row['minimumSampleJ']) and row['minimumSampleJ']>1e-6,'J_GUARD');rows.append(row)
    need(stage['pointCount']==r['points'] and stage['minimumSampleJ']==min(x['minimumSampleJ'] for x in rows),'STAGE_POINT_MINIMUM');need(stage['newCallbackPoints']==sum(rcount(r,'core' if i==r['depth'] else f's{i+1}') for i in range(r['depth']+1) if not shared(r,'core' if i==r['depth'] else f's{i+1}')),'STAGE_NEW_CALLBACK_COUNT');need(stage['reusedPoints']==stage['pointCount']-stage['newCallbackPoints'],'STAGE_REUSE_COUNT')
    actual,en=_old.sum_rows(rows,ids);sv,se=_old.sum_rows([stage],ids);_old.same_vectors(actual,sv);_old.components(actual,en)
    for t in TERMS:close(en[t],se[t],1e-9)
@@ -78,7 +80,16 @@ def verify_vectors(directory,pref,plan):
     if e in QUIET:units.append((f'{e}-whole',A,B))
     else:
      for ar,br in zip(A['comparisonShells'],B['comparisonShells']):units.append((f"{e}-{ar['shell']}",{**ar,'element':e},{**br,'element':e}))
-   need(len(units)==156,'ALL_16_PHYSICAL_UNITS');c=read(mat/f'{state}-{a}-{b}-comparison.json');need(c['state']==state and c['a']==a and c['b']==b and c['required'] is is_required,'COMPARISON_IDENTITY');global_pass=global_comparison(c,units,ids,direction);allocated=allocations(c,units,ids,direction,a,b);need(c['pass'] is (global_pass and allocated),'FALSE_FINE_WINDOW_PASS')
+   need(len(units)==156,'ALL_16_PHYSICAL_UNITS');c=read(mat/f'{state}-{a}-{b}-comparison.json');need(c['state']==state and c['a']==a and c['b']==b and c['required'] is is_required,'COMPARISON_IDENTITY');global_pass=global_comparison(c,units,ids,direction);allocated=allocations(c,units,ids,direction,a,b);need(c['quietIdenticalReuseEarnsNoRefinementCredit'] is (not (a=='I0' and b=='I1') and not (a=='S2' and b=='I1')),'QUIET_REUSE_CREDIT');
+   for t in TERMS:
+    signed=[[[] for _ in range(3)] for _ in range(585)];work=[]
+    for e,A,B in zip(PATCH,candidates[a]['localElements'],candidates[b]['localElements']):
+     w=[]
+     for i,n in enumerate(ids[e]):
+      for d in range(3):delta=A['localGradientsN'][t][i][d]-B['localGradientsN'][t][i][d];signed[n][d].append(delta);w.append(delta*direction[n][d])
+     work.append(math.fsum(w))
+    for k,v in zip(['signedN','triangleN','signedWorkJ','triangleWorkJ'],[max(abs(math.fsum(x)) for row in signed for x in row),max(math.fsum(abs(v) for v in x) for row in signed for x in row),abs(math.fsum(work)),math.fsum(abs(x) for x in work)]):close(c['common16Diagnostic'][t][k],v,1e-12)
+   need(c['pass'] is (global_pass and allocated),'FALSE_FINE_WINDOW_PASS')
    if is_required:required.append(c['pass'])
   for a,b in [('D4','D5'),('U4','U5'),('D5','U5')]:
    c=read(mat/f'{state}-quiet-{a}-{b}-comparison.json');units=[(f'{e}-whole',retained(state,e,a),retained(state,e,b)) for e in QUIET];global_pass=global_comparison(c,units,ids,direction);fraction=.85 if a=='U4' else .2;close(c['allocatedForceN'],fraction*1e-5,1e-18);close(c['allocatedWorkJ'],fraction*5.492029235357012e-7,1e-20);checks=[]
@@ -86,9 +97,18 @@ def verify_vectors(directory,pref,plan):
     x=c['terms'][t];p=x['aggregateInfinityN']<=c['allocatedForceN'] and x['unitTriangleInfinityN']<=c['allocatedForceN'] and x['aggregateDirectionalDifferenceJ']<=c['allocatedWorkJ'] and x['unitTriangleDirectionalDifferenceJ']<=c['allocatedWorkJ'];need(x['allocatedPass'] is p,'FALSE_QUIET_ALLOCATION');checks.append(p)
    need(c['required'] is True and c['pass'] is (global_pass and all(checks)),'QUIET_WITNESS_REQUIRED');required.append(c['pass'])
  need((regions,new_regions,shared_regions,callback_points,reused_points)==(2002,1682,320,19716000,640000),'COMPLETE_SCHEDULE_COUNTS');return {'result':'PASS_BOUNDED_FINE_WINDOW_FIXED_PATCH_AGREEMENT' if all(required) else 'UNRESOLVED_FIXED_PATCH_INTEGRATION','requiredComparisonsIncludingQuiet':20,'replayedLogicalRegions':regions,'newRegions':new_regions,'sharedRegions':shared_regions,'materialLawInvocations':0,'specimenCalls':0,'outside236Qualified':False}
+def verify_scope(completion):
+ need(completion['originalResultCommit']=='38ae8a2e2af57cf33254af987b724824b9d84357' and completion['originalResult']=='UNRESOLVED_FIXED_PATCH_INTEGRATION' and completion['originalTwoShellExecutionExit']==1,'HISTORICAL_FAILURE_SCOPE')
+ need(completion['unchangedStates'] is True and completion['outsidePatchElements']==236 and completion['outsidePatchQualified'] is False and completion['anatomicalQualification'] is False,'BOUNDED_SCOPE')
+ for k in ['newNodalFields','nonlinearSolves','optimizerTrials','refits']:need(completion[k]==0,'NO_ADDED_PHYSICAL_ACTIONS')
+def verify_external_envelopes(directory):
+ root=pathlib.Path(directory);names={'execution-start.json','execute.log','external-exit.json','external-final.json','external-final.pending.json','launcher.log','launcher-exit.json','launcher-exit.pending.json','launcher-acceptance.pending.json','external-incomplete.json','supervisor-incomplete.json','public-entry-exit.json'}
+ files=[p for p in root.iterdir() if p.name!='material'];need(len(files)<=10,'EXTERNAL_SLOT_ENVELOPE')
+ for p in files:need(p.is_file() and p.name in names and p.stat().st_size<=65536,'EXTERNAL_FILE_ENVELOPE')
 def verify(directory):
  chain=require_terminal_evidence(directory,BUDGET,COMMAND,results=RESULTS);root=pathlib.Path(directory);mat=root/'material';pref=read(PREF/'preflight.json');plan=read(PREF/'storage-plan.json');completion=chain['completion'];auth=read(AUTH);review=read(PREF/'independent-review.json');validate_authorization(auth,pref,review)
  need(auth['preflightSha256']==digest(PREF/'preflight.json') and auth['independentReviewSha256']==digest(PREF/'independent-review.json'),'FROZEN_AUTHORIZATION_CHAIN');need(read(root/'execution-start.json')['authorizationSha256']==digest(AUTH),'NEW_AUTHORIZATION_IDENTITY');need(completion['runnerSourceCommit']==pref['sourceCommit'],'FROZEN_RUNNER_SOURCE');need(completion['newCallbacks']==19716000 and completion['logicalRegions']==2002 and completion['newRegions']==1682 and completion['sharedRegions']==320 and completion['sharedLogicalMeasurements']==640000,'EXACT_NEW_SCHEDULE');need(completion['originalResultCommit']=='38ae8a2e2af57cf33254af987b724824b9d84357' and completion['originalTwoShellExecutionExit']==1 and completion['anatomicalQualification'] is False,'HISTORICAL_FAILURE_SCOPE')
+ verify_scope(completion);verify_external_envelopes(root)
  _old.check_frozen_inventories(completion,pref,plan)
  expected=set(pref['sourceHashes'])|{str((PREF/p).relative_to(ROOT)) for p in ['preflight.json','independent-review.json',*pref['artifactHashes']]}|{str(AUTH.relative_to(ROOT))};need(set(completion['sourceHashes'])==expected,'COMPLETE_SOURCE_HASH_INVENTORY')
  for p,h in completion['sourceHashes'].items():need(digest(ROOT/p)==h,'SOURCE_HASH')

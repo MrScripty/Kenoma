@@ -68,9 +68,11 @@ completion,2MiB provenance,131072B saved arrays,16384B terminal, ten64KiB
 external/log slots and4MiB emergency reserve yield **448240000B** maximum,
 below536870912B. Finite compact JSON limits depth32, strings512B, keys256B and
 4096 entries; actual encoded bytes are checked before exclusive durable writes.
-Worst numeric serialization fills variable numeric fields with the longest
-finite binary64 values; immutable saved arrays/provenance use their actual
-hash-bound bytes. Per-file caps refuse oversize instead of raising budgets.
+Worst numeric serialization reserves26 characters per variable finite binary64
+number (17 significant digits, fixed/scientific format bound), including the
+25-character fixed decimal case. Shared pure production record constructors
+certify full start/completion/provenance/terminal and emergency shapes; immutable
+saved arrays/provenance use their actual hash-bound bytes. Per-file caps refuse oversize instead of raising budgets.
 
 One region at a time: maximum48000 points,2304000B normalized buffer and
 384000B physical weights. Current complete/partial weights fit512KiB emergency

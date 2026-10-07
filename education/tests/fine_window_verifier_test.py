@@ -15,9 +15,17 @@ class FixtureTests(unittest.TestCase):
  def tearDownClass(cls):cls.tmp.cleanup()
  def damage(self,name,edit):
   p=self.root/'material'/name;original=p.read_bytes();data=json.loads(original);edit(data);p.write_text(json.dumps(data))
+  stage_backup=None
+  if name.endswith('-region.json'):
+   state,e,rule,shell,_suffix=name.split('-');stage_path=self.root/'material'/f'{state}-{e}-{rule}-stage.json';stage_backup=stage_path.read_bytes();stage=json.loads(stage_backup)
+   for ref in stage['rowSources']:
+    if ref.get('name')==name:ref.update(sha256=v.digest(p),bytes=p.stat().st_size)
+   stage_path.write_text(json.dumps(stage))
   try:
    with self.assertRaises(Exception):v.verify_vectors(self.root,pref,plan)
-  finally:p.write_bytes(original)
+  finally:
+   p.write_bytes(original)
+   if stage_backup is not None:stage_path.write_bytes(stage_backup)
  def test_complete_nonzero_actual_serialized_producer(self):
   result=v.verify_vectors(self.root,pref,plan);self.assertEqual(result['replayedLogicalRegions'],2002);self.assertEqual(result['newRegions'],1682);self.assertEqual(result['sharedRegions'],320);self.assertEqual(result['specimenCalls'],0)
  def test_missing_patch_element(self):self.damage('control45-S2-hybrid.json',lambda x:x['localElements'].pop())
@@ -30,6 +38,20 @@ class FixtureTests(unittest.TestCase):
  def test_nonfinite_component(self):self.damage('control45-197-I1-s1-region.json',lambda x:x['localGradientsN']['total'][0].__setitem__(0,float('nan')))
  def test_declared_physical_gates_not_relaxed(self):
   self.assertEqual(BUDGET['plannedMaterialCalls'],19716000);self.assertEqual(BUDGET['maximumMaterialCalls'],19716000);self.assertEqual(BUDGET['maximumWallSeconds'],7200);self.assertEqual(BUDGET['maximumOutputBytes'],536870912)
+ def test_recorded_force_gate_damage(self):self.damage('control45-S0-S1-comparison.json',lambda x:x['terms']['total'].update(forceGateN=2e-5))
+ def test_recorded_work_gate_damage(self):self.damage('control45-S0-S1-comparison.json',lambda x:x['terms']['total'].update(workGateJ=1e-6))
+ def test_region_bounds_damage(self):self.damage('control45-197-I1-s1-region.json',lambda x:x.update(lo=0))
+ def test_common16_diagnostic_damage(self):self.damage('control45-S0-S1-comparison.json',lambda x:x['common16Diagnostic']['total'].update(triangleN=1))
+ def test_quiet_credit_damage(self):self.damage('control45-S0-S1-comparison.json',lambda x:x.update(quietIdenticalReuseEarnsNoRefinementCredit=False))
+ def test_completion_scope_damage(self):
+  c={'originalResultCommit':'38ae8a2e2af57cf33254af987b724824b9d84357','originalResult':'UNRESOLVED_FIXED_PATCH_INTEGRATION','originalTwoShellExecutionExit':1,'unchangedStates':True,'outsidePatchElements':236,'outsidePatchQualified':False,'anatomicalQualification':False,'newNodalFields':0,'nonlinearSolves':0,'optimizerTrials':0,'refits':0};v.verify_scope(c)
+  for k in ['newNodalFields','nonlinearSolves','optimizerTrials','refits','outsidePatchQualified','anatomicalQualification']:
+   bad=copy.deepcopy(c);bad[k]=1
+   with self.assertRaises(Exception):v.verify_scope(bad)
+ def test_external_log_and_receipt_caps(self):
+  with tempfile.TemporaryDirectory() as tmp:
+   p=pathlib.Path(tmp)/'execute.log';p.write_bytes(b'x'*65536);v.verify_external_envelopes(tmp);p.write_bytes(b'x'*65537)
+   with self.assertRaisesRegex(Exception,'EXTERNAL_FILE_ENVELOPE'):v.verify_external_envelopes(tmp)
 class LifecycleTests(unittest.TestCase):
  def test_old_consumed_authorization_cannot_apply(self):
   old=json.loads((ROOT/'research/selective-fixed-patch-authorization-20261007.json').read_text())
