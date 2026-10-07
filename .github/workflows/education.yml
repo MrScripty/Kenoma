@@ -4,6 +4,7 @@ on:
     branches: [main, 'education/**']
     paths: ['README.md', 'education/**', '.github/workflows/education.yml']
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
     paths: ['README.md', 'education/**', '.github/workflows/education.yml']
   workflow_dispatch:
     inputs:
