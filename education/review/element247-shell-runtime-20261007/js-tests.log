@@ -1,0 +1,34 @@
+✔ whole-element geometric coverage includes every outer shell and the corner core (5.025367ms)
+✔ radial-face chart Jacobian matches an independent derivative determinant (2.012428ms)
+✔ analytic dyadic shell moments agree with known whole-tetrahedron moments (0.871628ms)
+✔ registered point counts, positive weights and per-shell degree-five moments hold (544.637133ms)
+✔ wrong radial Jacobian and damaged positive weight fail relative core moments (3.14134ms)
+✔ depth22 shells regroup without losing the depth20 core (27.749438ms)
+✔ shell force and work cancellation cannot create a passing comparison (5.261565ms)
+✔ missing shell, reordered shell and malformed vector refuse comparisons (3.308982ms)
+✔ complete synthetic actual shell path retains originals, independent total and all585 reactions (176.970099ms)
+✔ shell-to-element and global comparison checks reject a damaged nonincident node and missing original (119.190116ms)
+✔ component total reconstruction refuses damage before a completed stage can be retained (15.936779ms)
+✔ combined output includes external log growth and preserves incomplete shell evidence (14.015158ms)
+✔ throwing shell callback retains partial vectors and physical weights, counted once with no retry (8.470285ms)
+✔ post-assembly output refusal retains complete shell weights and vector in reserved evidence (11.773087ms)
+✔ shell wall and RSS refusals preserve partial evidence at actual callback entry boundaries (24.986093ms)
+✔ frozen call/time/memory/output and reconstruction bounds precede all results (0.261631ms)
+✔ material CLI refuses missing authorization before invocation/output/material callbacks (60.326142ms)
+✔ reservations are distinct from actual and completed callbacks; no spare calls (5.930296ms)
+✔ throwing callback counts as actual but not completed, with no retry (0.479924ms)
+✔ time refuses before, during, after callback and after the final batch/output (0.516849ms)
+✔ RSS limits are checked before and during batches and after final callback (0.812573ms)
+✔ storage refuses a write before exceeding bounds and preserves earlier files plus partial receipt (3.518972ms)
+✔ storage growth outside wrapper is detected during batch checkpoints (0.489202ms)
+✔ wall/RSS/callback failures preserve small fixture partial evidence and never retry (1.920877ms)
+✔ actual assembly/scatter path agrees with independent affine P2 constant-stress oracle (2.709351ms)
+✔ actual assembly failures carry partial vectors/weights through resource and callback paths (48.05914ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 697.925903

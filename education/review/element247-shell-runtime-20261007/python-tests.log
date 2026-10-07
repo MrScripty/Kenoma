@@ -1,0 +1,24 @@
+test_changed_hash_or_invocation_refuses (__main__.EvidenceTests.test_changed_hash_or_invocation_refuses) ... ok
+test_completed_synthetic_terminal_evidence_is_accepted (__main__.EvidenceTests.test_completed_synthetic_terminal_evidence_is_accepted) ... ok
+test_duplicate_or_nonfinal_stdout_marker_refuses (__main__.EvidenceTests.test_duplicate_or_nonfinal_stdout_marker_refuses) ... ok
+test_external_postfinal_incomplete_overrides_everything (__main__.EvidenceTests.test_external_postfinal_incomplete_overrides_everything) ... ok
+test_failed_exit_has_precedence_over_missing_terminal_and_valid_earlier_receipts (__main__.EvidenceTests.test_failed_exit_has_precedence_over_missing_terminal_and_valid_earlier_receipts) ... ok
+test_frozen_child_and_external_wall_rss_bounds_refuse (__main__.EvidenceTests.test_frozen_child_and_external_wall_rss_bounds_refuse) ... ok
+test_material_incomplete_overrides_complete_hashes_and_zero_external_exit (__main__.EvidenceTests.test_material_incomplete_overrides_complete_hashes_and_zero_external_exit) ... ok
+test_missing_final_child_marker_or_external_final_refuses (__main__.EvidenceTests.test_missing_final_child_marker_or_external_final_refuses) ... ok
+test_provisional_receipt_alone_is_never_completion (__main__.EvidenceTests.test_provisional_receipt_alone_is_never_completion) ... ok
+test_reserved_entered_completed_counters_are_not_interchangeable (__main__.EvidenceTests.test_reserved_entered_completed_counters_are_not_interchangeable) ... ok
+test_verifier_checks_failure_before_source_or_vector_data (__main__.EvidenceTests.test_verifier_checks_failure_before_source_or_vector_data) ... ok
+test_complete_synthetic_inventory_scatter_cancellation_and_terminal_path_passes (__main__.FullVerifierTests.test_complete_synthetic_inventory_scatter_cancellation_and_terminal_path_passes) ... ok
+test_damaged_held_node_scatter_is_rejected_after_all_hashes_are_refreshed (__main__.FullVerifierTests.test_damaged_held_node_scatter_is_rejected_after_all_hashes_are_refreshed) ... ok
+test_missing_shell_and_forged_cancellation_pass_flag_are_rejected_with_valid_hashes (__main__.FullVerifierTests.test_missing_shell_and_forged_cancellation_pass_flag_are_rejected_with_valid_hashes) ... ok
+test_public_launcher_refuses_missing_authorization_without_creating_run (__main__.LauncherTests.test_public_launcher_refuses_missing_authorization_without_creating_run) ... ok
+test_real_small_process_nonzero_exit_is_preserved_without_retry (__main__.LauncherTests.test_real_small_process_nonzero_exit_is_preserved_without_retry) ... ok
+test_real_small_synthetic_process_records_external_exit_and_final (__main__.LauncherTests.test_real_small_synthetic_process_records_external_exit_and_final) ... ok
+test_real_watchdog_refuses_wall_and_storage_without_retry (__main__.LauncherTests.test_real_watchdog_refuses_wall_and_storage_without_retry) ... ok
+test_watchdog_rss_refusal_and_after_final_write_failure_take_precedence (__main__.LauncherTests.test_watchdog_rss_refusal_and_after_final_write_failure_take_precedence) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 1.080s
+
+OK
