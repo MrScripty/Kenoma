@@ -1,0 +1,14 @@
+✔ exactly two fixed 2000-point rules and an exact 4000 budget (31.915425ms)
+✔ 4000 synthetic callbacks complete once, with no callback on reused records (210.696407ms)
+✔ complete synthetic reconstruction failure retains full current-shell weights (71.918368ms)
+✔ truncated normal weight bytes are preserved alongside verified full emergency bytes (82.645108ms)
+✔ retained-data constructed values preserve all585 nodes and independent total (8.470169ms)
+✔ changed-only comparison retains nonzero signed vectors without invented tail evidence (1.590439ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 539.534977
