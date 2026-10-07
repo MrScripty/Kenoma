@@ -25,7 +25,7 @@ No equations, material values, physical solvers, UI controller code or proof dec
 
 ## Deliverables and qualification boundary
 
-The [review PDF](../../deliverables/measurement-first-editorial-review/kenoma-mechanics.pdf) and [generated Markdown](../../deliverables/measurement-first-editorial-review/kenoma-mechanics.md) use the same revised canonical prose and order. The PDF is labeled **Editorial review preview · Not for publication** on every page. Markdown is a companion to the regenerated book assets; this small handoff is not a new portable website archive.
+The [review PDF](https://raw.githubusercontent.com/MrScripty/Kenoma/596df78f5cb652b4ac70917a82d8aa908b617056/education/deliverables/measurement-first-editorial-review/kenoma-mechanics.pdf) and [generated Markdown](../../deliverables/measurement-first-editorial-review/kenoma-mechanics.md) use the same revised canonical prose and order. The PDF is labeled **Editorial review preview · Not for publication** on every page. Markdown is a companion to the regenerated book assets; this small handoff is not a new portable website archive.
 
 The review builder verifies the archived portable book's delivery hash and canonical chapter hashes, and checks that reused proof receipts still bind to current unchanged proof/claim sources. It regenerates current prose, HTML, controls and app bytes while preserving historical experiment/proof content. `editorial-preview-manifest.json` identifies the source base at rendering time; `delivery-receipt.json` binds every preview input to the later committed source checkpoint above. These are historical proof checks, not fresh Lean compilation or fresh release/solver qualification. The checkout did not contain the pinned Lean/mathlib workspace.
 
