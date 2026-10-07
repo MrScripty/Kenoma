@@ -1,0 +1,25 @@
+✔ two independent positive rule families have correct counts and degree2 moments; original baseline is bit-identical (511.451072ms)
+✔ schedule covers every patch element at each level and stays under frozen ceiling (0.50258ms)
+✔ saved field and whole-element determinant guard precede callback (3.361164ms)
+✔ held trace and immutable callback reject damage without changing input (0.809749ms)
+✔ replacement subtracts old patch once and preserves outside vectors, caps and all components (2.584948ms)
+✔ finite patch contamination outside incident support is refused (0.878175ms)
+✔ equal scalar maxima and directional cancellation cannot conceal vector damage (0.39299ms)
+✔ call and wall ceilings refuse the next batch and never relax (1.593984ms)
+✔ reservations are distinct from actual and completed callbacks; no spare calls (4.044372ms)
+✔ throwing callback counts as actual but not completed, with no retry (0.398804ms)
+✔ time refuses before, during, after callback and after the final batch/output (0.313687ms)
+✔ RSS limits are checked before and during batches and after final callback (0.504969ms)
+✔ storage refuses a write before exceeding bounds and preserves earlier files plus partial receipt (3.068249ms)
+✔ storage growth outside wrapper is detected during batch checkpoints (0.440672ms)
+✔ wall/RSS/callback failures preserve small fixture partial evidence and never retry (1.649502ms)
+✔ actual assembly/scatter path agrees with independent affine P2 constant-stress oracle (2.314545ms)
+✔ actual assembly failures carry partial vectors/weights through resource and callback paths (29.191081ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 616.76181
