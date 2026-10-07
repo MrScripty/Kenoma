@@ -1,0 +1,128 @@
+PREPARE unchanged2048-point operator
+DIAGNOSTIC_SAVED_STATE control45 0 2026-10-07T00:35:36.103Z
+DIAGNOSTIC_SAVED_STATE first-valid46 516096 2026-10-07T00:35:45.469Z
+DIAGNOSTIC_SAVED_STATE last-valid46 1032192 2026-10-07T00:35:54.869Z
+DIAGNOSTIC_PATCH control45 4 1548288 2026-10-07T00:36:04.032Z
+DIAGNOSTIC_PATCH control45 5 1810432 2026-10-07T00:36:09.833Z
+DIAGNOSTIC_PATCH last-valid46 4 2187264 2026-10-07T00:36:18.304Z
+DIAGNOSTIC_PATCH last-valid46 5 2449408 2026-10-07T00:36:24.219Z
+DIAGNOSTIC_GRADED_CORNER control45 2826240
+DIAGNOSTIC_GRADED_CORNER last-valid46 2835440
+{
+  "schema": 1,
+  "result": "COMPLETED_BOUNDED_SAVED_VALID_STATE_DIAGNOSTIC_NO_OPTIMIZER",
+  "sourceCommit": "e28ab8be8ed1403f4c3034f88191b6d698421cb3",
+  "sourceHashes": {
+    "data/anatomical-arm-v1/generated/arm-reference.json": "1b80c1d3d9f2eb4370cd298f58f5e9c582625574f27072f6d3a1ea898ce4c036",
+    "data/anatomical-arm-v1/audit/modal-fixed-end-results.json": "b0eeecdade262b682279d9ebeb7a8147a4525a992976a85afc0ce5e63270d8b4",
+    "data/anatomical-arm-v1/audit/modal-fixed-end-recheck.json": "1f8f9b764f748c6fde38c61645fd56b6794240e414ac143c02f43fcda25816ab",
+    "data/anatomical-arm-v1/audit/anatomical-fixed-end-compression.json": "1abfd611d64cb9c57d07bbbb5fa9c7f7a6f6ce30d18041efa2c22d9b304b2208",
+    "data/anatomical-arm-v1/audit/anatomical-calibration-nodal.json": "c1ea8baa13dddff9f728e30f9035e2b2fdb5715bdf0feddc7d6fcd9a5b52020a",
+    "data/anatomical-arm-v1/audit/anatomical-further-integration.json": "d8c6444ccc947d32c658666a7b995f5bf7fe728413309ad80457483c2f9045ae",
+    "data/anatomical-arm-v1/audit/anatomical-pressure-space.json": "71f7dcf724e4abc7b954456451e2417d8d1accbea806f156b56cc2fddeb66226",
+    "data/elbow-v1/sources/arm26.osim": "e2224d0044eb393b05d64926c3fa1682c451a9adc7f510e5517ef9958d3d41b9",
+    "web/anatomical-modal.mjs": "12cd671bc963aa04dd5c0e173a776049de191283d850b0b60d0fe8e63be4c9a1",
+    "web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+    "web/anatomical-element.mjs": "3f67a6bd31565c83d2cbea591c3cf1862a48e50cc4efa780880fda7e808d4b1f",
+    "web/anatomical-aponeurosis.mjs": "1dbebfd2ea67427ee0d962b7b234d2d40a2f2cd4616a4f1199e20b3aba7316a0",
+    "tools/anatomical-compression-quadrature.mjs": "f12e0d80224bad5e0bfa0649e08cac2f31a0baf162e2547ae8767b7371f48dc2",
+    "tools/anatomical-integration-refinement.mjs": "4e304b9132c914762f15d4f51dc058d67181161e35b4bf4c24789f8e9df1898f",
+    "tools/anatomical-bernstein-orientation.mjs": "5622685f19e7fabdd820fee11268950f0f97c58dc4818dbae8652e320cc5ca95",
+    "research/isolated-calibration-resolution-20261006-inputs.json": "c88d57b8a0ef87e1a2c5fec86a1ea3ed8969ae8a687f52b7aa50290944894452",
+    "review/isolated-calibration-resolution-20261006/results.json": "0c7a864aa463e78479ffb67e44ac3c7768768955fc449d7f7a7f7acafb2cf1dd",
+    "review/isolated-calibration-resolution-20261006/verification.json": "b33882813d227cbaacd6cfc69c1b2d7fd3c4afc00c25c3c4059c1fdfbacc7512",
+    "tools/anatomical-further-integration-audit.mjs": "c5d49d8e9da6f4afbb5377dc467ac09fe3d5c2d5cb8f97a81d89a518d1bf79b2",
+    "tools/anatomical-dense-quadrature.mjs": "2a9279268cc9a3c206e400293add90a537d7222c62af5992e08bc6467a078210",
+    "data/anatomical-arm-v1/audit/anatomical-dense-loading-prefix.json": "31ef26d3584d5b937d9086b8df80fcd60624eb007cdfbf6f68ac11c07040b582",
+    "data/anatomical-arm-v1/audit/anatomical-enriched-step.json": "4c465823cd82e78814259791056d5b23efc094a3ed6b4892e829d682686d8b85",
+    "data/anatomical-arm-v1/audit/anatomical-enriched-step-recheck.json": "dcdf325e7710426f9417c31aad8bb16aa23c244dbe3a0f8e7cc85cbdb17ef42a",
+    "research/anatomical-dense-qualification.md": "04197bfd349a6232eb479ab609f0ced50094a3360a435215b18aff4cd42a2dbb",
+    "research/isolated-enrichment-protocol-20261006-inputs.json": "3fe433915c3d52e2f48ebb65405d7832461a57f9714c118ad29e1ded22b19be6",
+    "review/isolated-enrichment-protocol-20261006/structural-checks.json": "9bafeab1883f5335b55cbd6d8042ba358b6afbc983c838f4b778c741ef5500d8",
+    "tools/isolated-displacement-family.mjs": "7a01f3d80f58513a55794f8bfa9e5fe7cfd6296f0dadd9cb05b111a412360a40",
+    "research/isolated-brachialis-response-20261006-inputs.json": "463ce04eac0b6a18a18c501159c604e607dcf69cd3286a954b1bcd173f48f225",
+    "tools/isolated-projected-response.mjs": "1a4c66155c1c79426f42994caf384ed33fef3ef82bb1e55904b5c9726fc062a3",
+    "tools/run-isolated-brachialis-response.mjs": "2f8facabd0dace4afd25d17fa250d6613f316d3723d75575a08c231007cf6e6c",
+    "tests/isolated_projected_response.test.mjs": "d7938ca2f74bd2b938ba15d928057c9ce322e04856d02a7e0b34079069296c2b",
+    "research/isolated-brachialis-response-20261006.md": "ccb71483d78f3c1369acc4b9023aed5515343e054ba52e28b29c4edda9a21edd",
+    "review/isolated-brachialis-response-20261006/results.json": "6b105362e0215b611b0aa5eef77296e88f449be6b0cf2abc869b41b28f04f071",
+    "review/isolated-brachialis-response-20261006/preflight.json": "abf17db90ec6b78a27b993c8527e29e0bcfccfb72cfe467be124ec8ef4b22af1",
+    "review/isolated-brachialis-response-20261006/response-summary.json": "c087772d359005bd8020a1d9bdfa748ce1f8d468625ec14c1c77ec793c5c2d8d",
+    "review/isolated-brachialis-response-20261006/refused-trial-geometry.json": "6a6acb6f59a6552b280eb3df7deecee9defeced070e4bc3d952b3e3f521448f9",
+    "review/isolated-brachialis-response-20261006/last-valid46-orientation.json": "0c0f5a8c4068c9dd7ed78c9820daebd191d2786c1b88f3ff3cdcdbed53d34fe5",
+    "research/isolated-brachialis-response-outcome-20261006.md": "91409de4136a4aa3dccb1989d4c89513254acf7141081f65dac0c402c9d81a53",
+    "research/isolated-globalization-proposal-20261006-inputs.json": "776a21b8d02d563135f53f84a95c4006e77770cd420ab95c96f0d8932ee9646c",
+    "tools/audit-isolated-segment.mjs": "c99f1c77d31b8aedea99455ce80c25661dfcf67efef73314b2bd34dfa096470f",
+    "tools/isolated-segment-geometry.mjs": "f14654a364424181850171b25a16700e44c0e6e0d65471dca34c37c6ff5eed97",
+    "tests/isolated_segment_geometry.test.mjs": "a60e52cd0ef4a0e59354a213489a81815283aed3e8fb1d01555cc0168abeb5a8",
+    "research/isolated-globalization-proposal-20261006.md": "39256f688299fdc3713483aeb6c726000d5b65d6a898865e4cc4521277c8b025",
+    "research/isolated-globalization-outcome-20261006.md": "b46490d54ffcb50e9891126b91deea2ebde25e53c62887a2567ec55d61323776",
+    "review/isolated-globalization-proposal-20261006/geometry-audit.json": "3eb1dd27b6d25c5be7937b2040575997f2cd03149257367bfc08e6114162bc95",
+    "review/isolated-globalization-proposal-20261006/checks.json": "6d99fec8396be9eb2ddd1eb19c98104ae5472b23fb6ba33ef2dcd558ee58d364",
+    "research/isolated-geometry-backtracking-20261006-inputs.json": "42d055d70d7c58ca8b3133d305ce5a7e63e08984f8d6965aa962a05b4e898006",
+    "tools/run-isolated-geometry-response.mjs": "6b3087f6aa1d481b0f23e1d5e5e60ddffd5c721fadf6a612104a1918bfbd5c86",
+    "tools/isolated-geometry-backtracking.mjs": "e2934ad8fa8046dae82ff64b20efeb3ac71d29a87e1b65d69b21f06bd4ff8c6b",
+    "tools/preflight-isolated-geometry-backtracking.mjs": "1a010ecd377e2803d308e0baf385cc424fc77e6e90033f62ee1172fe5305e8c0",
+    "tests/isolated_geometry_backtracking.test.mjs": "945fce99d5a10c1064abc80d68f3187e82468fbd90c9c1f1a77d37db3df75fbd",
+    "research/isolated-geometry-backtracking-20261006.md": "fa26696827fb75bae5828cf5ff3aabe0d852cd17314f2ca3809a76898bea1f28",
+    "review/isolated-geometry-backtracking-20261006/results.json": "d781d7a68cd742b4019ae89d5464109d42b758e8f30419341b5ee55421e1406d",
+    "review/isolated-geometry-backtracking-20261006/run-summary.json": "ab38262da9ec4e3b728e75f6650dae9e495e64005197ea973521b65db137f79e",
+    "review/isolated-geometry-backtracking-20261006/run-verification.json": "7277fadace03825136c1e5736222da90daabba498ed29b0d45a086978268711b",
+    "review/isolated-geometry-backtracking-20261006/newton-inventory.json": "0962b30d41ec782fc6c30ae378794efe084ae8de2cf5b732942c04ef561e4bde",
+    "review/isolated-geometry-backtracking-20261006/trial-inventory.json": "b9feb6fdacd345126c0ed7b431310a216cec976320fb064d0afb34f6bb055c04",
+    "review/isolated-geometry-backtracking-20261006/terminal-corner-witnesses.json": "a83d49f87a48c67abc64aa9efdee0bc628da70c4cf8c054423e4a4714d9a4297",
+    "review/isolated-geometry-backtracking-20261006/execution-receipt.json": "a4fef9de07d6afa6d93aca995b049a621e9635dfa01f96309e3fb0a3cd5497a2",
+    "research/isolated-geometry-run-outcome-20261007.md": "a673379ce4d1a68a983fb141f15c77bd5240f6e34ad8982ddd0abf2a9cc3e9e2",
+    "data/anatomical-arm-v1/config/materials.json": "623c081e339f5abb5e3432a0ea6cb43834b9c511f87fc073b0bf26ba51d6a377",
+    "tools/anatomical-modal-fixed-end.mjs": "d76a02ad773db22d77664c3d975a3eb25e388e2e4604844cb3e441d25585f0d3",
+    "data/anatomical-arm-v1/audit/anatomical-calibration-geometry.json": "d786c4947d00bc151caf0716556ce451e4a5c670a544dbbb6882fc98f0533563",
+    "research/isolated-collapse-diagnostic-20261007-inputs.json": "4d793d660787c1c228b747dbf8c9664bf644009cedc1f088afb6373070ce4e5f",
+    "tools/isolated-collapse-components.mjs": "036f4973d3942e1bf0340f94908a43f4025b838a908f07f5856a346224b8c6c8",
+    "tools/run-isolated-collapse-diagnostic.mjs": "323304e7410e3aa99d3e1138125745ad90da74802f5687ac4a4a1bfa7f9fd7e0",
+    "tests/isolated_collapse_components.test.mjs": "652fec0142578bd3ffdd6117e6c83845ab49551ff09ce0da411559abde42a390",
+    "research/isolated-collapse-diagnostic-20261007.md": "7aae93ece78d8fc480bb217655ea37ddaee31e8cc3fdeb61273d374d77448b8f"
+  },
+  "evaluatedSavedStates": [
+    {
+      "state": "control45",
+      "label": "45-mode-control",
+      "iteration": 1,
+      "positionsSha256": "07e50e29f34c3f6880f3895bb63c3a53dd18afee90217b6816099681e2c8132e"
+    },
+    {
+      "state": "first-valid46",
+      "label": "46-mode-response",
+      "iteration": 1,
+      "positionsSha256": "740b5ff44c1589d47ca4456c46edc43ae3ef502dcb3cc747ace798e9fac5102e"
+    },
+    {
+      "state": "last-valid46",
+      "label": "46-mode-response",
+      "iteration": 13,
+      "positionsSha256": "655eb058007d2432689257b0bbe84f9b054500587672b087b03dbecf0bdfc410"
+    }
+  ],
+  "diagnosticMaterialPointEvaluations": 2844788,
+  "maximumMaterialPointEvaluations": 3000000,
+  "maximumStressReconstructionRelativeError": 0,
+  "nonlinearSolves": 0,
+  "newOptimizerTrials": 0,
+  "forceFitting": false,
+  "parameterChange": false,
+  "fieldAdvancement": false,
+  "rejectedStateMaterialEvaluations": 0,
+  "independentReviewLimit": "Full50.6MB raw result and55 additional material-gate certificates not independently replayed by parent reviewer; this source-bound diagnostic is new evidence requiring review.",
+  "diagnosticOnly": true,
+  "outputHashes": {
+    "control45-components.json": "8dcbd21e895795e8537dde627491bf00e44f8e001f263bb99bbec21583f72c97",
+    "element-energy-changes.json": "e3e227fdcf9dd0eb57286f414208c730410892c4bbe911479fe90e3ac671154d",
+    "exact-corner-neighborhood.json": "277475bd77a77ac7a0e77321126b320dfb19a154d2001a7fe442fc4b25e84df3",
+    "first-valid46-components.json": "9faa2b50f03b2ab6d5996ed61f473003f7b50f0508696f87fc393d57a920e871",
+    "geometry-trajectory.json": "47ea8b8e26dfc26f62d982d67ab65b7f08d1bb640cc38cbc862348e5e71d06b3",
+    "graded-corner.json": "06cd8b998436af10a50c2ce7be0e571f472c1ae439f781022500834686c0bc75",
+    "last-valid46-components.json": "8cf1b4f3866c5f230632d6c3147919d39be3a110a0baea06864db2e6ec6ea670",
+    "parameter-provenance.json": "6a76ecdac674cb5076eb632839e7e41b777e307138deceeadc4aa88e1dfbae74",
+    "patch-quadrature.json": "2429ad85dddd9ce5c48e69feef9d90231cb6e412c314a150a82d8f42073366cd",
+    "pointwise-corner.json": "ded82a77f2629bb1c16d44de02bf897dfef4a2be548344cab84ece0c779c2338"
+  }
+}

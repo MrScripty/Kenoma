@@ -1,0 +1,11 @@
+{
+  "sourceCommit": "e28ab8be8ed1403f4c3034f88191b6d698421cb3",
+  "command": "node --test education/tests/isolated_collapse_components.test.mjs",
+  "tests": 5,
+  "pass": 5,
+  "fail": 0,
+  "durationMs": 142.56383,
+  "note": "Synthetic local tensor/rule unit checks ran before source freeze; tested source bytes match frozen hashes. No specimen solver or new nodal field.",
+  "helperSha256": "036f4973d3942e1bf0340f94908a43f4025b838a908f07f5856a346224b8c6c8",
+  "testsSha256": "652fec0142578bd3ffdd6117e6c83845ab49551ff09ce0da411559abde42a390"
+}
