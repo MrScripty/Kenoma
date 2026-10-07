@@ -1,0 +1,19 @@
+✔ fresh rounded paths reject inverted and zero candidates before the synthetic callback, then accept admissible fraction (11.087135ms)
+✔ initial physical bound scales raw direction and logs both raw and rounded increments (4.630103ms)
+✔ positive endpoint orientation cannot substitute for a whole-path certificate (3.400065ms)
+✔ same1e-6 domain guard refuses positive orientation below its threshold (2.421678ms)
+✔ caps, nonfinite geometry and uncertified evaluation are fatal before callbacks (1.727815ms)
+✔ unexpected failure after certification stops without fraction reduction (5.266361ms)
+✔ unchanged Armijo has exactly21 bounded fractions and refuses exhaustion (11.81889ms)
+✔ non-descent, no representable change, nonfinite and mismatched certified results stop (3.964478ms)
+✔ known affine determinant path certifies a safe prefix and brackets the unchanged domain boundary (8.948416ms)
+✔ orientation-positive endpoints can contain an inverted path interior (2.36676ms)
+✔ the curved P2 segment polynomial endpoints agree with the original exact spatial compiler (2.43538ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 139.020142
