@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "verifiedUTCDate": "2026-10-07",
+  "sources": [
+    {
+      "authors": "Michael G. Duffy",
+      "title": "Quadrature Over a Pyramid or Cube of Integrands with a Singularity at a Vertex",
+      "journal": "SIAM Journal on Numerical Analysis 19(6), 1260–1262 (1982)",
+      "doi": "10.1137/0719090",
+      "url": "https://epubs.siam.org/doi/10.1137/0719090",
+      "verifiedContent": "Original publisher metadata and abstract; original full text access was restricted.",
+      "use": "Historical primary source for a vertex-directed change of variables. Our tetrahedral radial-face chart and Jacobian are derived explicitly, not attributed as Duffy's exact formula."
+    },
+    {
+      "authors": "S. E. Mousavi and N. Sukumar",
+      "title": "Generalized Duffy transformation for integrating vertex singularities",
+      "journal": "Computational Mechanics 45, 127–140 (2010); online 16 October 2009",
+      "doi": "10.1007/s00466-009-0424-1",
+      "url": "https://link.springer.com/article/10.1007/s00466-009-0424-1",
+      "fullText": "https://link.springer.com/content/pdf/10.1007/s00466-009-0424-1.pdf",
+      "verifiedContent": "Original open-access full text, introduction and section2 equations1a–1b, pages128–129.",
+      "use": "Transformation Jacobians and tensor-product Gauss integration; motivates explicit transformation and exponent accounting. We use beta1 and dyadic radial shells, not an optimized power map or their singular-kernel error claim."
+    }
+  ],
+  "limits": [
+    "The saved specimen fields have strictly positive J and a finite near-corner layer, not a proved p/r^alpha singular kernel.",
+    "No cited paper establishes this specimen's force accuracy; structural moments and later fixed-vector comparisons must be checked separately.",
+    "The four- and five-point binary64 Gauss tables are inherited byte-identically from the accepted fixed-field protocol; no new dependency or quadrature-table generator is introduced."
+  ]
+}
