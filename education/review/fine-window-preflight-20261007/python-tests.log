@@ -1,0 +1,25 @@
+test_common16_diagnostic_damage (__main__.FixtureTests.test_common16_diagnostic_damage) ... ok
+test_complete_nonzero_actual_serialized_producer (__main__.FixtureTests.test_complete_nonzero_actual_serialized_producer) ... ok
+test_completion_scope_damage (__main__.FixtureTests.test_completion_scope_damage) ... ok
+test_declared_physical_gates_not_relaxed (__main__.FixtureTests.test_declared_physical_gates_not_relaxed) ... ok
+test_external_log_and_receipt_caps (__main__.FixtureTests.test_external_log_and_receipt_caps) ... ok
+test_false_allocated_group_pass (__main__.FixtureTests.test_false_allocated_group_pass) ... ok
+test_false_pass_flag (__main__.FixtureTests.test_false_pass_flag) ... ok
+test_held_reaction_damage (__main__.FixtureTests.test_held_reaction_damage) ... ok
+test_missing_patch_element (__main__.FixtureTests.test_missing_patch_element) ... ok
+test_nonfinite_component (__main__.FixtureTests.test_nonfinite_component) ... ok
+test_omitted_original_region (__main__.FixtureTests.test_omitted_original_region) ... ok
+test_quiet_credit_damage (__main__.FixtureTests.test_quiet_credit_damage) ... ok
+test_recorded_force_gate_damage (__main__.FixtureTests.test_recorded_force_gate_damage) ... ok
+test_recorded_work_gate_damage (__main__.FixtureTests.test_recorded_work_gate_damage) ... ok
+test_region_bounds_damage (__main__.FixtureTests.test_region_bounds_damage) ... ok
+test_reuse_source_identity (__main__.FixtureTests.test_reuse_source_identity) ... ok
+test_failure_precedes_hash_or_terminal_validation (__main__.LifecycleTests.test_failure_precedes_hash_or_terminal_validation) ... ok
+test_missing_new_auth_refuses_without_creating_run (__main__.LifecycleTests.test_missing_new_auth_refuses_without_creating_run) ... ok
+test_nonzero_child_or_public_exit_dominates_provisional_success (__main__.LifecycleTests.test_nonzero_child_or_public_exit_dominates_provisional_success) ... ok
+test_old_consumed_authorization_cannot_apply (__main__.LifecycleTests.test_old_consumed_authorization_cannot_apply) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 125.166s
+
+OK

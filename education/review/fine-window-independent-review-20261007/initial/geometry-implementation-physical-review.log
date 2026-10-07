@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "status": "PASS_FROZEN_IMPLEMENTATION_PHYSICAL_ARRAYS_PREFLIGHT_PENDING",
+  "sourceCommit": "ce5df8ae5266e481496d2fb05b386a2d52f7a949",
+  "specimenCalls": 0,
+  "materialLawInvocations": 0,
+  "sourceEdits": 0,
+  "physicalMomentChecks": 4410,
+  "geometricStatePointChecks": 15260000,
+  "maximumPhysicalMomentRelativeError": 7.011741362406868e-14,
+  "maximumIndependentRelativeWeightDifference": 4.906890625819781e-15,
+  "minimumReferenceJacobian": 1.3860150188955186e-07,
+  "minimumPhysicalWeightM3": 1.6117946584952456e-34,
+  "minimumSampleJ": {
+    "control45": 0.5607113786709221,
+    "terminal46": 1.3430852676931198e-06
+  },
+  "preflightCompleted": false,
+  "preflightDirectory": "/tmp/kenoma-fine-preflight-initial-20261007",
+  "outside236Qualified": false,
+  "seconds": 20.61811688200396
+}

@@ -1,0 +1,3552 @@
+{
+  "schema": 1,
+  "status": "PASS_FROZEN_IMPLEMENTATION_PHYSICAL_ARRAYS_PREFLIGHT_PENDING",
+  "sourceCommit": "ce5df8ae5266e481496d2fb05b386a2d52f7a949",
+  "specimenCalls": 0,
+  "materialLawInvocations": 0,
+  "sourceEdits": 0,
+  "physicalMomentChecks": 4410,
+  "geometricStatePointChecks": 15260000,
+  "maximumPhysicalMomentRelativeError": 7.011741362406868e-14,
+  "maximumIndependentRelativeWeightDifference": 4.906890625819781e-15,
+  "minimumReferenceJacobian": 1.3860150188955186e-07,
+  "minimumPhysicalWeightM3": 1.6117946584952456e-34,
+  "minimumSampleJ": {
+    "control45": 0.5607113786709221,
+    "terminal46": 1.3430852676931198e-06
+  },
+  "arrays": [
+    {
+      "filename": "197-I0-s1-weights.f64le",
+      "sha256": "74baba8ace89fc1fb63bbf05ce2f31a676f11e08b49c2a892d6b55a193a74370",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 8.643433292556487e-15,
+      "maximumIndependentRelativeWeightDifference": 3.2360067425837815e-15,
+      "minimumSampleJ": {
+        "control45": 0.5608742379387109,
+        "terminal46": 0.47178503357151275
+      }
+    },
+    {
+      "filename": "197-I0-s2-weights.f64le",
+      "sha256": "ae9a0e10c06a2eae18c4af01bc4713be63d4e6d0d6dd138723c81f2415e8fae3",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.5301212990876752e-14,
+      "maximumIndependentRelativeWeightDifference": 3.1031391928172127e-15,
+      "minimumSampleJ": {
+        "control45": 0.5614695052704232,
+        "terminal46": 0.5335180802943648
+      }
+    },
+    {
+      "filename": "197-I0-s3-weights.f64le",
+      "sha256": "d16660fd8027a83961544102b1aefa48c4b7bb7361cea812059639cd06153c92",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.0323748552767385e-14,
+      "maximumIndependentRelativeWeightDifference": 3.0388118002969208e-15,
+      "minimumSampleJ": {
+        "control45": 0.5617670411767516,
+        "terminal46": 0.5643455597108227
+      }
+    },
+    {
+      "filename": "197-I0-s4-weights.f64le",
+      "sha256": "5dd482e1ad67baa61afa023f1310e4a7fbdcb435ac5aeee6e144186288e2178f",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.0278677428985755e-14,
+      "maximumIndependentRelativeWeightDifference": 2.6214986625248633e-15,
+      "minimumSampleJ": {
+        "control45": 0.5619157846901216,
+        "terminal46": 0.5797477296073335
+      }
+    },
+    {
+      "filename": "197-I0-s5-weights.f64le",
+      "sha256": "b05d12ae91dddcf63866abc709c3331c4b3bc520360d714196b178cd44e17321",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.3315559396640606e-14,
+      "maximumIndependentRelativeWeightDifference": 3.0671897635862797e-15,
+      "minimumSampleJ": {
+        "control45": 0.5619901503366455,
+        "terminal46": 0.5874456959991978
+      }
+    },
+    {
+      "filename": "197-I0-s6-weights.f64le",
+      "sha256": "71e25a7ee302a8d34f1c480b6b305f83f74df843e50e58ba02236366ca9c612d",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 5.37294501969708e-15,
+      "maximumIndependentRelativeWeightDifference": 2.940039083416073e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620273316324279,
+        "terminal46": 0.591293871293214
+      }
+    },
+    {
+      "filename": "197-I0-s7-weights.f64le",
+      "sha256": "0e18457610fa4abc83c4781f427833d642480f6f6e53029114c717d9657ae696",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 3.258807957598879e-14,
+      "maximumIndependentRelativeWeightDifference": 2.7846120327562312e-15,
+      "minimumSampleJ": {
+        "control45": 0.56204592189847,
+        "terminal46": 0.5932177534319938
+      }
+    },
+    {
+      "filename": "197-I0-s8-weights.f64le",
+      "sha256": "31cb37b26b27a7ae36e4a356bf154d30dd6a254d47a86efc67ee17b222aee228",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.6002031906489118e-14,
+      "maximumIndependentRelativeWeightDifference": 3.1481811383465684e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620552169360518,
+        "terminal46": 0.5941796426826284
+      }
+    },
+    {
+      "filename": "197-I0-s9-weights.f64le",
+      "sha256": "b26fdb0196c96b8d5f5dfba22b3d168ad5e129b02f8587ac27e85781b825890e",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.114137062098197e-14,
+      "maximumIndependentRelativeWeightDifference": 2.9116967877523355e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620598644309371,
+        "terminal46": 0.5946605742980324
+      }
+    },
+    {
+      "filename": "197-I0-s10-weights.f64le",
+      "sha256": "fa78e9f902c7c14f184849dab562a6433e4c1f2babd4fc12dda57dc4521d7957",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.624785534983133e-14,
+      "maximumIndependentRelativeWeightDifference": 2.9400390834165326e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620621881724788,
+        "terminal46": 0.5949010368463399
+      }
+    },
+    {
+      "filename": "197-I0-s11-weights.f64le",
+      "sha256": "eb6a2770ecf49da817e9570730700f6d1af4c58bf8cd4a6e880c9541b9d10d71",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.534628411465794e-14,
+      "maximumIndependentRelativeWeightDifference": 2.8970664971886932e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620633500418106,
+        "terminal46": 0.5950212673050014
+      }
+    },
+    {
+      "filename": "197-I0-s12-weights.f64le",
+      "sha256": "4229a3f95ebdac4b57f5e9cf52c52e7c1f3578747a3783b704c484a1cb434a7e",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.5813496725066378e-14,
+      "maximumIndependentRelativeWeightDifference": 2.675171797924586e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620639309760549,
+        "terminal46": 0.5950813823301895
+      }
+    },
+    {
+      "filename": "197-I0-s13-weights.f64le",
+      "sha256": "101c6eefcbcc038b82f25f41bc7afc17f8f45b5d1479d29529215fe9c1099d5b",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.3782772007049015e-14,
+      "maximumIndependentRelativeWeightDifference": 2.9835782028270627e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620642214430048,
+        "terminal46": 0.595111439791681
+      }
+    },
+    {
+      "filename": "197-I0-s14-weights.f64le",
+      "sha256": "063934e7452e305ca400b71629d9e47379fd9af20ee35d7047c25b3e42b992c2",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.1141370620981963e-14,
+      "maximumIndependentRelativeWeightDifference": 2.6727628031053123e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620643666765696,
+        "terminal46": 0.5951264685097353
+      }
+    },
+    {
+      "filename": "197-I0-s15-weights.f64le",
+      "sha256": "23a5fa8708b7b605e015a79a68d50301ab9e0ad4869d4ddc914a881c92dbeb87",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 4.8122898872069445e-14,
+      "maximumIndependentRelativeWeightDifference": 3.129388231563582e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620644392931308,
+        "terminal46": 0.5951339828654822
+      }
+    },
+    {
+      "filename": "197-I0-s16-weights.f64le",
+      "sha256": "9489b9981f832f80661748ed21c43625fbc022c9cb19d4734c79e55dc41bf648",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.2731543633630022e-14,
+      "maximumIndependentRelativeWeightDifference": 2.730488953910013e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620644756015981,
+        "terminal46": 0.5951377400426395
+      }
+    },
+    {
+      "filename": "197-I0-s17-weights.f64le",
+      "sha256": "5b83d2757e9a4fe56b492603a577c12229fbd24e9768b59333c07df55d2b9ecd",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.506760668567223e-14,
+      "maximumIndependentRelativeWeightDifference": 2.8718117492108505e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620644937558462,
+        "terminal46": 0.5951396186309347
+      }
+    },
+    {
+      "filename": "197-I0-s18-weights.f64le",
+      "sha256": "259bafe3d56ade98ce0aefedc820f8913945a0679763dbf29bc75bc3cdb8ad10",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.0745890039394147e-14,
+      "maximumIndependentRelativeWeightDifference": 2.9007502443707836e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645028330412,
+        "terminal46": 0.5951405579251577
+      }
+    },
+    {
+      "filename": "197-I0-s19-weights.f64le",
+      "sha256": "a9da599004e06c2e043be156ed69324ad9796e2aa88f1cb7efffc3d2b1434cf3",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.3782772007049015e-14,
+      "maximumIndependentRelativeWeightDifference": 2.804276880889762e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645073714606,
+        "terminal46": 0.5951410275722612
+      }
+    },
+    {
+      "filename": "197-I0-s20-weights.f64le",
+      "sha256": "1375991e201eac2374cc0995694e4ab8a2e361a7b769ccc6bb462638ccdb4f2b",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.4483590922661676e-14,
+      "maximumIndependentRelativeWeightDifference": 2.7271525714665947e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645096406859,
+        "terminal46": 0.5951412623955707
+      }
+    },
+    {
+      "filename": "197-I0-core-weights.f64le",
+      "sha256": "19275f7e52893bf43d64becb30015e398142f71588074ba6f221cfb708ab5725",
+      "bytes": 16000,
+      "points": 2000,
+      "maximumPhysicalMomentRelativeError": 5.906589423147965e-14,
+      "maximumIndependentRelativeWeightDifference": 2.8218145824986356e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645108093508,
+        "terminal46": 0.5951413826639276
+      }
+    },
+    {
+      "filename": "200-I0-s1-weights.f64le",
+      "sha256": "0ba062fdb19fe63ad766a62730384a9deb0c2dc0d64a210461b71b645b019d7b",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 6.069890816280582e-15,
+      "maximumIndependentRelativeWeightDifference": 3.19174322117825e-15,
+      "minimumSampleJ": {
+        "control45": 0.5624429283106738,
+        "terminal46": 0.5372454453756285
+      }
+    },
+    {
+      "filename": "200-I0-s2-weights.f64le",
+      "sha256": "88332e5e4245f850b2e6fece7069904ad2419c500725160c082a155467e531d4",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.522798370516555e-14,
+      "maximumIndependentRelativeWeightDifference": 3.1252600910725753e-15,
+      "minimumSampleJ": {
+        "control45": 0.5622537191246114,
+        "terminal46": 0.5608054404652704
+      }
+    },
+    {
+      "filename": "200-I0-s3-weights.f64le",
+      "sha256": "2abfdbfdf54051a1179fef551589a22b04e90f3c7b2cfe104afd61c1962d0634",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.1623986032998697e-14,
+      "maximumIndependentRelativeWeightDifference": 2.892606574653606e-15,
+      "minimumSampleJ": {
+        "control45": 0.5621591152708852,
+        "terminal46": 0.5710668830004344
+      }
+    },
+    {
+      "filename": "200-I0-s4-weights.f64le",
+      "sha256": "9215a38056d6469f674ccf67e84d956f41778db998bba40ee199f630cc366a32",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.6312831568753333e-14,
+      "maximumIndependentRelativeWeightDifference": 3.0991534879680237e-15,
+      "minimumSampleJ": {
+        "control45": 0.5621118135288384,
+        "terminal46": 0.5758154569852889
+      }
+    },
+    {
+      "filename": "200-I0-s5-weights.f64le",
+      "sha256": "3f654539f8154f0dee9f84b2e2e50e16baee4f78b53b7f0a32d9915f4069cf06",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 5.311154464245255e-15,
+      "maximumIndependentRelativeWeightDifference": 3.230148603573973e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620881627040296,
+        "terminal46": 0.5780938935907621
+      }
+    },
+    {
+      "filename": "200-I0-s6-weights.f64le",
+      "sha256": "054bf5e7b41703827705ef608d70ad2ceea31c070ca79125c248fa19223ea1f2",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.5607351881182456e-14,
+      "maximumIndependentRelativeWeightDifference": 3.0607427846930396e-15,
+      "minimumSampleJ": {
+        "control45": 0.562076337303166,
+        "terminal46": 0.579209110101087
+      }
+    },
+    {
+      "filename": "200-I0-s7-weights.f64le",
+      "sha256": "47dc9dd8e6ef9e8e8a9bc2d5d38f29bf4ae37f82b8c4884f0f54ca8d9c896ce7",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.4605674776674427e-14,
+      "maximumIndependentRelativeWeightDifference": 3.0858266789736475e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620704246057867,
+        "terminal46": 0.5797607130085104
+      }
+    },
+    {
+      "filename": "200-I0-s8-weights.f64le",
+      "sha256": "07d67409e4cf77b2ce5908d6a72cbe7c06e27899dee8d2976182a24ee6171f65",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 3.414313584157657e-15,
+      "maximumIndependentRelativeWeightDifference": 3.099495217633521e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620674682576048,
+        "terminal46": 0.5800350125128534
+      }
+    },
+    {
+      "filename": "200-I0-s9-weights.f64le",
+      "sha256": "e0d943588453164165a04c6429e0a8508dbd1e46533852e6779af130bde29ffd",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.0622308928490485e-14,
+      "maximumIndependentRelativeWeightDifference": 2.851915536122193e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620659900838504,
+        "terminal46": 0.5801717867012082
+      }
+    },
+    {
+      "filename": "200-I0-s10-weights.f64le",
+      "sha256": "b1b0e2ffc374a9fbb1f86b19dca90241dc9f4e8d5610362b9f7b89853fdc7e2a",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 3.357408357755028e-14,
+      "maximumIndependentRelativeWeightDifference": 3.035538255808992e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620652509969509,
+        "terminal46": 0.5802400798948253
+      }
+    },
+    {
+      "filename": "200-I0-s11-weights.f64le",
+      "sha256": "c74d553aec9e991af4a7c25613f359572e70cb8f30207e43f8ce696d2d0a4f86",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 3.1677242697462693e-14,
+      "maximumIndependentRelativeWeightDifference": 3.057357916580884e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620648814534369,
+        "terminal46": 0.5802742030154059
+      }
+    },
+    {
+      "filename": "200-I0-s12-weights.f64le",
+      "sha256": "e426f86d6d16f6c1eb1bebac089f8fc2fdd7212e4bfe36482f376ebb0994cbe9",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 4.552418112210207e-15,
+      "maximumIndependentRelativeWeightDifference": 3.099289173489713e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620646966817634,
+        "terminal46": 0.5802912587061242
+      }
+    },
+    {
+      "filename": "200-I0-s13-weights.f64le",
+      "sha256": "96d44164f86a090c54723b3f7e7a291692d232c768c91cb4ef17edf56fc42c08",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.1054933768972208e-14,
+      "maximumIndependentRelativeWeightDifference": 3.2084049781373867e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620646042958496,
+        "terminal46": 0.5802997850844653
+      }
+    },
+    {
+      "filename": "200-I0-s14-weights.f64le",
+      "sha256": "11f5fd4edb291bc73314f40617d11fd6b02124a340d29688f2ff31af418650ad",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 4.872649258099861e-15,
+      "maximumIndependentRelativeWeightDifference": 3.1953034271670536e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645581030762,
+        "terminal46": 0.5803040479068465
+      }
+    },
+    {
+      "filename": "200-I0-s15-weights.f64le",
+      "sha256": "18e14aec1f68dbe18dff28a1ddb368fb07498bf1a5919d67e21eeff0dcc53ce8",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.484861552914738e-14,
+      "maximumIndependentRelativeWeightDifference": 2.9441224381885594e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645350065616,
+        "terminal46": 0.5803061792261979
+      }
+    },
+    {
+      "filename": "200-I0-s16-weights.f64le",
+      "sha256": "9a9ac30da2eace8cd9d32f7831b81815624bfe3207e4346dc61d3e8ba44087d6",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.2951774649059795e-14,
+      "maximumIndependentRelativeWeightDifference": 3.031821754819988e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645234582936,
+        "terminal46": 0.580307244862947
+      }
+    },
+    {
+      "filename": "200-I0-s17-weights.f64le",
+      "sha256": "87dedbeda6ecbc3f7e99f65b0e094397bbdf32d8041a41b9c7c89cdfdaee9e54",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 3.292957304972534e-15,
+      "maximumIndependentRelativeWeightDifference": 3.0549749474092095e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645176840778,
+        "terminal46": 0.58030777767554
+      }
+    },
+    {
+      "filename": "200-I0-s18-weights.f64le",
+      "sha256": "9e1f8eb36231278cfb3a9ad39fe0b4eea54271ca6e7f483a3ca5a3515c42ef8d",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 5.500838552254e-15,
+      "maximumIndependentRelativeWeightDifference": 3.208264515574116e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645147969421,
+        "terminal46": 0.5803080440805088
+      }
+    },
+    {
+      "filename": "200-I0-s19-weights.f64le",
+      "sha256": "5b7247ea936e0432095c6e00f402eeb46739f1d4b35e7e73f9d3dc86cc2146b8",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 9.86357257645545e-15,
+      "maximumIndependentRelativeWeightDifference": 3.0992891734896478e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645133534908,
+        "terminal46": 0.5803081772826623
+      }
+    },
+    {
+      "filename": "200-I0-s20-weights.f64le",
+      "sha256": "198c2dcbfe179a5a3c348c62614202d0059eebcc3051c74e781d9032b6994652",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.0432624840481726e-14,
+      "maximumIndependentRelativeWeightDifference": 3.119626042800382e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645126318837,
+        "terminal46": 0.5803082438834593
+      }
+    },
+    {
+      "filename": "200-I0-core-weights.f64le",
+      "sha256": "6859fba71c32a514dc64f01b825e9f252a26903d7b9acc129fb428fe19b49760",
+      "bytes": 16000,
+      "points": 2000,
+      "maximumPhysicalMomentRelativeError": 3.858885665428184e-15,
+      "maximumIndependentRelativeWeightDifference": 3.0022042586559855e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645119551299,
+        "terminal46": 0.5803082777975458
+      }
+    },
+    {
+      "filename": "203-I0-s1-weights.f64le",
+      "sha256": "db916620255ead0873d962065e7154aae37467262d29f389b5a56e2d737c3d5c",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 5.294787075986347e-15,
+      "maximumIndependentRelativeWeightDifference": 3.3521196803509108e-15,
+      "minimumSampleJ": {
+        "control45": 0.5633143085249824,
+        "terminal46": 0.5580696238993545
+      }
+    },
+    {
+      "filename": "203-I0-s2-weights.f64le",
+      "sha256": "81f8f92d7b42d3283d5c4cb668178baf0f42f7088b6db22083e044107d4c9e58",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 8.824645126643828e-15,
+      "maximumIndependentRelativeWeightDifference": 3.0118807894285182e-15,
+      "minimumSampleJ": {
+        "control45": 0.5626894044359809,
+        "terminal46": 0.557790763316096
+      }
+    },
+    {
+      "filename": "203-I0-s3-weights.f64le",
+      "sha256": "592fca12b56fafc2023f68ed4f928931aec5ccd9901029ac43b1901ce0cc2597",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 5.0594632059423454e-15,
+      "maximumIndependentRelativeWeightDifference": 2.8804233746968322e-15,
+      "minimumSampleJ": {
+        "control45": 0.5623769567276214,
+        "terminal46": 0.5577160320479144
+      }
+    },
+    {
+      "filename": "203-I0-s4-weights.f64le",
+      "sha256": "19783cb23d8653b9362dc293b4d313956b01e65baaf62c77bd19ea073c4f901c",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.788461412333101e-14,
+      "maximumIndependentRelativeWeightDifference": 2.9824695419111656e-15,
+      "minimumSampleJ": {
+        "control45": 0.5622207339573966,
+        "terminal46": 0.5576947795399693
+      }
+    },
+    {
+      "filename": "203-I0-s5-weights.f64le",
+      "sha256": "e9e3d5a864b6de3c28d487d587a9f3e205068b9aa08cd0507b93e7cb45f97556",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 8.353997386555923e-15,
+      "maximumIndependentRelativeWeightDifference": 2.9960391759235958e-15,
+      "minimumSampleJ": {
+        "control45": 0.5621426228434299,
+        "terminal46": 0.5576881738638513
+      }
+    },
+    {
+      "filename": "203-I0-s6-weights.f64le",
+      "sha256": "be49672b43c92ef307dbe1b75e9c9a9459e99986bdf8c452653b09d586a54809",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.0002528953725443e-15,
+      "maximumIndependentRelativeWeightDifference": 3.197445003100884e-15,
+      "minimumSampleJ": {
+        "control45": 0.5621035673540927,
+        "terminal46": 0.5576858752071419
+      }
+    },
+    {
+      "filename": "203-I0-s7-weights.f64le",
+      "sha256": "7e7b4d0f5ab15958a34ca89ae6ca95cf23420d68856f11ec8ba0cd428d446d36",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 3.1415736650851114e-14,
+      "maximumIndependentRelativeWeightDifference": 2.9905613137132578e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620840396264813,
+        "terminal46": 0.557684976803933
+      }
+    },
+    {
+      "filename": "203-I0-s8-weights.f64le",
+      "sha256": "71a28d8c4d7464e54ee0aa6db3c223f268cd2c5c1c6e444431632dcbfa8ed3eb",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 4.824139335898486e-15,
+      "maximumIndependentRelativeWeightDifference": 3.009045349526521e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620742757667871,
+        "terminal46": 0.5576845903185208
+      }
+    },
+    {
+      "filename": "203-I0-s9-weights.f64le",
+      "sha256": "bb6ca9ca01144430eade0076a5a4b7d168bd366a2389cd3015d3340f6306ab4b",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.2355767654163714e-14,
+      "maximumIndependentRelativeWeightDifference": 3.0649643240094988e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620693938380926,
+        "terminal46": 0.5576844127528644
+      }
+    },
+    {
+      "filename": "203-I0-s10-weights.f64le",
+      "sha256": "75c135507e17a0e200ad01e5eee9a319257c63e183132be2089f11acb4473120",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 9.765940606818885e-15,
+      "maximumIndependentRelativeWeightDifference": 2.930883529993184e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620669528739586,
+        "terminal46": 0.5576843278892188
+      }
+    },
+    {
+      "filename": "203-I0-s11-weights.f64le",
+      "sha256": "645d1288066dd619457a2227cf3fd52ac556cb1f832f6327ac02febcb4583e30",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.153213410901031e-14,
+      "maximumIndependentRelativeWeightDifference": 3.103494753541222e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620657323919107,
+        "terminal46": 0.5576842864371041
+      }
+    },
+    {
+      "filename": "203-I0-s12-weights.f64le",
+      "sha256": "c7c5aa298f80811769a33b101a7851ea199649c4407675563394290bb97bb0a7",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.541371348787077e-14,
+      "maximumIndependentRelativeWeightDifference": 3.2157063992629264e-15,
+      "minimumSampleJ": {
+        "control45": 0.562065122150991,
+        "terminal46": 0.5576842659559351
+      }
+    },
+    {
+      "filename": "203-I0-s13-weights.f64le",
+      "sha256": "ef29ce6bde4899d0b82d5f778c665ee26eafe1301fc2714cbdfa09828b6966f0",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 5.765434816073799e-15,
+      "maximumIndependentRelativeWeightDifference": 3.153289660082768e-15,
+      "minimumSampleJ": {
+        "control45": 0.56206481703053,
+        "terminal46": 0.5576842557766308
+      }
+    },
+    {
+      "filename": "203-I0-s14-weights.f64le",
+      "sha256": "2fc5469dec52936b7249d50c741ababed7ed3876042e7b978267b410f487953b",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 7.883349646468255e-15,
+      "maximumIndependentRelativeWeightDifference": 2.979026479597764e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620646644702957,
+        "terminal46": 0.5576842507023229
+      }
+    },
+    {
+      "filename": "203-I0-s15-weights.f64le",
+      "sha256": "b524a94e54eca186fe8bf47fc4b276416af8efa4b470662fd3ccc4ae86ff17c6",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.341472506936094e-14,
+      "maximumIndependentRelativeWeightDifference": 3.0343232493308915e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645881901472,
+        "terminal46": 0.557684248168974
+      }
+    },
+    {
+      "filename": "203-I0-s16-weights.f64le",
+      "sha256": "8d13fb70c72a1880bff77b00308739ccef580f0e1ec1543db33a8b57cdbea6ba",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 4.294660628299871e-14,
+      "maximumIndependentRelativeWeightDifference": 2.96615130360921e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645500500209,
+        "terminal46": 0.557684246903149
+      }
+    },
+    {
+      "filename": "203-I0-s17-weights.f64le",
+      "sha256": "6b923aaced8b16970b8f60240898045d4870582bf667dc5e27668f5b4e47eba6",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 8.82464512664357e-15,
+      "maximumIndependentRelativeWeightDifference": 3.040447722979059e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645309799887,
+        "terminal46": 0.5576842462706154
+      }
+    },
+    {
+      "filename": "203-I0-s18-weights.f64le",
+      "sha256": "3e07f9e34278a64d13da25666127f5721997277507ee21b86e7bc114350992a6",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.376644639756397e-14,
+      "maximumIndependentRelativeWeightDifference": 2.9824695419109227e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645214449762,
+        "terminal46": 0.5576842459543329
+      }
+    },
+    {
+      "filename": "203-I0-s19-weights.f64le",
+      "sha256": "b83d9f361d91789a1405830284929701dc7755db037a39ed6a54e905858debbd",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 8.82464512664357e-15,
+      "maximumIndependentRelativeWeightDifference": 3.202683845246973e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645166774736,
+        "terminal46": 0.5576842457961959
+      }
+    },
+    {
+      "filename": "203-I0-s20-weights.f64le",
+      "sha256": "0eb66aa122b8158c36b397408c861a77f6c9a3f9cbfdcc6973cfb2f11db8cafc",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.317940119931711e-14,
+      "maximumIndependentRelativeWeightDifference": 2.9790264795975102e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645142938075,
+        "terminal46": 0.5576842457171979
+      }
+    },
+    {
+      "filename": "203-I0-core-weights.f64le",
+      "sha256": "ba01e4ee69f53abd4906daa73256795b44a1d2ff373b88805917914fdceb45a2",
+      "bytes": 16000,
+      "points": 2000,
+      "maximumPhysicalMomentRelativeError": 7.409024970911163e-15,
+      "maximumIndependentRelativeWeightDifference": 2.6309694372376575e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645120329681,
+        "terminal46": 0.5576842456781446
+      }
+    },
+    {
+      "filename": "206-I0-s1-weights.f64le",
+      "sha256": "356d88f7dc6db78c21639fd7912534d5aba946d8ba997271f23c1712fd028dcf",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.1595417914253649e-14,
+      "maximumIndependentRelativeWeightDifference": 4.0213865336816465e-15,
+      "minimumSampleJ": {
+        "control45": 0.5629894747744881,
+        "terminal46": 0.43648714840853653
+      }
+    },
+    {
+      "filename": "206-I0-s2-weights.f64le",
+      "sha256": "d1bd199d940f056ac256f4bbe29d8ae9be64589a7f21c35b29278b6fe73c71ab",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 4.3223063192917596e-15,
+      "maximumIndependentRelativeWeightDifference": 4.0494405877173565e-15,
+      "minimumSampleJ": {
+        "control45": 0.5625269163773101,
+        "terminal46": 0.41042929935819633
+      }
+    },
+    {
+      "filename": "206-I0-s3-weights.f64le",
+      "sha256": "7425d039302db71e629ec569a250a17e51ed7e85e1dabcd9c9e7e8b8c15ab515",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 3.6619539649555895e-14,
+      "maximumIndependentRelativeWeightDifference": 3.909342708738117e-15,
+      "minimumSampleJ": {
+        "control45": 0.5622956949025795,
+        "terminal46": 0.3980193381015416
+      }
+    },
+    {
+      "filename": "206-I0-s4-weights.f64le",
+      "sha256": "ecf767a65615d909976cbb900649b1be7123c8b4338b66c773a67b67383fc4db",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.617396604460086e-14,
+      "maximumIndependentRelativeWeightDifference": 4.019916298033321e-15,
+      "minimumSampleJ": {
+        "control45": 0.5621800985964532,
+        "terminal46": 0.39196887451104867
+      }
+    },
+    {
+      "filename": "206-I0-s5-weights.f64le",
+      "sha256": "06145d7339da610bc577ec857d87f63abae3c6be664d0a186a66c22e2ef689c8",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 7.011741362406868e-14,
+      "maximumIndependentRelativeWeightDifference": 3.7977236938629026e-15,
+      "minimumSampleJ": {
+        "control45": 0.5621223040510055,
+        "terminal46": 0.3889822440013552
+      }
+    },
+    {
+      "filename": "206-I0-s6-weights.f64le",
+      "sha256": "dc5df49443fe931a321d82b0afbaa41540e2b947664a167d266059b452b60167",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.881537546194611e-14,
+      "maximumIndependentRelativeWeightDifference": 4.062611597703027e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620934076799176,
+        "terminal46": 0.38749857557176387
+      }
+    },
+    {
+      "filename": "206-I0-s7-weights.f64le",
+      "sha256": "1273fdfc2a4c651717d865debe8411b7b8a6519e15976b5bca2ae882265fc15e",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.653415823787545e-14,
+      "maximumIndependentRelativeWeightDifference": 3.694417633586759e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620789597202913,
+        "terminal46": 0.38675915262727595
+      }
+    },
+    {
+      "filename": "206-I0-s8-weights.f64le",
+      "sha256": "c57b7409c45daa2ec567265c5c19717c61361901d8d7feef6cec506beaae5d88",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.0925829862654591e-14,
+      "maximumIndependentRelativeWeightDifference": 3.626463570895497e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620717357965638,
+        "terminal46": 0.3863900439166499
+      }
+    },
+    {
+      "filename": "206-I0-s9-weights.f64le",
+      "sha256": "2eee4645e69e3cbcca634eeb6a59f4094d7de09f5ab261a2a61e36eaed0f6c66",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.4853261335928578e-14,
+      "maximumIndependentRelativeWeightDifference": 4.143230378557608e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620681238485711,
+        "terminal46": 0.38620564024560344
+      }
+    },
+    {
+      "filename": "206-I0-s10-weights.f64le",
+      "sha256": "3c857cad4436512b233f29895dd926753385ba633bba14e15cab051588928ae5",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 3.9621141260176003e-14,
+      "maximumIndependentRelativeWeightDifference": 4.062611597701065e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620663178780579,
+        "terminal46": 0.3861134760804555
+      }
+    },
+    {
+      "filename": "206-I0-s11-weights.f64le",
+      "sha256": "1df14afe75d5681d484932fac1aaeb99af83b30e29f446994612193534fae5da",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.8729994050265015e-14,
+      "maximumIndependentRelativeWeightDifference": 3.882151449083737e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620654148939795,
+        "terminal46": 0.3860674034145883
+      }
+    },
+    {
+      "filename": "206-I0-s12-weights.f64le",
+      "sha256": "7f14b4925151c9fbbb6916d15c8736269ab6754901f46415f10c8e6fa326ba4d",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.0805765798229817e-14,
+      "maximumIndependentRelativeWeightDifference": 3.784330649669361e-15,
+      "minimumSampleJ": {
+        "control45": 0.562064963402026,
+        "terminal46": 0.38604436943609477
+      }
+    },
+    {
+      "filename": "206-I0-s13-weights.f64le",
+      "sha256": "22eafce82013c00bdb97975df0ec43cace6b8fbda9871d0deaac753297e451af",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 5.258806021805178e-14,
+      "maximumIndependentRelativeWeightDifference": 4.16057304811008e-15,
+      "minimumSampleJ": {
+        "control45": 0.562064737656092,
+        "terminal46": 0.38603285303603313
+      }
+    },
+    {
+      "filename": "206-I0-s14-weights.f64le",
+      "sha256": "a33bb162dbfb97f812b7165ef90d7ca00cbe223150644938720ba558ed6796e5",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.4407687730973088e-14,
+      "maximumIndependentRelativeWeightDifference": 3.884278479898351e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620646247833317,
+        "terminal46": 0.3860270949823913
+      }
+    },
+    {
+      "filename": "206-I0-s15-weights.f64le",
+      "sha256": "9077afa80c5c6579c765983c939f66119200f7db4e33101e1ff3ee4fa6e96c67",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 4.250267880637061e-14,
+      "maximumIndependentRelativeWeightDifference": 4.020943162429074e-15,
+      "minimumSampleJ": {
+        "control45": 0.562064568346593,
+        "terminal46": 0.38602421599311976
+      }
+    },
+    {
+      "filename": "206-I0-s16-weights.f64le",
+      "sha256": "a5f457edc70f38d8c4e5d0076aea7a99593d521ae37c875eea8c41f1ba5265f2",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.485326133592858e-14,
+      "maximumIndependentRelativeWeightDifference": 3.791302824117965e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645401284141,
+        "terminal46": 0.38602277650689243
+      }
+    },
+    {
+      "filename": "206-I0-s17-weights.f64le",
+      "sha256": "841d34f5bac07f113417d0de50f2e12faba47b6400425950e1ab083c174e7c55",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.6894350431149768e-14,
+      "maximumIndependentRelativeWeightDifference": 3.786251791336348e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645260192394,
+        "terminal46": 0.3860220567665778
+      }
+    },
+    {
+      "filename": "206-I0-s18-weights.f64le",
+      "sha256": "5328e70bcb27992e97e48bcf5e6480efd3a3572c583c57532071821c8d72ffb8",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.2091787854158738e-14,
+      "maximumIndependentRelativeWeightDifference": 3.566740511192206e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645189651767,
+        "terminal46": 0.38602169689659566
+      }
+    },
+    {
+      "filename": "206-I0-s19-weights.f64le",
+      "sha256": "ef37041914a7e4f2ae62f05e75e7dce307dd4639244ec1a3ecb4bf00d73d8387",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.1835720041959422e-14,
+      "maximumIndependentRelativeWeightDifference": 4.101917579046468e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645154375499,
+        "terminal46": 0.386021516962102
+      }
+    },
+    {
+      "filename": "206-I0-s20-weights.f64le",
+      "sha256": "511ef1746e5ff44206f3efdff114e91be8faf49d88ffa47ddd24fa44e946c94d",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.521345352920291e-14,
+      "maximumIndependentRelativeWeightDifference": 3.7394934030015445e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645136739891,
+        "terminal46": 0.3860214269950204
+      }
+    },
+    {
+      "filename": "206-I0-core-weights.f64le",
+      "sha256": "ff4f8fd0d348ec50909afee4238b90e58cc32d5cdeacef97cb0b07556b93a09a",
+      "bytes": 16000,
+      "points": 2000,
+      "maximumPhysicalMomentRelativeError": 4.152340628090604e-14,
+      "maximumIndependentRelativeWeightDifference": 3.10825933634713e-15,
+      "minimumSampleJ": {
+        "control45": 0.562064512007088,
+        "terminal46": 0.38602134124679516
+      }
+    },
+    {
+      "filename": "246-I0-s1-weights.f64le",
+      "sha256": "4d3dd9442b00202b9772707edf427b57379c56c39612fda6a6d7a5abde4cc424",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.1406086120353364e-14,
+      "maximumIndependentRelativeWeightDifference": 3.1372082128471547e-15,
+      "minimumSampleJ": {
+        "control45": 1.518842666260439,
+        "terminal46": 1.1629224582504207
+      }
+    },
+    {
+      "filename": "246-I0-s2-weights.f64le",
+      "sha256": "f01f91cfbea792fad49bf9e5ce6df63db10c123d8e91ec37465066dd2a6f40ef",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.0325509540531012e-14,
+      "maximumIndependentRelativeWeightDifference": 3.0867104770393075e-15,
+      "minimumSampleJ": {
+        "control45": 1.5158003226855568,
+        "terminal46": 1.063030553888764
+      }
+    },
+    {
+      "filename": "246-I0-s3-weights.f64le",
+      "sha256": "4dcad69342e8ac3644034efd59ffeb7d63d24890410e86aa46b27697b00d6b16",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.2572044111858356e-14,
+      "maximumIndependentRelativeWeightDifference": 3.203759142673454e-15,
+      "minimumSampleJ": {
+        "control45": 1.5142797569285371,
+        "terminal46": 1.0120311115003253
+      }
+    },
+    {
+      "filename": "246-I0-s4-weights.f64le",
+      "sha256": "6e8cca225478a306a651fce040b38257f0bb34dcd855febb722bfd11dcd57290",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.3086983022300957e-14,
+      "maximumIndependentRelativeWeightDifference": 3.523137098143118e-15,
+      "minimumSampleJ": {
+        "control45": 1.5135196255574925,
+        "terminal46": 0.9862681612336034
+      }
+    },
+    {
+      "filename": "246-I0-s5-weights.f64le",
+      "sha256": "a04cdbc5d99f5133dd0ca460ab33366a00348f993ac64c7fb047271b8be971dd",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.3086983022301047e-14,
+      "maximumIndependentRelativeWeightDifference": 3.416876029985969e-15,
+      "minimumSampleJ": {
+        "control45": 1.513139597748418,
+        "terminal46": 0.9733208967668501
+      }
+    },
+    {
+      "filename": "246-I0-s6-weights.f64le",
+      "sha256": "dd85ca96126f1dd427666a034e8c1c9ecf3b3c38ef98187f5338d769c7221988",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.497332540035427e-14,
+      "maximumIndependentRelativeWeightDifference": 3.3413318779139e-15,
+      "minimumSampleJ": {
+        "control45": 1.5129495933133938,
+        "terminal46": 0.966830819442164
+      }
+    },
+    {
+      "filename": "246-I0-s7-weights.f64le",
+      "sha256": "636678b85070730c48ec33d85621a7f8c3e086aa995052899c122d1981648609",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.3687303344424949e-14,
+      "maximumIndependentRelativeWeightDifference": 3.3042240520253183e-15,
+      "minimumSampleJ": {
+        "control45": 1.5128545934631539,
+        "terminal46": 0.9635816697867033
+      }
+    },
+    {
+      "filename": "246-I0-s8-weights.f64le",
+      "sha256": "2d8bbef21bf6bd1b287b6af9cf364880b0987e269751c9e78da2f369fe07c7b2",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 5.8831391568142355e-15,
+      "maximumIndependentRelativeWeightDifference": 3.2351262075703897e-15,
+      "minimumSampleJ": {
+        "control45": 1.512807094130549,
+        "terminal46": 0.9619560672464383
+      }
+    },
+    {
+      "filename": "246-I0-s9-weights.f64le",
+      "sha256": "c8f3796b3f7cb8c32d64ba5c09c739b591c34d55921acdf0223fce0be0e679d6",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 5.522946963539898e-15,
+      "maximumIndependentRelativeWeightDifference": 3.2682855610779458e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127833446111592,
+        "terminal46": 0.9611430090523354
+      }
+    },
+    {
+      "filename": "246-I0-s10-weights.f64le",
+      "sha256": "670a5a486abaadf94aeddef7920400181e0c9646f68bc06d86ee1db32a833537",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 6.723587607787701e-15,
+      "maximumIndependentRelativeWeightDifference": 3.159052532824009e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127714698891275,
+        "terminal46": 0.9607364157243898
+      }
+    },
+    {
+      "filename": "246-I0-s11-weights.f64le",
+      "sha256": "2b659e7891f669a61d46e2162edd3ee743c054712d5e6bc8c12adde62522c1fa",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.0445573604955892e-14,
+      "maximumIndependentRelativeWeightDifference": 3.296857232722099e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127655325365355,
+        "terminal46": 0.9605331030033488
+      }
+    },
+    {
+      "filename": "246-I0-s12-weights.f64le",
+      "sha256": "b455c720e62b74506dcf01ed47461be39259b63f6b34f9c35a4546da2090da07",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.221185191858437e-14,
+      "maximumIndependentRelativeWeightDifference": 3.3839535001749724e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127625638633184,
+        "terminal46": 0.96043144262833
+      }
+    },
+    {
+      "filename": "246-I0-s13-weights.f64le",
+      "sha256": "4c72e1a499eb2b0b119c6b4a5bb0a3c91a78aeaeeedf93dbab6ac6f3e3cb3330",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.0290826887787885e-14,
+      "maximumIndependentRelativeWeightDifference": 3.2360425848122735e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127610795267368,
+        "terminal46": 0.9603806114372746
+      }
+    },
+    {
+      "filename": "246-I0-s14-weights.f64le",
+      "sha256": "3a8fd5de9a774cba14bbbb926ba28ff43b90e632992e03120b9186dd2c660fa5",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.8489865921416176e-14,
+      "maximumIndependentRelativeWeightDifference": 3.0267068202120024e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127603373590677,
+        "terminal46": 0.9603551955908198
+      }
+    },
+    {
+      "filename": "246-I0-s15-weights.f64le",
+      "sha256": "a178d369d9ab65f8277be1d0b6d9283d4407ae3117bde8171878a7553a4910b7",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.881537546194729e-15,
+      "maximumIndependentRelativeWeightDifference": 3.593866875617336e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127599662749354,
+        "terminal46": 0.9603424876048734
+      }
+    },
+    {
+      "filename": "246-I0-s16-weights.f64le",
+      "sha256": "6054ddfd94f3c8b80882e929ff33beb583dae9bcceef780a0d5b6624e53853aa",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.4767879924247987e-14,
+      "maximumIndependentRelativeWeightDifference": 3.694124100876948e-15,
+      "minimumSampleJ": {
+        "control45": 1.512759780732983,
+        "terminal46": 0.9603361335961023
+      }
+    },
+    {
+      "filename": "246-I0-s17-weights.f64le",
+      "sha256": "92710debd161369654fa2c05c5a7e8059af372f09762e53124d068f822d1fa00",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.5488264310796668e-14,
+      "maximumIndependentRelativeWeightDifference": 3.4527675632835522e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596879620084,
+        "terminal46": 0.9603329565877645
+      }
+    },
+    {
+      "filename": "246-I0-s18-weights.f64le",
+      "sha256": "3911a99845a3ccbc685622b5c5e81b7f53739bfa103e5225e0c07761d55fb2a4",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.0565637669380672e-14,
+      "maximumIndependentRelativeWeightDifference": 3.1275371596515022e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596415767195,
+        "terminal46": 0.9603313680826555
+      }
+    },
+    {
+      "filename": "246-I0-s19-weights.f64le",
+      "sha256": "a2dcf45efcb22bd26ac6c05bff7f23ceef561a5118eab293a10b7bd1956a9bd8",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 9.725189218407211e-15,
+      "maximumIndependentRelativeWeightDifference": 3.2712604172135016e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596183837624,
+        "terminal46": 0.9603305738300867
+      }
+    },
+    {
+      "filename": "246-I0-s20-weights.f64le",
+      "sha256": "715c9bda18e54a44482b99a9f22301d5c61115544248cd1dea13e4c89b082676",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.0290826887787885e-14,
+      "maximumIndependentRelativeWeightDifference": 3.1251700410078576e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596067877032,
+        "terminal46": 0.9603301767034149
+      }
+    },
+    {
+      "filename": "246-I0-core-weights.f64le",
+      "sha256": "d1e934091a28ff8108747950fc30f0121655a1ad63d7c9bc688986df35cced3a",
+      "bytes": 16000,
+      "points": 2000,
+      "maximumPhysicalMomentRelativeError": 2.233191598300915e-14,
+      "maximumIndependentRelativeWeightDifference": 3.232707140531352e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127595957272248,
+        "terminal46": 0.960329798153375
+      }
+    },
+    {
+      "filename": "247-I0-s1-weights.f64le",
+      "sha256": "fe39ed9f82d5bf424616676c95ec69f02fac9792a914efa4beaf33ab7e99a87a",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 9.425667724457037e-15,
+      "maximumIndependentRelativeWeightDifference": 3.973639162489665e-15,
+      "minimumSampleJ": {
+        "control45": 1.5191259926347724,
+        "terminal46": 0.4785067606114307
+      }
+    },
+    {
+      "filename": "247-I0-s2-weights.f64le",
+      "sha256": "cb9a0357936d5ad7724322b4e5a13da3a9ca1cfb3c18840313933df6b13bbe4d",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 3.1418892414856933e-15,
+      "maximumIndependentRelativeWeightDifference": 4.013955302921596e-15,
+      "minimumSampleJ": {
+        "control45": 1.5159419327418462,
+        "terminal46": 0.2393910850941516
+      }
+    },
+    {
+      "filename": "247-I0-s3-weights.f64le",
+      "sha256": "a47194fffcf4417ef6637c3dec6fd965ca3740f2f117e759172c0ba78db0babe",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.328694378983527e-14,
+      "maximumIndependentRelativeWeightDifference": 4.202976121340669e-15,
+      "minimumSampleJ": {
+        "control45": 1.5143505486732558,
+        "terminal46": 0.11973040711764868
+      }
+    },
+    {
+      "filename": "247-I0-s4-weights.f64le",
+      "sha256": "7fd46ddb86135d7ea134dde1983e7e742fe151066c04754b4fa760d60c79c769",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.6079080235838797e-14,
+      "maximumIndependentRelativeWeightDifference": 4.0544028796615014e-15,
+      "minimumSampleJ": {
+        "control45": 1.513555018109515,
+        "terminal46": 0.059874401382766076
+      }
+    },
+    {
+      "filename": "247-I0-s5-weights.f64le",
+      "sha256": "449f254121e2ba9485ef6556a047b95f506acc05c1908bfacd4880410839e68c",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.6263897250043834e-14,
+      "maximumIndependentRelativeWeightDifference": 3.908708143822106e-15,
+      "minimumSampleJ": {
+        "control45": 1.5131572931944115,
+        "terminal46": 0.02993998724258645
+      }
+    },
+    {
+      "filename": "247-I0-s6-weights.f64le",
+      "sha256": "57b3af201bc38c50b4de9931a97694cb9d8a26efb8fa03066e77aa61d988827f",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.531993094609103e-14,
+      "maximumIndependentRelativeWeightDifference": 3.728161838850251e-15,
+      "minimumSampleJ": {
+        "control45": 1.5129584408295504,
+        "terminal46": 0.01497117803089551
+      }
+    },
+    {
+      "filename": "247-I0-s7-weights.f64le",
+      "sha256": "e446a72ea46f1804761c693120369b3f2e98ec26712c89c1c1a6aec3e1df6314",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.4395845875065816e-14,
+      "maximumIndependentRelativeWeightDifference": 4.152276659336721e-15,
+      "minimumSampleJ": {
+        "control45": 1.5128590171691456,
+        "terminal46": 0.007486372973756168
+      }
+    },
+    {
+      "filename": "247-I0-s8-weights.f64le",
+      "sha256": "255a7fa7ead6f5ae021806138d5fa129ed879625c88e9c99a7a3929293bdea42",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.5504747960296084e-14,
+      "maximumIndependentRelativeWeightDifference": 4.567326431151085e-15,
+      "minimumSampleJ": {
+        "control45": 1.5128093059703824,
+        "terminal46": 0.003743870343427933
+      }
+    },
+    {
+      "filename": "247-I0-s9-weights.f64le",
+      "sha256": "bebb51b8f4fe34a6b13a68fe3a2d72b9d973d4a63c52e8d3cbe6ed7b8f874595",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 7.762314596611853e-15,
+      "maximumIndependentRelativeWeightDifference": 3.930270859277617e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127844505278762,
+        "terminal46": 0.001872594004176116
+      }
+    },
+    {
+      "filename": "247-I0-s10-weights.f64le",
+      "sha256": "1d7f8a9bbed03f59a17d322a27b1128c17e56dc990432e24427d694ac8975dbb",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.5709446207428752e-14,
+      "maximumIndependentRelativeWeightDifference": 4.358641903611881e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127720228467756,
+        "terminal46": 0.0009369495782113247
+      }
+    },
+    {
+      "filename": "247-I0-s11-weights.f64le",
+      "sha256": "08cdb7fabbef2d8885aeb0b55310419eb8d8e19b4c0652a249a43eb4bef078d2",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.8481701420504417e-14,
+      "maximumIndependentRelativeWeightDifference": 4.1013632657541205e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127658090155724,
+        "terminal46": 0.00046912580135690074
+      }
+    },
+    {
+      "filename": "247-I0-s12-weights.f64le",
+      "sha256": "409226186bd6fa8886bcc04728ad880042026808f4bb643db0972c81ccc48b9c",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 3.2712611514292816e-14,
+      "maximumIndependentRelativeWeightDifference": 3.980936573317571e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127627021025354,
+        "terminal46": 0.00023521352247937607
+      }
+    },
+    {
+      "filename": "247-I0-s13-weights.f64le",
+      "sha256": "7ece41c5ad8960ee006d00fa1d63d4bbb863096bb4096de7157ba25989771219",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.7187982321069106e-14,
+      "maximumIndependentRelativeWeightDifference": 4.024394184433651e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127611486467638,
+        "terminal46": 0.00011825728498291792
+      }
+    },
+    {
+      "filename": "247-I0-s14-weights.f64le",
+      "sha256": "8a32e1e4cb70167f988335148adb05baa09965929e32aa68ef0c720c8c92530a",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.478536113640353e-14,
+      "maximumIndependentRelativeWeightDifference": 4.167314187101296e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127603719191483,
+        "terminal46": 5.977914145890784e-05
+      }
+    },
+    {
+      "filename": "247-I0-s15-weights.f64le",
+      "sha256": "56df3751f4a8e6b3365deca68e94769ac800af6c36530ee2c74f9ebe219824d1",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.6079080235838842e-14,
+      "maximumIndependentRelativeWeightDifference": 3.9302708592773795e-15,
+      "minimumSampleJ": {
+        "control45": 1.512759983554802,
+        "terminal46": 3.054006382452682e-05
+      }
+    },
+    {
+      "filename": "247-I0-s16-weights.f64le",
+      "sha256": "e27902c3b6e55767666bae84e1cc467c1d04a5b52ba7342046f484181f903467",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.0329871562554857e-14,
+      "maximumIndependentRelativeWeightDifference": 4.007000991144646e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127597893740705,
+        "terminal46": 1.5920523835460045e-05
+      }
+    },
+    {
+      "filename": "247-I0-s17-weights.f64le",
+      "sha256": "f1b0f64926c4f68953bfb85783f37a0052e581a87d435672dfcb5fe3fde0d642",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 9.240850710252208e-15,
+      "maximumIndependentRelativeWeightDifference": 4.3338899901464795e-15,
+      "minimumSampleJ": {
+        "control45": 1.512759692282388,
+        "terminal46": 8.610753070412113e-06
+      }
+    },
+    {
+      "filename": "247-I0-s18-weights.f64le",
+      "sha256": "25f52b0847b791378aa5d884a365d4fdb1060ebd9e29553e511fa22bad305f5d",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 7.023046539791678e-15,
+      "maximumIndependentRelativeWeightDifference": 3.714488640998931e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596437366404,
+        "terminal46": 4.955867343451864e-06
+      }
+    },
+    {
+      "filename": "247-I0-s19-weights.f64le",
+      "sha256": "057eab9601dda118e4766134d0cd1ab7fb430532b747d253c1703b3e85ba10bc",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 2.7722552130756625e-15,
+      "maximumIndependentRelativeWeightDifference": 3.716309870345688e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596194642752,
+        "terminal46": 3.128424938577249e-06
+      }
+    },
+    {
+      "filename": "247-I0-s20-weights.f64le",
+      "sha256": "0b9d8a5df96ea315fa6e3fd84660cd8758c934ba2bc2550daf4db6160062ea11",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 8.87121668184212e-15,
+      "maximumIndependentRelativeWeightDifference": 4.036944734490191e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596073279597,
+        "terminal46": 2.2147036086803933e-06
+      }
+    },
+    {
+      "filename": "247-I0-core-weights.f64le",
+      "sha256": "7cb6e6d2b4b7b24ab5a38e2ddbf950caf09f73c9e489782ab76eae0ab36bdaa4",
+      "bytes": 16000,
+      "points": 2000,
+      "maximumPhysicalMomentRelativeError": 1.5755650460980012e-14,
+      "maximumIndependentRelativeWeightDifference": 3.5818283323928695e-15,
+      "minimumSampleJ": {
+        "control45": 1.512759596044508,
+        "terminal46": 1.3437292342888716e-06
+      }
+    },
+    {
+      "filename": "248-I0-s1-weights.f64le",
+      "sha256": "9717e0d860688bf30fab51c2c2447a7dfb38e204864e99a206c732366ba8ad72",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 8.168282968462325e-15,
+      "maximumIndependentRelativeWeightDifference": 3.68983041120638e-15,
+      "minimumSampleJ": {
+        "control45": 1.8364491801664342,
+        "terminal46": 1.5561794315363082
+      }
+    },
+    {
+      "filename": "248-I0-s2-weights.f64le",
+      "sha256": "18aae0670989821845077d55e37336c963723fc45000cfe8eccf61efdaaf69e0",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 6.35310897547062e-15,
+      "maximumIndependentRelativeWeightDifference": 3.845923630884844e-15,
+      "minimumSampleJ": {
+        "control45": 1.6747628178299057,
+        "terminal46": 1.24890302262983
+      }
+    },
+    {
+      "filename": "248-I0-s3-weights.f64le",
+      "sha256": "e9a8411eca57689bf78065220363ffd6c77b31c4ae00a96286a52530988c70db",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 9.0758699649578e-15,
+      "maximumIndependentRelativeWeightDifference": 4.041241652646413e-15,
+      "minimumSampleJ": {
+        "control45": 1.5938008140482125,
+        "terminal46": 1.0944148067679014
+      }
+    },
+    {
+      "filename": "248-I0-s4-weights.f64le",
+      "sha256": "3212dfa4816fcfde020a8c8bd37b99a410b1ff81da3f598532286371e0731273",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 5.186211408547283e-15,
+      "maximumIndependentRelativeWeightDifference": 3.856350377678485e-15,
+      "minimumSampleJ": {
+        "control45": 1.55329010650431,
+        "terminal46": 1.0169585106368118
+      }
+    },
+    {
+      "filename": "248-I0-s5-weights.f64le",
+      "sha256": "53f633536f979dfc1a7c28ab990d91ac758ba74c0670850b8b581a75b24ffdfe",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.140966509880399e-14,
+      "maximumIndependentRelativeWeightDifference": 3.5081346877275197e-15,
+      "minimumSampleJ": {
+        "control45": 1.5330273263191057,
+        "terminal46": 0.9781773548527333
+      }
+    },
+    {
+      "filename": "248-I0-s6-weights.f64le",
+      "sha256": "494db5a5b7c366da8b1c7c98559f29714e018e03bb542f84b94f0fe54e0f41aa",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 7.131040686752481e-15,
+      "maximumIndependentRelativeWeightDifference": 3.5943496518433074e-15,
+      "minimumSampleJ": {
+        "control45": 1.5228940796231143,
+        "terminal46": 0.9587735299469563
+      }
+    },
+    {
+      "filename": "248-I0-s7-weights.f64le",
+      "sha256": "d859d40aafc60e8a32402a9bfdfa971add034a576276147cdf9547ddca01575b",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.5688289510855457e-14,
+      "maximumIndependentRelativeWeightDifference": 3.918148749595645e-15,
+      "minimumSampleJ": {
+        "control45": 1.5178269921242509,
+        "terminal46": 0.9490683063560711
+      }
+    },
+    {
+      "filename": "248-I0-s8-weights.f64le",
+      "sha256": "941066e1a5f4b546dc06aa8d645b548aff23400b57cf4e132cf431564ca2c450",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.5169668370000718e-14,
+      "maximumIndependentRelativeWeightDifference": 4.054035854286013e-15,
+      "minimumSampleJ": {
+        "control45": 1.5152933323368476,
+        "terminal46": 0.9442148668524474
+      }
+    },
+    {
+      "filename": "248-I0-s9-weights.f64le",
+      "sha256": "6af10a109f8ac22c9672dedde22ab1e669da4c4e3a236e95002b39d8087affe0",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 6.093798405043022e-15,
+      "maximumIndependentRelativeWeightDifference": 4.51583907685035e-15,
+      "minimumSampleJ": {
+        "control45": 1.5140264734337898,
+        "terminal46": 0.9417879401829853
+      }
+    },
+    {
+      "filename": "248-I0-s10-weights.f64le",
+      "sha256": "b82f0ef2b62206e35a119b6a97335339d1092abaa3fd7af8f53425e6fabb68bf",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 6.353108975470385e-15,
+      "maximumIndependentRelativeWeightDifference": 4.311181159185412e-15,
+      "minimumSampleJ": {
+        "control45": 1.5133930367300619,
+        "terminal46": 0.9405744251206261
+      }
+    },
+    {
+      "filename": "248-I0-s11-weights.f64le",
+      "sha256": "3269852b7b003b2082f5c8742b127cb01ace39326cc710ebf0e14015f40ecb80",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 7.520006542393516e-15,
+      "maximumIndependentRelativeWeightDifference": 3.836068711226072e-15,
+      "minimumSampleJ": {
+        "control45": 1.5130763165653196,
+        "terminal46": 0.9399676546572764
+      }
+    },
+    {
+      "filename": "248-I0-s12-weights.f64le",
+      "sha256": "7afa13fb8ad66890c30d551b1a368eecc9bff791d122b6d5e68e0941a4d01c69",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.1150354528376592e-14,
+      "maximumIndependentRelativeWeightDifference": 3.821094603489057e-15,
+      "minimumSampleJ": {
+        "control45": 1.5129179560289288,
+        "terminal46": 0.9396642661925948
+      }
+    },
+    {
+      "filename": "248-I0-s13-weights.f64le",
+      "sha256": "18473adf584262f00196321ca8df5e32ec2cff98265ce76704af62b965c308a3",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.5558634225641755e-14,
+      "maximumIndependentRelativeWeightDifference": 4.054751897282642e-15,
+      "minimumSampleJ": {
+        "control45": 1.5128387756481247,
+        "terminal46": 0.9395125711526287
+      }
+    },
+    {
+      "filename": "248-I0-s14-weights.f64le",
+      "sha256": "a50fc0c7e0fba26755f527da1323d7e0b868de3367b27e8145ff12c730e6b18b",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 8.557248824102967e-15,
+      "maximumIndependentRelativeWeightDifference": 3.5070956397619834e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127991854291551,
+        "terminal46": 0.9394367234300046
+      }
+    },
+    {
+      "filename": "248-I0-s15-weights.f64le",
+      "sha256": "a4271bacc2f4b17eef0de5b2e266738c55156f44230d6374862e1dd09deb8335",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.296552852136813e-14,
+      "maximumIndependentRelativeWeightDifference": 3.918148749596341e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127793903123954,
+        "terminal46": 0.939398799518475
+      }
+    },
+    {
+      "filename": "248-I0-s16-weights.f64le",
+      "sha256": "b5f592f1b09fad1d09f6a3f95d663e4124ff6187f2f3d46d85831baa60e47896",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.2187596810086043e-14,
+      "maximumIndependentRelativeWeightDifference": 3.8131546691994616e-15,
+      "minimumSampleJ": {
+        "control45": 1.512769492752646,
+        "terminal46": 0.9393798375496245
+      }
+    },
+    {
+      "filename": "248-I0-s17-weights.f64le",
+      "sha256": "63e042e6fbd01399ab815dc83853d8e0b5e72b63e2dc6545cd264027282955f8",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.2187596810086043e-14,
+      "maximumIndependentRelativeWeightDifference": 4.000925375080189e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127645439717845,
+        "terminal46": 0.9393703565624654
+      }
+    },
+    {
+      "filename": "248-I0-s18-weights.f64le",
+      "sha256": "6e8b2dd3d50f5cfc13c9ba1a38e0ea8df5f96fdac874a1fca860e5ce0fdecf0a",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.2187596810086043e-14,
+      "maximumIndependentRelativeWeightDifference": 3.9353761910606996e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127620695817328,
+        "terminal46": 0.9393656160678049
+      }
+    },
+    {
+      "filename": "248-I0-s19-weights.f64le",
+      "sha256": "c91a036d812b455b90ecbb6fbfe567218fd2ce9501b3eb0605d0d4ce356615bf",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 8.427593538889285e-15,
+      "maximumIndependentRelativeWeightDifference": 3.8451075203531765e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127608323864312,
+        "terminal46": 0.939363245820384
+      }
+    },
+    {
+      "filename": "248-I0-s20-weights.f64le",
+      "sha256": "9f5077d85fabc6970763161d09b8db1139634c880832275c3ea5e9bbb4b14ce9",
+      "bytes": 48000,
+      "points": 6000,
+      "maximumPhysicalMomentRelativeError": 1.296552852136813e-14,
+      "maximumIndependentRelativeWeightDifference": 4.0175958987183475e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127602137888438,
+        "terminal46": 0.9393620606965728
+      }
+    },
+    {
+      "filename": "248-I0-core-weights.f64le",
+      "sha256": "506abe4d2b170022feaf83f7a87a13351513809ca47bbf5529d8bf134525619a",
+      "bytes": 16000,
+      "points": 2000,
+      "maximumPhysicalMomentRelativeError": 1.4821219790988944e-14,
+      "maximumIndependentRelativeWeightDifference": 4.272175291090332e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596241266625,
+        "terminal46": 0.9393609310615963
+      }
+    },
+    {
+      "filename": "197-I1-s1-weights.f64le",
+      "sha256": "3ea23bec1c47248af572e9ef2d9efb4ac04843188bfcbdf21893eacd60272fb4",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.2533876759996093e-15,
+      "maximumIndependentRelativeWeightDifference": 3.3911879818157158e-15,
+      "minimumSampleJ": {
+        "control45": 0.5607113786709221,
+        "terminal46": 0.46948625020222595
+      }
+    },
+    {
+      "filename": "197-I1-s2-weights.f64le",
+      "sha256": "28e25d1e8372bd7202bfd7f33006488314dddb015cd1a055522424dd841e8b62",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 8.643433292556334e-15,
+      "maximumIndependentRelativeWeightDifference": 3.166580304514096e-15,
+      "minimumSampleJ": {
+        "control45": 0.5613880120412436,
+        "terminal46": 0.5323695861775132
+      }
+    },
+    {
+      "filename": "197-I1-s3-weights.f64le",
+      "sha256": "dafe12a491d25109ca4b99f545340c6c8763046508117c1451355ee3d1558f73",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 8.877039597760467e-15,
+      "maximumIndependentRelativeWeightDifference": 3.140126345406767e-15,
+      "minimumSampleJ": {
+        "control45": 0.5617262786633158,
+        "terminal46": 0.5637716638215732
+      }
+    },
+    {
+      "filename": "197-I1-s4-weights.f64le",
+      "sha256": "deb2449827cd118a015c61599d4d7d742aac05596db2977b77a491ea60874bc4",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.4952864859905022e-14,
+      "maximumIndependentRelativeWeightDifference": 3.0230259101110145e-15,
+      "minimumSampleJ": {
+        "control45": 0.5618953994585294,
+        "terminal46": 0.57946088530208
+      }
+    },
+    {
+      "filename": "197-I1-s5-weights.f64le",
+      "sha256": "1efb8ab3c5437ced995d40c1e2bdbc703560b344a93413dfaab8783446c8e761",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.7754079195520808e-14,
+      "maximumIndependentRelativeWeightDifference": 2.9870831470002545e-15,
+      "minimumSampleJ": {
+        "control45": 0.561979956727289,
+        "terminal46": 0.587302301737502
+      }
+    },
+    {
+      "filename": "197-I1-s6-weights.f64le",
+      "sha256": "d9450c3686ed48ad011443671cabb7c88286ea4a98c8f40b2a129e23bb041384",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.2030724718017377e-14,
+      "maximumIndependentRelativeWeightDifference": 3.1349898327077076e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620222345794293,
+        "terminal46": 0.5912221813826946
+      }
+    },
+    {
+      "filename": "197-I1-s7-weights.f64le",
+      "sha256": "9f5396bbc9c816af82447130bae0826032b244608c6dc4abb69c9d25cf9281ab",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 5.489748172299187e-15,
+      "maximumIndependentRelativeWeightDifference": 3.2195988074882467e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620433733099495,
+        "terminal46": 0.5931819103126874
+      }
+    },
+    {
+      "filename": "197-I1-s8-weights.f64le",
+      "sha256": "482f585dd9a96faa3284c8774131935645c24d7462d2e10f54d58f58ed433ebe",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 8.409826987351944e-15,
+      "maximumIndependentRelativeWeightDifference": 3.0592814285864883e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620539426261854,
+        "terminal46": 0.594161721585776
+      }
+    },
+    {
+      "filename": "197-I1-s9-weights.f64le",
+      "sha256": "45094a8ec1895cb6f920562a906fef712a944092a775ff88aaadba6a8a9def89",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.1797118412813143e-14,
+      "maximumIndependentRelativeWeightDifference": 2.882660295239584e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620592272722539,
+        "terminal46": 0.5946516138659386
+      }
+    },
+    {
+      "filename": "197-I1-s10-weights.f64le",
+      "sha256": "44409ca19a96b2447e609752eaf1c797512eca207b851a1bffdc18bbb71b5d63",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.156351210760892e-14,
+      "maximumIndependentRelativeWeightDifference": 3.040224603824363e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620618695921131,
+        "terminal46": 0.5948965566594068
+      }
+    },
+    {
+      "filename": "197-I1-s11-weights.f64le",
+      "sha256": "6205968ca28f1a100696de672eb843cfbc6426d5accbc90689d793ed4279c6db",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 7.008189156126619e-15,
+      "maximumIndependentRelativeWeightDifference": 3.1654719422282064e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620631907512604,
+        "terminal46": 0.5950190272186319
+      }
+    },
+    {
+      "filename": "197-I1-s12-weights.f64le",
+      "sha256": "186259fa6210952eb37d04d6586c558fa2590d73269a1c1b2ac5037ceb534e3c",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 7.4516276897569e-15,
+      "maximumIndependentRelativeWeightDifference": 3.1415862520657424e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620638513308052,
+        "terminal46": 0.595080262288734
+      }
+    },
+    {
+      "filename": "197-I1-s13-weights.f64le",
+      "sha256": "438eafdc2c5c2b2f0b5cfa59b2c3e995cc0fcbf23cc5e0fc9dd7bbc036dbbfc5",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.0512283734189927e-14,
+      "maximumIndependentRelativeWeightDifference": 3.0324667618606333e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620641816204708,
+        "terminal46": 0.5951108797715483
+      }
+    },
+    {
+      "filename": "197-I1-s14-weights.f64le",
+      "sha256": "d03892925561ad95989e4214c26d80faf6ab7b72a1d23849487efc5c0402f9f9",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 2.9200788150527576e-15,
+      "maximumIndependentRelativeWeightDifference": 2.8730753064261834e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620643467650793,
+        "terminal46": 0.5951261884995965
+      }
+    },
+    {
+      "filename": "197-I1-s15-weights.f64le",
+      "sha256": "4e6462fd84e8a62d7b655e72e5d7d8754422080dd02a5e4aa6ad82bd6161d966",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 3.3872914254611985e-15,
+      "maximumIndependentRelativeWeightDifference": 2.8977085563027085e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620644293377532,
+        "terminal46": 0.5951338428605648
+      }
+    },
+    {
+      "filename": "197-I1-s16-weights.f64le",
+      "sha256": "3fed0bf1f137394964491ac4a764eac0a547eeaefebe5ff791f3cd9f98b1bde1",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.0979496344598368e-14,
+      "maximumIndependentRelativeWeightDifference": 3.053488150781732e-15,
+      "minimumSampleJ": {
+        "control45": 0.562064470623984,
+        "terminal46": 0.5951376700402757
+      }
+    },
+    {
+      "filename": "197-I1-s17-weights.f64le",
+      "sha256": "bafd67e48a16396682089c93f67fe6c8c1fd115fa342a1dbd675232c6e0db50a",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 9.461055360770934e-15,
+      "maximumIndependentRelativeWeightDifference": 3.07678123160452e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620644912668992,
+        "terminal46": 0.5951395836296761
+      }
+    },
+    {
+      "filename": "197-I1-s18-weights.f64le",
+      "sha256": "047735abf0fb18235cbc5cb2adea0e5671cd0ac5f1663c09329f16c77014f488",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.7053260279908104e-14,
+      "maximumIndependentRelativeWeightDifference": 3.0498131787338167e-15,
+      "minimumSampleJ": {
+        "control45": 0.562064501588409,
+        "terminal46": 0.5951405404243821
+      }
+    },
+    {
+      "filename": "197-I1-s19-weights.f64le",
+      "sha256": "85f71311890082ac7aafc12640dd9937ba23c6a168e249412c2431fc739107c2",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 8.526630139954052e-15,
+      "maximumIndependentRelativeWeightDifference": 3.1609952038221675e-15,
+      "minimumSampleJ": {
+        "control45": 0.562064506749165,
+        "terminal46": 0.5951410188219547
+      }
+    },
+    {
+      "filename": "197-I1-s20-weights.f64le",
+      "sha256": "d7961c9462d0e8d09a6cf670802cb9a6a7f3b7b32c266d4685b0006345b0e4ef",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.5184409838274338e-14,
+      "maximumIndependentRelativeWeightDifference": 2.9207623494588135e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645093297217,
+        "terminal46": 0.5951412580205712
+      }
+    },
+    {
+      "filename": "197-I1-core-weights.f64le",
+      "sha256": "132b3a696952342b04b341db10dc4b4b282f3400c67f4ce65d3d22264cf652cd",
+      "bytes": 64000,
+      "points": 8000,
+      "maximumPhysicalMomentRelativeError": 2.4893671898324756e-14,
+      "maximumIndependentRelativeWeightDifference": 3.1490542558943543e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645106707113,
+        "terminal46": 0.5951413819044851
+      }
+    },
+    {
+      "filename": "200-I1-s1-weights.f64le",
+      "sha256": "65b50c32c8aed6c8777952b8761810f3a7a5b9a82678ae778d75fe9a5a405476",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 3.3076162846528485e-15,
+      "maximumIndependentRelativeWeightDifference": 3.3018574043448724e-15,
+      "minimumSampleJ": {
+        "control45": 0.5624302660793009,
+        "terminal46": 0.5329888454003721
+      }
+    },
+    {
+      "filename": "200-I1-s2-weights.f64le",
+      "sha256": "d817523a401b888f38c64683e6c3af9519a6274db27447e026fa3e47604bf21f",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 2.672821240123471e-15,
+      "maximumIndependentRelativeWeightDifference": 3.15087408038733e-15,
+      "minimumSampleJ": {
+        "control45": 0.5622473886341346,
+        "terminal46": 0.5587215726394371
+      }
+    },
+    {
+      "filename": "200-I1-s3-weights.f64le",
+      "sha256": "9dde14dfa12679cb7102fb30ac2d86659e8399ebe3fe3e468c3c02b0c6b07830",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 5.500838552254071e-15,
+      "maximumIndependentRelativeWeightDifference": 3.4419790116252583e-15,
+      "minimumSampleJ": {
+        "control45": 0.5621559501819021,
+        "terminal46": 0.5700362580608519
+      }
+    },
+    {
+      "filename": "200-I1-s4-weights.f64le",
+      "sha256": "b19e0fb3aaa902bfcc7a6041850a8abf39a4eb5874377e0903f2b76dfafb7887",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 4.981109904660196e-15,
+      "maximumIndependentRelativeWeightDifference": 3.2727847256308314e-15,
+      "minimumSampleJ": {
+        "control45": 0.5621102310235475,
+        "terminal46": 0.57530299687558
+      }
+    },
+    {
+      "filename": "200-I1-s5-weights.f64le",
+      "sha256": "7bcfe9191a7af23ea757b1d414f278e34d58340f4a933bb2892225091b05ecef",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 7.777047608359128e-15,
+      "maximumIndependentRelativeWeightDifference": 3.2046976681092122e-15,
+      "minimumSampleJ": {
+        "control45": 0.562087371461048,
+        "terminal46": 0.5778383797654927
+      }
+    },
+    {
+      "filename": "200-I1-s6-weights.f64le",
+      "sha256": "64a761cd26abb95afcb68803536a92b830ec0887016c1035b7cda9396938c634",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 7.966731696367874e-15,
+      "maximumIndependentRelativeWeightDifference": 3.2831015098133233e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620759416841815,
+        "terminal46": 0.5790815326382113
+      }
+    },
+    {
+      "filename": "200-I1-s7-weights.f64le",
+      "sha256": "680970451e85c64a94c93443dd71502d6a2a1d36d0f375e509574de84b90a789",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.6502515656762014e-14,
+      "maximumIndependentRelativeWeightDifference": 3.240813291656268e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620702267968124,
+        "terminal46": 0.5796969691885687
+      }
+    },
+    {
+      "filename": "200-I1-s8-weights.f64le",
+      "sha256": "6cdc424292904324be1b234cac65bc9aa21ea63ed0378ca7b990ab4e2bde47b6",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 6.2595749042890375e-15,
+      "maximumIndependentRelativeWeightDifference": 3.1589263070800575e-15,
+      "minimumSampleJ": {
+        "control45": 0.562067369353396,
+        "terminal46": 0.5800031518369884
+      }
+    },
+    {
+      "filename": "200-I1-s9-weights.f64le",
+      "sha256": "478eb748ca2ce29a3fc6e6525c1905bfa642d7c2bfa3e9bcf209cd6efe8b8b4c",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.0622308928490485e-14,
+      "maximumIndependentRelativeWeightDifference": 3.2727847256311114e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620659406316444,
+        "terminal46": 0.580155859172503
+      }
+    },
+    {
+      "filename": "200-I1-s10-weights.f64le",
+      "sha256": "75e41724323fa882c07e29fd10d098f5dd2970e46ddce62ba3080d7b4a8a32a1",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 2.4658931441138624e-15,
+      "maximumIndependentRelativeWeightDifference": 3.2269965998954132e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620652262708519,
+        "terminal46": 0.5802321168328695
+      }
+    },
+    {
+      "filename": "200-I1-s11-weights.f64le",
+      "sha256": "3605343efd3f955914a5cce44bca42d31273cefbc1920da700e39f35db18947e",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.4415990688665658e-14,
+      "maximumIndependentRelativeWeightDifference": 3.2769351158100434e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620648690904757,
+        "terminal46": 0.5802702216599893
+      }
+    },
+    {
+      "filename": "200-I1-s12-weights.f64le",
+      "sha256": "4c77c9c3668485e6f226e5b13f87a8d90a27ba7a5c6c74ff44650ce4a144aa66",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 3.4143135841576557e-15,
+      "maximumIndependentRelativeWeightDifference": 3.159901718816761e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620646905002484,
+        "terminal46": 0.580289268072552
+      }
+    },
+    {
+      "filename": "200-I1-s13-weights.f64le",
+      "sha256": "c9be2862c295d4fc6c802475b7e2f654ce357d2921ae9407db4fae508e3d7d91",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 6.638943080306552e-15,
+      "maximumIndependentRelativeWeightDifference": 3.158298386764515e-15,
+      "minimumSampleJ": {
+        "control45": 0.562064601205218,
+        "terminal46": 0.5802987897785281
+      }
+    },
+    {
+      "filename": "200-I1-s14-weights.f64le",
+      "sha256": "80d1cb295062a8cd7a73d141d4f24cef97ba4629e7a9da625cda1d364bc5b203",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 3.224629496148897e-15,
+      "maximumIndependentRelativeWeightDifference": 3.097781110462799e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645565575199,
+        "terminal46": 0.5803035502565933
+      }
+    },
+    {
+      "filename": "200-I1-s15-weights.f64le",
+      "sha256": "4aa480acc14f5ffc5c6a5b1c26d1de0f1cfe48ba6954fe7a8a09648f162372df",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.2898517984595587e-14,
+      "maximumIndependentRelativeWeightDifference": 3.26111039035075e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645342338577,
+        "terminal46": 0.5803059304018596
+      }
+    },
+    {
+      "filename": "200-I1-s16-weights.f64le",
+      "sha256": "bed739899c4f558f7cbb6d84a9347da1639555c091050bf3edb5334259b07764",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 4.742102200218966e-15,
+      "maximumIndependentRelativeWeightDifference": 3.2914764055093456e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645230720032,
+        "terminal46": 0.580307120450933
+      }
+    },
+    {
+      "filename": "200-I1-s17-weights.f64le",
+      "sha256": "1de9c9965baa70ba761dacc98687d16db522aea043bbabe6702d5619324d4fd9",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.0053256664464207e-14,
+      "maximumIndependentRelativeWeightDifference": 3.472299955345508e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645174909811,
+        "terminal46": 0.5803077154697555
+      }
+    },
+    {
+      "filename": "200-I1-s18-weights.f64le",
+      "sha256": "8ca7c3b660c8f7058a8dd38bd213c20d10c5d53d68d3e913f643930455afd26d",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.270883389658683e-14,
+      "maximumIndependentRelativeWeightDifference": 3.2305275019725113e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645147005299,
+        "terminal46": 0.5803080129775255
+      }
+    },
+    {
+      "filename": "200-I1-s19-weights.f64le",
+      "sha256": "f1c4efcc2d652f7823c99f031ebe7396413b7a9f09a80bd8ab5c87b950535a26",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 6.449258992297794e-15,
+      "maximumIndependentRelativeWeightDifference": 3.168092915096684e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645133053628,
+        "terminal46": 0.5803081617312608
+      }
+    },
+    {
+      "filename": "200-I1-s20-weights.f64le",
+      "sha256": "e51c3177d0f70d37dc4cd5b3e0c122e6d81d106956d758665dfd5516acb5e715",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.8968408800875865e-15,
+      "maximumIndependentRelativeWeightDifference": 3.0858266789739548e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645126077038,
+        "terminal46": 0.5803082361077221
+      }
+    },
+    {
+      "filename": "200-I1-core-weights.f64le",
+      "sha256": "c677a2adec6f2e52a540f1ac9a051a6959dc413542eadec00b66634fff6c87e9",
+      "bytes": 64000,
+      "points": 8000,
+      "maximumPhysicalMomentRelativeError": 4.042642125686669e-15,
+      "maximumIndependentRelativeWeightDifference": 3.002204258656242e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645119484354,
+        "terminal46": 0.5803082744819726
+      }
+    },
+    {
+      "filename": "203-I1-s1-weights.f64le",
+      "sha256": "4a6e8c5d30fac24632b022846efa7032aeeb1031782b28ee0e60ac7e24956fb8",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 2.8496249888120664e-15,
+      "maximumIndependentRelativeWeightDifference": 3.310016552511991e-15,
+      "minimumSampleJ": {
+        "control45": 0.5631919291475344,
+        "terminal46": 0.5580282720244555
+      }
+    },
+    {
+      "filename": "203-I1-s2-weights.f64le",
+      "sha256": "de3dce530464ba0a257acf9eb5524f328317b0055ad048af4509e09f2dea7bb2",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.8237599928396932e-15,
+      "maximumIndependentRelativeWeightDifference": 3.5025788524076958e-15,
+      "minimumSampleJ": {
+        "control45": 0.5626282186313777,
+        "terminal46": 0.5577738732979065
+      }
+    },
+    {
+      "filename": "203-I1-s3-weights.f64le",
+      "sha256": "a810b99ebc30bf0b7fbe2bcbc892791705cc33404c365b248790fe6b6a65e545",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 5.6477728810519296e-15,
+      "maximumIndependentRelativeWeightDifference": 3.373083542768249e-15,
+      "minimumSampleJ": {
+        "control45": 0.5623463647963155,
+        "terminal46": 0.5577085291087154
+      }
+    },
+    {
+      "filename": "203-I1-s4-weights.f64le",
+      "sha256": "290bac7bca8f1baf568190e2cbb8d58a94316a1de0e5ea06dacd69e2886714e8",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 8.118673516512104e-15,
+      "maximumIndependentRelativeWeightDifference": 3.032024604944346e-15,
+      "minimumSampleJ": {
+        "control45": 0.5622054382346383,
+        "terminal46": 0.5576912630367171
+      }
+    },
+    {
+      "filename": "203-I1-s5-weights.f64le",
+      "sha256": "005b4d7b757d13dfdd1ce3b4e694fe59d1a2f787557b716302fd8bedd3e0cd5d",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.1648531567169527e-14,
+      "maximumIndependentRelativeWeightDifference": 3.2850389157284515e-15,
+      "minimumSampleJ": {
+        "control45": 0.562134975042616,
+        "terminal46": 0.5576864742847855
+      }
+    },
+    {
+      "filename": "203-I1-s6-weights.f64le",
+      "sha256": "30d4ece02ac058e97cea1f1ac346d946571d7606a98b3fb746ec6c786d0c3545",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 3.5298580506574312e-15,
+      "maximumIndependentRelativeWeightDifference": 3.159029940167232e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620997434688239,
+        "terminal46": 0.55768504007723
+      }
+    },
+    {
+      "filename": "203-I1-s7-weights.f64le",
+      "sha256": "93b86cefed548b555086fe6e50de70fd87d99c0ad628e24397a3ddc045e207b5",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 8.589321256599743e-15,
+      "maximumIndependentRelativeWeightDifference": 3.144390643309903e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620821276876762,
+        "terminal46": 0.5576845629027923
+      }
+    },
+    {
+      "filename": "203-I1-s8-weights.f64le",
+      "sha256": "826387fe590c751ed83d1fe66a3da57e67c03c1899144aac036fbbb86db3ae49",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.588436122795843e-14,
+      "maximumIndependentRelativeWeightDifference": 3.1942402141712306e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620733197983333,
+        "terminal46": 0.5576843842837547
+      }
+    },
+    {
+      "filename": "203-I1-s9-weights.f64le",
+      "sha256": "258f390b9d6b767387b9935d403b0294b730d474c3afe5e9fcfe95ea2cb42638",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 4.0005057907450854e-15,
+      "maximumIndependentRelativeWeightDifference": 3.231063076860745e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620689158540533,
+        "terminal46": 0.5576843099645162
+      }
+    },
+    {
+      "filename": "203-I1-s10-weights.f64le",
+      "sha256": "b82e77b19aa04a6751ea1b637ef59d228b9f7b66cf8c83a7a83eca9bd9cf8d72",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.6943318643155655e-14,
+      "maximumIndependentRelativeWeightDifference": 3.163213781330215e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620667138820122,
+        "terminal46": 0.5576842765522503
+      }
+    },
+    {
+      "filename": "203-I1-s11-weights.f64le",
+      "sha256": "a1b2476c796e92a86c219d517e3efcdd57f5f559f2bb00dfa68b5328ac0f6d08",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.211917930725717e-14,
+      "maximumIndependentRelativeWeightDifference": 3.2516421897084316e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620656128960331,
+        "terminal46": 0.5576842607829439
+      }
+    },
+    {
+      "filename": "203-I1-s12-weights.f64le",
+      "sha256": "c3c9d482c32a22a709b5a7c9b1985f9660dc847fc813414cc932c59482cde513",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 2.4709006354601996e-15,
+      "maximumIndependentRelativeWeightDifference": 3.2809293402509843e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620650624030684,
+        "terminal46": 0.5576842531325514
+      }
+    },
+    {
+      "filename": "203-I1-s13-weights.f64le",
+      "sha256": "37b1e4ca33e8535760aa4e5b0b578dcd85f8ab1eecbb1d3ef050715fa285927c",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.0589574151972285e-14,
+      "maximumIndependentRelativeWeightDifference": 3.3688352754186155e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620647871565332,
+        "terminal46": 0.5576842493658263
+      }
+    },
+    {
+      "filename": "203-I1-s14-weights.f64le",
+      "sha256": "894c195ac173c81095e426469590fb38dfc166bf4e532636e12fe859b64f3c80",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 7.648025776424428e-15,
+      "maximumIndependentRelativeWeightDifference": 3.148237472360541e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620646495332327,
+        "terminal46": 0.5576842474970483
+      }
+    },
+    {
+      "filename": "203-I1-s15-weights.f64le",
+      "sha256": "81aee8fdfcca3d826b582a7cb0ed60180c415d6dd43fb2098e4ba8fa61e306ec",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.1060221892059942e-14,
+      "maximumIndependentRelativeWeightDifference": 3.0514025329253883e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645807216855,
+        "terminal46": 0.5576842465663154
+      }
+    },
+    {
+      "filename": "203-I1-s16-weights.f64le",
+      "sha256": "ac458c3e58d2a6b42b2cba032507dec7b46ad4a91683d233185e5c5223f08330",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 4.824139335898485e-15,
+      "maximumIndependentRelativeWeightDifference": 3.1032884435222725e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645463158233,
+        "terminal46": 0.5576842461018756
+      }
+    },
+    {
+      "filename": "203-I1-s17-weights.f64le",
+      "sha256": "324b534d6437eebfc31929c29dc269a138309488cb8e92474187b442f8525de6",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 9.530616736775055e-15,
+      "maximumIndependentRelativeWeightDifference": 3.1712988742018797e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645291128938,
+        "terminal46": 0.5576842458699655
+      }
+    },
+    {
+      "filename": "203-I1-s18-weights.f64le",
+      "sha256": "ac3ad2ef45f2d21de66275e7ad7164a0529163e6ac972431dbf6fd5241367c30",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.0001264476862712e-14,
+      "maximumIndependentRelativeWeightDifference": 3.1017138370086802e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645205114089,
+        "terminal46": 0.5576842457540241
+      }
+    },
+    {
+      "filename": "203-I1-s19-weights.f64le",
+      "sha256": "e976e6f2c2e28d1852a8b4b4b1a4670b4e85807ebeaeba4d3040790950d11f09",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 5.530110946029971e-15,
+      "maximumIndependentRelativeWeightDifference": 3.0944225456227578e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645162107538,
+        "terminal46": 0.5576842456961131
+      }
+    },
+    {
+      "filename": "203-I1-s20-weights.f64le",
+      "sha256": "79390c348ada61590bf859888b235ab1fc56222b521a087dfd51a2535e9aea1c",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 3.176872245591685e-15,
+      "maximumIndependentRelativeWeightDifference": 3.143502372185437e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645140603794,
+        "terminal46": 0.5576842456670812
+      }
+    },
+    {
+      "filename": "203-I1-core-weights.f64le",
+      "sha256": "1bac18dc9e611746b2a288bda187868350a30cf92ddcde5f2b42157a8c7b13f6",
+      "bytes": 64000,
+      "points": 8000,
+      "maximumPhysicalMomentRelativeError": 9.118806486477014e-15,
+      "maximumIndependentRelativeWeightDifference": 3.1364252264717285e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645120165371,
+        "terminal46": 0.5576842456580077
+      }
+    },
+    {
+      "filename": "206-I1-s1-weights.f64le",
+      "sha256": "6e7d6f3d0d3de067716b364686d741b8a186ff073d4924fc2127f0c68ad6dc4f",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 9.591271608086864e-15,
+      "maximumIndependentRelativeWeightDifference": 4.0967444851316076e-15,
+      "minimumSampleJ": {
+        "control45": 0.5628018253375414,
+        "terminal46": 0.4357035746559292
+      }
+    },
+    {
+      "filename": "206-I1-s2-weights.f64le",
+      "sha256": "a4dbc6ee33a5392c913fe839d95b353998fa6ad2870ebb708f86561c177f6dab",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 9.364997025132146e-15,
+      "maximumIndependentRelativeWeightDifference": 4.357329010974501e-15,
+      "minimumSampleJ": {
+        "control45": 0.5624331409230523,
+        "terminal46": 0.4100362801608983
+      }
+    },
+    {
+      "filename": "206-I1-s3-weights.f64le",
+      "sha256": "e2332d36708865889b6349f4d74d9918029dce44b471f4e1fa010b5d3b4b5078",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 6.1232672856634394e-15,
+      "maximumIndependentRelativeWeightDifference": 4.053126466124523e-15,
+      "minimumSampleJ": {
+        "control45": 0.5622488194913352,
+        "terminal46": 0.39782252376171967
+      }
+    },
+    {
+      "filename": "206-I1-s4-weights.f64le",
+      "sha256": "7281e063a49272136069e1b61251775cd8c3232f8cae0486fa0313d341b5f3ad",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.571812673896989e-14,
+      "maximumIndependentRelativeWeightDifference": 4.437944584650658e-15,
+      "minimumSampleJ": {
+        "control45": 0.5621566639697061,
+        "terminal46": 0.39187039157253284
+      }
+    },
+    {
+      "filename": "206-I1-s5-weights.f64le",
+      "sha256": "006d1ab43e538a21424c551c5038b9c1e0a6d71c8a4e6e084153b1e848c834b2",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.680896901946852e-14,
+      "maximumIndependentRelativeWeightDifference": 4.512932189746436e-15,
+      "minimumSampleJ": {
+        "control45": 0.5621105875068063,
+        "terminal46": 0.38893298364262946
+      }
+    },
+    {
+      "filename": "206-I1-s6-weights.f64le",
+      "sha256": "fb83f120db1afead2034ce5afd7557720a0cf9fda96969d3ebf2e77b4601526a",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 3.1576848943715944e-14,
+      "maximumIndependentRelativeWeightDifference": 4.1700495462011725e-15,
+      "minimumSampleJ": {
+        "control45": 0.562087549600936,
+        "terminal46": 0.3874739406765899
+      }
+    },
+    {
+      "filename": "206-I1-s7-weights.f64le",
+      "sha256": "5efeef1522fca5d06d52cdb83e3c8af6030c1121f35c76780b5f8dbc781419ba",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 9.8452532828316e-15,
+      "maximumIndependentRelativeWeightDifference": 4.329007675785887e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620760307284554,
+        "terminal46": 0.38674683400103566
+      }
+    },
+    {
+      "filename": "206-I1-s8-weights.f64le",
+      "sha256": "1e22e118bd512d0245f6c18d3285dd04009b937a28355ef52864c4b3f76dba84",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 2.245198004743305e-14,
+      "maximumIndependentRelativeWeightDifference": 4.198031984291308e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620702713125293,
+        "terminal46": 0.38638388430933773
+      }
+    },
+    {
+      "filename": "206-I1-s9-weights.f64le",
+      "sha256": "dfb7fb2540553cd93eab3e5a780da48edd8ad5371636544ed0459ecc176b69c7",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 6.843651672212219e-15,
+      "maximumIndependentRelativeWeightDifference": 4.0954248618461685e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620673916094739,
+        "terminal46": 0.38620256036837525
+      }
+    },
+    {
+      "filename": "206-I1-s10-weights.f64le",
+      "sha256": "14ba3d537a8b46aa512c56b3df85fc666d078467bbb4354cf3079ec5a929558e",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.5248136181946523e-14,
+      "maximumIndependentRelativeWeightDifference": 4.3135016100936245e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620659517597901,
+        "terminal46": 0.3861119361227664
+      }
+    },
+    {
+      "filename": "206-I1-s11-weights.f64le",
+      "sha256": "8a4d9daeaedf6ff21837da20c3987f5138a3b2198dcb2c31a36fd28dd6d270fb",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.7649417470442035e-14,
+      "maximumIndependentRelativeWeightDifference": 4.906890625819781e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620652318353041,
+        "terminal46": 0.38606663343131753
+      }
+    },
+    {
+      "filename": "206-I1-s12-weights.f64le",
+      "sha256": "4ffe5ab2b29b86b2b2b334a2f8d5c49c2bdc47fc1c4202198ac2cff16898093a",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.1526150184778471e-14,
+      "maximumIndependentRelativeWeightDifference": 4.3616805562846065e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620648718724011,
+        "terminal46": 0.3860439844432977
+      }
+    },
+    {
+      "filename": "206-I1-s13-weights.f64le",
+      "sha256": "b7a6226c05f4c97f4aa14a209c79059ecfd566fce585d34be7674f4a315431b3",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 3.66195396495566e-14,
+      "maximumIndependentRelativeWeightDifference": 4.141477735229813e-15,
+      "minimumSampleJ": {
+        "control45": 0.562064691891604,
+        "terminal46": 0.386032660539462
+      }
+    },
+    {
+      "filename": "206-I1-s14-weights.f64le",
+      "sha256": "e8fd0eb966b07dd8a54712d78d3ff6ae8a20596d00af0b15ac493e659ed880ad",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.2246534571327127e-14,
+      "maximumIndependentRelativeWeightDifference": 4.109297901364974e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620646019011188,
+        "terminal46": 0.3860269987341812
+      }
+    },
+    {
+      "filename": "206-I1-s15-weights.f64le",
+      "sha256": "85b4163fe26887adff1a733cd28493d53c72fbf3304568ac16f2794777e68a4d",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 7.203843865486544e-15,
+      "maximumIndependentRelativeWeightDifference": 4.161721877790512e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645569057572,
+        "terminal46": 0.3860241678684648
+      }
+    },
+    {
+      "filename": "206-I1-s16-weights.f64le",
+      "sha256": "b1dc45695528145529b32c4c1a4243820bfb67caa42904f867c58747f264df76",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.1886342378052799e-14,
+      "maximumIndependentRelativeWeightDifference": 4.289904252149043e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645344083419,
+        "terminal46": 0.38602275244530737
+      }
+    },
+    {
+      "filename": "206-I1-s17-weights.f64le",
+      "sha256": "0c81867e31e7ebf4d0eb8580d908be7c5e2247274ae6c1e12e950a5fb29dffb0",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.0805765798229817e-14,
+      "maximumIndependentRelativeWeightDifference": 4.151597996761398e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645231589582,
+        "terminal46": 0.38602204473562
+      }
+    },
+    {
+      "filename": "206-I1-s18-weights.f64le",
+      "sha256": "ae8af72447ddc5fc6505641a08f84770e69b791b4411ff34c0e19effd185ec22",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 9.004804831858181e-15,
+      "maximumIndependentRelativeWeightDifference": 3.975644566224414e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645175349798,
+        "terminal46": 0.38602169088136984
+      }
+    },
+    {
+      "filename": "206-I1-s19-weights.f64le",
+      "sha256": "b2d241fc348674eddb619dd1c4c4bc0334c1490e88b22069bb6d237383318a3b",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 8.884740767433405e-15,
+      "maximumIndependentRelativeWeightDifference": 4.5142105164918436e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645147223985,
+        "terminal46": 0.38602151395434997
+      }
+    },
+    {
+      "filename": "206-I1-s20-weights.f64le",
+      "sha256": "292da930eb7d82b608b0d0db271402934b64721116764e7fab6e0b2322e3ffac",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 7.203843865486544e-15,
+      "maximumIndependentRelativeWeightDifference": 4.27569367682741e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645133162786,
+        "terminal46": 0.3860214254908437
+      }
+    },
+    {
+      "filename": "206-I1-core-weights.f64le",
+      "sha256": "a3fc4fb6656f92b49ac963009fe40c2f8a04727ad7859c37e0b73edc0195d0db",
+      "bytes": 64000,
+      "points": 8000,
+      "maximumPhysicalMomentRelativeError": 3.721991321517311e-14,
+      "maximumIndependentRelativeWeightDifference": 3.833560356905362e-15,
+      "minimumSampleJ": {
+        "control45": 0.5620645119865334,
+        "terminal46": 0.3860213411769499
+      }
+    },
+    {
+      "filename": "246-I1-s1-weights.f64le",
+      "sha256": "98270ebffe479c14b7e9f3258a38385dc4be701315920c9a1c501b6b21726a4f",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 3.842050061592712e-15,
+      "maximumIndependentRelativeWeightDifference": 3.2594522841310994e-15,
+      "minimumSampleJ": {
+        "control45": 1.5168536632234186,
+        "terminal46": 1.1564859793725568
+      }
+    },
+    {
+      "filename": "246-I1-s2-weights.f64le",
+      "sha256": "3f42d39d497f66e6a88ba5b14fe56875ba872075c23cc963c034170eb1932aec",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 6.1232672856635996e-15,
+      "maximumIndependentRelativeWeightDifference": 3.4707975144699726e-15,
+      "minimumSampleJ": {
+        "control45": 1.5148062344274427,
+        "terminal46": 1.0598271906382981
+      }
+    },
+    {
+      "filename": "246-I1-s3-weights.f64le",
+      "sha256": "b6ad154dea56fd7a8fffdc02eb2c2a155254cd263610b0091f6e1e8c69481d92",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 7.203843865486874e-15,
+      "maximumIndependentRelativeWeightDifference": 3.518297274351374e-15,
+      "minimumSampleJ": {
+        "control45": 1.5137828161144364,
+        "terminal46": 1.010433147629497
+      }
+    },
+    {
+      "filename": "246-I1-s4-weights.f64le",
+      "sha256": "65cf43418fb2ca88b39a9f0ea73879b795d00ba1ca73dc43efbd6aae8e674d25",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.2846854893451473e-14,
+      "maximumIndependentRelativeWeightDifference": 3.810920515786976e-15,
+      "minimumSampleJ": {
+        "control45": 1.5132711809787962,
+        "terminal46": 0.9854701085748189
+      }
+    },
+    {
+      "filename": "246-I1-s5-weights.f64le",
+      "sha256": "81598cf3aacd7633226d95cac3783e78ce8a38892d6fa50b5606e75d4e7109e8",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 5.522946963539874e-15,
+      "maximumIndependentRelativeWeightDifference": 3.4707975144699485e-15,
+      "minimumSampleJ": {
+        "control45": 1.5130153819171408,
+        "terminal46": 0.9729221027363214
+      }
+    },
+    {
+      "filename": "246-I1-s6-weights.f64le",
+      "sha256": "75430152789bbb19d7a3a00f2f3b959be9bfcfe6f76a23b6daae3aa215e124e2",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.0805765798230227e-14,
+      "maximumIndependentRelativeWeightDifference": 3.7530591833267515e-15,
+      "minimumSampleJ": {
+        "control45": 1.512887487011611,
+        "terminal46": 0.9666314804990043
+      }
+    },
+    {
+      "filename": "246-I1-s7-weights.f64le",
+      "sha256": "1d781f91a1d1b94ef7b617ce8fee418b3552b131792d0ea98918074b3d39646f",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 8.644612638584177e-15,
+      "maximumIndependentRelativeWeightDifference": 3.541781848434147e-15,
+      "minimumSampleJ": {
+        "control45": 1.5128235407163815,
+        "terminal46": 0.9634820148327908
+      }
+    },
+    {
+      "filename": "246-I1-s8-weights.f64le",
+      "sha256": "88df41a6c3899dab8c58e31f911cbeb20f8d01a0a85d40e2eb9faca4f858869f",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 6.003203221239018e-15,
+      "maximumIndependentRelativeWeightDifference": 3.55576612814332e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127915678574706,
+        "terminal46": 0.9619062433989419
+      }
+    },
+    {
+      "filename": "246-I1-s9-weights.f64le",
+      "sha256": "1f4f42a8dcfcfff0d369f511e0c7d7452648f387c8402619a48889600c210399",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 2.389788062138297e-15,
+      "maximumIndependentRelativeWeightDifference": 3.452767563283798e-15,
+      "minimumSampleJ": {
+        "control45": 1.512775581500411,
+        "terminal46": 0.9611180980361135
+      }
+    },
+    {
+      "filename": "246-I1-s10-weights.f64le",
+      "sha256": "ef6f8ddae012ce1b1917ad7ec24a433f2a5a6bde9af5398e069b4ccd22832c4e",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 6.36339541451336e-15,
+      "maximumIndependentRelativeWeightDifference": 3.44822094989889e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127675883397385,
+        "terminal46": 0.9607239604431266
+      }
+    },
+    {
+      "filename": "246-I1-s11-weights.f64le",
+      "sha256": "4b9183645beda076062684ca49307023f848b70cc07dbc81329a28386ba50c2e",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 3.36179380389385e-15,
+      "maximumIndependentRelativeWeightDifference": 3.642591019150362e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127635917637159,
+        "terminal46": 0.9605268754195051
+      }
+    },
+    {
+      "filename": "246-I1-s12-weights.f64le",
+      "sha256": "a8bdd2b17974528218b0e1603ea69a9f455ccd8df1f9b0df0731df76b750447e",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 5.402882899115117e-15,
+      "maximumIndependentRelativeWeightDifference": 3.4527675632836875e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127615934773304,
+        "terminal46": 0.9604283288505093
+      }
+    },
+    {
+      "filename": "246-I1-s13-weights.f64le",
+      "sha256": "ea129c1e0c1f02665b5e02ca44ff5ded4e5714d43d60442a7e93f62cf8da6956",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 2.521345352920388e-15,
+      "maximumIndependentRelativeWeightDifference": 3.4875601980881902e-15,
+      "minimumSampleJ": {
+        "control45": 1.512760594334247,
+        "terminal46": 0.9603790545516806
+      }
+    },
+    {
+      "filename": "246-I1-s14-weights.f64le",
+      "sha256": "60188862960fcbb51dcff7db26c66c24eee2c8c16e78b667335ce639b183a7e8",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 7.083779801062042e-15,
+      "maximumIndependentRelativeWeightDifference": 3.383351174143918e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127600947628927,
+        "terminal46": 0.9603544171489136
+      }
+    },
+    {
+      "filename": "246-I1-s15-weights.f64le",
+      "sha256": "01978bd90ee4827f86b5ea1039d4639642b628df8e361fa198c891dd9db4c4d0",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 8.284420445309846e-15,
+      "maximumIndependentRelativeWeightDifference": 3.453415051793173e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127598449768003,
+        "terminal46": 0.9603420983840584
+      }
+    },
+    {
+      "filename": "246-I1-s16-weights.f64le",
+      "sha256": "152c52ba9c100fe99c652198f52438087d14855be3396ae0d63415528b590297",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 6.123267285663799e-15,
+      "maximumIndependentRelativeWeightDifference": 3.552140866419251e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127597200840681,
+        "terminal46": 0.9603359389855947
+      }
+    },
+    {
+      "filename": "246-I1-s17-weights.f64le",
+      "sha256": "90eb5b4961f4423430b4b54b47ad1e2f2f74ca2e273a6af8c985c0f4245bf9be",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 5.883139156814239e-15,
+      "maximumIndependentRelativeWeightDifference": 3.3334417397033308e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596576379367,
+        "terminal46": 0.9603328592828158
+      }
+    },
+    {
+      "filename": "246-I1-s18-weights.f64le",
+      "sha256": "d99cd69f39371794e8abeac45600558639008fc0fa5097a9942cd6341959bb01",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.3687303344424963e-14,
+      "maximumIndependentRelativeWeightDifference": 3.395317175037499e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596264144059,
+        "terminal46": 0.960331319429833
+      }
+    },
+    {
+      "filename": "246-I1-s19-weights.f64le",
+      "sha256": "a056bd5de8ce3f2cdc8028f72fc06be698937cb141e3f1cbbb681c652e136d09",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 5.282818834690336e-15,
+      "maximumIndependentRelativeWeightDifference": 3.385882969619059e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596108026422,
+        "terminal46": 0.9603305495038378
+      }
+    },
+    {
+      "filename": "246-I1-s20-weights.f64le",
+      "sha256": "5aad7db59f54a14750fa661baf5329533e2c794f0884ba2ffce5150ac4c14828",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 5.162754770265556e-15,
+      "maximumIndependentRelativeWeightDifference": 3.4050451727380795e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596029969363,
+        "terminal46": 0.9603301645402552
+      }
+    },
+    {
+      "filename": "246-I1-core-weights.f64le",
+      "sha256": "a87ae89d10caad305163a0372a7ffb616f2f6510c6243575429186ab47658285",
+      "bytes": 64000,
+      "points": 8000,
+      "maximumPhysicalMomentRelativeError": 2.8845413485357474e-14,
+      "maximumIndependentRelativeWeightDifference": 3.2008456716175423e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127595955540483,
+        "terminal46": 0.9603297976133097
+      }
+    },
+    {
+      "filename": "247-I1-s1-weights.f64le",
+      "sha256": "7ddfb5f847696a2919dd285ec32f0c36b427b84e3c07d574d5823d7d23a71727",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 8.316765639226798e-15,
+      "maximumIndependentRelativeWeightDifference": 4.471646978257615e-15,
+      "minimumSampleJ": {
+        "control45": 1.5169530498765698,
+        "terminal46": 0.47057874315181586
+      }
+    },
+    {
+      "filename": "247-I1-s2-weights.f64le",
+      "sha256": "b6ee7e07a865f27c2d93e567c2a827b2fa243af0b54e5a5cfbb2e930400a32c3",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 8.131948625021739e-15,
+      "maximumIndependentRelativeWeightDifference": 4.7010480230281874e-15,
+      "minimumSampleJ": {
+        "control45": 1.514855905806606,
+        "terminal46": 0.23542824114632413
+      }
+    },
+    {
+      "filename": "247-I1-s3-weights.f64le",
+      "sha256": "d9ae4fea7c6c1a1a0e8c23feab9c4d4afca6be4217cb9c934ecf0d2cf551bea7",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 2.5874381988705855e-15,
+      "maximumIndependentRelativeWeightDifference": 4.4289839629459006e-15,
+      "minimumSampleJ": {
+        "control45": 1.5138076463171974,
+        "terminal46": 0.11774928435280217
+      }
+    },
+    {
+      "filename": "247-I1-s4-weights.f64le",
+      "sha256": "c54285432be3b0be51d74f3c77bf05195479b4b5fc45e57ce554991de9df81e1",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.2567556965942923e-14,
+      "maximumIndependentRelativeWeightDifference": 4.606158076322243e-15,
+      "minimumSampleJ": {
+        "control45": 1.5132835947090548,
+        "terminal46": 0.058883915804660666
+      }
+    },
+    {
+      "filename": "247-I1-s5-weights.f64le",
+      "sha256": "45035f9070406e6e55030994f1b30c7052a619c5773bff2f929d937ffdc74baa",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 7.762314596611837e-15,
+      "maximumIndependentRelativeWeightDifference": 4.3087124999811755e-15,
+      "minimumSampleJ": {
+        "control45": 1.5130215884392102,
+        "terminal46": 0.029444763529201355
+      }
+    },
+    {
+      "filename": "247-I1-s6-weights.f64le",
+      "sha256": "3df15aff37c9b9471c13a64ac50ab32be0f24a91f25bcefec80992ffd3e95e3e",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.0349752795482465e-14,
+      "maximumIndependentRelativeWeightDifference": 4.675258283863018e-15,
+      "minimumSampleJ": {
+        "control45": 1.5128905901872196,
+        "terminal46": 0.014723570958883513
+      }
+    },
+    {
+      "filename": "247-I1-s7-weights.f64le",
+      "sha256": "c06ef6f3d6732a06505817d396ab4385f6e5cf575aa63131acef9811e62e945f",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.2937190994353082e-14,
+      "maximumIndependentRelativeWeightDifference": 4.50355630042916e-15,
+      "minimumSampleJ": {
+        "control45": 1.5128250922822641,
+        "terminal46": 0.007362570636322559
+      }
+    },
+    {
+      "filename": "247-I1-s8-weights.f64le",
+      "sha256": "d60a86c0777bccb8ed34822097079cbab5e5826c06ff1b3fad714cf2ca42fd0d",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.2013105923327868e-14,
+      "maximumIndependentRelativeWeightDifference": 4.664770185309548e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127923436349642,
+        "terminal46": 0.0036819694741887466
+      }
+    },
+    {
+      "filename": "247-I1-s9-weights.f64le",
+      "sha256": "4220c2de22b6f1a36dd8ae8523e52e83da8d620f95c068bfafd34d062e541b48",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 7.762314596611855e-15,
+      "maximumIndependentRelativeWeightDifference": 4.622850132952612e-15,
+      "minimumSampleJ": {
+        "control45": 1.512775969387766,
+        "terminal46": 0.0018416436442174457
+      }
+    },
+    {
+      "filename": "247-I1-s10-weights.f64le",
+      "sha256": "b2d08c3b5671deae60aa36f1f7fdb616159b0e4a1c202f04a93cc32aa19d3c8f",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 5.9141444545614125e-15,
+      "maximumIndependentRelativeWeightDifference": 4.291530295489052e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127677822833971,
+        "terminal46": 0.0009214744172898686
+      }
+    },
+    {
+      "filename": "247-I1-s11-weights.f64le",
+      "sha256": "c2132fefc355cb3f36199893f3ced331110c072b366b8913c0faa84fbca849bf",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 5.9141444545614125e-15,
+      "maximumIndependentRelativeWeightDifference": 4.6770079124068535e-15,
+      "minimumSampleJ": {
+        "control45": 1.512763688736275,
+        "terminal46": 0.00046138822606052227
+      }
+    },
+    {
+      "filename": "247-I1-s12-weights.f64le",
+      "sha256": "fe7354771072d1c51a001fa56f238fafb9ea94a80f0ae1fb25e23fef0f7e2f00",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 8.131948625021942e-15,
+      "maximumIndependentRelativeWeightDifference": 4.16716875818363e-15,
+      "minimumSampleJ": {
+        "control45": 1.512761641962829,
+        "terminal46": 0.00023134473562498524
+      }
+    },
+    {
+      "filename": "247-I1-s13-weights.f64le",
+      "sha256": "45fbf67ffa50a5f4eb08d2913d52c81735c1482407fb31e270f43ac654c32856",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 6.6534125113815894e-15,
+      "maximumIndependentRelativeWeightDifference": 4.52186545463609e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127606185770073,
+        "terminal46": 0.00011632289139619036
+      }
+    },
+    {
+      "filename": "247-I1-s14-weights.f64le",
+      "sha256": "06118496df49e1224608dea0a546e3406d42b48c97850be4a83b082bdfa73acc",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 7.762314596611855e-15,
+      "maximumIndependentRelativeWeightDifference": 4.7512127124573566e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127601068842742,
+        "terminal46": 5.8811945285710015e-05
+      }
+    },
+    {
+      "filename": "247-I1-s15-weights.f64le",
+      "sha256": "d922613592b6dde4760cbe7eb031edd519038431c1039d1405e0e04d6095ce19",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 9.425667724457251e-15,
+      "maximumIndependentRelativeWeightDifference": 4.34099083645154e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127598510373155,
+        "terminal46": 3.005646583262963e-05
+      }
+    },
+    {
+      "filename": "247-I1-s16-weights.f64le",
+      "sha256": "c38601548df13d5b4ae697023ae36e1f7560b48e196f56bdc5b946eec9e3544f",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 7.9471316108169e-15,
+      "maximumIndependentRelativeWeightDifference": 4.332662726271643e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127597231145966,
+        "terminal46": 1.5678724660902595e-05
+      }
+    },
+    {
+      "filename": "247-I1-s17-weights.f64le",
+      "sha256": "ee3c31e706cc2d54e2e519d5f9836a0c1f2fb19774c6b78828d9caa40e2f44ae",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 4.43560834092106e-15,
+      "maximumIndependentRelativeWeightDifference": 4.398166192960555e-15,
+      "minimumSampleJ": {
+        "control45": 1.512759659153322,
+        "terminal46": 8.489853663583878e-06
+      }
+    },
+    {
+      "filename": "247-I1-s18-weights.f64le",
+      "sha256": "1b284343df7353fa7cb7833525a02fac0549cc27b60cf967102c88d954768e38",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 6.098961468766457e-15,
+      "maximumIndependentRelativeWeightDifference": 4.746641417777907e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596271723496,
+        "terminal46": 4.8954180515899535e-06
+      }
+    },
+    {
+      "filename": "247-I1-s19-weights.f64le",
+      "sha256": "4911224f246b8977d6c4e420f846d47f1bbb1808515c8a9f19d9da91b0e42440",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 7.762314596611855e-15,
+      "maximumIndependentRelativeWeightDifference": 4.4574036994087846e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596111816097,
+        "terminal46": 3.0981998467486627e-06
+      }
+    },
+    {
+      "filename": "247-I1-s20-weights.f64le",
+      "sha256": "23c8eff08f09ef2e07397479dd56b17462dac3ac9a2c701de1719fb38b26b919",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 2.5874381988706182e-15,
+      "maximumIndependentRelativeWeightDifference": 4.33464257871294e-15,
+      "minimumSampleJ": {
+        "control45": 1.512759603186741,
+        "terminal46": 2.199591282540669e-06
+      }
+    },
+    {
+      "filename": "247-I1-core-weights.f64le",
+      "sha256": "facdbc12f96cb9aee0d244fc93e1608e0e1131167b140a2a7044d5969561d180",
+      "bytes": 64000,
+      "points": 8000,
+      "maximumPhysicalMomentRelativeError": 2.721430534169275e-14,
+      "maximumIndependentRelativeWeightDifference": 4.31515917431557e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127595957126465,
+        "terminal46": 1.3430852676931198e-06
+      }
+    },
+    {
+      "filename": "248-I1-s1-weights.f64le",
+      "sha256": "b850385dce336dc2921c6a3faf14175a60914397eef0eae62677f64799b5321e",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 3.1117268451285417e-15,
+      "maximumIndependentRelativeWeightDifference": 4.1795214492857135e-15,
+      "minimumSampleJ": {
+        "control45": 1.8359256474179138,
+        "terminal46": 1.555481244321642
+      }
+    },
+    {
+      "filename": "248-I1-s2-weights.f64le",
+      "sha256": "0cc1c83d34038f7e8bc894de80069e21d2e1cd5add9d78f9cf6a4b1fc19cd232",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.583966045960286e-15,
+      "maximumIndependentRelativeWeightDifference": 4.274458913039042e-15,
+      "minimumSampleJ": {
+        "control45": 1.6745069829992083,
+        "terminal46": 1.2485728699674281
+      }
+    },
+    {
+      "filename": "248-I1-s3-weights.f64le",
+      "sha256": "6b3e694b16e70ac81a580ddfb6fb8ac9c96df4060e3660668676bce84619ddc3",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 3.1117268451283906e-15,
+      "maximumIndependentRelativeWeightDifference": 4.078233612385883e-15,
+      "minimumSampleJ": {
+        "control45": 1.5936743795188517,
+        "terminal46": 1.094254465728751
+      }
+    },
+    {
+      "filename": "248-I1-s4-weights.f64le",
+      "sha256": "44747054268cdde6798b32c8f18f08018fe8f0a1dbdc8d737ef7fe83487ddb8a",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 3.1117268451283804e-15,
+      "maximumIndependentRelativeWeightDifference": 4.679775302289536e-15,
+      "minimumSampleJ": {
+        "control45": 1.5532272599614387,
+        "terminal46": 1.016879523947151
+      }
+    },
+    {
+      "filename": "248-I1-s5-weights.f64le",
+      "sha256": "80f31a06dcc84ec4a1bbb78e558e4c1415ae5545dcacf4a8524b3b5629ae96dc",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 6.612419545897766e-15,
+      "maximumIndependentRelativeWeightDifference": 4.509518362818535e-15,
+      "minimumSampleJ": {
+        "control45": 1.532995995727971,
+        "terminal46": 0.9781381574657728
+      }
+    },
+    {
+      "filename": "248-I1-s6-weights.f64le",
+      "sha256": "b2e98930bc58bccbe429abf166c117aae36f8a0cb8e4faab08e79e28c78c8404",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.024276753188084e-14,
+      "maximumIndependentRelativeWeightDifference": 4.035035081334123e-15,
+      "minimumSampleJ": {
+        "control45": 1.522878437497501,
+        "terminal46": 0.9587540052435862
+      }
+    },
+    {
+      "filename": "248-I1-s7-weights.f64le",
+      "sha256": "cf4f27ff881e96061d9e39c3134eaa390b756f397a6946b3718ef0f87de7affe",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 3.889658556410442e-15,
+      "maximumIndependentRelativeWeightDifference": 4.499445814457803e-15,
+      "minimumSampleJ": {
+        "control45": 1.5178191768538283,
+        "terminal46": 0.9490585625014145
+      }
+    },
+    {
+      "filename": "248-I1-s8-weights.f64le",
+      "sha256": "adc7437fe1b773668dc2972516edc28fffd3c80ef6f1b625cc47da680aad4e6e",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 6.2234536902567055e-15,
+      "maximumIndependentRelativeWeightDifference": 4.218492094985498e-15,
+      "minimumSampleJ": {
+        "control45": 1.5152894261500003,
+        "terminal46": 0.9442099995494668
+      }
+    },
+    {
+      "filename": "248-I1-s9-weights.f64le",
+      "sha256": "f46ad134b8813896a98d4da47540ae750ef40bbe2e8ba5eba11647889c329213",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 8.686904109316649e-15,
+      "maximumIndependentRelativeWeightDifference": 4.124782108287506e-15,
+      "minimumSampleJ": {
+        "control45": 1.5140245207021479,
+        "terminal46": 0.9417855076879562
+      }
+    },
+    {
+      "filename": "248-I1-s10-weights.f64le",
+      "sha256": "59e2151946dc45617aa43573a8f86091c06a92bf24f9336cd531900e92209303",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 4.278624412051483e-15,
+      "maximumIndependentRelativeWeightDifference": 4.574905152849057e-15,
+      "minimumSampleJ": {
+        "control45": 1.5133920604553979,
+        "terminal46": 0.9405732091620006
+      }
+    },
+    {
+      "filename": "248-I1-s11-weights.f64le",
+      "sha256": "32fc7ad95bef7a14f540489d9f95f430e556a8fc9b92a29e4453261dece5d53a",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.8151739929915384e-15,
+      "maximumIndependentRelativeWeightDifference": 4.210471389218171e-15,
+      "minimumSampleJ": {
+        "control45": 1.5130758284503922,
+        "terminal46": 0.939967046750055
+      }
+    },
+    {
+      "filename": "248-I1-s12-weights.f64le",
+      "sha256": "8192aacbdc386e7e407fba14db24ed2b93f166dfc0dc1166b8e81e132a846051",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 7.520006542393516e-15,
+      "maximumIndependentRelativeWeightDifference": 4.679626712608805e-15,
+      "minimumSampleJ": {
+        "control45": 1.5129177119774573,
+        "terminal46": 0.9396639622574016
+      }
+    },
+    {
+      "filename": "248-I1-s13-weights.f64le",
+      "sha256": "114d526cad2a8059ac7e839d375dad2d2e564eb0476c551675b9c84f0e96a2d4",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 4.667590267692527e-15,
+      "maximumIndependentRelativeWeightDifference": 4.0742971962141615e-15,
+      "minimumSampleJ": {
+        "control45": 1.512838653624027,
+        "terminal46": 0.9395124191888824
+      }
+    },
+    {
+      "filename": "248-I1-s14-weights.f64le",
+      "sha256": "d3cd66126341fb35282b88852c086c0a85ab2c13a608a3f30881c0f62f763231",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 5.056556123333571e-15,
+      "maximumIndependentRelativeWeightDifference": 4.194479108980444e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127991244175718,
+        "terminal46": 0.9394366474492152
+      }
+    },
+    {
+      "filename": "248-I1-s15-weights.f64le",
+      "sha256": "5e94d1ec425bcd31adc9b3134db397b86ad4325958d5ec9377734f661e9ad8fb",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 1.1668975669231317e-14,
+      "maximumIndependentRelativeWeightDifference": 4.605728783802074e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127793598063521,
+        "terminal46": 0.9393987615285344
+      }
+    },
+    {
+      "filename": "248-I1-s16-weights.f64le",
+      "sha256": "24a9623af89183598f9c5a9814673dd737dcaafbf250ceb7fae50dc8d3efd4f0",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 4.667590267692527e-15,
+      "maximumIndependentRelativeWeightDifference": 4.366159126973644e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127694774996043,
+        "terminal46": 0.9393798185548522
+      }
+    },
+    {
+      "filename": "248-I1-s17-weights.f64le",
+      "sha256": "62bc977b71e5ab9032146557634866fb0989c41c0b778a6a9a06b7234d6127b5",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 5.7048325494019775e-15,
+      "maximumIndependentRelativeWeightDifference": 4.113133236548565e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127645363455613,
+        "terminal46": 0.9393703470648338
+      }
+    },
+    {
+      "filename": "248-I1-s18-weights.f64le",
+      "sha256": "3aa04f2f4153de607e62a9316bda5e321e84f2ad7f1ef86b8dbc801d82ed48df",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 2.593105704273626e-15,
+      "maximumIndependentRelativeWeightDifference": 4.391716670886467e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127620657686907,
+        "terminal46": 0.9393656113186859
+      }
+    },
+    {
+      "filename": "248-I1-s19-weights.f64le",
+      "sha256": "38f514f9a3ac6b6d3f820ec97a0723ede2df9b47eb8d920d5d56ab8fec45b9bd",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 4.537934982478845e-15,
+      "maximumIndependentRelativeWeightDifference": 4.540809227655173e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127608304798148,
+        "terminal46": 0.9393632434456844
+      }
+    },
+    {
+      "filename": "248-I1-s20-weights.f64le",
+      "sha256": "6e1283329ccbf2332480445eae462fb19144249227e1f1128961fb8a584a21fd",
+      "bytes": 384000,
+      "points": 48000,
+      "maximumPhysicalMomentRelativeError": 7.520006542393516e-15,
+      "maximumIndependentRelativeWeightDifference": 4.540809227654964e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127602128352582,
+        "terminal46": 0.9393620595094107
+      }
+    },
+    {
+      "filename": "248-I1-core-weights.f64le",
+      "sha256": "dbf933f1a1751e4656ff698135cf5b048de36eb64a1068b3922573804a2b29ff",
+      "bytes": 64000,
+      "points": 8000,
+      "maximumPhysicalMomentRelativeError": 6.154574319986934e-15,
+      "maximumIndependentRelativeWeightDifference": 3.999792399580025e-15,
+      "minimumSampleJ": {
+        "control45": 1.5127596241233627,
+        "terminal46": 0.9393609310585028
+      }
+    }
+  ],
+  "preflightCompleted": false,
+  "preflightDirectory": "/tmp/kenoma-fine-preflight-initial-20261007",
+  "outside236Qualified": false,
+  "seconds": 20.61811688200396
+}

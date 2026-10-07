@@ -1,0 +1,76 @@
+TAP version 13
+# Subtest: exact accepted closed schedule/counts and new declared budgets
+ok 1 - exact accepted closed schedule/counts and new declared budgets
+  ---
+  duration_ms: 8.443587
+  type: 'test'
+  ...
+# Subtest: independent exact topology/orientation/coverage is complete on all four charts
+ok 2 - independent exact topology/orientation/coverage is complete on all four charts
+  ---
+  duration_ms: 377.66817
+  type: 'test'
+  ...
+# Subtest: actual nonzero producer to durable JSON to complete constructor on four corner maps and independent family
+ok 3 - actual nonzero producer to durable JSON to complete constructor on four corner maps and independent family
+  ---
+  duration_ms: 6845.156365
+  type: 'test'
+  ...
+# Subtest: largest independent region uses bounded48000point assembly and partial weights
+ok 4 - largest independent region uses bounded48000point assembly and partial weights
+  ---
+  duration_ms: 1037.829166
+  type: 'test'
+  ...
+# Subtest: missing prior P4 receipt fails before callback and never buys replacement points
+ok 5 - missing prior P4 receipt fails before callback and never buys replacement points
+  ---
+  duration_ms: 9.565351
+  type: 'test'
+  ...
+# Subtest: historical row or weight damage refuses reuse without specimen replacement
+ok 6 - historical row or weight damage refuses reuse without specimen replacement
+  ---
+  duration_ms: 31.592404
+  type: 'test'
+  ...
+# Subtest: unit triangle and allocated budgets preserve held entries and reject cancellation
+ok 7 - unit triangle and allocated budgets preserve held entries and reject cancellation
+  ---
+  duration_ms: 3.166342
+  type: 'test'
+  ...
+# Subtest: byte envelopes,4096entry bounded JSON, nonfinite and unplanned files refuse
+ok 8 - byte envelopes,4096entry bounded JSON, nonfinite and unplanned files refuse
+  ---
+  duration_ms: 14.822193
+  type: 'test'
+  ...
+# Subtest: truncated maximum-region output preserves complete bounded emergency weights
+ok 9 - truncated maximum-region output preserves complete bounded emergency weights
+  ---
+  duration_ms: 953.291495
+  type: 'test'
+  ...
+# Subtest: callback/wall/RSS/count refusals remain incomplete, no retry
+ok 10 - callback/wall/RSS/count refusals remain incomplete, no retry
+  ---
+  duration_ms: 1.970582
+  type: 'test'
+  ...
+# Subtest: finite binary64 serialization bound includes25character fixed decimals
+ok 11 - finite binary64 serialization bound includes25character fixed decimals
+  ---
+  duration_ms: 0.662851
+  type: 'test'
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 9587.745102

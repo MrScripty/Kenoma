@@ -1,0 +1,938 @@
+[
+  {
+    "corner": 0,
+    "rule": "I0",
+    "tetrahedra": 976,
+    "boundaryFaces": 508,
+    "interiorFaces": 1698,
+    "exactVolumeNumerator": "73786976294838206464",
+    "exactVolumeDenominator": "73786976294838206464",
+    "regionVolumes": [
+      {
+        "shell": "s1",
+        "numerator": "64563604257983430656",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s2",
+        "numerator": "8070450532247928832",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s3",
+        "numerator": "1008806316530991104",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s4",
+        "numerator": "126100789566373888",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s5",
+        "numerator": "15762598695796736",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s6",
+        "numerator": "1970324836974592",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s7",
+        "numerator": "246290604621824",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s8",
+        "numerator": "30786325577728",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s9",
+        "numerator": "3848290697216",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s10",
+        "numerator": "481036337152",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s11",
+        "numerator": "60129542144",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s12",
+        "numerator": "7516192768",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s13",
+        "numerator": "939524096",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s14",
+        "numerator": "117440512",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s15",
+        "numerator": "14680064",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s16",
+        "numerator": "1835008",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s17",
+        "numerator": "229376",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s18",
+        "numerator": "28672",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s19",
+        "numerator": "3584",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s20",
+        "numerator": "448",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "core",
+        "numerator": "64",
+        "denominator": "73786976294838206464"
+      }
+    ],
+    "conformingPositiveOrientedMesh": true
+  },
+  {
+    "corner": 1,
+    "rule": "I0",
+    "tetrahedra": 976,
+    "boundaryFaces": 508,
+    "interiorFaces": 1698,
+    "exactVolumeNumerator": "73786976294838206464",
+    "exactVolumeDenominator": "73786976294838206464",
+    "regionVolumes": [
+      {
+        "shell": "s1",
+        "numerator": "64563604257983430656",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s2",
+        "numerator": "8070450532247928832",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s3",
+        "numerator": "1008806316530991104",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s4",
+        "numerator": "126100789566373888",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s5",
+        "numerator": "15762598695796736",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s6",
+        "numerator": "1970324836974592",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s7",
+        "numerator": "246290604621824",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s8",
+        "numerator": "30786325577728",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s9",
+        "numerator": "3848290697216",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s10",
+        "numerator": "481036337152",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s11",
+        "numerator": "60129542144",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s12",
+        "numerator": "7516192768",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s13",
+        "numerator": "939524096",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s14",
+        "numerator": "117440512",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s15",
+        "numerator": "14680064",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s16",
+        "numerator": "1835008",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s17",
+        "numerator": "229376",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s18",
+        "numerator": "28672",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s19",
+        "numerator": "3584",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s20",
+        "numerator": "448",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "core",
+        "numerator": "64",
+        "denominator": "73786976294838206464"
+      }
+    ],
+    "conformingPositiveOrientedMesh": true
+  },
+  {
+    "corner": 2,
+    "rule": "I0",
+    "tetrahedra": 976,
+    "boundaryFaces": 508,
+    "interiorFaces": 1698,
+    "exactVolumeNumerator": "73786976294838206464",
+    "exactVolumeDenominator": "73786976294838206464",
+    "regionVolumes": [
+      {
+        "shell": "s1",
+        "numerator": "64563604257983430656",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s2",
+        "numerator": "8070450532247928832",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s3",
+        "numerator": "1008806316530991104",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s4",
+        "numerator": "126100789566373888",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s5",
+        "numerator": "15762598695796736",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s6",
+        "numerator": "1970324836974592",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s7",
+        "numerator": "246290604621824",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s8",
+        "numerator": "30786325577728",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s9",
+        "numerator": "3848290697216",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s10",
+        "numerator": "481036337152",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s11",
+        "numerator": "60129542144",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s12",
+        "numerator": "7516192768",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s13",
+        "numerator": "939524096",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s14",
+        "numerator": "117440512",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s15",
+        "numerator": "14680064",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s16",
+        "numerator": "1835008",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s17",
+        "numerator": "229376",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s18",
+        "numerator": "28672",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s19",
+        "numerator": "3584",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s20",
+        "numerator": "448",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "core",
+        "numerator": "64",
+        "denominator": "73786976294838206464"
+      }
+    ],
+    "conformingPositiveOrientedMesh": true
+  },
+  {
+    "corner": 3,
+    "rule": "I0",
+    "tetrahedra": 976,
+    "boundaryFaces": 508,
+    "interiorFaces": 1698,
+    "exactVolumeNumerator": "73786976294838206464",
+    "exactVolumeDenominator": "73786976294838206464",
+    "regionVolumes": [
+      {
+        "shell": "s1",
+        "numerator": "64563604257983430656",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s2",
+        "numerator": "8070450532247928832",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s3",
+        "numerator": "1008806316530991104",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s4",
+        "numerator": "126100789566373888",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s5",
+        "numerator": "15762598695796736",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s6",
+        "numerator": "1970324836974592",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s7",
+        "numerator": "246290604621824",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s8",
+        "numerator": "30786325577728",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s9",
+        "numerator": "3848290697216",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s10",
+        "numerator": "481036337152",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s11",
+        "numerator": "60129542144",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s12",
+        "numerator": "7516192768",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s13",
+        "numerator": "939524096",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s14",
+        "numerator": "117440512",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s15",
+        "numerator": "14680064",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s16",
+        "numerator": "1835008",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s17",
+        "numerator": "229376",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s18",
+        "numerator": "28672",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s19",
+        "numerator": "3584",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "s20",
+        "numerator": "448",
+        "denominator": "73786976294838206464"
+      },
+      {
+        "shell": "core",
+        "numerator": "64",
+        "denominator": "73786976294838206464"
+      }
+    ],
+    "conformingPositiveOrientedMesh": true
+  },
+  {
+    "corner": 0,
+    "rule": "I1",
+    "tetrahedra": 7744,
+    "boundaryFaces": 2008,
+    "interiorFaces": 14484,
+    "exactVolumeNumerator": "4722366482869645213696",
+    "exactVolumeDenominator": "4722366482869645213696",
+    "regionVolumes": [
+      {
+        "shell": "s1",
+        "numerator": "4132070672510939561984",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s2",
+        "numerator": "516508834063867445248",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s3",
+        "numerator": "64563604257983430656",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s4",
+        "numerator": "8070450532247928832",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s5",
+        "numerator": "1008806316530991104",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s6",
+        "numerator": "126100789566373888",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s7",
+        "numerator": "15762598695796736",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s8",
+        "numerator": "1970324836974592",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s9",
+        "numerator": "246290604621824",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s10",
+        "numerator": "30786325577728",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s11",
+        "numerator": "3848290697216",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s12",
+        "numerator": "481036337152",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s13",
+        "numerator": "60129542144",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s14",
+        "numerator": "7516192768",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s15",
+        "numerator": "939524096",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s16",
+        "numerator": "117440512",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s17",
+        "numerator": "14680064",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s18",
+        "numerator": "1835008",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s19",
+        "numerator": "229376",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s20",
+        "numerator": "28672",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "core",
+        "numerator": "4096",
+        "denominator": "4722366482869645213696"
+      }
+    ],
+    "conformingPositiveOrientedMesh": true
+  },
+  {
+    "corner": 1,
+    "rule": "I1",
+    "tetrahedra": 7744,
+    "boundaryFaces": 2008,
+    "interiorFaces": 14484,
+    "exactVolumeNumerator": "4722366482869645213696",
+    "exactVolumeDenominator": "4722366482869645213696",
+    "regionVolumes": [
+      {
+        "shell": "s1",
+        "numerator": "4132070672510939561984",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s2",
+        "numerator": "516508834063867445248",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s3",
+        "numerator": "64563604257983430656",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s4",
+        "numerator": "8070450532247928832",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s5",
+        "numerator": "1008806316530991104",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s6",
+        "numerator": "126100789566373888",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s7",
+        "numerator": "15762598695796736",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s8",
+        "numerator": "1970324836974592",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s9",
+        "numerator": "246290604621824",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s10",
+        "numerator": "30786325577728",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s11",
+        "numerator": "3848290697216",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s12",
+        "numerator": "481036337152",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s13",
+        "numerator": "60129542144",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s14",
+        "numerator": "7516192768",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s15",
+        "numerator": "939524096",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s16",
+        "numerator": "117440512",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s17",
+        "numerator": "14680064",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s18",
+        "numerator": "1835008",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s19",
+        "numerator": "229376",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s20",
+        "numerator": "28672",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "core",
+        "numerator": "4096",
+        "denominator": "4722366482869645213696"
+      }
+    ],
+    "conformingPositiveOrientedMesh": true
+  },
+  {
+    "corner": 2,
+    "rule": "I1",
+    "tetrahedra": 7744,
+    "boundaryFaces": 2008,
+    "interiorFaces": 14484,
+    "exactVolumeNumerator": "4722366482869645213696",
+    "exactVolumeDenominator": "4722366482869645213696",
+    "regionVolumes": [
+      {
+        "shell": "s1",
+        "numerator": "4132070672510939561984",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s2",
+        "numerator": "516508834063867445248",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s3",
+        "numerator": "64563604257983430656",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s4",
+        "numerator": "8070450532247928832",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s5",
+        "numerator": "1008806316530991104",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s6",
+        "numerator": "126100789566373888",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s7",
+        "numerator": "15762598695796736",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s8",
+        "numerator": "1970324836974592",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s9",
+        "numerator": "246290604621824",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s10",
+        "numerator": "30786325577728",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s11",
+        "numerator": "3848290697216",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s12",
+        "numerator": "481036337152",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s13",
+        "numerator": "60129542144",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s14",
+        "numerator": "7516192768",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s15",
+        "numerator": "939524096",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s16",
+        "numerator": "117440512",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s17",
+        "numerator": "14680064",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s18",
+        "numerator": "1835008",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s19",
+        "numerator": "229376",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s20",
+        "numerator": "28672",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "core",
+        "numerator": "4096",
+        "denominator": "4722366482869645213696"
+      }
+    ],
+    "conformingPositiveOrientedMesh": true
+  },
+  {
+    "corner": 3,
+    "rule": "I1",
+    "tetrahedra": 7744,
+    "boundaryFaces": 2008,
+    "interiorFaces": 14484,
+    "exactVolumeNumerator": "4722366482869645213696",
+    "exactVolumeDenominator": "4722366482869645213696",
+    "regionVolumes": [
+      {
+        "shell": "s1",
+        "numerator": "4132070672510939561984",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s2",
+        "numerator": "516508834063867445248",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s3",
+        "numerator": "64563604257983430656",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s4",
+        "numerator": "8070450532247928832",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s5",
+        "numerator": "1008806316530991104",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s6",
+        "numerator": "126100789566373888",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s7",
+        "numerator": "15762598695796736",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s8",
+        "numerator": "1970324836974592",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s9",
+        "numerator": "246290604621824",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s10",
+        "numerator": "30786325577728",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s11",
+        "numerator": "3848290697216",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s12",
+        "numerator": "481036337152",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s13",
+        "numerator": "60129542144",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s14",
+        "numerator": "7516192768",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s15",
+        "numerator": "939524096",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s16",
+        "numerator": "117440512",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s17",
+        "numerator": "14680064",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s18",
+        "numerator": "1835008",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s19",
+        "numerator": "229376",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "s20",
+        "numerator": "28672",
+        "denominator": "4722366482869645213696"
+      },
+      {
+        "shell": "core",
+        "numerator": "4096",
+        "denominator": "4722366482869645213696"
+      }
+    ],
+    "conformingPositiveOrientedMesh": true
+  }
+]

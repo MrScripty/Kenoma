@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/tmp/Kenoma-fine-window-runner/education/tools/launch-fine-window.py", line 13, in <module>
+    if __name__=='__main__':os._exit(main())
+                                     ^^^^^^
+  File "/tmp/Kenoma-fine-window-runner/education/tools/launch-fine-window.py", line 5, in main
+    started=time.monotonic();need(sys.argv[1:]==['--execute'],'Explicit --execute only');need(AUTH.is_file(),'NO_FINE_WINDOW_AUTHORIZATION');auth=read(AUTH);pref=read(PREF/'preflight.json');review=read(PREF/'independent-review.json');validate_authorization(auth,pref,review)
+                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/Kenoma-fine-window-runner/education/tools/element247_shell_execution.py", line 11, in need
+    if not condition:raise EvidenceFailure(message)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+element247_shell_execution.EvidenceFailure: NO_FINE_WINDOW_AUTHORIZATION
