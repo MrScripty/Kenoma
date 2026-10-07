@@ -100,7 +100,7 @@ export function reconstructRetainedDiagnostic(root) {
  assert.equal(publicExit.finalToolResult.exit_code,1);assert.equal(publicExit.sourceCommit,EXECUTED_COMMIT);assert.equal(publicExit.invocations,1);
  const runtime=incomplete.runtime;['reservedCalls','actualConstitutiveCallbacks','completedConstitutiveCallbacks','plannedCalls','maximumCalls'].forEach(k=>assert.equal(runtime[k],4000));assert.equal(runtime.activeBatch,null);
  const auth=read('research/element247-two-shell-authorization-20261007.json');assert.equal(auth.invocations,1);assert.equal(sha(bytes('research/element247-two-shell-authorization-20261007.json')),start.authorizationSha256);
- for(const name of ['material/completion-receipt.json','material/terminal-completion.json','external-final.json','launcher-acceptance.json'])assert.ok(!fs.existsSync(path.join(root,RAW+name)),'FAILED_RUN_MUST_REMAIN_INCOMPLETE');
+ for(const name of ['material/completion-receipt.json','material/terminal-completion.json','external-final.json','launcher-exit.json','launcher-acceptance.json'])assert.ok(!fs.existsSync(path.join(root,RAW+name)),'FAILED_RUN_MUST_REMAIN_INCOMPLETE');
  // Bind all transitive local source modules, including helpers imported for arithmetic.
  const reconstructionSources={};
  const visit=name=>{
