@@ -1,0 +1,16 @@
+✔ whole-element geometric coverage includes every outer shell and the corner core (3.555116ms)
+✔ radial-face chart Jacobian matches an independent derivative determinant (1.435604ms)
+✔ analytic dyadic shell moments agree with known whole-tetrahedron moments (0.683379ms)
+✔ registered point counts, positive weights and per-shell degree-five moments hold (458.734231ms)
+✔ wrong radial Jacobian and damaged positive weight fail relative core moments (3.790405ms)
+✔ depth22 shells regroup without losing the depth20 core (35.822632ms)
+✔ shell force and work cancellation cannot create a passing comparison (2.452057ms)
+✔ missing shell, reordered shell and malformed vector refuse comparisons (5.286588ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 605.301558
