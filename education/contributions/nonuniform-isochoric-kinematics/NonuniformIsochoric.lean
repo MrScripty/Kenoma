@@ -11,6 +11,8 @@ and positive stretch on the stated material interval. They do not formally
 derive the gradient, prove a change-of-variables integral, triangulation
 correctness, floating-point refinement, equilibrium or biological validity.
 -/
+noncomputable section
+
 namespace KenomaNonuniform
 
 def stretch (m a L S : ℝ) : ℝ := m * (1 + a * (2 * (S / L) - 1))
@@ -69,7 +71,7 @@ theorem straight_cell_error_factorization (r : ℝ) (hr : 0 < r) :
       (r - 1) ^ 2 * (r ^ 2 + 3 * r + 1) / (6 * r ^ 2) := by
   unfold straightCellRatio
   field_simp [ne_of_gt hr]
-  <;> ring
+  ring
 
 theorem straight_cell_ratio_ge_one (r : ℝ) (hr : 0 < r) :
     1 ≤ straightCellRatio r := by
