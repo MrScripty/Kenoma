@@ -11,7 +11,7 @@
 <p class="scope">This is a prescribed deformation map. It contains no force balance, material response, activation or anatomical prediction. The reference is a 16-sided prism with length 120 mm and circumradius 15 mm.</p>
 <div class="controls">
 <label>Mean axial stretch <input id="mean" type="number" min="0.6" max="1.4" step="0.05" value="1"><small>Positive range: 0.6–1.4.</small></label>
-<label>Uneven-stretch gradient <input id="gradient" type="number" min="-0.6" max="0.6" step="0.05" value="0.4"><small>Changes the stretch along the material coordinate.</small></label>
+<label>Uneven-stretch amplitude a <input id="gradient" type="number" min="-0.6" max="0.6" step="0.05" value="0.4"><small>Dimensionless relative variation. The actual gradient is dλ/dS = 2λ̄a/L₀.</small></label>
 <label>Axial mesh cells <select id="cells"><option>8</option><option>16</option><option selected>32</option><option>64</option><option>128</option></select><small>Refines the displayed straight-cell approximation.</small></label>
 <label style="grid-column:1/-1"><input id="compensate" type="checkbox" checked> Local radial compensation: b = 1/√λ</label>
 </div><button id="reset">Reset reference experiment</button><div id="error" role="status" class="error"></div>
@@ -26,6 +26,8 @@
 x(S) = λ̄ [(1 − a)S + aS²/L₀]
 y = b(S)Y,  z = b(S)Z
 b(S) = 1/√λ(S) with compensation; b = 1 otherwise
+dλ/dS = 2λ̄a/L₀
+b′(S) = −(dλ/dS)/(2λ(S)^(3/2)) with compensation
 
 F = [ λ      0  0 ]
     [ b′Y    b  0 ]
