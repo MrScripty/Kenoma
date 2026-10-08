@@ -290,7 +290,7 @@ def qualify(out, baseline_pdf=None):
                 measure('prose:' + chapter, n.text(), prose=True, node=n)
                 selected.add(chapter)
         assert selected, 'No representative instructional prose selected'
-        for name in ('dense-qualification.svg', 'dense-envelope.svg', 'nodal-force-components.svg', 'property-serial.svg', 'property-dissipative.svg', 'pressure-projection.svg'):
+        for name in ('dense-qualification.svg', 'dense-envelope.svg', 'nodal-force-components.svg', 'property-serial.svg', 'property-dissipative.svg', 'pressure-projection.svg', 'nonuniform-volume.svg'):
             paths = list(out.rglob(name))
             assert len(paths) == 1, f'Missing/duplicated delivered figure {name}'
             path = paths[0]
