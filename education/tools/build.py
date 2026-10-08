@@ -14,6 +14,7 @@ from check_real_lesson_proofs import check as check_real_lessons, FAMILIES as RE
 from property_labs import block as property_block
 from dissipative_lab import block as dissipative_block
 from serial_lab import block as serial_block
+from nonuniform_lab import build as build_nonuniform, block as nonuniform_block
 from figures import generate
 from evidence_figures import generate as evidence_figures
 from spatial_figures import generate as advanced_figures
@@ -114,6 +115,7 @@ def build():
     properties=check_properties()
     material=check_material()
     real_lessons=check_real_lessons(properties)
+    build_nonuniform()
     from check_mixed_volume_proofs import check as check_mixed
     check_mixed(OUT/'mixed-volume-kernel', False)
     data=ROOT/'data/elbow-v1'
@@ -219,6 +221,7 @@ def build():
     def expand(web):
         text=re.sub(r'\{\{demo:(\w+)\}\}',lambda m:lab_block(m[1],web),chapters)
         text=re.sub(r'\{\{property:(\w+)\}\}',lambda m:property_block(m[1],web),text)
+        text=text.replace('{{nonuniform-lab}}',nonuniform_block(web))
         text=re.sub(r'\{\{dissipative:(\w+)\}\}',lambda m:dissipative_block(m[1],web),text)
         text=text.replace('{{dissipative-table}}',dissipative_table)
         text=re.sub(r'\{\{serial:(\w+)\}\}',lambda m:serial_block(m[1],web),text)

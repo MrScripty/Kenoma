@@ -56,6 +56,7 @@ def render():
               Object.assign(destinations,{'proofs/AnatomicalTransfer.lean':'#transfer-source-appendix','transfer-proof-status.json':'#transfer-proof-receipt','transfer-lean-check.txt':'#transfer-kernel-report','proofs/CoupledMechanics.lean':'#coupled-source-appendix','coupled-proof-status.json':'#coupled-proof-receipt','coupled-lean-check.txt':'#coupled-kernel-report','proofs/AnatomicalArm.lean':'#arm-source-appendix','arm-proof-status.json':'#arm-proof-receipt','arm-lean-check.txt':'#arm-kernel-report','proofs/ContinuumProperties.lean':'#property-source-appendix','property-proof-status.json':'#property-proof-receipt','property-lean-check.txt':'#property-kernel-report'});
               Object.assign(destinations,{'proofs/MaterialResponse.lean':'#material-source-appendix','material-proof-status.json':'#material-proof-receipt','material-lean-check.txt':'#material-kernel-report'});
               Object.assign(destinations,realDestinations);
+              Object.assign(destinations,{'nonuniform/nonuniform-volume-lab.html':'#nonuniform-local-volume','nonuniform/composition.json':'#nonuniform-evidence-boundaries'});
               for(const link of document.querySelectorAll('a[href]')){
                 const href=link.getAttribute('href'),target=destinations[href];
                 if(target)link.setAttribute('href',target);
