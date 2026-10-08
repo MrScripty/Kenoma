@@ -106,6 +106,8 @@ def verify_mathlib(mathlib, require_packages=True):
             path = mathlib / '.lake/packages' / package['name']
             require(git('rev-parse', 'HEAD', cwd=path) == package['rev'], 'Wrong package: ' + package['name'])
             require(not git('status', '--porcelain', cwd=path), 'Dirty package: ' + package['name'])
+            if package['name'] == 'proofwidgets':
+                verify_release_tag(path, package['inputRev'], package['rev'])
     return lock, packages
 
 
@@ -115,6 +117,21 @@ def checkout(url, revision, path):
     subprocess.run(['git', '-C', str(path), 'remote', 'add', 'origin', url], check=True)
     subprocess.run(['git', '-C', str(path), 'fetch', '--depth', '1', 'origin', revision], check=True)
     subprocess.run(['git', '-C', str(path), 'checkout', '--detach', revision], check=True)
+
+
+def verify_release_tag(path, tag, revision):
+    require(re.fullmatch(r'v[0-9]+\.[0-9]+\.[0-9]+', tag), 'Unexpected release tag')
+    require(git('rev-parse', f'refs/tags/{tag}^{{}}', cwd=path) == revision,
+            'Release tag does not match pinned package revision')
+
+
+def fetch_release_tag(path, tag, revision):
+    # Lake 4.19 resolves release URLs with git describe --tags --exact-match.
+    # A SHA-only shallow checkout lacks that metadata; never follow an unpinned tag.
+    require(re.fullmatch(r'v[0-9]+\.[0-9]+\.[0-9]+', tag), 'Unexpected release tag')
+    subprocess.run(['git', '-C', str(path), 'fetch', '--depth', '1', 'origin',
+                    f'refs/tags/{tag}:refs/tags/{tag}'], check=True)
+    verify_release_tag(path, tag, revision)
 
 
 def dependencies(args):
@@ -128,7 +145,10 @@ def dependencies(args):
         checkout(lock['repository'], lock['commit'], mathlib)
         _, packages = verify_mathlib(mathlib, require_packages=False)
         for package in packages:
-            checkout(package['url'], package['rev'], mathlib / '.lake/packages' / package['name'])
+            path = mathlib / '.lake/packages' / package['name']
+            checkout(package['url'], package['rev'], path)
+            if package['name'] == 'proofwidgets':
+                fetch_release_tag(path, package['inputRev'], package['rev'])
     lock, packages = verify_mathlib(mathlib)
     if not args.verify_only:
         env = os.environ.copy()
@@ -140,6 +160,8 @@ def dependencies(args):
     write_json(output / 'dependencies.json', {
         'mathlib_commit': lock['commit'], 'manifest_sha256': lock['manifest_sha256'],
         'packages': [{'name': p['name'], 'revision': p['rev']} for p in packages],
+        'release_tags': [{'name': p['name'], 'tag': p['inputRev'], 'revision': p['rev']}
+                         for p in packages if p['name'] == 'proofwidgets'],
         'cache_roots': list(CACHE_ROOTS), 'all_sources_pristine': True,
         'cache_fetched_in_this_command': not args.verify_only,
         'full_book_from_source_gate': False,

@@ -18,7 +18,9 @@ symbolic evidence, separate from the six Lean Real contracts.
 The job reuses the repository's pinned action commits, Node 22, Python 3.12,
 Python requirements and hash-verified official Lean 4.19.0 installer. It verifies
 the pinned mathlib revision and manifest *before* cloning the manifest's exact
-package revisions. It verifies pristine package sources before and after
+package revisions. The manifest's ProofWidgets release tag is also fetched and
+required to resolve to its pinned commit; Lake needs that exact-match tag to
+locate the official release archive. It verifies pristine package sources before and after
 fetching only the official cache closures of `Mathlib/Data/Real/Basic.lean`,
 `Mathlib/Tactic/FieldSimp.lean`, and `Mathlib/Tactic/Ring.lean`. Mathlib's official
 cache tool may also retrieve its pinned ProofWidgets release assets. Nothing

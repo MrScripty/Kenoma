@@ -71,6 +71,47 @@ class SourceControls(unittest.TestCase):
         self.assertEqual(Q.external(self.root.parent / 'external', self.root), self.root.parent / 'external')
 
 
+class ReleaseTagControls(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory(prefix='kenoma-force-tag-test-')
+        self.addCleanup(self.tmp.cleanup)
+        self.root = Path(self.tmp.name)
+        self.origin = self.root / 'origin'
+        self.checkout = self.root / 'checkout'
+        subprocess.run(['git', 'init', '-q', str(self.origin)], check=True)
+        (self.origin / 'source.txt').write_text('pinned source')
+        subprocess.run(['git', 'add', '.'], cwd=self.origin, check=True)
+        subprocess.run(['git', '-c', 'user.email=test@example.invalid', '-c', 'user.name=Tag test',
+                        '-c', 'commit.gpgsign=false', 'commit', '-qm', 'Local fixture'], cwd=self.origin, check=True)
+        self.revision = Q.git('rev-parse', 'HEAD', cwd=self.origin)
+        subprocess.run(['git', 'tag', 'v0.0.57'], cwd=self.origin, check=True)
+        Q.checkout(str(self.origin), self.revision, self.checkout)
+        # A normal Git fetch can auto-follow reachable tags. Remove it to
+        # reproduce the SHA-only GitHub checkout observed in the failed run.
+        if Q.git('tag', '--list', 'v0.0.57', cwd=self.checkout):
+            subprocess.run(['git', 'tag', '-d', 'v0.0.57'], cwd=self.checkout, check=True)
+
+    def test_sha_checkout_does_not_supply_release_tag(self):
+        with self.assertRaises(subprocess.CalledProcessError):
+            Q.verify_release_tag(self.checkout, 'v0.0.57', self.revision)
+
+    def test_fetch_verified_tag_preserves_exact_sources(self):
+        Q.fetch_release_tag(self.checkout, 'v0.0.57', self.revision)
+        self.assertEqual(Q.git('describe', '--tags', '--exact-match', 'HEAD', cwd=self.checkout), 'v0.0.57')
+        self.assertEqual(Q.git('rev-parse', 'HEAD', cwd=self.checkout), self.revision)
+        self.assertEqual(Q.git('status', '--porcelain', cwd=self.checkout), '')
+
+    def test_tag_pointing_elsewhere_rejected(self):
+        with self.assertRaisesRegex(RuntimeError, 'pinned package revision'):
+            Q.fetch_release_tag(self.checkout, 'v0.0.57', '0' * 40)
+
+    def test_nonrelease_ref_rejected_before_fetch(self):
+        with patch.object(Q.subprocess, 'run') as run:
+            with self.assertRaisesRegex(RuntimeError, 'Unexpected release tag'):
+                Q.fetch_release_tag(self.checkout, 'main', self.revision)
+            run.assert_not_called()
+
+
 class FinishControls(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory(prefix='kenoma-force-finish-test-')
