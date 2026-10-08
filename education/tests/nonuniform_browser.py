@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'tools'))
 from render_pdf import serve
 from executable_outputs import checked_build_outputs, unchanged_outputs
+from check_print_readability import PDFText, normalized
 
 out = ROOT / 'dist'
 lab = out / 'nonuniform'
@@ -55,11 +56,15 @@ try:
 finally:
     server.shutdown();server.server_close()
 with fitz.open(out/'kenoma-mechanics.pdf') as doc:
-    flat=''.join(''.join(page.get_text().split()) for page in doc)
+    pdf = PDFText(doc)
+    flat = pdf.text
     assert 'Unevenstretchandlocalvolume' in flat
     assert registration['acceptedSource'] in flat
     source=(ROOT/'proofs/NonuniformIsochoric.lean').read_text()
-    assert ''.join(source.split()) in flat
+    bounds = next((b for b in pdf.bounded('Checked source appendix: NonuniformIsochoric', 'Proof check receipt')
+                   if list(pdf.occurrences(source, *b))), None)
+    assert bounds is not None, 'Missing or incomplete NonuniformIsochoric appendix'
+    assert normalized(source) in flat[bounds[0]:bounds[1]]
     for page in doc:
         for link in page.get_links():
             uri=link.get('uri','');assert '127.0.0.1' not in uri and 'localhost' not in uri, uri
