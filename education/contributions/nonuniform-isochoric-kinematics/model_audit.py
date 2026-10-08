@@ -4,6 +4,9 @@ from collections import Counter
 from decimal import Decimal,localcontext
 import argparse,hashlib,itertools,json,subprocess
 import sympy as sp
+import mpmath
+
+assert sp.__version__=='1.14.0' and mpmath.__version__=='1.3.0','Use the pinned audit dependencies'
 
 ROOT=Path(__file__).resolve().parent
 parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
@@ -71,4 +74,5 @@ phrases=['no force balance, material response, activation or anatomical predicti
 for phrase in phrases:assert phrase.lower() in text.lower(),phrase
 sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 payload={'result':'PASS_SEPARATE_SYMBOLIC_GEOMETRY_TOPOLOGY_AND_TEXT_AUDIT','sourceHashes':{name:sha(ROOT/name) for name in ['model.mjs','index.template.html','model_audit.py']},'independentDerivation':{'fullJacobian':str(F),'determinant':str(sp.simplify(F.det())),'axialSpan':'m*L','uncompensatedMeanVolumeRatio':'m','cellErrorFactorization':str(factor),'strictCellErrorCondition':'r>0 and r != 1; numerator and denominator are positive.','continuumVolumeArgument':'On the positive-stretch material interval, x(S) is strictly increasing and b(S)>0. The map is injective and C1 on a neighbourhood of the prism. Change of variables gives the stated continuum volume; this integral argument is not a compiled Lean theorem.'},'numericalChecks':{'states':len(states),'closedOrientedMeshes':closedMeshes,'maximumBoundaryDifferenceM3':maxBoundaryError,'maximumReferenceDifferenceM3':maxReferenceError,'maximumIndependentCellRatioDifference':maxCellError,'refinementFamilies':len(refinement),'minimumReductionFactorRequired':3.7},'textScopeChecks':phrases,'physicsReview':'Prescribed compatible finite kinematics, with true off-axis shear. Centerline lambda-1 is not surface-fibre extension. No balance law or tissue material law is introduced. A 16-sided prism is authored reference geometry. Finite-volume error is measured rather than hidden.','peerAcceptance':'PENDING_PARENT_INDEPENDENT_REVIEW; separate audit routes are not a substitute for an independent human/agent acceptance.','anatomicalCompletion':False,'authorCampaignInvocations':0}
+payload['auditDependencies']={'sympy':sp.__version__,'mpmath':mpmath.__version__,'requirementsSha256':sha(ROOT/'requirements-audit.txt')}
 (args.output/'model-audit.json').write_text(json.dumps(payload,indent=2,ensure_ascii=False)+'\n');print(payload['result'],len(states),'states')

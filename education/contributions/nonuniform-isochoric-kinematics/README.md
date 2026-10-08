@@ -10,6 +10,7 @@ Validation commands, from this directory:
 
 ```bash
 node --test model.test.mjs
+python3 -m pip install -r requirements-audit.txt
 python3 model_audit.py --output /absolute/ignored/review/audit
 python3 check_proofs.py --mathlib /absolute/pinned/mathlib4 --lean-bin /absolute/lean-4.19.0-linux/bin --output /absolute/ignored/review/proofs
 python3 build.py --output /absolute/ignored/review/site --proof-receipt /absolute/ignored/review/proofs/nonuniform-proof-status.json --model-audit /absolute/ignored/review/audit/model-audit.json
