@@ -8,8 +8,9 @@ starts the repository's separate, broad full-book gate.
 
 The original thirteen files under `contributions/architecture-force/` are the
 reviewed additive lesson, not book registration. The job names their two Node
-test files explicitly because the existing default `npm test` glob excludes
-this directory. Its twelve Node contracts include the actual checked-out
+test files explicitly to keep this job bounded. The historical default
+`npm test` glob excluded this directory; the source-only book integration now
+registers these same tests in the default suite as well. Its twelve Node contracts include the actual checked-out
 `web/anatomical-material.mjs`. Seven SymPy identities remain supplementary
 symbolic evidence, separate from the six Lean Real contracts.
 

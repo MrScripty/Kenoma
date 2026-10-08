@@ -18,8 +18,8 @@ import fitz
 
 ROOT = Path(__file__).resolve().parents[1]
 MINIMUM_PT = 10.0
-EXPECTED_CARDS = 109
-EXPECTED_SOURCES = 13
+EXPECTED_CARDS = 115
+EXPECTED_SOURCES = 14
 
 
 def sha(path):
@@ -231,7 +231,7 @@ def qualify(out, baseline_pdf=None):
         for claim in receipt['claims']:
             assert claim['id'] not in claims, 'Duplicate claim id'
             claims[claim['id']] = (claim, source)
-    assert len(families) == EXPECTED_SOURCES and len(claims) == EXPECTED_CARDS, 'Expected the complete 109-card, thirteen-source integration edition'
+    assert len(families) == EXPECTED_SOURCES and len(claims) == EXPECTED_CARDS, 'Expected the complete registered-card/source integration edition'
     cards = [n for n in nodes if 'proof-card' in n.attrs.get('class', '').split()]
     assert len(cards) == EXPECTED_CARDS, 'Wrong printed card inventory'
     measurements, errors, figure_inputs = [], [], {}

@@ -5,6 +5,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from threading import Thread
 import hashlib, html, json, os, shutil, subprocess
 from playwright.sync_api import sync_playwright
+from check_real_lesson_proofs import BOOK_CLAIMS
 
 ROOT = Path(__file__).resolve().parents[1]
 ACCEPTED = '15c624c32378b9c773a3d0c25a65150804b68c90'
@@ -37,9 +38,9 @@ def build():
     target = out / 'nonuniform-volume-lab.html'
     text = target.read_text()
     replacements = {
-        'The existing book remains at 103 claims; this extension is not registered pending independent acceptance.': 'This accepted extension adds six scoped contracts to the original 103, giving 109 checked declarations in the book candidate.',
+        'The existing book remains at 103 claims; this extension is not registered pending independent acceptance.': f'This accepted extension added six scoped contracts to the original 103, giving 109 at its historical integration. The current book registry contains {BOOK_CLAIMS} declarations, including six architecture-force contracts.',
         'Independent peer acceptance is pending.': 'Independent peer acceptance applies to exact source ' + ACCEPTED + '; this candidate preserves its mathematical and model source bytes.',
-        'Separate property-lab review candidate. Existing research-book sources and 103 proof identities are unchanged. Six scoped Real contracts are compiled for this standalone extension; book registration requires independent acceptance.': 'Accepted property lab in a separate research-book candidate. Original 103 proof identities are preserved; six scoped Real contracts bring the candidate to 109. Source ' + ACCEPTED + '.',
+        'Separate property-lab review candidate. Existing research-book sources and 103 proof identities are unchanged. Six scoped Real contracts are compiled for this standalone extension; book registration requires independent acceptance.': f'Accepted property lab in a separate research-book candidate. Original 103 proof identities are preserved; this lesson added six scoped Real contracts for the historical total of 109. The current book registry contains {BOOK_CLAIMS} declarations. Source ' + ACCEPTED + '.',
     }
     for old, new in replacements.items():
         assert text.count(old) == 1, old
@@ -51,10 +52,10 @@ def build():
     # assembled download and rebind the assembly receipt to the actual HTML.
     download = out / 'nonuniform-proof-status.json'
     payload = json.loads(download.read_text())
-    payload.update(bookRegistration='REGISTERED_IN_SEPARATE_ACCEPTED_BOOK_CANDIDATE', bookTotal=109, independentlyAcceptedSource=ACCEPTED)
+    payload.update(bookRegistration='REGISTERED_IN_SEPARATE_ACCEPTED_BOOK_CANDIDATE', bookTotal=BOOK_CLAIMS, historicalNonuniformBookTotal=109, independentlyAcceptedSource=ACCEPTED)
     download.write_text(json.dumps(payload, indent=2)+'\n')
     assembly = json.loads((out / 'build-receipt.json').read_text())
-    assembly.update(formalProofRegistration='REGISTERED_IN_SEPARATE_ACCEPTED_BOOK_CANDIDATE', bookTotal=109, independentlyAcceptedSource=ACCEPTED, originalCheckerReceipt='proof-check/nonuniform-proof-status.json')
+    assembly.update(formalProofRegistration='REGISTERED_IN_SEPARATE_ACCEPTED_BOOK_CANDIDATE', bookTotal=BOOK_CLAIMS, historicalNonuniformBookTotal=109, independentlyAcceptedSource=ACCEPTED, originalCheckerReceipt='proof-check/nonuniform-proof-status.json')
     assembly['proofReceiptSha256'] = hashlib.sha256(download.read_bytes()).hexdigest()
     assembly['output']['sha256'] = hashlib.sha256(target.read_bytes()).hexdigest()
     assembly['output']['bytes'] = target.stat().st_size
@@ -81,7 +82,7 @@ def build():
     figure = figure.replace('>', '><style>text{font:23px sans-serif;fill:#193438}</style>', 1)
     assets = ROOT / 'dist/assets';assets.mkdir(exist_ok=True)
     (assets / 'nonuniform-volume.svg').write_text(figure)
-    manifest = {'acceptedSource':ACCEPTED, 'candidateRevision':subprocess.check_output(['git','rev-parse','HEAD'], cwd=ROOT, text=True).strip(), 'registeredContracts':6, 'bookTotal':109, 'sourceSha256':receipt['source_sha256'], 'standaloneClaimsSha256':hashlib.sha256((source / 'claims.json').read_bytes()).hexdigest(), 'registeredClaimsSha256':receipt['claims_sha256'], 'outputSha256':hashlib.sha256(target.read_bytes()).hexdigest(), 'assemblyReplacements':replacements, 'physicalLawsChanged':False}
+    manifest = {'acceptedSource':ACCEPTED, 'candidateRevision':subprocess.check_output(['git','rev-parse','HEAD'], cwd=ROOT, text=True).strip(), 'registeredContracts':6, 'bookTotal':BOOK_CLAIMS, 'historicalNonuniformBookTotal':109, 'sourceSha256':receipt['source_sha256'], 'standaloneClaimsSha256':hashlib.sha256((source / 'claims.json').read_bytes()).hexdigest(), 'registeredClaimsSha256':receipt['claims_sha256'], 'outputSha256':hashlib.sha256(target.read_bytes()).hexdigest(), 'assemblyReplacements':replacements, 'physicalLawsChanged':False}
     (out / 'registration.json').write_text(json.dumps(manifest, indent=2)+'\n')
 
 def block(web):

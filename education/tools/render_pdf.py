@@ -7,6 +7,7 @@ import json,os,shutil,subprocess
 import fitz
 from playwright.sync_api import sync_playwright
 from check_real_lesson_proofs import FAMILIES as REAL_FAMILIES
+from architecture_force_lab import pdf_implementation_links
 ROOT=Path(__file__).resolve().parents[1]
 
 def repair_outline_titles(path,heading_titles):
@@ -51,12 +52,14 @@ def render():
             real_destinations={}
             for source_name,_,prefix,_ in REAL_FAMILIES:
                 real_destinations.update({'proofs/'+source_name:'#'+prefix+'-source-appendix',prefix+'-proof-status.json':'#'+prefix+'-proof-receipt',prefix+'-lean-check.txt':'#'+prefix+'-kernel-report'})
-            page.evaluate('''({revision,realDestinations}) => {
+            page.evaluate('''({revision,realDestinations,architectureImplementationDestinations}) => {
               const destinations={'proofs/Mechanics.lean':'#checked-source-appendix','proof-status.json':'#proof-check-receipt','lean-check.txt':'#kernel-dependency-report'};
               Object.assign(destinations,{'proofs/AnatomicalTransfer.lean':'#transfer-source-appendix','transfer-proof-status.json':'#transfer-proof-receipt','transfer-lean-check.txt':'#transfer-kernel-report','proofs/CoupledMechanics.lean':'#coupled-source-appendix','coupled-proof-status.json':'#coupled-proof-receipt','coupled-lean-check.txt':'#coupled-kernel-report','proofs/AnatomicalArm.lean':'#arm-source-appendix','arm-proof-status.json':'#arm-proof-receipt','arm-lean-check.txt':'#arm-kernel-report','proofs/ContinuumProperties.lean':'#property-source-appendix','property-proof-status.json':'#property-proof-receipt','property-lean-check.txt':'#property-kernel-report'});
               Object.assign(destinations,{'proofs/MaterialResponse.lean':'#material-source-appendix','material-proof-status.json':'#material-proof-receipt','material-lean-check.txt':'#material-kernel-report'});
               Object.assign(destinations,realDestinations);
+              Object.assign(destinations,architectureImplementationDestinations);
               Object.assign(destinations,{'nonuniform/nonuniform-volume-lab.html':'#nonuniform-local-volume','nonuniform/composition.json':'#nonuniform-evidence-boundaries'});
+              Object.assign(destinations,{'architecture-force/index.html':'#architecture-to-force','architecture-force/sources.json':'#architecture-force-evidence','architecture-force/registration.json':'#architecture-force-evidence','contributions/architecture-force/README.md':'#architecture-force-evidence'});
               for(const link of document.querySelectorAll('a[href]')){
                 const href=link.getAttribute('href'),target=destinations[href];
                 if(target)link.setAttribute('href',target);
@@ -68,7 +71,7 @@ def render():
                   link.textContent='Reproduce this research preview from the pinned repository instructions';
                 }
               }
-            }''',{'revision':revision,'realDestinations':real_destinations})
+            }''',{'revision':revision,'realDestinations':real_destinations,'architectureImplementationDestinations':pdf_implementation_links(ROOT)})
             page.pdf(path=str(ROOT/'dist/kenoma-mechanics.pdf'),format='A4',print_background=True,
               display_header_footer=True,header_template='<span></span>',
               footer_template='<div style="font-family:Arial;font-size:9px;width:100%;padding:0 18mm;color:#456171;display:flex;justify-content:space-between"><span>Kenoma · Mechanics of Moving Bodies · Spatial mechanics and evidence</span><span class="pageNumber"></span></div>',

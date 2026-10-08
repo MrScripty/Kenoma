@@ -15,11 +15,18 @@ from property_labs import block as property_block
 from dissipative_lab import block as dissipative_block
 from serial_lab import block as serial_block
 from nonuniform_lab import build as build_nonuniform, block as nonuniform_block
+from architecture_force_lab import build as build_architecture_force, block as architecture_force_block
 from figures import generate
 from evidence_figures import generate as evidence_figures
 from spatial_figures import generate as advanced_figures
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'dist'
+
+def implementation_link(implementation):
+    """Link supported bundled sources; leave other implementation prose unchanged."""
+    prose=html.escape(implementation).replace('*','&#42;').replace('^','&#94;')
+    match=re.match(r'(web/[^: ]+|contributions/architecture-force/[^:; ]+)',implementation)
+    return f'<a href="{html.escape(match[1])}">{prose}</a>' if match else prose
 
 def theorem_statement(checked_source,name):
     # A checked theorem may use a term proof or a tactic proof. Stop at its
@@ -116,6 +123,7 @@ def build():
     material=check_material()
     real_lessons=check_real_lessons(properties)
     build_nonuniform()
+    build_architecture_force()
     from check_mixed_volume_proofs import check as check_mixed
     check_mixed(OUT/'mixed-volume-kernel', False)
     data=ROOT/'data/elbow-v1'
@@ -158,8 +166,7 @@ def build():
         # multiplication signs are literal text, not emphasis delimiters.
         def prose(value):return e(value).replace('*','&#42;').replace('^','&#94;')
         implementation=c.get('implementation','See the adjacent derivation and original mechanics claim map.')
-        match=re.match(r'(web/[^: ]+)',implementation)
-        implementation_html=(f'<a href="{e(match[1])}">{prose(implementation)}</a>' if match else prose(implementation))
+        implementation_html=implementation_link(implementation)
         return f'''\n<aside class="proof-card" id="proof-{id}" aria-label="Checked mathematical claim">
 <h3>Checked claim · {e(id)}</h3><p>{prose(c['claim'])}</p><p><strong>Assumptions:</strong> {prose(c['assumptions'])}</p>
 <pre><code>{e(stmt)}</code></pre><p><strong>Limits:</strong> {prose(c['limitations'])}</p>
@@ -222,6 +229,7 @@ def build():
         text=re.sub(r'\{\{demo:(\w+)\}\}',lambda m:lab_block(m[1],web),chapters)
         text=re.sub(r'\{\{property:(\w+)\}\}',lambda m:property_block(m[1],web),text)
         text=text.replace('{{nonuniform-lab}}',nonuniform_block(web))
+        text=text.replace('{{architecture-force-lab}}',architecture_force_block(web))
         text=re.sub(r'\{\{dissipative:(\w+)\}\}',lambda m:dissipative_block(m[1],web),text)
         text=text.replace('{{dissipative-table}}',dissipative_table)
         text=re.sub(r'\{\{serial:(\w+)\}\}',lambda m:serial_block(m[1],web),text)

@@ -9,13 +9,14 @@ sys.path.insert(0, str(ROOT / 'tools'))
 from render_pdf import serve
 from executable_outputs import checked_build_outputs, unchanged_outputs
 from check_print_readability import PDFText, normalized
+from check_real_lesson_proofs import BOOK_CLAIMS
 
 out = ROOT / 'dist'
 lab = out / 'nonuniform'
 before = checked_build_outputs(out)
 registration = json.loads((lab / 'registration.json').read_text())
 assert registration['acceptedSource'] == '15c624c32378b9c773a3d0c25a65150804b68c90'
-assert registration['bookTotal'] == 109 and registration['registeredContracts'] == 6
+assert registration['bookTotal'] == BOOK_CLAIMS and registration['historicalNonuniformBookTotal'] == 109 and registration['registeredContracts'] == 6
 assert registration['outputSha256'] == hashlib.sha256((lab / 'nonuniform-volume-lab.html').read_bytes()).hexdigest()
 assembly = json.loads((lab / 'build-receipt.json').read_text())
 assert assembly['output']['sha256'] == registration['outputSha256']
@@ -31,14 +32,14 @@ try:
             page = browser.new_page(viewport={'width':width,'height':1000})
             errors = [];page.on('pageerror', lambda error: errors.append(str(error)))
             page.goto(url + '/index.html', wait_until='networkidle')
-            assert page.locator('.proof-card').count() == 109
+            assert page.locator('.proof-card').count() == BOOK_CLAIMS
             for item in ['nonuniform-local-volume','nonuniform-evidence-boundaries']:
                 expect(page.locator('#'+item)).to_have_count(1)
             entry = page.get_by_role('link', name='Open the interactive local-volume lab', exact=True)
             entry.click();page.wait_for_load_state('networkidle')
             assert page.url == url + '/nonuniform/nonuniform-volume-lab.html'
             assert page.locator('.real-contract').count() == 6
-            assert 'giving 109 checked declarations' in page.locator('#real-contracts').inner_text()
+            assert f'The current book registry contains {BOOK_CLAIMS} declarations' in page.locator('#real-contracts').inner_text()
             assert 'acceptance is pending' not in page.locator('body').inner_text()
             state = lambda:page.evaluate('KinematicLab.state()')
             page.locator('#compensate').uncheck()
@@ -70,6 +71,6 @@ with fitz.open(out/'kenoma-mechanics.pdf') as doc:
             uri=link.get('uri','');assert '127.0.0.1' not in uri and 'localhost' not in uri, uri
     pages=len(doc)
 unchanged_outputs(out,before)
-result={'result':'PASS_ACCEPTED_NONUNIFORM_BOOK_ENTRY_CONTROLS_SOURCE_PDF_AND_PORTABLE_LINKS','candidateRevision':registration['candidateRevision'],'acceptedSource':registration['acceptedSource'],'bookProofs':109,'views':views,'pdfPages':pages,'standaloneBrowserReceiptSha256':hashlib.sha256((lab/'browser-receipt.json').read_bytes()).hexdigest(),'physicalLawsChanged':False,'authorCampaignInvocations':0}
+result={'result':'PASS_ACCEPTED_NONUNIFORM_BOOK_ENTRY_CONTROLS_SOURCE_PDF_AND_PORTABLE_LINKS','candidateRevision':registration['candidateRevision'],'acceptedSource':registration['acceptedSource'],'bookProofs':BOOK_CLAIMS,'views':views,'pdfPages':pages,'standaloneBrowserReceiptSha256':hashlib.sha256((lab/'browser-receipt.json').read_bytes()).hexdigest(),'physicalLawsChanged':False,'authorCampaignInvocations':0}
 (lab/'book-integration-browser.json').write_text(json.dumps(result,indent=2)+'\n')
 print(json.dumps(result,indent=2))
