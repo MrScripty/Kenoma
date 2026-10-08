@@ -1,0 +1,68 @@
+[
+  {
+    "id": "lateral-material-resultants",
+    "theorem": "KenomaLateralTransfer.material_resultants",
+    "title": "Material quantities map to declared resultants",
+    "domain": "Real",
+    "statement_lean": "theorem material_resultants (E A L G As h s : ℝ) (hL : 0 < L) (hh : 0 < h) :\n    axial E A L * s = A * (E * (s / L)) ∧\n      shear G As h * s = As * (G * (s / h))",
+    "status": "unqualified until fresh source-bound kernel receipt",
+    "assumptions": "Exactly the quantified parameters and explicit hypotheses in the full Lean statement.",
+    "limitations": "Original finite discrete passive guided model only. No certified differentiation, continuum equilibrium, JavaScript refinement, anatomy or biological calibration. E is a reduced axial modulus; two localized macro-links are an authored discretization.",
+    "implementation": "model.mjs: axialStiffness, shearStiffness, equilibrium and storedEnergy; independent rational/symbolic checks are separate."
+  },
+  {
+    "id": "lateral-stationary-solution",
+    "theorem": "KenomaLateralTransfer.stationary_solution",
+    "title": "Closed-form displacements satisfy the discrete equations",
+    "domain": "Real",
+    "statement_lean": "theorem stationary_solution (K1 K2 CL CR d : ℝ)\n    (hK1 : 0 < K1) (hK2 : 0 < K2) (hCL : 0 ≤ CL) (hCR : 0 ≤ CR) :\n    K1 * upper K1 CR d = CR * (d - upper K1 CR d) ∧\n      K2 * (d - lower K2 CL d) = CL * lower K2 CL d",
+    "status": "unqualified until fresh source-bound kernel receipt",
+    "assumptions": "Exactly the quantified parameters and explicit hypotheses in the full Lean statement.",
+    "limitations": "Original finite discrete passive guided model only. No certified differentiation, continuum equilibrium, JavaScript refinement, anatomy or biological calibration. E is a reduced axial modulus; two localized macro-links are an authored discretization.",
+    "implementation": "model.mjs: axialStiffness, shearStiffness, equilibrium and storedEnergy; independent rational/symbolic checks are separate."
+  },
+  {
+    "id": "lateral-matched-end-resultants",
+    "theorem": "KenomaLateralTransfer.matched_end_resultants",
+    "title": "Both end-pull scalars match the effective stiffness",
+    "domain": "Real",
+    "statement_lean": "theorem matched_end_resultants (K1 K2 CL CR d : ℝ)\n    (hK1 : 0 < K1) (hK2 : 0 < K2) (hCL : 0 ≤ CL) (hCR : 0 ≤ CR) :\n    K1 * upper K1 CR d + CL * lower K2 CL d = effective K1 K2 CL CR * d ∧\n      K2 * (d - lower K2 CL d) + CR * (d - upper K1 CR d) =\n        effective K1 K2 CL CR * d",
+    "status": "unqualified until fresh source-bound kernel receipt",
+    "assumptions": "Exactly the quantified parameters and explicit hypotheses in the full Lean statement.",
+    "limitations": "Original finite discrete passive guided model only. No certified differentiation, continuum equilibrium, JavaScript refinement, anatomy or biological calibration. E is a reduced axial modulus; two localized macro-links are an authored discretization.",
+    "implementation": "model.mjs: axialStiffness, shearStiffness, equilibrium and storedEnergy; independent rational/symbolic checks are separate."
+  },
+  {
+    "id": "lateral-energy-completion-unique-minimum",
+    "theorem": "KenomaLateralTransfer.energy_completion_unique_minimum",
+    "title": "Quadratic completion gives the unique discrete minimum",
+    "domain": "Real",
+    "statement_lean": "theorem energy_completion_unique_minimum (K1 K2 CL CR d u v : ℝ)\n    (hK1 : 0 < K1) (hK2 : 0 < K2) (hCL : 0 ≤ CL) (hCR : 0 ≤ CR) :\n    energy K1 K2 CL CR d u v - effective K1 K2 CL CR * d ^ 2 / 2 =\n      (K1 + CR) / 2 * (u - upper K1 CR d) ^ 2 +\n        (K2 + CL) / 2 * (v - lower K2 CL d) ^ 2 ∧\n    0 ≤ energy K1 K2 CL CR d u v - effective K1 K2 CL CR * d ^ 2 / 2 ∧\n    (energy K1 K2 CL CR d u v = effective K1 K2 CL CR * d ^ 2 / 2 ↔\n      u = upper K1 CR d ∧ v = lower K2 CL d)",
+    "status": "unqualified until fresh source-bound kernel receipt",
+    "assumptions": "Exactly the quantified parameters and explicit hypotheses in the full Lean statement.",
+    "limitations": "Original finite discrete passive guided model only. No certified differentiation, continuum equilibrium, JavaScript refinement, anatomy or biological calibration. E is a reduced axial modulus; two localized macro-links are an authored discretization.",
+    "implementation": "model.mjs: axialStiffness, shearStiffness, equilibrium and storedEnergy; independent rational/symbolic checks are separate."
+  },
+  {
+    "id": "lateral-transfer-stiffness-bounds",
+    "theorem": "KenomaLateralTransfer.transfer_stiffness_bounds",
+    "title": "Finite interface transfer stiffness is bounded",
+    "domain": "Real",
+    "statement_lean": "theorem transfer_stiffness_bounds (K1 K2 CL CR : ℝ)\n    (hK1 : 0 < K1) (hK2 : 0 < K2) (hCL : 0 ≤ CL) (hCR : 0 ≤ CR) :\n    0 ≤ effective K1 K2 CL CR ∧ effective K1 K2 CL CR < K1 + K2 ∧\n      (effective K1 K2 CL CR = 0 ↔ CL = 0 ∧ CR = 0)",
+    "status": "unqualified until fresh source-bound kernel receipt",
+    "assumptions": "Exactly the quantified parameters and explicit hypotheses in the full Lean statement.",
+    "limitations": "Original finite discrete passive guided model only. No certified differentiation, continuum equilibrium, JavaScript refinement, anatomy or biological calibration. E is a reduced axial modulus; two localized macro-links are an authored discretization.",
+    "implementation": "model.mjs: axialStiffness, shearStiffness, equilibrium and storedEnergy; independent rational/symbolic checks are separate."
+  },
+  {
+    "id": "lateral-interface-stiffness-difference",
+    "theorem": "KenomaLateralTransfer.interface_stiffness_difference",
+    "title": "Stronger interface increases effective stiffness",
+    "domain": "Real",
+    "statement_lean": "theorem interface_stiffness_difference (K1 K2 CL CR CR' : ℝ)\n    (hK1 : 0 < K1) (hK2 : 0 < K2) (hCL : 0 ≤ CL) (hCR : 0 ≤ CR) (hCR' : CR ≤ CR') :\n    effective K1 K2 CL CR' - effective K1 K2 CL CR =\n      K1 ^ 2 * (CR' - CR) / ((K1 + CR') * (K1 + CR)) ∧\n      effective K1 K2 CL CR ≤ effective K1 K2 CL CR'",
+    "status": "unqualified until fresh source-bound kernel receipt",
+    "assumptions": "Exactly the quantified parameters and explicit hypotheses in the full Lean statement.",
+    "limitations": "Original finite discrete passive guided model only. No certified differentiation, continuum equilibrium, JavaScript refinement, anatomy or biological calibration. E is a reduced axial modulus; two localized macro-links are an authored discretization.",
+    "implementation": "model.mjs: axialStiffness, shearStiffness, equilibrium and storedEnergy; independent rational/symbolic checks are separate."
+  }
+]

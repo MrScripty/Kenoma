@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "access_checked": "2026-10-08",
+  "numeric_inputs": "Every geometry, E/G modulus, stiffness preset and range in this contribution is an authored illustrative engineering input. No biological measurements or fitted anatomical parameters are imported.",
+  "sources": [
+    {
+      "author": "S. F. Street",
+      "year": 1983,
+      "title": "Lateral transmission of tension in frog myofibers: a myofibrillar network and transverse cytoskeletal connections are possible transmitters",
+      "doi": "10.1002/jcp.1041140314",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/6601109/",
+      "kind": "original measured mechanical study",
+      "access": "Original PubMed abstract independently verified; full text not used",
+      "specimen": "Single frog semitendinosus myofibres with a retained surrounding-tissue splint containing cut myofibres, blood vessels and connective tissue",
+      "protocol_scope": "Pinned surrounding-tissue splint received recorded lateral tension; abstract describes active and resting transmission",
+      "use": "Motivation to declare lateral load paths",
+      "excluded_inference": "No G, interface dimensions, human fibre/bundle/whole-muscle parameters or validation of this passive two-link discretization",
+      "numeric_extraction": null,
+      "redistribution": "Citation and original paraphrase only; no source figure, table or dataset"
+    },
+    {
+      "authors": "Chi Zhang and Yingxin Gao",
+      "year": 2012,
+      "title": "Finite element analysis of mechanics of lateral transmission of force in single muscle fiber",
+      "doi": "10.1016/j.jbiomech.2012.04.026",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22682257/",
+      "kind": "original computational study, not measured material data",
+      "access": "Original abstract independently verified; full PMC retrieval was blocked",
+      "model_scope": "2D fibre/endomysium model investigating shear transfer and tapered endings",
+      "use": "Conceptual comparison requiring declared interface mechanics",
+      "excluded_inference": "No equation, geometry, parameter or numerical result reproduced or used to calibrate this fixture",
+      "numeric_extraction": null,
+      "redistribution": "Citation and original paraphrase only"
+    },
+    {
+      "author": "A. F. Bower",
+      "title": "Applied Mechanics of Solids, section 3.2",
+      "url": "https://solidmechanics.org/Text/Chapter3_2/Chapter3_2.php",
+      "kind": "original-author mechanics text",
+      "access": "Sections 3.2.6 and 3.2.7 independently read",
+      "use": "Small-strain modulus and recoverable-energy conventions",
+      "excluded_inference": "No material value imported; this guided network is an original reduction, not a 3D constrained modulus experiment",
+      "redistribution": "Citation only; no publication figure"
+    }
+  ],
+  "preserved_research_context": [
+    "education/research/progressive-muscle-labs.md",
+    "education/research/progressive-lab-checkpoint.md",
+    "education/research/measured-fibre-property-map.md",
+    "education/book/chapters/09ab-architecture-force.md"
+  ],
+  "existing_ledgers_changed": false
+}
