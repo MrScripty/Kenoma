@@ -1,0 +1,55 @@
+{
+  "scope": "Contribution-only contracts; not registered in the book proof manifest",
+  "source": "ArchitectureForce.lean",
+  "proof_status": "See a fresh source-hashed kernel receipt; this manifest alone is not proof evidence",
+  "claims": [
+    {
+      "id": "architecture-material-cut-force",
+      "theorem": "KenomaArchitectureForce.material_cut_force",
+      "model_function": "materialCut",
+      "domain": "Real; J > 0 and stretch > 0",
+      "claim": "Declared Cauchy fibre stress times declared current projected cut area equals nominal stress times reference area",
+      "not_proved": "The geometry or Nanson premises, a heterogeneous area integral, JavaScript arithmetic, equilibrium or physiology"
+    },
+    {
+      "id": "architecture-parallel-area-aggregation",
+      "theorem": "KenomaArchitectureForce.parallel_area_aggregation",
+      "model_function": "aggregateTypes",
+      "domain": "Real; total two-group reference area > 0",
+      "claim": "Total area times area-weighted nominal stress equals the two-group force sum",
+      "not_proved": "Measured fibre counts/areas, biological recruitment, lateral load sharing or the arbitrary-length JavaScript sum"
+    },
+    {
+      "id": "architecture-projection-once",
+      "theorem": "KenomaArchitectureForce.projection_once",
+      "model_function": "forceFromArea",
+      "domain": "Real scalar identity; physical use separately restricts a cosine to [0,1]",
+      "claim": "Projecting force once equals multiplying stress by an already projected area",
+      "not_proved": "A paper's PCSA definition, actual pennation, tendon routing or cancellation of transverse force"
+    },
+    {
+      "id": "architecture-two-group-projected-sum",
+      "theorem": "KenomaArchitectureForce.two_group_projected_sum",
+      "model_function": "aggregateTypes",
+      "domain": "Real scalar identity",
+      "claim": "Two separate area/stress/cosine products equal the sum of separately projected group forces",
+      "not_proved": "A three-dimensional aponeurosis solution or a calibrated fibre orientation distribution"
+    },
+    {
+      "id": "architecture-series-balance-telescopes",
+      "theorem": "KenomaArchitectureForce.series_balance_telescopes",
+      "model_function": "lateralExchange",
+      "domain": "Real scalar identity with one shared internal force",
+      "claim": "Summing two declared cell balances cancels the shared internal section force",
+      "not_proved": "Equilibrium premises, compatible displacement, ECM stiffness or force generation"
+    },
+    {
+      "id": "architecture-paired-exchange-power",
+      "theorem": "KenomaArchitectureForce.paired_exchange_power",
+      "model_function": null,
+      "domain": "Real scalar identity with equal and opposite paired forces",
+      "claim": "Paired internal force power equals force times relative velocity",
+      "not_proved": "The force law, energy storage, dissipation sign, no-slip constraint or biological bonding"
+    }
+  ]
+}
