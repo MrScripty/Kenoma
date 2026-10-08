@@ -1,0 +1,56 @@
+[
+  {
+    "id": "nonuniform-gradient-determinant",
+    "theorem": "KenomaNonuniform.gradient_determinant",
+    "domain": "Real",
+    "statement": "Off-axis shear leaves the determinant equal to lambda*b*b.",
+    "statement_lean": "theorem gradient_determinant (lambda b shearY shearZ : ℝ) :\n    Matrix.det (gradientField lambda b shearY shearZ) = lambda * b * b",
+    "assumptions": "Exactly the parameters and hypotheses in the full Lean statement.",
+    "limitations": "Declared finite kinematics only; no formal derivative, integration, triangulation, floating-point or physical equilibrium refinement; no biological claim."
+  },
+  {
+    "id": "nonuniform-positive-stretch",
+    "theorem": "KenomaNonuniform.positive_stretch_on_interval",
+    "domain": "Real",
+    "statement": "Positive mean/length, -1<a<1 and 0<=S<=L imply positive local stretch.",
+    "statement_lean": "theorem positive_stretch_on_interval (m a L S : ℝ)\n    (hm : 0 < m) (hL : 0 < L) (haLower : -1 < a) (haUpper : a < 1)\n    (hS : 0 ≤ S) (hSL : S ≤ L) : 0 < stretch m a L S",
+    "assumptions": "Exactly the parameters and hypotheses in the full Lean statement.",
+    "limitations": "Declared finite kinematics only; no formal derivative, integration, triangulation, floating-point or physical equilibrium refinement; no biological claim."
+  },
+  {
+    "id": "nonuniform-pointwise-compensation",
+    "theorem": "KenomaNonuniform.pointwise_isochoric_gradient",
+    "domain": "Real",
+    "statement": "Positive lambda and b=1/sqrt(lambda) give positive b and determinant one, for arbitrary shear entries.",
+    "statement_lean": "theorem pointwise_isochoric_gradient (lambda shearY shearZ : ℝ)\n    (hlambda : 0 < lambda) :\n    0 < transverse lambda ∧\n      Matrix.det (gradientField lambda (transverse lambda) shearY shearZ) = 1",
+    "assumptions": "Exactly the parameters and hypotheses in the full Lean statement.",
+    "limitations": "Declared finite kinematics only; no formal derivative, integration, triangulation, floating-point or physical equilibrium refinement; no biological claim."
+  },
+  {
+    "id": "nonuniform-nonuniform-isochoric",
+    "theorem": "KenomaNonuniform.nonuniform_isochoric_on_interval",
+    "domain": "Real",
+    "statement": "The declared nonuniform field has positive b and determinant one throughout the stated interval.",
+    "statement_lean": "theorem nonuniform_isochoric_on_interval (m a L S shearY shearZ : ℝ)\n    (hm : 0 < m) (hL : 0 < L) (haLower : -1 < a) (haUpper : a < 1)\n    (hS : 0 ≤ S) (hSL : S ≤ L) :\n    0 < transverse (stretch m a L S) ∧\n      Matrix.det (gradientField (stretch m a L S)\n        (transverse (stretch m a L S)) shearY shearZ) = 1",
+    "assumptions": "Exactly the parameters and hypotheses in the full Lean statement.",
+    "limitations": "Declared finite kinematics only; no formal derivative, integration, triangulation, floating-point or physical equilibrium refinement; no biological claim."
+  },
+  {
+    "id": "nonuniform-straight-cell-error",
+    "theorem": "KenomaNonuniform.straight_cell_error_factorization",
+    "domain": "Real",
+    "statement": "For positive endpoint square-root ratio r, the algebraic straight-cell volume error has the stated nonnegative factorization.",
+    "statement_lean": "theorem straight_cell_error_factorization (r : ℝ) (hr : 0 < r) :\n    straightCellRatio r - 1 =\n      (r - 1) ^ 2 * (r ^ 2 + 3 * r + 1) / (6 * r ^ 2)",
+    "assumptions": "Exactly the parameters and hypotheses in the full Lean statement.",
+    "limitations": "Declared finite kinematics only; no formal derivative, integration, triangulation, floating-point or physical equilibrium refinement; no biological claim."
+  },
+  {
+    "id": "nonuniform-straight-cell-volume-bound",
+    "theorem": "KenomaNonuniform.straight_cell_ratio_ge_one",
+    "domain": "Real",
+    "statement": "For r>0 the algebraic straight-cell volume ratio is at least one; this does not certify a mesh implementation.",
+    "statement_lean": "theorem straight_cell_ratio_ge_one (r : ℝ) (hr : 0 < r) :\n    1 ≤ straightCellRatio r",
+    "assumptions": "Exactly the parameters and hypotheses in the full Lean statement.",
+    "limitations": "Declared finite kinematics only; no formal derivative, integration, triangulation, floating-point or physical equilibrium refinement; no biological claim."
+  }
+]

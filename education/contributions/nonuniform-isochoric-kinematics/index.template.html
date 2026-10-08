@@ -4,6 +4,7 @@
 </style>
 <style>.panel,.card,.controls>*{min-width:0}.table-scroll,.shape-scroll{max-width:100%;overflow:auto}.shape-scroll svg{min-width:640px}@media print{.shape-scroll{overflow:visible}.shape-scroll svg{min-width:0}}</style>
 <style>@media print{pre,small,table,footer{font-size:10.25pt}}</style>
+<style>h3{font-size:1rem;overflow-wrap:anywhere}.real-contract{margin:28px 0}a{color:#236d75;overflow-wrap:anywhere}</style>
 <div class="eyebrow">Individual property lab · imposed finite kinematics</div>
 <h1>Uneven stretch.<br>Where does the volume go?</h1>
 <p>Prescribe a different axial stretch along an ideal reference prism, then measure the resulting geometry. Local radial compensation can preserve volume point by point, while neighbouring sections still undergo different centerline strains.</p>
@@ -33,8 +34,9 @@ J = det F = λb²</pre>
 <p>λ &gt; 0 makes the axial map monotone. Compensation gives J = 1 for the exact continuum map. The off-diagonal terms b′Y and b′Z describe the additional shear away from the centerline; a nonuniform stretch is not a sequence of unrelated uniform blocks. The reported engineering strain λ − 1 is the axial-line strain at Y = Z = 0.</p>
 <p>With compensation off and mean stretch one, total volume is still unchanged because expansion and contraction cancel. Local J then differs from one. A near-unity total-volume number alone therefore does not establish local volume preservation.</p>
 <p>Finite boundary triangles approximate the exact curved map. Their volume error is reported and should decrease with refinement. These geometric results do not establish a passive equilibrium, a muscle law, pressure, or anatomical completion.</p></section>
-<noscript><p>The reference experiment uses mean stretch 1 and gradient 0.4: centerline stretch ranges from 0.6 to 1.4. Exact compensated J is one; finite-mesh measurement requires JavaScript. The complete map and assumptions remain readable above.</p></noscript>
-<footer>Separate property-lab review candidate. Existing research-book sources and 103 proof identities are unchanged. No additional compiled Lean claim is asserted for this prototype.</footer>
+__PROOF_CONTENT__
+<noscript><p>The reference experiment uses mean stretch 1 and gradient 0.4: centerline stretch ranges from 0.6 to 1.4. Exact compensated J is one; finite-mesh measurement requires JavaScript. The complete map, assumptions and checked statements remain readable above.</p></noscript>
+<footer>Separate property-lab review candidate. Existing research-book sources and 103 proof identities are unchanged. Six scoped Real contracts are compiled for this standalone extension; book registration requires independent acceptance. No anatomical completion is claimed.</footer>
 <script type="module">
 __MODEL_CODE__
 let current=state(DEFAULTS);const $=id=>document.getElementById(id),number=(v,n=6)=>Number(v).toFixed(n);
