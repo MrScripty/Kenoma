@@ -44,6 +44,8 @@ def build():
     for old, new in replacements.items():
         assert text.count(old) == 1, old
         text = text.replace(old, new)
+    assert text.count('<footer>') == 1
+    text = text.replace('<footer>', '<footer style="overflow-wrap:anywhere">', 1)
     target.write_text(text)
     # Retain the original checker output under proof-check; annotate only the
     # assembled download and rebind the assembly receipt to the actual HTML.
