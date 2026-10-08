@@ -1,0 +1,35 @@
+{
+  "parent": "da6842f146ea11bd1c0bfbfb3de409978a824f5c",
+  "reusedModules": [
+    {
+      "path": "education/web/continuum-properties.mjs",
+      "bytes": 5301,
+      "sha256": "dafe703db471ec9de460b316dde9b56b5c16cedca720b1c48b2fba29c24d8988"
+    },
+    {
+      "path": "education/web/material-response.mjs",
+      "bytes": 5041,
+      "sha256": "513dc004fe16dba2fa781f8534cb248b609fb20c59ffff9a759960b41a1d52e8"
+    },
+    {
+      "path": "education/web/tissue.mjs",
+      "bytes": 2103,
+      "sha256": "72d88e8afa18af7acf3f5ab45d6b1676a0beff523a124023f19cce99347b1b30"
+    },
+    {
+      "path": "education/web/property-labs.mjs",
+      "bytes": 7591,
+      "sha256": "cf135d2dcd5ab359f6cf9a0d5f0062f01cbeaa487478188baa18ef5490c64eaa"
+    },
+    {
+      "path": "education/web/tapered-bar.mjs",
+      "bytes": 3006,
+      "sha256": "9f68e29b3e708d8e53dd964d3d42fcfd9f530dd818ad33ed3641ad3a423feaec"
+    }
+  ],
+  "inheritedLicense": {
+    "path": "LICENSE",
+    "bytes": 11357,
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  }
+}
