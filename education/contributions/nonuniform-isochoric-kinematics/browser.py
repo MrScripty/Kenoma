@@ -8,7 +8,7 @@ import fitz
 
 parser=argparse.ArgumentParser();parser.add_argument('output',type=Path);args=parser.parse_args();out=args.output.resolve()
 original=(out/'nonuniform-volume-lab.html').read_text();sha=lambda b:hashlib.sha256(b).hexdigest()
-receipt={'scope':'Prescribed finite kinematics only; not a material/equilibrium/anatomical model or new Lean claim.','sourceHTMLSha256':sha(original.encode()),'viewports':[],'negativeControls':[],'authorScheduleRuns':0}
+receipt={'scope':'Prescribed finite kinematics with six checked Real contracts for the declared-gradient determinant, interval positivity and algebraic cell-error bounds. Map differentiation, injectivity/integration, triangulation and floating-point refinement remain separate unproved obligations; no material, equilibrium or anatomical completion claim.','sourceHTMLSha256':sha(original.encode()),'viewports':[],'negativeControls':[],'authorScheduleRuns':0}
 class Quiet(SimpleHTTPRequestHandler):
     def log_message(self,*args):pass
 with tempfile.TemporaryDirectory(dir=out) as directory:
