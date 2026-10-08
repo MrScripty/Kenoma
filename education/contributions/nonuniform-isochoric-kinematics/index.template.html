@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Uneven stretch · local volume lab</title>
+<style>
+:root{font:17px/1.55 system-ui,sans-serif;color:#193438;background:#f3f5f0}*{box-sizing:border-box}body{max-width:1120px;margin:auto;padding:36px 24px}h1{font-size:clamp(2.1rem,5vw,3.3rem);line-height:1.07;max-width:850px;letter-spacing:-.04em}h2{font-size:1.3rem}p{max-width:85ch}.eyebrow{font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:#28676b;font-weight:700}.scope{border-left:4px solid #26757c;padding:12px 20px;background:#e7eeea}.controls,.cards,.columns{display:grid;gap:16px}.controls{grid-template-columns:repeat(3,1fr);background:white;padding:22px;border:1px solid #cfdbd8;border-radius:16px}.cards{grid-template-columns:repeat(3,1fr);margin:22px 0}.card{background:white;padding:20px;border-radius:12px;border:1px solid #cfdbd8}.card strong{display:block;font-size:1.9rem;color:#236d75}.columns{grid-template-columns:1.2fr 1fr}.panel{background:white;border:1px solid #cfdbd8;border-radius:14px;padding:24px;margin:20px 0}label{display:block;font-weight:650}input[type=number],select,button{font:inherit;padding:10px;border-radius:7px;border:1px solid #92aaa7;background:white;max-width:100%;width:100%}button{cursor:pointer;width:auto;margin:14px 0}small{display:block;font-size:.84rem;color:#47656a}.error{color:#9a321b;min-height:1.6em}#warning{background:#fbefd9;padding:14px;border-radius:8px}svg{width:100%;height:auto}svg text{font:23px system-ui,sans-serif;fill:#193438}table{border-collapse:collapse;width:100%;font-size:.86rem}td,th{padding:9px 12px;border-bottom:1px solid #d8e2df;text-align:right;white-space:nowrap}th{font-weight:700}.table-scroll{overflow:auto}pre{font:15px/1.5 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere;background:#edf3ef;padding:15px}footer{border-top:1px solid #bfcfca;margin-top:32px;padding:24px 0;font-size:.88rem}@media(max-width:680px){body{padding:24px 14px}.controls,.cards,.columns{grid-template-columns:1fr}.card strong{font-size:1.6rem}.panel{padding:16px}}@media print{body{max-width:none;padding:0;font-size:11pt}.controls,button,.error{display:none}.columns{display:block}.panel{break-inside:avoid}svg{max-height:82mm}pre{font-size:10pt}small,table,footer{font-size:10pt}h1{font-size:24pt}}
+</style>
+<style>.panel,.card,.controls>*{min-width:0}.table-scroll,.shape-scroll{max-width:100%;overflow:auto}.shape-scroll svg{min-width:640px}@media print{.shape-scroll{overflow:visible}.shape-scroll svg{min-width:0}}</style>
+<style>@media print{pre,small,table,footer{font-size:10.25pt}}</style>
+<div class="eyebrow">Individual property lab · imposed finite kinematics</div>
+<h1>Uneven stretch.<br>Where does the volume go?</h1>
+<p>Prescribe a different axial stretch along an ideal reference prism, then measure the resulting geometry. Local radial compensation can preserve volume point by point, while neighbouring sections still undergo different centerline strains.</p>
+<p class="scope">This is a prescribed deformation map. It contains no force balance, material response, activation or anatomical prediction. The reference is a 16-sided prism with length 120 mm and circumradius 15 mm.</p>
+<div class="controls">
+<label>Mean axial stretch <input id="mean" type="number" min="0.6" max="1.4" step="0.05" value="1"><small>Positive range: 0.6–1.4.</small></label>
+<label>Uneven-stretch gradient <input id="gradient" type="number" min="-0.6" max="0.6" step="0.05" value="0.4"><small>Changes the stretch along the material coordinate.</small></label>
+<label>Axial mesh cells <select id="cells"><option>8</option><option>16</option><option selected>32</option><option>64</option><option>128</option></select><small>Refines the displayed straight-cell approximation.</small></label>
+<label style="grid-column:1/-1"><input id="compensate" type="checkbox" checked> Local radial compensation: b = 1/√λ</label>
+</div><button id="reset">Reset reference experiment</button><div id="error" role="status" class="error"></div>
+<div class="cards"><div class="card">Exact continuum volume ratio<strong id="continuum"></strong><small>From the declared deformation gradient.</small></div><div class="card">Measured mesh volume ratio<strong id="measured"></strong><small>Signed volume from closed boundary triangles.</small></div><div class="card">True local Jacobian range<strong id="local"></strong><small>Endpoint extrema of this positive linear stretch field.</small></div></div>
+<p id="warning"></p>
+<section class="panel"><h2>The same reference scale, before and after</h2><p id="strain"></p>
+<div class="shape-scroll" tabindex="0" aria-label="Scrollable longitudinal section at a fixed millimetre scale"><svg id="shape" viewBox="0 0 980 450" role="img" aria-label="Longitudinal section of the reference and deformed straight-cell mesh"></svg></div>
+<small>The dashed outline is the reference. Each teal strip belongs to a different material interval. This is a longitudinal section through the same vertex geometry used for the full three-dimensional volume calculation. Both axes use the same fixed millimetre scale.</small></section>
+<div class="columns"><section class="panel"><h2>Local geometry, measured cell by cell</h2><div class="table-scroll" tabindex="0" aria-label="Scrollable local deformation measurements"><table><thead><tr><th>S/L₀</th><th>λ</th><th>Centerline ε</th><th>b</th><th>Pointwise J</th><th>Mesh cell V/V₀</th></tr></thead><tbody id="rows"></tbody></table></div><small>Rows report material midpoints; the Jacobian and strain ranges above include the true endpoints. A straight mesh cell approximates the curved exact map, so its volume ratio can differ slightly from one even when pointwise J = 1.</small></section>
+<section class="panel"><h2>Refine the geometry</h2><div class="table-scroll" tabindex="0" aria-label="Scrollable mesh refinement measurements"><table><thead><tr><th>Cells</th><th>Measured V/V₀</th><th>Relative error</th></tr></thead><tbody id="refinement"></tbody></table></div><p>The triangle-based volume also agrees with an independent polygonal-frustum calculation. The reference volume is checked against the exact regular-polygon area times its length.</p><p id="oracle"></p></section></div>
+<section class="panel"><h2>The declared map and its limits</h2><pre>λ(S) = λ̄ [1 + a(2S/L₀ − 1)]
+x(S) = λ̄ [(1 − a)S + aS²/L₀]
+y = b(S)Y,  z = b(S)Z
+b(S) = 1/√λ(S) with compensation; b = 1 otherwise
+
+F = [ λ      0  0 ]
+    [ b′Y    b  0 ]
+    [ b′Z    0  b ]
+J = det F = λb²</pre>
+<p>λ &gt; 0 makes the axial map monotone. Compensation gives J = 1 for the exact continuum map. The off-diagonal terms b′Y and b′Z describe the additional shear away from the centerline; a nonuniform stretch is not a sequence of unrelated uniform blocks. The reported engineering strain λ − 1 is the axial-line strain at Y = Z = 0.</p>
+<p>With compensation off and mean stretch one, total volume is still unchanged because expansion and contraction cancel. Local J then differs from one. A near-unity total-volume number alone therefore does not establish local volume preservation.</p>
+<p>Finite boundary triangles approximate the exact curved map. Their volume error is reported and should decrease with refinement. These geometric results do not establish a passive equilibrium, a muscle law, pressure, or anatomical completion.</p></section>
+<noscript><p>The reference experiment uses mean stretch 1 and gradient 0.4: centerline stretch ranges from 0.6 to 1.4. Exact compensated J is one; finite-mesh measurement requires JavaScript. The complete map and assumptions remain readable above.</p></noscript>
+<footer>Separate property-lab review candidate. Existing research-book sources and 103 proof identities are unchanged. No additional compiled Lean claim is asserted for this prototype.</footer>
+<script type="module">
+__MODEL_CODE__
+let current=state(DEFAULTS);const $=id=>document.getElementById(id),number=(v,n=6)=>Number(v).toFixed(n);
+function draw(s){
+ const p=s.parameters,scale=4,ox=95,cy=220,x=S=>ox+mapPoint([S,0,0],p)[0]*1000*scale,r=S=>field(S,p).b*p.radius*1000*scale;
+ let svg=`<path d="M${ox},${cy-60}H${ox+480}V${cy+60}H${ox}Z" fill="none" stroke="#799292" stroke-width="3" stroke-dasharray="9 7"/>`;
+ for(let i=0;i<p.cells;i++){const a=p.length*i/p.cells,b=p.length*(i+1)/p.cells;svg+=`<path d="M${x(a)},${cy-r(a)}L${x(b)},${cy-r(b)}L${x(b)},${cy+r(b)}L${x(a)},${cy+r(a)}Z" fill="${i%2?'#c0dedb':'#dcebe4'}" stroke="#277780" stroke-width="1.5"/>`;}
+ svg+=`<path d="M70,${cy}H850" stroke="#779798" stroke-width="1"/><text x="95" y="400">0 mm</text><text x="535" y="400">120 mm reference</text><text x="95" y="45">Centerline: λ − 1 varies along S</text>`;$('shape').innerHTML=svg;
+}
+function render(s){
+ $('continuum').textContent=number(s.continuumVolumeRatio);$('measured').textContent=number(s.meshVolumeRatio);
+ $('local').textContent=s.pointwiseJRange.map(x=>number(x,4)).join(' – ');
+ $('strain').textContent=`True centerline engineering strain: ${s.centerlineStrainRange.map(x=>number(100*x,2)+'%').join(' to ')}. Displacement and radial compensation are computed at every section.`;
+ $('warning').textContent=s.parameters.compensate?`Exact local J = 1. The displayed mesh has ${number(100*s.relativeMeshVolumeError,5)}% relative volume error; refine its straight cells to reduce that error.`:`Compensation is off. Total volume ratio ${number(s.meshVolumeRatio)} does not imply local J = 1; inspect the local range and cell measurements.`;
+ const step=Math.max(1,Math.floor(s.rows.length/8));$('rows').innerHTML=s.rows.filter((_,i)=>i%step===0||i===s.rows.length-1).map(v=>`<tr><td>${number(v.materialFraction,3)}</td><td>${number(v.lambda,4)}</td><td>${number(v.centerlineStrain,4)}</td><td>${number(v.b,4)}</td><td>${number(v.J,6)}</td><td>${number(v.cellVolumeRatio,6)}</td></tr>`).join('');
+ $('refinement').innerHTML=[8,16,32,64,128].map(cells=>{const m=state({...s.parameters,cells});return `<tr><td>${cells}</td><td>${number(m.meshVolumeRatio,8)}</td><td>${m.relativeMeshVolumeError.toExponential(3)}</td></tr>`;}).join('');
+ $('oracle').textContent=`Triangle/frustum discrepancy: ${s.independentMeshMeasurementError.toExponential(3)} m³. Reference boundary/area discrepancy: ${s.referenceMeasurementError.toExponential(3)} m³.`;draw(s);
+}
+function update(){
+ try{const p={...DEFAULTS,mean:Number($('mean').value),gradient:Number($('gradient').value),cells:Number($('cells').value),compensate:$('compensate').checked};
+ if(!$('mean').value||!$('gradient').value)throw Error('A blank numeric input retains the last valid geometry.');current=state(p);$('error').textContent='';for(const id of ['mean','gradient'])$(id).removeAttribute('aria-invalid');render(current);
+ }catch(error){$('error').textContent=error.message;for(const id of ['mean','gradient']){const input=$(id),value=Number(input.value);if(!input.value||!Number.isFinite(value)||value<Number(input.min)||value>Number(input.max))input.setAttribute('aria-invalid','true');else input.removeAttribute('aria-invalid');}}
+}
+for(const id of ['mean','gradient','cells','compensate'])$(id).addEventListener('input',update);
+$('reset').onclick=()=>{$('mean').value=1;$('gradient').value=.4;$('cells').value=32;$('compensate').checked=true;update();};
+window.KinematicLab={state:()=>structuredClone(current)};render(current);
+</script></html>
