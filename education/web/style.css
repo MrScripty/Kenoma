@@ -59,4 +59,6 @@ math[display="inline"]{display:inline-block;white-space:nowrap;break-inside:avoi
  figure:has(img[src="assets/property-serial.svg"]),figure:has(img[src="assets/property-dissipative.svg"]){margin:4mm 0;break-inside:avoid}
 }
 @media print{.projection-interactive{display:none!important}main img[src="assets/pressure-projection.svg"]{width:100%;max-height:155mm;object-fit:contain}}
+.nonuniform-reference img{display:block;width:100%}
+@media print{figure.nonuniform-reference{margin:4mm 0;break-inside:avoid}main img[src="assets/nonuniform-volume.svg"]{width:100%;max-height:155mm;object-fit:contain}}
 @media(max-width:700px){.projection-interactive iframe{height:2600px!important}}
