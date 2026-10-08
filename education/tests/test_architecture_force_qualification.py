@@ -185,5 +185,19 @@ class FinishControls(unittest.TestCase):
         self.reject('captures')
 
 
+class WorkflowControls(unittest.TestCase):
+    def test_job_environment_uses_only_available_expression_contexts(self):
+        # GitHub resolves job env before a runner exists. runner is valid in
+        # step contexts but not here; plain YAML parsing cannot detect this.
+        import re
+        workflow = (Q.ROOT / '.github/workflows/education.yml').read_text()
+        job = workflow.split('  architecture-force-contribution:\n', 1)[1].split('  build:\n', 1)[0]
+        environment = job.split('    env:\n', 1)[1].split('    steps:\n', 1)[0]
+        allowed = {'github', 'needs', 'strategy', 'matrix', 'vars', 'secrets', 'inputs'}
+        for expression in re.findall(r'\$\{\{(.*?)\}\}', environment):
+            root = expression.strip().split('.', 1)[0]
+            self.assertIn(root, allowed, 'Context unavailable in job-level env: ' + root)
+
+
 if __name__ == '__main__':
     unittest.main()
