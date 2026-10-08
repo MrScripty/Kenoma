@@ -269,6 +269,140 @@ class AssemblyContracts(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'differs from the delivered book receipt'):
             lab.assemble(self.out, self.receipt, self.root)
 
+    def source_bytes(self):
+        return {str(p.relative_to(self.root)): p.read_bytes()
+                for p in self.root.rglob('*') if p.is_file()}
+
+    def test_output_hard_link_cannot_truncate_original_source(self):
+        before = self.source_bytes()
+        destination = self.out/'architecture-force/model.mjs'
+        destination.parent.mkdir()
+        source = self.root/'contributions/architecture-force/lab.mjs'
+        destination.hardlink_to(source)
+        self.assertEqual(destination.stat().st_ino, source.stat().st_ino)
+        self.assertEqual(source.stat().st_nlink, 2)
+        try:
+            with self.assertRaisesRegex(ValueError, 'hard links'):
+                lab.assemble(self.out, self.receipt, self.root)
+        finally:
+            self.assertEqual(self.source_bytes(), before)
+        self.assertEqual(destination.stat().st_ino, source.stat().st_ino)
+        self.assertEqual(source.stat().st_nlink, 2)
+
+    def test_all_final_hard_links_preserve_external_sentinel_and_source(self):
+        manifest, _ = lab.source_inventory(self.root)
+        destinations = ['architecture-force/'+name for name in
+                        ['registration.json', 'book-browser.json', 'style.css', 'lab.mjs',
+                         'model.mjs', 'sources.json', 'index.html', 'source-manifest.json']]
+        destinations += ['contributions/architecture-force/'+name for name in manifest['files']]
+        before = self.source_bytes()
+        for index, relative in enumerate(destinations):
+            with self.subTest(destination=relative):
+                out = self.out/('hard-link-'+str(index))
+                out.mkdir()
+                (out/lab.RECEIPT).write_text(json.dumps(self.receipt))
+                sentinel = self.out.parent/('hard-link-sentinel-'+str(index))
+                sentinel.write_bytes(b'external hard-link sentinel')
+                destination = out/relative
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                destination.hardlink_to(sentinel)
+                self.assertEqual(destination.stat().st_ino, sentinel.stat().st_ino)
+                try:
+                    with self.assertRaisesRegex(ValueError, 'hard links'):
+                        lab.assemble(out, self.receipt, self.root)
+                finally:
+                    self.assertEqual(sentinel.read_bytes(), b'external hard-link sentinel')
+                    self.assertEqual(self.source_bytes(), before)
+                self.assertEqual(destination.stat().st_ino, sentinel.stat().st_ino)
+                self.assertEqual(sentinel.stat().st_nlink, 2)
+
+    def test_output_file_symlink_cannot_overwrite_original_source(self):
+        before = self.source_bytes()
+        destination = self.out/'architecture-force/model.mjs'
+        destination.parent.mkdir()
+        destination.symlink_to(self.root/'contributions/architecture-force/lab.mjs')
+        try:
+            with self.assertRaisesRegex(ValueError, 'symlink'):
+                lab.assemble(self.out, self.receipt, self.root)
+        finally:
+            self.assertEqual(self.source_bytes(), before)
+        self.assertTrue(destination.is_symlink())
+
+    def test_every_final_unlink_copy_write_destination_rejects_symlinks(self):
+        manifest, _ = lab.source_inventory(self.root)
+        destinations = ['architecture-force/'+name for name in
+                        ['registration.json', 'book-browser.json', 'style.css', 'lab.mjs',
+                         'model.mjs', 'sources.json', 'index.html', 'source-manifest.json']]
+        destinations += ['contributions/architecture-force/'+name for name in manifest['files']]
+        before = self.source_bytes()
+        for index, relative in enumerate(destinations):
+            with self.subTest(destination=relative):
+                out = self.out/str(index)
+                out.mkdir()
+                (out/lab.RECEIPT).write_text(json.dumps(self.receipt))
+                sentinel = self.out.parent/('external-sentinel-'+str(index))
+                sentinel.write_bytes(b'external bytes must remain unchanged')
+                destination = out/relative
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                destination.symlink_to(sentinel)
+                try:
+                    with self.assertRaisesRegex(ValueError, 'symlink'):
+                        lab.assemble(out, self.receipt, self.root)
+                finally:
+                    self.assertEqual(sentinel.read_bytes(), b'external bytes must remain unchanged')
+                    self.assertEqual(self.source_bytes(), before)
+                self.assertTrue(destination.is_symlink())
+
+    def test_nested_output_directory_symlinks_preserve_external_tree(self):
+        before = self.source_bytes()
+        for index, relative in enumerate(['architecture-force', 'contributions', 'contributions/architecture-force']):
+            with self.subTest(directory=relative):
+                out = self.out/('directory-'+str(index))
+                out.mkdir()
+                (out/lab.RECEIPT).write_text(json.dumps(self.receipt))
+                external = self.out.parent/('external-tree-'+str(index))
+                external.mkdir()
+                for name in ['registration.json', 'book-browser.json', 'model.mjs', 'architecture-force/model.mjs']:
+                    sentinel = external/name
+                    sentinel.parent.mkdir(parents=True, exist_ok=True)
+                    sentinel.write_bytes(b'external tree sentinel')
+                external_before = {str(p.relative_to(external)): p.read_bytes()
+                                   for p in external.rglob('*') if p.is_file()}
+                destination = out/relative
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                destination.symlink_to(external, target_is_directory=True)
+                try:
+                    with self.assertRaisesRegex(ValueError, 'symlink'):
+                        lab.assemble(out, self.receipt, self.root)
+                finally:
+                    self.assertEqual({str(p.relative_to(external)): p.read_bytes()
+                                      for p in external.rglob('*') if p.is_file()}, external_before)
+                    self.assertEqual(self.source_bytes(), before)
+
+    def test_dangling_output_file_symlink_cannot_create_external_file(self):
+        target = self.out.parent/'missing-external-file'
+        destination = self.out/'architecture-force/index.html'
+        destination.parent.mkdir()
+        destination.symlink_to(target)
+        before = self.source_bytes()
+        try:
+            with self.assertRaisesRegex(ValueError, 'symlink'):
+                lab.assemble(self.out, self.receipt, self.root)
+        finally:
+            self.assertFalse(target.exists())
+            self.assertEqual(self.source_bytes(), before)
+        self.assertTrue(destination.is_symlink())
+
+    def test_dist_alias_into_source_cannot_bypass_output_root_guard(self):
+        (self.root/'dist').symlink_to(self.root/'contributions', target_is_directory=True)
+        (self.root/'contributions'/lab.RECEIPT).write_text(json.dumps(self.receipt))
+        before = self.source_bytes()
+        try:
+            with self.assertRaisesRegex(ValueError, 'output must be dist or outside'):
+                lab.assemble(self.root/'dist', self.receipt, self.root)
+        finally:
+            self.assertEqual(self.source_bytes(), before)
+
     def test_output_cannot_overwrite_source(self):
         with self.assertRaisesRegex(ValueError, 'output must be dist or outside'):
             lab.assemble(self.root/'contributions/architecture-force', self.receipt, self.root)

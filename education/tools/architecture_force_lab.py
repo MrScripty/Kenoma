@@ -119,23 +119,43 @@ def assemble(out, receipt, root=ROOT):
 
     Does not compile or certify proofs: the caller owns fresh kernel execution.
     Unit tests exercise this with explicitly synthetic receipts only.
+    Reject pre-existing child-output symlinks and multiply linked regular files.
+    The caller must prevent concurrent output-tree mutation; these checks are not race-safe.
     """
-    root, out = Path(root), Path(out)
-    require(not out.resolve().is_relative_to(root.resolve()) or out.resolve() == (root / 'dist').resolve(),
+    root, out = Path(root).resolve(), Path(out).resolve()
+    require(not out.is_relative_to(root) or out == root / 'dist',
             'Assembly output must be dist or outside the source tree')
+
+    def destination(relative):
+        relative = Path(relative)
+        require(not relative.is_absolute() and '..' not in relative.parts,
+                'Assembly destination must be relative to output')
+        path = out / relative
+        for component in (path, *path.parents):
+            if component == out:
+                break
+            require(not component.is_symlink(), 'Assembly destination contains a symlink: ' + str(component))
+        resolved = path.resolve()
+        require(not path.is_file() or path.stat().st_nlink == 1,
+                'Assembly destination has multiple hard links: ' + str(path))
+        require(resolved.is_relative_to(out), 'Assembly destination escapes output')
+        require(not resolved.is_relative_to(root) or resolved.is_relative_to(root / 'dist'),
+                'Assembly destination overlaps immutable source')
+        return path
+
     for name in ['registration.json', 'book-browser.json']:
-        (out / 'architecture-force' / name).unlink(missing_ok=True)
+        destination(Path('architecture-force') / name).unlink(missing_ok=True)
     manifest = validate_receipt(receipt, root)
     require(json.loads((out / RECEIPT).read_text()) == receipt,
             'Supplied receipt differs from the delivered book receipt')
     source = root / 'contributions/architecture-force'
-    lab, archive = out / 'architecture-force', out / 'contributions/architecture-force'
+    lab, archive = destination('architecture-force'), destination('contributions/architecture-force')
     lab.mkdir(parents=True, exist_ok=True)
     archive.mkdir(parents=True, exist_ok=True)
     for name in manifest['files']:
-        shutil.copyfile(source / name, archive / name)
+        shutil.copyfile(source / name, destination(Path('contributions/architecture-force') / name))
     for name in ('style.css', 'lab.mjs', 'model.mjs', 'sources.json'):
-        shutil.copyfile(source / name, lab / name)
+        shutil.copyfile(source / name, destination(Path('architecture-force') / name))
     text = (source / 'index.html').read_text()
     readout = '<div id="readout" role="status" aria-live="polite"></div>'
     defaults = '<dl>'+''.join('<div><dt>'+html.escape(name)+'</dt><dd>'+html.escape(value)+'</dd></div>'
@@ -153,8 +173,8 @@ def assemble(out, receipt, root=ROOT):
     for old, new in replacements.items():
         require(text.count(old) == 1, 'Expected one lab assembly marker: ' + old)
         text = text.replace(old, new)
-    (lab / 'index.html').write_text(text)
-    shutil.copyfile(root / SOURCE_MANIFEST, lab / 'source-manifest.json')
+    destination('architecture-force/index.html').write_text(text)
+    shutil.copyfile(root / SOURCE_MANIFEST, destination('architecture-force/source-manifest.json'))
     paths = [lab / name for name in ['index.html', 'style.css', 'lab.mjs', 'model.mjs', 'sources.json', 'source-manifest.json']]
     paths += [archive / name for name in manifest['files']]
     outputs = {str(path.relative_to(out)): digest(path) for path in sorted(paths)}
@@ -172,7 +192,7 @@ def assemble(out, receipt, root=ROOT):
         'assemblySourceSha256': digest(root / 'tools/architecture_force_lab.py'),
         'outputSha256': outputs, 'physicalLawsChanged': False,
     }
-    (lab / 'registration.json').write_text(json.dumps(registration, indent=2)+'\n')
+    destination('architecture-force/registration.json').write_text(json.dumps(registration, indent=2)+'\n')
     return registration
 
 
