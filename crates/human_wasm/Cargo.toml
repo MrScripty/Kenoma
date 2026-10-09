@@ -1,0 +1,17 @@
+[package]
+name = "human_wasm"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+human_core = { path = "../human_core" }
+serde.workspace = true
+serde_json = "1"
+wasm-bindgen = "0.2"
+
+[lints]
+workspace = true
