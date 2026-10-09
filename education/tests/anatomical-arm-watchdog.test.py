@@ -81,6 +81,34 @@ class WatchdogTests(unittest.TestCase):
         p=self.root/'manifest';p.write_text('{}')
         with self.assertRaisesRegex(w.Refusal,'approval'):w.execute(p,self.root/'never-created','0'*64)
         self.assertFalse((self.root/'never-created').exists());self.assertFalse(pathlib.Path(str(p)+'.executed').exists())
+    def test_retained_result_buffers_count_across_jobs(self):
+        self.policy['aggregateOutputBytes']=1200;self.policy['perRunOutputBytes']=1200;self.policy['reservedReceiptBytes']=0
+        self.output.write('manifest.json',b'x'*100,'A')
+        code="import os,json;os.write(int(os.environ['KENOMA_RESULT_FD']),json.dumps({'status':'PASS','pad':'x'*400}).encode())"
+        first,_=self.run_child(code,{**self.run,'id':'B'});second,_=self.run_child(code,{**self.run,'id':'C'})
+        self.assertEqual(first['status'],'PASS');self.assertEqual(second['status'],'RESOURCE_INCONCLUSIVE');self.assertIn('staging',second['reason'])
+        self.assertGreater(self.output.pending['B'],400);self.assertEqual(self.output.pending['C'],0)
+    def test_final_staging_coexists_with_retained_and_durable_bytes(self):
+        self.policy['aggregateOutputBytes']=2400;self.policy['perRunOutputBytes']=2400;self.policy['reservedReceiptBytes']=0
+        self.output.write('manifest.json',b'x'*100,'A');self.output.retain('B',1500)
+        results={r:{'status':'PASS','pad':'x'*300} for r in 'ABCD'}
+        with self.assertRaisesRegex(w.Refusal,'Output ceiling'):w.finalize(self.output,results,[],{},'synthetic',time.monotonic(),self.cg)
+        self.assertFalse((self.output.path/'resource-receipt.json').exists())
+    def test_exact_raw_review_bytes_and_digest_claim_identity(self):
+        raw='{"value":1e-6,"name":"é"}\n';review=json.loads(raw)
+        m={'reviewReceiptText':raw,'reviewReceipt':review,'reviewReceiptSHA256':w.digest(raw.encode())};w.validate_review_bytes(m)
+        with self.assertRaisesRegex(w.Refusal,'exact review'):w.validate_review_bytes({**m,'reviewReceiptText':raw+' '})
+        self.assertNotEqual(w.digest(raw.encode()),w.digest(w.encoded(review)))
+        h=w.digest(raw.encode());self.assertEqual(w.claim_path(self.policy,h),w.claim_path(self.policy,h))
+        self.assertEqual(w.claim_path(self.policy,h).name,h+'.executed')
+        self.assertEqual(str(w.claim_path(self.policy,h).parent),w.EXPECTED_POLICY['claimDirectory'])
+        self.assertFalse(w.claim_path(self.policy,h).exists())
+    def test_exact_destination_binding_is_checked_without_launch(self):
+        dest=self.root/'never';m={'executionDestination':str(dest)}
+        self.assertEqual(w.approved_destination(m,dest),dest)
+        with self.assertRaisesRegex(w.Refusal,'Unapproved'):w.approved_destination(m,self.root/'other')
+        dest.mkdir()
+        with self.assertRaisesRegex(w.Refusal,'already exists'):w.approved_destination(m,dest)
     def test_stale_policy_and_input_refuse(self):
         with self.assertRaisesRegex(w.Refusal,'source/policy'):w.validate_manifest({'schema':1},b'{}',False)
         m={'schema':1,'operatorCommit':'e57847418a13da39db78cbfcdba070c285f3bfde','inputCommit':'0b83819ad3fdaed7405c6bbe617bc01640eef914','policy':w.EXPECTED_POLICY,'inputs':{}}

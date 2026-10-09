@@ -18,7 +18,7 @@ test('partial/repeated/rejected entry accounting is cumulative across attempts a
  const b=new Budget({...caps(),configurationEntries:4});b.beginAttempt();b.charge('configurationEntries');b.charge('muscleMaterial');b.beginAttempt();b.charge('configurationEntries');b.charge('configurationEntries');b.charge('configurationEntries');assert.throws(()=>b.charge('configurationEntries'),BudgetExceeded);assert.equal(b.counts.configurationEntries,4);assert.equal(b.counts.attempts,2);
 });
 test('per-attempt Hessian limit resets and aggregate limit remains active',()=>{
- const b=new Budget({...caps(),hessianProducts:7057680});b.beginAttempt();b.charge('hessianProducts',3528840);assert.throws(()=>b.charge('hessianProducts'),BudgetExceeded);
+ const b=new Budget({...caps(),hessianProducts:7057680});b.beginAttempt();b.charge('hessianProducts',3528840);assert.throws(()=>b.charge('hessianProducts'),BudgetExceeded);assert.equal(b.denied.hessianProducts,1);
  const c=new Budget({...caps(),hessianProducts:7057680});c.beginAttempt();c.charge('hessianProducts',3528840);c.beginAttempt();c.charge('hessianProducts',3528840);assert.equal(c.counts.hessianProducts,7057680);
 });
 test('internal lexical tendon call is charged by insertion before synthetic work',()=>{
@@ -77,10 +77,10 @@ test('fixed policy totals and exact input inventory are independently countable'
  assert.equal(POLICY.runs.reduce((s,r)=>s+r.attempts,0),6);assert.equal(POLICY.runs.reduce((s,r)=>s+r.configurationEntries,0),1537);assert.equal(POLICY.runs.reduce((s,r)=>s+r.wallSeconds,0),780);assert.equal(POLICY.runs.reduce((s,r)=>s+r.muscleMaterial,0),86760576);assert.equal(POLICY.runs.reduce((s,r)=>s+r.tendonMaterial,0),972921);assert.equal(POLICY.runs.reduce((s,r)=>s+r.materialTensor,0),86704128);assert.equal(POLICY.ownedRSSBytes,1000000000);assert.equal(POLICY.cgroupBytes,16000000000);assert.equal(Object.keys(INPUTS).length,6);
 });
 test('actual worker orchestration runs A/B/C/D and late D refusal against synthetic operators only',()=>{
- for(const id of ['A','B','C','D','D-fail','C-budget']){
+ for(const id of ['A','B','C','D','D-fail','C-budget','C-returned-exception']){
   const result=JSON.parse(execFileSync(process.execPath,['education/tests/arm-validation-synthetic-worker.mjs',id],{cwd:new URL('../..',import.meta.url),encoding:'utf8'}));
   assert.equal(result.syntheticOnly,true);assert.equal(result.physicalImports,0);assert.equal(result.packet.executionScope,'SYNTHETIC_TEST_ONLY');assert.equal(result.packet.finalAcceptance,false);assert.equal(result.packet.modelDisposed,true);
-  if(id==='D-fail')assert.equal(result.packet.status,'SOLVER_REFUSAL');else if(id==='C-budget')assert.equal(result.packet.status,'RESOURCE_INCONCLUSIVE');else assert.equal(result.packet.status,'PASS');
+  if(id==='C-returned-exception')assert.equal(result.packet.status,'EXCEPTION');else if(id==='D-fail')assert.equal(result.packet.status,'SOLVER_REFUSAL');else if(id==='C-budget')assert.equal(result.packet.status,'RESOURCE_INCONCLUSIVE');else assert.equal(result.packet.status,'PASS');
  }
 });
 test('observer captures both accepted helper halves before they can become later provisional failures',()=>{
@@ -92,4 +92,8 @@ test('observer captures both accepted helper halves before they can become later
 });
 test('virtual physical module cannot import foreign URLs or builtin I/O',async()=>{
  const p='education/web/synthetic-forbidden.mjs',text="import fs from 'node:fs'; export const value=1;",m={[p]:{text,sha256:sha256(text),transformedSHA256:sha256(text)}};const hook=installLoader(m);try{await assert.rejects(()=>import('kenoma:'+p),/Unlisted physical dependency/);}finally{hook.deregister();}
+});
+
+test('unsupervised worker API refuses actual scope before any physical import',async()=>{
+ const {numericalWorker,validateWorkerEntry}=await import('../tools/arm-validation/worker.mjs');await assert.rejects(()=>numericalWorker({scope:'ACTUAL',operatorCommit:'ACTUAL'},'A'),/context required/);assert.throws(()=>validateWorkerEntry({},'/tmp/synthetic','synthetic',{}),/Missing supervisor result channel/);
 });

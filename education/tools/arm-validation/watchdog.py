@@ -6,7 +6,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[3]
 NAMES = ['manifest.json','rest-recheck.json','default.json','adaptive-depth1.json','explicit-halves.json','comparison.json','resource-receipt.json','transcript.log']
 RUN_NAMES = ['rest-recheck.json','default.json','adaptive-depth1.json','explicit-halves.json']
 CLASSES = ['attempts','configurationEntries','muscleMaterial','tendonMaterial','materialTensor','hessianProducts']
-EXPECTED_POLICY = dict(runs=[dict(id='A',attempts=0,configurationEntries=1,wallSeconds=60,muscleMaterial=56448,tendonMaterial=633,materialTensor=0,hessianProducts=0)]+[dict(id=i,attempts=n,configurationEntries=512,wallSeconds=240,muscleMaterial=28901376,tendonMaterial=324096,materialTensor=28901376,hessianProducts=n*3528840) for i,n in [('B',1),('C',3),('D',2)]], aggregateWallSeconds=780,ownedRSSBytes=1000000000,cgroupBytes=16000000000,perRunOutputBytes=4194304,aggregateOutputBytes=16777216,perRunTranscriptBytes=262144,aggregateTranscriptBytes=1048576,pollSeconds=.01,reservedReceiptBytes=65536,reservedTranscriptBytes=1024,outputs=NAMES)
+EXPECTED_POLICY = dict(runs=[dict(id='A',attempts=0,configurationEntries=1,wallSeconds=60,muscleMaterial=56448,tendonMaterial=633,materialTensor=0,hessianProducts=0)]+[dict(id=i,attempts=n,configurationEntries=512,wallSeconds=240,muscleMaterial=28901376,tendonMaterial=324096,materialTensor=28901376,hessianProducts=n*3528840) for i,n in [('B',1),('C',3),('D',2)]], aggregateWallSeconds=780,ownedRSSBytes=1000000000,cgroupBytes=16000000000,perRunOutputBytes=4194304,aggregateOutputBytes=16777216,perRunTranscriptBytes=262144,aggregateTranscriptBytes=1048576,pollSeconds=.01,reservedReceiptBytes=65536,reservedTranscriptBytes=1024,claimDirectory='/tmp/kenoma-arm-validation-approval-claims',outputs=NAMES)
 INPUT_HASHES={'generated/arm-reference.json':'1b80c1d3d9f2eb4370cd298f58f5e9c582625574f27072f6d3a1ea898ce4c036','config/attachments-apparatus.json':'070fee738e73e127e334ee5cbe680cb622f100396ad0728eb9df6723c2232389','config/apparatus-routing.json':'b8580e8158e17730b65b64d0fdbe0f1cbbafc76235b9a5f0c2b01020818cd93f','audit/modal-fixed-end-results.json':'b0eeecdade262b682279d9ebeb7a8147a4525a992976a85afc0ce5e63270d8b4','audit/arm-rest-results.json':'8dc23d896adce4b428f39cb172d76f3c74c828f49c2007c66155e45e8ea359c7','audit/arm-rest-recheck.json':'3d1159de78088207320d3b19b17ffc83cb08a531781e26715c8167dd7efbecab'}
 
 def digest(data): return hashlib.sha256(data).hexdigest()
@@ -54,6 +54,10 @@ def descendants(root):
         new={pid for pid,p in table.items() if p['ppid'] in owned};changed=not new.issubset(owned);owned |= new
     return {pid:table[pid] for pid in owned if pid in table}
 
+def validate_review_bytes(m):
+    raw=m.get('reviewReceiptText')
+    if not isinstance(raw,str) or digest(raw.encode())!=m.get('reviewReceiptSHA256') or json.loads(raw)!=m.get('reviewReceipt'):raise Refusal('Changed exact review receipt bytes')
+
 def validate_manifest(m, data, require_review=True):
     if m.get('schema')!=1 or m.get('operatorCommit')!='e57847418a13da39db78cbfcdba070c285f3bfde' or m.get('inputCommit')!='0b83819ad3fdaed7405c6bbe617bc01640eef914' or m.get('policy')!=EXPECTED_POLICY: raise Refusal('Changed exact source/policy')
     if set(m.get('inputs',{}))!=set(INPUT_HASHES): raise Refusal('Changed input inventory')
@@ -74,17 +78,20 @@ def validate_manifest(m, data, require_review=True):
     review=m.get('reviewReceipt')
     if require_review:
         if not review or review.get('verdict')!='PASS_RUN_READY_SOURCE_ONLY' or review.get('sourceCommit')!=m.get('harnessCommit'):raise Refusal('Missing exact independent review')
-        # Node JSON.stringify is used for this canonical binding; no non-ASCII in receipt.
-        canonical=json.dumps(review,separators=(',',':'),ensure_ascii=False).encode()
-        if digest(canonical)!=m.get('reviewReceiptSHA256'):raise Refusal('Changed review receipt binding')
+        validate_review_bytes(m)
     return node
 
 class Output:
     def __init__(self,directory,policy):
-        self.path=no_symlinks(directory);os.mkdir(self.path,0o700);self.policy=policy;self.charges={r['id']:0 for r in policy['runs']};self.transcript={r['id']:0 for r in policy['runs']};self.written={};self.claim={}
+        self.path=no_symlinks(directory);os.mkdir(self.path,0o700);self.policy=policy;self.charges={r['id']:0 for r in policy['runs']};self.transcript={r['id']:0 for r in policy['runs']};self.written={};self.claim={};self.pending={r['id']:0 for r in policy['runs']};self.staging={r['id']:0 for r in policy['runs']}
     def reserve(self,run,amount,emergency=False):
         reserve=0 if emergency else self.policy['reservedReceiptBytes']
-        if self.charges[run]+amount>self.policy['perRunOutputBytes']-reserve or sum(self.charges.values())+amount>self.policy['aggregateOutputBytes']-reserve:raise Refusal('Output ceiling')
+        totals={r:self.charges[r]+self.pending[r]+self.staging[r] for r in self.charges}
+        if totals[run]+amount>self.policy['perRunOutputBytes']-reserve or sum(totals.values())+amount>self.policy['aggregateOutputBytes']-reserve:raise Refusal('Output ceiling')
+    def retain(self,run,amount):
+        self.reserve(run,amount-self.pending[run]);self.pending[run]=amount
+    def stage(self,run,amount):
+        self.reserve(run,amount);self.staging[run]+=amount
     def write(self,name,bytes_,run,emergency=False):
         if name not in NAMES or name in self.written:raise Refusal('Foreign/repeated output')
         self.reserve(run,len(bytes_),emergency)
@@ -127,7 +134,7 @@ def supervise(command, output, run, aggregate_start, cgroup=None, allow_descenda
     if parent_before is None:raise Refusal('Owned process monitor unavailable')
     if parent_before['hwm']>policy['ownedRSSBytes']:raise Refusal('Owned RSS ceiling before launch')
     if shutil.disk_usage(output.path).free<policy['aggregateOutputBytes']+policy['reservedReceiptBytes']:raise Refusal('Insufficient scratch space')
-    rfd,wfd=os.pipe();env={'PATH':os.defpath,'LANG':'C.UTF-8','KENOMA_RESULT_FD':str(wfd),'TMPDIR':str(output.path)}
+    rfd,wfd=os.pipe();env={'PATH':os.defpath,'LANG':'C.UTF-8','KENOMA_RESULT_FD':str(wfd),'KENOMA_SUPERVISOR_PID':str(os.getpid()),'KENOMA_CLAIM_PATH':str(output.claim.get('path','')),'TMPDIR':str(output.path)}
     proc=subprocess.Popen(command,start_new_session=True,pass_fds=(wfd,),stdout=subprocess.PIPE,stderr=subprocess.PIPE,env=env);os.close(wfd)
     selector=selectors.DefaultSelector();selector.register(rfd,selectors.EVENT_READ,'result');selector.register(proc.stdout,selectors.EVENT_READ,'stdout');selector.register(proc.stderr,selectors.EVENT_READ,'stderr')
     for key in selector.get_map().values():os.set_blocking(key.fd,False)
@@ -152,7 +159,7 @@ def supervise(command, output, run, aggregate_start, cgroup=None, allow_descenda
                 if key.data=='result':
                     if len(packet)+len(b)>policy['perRunOutputBytes']-policy['reservedReceiptBytes']:raise Refusal('Result/staging ceiling')
                     # Also include the eventual packet alongside already-created output.
-                    output.reserve(run['id'],len(packet)+len(b));packet.extend(b)
+                    output.retain(run['id'],len(packet)+len(b));packet.extend(b)
                 else:output.log(b,run['id'])
         while os.waitid(os.P_PID,proc.pid,os.WEXITED|os.WNOHANG|os.WNOWAIT) is None:
             inspect();time.sleep(policy['pollSeconds'])
@@ -187,9 +194,14 @@ def supervise(command, output, run, aggregate_start, cgroup=None, allow_descenda
     elapsed=time.monotonic()-start
     if elapsed>run['wallSeconds'] or time.monotonic()-aggregate_start>policy['aggregateWallSeconds']:reason=reason or 'Final wall ceiling'
     resources={'run':run['id'],'startOffsetSeconds':start-aggregate_start,'wallSeconds':elapsed,'ownedPeakRSSBytes':peak,'observedCgroupPeakBytes':shared_peak,'monitorPeriodSeconds':policy['pollSeconds'],'processIdentities':[{'pid':p,'startTicks':s,'observedPeakRSSBytes':h} for (p,s),h in observed.items()],'allProcessesReaped':not survivors and proc.returncode is not None,'transcriptBytes':output.transcript[run['id']]}
-    if reason or proc.returncode!=0:return {'status':'RESOURCE_INCONCLUSIVE','reason':reason or 'Nonzero worker exit','finalAcceptance':False},resources
-    try:result=json.loads(packet)
-    except Exception:return {'status':'RESOURCE_INCONCLUSIVE','reason':'Incomplete result channel','finalAcceptance':False},resources
+    if reason or proc.returncode!=0:
+        packet.clear();output.pending[run['id']]=0
+        return {'status':'RESOURCE_INCONCLUSIVE','reason':reason or 'Nonzero worker exit','finalAcceptance':False},resources
+    try:
+        result=json.loads(packet);output.reserve(run['id'],len(encoded(result)));packet.clear();output.retain(run['id'],len(encoded(result)))
+    except Exception as e:
+        packet.clear();output.pending[run['id']]=0
+        return {'status':'RESOURCE_INCONCLUSIVE','reason':'Incomplete/over-budget result staging: '+str(e),'finalAcceptance':False},resources
     return result,resources
 
 def compare(B,C,D):
@@ -227,33 +239,51 @@ def finalize(output,results,resources,comparison,manifest_hash,aggregate_start,c
     failure=not disposed or any(r.get('status') not in ('PASS','SOLVER_REFUSAL') for r in results.values())
     summary={'event':'supervisor-final','status':'RESOURCE_INCONCLUSIVE' if failure else 'COMPLETE_FINALIZED','manifestSHA256':manifest_hash,'output':str(output.path),'anatomicalQualification':False,'observationalStatus':'Provisional until supervisor exit zero and matching complete resource receipt'}
     output.log(encoded(summary),resources[-1]['run'] if resources else 'A',final=True);output.seal_log()
-    payloads={RUN_NAMES[i]:encoded({'run':run,'workerSnapshotStatus':'PROVISIONAL_UNTIL_RESOURCE_COMMIT','payload':results.get(run,{'status':'SKIPPED_NOT_RUN','finalAcceptance':False})}) for i,run in enumerate('ABCD')}
-    payloads['comparison.json']=encoded(comparison)
     last_run=resources[-1]['run'] if resources else 'A'
+    acceptance={r:results.get(r,{}).get('status')=='PASS' and not failure for r in 'ABCD'}
     owners={name:(run if run in results else last_run) for name,run in zip(RUN_NAMES,'ABCD')};owners['comparison.json']=last_run
-    # Pre-account all final payloads plus the mandatory failure/commit reserve.
-    for name,b in payloads.items():output.reserve(owners[name],len(b))
-    simulated=dict(output.charges)
-    for name,b in payloads.items():simulated[owners[name]]+=len(b)
-    if any(v>output.policy['perRunOutputBytes']-output.policy['reservedReceiptBytes'] for v in simulated.values()) or sum(simulated.values())>output.policy['aggregateOutputBytes']-output.policy['reservedReceiptBytes']:raise Refusal('Combined final output ceiling')
-    for name,b in payloads.items():output.write(name,b,owners[name])
+    # Retained raw result payloads coexist with encoded publication staging.
+    payloads={}
+    for name,run in zip(RUN_NAMES,'ABCD'):
+        b=encoded({'run':run,'workerSnapshotStatus':'PROVISIONAL_UNTIL_RESOURCE_COMMIT','payload':results.get(run,{'status':'SKIPPED_NOT_RUN','finalAcceptance':False})})
+        output.stage(owners[name],len(b));payloads[name]=b
+    b=encoded(comparison);output.stage(last_run,len(b));payloads['comparison.json']=b
+    results.clear();output.pending={r:0 for r in output.pending}
+    # Count staging and durable bytes together during each fsync. Drop the
+    # buffer's accounting only after publication, before the next allocation.
+    for name in list(payloads):
+        b=payloads.pop(name);output.write(name,b,owners[name]);output.staging[owners[name]]-=len(b);del b
     output.verify_inventory()
     final_metrics=final_guard(output,resources,aggregate_start,cgroup)
-    receipt={'status':'RESOURCE_INCONCLUSIVE' if failure else 'COMPLETE_FINALIZED','manifestSHA256':manifest_hash,'authoritativeFinalAcceptance':{r:results.get(r,{}).get('status')=='PASS' and not failure for r in 'ABCD'},'snapshotsDetached':True,'allProcessesDisposed':all(r['allProcessesReaped'] for r in resources),'anatomicalQualification':False,'aggregateWallSeconds':time.monotonic()-aggregate_start,'resources':copy.deepcopy(resources),'finalResourceObservation':final_metrics,'perRunOutputBytesBeforeCommit':dict(output.charges),'oneUseClaimBytesChargedToA':output.claim.get('bytes',0),'externalOneUseClaim':copy.deepcopy(output.claim),'fileHashes':copy.deepcopy(output.written),'supervisorStdout':summary,'observationalStatus':{'progress':'PROVISIONAL_NOT_COMMITTED','contactAliases':'UNTRUSTED_PROCESS_LOCAL_ALIASES_DISPOSED','onlyAuthoritativeAcceptance':'Supervisor exit zero AND this complete resource receipt, matching all listed snapshot hashes and manifest. Files observed before supervisor disposal are provisional.'}}
+    receipt={'status':'RESOURCE_INCONCLUSIVE' if failure else 'COMPLETE_FINALIZED','manifestSHA256':manifest_hash,'authoritativeFinalAcceptance':acceptance,'snapshotsDetached':True,'allProcessesDisposed':all(r['allProcessesReaped'] for r in resources),'anatomicalQualification':False,'aggregateWallSeconds':time.monotonic()-aggregate_start,'resources':copy.deepcopy(resources),'finalResourceObservation':final_metrics,'perRunOutputBytesBeforeCommit':dict(output.charges),'oneUseClaimBytesChargedToA':output.claim.get('bytes',0),'externalOneUseClaim':copy.deepcopy(output.claim),'fileHashes':copy.deepcopy(output.written),'supervisorStdout':summary,'observationalStatus':{'progress':'PROVISIONAL_NOT_COMMITTED','contactAliases':'UNTRUSTED_PROCESS_LOCAL_ALIASES_DISPOSED','onlyAuthoritativeAcceptance':'Supervisor exit zero AND this complete resource receipt, matching all listed snapshot hashes and manifest. Files observed before supervisor disposal are provisional.'}}
     if not receipt['allProcessesDisposed']:receipt['status']='RESOURCE_INCONCLUSIVE';receipt['authoritativeFinalAcceptance']={r:False for r in 'ABCD'}
-    b=encoded(receipt);output.write('resource-receipt.json',b,last_run,emergency=True);output.verify_inventory()
+    b=encoded(receipt);output.reserve(last_run,2*len(b),emergency=True);output.write('resource-receipt.json',b,last_run,emergency=True);del b;output.verify_inventory()
     final_guard(output,resources,aggregate_start,cgroup)
     return receipt
+
+def claim_path(policy,manifest_hash):
+    return no_symlinks(policy['claimDirectory'])/(manifest_hash+'.executed')
+
+def approved_destination(m,destination):
+    p=no_symlinks(destination)
+    if str(p)!=m.get('executionDestination'):raise Refusal('Unapproved destination')
+    if p.exists():raise Refusal('Numerical destination already exists')
+    return p
 
 def execute(manifest_path,destination,approval):
     start=time.monotonic();data=read_regular(manifest_path);h=digest(data)
     if approval!=h:raise Refusal('Stale/missing exact numerical approval token')
     m=json.loads(data);node=validate_manifest(m,data);cg=cgroup_file()
+    approved_destination(m,destination)
     if int(cg.read_text())>m['policy']['cgroupBytes']:raise Refusal('Shared cgroup ceiling')
     if shutil.disk_usage(no_symlinks(destination).parent).free<m['policy']['aggregateOutputBytes']+m['policy']['reservedReceiptBytes']:raise Refusal('Insufficient scratch')
     # Exclusive one-use claim; no campaign restart/reuse of an approved manifest.
     claim_bytes=encoded({'manifestSHA256':h,'output':str(destination)})
-    claim=pathlib.Path(str(manifest_path)+'.executed');fd=os.open(no_symlinks(claim),os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600)
+    claims=no_symlinks(m['policy']['claimDirectory'])
+    try:os.mkdir(claims,0o700)
+    except FileExistsError:
+        if not claims.is_dir():raise Refusal('Invalid fixed claim namespace')
+    claim=claim_path(m['policy'],h);fd=os.open(no_symlinks(claim),os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600)
     try:
         with os.fdopen(fd,'wb',closefd=False) as f:f.write(claim_bytes);f.flush();os.fsync(fd)
     finally:os.close(fd)
@@ -270,14 +300,17 @@ def execute(manifest_path,destination,approval):
         comparison=compare(results['B'],results['C'],results['D']) if set(results)==set('ABCD') and all(r['status'] in ('PASS','SOLVER_REFUSAL') for r in results.values()) else {'result':'RESOURCE_OR_GATE_INCONCLUSIVE_NO_RESTART'}
         return finalize(output,results,resources,comparison,h,start,cg)
     except Exception as error:
+        reason=str(error);error.__traceback__=None;error.__context__=None;error.__cause__=None
+        # Release failed publication frames/buffers before emergency accounting.
         # Never turn a finalization/cap failure into an accepted state. Reserved
         # minimal receipt is sufficient; incomplete files remain provisional.
+        results.clear();output.pending={r:0 for r in output.pending};output.staging={r:0 for r in output.staging}
         if 'resource-receipt.json' in output.written:
             old=output.written.pop('resource-receipt.json');os.unlink(output.path/'resource-receipt.json');output.charges[resources[-1]['run'] if resources else 'A']-=old['bytes']
         summary={'event':'supervisor-final','status':'RESOURCE_INCONCLUSIVE','manifestSHA256':h,'anatomicalQualification':False}
         output.log(encoded(summary),resources[-1]['run'] if resources else 'A',final=True);output.seal_log()
-        receipt={'status':'RESOURCE_INCONCLUSIVE','reason':str(error),'manifestSHA256':h,'authoritativeFinalAcceptance':{r:False for r in 'ABCD'},'anatomicalQualification':False,'resources':resources,'supervisorStdout':summary}
-        output.write('resource-receipt.json',encoded(receipt),resources[-1]['run'] if resources else 'A',emergency=True)
+        receipt={'status':'RESOURCE_INCONCLUSIVE','reason':reason,'manifestSHA256':h,'authoritativeFinalAcceptance':{r:False for r in 'ABCD'},'anatomicalQualification':False,'resources':resources,'supervisorStdout':summary}
+        b=encoded(receipt);owner=resources[-1]['run'] if resources else 'A';output.reserve(owner,2*len(b),emergency=True);output.write('resource-receipt.json',b,owner,emergency=True)
         return receipt
 
 def main():
@@ -286,6 +319,10 @@ def main():
     if a.preflight:
         data=read_regular(a.manifest);m=json.loads(data);validate_manifest(m,data);cg=cgroup_file();used=int(cg.read_text());
         if used>m['policy']['cgroupBytes']:raise Refusal('Observed cgroup ceiling')
+        dest=approved_destination(m,m['executionDestination'])
+        claims=no_symlinks(m['policy']['claimDirectory'])
+        if claim_path(m['policy'],digest(data)).exists():raise Refusal('Exact digest approval already consumed')
+        if shutil.disk_usage(dest.parent).free<m['policy']['aggregateOutputBytes']+m['policy']['reservedReceiptBytes']:raise Refusal('Insufficient scratch')
         print(json.dumps({'status':'PREFLIGHT_READY_NO_PHYSICAL_IMPORTS','manifestSHA256':digest(data),'cgroupPath':str(cg),'observedCgroupBytes':used,'physicalEvaluations':0}));return
     if not a.output:raise Refusal('New private output directory required')
     receipt=execute(a.manifest,a.output,a.approved_manifest_sha256);print(json.dumps(receipt['supervisorStdout'],separators=(',',':')));

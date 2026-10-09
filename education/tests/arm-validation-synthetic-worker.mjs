@@ -9,6 +9,7 @@ const entries={
  export function anatomicalConfiguration(arm,x,a){globalThis.__kenomaValidation.budget.charge('configurationEntries');return {gradient:new Float64Array(460),positions:[],physicalPotentialJ:3+a,energies:{activePotentialJ:a},headResults:[{minJ:1}],contact:{maximumSampledBonePenetrationM:0,maximumSampledSoftPenetrationM:0,maximumSampledTendonPenetrationM:0}};}
  export function stepAnatomicalArm(arm,s,o){return globalThis.__kenomaValidation.attempt(arm,s,o,()=>{
  ${which==='C-budget'?"try{globalThis.__kenomaValidation.budget.charge('configurationEntries',999);}catch{}":''}
+ if(${JSON.stringify(which)}==='C-returned-exception')return {accepted:false,state:s,retryable:false,error:'synthetic terminal error',substepIntegration:{attempts:[{exception:'synthetic terminal error'}]}};
  if(${JSON.stringify(which)}==='D-fail'&&s.step===1)return {accepted:false,state:s,reason:'synthetic late-half refusal'};
  const receipt={activeMechanicalWorkJ:0,maximumFreeModalGradientN:0,referenceQuadratureUpdateJ:0,oldMechanicalJ:3,newMechanicalJ:3,nonlinearWorkDefectJ:0,impulseResidualNmS:0};
  return {accepted:true,state:{...s,timeS:s.timeS+o.h,step:s.step+1,effort:o.effort,contactRule:{schema:1},history:[...s.history,receipt]},receipt};});}

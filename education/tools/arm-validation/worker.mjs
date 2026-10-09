@@ -3,7 +3,18 @@
 import fs from 'node:fs';import path from 'node:path';import {fileURLToPath} from 'node:url';
 import {Budget,createObserver,detached,json,sha256,transaction,observationStatus} from './core.mjs';
 import {installLoader} from './loader.mjs';import {verifyHeld,verifyLeaves} from './replay.mjs';
-export async function numericalWorker(manifest,runId){
+const supervisorContext=Symbol('verified supervisor context');
+export function validateWorkerEntry(manifest,manifestPath,expected,environment=process.env){
+ const fd=Number(environment.KENOMA_RESULT_FD);if(!Number.isInteger(fd)||fd<3||!fs.fstatSync(fd).isFIFO())throw Error('Missing supervisor result channel');
+ if(Number(environment.KENOMA_SUPERVISOR_PID)!==process.ppid)throw Error('Missing bound supervisor identity');
+ if(path.resolve(manifestPath)!==path.join(manifest.executionDestination,'manifest.json'))throw Error('Unbound worker destination');
+ const claim=path.join(manifest.policy.claimDirectory,expected+'.executed');if(environment.KENOMA_CLAIM_PATH!==claim)throw Error('Missing digest approval claim');
+ const stat=fs.lstatSync(claim);if(!stat.isFile()||stat.isSymbolicLink()||stat.size>1024)throw Error('Invalid approval claim');
+ const receipt=JSON.parse(fs.readFileSync(claim,'utf8'));if(receipt.manifestSHA256!==expected||receipt.output!==manifest.executionDestination)throw Error('Unbound approval claim');
+ return fd;
+}
+export async function numericalWorker(manifest,runId,context){
+ if(context!==supervisorContext&&(manifest.scope!=='SYNTHETIC_TEST_ONLY'||manifest.operatorCommit!=='SYNTHETIC_NO_PHYSICS'))throw Error('Supervised approval context required before physical imports');
  const run=manifest.policy.runs.find(r=>r.id===runId);if(!run)throw Error('Unknown fixed run');
  const limits=Object.fromEntries(['attempts','configurationEntries','muscleMaterial','tendonMaterial','materialTensor','hessianProducts'].map(k=>[k,run[k]]));
  const budget=new Budget(limits),emit=e=>{const bytes=json({run:runId,...e})+'\n';if(Buffer.byteLength(bytes)+transcript>manifest.policy.perRunTranscriptBytes-manifest.policy.reservedTranscriptBytes)budget.refuse('transcriptBytes',{executed:transcript});transcript+=Buffer.byteLength(bytes);fs.writeSync(1,bytes);};let transcript=0;
@@ -26,6 +37,7 @@ export async function numericalWorker(manifest,runId){
      const first=step(initial,.005);budget.alive();if(!first.accepted)return {accepted:false,status:'SOLVER_REFUSAL',reason:first.reason??null};
      result=step(first.state,.005);budget.alive();
     }else{result=step(initial,.01,runId==='C'?1:0);budget.alive();}
+    if(!result.accepted&&(result.retryable===false||result.error||result.substepIntegration?.attempts?.some(a=>a.exception)))throw Error('Terminal original attempt exception: '+(result.error??result.reason));
     if(!result.accepted)return {accepted:false,status:'SOLVER_REFUSAL',reason:result.reason??null,residualN:result.maxGradientN??null,substepIntegration:result.substepIntegration??null};
     const leaves=runId==='D'?observer.records().filter(r=>r.accepted):observer.select(result);
     if(leaves.length!==(runId==='D'?2:result.substepIntegration?.committedSubsteps??1))throw Error('Missing leaf coverage');
@@ -43,5 +55,5 @@ export async function numericalWorker(manifest,runId){
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
  const [flag,manifestPath,runId,expected]=process.argv.slice(2);if(flag!=='--numerical-run'||!manifestPath||!runId||!expected)throw Error('Explicit supervised numerical entry required');
  const bytes=fs.readFileSync(manifestPath);if(sha256(bytes)!==expected)throw Error('Stale manifest');const manifest=JSON.parse(bytes);
- const packet=await numericalWorker(manifest,runId);const fd=Number(process.env.KENOMA_RESULT_FD);if(!Number.isInteger(fd)||fd<3)throw Error('Missing supervisor result channel');fs.writeFileSync(fd,json(packet)+'\n');
+ const fd=validateWorkerEntry(manifest,path.resolve(manifestPath),expected);const packet=await numericalWorker(manifest,runId,supervisorContext);fs.writeFileSync(fd,json(packet)+'\n');
 }

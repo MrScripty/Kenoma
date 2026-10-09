@@ -29,8 +29,9 @@ for disposal; no accepted result may exceed the full ceilings.
 Per job: owned RSS <=1,000,000,000 bytes, observed shared cgroup usage
 <=16,000,000,000 bytes, output <=4,194,304 bytes, stdout/stderr <=262,144 bytes.
 Aggregate output <=16,777,216 bytes and transcript <=1,048,576 bytes. Include
-manifest/input/source text, result buffers/staging, logs, final/refusal receipts
-and the exclusive external one-use claim. Reserve 65,536 output bytes and 1,024
+durable manifest (including embedded input/source text), retained/active result
+buffers, encoded publication staging coexisting with durable files, logs, final/refusal receipts
+and the exclusive digest-addressed one-use claim. Reserve 65,536 output bytes and 1,024
 transcript bytes for final/refusal reporting **within** the ceilings. No scientific
 receipt is silently truncated; overflow means refusal.
 
@@ -75,7 +76,7 @@ transaction; first-half success cannot commit a failed interval.
 
 Manifest preparation only reads/hashes immutable bytes. It embeds original
 module/input text, original/transformed SHA-256, harness hashes, Git IDs, Node
-version, fixed policy and the exact independent review. The in-memory synchronous
+version, fixed policy and the exact raw independent review receipt bytes/hash. The in-memory synchronous
 Node loader verifies both hashes before physical import and rejects foreign or
 unlisted URLs. Exact-prefix/cardinality-checked insertion instruments internal
 configuration/material/tensor/attempt/HVP call sites, including lexical calls.
@@ -144,9 +145,14 @@ final snapshot. Reserved finalization refusals set every acceptance flag false.
 
 Final directory inventory: manifest.json, rest-recheck.json, default.json,
 adaptive-depth1.json, explicit-halves.json, comparison.json, resource-receipt.json,
-transcript.log. The separately declared <approved-manifest>.executed exclusive
-claim is hashed and charged to A. It prevents reuse/restart of the same approval.
-No approval/claim is installed during preparation.
+transcript.log. The separately declared fixed-namespace
+/tmp/kenoma-arm-validation-approval-claims/<manifestSHA>.executed claim is
+exclusive, hashed and charged to A; manifest copies reuse this same claim.
+The numerical destination is also bound in the approved manifest. It prevents reuse/restart of the same approval.
+The worker validates its pipe, parent identity, manifest destination and bound digest
+claim before physical imports. The public worker API refuses a real manifest
+without that private supervisor context; its test bypass accepts only explicitly
+synthetic source/scope. No approval/claim is installed during preparation.
 
 ## Commands
 
@@ -160,7 +166,7 @@ python3 -B education/tests/anatomical-arm-watchdog.test.py
 After independent review, metadata-only preparation/preflight:
 
 ```
-node education/tools/arm-validation/prepare.mjs REPOSITORY NEW_MANIFEST REVIEW_RECEIPT
+node education/tools/arm-validation/prepare.mjs REPOSITORY NEW_MANIFEST REVIEW_RECEIPT EXACT_NUMERICAL_DESTINATION
 python3 -B education/tools/arm-validation/watchdog.py --preflight --manifest NEW_MANIFEST
 ```
 

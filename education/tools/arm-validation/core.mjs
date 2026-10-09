@@ -21,7 +21,7 @@ export class Budget {
   charge(kind,n=1){
     this.alive();if(!Number.isSafeInteger(n)||n<0||!Object.hasOwn(this.limits,kind))throw new Error('Invalid accounting class');
     if(this.counts[kind]+n>this.limits[kind]){this.denied[kind]=(this.denied[kind]||0)+n;this.refuse(kind,{executed:this.counts[kind],denied:n,limit:this.limits[kind]});}
-    if(kind==='hessianProducts'&&this.attemptProducts+n>3528840)this.refuse('perAttemptHessianProducts',{executed:this.attemptProducts});
+    if(kind==='hessianProducts'&&this.attemptProducts+n>3528840){this.denied[kind]=(this.denied[kind]||0)+n;this.refuse('perAttemptHessianProducts',{executed:this.attemptProducts,denied:n});}
     this.counts[kind]+=n;if(kind==='hessianProducts')this.attemptProducts+=n;
   }
   beginAttempt(){this.charge('attempts');this.attemptProducts=0;}

@@ -13,9 +13,10 @@ export const INPUTS={
 };
 export const POLICY={runs:[{id:'A',attempts:0,configurationEntries:1,wallSeconds:60,muscleMaterial:56448,tendonMaterial:633,materialTensor:0,hessianProducts:0},
  ...[['B',1],['C',3],['D',2]].map(([id,attempts])=>({id,attempts,configurationEntries:512,wallSeconds:240,muscleMaterial:28901376,tendonMaterial:324096,materialTensor:28901376,hessianProducts:3528840*attempts}))],
- aggregateWallSeconds:780,ownedRSSBytes:1000000000,cgroupBytes:16000000000,perRunOutputBytes:4194304,aggregateOutputBytes:16777216,perRunTranscriptBytes:262144,aggregateTranscriptBytes:1048576,pollSeconds:.01,reservedReceiptBytes:65536,reservedTranscriptBytes:1024,
+ aggregateWallSeconds:780,ownedRSSBytes:1000000000,cgroupBytes:16000000000,perRunOutputBytes:4194304,aggregateOutputBytes:16777216,perRunTranscriptBytes:262144,aggregateTranscriptBytes:1048576,pollSeconds:.01,reservedReceiptBytes:65536,reservedTranscriptBytes:1024,claimDirectory:'/tmp/kenoma-arm-validation-approval-claims',
  outputs:['manifest.json','rest-recheck.json','default.json','adaptive-depth1.json','explicit-halves.json','comparison.json','resource-receipt.json','transcript.log']};
-export function buildManifest(repo,review=null){
+export function buildManifest(repo,review=null,reviewText=null,destination='/tmp/kenoma-arm-four-run-e578474-20261009'){
+ if(!path.isAbsolute(destination)||path.resolve(destination)!==destination)throw Error('Exact absolute destination required');
  const git=(...args)=>execFileSync('git',['--no-optional-locks','-C',repo,...args],{maxBuffer:32*1024*1024});
  const modules={};function add(p){if(modules[p])return;const text=git('show',OPERATOR+':'+p).toString();const transformed=instrument(p,text);modules[p]={text,sha256:sha256(text),transformedSHA256:sha256(transformed)};
   const specs=[...text.matchAll(/(?:from\s*|import\s*)['"]([^'"]+)['"]/g)].map(m=>m[1]);for(const spec of specs){if(!spec.startsWith('.'))throw Error('Unlisted physical import '+spec);add(path.posix.normalize(path.posix.join(path.posix.dirname(p),spec)));}}
@@ -23,10 +24,10 @@ export function buildManifest(repo,review=null){
  const inputs={};for(const [rel,expected] of Object.entries(INPUTS)){const text=git('show',INPUT+':education/data/anatomical-arm-v1/'+rel).toString();if(sha256(text)!==expected)throw Error('Changed input '+rel);inputs[rel]={text,sha256:expected};}
  const harnessFiles={};for(const name of ['core.mjs','prepare.mjs','loader.mjs','replay.mjs','worker.mjs','watchdog.py']){const rel='education/tools/arm-validation/'+name,b=git('show','HEAD:'+rel);if(!fs.readFileSync(path.join(repo,rel)).equals(b))throw Error('Uncommitted harness '+name);harnessFiles[rel]=sha256(b);}
  const commit=git('rev-parse','HEAD').toString().trim();if(review&&(review.verdict!=='PASS_RUN_READY_SOURCE_ONLY'||review.sourceCommit!==commit))throw Error('Review receipt does not approve this exact harness');
- return {schema:1,scope:'BOUNDED_REDUCED_ARM_VALIDATION_NOT_ANATOMICAL_QUALIFICATION',harnessCommit:commit,operatorCommit:OPERATOR,inputCommit:INPUT,nodeVersion:process.version,policy:POLICY,harnessFiles,modules,inputs,reviewReceipt:review,reviewReceiptSHA256:review?sha256(json(review)):null,anatomicalQualification:false};
+ return {schema:1,scope:'BOUNDED_REDUCED_ARM_VALIDATION_NOT_ANATOMICAL_QUALIFICATION',harnessCommit:commit,operatorCommit:OPERATOR,inputCommit:INPUT,nodeVersion:process.version,policy:POLICY,harnessFiles,modules,inputs,reviewReceipt:review,reviewReceiptText:review?(reviewText??json(review)):null,reviewReceiptSHA256:review?sha256(reviewText??json(review)):null,executionDestination:destination,anatomicalQualification:false};
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
- const [repo,out,reviewPath]=process.argv.slice(2);if(!repo||!out)throw Error('Usage: prepare.mjs REPOSITORY NEW_MANIFEST_PATH [REVIEW_RECEIPT]');
- const receipt=reviewPath?JSON.parse(fs.readFileSync(reviewPath,'utf8')):null;
- const bytes=json(buildManifest(path.resolve(repo),receipt))+'\n';fs.writeFileSync(out,bytes,{flag:'wx'});console.log(json({manifest:out,bytes:Buffer.byteLength(bytes),sha256:sha256(bytes),physicalImports:0,physicalEvaluations:0}));
+ const [repo,out,reviewPath,destination]=process.argv.slice(2);if(!repo||!out)throw Error('Usage: prepare.mjs REPOSITORY NEW_MANIFEST_PATH [REVIEW_RECEIPT] [EXACT_NUMERICAL_DESTINATION]');
+ const reviewText=reviewPath?fs.readFileSync(reviewPath,'utf8'):null,receipt=reviewText?JSON.parse(reviewText):null;
+ const bytes=json(buildManifest(path.resolve(repo),receipt,reviewText,destination))+'\n';fs.writeFileSync(out,bytes,{flag:'wx'});console.log(json({manifest:out,bytes:Buffer.byteLength(bytes),sha256:sha256(bytes),physicalImports:0,physicalEvaluations:0}));
 }
