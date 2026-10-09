@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
+import {execFileSync} from 'node:child_process';
 import {advanceArmInterval,MAX_SUBDIVISION_DEPTH} from '../web/anatomical-arm-substeps.mjs';
 
 // Metadata-only callbacks. Never import the arm/material/element/solver modules.
@@ -141,8 +142,8 @@ test('actual arm integration preserves the complete old solve/law/gate source by
 
 test('worker opt-in and trace wiring preserve every previous worker statement', () => {
   let source = readFileSync(new URL('../web/anatomical-arm-worker.mjs', import.meta.url), 'utf8');
-  source = source.replace(',subdivisionDepth:data.subdivisionDepth??0', '');
-  source = source.replace(',substepIntegration:result.substepIntegration', '');
+  source = source.replace(',...(data.subdivisionDepth==null?{}:{subdivisionDepth:data.subdivisionDepth})', '');
+  source = source.replace(',...(result.substepIntegration?{substepIntegration:result.substepIntegration}:{})', '');
   assert.equal(createHash('sha256').update(source).digest('hex'), 'dfadf3136b8ecac0fd6275f059085636eb8953346d920ca69a4d4382fa7b39d5');
 });
 
@@ -197,4 +198,106 @@ test('custom warm start remains available at depth zero; subdivision refuses it 
   const before = structuredClone(arm.contact);
   assert.throws(() => step(arm, s, {effort: .3, startCoordinates: guess, subdivisionDepth: 1}), RangeError);
   assert.equal(calls, 1); assert.deepEqual(arm.contact, before);
+});
+
+test('default bypass preserves exact state/options/result and every retained alias', () => {
+  const s = initial(), options = {effort: '0.3', h: '.125'}, result = {accepted: true, state: s};
+  s.massEvents = [{externalWorkJ: 4}]; s.history = [{nested: {value: 2}}];
+  const arm = {}; // No parameter/contact access is needed before the original callback.
+  const step = publicWrapper((a, current, forwarded) => {
+    assert.equal(a, arm); assert.equal(current, s); assert.equal(forwarded, options);
+    assert.equal(current.massEvents, s.massEvents); assert.equal(current.history[0], s.history[0]);
+    return result;
+  });
+  assert.equal(step(arm, s, options), result);
+  assert.equal(Object.hasOwn(result, 'substepIntegration'), false);
+});
+
+test('default bypass propagates original exceptions and performs no new domain checks', () => {
+  const error = new RangeError('Effort/step domain'), options = {effort: Infinity, h: Infinity};
+  const step = publicWrapper((a, s, forwarded) => {assert.equal(forwarded, options); throw error;});
+  assert.throws(() => step({}, initial(), options), e => e === error);
+});
+
+test('late refusal preserves every state value and caller identity', () => {
+  const s = {...initial(), omegaRadPerS: .2, effort: .3, step: 7,
+    contactRule: {schema: 1, tendonKnots: [['0:0', [.1, .2]]]},
+    massEvents: [{massKg: .5, externalEnergyJ: 2}], history: [{nested: [2, 3]}]};
+  const before = structuredClone(s), history = s.history, massEvents = s.massEvents;
+  const f = fixture((current, h, rule) => {
+    const late = current.timeS > 0;
+    current.coordinatesM.fill(999); current.qRad = 10; current.omegaRadPerS = 20;
+    current.activation = .9; current.effort = .8; current.massKg = 99;
+    current.step = 999; current.mechanicalWorkJ = 100;
+    current.contactRule.tendonKnots[0][1].push(.4);
+    current.massEvents[0].externalEnergyJ = 999; current.history[0].nested.push(999);
+    rule.generation++; rule.knots.push('provisional');
+    return h > .0625 || late ? {accepted: false, state: current} : success(current, h, rule);
+  });
+  const r = advanceArmInterval(s, {...f, h: .125, maxDepth: 1});
+  assert.equal(r.accepted, false); assert.equal(r.state, s); assert.deepEqual(s, before);
+  assert.equal(s.history, history); assert.equal(s.massEvents, massEvents);
+  assert.deepEqual(f.rule(), {knots: ['original'], generation: 0});
+});
+
+function workerFixture(step, s = initial()) {
+  // Execute the actual worker handler, injecting the original-step callback only.
+  // No initialization, fetch, original numerical modules or sample evaluation.
+  const source = readFileSync(new URL('../web/anatomical-arm-worker.mjs', import.meta.url), 'utf8')
+    .split('\n').filter(line => !line.startsWith('import ')).join('\n')
+    .replace('let arm,state,initial,epoch=0;', 'let arm=injectedArm,state=injectedState,initial,epoch=0;');
+  const posts = [], self = {postMessage: p => posts.push(structuredClone(p))}, arm = {};
+  new Function('self', 'injectedArm', 'injectedState', 'stepAnatomicalArm', source)(self, arm, s, step);
+  return {posts, arm, send: data => self.onmessage({data: {id: 1, epoch: 0, kind: 'step', ...data}})};
+}
+
+test('actual default worker preserves original options and posted message shape', async () => {
+  const w = workerFixture((a, s, options) => {
+    assert.deepEqual(options, {effort: .3, maxIterations: 120});
+    a.onIteration({iteration: 1, maxGradient: 2});
+    return {accepted: false, state: s, reason: 'unchanged refusal'};
+  });
+  await w.send({effort: .3});
+  assert.equal(w.posts.length, 2); assert.equal(w.posts[0].kind, 'progress');
+  assert.equal(Object.hasOwn(w.posts[1], 'substepIntegration'), false);
+  assert.equal(w.posts[1].accepted, false);
+});
+
+test('actual default worker retains its error branch and opt-in metadata remains explicit', async () => {
+  const failing = workerFixture(() => {throw new RangeError('Effort/step domain');});
+  await failing.send({effort: .3});
+  assert.deepEqual(failing.posts, [{id: 1, epoch: 0, kind: 'step', error: 'RangeError: Effort/step domain'}]);
+  const opted = workerFixture((a, s, options) => {
+    assert.equal(options.subdivisionDepth, 1);
+    return {accepted: false, state: s, substepIntegration: {committedSubsteps: 0}};
+  });
+  await opted.send({effort: .3, subdivisionDepth: 1});
+  assert.deepEqual(opted.posts[0].substepIntegration, {committedSubsteps: 0});
+});
+
+test('actual contact recipe restores all mutable fields and rebuilds derived sample values', () => {
+  // Read source only; compile the two actual serialization functions with
+  // metadata rebuild callbacks. No contact module import or atlas sampling.
+  const source = execFileSync('git', ['show', 'HEAD:education/web/anatomical-contact-refinement.mjs'],
+    {cwd: new URL('../..', import.meta.url), encoding: 'utf8'});
+  const functions = source.slice(source.indexOf('export function contactRecipe(')).replaceAll('export function', 'function');
+  const surfaceRebuild = s => {s.samples = {derivedFrom: structuredClone(s.materialTriangles)};};
+  const boneRebuild = b => {b.samples = {derivedFrom: structuredClone(b.materialTriangles)};};
+  const {capture, restore} = new Function('rebuildSurfaceSamples', 'rebuildBoneSamples',
+    functions + '\nreturn {capture:contactRecipe,restore:restoreContactRecipe};')(surfaceRebuild, boneRebuild);
+  const contact = {surfaces: [{materialTriangles: [[['surface rule']]], body: {unchanged: true}}],
+    bones: [{materialTriangles: [[['bone rule']]], source: {unchanged: true}, referenceSamples: ['base']},
+      {referenceSamples: ['unrefined base']}], tendonKnots: new Map([['0:0', [.1, .3]]]), refinementRounds: 3};
+  surfaceRebuild(contact.surfaces[0]); boneRebuild(contact.bones[0]);
+  contact.bones[1].samples = contact.bones[1].referenceSamples;
+  const before = structuredClone(contact), recipe = capture(contact), sourceAlias = contact.bones[0].source;
+  contact.surfaces[0].materialTriangles[0][0].push('changed'); contact.surfaces[0].samples = ['changed'];
+  contact.bones[0].materialTriangles[0][0].push('changed'); contact.bones[0].samples = ['changed'];
+  contact.bones[1].materialTriangles = [['new partition']]; contact.bones[1].samples = ['new samples'];
+  contact.tendonKnots.get('0:0').push(.9); contact.tendonKnots.set('new', [.5]); contact.refinementRounds++;
+  restore(contact, recipe);
+  assert.deepEqual(contact, before); assert.equal(contact.bones[0].source, sourceAlias);
+  assert.equal(Object.hasOwn(contact.bones[1], 'materialTriangles'), false);
+  assert.equal(contact.bones[1].samples, contact.bones[1].referenceSamples);
+  assert.deepEqual(capture(contact), recipe);
 });
