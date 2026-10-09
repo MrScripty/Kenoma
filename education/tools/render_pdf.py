@@ -41,6 +41,7 @@ def render():
             page=browser.new_page()
             page.goto(url+'/index.html',wait_until='networkidle')
             page.emulate_media(media='print')
+            page.locator('.proof-appendices').evaluate_all('(nodes)=>nodes.forEach(n=>n.open=true)')
             # Match A4's printable width before measuring MathML. Let long
             # formulas wrap at semantic boundaries instead of shrinking all text.
             page.set_viewport_size({'width':658,'height':1000})
@@ -63,6 +64,7 @@ def render():
               for(const link of document.querySelectorAll('a[href]')){
                 const href=link.getAttribute('href'),target=destinations[href];
                 if(target)link.setAttribute('href',target);
+                else if(href.startsWith('examples.html?')){link.setAttribute('href',`https://github.com/MrScripty/Kenoma/blob/${revision}/education/book/examples/registry.json`);link.textContent='Reproduce this chapter example from the pinned registry and GUI sources';}
                 else if(href.startsWith('data/'))link.setAttribute('href',`https://github.com/MrScripty/Kenoma/blob/${revision}/education/${href}`);
                 else if(href.startsWith('web/'))link.setAttribute('href',`https://github.com/MrScripty/Kenoma/blob/${revision}/education/${href}`);
                 else if(href.startsWith('standalone/'))link.setAttribute('href',`https://github.com/MrScripty/Kenoma/blob/${revision}/education/${href}`);

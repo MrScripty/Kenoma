@@ -49,3 +49,24 @@ Imagine a forearm holding a dumbbell. Ask: what system did we isolate, what forc
 The property lessons use the same SI convention with prescribed positive stretches or an explicitly reduced small-strain axial law. The first four update a prescribed geometry or static equilibrium; the fifth integrates an internal viscous strain under its stated axial law, and the sixth solves two separate incompressible homogeneous blocks and independently measures their 3D geometry. Independent geometric measurements and midpoint-integration error remain visible; their exact kinematic claims do not prove a constitutive law or qualify the anatomical tissue envelope.
 
 The architecture-force integration is a source candidate, not a newly qualified full-book release. Its chapter and portable lab connect reference/current area, nominal/Cauchy stress, projection, parallel aggregation and series exchange. The historical nonuniform-volume total was 103 + 6 = 109; this source registry adds six for 115. The preserved standalone qualification does not establish complete-book proof closure, integrated browser/PDF acceptance or anatomical calibration. All example counts, areas, stresses and control ranges are authored.
+
+
+## Read the model before moving it {#shared-gui-scope}
+
+Every chapter now has an example in the shared Kenoma embedded GUI. The label
+above each view distinguishes illustrative geometry, prescribed kinematics,
+analytic bookkeeping, a numerical demonstration, and recorded evidence. Orbiting
+a model does not increase its physical dimension or validate its parameters.
+An algebraic statement can be kernel-checked while its browser implementation,
+mesh approximation and biological interpretation remain separate obligations.
+
+The simple human poser is an independent artistic system: a graph, generated
+surface and pose rig with gizmo controls and local SQLite scene files. It has
+no tissue forces or contact response. Educational model adapters share only
+presentation components with it. The research apparatus retains its original
+laws, acceptance criteria and failed-state evidence.
+
+Checked cards show their claim, assumptions and limits immediately. Expand a
+card for its exact statement, source and compilation receipt. The complete Lean
+appendices are also collapsible on screen; the PDF retains all statements and
+full sources. A GUI badge never substitutes for the source-bound kernel receipt.

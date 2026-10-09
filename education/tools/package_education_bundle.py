@@ -5,6 +5,7 @@ from html.parser import HTMLParser
 from urllib.parse import unquote,urlsplit
 import fitz
 from executable_outputs import executable_outputs,executable_digest
+from chapter_examples import runtime_resources
 from check_real_lesson_proofs import FAMILIES as REAL_FAMILIES
 from check_real_lesson_artifact import check as check_real_lesson_artifact
 from check_dissipative_artifact import check as check_dissipative_artifact
@@ -30,6 +31,23 @@ def validate_build(out,manifest):
         require(path.is_relative_to(out.resolve()) and path.is_file(),'Missing/invalid bundle resource: '+relative)
         return path
     def read(relative):return json.loads(local(relative).read_text())
+    gui=read('chapter-example-build.json')
+    require(gui==manifest.get('chapter_examples'),'Changed chapter GUI packaging receipt')
+    require(gui.get('chapters')==27 and len(set(gui.get('example_ids',[])))==27,'Missing chapter example coverage')
+    require(gui.get('registry_sha256')==digest(ROOT/'book/examples/registry.json')==digest(local('chapter-examples.json')),'Stale chapter registry')
+    require(bool(gui.get('gui_inputs')),'Missing GUI source identity')
+    for relative,value in gui['gui_inputs'].items():
+        source=(ROOT.parent/relative).resolve()
+        require(source.is_relative_to(ROOT.parent.resolve()) and digest(source)==value,'GUI input changed: '+relative)
+    require(gui.get('wasm_sha256')==digest(local('gui/simple-graph/pkg/human_wasm_bg.wasm')),'Changed poser WASM bytes')
+    runtime=runtime_resources(out,ROOT.parent)
+    require(gui.get('runtime_resources')==runtime,'Stale GUI runtime resources')
+    browser=read('chapter-example-qa/receipt.json')
+    require(browser.get('runtime_resources')==runtime,'Stale GUI browser data/style binding')
+    require(browser.get('result')=='PASS_CHAPTER_EXAMPLES' and browser.get('preview') is False,'Missing qualified chapter GUI checks')
+    require(browser.get('test_sha256')==digest(ROOT/'tests/chapter_examples_browser.py'),'Stale GUI test source')
+    require(browser.get('executable_outputs_sha256')==executable_digest(outputs) and browser.get('registry_sha256')==gui['registry_sha256'],'Stale GUI executable checks')
+    require({v.get('width') for v in browser.get('views',[])}=={320,390,1280} and all(v.get('chapters')==gui['example_ids'] and not v.get('errors') for v in browser.get('views',[])),'Missing chapter viewport coverage')
     for name in ['index.html','kenoma-mechanics.md','kenoma-mechanics.pdf','assets/app.js','anatomical-arm/worker.js','coupled-fixture/worker.js']:local(name)
     require(manifest.get('proof_families')==[r[0] for r in FAMILIES],'Unexpected proof families')
     for name,source,claims,count in FAMILIES:

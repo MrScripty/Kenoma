@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "sql.js": "1.14.2",
+    "three": "0.180.0"
+  },
+  "scripts": {
+    "build": "./build.sh",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "node tests/browser.mjs",
+    "test:rig-browser": "node tests/rig-browser.mjs",
+    "test:scene-browser": "node tests/scene-files-browser.mjs"
+  }
+}

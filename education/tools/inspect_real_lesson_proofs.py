@@ -30,6 +30,11 @@ def inspect():
                 for claim in receipt['claims']:
                     card=page.locator('#proof-'+claim['id']);card.scroll_into_view_if_needed()
                     expect(card).to_be_visible()
+                    toggle=card.locator('.claim-toggle')
+                    expect(toggle).to_have_attribute('aria-expanded','false')
+                    toggle.focus();page.keyboard.press('Enter')
+                    expect(toggle).to_have_attribute('aria-expanded','true')
+                    expect(card.locator('.claim-technical')).to_be_visible()
                     expect(card).to_contain_text(claim['assumptions']);expect(card).to_contain_text(claim['limitations'])
                     expect(card.locator('.proof-meta')).to_contain_text(receipt['source_sha256'])
                     from build import theorem_statement

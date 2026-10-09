@@ -2,7 +2,7 @@
 from pathlib import Path
 import hashlib,json
 
-SUFFIXES={'.html','.js','.mjs','.cjs'}
+SUFFIXES={'.html','.js','.mjs','.cjs','.wasm'}
 
 def executable_outputs(directory,scope=None):
     directory=Path(directory)

@@ -9,6 +9,7 @@ import fitz
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'tools'))
 from executable_outputs import executable_outputs, executable_digest
+from chapter_examples import RUNTIME_SOURCES, runtime_resources
 
 class PackageAcceptance(unittest.TestCase):
  def fixture(self, fixture):
@@ -35,10 +36,28 @@ class PackageAcceptance(unittest.TestCase):
   write('kenoma-mechanics.md','Unit packaging fixture, not a qualified book.\n')
   for name in ['assets/app.js','anatomical-arm/worker.js','coupled-fixture/worker.js']:write(name,'export const fixture = true;\n')
   for name in ['anatomical-arm/index.html','coupled-fixture/index.html']:write(name,'<script src="worker.js"></script>')
+  # Synthetic bytes test bindings only, not rendering, scientific data or WASM validity.
+  ids=['unit-example-'+str(i) for i in range(27)]
+  registry=record('book/examples/registry.json',{'version':1,'examples':ids},True)
+  write('chapter-examples.json',registry.read_bytes())
+  gui_source=write('../browser/embedded/viewport.js','// isolated GUI fixture\n',True)
+  gui_test=write('tests/chapter_examples_browser.py','# isolated GUI browser fixture\n',True)
+  wasm=write('gui/simple-graph/pkg/human_wasm_bg.wasm',b'unit-fixture-WASM-bytes-not-executable')
+  for delivered,source in RUNTIME_SOURCES.items():
+   write(delivered,'isolated GUI resource fixture\n')
+   path=fixture.parent/source;path.parent.mkdir(parents=True,exist_ok=True);path.write_text('isolated GUI resource fixture\n')
+  runtime=runtime_resources(dist,fixture.parent)
+  gui={'version':1,'chapters':27,'example_ids':ids,'registry_sha256':digest(registry),
+       'gui_inputs':{'browser/embedded/viewport.js':digest(gui_source)},'wasm_sha256':digest(wasm),'runtime_resources':runtime}
+  record('chapter-example-build.json',gui)
   document=fitz.open();document.new_page().insert_text((72,72),'Unit packaging fixture',fontsize=11);document.save(dist/'kenoma-mechanics.pdf');document.close()
   manifest={'input_sha256':{str(p.relative_to(fixture)):digest(p) for p in fixture.rglob('*') if p.is_file() and not p.is_relative_to(dist)},
-    'executable_outputs':executable_outputs(dist),'proof_families':[f[0] for f in families],'lean':'unit-fixture','property_mathlib':lock,'git_revision':'unit-fixture'}
+    'executable_outputs':executable_outputs(dist),'proof_families':[f[0] for f in families],'lean':'unit-fixture','property_mathlib':lock,'git_revision':'unit-fixture','chapter_examples':gui}
   record('build-manifest.json',manifest)
+  record('chapter-example-qa/receipt.json',{'result':'PASS_CHAPTER_EXAMPLES','preview':False,
+    'test_sha256':digest(gui_test),'registry_sha256':digest(registry),'runtime_resources':runtime,
+    'executable_outputs_sha256':executable_digest(manifest['executable_outputs']),
+    'views':[{'width':width,'chapters':ids,'errors':[]} for width in [320,390,1280]]})
   html=digest(dist/'index.html');app=digest(dist/'assets/app.js');manifest_hash=digest(dist/'build-manifest.json')
   for name in ['browser-check.json','mobile-startup-check.json']:
    record(name,{'status':'passed','executable_outputs_sha256':executable_digest(manifest['executable_outputs']),'html_sha256':html,'app_sha256':app})
@@ -76,7 +95,14 @@ class PackageAcceptance(unittest.TestCase):
     ('throwing anatomical worker','anatomical-arm/worker.js',lambda b:b'throw new Error("mutation");'),
     ('throwing coupled worker','coupled-fixture/worker.js',lambda b:b'throw new Error("mutation");'),
     ('changed anatomical subpage','anatomical-arm/index.html',lambda b:b+b'<!-- modified -->'),
-    ('changed render bytes','property-book-review/page-1.png',lambda b:b+b'changed')]
+    ('changed render bytes','property-book-review/page-1.png',lambda b:b+b'changed'),
+    ('changed poser WASM','gui/simple-graph/pkg/human_wasm_bg.wasm',lambda b:b+b'changed'),
+    ('changed shared viewport','../../browser/embedded/viewport.js',lambda b:b+b'changed'),
+    ('preview cannot qualify book GUI','chapter-example-qa/receipt.json',lambda b:self.json_change(b,lambda x:x.update(preview=True))),
+    ('incomplete GUI viewport coverage','chapter-example-qa/receipt.json',lambda b:self.json_change(b,lambda x:x.update(views=[]))),
+    ('changed GUI registry','chapter-examples.json',lambda b:b+b'changed'),
+    ('changed delivered atlas','data/elbow-v1/data/bodyparts3d_right_arm_m.json',lambda b:b+b'changed'),
+    ('changed delivered GUI style','assets/chapter-examples.css',lambda b:b+b'changed')]
    for i,(label,name,change) in enumerate(controls):
     path=dist/name;original=path.read_bytes();modified=change(original)
     try:
