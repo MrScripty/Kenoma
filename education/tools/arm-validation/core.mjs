@@ -47,7 +47,7 @@ export function instrument(path,source){
   }
   return text;
 }
-export function createObserver(budget, emit, byteLimit=4194304){
+export function createObserver(budget, emit, byteLimit=4194304, capture=null){
   let records=[],current=null,sequence=0,retainedBytes=0;
   const save=(record)=>{const copy=detached(record),size=Buffer.byteLength(json(copy));if(retainedBytes+size>byteLimit)budget.refuse('observationBytes',{retainedBytes,size,limit:byteLimit});retainedBytes+=size;records.push(copy);};
   return {
@@ -55,13 +55,15 @@ export function createObserver(budget, emit, byteLimit=4194304){
     attempt(arm,state,options,original){
       budget.beginAttempt();const id=budget.counts.attempts,old=detached(state),h=options.h??arm.parameters.stepS,effort=options.effort??state.effort;current=id;
       try{
+        capture?.snapshot('BEGIN',id,old.coordinatesM,{inputTimeS:old.timeS,candidateStepSeconds:h,effort});
         const result=original(arm,state,options);budget.alive();
+        if(result.accepted)capture?.snapshot('STEP_CANDIDATE',id,result.state.coordinatesM,{candidateTimeS:result.state.timeS,acceptance:'UNREPLAYED_WORKER_CANDIDATE'});
         save({attempt:id,status:'PROVISIONAL_NOT_COMMITTED',hS:h,effort,accepted:result.accepted,
           ...(result.accepted?{oldState:old,state:detached(result.state),receipt:detached(result.receipt)}:{reason:result.reason??null,residualN:result.maxGradientN??null})});
         return result;
       }finally{current=null;}
     },
-    progress(row){budget.alive();const event={kind:'progress',status:'PROVISIONAL_NOT_COMMITTED',attempt:current,sequence:++sequence,iteration:row.iteration,residualN:row.maxGradient};emit(detached(event));},
+    progress(row){budget.alive();capture?.snapshot('NEWTON_ITERATE',current,row.fullCoordinates,{iteration:row.iteration,residualN:row.maxGradient});const event={kind:'progress',status:'PROVISIONAL_NOT_COMMITTED',attempt:current,sequence:++sequence,iteration:row.iteration,residualN:row.maxGradient};emit(detached(event));},
     records:()=>detached(records),
     select(result){budget.alive();if(!result.accepted)return [];const expected=result.substepIntegration?.receipts?.map(r=>r.receipt)??[result.receipt];const rows=records.filter(r=>r.accepted).slice(-expected.length);
       if(rows.length!==expected.length||rows.some((r,i)=>json(r.receipt)!==json(expected[i])))throw Error('Accepted leaf coverage mismatch');return detached(rows);

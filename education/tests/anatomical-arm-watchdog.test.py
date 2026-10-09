@@ -79,9 +79,9 @@ class WatchdogTests(unittest.TestCase):
     def test_actual_supervisor_dispatches_halves_before_default_timeout_without_physical_worker(self):
         from unittest.mock import patch
         policy=copy.deepcopy(self.policy);policy['claimDirectory']=str(self.root/'synthetic-claims')
-        dest=self.root/'synthetic-execute';m={'policy':policy,'executionDestination':str(dest),'harnessFiles':{},'operatorCommit':'SYNTHETIC_NO_PHYSICS','harnessCommit':'SYNTHETIC_NO_PHYSICS','scope':'SYNTHETIC_TEST_ONLY'}
+        dest=self.root/'synthetic-execute';m={'policy':policy,'executionDestination':str(dest),'harnessFiles':{},'operatorCommit':'SYNTHETIC_NO_PHYSICS','harnessCommit':'SYNTHETIC_NO_PHYSICS','scope':'SYNTHETIC_TEST_ONLY','inputCommit':'SYNTHETIC_NO_PHYSICS','inputs':{'generated/arm-reference.json':{'sha256':'synthetic'},'audit/arm-rest-results.json':{'sha256':'synthetic'}},'cameraSHA256':'synthetic'}
         raw=w.encoded(m);manifest=self.root/'synthetic-manifest.json';manifest.write_bytes(raw);calls=[]
-        def fake_supervise(command,output,run,start,cgroup):
+        def fake_supervise(command,output,run,start,cgroup,**kwargs):
             calls.append(run['id'])
             packet={'status':'RESOURCE_INCONCLUSIVE','reason':'Wall deadline/cleanup reserve','finalAcceptance':False} if run['id']=='B' else {'status':'PASS','workerStatus':'PROVISIONAL_PENDING_SUPERVISOR','finalAcceptance':False,'run':run['id'],'sourceCommit':m['operatorCommit'],'harnessCommit':m['harnessCommit'],'executionScope':m['scope'],'anatomicalQualification':False,'numericalCandidateAccepted':True,'counters':{'executed':{k:0 for k in w.CLASSES},'latched':False},'modelDisposed':True,'syntheticOnly':True}
             return packet,{'run':run['id'],'allProcessesReaped':True,'startOffsetSeconds':0,'ownedPeakRSSBytes':0,'observedCgroupPeakBytes':1}

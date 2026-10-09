@@ -3,11 +3,14 @@
 import fs from 'node:fs';import path from 'node:path';import {fileURLToPath} from 'node:url';
 import {Budget,createObserver,detached,json,sha256,transaction,observationStatus} from './core.mjs';
 import {installLoader} from './loader.mjs';import {verifyHeld,verifyLeaves} from './replay.mjs';
+import {createCapture,provenance} from './capture.mjs';
 const supervisorContext=Symbol('verified supervisor context');
 export function validateWorkerEntry(manifest,manifestPath,expected,environment=process.env){
  const fd=Number(environment.KENOMA_RESULT_FD);if(!Number.isInteger(fd)||fd<3||!fs.fstatSync(fd).isFIFO())throw Error('Missing supervisor result channel');
+ const captureFD=Number(environment.KENOMA_CAPTURE_FD);if(!Number.isInteger(captureFD)||captureFD<3||captureFD===fd||!fs.fstatSync(captureFD).isFIFO())throw Error('Missing distinct supervisor capture channel');
  if(Number(environment.KENOMA_SUPERVISOR_PID)!==process.ppid)throw Error('Missing bound supervisor identity');
  if(path.resolve(manifestPath)!==path.join(manifest.executionDestination,'manifest.json'))throw Error('Unbound worker destination');
+ if(environment.KENOMA_MANIFEST_SHA256!==expected)throw Error('Missing bound capture manifest identity');
  const claim=path.join(manifest.policy.claimDirectory,expected+'.executed');if(environment.KENOMA_CLAIM_PATH!==claim)throw Error('Missing digest approval claim');
  const stat=fs.lstatSync(claim);if(!stat.isFile()||stat.isSymbolicLink()||stat.size>1024)throw Error('Invalid approval claim');
  const receipt=JSON.parse(fs.readFileSync(claim,'utf8'));if(receipt.manifestSHA256!==expected||receipt.output!==manifest.executionDestination)throw Error('Unbound approval claim');
@@ -18,7 +21,8 @@ export async function numericalWorker(manifest,runId,context){
  const run=manifest.policy.runs.find(r=>r.id===runId);if(!run)throw Error('Unknown fixed run');
  const limits=Object.fromEntries(['attempts','configurationEntries','muscleMaterial','tendonMaterial','materialTensor','hessianProducts'].map(k=>[k,run[k]]));
  const budget=new Budget(limits),emit=e=>{const bytes=json({run:runId,...e})+'\n';if(Buffer.byteLength(bytes)+transcript>manifest.policy.perRunTranscriptBytes-manifest.policy.reservedTranscriptBytes)budget.refuse('transcriptBytes',{executed:transcript});transcript+=Buffer.byteLength(bytes);fs.writeSync(1,bytes);};let transcript=0;
- const observer=createObserver(budget,emit,manifest.policy.perRunOutputBytes-manifest.policy.reservedReceiptBytes);globalThis.__kenomaValidation=observer;
+ const capture=context===supervisorContext?createCapture(Number(process.env.KENOMA_CAPTURE_FD),provenance(manifest,runId,process.env.KENOMA_MANIFEST_SHA256),()=>budget.alive()):null;
+ const observer=createObserver(budget,emit,manifest.policy.perRunOutputBytes-manifest.policy.reservedReceiptBytes,capture);globalThis.__kenomaValidation=observer;
  const hook=installLoader(manifest.modules);let arm,initial,rule,packet;
  try{
   const imports=await Promise.all(['anatomical-arm','anatomical-contact-refinement','anatomical-audit','anatomical-routing-audit','anatomical-transfer','anatomical-apparatus'].map(n=>import('kenoma:education/web/'+n+'.mjs')));
@@ -30,7 +34,7 @@ export async function numericalWorker(manifest,runId,context){
   initial=detached(rest.state);rule=api.contactRecipe(arm.contact);arm.onIteration=row=>observer.progress(row);
   packet=await transaction({state:initial,capture:()=>api.contactRecipe(arm.contact),restore:r=>api.restoreContactRecipe(arm.contact,r),budget,
    operation:async()=>{
-    if(runId==='A')return {accepted:true,status:'PASS',heldRecheck:verifyHeld(api,arm,initial),finalState:detached(initial),finalContactRule:detached(rule),leaves:[]};
+    if(runId==='A'){capture?.snapshot('BEGIN',0,initial.coordinatesM,{inputTimeS:initial.timeS,role:'FROZEN_HELD_INPUT'});return {accepted:true,status:'PASS',heldRecheck:verifyHeld(api,arm,initial),finalState:detached(initial),finalContactRule:detached(rule),leaves:[]};}
     let result;
     const step=(s,h,depth=0)=>api.stepAnatomicalArm(arm,{...s,coordinatesM:Float64Array.from(s.coordinatesM)},{effort:.04,h,maxIterations:120,...(depth?{subdivisionDepth:depth}:{})});
     if(runId==='D'){
@@ -50,7 +54,7 @@ export async function numericalWorker(manifest,runId,context){
   packet={accepted:false,status:budget.latch?'RESOURCE_INCONCLUSIVE':'EXCEPTION',error:String(error)};
  }finally{if(arm)arm.onIteration=undefined;arm=null;hook.deregister();delete globalThis.__kenomaValidation;}
  const observations=observer.records();observer.dispose();const accepted=packet.accepted;delete packet.accepted;
- return detached({...packet,executionScope:manifest.scope,status:budget.latch?'RESOURCE_INCONCLUSIVE':packet.status,workerStatus:'PROVISIONAL_PENDING_SUPERVISOR',numericalCandidateAccepted:accepted&&!budget.latch,finalAcceptance:false,run:runId,sourceCommit:manifest.operatorCommit,harnessCommit:manifest.harnessCommit,inputStateSHA256:sha256(manifest.inputs['audit/arm-rest-results.json'].text),observations,observationStatus,counters:budget.snapshot(),transcriptBytes:transcript,modelDisposed:true,anatomicalQualification:false});
+ return detached({...packet,capture:capture?.receipt()??null,executionScope:manifest.scope,status:budget.latch?'RESOURCE_INCONCLUSIVE':packet.status,workerStatus:'PROVISIONAL_PENDING_SUPERVISOR',numericalCandidateAccepted:accepted&&!budget.latch,finalAcceptance:false,run:runId,sourceCommit:manifest.operatorCommit,harnessCommit:manifest.harnessCommit,inputStateSHA256:sha256(manifest.inputs['audit/arm-rest-results.json'].text),observations,observationStatus,counters:budget.snapshot(),transcriptBytes:transcript,modelDisposed:true,anatomicalQualification:false});
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
  const [flag,manifestPath,runId,expected]=process.argv.slice(2);if(flag!=='--numerical-run'||!manifestPath||!runId||!expected)throw Error('Explicit supervised numerical entry required');

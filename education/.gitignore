@@ -4,3 +4,6 @@ __pycache__/
 proofs/.lake/
 proofs/*.olean
 .tools/
+
+# Generated coordinate slots, JPEG/GIF previews and receipts (source stays tracked).
+.animation-output/
