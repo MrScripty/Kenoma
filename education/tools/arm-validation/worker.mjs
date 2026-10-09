@@ -34,9 +34,9 @@ export async function numericalWorker(manifest,runId,context){
     let result;
     const step=(s,h,depth=0)=>api.stepAnatomicalArm(arm,{...s,coordinatesM:Float64Array.from(s.coordinatesM)},{effort:.04,h,maxIterations:120,...(depth?{subdivisionDepth:depth}:{})});
     if(runId==='D'){
-     const first=step(initial,.005);budget.alive();if(!first.accepted)return {accepted:false,status:'SOLVER_REFUSAL',reason:first.reason??null};
+     const first=step(initial,.005);budget.alive();if(!first.accepted&&(first.retryable===false||first.error||first.substepIntegration?.attempts?.some(a=>a.exception)))throw Error('Terminal original first-half exception: '+(first.error??first.reason));if(!first.accepted)return {accepted:false,status:'SOLVER_REFUSAL',reason:first.reason??null};
      result=step(first.state,.005);budget.alive();
-    }else{result=step(initial,.01,runId==='C'?1:0);budget.alive();}
+    }else{result=step(initial,.01);budget.alive();}
     if(!result.accepted&&(result.retryable===false||result.error||result.substepIntegration?.attempts?.some(a=>a.exception)))throw Error('Terminal original attempt exception: '+(result.error??result.reason));
     if(!result.accepted)return {accepted:false,status:'SOLVER_REFUSAL',reason:result.reason??null,residualN:result.maxGradientN??null,substepIntegration:result.substepIntegration??null};
     const leaves=runId==='D'?observer.records().filter(r=>r.accepted):observer.select(result);

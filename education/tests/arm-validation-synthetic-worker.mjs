@@ -1,6 +1,6 @@
 /** Completely synthetic virtual modules. No atlas/material/real module import. */
 import {numericalWorker} from '../tools/arm-validation/worker.mjs';import {sha256,instrument} from '../tools/arm-validation/core.mjs';import {POLICY} from '../tools/arm-validation/prepare.mjs';
-const which=process.argv[2],run=which.startsWith('D')?'D':which.startsWith('C')?'C':which;
+const which=process.argv[2],run=which.startsWith('D')?'D':which.startsWith('B')?'B':which;
 const state={coordinatesM:Array(460).fill(0),qRad:0,omegaRadPerS:0,activation:0,timeS:0,step:0,effort:0,massKg:.5,massEvents:[],history:[],mechanicalWorkJ:0};
 const parameters={stepS:.01,stationarityToleranceN:1e-4,gMPerS2:0,segmentMassKg:0,stopStiffnessNmPerRad:0,minimumAngleRad:-1,maximumAngleRad:1,jointDampingNmS:0};
 const entries={
@@ -8,8 +8,8 @@ const entries={
  export function prepareAnatomicalArm(){return {model:{ndof:460,jointIndex:459,frame:{atlas_bind_angle_rad:0},branches:{length:585},bodies:[{modal:{points:{length:56448}},internalAponeuroses:{branches:{length:48}}}]},parameters:${JSON.stringify(parameters)},contact:{rule:{schema:1}},initialContactRule:{schema:1},baseInertiaKgM2:0,gripRadiusSquaredM2:0};}
  export function anatomicalConfiguration(arm,x,a){globalThis.__kenomaValidation.budget.charge('configurationEntries');return {gradient:new Float64Array(460),positions:[],physicalPotentialJ:3+a,energies:{activePotentialJ:a},headResults:[{minJ:1}],contact:{maximumSampledBonePenetrationM:0,maximumSampledSoftPenetrationM:0,maximumSampledTendonPenetrationM:0}};}
  export function stepAnatomicalArm(arm,s,o){return globalThis.__kenomaValidation.attempt(arm,s,o,()=>{
- ${which==='C-budget'?"try{globalThis.__kenomaValidation.budget.charge('configurationEntries',999);}catch{}":''}
- if(${JSON.stringify(which)}==='C-returned-exception')return {accepted:false,state:s,retryable:false,error:'synthetic terminal error',substepIntegration:{attempts:[{exception:'synthetic terminal error'}]}};
+ ${which==='B-budget'?"try{globalThis.__kenomaValidation.budget.charge('configurationEntries',999);}catch{}":''}
+ if(${JSON.stringify(which)}==='B-returned-exception'||(${JSON.stringify(which)}==='D-first-exception'&&s.step===0))return {accepted:false,state:s,retryable:false,error:'synthetic terminal error',substepIntegration:{attempts:[{exception:'synthetic terminal error'}]}};
  if(${JSON.stringify(which)}==='D-fail'&&s.step===1)return {accepted:false,state:s,reason:'synthetic late-half refusal'};
  const receipt={activeMechanicalWorkJ:0,maximumFreeModalGradientN:0,referenceQuadratureUpdateJ:0,oldMechanicalJ:3,newMechanicalJ:3,nonlinearWorkDefectJ:0,impulseResidualNmS:0};
  return {accepted:true,state:{...s,timeS:s.timeS+o.h,step:s.step+1,effort:o.effort,contactRule:{schema:1},history:[...s.history,receipt]},receipt};});}

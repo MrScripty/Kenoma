@@ -53,20 +53,62 @@ class WatchdogTests(unittest.TestCase):
     def test_finalization_combined_overflow_cannot_publish_acceptance(self):
         self.policy['perRunOutputBytes']=1100
         self.output.write('manifest.json',b'{}','A')
-        results={r:{'status':'PASS','syntheticOnly':True,'large':'x'*70} for r in 'ABCD'}
-        with self.assertRaises(w.Refusal):w.finalize(self.output,results,[],{'result':'SYNTHETIC'},'synthetic',time.monotonic())
+        results={r:{'status':'PASS','syntheticOnly':True,'large':'x'*70} for r in w.RUN_IDS}
+        with self.assertRaises(w.Refusal):w.finalize(self.output,results,[],{'result':'SYNTHETIC'},'synthetic',time.monotonic(),self.cg)
         self.assertFalse((self.output.path/'resource-receipt.json').exists())
     def test_aggregate_deadline_checked_at_finalization(self):
         self.output.write('manifest.json',b'{}','A')
-        with self.assertRaisesRegex(w.Refusal,'aggregate wall'):w.finalize(self.output,{},[],{'result':'SYNTHETIC'},'synthetic',time.monotonic()-6)
+        with self.assertRaisesRegex(w.Refusal,'aggregate wall'):w.finalize(self.output,{},[],{'result':'SYNTHETIC'},'synthetic',time.monotonic()-6,self.cg)
         self.assertFalse((self.output.path/'resource-receipt.json').exists())
-    def test_comparison_control_recovery_refusal_and_mismatch(self):
-        leaf={'receipt':{'r':1}};whole={'status':'PASS','finalState':{'t':1},'leaves':[leaf]};halves={'status':'PASS','finalState':{'t':1},'leaves':[leaf,leaf]};refused={'status':'SOLVER_REFUSAL'}
-        self.assertEqual(w.compare(whole,whole,halves)['result'],'CONTROL_COMPATIBLE_REMEDY_UNPROVEN');self.assertIn('RECOVERY_SUPPORTED',w.compare(refused,halves,halves)['result']);self.assertIn('REFUSED',w.compare(refused,refused,refused)['result'])
-        with self.assertRaises(w.Refusal):w.compare(refused,halves,whole)
+    def baseline(self):
+        import subprocess
+        text=subprocess.check_output(['node','--input-type=module','-e',"import {retainedBaseline} from './education/tools/arm-validation/prepare.mjs';process.stdout.write(JSON.stringify(retainedBaseline()))"],cwd=w.ROOT)
+        return json.loads(text)
+    def test_independent_comparison_preserves_resource_failure_and_no_adaptive_claim(self):
+        leaf={'receipt':{'r':1}};whole={'status':'PASS','finalState':{'t':1},'leaves':[leaf]};halves={'status':'PASS','finalState':{'t':1},'leaves':[leaf,leaf]};refused={'status':'SOLVER_REFUSAL'};timeout={'status':'RESOURCE_INCONCLUSIVE'}
+        self.assertEqual(w.compare(whole,halves)['result'],'BOTH_DISCRETIZATIONS_COMPLETED_NO_RECOVERY_CLAIM')
+        self.assertEqual(w.compare(timeout,halves)['result'],'HALF_STEP_WORKER_PASS_DEFAULT_RESOURCE_INCONCLUSIVE_NO_ACCEPTANCE')
+        self.assertEqual(w.compare(None,timeout)['defaultWorkerStatus'],'SKIPPED_NOT_RUN')
+        self.assertFalse(w.compare(refused,halves)['adaptiveRecoveryClaim'])
+        with self.assertRaises(w.Refusal):w.compare(whole,whole)
+    def test_policy_order_places_fresh_half_steps_before_default(self):
+        self.assertEqual([r['id'] for r in w.EXPECTED_POLICY['runs']],['A','D','B'])
+        self.assertEqual(sum(r['attempts'] for r in w.EXPECTED_POLICY['runs']),3)
+        self.assertEqual(sum(r['configurationEntries'] for r in w.EXPECTED_POLICY['runs']),1025)
+        self.assertEqual(sum(r['wallSeconds'] for r in w.EXPECTED_POLICY['runs']),540)
+    def test_actual_supervisor_dispatches_halves_before_default_timeout_without_physical_worker(self):
+        from unittest.mock import patch
+        policy=copy.deepcopy(self.policy);policy['claimDirectory']=str(self.root/'synthetic-claims')
+        dest=self.root/'synthetic-execute';m={'policy':policy,'executionDestination':str(dest),'harnessFiles':{},'operatorCommit':'SYNTHETIC_NO_PHYSICS','harnessCommit':'SYNTHETIC_NO_PHYSICS','scope':'SYNTHETIC_TEST_ONLY'}
+        raw=w.encoded(m);manifest=self.root/'synthetic-manifest.json';manifest.write_bytes(raw);calls=[]
+        def fake_supervise(command,output,run,start,cgroup):
+            calls.append(run['id'])
+            packet={'status':'RESOURCE_INCONCLUSIVE','reason':'Wall deadline/cleanup reserve','finalAcceptance':False} if run['id']=='B' else {'status':'PASS','workerStatus':'PROVISIONAL_PENDING_SUPERVISOR','finalAcceptance':False,'run':run['id'],'sourceCommit':m['operatorCommit'],'harnessCommit':m['harnessCommit'],'executionScope':m['scope'],'anatomicalQualification':False,'numericalCandidateAccepted':True,'counters':{'executed':{k:0 for k in w.CLASSES},'latched':False},'modelDisposed':True,'syntheticOnly':True}
+            return packet,{'run':run['id'],'allProcessesReaped':True,'startOffsetSeconds':0,'ownedPeakRSSBytes':0,'observedCgroupPeakBytes':1}
+        with patch.object(w,'validate_manifest',return_value='NEVER_LAUNCHED'),patch.object(w,'cgroup_file',return_value=self.cg),patch.object(w,'supervise',side_effect=fake_supervise):
+            receipt=w.execute(manifest,dest,w.digest(raw))
+        self.assertEqual(calls,['A','D','B']);self.assertEqual(receipt['status'],'RESOURCE_INCONCLUSIVE')
+        self.assertEqual(receipt['authoritativeFinalAcceptance'],{k:False for k in w.RUN_IDS})
+        self.assertEqual(json.loads((dest/'explicit-halves.json').read_text())['payload']['status'],'PASS')
+        self.assertEqual(json.loads((dest/'default.json').read_text())['payload']['status'],'RESOURCE_INCONCLUSIVE')
+        self.assertEqual(json.loads((dest/'comparison.json').read_text())['result'],'HALF_STEP_WORKER_PASS_DEFAULT_RESOURCE_INCONCLUSIVE_NO_ACCEPTANCE')
+        self.assertTrue((self.root/'synthetic-claims'/(w.digest(raw)+'.executed')).exists())
+        self.assertFalse((dest/'adaptive-depth1.json').exists())
+    def test_retained_baseline_tamper_refuses_without_launch(self):
+        b=self.baseline();w.validate_baseline({'baselineEvidence':b})
+        b['files']['default.json']['text']+=' '
+        with self.assertRaisesRegex(w.Refusal,'baseline'):w.validate_baseline({'baselineEvidence':b})
+    def test_default_timeout_cannot_erase_prior_halves_or_commit_acceptance(self):
+        self.output.write('manifest.json',b'{}','A')
+        results={'A':{'status':'PASS'},'D':{'status':'PASS','sentinel':'retained_half_steps'},'B':{'status':'RESOURCE_INCONCLUSIVE','reason':'Wall deadline/cleanup reserve'}}
+        receipt=w.finalize(self.output,results,[],w.compare(results['B'],results['D']),'synthetic',time.monotonic(),self.cg)
+        self.assertEqual(receipt['status'],'RESOURCE_INCONCLUSIVE')
+        self.assertEqual(receipt['authoritativeFinalAcceptance'],{r:False for r in w.RUN_IDS})
+        self.assertEqual(json.loads((self.output.path/'explicit-halves.json').read_text())['payload']['sentinel'],'retained_half_steps')
+        self.assertFalse((self.output.path/'adaptive-depth1.json').exists())
     def test_finalize_has_detached_accounting_and_hashes(self):
         self.output.write('manifest.json',b'{}','A')
-        result={r:{'status':'PASS','syntheticOnly':True} for r in 'ABCD'}
+        result={r:{'status':'PASS','syntheticOnly':True} for r in w.RUN_IDS}
         receipt=w.finalize(self.output,result,[],{'result':'SYNTHETIC_TEST_ONLY'},'synthetic',time.monotonic(),self.cg)
         self.assertEqual(receipt['status'],'COMPLETE_FINALIZED')
         self.assertNotIn('resource-receipt.json',receipt['fileHashes'])
@@ -85,13 +127,13 @@ class WatchdogTests(unittest.TestCase):
         self.policy['aggregateOutputBytes']=1200;self.policy['perRunOutputBytes']=1200;self.policy['reservedReceiptBytes']=0
         self.output.write('manifest.json',b'x'*100,'A')
         code="import os,json;os.write(int(os.environ['KENOMA_RESULT_FD']),json.dumps({'status':'PASS','pad':'x'*400}).encode())"
-        first,_=self.run_child(code,{**self.run,'id':'B'});second,_=self.run_child(code,{**self.run,'id':'C'})
+        first,_=self.run_child(code,{**self.run,'id':'B'});second,_=self.run_child(code,{**self.run,'id':'D'})
         self.assertEqual(first['status'],'PASS');self.assertEqual(second['status'],'RESOURCE_INCONCLUSIVE');self.assertIn('staging',second['reason'])
-        self.assertGreater(self.output.pending['B'],400);self.assertEqual(self.output.pending['C'],0)
+        self.assertGreater(self.output.pending['B'],400);self.assertEqual(self.output.pending['D'],0)
     def test_final_staging_coexists_with_retained_and_durable_bytes(self):
         self.policy['aggregateOutputBytes']=2400;self.policy['perRunOutputBytes']=2400;self.policy['reservedReceiptBytes']=0
         self.output.write('manifest.json',b'x'*100,'A');self.output.retain('B',1500)
-        results={r:{'status':'PASS','pad':'x'*300} for r in 'ABCD'}
+        results={r:{'status':'PASS','pad':'x'*300} for r in w.RUN_IDS}
         with self.assertRaisesRegex(w.Refusal,'Output ceiling'):w.finalize(self.output,results,[],{},'synthetic',time.monotonic(),self.cg)
         self.assertFalse((self.output.path/'resource-receipt.json').exists())
     def test_exact_raw_review_bytes_and_digest_claim_identity(self):
@@ -111,6 +153,6 @@ class WatchdogTests(unittest.TestCase):
         with self.assertRaisesRegex(w.Refusal,'already exists'):w.approved_destination(m,dest)
     def test_stale_policy_and_input_refuse(self):
         with self.assertRaisesRegex(w.Refusal,'source/policy'):w.validate_manifest({'schema':1},b'{}',False)
-        m={'schema':1,'operatorCommit':'e57847418a13da39db78cbfcdba070c285f3bfde','inputCommit':'0b83819ad3fdaed7405c6bbe617bc01640eef914','policy':w.EXPECTED_POLICY,'inputs':{}}
+        m={'schema':1,'operatorCommit':'0b18a4146768ab6a49cb2febdea696bf0c073434','inputCommit':'0b83819ad3fdaed7405c6bbe617bc01640eef914','policy':w.EXPECTED_POLICY,'inputs':{},'baselineEvidence':self.baseline()}
         with self.assertRaisesRegex(w.Refusal,'input inventory'):w.validate_manifest(m,b'{}',False)
 if __name__=='__main__':unittest.main()

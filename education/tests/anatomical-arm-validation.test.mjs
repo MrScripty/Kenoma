@@ -74,13 +74,24 @@ test('comparison distinguishes compatible controls, one-interval remedy, and ref
  assert.equal(compareRuns(whole,whole,halves).result,'CONTROL_COMPATIBLE_REMEDY_UNPROVEN');assert.equal(compareRuns(refusal,halves,halves).result,'RECOVERY_SUPPORTED_FOR_THIS_REDUCED_INTERVAL_ONLY');assert.equal(compareRuns(refusal,refusal,refusal).result,'DEPTH_ONE_RECOVERY_REFUSED_FOR_THIS_INTERVAL');assert.throws(()=>compareRuns(refusal,halves,whole),/mismatch/);
 });
 test('fixed policy totals and exact input inventory are independently countable',()=>{
- assert.equal(POLICY.runs.reduce((s,r)=>s+r.attempts,0),6);assert.equal(POLICY.runs.reduce((s,r)=>s+r.configurationEntries,0),1537);assert.equal(POLICY.runs.reduce((s,r)=>s+r.wallSeconds,0),780);assert.equal(POLICY.runs.reduce((s,r)=>s+r.muscleMaterial,0),86760576);assert.equal(POLICY.runs.reduce((s,r)=>s+r.tendonMaterial,0),972921);assert.equal(POLICY.runs.reduce((s,r)=>s+r.materialTensor,0),86704128);assert.equal(POLICY.ownedRSSBytes,1000000000);assert.equal(POLICY.cgroupBytes,16000000000);assert.equal(Object.keys(INPUTS).length,6);
+ assert.equal(POLICY.runs.reduce((s,r)=>s+r.attempts,0),3);assert.equal(POLICY.runs.reduce((s,r)=>s+r.configurationEntries,0),1025);assert.equal(POLICY.runs.reduce((s,r)=>s+r.wallSeconds,0),540);assert.equal(POLICY.runs.reduce((s,r)=>s+r.muscleMaterial,0),57859200);assert.equal(POLICY.runs.reduce((s,r)=>s+r.tendonMaterial,0),648825);assert.equal(POLICY.runs.reduce((s,r)=>s+r.materialTensor,0),57802752);assert.equal(POLICY.ownedRSSBytes,1000000000);assert.equal(POLICY.cgroupBytes,16000000000);assert.equal(Object.keys(INPUTS).length,6);
 });
-test('actual worker orchestration runs A/B/C/D and late D refusal against synthetic operators only',()=>{
- for(const id of ['A','B','C','D','D-fail','C-budget','C-returned-exception']){
+test('actual worker orchestration runs A/D/B and late D refusal against synthetic operators only',()=>{
+ for(const id of ['A','D','B','D-fail','B-budget','B-returned-exception','D-first-exception']){
   const result=JSON.parse(execFileSync(process.execPath,['education/tests/arm-validation-synthetic-worker.mjs',id],{cwd:new URL('../..',import.meta.url),encoding:'utf8'}));
   assert.equal(result.syntheticOnly,true);assert.equal(result.physicalImports,0);assert.equal(result.packet.executionScope,'SYNTHETIC_TEST_ONLY');assert.equal(result.packet.finalAcceptance,false);assert.equal(result.packet.modelDisposed,true);
-  if(id==='C-returned-exception')assert.equal(result.packet.status,'EXCEPTION');else if(id==='D-fail')assert.equal(result.packet.status,'SOLVER_REFUSAL');else if(id==='C-budget')assert.equal(result.packet.status,'RESOURCE_INCONCLUSIVE');else assert.equal(result.packet.status,'PASS');
+  if(id==='B-returned-exception'||id==='D-first-exception')assert.equal(result.packet.status,'EXCEPTION');else if(id==='D-fail')assert.equal(result.packet.status,'SOLVER_REFUSAL');else if(id==='B-budget')assert.equal(result.packet.status,'RESOURCE_INCONCLUSIVE');else assert.equal(result.packet.status,'PASS');
+ }
+});
+test('independent D starts fresh and directly uses two halves; B starts a separate fresh state',()=>{
+ for(const id of ['D','B']){
+  const {packet}=JSON.parse(execFileSync(process.execPath,['education/tests/arm-validation-synthetic-worker.mjs',id],{cwd:new URL('../..',import.meta.url),encoding:'utf8'}));
+  assert.equal(packet.leaves.length,id==='D'?2:1);
+  assert.deepEqual(packet.leaves.map(l=>l.hS),id==='D'?[.005,.005]:[.01]);
+  const first=packet.leaves[0].oldState;
+  assert.equal(first.timeS,0);assert.equal(first.step,0);assert.deepEqual(first.history,[]);assert.deepEqual(first.massEvents,[]);
+  assert.ok(first.coordinatesM.every(x=>x===0));
+  if(id==='D'){assert.equal(packet.leaves[1].oldState.timeS,.005);assert.equal(packet.leaves[1].oldState.step,1);}
  }
 });
 test('observer captures both accepted helper halves before they can become later provisional failures',()=>{

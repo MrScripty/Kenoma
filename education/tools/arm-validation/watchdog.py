@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
-"""Private four-job supervisor. Import/self-tests never launch numerical code."""
+"""Private independent three-job supervisor. Import/self-tests never launch numerical code."""
 import argparse, copy, ctypes, hashlib, json, math, os, pathlib, resource, selectors
 import shutil, signal, stat, subprocess, sys, time
 ROOT = pathlib.Path(__file__).resolve().parents[3]
-NAMES = ['manifest.json','rest-recheck.json','default.json','adaptive-depth1.json','explicit-halves.json','comparison.json','resource-receipt.json','transcript.log']
-RUN_NAMES = ['rest-recheck.json','default.json','adaptive-depth1.json','explicit-halves.json']
+NAMES = ['manifest.json','rest-recheck.json','explicit-halves.json','default.json','comparison.json','resource-receipt.json','transcript.log']
+RUN_NAMES = ['rest-recheck.json','explicit-halves.json','default.json']
 CLASSES = ['attempts','configurationEntries','muscleMaterial','tendonMaterial','materialTensor','hessianProducts']
-EXPECTED_POLICY = dict(runs=[dict(id='A',attempts=0,configurationEntries=1,wallSeconds=60,muscleMaterial=56448,tendonMaterial=633,materialTensor=0,hessianProducts=0)]+[dict(id=i,attempts=n,configurationEntries=512,wallSeconds=240,muscleMaterial=28901376,tendonMaterial=324096,materialTensor=28901376,hessianProducts=n*3528840) for i,n in [('B',1),('C',3),('D',2)]], aggregateWallSeconds=780,ownedRSSBytes=1000000000,cgroupBytes=16000000000,perRunOutputBytes=4194304,aggregateOutputBytes=16777216,perRunTranscriptBytes=262144,aggregateTranscriptBytes=1048576,pollSeconds=.01,reservedReceiptBytes=65536,reservedTranscriptBytes=1024,claimDirectory='/tmp/kenoma-arm-validation-approval-claims',outputs=NAMES)
+EXPECTED_POLICY = dict(runs=[dict(id='A',attempts=0,configurationEntries=1,wallSeconds=60,muscleMaterial=56448,tendonMaterial=633,materialTensor=0,hessianProducts=0)]+[dict(id=i,attempts=n,configurationEntries=512,wallSeconds=240,muscleMaterial=28901376,tendonMaterial=324096,materialTensor=28901376,hessianProducts=n*3528840) for i,n in [('D',2),('B',1)]], aggregateWallSeconds=540,ownedRSSBytes=1000000000,cgroupBytes=16000000000,perRunOutputBytes=4194304,aggregateOutputBytes=16777216,perRunTranscriptBytes=262144,aggregateTranscriptBytes=1048576,pollSeconds=.01,reservedReceiptBytes=65536,reservedTranscriptBytes=1024,claimDirectory='/tmp/kenoma-arm-validation-approval-claims',outputs=NAMES)
+RUN_IDS = ['A','D','B']
+BASELINE_HASHES = {'default.json': {'bytes': 181, 'sha256': '747556ce097e0b45547f031b7609ae5ad35dcd6babeba9cf5ffb466cc9035614'}, 'comparison.json': {'bytes': 54, 'sha256': '0a35867dcff565f7c98b1b8395d0b9274492f32b30deb3ce58479ef624029bbe'}, 'resource-receipt.json': {'bytes': 3092, 'sha256': '79a2212e17ee668cffc6e74963f6ed0185d1addef239ddb24e24544dd8a5248d'}, 'transcript.log': {'bytes': 6825, 'sha256': 'eb5f92106489ba5f3ac108d934cf45f1dda2da02f57ad348761cda2193802d04'}}
 INPUT_HASHES={'generated/arm-reference.json':'1b80c1d3d9f2eb4370cd298f58f5e9c582625574f27072f6d3a1ea898ce4c036','config/attachments-apparatus.json':'070fee738e73e127e334ee5cbe680cb622f100396ad0728eb9df6723c2232389','config/apparatus-routing.json':'b8580e8158e17730b65b64d0fdbe0f1cbbafc76235b9a5f0c2b01020818cd93f','audit/modal-fixed-end-results.json':'b0eeecdade262b682279d9ebeb7a8147a4525a992976a85afc0ce5e63270d8b4','audit/arm-rest-results.json':'8dc23d896adce4b428f39cb172d76f3c74c828f49c2007c66155e45e8ea359c7','audit/arm-rest-recheck.json':'3d1159de78088207320d3b19b17ffc83cb08a531781e26715c8167dd7efbecab'}
 
 def digest(data): return hashlib.sha256(data).hexdigest()
@@ -58,8 +60,20 @@ def validate_review_bytes(m):
     raw=m.get('reviewReceiptText')
     if not isinstance(raw,str) or digest(raw.encode())!=m.get('reviewReceiptSHA256') or json.loads(raw)!=m.get('reviewReceipt'):raise Refusal('Changed exact review receipt bytes')
 
+def validate_baseline(m):
+    b=m.get('baselineEvidence',{})
+    if b.get('operatorCommit')!='e57847418a13da39db78cbfcdba070c285f3bfde' or b.get('manifestSHA256')!='c312f2d229ff73c78e810f419e19c11a6edadd6a1b1a689faf6fa71b93a630b2' or b.get('status')!='RESOURCE_INCONCLUSIVE' or b.get('defaultFinalCountersAvailable') is not False:raise Refusal('Changed baseline identity')
+    if set(b.get('files',{}))!=set(BASELINE_HASHES):raise Refusal('Changed baseline inventory')
+    for name,expected in BASELINE_HASHES.items():
+        item=b['files'][name];raw=item.get('text','').encode()
+        if len(raw)!=expected['bytes'] or digest(raw)!=expected['sha256'] or {k:item.get(k) for k in expected}!=expected:raise Refusal('Changed baseline '+name)
+    default=json.loads(b['files']['default.json']['text'])['payload']
+    resource=json.loads(b['files']['resource-receipt.json']['text'])
+    if default.get('status')!='RESOURCE_INCONCLUSIVE' or default.get('reason')!='Wall deadline/cleanup reserve' or resource.get('authoritativeFinalAcceptance')!={k:False for k in 'ABCD'}:raise Refusal('Changed baseline failure meaning')
+
 def validate_manifest(m, data, require_review=True):
-    if m.get('schema')!=1 or m.get('operatorCommit')!='e57847418a13da39db78cbfcdba070c285f3bfde' or m.get('inputCommit')!='0b83819ad3fdaed7405c6bbe617bc01640eef914' or m.get('policy')!=EXPECTED_POLICY: raise Refusal('Changed exact source/policy')
+    if m.get('schema')!=1 or m.get('operatorCommit')!='0b18a4146768ab6a49cb2febdea696bf0c073434' or m.get('inputCommit')!='0b83819ad3fdaed7405c6bbe617bc01640eef914' or m.get('policy')!=EXPECTED_POLICY: raise Refusal('Changed exact source/policy')
+    validate_baseline(m)
     if set(m.get('inputs',{}))!=set(INPUT_HASHES): raise Refusal('Changed input inventory')
     for p,h in INPUT_HASHES.items():
         i=m['inputs'][p]
@@ -204,16 +218,20 @@ def supervise(command, output, run, aggregate_start, cgroup=None, allow_descenda
         return {'status':'RESOURCE_INCONCLUSIVE','reason':'Incomplete/over-budget result staging: '+str(e),'finalAcceptance':False},resources
     return result,resources
 
-def compare(B,C,D):
-    eq=lambda a,b:json.dumps(a,sort_keys=True,separators=(',',':'))==json.dumps(b,sort_keys=True,separators=(',',':'))
-    if B['status']=='PASS' and C['status']=='PASS':
-        if len(C['leaves'])!=1 or not eq(B['finalState'],C['finalState']) or not eq([r['receipt'] for r in B['leaves']],[r['receipt'] for r in C['leaves']]):raise Refusal('Default compatibility mismatch')
-        return dict(result='CONTROL_COMPATIBLE_REMEDY_UNPROVEN',explicitHalvesDifferFromWhole=not eq(B['finalState'],D.get('finalState')))
-    if B['status']=='SOLVER_REFUSAL' and C['status']=='PASS':
-        if len(C['leaves'])!=2 or D['status']!='PASS' or not eq(C['finalState'],D['finalState']) or not eq([r['receipt'] for r in C['leaves']],[r['receipt'] for r in D['leaves']]):raise Refusal('Half-step replay mismatch')
-        return dict(result='RECOVERY_SUPPORTED_FOR_THIS_REDUCED_INTERVAL_ONLY')
-    if C['status']=='SOLVER_REFUSAL' and D['status']=='SOLVER_REFUSAL':return dict(result='DEPTH_ONE_RECOVERY_REFUSED_FOR_THIS_INTERVAL')
-    raise Refusal('Inconsistent control/halves outcomes')
+def compare(B,D):
+    """Different time discretizations; no adaptive recovery/equivalence claim."""
+    b=B or {'status':'SKIPPED_NOT_RUN'};d=D or {'status':'SKIPPED_NOT_RUN'}
+    result={'result':'INDEPENDENT_HALF_STEPS_AND_DEFAULT_DIAGNOSTIC','baselineDefaultStatus':'RESOURCE_INCONCLUSIVE','baselineManifestSHA256':'c312f2d229ff73c78e810f419e19c11a6edadd6a1b1a689faf6fa71b93a630b2','halfStepWorkerStatus':d['status'],'defaultWorkerStatus':b['status'],'commonInitialState':'FRESH_FROZEN_REST_PER_PROCESS','intervalS':.01,'halfStepsS':[.005,.005],'adaptiveRecoveryClaim':False,'anatomicalQualification':False,'observationalStatus':'Worker outcomes provisional until complete supervisor resource receipt; any resource failure prevents campaign acceptance.'}
+    if d['status']=='PASS' and b['status']=='RESOURCE_INCONCLUSIVE':result['result']='HALF_STEP_WORKER_PASS_DEFAULT_RESOURCE_INCONCLUSIVE_NO_ACCEPTANCE'
+    elif d['status']=='SOLVER_REFUSAL':result['result']='EXPLICIT_HALF_STEP_SOLVER_REFUSAL'
+    elif d['status']=='RESOURCE_INCONCLUSIVE':result['result']='HALF_STEP_RESOURCE_INCONCLUSIVE_DEFAULT_NOT_RUN'
+    elif d['status']=='PASS' and b['status']=='SOLVER_REFUSAL':result['result']='HALF_STEP_WORKER_PASS_DEFAULT_COMPLETED_SOLVER_REFUSAL'
+    elif d['status']=='PASS' and b['status']=='PASS':
+        if len(d.get('leaves',[]))!=2 or len(b.get('leaves',[]))!=1:raise Refusal('Missing independent leaf coverage')
+        result['result']='BOTH_DISCRETIZATIONS_COMPLETED_NO_RECOVERY_CLAIM'
+        result['finalStatesEqual']=b['finalState']==d['finalState']
+    return result
+
 
 def final_guard(output,resources,aggregate_start,cgroup=None):
     parent=process_info(os.getpid())
@@ -240,11 +258,11 @@ def finalize(output,results,resources,comparison,manifest_hash,aggregate_start,c
     summary={'event':'supervisor-final','status':'RESOURCE_INCONCLUSIVE' if failure else 'COMPLETE_FINALIZED','manifestSHA256':manifest_hash,'output':str(output.path),'anatomicalQualification':False,'observationalStatus':'Provisional until supervisor exit zero and matching complete resource receipt'}
     output.log(encoded(summary),resources[-1]['run'] if resources else 'A',final=True);output.seal_log()
     last_run=resources[-1]['run'] if resources else 'A'
-    acceptance={r:results.get(r,{}).get('status')=='PASS' and not failure for r in 'ABCD'}
-    owners={name:(run if run in results else last_run) for name,run in zip(RUN_NAMES,'ABCD')};owners['comparison.json']=last_run
+    acceptance={r:results.get(r,{}).get('status')=='PASS' and not failure for r in RUN_IDS}
+    owners={name:(run if run in results else last_run) for name,run in zip(RUN_NAMES,RUN_IDS)};owners['comparison.json']=last_run
     # Retained raw result payloads coexist with encoded publication staging.
     payloads={}
-    for name,run in zip(RUN_NAMES,'ABCD'):
+    for name,run in zip(RUN_NAMES,RUN_IDS):
         b=encoded({'run':run,'workerSnapshotStatus':'PROVISIONAL_UNTIL_RESOURCE_COMMIT','payload':results.get(run,{'status':'SKIPPED_NOT_RUN','finalAcceptance':False})})
         output.stage(owners[name],len(b));payloads[name]=b
     b=encoded(comparison);output.stage(last_run,len(b));payloads['comparison.json']=b
@@ -256,7 +274,7 @@ def finalize(output,results,resources,comparison,manifest_hash,aggregate_start,c
     output.verify_inventory()
     final_metrics=final_guard(output,resources,aggregate_start,cgroup)
     receipt={'status':'RESOURCE_INCONCLUSIVE' if failure else 'COMPLETE_FINALIZED','manifestSHA256':manifest_hash,'authoritativeFinalAcceptance':acceptance,'snapshotsDetached':True,'allProcessesDisposed':all(r['allProcessesReaped'] for r in resources),'anatomicalQualification':False,'aggregateWallSeconds':time.monotonic()-aggregate_start,'resources':copy.deepcopy(resources),'finalResourceObservation':final_metrics,'perRunOutputBytesBeforeCommit':dict(output.charges),'oneUseClaimBytesChargedToA':output.claim.get('bytes',0),'externalOneUseClaim':copy.deepcopy(output.claim),'fileHashes':copy.deepcopy(output.written),'supervisorStdout':summary,'observationalStatus':{'progress':'PROVISIONAL_NOT_COMMITTED','contactAliases':'UNTRUSTED_PROCESS_LOCAL_ALIASES_DISPOSED','onlyAuthoritativeAcceptance':'Supervisor exit zero AND this complete resource receipt, matching all listed snapshot hashes and manifest. Files observed before supervisor disposal are provisional.'}}
-    if not receipt['allProcessesDisposed']:receipt['status']='RESOURCE_INCONCLUSIVE';receipt['authoritativeFinalAcceptance']={r:False for r in 'ABCD'}
+    if not receipt['allProcessesDisposed']:receipt['status']='RESOURCE_INCONCLUSIVE';receipt['authoritativeFinalAcceptance']={r:False for r in RUN_IDS}
     b=encoded(receipt);output.reserve(last_run,2*len(b),emergency=True);output.write('resource-receipt.json',b,last_run,emergency=True);del b;output.verify_inventory()
     final_guard(output,resources,aggregate_start,cgroup)
     return receipt
@@ -298,7 +316,7 @@ def execute(manifest_path,destination,approval):
             counts=result.get('counters',{}).get('executed',{})
             if set(counts)!=set(CLASSES) or any(type(counts[k]) is not int or counts[k]<0 or counts[k]>run[k] for k in CLASSES) or result.get('counters',{}).get('latched') or result.get('modelDisposed') is not True:raise Refusal('Incomplete/over-budget worker accounting')
         result=None;counts=None  # Retained packets are owned only by results.
-        comparison=compare(results['B'],results['C'],results['D']) if set(results)==set('ABCD') and all(r['status'] in ('PASS','SOLVER_REFUSAL') for r in results.values()) else {'result':'RESOURCE_OR_GATE_INCONCLUSIVE_NO_RESTART'}
+        comparison=compare(results.get('B'),results.get('D'))
         return finalize(output,results,resources,comparison,h,start,cg)
     except Exception as error:
         reason=str(error);error.__traceback__=None;error.__context__=None;error.__cause__=None
@@ -310,7 +328,7 @@ def execute(manifest_path,destination,approval):
             old=output.written.pop('resource-receipt.json');os.unlink(output.path/'resource-receipt.json');output.charges[resources[-1]['run'] if resources else 'A']-=old['bytes']
         summary={'event':'supervisor-final','status':'RESOURCE_INCONCLUSIVE','manifestSHA256':h,'anatomicalQualification':False}
         output.log(encoded(summary),resources[-1]['run'] if resources else 'A',final=True);output.seal_log()
-        receipt={'status':'RESOURCE_INCONCLUSIVE','reason':reason,'manifestSHA256':h,'authoritativeFinalAcceptance':{r:False for r in 'ABCD'},'anatomicalQualification':False,'resources':resources,'supervisorStdout':summary}
+        receipt={'status':'RESOURCE_INCONCLUSIVE','reason':reason,'manifestSHA256':h,'authoritativeFinalAcceptance':{r:False for r in RUN_IDS},'anatomicalQualification':False,'resources':resources,'supervisorStdout':summary}
         b=encoded(receipt);owner=resources[-1]['run'] if resources else 'A';output.reserve(owner,2*len(b),emergency=True);output.write('resource-receipt.json',b,owner,emergency=True)
         return receipt
 
