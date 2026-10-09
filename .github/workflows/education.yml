@@ -250,6 +250,9 @@ jobs:
   deploy:
     if: github.event_name == 'workflow_dispatch' && inputs.publish && github.ref == 'refs/heads/main'
     needs: build
+    concurrency:
+      group: kenoma-pages-production
+      cancel-in-progress: false
     runs-on: ubuntu-24.04
     permissions:
       pages: write
