@@ -297,6 +297,7 @@ def execute(manifest_path,destination,approval):
             if result.get('workerStatus')!='PROVISIONAL_PENDING_SUPERVISOR' or result.get('finalAcceptance') is not False or result.get('run')!=run['id'] or result.get('sourceCommit')!=m['operatorCommit'] or result.get('harnessCommit')!=m['harnessCommit'] or result.get('executionScope')!=m['scope'] or result.get('anatomicalQualification') is not False or result.get('numericalCandidateAccepted')!=(result.get('status')=='PASS'):raise Refusal('Unbound/provisional worker packet')
             counts=result.get('counters',{}).get('executed',{})
             if set(counts)!=set(CLASSES) or any(type(counts[k]) is not int or counts[k]<0 or counts[k]>run[k] for k in CLASSES) or result.get('counters',{}).get('latched') or result.get('modelDisposed') is not True:raise Refusal('Incomplete/over-budget worker accounting')
+        result=None;counts=None  # Retained packets are owned only by results.
         comparison=compare(results['B'],results['C'],results['D']) if set(results)==set('ABCD') and all(r['status'] in ('PASS','SOLVER_REFUSAL') for r in results.values()) else {'result':'RESOURCE_OR_GATE_INCONCLUSIVE_NO_RESTART'}
         return finalize(output,results,resources,comparison,h,start,cg)
     except Exception as error:
@@ -304,7 +305,7 @@ def execute(manifest_path,destination,approval):
         # Release failed publication frames/buffers before emergency accounting.
         # Never turn a finalization/cap failure into an accepted state. Reserved
         # minimal receipt is sufficient; incomplete files remain provisional.
-        results.clear();output.pending={r:0 for r in output.pending};output.staging={r:0 for r in output.staging}
+        result=None;counts=None;results.clear();output.pending={r:0 for r in output.pending};output.staging={r:0 for r in output.staging}
         if 'resource-receipt.json' in output.written:
             old=output.written.pop('resource-receipt.json');os.unlink(output.path/'resource-receipt.json');output.charges[resources[-1]['run'] if resources else 'A']-=old['bytes']
         summary={'event':'supervisor-final','status':'RESOURCE_INCONCLUSIVE','manifestSHA256':h,'anatomicalQualification':False}
