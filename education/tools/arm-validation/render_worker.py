@@ -25,7 +25,7 @@ def main():
     frames=[];captureHashes={}
     for p in cfg['captures']:
         raw=read_regular(p,196608);captureHashes[pathlib.Path(p).name]=digest(raw)
-        rows=read_slots(pathlib.Path(p));last=0
+        rows=read_slots(pathlib.Path(p));last=-1
         for row in rows:
             for k,v in dict(manifestSHA256=mh,harnessCommit=m['harnessCommit'],operatorCommit=m['operatorCommit'],inputCommit=m['inputCommit'],modelSHA256=gitem['sha256'],inputStateSHA256=m['inputs']['audit/arm-rest-results.json']['sha256'],cameraSHA256=m['cameraSHA256'],jointScaleMPerRad=.1).items():
                 if row.get(k)!=v:raise ValueError('Frame provenance '+k)
