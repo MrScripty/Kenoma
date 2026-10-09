@@ -1,0 +1,23 @@
+@font-face{font-family:KenomaSans;src:url('../reading-edition/fonts/LiberationSans-Regular.ttf')}
+@font-face{font-family:KenomaSerif;src:url('../reading-edition/fonts/DejaVuSerif.ttf')}
+@font-face{font-family:KenomaMono;src:url('../reading-edition/fonts/DejaVuSansMono.ttf')}
+@font-face{font-family:KenomaMath;src:url('../reading-edition/fonts/DejaVuMathTeXGyre.ttf')}
+body{font-family:KenomaSans,Arial,sans-serif;overflow-wrap:anywhere}
+*,*::before,*::after{box-sizing:border-box}
+header,main,p,a{min-width:0;overflow-wrap:anywhere}
+input,select,button{max-width:100%;min-width:0}
+header.hero h1{font-family:KenomaSerif,serif}
+pre,code{font-family:KenomaMono,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
+math{font-family:KenomaMath,serif}
+math[display=inline]{display:inline-block;max-width:100%;overflow:auto;vertical-align:middle}
+.historical-scope,.archive-runtime-note{border-left:4px solid #087567;padding:1rem;margin:1rem 0}
+.archive-runtime-note{font-size:1rem;background:#eaf5f2;color:#152e41}
+.archive-runtime-note a{color:#066b83}
+button:disabled{cursor:default;opacity:.6}
+@media print{
+  body{font-size:10pt}
+  table,pre,.proof-card,.proof-meta{font-size:10pt!important}
+  .historical-scope{font-size:10pt}
+  .archive-runtime-note{display:none}
+  math[display=inline]{overflow:visible}
+}
