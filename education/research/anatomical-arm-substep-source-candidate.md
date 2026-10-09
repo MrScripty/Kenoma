@@ -159,7 +159,8 @@ Hessian-vector products do not re-evaluate material; bound them separately at
 21,173,040 over six attempts. Contact/tree/audit work remains subject to wall and
 memory ceilings even though it is not a material callback.
 
-Each process: owned peak RSS <=1 GiB, observed shared cgroup usage <=16 GiB,
+Each process: owned peak RSS <=1,000,000,000 bytes, observed shared cgroup
+usage <=16,000,000,000 bytes (decimal GB, preserving the earlier proposed caps),
 output <=4 MiB and stdout/stderr <=256 KiB. Sequential aggregate: wall <=780 s,
 output <=16 MiB, transcript <=1 MiB. Include all descendants and staging/temp
 files. Abort on unavailable monitoring or inadequate scratch space. Proposed
