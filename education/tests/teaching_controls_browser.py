@@ -12,6 +12,7 @@ from io import BytesIO
 import argparse, hashlib, json, os, shutil, subprocess, sys
 from math import tan, pi, exp, hypot, sqrt, cos
 from PIL import Image
+from browser_capture import capture_section
 from playwright.sync_api import sync_playwright, expect
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -96,7 +97,7 @@ def check(page, out, case='all'):
                 lab.locator('[data-action=step]').click()
                 assert state(lab)['state'] == before
                 if h == .05 or (h == .005 and method == 'verlet'):
-                    lab.screenshot(path=str(out/f'energy-{method}-{h}-completed.png'))
+                    capture_section(page,lab,out/f'energy-{method}-{h}-completed.png')
                 energy_runs.append({'method': method, 'h': h, 'run': current['run'], 'finalState': current['state'], 'trace': filename})
         # A genuine mid-run user pause leaves state unchanged; resume reaches the endpoint.
         lab.locator('[data-action=reset]').click()
@@ -142,7 +143,7 @@ def check(page, out, case='all'):
         imposed = state(lab)
         assert abs(imposed['measurements']['materialLineStretches'][1]-1) < 1e-12
         expect(lab.locator('.readout')).to_contain_text('Y material-line stretch')
-        lab.screenshot(path=str(out/'property-shear-line-stretch.png'))
+        capture_section(page,lab,out/'property-shear-line-stretch.png')
         observed['deformation'] = imposed
         lab = page.locator('[data-property=tapered]')
         expect(lab.locator('label[for=property-tapered-area]')).to_have_text('Reference area A1 at s=0 (m²)')
@@ -152,7 +153,7 @@ def check(page, out, case='all'):
         assert measurements['narrowAreaM2'] == reversed_taper['parameters']['area']*.5
         assert measurements['endpointStrains'][1] > measurements['endpointStrains'][0]
         expect(lab.locator('.readout')).to_contain_text('Narrow area from geometry')
-        lab.screenshot(path=str(out/'property-reversed-taper.png'))
+        capture_section(page,lab,out/'property-reversed-taper.png')
         observed['reversedTaper'] = reversed_taper
         # Same actual controls/time/input compare earlier law with rigid series limit.
         forces = []
@@ -175,7 +176,7 @@ def check(page, out, case='all'):
             assert abs(row['active']-expected) < 1e-8
             assert row['active'] < p['maxForce']*current['state']['a']-40
             forces.append(row['active'])
-            lab.screenshot(path=str(out/f'{kind}-rigid-force-length.png'))
+            capture_section(page,lab,out/f'{kind}-rigid-force-length.png')
             observed[kind+'RigidLimit'] = {'current': current, 'row': row}
         assert abs(forces[0]-forces[1]) < 1e-8
         lab = page.locator('#lab-series')
@@ -186,7 +187,7 @@ def check(page, out, case='all'):
         row = json.loads((out/'series-compliant-force-length-trace.json').read_text())['trace'][-1]
         assert row['fiber'] < fiber and row['tendonEnergy'] > 0 and row['active'] < forces[1]
         assert abs(row['forceResidual']) < 1e-8 and abs(row['balanceResidual']) < 1e-5
-        lab.screenshot(path=str(out/'series-compliant-force-length.png'))
+        capture_section(page,lab,out/'series-compliant-force-length.png')
         observed['seriesCompliant'] = row
         # Actual Lab6 fields, common scales, fixed-node forces and retained assembly.
         lab = page.locator('#lab-continuum')
@@ -199,9 +200,9 @@ def check(page, out, case='all'):
         assert all(abs(v-1600) < 1e-6 for v in sum(affine['diagnostics']['colour']['fields'], []))
         assert abs(affine['diagnostics']['referenceReactionN'][0]+.96) < 1e-8
         expect(lab.locator('.readout')).to_contain_text('force ON block xyz')
-        lab.screenshot(path=str(out/'continuum-affine-stress-reaction.png'))
+        capture_section(page,lab,out/'continuum-affine-stress-reaction.png')
         lab.locator('select[data-param=case]').select_option('quadratic')
-        lab.screenshot(path=str(out/'continuum-quadratic-stress.png'))
+        capture_section(page,lab,out/'continuum-quadratic-stress.png')
         stress_pixels = field_pixels(lab.locator('canvas'), out/'continuum-stress-canvas.png')
         assert stress_pixels['interiorColourBands'] >= 3, 'Stress must vary by element in actual canvas pixels'
         lab.locator('select[data-param=comparison]').select_option('implicit')
@@ -209,7 +210,7 @@ def check(page, out, case='all'):
         lab.locator('select[data-param=h]').select_option('0.002')
         lab.locator('select[data-param=sweeps]').select_option('1')
         coarse = state(lab)
-        lab.screenshot(path=str(out/'continuum-coarse-error.png'))
+        capture_section(page,lab,out/'continuum-coarse-error.png')
         coarse_pixels = field_pixels(lab.locator('canvas'), out/'continuum-coarse-canvas.png')
         lab.locator('select[data-param=sweeps]').select_option('100')
         refined = state(lab)
@@ -217,7 +218,7 @@ def check(page, out, case='all'):
         assert refined['diagnostics']['colour']['observedMax'] < coarse['diagnostics']['colour']['observedMax']/10
         assert coarse['diagnostics']['colour']['fields'][0] == [0]*len(coarse['diagnostics']['colour']['fields'][0])
         assert refined['diagnostics']['assemblyCount'] == coarse['diagnostics']['assemblyCount']
-        lab.screenshot(path=str(out/'continuum-refined-error.png'))
+        capture_section(page,lab,out/'continuum-refined-error.png')
         refined_pixels = field_pixels(lab.locator('canvas'), out/'continuum-refined-canvas.png')
         assert coarse_pixels['highFieldPixels'] > refined_pixels['highFieldPixels']+50
         lab.locator('select[data-param=magnification]').select_option('100')
@@ -256,7 +257,7 @@ def check(page, out, case='all'):
             assert 0 < released['state']['a'] < boundary['state']['a']
             assert released['state']['q'] == before['state']['q'] and released['state']['w'] == 0
             if kind == 'series': expect(lab.locator('.readout')).to_contain_text('Lengthening')
-            lab.screenshot(path=str(out/f'{kind}-current-pulse-release.png'))
+            capture_section(page,lab,out/f'{kind}-current-pulse-release.png')
             observed[kind+'Pulse'] = {'before': before, 'scheduled': scheduled, 'boundary': boundary, 'released': released}
             lab.locator('[data-action=reset]').click()
             reset = state(lab)
@@ -292,7 +293,7 @@ def check(page, out, case='all'):
             if kind in ['elbow', 'series', 'spatial']: assert current['state']['time'] > 0
             lab.locator('[data-action=step]').click()
             assert state(lab)['step'] == 2
-        failed.locator('#lab-series').screenshot(path=str(out/'numerical-only-series.png'))
+        capture_section(failed,failed.locator('#lab-series'),out/'numerical-only-series.png')
         failed.close()
     if case in ['all', 'force']:
         lab = page.locator('#lab-force')
@@ -331,7 +332,7 @@ def check(page, out, case='all'):
         after, h2 = state(lab), heights()
         observed['property'] = {'before': before, 'after': after, 'heightsBefore': h1, 'heightsAfter': h2}
         (out/'property-observed.json').write_text(json.dumps(observed['property'], indent=2)+'\n')
-        lab.screenshot(path=str(out/'property-double-force.png'))
+        capture_section(page,lab,out/'property-double-force.png')
         assert all(abs(b-2*a) < 1e-10 for a, b in zip(h1, h2))
         assert all(abs(b['strain']-2*a['strain']) < 1e-12 for a, b in zip(before['measurements']['samples'], after['measurements']['samples']))
         for key in ['activation', 'activeStress']:
@@ -360,7 +361,7 @@ def check(page, out, case='all'):
         lab.locator('[data-action=compression]').click()
         before = state(lab)
         active_pixels = lab.locator('canvas').screenshot()
-        lab.screenshot(path=str(out/'spatial-active-on.png'))
+        capture_section(page,lab,out/'spatial-active-on.png')
         observed['spatial'] = {'fixture': before, 'ablations': {}}
         for key, value in [('skin', 'off'), ('boneContact', 'off'), ('volumeK', '2500'), ('activeShape', 'off')]:
             lab.locator('[data-action=reset]').click()
@@ -380,7 +381,7 @@ def check(page, out, case='all'):
                 assert current['diagnostics']['energyJ']['active'] == 0
                 assert current['diagnostics']['hingeFiberM'] == before['diagnostics']['hingeFiberM']
                 assert abs(current['diagnostics']['spatialFiberArcM']-before['diagnostics']['spatialFiberArcM']) > .001
-                lab.screenshot(path=str(out/'spatial-active-off.png'))
+                capture_section(page,lab,out/'spatial-active-off.png')
                 assert lab.locator('canvas').screenshot() != active_pixels, 'Active-shape ablation must change the rendered geometry'
                 lab.locator('select[data-param=activeShape]').select_option('on')
                 assert state(lab)['diagnostics'] == before['diagnostics']
@@ -408,7 +409,7 @@ def check(page, out, case='all'):
         expect(lab.locator('.readout')).to_contain_text('Dead centre: zero moment arm')
         lab.locator('[data-action=start]').click()
         expect(lab).to_have_attribute('data-scene-state', 'ready')
-        lab.screenshot(path=str(out/'elbow-dead-centre.png'))
+        capture_section(page,lab,out/'elbow-dead-centre.png')
         lab.locator('[data-action=reset]').click()
     return observed
 
@@ -469,7 +470,7 @@ def main():
                     assert numerical['step'] == 2400 and numerical['display'] == 'numerical-only'
                     assert numerical['run']['sampleCount'] == 2401
                     expect(energy.locator('.scene-notice')).to_contain_text('static reference diagram does not move')
-                    energy.screenshot(path=str(out/'energy-numerical-only-completed.png'))
+                    capture_section(fallback,energy,out/'energy-numerical-only-completed.png')
                     receipt['observed']['energyNumericalOnly'] = numerical
                     fallback.close()
                 assert not errors, errors

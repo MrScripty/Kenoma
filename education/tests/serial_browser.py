@@ -278,6 +278,7 @@ def capture(lab, out, name):
 
 
 def check(page, out, full=True):
+    from browser_capture import capture_section
     lab = page.locator('#lab-serial-specimen[data-serial]')
     expect(lab).to_have_count(1)
     page.wait_for_function('document.querySelector("#lab-serial-specimen").serialLab != null')
@@ -455,7 +456,7 @@ def check(page, out, full=True):
     lab.locator('[data-action=reset]').click()
     mobile = snapshot(lab);verify_state(mobile);verify_scene(mobile)
     captures.append(capture(lab,out,'mobile-default'))
-    lab.screenshot(path=str(out/'mobile-controls.png'))
+    capture_section(page,lab,out/'mobile-controls.png')
     cases.update(reset=reset,contextLossRetained=lost,contextRetry=retry,mobile=mobile,pixelSignature=pixels)
     (out/'observed-states.json').write_text(json.dumps(cases,indent=2)+'\n')
     return {'cases':cases,'captures':captures,'scope':'Actual Chromium WebGL rendering; mobile viewport emulation, not a physical phone; no biological validation.'}
@@ -499,6 +500,12 @@ def displayed_proofs(page, site):
     for claim in record['claims']:
         assert claim['status'] == 'checked' and set(claim['axioms']) <= {'propext','Classical.choice','Quot.sound'}
         card = page.locator('#proof-'+claim['id']);expect(card).to_have_count(1)
+        toggle = card.locator('.claim-toggle')
+        if toggle.count():
+            expect(toggle).to_have_attribute('aria-expanded','false')
+            toggle.focus();page.keyboard.press('Enter')
+            expect(toggle).to_have_attribute('aria-expanded','true')
+            expect(card.locator('.claim-technical')).to_be_visible()
         text = card.inner_text();statement = card.locator('pre').first.inner_text()
         assert 'theorem '+claim['theorem'].split('.')[-1] in statement
         assert sum(line.startswith('theorem ') for line in statement.splitlines()) == 1
@@ -551,7 +558,7 @@ def main():
         if args.site is None:
             build(site)
         inputs = {str(path.relative_to(site)):digest(path) for path in sorted(site.rglob('*')) if path.is_file() and path.suffix in ['.html','.mjs','.js','.css']}
-        names = ['web/serial-specimen.mjs','web/continuum-properties.mjs','web/scene-status.mjs','web/serial-lab.mjs','web/serial-lab.css','web/style.css','web/app.mjs','tools/serial_lab.py','tools/build_serial_preview.py','tests/serial_browser.py']
+        names = ['web/serial-specimen.mjs','web/continuum-properties.mjs','web/scene-status.mjs','web/serial-lab.mjs','web/serial-lab.css','web/style.css','web/app.mjs','tools/serial_lab.py','tools/build_serial_preview.py','tests/serial_browser.py','tests/browser_capture.py']
         source_hashes = {name:digest(ROOT/name) for name in names}
         result = qualify(site,out)
         result.update(scope='Actual serial specimen production controls, independent numerical and actual indexed WebGL geometry checks; not a full-book release or Lean rerun',delivered_input_sha256=inputs,source_input_sha256=source_hashes,test_sha256=source_hashes['tests/serial_browser.py'],source_base_revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),worktree_dirty=bool(subprocess.check_output(['git','status','--porcelain'],cwd=ROOT,text=True).strip()),build_manifest_sha256=digest(site/'build-manifest.json') if (site/'build-manifest.json').exists() else None,preview_manifest_sha256=digest(site/'serial-preview-manifest.json') if (site/'serial-preview-manifest.json').exists() else None)

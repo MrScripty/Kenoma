@@ -166,7 +166,11 @@ jobs:
             education/.tools/property-mathlib-source-logs/
             education/.tools/real-mathlib-source-logs/
           include-hidden-files: true
+      - name: Prepare an isolated exact-source research rerun
+        run: |
+          python3 tools/prepare_research_workspace.py --destination "$RUNNER_TEMP/kenoma-research"
       - name: Check anatomical research foundation separately from the published capstone
+        working-directory: ${{ runner.temp }}/kenoma-research/education
         run: |
           npm run anatomy:geometry
           node tools/repair-anatomical-reference.mjs
@@ -208,9 +212,15 @@ jobs:
         run: |
           npm test
           npm run test:python
-          node tools/tapered-bar-current-endpoint-audit.mjs
-          python3 tests/endpoint_warning_audit.py
-          python3 tools/check_endpoint_warning_audit.py
+          # These checks intentionally regenerate tracked research evidence.
+          # Keep it in the research checkout, without weakening the proof guard.
+          (
+            cd "$RUNNER_TEMP/kenoma-research/education"
+            node tools/tapered-bar-current-endpoint-audit.mjs
+            python3 tests/endpoint_warning_audit.py
+            python3 tools/check_endpoint_warning_audit.py
+          )
+          test -z "$(git status --porcelain)"
           npm run build
           npm run pdf
           python3 tools/check_print_readability.py dist
@@ -239,6 +249,17 @@ jobs:
           python3 tests/artifacts.py
           python3 tools/qualify_print_negatives.py
           python3 tools/package_education_bundle.py
+      - name: Preserve independent research rerun evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: kenoma-independent-research-rerun
+          path: |
+            ${{ runner.temp }}/kenoma-research/education/.artifacts/research-workspace.json
+            ${{ runner.temp }}/kenoma-research/education/data/
+            ${{ runner.temp }}/kenoma-research/education/dist/
+          include-hidden-files: true
+          if-no-files-found: error
       - name: Preserve downloadable PDFs separately from sources
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:

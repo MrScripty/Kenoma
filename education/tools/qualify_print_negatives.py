@@ -27,7 +27,7 @@ for label,mutation in [('missing readability receipt',lambda:receipt.unlink()),(
     finally:receipt.write_bytes(original)
 
 tree=ast.parse((ROOT/'tools/render_pdf.py').read_text())
-mapping=next(n.args[0].value for n in ast.walk(tree) if isinstance(n,ast.Call) and isinstance(n.func,ast.Attribute) and n.func.attr=='evaluate' and n.args and isinstance(n.args[0],ast.Constant) and isinstance(n.args[0].value,str) and n.args[0].value.startswith('({revision,realDestinations})'))
+mapping=next(n.args[0].value for n in ast.walk(tree) if isinstance(n,ast.Call) and isinstance(n.func,ast.Attribute) and n.func.attr=='evaluate' and n.args and isinstance(n.args[0],ast.Constant) and isinstance(n.args[0].value,str) and n.args[0].value.startswith('({revision,realDestinations,architectureImplementationDestinations})'))
 destinations={}
 for source,_,prefix,_ in FAMILIES:
     destinations.update({'proofs/'+source:'#'+prefix+'-source-appendix',prefix+'-proof-status.json':'#'+prefix+'-proof-receipt',prefix+'-lean-check.txt':'#'+prefix+'-kernel-report'})
@@ -36,10 +36,12 @@ try:
     with sync_playwright() as p:
         browser=p.chromium.launch(headless=True,executable_path='/usr/bin/chromium')
         page=browser.new_page(viewport={'width':658,'height':1000})
-        page.goto(url+'/index.html',wait_until='networkidle');page.emulate_media(media='print');page.evaluate('document.fonts.ready')
+        page.goto(url+'/index.html',wait_until='networkidle');page.emulate_media(media='print')
+        page.locator('.proof-appendices').evaluate_all('(nodes)=>nodes.forEach(n=>n.open=true)')
+        page.evaluate('document.fonts.ready')
         page.add_style_tag(content='@media print {pre, pre code, pre code span {font-size:9pt!important}}')
         reflow=page.evaluate((ROOT/'tools/print_layout.js').read_text())
-        page.evaluate(mapping,{'revision':manifest['git_revision'],'realDestinations':destinations})
+        page.evaluate(mapping,{'revision':manifest['git_revision'],'realDestinations':destinations,'architectureImplementationDestinations':render_pdf.pdf_implementation_links(ROOT)})
         path=fixture/'kenoma-mechanics.pdf'
         page.pdf(path=str(path),format='A4',print_background=True,prefer_css_page_size=True,tagged=True,outline=True)
         browser.close()

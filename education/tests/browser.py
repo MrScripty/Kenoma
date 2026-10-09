@@ -6,6 +6,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
 from render_pdf import serve
 from executable_outputs import checked_build_outputs,executable_digest,unchanged_outputs
 from teaching_controls_browser import check as check_teaching_controls
+from browser_capture import capture_section
 from playwright.sync_api import sync_playwright,expect
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -43,7 +44,7 @@ def check():
         assert force.locator('.readout').inner_text()==first
         force.locator('[data-action=start]').click();expect(force.locator('canvas')).to_be_visible()
         force.locator('[data-action=view]').click();assert force.locator('.readout').inner_text()==first
-        force.screenshot(path=str(out/'force-desktop.png'))
+        capture_section(page,force,out/'force-desktop.png')
         torque=page.locator('#lab-torque')
         length=torque.locator('input[type=number][data-param=length]');length.fill('');length.press_sequentially('0.35')
         expect(length).to_have_value('0.35');assert length.get_attribute('aria-invalid') is None
@@ -54,7 +55,7 @@ def check():
         expect(torque.locator('.readout')).to_contain_text('0 N m')
         torque.locator('[data-action=reset]').click();torque.locator('[data-action=start]').click()
         assert page.locator('canvas').count()==1
-        torque.screenshot(path=str(out/'torque-desktop.png'))
+        capture_section(page,torque,out/'torque-desktop.png')
         energy=page.locator('#lab-energy')
         for method in ['explicit','symplectic','verlet']:
           energy.locator('[data-action=reset]').click()
@@ -72,7 +73,7 @@ def check():
         energy.locator('[data-action=play]').click();page.wait_for_timeout(200)
         energy.locator('[data-action=play]').click();paused=energy.locator('.readout').inner_text()
         page.wait_for_timeout(100);assert energy.locator('.readout').inner_text()==paused
-        energy.locator('[data-action=reset]').click();energy.screenshot(path=str(out/'energy-desktop.png'))
+        energy.locator('[data-action=reset]').click();capture_section(page,energy,out/'energy-desktop.png')
         page.screenshot(path=str(out/'book-desktop.png'))
         assert not errors,errors
         checks.append('Desktop real WebGL, camera, defaults, all integrators, stepping, reset replay, copy, pause verified')
@@ -95,7 +96,7 @@ def check():
         elbow.locator('[data-action=reset]').click();elbow.locator('select[data-param=mode]').select_option('prescribed')
         elbow.locator('input[type=number][data-param=angle]').fill('90');elbow.locator('[data-action=step]').click()
         expect(elbow.locator('.readout')).to_contain_text('90.00°');expect(elbow.locator('.readout')).to_contain_text('Prescribed static hold')
-        elbow.locator('[data-action=reset]').click();elbow.screenshot(path=str(out/'elbow-desktop.png'))
+        elbow.locator('[data-action=reset]').click();capture_section(page,elbow,out/'elbow-desktop.png')
         elbow.locator('[data-action=pulse]').click();page.wait_for_timeout(100);elbow.locator('[data-action=play]').click()
         elbow.locator('[data-action=reset]').click()
         checks.append('Elbow real WebGL, force-driven lift, continuous release, trace download, prescribed hold and pulse controls verified')
@@ -131,7 +132,7 @@ def check():
         assert trace['model']=='series-force-length-affine-tissue-v2' and len(trace['trace'])==62
         assert r['tissue']['normal']>5.5 and r['tissue']['volumeRatio']>.99 and abs(r['tissue']['skinVolumeRatio']-.5)<1e-12
         assert r['fiberSpeed']>0 and r['activePower']<0 and r['hingeMusclePower']==0
-        series.screenshot(path=str(out/'series-desktop.png'))
+        capture_section(page,series,out/'series-desktop.png')
         series.locator('select[data-param=contact]').select_option('off')
         expect(series.locator('.readout')).to_contain_text('13.891 mm')
         series.locator('select[data-param=contact]').select_option('on');series.locator('select[data-param=bulk]').select_option('0')
@@ -149,14 +150,14 @@ def check():
         assert better['diagnostics']['assemblyCount']==assembly
         continuum.locator('select[data-param=comparison]').select_option('static');expect(continuum.locator('.readout')).to_contain_text('Static analytic displacement L2 error')
         continuum.locator('select[data-param=n]').select_option('4');continuum.locator('[data-action=copy]').click();refined=json.loads(continuum.locator('.preset').input_value());assert abs(refined['diagnostics']['metrics']['relativeL2']-.1471)<.001
-        continuum.locator('[data-action=reset]').click();continuum.screenshot(path=str(out/'continuum-desktop.png'))
+        continuum.locator('[data-action=reset]').click();capture_section(page,continuum,out/'continuum-desktop.png')
         checks.append('Spatial FEM reference converged; matched sweep improvement, static refinement and cached assembly verified')
         spatial=page.locator('#lab-spatial');numeric=spatial.locator('input[type=number][data-param=excitation]');numeric.fill('');numeric.press_sequentially('0.35');expect(numeric).to_have_value('0.35');assert numeric.get_attribute('aria-invalid') is None
         spatial.locator('[data-action=reset]').click();spatial.locator('[data-action=start]').click();assert page.locator('canvas').count()==1
         spatial.locator('[data-action=compression]').click();spatial.locator('[data-action=copy]').click();compression=json.loads(spatial.locator('.preset').input_value());d=compression['diagnostics'];(out/'spatial-compression-state.json').write_text(json.dumps(compression,indent=2)+'\n')
         assert abs(d['q']-3.141592653589793/2)<1e-12 and d['minJ']>.7 and d['baselineMinJ']<.18
         assert d['penetrationM']<.00005 and d['baselinePenetrationM']>.009
-        spatial.screenshot(path=str(out/'spatial-compression-desktop.png'))
+        capture_section(page,spatial,out/'spatial-compression-desktop.png')
         spatial.locator('select[data-param=boneContact]').select_option('off');spatial.locator('[data-action=copy]').click();contact_off=json.loads(spatial.locator('.preset').input_value());assert contact_off['diagnostics']['contactNormalSumN']==0
         spatial.locator('[data-action=reset]').click();spatial.locator('select[data-param=sweeps]').select_option('80')
         spatial.evaluate('(lab)=>{for(let i=0;i<60;i++)lab.querySelector("[data-action=step]").click()}')
@@ -195,24 +196,24 @@ def check():
         slider=evidence.locator('[data-evidence=bin]');slider.focus();page.keyboard.press('End')
         expect(evidence.locator('.readout')).to_contain_text('172 / 172');expect(evidence.locator('.readout')).to_contain_text('unit 1')
         evidence.locator('[data-action=reset]').click();expect(slider).to_have_value('0');expect(evidence.locator('[data-evidence=part]')).to_have_value('all')
-        expect(evidence.locator('.readout')).to_contain_text('0.219441 s');evidence.screenshot(path=str(out/'evidence-desktop.png'))
+        expect(evidence.locator('.readout')).to_contain_text('0.219441 s');capture_section(page,evidence,out/'evidence-desktop.png')
         assert not errors,errors
         checks.append('Actual atlas WebGL part/camera views and keyboard-accessible timestamp-aware recording bins/reset verified; one active canvas retained')
         page.set_viewport_size({'width':390,'height':844})
         page.goto(url+'/index.html',wait_until='networkidle')
         assert page.evaluate('document.documentElement.scrollWidth<=window.innerWidth'), 'mobile overflow'
         torque=page.locator('#lab-torque');torque.locator('[data-action=start]').click()
-        expect(torque.locator('canvas')).to_be_visible();torque.screenshot(path=str(out/'torque-mobile.png'))
+        expect(torque.locator('canvas')).to_be_visible();capture_section(page,torque,out/'torque-mobile.png')
         # Native number control is fully keyboard operable.
         number=torque.locator('input[type=number][data-param=angle]');number.focus();page.keyboard.press('ArrowUp')
         expect(number).to_have_value('1');torque.locator('[data-action=reset]').click()
         checks.append('390px viewport has no horizontal page overflow; WebGL and keyboard controls verified')
-        elbow=page.locator('#lab-elbow');elbow.locator('[data-action=start]').click();elbow.screenshot(path=str(out/'elbow-mobile.png'))
+        elbow=page.locator('#lab-elbow');elbow.locator('[data-action=start]').click();capture_section(page,elbow,out/'elbow-mobile.png')
         series=page.locator('#lab-series');series.locator('[data-action=start]').click()
-        series.locator('select[data-param=mode]').select_option('prescribed');series.locator('input[type=number][data-param=angle]').fill('90');series.screenshot(path=str(out/'series-mobile.png'))
-        continuum=page.locator('#lab-continuum');continuum.locator('[data-action=start]').click();continuum.screenshot(path=str(out/'continuum-mobile.png'))
-        spatial=page.locator('#lab-spatial');spatial.locator('[data-action=start]').click();spatial.locator('[data-action=compression]').click();spatial.screenshot(path=str(out/'spatial-compression-mobile.png'))
-        evidence=page.locator('#evidence-viewer');evidence.locator('[data-action=start]').click();expect(evidence.locator('canvas')).to_be_visible();evidence.screenshot(path=str(out/'evidence-mobile.png'))
+        series.locator('select[data-param=mode]').select_option('prescribed');series.locator('input[type=number][data-param=angle]').fill('90');capture_section(page,series,out/'series-mobile.png')
+        continuum=page.locator('#lab-continuum');continuum.locator('[data-action=start]').click();capture_section(page,continuum,out/'continuum-mobile.png')
+        spatial=page.locator('#lab-spatial');spatial.locator('[data-action=start]').click();spatial.locator('[data-action=compression]').click();capture_section(page,spatial,out/'spatial-compression-mobile.png')
+        evidence=page.locator('#evidence-viewer');evidence.locator('[data-action=start]').click();expect(evidence.locator('canvas')).to_be_visible();capture_section(page,evidence,out/'evidence-mobile.png')
         assert page.evaluate('document.documentElement.scrollWidth<=window.innerWidth'), 'new chapter mobile overflow'
         no_gl=context.new_page();no_gl.add_init_script('''const original=HTMLCanvasElement.prototype.getContext;
 HTMLCanvasElement.prototype.getContext=function(type,...args){if(type.includes('webgl'))return null;return original.call(this,type,...args);};''')

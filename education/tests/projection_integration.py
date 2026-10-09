@@ -79,7 +79,9 @@ def check():
             })
             receipt['evidence_sha256'][pdf.name] = digest(pdf)
             receipt_path.write_text(json.dumps(receipt,indent=2)+'\n')
-            page.emulate_media(media='screen');page.set_viewport_size({'width':1280,'height':900})
+            # Keep the complete tall controls inside the capture viewport.
+            # Chromium can stall resizing an element screenshot on the long book.
+            page.emulate_media(media='screen');page.set_viewport_size({'width':1280,'height':2200})
             page.goto(url+'/index.html#fixed-field-pressure-projection', wait_until='networkidle')
             frame = page.frame_locator('iframe[title="Fixed-field weighted pressure projection controls"]')
             expect(frame.locator('#full')).to_have_text('8')
