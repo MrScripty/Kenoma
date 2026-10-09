@@ -1,80 +1,129 @@
 import assert from 'node:assert/strict';
-import http from 'node:http';
-import {readFile,mkdir,writeFile} from 'node:fs/promises';
 import path from 'node:path';
-import {fileURLToPath} from 'node:url';
-import {createHash} from 'node:crypto';
-import {execFileSync} from 'node:child_process';
-const {chromium}=await import(process.env.PLAYWRIGHT_MODULE || 'playwright');
-const root=fileURLToPath(new URL('../',import.meta.url));
-const output=path.join(root,'test-output');await mkdir(output,{recursive:true});
-const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
-const server=http.createServer(async(req,res)=>{
-  try {
-    const pathname=new URL(req.url,'http://localhost').pathname;
-    if(pathname==='/embed.html'){
-      res.setHeader('Content-Type','text/html');res.end('<!doctype html><title>Static host</title><iframe title="Isolated graph demo" src="/preview/index.html" style="border:0;width:1200px;height:1000px"></iframe>');return;
-    }
-    if(!pathname.startsWith('/preview/')){res.writeHead(404).end();return;}
-    const target=path.resolve(root,decodeURIComponent(pathname.slice('/preview/'.length)));
-    if(!target.startsWith(root)){res.writeHead(404).end();return;}
-    const bytes=await readFile(target);
-    const type={'.html':'text/html','.js':'text/javascript','.wasm':'application/wasm'}[path.extname(target)]||'application/octet-stream';
-    res.setHeader('Content-Type',type);res.end(bytes);
-  }catch{res.writeHead(404).end();}
-});
-await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
-let browser;
-try {
-  browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM || '/usr/bin/chromium'});
-  const page=await browser.newPage({viewport:{width:1220,height:1040},deviceScaleFactor:1});
-  const errors=[];page.on('pageerror',error=>errors.push(error.message));
-  const requests=[];page.on('request',request=>requests.push(request.url()));
-  await page.goto(`http://127.0.0.1:${server.address().port}/embed.html`);
-  const frame=page.frames().find(frame=>frame.url().endsWith('/preview/index.html'));
-  assert.ok(frame,'Demo loaded embedded under a static-host subpath');
-  await frame.waitForFunction(()=>window.simpleGraphDemo?.rendered===true);
-  const evidence=await frame.evaluate(async()=>{
-    const {client,sample,result}=window.simpleGraphDemo;
-    const check=(condition,label)=>{if(!condition)throw new Error(label);};
-    check(sample.ok&&result.ok,'success envelopes');
-    check(sample.graph.nodes.length===16&&sample.mesh.positions.length===820&&sample.mesh.indices.length===4608,'canonical counts');
-    const serialized=JSON.stringify(sample.graph);
-    const repeated=client.request({version:1,operation:{type:'generate',graph:sample.graph}});
-    check(JSON.stringify(repeated.mesh)===JSON.stringify(sample.mesh),'repeat deterministic');
-    check(JSON.stringify(result.graph.nodes[6])!==JSON.stringify(sample.graph.nodes[6]),'hand moves');
-    for(let i=0;i<16;i++)if(i!==6)check(JSON.stringify(result.graph.nodes[i])===JSON.stringify(sample.graph.nodes[i]),'pose isolation');
-    const length=(graph,edge)=>Math.hypot(...graph.nodes[edge.a].position.map((x,j)=>x-graph.nodes[edge.b].position[j]));
-    for(const edge of sample.graph.edges)check(Math.abs(length(sample.graph,edge)-length(result.graph,edge))<1e-6,'length preserved');
-    for(const mesh of [sample.mesh,result.mesh]){
-      check(mesh.indices.every(i=>Number.isInteger(i)&&i>=0&&i<mesh.positions.length),'valid indices');
-      check(mesh.positions.flat().every(Number.isFinite),'finite positions');
-      check(mesh.normals.every(n=>Math.abs(Math.hypot(...n)-1)<1e-5),'unit normals');
-    }
-    const bad=client.request({version:1,operation:{type:'edit',graph:sample.graph,commands:[{MoveNode:{node:5,position:[0,1,0]}},{DeleteNode:{node:999}}]}});
-    check(!bad.ok&&bad.error.code==='invalid_node'&&!('graph'in bad),'batch failure');
-    check(JSON.stringify(sample.graph)===serialized,'no caller mutation');
-    const nonfinite=structuredClone(sample.graph);nonfinite.nodes[0].position[0]=Infinity;
-    check(client.request({version:1,operation:{type:'generate',graph:nonfinite}}).error.code==='invalid_request','nonfinite rejected before JSON coercion');
-    check(client.request({version:2,operation:{type:'mannequin'}}).error.code==='unsupported_version','version error');
-    check(client.request({version:1,operation:{type:'generate',graph:sample.graph,options:{ring_sides:4294967296,target_segment_length_factor:1.25,max_edge_segments:64}}}).error.code==='invalid_request','portable u32 count error');
-    const cycles={};cycles.self=cycles;check(client.request(cycles).error.code==='invalid_request','cycle error');
-    const pixels=document.querySelector('#posed').getContext('2d').getImageData(0,0,520,500).data;
-    let distinct=0;for(let i=0;i<pixels.length;i+=4)if(pixels[i+1]>130&&pixels[i+2]>100)distinct++;
-    check(distinct>5000,'actual visible mesh pixels');
-    return {vertices:sample.mesh.positions.length,triangles:sample.mesh.indices.length/3,poseDegrees:70,visibleMeshPixels:distinct,sourceGraph:sample.graph,posedGraph:result.graph,meshSerialized:JSON.stringify(result.mesh),checks:['WASM initialization','static subpath iframe embedding','canonical mesh counts','deterministic regeneration','branch isolation','edge lengths','finite buffers and unit normals','failed batch rollback','caller immutability','nonfinite and cyclic input rejection','version errors','portable u32 counts','visible mesh pixels']};
-  });
-  await frame.locator('#angle').fill('100');await frame.locator('#angle').dispatchEvent('input');
-  assert.equal(await frame.locator('#angleValue').textContent(),'100°');
-  await frame.locator('#reset').click();
-  const resetEqual=await frame.evaluate(()=>JSON.stringify(window.simpleGraphDemo.result.graph)===JSON.stringify(window.simpleGraphDemo.sample.graph));assert.ok(resetEqual,'reset restores source pose');
-  await frame.locator('#angle').fill('70');await frame.locator('#angle').dispatchEvent('input');
-  await frame.locator('main').screenshot({path:path.join(output,'kenoma-wasm-mannequin.png')});
-  assert.deepEqual(errors,[]);
-  assert.ok(requests.some(url=>url.endsWith('human_wasm_bg.wasm')),'compiled wasm actually fetched');
-  assert.ok(requests.every(url=>url.startsWith('http://127.0.0.1:')),'no external runtime requests');
-  const meshHash=hash(evidence.meshSerialized);delete evidence.meshSerialized;
-  const receipt={...evidence,checks:[...evidence.checks,'slider interaction','reset','no browser exceptions','no external requests'],browser:await browser.version(),wasmSha256:hash(await readFile(path.join(root,'pkg/human_wasm_bg.wasm'))),meshSha256:meshHash,sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),sourceDirty:execFileSync('git',['status','--porcelain'],{cwd:root,encoding:'utf8'}).trim()!=='',capturedAt:new Date().toISOString(),renderer:'Canvas 2D triangle projection of actual Rust/WASM-generated buffers; graph overlay; painter sorting'};
-  await writeFile(path.join(output,'browser-verification.json'),JSON.stringify(receipt,null,2)+'\n');
-  console.log(JSON.stringify({checks:receipt.checks.length,vertices:receipt.vertices,triangles:receipt.triangles,browser:receipt.browser,wasmSha256:receipt.wasmSha256,output}));
-}finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));}
+import {startServer,output,saveReceipt,verifyBinding} from './browser-support.mjs';
+const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright');
+const server=await startServer();let browser;
+const checks=[];const check=(condition,label)=>{assert.ok(condition,label);checks.push(label);};
+try{
+ browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM||'/usr/bin/chromium'});
+ const page=await browser.newPage({viewport:{width:1440,height:900},deviceScaleFactor:1});
+ const errors=[],requests=[];page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>requests.push(r.url()));
+ await page.goto(`${server.url}/embed.html`);
+ const frame=page.frames().find(f=>f.url().endsWith('/preview/index.html'));check(frame,'static subpath iframe embedding');
+ await frame.waitForFunction(()=>window.simpleGraphEditor?.ready===true);
+ await frame.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
+ checks.push(...await verifyBinding(frame));
+ const snapshot=()=>frame.evaluate(()=>window.simpleGraphEditor.model.state);
+ const selected=state=>state.characters.find(c=>c.id===state.selectedId);
+ async function setInput(id,value){await frame.locator('#'+id).evaluate((el,value)=>{el.value=String(value);el.dispatchEvent(new Event('input',{bubbles:true}));el.dispatchEvent(new Event('change',{bubbles:true}));},value);}
+ async function drag(key,dx,dy){
+  await frame.locator('#handle').selectOption(key);
+  const p=await frame.evaluate(key=>window.simpleGraphEditor.renderer.projectHandle(key),key);
+  assert.ok(p&&p.x>0&&p.x<1440&&p.y>50&&p.y<820,`visible handle ${key}: ${JSON.stringify(p)}`);
+  await page.mouse.move(p.x,p.y);await page.mouse.down();await page.mouse.move(p.x+dx,p.y+dy,{steps:12});await page.mouse.up();
+ }
+ const initial=await snapshot();const firstId=initial.selectedId;
+ const viewport=await frame.locator('#viewport').boundingBox();check(viewport.height>700,'desktop viewport-first layout');
+ const rendering=await frame.evaluate(()=>{const r=window.simpleGraphEditor.renderer,i=r.characters.values().next().value;return {webgl:!!r.webgl.getContext().getParameter(r.webgl.getContext().VERSION),depth:i.body.material.depthTest,grid:r.grid.type==='GridHelper',head:i.head.children.length,calls:r.webgl.info.render.calls};});
+ check(rendering.webgl&&rendering.depth&&rendering.calls>0,'real depth-tested WebGL rendering');check(rendering.grid,'grid floor');check(rendering.head>=6,'directional head has distinct facial/back geometry');
+ // Locate the real X-axis picker by hovering, then test constrained movement
+ // and Escape snapshot restoration rather than invoking a model action.
+ await frame.locator('#handle').selectOption('rightArm:target');
+ const center=await frame.evaluate(()=>window.simpleGraphEditor.renderer.projectHandle('rightArm:target'));
+ let axisPoint;
+ for(let x=20;x<100&&!axisPoint;x+=10)for(let y=-70;y<70&&!axisPoint;y+=10){
+   await page.mouse.move(center.x+x,center.y+y);
+   if(await frame.evaluate(()=>window.simpleGraphEditor.renderer.gizmo.axis)==='X')axisPoint={x:center.x+x,y:center.y+y};
+ }
+ check(axisPoint,'axis gizmo is pickable');
+ const axisBefore=await snapshot(),undoBefore=await frame.evaluate(()=>window.simpleGraphEditor.model.canUndo);
+ await page.mouse.down();
+ check(await frame.evaluate(()=>!window.simpleGraphEditor.renderer.drag&&window.simpleGraphEditor.renderer.gizmo.dragging),'real axis drag starts');
+ await page.mouse.move(axisPoint.x+40,axisPoint.y,{steps:10});
+ const constrained=selected(await snapshot()).rig.rightArm.target,prior=selected(axisBefore).rig.rightArm.target;
+ check(Math.abs(constrained[0]-prior[0])>1e-4&&Math.abs(constrained[1]-prior[1])<1e-7&&Math.abs(constrained[2]-prior[2])<1e-7,'axis gizmo constrains movement');
+ await page.keyboard.press('Escape');await page.mouse.up();
+ check(JSON.stringify(await snapshot())===JSON.stringify(axisBefore)&&(await frame.evaluate(()=>window.simpleGraphEditor.model.canUndo))===undoBefore,'Escape cancels axis drag without pose or history changes');
+ await drag('rightArm:target',-45,30);
+ let posed=await snapshot();check(JSON.stringify(selected(posed).graph)!==JSON.stringify(selected(initial).graph),'real hand IK handle drag changes pose');
+ const afterHand=structuredClone(posed);
+ await page.keyboard.press('Control+z');check(JSON.stringify((await snapshot()).characters)===JSON.stringify(initial.characters),'keyboard undo groups full handle drag');
+ await page.keyboard.press('Control+Shift+z');check(JSON.stringify((await snapshot()).characters)===JSON.stringify(afterHand.characters),'keyboard redo restores pose');
+ for(const [key,dx,dy]of [['rightArm:pole',35,25],['rightLeg:target',28,-30],['rightLeg:pole',25,-20],['leftArm:target',30,20],['leftLeg:target',-20,-18]]){
+   const before=selected(await snapshot());await drag(key,dx,dy);const after=selected(await snapshot());const [limb,kind]=key.split(':');check(JSON.stringify(before.rig[limb][kind])!==JSON.stringify(after.rig[limb][kind]),`real ${key} drag`);
+ }
+ const lengths=await frame.evaluate(()=>{const {model,sample}=window.simpleGraphEditor;const graph=model.state.characters[0].graph;return sample.graph.edges.map(e=>{const length=g=>Math.hypot(...g.nodes[e.a].position.map((v,i)=>v-g.nodes[e.b].position[i]));return Math.abs(length(graph)-length(sample.graph));});});
+ check(Math.max(...lengths)<1e-6,'all graph edge lengths preserved by IK');
+ const beforeRoot=selected(await snapshot()).position;await drag('root',-45,10);check(JSON.stringify(selected(await snapshot()).position)!==JSON.stringify(beforeRoot),'root handle moves character in 3D');
+ await setInput('yaw',35);await setInput('headYaw',55);await setInput('headPitch',-15);
+ const head=await frame.evaluate(()=>{const e=window.simpleGraphEditor,c=e.model.state.characters[0],h=e.renderer.characters.get(c.id).head;return {state:c.head,rotation:h.rotation.toArray().slice(0,3)};});
+ check(Math.abs(head.state.yaw-55*Math.PI/180)<1e-8&&Math.abs(head.rotation[1]-head.state.yaw)<1e-8,'head facing control changes rendered orientation');
+ await setInput('color','#de8a62');const firstBeforeAdd=selected(await snapshot());
+ await frame.locator('#add').click();let multi=await snapshot();const secondId=multi.selectedId;check(multi.characters.length===2&&secondId!==firstId,'add independent second character');
+ await setInput('color','#8299e8');await setInput('headYaw',-40);
+ check(JSON.stringify((await snapshot()).characters.find(c=>c.id===firstId))===JSON.stringify(firstBeforeAdd),'pose placement head and color isolated between characters');
+ const materialColors=await frame.evaluate(()=>[...window.simpleGraphEditor.renderer.characters.values()].map(i=>i.material.color.getHexString()));check(materialColors.includes('de8a62')&&materialColors.includes('8299e8'),'independent rendered colors');
+ await frame.locator('#character').selectOption(firstId);check((await snapshot()).selectedId===firstId,'character selector');
+ // Pick the other character's head through the actual canvas raycaster.
+ const headPoint=await frame.evaluate(id=>{const r=window.simpleGraphEditor.renderer,h=r.characters.get(id).head;h.updateWorldMatrix(true,false);const p=h.getWorldPosition(h.position.clone()).project(r.camera),b=r.webgl.domElement.getBoundingClientRect();return {x:b.left+(p.x+1)*b.width/2,y:b.top+(1-p.y)*b.height/2};},secondId);
+ await page.mouse.click(headPoint.x,headPoint.y);check((await snapshot()).selectedId===secondId,'3D mesh picking selects character');
+ await page.keyboard.press('Delete');check((await snapshot()).characters.length===1,'keyboard character removal');
+ await page.keyboard.press('Control+z');check((await snapshot()).characters.length===2,'undo restores removed character and its state');
+ await frame.locator('#remove').click();check((await snapshot()).characters.length===1,'remove button');await frame.locator('#undo').click();
+ const cameraBefore=await frame.evaluate(()=>window.simpleGraphEditor.renderer.camera.position.toArray());
+ const box=await frame.locator('canvas').boundingBox();await page.mouse.move(box.x+40,box.y+50);await page.mouse.down();await page.mouse.move(box.x+140,box.y+80,{steps:10});await page.mouse.up();await page.waitForTimeout(200);
+ const cameraAfter=await frame.evaluate(()=>window.simpleGraphEditor.renderer.camera.position.toArray());check(JSON.stringify(cameraBefore)!==JSON.stringify(cameraAfter),'camera orbit interaction');
+ await page.mouse.wheel(0,-180);await page.waitForTimeout(200);check(JSON.stringify(await frame.evaluate(()=>window.simpleGraphEditor.renderer.camera.position.toArray()))!==JSON.stringify(cameraAfter),'camera zoom interaction');
+ const panBefore=await frame.evaluate(()=>window.simpleGraphEditor.renderer.controls.target.toArray());
+ await page.mouse.move(box.x+40,box.y+60);await page.mouse.down({button:'right'});await page.mouse.move(box.x+80,box.y+80,{steps:8});await page.mouse.up({button:'right'});await page.waitForTimeout(150);
+ check(JSON.stringify(await frame.evaluate(()=>window.simpleGraphEditor.renderer.controls.target.toArray()))!==JSON.stringify(panBefore),'camera pan interaction');
+ await frame.locator('#frame').click();
+ // Exercise exact singular/unreachable inputs in the browser's headless model;
+ // pointer-driven behavior above separately proves real handle interactions.
+ const edgeCases=await frame.evaluate(()=>{const e=window.simpleGraphEditor,id=e.model.state.selectedId;const before=e.model.state;const root=before.characters.find(c=>c.id===id).graph.nodes[4].position;const statuses=[];e.model.beginGesture();for(const target of [root,[100,100,100]]){e.model.dispatch({type:'ik',id,limb:'rightArm',target,pole:root});e.update();const c=e.model.state.characters.find(c=>c.id===id);if(!c.graph.nodes.every(n=>n.position.every(Number.isFinite)))throw Error('nonfinite IK');statuses.push(c.rig.rightArm.status);}e.model.cancelGesture();e.update();return statuses;});
+ check(edgeCases.includes('clamped-near')&&edgeCases.includes('clamped-far'),'browser singular and unreachable targets remain finite and bounded');
+ await frame.locator('#handle').selectOption('rightArm:target');
+ await page.screenshot({path:path.join(output,'kenoma-scene-editor-desktop.png')});
+ const scene=await snapshot();
+ // Phone layout and touch handle interaction.
+ const phone=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:1,isMobile:true,hasTouch:true});phone.on('pageerror',e=>errors.push(e.message));
+ await phone.goto(`${server.url}/preview/index.html`);await phone.waitForFunction(()=>window.simpleGraphEditor?.ready);
+ const phoneLayout=await phone.evaluate(()=>({scroll:document.documentElement.scrollWidth,width:innerWidth,viewport:document.querySelector('#viewport').getBoundingClientRect().height,app:document.querySelector('#app').getBoundingClientRect().height}));
+ check(phoneLayout.scroll<=390&&phoneLayout.viewport>480&&phoneLayout.app<=844,'phone layout keeps viewport without page overflow');
+ const session=await phone.context().newCDPSession(phone);
+ await phone.locator('#handle').selectOption('root');
+ const phoneAxisBefore=await phone.evaluate(()=>window.simpleGraphEditor.model.state);
+ const rootPoint=await phone.evaluate(()=>window.simpleGraphEditor.renderer.projectHandle('root'));
+ const axisTouch={id:11,x:rootPoint.x+20,y:rootPoint.y};
+ await session.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[axisTouch]});
+ check(await phone.evaluate(()=>window.simpleGraphEditor.renderer.gizmo.dragging),'phone axis drag starts');
+ await session.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[axisTouch,{id:12,x:rootPoint.x,y:rootPoint.y}]});
+ await session.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[axisTouch,{id:12,x:rootPoint.x+10,y:rootPoint.y+10}]});
+ check(JSON.stringify(await phone.evaluate(()=>window.simpleGraphEditor.model.state))===JSON.stringify(phoneAxisBefore),'second touch cannot change axis-owned pose');
+ await session.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[{id:12,x:rootPoint.x+10,y:rootPoint.y+10}]});
+ check(await phone.evaluate(()=>window.simpleGraphEditor.renderer.gizmo.dragging),'second touch release preserves axis drag');
+ await session.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{...axisTouch,x:axisTouch.x+25}]});
+ await session.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+ check(JSON.stringify(await phone.evaluate(()=>window.simpleGraphEditor.model.state.characters[0].position))!==JSON.stringify(phoneAxisBefore.characters[0].position),'owner touch moves constrained root');
+ await phone.locator('#undo').click();
+ check(JSON.stringify(await phone.evaluate(()=>window.simpleGraphEditor.model.state))===JSON.stringify(phoneAxisBefore),'phone axis gesture undo is exact');
+ await phone.locator('#handle').selectOption('rightArm:target');
+ const touchPoint=await phone.evaluate(()=>window.simpleGraphEditor.renderer.projectHandle('rightArm:target'));
+ const phoneBefore=await phone.evaluate(()=>window.simpleGraphEditor.model.state.characters[0].rig.rightArm.target);
+ await session.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{id:1,x:touchPoint.x,y:touchPoint.y}]});
+ await session.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{id:1,x:touchPoint.x,y:touchPoint.y},{id:2,x:touchPoint.x+2,y:touchPoint.y+2}]});
+ await session.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{id:1,x:touchPoint.x,y:touchPoint.y},{id:2,x:touchPoint.x+25,y:touchPoint.y+25}]});
+ check(JSON.stringify(await phone.evaluate(()=>window.simpleGraphEditor.model.state.characters[0].rig.rightArm.target))===JSON.stringify(phoneBefore),'second touch cannot move owner handle');
+ await session.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[{id:2,x:touchPoint.x+25,y:touchPoint.y+25}]});
+ check(await phone.evaluate(()=>window.simpleGraphEditor.renderer.drag!==null),'second touch release preserves owner drag');
+ for(let i=1;i<=8;i++)await session.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{id:1,x:touchPoint.x-i*2,y:touchPoint.y+i*2}]});
+ await session.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+ check(JSON.stringify(await phone.evaluate(()=>window.simpleGraphEditor.model.state.characters[0].rig.rightArm.target))!==JSON.stringify(phoneBefore),'phone touch drags IK handle');
+ await phone.locator('#add').click();check(await phone.locator('#character option').count()===2,'phone add character');
+ await phone.locator('#character').selectOption('character-1');await phone.locator('#remove').click();check(await phone.locator('#character option').count()===1,'phone select/remove character');await phone.locator('#undo').click();
+ await phone.screenshot({path:path.join(output,'kenoma-scene-editor-phone.png')});
+ check(errors.length===0,`no browser exceptions: ${errors.join('; ')}`);
+ check(requests.some(url=>url.endsWith('human_wasm_bg.wasm'))&&requests.every(url=>url.startsWith(server.url)),'actual WASM and local-only runtime requests');
+ const receipt=await saveReceipt(browser,{checks,scene,phoneLayout,desktop:{width:1440,height:900},phone:{width:390,height:844},kinematics:'Analytic two-bone IK, no forces or simulation',screenshots:['kenoma-scene-editor-desktop.png','kenoma-scene-editor-phone.png']});
+ console.log(JSON.stringify({checks:checks.length,browser:receipt.browser,output,phoneLayout}));
+}finally{if(browser)await browser.close();await server.close();}

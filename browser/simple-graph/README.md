@@ -1,8 +1,53 @@
-# Portable simple graph browser binding
+# Simple posing scene editor and portable binding
 
-This is an independent static demo and JavaScript adapter for `human_core`, not
-Kenoma/Rheon's final shared GUI. No solver, simulation, SQLite, CDN or rendering
-framework is imported. `human_wasm` compiles the same tested core to WASM.
+This independent, non-simulation scene editor uses a depth-tested Three.js
+viewport and the existing Rust/WASM graph generator. It supports multiple
+characters, hand/foot IK targets, elbow/knee pole targets, root placement,
+character turn, directional head yaw/pitch, per-character colors and undo/redo.
+It does not import any research solver or SQLite. The wider shared GUI host
+remains undecided; this editor can be served by either repository.
+
+## Posing and scene controls
+
+Drag round hand/foot targets to pose a limb; diamond poles control its bend
+plane. Select a control from **Handle** when it is hidden behind another control.
+A selected handle also has axis arrows for movement at fixed world X/Y/Z.
+Direct dragging uses the camera plane. Drag **Root** to move the whole character;
+**Turn** rotates it. **Head turn/tilt** orient the stylized head independently.
+The eyes, nose and dark back make its facing direction visible.
+
+**+ Character**, character selection (dropdown or mesh picking), **Remove**, and
+the color swatch operate independently per character. New characters use free
+floor slots. Drag empty space to orbit, right-drag to pan, scroll to zoom; touch
+supports handle dragging, orbit and two-finger camera gestures. **Frame** fits
+the scene. **F** frames, **Delete** removes, **Ctrl/⌘ Z** undoes,
+**Ctrl/⌘ Shift Z** redoes, and **Escape** cancels a drag. Help stays collapsed.
+
+Edits are held in memory, with a 100-entry undo history; reloading the page loses
+the scene. Scene save/import and animation are not implemented. Body geometry
+retains the core's overlapping tube/hub topology. The renderer hides the original
+head-edge surface and draws a presentation-only stylized head. It is not an
+anatomical model, skin simulation or a new core mesh asset.
+
+## Headless kinematics and scene state
+
+`rig.js` exports `solveTwoBone({root,joint,end,target,pole})` and `LIMBS`.
+The analytic solver preserves both segment lengths and returns `{joint,end,
+target,status}`. Status is `reachable`, `clamped-near` or `clamped-far`. Requested
+unreachable handles remain where placed while the solved endpoint clamps to the
+reach annulus. Collinear poles use the original bend plane, then a deterministic
+perpendicular. This prevents NaNs; it does not promise continuity across an
+exactly singular bend-plane switch. There are no joint limits, forces or physics.
+
+`scene-state.js` exports `SceneModel(baseGraph)` for the canonical 16-node human.
+Its frozen `state` snapshot contains version, characters, selectedId and nextId.
+Characters own graph, rig, color, placement/yaw and head yaw/pitch. Graphs and rig
+targets use local coordinates; the renderer applies placement and yaw to world
+space. Actions (`dispatch`) are add/select/remove/color/placement/head/ik.
+`beginGesture/commitGesture/cancelGesture` group atomic drag edits; `undo/redo`
+restore snapshots. Selection alone does not create history. IDs never recycle.
+The model solves from immutable rest lengths, rather than accumulating drift.
+It is testable with Node and has no Three.js, browser, WASM or physics dependency.
 
 ## Build and serve
 
@@ -16,15 +61,15 @@ browser/simple-graph/build.sh
 python3 -m http.server 8000 --directory browser/simple-graph
 ```
 
-Open `http://localhost:8000/`. `pkg/` is generated and ignored; retain it when
-copying the demo to a static site. Serve over HTTP(S), with `.js` as JavaScript
+Open `http://localhost:8000/`. `pkg/` is generated and ignored; retain it and `vendor/` when
+copying the editor to a static site. Serve over HTTP(S), with `.js` as JavaScript
 and `.wasm` preferably as `application/wasm`. Relative imports work under a
 GitHub Pages project subpath. No cross-origin-isolation headers or server API
 are needed. An ordinary iframe can embed `index.html`; no parent messaging is
 implemented. This task does not publish or select a hosting repository.
 
 For a custom host, copy `client.js`, `client.d.ts` and generated `pkg/` together;
-the demo HTML/renderer is optional. Keep glue and WASM files from the same build.
+the editor HTML/renderer and headless rig modules are optional. Keep glue and WASM files from the same build.
 
 ```js
 import {createSimpleGraph} from './simple-graph/client.js';
@@ -66,28 +111,33 @@ this first portable boundary; typed-array/zero-copy performance work is deferred
 Determinism means repeated identical ordered input on the same platform, not
 bit-identical native/browser trigonometry across all platforms.
 
-## Actual browser verification
+## Dependencies and verification
 
-`tests/browser.mjs` starts its own local static server and embeds the demo under
-`/preview/` in an iframe. It checks actual WASM fetch/initialization, source and
-mesh counts, repeated generation, elbow isolation, edge lengths, finite buffers,
-unit normals, failed batch rollback, non-finite/cyclic inputs, portable integer
-bounds, slider/reset interactions, visible rendered pixels and browser errors.
-It also checks that no external runtime requests occurred.
+Three.js 0.180.0 is independently pinned in package-lock.json and vendored under
+`vendor/`, including its MIT license, for offline static serving. To refresh the
+same pinned vendor files, run `npm ci` here and copy `build/three.module.js`,
+`build/three.core.js`, `examples/jsm/controls/OrbitControls.js`,
+`examples/jsm/controls/TransformControls.js` and `LICENSE` from node_modules/three.
+There is no commercial rigging package, CDN runtime or research dependency.
 
-Use an installed Playwright package (tested with playwright-core 1.57.0) and
-Chromium, then run:
+From the repository root:
 
 ```sh
+node --test browser/simple-graph/tests/rig.test.mjs browser/simple-graph/tests/scene.test.mjs
 PLAYWRIGHT_MODULE=/absolute/path/to/playwright-core/index.mjs \
 CHROMIUM=/usr/bin/chromium node browser/simple-graph/tests/browser.mjs
 ```
 
-Without `PLAYWRIGHT_MODULE`, it imports `playwright` from normal Node resolution.
-Output is ignored `test-output/kenoma-wasm-mannequin.png` plus a JSON receipt
-containing source commit/dirty status, browser version, WASM SHA-256, posed-mesh
-SHA-256 and the exact source/posed graphs. The screenshot renders actual generated
-triangles with a graph overlay. The small Canvas painter renderer has no true
-depth buffer and is a demonstration, not a final viewport or geometric proof.
-Native tests independently check topology/winding. WASM compilation and browser
-execution are separate verification steps.
+The tests use Playwright (tested with playwright-core 1.57.0) and Chromium. If
+PLAYWRIGHT_MODULE is omitted, normal Node resolution imports `playwright`.
+The browser suite starts its own local server and tests iframe/subpath embedding,
+real WebGL, actual handle/gizmo dragging, scene isolation, picking, colors,
+head direction, camera controls, keyboard history, cancellation, unreachable
+inputs and phone/touch behavior. The original WASM contract remains tested too.
+
+Ignored `test-output/` contains desktop and phone screenshots plus
+`scene-editor-verification.json` with commit/dirty status, exact scene, browser
+version, WASM hash and checks. Captures render actual WASM body buffers with
+Three.js head geometry; no generated-image substitute is used. Native core tests
+still independently establish body winding/topology. Browser screenshots are
+visual evidence, not numerical proofs.

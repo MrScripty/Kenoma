@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "three": "0.180.0"
+  },
+  "scripts": {
+    "build": "./build.sh",
+    "test": "node --test tests/rig.test.mjs tests/scene.test.mjs",
+    "test:browser": "node tests/browser.mjs"
+  }
+}
