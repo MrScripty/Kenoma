@@ -1,4 +1,5 @@
 //! Versioned, host-independent WASM/JSON adapter for the simple graph core.
+mod rig_protocol;
 use human_core::*;
 use human_surface::{generate_mannequin_surface, HeadPose, SurfaceOptions};
 use serde::{Deserialize, Serialize};
@@ -18,6 +19,22 @@ struct Request {
 #[serde(tag = "type", rename_all = "snake_case", deny_unknown_fields)]
 enum Operation {
     Mannequin,
+    RigBind {
+        rig_version: u32,
+        #[serde(default)]
+        surface_options: SurfaceOptions,
+    },
+    RigDeform {
+        rig_version: u32,
+        rig_id: u32,
+        graph: SkinGraph,
+        #[serde(default)]
+        head: HeadPose,
+    },
+    RigRelease {
+        rig_version: u32,
+        rig_id: u32,
+    },
     Surface {
         graph: SkinGraph,
         #[serde(default)]
@@ -135,6 +152,20 @@ pub fn evaluate(request_json: &str) -> String {
         return failure("unsupported_version", "Expected protocol version 1");
     }
     let (mut graph, options, commands, surface) = match request.operation {
+        Operation::RigBind {
+            rig_version,
+            surface_options,
+        } => return rig_protocol::bind(rig_version, surface_options),
+        Operation::RigDeform {
+            rig_version,
+            rig_id,
+            graph,
+            head,
+        } => return rig_protocol::deform(rig_version, rig_id, graph, head),
+        Operation::RigRelease {
+            rig_version,
+            rig_id,
+        } => return rig_protocol::release(rig_version, rig_id),
         Operation::Mannequin => (
             mannequin(),
             SkinGraphGenerateOptions::default(),

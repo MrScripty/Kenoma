@@ -33,7 +33,7 @@ function validateValue(root) {
 export async function createSimpleGraph({wasmUrl} = {}) {
   await init(wasmUrl ? {module_or_path: wasmUrl} : undefined);
   return Object.freeze({
-    /** Pure request/response. An error never returns a partially edited graph. */
+    /** Versioned request/response. Rig handles are local to this WASM instance; graph errors never return partial edits. */
     request(value) {
       let encoded;
       try {

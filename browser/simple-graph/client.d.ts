@@ -42,3 +42,18 @@ export type Response = {version: 1; ok: true; graph: SkinGraph; options: Options
 export interface SimpleGraph {request(value: Request): Response}
 /** Initialization may reject on a fetch/compilation error; requests return envelopes. */
 export function createSimpleGraph(options?: {wasmUrl?: string | URL}): Promise<SimpleGraph>;
+
+/** Additive rig-v1 API. Handles belong to a single initialized WASM instance.
+ * Bind once in neutral pose; deformation preserves rest indices and vertex IDs.
+ * Release unused handles. The legacy Request/Response contracts are unchanged.
+ */
+export type RigBindRequest = {version: 1; operation: {type: 'rig_bind'; rig_version: 1; surface_options?: SurfaceOptions}};
+export type RigDeformRequest = {version: 1; operation: {type: 'rig_deform'; rig_version: 1; rig_id: number; graph: SkinGraph; head?: HeadPose}};
+export type RigReleaseRequest = {version: 1; operation: {type: 'rig_release'; rig_version: 1; rig_id: number}};
+export type RigFailure = {version: 1; ok: false; error: {code: ErrorCode | 'invalid_rig' | 'unknown_rig' | 'unsupported_rig_version'; message: string}};
+export type RigMeshResponse = {version: 1; ok: true; rig_version: 1; rig_id: number; graph: SkinGraph; head: HeadPose; options: Options; mesh: Mesh} | RigFailure;
+export type RigReleaseResponse = {version: 1; ok: true; rig_version: 1; rig_id: number; released: true} | RigFailure;
+export interface SimpleGraph {
+  request(value: RigBindRequest | RigDeformRequest): RigMeshResponse;
+  request(value: RigReleaseRequest): RigReleaseResponse;
+}

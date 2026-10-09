@@ -17,5 +17,6 @@ try{
  $('undo').onclick=()=>run(()=>model.undo());$('redo').onclick=()=>run(()=>model.redo());$('frame').onclick=()=>renderer.frame();
  for(const [id,type,field]of [['color','color','color']]){const input=$(id);input.addEventListener('pointerdown',()=>model.beginGesture());input.addEventListener('input',()=>run(()=>model.dispatch({type,id:model.state.selectedId,[field]:input.value})));input.addEventListener('change',()=>run(()=>model.commitGesture()));input.addEventListener('pointerup',()=>run(()=>model.commitGesture()));input.addEventListener('blur',()=>run(()=>model.commitGesture()));}
  document.addEventListener('keydown',e=>{if(e.key==='Escape'){renderer.cancelDrag();$('help').open=false;return;}if(/INPUT|SELECT|TEXTAREA/.test(e.target.tagName))return;if(e.target===renderer.webgl.domElement&&e.key.startsWith('Arrow')){e.preventDefault();run(()=>renderer.nudge(e.key,e));return;}if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'){e.preventDefault();run(()=>e.shiftKey?model.redo():model.undo());}else if(e.key==='Delete'||e.key==='Backspace'){e.preventDefault();if(model.state.selectedId)run(()=>model.dispatch({type:'remove',id:model.state.selectedId}));}else if(e.key.toLowerCase()==='f')renderer.frame();});
- window.simpleGraphEditor={client,sample,model,renderer,update,ready:true};
+ window.simpleGraphEditor={client,sample,model,renderer,update,ready:false};
+ await renderer.whenIdle();renderer.frame();window.simpleGraphEditor.ready=true;
 }catch(e){error(e);}

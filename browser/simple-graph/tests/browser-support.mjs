@@ -28,7 +28,7 @@ export async function startServer(){
   return {url:`http://127.0.0.1:${server.address().port}`,close:()=>new Promise(resolve=>server.close(resolve))};
 }
 export async function saveReceipt(browser,data){
-  const receipt={...data,browser:await browser.version(),wasmSha256:hash(await readFile(path.join(root,'pkg/human_wasm_bg.wasm'))),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),sourceDirty:execFileSync('git',['status','--porcelain'],{cwd:root,encoding:'utf8'}).trim()!=='',capturedAt:new Date().toISOString(),renderer:'Three.js WebGL depth-tested scene; single welded WASM body/head surface per character; scene rotation gizmos'};
+  const receipt={...data,browser:await browser.version(),wasmSha256:hash(await readFile(path.join(root,'pkg/human_wasm_bg.wasm'))),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),sourceDirty:execFileSync('git',['status','--porcelain'],{cwd:root,encoding:'utf8'}).trim()!=='',capturedAt:new Date().toISOString(),renderer:'Three.js WebGL depth-tested scene; fixed connected rest mesh with worker-driven rig-v1 deformation; scene rotation gizmos'};
   await writeFile(path.join(output,'scene-editor-verification.json'),JSON.stringify(receipt,null,2)+'\n');
   return receipt;
 }

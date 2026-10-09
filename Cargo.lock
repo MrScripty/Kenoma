@@ -102,6 +102,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "human_rig"
+version = "0.1.0"
+dependencies = [
+ "glam",
+ "human_core",
+ "human_surface",
+ "serde",
+ "serde_json",
+ "thiserror",
+]
+
+[[package]]
 name = "human_surface"
 version = "0.1.0"
 dependencies = [
@@ -116,6 +128,7 @@ name = "human_wasm"
 version = "0.1.0"
 dependencies = [
  "human_core",
+ "human_rig",
  "human_surface",
  "serde",
  "serde_json",

@@ -23,7 +23,12 @@ the scene. **F** frames, **Delete** removes, **Ctrl/⌘ Z** undoes,
 **Ctrl/⌘ Shift Z** redoes, and **Escape** cancels a drag. Help stays collapsed.
 
 Edits are held in memory, with a 100-entry undo history; reloading the page loses
-the scene. Scene save/import and animation are not implemented. The `human_surface` crate generates one welded continuous body/head surface with gradient normals. It is a non-anatomical mannequin, without physics. Topology regenerates with the pose; vertex IDs are not stable. Smooth unions can fuse self-contacting limbs and create handles. The default 0.016 m grid trades detail for bounded generation cost; requests are synchronous, so regeneration can pause interaction on slower devices. Root placement and color changes reuse geometry.
+the scene. Scene save/import and animation are not implemented. The `human_surface` crate creates the neutral connected body/head surface once;
+`human_rig` binds it and deforms fixed topology as the pose changes. Touching or
+crossed limbs retain their vertices and cannot fuse. Contact may interpenetrate:
+this is an artistic rig without collision simulation. A dedicated worker performs
+binding/deformation; handles update immediately while the latest mesh catches up.
+See [rig API version1](RIG_API.md) for the additive consumer contract and limits.
 
 ## Headless kinematics and scene state
 
@@ -96,13 +101,13 @@ pose rules are the existing `human_core` contract. IDs/counts are unsigned
 requests over 2 MiB before parsing; core resource/geometry limits also apply.
 The JS facade accepts plain JSON values and rejects non-finite numbers,
 accessors, cyclic/repeated object references and undefined values. Numbers are
-validated again by Rust. No physics or animation loop runs in the binding.
+validated again by Rust. No physics loop runs in the binding. The additive rig operations retain explicit instance-local handles; see [rig API version1](RIG_API.md).
 
 Operation errors use `{version:1, ok:false, error:{code,message}}`; code is the
 stable discriminator, message is explanatory. Success uses `ok:true` with
 `graph`, `options`, `mesh`. Calls are synchronous after async initialization;
 for large graphs, a host can initialize the same adapter in a module Worker.
-Worker integration itself is not tested here. JSON copies are intentional for
+The editor worker integration is tested with real browser interactions and stale-result lifecycle cases. JSON copies are intentional for
 this first portable boundary; typed-array/zero-copy performance work is deferred.
 Determinism means repeated identical ordered input on the same platform, not
 bit-identical native/browser trigonometry across all platforms.

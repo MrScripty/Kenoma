@@ -145,3 +145,96 @@ fn connected_surface_contract_matches_native() -> Result<(), Box<dyn std::error:
     assert!(bad.get("mesh").is_none());
     Ok(())
 }
+
+#[test]
+fn rig_handles_are_versioned_reusable_and_released() -> Result<(), Box<dyn std::error::Error>> {
+    let bound = call(
+        json!({"version":1,"operation":{"type":"rig_bind","rig_version":1,"surface_options":{"cell_size":0.028}}}),
+    )?;
+    assert_eq!(bound.get("ok"), Some(&json!(true)));
+    let id = bound.get("rig_id").ok_or("missing rig_id")?;
+    let mut graph = mannequin();
+    apply_graph_command(
+        &mut graph,
+        &GraphCommand::RotateBranch {
+            pivot: 4,
+            child: 5,
+            axis: Vec3::Y,
+            radians: 1.2,
+        },
+    )?;
+    let request = json!({"version":1,"operation":{"type":"rig_deform","rig_version":1,"rig_id":id,"graph":graph,"head":{"yaw":0.3,"pitch":0.1}}});
+    let posed = call(request.clone())?;
+    assert_eq!(posed.get("ok"), Some(&json!(true)));
+    assert_eq!(
+        posed.pointer("/mesh/indices"),
+        bound.pointer("/mesh/indices")
+    );
+    assert_ne!(
+        posed.pointer("/mesh/positions"),
+        bound.pointer("/mesh/positions")
+    );
+    assert_eq!(posed, call(request.clone())?);
+    let bad = call(
+        json!({"version":1,"operation":{"type":"rig_deform","rig_version":2,"rig_id":id,"graph":graph}}),
+    )?;
+    assert_eq!(
+        bad.pointer("/error/code"),
+        Some(&json!("unsupported_rig_version"))
+    );
+    let mut malformed = graph.clone();
+    malformed.edges.pop();
+    let bad = call(
+        json!({"version":1,"operation":{"type":"rig_deform","rig_version":1,"rig_id":id,"graph":malformed}}),
+    )?;
+    assert_eq!(bad.pointer("/error/code"), Some(&json!("invalid_rig")));
+    assert_eq!(posed, call(request.clone())?);
+    let released =
+        call(json!({"version":1,"operation":{"type":"rig_release","rig_version":1,"rig_id":id}}))?;
+    assert_eq!(released.get("released"), Some(&json!(true)));
+    assert_eq!(
+        call(request)?.pointer("/error/code"),
+        Some(&json!("unknown_rig"))
+    );
+    Ok(())
+}
+
+#[test]
+fn rig_registry_budget_and_monotonic_ids() -> Result<(), Box<dyn std::error::Error>> {
+    let mut ids = Vec::new();
+    for _ in 0..16 {
+        let r = call(
+            json!({"version":1,"operation":{"type":"rig_bind","rig_version":1,"surface_options":{"cell_size":0.028}}}),
+        )?;
+        assert_eq!(r.get("ok"), Some(&json!(true)));
+        ids.push(
+            r.get("rig_id")
+                .and_then(Value::as_u64)
+                .ok_or("missing id")?,
+        );
+    }
+    let denied = call(json!({"version":1,"operation":{"type":"rig_bind","rig_version":1}}))?;
+    assert_eq!(
+        denied.pointer("/error/code"),
+        Some(&json!("resource_limit"))
+    );
+    for id in &ids {
+        assert_eq!(
+            call(
+                json!({"version":1,"operation":{"type":"rig_release","rig_version":1,"rig_id":id}})
+            )?
+            .get("ok"),
+            Some(&json!(true))
+        );
+    }
+    let r = call(
+        json!({"version":1,"operation":{"type":"rig_bind","rig_version":1,"surface_options":{"cell_size":0.028}}}),
+    )?;
+    let id = r
+        .get("rig_id")
+        .and_then(Value::as_u64)
+        .ok_or("missing id")?;
+    assert!(ids.iter().all(|old| id > *old));
+    call(json!({"version":1,"operation":{"type":"rig_release","rig_version":1,"rig_id":id}}))?;
+    Ok(())
+}

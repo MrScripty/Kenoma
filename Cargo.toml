@@ -1,5 +1,5 @@
 [workspace]
-members = ["crates/human_core", "crates/human_persistence", "crates/human_wasm", "crates/human_surface"]
+members = ["crates/human_core", "crates/human_persistence", "crates/human_wasm", "crates/human_surface", "crates/human_rig"]
 resolver = "2"
 
 [workspace.package]

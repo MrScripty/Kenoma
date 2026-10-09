@@ -6,7 +6,8 @@
   },
   "scripts": {
     "build": "./build.sh",
-    "test": "node --test tests/rig.test.mjs tests/scene.test.mjs",
-    "test:browser": "node tests/browser.mjs"
+    "test": "node --test tests/rig.test.mjs tests/scene.test.mjs tests/rig-bridge.test.mjs",
+    "test:browser": "node tests/browser.mjs",
+    "test:rig-browser": "node tests/rig-browser.mjs"
   }
 }

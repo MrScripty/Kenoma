@@ -14,6 +14,7 @@ try{
  await frame.waitForFunction(()=>window.simpleGraphEditor?.ready===true);
  await frame.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
  checks.push(...await verifyBinding(frame));
+ const idle=context=>context.evaluate(()=>window.simpleGraphEditor.renderer.whenIdle());
  const snapshot=()=>frame.evaluate(()=>window.simpleGraphEditor.model.state);
  const selected=state=>state.characters.find(c=>c.id===state.selectedId);
  async function setInput(id,value){await frame.locator('#'+id).evaluate((el,value)=>{el.value=String(value);el.dispatchEvent(new Event('input',{bubbles:true}));el.dispatchEvent(new Event('change',{bubbles:true}));},value);}
@@ -31,10 +32,11 @@ try{
  async function rotate(key,axis,dx,dy){const point=await ringPoint(frame,key,axis);check(point,`${key} ${axis} rotation ring is pickable`);await page.mouse.move(point.x,point.y);await page.mouse.down();check(await frame.evaluate(()=>window.simpleGraphEditor.renderer.gizmo.dragging&&!window.simpleGraphEditor.renderer.drag),'rotation gizmo owns pointer');await page.mouse.move(point.x+dx,point.y+dy,{steps:3});await page.mouse.up();}
  const initial=await snapshot();const firstId=initial.selectedId;
  const viewport=await frame.locator('#viewport').boundingBox();check(viewport.height>700,'desktop viewport-first layout');
+ await idle(frame);
  const rendering=await frame.evaluate(()=>{const r=window.simpleGraphEditor.renderer,i=r.characters.values().next().value;return {webgl:!!r.webgl.getContext().getParameter(r.webgl.getContext().VERSION),depth:i.body.material.depthTest,grid:r.grid.type==='GridHelper',head:i.head.children.length,calls:r.webgl.info.render.calls};});
  check(rendering.webgl&&rendering.depth&&rendering.calls>0,'real depth-tested WebGL rendering');check(rendering.grid,'grid floor');check(rendering.head===0,'head is integrated surface without independent primitive geometry');check(await frame.locator('input[type=range]').count()===0,'no slider controls');
- const surface=await frame.evaluate(()=>{const e=window.simpleGraphEditor,c=e.model.state.characters[0],i=e.renderer.characters.get(c.id);const start=performance.now(),r=e.client.request({version:1,operation:{type:'surface',graph:c.graph,head:c.head}});if(!r.ok)throw Error(r.error.message);return {milliseconds:performance.now()-start,vertices:r.mesh.positions.length,triangles:r.mesh.indices.length/3,allIndices:i.body.geometry.index.count===r.mesh.indices.length,deterministic:JSON.stringify(i.mesh)===JSON.stringify(r.mesh)};});
- check(surface.allIndices&&surface.deterministic,'actual deterministic surface operation rendered with all indices');
+ const surface=await frame.evaluate(()=>{const e=window.simpleGraphEditor,c=e.model.state.characters[0],i=e.renderer.characters.get(c.id);const start=performance.now(),bound=e.client.request({version:1,operation:{type:'rig_bind',rig_version:1}});if(!bound.ok)throw Error(bound.error.message);const bindMilliseconds=performance.now()-start;try{const deformStart=performance.now(),r=e.client.request({version:1,operation:{type:'rig_deform',rig_version:1,rig_id:bound.rig_id,graph:c.graph,head:c.head}});if(!r.ok)throw Error(r.error.message);return {bindMilliseconds,milliseconds:performance.now()-deformStart,vertices:r.mesh.positions.length,triangles:r.mesh.indices.length/3,allIndices:i.body.geometry.index.count===r.mesh.indices.length,deterministic:JSON.stringify(i.mesh)===JSON.stringify(r.mesh),currentMeshKey:i.meshKey===i.graphKey};}finally{const released=e.client.request({version:1,operation:{type:'rig_release',rig_version:1,rig_id:bound.rig_id}});if(!released.ok)throw Error(released.error.message);}});
+ check(surface.allIndices&&surface.deterministic&&surface.currentMeshKey,'actual deterministic bound rig deformation rendered with all indices');
  const topology=await frame.evaluate(async()=>{const {verifySurfaceTopology}=await import('/preview/tests/surface-topology.mjs');return {neutral:verifySurfaceTopology(window.simpleGraphEditor.renderer.characters.values().next().value.mesh)};});check(topology.neutral.components===1,'actual neutral WASM topology is one closed oriented nondegenerate component with unit normals');
  // Locate the real X-axis picker by hovering, then test constrained movement
  // and Escape snapshot restoration rather than invoking a model action.
@@ -79,6 +81,7 @@ try{
  check(JSON.stringify((await snapshot()).characters.find(c=>c.id===firstId))===JSON.stringify(firstBeforeAdd),'pose placement head and color isolated between characters');
  const materialColors=await frame.evaluate(()=>[...window.simpleGraphEditor.renderer.characters.values()].map(i=>i.material.color.getHexString()));check(materialColors.includes('de8a62')&&materialColors.includes('8299e8'),'independent rendered colors');
  await frame.locator('#handle').selectOption('root');await frame.locator('#character').selectOption(firstId);check((await snapshot()).selectedId===firstId,'character selector');
+ await idle(frame);
  // Pick the other character's head through the actual canvas raycaster.
  const headPoint=await frame.evaluate(id=>{const r=window.simpleGraphEditor.renderer,h=r.characters.get(id).head;h.updateWorldMatrix(true,false);const p=h.getWorldPosition(h.position.clone()).project(r.camera),b=r.webgl.domElement.getBoundingClientRect();return {x:b.left+(p.x+1)*b.width/2,y:b.top+(1-p.y)*b.height/2};},secondId);
  await page.mouse.click(headPoint.x,headPoint.y);check((await snapshot()).selectedId===secondId,'3D mesh picking selects character');
@@ -92,18 +95,18 @@ try{
  const panBefore=await frame.evaluate(()=>window.simpleGraphEditor.renderer.controls.target.toArray());
  await page.mouse.move(box.x+40,box.y+60);await page.mouse.down({button:'right'});await page.mouse.move(box.x+80,box.y+80,{steps:3});await page.mouse.up({button:'right'});await page.waitForTimeout(150);
  check(JSON.stringify(await frame.evaluate(()=>window.simpleGraphEditor.renderer.controls.target.toArray()))!==JSON.stringify(panBefore),'camera pan interaction');
- await frame.locator('#frame').click();
+ await idle(frame);await frame.locator('#frame').click();
  // Exercise exact singular/unreachable inputs in the browser's headless model;
  // pointer-driven behavior above separately proves real handle interactions.
  const edgeCases=await frame.evaluate(()=>{const e=window.simpleGraphEditor,id=e.model.state.selectedId;const before=e.model.state;const root=before.characters.find(c=>c.id===id).graph.nodes[4].position;const statuses=[];e.model.beginGesture();for(const target of [root,[100,100,100]]){e.model.dispatch({type:'ik',id,limb:'rightArm',target,pole:root});e.update();const c=e.model.state.characters.find(c=>c.id===id);if(!c.graph.nodes.every(n=>n.position.every(Number.isFinite)))throw Error('nonfinite IK');statuses.push(c.rig.rightArm.status);}e.model.cancelGesture();e.update();return statuses;});
  check(edgeCases.includes('clamped-near')&&edgeCases.includes('clamped-far'),'browser singular and unreachable targets remain finite and bounded');
  await frame.locator('#handle').selectOption('rightArm:target');
- await page.screenshot({path:path.join(output,'kenoma-connected-editor-desktop.png')});
+ await idle(frame);await page.screenshot({path:path.join(output,'kenoma-stable-editor-desktop.png')});
  topology.posed=await frame.evaluate(async()=>{const {verifySurfaceTopology}=await import('/preview/tests/surface-topology.mjs');return [...window.simpleGraphEditor.renderer.characters.values()].map(i=>verifySurfaceTopology(i.mesh));});check(topology.posed.every(t=>t.components===1),'actual posed WASM topology remains closed connected oriented with valid normals');
  const scene=await snapshot();
  const originalCamera=await frame.evaluate(()=>{const r=window.simpleGraphEditor.renderer,c=r.characters.get(window.simpleGraphEditor.model.state.selectedId);const saved={position:r.camera.position.toArray(),target:r.controls.target.toArray()};c.head.updateWorldMatrix(true,false);const head=c.head.getWorldPosition(c.head.position.clone());r.gizmo.detach();r.handleGroup.visible=false;r.controls.target.copy(head);r.camera.position.copy(head).add(head.clone().set(.28,.08,.65));r.controls.update();return saved;});
- await page.waitForTimeout(150);await page.screenshot({path:path.join(output,'kenoma-connected-head-closeup.png'),clip:{x:420,y:146,width:600,height:600}});
- await frame.evaluate(id=>{const e=window.simpleGraphEditor,r=e.renderer,c=e.model.state.characters.find(c=>c.id===id),item=r.characters.get(id);item.group.updateWorldMatrix(true,false);const joint=item.group.localToWorld(item.group.position.clone().fromArray(c.graph.nodes[5].position));r.controls.target.copy(joint);r.camera.position.copy(joint).add(joint.clone().set(.20,.06,.55));r.controls.update();},firstId);await page.waitForTimeout(150);await page.screenshot({path:path.join(output,'kenoma-connected-joint-closeup.png'),clip:{x:420,y:146,width:600,height:600}});
+ await page.waitForTimeout(150);await page.screenshot({path:path.join(output,'kenoma-stable-head-closeup.png'),clip:{x:420,y:146,width:600,height:600}});
+ await frame.evaluate(id=>{const e=window.simpleGraphEditor,r=e.renderer,c=e.model.state.characters.find(c=>c.id===id),item=r.characters.get(id);item.group.updateWorldMatrix(true,false);const joint=item.group.localToWorld(item.group.position.clone().fromArray(c.graph.nodes[5].position));r.controls.target.copy(joint);r.camera.position.copy(joint).add(joint.clone().set(.20,.06,.55));r.controls.update();},firstId);await page.waitForTimeout(150);await page.screenshot({path:path.join(output,'kenoma-stable-joint-closeup.png'),clip:{x:420,y:146,width:600,height:600}});
  await frame.evaluate(saved=>{const e=window.simpleGraphEditor,r=e.renderer;r.camera.position.fromArray(saved.position);r.controls.target.fromArray(saved.target);r.controls.update();e.update();},originalCamera);
 
  // Phone layout and touch handle interaction.
@@ -143,9 +146,9 @@ try{
  for(const [key,axis]of [['root:rotate','Y'],['head','Y'],['head','X']]){const point=await ringPoint(phone,key,axis);check(point,`phone ${key} ${axis} rotation ring visible`);const before=await phone.evaluate(()=>window.simpleGraphEditor.model.state.characters[0]);await session.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{id:21,x:point.x,y:point.y}]});check(await phone.evaluate(()=>window.simpleGraphEditor.renderer.gizmo.dragging),'phone rotation touch begins gizmo drag');await session.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{id:21,x:point.x+22,y:point.y+14}]});await session.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});const after=await phone.evaluate(()=>window.simpleGraphEditor.model.state.characters[0]);check(key==='head'?JSON.stringify(before.head)!==JSON.stringify(after.head):before.yaw!==after.yaw,`phone touch ${key} ${axis} changes orientation`);}
  await phone.locator('#add').click();check(await phone.locator('#character option').count()===2,'phone add character');
  await phone.locator('#character').selectOption('character-1');await phone.locator('#remove').click();check(await phone.locator('#character option').count()===1,'phone select/remove character');await phone.locator('#undo').click();
- await phone.screenshot({path:path.join(output,'kenoma-connected-editor-phone.png')});
+ await idle(phone);await phone.screenshot({path:path.join(output,'kenoma-stable-editor-phone.png')});
  check(errors.length===0,`no browser exceptions: ${errors.join('; ')}`);
  check(requests.some(url=>url.endsWith('human_wasm_bg.wasm'))&&requests.every(url=>url.startsWith(server.url)),'actual WASM and local-only runtime requests');
- const receipt=await saveReceipt(browser,{checks,scene,phoneLayout,surface,topology,servedWasmSha256:await Promise.all(wasmResponses),desktop:{width:1440,height:900},phone:{width:390,height:844},kinematics:'Analytic two-bone IK, no forces or simulation',screenshots:['kenoma-connected-editor-desktop.png','kenoma-connected-editor-phone.png','kenoma-connected-head-closeup.png','kenoma-connected-joint-closeup.png']});
+ const receipt=await saveReceipt(browser,{checks,scene,phoneLayout,surface,topology,servedWasmSha256:await Promise.all(wasmResponses),desktop:{width:1440,height:900},phone:{width:390,height:844},kinematics:'Analytic two-bone IK, no forces or simulation',screenshots:['kenoma-stable-editor-desktop.png','kenoma-stable-editor-phone.png','kenoma-stable-head-closeup.png','kenoma-stable-joint-closeup.png']});
  console.log(JSON.stringify({checks:checks.length,browser:receipt.browser,output,phoneLayout}));
 }finally{if(browser)await browser.close();await server.close();}

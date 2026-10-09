@@ -15,7 +15,8 @@ The word Kenoma comes from the ancient Greek word κένωμα which litteraly m
 The [simple posing editor](browser/simple-graph/README.md) provides multiple
 characters, scene gizmos, two-bone IK, head orientation, colors and undo/redo in
 an embeddable static WebGL/WASM page. The headless `human_core` graph/edit API,
-`human_persistence` SQLite store and `human_surface` connected mannequin generator
+`human_persistence` SQLite store, `human_surface` connected mannequin generator
+and `human_rig` stable pose deformation
 are separate from the biomechanics research. See the [implementation inventory
 and ownership boundary](docs/adr/001-simple-graph-boundary.md) and
 [connected surface contract](crates/human_surface/README.md). This is schematic
