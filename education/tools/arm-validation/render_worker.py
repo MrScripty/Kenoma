@@ -3,6 +3,7 @@ No solver/material import, numerical evaluation, coordinate interpolation or ext
 """
 import hashlib, io, json, os, pathlib, struct, sys, time, tempfile, threading
 from http.server import HTTPServer, BaseHTTPRequestHandler
+from contextlib import closing
 from PIL import Image
 from playwright.sync_api import sync_playwright
 from capture_store import read_slots
@@ -51,6 +52,12 @@ def display_frames(frames,synthetic):
     if synthetic:
         for row in rows:row.pop('residualN',None)
     return rows
+def validate_jpeg85(jpeg):
+    # Release the decoded RGB image and its input buffer before the next
+    # screenshot; neither is needed once the exact JPEG bytes are validated.
+    with io.BytesIO(jpeg) as buffer, closing(Image.open(buffer)) as image:
+        image.load()
+        if image.size!=(960,720) or image.format!='JPEG' or image.quantization[0][0]!=5:raise ValueError('Actual JPEG quality85 quantization gate')
 def main():
     cfg=json.loads(read_regular(sys.argv[1],4194304));out=pathlib.Path(cfg['output']);manifest_bytes=read_regular(cfg['manifest'],4194304);m=json.loads(manifest_bytes);mh=digest(manifest_bytes)
     if set(m.get('harnessFiles',{}))!=HARNESS_PATHS:raise ValueError('Changed renderer/harness inventory')
@@ -115,9 +122,9 @@ def main():
                 if cfg['syntheticOnly'] and 'residual not evaluated' not in caption:raise ValueError('Synthetic residual authority gate')
                 labels.append(dict(frame=i,title=title,caption=caption,depiction=scope))
                 jpeg=page.screenshot(type='jpeg',quality=85,animations='disabled',timeout=10000)
-                im=Image.open(io.BytesIO(jpeg));im.load()
-                if im.size!=(960,720) or im.format!='JPEG' or im.quantization[0][0]!=5:raise ValueError('Actual JPEG quality85 quantization gate')
+                validate_jpeg85(jpeg)
                 name=f'frame-{i:02d}.jpg';write(name,jpeg,MAX_JPEG);jpgs.append(name)
+                del jpeg
             # Exercise real portable viewer navigation after recording frames.
             page.evaluate("document.querySelector('nav').style.display='block'")
             page.locator('#previous').click();expected=max(0,len(frames)-2)
