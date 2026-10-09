@@ -266,6 +266,14 @@ jobs:
           name: kenoma-print-downloads
           path: education/dist/**/*.pdf
           if-no-files-found: error
+      - name: Preserve incomplete book diagnostics after a failed gate
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: kenoma-unqualified-book-diagnostics
+          path: education/dist/
+          include-hidden-files: true
+          if-no-files-found: ignore
       - name: Preserve projection viewport diagnostics
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
