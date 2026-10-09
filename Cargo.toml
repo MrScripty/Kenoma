@@ -1,0 +1,22 @@
+[workspace]
+members = ["crates/human_core", "crates/human_persistence"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+
+[workspace.dependencies]
+glam = { version = "0.30", features = ["serde"] }
+serde = { version = "1", features = ["derive"] }
+thiserror = "2"
+rusqlite = { version = "0.38", features = ["bundled"] }
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+indexing_slicing = "deny"
