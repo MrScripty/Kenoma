@@ -1,0 +1,460 @@
+{
+  "version": 1,
+  "examples": [
+    {
+      "id": "00-scope",
+      "chapter": "00-scope.md",
+      "chapterTitle": "Reading a moving body",
+      "anchor": "reading-a-moving-body",
+      "kind": "pose",
+      "title": "Coordinate and pose inspection",
+      "evidenceClass": "Illustrative geometry",
+      "task": "Move the root and hand targets; distinguish authored geometry from a measured body.",
+      "limits": "No forces, contact, anatomical accuracy or clinical inference.",
+      "claimIds": []
+    },
+    {
+      "id": "01-force",
+      "chapter": "01-force.md",
+      "chapterTitle": "Force changes motion",
+      "anchor": "force-changes-motion",
+      "kind": "force",
+      "title": "Force, mass and displacement",
+      "evidenceClass": "Numerical demonstration",
+      "task": "Change net force and inspect the displacement and work at one second.",
+      "limits": "Constant mass and constant horizontal net force; visual arrow lengths are scaled.",
+      "claimIds": [
+        "force-pair",
+        "force-real-pair"
+      ]
+    },
+    {
+      "id": "02-torque",
+      "chapter": "02-torque.md",
+      "chapterTitle": "A force has an application point",
+      "anchor": "a-force-has-an-application-point",
+      "kind": "torque",
+      "title": "Moment arm in three dimensions",
+      "evidenceClass": "Numerical demonstration",
+      "task": "Change the planar lever angle and inspect the moment vector.",
+      "limits": "Planar mechanics rendered in 3D; no joint or anatomical inference.",
+      "claimIds": [
+        "torque-example",
+        "torque-linearity",
+        "torque-real-linearity",
+        "torque-origin",
+        "central-pair"
+      ]
+    },
+    {
+      "id": "03-energy",
+      "chapter": "03-energy.md",
+      "chapterTitle": "Energy reveals numerical error",
+      "anchor": "energy-reveals-numerical-error",
+      "kind": "energy",
+      "title": "Oscillator state and energy",
+      "evidenceClass": "Numerical demonstration",
+      "task": "Compare explicit Euler, symplectic Euler and Verlet after the same number of steps.",
+      "limits": "One-dimensional oscillator rendered in 3D; numerical drift is not a checked conservation theorem.",
+      "claimIds": [
+        "kinetic-sign"
+      ]
+    },
+    {
+      "id": "09a-properties",
+      "chapter": "09a-properties.md",
+      "chapterTitle": "Measure deformation before choosing a muscle law",
+      "anchor": "measure-deformation-before-choosing-a-muscle-law",
+      "kind": "deformation",
+      "title": "Reference and deformed tetrahedron",
+      "evidenceClass": "Prescribed kinematics",
+      "task": "Change axial stretch and shear; compare determinant with triangle-measured volume.",
+      "limits": "Prescribed affine map, not force equilibrium or tissue response.",
+      "claimIds": [
+        "volume-edge-translation",
+        "volume-det-compose",
+        "volume-diagonal",
+        "volume-isochoric-sqrt"
+      ]
+    },
+    {
+      "id": "09aa-nonuniform-volume",
+      "chapter": "09aa-nonuniform-volume.md",
+      "chapterTitle": "Uneven stretch and local volume",
+      "anchor": "nonuniform-local-volume",
+      "kind": "nonuniform",
+      "title": "Uneven stretch and local volume",
+      "evidenceClass": "Prescribed kinematics",
+      "task": "Change the stretch gradient and compensation; inspect the existing closed prism mesh.",
+      "limits": "Algebraic local-volume claims do not prove mesh integration or floating-point refinement.",
+      "claimIds": [
+        "nonuniform-gradient-determinant",
+        "nonuniform-positive-stretch",
+        "nonuniform-pointwise-compensation",
+        "nonuniform-nonuniform-isochoric",
+        "nonuniform-straight-cell-error",
+        "nonuniform-straight-cell-volume-bound"
+      ]
+    },
+    {
+      "id": "09ab-architecture-force",
+      "chapter": "09ab-architecture-force.md",
+      "chapterTitle": "Connect fibre architecture to force without inventing strength",
+      "anchor": "architecture-to-force",
+      "kind": "architecture",
+      "title": "Fibres, cuts and projected force",
+      "evidenceClass": "Analytic bookkeeping",
+      "task": "Change pennation and material stretch; compare reference and current cut forces.",
+      "limits": "Authored areas/stresses; one projection only; no contraction or calibrated muscle prediction.",
+      "claimIds": [
+        "architecture-projection-once",
+        "architecture-parallel-area-aggregation",
+        "architecture-two-group-projected-sum",
+        "architecture-material-cut-force",
+        "architecture-series-balance-telescopes",
+        "architecture-paired-exchange-power"
+      ]
+    },
+    {
+      "id": "09b-material-response",
+      "chapter": "09b-material-response.md",
+      "chapterTitle": "Let material stiffness and boundaries choose the lateral shape",
+      "anchor": "compression-bulk-shear-confinement",
+      "kind": "material",
+      "title": "Free and confined compression",
+      "evidenceClass": "Numerical demonstration",
+      "task": "Change height stretch and inspect free versus confined lateral response.",
+      "limits": "Existing homogeneous one-lateral-DOF equilibrium; not unrestricted 3D material stability.",
+      "claimIds": [
+        "material-real-confined-volume",
+        "material-real-bulk-sign",
+        "material-real-bulk-zero",
+        "material-real-separated-wall",
+        "material-real-lateral-work",
+        "material-confined-volume",
+        "material-bulk-sign",
+        "material-bulk-zero",
+        "material-separated-wall",
+        "material-lateral-work"
+      ]
+    },
+    {
+      "id": "09c-dissipative-response",
+      "chapter": "09c-dissipative-response.md",
+      "chapterTitle": "Load, hold, release: storage and viscous loss",
+      "anchor": "dissipative-load-hold-release",
+      "kind": "dissipative",
+      "title": "Load, hold and recovery specimen",
+      "evidenceClass": "Numerical demonstration",
+      "task": "Scrub the existing finite SLS protocol and compare work, storage and loss.",
+      "limits": "One-dimensional small-strain bar extruded for viewing; transverse area is not solved.",
+      "claimIds": [
+        "dissipative-real-storage-sign",
+        "dissipative-real-dissipation-sign",
+        "dissipative-real-storage-derivative",
+        "dissipative-real-power-balance",
+        "dissipative-real-elastic-recovery",
+        "dissipative-real-viscous-derivative",
+        "dissipative-real-viscous-bounds",
+        "dissipative-real-viscous-monotone",
+        "dissipative-real-viscous-antitone",
+        "dissipative-real-held-stress-bounds",
+        "dissipative-real-held-stress-decay"
+      ]
+    },
+    {
+      "id": "09d-serial-specimen",
+      "chapter": "09d-serial-specimen.md",
+      "chapterTitle": "One force, unequal stretches, and local volume",
+      "anchor": "serial-specimen-volume",
+      "kind": "serial",
+      "title": "Two separate blocks in series",
+      "evidenceClass": "Numerical demonstration",
+      "task": "Change transmitted force and compare the two solved stretches and areas.",
+      "limits": "Two separate homogeneous incompressible blocks and ideal spacer; not a continuous tapered body.",
+      "claimIds": [
+        "serial-real-energy-factor",
+        "serial-real-energy-sign",
+        "serial-real-energy-zero",
+        "serial-real-energy-derivative",
+        "serial-real-stress-identities",
+        "serial-real-stress-sign",
+        "serial-real-stress-difference",
+        "serial-real-stress-monotone",
+        "serial-real-root-unique",
+        "serial-real-volume",
+        "serial-real-tension-order",
+        "serial-real-compression-order"
+      ]
+    },
+    {
+      "id": "04-anatomy",
+      "chapter": "04-anatomy.md",
+      "chapterTitle": "Anatomy is evidence, not a silhouette",
+      "anchor": "anatomy-is-evidence",
+      "kind": "atlas",
+      "title": "Anatomy as source geometry",
+      "evidenceClass": "Recorded evidence",
+      "task": "Select a licensed atlas structure and inspect its original surface and identity.",
+      "limits": "Static atlas; no posed anatomical rig or subject-matched muscle parameters.",
+      "claimIds": []
+    },
+    {
+      "id": "08-actual-data",
+      "chapter": "08-actual-data.md",
+      "chapterTitle": "Inspect real anatomy and recorded evidence",
+      "anchor": "actual-anatomical-data",
+      "kind": "atlas",
+      "title": "Atlas parts and evidence streams",
+      "evidenceClass": "Recorded evidence",
+      "task": "Select structures and inspect units, source hashes and raw topology counts.",
+      "limits": "Atlas surfaces and recorded signals are independent; no inferred registration or dynamics.",
+      "claimIds": []
+    },
+    {
+      "id": "04-muscle-physiology",
+      "chapter": "04-muscle-physiology.md",
+      "chapterTitle": "Muscle pulls through a changing path",
+      "anchor": "muscle-pulls-through-a-changing-path",
+      "kind": "physiology",
+      "title": "Synthetic actuator geometry",
+      "evidenceClass": "Numerical demonstration",
+      "task": "Change hinge angle and activation; inspect path length and signed moment arm.",
+      "limits": "Authored synthetic path and force law; no tissue shape or calibrated strength.",
+      "claimIds": []
+    },
+    {
+      "id": "05-elbow",
+      "chapter": "05-elbow.md",
+      "chapterTitle": "Let forces move the elbow",
+      "anchor": "let-forces-move-the-elbow",
+      "kind": "elbow",
+      "title": "Force-driven hinge inspection",
+      "evidenceClass": "Numerical demonstration",
+      "task": "Step the existing hinge under a chosen load and inspect force and torque.",
+      "limits": "Fixed shoulder, single hinge and authored actuator; no anatomical validation.",
+      "claimIds": [
+        "virtual-power",
+        "virtual-real-power",
+        "activation-bound",
+        "actuator-real-activation-interval",
+        "actuator-real-activation-ode",
+        "actuator-real-active-force-bounds",
+        "actuator-real-active-force-derivative"
+      ]
+    },
+    {
+      "id": "06-tissue-graphics",
+      "chapter": "06-tissue-graphics.md",
+      "chapterTitle": "From line forces to tissue and rendered skin",
+      "anchor": "tissue-and-rendered-skin",
+      "kind": "pose",
+      "title": "Artistic skin and pose",
+      "evidenceClass": "Illustrative geometry",
+      "task": "Use the independent mannequin gizmos to inspect pose-dependent rendered skin.",
+      "limits": "Dual-quaternion artistic deformation, not tissue mechanics; contact may interpenetrate.",
+      "claimIds": []
+    },
+    {
+      "id": "07-tendon-tissue",
+      "chapter": "07-tendon-tissue.md",
+      "chapterTitle": "Store tendon energy and resist compression",
+      "anchor": "tendon-tissue-coupling",
+      "kind": "tendon",
+      "title": "Reduced tendon and tissue balance",
+      "evidenceClass": "Numerical demonstration",
+      "task": "Inspect the existing reduced series geometry at a prescribed angle and excitation.",
+      "limits": "Reduced static hold; no 3D anatomical tissue solve or sliding interface.",
+      "claimIds": [
+        "actuator-real-gaussian-radius-bound",
+        "actuator-real-active-slope-bound",
+        "actuator-real-series-strict-monotone",
+        "actuator-real-series-unique-root",
+        "actuator-real-series-root-exists",
+        "actuator-real-series-lower-rejection",
+        "actuator-real-series-denominator"
+      ]
+    },
+    {
+      "id": "09-continuum-medical",
+      "chapter": "09-continuum-medical.md",
+      "chapterTitle": "From a spring to a volume of tissue",
+      "anchor": "from-a-spring-to-a-volume-of-tissue",
+      "kind": "deformation",
+      "title": "Reference/current continuum geometry",
+      "evidenceClass": "Prescribed kinematics",
+      "task": "Shear and stretch one tetrahedron; inspect its reference/current boundaries.",
+      "limits": "Kinematic tensor inspection alone does not establish a constitutive law or medical validity.",
+      "claimIds": []
+    },
+    {
+      "id": "10-fast-methods",
+      "chapter": "10-fast-methods.md",
+      "chapterTitle": "Fast solvers and what they approximate",
+      "anchor": "fast-solvers-and-what-they-approximate",
+      "kind": "continuum",
+      "title": "Reference and finite-sweep approximation",
+      "evidenceClass": "Numerical demonstration",
+      "task": "Change compliant sweeps on the same small linear FEM problem.",
+      "limits": "Existing bounded reference/compliant comparison; not an implemented reduced-basis or multigrid method.",
+      "claimIds": []
+    },
+    {
+      "id": "10a-spatial-continuum",
+      "chapter": "10a-spatial-continuum.md",
+      "chapterTitle": "Solve a spatial solid, then buy speed with a measured error",
+      "anchor": "continuum-reference",
+      "kind": "continuum",
+      "title": "Spatial finite-element comparison",
+      "evidenceClass": "Numerical demonstration",
+      "task": "Inspect reference and approximation on the same tetrahedral discretization.",
+      "limits": "Linear small-strain, authored load and fixed mesh; visual displacement magnification is declared.",
+      "claimIds": [
+        "compliance-denominator"
+      ]
+    },
+    {
+      "id": "10b-pressure-projection",
+      "chapter": "10b-pressure-projection.md",
+      "chapterTitle": "What does a pressure space miss?",
+      "anchor": "fixed-field-pressure-projection",
+      "kind": "projection",
+      "title": "Weighted samples and unresolved field",
+      "evidenceClass": "Analytic bookkeeping",
+      "task": "Change pressure-space resolution while holding the four prescribed samples fixed.",
+      "limits": "Abstract sample glyphs, not body deformation or an equilibrium pressure field.",
+      "claimIds": [
+        "projection-inner-comm",
+        "projection-inner-add-right",
+        "projection-inner-add-left",
+        "projection-inner-sub-right",
+        "projection-inner-sub-left",
+        "projection-inner-smul-right",
+        "projection-inner-smul-left",
+        "projection-normSq-nonneg",
+        "projection-normSq-eq-zero-iff",
+        "projection-normSq-sub",
+        "projection-normSq-smul",
+        "projection-project-eq-self-iff",
+        "projection-project-idempotent",
+        "projection-inner-project",
+        "projection-project-self-adjoint",
+        "projection-optimizer-mem",
+        "projection-square-completion",
+        "projection-optimizer-value",
+        "projection-objective-le-condensed",
+        "projection-value-eq-iff-optimizer",
+        "projection-unique-maximizer",
+        "projection-pythagoras",
+        "projection-pointwise-minus-condensed",
+        "projection-condensed-nonneg",
+        "projection-gap-nonneg",
+        "projection-gap-zero-iff-represented",
+        "projection-nested-energy-monotone"
+      ]
+    },
+    {
+      "id": "11-interfaces",
+      "chapter": "11-interfaces.md",
+      "chapterTitle": "Skin must follow motion without losing the mechanics",
+      "anchor": "skin-must-follow-motion-without-losing-the-mechanics",
+      "kind": "pose",
+      "title": "Posing and interface boundaries",
+      "evidenceClass": "Illustrative geometry",
+      "task": "Inspect the independent rig surface at a fixed pose using its hand/head gizmos.",
+      "limits": "Rig weights are presentation mappings; sliding, contact and two-way tissue coupling are not supplied.",
+      "claimIds": []
+    },
+    {
+      "id": "12-spatial-capstone",
+      "chapter": "12-spatial-capstone.md",
+      "chapterTitle": "Lift, release and compress a spatial arm",
+      "anchor": "spatial-capstone",
+      "kind": "spatial",
+      "title": "One-way arm and independent skin",
+      "evidenceClass": "Numerical demonstration",
+      "task": "Change the prescribed pose and inspect the existing capstone geometry.",
+      "limits": "Existing one-way quasistatic educational model; shape has no reaction feedback to the hinge.",
+      "claimIds": [
+        "element-resultant",
+        "centroid-transfer",
+        "armijo-decrease"
+      ]
+    },
+    {
+      "id": "14-coupled-mechanics",
+      "chapter": "14-coupled-mechanics.md",
+      "chapterTitle": "Coupled tissue mechanics: a checked intermediate",
+      "anchor": "coupled-tissue-mechanics",
+      "kind": "coupled",
+      "title": "Preserved coupled-fixture trajectory",
+      "evidenceClass": "Recorded numerical evidence",
+      "task": "Scrub the saved trajectory and inspect nodal geometry and its recorded work residual.",
+      "limits": "Read-only replay of historical authored fixture evidence; no new solve or physiological qualification.",
+      "claimIds": [
+        "quadratic-partition",
+        "tendon-toe-storage",
+        "attachment-transpose-power",
+        "paired-attachment-work",
+        "implicit-impulse",
+        "kinetic-increment",
+        "implicit-angular-work",
+        "implicit-dissipation",
+        "mass-event-work"
+      ]
+    },
+    {
+      "id": "15-anatomical-apparatus",
+      "chapter": "15-anatomical-apparatus.md",
+      "chapterTitle": "Build an anatomical apparatus that can fail a check",
+      "anchor": "anatomical-apparatus",
+      "kind": "apparatus",
+      "title": "Anatomical apparatus and failed trajectory",
+      "evidenceClass": "Recorded numerical evidence",
+      "task": "Inspect reference parts alongside the preserved failed trajectory status.",
+      "limits": "Reference geometry is not a successful trajectory; original rejection remains visible.",
+      "claimIds": [
+        "shared-guide-balance",
+        "upward-mass-event",
+        "contact-area-partition",
+        "conservative-contact-gap"
+      ]
+    },
+    {
+      "id": "13-coverage",
+      "chapter": "13-coverage.md",
+      "chapterTitle": "What the experiments establish",
+      "anchor": "coverage-and-evidence",
+      "kind": "coverage",
+      "title": "Model and evidence comparison",
+      "evidenceClass": "Illustrative geometry",
+      "task": "Switch between prescribed geometry and licensed atlas evidence; inspect what each can support.",
+      "limits": "No unified accuracy score, anatomical calibration or equivalence between models.",
+      "claimIds": []
+    },
+    {
+      "id": "04-research-path",
+      "chapter": "04-research-path.md",
+      "chapterTitle": "From a lever to an arm",
+      "anchor": "from-a-lever-to-an-arm",
+      "kind": "research",
+      "title": "Implemented research layers",
+      "evidenceClass": "Recorded evidence",
+      "task": "Inspect licensed source surfaces and the separate authored apparatus geometry.",
+      "limits": "Stages are distinct datasets; overlay does not establish subject matching or missing mechanics.",
+      "claimIds": []
+    },
+    {
+      "id": "05-sources",
+      "chapter": "05-sources.md",
+      "chapterTitle": "Sources and evidence boundaries",
+      "anchor": "sources-and-evidence-boundaries",
+      "kind": "atlas",
+      "title": "Geometry provenance inspector",
+      "evidenceClass": "Recorded evidence",
+      "task": "Pick a surface to inspect its source identity, units, mesh counts and licence.",
+      "limits": "Geometry provenance does not establish a mechanical or clinical result.",
+      "claimIds": []
+    }
+  ]
+}

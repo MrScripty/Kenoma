@@ -15,6 +15,7 @@ from check_real_lesson_proofs import FAMILIES as REAL_FAMILIES
 from check_print_readability import check as check_print_readability
 from check_projection_artifact import check as check_projection_artifact
 from check_projection_print_limits import check as check_projection_print_limits
+from check_architecture_force_artifact import check as check_architecture_force_artifact
 ROOT=Path(__file__).resolve().parents[1];out=ROOT/'dist'
 proof=json.loads((out/'proof-status.json').read_text())
 assert proof['source_sha256']==hashlib.sha256((ROOT/'proofs/Mechanics.lean').read_bytes()).hexdigest()
@@ -66,6 +67,7 @@ check_material_artifact(out)
 check_dissipative_artifact(out)
 check_serial_artifact(out)
 check_real_lesson_artifact(out)
+check_architecture_force_artifact(out)
 print_readability=check_print_readability(out)
 check_projection_artifact(out)
 check_projection_print_limits(out)

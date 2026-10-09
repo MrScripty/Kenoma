@@ -1,17 +1,21 @@
 # Kenoma educational book
 
-This additive track provides one illustrated research book, seven resettable 3D teaching laboratories, six progressive property lessons, actual atlas-data inspection, a coupled engineering fixture and an anatomical apparatus candidate. It preserves the production simulator plans. The research edition has 25 chapters and 103 compiled Lean4 claims across twelve source files. Primary sources and independently licensed anatomy/trial/Arm26 data are cited separately from authored teaching geometry and material assumptions.
+This additive track provides one illustrated research book, seven original resettable 3D teaching laboratories, eight progressive property lessons, a shared embedded 3D example for each of its 27 chapters, actual atlas-data inspection, a coupled engineering fixture and an anatomical apparatus candidate. It preserves the production simulator plans. The integrated source has 27 chapters and a registry of 115 Lean4 claims across fourteen source files. Each published cohort requires fresh complete-book proof, browser and PDF qualification bound to its delivered bytes. Primary sources and independently licensed anatomy/trial/Arm26 data are cited separately from authored teaching geometry and material assumptions.
 
 The published spatial teaching lab uses a one-way quasistatic line actuator and schematic skin/fascia. The newer anatomical candidate connects seven atlas-derived P2 volumes through shared tendon apparatuses and a jointly solved elbow. Its retained research receipts describe reduced force and finite geometry checks for held rest and 15 recorded steps. These do not establish acceptance or completion of the requested anatomical capstone. The original failures remain source-bound regressions. Lift/release receipts, compression and remaining model limits are reported in the anatomical apparatus chapter; no medical or subject-specific validation is claimed.
 
 ## Build and read
 
-The reading order is defined by `book/book.json`, rather than filename numbering. Force, torque and energy lead into prescribed deformation measurements, imposed volume preservation and nonuniform axial strain, followed by material confinement, dissipative response and the separate serial blocks. Anatomy and actuation then lead into contact and spatial solvers. The fixed-field pressure-projection interlude follows the spatial continuum chapter, before interfaces and coupling. The property chapter's retained filename is `09a-properties.md`; its stable heading links continue to resolve. Its isochoric geometry is not a material solve, and its axial bar does not determine transverse muscle deformation.
+The reading order is defined by `book/book.json`, rather than filename numbering. Force, torque and energy lead into prescribed deformation measurements, imposed volume preservation and nonuniform axial strain, including the accepted local-versus-total volume map, then architecture-to-force bookkeeping, followed by material confinement, dissipative response and the separate serial blocks. Anatomy and actuation then lead into contact and spatial solvers. The fixed-field pressure-projection interlude follows the spatial continuum chapter, before interfaces and coupling. The property chapter's retained filename is `09a-properties.md`; its stable heading links continue to resolve. Its isochoric geometry is not a material solve, and its axial bar does not determine transverse muscle deformation.
 
-Prerequisites: Node 22 or later, Python 3.12, Pandoc (tested 3.1.11.1), and pinned Lean 4.19.0. The local milestone used Node 24.19.0; CI selects Node 22; the reviewed foundation passed remotely, and the articulated-elbow descendant passed its own exact-head workflow; each new apparatus revision requires its own workflow check. A Linux x86_64 installer downloads the official Lean archive and checks its recorded SHA-256. For another platform, use the official Lean release matching `proofs/lean-toolchain`.
+Prerequisites: Node 22 or later, Python 3.12, Pandoc (tested 3.1.11.1), pinned Lean 4.19.0, and Rust 1.90.0 with the `wasm32-unknown-unknown` target. The independent poser uses the exact wasm-bindgen CLI version pinned in `Cargo.lock` (currently 0.2.129). The local milestone used Node 24.19.0; CI selects Node 22; the reviewed foundation passed remotely, and the articulated-elbow descendant passed its own exact-head workflow; each new apparatus revision requires its own workflow check. A Linux x86_64 installer downloads the official Lean archive and checks its recorded SHA-256. For another platform, use the official Lean release matching `proofs/lean-toolchain`.
 
 ```bash
 cd education
+rustup toolchain install 1.90.0 --profile minimal --target wasm32-unknown-unknown
+rustup default 1.90.0
+cargo install wasm-bindgen-cli --version 0.2.129 --locked
+../browser/simple-graph/build.sh
 npm ci
 python3 -m pip install -r requirements.txt
 python3 -m playwright install chromium
@@ -27,6 +31,9 @@ npm run test:mobile
 python3 tests/projection_integration.py
 python3 tests/anatomical_arm_inspection.py
 python3 tests/property_browser.py dist
+python3 tests/nonuniform_browser.py
+python3 tests/architecture_force_book_browser.py
+python3 tests/chapter_examples_browser.py
 python3 tests/worker_lifecycle.py
 python3 tools/inspect_property_integration.py
 python3 tests/artifacts.py
@@ -53,14 +60,55 @@ A system Chromium can be used when installed; `CHROMIUM_EXECUTABLE=/absolute/pat
 - `{{demo:force}}`, `{{demo:torque}}`, `{{demo:energy}}`, `{{demo:elbow}}`, `{{demo:series}}` expand into HTML laboratories or static Markdown descriptions. `{{demo:continuum}}` and `{{demo:spatial}}` add the advanced lessons. Original SVGs are generated from actual solved fixture coordinates as well as elementary diagrams.
 - `{{proof:ID}}` connects a claim to the declaration in `proofs/claims.json`. `tools/check_proofs.py` invokes Lean afresh, rejects unknown/custom axiom dependencies and admissions, and writes a source-bound receipt only on success. No manual checked flag is accepted.
 - `{{property:deformation}}`, `{{property:isochoric}}` and `{{property:tapered}}` add independent boundary-volume and axial-bar lessons with static print figures. `tools/check_property_proofs.py` freshly checks their four real kinematic declarations and pins each transitive Git dependency before emitting a receipt.
-- `tools/check_real_lesson_proofs.py` uses the same pinned dependency check, then compiles the separate real material, mechanics, actuator, SLS, serial-block and fixed-vector projection sources. All six additional Real family receipts are withheld if any declaration fails. Real cards state their assumptions and limits; integer contracts, numerical checks and remaining finite-bulk specimen derivative/equilibrium and numerical refinement obligations remain distinct.
+- `tools/check_real_lesson_proofs.py` uses the same pinned dependency check, then compiles the separate real material, mechanics, actuator, SLS, serial-block, fixed-vector projection, nonuniform-volume and architecture-force sources. All eight additional Real family receipts are withheld if any declaration fails. Real cards state their assumptions and limits; integer contracts, numerical checks and remaining finite-bulk specimen derivative/equilibrium and numerical refinement obligations remain distinct.
+- `{{nonuniform-lab}}` adds the independently accepted prescribed nonuniform-volume map after properties and before material response. Its six Real contracts concern the declared gradient, positive interval stretch and algebraic cell error; differentiation/integration, mesh and floating-point obligations remain separately audited. Original 103 proof identities and anatomy references are preserved.
+- `{{architecture-force-lab}}` adds the canonical `09ab-architecture-force.md` lesson and the locally bundled `architecture-force/index.html` lab. Static default values survive print and no-JavaScript reading. Six original claim IDs and the exact `ArchitectureForce.lean` source are registered with explicit assumptions; the thirteen contribution files and all anatomy data remain unchanged. The historical 103 + 6 = 109 nonuniform milestone stays distinct from this 115-declaration inventory. Prior standalone qualification does not qualify the book assembly.
 - `{{dissipative:sls}}` adds the passive axial load/hold/unload/recovery protocol and energy ledger. `{{serial:assembly}}` adds two separate incompressible neo-Hookean blocks with bilateral sliding fixtures, a shared signed force, actual 3D geometry, local volume measurements and visible root residuals. The serial lesson has twelve scoped Real declarations; it proves neither continuous-taper fields nor unrestricted stability.
 - `{{experiment}}` executes the browser's pure mechanics module to generate the table and JSON result. Tests independently compare reference values and convergence, without claiming implementation refinement proofs.
 - The PDF prints the same HTML manuscript with native MathML and static diagrams. Controls and canvases are omitted; all prose, worked examples and exact claims remain.
 
 Each 3D laboratory initializes only when requested and keeps one canvas for its surface. Numerical controls work without WebGL. A zero-JavaScript reader retains all chapter text, figures, mathematical claims and the numerical experiment table. Labs start paused; Reset restores all parameters and camera. Only deliberate requested summaries are announced, rather than every frame.
 
-Thirty declarations use exact integer domains and bundled Std. Seventy-three declarations use reals with pinned mathlib. Four of those declarations in `ContinuumProperties.lean` use real matrices and the real square root with pinned mathlib v4.19.0; `proofs/mathlib-lock.json` binds its commit and dependency manifest. The source build uses two jobs and does not require a binary cache. These are mathematical contracts, not real-valued biological model validation. The original twelve Mechanics checks cover cancellation, torque identities, kinetic-energy numerator nonnegativity, an exact worked torque, an integer convex-mixture numerator bound and signed virtual-power algebra, plus element-gradient resultants, centroid force-transfer power, a compliant-denominator bound and Armijo acceptance. Every card declares its domain and limits. These exact contracts do not prove the numerical implementation or biological response.
+Thirty declarations use exact integer domains and bundled Std. Eighty-five registered declarations use reals with pinned mathlib. Four of those declarations in `ContinuumProperties.lean` use real matrices and the real square root with pinned mathlib v4.19.0; `proofs/mathlib-lock.json` binds its commit and dependency manifest. The source build uses two jobs and does not require a binary cache. These are mathematical contracts, not real-valued biological model validation. The original twelve Mechanics checks cover cancellation, torque identities, kinetic-energy numerator nonnegativity, an exact worked torque, an integer convex-mixture numerator bound and signed virtual-power algebra, plus element-gradient resultants, centroid force-transfer power, a compliant-denominator bound and Armijo acceptance. Every card declares its domain and limits. These exact contracts do not prove the numerical implementation or biological response.
+
+## Shared chapter GUI and embedding
+
+`dist/examples.html` exposes the same chapter viewer used by the book. After
+building and qualifying the complete `dist` directory, a static host can embed
+`examples.html?chapter=01-force&embedded=1` in a titled iframe. Preserve the
+relative `assets`, `gui`, `data` and source directories. This does not require a
+server-side solver. Building a candidate does not publish it to Pages.
+
+`book/examples/registry.json` binds every chapter to its task, model/evidence
+class, limitations and related exact-domain claims. `web/chapter-models.mjs`
+accepts bounded parameters and returns a version-1 scene description and text
+metrics. A coalescing worker keeps one request in flight and one latest update.
+The shared `browser/embedded` viewport owns presentation and disposal only.
+The independent poser keeps its own graph, Rust/WASM, gizmos and SQLite scene
+contract; it imports no research solver. Research evidence views retain recorded
+failures, and saved trajectories are identified as replays.
+
+Checked-claim details collapse on screen with keyboard-accessible controls.
+Assumptions and limitations remain visible. No-JavaScript reading exposes the
+statements, and the PDF retains all 115 declarations and fourteen complete
+sources. The new browser gate exercises all 27 chapters at desktop, 390 px and
+320 px widths, real controls, reset, keyboard orbit, context loss, disposal and
+embedded posing. Packaging checks executable/WASM and delivered data/style
+hashes against those tests. Preview receipts never qualify a complete book.
+
+## Source-only architecture-force integration checks
+
+Run the bounded checks without starting the full build:
+
+```bash
+cd education
+npm run test:architecture-force
+python3 -m unittest discover -s tests -p 'test_real_lesson_proofs.py'
+```
+
+The first command runs the twelve preserved Node contracts, seven supplementary symbolic checks and source/assembly unit tests. Unit-test proof receipts are synthetic fixtures, not fresh Lean evidence. No browser, PDF, solver, dependency build or numerical campaign runs. The canonical lesson preserves anatomical stationarity, compression and calibration gaps. See [integration scope and remaining gates](research/architecture-force-book-integration.md).
+
+`npm run build` is not a render-only operation: it freshly checks proofs and launches oscillator, elbow, series, spatial and material experiments. The broad workflow adds anatomical research operations. Full-build execution, integrated controls/PDF review and release/publication need a separate decision; no source-only check establishes that they passed.
 
 ## GitHub Pages foundation
 

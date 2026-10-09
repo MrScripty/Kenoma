@@ -67,3 +67,28 @@ Arm26: [official pinned XML](https://github.com/opensim-org/opensim-models/blob/
 ## What remains unverified
 
 Published architecture and fitted-modulus summaries above are verified within their stated sources and methods. The acquired package establishes the specific data and provenance described in the data chapter. The schematic actuator's biological calibration, anatomical continuum/contact accuracy, patient-specific validity and performance rankings are not established by this edition. The browser tests establish behavior in the tested Chromium environment; they do not certify every browser, assistive technology, or medical application.
+
+
+## Geometric posing and the integrated proof boundary {#source-embedded-cohort}
+
+Ladislav Kavan, Steven Collins, Jiří Žára and Carol O'Sullivan. “Geometric Skinning
+with Approximate Dual Quaternion Blending.” *ACM Transactions on Graphics* 27(4)
+(2008). DOI: [10.1145/1409625.1409627](https://doi.org/10.1145/1409625.1409627).
+[Author-hosted full text](https://users.cs.utah.edu/~ladislav/kavan08geometric/kavan08geometric.pdf),
+§§1–2 and 4, opened 2026-10-09. Supports geometric transformation blending and
+its distinction from physical simulation, not anatomical validity or a guarantee
+for Kenoma's particular rig. No paper figures or source assets are redistributed.
+
+The architecture-to-force chapter retains its primary-source ledger. Murray,
+Buchanan and Delp, *Journal of Biomechanics* 33 (2000), 943–952,
+[author-laboratory full text](https://nmbl.stanford.edu/publications/pdf/Murray2000.pdf),
+DOI [10.1016/S0021-9290(00)00051-8](https://doi.org/10.1016/S0021-9290(00)00051-8),
+was re-opened 2026-10-09. The study concerns architecture and moment arms in
+cadaveric elbow muscles; it does not calibrate this book's authored examples.
+The original contribution's more detailed extraction and exclusions are retained.
+
+The Lean project's [Axioms and Computation documentation](https://lean-lang.org/theorem_proving_in_lean4/Axioms-and-Computation/)
+was opened 2026-10-09 for the distinction between kernel-checked declarations,
+axiom dependencies and computation. The build still records the pinned Lean
+4.19.0 toolchain, complete source hashes and actual dependency reports. This
+citation does not establish JavaScript refinement or replace compilation.

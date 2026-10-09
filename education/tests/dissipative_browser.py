@@ -45,6 +45,7 @@ def row_at(rows,t):
     return min(rows,key=lambda row:abs(row['time']-t))
 
 def check(page,out,full=True):
+    from browser_capture import capture_section
     lab=page.locator('[data-dissipative]');expect(lab).to_have_count(1)
     lab.locator('[data-action=reset]').click()
     initial=snapshot(lab);verify_trace(initial)
@@ -79,7 +80,7 @@ def check(page,out,full=True):
             points=lab.locator(f'.{name} [data-series={key}]').get_attribute('points').split()
             assert len(points)==len(rows) and abs(float(points[-1].split(',')[0])-555)<1e-9
         (out/f'{mode}-hold-trace.json').write_text(json.dumps(result,indent=2)+'\n')
-        lab.screenshot(path=str(out/f'{mode}-hold-completed.png'))
+        capture_section(page,lab,out/f'{mode}-hold-completed.png')
         cases[mode]=result
     if not full:return cases
     assert cases['force']['trace'][150]['extensionM']>cases['extension']['trace'][150]['extensionM']*1.2
@@ -90,7 +91,7 @@ def check(page,out,full=True):
     loaded=snapshot(lab);verify_trace(loaded)
     right=lab.locator('.dissipative-scene rect[data-strain]').last.evaluate('(r)=>Number(r.getAttribute("x"))+Number(r.getAttribute("width"))')
     assert abs(right-initial_right-10*1600*loaded['trace'][-1]['extensionM'])<1e-8 and right>initial_right+20
-    lab.screenshot(path=str(out/'force-hold-loaded.png'))
+    capture_section(page,lab,out/'force-hold-loaded.png')
     # Empty/out-of-range controls retain actual state and trace; valid edits reset.
     control=lab.locator('input[type=number][data-param=ramp]');control.fill('')
     expect(control).to_have_attribute('aria-invalid','true');invalid=snapshot(lab)
@@ -144,7 +145,7 @@ def check(page,out,full=True):
     lab.locator('[data-action=summary]').click();expect(lab.locator('.announce')).to_contain_text('Phase:')
     page.set_viewport_size({'width':390,'height':844});lab.locator('[data-action=reset]').click()
     assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+1')
-    lab.screenshot(path=str(out/'mobile-default.png'))
+    capture_section(page,lab,out/'mobile-default.png')
     cases.update(loaded=loaded,elasticQuadratureErrors=elastic,viscosityCreep=creep,paused=paused,resumedSteps=resumed['steps'],paced=paced)
     return cases
 
@@ -162,6 +163,12 @@ def displayed_proofs(page,site):
     for claim in record['claims']:
         assert claim['status']=='checked' and set(claim['axioms'])<={'propext','Classical.choice','Quot.sound'}
         card=page.locator('#proof-'+claim['id']);expect(card).to_have_count(1)
+        toggle = card.locator('.claim-toggle')
+        if toggle.count():
+            expect(toggle).to_have_attribute('aria-expanded','false')
+            toggle.focus();page.keyboard.press('Enter')
+            expect(toggle).to_have_attribute('aria-expanded','true')
+            expect(card.locator('.claim-technical')).to_be_visible()
         text=card.inner_text();statement=card.locator('pre').first.inner_text()
         assert 'theorem '+claim['theorem'].split('.')[-1] in statement
         for key in ['claim','assumptions','limitations','implementation']:assert normal(claim[key]) in normal(text),(claim['id'],key)
@@ -194,7 +201,7 @@ def main():
         base=Path(temp);site=args.site.resolve() if args.site else base/'site'
         if args.site is None:build(site)
         inputs={str(p.relative_to(site)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(site.rglob('*')) if p.is_file() and p.suffix in ['.html','.mjs','.js','.css']}
-        source_names=['web/dissipative-bar.mjs','web/dissipative-lab.mjs','web/dissipative-lab.css','web/app.mjs','tools/dissipative_lab.py','tools/build_dissipative_preview.py','tests/dissipative_browser.py']
+        source_names=['web/dissipative-bar.mjs','web/dissipative-lab.mjs','web/dissipative-lab.css','web/app.mjs','tools/dissipative_lab.py','tools/build_dissipative_preview.py','tests/dissipative_browser.py','tests/browser_capture.py']
         source_hashes={name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in source_names}
         result=qualify(site,out);result.update(scope='Actual production SLS controls and model; numerical/browser checks, not Lean or full-book release qualification',delivered_input_sha256=inputs,test_sha256=source_hashes['tests/dissipative_browser.py'],source_input_sha256=source_hashes,source_base_revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),worktree_dirty=bool(subprocess.check_output(['git','status','--porcelain'],cwd=ROOT,text=True).strip()),renderer_source_sha256=source_hashes['web/dissipative-lab.mjs'],model_source_sha256=source_hashes['web/dissipative-bar.mjs'],app_source_sha256=source_hashes['web/app.mjs'],app_bundle_sha256=hashlib.sha256((site/'assets/app.js').read_bytes()).hexdigest() if (site/'assets/app.js').exists() else None,build_manifest_sha256=hashlib.sha256((site/'build-manifest.json').read_bytes()).hexdigest() if (site/'build-manifest.json').exists() else None)
         assert all(hashlib.sha256((site/name).read_bytes()).hexdigest()==digest for name,digest in inputs.items()), 'Delivered source changed during browser checks'

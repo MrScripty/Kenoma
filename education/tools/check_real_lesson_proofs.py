@@ -10,7 +10,12 @@ FAMILIES = [
     ('DissipativeBarReal.lean', 'dissipative-real-claims.json', 'dissipative-real', 11),
     ('SerialSpecimenReal.lean', 'serial-specimen-real-claims.json', 'serial-real', 12),
     ('MixedLogVolume.lean', 'mixed-volume-claims.json', 'mixed-volume', 27),
+    ('NonuniformIsochoric.lean', 'nonuniform-real-claims.json', 'nonuniform-real', 6),
+    ('ArchitectureForce.lean', 'architecture-force-real-claims.json', 'architecture-force-real', 6),
 ]
+# Six original families: 30 integer declarations and four Real kinematics.
+BOOK_CLAIMS = 34 + sum(count for *_, count in FAMILIES)
+BOOK_SOURCES = 6 + len(FAMILIES)
 
 def check(existing=None):
     out = ROOT / 'dist'; out.mkdir(exist_ok=True)

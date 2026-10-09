@@ -115,3 +115,14 @@ In the elbow's inner fold, bending brings opposing skin patches together. A usef
 Do not color every red contact patch as “high pressure.” Pressure requires a defined force-to-area measure or continuum stress; a multiplier, penetration depth or collision flag is not automatically pressure. A contact-free image proves only that no visible overlap was noticed from that camera. The verification system must examine the complete geometry.
 
 Laboratory 7 now implements a separate skin membrane, discrete fascia tethers and compliant sampled contact on the arm itself. Its one-way coupling, absent sliding/self-contact, and sampled-gap limitations are explicit. It transfers centroid contact forces with barycentric weights, while the paired baseline is posed exactly once. The following chapter reports actual residuals and penetration for that implementation.
+
+
+## A shared view is not a shared solver {#gui-interface-boundary}
+
+The embedded examples reuse Kenoma's camera, orbit interaction, presentation theme
+and disposal lifecycle. Each adapter owns its model state and units. The poser
+keeps its Rust/WASM graph and artistic rig; educational adapters call the existing
+bounded lesson models, and evidence adapters read preserved data. No lesson sends
+poser deformations into the biomechanical solver or treats rig weights as tissue
+attachments. The chapter's poser illustrates that boundary; it does not implement
+the sliding, contact or two-way coupling discussed above.

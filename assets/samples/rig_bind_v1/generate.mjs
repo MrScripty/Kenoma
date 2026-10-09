@@ -1,0 +1,26 @@
+/** Generate exact wire bytes from the retained/pinned tested WASM, no browser or Rust needed. */
+import {readFile,mkdir,writeFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {gzipSync} from 'node:zlib';
+import init,{evaluate} from '../../../browser/simple-graph/pkg/human_wasm.js';
+const here=path.dirname(fileURLToPath(import.meta.url));
+const root=path.resolve(here,'../../..');
+const output=process.argv[2];if(!output)throw Error('Usage: node assets/samples/rig_bind_v1/generate.mjs OUTPUT_DIRECTORY');
+const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
+const wasm=await readFile(path.join(root,'browser/simple-graph/pkg/human_wasm_bg.wasm'));
+const expectedWasm='da3958056caeda3d190dfff7cb708657fb81c8389f953ad4c022a26e64bcdf8f';
+if(sha(wasm)!==expectedWasm)throw Error('WASM differs from tested 136f494 artifact; do not silently relabel provenance');
+const request=await readFile(path.join(here,'request.json'));
+await init({module_or_path:wasm});
+const response=Buffer.from(evaluate(request.toString('utf8')),'utf8');
+const value=JSON.parse(response);if(!value.ok||value.rig_version!==1||value.rig_id!==1)throw Error('Unexpected bind response');
+const mesh=value.mesh;
+if(mesh.positions.length!==46728||mesh.normals.length!==46728||mesh.indices.length!==280356)throw Error('Unexpected representative counts');
+const bounds={min:[0,1,2].map(i=>Math.min(...mesh.positions.map(p=>p[i]))),max:[0,1,2].map(i=>Math.max(...mesh.positions.map(p=>p[i])))};
+const compressed=gzipSync(response,{level:9,mtime:0});
+const manifest={fixture_version:1,provenance:'Fresh deterministic rig_bind response from the retained WASM artifact verified in the 136f494 browser receipts; not a retained original request/response pair.',source_commit:'136f4947c7ef9bd2d4fe5cff09086489b0cb501d',compatible_editor_checkpoint:'3e7ff0887d01a1f4c440d3808770ea3eac7ec8d4',protocol_version:1,rig_version:1,crate_version:'0.1.0',wasm:{sha256:sha(wasm),bytes:wasm.length},coordinate_frame:{handedness:'right-handed',up:'+Y',head_forward:'+Z',length_unit:'metre',angle_unit:'radian',space:'character-local; no scene placement transform',triangle_winding:'counterclockwise viewed from outside'},request:{file:'request.json',bytes:request.length,sha256:sha(request),encoding:'UTF-8; trailing LF included'},response:{file:'response.json',bytes:response.length,sha256:sha(response),encoding:'UTF-8; exact evaluate() return, no added newline',compressed_file:'response.json.gz',compressed_bytes:compressed.length,compressed_sha256:sha(compressed)},counts:{source_nodes:value.graph.nodes.length,source_edges:value.graph.edges.length,positions:mesh.positions.length,normals:mesh.normals.length,triangle_indices:mesh.indices.length,triangles:mesh.indices.length/3},bounds,options:{cell_size:0.016,head:{yaw:0,pitch:0}},note:'Schematic artistic mannequin. No anatomical/medical inputs, physics, contact simulation or research artifacts. rig_id is instance-local and cannot be reused in another process.'};
+await mkdir(output,{recursive:true});
+for(const [name,bytes]of [['request.json',request],['response.json',response],['response.json.gz',compressed],['manifest.json',JSON.stringify(manifest,null,2)+'\n']])await writeFile(path.join(output,name),bytes);
+console.log(JSON.stringify(manifest,null,2));

@@ -1,6 +1,7 @@
 """Capture actual new Real cards and verify their durable PDF source evidence."""
 from pathlib import Path
 import hashlib,json,os,shutil
+from math import ceil
 import fitz
 from playwright.sync_api import sync_playwright,expect
 from check_real_lesson_proofs import FAMILIES
@@ -30,12 +31,27 @@ def inspect():
                 for claim in receipt['claims']:
                     card=page.locator('#proof-'+claim['id']);card.scroll_into_view_if_needed()
                     expect(card).to_be_visible()
+                    toggle=card.locator('.claim-toggle')
+                    expect(toggle).to_have_attribute('aria-expanded','false')
+                    toggle.focus();page.keyboard.press('Enter')
+                    expect(toggle).to_have_attribute('aria-expanded','true')
+                    expect(card.locator('.claim-technical')).to_be_visible()
                     expect(card).to_contain_text(claim['assumptions']);expect(card).to_contain_text(claim['limitations'])
                     expect(card.locator('.proof-meta')).to_contain_text(receipt['source_sha256'])
                     from build import theorem_statement
                     expect(card.locator('pre').first).to_have_text(theorem_statement((ROOT / receipt['source']).read_text(), claim['theorem'].split('.')[-1]))
                     assert card.evaluate('(x)=>x.scrollWidth<=x.clientWidth+1')
-                    path=out/(name+'-'+claim['id']+'.png');card.screenshot(path=str(path));captures.append(path)
+                    path=out/(name+'-'+claim['id']+'.png')
+                    # Avoid Chromium's oversized-element capture path while
+                    # retaining the complete expanded statement at its width.
+                    before=card.bounding_box();capture_height=max(height,ceil(before['height'])+64)
+                    assert capture_height<=8192
+                    try:
+                        page.set_viewport_size({'width':width,'height':capture_height})
+                        after=card.bounding_box()
+                        assert abs(after['width']-before['width'])<.5 and after['height']<=capture_height-32
+                        card.screenshot(path=str(path));captures.append(path)
+                    finally:page.set_viewport_size({'width':width,'height':height})
             overflow=page.evaluate('document.documentElement.scrollWidth>innerWidth+1');assert not overflow
             views.append({'name':name,'real_cards':len(claims),'horizontal_overflow':overflow});page.close()
         version=browser.version;browser.close()

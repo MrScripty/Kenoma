@@ -2,6 +2,7 @@
 from pathlib import Path
 from publication_data import copy_publication_data
 from ordinary_images import jpeg85
+from chapter_examples import inventory as example_inventory, block as example_block, package as package_examples
 from executable_outputs import executable_outputs
 import hashlib,html,json,re,shutil,subprocess
 from check_proofs import check
@@ -14,11 +15,19 @@ from check_real_lesson_proofs import check as check_real_lessons, FAMILIES as RE
 from property_labs import block as property_block
 from dissipative_lab import block as dissipative_block
 from serial_lab import block as serial_block
+from nonuniform_lab import build as build_nonuniform, block as nonuniform_block
+from architecture_force_lab import build as build_architecture_force, block as architecture_force_block
 from figures import generate
 from evidence_figures import generate as evidence_figures
 from spatial_figures import generate as advanced_figures
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'dist'
+
+def implementation_link(implementation):
+    """Link supported bundled sources; leave other implementation prose unchanged."""
+    prose=html.escape(implementation).replace('*','&#42;').replace('^','&#94;')
+    match=re.match(r'(web/[^: ]+|contributions/architecture-force/[^:; ]+)',implementation)
+    return f'<a href="{html.escape(match[1])}">{prose}</a>' if match else prose
 
 def theorem_statement(checked_source,name):
     # A checked theorem may use a term proof or a tactic proof. Stop at its
@@ -114,6 +123,8 @@ def build():
     properties=check_properties()
     material=check_material()
     real_lessons=check_real_lessons(properties)
+    build_nonuniform()
+    build_architecture_force()
     from check_mixed_volume_proofs import check as check_mixed
     check_mixed(OUT/'mixed-volume-kernel', False)
     data=ROOT/'data/elbow-v1'
@@ -156,15 +167,16 @@ def build():
         # multiplication signs are literal text, not emphasis delimiters.
         def prose(value):return e(value).replace('*','&#42;').replace('^','&#94;')
         implementation=c.get('implementation','See the adjacent derivation and original mechanics claim map.')
-        match=re.match(r'(web/[^: ]+)',implementation)
-        implementation_html=(f'<a href="{e(match[1])}">{prose(implementation)}</a>' if match else prose(implementation))
+        implementation_html=implementation_link(implementation)
         return f'''\n<aside class="proof-card" id="proof-{id}" aria-label="Checked mathematical claim">
 <h3>Checked claim · {e(id)}</h3><p>{prose(c['claim'])}</p><p><strong>Assumptions:</strong> {prose(c['assumptions'])}</p>
-<pre><code>{e(stmt)}</code></pre><p><strong>Limits:</strong> {prose(c['limitations'])}</p>
+<p><strong>Limits:</strong> {prose(c['limitations'])}</p>
+<button type="button" class="claim-toggle" aria-expanded="false" aria-controls="claim-technical-{e(id)}" hidden>Expand checked statement and evidence</button>
+<div class="claim-technical" id="claim-technical-{e(id)}"><pre><code>{e(stmt)}</code></pre>
 <p class="proof-meta">Declaration {e(c['theorem'])}. {e(meta)}.</p>
 <p><strong>Implementation link:</strong> {implementation_html}</p>
 <p><a href="{receipt['source']}">Full source</a> · <a href="{receipt_path}">Build receipt</a> · <a href="{transcript_path}">Kernel dependency report</a></p>
-<details><summary>Read complete checked definitions and proof source</summary><pre><code>{e(checked_source)}</code></pre></details></aside>\n'''
+</div><details><summary>Read complete checked definitions and proof source</summary><pre><code>{e(checked_source)}</code></pre></details></aside>\n'''
     experiment_text=subprocess.check_output(['node',str(ROOT/'tools/experiment.mjs')],text=True)
     (OUT/'experiment.json').write_text(experiment_text)
     experiment=json.loads(experiment_text)
@@ -207,7 +219,8 @@ def build():
         state=serial['cases'][name]
         for i,c in enumerate(state['cells']):
             serial_table+=f"| {state['parameters']['force']:.3f} | {i+1} | {c['stretch']:.6f} | {c['engineeringStrain']:.6f} | {1e6*c['currentAreaM2']:.3f} | {1e9*c['currentBoundaryVolumeM3']:.3f} | {c['forceResidualN']:.3g} |\n"
-    chapters='\n\n'.join(((ROOT/'book'/p).read_text()+'\n\n{{demo:continuum}}\n\n{{proof:compliance-denominator}}\n') if p.startswith('../contributions/') else (ROOT/'book/chapters'/p).read_text() for p in manifest['chapters'])
+    example_inventory()  # Fail closed for a missing or stale chapter adapter.
+    chapters='\n\n'.join((ROOT/'book/chapters'/p).read_text()+'\n\n{{chapter-example:'+p.removesuffix('.md')+'}}\n' for p in manifest['chapters'])
     coupling_receipt=json.loads((ROOT/'data/anatomical-arm-v1/audit/coupling-results.json').read_text())
     profile_table='| Mesh | Solver | Objective calls | HVP calls | Time (s) | Loaded length (mm) | Max nodal force (N) |\n|:--|:--|--:|--:|--:|--:|--:|\n'
     for r in coupling_receipt['profiles']:
@@ -219,6 +232,9 @@ def build():
     def expand(web):
         text=re.sub(r'\{\{demo:(\w+)\}\}',lambda m:lab_block(m[1],web),chapters)
         text=re.sub(r'\{\{property:(\w+)\}\}',lambda m:property_block(m[1],web),text)
+        text=re.sub(r'\{\{chapter-example:([\w-]+)\}\}',lambda m:example_block(m[1],web),text)
+        text=text.replace('{{nonuniform-lab}}',nonuniform_block(web))
+        text=text.replace('{{architecture-force-lab}}',architecture_force_block(web))
         text=re.sub(r'\{\{dissipative:(\w+)\}\}',lambda m:dissipative_block(m[1],web),text)
         text=text.replace('{{dissipative-table}}',dissipative_table)
         text=re.sub(r'\{\{serial:(\w+)\}\}',lambda m:serial_block(m[1],web),text)
@@ -241,6 +257,9 @@ def build():
     if 'Could not convert TeX math' in pandoc_result.stderr:raise RuntimeError(pandoc_result.stderr)
     html_path=OUT/"index.html"
     rendered=html_path.read_text().replace('</head>','<link rel="stylesheet" href="assets/dissipative-lab.css">\n<link rel="stylesheet" href="assets/serial-lab.css">\n</head>')
+    appendix='<h1 id="checked-source-appendix">'
+    if rendered.count(appendix)!=1:raise RuntimeError('Expected one checked-source appendix boundary')
+    rendered=rendered.replace(appendix,'<details class="proof-appendices"><summary>Expand fourteen complete checked sources and kernel receipts</summary>'+appendix).replace('</main>','</details></main>')
     # MathML matrix fences can fail to stretch in Chromium's PDF font fallback.
     # Preserve the semantic operators; draw full-height fences around the table.
     rendered=re.sub(r'<mrow>(<mo[^>]*>\[</mo>)(<mtable>.*?</mtable>)(<mo[^>]*>\]</mo>)</mrow>',
@@ -281,6 +300,7 @@ def build():
     shutil.copy(ROOT/'web/serial-lab.css',assets/'serial-lab.css')
     shutil.copytree(ROOT/'web',OUT/'web',dirs_exist_ok=True)
     subprocess.run([str(ROOT/'node_modules/.bin/esbuild'),str(ROOT/'web/app.mjs'),'--bundle','--minify','--format=esm','--target=es2022',f'--outfile={assets/"app.js"}','--legal-comments=external'],check=True)
+    example_receipt=package_examples(OUT)
     proofs=OUT/'proofs';proofs.mkdir(exist_ok=True)
     for file in ['Mechanics.lean','AnatomicalTransfer.lean','CoupledMechanics.lean','AnatomicalArm.lean','anatomical-claims.json','coupled-claims.json','arm-claims.json','ContinuumProperties.lean','property-claims.json','MaterialResponse.lean','material-claims.json','mathlib-lock.json','lean-toolchain','claims.json']:shutil.copy(ROOT/'proofs'/file,proofs/file)
     for source_name,map_name,_,_ in REAL_FAMILIES:
@@ -305,6 +325,7 @@ def build():
       'node':subprocess.check_output(['node','--version'],text=True).strip(),
       'numerical_experiment':'experiment.json','proof_evidence':'proof-status.json',
       'executable_outputs':executable_outputs(OUT),
+      'chapter_examples':example_receipt,
       'proof_families':[b[2] for b in bundles],'property_mathlib':properties['mathlib'],
       'property_experiment':'property-experiment.json',
       'material_experiment':'material-experiment.json',

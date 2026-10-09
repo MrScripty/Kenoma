@@ -45,3 +45,19 @@ Reduced deformation bases, cached simulations and learned mappings can save comp
 If a detailed render surface follows a tissue proxy, embed it directly in the posed proxy, or add a displacement residual measured against its baseline at the **same current pose and coordinate frame**. Adding an unposed rest-relative displacement to an already skinned vertex applies part of the pose twice. Test this with a pure bone-motion sweep: a zero tissue residual must leave exactly the baseline surface.
 
 For the spatial capstone, synchronize the actual q(t) from forward dynamics across the naive skinning and tissue views. Keep the base mesh and skeletal transforms identical. Show geometric distortion separately from detected intersection, contact gap separately from pressure, and each force owner separately from its visual shape. Laboratory 4 supplies the first trajectory and actuator telemetry for that comparison; Laboratory 7 adds the spatial volume, membrane, fascia-tether and sampled bone-contact solve with a synchronized baseline and measured defects.
+
+
+## The separate artistic poser {#artistic-poser-boundary}
+
+The chapter's embedded poser uses a stick graph and a surface bound in the neutral
+pose. It blends rigid bone transformations with dual quaternions while retaining
+mesh topology. This is geometric skinning, not a constitutive material model.
+Kavan and colleagues describe approximate dual-quaternion blending and distinguish
+geometric from physically based skinning in their original paper (2008, §§1–2).
+[Author-hosted paper](https://users.cs.utah.edu/~ladislav/kavan08geometric/kavan08geometric.pdf).
+
+Kenoma's implementation has its own weights, bind mesh and limitations: extreme
+bends can crease or bulge and surfaces may interpenetrate. It does not promise
+volume preservation, nonintersection or anatomical accuracy. Its visual result
+must not be used as a muscle-force, pressure or physiological measurement.
+[Versioned rig contract](https://github.com/MrScripty/Kenoma/blob/7eec7ef00c005ac3168e51cb93cb4b212fe31e36/browser/simple-graph/RIG_API.md).

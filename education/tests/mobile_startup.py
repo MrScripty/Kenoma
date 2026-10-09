@@ -9,6 +9,7 @@ from render_pdf import serve
 from executable_outputs import checked_build_outputs,executable_digest,unchanged_outputs
 from playwright.sync_api import sync_playwright,expect
 from collections import Counter
+from browser_capture import capture_section
 import fitz
 ROOT=Path(__file__).resolve().parents[1]
 LABS=['force','torque','energy','elbow','series','continuum','spatial']
@@ -102,7 +103,7 @@ def check():
           assert lab.locator('.readout').inner_text()!=before,name
           expect(lab.locator('.scene-error')).to_be_visible()
         for name in LABS:expect(failed.locator('#lab-'+name+' .scene-error')).to_be_visible()
-        failed.locator('#lab-series').screenshot(path=str(out/'unavailable-series.png'))
+        capture_section(failed,failed.locator('#lab-series'),out/'unavailable-series.png')
         failed.locator('#lab-series .scene-host').screenshot(path=str(out/'unavailable-message.png'))
         failed.locator('#lab-series .scene-toolbar').screenshot(path=str(out/'retry-toolbar.png'))
         assert not failed_downloads

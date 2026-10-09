@@ -2,10 +2,10 @@ name: Kenoma educational book
 on:
   push:
     branches: [main, 'education/**']
-    paths: ['README.md', 'education/**', '.github/workflows/education.yml']
+    paths: ['README.md', 'education/**', 'browser/**', 'crates/human_*/**', 'Cargo.toml', 'Cargo.lock', '.github/workflows/education.yml']
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
-    paths: ['README.md', 'education/**', '.github/workflows/education.yml']
+    paths: ['README.md', 'education/**', 'browser/**', 'crates/human_*/**', 'Cargo.toml', 'Cargo.lock', '.github/workflows/education.yml']
   workflow_dispatch:
     inputs:
       publish:
@@ -46,6 +46,70 @@ jobs:
           python3 tools/check_generated_outputs.py
           npm test
           npm run test:python
+  architecture-force-contribution:
+    # Bounded draft-PR gate only. Does not qualify the full book or anatomy.
+    if: github.event_name == 'pull_request' && github.event.pull_request.draft
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: education
+        shell: bash
+    env:
+      EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.12'
+      - name: Set external qualification paths on the runner
+        run: |
+          echo "RECEIPTS=$RUNNER_TEMP/architecture-force-receipts" >> "$GITHUB_ENV"
+          echo "LEAN_ROOT=$RUNNER_TEMP/architecture-force-tools" >> "$GITHUB_ENV"
+          echo "MATHLIB=$RUNNER_TEMP/architecture-force-mathlib" >> "$GITHUB_ENV"
+          echo "XDG_CACHE_HOME=$RUNNER_TEMP/architecture-force-cache" >> "$GITHUB_ENV"
+      - name: Bind exact checkout and qualification sources
+        run: python3 tools/qualify_architecture_force.py source --expected-head "$EXPECTED_HEAD" --output "$RECEIPTS"
+      - name: Install pinned official test dependencies and verified Lean release
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y zstd
+          python3 -m pip install -r requirements.txt
+          python3 -m playwright install --with-deps chromium
+          python3 tools/install_lean.py --directory "$LEAN_ROOT" | tee "$RECEIPTS/lean-install.txt"
+      - name: Run the twelve contribution Node contracts explicitly
+        run: node --test --test-reporter=tap contributions/architecture-force/model.test.mjs contributions/architecture-force/repo-contract.test.mjs | tee "$RECEIPTS/node.txt"
+      - name: Run supplementary symbolic identities separately
+        run: python3 contributions/architecture-force/check_algebra.py | tee "$RECEIPTS/symbolic.json"
+      - name: Check qualification receipt negative controls
+        run: python3 -m unittest discover -s tests -p 'test_architecture_force_qualification.py' -v 2>&1 | tee "$RECEIPTS/qualification-tests.txt"
+      - name: Fetch only the pinned official three-import mathlib cache closure
+        run: |
+          python3 tools/qualify_architecture_force.py dependencies --mathlib "$MATHLIB" --lean-bin "$LEAN_ROOT/lean-4.19.0-linux/bin" --output "$RECEIPTS" 2>&1 | tee "$RECEIPTS/mathlib-cache.txt"
+      - name: Compile the six contribution Lean contracts with pinned pristine sources
+        run: |
+          python3 contributions/architecture-force/check_lean.py --mathlib "$MATHLIB" --lean-bin "$LEAN_ROOT/lean-4.19.0-linux/bin" --output "$RECEIPTS/formal" | tee "$RECEIPTS/lean-check.txt"
+      - name: Exercise real desktop and mobile browser controls
+        run: python3 tests/architecture_force_browser.py --output "$RECEIPTS/browser" | tee "$RECEIPTS/browser.txt"
+      - name: Verify unchanged source and bind all evidence
+        run: python3 tools/qualify_architecture_force.py finish --expected-head "$EXPECTED_HEAD" --output "$RECEIPTS"
+      - name: Preserve contribution evidence for visual inspection
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: architecture-force-${{ github.event.pull_request.head.sha }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/architecture-force-receipts/
+          if-no-files-found: error
+          retention-days: 14
   build:
     # Mandatory full qualification still runs on ready PRs and explicit builds.
     # A draft contract PASS does not establish full-book or proof qualification.
@@ -75,6 +139,20 @@ jobs:
           npm ci --no-audit --no-fund
           python3 tools/install_lean.py --directory .tools
           echo "$PWD/.tools/lean-4.19.0-linux/bin" >> "$GITHUB_PATH"
+      - name: Build and test the isolated poser and its browser ABI
+        run: |
+          rustup toolchain install 1.90.0 --profile minimal --target wasm32-unknown-unknown
+          rustup default 1.90.0
+          cargo install wasm-bindgen-cli --version 0.2.129 --locked
+          ../browser/simple-graph/build.sh
+          cargo test --locked --workspace
+          npm ci --prefix ../browser/simple-graph --ignore-scripts --no-audit --no-fund
+          npm --prefix ../browser/simple-graph test
+          export PLAYWRIGHT_MODULE="$(python3 -c 'from pathlib import Path; import playwright; print(Path(playwright.__file__).parent / "driver/package/index.mjs")')"
+          export CHROMIUM="$(python3 -c 'from playwright.sync_api import sync_playwright; p=sync_playwright().start(); print(p.chromium.executable_path); p.stop()')"
+          node ../browser/simple-graph/tests/browser.mjs
+          node ../browser/simple-graph/tests/rig-browser.mjs
+          node ../browser/simple-graph/tests/scene-files-browser.mjs
       - name: Compile pinned real-proof dependencies from source
         run: |
           python3 tools/build_property_mathlib.py
@@ -88,7 +166,11 @@ jobs:
             education/.tools/property-mathlib-source-logs/
             education/.tools/real-mathlib-source-logs/
           include-hidden-files: true
+      - name: Prepare an isolated exact-source research rerun
+        run: |
+          python3 tools/prepare_research_workspace.py --destination "$RUNNER_TEMP/kenoma-research"
       - name: Check anatomical research foundation separately from the published capstone
+        working-directory: ${{ runner.temp }}/kenoma-research/education
         run: |
           npm run anatomy:geometry
           node tools/repair-anatomical-reference.mjs
@@ -130,9 +212,15 @@ jobs:
         run: |
           npm test
           npm run test:python
-          node tools/tapered-bar-current-endpoint-audit.mjs
-          python3 tests/endpoint_warning_audit.py
-          python3 tools/check_endpoint_warning_audit.py
+          # These checks intentionally regenerate tracked research evidence.
+          # Keep it in the research checkout, without weakening the proof guard.
+          (
+            cd "$RUNNER_TEMP/kenoma-research/education"
+            node tools/tapered-bar-current-endpoint-audit.mjs
+            python3 tests/endpoint_warning_audit.py
+            python3 tools/check_endpoint_warning_audit.py
+          )
+          test -z "$(git status --porcelain)"
           npm run build
           npm run pdf
           python3 tools/check_print_readability.py dist
@@ -143,6 +231,9 @@ jobs:
           npm run test:browser
           npm run test:mobile
           python3 tests/property_browser.py dist
+          python3 tests/nonuniform_browser.py
+          python3 tests/architecture_force_book_browser.py
+          python3 tests/chapter_examples_browser.py
           python3 tests/material_browser.py dist
           python3 tests/dissipative_browser.py dist --output dist/dissipative-qa
           python3 tests/dissipative_browser.py --negative-controls --output .artifacts/dissipative-negative-ci
@@ -157,12 +248,32 @@ jobs:
           python3 tests/worker_lifecycle.py
           python3 tests/artifacts.py
           python3 tools/qualify_print_negatives.py
+          python3 tools/package_education_bundle.py
+      - name: Preserve independent research rerun evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: kenoma-independent-research-rerun
+          path: |
+            ${{ runner.temp }}/kenoma-research/education/.artifacts/research-workspace.json
+            ${{ runner.temp }}/kenoma-research/education/data/
+            ${{ runner.temp }}/kenoma-research/education/dist/
+          include-hidden-files: true
+          if-no-files-found: error
       - name: Preserve downloadable PDFs separately from sources
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: kenoma-print-downloads
           path: education/dist/**/*.pdf
           if-no-files-found: error
+      - name: Preserve incomplete book diagnostics after a failed gate
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: kenoma-unqualified-book-diagnostics
+          path: education/dist/
+          include-hidden-files: true
+          if-no-files-found: ignore
       - name: Preserve projection viewport diagnostics
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2

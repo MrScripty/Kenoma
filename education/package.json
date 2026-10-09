@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "python3 tools/build.py",
-    "test": "node --test tests/*.test.mjs contributions/continuum_reference/tests/*.test.mjs",
+    "test": "node --test tests/*.test.mjs contributions/continuum_reference/tests/*.test.mjs contributions/nonuniform-isochoric-kinematics/model.test.mjs contributions/architecture-force/*.test.mjs",
     "test:python": "python3 -m unittest discover -s tests -p 'test_*.py'",
     "proofs": "python3 tools/check_proofs.py",
     "pdf": "python3 tools/render_pdf.py",
@@ -19,7 +19,8 @@
     "anatomy:apparatus": "node tools/verify-anatomical-matches.mjs && node tools/build-anatomical-routes.mjs",
     "anatomy:arm": "node tools/anatomical-arm-experiment.mjs",
     "anatomy:contact": "node tools/anatomical-contact-experiment.mjs && node tools/verify-anatomical-contact-trajectory.mjs",
-    "check:outputs": "python3 tools/check_generated_outputs.py"
+    "check:outputs": "python3 tools/check_generated_outputs.py",
+    "test:architecture-force": "node --test contributions/architecture-force/model.test.mjs contributions/architecture-force/repo-contract.test.mjs && python3 contributions/architecture-force/check_algebra.py && python3 -m unittest discover -s tests -p test_architecture_force_integration.py"
   },
   "dependencies": {
     "three": "0.180.0"

@@ -1,5 +1,6 @@
 """Actual controls, rollback, volume oracles and print alternatives in the preview."""
 from pathlib import Path
+from browser_capture import capture_section
 from functools import partial
 from http.server import SimpleHTTPRequestHandler,ThreadingHTTPServer
 from threading import Thread
@@ -74,10 +75,10 @@ def check(destination):
         checks.append('UI-valid endpoint warning regression: true 5.4545% strain exposed despite midpoint maximum below 5%')
         checks.append('Taper fixed-end uneven extension/compression and genuine midpoint refinement')
         for lab in [deformation,iso,bar]:
-            lab.locator('[data-action=reset]').click();lab.locator('[data-action=summary]').click();expect(lab.locator('.announce')).not_to_be_empty();lab.locator('.preset').evaluate('(x)=>x.hidden=true');lab.screenshot(path=str(qa/(lab.get_attribute('data-property')+'-desktop.png')))
+            lab.locator('[data-action=reset]').click();lab.locator('[data-action=summary]').click();expect(lab.locator('.announce')).not_to_be_empty();lab.locator('.preset').evaluate('(x)=>x.hidden=true');capture_section(page,lab,qa/(lab.get_attribute('data-property')+'-desktop.png'))
         page.set_viewport_size({'width':393,'height':852})
         for lab in [deformation,iso,bar]:
-            lab.scroll_into_view_if_needed();assert lab.evaluate('(x)=>x.scrollWidth<=x.clientWidth+1');lab.screenshot(path=str(qa/(lab.get_attribute('data-property')+'-mobile.png')))
+            lab.scroll_into_view_if_needed();assert lab.evaluate('(x)=>x.scrollWidth<=x.clientWidth+1');capture_section(page,lab,qa/(lab.get_attribute('data-property')+'-mobile.png'))
         page.emulate_media(media='print')
         for lab in [deformation,iso,bar]:expect(lab.locator('.static-figure')).to_be_visible();expect(lab.locator('.property-scene')).to_be_hidden();expect(lab.locator('.property-description')).to_be_hidden()
         revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
