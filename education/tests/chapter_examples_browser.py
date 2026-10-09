@@ -85,6 +85,11 @@ try:
      page.frame_locator('.chapter-example-frame').locator('#example-choice').wait_for()
      frame=next(f for f in page.frames if 'examples.html' in f.url)
      frame.wait_for_function('window.kenomaChapterExample?.ready',timeout=90000)
+    poser=next(f for f in page.frames if '/simple-graph/' in f.url)
+    for control in poser.locator('header button,header summary,aside button,aside select').all():
+     assert control.evaluate('e=>{const r=e.getBoundingClientRect();return r.left>=0&&r.right<=innerWidth+1}'),'clipped nested poser control'
+    page.locator('.proof-appendices').evaluate('(e)=>e.open=true')
+    assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+1'),'expanded appendix overflow'
     page.locator('[data-chapter-example="00-scope"]').click();assert page.locator('.chapter-example-frame').count()==0
     page.emulate_media(media='print');expect(body).to_be_visible()
    assert not errors,errors

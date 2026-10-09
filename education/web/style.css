@@ -84,3 +84,4 @@ math[display="inline"]{display:inline-block;white-space:nowrap;break-inside:avoi
  .claim-technical[hidden]{display:block!important}.claim-toggle,.chapter-example button,.chapter-example-host{display:none!important}
  .proof-appendices{display:block!important}.proof-appendices>summary{display:none}.chapter-example{break-inside:avoid;font-size:10.5pt;border-top:1px solid #d8e1df;padding-top:3mm}.chapter-example h2{font-size:14pt}
 }
+.proof-appendices h1,.proof-appendices h2,.proof-appendices p{overflow-wrap:anywhere}

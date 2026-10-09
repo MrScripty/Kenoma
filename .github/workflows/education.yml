@@ -238,6 +238,7 @@ jobs:
           python3 tests/worker_lifecycle.py
           python3 tests/artifacts.py
           python3 tools/qualify_print_negatives.py
+          python3 tools/package_education_bundle.py
       - name: Preserve downloadable PDFs separately from sources
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
