@@ -1,0 +1,67 @@
+name: Publish preserved Kenoma book
+on:
+  workflow_dispatch:
+    inputs:
+      payload_commit:
+        description: 'Immutable prepared publication payload commit (40-character SHA)'
+        required: true
+        type: string
+  push:
+    branches: [main]
+    paths: ['.github/publications/kenoma-20261009.json']
+permissions:
+  contents: read
+concurrency:
+  group: kenoma-preserved-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Read the deployment-only instructions
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Select the immutable approved payload
+        id: payload
+        env:
+          REQUESTED_PAYLOAD: ${{ inputs.payload_commit }}
+        run: |
+          python3 - <<'PY'
+          import json,os,re
+          from pathlib import Path
+          value=os.environ.get('REQUESTED_PAYLOAD')
+          if not value:
+              value=json.loads(Path('.github/publications/kenoma-20261009.json').read_text())['payload_commit']
+          assert re.fullmatch(r'[0-9a-f]{40}',value), 'A completed immutable payload commit is required'
+          with open(os.environ['GITHUB_OUTPUT'],'a') as stream: stream.write('sha='+value+'\n')
+          PY
+      - name: Read the source bytes already verified for the book
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: dc8b692e9f85c8ed8e84562789ba73df5e3c62b6
+          path: source
+          persist-credentials: false
+      - name: Read the preserved publication payload
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ steps.payload.outputs.sha }}
+          path: payload
+          persist-credentials: false
+      - name: Verify and assemble preserved bytes without rebuilding
+        run: python3 .github/scripts/assemble-preserved-book.py source payload _site
+      - name: Upload the approved preserved site
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
+        with:
+          path: _site
+      - name: Publish to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e
