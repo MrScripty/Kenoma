@@ -1,7 +1,0 @@
-info: batteries: cloning https://github.com/leanprover-community/batteries
-info: batteries: checking out revision '5a56dfa58c18a1c4c485e5e630f9035e56c0952b'
-✖ [2/2] Building proofwidgets/widgetJsAll
-error: ProofWidgets not up-to-date. Please run `lake exe cache get` to fetch the latest ProofWidgets. If this does not work, report your issue on the Lean Zulip.
-Some required builds logged failures:
-- proofwidgets/widgetJsAll
-error: build failed

@@ -1,8 +1,0 @@
-'Kenoma.ActuatorReal.activation_in_unit_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Kenoma.ActuatorReal.activation_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Kenoma.ActuatorReal.active_force_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Kenoma.ActuatorReal.active_force_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Kenoma.ActuatorReal.gaussian_weighted_radius_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Kenoma.ActuatorReal.active_slope_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Kenoma.ActuatorReal.series_residual_strictMono' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Kenoma.ActuatorReal.series_equilibrium_unique' depends on axioms: [propext, Classical.choice, Quot.sound]

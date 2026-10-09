@@ -1,9 +1,0 @@
-# Make PR8 instructional and proof PDF text readable
-
-The PR8 author PDF shrinks its lesson prose to about 7 pt and proof code to 4.55 pt: wide display MathML expands the print layout, while nested code styles compound font reductions. This rendering-only successor sets explicit 10.5 pt instructional/code sizes, wraps long code and reflows three overflowing equations without changing their tokens. Diagnostic figures reserve space for enlarged labels, legends and captions. More PDF pages are intentional.
-
-Adds an actual-PDF gate covering every one of the 53 theorem statements, nine complete Lean sources, chapter prose and 119 diagnostic labels. CI, artifact checking and packaging require fresh source-bound measurements; tests reject undersized code, missing text, stale/forged bindings and absent receipts. Book prose, proof contracts, material calibration, physical equations, numerical gates and capstone labels are unchanged. Historical nodal plot input remains bound through the repository's existing archived-byte transition record.
-
-Validation at source `0b4dc6a2cfa4fd4ff2b3decd08718c35ad5510e2`: 179 Node / 52 Python tests, 53 fresh Lean checks, all 12 native browser/render/worker/artifact lanes, three full-build negative controls, and immutable portable ZIP checks pass. The 153-page local PDF measures 10.5 pt instructional/code text; diagnostic label minima exceed 10.84 pt. Portable link target sets match the frozen author baseline. Exact receipts and inspected-page evidence are in `education/review/pr8-print-readability/`.
-
-Review as a successor to frozen PR8 `e8fa239e3c01468cee86615e1f306dd6659999fa`; SLS and serial-specimen work stays separate. Hosted-run qualification is pending; the previous hosted PDF was inspected by the parent, not this worker. No native Ctrl+P qualification, merge or deployment is claimed.

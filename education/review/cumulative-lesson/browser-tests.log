@@ -1,8 +1,0 @@
-
-  ../../kenoma-controls-k_pk63ob/app.js            572.0kb
-  ../../kenoma-controls-k_pk63ob/app.js.LEGAL.txt    188b 
-
-⚡ Done in 76ms
-/tmp/kenoma-lesson-repair/education/tests/teaching_controls_browser.py:43: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
-  red = sum(r > 180 and g < 160 and b < 160 for r, g, b in im.getdata())
-PASS all: real controls/render evidence at /tmp/kenoma-lesson-repair/education/review/cumulative-lesson/browser

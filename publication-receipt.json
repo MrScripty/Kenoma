@@ -1,0 +1,21 @@
+{
+  "publicationDecision": "Owner requested publication after cancelling the subsequent full CI run.",
+  "sourceEquivalentTo": "dc8b692e9f85c8ed8e84562789ba73df5e3c62b6",
+  "sourceURL": "https://github.com/MrScripty/Kenoma/tree/dc8b692e9f85c8ed8e84562789ba73df5e3c62b6",
+  "preservedBuildSource": "ae000b59f309dcf6357922ad1af459d86efd4e8c",
+  "preservedBuildManifestSHA256": "415d3d15c6f9644660bd2dd3983367bb30548188080ab0fbf7de45c4b7ed6d02",
+  "preservedArchiveSHA256": "310694f883be90769803deb2065529db9f9c0b90fddf34dd502ec5a08383938e",
+  "verifiedSourceInputs": 947,
+  "preservedFiles": 1102,
+  "sourceComparison": "All 947 recorded build input hashes match the merged source exactly. Only qualification helper/workflow changes were added later.",
+  "qualificationLimits": "Preserved receipts retain their original identities and may relate to earlier qualification passes. Final print-negative/package qualification was not completed. Hosted run 306 passed complete proof/book/PDF and original desktop browser checks, then failed mobile screenshot capture; the committed capture fix and remaining downstream gates were not rerun before the owner requested publication. No full-suite PASS is claimed.",
+  "pdfLinkRepair": {
+    "kind": "URI annotation destinations only; no page rerendering",
+    "originalSHA256": "5742911678e8435d1ccbf2c0b24ada6753763fa8edb78034004ec29ee35160f8",
+    "publishedSHA256": "4a84f5733b8d482efee1cef0611a3cff1146e09a00731426a5301169183a3e2d",
+    "repairedAnnotations": 210,
+    "pages": 236,
+    "allPageTextAndContentStreamsUnchanged": true,
+    "sourceTargetsMatchRecordedBuildInputs": true
+  }
+}

@@ -1,5 +1,0 @@
-{
-  "first_attempt": "Direct validation used relative Path(dist), causing a ValueError while formatting a resource path. No mutation ran. Production package() used its absolute ROOT/dist and passed.",
-  "corrected_attempt": "Absolute current dist path; valid artifact passes, all three requested mutations reject, restored artifact passes.",
-  "scope": "Harness correction only; no acceptance gate or numerical relaxation."
-}

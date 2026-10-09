@@ -1,7 +1,0 @@
-'Kenoma.Coupled.impulse_balance' depends on axioms: [propext, Quot.sound]
-'Kenoma.Coupled.kinetic_increment_identity' depends on axioms: [propext, Quot.sound]
-'Kenoma.Coupled.implicit_kinetic_work_balance' depends on axioms: [propext, Quot.sound]
-'Kenoma.Coupled.implicit_dissipation_numerator_nonnegative' depends on axioms: [propext]
-'Kenoma.Coupled.mass_event_work_numerator' depends on axioms: [propext, Quot.sound]
-'Kenoma.Coupled.tendon_toe_energy_numerator_nonnegative' depends on axioms: [propext]
-'Kenoma.Coupled.quadratic_partition_numerator' depends on axioms: [propext, Quot.sound]

@@ -1,5 +1,0 @@
-'Kenoma.Material.confined_volume' depends on axioms: [propext]
-'Kenoma.Material.finite_bulk_penalty_nonnegative' depends on axioms: [propext]
-'Kenoma.Material.positive_bulk_zero_penalty' depends on axioms: [propext, Classical.choice, Quot.sound]
-'Kenoma.Material.separated_wall_zero_reaction' depends on axioms: [propext, Quot.sound]
-'Kenoma.Material.lateral_virtual_work' depends on axioms: [propext]
