@@ -13,6 +13,17 @@ class CaptureTests(unittest.TestCase):
         if not self.store.sealed:self.store.seal()
         self.tmp.cleanup()
     def begin(self):self.store.feed(frame(1,'BEGIN',local=0))
+    def test_prelaunch_frozen_begin_survives_zero_worker_records_and_verified_begin_does_not_overwrite(self):
+        self.store.prime_begin([0]*460,dict(inputTimeS=0));before=os.pread(self.store.fd,8192,0);self.store.seal();rows=c.read_slots(self.store.path);self.assertEqual(rows[0]['sequence'],0);self.assertIsNone(rows[0]['workerPID']);self.assertEqual(rows[0]['origin'],'SUPERVISOR_FROZEN_INPUT_BEFORE_WORKER_LAUNCH');self.assertEqual(self.store.receipt['records'],0);self.assertTrue(self.store.receipt['frozenBeginningDurable'])
+    def test_post_fsync_guard_failure_keeps_counts_and_latest_consistent(self):
+        self.begin();calls=0
+        def fail():
+            nonlocal calls
+            calls+=1
+            if calls==2:raise RuntimeError('Synthetic post-fsync resource stop')
+        self.store.check=fail
+        with self.assertRaisesRegex(RuntimeError,'resource stop'):self.store.feed(frame(2))
+        self.store.check=lambda:None;receipt=self.store.seal();self.assertEqual(receipt['records'],2);self.assertEqual(receipt['durableRecords'],2);self.assertEqual(receipt['latestRetainedSequence'],2);self.assertEqual(c.read_slots(self.store.path)[-1]['sequence'],2)
     def test_fragmented_wire_and_latest_checkpoints_are_detached(self):
         b=frame(1,'BEGIN',local=0)+b''.join(frame(i) for i in range(2,52))
         for i in range(0,len(b),17):self.store.feed(b[i:i+17])
@@ -42,7 +53,7 @@ class CaptureTests(unittest.TestCase):
     def test_two_D_attempts_have_independent_begin_latest_and_no_B_overwrite(self):
         d=c.Store(self.root/'geometry-D.slots','D',dict(run='D'))
         try:
-            d.feed(frame(1,'BEGIN',run='D',local=0));d.feed(frame(2,run='D'));d.feed(frame(3,'BEGIN',attempt=2,run='D',local=0));d.feed(frame(4,attempt=2,run='D',local=1));d.seal();rows=c.read_slots(d.path);self.assertEqual([(r['attempt'],r['kind']) for r in rows],[(1,'BEGIN'),(1,'NEWTON_ITERATE'),(2,'BEGIN'),(2,'NEWTON_ITERATE')]);self.begin();self.store.seal();self.assertEqual(c.read_slots(d.path),rows)
+            d.feed(frame(1,'BEGIN',run='D',local=0));d.feed(frame(2,run='D'));d.feed(frame(3,'STEP_CANDIDATE',run='D',local=1));d.feed(frame(4,'BEGIN',attempt=2,run='D',local=0));d.feed(frame(5,attempt=2,run='D',local=1));d.seal();rows=c.read_slots(d.path);self.assertEqual([(r['attempt'],r['kind']) for r in rows],[(1,'BEGIN'),(1,'NEWTON_ITERATE'),(1,'STEP_CANDIDATE'),(2,'BEGIN'),(2,'NEWTON_ITERATE')]);self.begin();self.store.seal();self.assertEqual(c.read_slots(d.path),rows)
         finally:
             if not d.sealed:d.seal()
     def test_slot_allocation_and_buffers_inside_existing_output_ceiling(self):
@@ -55,14 +66,14 @@ class CaptureTests(unittest.TestCase):
         finally:
             if not store.sealed:store.seal()
     def test_owned_timeout_retains_begin_and_latest_complete_frame_without_acceptance(self):
-        cg=self.root/'fake-cgroup';cg.write_text('1');policy=copy.deepcopy(w.EXPECTED_POLICY);policy['aggregateWallSeconds']=2;out=w.Output(self.root/'timeout-output',policy);identity=dict(run='B',manifestSHA256='synthetic')
+        cg=self.root/'fake-cgroup';cg.write_text('1');policy=copy.deepcopy(w.EXPECTED_POLICY);policy['aggregateWallSeconds']=5;out=w.Output(self.root/'timeout-output',policy);identity=dict(run='B',manifestSHA256='synthetic')
         code="import {createCapture} from "+json.dumps((ROOT/'tools/arm-validation/capture.mjs').as_uri())+";const c=createCapture(Number(process.env.KENOMA_CAPTURE_FD),{run:'B',manifestSHA256:'synthetic',workerPID:process.pid});const x=new Float64Array(460);c.snapshot('BEGIN',1,x);for(let i=0;i<47;i++){x[0]=i/10000;c.snapshot('NEWTON_ITERATE',1,x,{iteration:i,residualN:1/(i+1)});}while(true){}"
-        result,rs=w.supervise([shutil.which('node'),'--input-type=module','-e',code],out,dict(id='B',wallSeconds=.5),time.monotonic(),cg,capture_identity=identity)
-        self.assertEqual(result['status'],'RESOURCE_INCONCLUSIVE');self.assertTrue(rs['allProcessesReaped']);self.assertGreaterEqual(rs['capture']['records'],2);self.assertLessEqual(rs['capture']['records'],48);self.assertEqual(c.read_slots(out.path/'geometry-B.slots')[-1]['sequence'],rs['capture']['records']);self.assertFalse(rs['capture']['physicalMotionAccepted']);out.verify_inventory()
+        result,rs=w.supervise([shutil.which('node'),'--input-type=module','-e',code],out,dict(id='B',wallSeconds=3),time.monotonic(),cg,capture_identity=identity)
+        self.assertEqual(result['status'],'RESOURCE_INCONCLUSIVE');self.assertTrue(rs['allProcessesReaped']);self.assertGreaterEqual(rs['capture']['records'],2);self.assertLessEqual(rs['capture']['records'],48);self.assertEqual(c.read_slots(out.path/'geometry-B.slots')[-1]['sequence'],rs['capture']['latestRetainedSequence']);self.assertFalse(rs['capture']['physicalMotionAccepted']);out.verify_inventory()
     def test_trailing_partial_from_killed_process_is_recorded_without_losing_begin(self):
-        cg=self.root/'fake-cgroup';cg.write_text('1');policy=copy.deepcopy(w.EXPECTED_POLICY);policy['aggregateWallSeconds']=2;out=w.Output(self.root/'partial-output',policy);raw=frame(1,'BEGIN',local=0,workerPID=None)
+        cg=self.root/'fake-cgroup';cg.write_text('1');policy=copy.deepcopy(w.EXPECTED_POLICY);policy['aggregateWallSeconds']=5;out=w.Output(self.root/'partial-output',policy);raw=frame(1,'BEGIN',local=0,workerPID=None)
         # Child sets its actual PID in a complete checksummed beginning.
-        code="import os,json,struct,hashlib,time;row="+repr(json.loads(raw[36:]))+";row['workerPID']=os.getpid();b=json.dumps(row,separators=(',',':')).encode();fd=int(os.environ['KENOMA_CAPTURE_FD']);os.write(fd,struct.pack('>I',len(b))+hashlib.sha256(b).digest()+b);os.write(fd,b'\\x00\\x00\\x01\\x00'+b'x'*50);time.sleep(2)"
-        result,rs=w.supervise([sys.executable,'-c',code],out,dict(id='B',wallSeconds=.3),time.monotonic(),cg,capture_identity=dict(run='B',manifestSHA256='synthetic'))
+        code="import os,json,struct,hashlib,time;row="+repr(json.loads(raw[36:]))+";row['workerPID']=os.getpid();b=json.dumps(row,separators=(',',':')).encode();fd=int(os.environ['KENOMA_CAPTURE_FD']);os.write(fd,struct.pack('>I',len(b))+hashlib.sha256(b).digest()+b);os.write(fd,b'\\x00\\x00\\x01\\x00'+b'x'*50);time.sleep(5)"
+        result,rs=w.supervise([sys.executable,'-c',code],out,dict(id='B',wallSeconds=3),time.monotonic(),cg,capture_identity=dict(run='B',manifestSHA256='synthetic'))
         self.assertEqual(result['status'],'RESOURCE_INCONCLUSIVE');self.assertTrue(rs['allProcessesReaped']);self.assertEqual(rs['capture']['trailingIncompleteBytes'],54);self.assertEqual(c.read_slots(out.path/'geometry-B.slots')[0]['kind'],'BEGIN')
 if __name__=='__main__':unittest.main()

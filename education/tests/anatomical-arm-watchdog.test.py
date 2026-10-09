@@ -79,7 +79,7 @@ class WatchdogTests(unittest.TestCase):
     def test_actual_supervisor_dispatches_halves_before_default_timeout_without_physical_worker(self):
         from unittest.mock import patch
         policy=copy.deepcopy(self.policy);policy['claimDirectory']=str(self.root/'synthetic-claims')
-        dest=self.root/'synthetic-execute';m={'policy':policy,'executionDestination':str(dest),'harnessFiles':{},'operatorCommit':'SYNTHETIC_NO_PHYSICS','harnessCommit':'SYNTHETIC_NO_PHYSICS','scope':'SYNTHETIC_TEST_ONLY','inputCommit':'SYNTHETIC_NO_PHYSICS','inputs':{'generated/arm-reference.json':{'sha256':'synthetic'},'audit/arm-rest-results.json':{'sha256':'synthetic'}},'cameraSHA256':'synthetic'}
+        dest=self.root/'synthetic-execute';m={'policy':policy,'executionDestination':str(dest),'harnessFiles':{},'operatorCommit':'SYNTHETIC_NO_PHYSICS','harnessCommit':'SYNTHETIC_NO_PHYSICS','scope':'SYNTHETIC_TEST_ONLY','inputCommit':'SYNTHETIC_NO_PHYSICS','inputs':{'generated/arm-reference.json':{'sha256':'synthetic'},'audit/arm-rest-results.json':{'sha256':'synthetic','text':json.dumps({'state':{'coordinatesM':[0]*460,'timeS':0}})}},'cameraSHA256':'synthetic'}
         raw=w.encoded(m);manifest=self.root/'synthetic-manifest.json';manifest.write_bytes(raw);calls=[]
         def fake_supervise(command,output,run,start,cgroup,**kwargs):
             calls.append(run['id'])

@@ -5,10 +5,18 @@ import hashlib, io, json, os, pathlib, shutil, struct, subprocess, sys, time
 from PIL import Image
 from playwright.sync_api import sync_playwright
 from capture_store import read_slots
-from watchdog import read_regular, digest, encoded
+from gif_encode import encode_shared_palette
+from watchdog import read_regular, digest, encoded, ROOT, validate_review_bytes
 MAX_FRAMES=34;MAX_JPEG=262144;MAX_GIF=8388608;MAX_ARTIFACT_BYTES=33554432
 def main():
     cfg=json.loads(read_regular(sys.argv[1],4194304));out=pathlib.Path(cfg['output']);manifest_bytes=read_regular(cfg['manifest'],4194304);m=json.loads(manifest_bytes);mh=digest(manifest_bytes)
+    for name,h in m['harnessFiles'].items():
+        if digest(read_regular(ROOT/name))!=h:raise ValueError('Changed local renderer/harness source '+name)
+    if subprocess.check_output([cfg['nodeExecutable'],'--version'],text=True).strip()!=m['nodeVersion']:raise ValueError('Changed Node runtime')
+    if not cfg['syntheticOnly']:
+        review=m.get('reviewReceipt') or {}
+        if review.get('verdict')!='PASS_RUN_READY_SOURCE_ONLY' or review.get('sourceCommit')!=m['harnessCommit']:raise ValueError('Missing exact source review')
+        validate_review_bytes(m)
     camera=m['camera'];camera_bytes=json.dumps(camera,separators=(',',':'),ensure_ascii=False).encode()
     if digest(camera_bytes)!=m['cameraSHA256'] or camera['jpegQuality']!=85 or camera['width']!=960 or camera['height']!=720 or camera['cameraFit']!='FIXED_NO_FRAME_RESCALE':raise ValueError('Pinned fixed camera required')
     gitem=m['inputs']['generated/arm-reference.json'];gbytes=gitem['text'].encode()
@@ -45,7 +53,7 @@ def main():
     data=dict(geometry=json.loads(gbytes),camera=camera,frames=frames,syntheticOnly=cfg['syntheticOnly'])
     # Embedded data makes viewer/downloads portable; escaped '<' prevents HTML
     # script termination from source strings. No external script/font/image.
-    html=('''<!doctype html><meta charset="utf-8"><title>Kenoma provisional geometry</title><style>*{box-sizing:border-box}body{margin:0;background:#15202a;color:#f0f4f7;font:18px Arial;width:960px;height:720px}h1{font-size:22px;margin:14px 18px 8px}p{margin:8px 18px;line-height:1.3}#scope{font-size:16px}canvas{display:block;width:960px;height:580px}nav{display:none}</style><h1 id="title"></h1><p id="caption"></p><canvas></canvas><p id="scope"></p><nav><button id="previous">Previous</button><button id="next">Next</button></nav><script>window.captureData='''+json.dumps(data,separators=(',',':')).replace('<','\\u003c')+'''</script><script src="viewer.js"></script><script>let n=0;previous.onclick=()=>drawCapture(n=Math.max(0,n-1));next.onclick=()=>drawCapture(n=Math.min(captureData.frames.length-1,n+1));</script>''').encode()
+    html=('''<!doctype html><meta charset="utf-8"><title>Kenoma provisional geometry</title><style>*{box-sizing:border-box}body{margin:0;background:#15202a;color:#f0f4f7;font:18px Arial;width:960px;height:720px}h1{font-size:22px;margin:14px 18px 8px}p{margin:8px 18px;line-height:1.3}#scope{font-size:16px}canvas{display:block;width:960px;height:560px}nav{display:flex;position:fixed;top:10px;right:12px;gap:6px}nav button{font:16px Arial;padding:6px}h1{max-width:690px}</style><h1 id="title"></h1><p id="caption"></p><canvas></canvas><p id="scope"></p><nav><button id="previous">Previous</button><button id="next">Next</button></nav><script>window.captureData='''+json.dumps(data,separators=(',',':')).replace('<','\\u003c')+'''</script><script src="viewer.js"></script><script>let n=0;previous.onclick=()=>drawCapture(n=Math.max(0,n-1));next.onclick=()=>drawCapture(n=Math.min(captureData.frames.length-1,n+1));</script>''').encode()
     write('viewer.html',html,2097152)
     jpgs=[];browser_receipt={};profile=out/'browser-profile';profile.mkdir(mode=0o700)
     try:
@@ -54,6 +62,7 @@ def main():
             page=browser.new_page();errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
             page.route('**/*',lambda route:route.continue_() if route.request.url.startswith('file:') else route.abort())
             page.goto((out/'viewer.html').as_uri(),wait_until='load',timeout=20000);page.wait_for_function('window.captureReady===true',timeout=20000)
+            page.evaluate("document.querySelector('nav').style.display='none'")
             for i,row in enumerate(frames):
                 page.evaluate('(i)=>window.drawCapture(i)',i)
                 rendered=page.evaluate('window.lastRendered')
@@ -75,18 +84,8 @@ def main():
     finally:shutil.rmtree(profile)
     # One global palette sampled across every recorded JPEG. No interpolated
     # coordinates or intermediate GIF frames; quantization/encoding only.
-    thumbs=[]
-    for name in jpgs:
-        with Image.open(out/name) as image:thumbs.append(image.convert('RGB').resize((160,120)))
-    atlas=Image.new('RGB',(160,120*len(thumbs)))
-    for i,im in enumerate(thumbs):atlas.paste(im,(0,120*i))
-    palette=atlas.quantize(colors=256,method=Image.Quantize.MEDIANCUT);palette_bytes=bytes(palette.getpalette());quantized=[]
-    for name in jpgs:
-        with Image.open(out/name) as image:quantized.append(image.convert('RGB').quantize(palette=palette,dither=Image.Dither.NONE))
-    gif=io.BytesIO();quantized[0].save(gif,format='GIF',save_all=True,append_images=quantized[1:],optimize=False,duration=500,loop=0,disposal=2);gifbytes=gif.getvalue();write('provisional-geometry.gif',gifbytes,MAX_GIF)
-    with Image.open(io.BytesIO(gifbytes)) as im:
-        if im.n_frames!=len(frames) or im.size!=(960,720):raise ValueError('GIF frame/resolution gate')
-    receipt=dict(status='PASS_SYNTHETIC_ONLY' if cfg['syntheticOnly'] else 'PASS_PROVISIONAL_GEOMETRY_ONLY',physicalEvaluations=0,physicalMotionAccepted=False,anatomicalQualification=False,manifestSHA256=mh,sourceCommit=m['harnessCommit'],captureHashes=captureHashes,cameraSHA256=m['cameraSHA256'],dependencies=deps,browser=browser_receipt,globalPaletteSHA256=digest(palette_bytes),paletteMethod='Shared all-frame JPEG thumbnail median-cut, 256 colors; no dithering',frameDurationMilliseconds=500,interpolation=False,retainedFrames=[{k:row.get(k) for k in ['run','attempt','sequence','attemptSequence','kind','iteration','residualN','coordinatesSHA256']} for row in frames],fileHashes=written,wallSeconds=time.monotonic()-started,outputArtifactBytes=used)
+    gifbytes,gif_receipt=encode_shared_palette([out/name for name in jpgs]);write('provisional-geometry.gif',gifbytes,MAX_GIF)
+    receipt=dict(status='PASS_SYNTHETIC_ONLY' if cfg['syntheticOnly'] else 'PASS_PROVISIONAL_GEOMETRY_ONLY',physicalEvaluations=0,physicalMotionAccepted=False,anatomicalQualification=False,manifestSHA256=mh,sourceCommit=m['harnessCommit'],captureHashes=captureHashes,cameraSHA256=m['cameraSHA256'],dependencies=deps,browser=browser_receipt,gif=gif_receipt,retainedFrames=[{k:row.get(k) for k in ['run','attempt','sequence','attemptSequence','kind','iteration','residualN','coordinatesSHA256']} for row in frames],fileHashes=written,wallSeconds=time.monotonic()-started,outputArtifactBytes=used)
     write('render-receipt.json',encoded(receipt),262144)
     os.write(int(os.environ['KENOMA_RESULT_FD']),encoded(dict(status='PASS',syntheticOnly=cfg['syntheticOnly'],renderReceiptSHA256=written['render-receipt.json']['sha256'],physicalEvaluations=0,physicalMotionAccepted=False)))
 if __name__=='__main__':main()

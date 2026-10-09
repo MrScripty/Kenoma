@@ -80,13 +80,13 @@ def validate_manifest(m, data, require_review=True):
     for p,h in INPUT_HASHES.items():
         i=m['inputs'][p]
         if i['sha256']!=h or digest(i['text'].encode())!=h: raise Refusal('Changed input '+p)
-    if m.get('cameraSHA256')!='cc18f17c17784c409fa2a341a153644449d48c84993e37a2b6153bb2da842dc8' or digest(json.dumps(m.get('camera'),separators=(',',':'),ensure_ascii=False).encode())!=m['cameraSHA256']:raise Refusal('Changed fixed renderer camera')
+    if m.get('cameraSHA256')!='428df4283bc6f4506f28a1fd1ceaeea2031e8ed9942e25d112a6820c4973c96e' or digest(json.dumps(m.get('camera'),separators=(',',':'),ensure_ascii=False).encode())!=m['cameraSHA256']:raise Refusal('Changed fixed renderer camera')
     approved_modules=(m.get('reviewReceipt') or {}).get('operatorModuleHashes')
     if require_review and (not approved_modules or set(approved_modules)!=set(m.get('modules',{}))):raise Refusal('Unreviewed module inventory')
     for p,item in m.get('modules',{}).items():
         if require_review and approved_modules[p]!=item['sha256']:raise Refusal('Unreviewed operator module '+p)
         if not p.startswith('education/') or pathlib.PurePosixPath(p).as_posix()!=p or '..' in pathlib.PurePosixPath(p).parts or digest(item['text'].encode())!=item['sha256']:raise Refusal('Changed module '+p)
-    files=m.get('harnessFiles',{});expected={'education/tools/arm-validation/'+n for n in ['core.mjs','prepare.mjs','loader.mjs','replay.mjs','worker.mjs','watchdog.py','capture.mjs','capture_store.py','geometry.mjs','render-browser.mjs','render-build.mjs','render.py','render_worker.py']}
+    files=m.get('harnessFiles',{});expected={'education/tools/arm-validation/'+n for n in ['core.mjs','prepare.mjs','loader.mjs','replay.mjs','worker.mjs','watchdog.py','capture.mjs','capture_store.py','geometry.mjs','render-browser.mjs','render-build.mjs','render.py','render_worker.py','gif_encode.py']}
     if set(files)!=expected: raise Refusal('Changed harness inventory')
     for p,h in files.items():
         if digest(read_regular(ROOT/p))!=h: raise Refusal('Changed harness '+p)
@@ -141,7 +141,7 @@ class Output:
             b=read_regular(self.path/name,self.policy['aggregateOutputBytes'])
             if {'bytes':len(b),'sha256':digest(b)}!=expected:raise Refusal('Changed published bytes')
 
-def supervise(command, output, run, aggregate_start, cgroup=None, allow_descendants=False, capture_identity=None, monitor=None):
+def supervise(command, output, run, aggregate_start, cgroup=None, allow_descendants=False, capture_identity=None, monitor=None, capture_begin=None):
     """Generic process adapter; tests supply synthetic programs, never physical code."""
     subreaper();policy=output.policy;start=time.monotonic();deadline=min(start+run['wallSeconds'],aggregate_start+policy['aggregateWallSeconds']);cgroup=cgroup or cgroup_file()
     try:initial_cgroup=int(pathlib.Path(cgroup).read_text())
@@ -154,6 +154,7 @@ def supervise(command, output, run, aggregate_start, cgroup=None, allow_descenda
     store=None;crfd=cwfd=None
     if capture_identity is not None:
         store=Store(output.path/('geometry-'+run['id']+'.slots'),run['id'],capture_identity,output)
+        if capture_begin is not None:store.prime_begin(capture_begin['coordinatesM'],{'inputTimeS':capture_begin['timeS']})
         crfd,cwfd=os.pipe();fcntl.fcntl(cwfd,fcntl.F_SETPIPE_SZ,CAPTURE_POLICY['pipeBytes'])
     rfd,wfd=os.pipe();env={'PATH':os.defpath,'LANG':'C.UTF-8','KENOMA_RESULT_FD':str(wfd),'KENOMA_SUPERVISOR_PID':str(os.getpid()),'KENOMA_CLAIM_PATH':str(output.claim.get('path','')),'TMPDIR':str(output.path)}
     if store:env.update(KENOMA_CAPTURE_FD=str(cwfd),KENOMA_MANIFEST_SHA256=capture_identity['manifestSHA256'])
@@ -256,7 +257,9 @@ def supervise(command, output, run, aggregate_start, cgroup=None, allow_descenda
         packet.clear();output.pending[run['id']]=0
         return {'status':'RESOURCE_INCONCLUSIVE','reason':reason or 'Nonzero worker exit','finalAcceptance':False},resources
     try:
-        result=json.loads(packet);output.reserve(run['id'],len(encoded(result)));packet.clear();output.retain(run['id'],len(encoded(result)))
+        result=json.loads(packet)
+        if store and (not store.records or result.get('capture',{}).get('records')!=store.receipt['records'] or result.get('capture',{}).get('wireBytes')!=store.receipt['wireBytes'] or store.receipt['trailingIncompleteBytes']):raise Refusal('Incomplete/unbound terminal capture accounting')
+        output.reserve(run['id'],len(encoded(result)));packet.clear();output.retain(run['id'],len(encoded(result)))
     except Exception as e:
         packet.clear();output.pending[run['id']]=0
         return {'status':'RESOURCE_INCONCLUSIVE','reason':'Incomplete/over-budget result staging: '+str(e),'finalAcceptance':False},resources
@@ -354,7 +357,7 @@ def execute(manifest_path,destination,approval):
         for run in m['policy']['runs']:
             for p,expected in m['harnessFiles'].items():
                 if digest(read_regular(ROOT/p))!=expected:raise Refusal('Changed harness before job '+run['id'])
-            result,rs=supervise([node,str(ROOT/'education/tools/arm-validation/worker.mjs'),'--numerical-run',str(output.path/'manifest.json'),run['id'],h],output,run,start,cg,capture_identity=dict(schema=1,run=run['id'],manifestSHA256=h,harnessCommit=m['harnessCommit'],operatorCommit=m['operatorCommit'],inputCommit=m['inputCommit'],modelSHA256=m['inputs']['generated/arm-reference.json']['sha256'],inputStateSHA256=m['inputs']['audit/arm-rest-results.json']['sha256'],cameraSHA256=m['cameraSHA256'],coordinateUnits='m; joint coordinate is 0.1 m/rad times q',jointScaleMPerRad=.1,supervisorPID=os.getpid()));resources.append(rs);results[run['id']]=result
+            result,rs=supervise([node,str(ROOT/'education/tools/arm-validation/worker.mjs'),'--numerical-run',str(output.path/'manifest.json'),run['id'],h],output,run,start,cg,capture_identity=dict(schema=1,run=run['id'],manifestSHA256=h,harnessCommit=m['harnessCommit'],operatorCommit=m['operatorCommit'],inputCommit=m['inputCommit'],modelSHA256=m['inputs']['generated/arm-reference.json']['sha256'],inputStateSHA256=m['inputs']['audit/arm-rest-results.json']['sha256'],cameraSHA256=m['cameraSHA256'],coordinateUnits='m; joint coordinate is 0.1 m/rad times q',jointScaleMPerRad=.1,supervisorPID=os.getpid()),capture_begin=json.loads(m['inputs']['audit/arm-rest-results.json']['text'])['state']);resources.append(rs);results[run['id']]=result
             if result.get('status') not in ('PASS','SOLVER_REFUSAL') or run['id']=='A' and result.get('status')!='PASS':break
             if result.get('workerStatus')!='PROVISIONAL_PENDING_SUPERVISOR' or result.get('finalAcceptance') is not False or result.get('run')!=run['id'] or result.get('sourceCommit')!=m['operatorCommit'] or result.get('harnessCommit')!=m['harnessCommit'] or result.get('executionScope')!=m['scope'] or result.get('anatomicalQualification') is not False or result.get('numericalCandidateAccepted')!=(result.get('status')=='PASS'):raise Refusal('Unbound/provisional worker packet')
             counts=result.get('counters',{}).get('executed',{})

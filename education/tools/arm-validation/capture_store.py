@@ -25,7 +25,7 @@ def pwrite_all(fd,b,offset):
         used+=n
 class Store:
     def __init__(self,path,run,identity,output=None):
-        self.path=path;self.run=run;self.identity=dict(identity);self.output=output;self.buffer=bytearray();self.records=0;self.wireBytes=0;self.trailingBytes=0;self.writeSeconds=0;self.sequence=0;self.locals={};self.latest={};self.sealed=False;self.pid=None;self.check=lambda:None
+        self.path=path;self.run=run;self.identity=dict(identity);self.output=output;self.buffer=bytearray();self.records=0;self.wireBytes=0;self.trailingBytes=0;self.writeSeconds=0;self.sequence=0;self.locals={};self.done=set();self.latest={};self.sealed=False;self.pid=None;self.check=lambda:None;self.primed=None;self.durableRecords=0;self.prelaunchWriteSeconds=0
         self.attempts=2 if run=='D' else 1
         self.bytes=self.attempts*12*8192
         if output:output.reserve(run,self.bytes+POLICY['maxSupervisorBuffersBytes'])
@@ -34,6 +34,15 @@ class Store:
         except BaseException:os.close(self.fd);raise
         if output:output.charges[run]+=self.bytes;output.captureBuffers[run]=POLICY['maxSupervisorBuffersBytes']
     def bind_process(self,pid,start):self.pid=pid;self.startTicks=start
+    def prime_begin(self,coordinates,extra=None):
+        """Durable frozen input BEFORE worker launch, independent of startup.
+        Sequence zero is supervisor provenance, never a Newton callback.
+        """
+        if self.primed is not None or self.records or len(coordinates)!=460 or not all(type(v) in (int,float) and math.isfinite(v) for v in coordinates):raise ValueError('Frozen beginning')
+        raw_coordinates=struct.pack('<460d',*coordinates)
+        row=dict(self.identity,kind='BEGIN',attempt=0 if self.run=='A' else 1,sequence=0,attemptSequence=0,status='PROVISIONAL_NEWTON_ITERATE',physicalMotionAccepted=False,workerPID=None,origin='SUPERVISOR_FROZEN_INPUT_BEFORE_WORKER_LAUNCH',coordinatesFloat64LE=base64.b64encode(raw_coordinates).decode(),coordinatesSHA256=digest(raw_coordinates),**(extra or {}))
+        payload=json.dumps(row,separators=(',',':'),allow_nan=False).encode();raw=struct.pack('>I',len(payload))+bytes.fromhex(digest(payload))+payload;decode(raw)
+        start=time.monotonic();pwrite_all(self.fd,raw,0);os.fsync(self.fd);self.prelaunchWriteSeconds+=time.monotonic()-start;self.primed=row['coordinatesSHA256']
     def feed(self,b):
         if self.sealed:raise ValueError('Sealed capture')
         if len(b)>POLICY['maxReadBytes']:raise ValueError('Capture read ceiling')
@@ -55,27 +64,41 @@ class Store:
         kind=row.get('kind');local=row.get('attemptSequence')
         if type(local) is not int:raise ValueError('Capture local sequence')
         if kind=='BEGIN':
-            if a in self.locals or local!=0:raise ValueError('Repeated/bad beginning')
-        elif a not in self.locals or kind not in ['NEWTON_ITERATE','STEP_CANDIDATE']:raise ValueError('Capture before beginning')
+            if a in self.locals or local!=0 or self.run=='D' and (a!=len(self.locals)+1 or a==2 and 1 not in self.done):raise ValueError('Repeated/bad beginning')
+        elif a not in self.locals or a in self.done or kind not in ['NEWTON_ITERATE','STEP_CANDIDATE']:raise ValueError('Capture before beginning')
         elif kind=='NEWTON_ITERATE':
             if local!=self.locals[a]+1 or type(row.get('iteration')) is not int or row['iteration']<0 or type(row.get('residualN')) not in (int,float) or not math.isfinite(row['residualN']):raise ValueError('Capture iteration')
         elif local!=self.locals[a]:raise ValueError('Capture candidate sequence')
         if self.records>=POLICY['maxRecords'][self.run]:raise ValueError('Capture record ceiling')
         start=time.monotonic();base=(0 if self.run=='A' else a-1)*12;slots=[]
-        if kind=='BEGIN':slots.append(base)
+        if kind=='BEGIN':
+            if base==0 and self.primed is not None:
+                if row['coordinatesSHA256']!=self.primed:raise ValueError('Changed frozen beginning')
+            else:slots.append(base)
         if kind=='NEWTON_ITERATE' and local in POLICY['checkpoints']:slots.append(base+1+POLICY['checkpoints'].index(local))
         if self.run!='A':slots.append(base+10+(self.latest.get(a,1)^1))
         # Full checksummed record fits each fixed slot. Trailing prior bytes are
         # irrelevant: size/hash reject an interrupted replacement. The other
         # latest slot remains complete until this slot's fsync succeeds.
-        for slot in slots:self.check();pwrite_all(self.fd,raw,slot*8192);os.fsync(self.fd);self.check()
-        self.writeSeconds+=time.monotonic()-start;self.records+=1;self.sequence=row['sequence'];self.locals[a]=local
-        if self.run!='A':self.latest[a]=self.latest.get(a,1)^1
+        # Processing and durability are distinct. Update the stream's consumed
+        # sequence before I/O; mark each first COMPLETE fsync before a resource
+        # check can throw. A killed refresh cannot contradict sealed slot data.
+        self.records+=1;self.sequence=row['sequence'];self.locals[a]=local
+        if kind=='STEP_CANDIDATE':self.done.add(a)
+        durable=False
+        try:
+            for slot in slots:
+                self.check();pwrite_all(self.fd,raw,slot*8192);os.fsync(self.fd)
+                if not durable:self.durableRecords+=1;durable=True
+                if slot-base>=10:self.latest[a]=slot-base-10
+                self.check()
+            if not slots and self.primed is not None:self.durableRecords+=1
+        finally:self.writeSeconds+=time.monotonic()-start
     def seal(self):
         if self.sealed:return self.receipt
         self.trailingBytes=len(self.buffer);self.buffer.clear();os.fsync(self.fd);os.close(self.fd);self.sealed=True
         raw=self.path.read_bytes();frames=read_slots(self.path)
-        self.receipt=dict(status='PROVISIONAL_GEOMETRY_ONLY',records=self.records,wireBytes=self.wireBytes,retainedBytes=self.bytes,validRetainedFrames=len(frames),trailingIncompleteBytes=self.trailingBytes,writeSeconds=self.writeSeconds,sha256=digest(raw),workerPID=self.pid,workerStartTicks=getattr(self,'startTicks',None),physicalMotionAccepted=False)
+        self.receipt=dict(status='PROVISIONAL_GEOMETRY_ONLY',records=self.records,durableRecords=self.durableRecords,latestRetainedSequence=max((r['sequence'] for r in frames),default=None),frozenBeginningDurable=self.primed is not None,prelaunchWriteSeconds=self.prelaunchWriteSeconds,wireBytes=self.wireBytes,retainedBytes=self.bytes,validRetainedFrames=len(frames),trailingIncompleteBytes=self.trailingBytes,writeSeconds=self.writeSeconds,sha256=digest(raw),workerPID=self.pid,workerStartTicks=getattr(self,'startTicks',None),physicalMotionAccepted=False)
         if self.output:
             self.output.captureBuffers[self.run]=0;self.output.written[self.path.name]=dict(bytes=len(raw),sha256=digest(raw))
         return self.receipt

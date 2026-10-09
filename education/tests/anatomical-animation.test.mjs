@@ -24,6 +24,6 @@ test('pure Rodrigues bone map matches exact pinned function including bind pose 
 });
 test('renderer imports only Three/pure geometry; camera and physical operator remain pinned',()=>{
  for(const p of ['geometry.mjs','render-browser.mjs']){const text=fs.readFileSync(new URL('../tools/arm-validation/'+p,import.meta.url),'utf8');assert.ok(!/\b(?:prepareModalBody|prepareAnatomicalArm|evaluateApparatus|muscleMaterial|tendonSegment)\s*\(/.test(text));const imports=[...text.matchAll(/from\s*['"]([^'"]+)['"]/g)].map(m=>m[1]);assert.deepEqual(imports,p==='geometry.mjs'?[]:['three','./geometry.mjs']);}
- assert.equal(CAMERA_SHA256,sha256(json(CAMERA)));assert.equal(CAMERA_SHA256,'cc18f17c17784c409fa2a341a153644449d48c84993e37a2b6153bb2da842dc8');assert.equal(CAPTURE_POLICY.maxFrames,34);
+ assert.equal(CAMERA_SHA256,sha256(json(CAMERA)));assert.equal(CAMERA_SHA256,'428df4283bc6f4506f28a1fd1ceaeea2031e8ed9942e25d112a6820c4973c96e');assert.equal(CAPTURE_POLICY.maxFrames,34);
  const closure=JSON.parse(fs.readFileSync('/tmp/kenoma-arm-independent-substeps-proposal-20261009/reviewed-unrun-manifest.json'));for(const [p,item] of Object.entries(closure.modules))assert.equal(sha256(pinned(p)),item.sha256);
 });
