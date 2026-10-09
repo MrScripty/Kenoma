@@ -143,6 +143,7 @@ jobs:
           npm run test:browser
           npm run test:mobile
           python3 tests/property_browser.py dist
+          python3 tests/nonuniform_browser.py
           python3 tests/material_browser.py dist
           python3 tests/dissipative_browser.py dist --output dist/dissipative-qa
           python3 tests/dissipative_browser.py --negative-controls --output .artifacts/dissipative-negative-ci
