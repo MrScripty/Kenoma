@@ -146,7 +146,13 @@ jobs:
           cargo install wasm-bindgen-cli --version 0.2.129 --locked
           ../browser/simple-graph/build.sh
           cargo test --locked --workspace
+          npm ci --prefix ../browser/simple-graph --ignore-scripts --no-audit --no-fund
           npm --prefix ../browser/simple-graph test
+          export PLAYWRIGHT_MODULE="$(python3 -c 'from pathlib import Path; import playwright; print(Path(playwright.__file__).parent / "driver/package/index.mjs")')"
+          export CHROMIUM="$(python3 -c 'from playwright.sync_api import sync_playwright; p=sync_playwright().start(); print(p.chromium.executable_path); p.stop()')"
+          node ../browser/simple-graph/tests/browser.mjs
+          node ../browser/simple-graph/tests/rig-browser.mjs
+          node ../browser/simple-graph/tests/scene-files-browser.mjs
       - name: Compile pinned real-proof dependencies from source
         run: |
           python3 tools/build_property_mathlib.py

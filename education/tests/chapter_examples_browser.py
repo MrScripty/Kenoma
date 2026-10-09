@@ -59,6 +59,7 @@ try:
    assert page.evaluate('kenomaChapterExample.viewport.camera.position.toArray()')!=position
    force=page.locator('#parameter-force');force.fill('100');expect(force).to_have_attribute('aria-invalid','true');assert page.evaluate('kenomaChapterExample.parameters.force')==4
    force.fill('8');page.wait_for_function('kenomaChapterExample.state.parameters.force===8')
+   assert page.evaluate('''()=>{const v=kenomaChapterExample.viewport;const s=kenomaChapterExample.state.objects.find(o=>o.type==='sphere');const p=v.controls.target.clone().fromArray(s.center).project(v.camera);return Math.abs(p.x)<.95&&Math.abs(p.y)<.95&&Math.abs(p.z)<1}'''), 'Changed force mass must remain visible'
    page.screenshot(path=str(capture/(name+'-force.png')),full_page=True)
    old=page.evaluate_handle('kenomaChapterExample.viewport');page.select_option('#example-choice','02-torque');page.wait_for_function('kenomaChapterExample.ready');assert old.evaluate('v=>v.disposed');old.dispose()
    page.evaluate("kenomaChapterExample.viewport.webgl.getContext().getExtension('WEBGL_lose_context').loseContext()")
