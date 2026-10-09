@@ -35,11 +35,11 @@ class RenderGuardTests(unittest.TestCase):
         with self.assertRaises(SystemExit):self.launch(child=child)
         receipt=json.loads((self.out/'resource-receipt.json').read_text());self.assertEqual(receipt['status'],'REFUSED_BEFORE_BROWSER_LAUNCH');self.assertEqual(receipt['physicalEvaluations'],0)
     def test_worker_modified_renderer_source_refuses_before_node_or_browser(self):
-        self.manifest.write_text(json.dumps(dict(harnessFiles={'education/tools/arm-validation/geometry.mjs':'bad'})));self.cfg.update(nodeExecutable='NEVER_LAUNCHED');self.config.write_text(json.dumps(self.cfg))
+        self.manifest.write_text(json.dumps(dict(harnessFiles={p:('bad' if p.endswith('/geometry.mjs') else w.digest((w.ROOT/p).read_bytes())) for p in w.HARNESS_PATHS})));self.cfg.update(nodeExecutable='NEVER_LAUNCHED');self.config.write_text(json.dumps(self.cfg))
         with patch.object(sys,'argv',['render_worker.py',str(self.config)]),patch.object(rw.subprocess,'check_output',side_effect=AssertionError('Must not launch')):
             with self.assertRaisesRegex(ValueError,'Changed local renderer'):rw.main()
     def test_real_manifest_requires_exact_source_review_before_browser(self):
-        self.manifest.write_text(json.dumps(dict(harnessFiles={},nodeVersion='synthetic',harnessCommit='abc',reviewReceipt=None)));self.cfg.update(nodeExecutable='NEVER_LAUNCHED',syntheticOnly=False);self.config.write_text(json.dumps(self.cfg))
+        self.manifest.write_text(json.dumps(dict(harnessFiles={p:w.digest((w.ROOT/p).read_bytes()) for p in w.HARNESS_PATHS},nodeVersion='synthetic',harnessCommit='abc',reviewReceipt=None)));self.cfg.update(nodeExecutable='NEVER_LAUNCHED',syntheticOnly=False);self.config.write_text(json.dumps(self.cfg))
         with patch.object(sys,'argv',['render_worker.py',str(self.config)]),patch.object(rw.subprocess,'check_output',return_value='synthetic'):
             with self.assertRaisesRegex(ValueError,'Missing exact source review'):rw.main()
 if __name__=='__main__':unittest.main()

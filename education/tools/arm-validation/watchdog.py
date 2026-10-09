@@ -7,6 +7,7 @@ from capture_store import Store, POLICY as CAPTURE_POLICY
 ROOT = pathlib.Path(__file__).resolve().parents[3]
 NAMES = ['manifest.json','rest-recheck.json','explicit-halves.json','default.json','comparison.json','resource-receipt.json','transcript.log','geometry-A.slots','geometry-D.slots','geometry-B.slots']
 RUN_NAMES = ['rest-recheck.json','explicit-halves.json','default.json']
+HARNESS_PATHS={'education/tools/arm-validation/'+n for n in ['core.mjs','prepare.mjs','loader.mjs','replay.mjs','worker.mjs','watchdog.py','capture.mjs','capture_store.py','geometry.mjs','render-browser.mjs','render-build.mjs','render.py','render_worker.py','gif_encode.py']}
 CLASSES = ['attempts','configurationEntries','muscleMaterial','tendonMaterial','materialTensor','hessianProducts']
 EXPECTED_POLICY = dict(runs=[dict(id='A',attempts=0,configurationEntries=1,wallSeconds=60,muscleMaterial=56448,tendonMaterial=633,materialTensor=0,hessianProducts=0)]+[dict(id=i,attempts=n,configurationEntries=512,wallSeconds=240,muscleMaterial=28901376,tendonMaterial=324096,materialTensor=28901376,hessianProducts=n*3528840) for i,n in [('D',2),('B',1)]], aggregateWallSeconds=540,ownedRSSBytes=1000000000,cgroupBytes=16000000000,perRunOutputBytes=4194304,aggregateOutputBytes=16777216,perRunTranscriptBytes=262144,aggregateTranscriptBytes=1048576,pollSeconds=.01,reservedReceiptBytes=65536,reservedTranscriptBytes=1024,claimDirectory='/tmp/kenoma-arm-validation-approval-claims',capture=CAPTURE_POLICY,outputs=NAMES)
 RUN_IDS = ['A','D','B']
@@ -86,7 +87,7 @@ def validate_manifest(m, data, require_review=True):
     for p,item in m.get('modules',{}).items():
         if require_review and approved_modules[p]!=item['sha256']:raise Refusal('Unreviewed operator module '+p)
         if not p.startswith('education/') or pathlib.PurePosixPath(p).as_posix()!=p or '..' in pathlib.PurePosixPath(p).parts or digest(item['text'].encode())!=item['sha256']:raise Refusal('Changed module '+p)
-    files=m.get('harnessFiles',{});expected={'education/tools/arm-validation/'+n for n in ['core.mjs','prepare.mjs','loader.mjs','replay.mjs','worker.mjs','watchdog.py','capture.mjs','capture_store.py','geometry.mjs','render-browser.mjs','render-build.mjs','render.py','render_worker.py','gif_encode.py']}
+    files=m.get('harnessFiles',{});expected=HARNESS_PATHS
     if set(files)!=expected: raise Refusal('Changed harness inventory')
     for p,h in files.items():
         if digest(read_regular(ROOT/p))!=h: raise Refusal('Changed harness '+p)

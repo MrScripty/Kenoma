@@ -6,10 +6,11 @@ from PIL import Image
 from playwright.sync_api import sync_playwright
 from capture_store import read_slots
 from gif_encode import encode_shared_palette
-from watchdog import read_regular, digest, encoded, ROOT, validate_review_bytes
+from watchdog import read_regular, digest, encoded, ROOT, validate_review_bytes, HARNESS_PATHS
 MAX_FRAMES=34;MAX_JPEG=262144;MAX_GIF=8388608;MAX_ARTIFACT_BYTES=33554432
 def main():
     cfg=json.loads(read_regular(sys.argv[1],4194304));out=pathlib.Path(cfg['output']);manifest_bytes=read_regular(cfg['manifest'],4194304);m=json.loads(manifest_bytes);mh=digest(manifest_bytes)
+    if set(m.get('harnessFiles',{}))!=HARNESS_PATHS:raise ValueError('Changed renderer/harness inventory')
     for name,h in m['harnessFiles'].items():
         if digest(read_regular(ROOT/name))!=h:raise ValueError('Changed local renderer/harness source '+name)
     if subprocess.check_output([cfg['nodeExecutable'],'--version'],text=True).strip()!=m['nodeVersion']:raise ValueError('Changed Node runtime')
