@@ -54,6 +54,13 @@ try:
      page.locator('#reset-example').click();page.wait_for_function('window.kenomaChapterExample?.ready',timeout=90000)
      assert page.evaluate('JSON.stringify(kenomaChapterExample.state)')==initial
     tested.append(e['id']);print(name,e['id'],'PASS',flush=True)
+   # Pick an actual atlas triangle through the canvas, after clearing the default readout.
+   page.select_option('#example-choice','04-anatomy');page.wait_for_function('kenomaChapterExample.ready')
+   page.select_option('#parameter-part','3');page.wait_for_function("kenomaChapterExample.state.parameters.part==='3'")
+   atlas_canvas=page.locator('#example-viewport canvas');atlas_canvas.scroll_into_view_if_needed();atlas_canvas.click(position={'x':2,'y':2});expect(page.locator('#selection-info')).to_be_empty()
+   point=page.evaluate('''()=>{const v=kenomaChapterExample.viewport,s=kenomaChapterExample.state.objects[0],face=s.faces[0],p=v.controls.target.clone().set(0,0,0);for(const i of face)p.add(v.controls.target.clone().fromArray(s.vertices[i]));p.multiplyScalar(1/3).project(v.camera);const b=v.webgl.domElement.getBoundingClientRect();return {x:b.left+(p.x+1)*b.width/2,y:b.top+(1-p.y)*b.height/2,name:s.source.name,hash:s.source.hash}}''')
+   page.mouse.click(point['x'],point['y']);expect(page.locator('#selection-info')).to_contain_text(point['name']);expect(page.locator('#selection-info')).to_contain_text(point['hash'])
+   assert page.request.head(url+'/'+page.locator('#selection-info a').get_attribute('href')).ok
    page.select_option('#example-choice','01-force');page.wait_for_function('kenomaChapterExample.ready')
    canvas=page.locator('#example-viewport canvas');canvas.focus();position=page.evaluate('kenomaChapterExample.viewport.camera.position.toArray()');page.keyboard.press('ArrowLeft')
    assert page.evaluate('kenomaChapterExample.viewport.camera.position.toArray()')!=position
@@ -74,10 +81,9 @@ try:
     for ident in ['01-force','00-scope']:
      page.locator('[data-chapter-example="'+ident+'"]').click()
      assert page.locator('.chapter-example-frame').count()==1
-     frame=next(f for f in page.frames if 'examples.html' in f.url) if len(page.frames)>1 else None
-     page.wait_for_timeout(100)
+     page.frame_locator('.chapter-example-frame').locator('#example-choice').wait_for()
      frame=next(f for f in page.frames if 'examples.html' in f.url)
-     frame.wait_for_function('kenomaChapterExample.ready',timeout=90000)
+     frame.wait_for_function('window.kenomaChapterExample?.ready',timeout=90000)
     page.locator('[data-chapter-example="00-scope"]').click();assert page.locator('.chapter-example-frame').count()==0
     page.emulate_media(media='print');expect(body).to_be_visible()
    assert not errors,errors
