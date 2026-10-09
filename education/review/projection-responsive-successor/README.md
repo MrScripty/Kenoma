@@ -15,8 +15,8 @@ The strict no-overflow assertion remains. The checker now saves element bounds, 
 ## Completed local evidence
 
 - [Receipt](local-browser/receipt.json): PASS, source-bound to 8f5bec15; Chromium 151.0.7922.173; 42 combinations of widths 320/360/390/414/560/768/1280, spaces Q1/Q2/Q4, and native/DejaVu fonts. Strict document bounds and controls, independent rational oracle, actual preset/slider/custom-input/reset interactions, keyboard table scrolling, access to the last column, and visible interpretation paragraph passed. No JavaScript errors.
-- [Frozen failure bounds](local-browser/viewport-failure-frozen-dejavu-320.json) and [screenshot](local-browser/viewport-failure-frozen-dejavu-320.png) preserve the 345 px document on a 320 px viewport.
-- [Fixed 320 px native screenshot](local-browser/fixed-native-320.png) and [fixed DejaVu screenshot](local-browser/fixed-dejavu-320.png) preserve the rendered successor.
+- [Frozen failure bounds](local-browser/viewport-failure-frozen-dejavu-320.json) and [screenshot](https://raw.githubusercontent.com/MrScripty/Kenoma/596df78f5cb652b4ac70917a82d8aa908b617056/education/review/projection-responsive-successor/local-browser/viewport-failure-frozen-dejavu-320.png) preserve the 345 px document on a 320 px viewport.
+- [Fixed 320 px native screenshot](https://raw.githubusercontent.com/MrScripty/Kenoma/596df78f5cb652b4ac70917a82d8aa908b617056/education/review/projection-responsive-successor/local-browser/fixed-native-320.png) and [fixed DejaVu screenshot](https://raw.githubusercontent.com/MrScripty/Kenoma/596df78f5cb652b4ac70917a82d8aa908b617056/education/review/projection-responsive-successor/local-browser/fixed-dejavu-320.png) preserve the rendered successor.
 - [Hosted failure extract](diagnosis/hosted-run-37489843475-extract.log) and [jobs](diagnosis/hosted-run-37489843475-jobs.json) preserve the failed run. Node 208, Python 55, build/Lean, and 103-statement/12-source actual-point print gates passed before the strict 320 px projection assertion failed, before PDF rendering. Original failed run 37484501133 and e7d56450 remain preserved.
 
 ## Access checkpoint and remaining work

@@ -77,3 +77,5 @@ Do not describe a local build as a hosted site or a passing future workflow. Con
 The source dependency build bootstraps the pinned ProofWidgets JavaScript assets in its standalone upstream package before restoring mathlib’s unchanged guarded configuration. See `research/ci-e19-proof-build-diagnosis.md` for the cold reproduction of the frozen delivery’s CI failure. Full dependency logs are retained on both failure and success; proof and artifact gates remain required.
 
 The candidate adds a fixed-field projection interlude after spatial continuum and before interfaces/coupling. Its standalone lab, guide, complete Lean source and 27 statements are bundled locally. New continuous-specimen, scalar tension/mass controller and anatomical completion work remain excluded.
+
+Generated downloads and capture collections are untracked. See [output policy and retained inputs](research/generated-output-cleanup.md) for regeneration, draft/full qualification boundaries and the unchanged reference-data package.

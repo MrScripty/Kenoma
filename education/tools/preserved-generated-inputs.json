@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "note": "Immutable existing large inputs retained because accepted source-bound receipts/tests or unique execution evidence still need them. No additional generated collection is accepted by this list.",
+  "files": {
+    "education/data/anatomical-arm-v1/audit/anatomical-bulk-step-0.5.json": {
+      "gitBlob": "2b1c2b3b0076385e25aa328193fc0442fa95b45b",
+      "bytes": 15324720
+    },
+    "education/data/anatomical-arm-v1/audit/anatomical-bulk-step-2.json": {
+      "gitBlob": "e8cf88fa5b788182ee8839f4a668ce181287b448",
+      "bytes": 15323679
+    },
+    "education/data/anatomical-arm-v1/audit/anatomical-calibration-nodal.json": {
+      "gitBlob": "54a86d283ae114eac56fa8427c58c35c42004213",
+      "bytes": 1060102
+    },
+    "education/data/anatomical-arm-v1/audit/anatomical-dense-loading-prefix.json": {
+      "gitBlob": "29600c48d44d40a26ef55a7901e1bd02993fe27d",
+      "bytes": 28531577
+    },
+    "education/data/anatomical-arm-v1/audit/anatomical-dense-step.json": {
+      "gitBlob": "a727c720daa5591468af9877bb60b7bddfb385dc",
+      "bytes": 15349396
+    },
+    "education/data/anatomical-arm-v1/audit/anatomical-dense-trajectory.json": {
+      "gitBlob": "79ad797adebfc394666a47e9a9212f2006789d93",
+      "bytes": 8651171
+    },
+    "education/data/anatomical-arm-v1/audit/anatomical-enriched-step.json": {
+      "gitBlob": "6e9da1860a87027b0d588a8123b036d04ff9026d",
+      "bytes": 1635152
+    },
+    "education/data/anatomical-arm-v1/audit/anatomical-trajectory-orientation-full.json.gz": {
+      "gitBlob": "db4072d6f60ef99c9937e8bd7216777bf1aab4e3",
+      "bytes": 29173324
+    },
+    "education/data/anatomical-arm-v1/audit/contact-coarse-release-base.json": {
+      "gitBlob": "7c40da28055c9129a673b825e778accde74cb86c",
+      "bytes": 44138330
+    },
+    "education/data/anatomical-arm-v1/audit/contact-default-start-rejected.json": {
+      "gitBlob": "a17f2ffe59617cb177f21f236be4b8bee486e2df",
+      "bytes": 1085576
+    },
+    "education/data/anatomical-arm-v1/audit/contact-feature-v2/interrupted-lift.json": {
+      "gitBlob": "e7d10ae2bc49f21aa339106df4af7e131ace6696",
+      "bytes": 3948605
+    },
+    "education/data/anatomical-arm-v1/audit/contact-feature-v2/rejected-cold-load.json": {
+      "gitBlob": "0b0f442b631abc3a721e0280eae56c2cd146085e",
+      "bytes": 2425253
+    },
+    "education/data/anatomical-arm-v1/audit/contact-fine-release-results.json": {
+      "gitBlob": "7ff47dae73b90681d94e4402a5e430d9fabc4e64",
+      "bytes": 12464091
+    },
+    "education/data/anatomical-arm-v1/audit/contact-lift-release-results.json": {
+      "gitBlob": "4e032093ff56cd7811ae9e41cca6010953db0636",
+      "bytes": 9891745
+    },
+    "education/data/anatomical-arm-v1/audit/contact-missed-soft-v3/candidate.json": {
+      "gitBlob": "ee14e00cc2722c52f854e59cf66b0f75c44ebd6f",
+      "bytes": 1069340
+    },
+    "education/data/anatomical-arm-v1/audit/contact-single-feature-interrupted.json": {
+      "gitBlob": "7ceb82930e195cf3fdebff70c8fcfa991124e7f0",
+      "bytes": 2872602
+    },
+    "education/data/anatomical-arm-v1/audit/reference-repair.json": {
+      "gitBlob": "079a1191be140267b6ffde1f3b7de3a3bce3ad29",
+      "bytes": 1759278
+    },
+    "education/data/anatomical-arm-v1/review/dense-qualification/calibration-mode-support/receipt.json": {
+      "gitBlob": "b0286bef009c1f54e147b4dc88815d37a0ff970b",
+      "bytes": 1059748
+    },
+    "education/review/accepted-book-integration/artifacts/dissipative-qa/receipt.json": {
+      "gitBlob": "83b741aa02789319496d1c2f9c75f5d54539ba8b",
+      "bytes": 11455513
+    },
+    "education/review/accepted-book-integration/sls-runtime-negatives/extension-hold-trace.json": {
+      "gitBlob": "ad8e55e36696d5c29a45858d976d101fc101058f",
+      "bytes": 3734502
+    },
+    "education/review/accepted-book-integration/sls-runtime-negatives/force-hold-trace.json": {
+      "gitBlob": "b362aa1d275a0b48326ec181a2cce5c2335885b1",
+      "bytes": 3731910
+    },
+    "education/review/accepted-book-integration/sls-runtime-negatives/receipt.json": {
+      "gitBlob": "47c8471db17c55c0022a20a44de6def7f2391792",
+      "bytes": 11221386
+    },
+    "education/review/dissipative-lesson/dissipative-qa/receipt.json": {
+      "gitBlob": "b133d85744422f520551902aa71bea8e558fb3da",
+      "bytes": 11490662
+    },
+    "education/review/projection-responsive-successor/qualification/artifacts/dissipative-qa/receipt.json": {
+      "gitBlob": "60479c109807f1a2cc9c77e0af90e31060c1a66d",
+      "bytes": 11514904
+    },
+    "education/review/serial-readable/delivered-evidence/dissipative-qa/receipt.json.gz": {
+      "gitBlob": "ae2fae1309e752d49999e6ed2ed38223cf8bd823",
+      "bytes": 1224179
+    }
+  }
+}

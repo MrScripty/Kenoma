@@ -1,6 +1,26 @@
-node_modules/
+node_modules
 dist/
 __pycache__/
 proofs/.lake/
 proofs/*.olean
 .tools/
+
+# Generated downloads, captures and runtime evidence belong outside source control.
+.artifacts/
+*.pdf
+*.zip
+*.olean
+/review/**/*.png
+/review/**/*.jpg
+/review/**/*.jpeg
+/review/**/*.log
+/review/**/*trace*.json
+/deliverables/
+
+# Existing tracked research fixtures stay tracked; new execution outputs stay local.
+/data/anatomical-arm-v1/audit/
+/data/anatomical-arm-v1/review/
+/data/property-labs-v1/review/
+/review/**/receipt.json
+/review/**/negative-controls/
+/.browser-tmp/

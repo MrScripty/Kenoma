@@ -6,7 +6,7 @@ The Chromium 151.0.7922.173 check passed 5,625 actual browser model states again
 
 - [Desktop: one shared value](desktop-coarse.png), [two group values](desktop-paired.png), and [full sample representation](desktop-full.png).
 - [Mobile: 390 pixels](mobile-390.png) and [320 pixels](mobile-320.png). Both have no document overflow; controls work at each width.
-- [Printed default reference](fixed-field-reference.pdf) and [source-bound check receipt](receipt.json).
+- [Printed default reference](https://raw.githubusercontent.com/MrScripty/Kenoma/596df78f5cb652b4ac70917a82d8aa908b617056/education/standalone/pressure-projection-lab-review/fixed-field-reference.pdf) and [source-bound check receipt](receipt.json).
 
 The same default prescribed `g=(-3/4,1/4,-1/4,3/4)` and `K=8` appear in all three desktop captures. Full energy stays 8; condensed energy increases from 1/2 to 1 to 8; the independently computed residual gap decreases from 15/2 to 7 to 0. No state is re-equilibrated and no body is rendered.
 

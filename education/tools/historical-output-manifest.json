@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "commit": "11b8d5b24f3d6dd898e091a10a2a63675ce48d3e",
+  "purpose": "Exact historical output recovery, not current qualification evidence. Originals are restored only into ignored .artifacts/historical-inputs.",
+  "files": {
+    "review/dissipative-lesson/standalone-569e/receipt.json": {
+      "bytes": 11221386,
+      "sha256": "cd0aaabb1f008b0327ded2d8566ea9a8a3c2b3c3e2c198a71fbe8579f22165a3",
+      "gitBlob": "f1fcbfec9597737cf855b121a4d72da69f4f0d3e",
+      "url": "https://raw.githubusercontent.com/MrScripty/Kenoma/11b8d5b24f3d6dd898e091a10a2a63675ce48d3e/education/review/dissipative-lesson/standalone-569e/receipt.json"
+    },
+    "review/projection-responsive-successor/qualification/sls-runtime-negatives/receipt.json": {
+      "bytes": 11221386,
+      "sha256": "6d05b832cc34a4e69b3bfa8bf40ebd67e6acfb25eb04d58aa45c028844dba70c",
+      "gitBlob": "6376ec2f5dd1b4427dbe453db13a263be72aee0d",
+      "url": "https://raw.githubusercontent.com/MrScripty/Kenoma/11b8d5b24f3d6dd898e091a10a2a63675ce48d3e/education/review/projection-responsive-successor/qualification/sls-runtime-negatives/receipt.json"
+    },
+    "review/serial-specimen/delivered-evidence/dissipative-qa/receipt.json": {
+      "bytes": 11514789,
+      "sha256": "6bde1d312d017815dce37e649d4c6a0a36a84521438acf85933eb79967a4ecc6",
+      "gitBlob": "145e2de3c78786ea6ab5d0b6cb09c94e1f19ef6f",
+      "url": "https://raw.githubusercontent.com/MrScripty/Kenoma/11b8d5b24f3d6dd898e091a10a2a63675ce48d3e/education/review/serial-specimen/delivered-evidence/dissipative-qa/receipt.json"
+    },
+    "deliverables/material-response-review/material-response.md": {
+      "bytes": 21232,
+      "sha256": "2af42a852eca764e76354a801fcd906edb8eb80ffbb24969093c7bcaba75284c",
+      "gitBlob": "b8cb889e26c99c615b324610ce9833fe1e1a1910",
+      "url": "https://raw.githubusercontent.com/MrScripty/Kenoma/11b8d5b24f3d6dd898e091a10a2a63675ce48d3e/education/deliverables/material-response-review/material-response.md"
+    },
+    "deliverables/measurement-first-editorial-review/kenoma-mechanics.md": {
+      "bytes": 295547,
+      "sha256": "cbebb9813e49397ff7acc83a62d070ea376f05c0331073daa51cd3704aed5e59",
+      "gitBlob": "320a273096acdad3960bc46d789c9b14828ce63f",
+      "url": "https://raw.githubusercontent.com/MrScripty/Kenoma/11b8d5b24f3d6dd898e091a10a2a63675ce48d3e/education/deliverables/measurement-first-editorial-review/kenoma-mechanics.md"
+    },
+    "deliverables/property-integration/kenoma-mechanics.md": {
+      "bytes": 282025,
+      "sha256": "56e394eafabfb5e741555590b5135205d55904175c9d0d23cd3927739608c344",
+      "gitBlob": "df2a53bad2c1f1755dcf40af7fb897a860ddff76",
+      "url": "https://raw.githubusercontent.com/MrScripty/Kenoma/11b8d5b24f3d6dd898e091a10a2a63675ce48d3e/education/deliverables/property-integration/kenoma-mechanics.md"
+    },
+    "deliverables/release-candidate-repaired/kenoma-mechanics.md": {
+      "bytes": 282339,
+      "sha256": "646bfe190582851ac58def591797b9b37eff09c292096d73b9e58fd7d0888151",
+      "gitBlob": "d40f3135ecc4f53e67b699e47c197cba61c5ebf4",
+      "url": "https://raw.githubusercontent.com/MrScripty/Kenoma/11b8d5b24f3d6dd898e091a10a2a63675ce48d3e/education/deliverables/release-candidate-repaired/kenoma-mechanics.md"
+    },
+    "deliverables/release-candidate/kenoma-mechanics.md": {
+      "bytes": 282022,
+      "sha256": "e172ec0830a73b7940f3d5735356820f6e8691d5afb10342eb0192463bd2efb3",
+      "gitBlob": "2b0f629472f90a328840d28d08afed042ef51324",
+      "url": "https://raw.githubusercontent.com/MrScripty/Kenoma/11b8d5b24f3d6dd898e091a10a2a63675ce48d3e/education/deliverables/release-candidate/kenoma-mechanics.md"
+    },
+    "deliverables/release-output-bound/kenoma-mechanics.md": {
+      "bytes": 282339,
+      "sha256": "646bfe190582851ac58def591797b9b37eff09c292096d73b9e58fd7d0888151",
+      "gitBlob": "d40f3135ecc4f53e67b699e47c197cba61c5ebf4",
+      "url": "https://raw.githubusercontent.com/MrScripty/Kenoma/11b8d5b24f3d6dd898e091a10a2a63675ce48d3e/education/deliverables/release-output-bound/kenoma-mechanics.md"
+    }
+  }
+}
