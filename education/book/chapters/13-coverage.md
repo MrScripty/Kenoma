@@ -43,7 +43,7 @@ The progressive property sequence currently implements measured tetrahedral defo
 
 This candidate excludes new continuous passive-specimen, scalar tension/mass controller and anatomical capstone implementations. Those coverage gaps remain open. Fixed-field projection adds no physical deformation or anatomical completion claim.
 
-The source-only architecture-force integration preserves the independently qualified thirteen-file contribution and all anatomical datasets. Its local lab closure and six exact source registrations still require full-book proof, control, print and release qualification. The historical 109-declaration milestone is not retroactively relabelled as a 115-declaration pass.
+The architecture-force integration preserves the independently qualified thirteen-file contribution and all anatomical datasets. Its local lab closure and six exact source registrations require full-book proof, control, print and release qualification bound to the same delivered bytes. The historical 109-declaration milestone is not retroactively relabelled as a 115-declaration pass.
 
 
 ## Interactive coverage is separate from proof coverage {#interactive-coverage}
