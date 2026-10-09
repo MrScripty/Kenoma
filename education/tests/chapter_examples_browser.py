@@ -78,6 +78,7 @@ try:
     assert page.locator('.claim-toggle[aria-expanded=false]').count()==115
     button=page.locator('.claim-toggle').first;body=page.locator('.claim-technical').first;expect(body).not_to_be_visible();button.focus();page.keyboard.press('Enter');expect(body).to_be_visible();page.keyboard.press('Space');expect(body).not_to_be_visible()
     assert page.locator('.chapter-example').count()==27
+    for entry in registry['examples']:expect(page.locator('[id="'+entry['anchor']+'"]')).to_have_count(1)
     for ident in ['01-force','00-scope']:
      page.locator('[data-chapter-example="'+ident+'"]').click()
      assert page.locator('.chapter-example-frame').count()==1
