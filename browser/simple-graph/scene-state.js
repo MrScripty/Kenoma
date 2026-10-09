@@ -1,4 +1,5 @@
 import {LIMBS,solveTwoBone,vector} from './rig.js';
+import {validateScene,MAX_SCENE_CHARACTERS} from './scene-file.js';
 const clone = value => structuredClone(value);
 function freeze(value) { if(value && typeof value==='object'){Object.values(value).forEach(freeze);Object.freeze(value);} return value; }
 const same = (a,b) => JSON.stringify(a)===JSON.stringify(b);
@@ -8,7 +9,7 @@ function angle(value,name) { if(!Number.isFinite(value)||Math.abs(value)>1e6) th
  * History is bounded to 100 entries. Selection does not create undo entries.
  */
 export class SceneModel {
-  #base; #state; #past=[]; #future=[]; #gesture=null; #serial=1;
+  #base; #state; #past=[]; #future=[]; #gesture=null; #serial=1; #revision=0;
   constructor(baseGraph) {
     this.#base=clone(baseGraph);
     if(!Array.isArray(this.#base?.nodes)||this.#base.nodes.length!==16||!Array.isArray(this.#base.edges)) throw new Error('SceneModel requires the 16-node mannequin graph');
@@ -29,14 +30,26 @@ export class SceneModel {
     this.dispatch({type:'add'}); this.#past=[];
   }
   get state(){return freeze(clone(this.#state));}
+  get baseGraph(){return freeze(clone(this.#base));}
+  get revision(){return this.#revision;}
+  get gestureActive(){return this.#gesture!==null;}
+  replaceScene(state){
+    if(this.#gesture)throw new Error('Finish the active gesture before opening a scene');
+    const next=validateScene(state,this.#base);
+    const serial=Math.max(this.#serial,next.nextId);
+    next.nextId=serial;
+    this.#record(clone(this.#state));
+    this.#serial=serial;this.#state=next;this.#revision++;
+    return this.state;
+  }
   get canUndo(){return this.#past.length>0;}
   get canRedo(){return this.#future.length>0;}
   #record(before){this.#past.push(before);if(this.#past.length>100)this.#past.shift();this.#future=[];}
-  beginGesture(){if(this.#gesture)throw new Error('A gesture is already active');this.#gesture=clone(this.#state);return this.state;}
-  commitGesture(){if(this.#gesture&&!same(this.#gesture.characters,this.#state.characters))this.#record(this.#gesture);this.#gesture=null;return this.state;}
-  cancelGesture(){if(this.#gesture)this.#state=this.#gesture;this.#gesture=null;this.#state.nextId=this.#serial;return this.state;}
-  undo(){if(this.#gesture)this.cancelGesture();if(this.#past.length){this.#future.push(this.#state);this.#state=this.#past.pop();this.#state.nextId=this.#serial;}return this.state;}
-  redo(){if(this.#gesture)this.cancelGesture();if(this.#future.length){this.#past.push(this.#state);this.#state=this.#future.pop();this.#state.nextId=this.#serial;}return this.state;}
+  beginGesture(){if(this.#gesture)throw new Error('A gesture is already active');this.#gesture=clone(this.#state);this.#revision++;return this.state;}
+  commitGesture(){if(this.#gesture){if(!same(this.#gesture.characters,this.#state.characters))this.#record(this.#gesture);this.#gesture=null;this.#revision++;}return this.state;}
+  cancelGesture(){if(this.#gesture){this.#state=this.#gesture;this.#gesture=null;this.#state.nextId=this.#serial;this.#revision++;}return this.state;}
+  undo(){if(this.#gesture)this.cancelGesture();if(this.#past.length){this.#future.push(this.#state);this.#state=this.#past.pop();this.#state.nextId=this.#serial;this.#revision++;}return this.state;}
+  redo(){if(this.#gesture)this.cancelGesture();if(this.#future.length){this.#past.push(this.#state);this.#state=this.#future.pop();this.#state.nextId=this.#serial;this.#revision++;}return this.state;}
   dispatch(action){
     if(!action||typeof action.type!=='string')throw new Error('Action type is required');
     const next=clone(this.#state);
@@ -44,6 +57,8 @@ export class SceneModel {
     if(action.type!=='add'&&!character)throw new Error(`Unknown character: ${action.id}`);
     switch(action.type){
       case 'add': {
+        if(next.characters.length>=MAX_SCENE_CHARACTERS)throw new Error('At most 64 characters are supported');
+        if(this.#serial>=Number.MAX_SAFE_INTEGER)throw new Error('Character ID allocation is exhausted');
         const id=`character-${this.#serial}`;
         const graph=clone(this.#base),rig={};
         for(const [name,[r,j,e]] of Object.entries(LIMBS)){
@@ -81,7 +96,7 @@ export class SceneModel {
     }
     if(same(next,this.#state))return this.state;
     if(!this.#gesture&&action.type!=='select')this.#record(clone(this.#state));
-    this.#state=next;if(action.type==='add')this.#serial=next.nextId;
+    this.#state=next;if(action.type==='add')this.#serial=next.nextId;this.#revision++;
     return this.state;
   }
 }

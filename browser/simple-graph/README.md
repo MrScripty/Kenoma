@@ -22,8 +22,11 @@ supports handle dragging, orbit and two-finger camera gestures. **Frame** fits
 the scene. **F** frames, **Delete** removes, **Ctrl/⌘ Z** undoes,
 **Ctrl/⌘ Shift Z** redoes, and **Escape** cancels a drag. Help stays collapsed.
 
-Edits are held in memory, with a 100-entry undo history; reloading the page loses
-the scene. Scene save/import and animation are not implemented. The `human_surface` crate creates the neutral connected body/head surface once;
+Edits have a 100-entry undo history. **Save** downloads a compact `.human.sqlite`
+scene; **Open** restores characters, poses and colors as one undoable edit. Save
+before reloading and Open afterward; there is no automatic storage. See the
+[scene file contract](SCENE_FILES.md) for limits and embedding APIs. Animation is
+not implemented. The `human_surface` crate creates the neutral connected body/head surface once;
 `human_rig` binds it and deforms fixed topology as the pose changes. Touching or
 crossed limbs retain their vertices and cannot fuse. Contact may interpenetrate:
 this is an artistic rig without collision simulation. A dedicated worker performs

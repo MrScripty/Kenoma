@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createRequire} from 'node:module';
+import {createSceneArchive,MAX_ARCHIVE_BYTES,MAX_SOURCE_BYTES} from '../scene-archive.js';
+const require=createRequire(import.meta.url),SQL=await require('sql.js')(),archive=await createSceneArchive({SQL});
+const text='{"format":"kenoma.scene-source","version":1,"characters":[]}';
+function mutate(sql){const db=new SQL.Database(archive.encode(text));try{db.run(sql);return db.export();}finally{db.close();}}
+test('real SQLite container roundtrips source repeatedly without modifying bytes',()=>{let bytes=archive.encode(text);assert.equal(new TextDecoder().decode(bytes.subarray(0,16)),'SQLite format 3\0');for(let i=0;i<10;i++){const before=bytes.slice();assert.equal(archive.decode(bytes),text);assert.deepEqual(bytes,before);bytes=archive.encode(archive.decode(bytes));}});
+test('future schema/record versions, missing tables and invalid cardinality fail',()=>{for(const sql of ['UPDATE skin_scene_schema SET version=2','UPDATE skin_scenes SET record_version=2','DELETE FROM skin_scene_schema','INSERT INTO skin_scene_schema VALUES(1)','DELETE FROM skin_scenes','INSERT INTO skin_scenes VALUES(2,1,\'{}\')','DROP TABLE skin_scenes','ALTER TABLE skin_scenes ADD COLUMN extra TEXT'])assert.throws(()=>archive.decode(mutate(sql)));});
+test('bounded input, malformed file and nontext/oversized payload fail',()=>{for(const input of [new Uint8Array(),new Uint8Array(MAX_ARCHIVE_BYTES+1),new TextEncoder().encode('not sqlite'.repeat(20))])assert.throws(()=>archive.decode(input));assert.throws(()=>archive.encode('x'.repeat(MAX_SOURCE_BYTES+1)));assert.throws(()=>archive.decode(mutate("UPDATE skin_scenes SET source_json=zeroblob(12)")));assert.throws(()=>archive.decode(mutate(`UPDATE skin_scenes SET source_json=CAST(zeroblob(${MAX_SOURCE_BYTES+1}) AS TEXT)`)));});
+test('unrelated project tables survive read; generated SQL/view source is rejected',()=>{const bytes=mutate('CREATE TABLE unrelated(value TEXT); INSERT INTO unrelated VALUES(\'keep\')');assert.equal(archive.decode(bytes),text);const db=new SQL.Database(bytes);assert.equal(db.exec('SELECT value FROM unrelated')[0].values[0][0],'keep');db.close();assert.throws(()=>archive.decode(mutate("ALTER TABLE skin_scenes RENAME TO data; CREATE VIEW skin_scenes AS SELECT * FROM data")));});

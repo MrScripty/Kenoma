@@ -1,6 +1,8 @@
 import {createSimpleGraph} from './client.js';
 import {SceneModel} from './scene-state.js';
 import {SceneRenderer} from './renderer.js';
+import {createSceneArchive} from './scene-archive.js';
+import {setupSceneFiles} from './scene-files-ui.js';
 const $=id=>document.getElementById(id);
 const error=e=>{$('error').textContent=e.message||String(e);$('error').hidden=false;};
 try{
@@ -18,5 +20,9 @@ try{
  for(const [id,type,field]of [['color','color','color']]){const input=$(id);input.addEventListener('pointerdown',()=>model.beginGesture());input.addEventListener('input',()=>run(()=>model.dispatch({type,id:model.state.selectedId,[field]:input.value})));input.addEventListener('change',()=>run(()=>model.commitGesture()));input.addEventListener('pointerup',()=>run(()=>model.commitGesture()));input.addEventListener('blur',()=>run(()=>model.commitGesture()));}
  document.addEventListener('keydown',e=>{if(e.key==='Escape'){renderer.cancelDrag();$('help').open=false;return;}if(/INPUT|SELECT|TEXTAREA/.test(e.target.tagName))return;if(e.target===renderer.webgl.domElement&&e.key.startsWith('Arrow')){e.preventDefault();run(()=>renderer.nudge(e.key,e));return;}if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'){e.preventDefault();run(()=>e.shiftKey?model.redo():model.undo());}else if(e.key==='Delete'||e.key==='Backspace'){e.preventDefault();if(model.state.selectedId)run(()=>model.dispatch({type:'remove',id:model.state.selectedId}));}else if(e.key.toLowerCase()==='f')renderer.frame();});
  window.simpleGraphEditor={client,sample,model,renderer,update,ready:false};
- await renderer.whenIdle();renderer.frame();window.simpleGraphEditor.ready=true;
+ await renderer.whenIdle();renderer.frame();
+ const archive=await createSceneArchive();
+ const files=setupSceneFiles({model,archive,saveButton:$('saveScene'),openButton:$('openScene'),fileInput:$('sceneFile'),onChange:()=>{$('error').hidden=true;update();renderer.frame();},onError:error});
+ $('saveScene').disabled=false;$('openScene').disabled=false;
+ Object.assign(window.simpleGraphEditor,{archive,files,ready:true});
 }catch(e){error(e);}
