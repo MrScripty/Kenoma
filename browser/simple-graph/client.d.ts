@@ -2,6 +2,8 @@ export type Vec3 = [number, number, number];
 export type Vec2 = [number, number];
 export interface SkinNode { position: Vec3; radii: Vec2; root: boolean }
 export interface SkinGraph { nodes: SkinNode[]; edges: {a: number; b: number}[] }
+export interface HeadPose { yaw: number; pitch: number }
+export interface SurfaceOptions { cell_size: number }
 export interface Options { ring_sides: number; target_segment_length_factor: number; max_edge_segments: number }
 export type Command =
   | {AddNode: {position: Vec3; radii: Vec2}}
@@ -28,13 +30,14 @@ export interface Mesh {
 export type Request = {version: 1; operation:
   | {type: 'mannequin'}
   | {type: 'generate'; graph: SkinGraph; options?: Options}
+  | {type: 'surface'; graph: SkinGraph; head?: HeadPose; surface_options?: SurfaceOptions}
   | {type: 'edit'; graph: SkinGraph; commands: Command[]; options?: Options}
 };
 export type ErrorCode = 'invalid_request' | 'unsupported_version' | 'resource_limit'
   | 'invalid_node' | 'invalid_edge' | 'self_edge' | 'duplicate_edge' | 'invalid_value'
   | 'invalid_options' | 'invalid_transform' | 'ambiguous_branch' | 'invalid_geometry'
-  | 'history_conflict' | 'serialization';
-export type Response = {version: 1; ok: true; graph: SkinGraph; options: Options; mesh: Mesh}
+  | 'history_conflict' | 'serialization' | 'invalid_surface';
+export type Response = {version: 1; ok: true; graph: SkinGraph; options: Options; mesh: Mesh; head?: HeadPose; surface_options?: SurfaceOptions}
   | {version: 1; ok: false; error: {code: ErrorCode; message: string}};
 export interface SimpleGraph {request(value: Request): Response}
 /** Initialization may reject on a fetch/compilation error; requests return envelopes. */

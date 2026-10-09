@@ -13,8 +13,7 @@ Drag round hand/foot targets to pose a limb; diamond poles control its bend
 plane. Select a control from **Handle** when it is hidden behind another control.
 A selected handle also has axis arrows for movement at fixed world X/Y/Z.
 Direct dragging uses the camera plane. Drag **Root** to move the whole character;
-**Turn** rotates it. **Head turn/tilt** orient the stylized head independently.
-The eyes, nose and dark back make its facing direction visible.
+Select **Turn character** for its Y-axis rotation ring, or **Turn head** for local yaw/pitch rings. The integrated mannequin head uses a smooth forehead, jaw and chin silhouette. All posing uses scene handles: no sliders. With the canvas focused, arrow keys move a selected handle (Alt for depth); rotation handles use arrows for yaw/pitch. Shift makes smaller adjustments.
 
 **+ Character**, character selection (dropdown or mesh picking), **Remove**, and
 the color swatch operate independently per character. New characters use free
@@ -24,10 +23,7 @@ the scene. **F** frames, **Delete** removes, **Ctrl/⌘ Z** undoes,
 **Ctrl/⌘ Shift Z** redoes, and **Escape** cancels a drag. Help stays collapsed.
 
 Edits are held in memory, with a 100-entry undo history; reloading the page loses
-the scene. Scene save/import and animation are not implemented. Body geometry
-retains the core's overlapping tube/hub topology. The renderer hides the original
-head-edge surface and draws a presentation-only stylized head. It is not an
-anatomical model, skin simulation or a new core mesh asset.
+the scene. Scene save/import and animation are not implemented. The `human_surface` crate generates one welded continuous body/head surface with gradient normals. It is a non-anatomical mannequin, without physics. Topology regenerates with the pose; vertex IDs are not stable. Smooth unions can fuse self-contacting limbs and create handles. The default 0.016 m grid trades detail for bounded generation cost; requests are synchronous, so regeneration can pause interaction on slower devices. Root placement and color changes reuse geometry.
 
 ## Headless kinematics and scene state
 
@@ -86,8 +82,8 @@ if (posed.ok) uploadToYourRenderer(posed.mesh);
 ## Contract
 
 `client.d.ts` describes the public request/response shape. Every request names
-protocol version 1 and an operation: `mannequin`, `generate`, or `edit`.
-Generate/edit take the canonical graph; options are optional and default to the
+protocol version 1 and an operation: `mannequin`, `generate`, `edit`, or `surface`. The first three preserve the original general graph contract and overlapping primitive output. `surface` takes the canonical 16-node mannequin graph, optional `head: {yaw, pitch}` in radians and `surface_options: {cell_size}` (default 0.016 m). It returns a connected mannequin mesh plus the applied head/options, or `invalid_surface`. Head rotation is Qy(yaw) * Qx(pitch), about node 3, with +Z facing forward. See `crates/human_surface/README.md` for limits and topology guarantees.
+Generate/edit take a general source graph; options are optional and default to the
 core settings. Edit applies at most 128 commands to a private graph. On success
 it returns the new graph, options and generated mesh. The caller's graph is
 never mutated; failure returns no partial graph or mesh. Hosts can retain graph
@@ -138,6 +134,6 @@ inputs and phone/touch behavior. The original WASM contract remains tested too.
 Ignored `test-output/` contains desktop and phone screenshots plus
 `scene-editor-verification.json` with commit/dirty status, exact scene, browser
 version, WASM hash and checks. Captures render actual WASM body buffers with
-Three.js head geometry; no generated-image substitute is used. Native core tests
-still independently establish body winding/topology. Browser screenshots are
+an integrated WASM head; no generated-image substitute is used. Native surface tests
+independently establish connectivity, manifold topology, winding and normals. Browser screenshots are
 visual evidence, not numerical proofs.

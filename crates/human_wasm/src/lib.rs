@@ -1,5 +1,6 @@
 //! Versioned, host-independent WASM/JSON adapter for the simple graph core.
 use human_core::*;
+use human_surface::{generate_mannequin_surface, HeadPose, SurfaceOptions};
 use serde::{Deserialize, Serialize};
 use wasm_bindgen::prelude::*;
 
@@ -17,6 +18,13 @@ struct Request {
 #[serde(tag = "type", rename_all = "snake_case", deny_unknown_fields)]
 enum Operation {
     Mannequin,
+    Surface {
+        graph: SkinGraph,
+        #[serde(default)]
+        head: HeadPose,
+        #[serde(default)]
+        surface_options: SurfaceOptions,
+    },
     Generate {
         graph: SkinGraph,
         #[serde(default)]
@@ -36,6 +44,10 @@ struct Success {
     graph: SkinGraph,
     options: SkinGraphGenerateOptions,
     mesh: GeneratedSkinMesh,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    head: Option<HeadPose>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    surface_options: Option<SurfaceOptions>,
 }
 #[derive(Serialize)]
 struct Failure<'a> {
@@ -122,14 +134,29 @@ pub fn evaluate(request_json: &str) -> String {
     if request.version != PROTOCOL_VERSION {
         return failure("unsupported_version", "Expected protocol version 1");
     }
-    let (mut graph, options, commands) = match request.operation {
-        Operation::Mannequin => (mannequin(), SkinGraphGenerateOptions::default(), Vec::new()),
-        Operation::Generate { graph, options } => (graph, options, Vec::new()),
+    let (mut graph, options, commands, surface) = match request.operation {
+        Operation::Mannequin => (
+            mannequin(),
+            SkinGraphGenerateOptions::default(),
+            Vec::new(),
+            None,
+        ),
+        Operation::Surface {
+            graph,
+            head,
+            surface_options,
+        } => (
+            graph,
+            SkinGraphGenerateOptions::default(),
+            Vec::new(),
+            Some((head, surface_options)),
+        ),
+        Operation::Generate { graph, options } => (graph, options, Vec::new(), None),
         Operation::Edit {
             graph,
             options,
             commands,
-        } => (graph, options, commands),
+        } => (graph, options, commands, None),
     };
     if commands.len() > MAX_COMMANDS {
         return failure("resource_limit", "At most 128 commands per request");
@@ -139,16 +166,27 @@ pub fn evaluate(request_json: &str) -> String {
             return graph_failure(error);
         }
     }
-    let mesh = match generate_skin_graph_mesh(&graph, &options) {
+    let generated = if let Some((head, surface_options)) = &surface {
+        match generate_mannequin_surface(&graph, head, surface_options) {
+            Ok(mesh) => Ok(mesh),
+            Err(error) => return failure("invalid_surface", error),
+        }
+    } else {
+        generate_skin_graph_mesh(&graph, &options)
+    };
+    let mesh = match generated {
         Ok(mesh) => mesh,
         Err(error) => return graph_failure(error),
     };
+    let (head, surface_options) = surface.unzip();
     match serde_json::to_string(&Success {
         version: PROTOCOL_VERSION,
         ok: true,
         graph,
         options,
         mesh,
+        head,
+        surface_options,
     }) {
         Ok(response) => response,
         Err(error) => failure("serialization", error),

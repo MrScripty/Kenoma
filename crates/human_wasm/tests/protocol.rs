@@ -104,3 +104,44 @@ fn portable_u32_counts_and_command_limit() -> Result<(), Box<dyn std::error::Err
     );
     Ok(())
 }
+
+#[test]
+fn connected_surface_contract_matches_native() -> Result<(), Box<dyn std::error::Error>> {
+    let graph = mannequin();
+    let head = human_surface::HeadPose {
+        yaw: 0.4,
+        pitch: -0.2,
+    };
+    let options = human_surface::SurfaceOptions { cell_size: 0.028 };
+    let response = call(
+        json!({"version":1,"operation":{"type":"surface","graph":graph,"head":head,"surface_options":options}}),
+    )?;
+    assert_eq!(response.get("ok"), Some(&json!(true)));
+    assert_eq!(
+        serde_json::from_value::<human_surface::HeadPose>(
+            response.get("head").ok_or("missing head")?.clone()
+        )?,
+        head
+    );
+    assert_eq!(
+        serde_json::from_value::<human_surface::SurfaceOptions>(
+            response
+                .get("surface_options")
+                .ok_or("missing surface options")?
+                .clone()
+        )?,
+        options
+    );
+    let mesh: GeneratedSkinMesh =
+        serde_json::from_value(response.get("mesh").ok_or("missing mesh")?.clone())?;
+    assert_eq!(
+        mesh,
+        human_surface::generate_mannequin_surface(&graph, &head, &options)?
+    );
+    let bad = call(
+        json!({"version":1,"operation":{"type":"surface","graph":graph,"surface_options":{"cell_size":0}}}),
+    )?;
+    assert_eq!(bad.pointer("/error/code"), Some(&json!("invalid_surface")));
+    assert!(bad.get("mesh").is_none());
+    Ok(())
+}

@@ -102,10 +102,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "human_surface"
+version = "0.1.0"
+dependencies = [
+ "glam",
+ "human_core",
+ "serde",
+ "thiserror",
+]
+
+[[package]]
 name = "human_wasm"
 version = "0.1.0"
 dependencies = [
  "human_core",
+ "human_surface",
  "serde",
  "serde_json",
  "wasm-bindgen",
