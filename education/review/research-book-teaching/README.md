@@ -31,25 +31,27 @@ These local captures compare the same force inputs: 4 N, 2 kg and 1 s. The old v
 
 | View | Preserved publication | Teaching reader |
 |:--|:--|:--|
-| Desktop, 1440 × 1000 | `before-kenoma-desktop-force.png` | `after-desktop-force-default.png` |
-| Phone, 390 × 844 | `before-kenoma-phone-force.png` | `after-phone-force-default.png` |
+| Desktop, 1440 × 1000 | [Before](../../../docs/review/research-book-teaching/before-kenoma-desktop-force.png) | [After](../../../docs/review/research-book-teaching/after-desktop-force-default.png) |
+| Phone, 390 × 844 | [Before](../../../docs/review/research-book-teaching/before-kenoma-phone-force.png) | [After](../../../docs/review/research-book-teaching/after-phone-force-default.png) |
 
-Captures reside beside this README in the local checkout. `education/.artifacts/research-book-teaching/matched-screenshots.json` records their hashes and numerical readouts. The final browser gate also captures energy and pressure-projection steps at three widths. `evidence-review-v8/` contains six anatomy/coupled screenshots and its byte-bound receipt, covering historical rejection labels, provenance selection, poser edits and restoration of a fully visible scene after changing chapters.
+The four requested comparison images and their [capture provenance](../../../docs/review/research-book-teaching/captures.json) are committed under `docs/review/research-book-teaching/`. Automated capture collections remain ignored. The browser gate also captures energy and pressure-projection steps at three widths. Local `evidence-review-v8/` contains six anatomy/coupled screenshots and its byte-bound receipt, covering historical rejection labels, provenance selection, poser edits and restoration of a fully visible scene after changing chapters.
 
 ## Regenerate
 
-Use the normal qualified build when the pinned Lean/Rust prerequisites are available. For this bounded review, supply the already verified preserved publication directory:
+Use the normal qualified build when the pinned Lean/Rust prerequisites are available. This bounded preview starts from a fresh checkout with Node 22+, Python 3.12 and Git; no preexisting `/tmp` artifacts are required:
 
 ```bash
 cd education
-npm ci
-python3 tools/build_teaching_preview.py --preserved /path/to/verified-preserved-book /tmp/kenoma-teaching
-python3 tests/research_book_browser.py /tmp/kenoma-teaching
-python3 tests/chapter_examples_browser.py --preview /tmp/kenoma-teaching
-python3 -m http.server 8000 --directory /tmp/kenoma-teaching
+npm ci --cache .artifacts/npm-cache --no-audit --no-fund
+python3 tools/build_teaching_preview.py .artifacts/research-book-preview
+python3 -m http.server 8000 --bind 127.0.0.1 --directory .artifacts/research-book-preview
 ```
 
-The preview verifies unchanged evidence/source bytes and explicitly labels its reused receipts and prior PDF. It runs no new scientific campaign, downloads no dataset and publishes nothing. The full-build CI sequence now includes the new research-book browser gate; it has not been run remotely for this feature.
+Open <http://127.0.0.1:8000/>. The builder reads the checked-in publication descriptor, fetches missing immutable Git commits only from the official Kenoma repository into ignored `.artifacts/teaching-preview-inputs`, and exports the exact canonical baseline before running the publication assembler. The current modified worktree is never used as the baseline. Every preserved file and source input is checked before current teaching assets are packaged. Temporary snapshots are removed; Git objects remain available for `--offline` reuse. Use a new output path for another build, `--cache PATH` for external staging, or `--preserved PATH` for an already verified local artifact.
+
+With the browser-test prerequisites installed, run `python3 tests/research_book_browser.py .artifacts/research-book-preview` and `python3 tests/chapter_examples_browser.py --preview .artifacts/research-book-preview`. The preview manifest records publication commits and verification hashes. It explicitly labels reused proof receipts, recorded solver results, poser WASM and the prior PDF; it runs no new scientific campaign, downloads no new medical dataset and publishes nothing. The full-build CI sequence includes the research-book browser gate; it has not been run remotely for this feature.
+
+The reconstruction command was exercised from a shallow checkout containing neither pinned historical commit, with freshly installed locked dependencies and the pending preview tooling applied. Both immutable commits were fetched successfully; the assembler verified 1,102 preserved files and 947 source inputs. An offline rebuild produced an identical preview manifest. Local HTTP serving and the force example's actual WebGL/numerical state passed. Missing offline objects, an existing output directory and changed canonical prose were rejected. The local record is `education/.artifacts/research-book-teaching/preview-reproduction.json`; these are packaging and browser smoke checks, not new scientific qualification.
 
 ## Scope left open
 

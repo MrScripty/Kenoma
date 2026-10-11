@@ -209,6 +209,21 @@ def svg_label_measurements(pdf, svg_path):
     return measurements
 
 
+def teaching_measurements(pdf, nodes):
+    """Check every complete worked reading, including its expected observation."""
+    measurements = []
+    for step in nodes:
+        if 'teaching-step' not in step.attrs.get('class', '').split():
+            continue
+        # The action button is screen-only; these four blocks are printed content.
+        blocks = [n for n in step.children if isinstance(n, Node) and
+                  (n.tag in {'h3', 'p'} or 'step-label' in n.attrs.get('class', '').split())]
+        assert len(blocks) == 4, 'Incomplete worked reading: ' + step.attrs.get('id', '')
+        measurements.append(pdf.target('worked:' + step.attrs['id'],
+                                       ''.join(n.text() for n in blocks), prose=True))
+    return measurements
+
+
 def qualify(out, baseline_pdf=None):
     out = Path(out)
     html_path, pdf_path = out / 'index.html', out / 'kenoma-mechanics.pdf'
@@ -290,6 +305,10 @@ def qualify(out, baseline_pdf=None):
                 measure('prose:' + chapter, n.text(), prose=True, node=n)
                 selected.add(chapter)
         assert selected, 'No representative instructional prose selected'
+        try:
+            measurements.extend(teaching_measurements(pdf, nodes))
+        except AssertionError as error:
+            errors.append(str(error))
         for name in ('dense-qualification.svg', 'dense-envelope.svg', 'nodal-force-components.svg', 'property-serial.svg', 'property-dissipative.svg', 'pressure-projection.svg', 'nonuniform-volume.svg'):
             paths = list(out.rglob(name))
             assert len(paths) == 1, f'Missing/duplicated delivered figure {name}'
@@ -317,6 +336,7 @@ def qualify(out, baseline_pdf=None):
     return {'schema': 1, 'status': 'PASS', 'minimum_required_pt': MINIMUM_PT,
             'proof_cards': len(cards), 'theorem_statements': len(cards), 'complete_source_appendices': len(families),
             'instructional_prose_chapters': sorted(selected), 'pages': pages,
+            'worked_readings': sum(m['label'].startswith('worked:') for m in measurements),
             'minimum_measured_pt': min(m['minimum_pt'] for m in measurements),
             'measurements': measurements, 'identified_footer_glyphs_excluded': pdf.footer_glyphs,
             'portable_links': links, 'baseline_pdf_sha256': baseline_hash,

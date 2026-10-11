@@ -29,6 +29,8 @@ The retained delivery manifest still verifies its SHA-256. This is optional hist
 
 ## Qualification scope
 
+The research-book teaching review has one explicit user-requested exception: four curated before/after illustrations are committed under `docs/review/research-book-teaching/`, with their capture hashes and source identities. This 465,250-byte comparison set is documentation, not a new execution archive or scientific qualification. Automated screenshot collections, PDFs and build receipts remain ignored; the tracked-output guard and all scientific gates are unchanged.
+
 Draft PRs run source and unit contracts without launching full research executions. Ready PRs and explicit builds retain the complete existing book, proof, browser, PDF and artifact qualification job; draft tests cannot establish those results. Publication still requires the existing explicit checked-main workflow input. No deployment, environment protection, credential, anatomical-completion claim or physical law is changed.
 
 Local verification passed 208 JavaScript tests and 63 Python tests, including runtime packaging damage controls, actual-point PDF tests, output traversal/missing-input rejection, actual Git-index rejection of new/changed large execution collections, and JPEG quantization checks. Source acquisition unit tests now mock disk space with their HTTP fixtures and independently test that the unchanged production 1.5 GiB floor rejects before network access. Full fresh Lean/book/PDF/research qualification remains necessary before a release; no blocked nonlinear author solve has been rerun.

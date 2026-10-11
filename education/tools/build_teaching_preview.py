@@ -1,13 +1,14 @@
-"""Build an explicitly unqualified reading preview from a verified preserved book.
+"""Build an explicitly unqualified reading preview from the pinned publication.
 
-No downloads, proof compilation, physical campaigns, or publication occur here.
-The caller supplies the locally reconstructed existing publication artifact.
+Missing immutable Git objects are fetched from the official Kenoma repository.
+No new datasets, proof compilation, physical campaigns, or publication occur.
 """
 from pathlib import Path
 import argparse, hashlib, html, json, re, shutil, subprocess
 from chapter_examples import inventory as examples, package as package_examples
 from teaching_sequences import block, inventory
 from executable_outputs import executable_outputs
+from preserved_publication import DEFAULT_CACHE, preserved_book
 
 ROOT = Path(__file__).resolve().parents[1]
 PINNED_BUILD = '415d3d15c6f9644660bd2dd3983367bb30548188080ab0fbf7de45c4b7ed6d02'
@@ -19,7 +20,7 @@ def digest(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def build(preserved, out):
+def build(preserved, out, provenance=None):
     if out.exists():
         raise FileExistsError('Choose a new preview directory: ' + str(out))
     if digest(preserved / 'build-manifest.json') != PINNED_BUILD:
@@ -80,10 +81,11 @@ def build(preserved, out):
     receipt = package_examples(out, preserved_poser=preserved / 'gui/simple-graph/pkg')
     inputs = {str(path.relative_to(ROOT)): digest(path) for folder in ['web', 'book/examples']
               for path in sorted((ROOT / folder).rglob('*')) if path.is_file()}
-    for name in ['tools/build_teaching_preview.py', 'tools/teaching_sequences.py', 'tools/chapter_examples.py', 'tools/build.py']:
+    for name in ['tools/build_teaching_preview.py', 'tools/preserved_publication.py', 'tools/teaching_sequences.py', 'tools/chapter_examples.py', 'tools/build.py']:
         inputs[name] = digest(ROOT / name)
     receipt = {'kind': 'research-book-teaching-preview', 'qualification': NOTE,
                'source_base_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
+               'preserved_publication': provenance,
                'preserved_build_sha256': PINNED_BUILD, 'preserved_poser_wasm_sha256': expected_wasm,
                'input_sha256': inputs, 'teaching': receipt['teaching'],
                'teaching_sha256': digest(out / 'teaching-sequences.json'),
@@ -94,7 +96,17 @@ def build(preserved, out):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--preserved', required=True, type=Path)
+    parser.add_argument('--preserved', type=Path, help='Use an already verified local publication instead of reconstructing it')
+    parser.add_argument('--cache', type=Path, default=DEFAULT_CACHE, help='Ignored/external staging and immutable Git-object cache')
+    parser.add_argument('--offline', action='store_true', help='Require pinned Git objects locally; never fetch')
     parser.add_argument('out', type=Path)
     args = parser.parse_args()
-    build(args.preserved.resolve(), args.out.resolve())
+    if args.out.exists():
+        parser.error('Choose a new preview directory: ' + str(args.out))
+    if not (ROOT / 'node_modules/.bin/esbuild').is_file():
+        parser.error('Install the locked preview dependencies first: cd education && npm ci')
+    if args.preserved:
+        build(args.preserved.resolve(), args.out.resolve())
+    else:
+        with preserved_book(args.cache, args.offline) as (preserved, provenance):
+            build(preserved, args.out.resolve(), provenance)

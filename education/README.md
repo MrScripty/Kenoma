@@ -77,17 +77,20 @@ The reading surface now pairs a chapter rail, a bounded text column and one stic
 
 Each JSON lesson in `book/examples/lessons/` contains bounded inputs, worked reasoning, expected observations and an audit of remaining scientific gaps. The [acceptance inventory](research/research-book-teaching-acceptance.md) records every chapter. Prescribed geometry, numerical models, historical replays and the independent poser remain separate.
 
-For interaction review with an existing verified publication directory, without rerunning scientific campaigns:
+For interaction review from a fresh checkout, use Node 22+, Python 3.12 and Git. From the repository root:
 
 ```bash
-npm ci
-python3 tools/build_teaching_preview.py --preserved /path/to/verified-preserved-book /tmp/kenoma-teaching
-python3 tests/research_book_browser.py /tmp/kenoma-teaching
-python3 tests/chapter_examples_browser.py --preview /tmp/kenoma-teaching
-python3 -m http.server 8000 --directory /tmp/kenoma-teaching
+cd education
+npm ci --cache .artifacts/npm-cache --no-audit --no-fund
+python3 tools/build_teaching_preview.py .artifacts/research-book-preview
+python3 -m http.server 8000 --bind 127.0.0.1 --directory .artifacts/research-book-preview
 ```
 
-The preview accepts the pinned preserved publication manifest from `.github/publications/kenoma-20261009.json`, verifies its inputs, and labels reused proof/evidence/PDF output. It does not download data, run Lean or publish. A newly qualified complete book still uses the full build and release gates above.
+Open <http://127.0.0.1:8000/>. Choose a new output directory for each build; existing outputs are never overwritten. To repeat the browser review, install the browser-test prerequisites described above and run `python3 tests/research_book_browser.py .artifacts/research-book-preview` and `python3 tests/chapter_examples_browser.py --preview .artifacts/research-book-preview`.
+
+The builder reads `.github/publications/kenoma-20261009.json`. It retrieves the exact canonical source and publication payload commits from existing Git objects or the official Kenoma repository, reconstructs the publication with the existing checksum assembler, then packages the current teaching source. Git objects are cached in ignored `.artifacts/teaching-preview-inputs`; temporary source/payload snapshots are removed after assembly. `--offline` requires those objects locally, `--cache PATH` relocates staging/cache, and `--preserved PATH` accepts an already verified local publication.
+
+The manifest records both immutable commits and verification hashes. Proof receipts, recorded numerical results, the poser WASM and the linked PDF are reused and labelled as preserved evidence. This command fetches existing repository artifacts; it downloads no new medical dataset, runs no Lean/Rust build or scientific campaign, and publishes nothing. A newly qualified complete book still uses the full build and release gates above.
 
 ## Shared chapter GUI and embedding
 
