@@ -22,6 +22,19 @@ and ownership boundary](docs/adr/001-simple-graph-boundary.md) and
 [connected surface contract](crates/human_surface/README.md). This is schematic
 posing and mesh generation, with no anatomical accuracy or physical simulation.
 
+![Two independently colored posed mannequins with scene controls and a grid](docs/images/kenoma-two-character-scene.png)
+
+Two independently colored mannequins posed in the running Rust/WASM editor.
+
+![Selected left-hand IK target and axis gizmo after a mouse drag](docs/images/kenoma-rig-interaction.png)
+
+Left-hand IK adjustment using the live scene gizmo. Joint creasing remains
+visible: these are schematic posing tools, not anatomical or biomechanical
+simulation.
+
+Unedited captures from commit `e2ea6acc5db44794ae8b49beb877f5a8bccea056`,
+using Chromium 151 at 1600 × 1000.
+
 ## Educational mechanics book
 
 The additive [educational book and seven 3D laboratories](education/README.md) develop force, torque, energy, activation/release, tendon storage, a worked spatial FEM/fast-solver comparison and a spatial muscle-under-skin/elbow-contact capstone at identical poses. Licensed atlas surfaces, recorded normalized human signals and source model parameters remain separate evidence streams. The book includes original numerical experiments, primary citations and visible checked Lean claims. Its schematic one-way capstone is an educational model; the original production simulator plans remain separate.
