@@ -42,7 +42,7 @@ def block(ident, web=True):
 <div class="step-label">Worked example · {i + 1} / {len(lesson['steps'])}</div>
 <h3>{e(step['title'])}</h3><p>{e(step['explanation'])}</p>
 <p class="step-observe"><strong>Observe</strong> {e(step['observe'])}</p>
-<button type="button" class="show-teaching-step" data-show-step="{key}" hidden>Show this step <span aria-hidden="true">↗</span></button>
+<button type="button" class="show-teaching-step" data-show-step="{key}" hidden>Show this step</button>
 </section>''')
     return '\n\n<div class="teaching-sequence" aria-label="Worked reading">\n' + '\n'.join(steps) + '\n</div>\n\n'
 
