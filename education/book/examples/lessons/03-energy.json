@@ -1,0 +1,54 @@
+{
+  "chapter": "03-energy",
+  "steps": [
+    {
+      "id": "explicit-growth",
+      "title": "Expose energy created by the update",
+      "parameters": {
+        "method": "explicit",
+        "dt": 0.05,
+        "steps": 40
+      },
+      "explanation": "Use the same 1 kg, 40 N/m spring starting at x = 0.20 m and v = 0. At h = 0.05 s, explicit Euler multiplies energy by 1 + 40h² = 1.1 each step. After 40 steps, t = 2 s and E = 0.8 × 1.1⁴⁰.",
+      "observe": "Energy grows to 36.2074 J, a maximum deviation of 4425.93%. Position is 1.27918 m, versus analytic 0.199316 m at the same 2 s."
+    },
+    {
+      "id": "symplectic-comparison",
+      "title": "Change the update, preserve the experiment",
+      "parameters": {
+        "method": "symplectic",
+        "dt": 0.05,
+        "steps": 40
+      },
+      "explanation": "Keep the initial state, step size and 2 s endpoint. Updating velocity before position changes the numerical method. Its endpoint energy looks much closer, but inspect the maximum over every completed step rather than trusting a single snapshot.",
+      "observe": "Final energy is 0.766327 J, while maximum energy deviation is 18.7744%. Absolute position error is 0.00550736 m. Bounded-looking motion does not imply exact conservation."
+    },
+    {
+      "id": "verlet-comparison",
+      "title": "Use both endpoint accelerations",
+      "parameters": {
+        "method": "verlet",
+        "dt": 0.05,
+        "steps": 40
+      },
+      "explanation": "Velocity Verlet uses old and new acceleration. The same 40 steps reach the same physical time. At this endpoint the energy happens to lie very near 0.8 J; the maximum over all samples prevents that phase coincidence from hiding error.",
+      "observe": "Final energy is 0.799632 J, but maximum energy deviation is 2.49928%. Position error is 0.00116381 m. These are measured numerical errors, not a conservation proof."
+    },
+    {
+      "id": "refine-at-equal-time",
+      "title": "Refine at equal elapsed time",
+      "parameters": {
+        "method": "verlet",
+        "dt": 0.01,
+        "steps": 200
+      },
+      "explanation": "Reduce h fivefold and use five times as many steps so the endpoint remains 2 s. Comparing equal step counts here would compare different experiments. The finer run uses the same physical model and no retuned constants.",
+      "observe": "Maximum energy deviation falls to 0.0999895% and endpoint position error to 0.0000353055 m. Both improve in this experiment; this does not establish a universal error bound."
+    }
+  ],
+  "audit": {
+    "finding": "The embedded view reported only current energy and drift with a fixed step size. A near-zero endpoint drift could conceal much larger intermediate error.",
+    "change": "Added supported step sizes, analytic reference position and maximum relative energy deviation across every completed sample; worked comparisons match 2 s physical time.",
+    "remaining": "Ideal linear oscillator only; observed refinement is not a proof for arbitrary trajectories or biological systems. The full original lab retains longer traces and exports."
+  }
+}

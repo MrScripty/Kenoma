@@ -1,0 +1,37 @@
+{
+  "chapter": "00-scope",
+  "steps": [
+    {
+      "id": "inspect-neutral",
+      "title": "First identify what owns the motion",
+      "parameters": {
+        "preset": "neutral"
+      },
+      "explanation": "This mannequin starts in an authored neutral pose. Its graph and bound surface describe geometry; they supply neither measured anatomy nor a force law. Orbit the camera without changing the pose.",
+      "observe": "The view changes while the prescribed pose remains neutral. Force, pressure and contact response are not modeled."
+    },
+    {
+      "id": "translate-root",
+      "title": "Move a coordinate frame without deforming the body",
+      "parameters": {
+        "preset": "translated"
+      },
+      "explanation": "Translate the root by 0.4 scene units in the poser’s horizontal direction. Every local pose coordinate stays the same, so a moved silhouette alone cannot establish tissue strain or mechanical work.",
+      "observe": "The whole character moves together; the pose graph and skin shape are unchanged. This is a prescribed placement, not acceleration under force."
+    },
+    {
+      "id": "prescribe-hand",
+      "title": "Change pose, then ask for the missing law",
+      "parameters": {
+        "preset": "hand-on-torso"
+      },
+      "explanation": "The existing hand-on-torso test prescribes a right-hand target and elbow pole. Inverse kinematics chooses bone positions and geometric skinning follows them. A tissue model would additionally need a material law, boundaries, forces and convergence checks.",
+      "observe": "The arm bends toward the torso. The pose does not produce contact pressure or an equilibrium residual; these outputs remain not modeled."
+    }
+  ],
+  "audit": {
+    "finding": "The opening example was an unstructured poser with no worked state or quantities separating camera, placement and deformation.",
+    "change": "Three bounded presets introduce view inspection, rigid placement and prescribed IK; unavailable physical outputs are explicit.",
+    "remaining": "The poser supplies no anatomical calibration, collision response, tissue strain measurement or biomechanics."
+  }
+}

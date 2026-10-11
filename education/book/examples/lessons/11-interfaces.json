@@ -1,0 +1,37 @@
+{
+  "chapter": "11-interfaces",
+  "steps": [
+    {
+      "id": "reference-interface",
+      "title": "Identify the representation being mapped",
+      "parameters": {
+        "preset": "neutral"
+      },
+      "explanation": "This view maps an artistic graph to a rendered surface. It can establish a neutral pose and stable topology; it contains no tissue degrees of freedom or transpose force-transfer operator. The equations below concern additional mechanical mappings.",
+      "observe": "A neutral mannequin is shown. The state has no force, pressure or contact output to transfer."
+    },
+    {
+      "id": "rigid-motion-check",
+      "title": "Check the simplest motion transfer",
+      "parameters": {
+        "preset": "translated"
+      },
+      "explanation": "Move the entire character by 0.4 scene units. The render surface follows the root once, without changing the local pose. This is a useful rigid-placement check; it does not test the chapter’s proposed residual tissue embedding, which is not present in the poser.",
+      "observe": "The character translates as one object. No added tissue displacement, deformation energy or reaction force is claimed."
+    },
+    {
+      "id": "interface-contact-limit",
+      "title": "Separate visual following from contact mechanics",
+      "parameters": {
+        "preset": "hand-on-torso"
+      },
+      "explanation": "Prescribe the hand near the torso and inspect the interface. The skin follows the graph, but the torso does not push back through a tissue-to-bone force map. The paddle/block and weighted-cylinder exercises below remain separate, unfinished mechanical demonstrations.",
+      "observe": "The arm reaches the prescribed target. There is no two-way tissue reaction, sliding model or contact-pressure readout."
+    }
+  ],
+  "audit": {
+    "finding": "The generic poser could be mistaken for implementation of the chapter’s skinning-collapse or two-way interface exercises.",
+    "change": "The sequence explicitly tests geometric reference/placement/following and states which mechanical exercises are still missing.",
+    "remaining": "Weighted-cylinder LBS distortion, the two-way paddle/block exercise, residual tissue embedding and interface work checks remain unimplemented here."
+  }
+}

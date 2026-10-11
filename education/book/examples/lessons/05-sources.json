@@ -1,0 +1,37 @@
+{
+  "chapter": "05-sources",
+  "steps": [
+    {
+      "id": "verify-identity",
+      "title": "Trace one displayed object to a source",
+      "parameters": {
+        "part": "0"
+      },
+      "explanation": "The humerus label links to the original FJ3368 OBJ, with its SHA-256 and topology counts. The displayed metre coordinates come from division of source millimetres by 1,000 and a view rotation. Hash identity checks bytes, not anatomical correctness.",
+      "observe": "The humerus record exposes 2,233 vertices, 3,784 triangles and its source hash. Original notices are retained."
+    },
+    {
+      "id": "verify-component",
+      "title": "Repeat the check on another component",
+      "parameters": {
+        "part": "3"
+      },
+      "explanation": "Select brachialis and confirm that its name, OBJ and hash change independently. This prevents an assembly-level citation from obscuring which component is actually displayed. Source licensing and the scope of a numerical claim remain separate records.",
+      "observe": "The record changes to FJ1486: 1,266 vertices and 1,746 triangles. No muscle force, fitted modulus or proof of contact accuracy is attached to this surface."
+    },
+    {
+      "id": "verify-scope",
+      "title": "Keep attribution and scientific support separate",
+      "parameters": {
+        "part": "all"
+      },
+      "explanation": "Restore the atlas and follow the chapter’s component licences, transformation record and primary references. BodyParts3D’s current CC BY 4.0 record coexists with retained historical OBJ notices; Kenoma’s code licence does not relicense those assets. Lean cards below identify their own exact mathematical assumptions.",
+      "observe": "All ten parts retain their own provenance. Source identity, licence, geometry checks and mathematical proof do not become clinical validation."
+    }
+  ],
+  "audit": {
+    "finding": "Surface picking alone and a generic source link made component identity difficult to inspect and blurred citation with scientific validation.",
+    "change": "Named component selections and repeated source/count checks teach provenance independently of constitutive or proof claims.",
+    "remaining": "No new asset licence, source download, biological validation or mathematical theorem is introduced; existing source and proof receipts remain authoritative."
+  }
+}

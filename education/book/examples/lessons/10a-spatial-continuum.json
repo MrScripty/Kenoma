@@ -1,0 +1,40 @@
+{
+  "chapter": "10a-spatial-continuum",
+  "steps": [
+    {
+      "id": "matched-implicit-problem",
+      "title": "Identify the problem being compared",
+      "parameters": {
+        "sweeps": 1,
+        "order": "forward"
+      },
+      "explanation": "The chapter’s static manufactured solution and this viewer’s implicit step are different experiments. Here both displayed meshes use the same quadratic-case loads and start with zero displacement and velocity for a 0.5 ms step.",
+      "observe": "The teal reference converges to its 4.16e-11 N target; the one-sweep orange solve has residual about 0.0438889 N. Geometry uses the same 20-fold displacement scale."
+    },
+    {
+      "id": "reverse-constraint-order",
+      "title": "Change only the order of one sweep",
+      "parameters": {
+        "sweeps": 1,
+        "order": "reverse"
+      },
+      "explanation": "Reverse strain-constraint traversal while retaining the mesh, material, load and sweep count. A finite sequential iteration can depend on the order in which it updates coordinates.",
+      "observe": "One reverse sweep uses the same 288 visits but gives residual about 0.0528295 N and maximum nodal difference 8.16060 µm. A sweep count is not an error bound."
+    },
+    {
+      "id": "resolve-the-iteration-error",
+      "title": "Resolve this finite-iteration difference",
+      "parameters": {
+        "sweeps": 20,
+        "order": "forward"
+      },
+      "explanation": "Return to forward order and allow 20 sweeps. Compare the physical residual and error against the independent PCG result before calling the approximation resolved.",
+      "observe": "Relative objective-norm error is about 8.98e-11, and the compliant residual is about 2.90e-11 N. These are finite-mesh, small-strain results; they do not establish mesh convergence or large-rotation validity."
+    }
+  ],
+  "audit": {
+    "finding": "The chapter adapter did not distinguish its dynamic implicit fixture from the chapter’s static manufactured solution or expose finite-order sensitivity.",
+    "change": "Label the exact shared implicit problem and compare forward, reverse and resolved iterations using unscaled diagnostics.",
+    "remaining": "The viewer remains a fixed n=2 small-strain discretization. Static manufactured-solution refinement lives in the original chapter evidence; no transfer to nonlinear tissue, locking or anatomical calibration."
+  }
+}

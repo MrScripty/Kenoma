@@ -1,0 +1,50 @@
+{
+  "chapter": "09c-dissipative-response",
+  "steps": [
+    {
+      "id": "finish-the-load-ramp",
+      "title": "Load the specimen",
+      "parameters": {
+        "time": 1,
+        "holdMode": "force"
+      },
+      "explanation": "A one-second ramp raises the axial force to 0.6 N. Work splits into recoverable storage and viscous loss; both quantities come from the existing standard-linear-solid protocol.",
+      "observe": "Extension is about 1.68159 mm. Work 0.000531635 J equals storage 0.000434748 J plus loss 0.0000968864 J up to roundoff."
+    },
+    {
+      "id": "hold-force",
+      "title": "Hold force and observe creep",
+      "parameters": {
+        "time": 2.8,
+        "holdMode": "force"
+      },
+      "explanation": "Keep force at 0.6 N during the hold. Extension keeps increasing, so the load continues doing work as the viscous branch evolves.",
+      "observe": "Extension grows to about 2.32895 mm while force remains 0.6 N. Storage plus accumulated loss still matches the displayed external work."
+    },
+    {
+      "id": "hold-extension",
+      "title": "Change what the fixture holds",
+      "parameters": {
+        "time": 2.8,
+        "holdMode": "extension"
+      },
+      "explanation": "Replay from the same initial state and loading ramp, but hold extension after 1 s. With no further extension during the hold, no additional external work is done.",
+      "observe": "Extension stays 1.68159 mm; force relaxes to about 0.402942 N. Work remains 0.000531635 J while storage decreases and loss increases."
+    },
+    {
+      "id": "finite-recovery",
+      "title": "Release and inspect finite recovery",
+      "parameters": {
+        "time": 7,
+        "holdMode": "force"
+      },
+      "explanation": "Return to the force-hold protocol and inspect its end after unloading from 3–4 s and recovery from 4–7 s. Zero applied force does not imply instantaneous recovery.",
+      "observe": "Force is zero, but residual extension is about 0.189097 mm and storage about 0.00000773842 J. Loss is 0.000511623 J; the finite run does not claim complete recovery."
+    }
+  ],
+  "audit": {
+    "finding": "Time scrubbing omitted applied force, phase and external work, and could not contrast creep with relaxation.",
+    "change": "Expose force versus extension holds and the complete work/storage/loss ledger at progressive protocol states.",
+    "remaining": "Passive small-strain axial SLS with prescribed cross-sections; no transverse contraction, activation, finite-strain tissue or irreversible plastic deformation."
+  }
+}

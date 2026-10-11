@@ -1,0 +1,58 @@
+{
+  "chapter": "12-spatial-capstone",
+  "steps": [
+    {
+      "id": "rest-fixture",
+      "title": "Establish the passive reference fixture",
+      "parameters": {
+        "angle": 0,
+        "activation": 0,
+        "sweeps": 320,
+        "boneContact": "on"
+      },
+      "explanation": "At zero pose and activation, the authored strip begins at its reference shape. The orange surface is the same-pose artistic skin baseline; the teal body uses the existing edge/volume energy.",
+      "observe": "Upper span is 180 mm, mean J=1 and sampled penetration is zero. The maximum free force satisfies the unchanged 2e-5 N per-coordinate stopping criterion."
+    },
+    {
+      "id": "activate-at-fixed-pose",
+      "title": "Isolate shape activation from bone motion",
+      "parameters": {
+        "angle": 0,
+        "activation": 0.6,
+        "sweeps": 320,
+        "boneContact": "on"
+      },
+      "explanation": "Keep the pose fixed and set shape activation to 0.6. Preferred shortening drives the volume network; it is a separate one-way shape law and adds no extra moment to the hinge.",
+      "observe": "Upper span shortens to about 170.768 mm while mean J is about 0.999324. This fixture converges locally, but its minimum J near 0.954272 shows that mean volume does not describe every cell."
+    },
+    {
+      "id": "bounded-compression",
+      "title": "Inspect a difficult compressed pose",
+      "parameters": {
+        "angle": 90,
+        "activation": 0.6,
+        "sweeps": 80,
+        "boneContact": "on"
+      },
+      "explanation": "Prescribe 90 degrees with the same activation and cap the solve at 80 iterations. This compresses the strip near the sampled capsule contact and compares it with the same-pose artistic baseline.",
+      "observe": "The maximum free force is about 2.65 N, far above criterion, so Converged is false. Sampled penetration is about 5.89 mm and minimum J about 0.642; baseline minimum J is about 0.171."
+    },
+    {
+      "id": "more-iterations-still-a-gap",
+      "title": "Increase the budget without hiding failure",
+      "parameters": {
+        "angle": 90,
+        "activation": 0.6,
+        "sweeps": 320,
+        "boneContact": "on"
+      },
+      "explanation": "Keep the model and prescribed state fixed, increasing only the cap to 320. Observe what improves and what still prevents accepting the shape as an equilibrated result.",
+      "observe": "Penetration falls to about 0.457 mm, but maximum free force remains about 0.444 N and Converged stays false. Toggle sampled contact manually to inspect its effect; neither setting guarantees intersection-free surfaces."
+    }
+  ],
+  "audit": {
+    "finding": "An angle-only adapter concealed activation and solver budget, and displayed an approximate iterate without the actual stopping threshold or baseline volume loss.",
+    "change": "Expose fixed-pose activation, iteration budget and contact, with true maximum-force criterion, local/mean J, span and penetration diagnostics.",
+    "remaining": "Authored edge/volume network, not FEM or anatomy. One-way prescribed pose/activation, sampled compliant contact, no skin self-contact or surface-intersection guarantee; compressed fixture remains unconverged."
+  }
+}

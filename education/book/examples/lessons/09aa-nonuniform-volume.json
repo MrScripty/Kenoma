@@ -1,0 +1,54 @@
+{
+  "chapter": "09aa-nonuniform-volume",
+  "steps": [
+    {
+      "id": "uniform-reference",
+      "title": "Begin with uniform stretch",
+      "parameters": {
+        "gradient": 0,
+        "compensate": "on",
+        "cells": 8
+      },
+      "explanation": "Mean stretch is 1 and the uneven-stretch amplitude is zero. Local compensation is then the identity everywhere.",
+      "observe": "Local J and both total volume ratios are 1 up to triangle-sum roundoff."
+    },
+    {
+      "id": "global-cancellation",
+      "title": "Let local volume changes cancel",
+      "parameters": {
+        "gradient": 0.4,
+        "compensate": "off",
+        "cells": 8
+      },
+      "explanation": "The endpoint axial stretches are 0.6 and 1.4. Without transverse compensation, J equals the local axial stretch; the average remains 1.",
+      "observe": "Total continuum volume remains 1 while local J spans 0.6–1.4. A correct global volume cannot establish local incompressibility."
+    },
+    {
+      "id": "local-compensation",
+      "title": "Compensate every material section",
+      "parameters": {
+        "gradient": 0.4,
+        "compensate": "on",
+        "cells": 8
+      },
+      "explanation": "Set transverse stretch to 1/sqrt(lambda) at each section. This makes the exact map locally isochoric, but eight straight mesh cells only approximate its curved boundary.",
+      "observe": "Local J is 1 throughout. The measured mesh ratio is about 1.00248, an excess of 0.00247970 rather than an exact mesh-volume guarantee."
+    },
+    {
+      "id": "refine-the-boundary",
+      "title": "Refine the geometric measurement",
+      "parameters": {
+        "gradient": 0.4,
+        "compensate": "on",
+        "cells": 128
+      },
+      "explanation": "Keep the same continuum map and increase only longitudinal cells from 8 to 128. This tests the straight-boundary approximation, not a different material.",
+      "observe": "Mesh-volume error falls to about 0.00000968811. The exact local and continuum volume ratios remain 1; the nonzero numerical discrepancy stays visible."
+    }
+  ],
+  "audit": {
+    "finding": "The old adapter showed only total volume and one fixed mesh, hiding the chapter’s key local-versus-global counterexample.",
+    "change": "Expose endpoint local J and mesh resolution with a cancellation, compensation and refinement experiment.",
+    "remaining": "A prescribed smooth map with straight-cell approximation; no force balance, material response or anatomical prediction. Lean matrix claims do not certify mesh code."
+  }
+}

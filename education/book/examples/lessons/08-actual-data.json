@@ -1,0 +1,37 @@
+{
+  "chapter": "08-actual-data",
+  "steps": [
+    {
+      "id": "locate-ultrasound-muscle",
+      "title": "Locate the muscle observed by ultrasound",
+      "parameters": {
+        "part": "9"
+      },
+      "explanation": "The recorded trial’s ultrasound channel observes brachioradialis thickness. Isolate the atlas brachioradialis to learn the anatomical name, while keeping the datasets separate: this surface is not a scan of participant 2.",
+      "observe": "The selected reference is brachioradialis with 3,270 vertices and 4,874 triangles. Subject registration remains false; the atlas does not deform to the trace."
+    },
+    {
+      "id": "separate-emg",
+      "title": "A second signal can concern a different muscle",
+      "parameters": {
+        "part": "5"
+      },
+      "explanation": "The trial’s sEMG channel concerns biceps brachii. This selected long-head atlas surface is an anatomical illustration, not localization of the electrode or an isolation of that head’s signal. The recorded values are normalized unit-one quantities, not activation or individual-muscle force.",
+      "observe": "The display changes to the long biceps head. There is no conversion from the normalized recording into this surface’s force or deformation."
+    },
+    {
+      "id": "keep-streams-independent",
+      "title": "Read three evidence streams without joining them",
+      "parameters": {
+        "part": "all"
+      },
+      "explanation": "The chapter’s recorded curves, six Arm26 actuator parameter sets and ten atlas surfaces answer different questions. The recording uses 4,403 irregularly timed samples and 172 half-second display bins; its held 90° posture is not a measured angle trajectory. Read the existing plots and source tables below alongside the unregistered atlas.",
+      "observe": "All atlas parts return. No synchronization, participant-specific fit or Newton-valued force is inferred from the normalized recording."
+    }
+  ],
+  "audit": {
+    "finding": "The chapter adapter displayed only an atlas, which could make the independent recording and model parameters look like inputs to one anatomy model.",
+    "change": "Worked part selections tie the two named signal modalities to their stated anatomical scope and preserve the existing recording plots and Arm26 table as independent evidence.",
+    "remaining": "The embedded panel does not add interactive recording scrubbing or model-parameter fitting. Physical-unit calibration, electrode localization and cross-dataset registration remain absent."
+  }
+}

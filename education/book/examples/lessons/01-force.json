@@ -1,0 +1,54 @@
+{
+  "chapter": "01-force",
+  "steps": [
+    {
+      "id": "one-second",
+      "title": "Predict the first second",
+      "parameters": {
+        "force": 4,
+        "mass": 2,
+        "time": 1
+      },
+      "explanation": "Start from rest with a constant 4 N horizontal net force on 2 kg. F/m gives 2 m/s², so at 1 s the velocity is 2 m/s and the displacement is ½ × 2 × 1² = 1 m. The grey origin stays fixed; the arrow encodes force, not velocity.",
+      "observe": "Displacement = 1 m; velocity = 2 m/s. Work 4 × 1 = 4 J equals kinetic energy ½ × 2 × 2² = 4 J."
+    },
+    {
+      "id": "twice-the-time",
+      "title": "Double time, quadruple distance",
+      "parameters": {
+        "force": 4,
+        "mass": 2,
+        "time": 2
+      },
+      "explanation": "Keep the force and mass fixed and advance the analytic solution to 2 s. Acceleration is unchanged. Velocity grows linearly with time, but displacement grows with time squared. No time-stepping solver or display-speed assumption enters this calculation.",
+      "observe": "Displacement increases from 1 to 4 m, while velocity increases from 2 to 4 m/s. Work and kinetic energy both become 16 J."
+    },
+    {
+      "id": "twice-the-mass",
+      "title": "Double mass at the same time",
+      "parameters": {
+        "force": 4,
+        "mass": 4,
+        "time": 2
+      },
+      "explanation": "Keep 4 N and 2 s but double the mass to 4 kg. The acceleration halves to 1 m/s². Both displacement and velocity halve relative to the previous state; the change is caused by mass, not an animation setting.",
+      "observe": "At 2 s, displacement = 2 m and velocity = 2 m/s. Work = kinetic energy = 8 J; the work-minus-kinetic residual is zero."
+    },
+    {
+      "id": "reverse-force",
+      "title": "Negative direction can mean positive work",
+      "parameters": {
+        "force": -4,
+        "mass": 2,
+        "time": 2
+      },
+      "explanation": "Return to 2 kg and reverse the force. Acceleration, velocity and displacement all point along negative x. The work is still positive because force and displacement have the same sign: (−4 N)(−4 m) = 16 J.",
+      "observe": "Displacement = −4 m and velocity = −4 m/s, while work and kinetic energy are both +16 J. A negative force is not by itself negative work."
+    }
+  ],
+  "audit": {
+    "finding": "The embedded adapter fixed time at 1 s and omitted velocity and the independent work/kinetic comparison, so the chapter’s time-scaling example could not be performed.",
+    "change": "Added a bounded elapsed-time control, origin marker, velocity and work-balance readouts, with four analytic comparisons.",
+    "remaining": "Constant horizontal force from rest only; no contact, drag, deformation or biological interpretation. Floating-point comparisons are tests, not Lean verification of JavaScript."
+  }
+}

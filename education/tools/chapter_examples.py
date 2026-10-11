@@ -1,6 +1,7 @@
 """Bind every chapter to a shared-GUI example and package source-traceable adapters."""
 from pathlib import Path
 import hashlib, html, json, re, shutil, subprocess
+from teaching_sequences import package as package_teaching
 ROOT=Path(__file__).resolve().parents[1]
 REPO=ROOT.parent
 REGISTRY=ROOT/'book/examples/registry.json'
@@ -8,6 +9,7 @@ REGISTRY=ROOT/'book/examples/registry.json'
 # Every non-executable resource consumed by the shared chapter GUI.
 RUNTIME_SOURCES={
  'assets/chapter-examples.css':'education/web/chapter-examples.css',
+ 'assets/research-book.css':'education/web/research-book.css',
  'gui/embedded/theme.css':'browser/embedded/theme.css',
  'gui/simple-graph/editor.css':'browser/simple-graph/editor.css',
  'data/elbow-v1/data/bodyparts3d_right_arm_m.json':'education/data/elbow-v1/data/bodyparts3d_right_arm_m.json',
@@ -51,7 +53,7 @@ def block(ident,web):
 <a href="{url}">Open standalone laboratory</a><div class="chapter-example-host" id="example-host-{ident}"></div>
 </section>\n'''
 
-def package(out):
+def package(out, preserved_poser=None):
     out=Path(out);examples=inventory();assets=out/'assets';assets.mkdir(parents=True,exist_ok=True)
     gui=out/'gui';gui.mkdir(exist_ok=True)
     # Source trees and the independently generated immutable WASM package only.
@@ -60,9 +62,15 @@ def package(out):
         if dest.exists():shutil.rmtree(dest)
         shutil.copytree(source,dest,ignore=shutil.ignore_patterns('node_modules','test-output','tests','.DS_Store'))
     wasm=gui/'simple-graph/pkg/human_wasm_bg.wasm'
+    if preserved_poser is not None:
+        # The preview must use the verified binary even if another local build exists.
+        preserved_target=gui/'simple-graph/pkg'
+        if preserved_target.exists():shutil.rmtree(preserved_target)
+        shutil.copytree(Path(preserved_poser),preserved_target)
     if not wasm.is_file():raise RuntimeError('Build browser/simple-graph/build.sh before packaging the book GUI')
-    for source,target in [('chapter-examples.html','examples.html'),('chapter-examples.css','assets/chapter-examples.css'),('book-interaction.mjs','assets/book-interaction.js')]:
+    for source,target in [('chapter-examples.html','examples.html'),('chapter-examples.css','assets/chapter-examples.css'),('research-book.css','assets/research-book.css'),('book-interaction.mjs','assets/book-interaction.js')]:
         shutil.copy(ROOT/'web'/source,out/target)
+    teaching=package_teaching(out)
     for entry in ['chapter-examples','chapter-worker']:
         subprocess.run([str(ROOT/'node_modules/.bin/esbuild'),str(ROOT/'web'/f'{entry}.mjs'),'--bundle','--minify','--format=esm','--target=es2022','--alias:three='+str(REPO/'browser/simple-graph/vendor/three.module.js'),f'--outfile={assets/entry}.js','--legal-comments=external'],check=True)
     source_dir=out/'example-sources';source_dir.mkdir(exist_ok=True)
@@ -70,6 +78,6 @@ def package(out):
     shutil.copy(REGISTRY,out/'chapter-examples.json')
     input_paths=list((REPO/'browser').rglob('*'))+list((REPO/'crates').rglob('*'))+[REPO/'Cargo.toml',REPO/'Cargo.lock']
     inputs={str(p.relative_to(REPO)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(input_paths) if p.is_file() and not any(x in p.parts for x in ['node_modules','tests','test-output','__pycache__'])}
-    receipt={'version':1,'chapters':len(examples),'example_ids':[e['id'] for e in examples],'registry_sha256':hashlib.sha256(REGISTRY.read_bytes()).hexdigest(),'gui_inputs':inputs,'wasm_sha256':hashlib.sha256(wasm.read_bytes()).hexdigest(),'runtime_resources':runtime_resources(out),'qualification':'Source packaging only; does not establish Lean, browser, physics or clinical qualification.'}
+    receipt={'version':1,'chapters':len(examples),'teaching':teaching,'teaching_sha256':hashlib.sha256((out/'teaching-sequences.json').read_bytes()).hexdigest(),'example_ids':[e['id'] for e in examples],'registry_sha256':hashlib.sha256(REGISTRY.read_bytes()).hexdigest(),'gui_inputs':inputs,'wasm_sha256':hashlib.sha256(wasm.read_bytes()).hexdigest(),'runtime_resources':runtime_resources(out),'qualification':'Source packaging only; does not establish Lean, browser, physics or clinical qualification.'}
     (out/'chapter-example-build.json').write_text(json.dumps(receipt,indent=2)+'\n')
     return receipt

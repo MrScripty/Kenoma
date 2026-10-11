@@ -5,20 +5,27 @@
 <title>$title$</title>
 <meta name="description" content="An illustrated mechanics book with resettable 3D teaching laboratories, source citations, and checked Lean proofs.">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/research-book.css">
 <script type="module" src="assets/app.js"></script>
 <script type="module" src="assets/book-interaction.js"></script>
 </head>
 <body>
 <a class="skip" href="#book-content">Skip to book content</a>
 <header class="hero">
-<div class="eyebrow">Kenoma / Educational research</div>
+<div class="eyebrow">Kenoma / Research book</div>
 <h1>$title$</h1>
-<p>$subtitle$</p>
-<nav aria-label="Downloads"><a href="kenoma-mechanics.md">Markdown book</a><a href="kenoma-mechanics.pdf">Illustrated PDF</a><a href="proof-status.json">Proof receipt</a><a href="experiment.json">Numerical results</a><a href="examples.html">Chapter laboratories</a></nav>
+<details class="book-downloads"><summary>Book, sources &amp; downloads</summary><nav aria-label="Downloads"><a href="kenoma-mechanics.md">Markdown book</a><a href="kenoma-mechanics.pdf">Illustrated PDF</a><a href="proof-status.json">Proof receipt</a><a href="experiment.json">Numerical results</a><a href="examples.html">Chapter laboratories</a></nav></details>
 </header>
+<div class="book-toolbar" id="book-toolbar" hidden><button type="button" id="toggle-contents" aria-expanded="false" aria-controls="book-contents">Chapters</button><span id="reading-chapter">Reading</span><button type="button" id="toggle-example" aria-expanded="false" aria-controls="example-dock">Example</button></div>
 <div class="layout">
-<nav class="toc" aria-label="Book contents"><strong>CONTENTS</strong>$toc$</nav>
+<nav class="toc" id="book-contents" aria-label="Book contents"><strong>CHAPTERS</strong>$toc$</nav>
 <main id="book-content">$body$</main>
+<aside id="example-dock" class="example-dock" aria-label="Example alongside the reading" hidden>
+<div class="dock-heading"><div><span class="eyebrow">Laboratory</span><h2 id="dock-title">Worked example</h2></div><button id="close-example" type="button" aria-label="Close example">×</button></div>
+<div class="dock-follow"><span id="follow-status" role="status">Follows reading</span><button id="follow-reading" type="button" aria-pressed="true">Pause following</button></div>
+<div id="reading-example-host"></div>
+<a id="open-laboratory" href="examples.html" target="_blank" rel="noopener">Open full laboratory ↗</a>
+</aside>
 </div>
-<footer>Original schematic geometry · SI units · Foundation milestone 1 · Apache-2.0</footer>
+<footer>Kenoma · Educational models and separately scoped evidence · Apache-2.0</footer>
 </body></html>

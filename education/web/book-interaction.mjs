@@ -1,12 +1,38 @@
-/** Progressive disclosure and one active embedded laboratory. No model ownership. */
-const cards=[...document.querySelectorAll('.proof-card')];
-for(const card of cards){const button=card.querySelector('.claim-toggle'),body=card.querySelector('.claim-technical');if(!button||!body)continue;button.hidden=false;body.hidden=true;button.setAttribute('aria-expanded','false');button.addEventListener('click',()=>{const open=button.getAttribute('aria-expanded')!=='true';button.setAttribute('aria-expanded',String(open));body.hidden=!open;button.textContent=open?'Hide checked statement and evidence':'Expand checked statement and evidence';});}
+/** Reading owns selection only. Adapters retain their own model and lifecycle. */
+for(const card of document.querySelectorAll('.proof-card')){
+ const button=card.querySelector('.claim-toggle'),body=card.querySelector('.claim-technical');if(!button||!body)continue;
+ button.hidden=false;body.hidden=true;button.setAttribute('aria-expanded','false');button.textContent='Statement & evidence';
+ button.addEventListener('click',()=>{const open=button.getAttribute('aria-expanded')!=='true';button.setAttribute('aria-expanded',String(open));body.hidden=!open;button.textContent=open?'Hide statement & evidence':'Statement & evidence';});
+}
 function revealAnchor(){if(!location.hash)return;let node;try{node=document.getElementById(decodeURIComponent(location.hash.slice(1)));}catch{return;}for(let p=node;p;p=p.parentElement)if(p.tagName==='DETAILS')p.open=true;}
 window.addEventListener('hashchange',revealAnchor);revealAnchor();
-let printing=[];
-window.addEventListener('beforeprint',()=>{printing=[...document.querySelectorAll('.proof-appendices')].map(d=>[d,d.open]);for(const [d]of printing)d.open=true;});
-window.addEventListener('afterprint',()=>{for(const [d,open]of printing)d.open=open;printing=[];});
-let active=null;
-function close(){if(!active)return;active.host.replaceChildren();active.button.setAttribute('aria-expanded','false');active.button.textContent='Open 3D example';active=null;}
-for(const button of document.querySelectorAll('[data-chapter-example]')){button.hidden=false;button.addEventListener('click',()=>{if(active?.button===button){close();return;}close();const id=button.dataset.chapterExample,host=document.getElementById(button.getAttribute('aria-controls')),frame=document.createElement('iframe');frame.title=button.closest('section').querySelector('h2').textContent;frame.src='examples.html?chapter='+encodeURIComponent(id)+'&embedded=1';frame.className='chapter-example-frame';frame.loading='lazy';host.append(frame);button.setAttribute('aria-expanded','true');button.textContent='Close 3D example';active={button,host,frame};});}
-window.addEventListener('pagehide',close);
+let printing=[];window.addEventListener('beforeprint',()=>{printing=[...document.querySelectorAll('.proof-appendices')].map(d=>[d,d.open]);for(const[d]of printing)d.open=true;});window.addEventListener('afterprint',()=>{for(const[d,open]of printing)d.open=open;printing=[];});
+const $=id=>document.getElementById(id);
+async function startReading(){
+ const[registry,sequences]=await Promise.all(['chapter-examples.json','teaching-sequences.json'].map(async path=>{const r=await fetch(path);if(!r.ok)throw Error(path);return r.json();}));
+ const examples=registry.examples,lessons=new Map(sequences.lessons.map(l=>[l.chapter,l])),stops=[];
+ for(const example of examples){const heading=$(example.anchor),lesson=lessons.get(example.id);if(!heading||!lesson)throw Error('Missing reading anchor: '+example.id);stops.push({element:heading,example,step:lesson.steps[0]});for(const step of lesson.steps){const element=$('step-'+example.id+'-'+step.id);if(element)stops.push({element,example,step});}}
+ let reading=stops[0],displayed=null,frame=null,following=true,open=false,ready=false,raf=0,lastKey=null,explicitOpen=false,readingGeneration=0;
+ const desktop=matchMedia('(min-width:1100px)');
+ function followUI(){$('follow-reading').setAttribute('aria-pressed',String(following));$('follow-reading').textContent=following?'Pause following':'Follow reading';$('follow-status').textContent=following?'Follows reading':'Exploring · reading sync paused';}
+ function showDisplayed(selection){displayed=selection;$('dock-title').textContent=selection.step.title;$('open-laboratory').href='examples.html?chapter='+selection.example.id+'&step='+selection.step.id;frame.title=selection.example.chapterTitle+' — '+selection.step.title;}
+ function send(){if(!frame||!ready||!open||!following)return;const key=reading.example.id+'/'+reading.step.id;if(key===lastKey)return;lastKey=key;frame.contentWindow.postMessage({type:'kenoma:set-step',chapter:reading.example.id,step:reading.step.id,generation:readingGeneration},location.origin);}
+ function setOpen(value){open=value;$('example-dock').hidden=!open;document.body.classList.toggle('dock-open',open);document.body.classList.toggle('dock-closed',!open);$('toggle-example').setAttribute('aria-expanded',String(open));$('toggle-example').textContent=open?'Hide example':'Example';if(!open){frame?.remove();frame=null;ready=false;lastKey=null;return;}if(!frame){frame=document.createElement('iframe');frame.className='reading-example-frame';frame.title=reading.example.chapterTitle+' — worked example';frame.src='examples.html?chapter='+reading.example.id+'&step='+reading.step.id+'&embedded=1&book=1&reading='+readingGeneration;$('reading-example-host').replaceChildren(frame);showDisplayed(reading);}send();}
+ function setContents(open){if(open)$('book-toolbar').scrollIntoView({block:'start',behavior:'instant'});document.body.classList.toggle('contents-open',open);$('toggle-contents').setAttribute('aria-expanded',String(open));}
+ function locate(){raf=0;const threshold=desktop.matches?Math.min(200,innerHeight*.22):Math.min(145,innerHeight*.2);let next=stops[0];for(const stop of stops){if(stop.element.getBoundingClientRect().top<=threshold)next=stop;else break;}if(next!==reading){reading=next;document.querySelector('[data-active]')?.removeAttribute('data-active');if(next.element.classList.contains('teaching-step'))next.element.dataset.active='';}$('reading-chapter').textContent=reading.example.chapterTitle;for(const a of $('book-contents').querySelectorAll('a')){if(a.hash==='#'+reading.example.anchor)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');}send();}
+ function schedule(){if(!raf)raf=requestAnimationFrame(locate);}
+ function showStep(chapter,step){const target=stops.find(s=>s.example.id===chapter&&s.element.classList.contains('teaching-step')&&(!step||s.step.id===step));if(!target)return;reading=target;following=true;readingGeneration++;lastKey=null;followUI();explicitOpen=true;setOpen(true);target.element.scrollIntoView({block:'start',behavior:'instant'});send();}
+ document.body.classList.add('research-book');$('book-toolbar').hidden=false;
+ $('toggle-contents').addEventListener('click',()=>setContents(!document.body.classList.contains('contents-open')));$('toggle-example').addEventListener('click',()=>{explicitOpen=true;setOpen(!open);});$('close-example').addEventListener('click',()=>{explicitOpen=true;setOpen(false);$('toggle-example').focus({preventScroll:true});});
+ $('follow-reading').addEventListener('click',()=>{following=!following;if(following)readingGeneration++;lastKey=null;followUI();if(following){locate();send();}});
+ $('book-contents').addEventListener('click',event=>{if(event.target.closest('a')){setContents(false);following=true;readingGeneration++;lastKey=null;followUI();schedule();}});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('contents-open')){setContents(false);$('toggle-contents').focus();}});
+ for(const button of document.querySelectorAll('[data-show-step]')){button.hidden=false;button.addEventListener('click',()=>{const section=button.closest('.teaching-step');showStep(section.dataset.teachingChapter,section.dataset.teachingStep);});}
+ for(const button of document.querySelectorAll('[data-chapter-example]')){button.hidden=false;button.textContent='Show alongside reading';button.addEventListener('click',()=>showStep(button.dataset.chapterExample));}
+ window.addEventListener('message',event=>{if(event.origin!==location.origin||event.source!==frame?.contentWindow)return;if(event.data?.type==='kenoma:ready'){ready=true;lastKey=null;send();}if(event.data?.type==='kenoma:selection'&&event.data.generation===readingGeneration){const selected=stops.find(s=>s.example.id===event.data.chapter&&s.step.id===event.data.step);if(selected)showDisplayed(selected);}if(event.data?.type==='kenoma:manual'&&event.data.generation===readingGeneration){following=false;followUI();}});
+ window.addEventListener('scroll',schedule,{passive:true});window.addEventListener('resize',schedule);window.addEventListener('hashchange',schedule);desktop.addEventListener('change',()=>{if(!explicitOpen)setOpen(desktop.matches);schedule();});
+ const observer=new ResizeObserver(schedule);observer.observe($('book-content'));document.querySelectorAll('img').forEach(img=>img.addEventListener('load',schedule,{once:true}));
+ window.kenomaResearchBook={get chapter(){return reading.example.id;},get step(){return reading.step.id;},get following(){return following;},get open(){return open;},get displayed(){return displayed?.example.id;}};
+ locate();setOpen(desktop.matches);followUI();window.addEventListener('pagehide',()=>{cancelAnimationFrame(raf);observer.disconnect();setOpen(false);},{once:true});
+}
+if($('example-dock'))startReading().catch(()=>{$('book-toolbar').hidden=true;});

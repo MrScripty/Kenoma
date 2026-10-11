@@ -3,6 +3,7 @@ from pathlib import Path
 from publication_data import copy_publication_data
 from ordinary_images import jpeg85
 from chapter_examples import inventory as example_inventory, block as example_block, package as package_examples
+from teaching_sequences import chapter_source as teaching_source, block as teaching_block
 from executable_outputs import executable_outputs
 import hashlib,html,json,re,shutil,subprocess
 from check_proofs import check
@@ -220,7 +221,7 @@ def build():
         for i,c in enumerate(state['cells']):
             serial_table+=f"| {state['parameters']['force']:.3f} | {i+1} | {c['stretch']:.6f} | {c['engineeringStrain']:.6f} | {1e6*c['currentAreaM2']:.3f} | {1e9*c['currentBoundaryVolumeM3']:.3f} | {c['forceResidualN']:.3g} |\n"
     example_inventory()  # Fail closed for a missing or stale chapter adapter.
-    chapters='\n\n'.join((ROOT/'book/chapters'/p).read_text()+'\n\n{{chapter-example:'+p.removesuffix('.md')+'}}\n' for p in manifest['chapters'])
+    chapters='\n\n'.join(teaching_source(ROOT/'book/chapters'/p)+'\n\n{{chapter-example:'+p.removesuffix('.md')+'}}\n' for p in manifest['chapters'])
     coupling_receipt=json.loads((ROOT/'data/anatomical-arm-v1/audit/coupling-results.json').read_text())
     profile_table='| Mesh | Solver | Objective calls | HVP calls | Time (s) | Loaded length (mm) | Max nodal force (N) |\n|:--|:--|--:|--:|--:|--:|--:|\n'
     for r in coupling_receipt['profiles']:
@@ -231,6 +232,7 @@ def build():
         step_table+=f"| {r['hS']:.2f} | {r['peakQ']*180/math.pi:.4f} | {r['finalQ']*180/math.pi:.4f} | {r['sumEndpointWorkDefectJ']:.6f} | {r['maxTorqueBalanceNm']:.3g} |\n"
     def expand(web):
         text=re.sub(r'\{\{demo:(\w+)\}\}',lambda m:lab_block(m[1],web),chapters)
+        text=re.sub(r'\{\{teaching:([\w-]+)\}\}',lambda m:teaching_block(m[1],web),text)
         text=re.sub(r'\{\{property:(\w+)\}\}',lambda m:property_block(m[1],web),text)
         text=re.sub(r'\{\{chapter-example:([\w-]+)\}\}',lambda m:example_block(m[1],web),text)
         text=text.replace('{{nonuniform-lab}}',nonuniform_block(web))

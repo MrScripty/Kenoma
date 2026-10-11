@@ -1,0 +1,54 @@
+{
+  "chapter": "05-elbow",
+  "steps": [
+    {
+      "id": "unbalanced-start",
+      "title": "Release a loaded hinge from rest",
+      "parameters": {
+        "load": 2,
+        "excitation": 0.6,
+        "steps": 0
+      },
+      "explanation": "Begin at 30° with a 2 kg point load, zero angular velocity and zero activation. Gravity contributes −4.53712 N m while passive muscle contributes only +0.393991 N m. There is no motor holding this forward simulation at its initial angle.",
+      "observe": "The initial net moment is negative, so the first motion must lower the arm. Activation is zero even though excitation is already 0.6."
+    },
+    {
+      "id": "activation-catches-up",
+      "title": "Force reversal does not instantly reverse velocity",
+      "parameters": {
+        "load": 2,
+        "excitation": 0.6,
+        "steps": 5
+      },
+      "explanation": "Advance five fixed RK4 steps, or 0.025 s. Activation has risen to 0.236082. The current muscle moment now exceeds gravity, but the arm retains negative velocity from its initial lowering; acceleration and velocity are different quantities.",
+      "observe": "Angle = 29.912° and angular velocity = −0.033263 rad/s, despite muscle moment +7.12093 N m versus gravity −4.52505 N m. Work-balance residual is about 3.19 × 10⁻⁷ J."
+    },
+    {
+      "id": "forward-lift",
+      "title": "Let the declared forces produce the lift",
+      "parameters": {
+        "load": 2,
+        "excitation": 0.6,
+        "steps": 60
+      },
+      "explanation": "Advance the same constant-excitation run to 0.30 s. The solver, rather than a pose slider, determines the angle and speed. Mechanical energy accounting includes signed active work, passive storage, gravity and damping exactly once in the stated continuous model.",
+      "observe": "Angle = 98.956°, activation = 0.598513 and angular velocity = 10.8734 rad/s. The numerical work-balance residual is about 2.27 × 10⁻⁵ J; these high speeds belong to the synthetic fixture."
+    },
+    {
+      "id": "heavier-same-input",
+      "title": "Change load, keep input and elapsed time",
+      "parameters": {
+        "load": 5,
+        "excitation": 0.6,
+        "steps": 60
+      },
+      "explanation": "Restart from the same 30° pose with a 5 kg load and the same excitation and 0.30 s endpoint. The heavier load changes both gravitational moment and rotational inertia. No controller secretly forces the previous trajectory.",
+      "observe": "Activation is still 0.598513, but angle is only 41.1118° and angular velocity 2.10467 rad/s. The different fiber length also changes tension; this is not a pure force-velocity law."
+    }
+  ],
+  "audit": {
+    "finding": "The adapter showed a moving angle and tension without the moment balance, angular velocity or energy residual needed to explain initial lowering and later lift. Excitation was hidden.",
+    "change": "Exposed excitation, individual moments, velocity, completed time, domain-stop flag and work residual; added the initial-pose reference line and controlled load comparison.",
+    "remaining": "Authored single hinge with rigid tendon and no joint-contact solve or measured force-velocity law. Domain exit retains the last admissible state; it is not a collision response. This sequence uses constant excitation; pulse/release remains in the full original lab."
+  }
+}

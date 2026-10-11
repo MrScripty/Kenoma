@@ -1,0 +1,37 @@
+{
+  "chapter": "14-coupled-mechanics",
+  "steps": [
+    {
+      "id": "first-loaded-step",
+      "title": "Read one actual coupled step",
+      "parameters": {
+        "sample": 0
+      },
+      "explanation": "At 0.04 s the saved synthetic fixture has excitation 0.25, activation about 0.158 and angle about 3.493°. Teal tissue coordinates, gold tendon branches and the blue rotating lever describe the same saved state. Small force residuals coexist with a roughly 0.859 J endpoint-work defect.",
+      "observe": "The saved maximum free nodal residual is about 6.67×10⁻⁷ N while the work defect is about 0.859 J. A force convergence check is not an energy-conservation certificate."
+    },
+    {
+      "id": "loaded-before-release",
+      "title": "Follow the force path through loading",
+      "parameters": {
+        "sample": 6
+      },
+      "explanation": "After seven 0.04 s steps, excitation is still 0.25 and activation is about 0.24977. Tendon attachments rotate using the existing rigid map at the saved 38.440° hinge angle. These are engineering fixture coordinates, not anatomical muscle motion.",
+      "observe": "At 0.28 s the lever is raised, angular velocity is still positive and minimum sampled J is about 0.94409. The nine branches connect saved tissue nodes to the rotating lever attachment map."
+    },
+    {
+      "id": "after-release",
+      "title": "Release effort without resetting the state",
+      "parameters": {
+        "sample": 11
+      },
+      "explanation": "Five saved release steps follow the loaded state. Excitation is zero, activation decays to about 0.00891 and angular velocity becomes negative. Compare the actual 22.113° angle with the loaded state; the simulation lowered the lever rather than resetting it.",
+      "observe": "At 0.48 s the lever has fallen and tissue torque is small. The recorded work defect remains about 0.01067 J. This replay does not rerun or newly qualify the solver."
+    }
+  ],
+  "audit": {
+    "finding": "The previous replay showed only tissue, hiding the hinge, distributed tendon path and excitation/activation progression that define the coupled experiment.",
+    "change": "The scene now reconstructs the existing attachment maps around saved positions and adds actual angle, excitation, activation, velocity, torque, residual and work readouts.",
+    "remaining": "The fixture is synthetic; saved timestep sensitivity and nonlinear work defects remain. No contact, anatomical calibration, physiological force-velocity law or new qualification run is added."
+  }
+}

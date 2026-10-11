@@ -1,0 +1,40 @@
+{
+  "chapter": "10-fast-methods",
+  "steps": [
+    {
+      "id": "one-sweep",
+      "title": "Measure the cost of one sweep",
+      "parameters": {
+        "sweeps": 1,
+        "order": "forward"
+      },
+      "explanation": "Both solvers use the same 48 linear tetrahedra, loads, masses, material and one 0.5 ms implicit step. The teal PCG solve supplies a checked residual reference for the orange compliant iteration.",
+      "observe": "One sweep visits 288 strain constraints. The orange residual is about 0.0438889 N and the maximum nodal difference is 4.73687 µm; display displacements are magnified 20 times."
+    },
+    {
+      "id": "five-sweeps",
+      "title": "Spend five times the constraint work",
+      "parameters": {
+        "sweeps": 5,
+        "order": "forward"
+      },
+      "explanation": "Change only the number of compliant sweeps. Keeping the physical problem fixed makes the numerical difference interpretable as finite-iteration error.",
+      "observe": "After 1440 constraint visits, residual falls to about 0.000504610 N and maximum nodal difference to 0.0781643 µm. The relative objective-norm error is about 0.00103718."
+    },
+    {
+      "id": "twenty-sweeps",
+      "title": "Inspect agreement with the reference",
+      "parameters": {
+        "sweeps": 20,
+        "order": "forward"
+      },
+      "explanation": "Increase to 20 sweeps and compare actual residuals. The algorithmic count alone does not prove convergence, time-step independence or agreement on a different model.",
+      "observe": "The compliant residual is about 2.90e-11 N for 5760 visits, close to the reference target 4.16e-11 N. This fixture supports the displayed comparison, not a general one-sweep accuracy claim."
+    }
+  ],
+  "audit": {
+    "finding": "Residual-only output did not expose the approximation error or constraint work, making a speed/accuracy comparison incomplete.",
+    "change": "Report nodal and objective-norm differences plus visits across one, five and twenty sweeps of one fixed problem.",
+    "remaining": "No wall-clock performance claim, collision-budget comparison, multigrid, reduced basis or general nonlinear XPBD qualification. Chapter implementation exercises remain explicitly unfinished."
+  }
+}
