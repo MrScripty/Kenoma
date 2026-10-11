@@ -1,14 +1,18 @@
 {
   "scope": "Same analytic force inputs as baseline: F=4 N, m=2 kg, t=1 s. Local source preview only.",
   "runtimeSha256": {
-    "index.html": "7ece4c1c23da34376d20b30bc1eb95d61a8aa86d697d7b37fce0e0a92e233345",
+    "index.html": "ef2fb9017993a02f4511c00191aa775e4ea532bd0ef773b6024ad50d4551a515",
     "assets/book-interaction.js": "a2b9815205acf4e18ed10e3da57ce47270add177e9064f812195f33f0d8b034f",
     "assets/chapter-examples.js": "491efa9992fc9494391c134e27f88d77f33a4a45a1521fc4544a7f184792bd55",
-    "assets/research-book.css": "c557c3971b6d3b0a688d66ca41178f8d02051b343ad832ff14a023838f8bad5b"
+    "assets/research-book.css": "acdc65a002ed36c261907aa35d2b5d5617fdca2aa1952b7acdccd38c4de9d4dc"
   },
   "views": [
     {
       "view": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
       "parameters": {
         "force": 4,
         "mass": 2,
@@ -44,10 +48,14 @@
           "0 J"
         ]
       ],
-      "sha256": "52205a5b79a26edca45cb4ab256ab8595595fedef1474deb48cf767e9fa1bf0b"
+      "sha256": "fb69f8c5d32931727b7d8b5c0cf24272333084dc2680d4ac3910294e963bc0d9"
     },
     {
       "view": "phone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
       "parameters": {
         "force": 4,
         "mass": 2,
@@ -83,10 +91,10 @@
           "0 J"
         ]
       ],
-      "sha256": "81df73eba700afa4a97004abe2de9acf5b79febdc8b2a58b2006385d446341fa"
+      "sha256": "98f07eda7580c5b33e42f33f4e4c65f298daa36f6c9c088c7e2ac5b4073e5cce"
     }
   ],
-  "source_commit": "f998586862b0c56e602ab6bdb6d2869693f84744",
+  "source_commit": "b6ff7af9010e867e6f8361ef4c5652147efa8391",
   "baseline_publication_commit": "2fd337166c4d2ef624e6536769e03b9d83587332",
   "baseline_build_manifest_sha256": "415d3d15c6f9644660bd2dd3983367bb30548188080ab0fbf7de45c4b7ed6d02",
   "baseline_scope": "Local rendering of verified preserved publication; direct live Pages access was proxy-blocked.",
@@ -96,16 +104,28 @@
       "sha256": "9c865666c7dbec5a2a486c5cc3a66466d9b7b409e418d34676c33b6b4f1b5626"
     },
     "after-desktop-force-default.png": {
-      "bytes": 222432,
-      "sha256": "52205a5b79a26edca45cb4ab256ab8595595fedef1474deb48cf767e9fa1bf0b"
+      "bytes": 222238,
+      "sha256": "fb69f8c5d32931727b7d8b5c0cf24272333084dc2680d4ac3910294e963bc0d9"
     },
     "before-kenoma-phone-force.png": {
       "bytes": 49341,
       "sha256": "74e5fa40c45ca9d04d9ac109a71a5964f596055ea315041d4b27efbe42a1345f"
     },
     "after-phone-force-default.png": {
-      "bytes": 52364,
-      "sha256": "81df73eba700afa4a97004abe2de9acf5b79febdc8b2a58b2006385d446341fa"
+      "bytes": 52316,
+      "sha256": "98f07eda7580c5b33e42f33f4e4c65f298daa36f6c9c088c7e2ac5b4073e5cce"
     }
+  },
+  "browser": {
+    "version": "151.0.7922.173",
+    "device_scale_factor": 1
+  },
+  "previewManifestSha256": "b90dcd670db9e7459955c79a6cafe028845006cbf949bedd42cb1061dc4076cd",
+  "sourceSha256": {
+    "web/template.html": "b14ffecc36795df684736c188bde8ae10eedf3ad46981fe99cb0224d79d33845",
+    "tools/teaching_sequences.py": "63aac50b38831749d4d761fd348c414056f0a288b6f6a4bf77db400656a1e09d",
+    "web/research-book.css": "acdc65a002ed36c261907aa35d2b5d5617fdca2aa1952b7acdccd38c4de9d4dc",
+    "web/book-interaction.mjs": "a2b9815205acf4e18ed10e3da57ce47270add177e9064f812195f33f0d8b034f",
+    "web/chapter-examples.mjs": "3652ac2324b86d49fcdbb70361c946c8d5867a5d125ff813386e1dcca1abf774"
   }
 }

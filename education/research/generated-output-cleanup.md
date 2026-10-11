@@ -29,7 +29,7 @@ The retained delivery manifest still verifies its SHA-256. This is optional hist
 
 ## Qualification scope
 
-The research-book teaching review has one explicit user-requested exception: four curated before/after illustrations are committed under `docs/review/research-book-teaching/`, with their capture hashes and source identities. This 465,250-byte comparison set is documentation, not a new execution archive or scientific qualification. Automated screenshot collections, PDFs and build receipts remain ignored; the tracked-output guard and all scientific gates are unchanged.
+The research-book teaching review has an explicit user-requested exception: four curated before/after illustrations and one native anatomical portfolio capture are committed under `docs/review/research-book-teaching/`, with their capture hashes and source identities. This 665,247-byte image set is documentation, not a new execution archive or scientific qualification. The additional anatomical image shows the existing held right-arm reference state, with its source, component attribution and limits recorded beside it; it does not show a new motion solve. Automated screenshot collections, PDFs and build receipts remain ignored; the tracked-output guard and all scientific gates are unchanged.
 
 Draft PRs run source and unit contracts without launching full research executions. Ready PRs and explicit builds retain the complete existing book, proof, browser, PDF and artifact qualification job; draft tests cannot establish those results. Publication still requires the existing explicit checked-main workflow input. No deployment, environment protection, credential, anatomical-completion claim or physical law is changed.
 

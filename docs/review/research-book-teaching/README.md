@@ -9,6 +9,10 @@ Four curated screenshots are committed here at the user's request so the design 
 
 Both sides use 4 N and 2 kg evaluated at 1 s: acceleration 2 m/s², displacement 1 m and work 4 J. The new reader exposes elapsed time and a fixed ruler; marker sizes and force-arrow scales are illustrative and labelled in the laboratory.
 
-The before images render the checksum-verified preserved publication locally. Direct access to the live Pages hosts was blocked by the execution environment. The after images were captured from the source-bound preview of `f998586862b0c56e602ab6bdb6d2869693f84744`. [Capture provenance and hashes](captures.json) identify all four files and the delivered runtime bytes.
+The before images render the checksum-verified preserved publication locally. Direct access to the live Pages hosts was blocked by the execution environment. The after images were captured from the source-bound preview of `b6ff7af9010e867e6f8361ef4c5652147efa8391`, including the removal of the unsupported decorative arrow glyph. [Capture provenance and hashes](captures.json) identify all four files and the delivered runtime bytes.
 
 [Chapter acceptance and scientific limits](../../../education/research/research-book-teaching-acceptance.md) · [Interaction review](../../../education/review/research-book-teaching/README.md)
+
+## Additional anatomical portfolio capture
+
+The [native anatomical right-arm screenshot](portfolio-anatomy/kenoma-anatomical-arm-apparatus.png) complements PR15's unchanged two-character poser image. It shows three atlas bones, seven derived muscle volumes and authored tendon paths at the existing held resting state, alongside a linear-weight comparison. No motion step was run. [Capture provenance, caption and component attribution](portfolio-anatomy/README.md) distinguish the anatomical reference from the independent geometric poser and from unqualified medical dynamics.

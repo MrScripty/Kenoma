@@ -36,6 +36,8 @@ These local captures compare the same force inputs: 4 N, 2 kg and 1 s. The old v
 
 The four requested comparison images and their [capture provenance](../../../docs/review/research-book-teaching/captures.json) are committed under `docs/review/research-book-teaching/`. Automated capture collections remain ignored. The browser gate also captures energy and pressure-projection steps at three widths. Local `evidence-review-v8/` contains six anatomy/coupled screenshots and its byte-bound receipt, covering historical rejection labels, provenance selection, poser edits and restoration of a fully visible scene after changing chapters.
 
+The separately requested [anatomical portfolio capture](../../../docs/review/research-book-teaching/portfolio-anatomy/README.md) records the existing right-arm viewer at its stored, held resting state, with three atlas bones, seven derived muscle volumes and authored tendon routes. Its native camera orbit leaves time, activation and recorded steps unchanged; no new motion solve is claimed. Exact served hashes, component attribution and the link to PR15's unchanged two-character poser image accompany the PNG.
+
 ## Regenerate
 
 Use the normal qualified build when the pinned Lean/Rust prerequisites are available. This bounded preview starts from a fresh checkout with Node 22+, Python 3.12 and Git; no preexisting `/tmp` artifacts are required:
