@@ -4,6 +4,8 @@
 
 **Caption:** Kenoma's existing right-arm research viewer at its stored, held resting state. Three BodyParts3D bones and seven derived muscle volumes appear with authored tendon routes on the left, beside an authored bone-weighting comparison on the right. This is an arm assembly, not a whole-body anatomical poser or a demonstration of medical dynamics.
 
+The separately approved [scene-focused portfolio image](kenoma-held-anatomy-scene.png) shows the complete native canvas at a closer oblique framing. Its [caption and scientific limits](held-scene.md) and [capture provenance](held-scene-provenance.json) accompany the exact reviewed PNG. This full-page screenshot remains unchanged as evidence of the surrounding controls and warnings.
+
 The unedited 1440 × 1440 Chromium screenshot comes from the preserved `/anatomical-arm/index.html` viewer in the preview built from `b6ff7af9010e867e6f8361ef4c5652147efa8391`. A small native camera orbit exposes the bones and muscle volumes. The original UI, limitations and controls remain visible. No rendering overlay, CSS change, geometry edit or image postprocessing was used.
 
 The left view evaluates the saved reduced resting coordinates; the right applies the existing linear bone-weight comparison at the same joint angle. Gold paths are authored tendon routes, and teal triangles are interpolation scaffolds rather than resolved tissue sheets. The violet dumbbell is a schematic point-mass glyph. The viewer contains no torso, skin or hand mesh.
@@ -23,7 +25,7 @@ During capture the browser initialized its residual and finite geometry checks. 
 
 These finite, reduced checks do not establish unsupported dynamic equilibrium, material calibration, full nodal convergence, sliding tendon wrapping, finite-radius contact, continuous-motion safety or clinical validity. The existing material and atlas-apposition limitations remain visible in the screenshot. Historical trajectories and rejected solves remain separate evidence.
 
-[Capture provenance](capture-provenance.json) records the exact served executables and data hashes, all 23 verified rest-recheck source hashes, browser settings, camera input, state hashes and initialized diagnostics. The executable hashes match both the teaching-preview manifest and preserved publication manifest. The three documentation files here do not modify that evidence or its qualification.
+[Capture provenance](capture-provenance.json) records the exact served executables and data hashes, all 23 verified rest-recheck source hashes, browser settings, camera input, state hashes and initialized diagnostics. The executable hashes match both the teaching-preview manifest and preserved publication manifest. These documentation assets do not modify that evidence or its qualification.
 
 This image complements the [existing two-character poser screenshot in PR15](https://github.com/MrScripty/Kenoma/blob/9739080116b658e6248816f4e4239c4fde95ca94/docs/images/kenoma-two-character-scene.png). That separate image was inspected at its original 1600 × 1000 dimensions: two colored schematic mannequins with an IK gizmo in the independent artistic scene editor. Its [source contract](../../../../browser/simple-graph/README.md) has no anatomy, muscle-force or collision simulation. PR15 and its assets remain unchanged.
 
