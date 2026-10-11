@@ -6,6 +6,7 @@ from threading import Thread
 import hashlib,json,os,shutil,subprocess,sys
 import fitz
 from playwright.sync_api import sync_playwright,expect
+from browser_capture import capture_section
 ROOT=Path(__file__).resolve().parents[1]
 def check(destination):
     out=Path(destination).resolve();qa=out/'material-qa';qa.mkdir(exist_ok=True)
@@ -32,7 +33,7 @@ def check(destination):
             def change(key,value):lab.locator(f'input[type=number][data-param={key}]').fill(str(value))
             def width(boundary):return float(lab.locator(f'g[data-boundary={boundary}] .specimen').get_attribute('width'))
             def capture(name):
-                lab.locator('.property-scene').screenshot(path=str(qa/(name+'.png')))
+                capture_section(page,lab.locator('.property-scene'),qa/(name+'.png'))
                 observed[name]=state()
             default=state()
             assert default['free']['converged'] and default['confined']['converged']
@@ -134,7 +135,7 @@ def check(destination):
     (qa/'observed.json').write_text(json.dumps(observed,indent=2)+'\n')
     receipt={'schema':1,'result':'PASS_MATERIAL_PREVIEW_BROWSER' if preview else 'PASS_INTEGRATED_MATERIAL_BROWSER','browserVersion':version,'checks':checks,'javascriptErrors':errors,
              'manifest':manifest,'manifestSHA256':digest(out/manifest),'HTMLSHA256':digest(out/'index.html'),
-             'sourceHashes':{p:digest(ROOT/p) for p in ['web/material-lab.mjs','web/material-response.mjs','web/tissue.mjs','tools/material_lab.py','tests/material_browser.py']},
+             'sourceHashes':{p:digest(ROOT/p) for p in ['web/material-lab.mjs','web/material-response.mjs','web/tissue.mjs','tools/material_lab.py','tests/material_browser.py','tests/browser_capture.py']},
              'outputs':{p.name:digest(p) for p in sorted(qa.iterdir()) if p.is_file() and p.name!='browser-check.json'}}
     receipt['appSHA256']=digest(out/'assets/app.js')
     if preview:receipt['PDFSHA256']=digest(out/'material-response.pdf')
