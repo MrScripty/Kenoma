@@ -1,0 +1,54 @@
+{
+  "chapter": "09a-properties",
+  "steps": [
+    {
+      "id": "measure-reference",
+      "title": "Start with the reference tetrahedron",
+      "parameters": {
+        "stretch": 1,
+        "shear": 0,
+        "rotation": 0
+      },
+      "explanation": "Unit stretches and zero shear prescribe the identity map. Compare the determinant with volume measured independently from the closed boundary triangles.",
+      "observe": "Both volume ratios are 1; Green strain is zero up to floating-point roundoff. The coincident surfaces are expected."
+    },
+    {
+      "id": "stretch-one-axis",
+      "title": "Lengthen one direction",
+      "parameters": {
+        "stretch": 1.2,
+        "shear": 0,
+        "rotation": 0
+      },
+      "explanation": "Only the X direction is stretched. The transverse stretches stay 1, so det F = 1.2 × 1 × 1 = 1.2.",
+      "observe": "Both volume ratios become 1.2. Green strain norm is 0.22; these are imposed geometric changes, not a force response."
+    },
+    {
+      "id": "shear-without-volume-loss",
+      "title": "Change shape while keeping volume",
+      "parameters": {
+        "stretch": 1,
+        "shear": 0.25,
+        "rotation": 0
+      },
+      "explanation": "Restore axial stretch to 1 and impose shear 0.25. The triangular deformation matrix still has unit determinant, but its reference Y-directed edge becomes longer.",
+      "observe": "J stays 1 while Green strain norm is about 0.179518 and Y-line stretch is about 1.03078. Constant volume does not mean zero strain."
+    },
+    {
+      "id": "rotate-the-sheared-state",
+      "title": "Rotate without adding strain",
+      "parameters": {
+        "stretch": 1,
+        "shear": 0.25,
+        "rotation": 90
+      },
+      "explanation": "Rotate the same sheared geometry by 90 degrees. Rigid rotation changes world-space positions but preserves edge lengths and F-transpose F.",
+      "observe": "The geometry rotates; J, Green strain norm and Y-line stretch match the previous step. No material law or equilibrium has been introduced."
+    }
+  ],
+  "audit": {
+    "finding": "Hidden transverse stretches and rotation made the previous unit-axial control state non-reference; only volume was reported.",
+    "change": "Use explicit unit transverse stretches, a rotation control, Green strain and line-stretch diagnostics in an identity/stretch/shear/rotation sequence.",
+    "remaining": "Prescribed affine kinematics only. No constitutive energy, equilibrium, curved-element validity or physiological calibration."
+  }
+}

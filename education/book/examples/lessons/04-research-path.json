@@ -1,0 +1,40 @@
+{
+  "chapter": "04-research-path",
+  "steps": [
+    {
+      "id": "source-layer",
+      "title": "Begin with acquired source evidence",
+      "parameters": {
+        "layer": "atlas",
+        "part": "all"
+      },
+      "explanation": "Inspect the ten original atlas surfaces with their units and per-part provenance. A research extension starts from this reference data and records every geometric transformation; the source surfaces alone do not supply an executable musculoskeletal model.",
+      "observe": "All ten source structures are visible. No subject matching or clinical validation is reported."
+    },
+    {
+      "id": "apparatus-bones",
+      "title": "Add a mechanical reference carefully",
+      "parameters": {
+        "layer": "apparatus",
+        "part": "bones"
+      },
+      "explanation": "The apparatus uses derived reference files and an authored hinge construction. Inspect its bone layer while retaining the separate historical trajectory status. A reference frame and a mechanically accepted time step are different deliverables.",
+      "observe": "Three apparatus reference bones appear. The selected historical run is still rejected and has no accepted snapshots."
+    },
+    {
+      "id": "apparatus-tissue",
+      "title": "Locate the remaining acceptance work",
+      "parameters": {
+        "layer": "apparatus",
+        "part": "muscles"
+      },
+      "explanation": "Now inspect the original derived tissue volumes. Later chapters document reference repairs, reduced solves and denser trajectory receipts; none makes these original bellies a calibrated biological response. Continued work must resolve local compression, integration sensitivity and missing nodal stationarity.",
+      "observe": "Seven derived reference bellies appear. Historical residual and gate remain visible. The scene makes no patient-specific, force-velocity or whole-tissue convergence claim."
+    }
+  ],
+  "audit": {
+    "finding": "The research-stage switch implied a single progression while loading different original reference and historical-result files without their acceptance boundaries.",
+    "change": "The sequence separates acquired atlas, apparatus bones and derived tissue; it keeps historical result status beside the geometry.",
+    "remaining": "Connected variable-area specimen, measured architecture/physiology, anatomical calibration and qualified tissue-envelope convergence remain research gaps."
+  }
+}

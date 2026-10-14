@@ -1,0 +1,43 @@
+{
+  "chapter": "09-continuum-medical",
+  "steps": [
+    {
+      "id": "reference-gradient",
+      "title": "Separate deformation from material response",
+      "parameters": {
+        "stretch": 1,
+        "shear": 0,
+        "rotation": 0
+      },
+      "explanation": "Start with the reference tetrahedron. F records local shape change; measuring it alone supplies no stress, stored energy or equilibrium condition.",
+      "observe": "J is 1 and Green strain is zero up to roundoff. No force or pressure readout is fabricated."
+    },
+    {
+      "id": "rigid-rotation",
+      "title": "Use rigid rotation as a strain check",
+      "parameters": {
+        "stretch": 1,
+        "shear": 0,
+        "rotation": 180
+      },
+      "explanation": "Rotate the undeformed element by 180 degrees. Green strain depends on F-transpose F, which remains the identity for a rigid rotation.",
+      "observe": "The element changes orientation while J stays 1 and Green strain remains zero up to roundoff. This verifies kinematics, not objective material energy."
+    },
+    {
+      "id": "isochoric-shear",
+      "title": "Distinguish isochoric shape change from rigidity",
+      "parameters": {
+        "stretch": 1,
+        "shear": 0.25,
+        "rotation": 0
+      },
+      "explanation": "Apply shear 0.25 instead. Its determinant is also 1, but its edge lengths and angles change; a constitutive law would need that information to calculate stress.",
+      "observe": "Green strain norm becomes about 0.179518 and Y-line stretch about 1.03078 while volume stays fixed. Continue to the material and FEM labs for actual force calculations."
+    }
+  ],
+  "audit": {
+    "finding": "The shared geometry adapter could suggest a continuum solve despite prescribing all positions and hiding its strain measure.",
+    "change": "Provide identity, rigid-rotation and shear checks with explicit missing constitutive response.",
+    "remaining": "This chapter example is a kinematic bridge. It does not implement the chapter’s proposed objective-energy, singular-value or finite-deformation material extensions."
+  }
+}

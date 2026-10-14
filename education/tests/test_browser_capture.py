@@ -47,6 +47,24 @@ class CaptureTests(unittest.TestCase):
             module.capture_section(page, Section(page, fail=True), Path('example.png'))
         self.assertEqual(page.viewport_size, {'width': 393, 'height': 851})
 
+    def test_readout_close_to_desktop_height_gets_capture_margin(self):
+        page = Page()
+        page.viewport_size = {'width': 1200, 'height': 1000}
+        section = Section(page, height=990.328125)
+        module.capture_section(page, section, Path('readout-desktop.png'))
+        self.assertEqual(section.captured[0], {'width': 1200, 'height': 1055})
+        self.assertEqual(section.captured[1]['timeout'], 30000)
+        self.assertEqual(page.viewport_size, {'width': 1200, 'height': 1000})
+
+    def test_tall_font_fallback_readout_keeps_width_and_timeout(self):
+        page = Page()
+        page.viewport_size = {'width': 1200, 'height': 1000}
+        section = Section(page, height=1166.671875)
+        module.capture_section(page, section, Path('readout-desktop.png'))
+        self.assertEqual(section.captured[0], {'width': 1200, 'height': 1231})
+        self.assertEqual(section.captured[1]['timeout'], 30000)
+        self.assertEqual(page.viewport_size, {'width': 1200, 'height': 1000})
+
     def test_oversized_section_is_rejected_without_resizing(self):
         page = Page()
         with self.assertRaisesRegex(AssertionError, 'Unexpectedly large'):

@@ -234,6 +234,7 @@ jobs:
           python3 tests/nonuniform_browser.py
           python3 tests/architecture_force_book_browser.py
           python3 tests/chapter_examples_browser.py
+          python3 tests/research_book_browser.py dist --output dist/research-book-qa
           python3 tests/material_browser.py dist
           python3 tests/dissipative_browser.py dist --output dist/dissipative-qa
           python3 tests/dissipative_browser.py --negative-controls --output .artifacts/dissipative-negative-ci

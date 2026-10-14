@@ -1,0 +1,40 @@
+{
+  "chapter": "13-coverage",
+  "steps": [
+    {
+      "id": "identity-check",
+      "title": "Start with a claim that can be checked geometrically",
+      "parameters": {
+        "layer": "prescribed",
+        "stretch": 1
+      },
+      "explanation": "Prescribe the identity map: all three stretches are one, with zero shear and rotation. The determinant and independently measured tetrahedron volume ratio should both equal one. This checks the geometry at one state.",
+      "observe": "Reference and current tetrahedra coincide; det F and measured volume ratio are one, up to floating-point arithmetic."
+    },
+    {
+      "id": "changed-geometry",
+      "title": "Change the input without changing the evidence class",
+      "parameters": {
+        "layer": "prescribed",
+        "stretch": 1.2
+      },
+      "explanation": "Stretch only the first axis by 20%, keeping the other two at one. The determinant and volume ratio become 1.2. Agreement establishes a kinematic measurement; it does not show that a muscle under a specified force would choose this shape.",
+      "observe": "The current tetrahedron elongates, with det F and measured volume ratio 1.2. No equilibrium force or constitutive response appears."
+    },
+    {
+      "id": "source-evidence",
+      "title": "Inspect a different kind of evidence",
+      "parameters": {
+        "layer": "atlas",
+        "stretch": 1.2
+      },
+      "explanation": "Switch to licensed source surfaces. Their provenance can establish which bytes and transformations are displayed, but there is no deformation pair or known force experiment here. The prescribed stretch control is irrelevant to the static atlas and never deforms it.",
+      "observe": "Ten static atlas parts appear with source units and licence. Subject registration and clinical validation remain false; the atlas does not inherit the tetrahedron’s numerical claim."
+    }
+  ],
+  "audit": {
+    "finding": "Switching geometry classes lacked a controlled reference measurement and inherited hidden lateral stretches and rotation from another lab.",
+    "change": "A clean identity → axial stretch → static atlas sequence distinguishes geometric consistency from data provenance and physical validation.",
+    "remaining": "No unified accuracy score, solver equivalence, anatomical calibration or clinical result follows from either view."
+  }
+}

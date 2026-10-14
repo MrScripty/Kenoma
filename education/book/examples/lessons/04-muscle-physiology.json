@@ -1,0 +1,58 @@
+{
+  "chapter": "04-muscle-physiology",
+  "steps": [
+    {
+      "id": "input-is-not-state",
+      "title": "Excitation is not instantaneous force",
+      "parameters": {
+        "angle": 30,
+        "activation": 0,
+        "excitation": 0.6,
+        "time": 0
+      },
+      "explanation": "Hold the synthetic hinge at 30°, start activation at zero, and set excitation to 0.6. The activation state has not yet responded. This straight path has a 0.213611 m fiber, slightly longer than the authored 0.20 m optimum, so the passive spring is already stretched.",
+      "observe": "Activation and active force are zero, while passive force is 16.3334 N. A nonzero excitation does not instantly create active tension; passive tension does not imply activation."
+    },
+    {
+      "id": "one-time-constant",
+      "title": "Wait one activation time constant",
+      "parameters": {
+        "angle": 30,
+        "activation": 0,
+        "excitation": 0.6,
+        "time": 0.05
+      },
+      "explanation": "At fixed endpoints, the exact teaching update gives a = 0.6(1 − exp(−0.05/0.05)) = 0.379272. The Gaussian force-length multiplier stays 0.987217 because the rigid tendon and prescribed angle keep fiber length fixed.",
+      "observe": "Active force becomes 449.309 N and total tension 465.642 N. The force arrow grows while the path geometry stays fixed; passive force remains 16.3334 N."
+    },
+    {
+      "id": "approach-excitation",
+      "title": "Approach the input without overshooting",
+      "parameters": {
+        "angle": 30,
+        "activation": 0,
+        "excitation": 0.6,
+        "time": 0.15
+      },
+      "explanation": "After three rise time constants, activation is 0.6(1 − exp(−3)) = 0.570128. It approaches 0.6 without equalling it at a finite time. This is a constant-input activation experiment, not a simulated neural controller.",
+      "observe": "Active force = 675.408 N and tension = 691.741 N at unchanged fiber length. The external hold moment is −6.99868 N m because a prescribed pose explicitly balances the net moment."
+    },
+    {
+      "id": "same-activation-new-path",
+      "title": "Keep activation, change the path",
+      "parameters": {
+        "angle": 90,
+        "activation": 0,
+        "excitation": 0.6,
+        "time": 0.15
+      },
+      "explanation": "Prescribe 90° with the same activation history. The fiber shortens to 0.168035 m, so the Gaussian multiplier decreases to 0.931504 and the passive spring becomes slack. The larger geometric moment arm can nevertheless produce a larger hinge moment.",
+      "observe": "Activation remains 0.570128, active force falls to 637.291 N, and passive force becomes zero. Moment arm rises to 0.0578858 m and muscle moment to 36.8901 N m."
+    }
+  ],
+  "audit": {
+    "finding": "The original embedded physiology state accepted activation directly and displayed only total tension, hiding excitation delay, passive preload and the force-length/moment-arm distinction.",
+    "change": "Added bounded initial activation, excitation and elapsed-time inputs using the existing exact activation law; separated active/passive forces, fiber length and support moment.",
+    "remaining": "Synthetic straight line, authored Gaussian and rigid tendon; no force-velocity law, calibrated physiology, metabolism, pennation, muscle-shape solve or neural control. Prescribed poses are not forward motion."
+  }
+}

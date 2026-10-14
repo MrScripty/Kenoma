@@ -1,0 +1,54 @@
+{
+  "chapter": "09b-material-response",
+  "steps": [
+    {
+      "id": "unloaded-boundaries",
+      "title": "Compare unloaded boundary conditions",
+      "parameters": {
+        "stretch": 1,
+        "bulk": 50000,
+        "iterations": 64
+      },
+      "explanation": "Start at unit height with shear modulus 1500 Pa and bulk modulus 50000 Pa. Neither free sides nor unilateral walls need a reaction in the reference state.",
+      "observe": "Both J values and lateral stretch are 1; plate forces and wall reaction are zero."
+    },
+    {
+      "id": "compress-free-and-confined",
+      "title": "Impose the same height reduction",
+      "parameters": {
+        "stretch": 0.8,
+        "bulk": 50000,
+        "iterations": 64
+      },
+      "explanation": "Shorten height to 0.8. The free specimen solves zero lateral traction and expands sideways; the confined specimen is prevented from widening.",
+      "observe": "Free lateral stretch is about 1.11463 and J is 0.993914, compared with confined J=0.8. Plate forces are about 4.53637 N and 42.0887 N, respectively."
+    },
+    {
+      "id": "raise-bulk-stiffness",
+      "title": "Change bulk stiffness without changing height",
+      "parameters": {
+        "stretch": 0.8,
+        "bulk": 250000,
+        "iterations": 64
+      },
+      "explanation": "Increase bulk modulus fivefold while keeping the same geometry, shear modulus and boundary conditions. The free specimen can preserve more volume by expanding; the walls prevent that route.",
+      "observe": "Free J rises to about 0.998781 and plate force to 4.56728 N. Confined J stays 0.8 while its force rises to 202.089 N; stiffness does not override the prescribed walls."
+    },
+    {
+      "id": "inspect-an-unconverged-root",
+      "title": "Read the residual before trusting a shape",
+      "parameters": {
+        "stretch": 0.8,
+        "bulk": 50000,
+        "iterations": 8
+      },
+      "explanation": "Return to bulk modulus 50000 Pa but stop bisection after eight iterations. The specimen still has positive volume and looks plausible, yet its free-side traction is not balanced.",
+      "observe": "Free lateral residual is about 24.0254 Pa, above the unchanged 0.00001 Pa criterion, so Free converged is false. Increase the cap manually to 64 to recover the second step."
+    }
+  ],
+  "audit": {
+    "finding": "Height-only controls hid bulk stiffness and root failure; a plausible finite iterate had no convergence status.",
+    "change": "Expose bulk modulus, bisection cap, plate forces, residual criterion and true convergence alongside free/confined geometry.",
+    "remaining": "One lateral degree of freedom in a homogeneous elastic ansatz. No unrestricted 3D stability, friction, plasticity, physiological calibration or tissue failure prediction."
+  }
+}

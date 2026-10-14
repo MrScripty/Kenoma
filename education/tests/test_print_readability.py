@@ -44,6 +44,29 @@ class PrintedReadabilityTests(unittest.TestCase):
         with self.assertRaisesRegex(AssertionError, 'below 10 pt'):
             pdf.target('theorem', text)
 
+    def worked_reading(self):
+        html = '<section class="teaching-step" id="step-force"><div class="step-label">Worked example 1</div><h3>Predict motion</h3><p>Force changes velocity.</p><p>Observe displacement.</p><button>Show this step</button></section>'
+        return list(checker.HTMLTree(html).root.nodes())
+
+    def test_worked_observation_below_point_floor_is_rejected(self):
+        pdf = checker.PDFText(self.pdf([('Worked example 1', 10), ('Predict motion', 13),
+                                      ('Force changes velocity.', 11), ('Observe displacement.', 9)]))
+        with self.assertRaisesRegex(AssertionError, 'worked:step-force.*below 10 pt'):
+            checker.teaching_measurements(pdf, self.worked_reading())
+
+    def test_complete_worked_reading_includes_observation_but_not_button(self):
+        pdf = checker.PDFText(self.pdf([('Worked example 1', 10), ('Predict motion', 13),
+                                      ('Force changes velocity.', 11), ('Observe displacement.', 10)]))
+        result = checker.teaching_measurements(pdf, self.worked_reading())
+        self.assertEqual(len(result), 1)
+        self.assertEqual(result[0]['minimum_pt'], 10)
+
+    def test_worked_reading_rejects_missing_observation(self):
+        pdf = checker.PDFText(self.pdf([('Worked example 1', 10), ('Predict motion', 13),
+                                      ('Force changes velocity.', 11)]))
+        with self.assertRaisesRegex(AssertionError, 'missing or truncated'):
+            checker.teaching_measurements(pdf, self.worked_reading())
+
     def test_missing_card_cannot_borrow_full_source_appendix(self):
         text = 'theorem cancel (f : Int) : f + (-f) = 0'
         pdf = checker.PDFText(self.pdf([

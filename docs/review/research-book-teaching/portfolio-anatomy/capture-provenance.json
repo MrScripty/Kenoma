@@ -1,0 +1,360 @@
+{
+  "schema": 1,
+  "kind": "unaltered-browser-screenshot-of-existing-anatomical-arm-viewer",
+  "captured_utc": "2026-10-11T22:09:56.335836+00:00",
+  "image": {
+    "file": "kenoma-anatomical-arm-apparatus.png",
+    "sha256": "3e0b37ecab5259fea8828faa9f67c6adf6e6703e7d4f2666c74706b3d7b3590d",
+    "width": 1440,
+    "height": 1440,
+    "format": "PNG",
+    "postprocessing": "none; no crop, compositing, generated image, overlays, CSS injection or DOM edits"
+  },
+  "source": {
+    "repository": "https://github.com/MrScripty/Kenoma",
+    "source_revision": "b6ff7af9010e867e6f8361ef4c5652147efa8391",
+    "preview_directory": "/tmp/kenoma-teaching-b6ff7af",
+    "route": "/anatomical-arm/index.html",
+    "capture_url": "http://127.0.0.1:35071/anatomical-arm/index.html",
+    "preserved_publication_source_revision": "ae000b59f309dcf6357922ad1af459d86efd4e8c",
+    "teaching_manifest_sha256": "b90dcd670db9e7459955c79a6cafe028845006cbf949bedd42cb1061dc4076cd",
+    "preserved_manifest_sha256": "415d3d15c6f9644660bd2dd3983367bb30548188080ab0fbf7de45c4b7ed6d02",
+    "executable_outputs": {
+      "anatomical-arm/index.html": {
+        "sha256": "d1337d5a1a8485f1f92e7239e5272d08b980bf10c3e5c6e8ee9aaca620b1e2cc",
+        "matches_teaching_manifest": true,
+        "matches_preserved_manifest": true
+      },
+      "anatomical-arm/inspect.js": {
+        "sha256": "8bdeda1ed90a209b8147b893d58f7ed33473e0a9cfded932378da6579b4840bd",
+        "matches_teaching_manifest": true,
+        "matches_preserved_manifest": true
+      },
+      "anatomical-arm/worker.js": {
+        "sha256": "ee80b2343f99b5b534a1ee597582e5780c0119ea4d8c4057941b44be18803685",
+        "matches_teaching_manifest": true,
+        "matches_preserved_manifest": true
+      }
+    },
+    "served_inputs": {
+      "geometry.json": {
+        "source": "education/data/anatomical-arm-v1/generated/arm-reference.json",
+        "sha256": "1b80c1d3d9f2eb4370cd298f58f5e9c582625574f27072f6d3a1ea898ce4c036",
+        "matches_worktree_source": true
+      },
+      "attachments.json": {
+        "source": "education/data/anatomical-arm-v1/config/attachments-apparatus.json",
+        "sha256": "070fee738e73e127e334ee5cbe680cb622f100396ad0728eb9df6723c2232389",
+        "matches_worktree_source": true
+      },
+      "matches.json": {
+        "source": "education/data/anatomical-arm-v1/audit/modal-fixed-end-results.json",
+        "sha256": "b0eeecdade262b682279d9ebeb7a8147a4525a992976a85afc0ce5e63270d8b4",
+        "matches_worktree_source": true
+      },
+      "routes.json": {
+        "source": "education/data/anatomical-arm-v1/config/apparatus-routing.json",
+        "sha256": "b8580e8158e17730b65b64d0fdbe0f1cbbafc76235b9a5f0c2b01020818cd93f",
+        "matches_worktree_source": true
+      },
+      "rest.json": {
+        "source": "education/data/anatomical-arm-v1/audit/arm-rest-recheck.json",
+        "sha256": "3d1159de78088207320d3b19b17ffc83cb08a531781e26715c8167dd7efbecab",
+        "matches_worktree_source": true
+      },
+      "proof-status.json": {
+        "source": "education/data/anatomical-arm-v1/audit/arm-proof-status.json",
+        "sha256": "8568fd5746025b5c5261e44d4683c61dd9adc89f75b985f95a4053c910a92e56",
+        "matches_worktree_source": true
+      },
+      "lean-check.txt": {
+        "source": "education/data/anatomical-arm-v1/audit/arm-lean-check.txt",
+        "sha256": "f570cbb6b0161d8cff60600f90e0b0d225fa8581555d60862e282806dac90703",
+        "matches_worktree_source": true
+      },
+      "AnatomicalArm.lean": {
+        "source": "education/proofs/AnatomicalArm.lean",
+        "sha256": "843f04f8e8f5c81a902d6816f0136726d006be6574aff5245360b8c2006ef025",
+        "matches_worktree_source": true
+      }
+    },
+    "source_sha256": {
+      "education/tools/build-anatomical-arm-inspector.mjs": "bad5072d8918c7a82d8b1717ca2cc623481eddb587ec176791b1d6b66cd0a350",
+      "education/tools/anatomical-arm-inspector.mjs": "4ffc6e08beebea2beb1746ee1b7d405062f273f0c5b666c09e9a4bbec7340985",
+      "education/web/anatomical-arm-worker.mjs": "dfadf3136b8ecac0fd6275f059085636eb8953346d920ca69a4d4382fa7b39d5",
+      "education/data/anatomical-arm-v1/generated/arm-reference.json": "1b80c1d3d9f2eb4370cd298f58f5e9c582625574f27072f6d3a1ea898ce4c036",
+      "education/data/anatomical-arm-v1/config/attachments-apparatus.json": "070fee738e73e127e334ee5cbe680cb622f100396ad0728eb9df6723c2232389",
+      "education/data/anatomical-arm-v1/config/apparatus-routing.json": "b8580e8158e17730b65b64d0fdbe0f1cbbafc76235b9a5f0c2b01020818cd93f",
+      "education/data/anatomical-arm-v1/audit/modal-fixed-end-results.json": "b0eeecdade262b682279d9ebeb7a8147a4525a992976a85afc0ce5e63270d8b4",
+      "education/web/anatomical-arm.mjs": "9ec37ec7b23bb67643fef715f4554fc8811e897a581691231e6669fdd66c7569",
+      "education/web/anatomical-apparatus.mjs": "be60e6a3ba4db34ee01a4cb531bcdd19f868645ef26e06e1e30daedbc360cb98",
+      "education/web/anatomical-aponeurosis.mjs": "1dbebfd2ea67427ee0d962b7b234d2d40a2f2cd4616a4f1199e20b3aba7316a0",
+      "education/web/anatomical-modal.mjs": "12cd671bc963aa04dd5c0e173a776049de191283d850b0b60d0fe8e63be4c9a1",
+      "education/web/anatomical-material.mjs": "e6ddf6cc391b417f03f5d122670036eb55ebe837ecbbc51d8535bd4e3e6d3a5b",
+      "education/web/anatomical-element.mjs": "3f67a6bd31565c83d2cbea591c3cf1862a48e50cc4efa780880fda7e808d4b1f",
+      "education/web/anatomical-contact.mjs": "ca3abc6a6c885651d6e43d0d0e2b08738b63a536d3850b854087a701695a1e67",
+      "education/web/anatomical-contact-differential.mjs": "76f107f5eb1c41fdf6622c428648babc5a489113a709fd337782b1b3de3cac0b",
+      "education/web/anatomical-distance.mjs": "e11826c97f160220fda68f72cbe5e73f35f9527edcf4a4d58100c467cb50940a",
+      "education/web/anatomical-routing.mjs": "83e52df556739786c97e4cb8ef6a7854d0d9a5fb36ca197b6bdc0b7597d09a3e",
+      "education/web/anatomical-routing-audit.mjs": "e6ef4473a272c985cd05012cf4cbf424c45522b535c280ad5de49222dd459d9b",
+      "education/web/anatomical-audit.mjs": "4f45bf4ce4459096e9595cd7bb1e0bcdfb0fafe858ee5da25444940604589f14",
+      "education/web/anatomical-intersections.mjs": "a083a9838ac3c7508b65b58329c741aef65a065288aff82fc886d1c2c90375df",
+      "education/web/anatomical-transfer.mjs": "1e82dabebf5a6247af9216a70292216b194a52545abf8f3b73c93ee6e2f22431",
+      "education/web/anatomical-newton.mjs": "e0b2193bff56a3fdb9595fa0893c469b5897a31512a282ff7a9b5519b2fe93fe",
+      "education/web/anatomical-preconditioner.mjs": "d234cd800784a57171514139a17d0720bb1a9d4d1089afcd9e7c783cead1b0b4",
+      "education/web/anatomical-retraction.mjs": "f5c4ef1115bc2a385d86e232cb9a6a36f8f61cd56d823b3495284de8e9c71819",
+      "education/web/anatomical-contact-refinement.mjs": "29830d2f311ee74a50acfd65f0ca8c245d2b390ed66d6eafd6c9b79de7607e07",
+      "education/tools/verify-anatomical-arm-rest.mjs": "3812bef9cc146f67e62cf2081a283bd7bbb8e15065a4b10866a25c25a4bd904d"
+    },
+    "rest_recheck_source_hashes_verified": 23,
+    "rest_recheck_source_mismatches": []
+  },
+  "browser": {
+    "engine": "Chromium",
+    "version": "151.0.7922.173",
+    "headless": true,
+    "executable": "/usr/bin/chromium",
+    "arguments": [
+      "--no-sandbox",
+      "--enable-unsafe-swiftshader"
+    ],
+    "viewport": {
+      "width": 1440,
+      "height": 1440
+    },
+    "device_scale_factor": 1,
+    "scroll_y": 0,
+    "scene_css_rect": {
+      "x": 195,
+      "y": 436.625,
+      "width": 1050,
+      "height": 660
+    },
+    "page_errors": [],
+    "failed_requests": [],
+    "responses": [
+      {
+        "path": "/anatomical-arm/index.html",
+        "status": 200
+      },
+      {
+        "path": "/anatomical-arm/inspect.js",
+        "status": 200
+      },
+      {
+        "path": "/anatomical-arm/attachments.json",
+        "status": 200
+      },
+      {
+        "path": "/anatomical-arm/matches.json",
+        "status": 200
+      },
+      {
+        "path": "/anatomical-arm/geometry.json",
+        "status": 200
+      },
+      {
+        "path": "/anatomical-arm/rest.json",
+        "status": 200
+      },
+      {
+        "path": "/anatomical-arm/routes.json",
+        "status": 200
+      },
+      {
+        "path": "/anatomical-arm/proof-status.json",
+        "status": 200
+      },
+      {
+        "path": "/anatomical-arm/AnatomicalArm.lean",
+        "status": 200
+      },
+      {
+        "path": "/anatomical-arm/worker.js",
+        "status": 200
+      },
+      {
+        "path": "/anatomical-arm/geometry.json",
+        "status": 200
+      },
+      {
+        "path": "/anatomical-arm/attachments.json",
+        "status": 200
+      },
+      {
+        "path": "/anatomical-arm/matches.json",
+        "status": 200
+      },
+      {
+        "path": "/anatomical-arm/routes.json",
+        "status": 200
+      },
+      {
+        "path": "/anatomical-arm/rest.json",
+        "status": 200
+      }
+    ]
+  },
+  "capture_replay": [
+    "Serve the frozen preview over HTTP.",
+    "Open /anatomical-arm/index.html at 1440\u00d71440, device scale1; wait for window.anatomicalArmReady.",
+    "Click #start (Start interactive 3D).",
+    "With mouse left button down, drag (950,760) to (870,755) in16 pointer steps; release.",
+    "Move pointer to (30,20). Capture entire viewport at scrollY0. Do not activate Step, Play, release, reset, effort or mass controls."
+  ],
+  "camera": {
+    "type": "orthographic",
+    "initial_target_m": [
+      -0.211,
+      -0.0702352010774452,
+      1.0594103477692185
+    ],
+    "initial_position_m": [
+      -0.211,
+      -1.0702352010774452,
+      1.1394103477692186
+    ],
+    "up": [
+      0,
+      0,
+      1
+    ],
+    "near_m": 0.001,
+    "far_m": 10,
+    "vertical_bounds_m": [
+      -0.35,
+      0.35
+    ],
+    "horizontal_bounds_m": [
+      -0.5568181818181818,
+      0.5568181818181818
+    ],
+    "initial_zoom": 1,
+    "final_orientation": "native OrbitControls after the exact pointer gesture recorded above; camera only",
+    "model_display_offsets_x_m": [
+      -0.2,
+      0.2
+    ],
+    "renderer_pixel_ratio": 1,
+    "reference_unit": "m"
+  },
+  "observed_state": {
+    "status_text": "Accepted resting pose loaded. Step solves may take minutes on a CPU; render speed is separate.",
+    "diagnostic_readout": {
+      "Accepted time": "0.000 s",
+      "Flexion": "16.278 degrees",
+      "Activation": "0.00000",
+      "Velocity": "0.00000 rad/s",
+      "Point mass": "0.50 kg",
+      "Tissue torque": "0.00033 N m",
+      "Reduced force residual": "0.00007035 N",
+      "Minimum body J": "0.99966",
+      "Naive minimum J": "1.00000",
+      "Mass events": "0",
+      "Audited surface crossings": "0",
+      "Audited tendon violations": "0",
+      "Last work defect": "Not evaluated"
+    },
+    "controls": {
+      "effort_for_next_step": 0.04,
+      "point_mass_kg": 0.5
+    },
+    "state": {
+      "qRad": 0.2841100888248933,
+      "omegaRadPerS": 0,
+      "activation": 0,
+      "effort": 0,
+      "massKg": 0.5,
+      "timeS": 0,
+      "step": 0,
+      "massEvents": [],
+      "history": [],
+      "mechanicalWorkJ": 0
+    },
+    "coordinates_count": 460,
+    "coordinates_json_sha256": "8cd8ad4865bc1720633c44a550287bc8e4907ca28526227b9b68e9ba064b5bf1",
+    "unchanged_by_camera": true,
+    "new_step_rows": 0,
+    "browser_rest_recheck_residual_N": 7.035136052391169e-05,
+    "saved_fixed_angle_external_motor_support_Nm": 0.8047110191558745,
+    "stored_receipt_iterations": 6,
+    "stored_receipt_iterations_are_not_new_capture_solves": true,
+    "head_table_text": "right brachialis\t0.99992\t0.99992\t1.00000\nshort head of right biceps brachii\t1.00248\t0.99966\t1.00000\nlong head of right biceps brachii\t1.00158\t0.99976\t1.00000\nmedial head of right triceps brachii\t0.99998\t0.99997\t1.00000\nlateral head of right triceps brachii\t0.99977\t0.99970\t1.00000\nlong head of right triceps brachii\t1.00229\t0.99972\t1.00000\nright brachioradialis\t1.00019\t0.99990\t1.00000",
+    "contact_rule_json_sha256": "fdaa91d9ec5e764dc4558bbe0d6337a4213b12c613a339c0921a51ec9fe02f26",
+    "contact_rule_refinement_rounds": 0
+  },
+  "scientific_scope": {
+    "anatomy": "right arm only: humerus, radius, ulna, seven explicitly repaired derived P2 muscle belly volumes; no torso, whole-body anatomy, hand mesh or skin",
+    "left_view": "stored fixed-angle reduced resting coordinates, live evaluated tissue geometry and initialized finite audits; gold authored tendon routes and teal authored shared interpolation scaffolds",
+    "right_view": "same atlas bones and reference tissue, same angle, authored linear bone-weight comparison",
+    "actual_computation_during_capture": "Loads saved resting coordinates; evaluates tissue/apparatus configuration, naive weighting comparison and browser reduced residual, finite surface/routing and sampled penetration rechecks; renders real WebGL. No new nonlinear time step or dynamics trajectory.",
+    "qualifications": "Finite fixed-angle reduced equilibrium and discrete audit receipt only. Recorded support torque holds the joint; the displayed 0.50kg glyph does not establish unsupported dynamic equilibrium.",
+    "limits": [
+      "No full-body anatomical poser.",
+      "No patient or subject-specific calibration, independent anatomical validation, measured fibre or tendon attachment validation, or clinical claim.",
+      "Authored tendon guides have fixed routing topology; not sliding wrapping or finite-radius tendon contact.",
+      "Teal triangles are interpolation scaffolds, not resolved aponeurosis solids.",
+      "No cartilage, skin, physiological force\u2013velocity or local tissue inertia; point-mass dumbbell has schematic shape.",
+      "Finite sampled surface/path gates do not certify grazing, coplanar or continuous-motion contact.",
+      "Independent Arm26 force-target fits are not tissue-material validation; existing fitted-stress/local-J warnings remain visible.",
+      "No new Lean compilation or full-book qualification from this screenshot."
+    ]
+  },
+  "attribution": {
+    "notice_source": "education/data/elbow-v1/LICENSES_AND_ATTRIBUTION.txt",
+    "notice_sha256": "9c2fa6c1434f40faed1fa1c24c1af9a04bd931066d4ada27a501752c7af38f2e",
+    "atlas": {
+      "credit": "BodyParts3D, \u00a9 The Database Center for Life Science licensed under CC Attribution 4.0 International.",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "official_grant": "https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html",
+      "release": "BodyParts3D 4.0, IS-A 99% polygon-reduced archive",
+      "publication": "Mitsuhashi N, Fujieda K, Tamura T, Kawamoto S, Takagi T, Okubo K. BodyParts3D: 3D structure database for anatomical concepts. Nucleic Acids Research37 (2009), D782\u2013D785. doi:10.1093/nar/gkn613.",
+      "modifications": "Ten-element selection; mm to SI m; zero-based face indices; colors/rendering. Muscle volumes additionally authored segmentation/remeshing and explicit reference repairs; authored attachments, fibres and tendon routes.",
+      "historical_notices": "Historical CC BY-SA2.1 Japan comments remain in original OBJ files; no license changed.",
+      "source": "education/data/elbow-v1/data/bodyparts3d_right_arm_m.json",
+      "source_sha256": "c3ca97df0d41302de5c3e553cb9974c4c0bd68a30866c26a18e1ba41ceab4257"
+    },
+    "arm26": {
+      "credit": "The OpenSim Development Team (Reinbolt, J; Seth, A; Habib, A; Hamner, S), adapted from a model originally created by Kate Holzbaur (11/22/04).",
+      "license": "CC BY3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "publication": "Holzbaur KRS, Murray WM, Delp SL. A Model of the Upper Extremity for Simulating Musculoskeletal Surgery and Analyzing Neuromuscular Control. Annals of Biomedical Engineering33 (2005),829\u2013840. doi:10.1007/s10439-005-3320-7.",
+      "pinned_model_url": "https://github.com/opensim-org/opensim-models/blob/84b487c4e3245359a64381e01f01b9cf4772d457/Models/Arm26/arm26.osim",
+      "modifications": "Selected numerical parameters/coordinate bounds extracted into CSV/JSON with units and evidence labels; original XML unchanged.",
+      "source_sha256": "e2224d0044eb393b05d64926c3fa1682c451a9adc7f510e5517ef9958d3d41b9"
+    },
+    "original_processing_scripts": {
+      "credit": "Copyright (c)2026 Kenoma educational data contribution",
+      "license": "MIT; full existing notice retained in linked component record"
+    },
+    "renderer": {
+      "credit": "Copyright \u00a92010\u20132025 three.js authors",
+      "license": "MIT; existing bundled notices retained"
+    },
+    "openarm": "Not used or displayed in this capture; separate OpenArm Multisensor2.0 CC BY4.0 credits remain in the component record.",
+    "license_changes": "None; no package-wide license overrides component licenses."
+  },
+  "paired_poser": {
+    "pr": 15,
+    "commit": "9739080116b658e6248816f4e4239c4fde95ca94",
+    "image_url": "https://raw.githubusercontent.com/MrScripty/Kenoma/9739080116b658e6248816f4e4239c4fde95ca94/docs/images/kenoma-two-character-scene.png",
+    "README_url": "https://github.com/MrScripty/Kenoma/blob/9739080116b658e6248816f4e4239c4fde95ca94/README.md",
+    "source": "browser/simple-graph/README.md; rig.js; scene-state.js; renderer.js",
+    "meaning": "Two separately controlled schematic whole-body mannequins in the independent Rust/WASM artistic IK/mesh editor; no anatomical tissues, muscle forces, contact simulation or biomechanics solver.",
+    "asset_copied_or_modified": false,
+    "inspection": {
+      "method": "Browser display of the exact public PR15 PNG, with no source or image modification; also read the PR15 README and local editor source.",
+      "natural_width": 1600,
+      "natural_height": 1000,
+      "complete": true,
+      "observed": "Two differently colored smooth full-body mannequins in an editor viewport with grid, character controls and one selected hand IK gizmo."
+    },
+    "source_sha256": {
+      "browser/simple-graph/README.md": "05cef32ae6020d715d671252026464bd04ff387ff8932d627759181ca41da69d",
+      "browser/simple-graph/rig.js": "a854070f6a13e6a2ca5ebbe85477dd40da563c8187143f13f3a2500cd1bc75eb",
+      "browser/simple-graph/scene-state.js": "038c8e0013dd3d11fc3c9acf32df26ff30a9f6fdfded474ed144ad1c8a6d50e7",
+      "browser/simple-graph/renderer.js": "a12dddf0097cd083ca6754518963be0c6b8dca4fa364abd848b4d738b517250a"
+    }
+  }
+}

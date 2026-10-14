@@ -6,6 +6,7 @@ from threading import Thread
 import hashlib,json,os,shutil,subprocess,sys
 import fitz
 from playwright.sync_api import sync_playwright,expect
+from browser_capture import capture_section
 ROOT=Path(__file__).resolve().parents[1]
 def check(destination):
     out=Path(destination).resolve();qa=out/'material-qa';qa.mkdir(exist_ok=True)
@@ -32,7 +33,7 @@ def check(destination):
             def change(key,value):lab.locator(f'input[type=number][data-param={key}]').fill(str(value))
             def width(boundary):return float(lab.locator(f'g[data-boundary={boundary}] .specimen').get_attribute('width'))
             def capture(name):
-                lab.locator('.property-scene').screenshot(path=str(qa/(name+'.png')))
+                capture_section(page,lab.locator('.property-scene'),qa/(name+'.png'))
                 observed[name]=state()
             default=state()
             assert default['free']['converged'] and default['confined']['converged']
@@ -41,7 +42,23 @@ def check(destination):
             fw,cw=width('free'),width('confined');assert abs(fw/cw-default['free']['b'])<1e-12
             capture('default-desktop')
             lab.locator('.controls').screenshot(path=str(qa/'controls-desktop.png'))
-            lab.locator('.readout').screenshot(path=str(qa/'readout-desktop.png'))
+            # Font metrics can make this readout taller than the viewport.
+            capture_section(page,lab.locator('.readout'),qa/'readout-desktop.png')
+            fallback=page.add_style_tag(content='body{font-family:"DejaVu Sans",sans-serif}')
+            try:
+                readout=lab.locator('.readout');before=readout.bounding_box()
+                assert before and before['height']>page.viewport_size['height']
+                assert readout.locator('dt').count()==readout.locator('dd').count()==18
+                assert all(text.strip() for text in readout.locator('dt,dd').all_text_contents())
+                capture_section(page,readout,qa/'readout-font-fallback.png')
+                after=readout.bounding_box()
+                assert page.viewport_size=={'width':1200,'height':1000}
+                assert after and all(abs(after[key]-before[key])<.5 for key in ['width','height'])
+                image=fitz.Pixmap(str(qa/'readout-font-fallback.png'))
+                assert abs(image.width-before['width'])<2 and abs(image.height-before['height'])<2
+                assert state()==default
+                checks.append('Tall font-fallback readout captures all labels at unchanged width and state; desktop viewport restored')
+            finally:fallback.evaluate('(x)=>x.remove()')
             lab.locator('[data-action=candidate]').click()
             expect(lab.locator('.announce')).to_contain_text('Rejected isochoric wall candidate')
             assert state()==default
@@ -134,7 +151,7 @@ def check(destination):
     (qa/'observed.json').write_text(json.dumps(observed,indent=2)+'\n')
     receipt={'schema':1,'result':'PASS_MATERIAL_PREVIEW_BROWSER' if preview else 'PASS_INTEGRATED_MATERIAL_BROWSER','browserVersion':version,'checks':checks,'javascriptErrors':errors,
              'manifest':manifest,'manifestSHA256':digest(out/manifest),'HTMLSHA256':digest(out/'index.html'),
-             'sourceHashes':{p:digest(ROOT/p) for p in ['web/material-lab.mjs','web/material-response.mjs','web/tissue.mjs','tools/material_lab.py','tests/material_browser.py']},
+             'sourceHashes':{p:digest(ROOT/p) for p in ['web/material-lab.mjs','web/material-response.mjs','web/tissue.mjs','tools/material_lab.py','tests/material_browser.py','tests/browser_capture.py']},
              'outputs':{p.name:digest(p) for p in sorted(qa.iterdir()) if p.is_file() and p.name!='browser-check.json'}}
     receipt['appSHA256']=digest(out/'assets/app.js')
     if preview:receipt['PDFSHA256']=digest(out/'material-response.pdf')

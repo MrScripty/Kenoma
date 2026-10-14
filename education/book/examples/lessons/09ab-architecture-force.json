@@ -1,0 +1,50 @@
+{
+  "chapter": "09ab-architecture-force",
+  "steps": [
+    {
+      "id": "reference-cut",
+      "title": "Calculate one reference-cut force",
+      "parameters": {
+        "angle": 0,
+        "stretch": 1
+      },
+      "explanation": "Use authored reference area 80 mm² and nominal stress 300 kPa. Their product is 24 N along the fibres. At zero pennation all of that force acts along the tendon direction.",
+      "observe": "Reference and current-cut forces both read 24 N. This is analytic bookkeeping with prescribed stress, not measured muscle strength."
+    },
+    {
+      "id": "current-cut",
+      "title": "Change area and stress together",
+      "parameters": {
+        "angle": 0,
+        "stretch": 0.8
+      },
+      "explanation": "Shorten to stretch 0.8 while imposing J=1. Current fibre-normal area becomes 80/0.8 = 100 mm² and Cauchy stress becomes 300 × 0.8 = 240 kPa.",
+      "observe": "100 mm² × 240 kPa still gives 24 N. Shortening alone does not change the prescribed nominal force in this example."
+    },
+    {
+      "id": "project-once",
+      "title": "Project the force once",
+      "parameters": {
+        "angle": 30,
+        "stretch": 0.8
+      },
+      "explanation": "Keep the same material cut and turn the fibres to 30 degrees. Tendon-directed force is the fibre force times cos(30 degrees).",
+      "observe": "Axial and current-cut forces stay 24 N; tendon-directed force becomes about 20.7846 N. Seven drawn lines encode orientation, not a fibre count."
+    },
+    {
+      "id": "projection-check",
+      "title": "Check a familiar angle",
+      "parameters": {
+        "angle": 60,
+        "stretch": 0.8
+      },
+      "explanation": "At 60 degrees the projection factor is one half. Projecting both an already projected area and the force again would apply the angle twice.",
+      "observe": "Tendon-directed force is 12 N while axial force remains 24 N. The orange cut slab is a diagram; the reported area is analytic."
+    }
+  ],
+  "audit": {
+    "finding": "The adapter lacked the stress readout needed to explain why changing current area did not change force.",
+    "change": "Report current Cauchy stress and reference area, then work through configuration matching and one pennation projection.",
+    "remaining": "Authored homogeneous bookkeeping. No source-bound fibre distribution, measured specific tension, force–length calibration or repaired anatomical equilibrium."
+  }
+}

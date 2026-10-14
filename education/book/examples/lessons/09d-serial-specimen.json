@@ -1,0 +1,54 @@
+{
+  "chapter": "09d-serial-specimen",
+  "steps": [
+    {
+      "id": "two-reference-blocks",
+      "title": "Begin with two separate unloaded blocks",
+      "parameters": {
+        "force": 0,
+        "ratio": 2,
+        "iterations": 48
+      },
+      "explanation": "The second reference cross-section is twice the first. A massless spacer transmits the same axial force and allows the blocks to slide laterally at their ideal fixtures.",
+      "observe": "Both stretches and measured volume ratios are 1; current areas are 300 and 600 mm². The gap and grey connector represent the spacer, not missing tissue."
+    },
+    {
+      "id": "one-tensile-force",
+      "title": "Transmit one tensile force",
+      "parameters": {
+        "force": 0.1,
+        "ratio": 2,
+        "iterations": 48
+      },
+      "explanation": "Apply +0.1 N to both blocks. The narrower block needs twice the nominal stress, so the same neo-Hookean law gives it the greater stretch.",
+      "observe": "Stretches are about 1.07983 and 1.03844; current areas shrink to 277.821 and 577.788 mm². Each measured volume ratio remains 1."
+    },
+    {
+      "id": "reverse-the-load",
+      "title": "Reverse the signed load",
+      "parameters": {
+        "force": -0.1,
+        "ratio": 2,
+        "iterations": 48
+      },
+      "explanation": "Apply −0.1 N using the same bilateral fixtures. The narrower block now shortens more and expands more laterally; neither block changes its local volume.",
+      "observe": "Stretches become about 0.931143 and 0.964301; areas become 322.185 and 622.212 mm². The shared force does not imply equal stress or equal strain."
+    },
+    {
+      "id": "root-cap-is-not-equilibrium",
+      "title": "Expose finite root error",
+      "parameters": {
+        "force": 0.1,
+        "ratio": 2,
+        "iterations": 8
+      },
+      "explanation": "Restore tension but reduce the bisection cap to eight. Incompressibility remains imposed exactly while axial force balance is only approximated.",
+      "observe": "The maximum force residual is about 0.00164715 N, above the 1e-10 N criterion, so Converged is false even though both volumes are preserved."
+    }
+  ],
+  "audit": {
+    "finding": "Current areas and force residuals were absent, and the spacer had no visual explanation.",
+    "change": "Display the ideal connector, measured areas and actual force criterion; compare unloaded, tensile, compressive and unconverged cases.",
+    "remaining": "Separate homogeneous incompressible blocks with ideal bilateral fixtures. No continuous taper, interface stress field, unrestricted stability or anatomical calibration."
+  }
+}

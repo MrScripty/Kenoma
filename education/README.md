@@ -71,6 +71,27 @@ Each 3D laboratory initializes only when requested and keeps one canvas for its 
 
 Thirty declarations use exact integer domains and bundled Std. Eighty-five registered declarations use reals with pinned mathlib. Four of those declarations in `ContinuumProperties.lean` use real matrices and the real square root with pinned mathlib v4.19.0; `proofs/mathlib-lock.json` binds its commit and dependency manifest. The source build uses two jobs and does not require a binary cache. These are mathematical contracts, not real-valued biological model validation. The original twelve Mechanics checks cover cancellation, torque identities, kinetic-energy numerator nonnegativity, an exact worked torque, an integer convex-mixture numerator bound and signed virtual-power algebra, plus element-gradient resultants, centroid force-transfer power, a compliant-denominator bound and Armijo acceptance. Every card declares its domain and limits. These exact contracts do not prove the numerical implementation or biological response.
 
+## Research-book teaching feature
+
+The reading surface now pairs a chapter rail, a bounded text column and one sticky 3D laboratory on desktop. At phone widths, **Chapters** and **Example** open collapsible panels. Scrolling selects authored worked steps; moving a control, focusing the laboratory or changing its camera pauses that selection. **Follow reading** resumes it. Reset returns to the selected step. The same 95 checkpoints across all 27 chapters are available in the standalone viewer and in static reading/print content.
+
+Each JSON lesson in `book/examples/lessons/` contains bounded inputs, worked reasoning, expected observations and an audit of remaining scientific gaps. The [acceptance inventory](research/research-book-teaching-acceptance.md) records every chapter. Prescribed geometry, numerical models, historical replays and the independent poser remain separate.
+
+For interaction review from a fresh checkout, use Node 22+, Python 3.12 and Git. From the repository root:
+
+```bash
+cd education
+npm ci --cache .artifacts/npm-cache --no-audit --no-fund
+python3 tools/build_teaching_preview.py .artifacts/research-book-preview
+python3 -m http.server 8000 --bind 127.0.0.1 --directory .artifacts/research-book-preview
+```
+
+Open <http://127.0.0.1:8000/>. Choose a new output directory for each build; existing outputs are never overwritten. To repeat the browser review, install the browser-test prerequisites described above and run `python3 tests/research_book_browser.py .artifacts/research-book-preview` and `python3 tests/chapter_examples_browser.py --preview .artifacts/research-book-preview`.
+
+The builder reads `.github/publications/kenoma-20261009.json`. It retrieves the exact canonical source and publication payload commits from existing Git objects or the official Kenoma repository, reconstructs the publication with the existing checksum assembler, then packages the current teaching source. Git objects are cached in ignored `.artifacts/teaching-preview-inputs`; temporary source/payload snapshots are removed after assembly. `--offline` requires those objects locally, `--cache PATH` relocates staging/cache, and `--preserved PATH` accepts an already verified local publication.
+
+The manifest records both immutable commits and verification hashes. Proof receipts, recorded numerical results, the poser WASM and the linked PDF are reused and labelled as preserved evidence. This command fetches existing repository artifacts; it downloads no new medical dataset, runs no Lean/Rust build or scientific campaign, and publishes nothing. A newly qualified complete book still uses the full build and release gates above.
+
 ## Shared chapter GUI and embedding
 
 `dist/examples.html` exposes the same chapter viewer used by the book. After

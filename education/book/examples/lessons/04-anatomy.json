@@ -1,0 +1,37 @@
+{
+  "chapter": "04-anatomy",
+  "steps": [
+    {
+      "id": "identify-bone",
+      "title": "Start with one named source surface",
+      "parameters": {
+        "part": "0"
+      },
+      "explanation": "Select the right humerus before assigning any material property. Its 2,233 vertices and 3,784 triangles identify the selected source representation, not a stiffness, cartilage field or joint axis. The display rotates the atlas frame only.",
+      "observe": "Only the humerus is visible. Its name, original OBJ hash and topology counts remain available beside the scene."
+    },
+    {
+      "id": "identify-muscle",
+      "title": "Separate a muscle surface from its architecture",
+      "parameters": {
+        "part": "4"
+      },
+      "explanation": "Now isolate the short head of biceps brachii. The 1,739 source vertices bound an atlas surface; they do not reveal fascicle direction, tendon slack length or maximum force. Those would require separate measurements or declared model assumptions.",
+      "observe": "The selected surface and provenance change to the short biceps head: 1,739 vertices and 1,856 triangles. No fibre or force field appears."
+    },
+    {
+      "id": "assemble-atlas",
+      "title": "Assemble evidence without inventing a subject",
+      "parameters": {
+        "part": "all"
+      },
+      "explanation": "Restore the three bones and seven muscle surfaces in their shared atlas coordinates. This is a constructed reference atlas, independent of the recorded OpenArm participant and the Arm26 actuator model. Coincident display is not registration.",
+      "observe": "The ten surfaces retain 13,852 vertices and 20,218 triangles. Subject registration and clinical validation both read false."
+    }
+  ],
+  "audit": {
+    "finding": "Numeric part IDs and a generic atlas label obscured the difference between named surface identity, muscle architecture and subject matching.",
+    "change": "Named controls and a bone → muscle → assembly sequence expose original counts, hashes, units and evidence limits.",
+    "remaining": "No measured fibre map, tendon material field, functional joint axis, subject registration or clinical validation is added."
+  }
+}

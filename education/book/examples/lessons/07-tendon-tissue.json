@@ -1,0 +1,58 @@
+{
+  "chapter": "07-tendon-tissue",
+  "steps": [
+    {
+      "id": "fixed-unactivated",
+      "title": "Separate passive plate contact from activation",
+      "parameters": {
+        "angle": 90,
+        "activation": 0,
+        "tendon": "rigid",
+        "contact": "on"
+      },
+      "explanation": "Hold q = 90° without activation. The path is 0.228035 m: a 0.168035 m fiber plus 0.060000 m rigid tendon. The fiber spring is slack. Independently, the angle-controlled plates compress the reduced tissue block; its force is not muscle activation.",
+      "observe": "Tension and tendon storage are zero, but plate reaction is 5.50272 N and tissue volume ratio is 0.992902. The translated block inset has zero plate penetration."
+    },
+    {
+      "id": "rigid-active",
+      "title": "Activate with rigid internal lengths",
+      "parameters": {
+        "angle": 90,
+        "activation": 0.6,
+        "tendon": "rigid",
+        "contact": "on"
+      },
+      "explanation": "Set activation to 0.6 at the same prescribed angle. With a rigid tendon the fiber cannot shorten, so the authored force-length law gives 670.683 N. The static external support changes sign to balance the resulting muscle, gravity and tissue moments.",
+      "observe": "Tension = 670.683 N, fiber length remains 0.168035 m, tendon length remains 0.060000 m and tendon storage stays zero. The force arrow changes; the path partition does not."
+    },
+    {
+      "id": "solve-compliant-partition",
+      "title": "Let the tendon stretch inside fixed endpoints",
+      "parameters": {
+        "angle": 90,
+        "activation": 0.6,
+        "tendon": "compliant",
+        "contact": "on"
+      },
+      "explanation": "Replace the rigid tendon with the existing 30,000 N/m spring and solve the monotone scalar equilibrium at the same angle and activation. Fiber shortening lowers active force along the declared Gaussian curve. Total path length remains fixed; the colored junction moves because the solved internal lengths change.",
+      "observe": "Fiber = 0.148126 m, tendon = 0.0799092 m, tension = 597.277 N and tendon storage = 5.94567 J. Length residual is zero and force residual is below 10⁻⁹ N; the fiber is admissible. These are equilibrium snapshots, not integrated work."
+    },
+    {
+      "id": "remove-contact",
+      "title": "Disable contact and measure the overlap",
+      "parameters": {
+        "angle": 90,
+        "activation": 0.6,
+        "tendon": "compliant",
+        "contact": "off"
+      },
+      "explanation": "Keep the tendon equilibrium but disable plate contact. The block remains at its rest dimensions while the prescribed plate gap remains closed. The explicit ablation removes the reaction instead of inventing a successful collision response.",
+      "observe": "Tendon force and storage are unchanged. Plate reaction becomes zero, tissue volume ratio becomes 1, and plate penetration becomes 0.0138909 m. The visibly overlapping block is a failed contact condition, not a solved compressed state."
+    }
+  ],
+  "audit": {
+    "finding": "The old tendon adapter rendered one undivided line and omitted the tissue block, storage, admissibility and contact ablation despite computing a series result. Its most important chapter mechanisms were invisible.",
+    "change": "Added rigid/compliant and contact toggles, actual solved fiber/tendon segment lengths, a clearly separate physical-dimension block/plate inset, storage and independent equilibrium/contact diagnostics.",
+    "remaining": "Static equilibrium snapshots only; no integrated activation work or full 3D muscle shape. The tissue inset is an unregistered homogeneous affine ansatz, and plate gap is authored rather than anatomical collision detection. Floating-point residuals do not extend existing Lean claims."
+  }
+}

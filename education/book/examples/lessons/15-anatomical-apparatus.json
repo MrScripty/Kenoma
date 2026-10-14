@@ -1,0 +1,37 @@
+{
+  "chapter": "15-anatomical-apparatus",
+  "steps": [
+    {
+      "id": "source-bones",
+      "title": "Locate the reference geometry being displayed",
+      "parameters": {
+        "part": "bones"
+      },
+      "explanation": "These are the three bones in the original arm-geometry.json reference file, rotated only for display. The viewer does not load a solved trajectory pose. The source atlas, original remesh, later repaired reference and later accepted states have distinct provenance.",
+      "observe": "The bone layer is visible. The historical trajectory receipt reports zero accepted snapshots and completion false."
+    },
+    {
+      "id": "inspect-original-remesh",
+      "title": "Do not promote a remesh into accepted tissue",
+      "parameters": {
+        "part": "muscles"
+      },
+      "explanation": "Show the seven original derived muscle bellies. This file predates the later reference repair described below; authored centreline directions are not measured fascicles. Positive cells or a plausible shape cannot establish force equilibrium or anatomical clearance.",
+      "observe": "Only the derived bellies are visible. The selected historical run still reports nonlinear iteration limit and residual about 0.03408 N, above its 0.0001 N gate."
+    },
+    {
+      "id": "separate-receipts",
+      "title": "Keep a rejected attempt separate from later evidence",
+      "parameters": {
+        "part": "both"
+      },
+      "explanation": "Restore the assembly and compare the receipt labels with the chapter’s later 256-point trajectory recheck: 15 accepted reduced-model increments through 0.43 s. Those later results do not replace this older rejection. They also retain minimum queried corner J near 0.712 and unresolved finer-integration and full-nodal checks.",
+      "observe": "The displayed geometry remains reference-only and the historical failure remains visible. The later chapter receipts report their own accepted states and scientific limits; no successful motion is fabricated in this viewer."
+    }
+  ],
+  "audit": {
+    "finding": "Original unrepaired geometry and one rejected historical trajectory were presented under broad apparatus labels, concealing the distinction from later repaired and accepted reduced-model records.",
+    "change": "Bone, original-remesh and combined views now expose historical residual/gate and identify the reference file, chronology and separate later evidence.",
+    "remaining": "This viewer does not replay the later accepted dense trajectory. Calibration stationarity, full-nodal/mesh/quadrature/timestep convergence, local compression and physiological validation remain unresolved."
+  }
+}

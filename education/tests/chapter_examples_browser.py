@@ -81,19 +81,25 @@ try:
     for entry in registry['examples']:expect(page.locator('[id="'+entry['anchor']+'"]')).to_have_count(1)
     for ident in ['01-force','00-scope']:
      page.locator('[data-chapter-example="'+ident+'"]').click()
-     assert page.locator('.chapter-example-frame').count()==1
-     page.frame_locator('.chapter-example-frame').locator('#example-choice').wait_for()
+     expect(page.locator('.reading-example-frame')).to_have_count(1)
+     page.frame_locator('.reading-example-frame').locator('#example-choice').wait_for(state='attached')
      frame=next(f for f in page.frames if 'examples.html' in f.url)
-     frame.wait_for_function('window.kenomaChapterExample?.ready',timeout=90000)
+     frame.wait_for_function('(ident)=>window.kenomaChapterExample?.ready && kenomaChapterExample.example.id===ident',arg=ident,timeout=90000)
+     page.wait_for_function('(ident)=>kenomaResearchBook.open && kenomaResearchBook.displayed===ident',arg=ident)
     poser=next(f for f in page.frames if '/simple-graph/' in f.url)
     for control in poser.locator('header button,header summary,aside button,aside select').all():
      assert control.evaluate('e=>{const r=e.getBoundingClientRect();return r.left>=0&&r.right<=innerWidth+1}'),'clipped nested poser control'
     page.locator('.proof-appendices').evaluate('(e)=>e.open=true')
     assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+1'),'expanded appendix overflow'
-    page.locator('[data-chapter-example="00-scope"]').click();assert page.locator('.chapter-example-frame').count()==0
+    # Desktop keeps the shared dock visible; its close control is offered by
+    # the responsive panel. Selecting a chapter replaces the single example.
+    if width>=1100:page.set_viewport_size({'width':1099,'height':1000})
+    page.locator('#close-example').click();expect(page.locator('.reading-example-frame')).to_have_count(0)
+    expect(page.locator('#example-dock')).to_be_hidden();assert not page.evaluate('kenomaResearchBook.open')
+    if width>=1100:page.set_viewport_size({'width':width,'height':1000})
     page.emulate_media(media='print');expect(body).to_be_visible()
    assert not errors,errors
-   views.append({'name':name,'width':width,'chapters':tested,'controlsResetKeyboardInvalidInputDisposeContextLoss':True,'errors':errors});page.close()
+   views.append({'name':name,'width':width,'chapters':tested,'controlsResetKeyboardInvalidInputDisposeContextLoss':True,'bookDockSelectionAndResponsiveClose':not bool(args.preview),'errors':errors});page.close()
   # Rendering failure must not erase numerical access.
   page=browser.new_page();page.add_init_script("HTMLCanvasElement.prototype.getContext=function(){return null}");page.goto(url+'/examples.html?chapter=01-force');page.wait_for_function('kenomaChapterExample.ready');expect(page.locator('#example-status')).to_contain_text('WebGL is unavailable');page.locator('#parameter-force').fill('8');page.wait_for_function('kenomaChapterExample.state.parameters.force===8');page.close()
   if not args.preview:

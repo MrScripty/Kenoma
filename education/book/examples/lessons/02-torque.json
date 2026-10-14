@@ -1,0 +1,50 @@
+{
+  "chapter": "02-torque",
+  "steps": [
+    {
+      "id": "horizontal",
+      "title": "Calculate a signed moment",
+      "parameters": {
+        "angle": 0,
+        "mass": 5
+      },
+      "explanation": "A 5 kg load exerts 49.05 N downward in the authored 9.81 m/s² field. The 0.30 m lever is horizontal, so τz = rx Fy = 0.30 × (−49.05) = −14.715 N m. Positive z is counterclockwise viewed toward the origin.",
+      "observe": "Moment arm = 0.30 m and torque = −14.715 N m. A static pose would require an external +14.715 N m hold moment."
+    },
+    {
+      "id": "half-arm",
+      "title": "Separate lever length from moment arm",
+      "parameters": {
+        "angle": 60,
+        "mass": 5
+      },
+      "explanation": "Rotate the same 0.30 m lever to 60°. Its horizontal offset is 0.30 cos 60° = 0.15 m, even though its length is unchanged. Gravity acts along the grey vertical line; the orange horizontal segment is the perpendicular offset.",
+      "observe": "Moment arm = 0.15 m and torque = −7.3575 N m: exactly half the horizontal-case magnitude within floating-point precision."
+    },
+    {
+      "id": "through-pivot",
+      "title": "Put gravity through the pivot",
+      "parameters": {
+        "angle": 90,
+        "mass": 5
+      },
+      "explanation": "At 90°, gravity’s line of action passes through the pivot. The force is still 49.05 N, but its perpendicular offset is zero. This is a posed geometric calculation, not a prediction that the lever stays there without supports.",
+      "observe": "Torque is approximately −9.01 × 10⁻¹⁶ N m and moment arm approximately 1.84 × 10⁻¹⁷ m: numerical zero, not a small physical moment."
+    },
+    {
+      "id": "other-side",
+      "title": "Cross the pivot and reverse the moment",
+      "parameters": {
+        "angle": 120,
+        "mass": 5
+      },
+      "explanation": "At 120° the load is left of the pivot: rx = −0.15 m. Multiplying this negative offset by the downward force gives a positive moment. The unsigned moment-arm magnitude alone cannot tell you the rotation direction.",
+      "observe": "Moment-arm magnitude remains 0.15 m, but torque is now +7.3575 N m. The required static hold moment reverses to −7.3575 N m."
+    }
+  ],
+  "audit": {
+    "finding": "The ±80° adapter bound excluded the chapter’s zero moment at 90° and sign reversal at 120°. It showed no force line of action or supporting hold moment.",
+    "change": "Expanded only the presentation control to ±120°, and added the perpendicular offset, gravity line and required external static hold diagnostic.",
+    "remaining": "Prescribed planar massless lever; no angular trajectory, support reaction solve, joint mechanics or anatomical coordinate claim."
+  }
+}

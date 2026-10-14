@@ -1,0 +1,37 @@
+{
+  "chapter": "06-tissue-graphics",
+  "steps": [
+    {
+      "id": "bind-reference",
+      "title": "Begin with a bound artistic reference",
+      "parameters": {
+        "preset": "neutral"
+      },
+      "explanation": "The poser binds a generated surface to its neutral graph. Vertex identity and triangle connectivity are retained when the rig moves. These geometric contracts describe a render surface, not a volume discretization with material stress.",
+      "observe": "The neutral surface is visible. Force and pressure remain not modeled even though the object is rendered in three dimensions."
+    },
+    {
+      "id": "pose-surface",
+      "title": "Follow the bones through a prescribed bend",
+      "parameters": {
+        "preset": "hand-on-torso"
+      },
+      "explanation": "Prescribe the right-hand target from the poser’s existing test case. Dual-quaternion blending moves the surface with the bone transforms; it does not solve the transverse compression, fascia sliding or contact reaction discussed in this chapter.",
+      "observe": "The right arm and rendered skin change together. This is a geometric pose change, with no reported tissue stress or contact reaction."
+    },
+    {
+      "id": "test-contact-boundary",
+      "title": "Make the contact limitation visible",
+      "parameters": {
+        "preset": "crossed-arms"
+      },
+      "explanation": "Cross both arms using the existing two-target pose. Inspect the close surfaces from several angles. A shaded crease is not an intersection test, and retained topology does not guarantee that unrelated surface regions stay apart.",
+      "observe": "Both arms move into the crossing pose. The example reports contact response as not modeled; it neither certifies separation nor assigns a pressure to apparent contact."
+    }
+  ],
+  "audit": {
+    "finding": "An empty-control poser illustrated skinning without a reproducible bend or contact-limit inspection.",
+    "change": "Neutral, one-arm bend and crossed-arm presets make the geometric progression reproducible without adding a physical claim.",
+    "remaining": "No tissue constitutive solve, measured local distortion, contact detection, collision response or pressure field is introduced."
+  }
+}

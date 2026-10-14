@@ -21,7 +21,7 @@
       "kind": "force",
       "title": "Force, mass and displacement",
       "evidenceClass": "Numerical demonstration",
-      "task": "Change net force and inspect the displacement and work at one second.",
+      "task": "Compare force, mass and elapsed time; check displacement and work against kinetic energy.",
       "limits": "Constant mass and constant horizontal net force; visual arrow lengths are scaled.",
       "claimIds": [
         "force-pair",
@@ -54,7 +54,7 @@
       "kind": "energy",
       "title": "Oscillator state and energy",
       "evidenceClass": "Numerical demonstration",
-      "task": "Compare explicit Euler, symplectic Euler and Verlet after the same number of steps.",
+      "task": "Compare integrators at equal elapsed time, then refine the step size and inspect maximum sampled energy error.",
       "limits": "One-dimensional oscillator rendered in 3D; numerical drift is not a checked conservation theorem.",
       "claimIds": [
         "kinetic-sign"
@@ -219,7 +219,7 @@
       "kind": "physiology",
       "title": "Synthetic actuator geometry",
       "evidenceClass": "Numerical demonstration",
-      "task": "Change hinge angle and activation; inspect path length and signed moment arm.",
+      "task": "Hold the hinge fixed; separate excitation delay, path geometry, passive tension and projected torque.",
       "limits": "Authored synthetic path and force law; no tissue shape or calibrated strength.",
       "claimIds": []
     },
@@ -263,7 +263,7 @@
       "kind": "tendon",
       "title": "Reduced tendon and tissue balance",
       "evidenceClass": "Numerical demonstration",
-      "task": "Inspect the existing reduced series geometry at a prescribed angle and excitation.",
+      "task": "Compare rigid and compliant tendon equilibrium, then inspect the reduced contact inset and residuals.",
       "limits": "Reduced static hold; no 3D anatomical tissue solve or sliding interface.",
       "claimIds": [
         "actuator-real-gaussian-radius-bound",
@@ -389,7 +389,7 @@
       "kind": "coupled",
       "title": "Preserved coupled-fixture trajectory",
       "evidenceClass": "Recorded numerical evidence",
-      "task": "Scrub the saved trajectory and inspect nodal geometry and its recorded work residual.",
+      "task": "Scrub saved lift/release samples; inspect the tissue, tendons, hinge and recorded work residual.",
       "limits": "Read-only replay of historical authored fixture evidence; no new solve or physiological qualification.",
       "claimIds": [
         "quadratic-partition",
@@ -409,9 +409,9 @@
       "chapterTitle": "Build an anatomical apparatus that can fail a check",
       "anchor": "anatomical-apparatus",
       "kind": "apparatus",
-      "title": "Anatomical apparatus and failed trajectory",
+      "title": "Original reference and rejected trajectory",
       "evidenceClass": "Recorded numerical evidence",
-      "task": "Inspect reference parts alongside the preserved failed trajectory status.",
+      "task": "Inspect the original pre-repair reference geometry and its historical rejection, then read the separately scoped later evidence.",
       "limits": "Reference geometry is not a successful trajectory; original rejection remains visible.",
       "claimIds": [
         "shared-guide-balance",

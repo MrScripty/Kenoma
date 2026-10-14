@@ -1,0 +1,50 @@
+{
+  "chapter": "10b-pressure-projection",
+  "steps": [
+    {
+      "id": "one-pressure-value",
+      "title": "Represent four samples by one value",
+      "parameters": {
+        "level": 1,
+        "field": "unresolved"
+      },
+      "explanation": "Keep g=(-0.75,0.25,-0.25,0.75), weights (1,3,2,2) and K=8 fixed. The weighted average is 0.125, so one shared pressure-space value misses most variation.",
+      "observe": "Full energy is 8, represented energy 0.5 and unresolved energy 7.5. Teal, green and orange arrows show g, Pg and g−Pg on the same signed scale."
+    },
+    {
+      "id": "two-pressure-values",
+      "title": "Add one independent group value",
+      "parameters": {
+        "level": 2,
+        "field": "unresolved"
+      },
+      "explanation": "The two pairs can now have separate weighted means: 0 and 0.25. Refinement changes only the representable space, not the prescribed samples.",
+      "observe": "Represented energy rises to 1 and unresolved energy falls to 7; their sum stays 8. The identity defect reports zero for this authored rational fixture."
+    },
+    {
+      "id": "all-pressure-values",
+      "title": "Represent every sample",
+      "parameters": {
+        "level": 4,
+        "field": "unresolved"
+      },
+      "explanation": "With one independent value per sample, Pg equals g and every residual arrow has zero length. Refinement recovers the previously unresolved component.",
+      "observe": "Represented energy is 8 and unresolved energy is zero. This is an exact finite-vector representation result, not a body equilibrated with four pressures."
+    },
+    {
+      "id": "already-represented",
+      "title": "Test when refinement gains nothing",
+      "parameters": {
+        "level": 2,
+        "field": "paired"
+      },
+      "explanation": "Now prescribe (-0.5,-0.5,0.25,0.25), already constant within each pair. Two values can represent this field completely.",
+      "observe": "Full and represented energies both equal 5, with zero gap. Manually select four values: no additional energy is recovered because the field was already represented."
+    }
+  ],
+  "audit": {
+    "finding": "The original single-field adapter showed refinement but could not demonstrate the important already-represented case.",
+    "change": "Add the same bounded field presets as the published standalone lab, retaining its weights, scale and energy identity.",
+    "remaining": "Finite weighted projection at fixed samples. No nonlinear equilibrium, pressure/displacement stability, continuous incompressibility, Hessian ordering or anatomy validation."
+  }
+}
