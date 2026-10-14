@@ -49,16 +49,79 @@ def step_id(step):
 def show_step(page, chapter, step):
     target = page.locator(f'.teaching-step[data-teaching-chapter="{chapter}"][data-teaching-step="{step_id(step)}"]')
     expect(target).to_have_count(1)
+    prior_generation = page.evaluate('kenomaResearchBook.generation')
     target.locator('[data-show-step]').click()
     try:
         page.wait_for_function(
-            '([chapter, step]) => window.kenomaResearchBook?.chapter === chapter && kenomaResearchBook.step === step',
-            arg=[chapter, step_id(step)])
+            '([chapter, step, prior]) => window.kenomaResearchBook?.chapter === chapter && kenomaResearchBook.step === step'
+            ' && kenomaResearchBook.generation > prior'
+            ' && kenomaResearchBook.acknowledgedGeneration === kenomaResearchBook.generation'
+            ' && kenomaResearchBook.displayed === chapter && kenomaResearchBook.displayedStep === step',
+            arg=[chapter, step_id(step), prior_generation])
         return wait_example(page, chapter, step.get('parameters'))
     except Exception:
         print('FAILED STEP', chapter, step_id(step), page.evaluate(
             '({chapter:kenomaResearchBook.chapter,step:kenomaResearchBook.step,following:kenomaResearchBook.following,scrollY})'), flush=True)
         raise
+
+
+def delayed_reading_command(page, frame, force):
+    """A command issued before local input cannot reset that later input.
+
+    The wrapper runs in the parent's realm and retains the original sender,
+    origin, payload and ordering when releasing actual postMessage calls.
+    """
+    prior_generation = page.evaluate('kenomaResearchBook.generation')
+    page.evaluate("""(prior) => {
+        const child = document.querySelector('.reading-example-frame').contentWindow;
+        const original = child.postMessage;
+        window.__heldReadingCommands = [];
+        child.postMessage = function(message, origin, ...rest) {
+            if (message?.type === 'kenoma:set-step' && message.generation > prior) {
+                __heldReadingCommands.push({message: structuredClone(message), origin, rest});
+                return;
+            }
+            return original.call(child, message, origin, ...rest);
+        };
+        window.__releaseReadingCommands = () => {
+            child.postMessage = original;
+            for (const item of __heldReadingCommands.splice(0))
+                original.call(child, item.message, item.origin, ...item.rest);
+        };
+    }""", prior_generation)
+    try:
+        step = step_id(force['steps'][0])
+        page.locator(f'#step-01-force-{step} [data-show-step]').click()
+        page.wait_for_function('__heldReadingCommands.length > 0')
+        intended_generation = page.evaluate('kenomaResearchBook.generation')
+        assert intended_generation > prior_generation
+        assert page.evaluate('kenomaResearchBook.acknowledgedGeneration') < intended_generation, 'Explicit selection must not acknowledge an undelivered command'
+        frame.wait_for_function('(generation) => kenomaChapterExample.readingGeneration === generation', arg=intended_generation)
+        frame.locator('#parameter-force').fill('8')
+        frame.wait_for_function('kenomaChapterExample.state.parameters.force === 8 && kenomaChapterExample.manualHold')
+        page.wait_for_function('!kenomaResearchBook.following')
+        manual = page.evaluate('__manualMessages.at(-1)')
+        assert manual['generation'] == intended_generation, 'Later input must use the already-issued intent generation'
+        page.evaluate('__releaseReadingCommands()')
+        frame.wait_for_function('(generation) => __readingMessages.some(message => message.generation === generation)', arg=intended_generation)
+        # Finish the event turn that dispatched the command and its listeners.
+        frame.evaluate('() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))')
+        assert frame.evaluate('kenomaChapterExample.parameters.force') == 8, 'Delayed newer-generation command overwrote later local input'
+        assert frame.evaluate('kenomaChapterExample.state.parameters.force') == 8
+        assert frame.evaluate('kenomaChapterExample.manualHold')
+        assert not page.evaluate('kenomaResearchBook.following')
+        assert page.evaluate('kenomaResearchBook.acknowledgedGeneration') < intended_generation, 'Rejected command must not acknowledge a selection'
+        click_visible(page, '#follow-reading')
+        page.wait_for_function('kenomaResearchBook.following && kenomaResearchBook.acknowledgedGeneration === kenomaResearchBook.generation')
+        frame = wait_example(page, '01-force', force['steps'][0]['parameters'])
+        assert frame.evaluate('kenomaChapterExample.readingGeneration') > intended_generation
+        assert not frame.evaluate('kenomaChapterExample.manualHold')
+        manual_count = page.evaluate('__manualMessages.length')
+        frame.evaluate('(message) => parent.postMessage(message, location.origin)', manual)
+        page.wait_for_function('(count) => __manualMessages.length > count', arg=manual_count)
+        assert page.evaluate('kenomaResearchBook.following'), 'Delayed old manual pause cancelled a later explicit resume'
+    finally:
+        page.evaluate('__releaseReadingCommands()')
 
 
 def click_visible(page, selector):
@@ -166,6 +229,8 @@ def run(site, output):
                         print(name, lesson['chapter'], step_id(step), 'PASS', flush=True)
                 force = by_chapter['01-force']
                 frame = show_step(page, '01-force', force['steps'][0])
+                delayed_reading_command(page, frame, force)
+                frame = show_step(page, '01-force', force['steps'][0])
                 # A real keyboard edit pauses following. Scrolling into another
                 # chapter must preserve both user state and iframe focus.
                 field = frame.locator('#parameter-force')
@@ -272,6 +337,8 @@ def run(site, output):
                     'rapidScrollLatestWins': True, 'closeReopen': width < 1100, 'keyboardOrbit': True,
                     'wheelAlonePausesFollowing': True, 'newChapterSceneScrollReset': True,
                     'staleAutomaticUpdateRejected': True,
+                    'delayedNewGenerationCannotOverwriteLaterInput': True,
+                    'explicitSelectionFreshlyAcknowledged': True,
                     'staleManualPauseRejectedAfterResume': True,
                     'unrelatedSenderRejected': True, 'proofDisclosureAndPrint': True, 'pageErrors': errors})
                 page.close()

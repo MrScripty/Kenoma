@@ -1,5 +1,13 @@
 # Research-book release qualification
 
+## Reader ordering repair before publication (2026-10-14)
+
+Independent review reproduced a pending-command race: after the parent issued a new worked-step generation, a local force edit could still report the old generation. The parent ignored that fresh manual pause, and the queued command replaced force 8 with force 4. The repaired same-origin reader establishes the intent generation synchronously before queueing the command and aligns later manual input with that intent. The same delayed-message probe now preserves force 8 and pauses following.
+
+The reader browser test now waits for a fresh explicit selection acknowledgment and exercises the delayed newer-generation command at all three widths, while retaining the existing stale-command, stale-manual, sender, focus, reset and fallback assertions. The repaired run passed 95 desktop, eight phone and eight narrow checkpoints. A second independent source review found no blocking defect. The earlier phone-edit timeout and the failed delayed-message probe remain retained observations; no assertion, timeout or numerical threshold was relaxed.
+
+These changes alter the reader and test bytes. The historical manifests and PDF/browser receipts below keep their original source identities and do not qualify the repaired reader. Full hosted qualification must cover the combined reader and [coupled browser receipt repair](https://github.com/MrScripty/Kenoma/pull/17); [PR16](https://github.com/MrScripty/Kenoma/pull/16) records the current source and hosted run. Scientific kernels, proof declarations, datasets and the disclosed anatomical qualification gaps are unchanged.
+
 ## Fresh local source, proof and print qualification
 
 The implementation was built in a clean isolated checkout of `b6ff7af9010e867e6f8361ef4c5652147efa8391`. The later `85107192d6459cae8d0054fe59f5f7889618f7ec` commit adds documentation and curated screenshots only: all **979 build-input hashes** match the fresh manifest, with zero missing or changed inputs. The generated build retains its actual `b6ff7af` revision; it is not relabelled as a later commit.

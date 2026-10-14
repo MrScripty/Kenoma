@@ -6,11 +6,15 @@ import registry from '../book/examples/registry.json' with {type:'json'};
 const $=id=>document.getElementById(id),examples=registry.examples;
 const search=new URLSearchParams(location.search);if(search.get('embedded')==='1')document.body.classList.add('embedded');
 const bookMode=search.get('book')==='1';if(bookMode)document.body.classList.add('book-embedded');
+// Intent advances synchronously before a parent command enters the message queue.
+// Equal-generation commands must retain a later local manual hold.
+let readingGeneration=Number(search.get('reading'))||0,manualHold=false;
+function beginReadingIntent(nextGeneration){if(!Number.isSafeInteger(nextGeneration)||nextGeneration<readingGeneration)return false;if(nextGeneration>readingGeneration){readingGeneration=nextGeneration;manualHold=false;}return true;}
+if(bookMode)window.kenomaBeginReadingIntent=beginReadingIntent;
 const lessons=new Map();
 try{const response=await fetch('teaching-sequences.json');if(!response.ok)throw Error(response.status);for(const lesson of (await response.json()).lessons)lessons.set(lesson.chapter,lesson);}catch{document.getElementById('worked-observation').textContent='Worked readings unavailable. The bounded laboratory controls remain usable.';}
 // A queued scroll message must never overwrite input that already happened locally.
-let readingGeneration=Number(search.get('reading'))||0,manualHold=false;
-const notifyManual=()=>{if(bookMode&&parent!==window){manualHold=true;parent.postMessage({type:'kenoma:manual',generation:readingGeneration},location.origin);}};
+const notifyManual=()=>{if(bookMode&&parent!==window){beginReadingIntent(parent.kenomaResearchBook?.generation);manualHold=true;parent.postMessage({type:'kenoma:manual',generation:readingGeneration},location.origin);}};
 let current=null,generation=0;
 const fmtError=e=>e?.message||String(e);
 const link=(label,href)=>{const a=document.createElement('a');a.textContent=label;a.href=href;return a;};
@@ -40,7 +44,7 @@ async function mount(id,stepId=null){const example=examples.find(e=>e.id===id)||
  function syncControls(){for(const c of CONTROLS[example.kind])for(const suffix of['','-range']){const el=$('parameter-'+c.key+suffix);if(el){el.value=params[c.key];el.removeAttribute('aria-invalid');}}}
  function applyStep(step){if(step.parameters.layer!==params.layer||step.parameters.part!==params.part)first=true;selectedStep=step;const url=new URL(location.href);url.searchParams.set('step',step.id);history.replaceState(null,'',url);params=parameters(example.kind,step.parameters);syncControls();showSteps(example,step);update();}
  async function applyPose(){poseEditor.renderer.cancelDrag();poseEditor.model.cancelGesture();poseEditor.model.replaceScene(poseInitial);for(const action of posePreset(params.preset))poseEditor.model.dispatch({...action,id:poseEditor.model.state.selectedId});poseEditor.update();await poseEditor.renderer.whenIdle();}
- current={dispose,example,applyStep};window.kenomaChapterExample={example,ready:false,get state(){return state;},get parameters(){return {...params};},get viewport(){return viewport;},dispose};
+ current={dispose,example,applyStep};window.kenomaChapterExample={example,ready:false,get state(){return state;},get parameters(){return {...params};},get readingGeneration(){return readingGeneration;},get manualHold(){return manualHold;},get viewport(){return viewport;},dispose};
  $('reset-example').disabled=false;$('frame-example').disabled=false;$('view-example').disabled=false;
  if(example.kind!=='pose')try{viewport=createViewport(host,{label:example.title+' — orbitable 3D example',floor:false,target:[0,0,0]});observer=new ResizeObserver(()=>viewport?.resize());observer.observe(host);viewport.resize();viewport.webgl.setAnimationLoop(viewport.render);
   const canvas=viewport.webgl.domElement;canvas.setAttribute('aria-description','Arrow keys orbit, plus or minus zoom, F frames. Scientific parameters are in labelled controls beside the scene.');
@@ -63,5 +67,5 @@ async function mount(id,stepId=null){const example=examples.find(e=>e.id===id)||
  }else update();
 }
 
-$('example-choice').addEventListener('change',e=>mount(e.target.value));window.addEventListener('pagehide',()=>current?.dispose(),{once:true});window.addEventListener('message',event=>{if(!bookMode||event.origin!==location.origin||event.source!==parent||event.data?.type!=='kenoma:set-step')return;const{chapter,step,generation:nextGeneration}=event.data;if(!Number.isSafeInteger(nextGeneration)||nextGeneration<readingGeneration||(manualHold&&nextGeneration===readingGeneration))return;const selected=lessons.get(chapter)?.steps.find(s=>s.id===step);if(!selected)return;if(nextGeneration>readingGeneration){readingGeneration=nextGeneration;manualHold=false;}if(current?.example.id===chapter)current.applyStep(selected);else mount(chapter,step);parent.postMessage({type:'kenoma:selection',chapter,step,generation:readingGeneration},location.origin);});
+$('example-choice').addEventListener('change',e=>mount(e.target.value));window.addEventListener('pagehide',()=>current?.dispose(),{once:true});window.addEventListener('message',event=>{if(!bookMode||event.origin!==location.origin||event.source!==parent||event.data?.type!=='kenoma:set-step')return;const{chapter,step,generation:nextGeneration}=event.data;if(!Number.isSafeInteger(nextGeneration)||nextGeneration<readingGeneration||(manualHold&&nextGeneration===readingGeneration))return;const selected=lessons.get(chapter)?.steps.find(s=>s.id===step);if(!selected)return;beginReadingIntent(nextGeneration);if(current?.example.id===chapter)current.applyStep(selected);else mount(chapter,step);parent.postMessage({type:'kenoma:selection',chapter,step,generation:readingGeneration},location.origin);});
 mount(search.get('chapter'),search.get('step'));if(bookMode&&parent!==window)parent.postMessage({type:'kenoma:ready'},location.origin);
