@@ -1,5 +1,11 @@
 # Research-book release qualification
 
+## Material readout capture repair before publication (2026-10-14)
+
+[Combined-head hosted run 38502074837](https://github.com/MrScripty/Kenoma/actions/runs/38502074837) failed at `material_browser.py`'s direct readout screenshot, after the reader checks passed. A bounded local probe reproduced the same timeout with the already supported DejaVu Sans fallback: the readout grows beyond the desktop viewport, and Chromium's oversized-element capture path collapses the viewport to 1 × 1, triggering responsive reflow. The hosted font metrics were not measured, so this reproduction does not establish their exact value or a browser-version cause.
+
+The failing call now uses the existing bounded section-capture helper, retaining the full readout and 30-second timeout. Five helper unit tests pass. An actual browser regression captures both native and tall fallback readouts, checks all 18 label/value pairs and complete image dimensions, preserves the numerical state and width, and restores the desktop viewport. The fallback image includes the final solve-status and model-validity text. This bounded check uses the preserved teaching preview and is not a new release qualification. Historical receipts keep their original identities; a fresh full hosted run must qualify the final source before merge and publication. Scientific sources, proof declarations and numerical assertions are unchanged.
+
 ## Reader ordering repair before publication (2026-10-14)
 
 Independent review reproduced a pending-command race: after the parent issued a new worked-step generation, a local force edit could still report the old generation. The parent ignored that fresh manual pause, and the queued command replaced force 8 with force 4. The repaired same-origin reader establishes the intent generation synchronously before queueing the command and aligns later manual input with that intent. The same delayed-message probe now preserves force 8 and pauses following.

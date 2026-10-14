@@ -42,7 +42,23 @@ def check(destination):
             fw,cw=width('free'),width('confined');assert abs(fw/cw-default['free']['b'])<1e-12
             capture('default-desktop')
             lab.locator('.controls').screenshot(path=str(qa/'controls-desktop.png'))
-            lab.locator('.readout').screenshot(path=str(qa/'readout-desktop.png'))
+            # Font metrics can make this readout taller than the viewport.
+            capture_section(page,lab.locator('.readout'),qa/'readout-desktop.png')
+            fallback=page.add_style_tag(content='body{font-family:"DejaVu Sans",sans-serif}')
+            try:
+                readout=lab.locator('.readout');before=readout.bounding_box()
+                assert before and before['height']>page.viewport_size['height']
+                assert readout.locator('dt').count()==readout.locator('dd').count()==18
+                assert all(text.strip() for text in readout.locator('dt,dd').all_text_contents())
+                capture_section(page,readout,qa/'readout-font-fallback.png')
+                after=readout.bounding_box()
+                assert page.viewport_size=={'width':1200,'height':1000}
+                assert after and all(abs(after[key]-before[key])<.5 for key in ['width','height'])
+                image=fitz.Pixmap(str(qa/'readout-font-fallback.png'))
+                assert abs(image.width-before['width'])<2 and abs(image.height-before['height'])<2
+                assert state()==default
+                checks.append('Tall font-fallback readout captures all labels at unchanged width and state; desktop viewport restored')
+            finally:fallback.evaluate('(x)=>x.remove()')
             lab.locator('[data-action=candidate]').click()
             expect(lab.locator('.announce')).to_contain_text('Rejected isochoric wall candidate')
             assert state()==default
