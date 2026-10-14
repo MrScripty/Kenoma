@@ -94,6 +94,8 @@ class PackageAcceptance(unittest.TestCase):
     ('changed build input','../proofs/Mechanics.lean',lambda b:b+b'-- changed\n'),
     ('throwing anatomical worker','anatomical-arm/worker.js',lambda b:b'throw new Error("mutation");'),
     ('throwing coupled worker','coupled-fixture/worker.js',lambda b:b'throw new Error("mutation");'),
+    ('missing native coupled browser receipt','coupled-review/browser-receipt.json',lambda b:None),
+    ('failed native coupled browser check','coupled-review/browser-receipt.json',lambda b:self.json_change(b,lambda x:x.update(result='FAIL'))),
     ('changed anatomical subpage','anatomical-arm/index.html',lambda b:b+b'<!-- modified -->'),
     ('changed render bytes','property-book-review/page-1.png',lambda b:b+b'changed'),
     ('changed poser WASM','gui/simple-graph/pkg/human_wasm_bg.wasm',lambda b:b+b'changed'),
