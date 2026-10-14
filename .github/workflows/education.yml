@@ -246,6 +246,8 @@ jobs:
           python3 tools/inspect_real_lesson_proofs.py
           python3 tests/render_capture_rerun.py
           python3 tests/anatomical_arm_inspection.py
+          # Qualify the coupled page shipped by this book checkout as well.
+          python3 tests/coupled_inspection.py
           python3 tests/worker_lifecycle.py
           python3 tests/artifacts.py
           python3 tools/qualify_print_negatives.py

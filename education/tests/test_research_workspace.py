@@ -11,6 +11,19 @@ spec.loader.exec_module(module)
 
 
 class ResearchWorkspaceTests(unittest.TestCase):
+    def test_book_checkout_generates_its_own_coupled_browser_receipt(self):
+        workflow = (Path(__file__).resolve().parents[2] / '.github/workflows/education.yml').read_text()
+        build_job = workflow.split('  build:\n', 1)[1].split('  deploy:\n', 1)[0]
+        self.assertIn('working-directory: education', build_job.split('    steps:\n', 1)[0])
+        book_step = build_job.split('      - name: Check mechanics and build checked proofs and book\n', 1)[1].split('      - name:', 1)[0]
+        # Research receipts live in another checkout and cannot qualify the
+        # executable bytes assembled by the book build.
+        command = '          python3 tests/coupled_inspection.py\n'
+        self.assertIn(command, book_step)
+        self.assertNotIn('working-directory:', book_step)
+        self.assertLess(book_step.index('          npm run build\n'), book_step.index(command))
+        self.assertLess(book_step.index(command), book_step.index('          python3 tools/package_education_bundle.py\n'))
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
