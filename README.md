@@ -1,40 +1,41 @@
 # Kenoma
-Experimental repo for human mesh generation to use as image diffusion reference in the whip project. On sucessful implementation it will be merged into the 3D tools in Pentimento along with diffusion support via Pantograph. 
 
-This repo contains 3 main tracks:
-1. A skinning tool that allows maniquins to be made from just a few connected vertices
-2. A morph target system that aproximates real human anatomy
-3. A biomechanical simulation for acurate anatomical features when posing
+Anatomically detailed soft- and rigid-body simulation in development, focused on muscles, skeletons and contracting soft tissue. Kenoma aims to make anatomy respond to pose and applied forces, supporting controllable 3D reference for creative tools.
 
-In theory the simpilist option is probably good enough for the intended use case, but morph targets have the potential for more control and consistent character generation. At this time i dont know if biomechanical simulation is practical as its much more difficult to create a system capable of acuratly simulating human anatomy and doing so in real time, but the problem is interesting enough i want to try it.
+Current work includes an anatomical right-arm research assembly, an illustrated mechanics book and an independent schematic posing editor.
 
-The word Kenoma comes from the ancient Greek word κένωμα which litteraly means "emptiness", "void", or "That which has been emptied". It seemed fitting for a lifeless mannequin that doesnt appear alive until diffusion paints it with life. 
+![Kenoma's anatomical right-arm research assembly beside its same-angle geometry comparison](docs/review/research-book-teaching/portfolio-anatomy/kenoma-held-anatomy-scene.png)
 
-## Independent simple posing tools
+[Anatomical viewer, sources and attribution](docs/review/research-book-teaching/portfolio-anatomy/held-scene.md).
 
-The [simple posing editor](browser/simple-graph/README.md) provides multiple
-characters, scene gizmos, two-bone IK, head orientation, colors and undo/redo in
-an embeddable static WebGL/WASM page. The headless `human_core` graph/edit API,
-`human_persistence` SQLite store, `human_surface` connected mannequin generator
-and `human_rig` stable pose deformation
-are separate from the biomechanics research. See the [implementation inventory
-and ownership boundary](docs/adr/001-simple-graph-boundary.md) and
-[connected surface contract](crates/human_surface/README.md). This is schematic
-posing and mesh generation, with no anatomical accuracy or physical simulation.
+## Explore the simulation research
 
-![Two independently colored posed mannequins with scene controls and a grid](docs/images/kenoma-two-character-scene.png)
+The [research book and interactive laboratories](education/README.md) connect force, torque, energy, material response, anatomy, contact and spatial solvers. Follow its preview instructions to inspect the teaching and research views.
 
-Two independently colored mannequins posed in the running Rust/WASM editor.
+The current arm is a bounded research assembly. Calibrated tissue behavior and complete whole-body biomechanics remain future work.
 
-![Selected left-hand IK target and axis gizmo after a mouse drag](docs/images/kenoma-rig-interaction.png)
+## Run the posing editor
 
-Left-hand IK adjustment using the live scene gizmo. Joint creasing remains
-visible: these are schematic posing tools, not anatomical or biomechanical
-simulation.
+The separate poser lets you arrange multiple mannequins with hand/foot IK, bend-plane handles, head orientation, colors and undo/redo.
 
-Unedited captures from commit `e2ea6acc5db44794ae8b49beb877f5a8bccea056`,
-using Chromium 151 at 1600 × 1000.
+![Two colored mannequins with scene controls in Kenoma's posing editor](docs/images/kenoma-two-character-scene.png)
 
-## Educational mechanics book
+Requires Rust with the WASM target, Python 3.11+ and the wasm-bindgen CLI version pinned in Cargo.lock, currently 0.2.129. From the repository root:
 
-The additive [educational book and seven 3D laboratories](education/README.md) develop force, torque, energy, activation/release, tendon storage, a worked spatial FEM/fast-solver comparison and a spatial muscle-under-skin/elbow-contact capstone at identical poses. Licensed atlas surfaces, recorded normalized human signals and source model parameters remain separate evidence streams. The book includes original numerical experiments, primary citations and visible checked Lean claims. Its schematic one-way capstone is an educational model; the original production simulator plans remain separate.
+```sh
+rustup target add wasm32-unknown-unknown
+cargo install wasm-bindgen-cli --version 0.2.129 --locked
+browser/simple-graph/build.sh
+python3 -m http.server 8000 --directory browser
+```
+
+Open [localhost:8000/simple-graph/](http://localhost:8000/simple-graph/). Drag handles to pose, drag empty space to orbit, right-drag to pan and scroll to zoom. **Save** downloads a scene; **Open** restores it. Save before reloading.
+
+The poser is an artistic rig with no anatomical or collision simulation. See the [editor and embedding guide](browser/simple-graph/README.md).
+
+## Reusable components
+
+[Graph editing](crates/human_core/README.md) · [Connected surfaces](crates/human_surface/README.md) · [Pose deformation](crates/human_rig/README.md) · [SQLite scenes](crates/human_persistence/README.md) · [Architecture](docs/adr/001-simple-graph-boundary.md) · [Background](docs/project-background.md)
+
+The software workspace declares Apache-2.0. Anatomy and third-party material retain their [component licenses](education/data/elbow-v1/LICENSES_AND_ATTRIBUTION.txt).
+
